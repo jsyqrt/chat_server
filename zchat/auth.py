@@ -95,7 +95,7 @@ def load_logged_in_user():
         g.user = None
     else:
         user_ops = UserOps(session=db.session)
-        g.user = user_ops.get_user(id=user_id)
+        g.user = user_ops.get_one(id=user_id)
 
 def login_required(view):
     @functools.wraps(view)

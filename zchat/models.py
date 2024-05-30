@@ -17,12 +17,6 @@ class User(db.Model):
     signature_text = db.Column(db.String)
 
     as_expert = db.Column(db.Integer, nullable=True)
-    email = db.Column(db.String, nullable=True)
-    email_verified = db.Column(db.Integer, nullable=True)
-    company = db.Column(db.String, nullable=True)
-    title = db.Column(db.String, nullable=True)
-    profession = db.Column(db.String, nullable=True)
-    business = db.Column(db.String, nullable=True)
 
     as_newbie = db.Column(db.Integer, nullable=True)
     target_company = db.Column(db.String, nullable=True)
@@ -40,12 +34,6 @@ class User(db.Model):
         db.Index('index_USER_signature_text', 'signature_text', unique=False),
 
         db.Index('index_USER_as_expert', 'as_expert', unique=False),
-        db.Index('index_USER_email', 'email', unique=False),
-        db.Index('index_USER_email_verified', 'email_verified', unique=False),
-        db.Index('index_USER_company', 'company', unique=False),
-        db.Index('index_USER_title', 'title', unique=False),
-        db.Index('index_USER_profession', 'profession', unique=False),
-        db.Index('index_USER_business', 'business', unique=False),
 
         db.Index('index_USER_as_newbie', 'as_newbie', unique=False),
         db.Index('index_USER_target_company', 'target_company', unique=False),
@@ -66,12 +54,7 @@ class User(db.Model):
             'yearofwork' : self.yearofwork,
             'signature_text': self.signature_text,
             'as_expert': self.as_expert,
-            'email' : self.email,
-            'email_verified': self.email_verified,
-            'company' : self.company,
-            'title' : self.title,
-            'profession': self.profession,
-            'business': self.business,
+
             'as_newbie': self.as_newbie,
             'target_company': self.target_company,
             'target_title' : self.target_title,
@@ -118,7 +101,39 @@ class UserOps:
             current_app.logger.warn(f"failed to update user avatar {id}, error {str(e)}")
         return False
 
-    def update_basic(self, id, phone_number, nickname, gender, edubg, yearofwork, signature_text)->bool:
+    def update_nickname(self, id, nickname)->bool:
+        try:
+            user = self.session.query(User).filter_by(id=id).first()
+            if user:
+                user.nickname = nickname
+
+                self.session.commit()
+                current_app.logger.debug(f"updated user nickname {id}")
+                return True
+            else:
+                current_app.logger.warn(f"no user {id}")
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"failed to update user nickname {id}, error {str(e)}")
+        return False
+
+    def update_signature(self, id, signature)->bool:
+        try:
+            user = self.session.query(User).filter_by(id=id).first()
+            if user:
+                user.signature_text = signature
+
+                self.session.commit()
+                current_app.logger.debug(f"updated user signature {id}")
+                return True
+            else:
+                current_app.logger.warn(f"no user {id}")
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"failed to update user signature {id}, error {str(e)}")
+        return False
+
+    def update_info(self, id, phone_number, nickname, gender, edubg, yearofwork, signature_text)->bool:
         try:
             user = self.session.query(User).filter_by(id=id).first()
             if user:
@@ -139,15 +154,15 @@ class UserOps:
             current_app.logger.warn(f"failed to update user {id}, error {str(e)}")
         return False
 
-    def get_user(self, id)->User:
+    def get_one(self, id)->User:
         try:
             user = self.session.query(User).filter_by(id=id).first()
             return user
         except Exception as e:
-            current_app.logger.debug(f'failed to get users, error {str(e)}')
+            current_app.logger.debug(f'failed to get user, error {str(e)}')
             return None
 
-    def get_all_users(self)->list:
+    def get_all(self)->list:
         try:
             users = self.session.query(User).all()
             current_app.logger.debug(f'len of all users {len(users)}')
@@ -156,140 +171,95 @@ class UserOps:
             current_app.logger.debug(f'failed to get all users, error {str(e)}')
             return []
 
-# def init():
-#     engine = create_engine('sqlite:///' + GlobalConfig['db_name'])
-#     create_database(engine=engine)
+class Expert(db.Model):
+    __tablename__ = 'EXPERT'
 
-#     Session = sessionmaker(bind=engine)
-#     session = Session()
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
 
-#     user_ops = UserOps(session=session)
-#     paper_ops = PaperOps(session=session)
+    email = db.Column(db.String, nullable=True)
+    email_verified = db.Column(db.Integer, nullable=True)
 
-#     assert user_ops.create_user(name="Jason", tags="Newbie")
-#     assert user_ops.create_user(name="Bob", tags="Newbie")
-#     assert user_ops.create_user(name="Alice", tags="Newbie")
-#     assert user_ops.update_user(name="Jason", new_tags="Master")
+    company = db.Column(db.String, nullable=True)
+    title = db.Column(db.String, nullable=True)
+    profession = db.Column(db.String, nullable=True)
+    business = db.Column(db.String, nullable=True)
 
-#     user = user_ops.get_user(name="Jason")
-#     paper = {
-#         'description': "This is a math test",
-#         'tags': json.dumps(["math", "easy"]),
-#         'created_by': user.id,
-#         'questions': [
-#             {
-#                 'description': "what is the answer of 1+1?",
-#                 'options': json.dumps(["1", "2", "3", "4"]),
-#                 'answers': json.dumps(["2"]),
-#             },
-#             {
-#                 'description': "what is the answer of 1*1?",
-#                 'options': json.dumps(["1", "2", "3", "4"]),
-#                 'answers': json.dumps(["1"]),
-#             },
-#         ]
-#     }
-#     assert paper_ops.create_paper(user_id=paper['created_by'], description=paper['description'], tags=paper['tags'], questions=paper['questions'])
+    __table_args__ = (
+        db.Index('index_EXPERT_email', 'email', unique=False),
+        db.Index('index_EXPERT_email_verified', 'email_verified', unique=False),
+        db.Index('index_EXPERT_company', 'company', unique=False),
+        db.Index('index_EXPERT_title', 'title', unique=False),
+        db.Index('index_EXPERT_profession', 'profession', unique=False),
+        db.Index('index_EXPERT_business', 'business', unique=False),
+    )
 
-#     user = user_ops.get_user(name="Alice")
-#     paper = {
-#         'description': "This is a physical test",
-#         'tags': json.dumps(["physical", "easy"]),
-#         'created_by': user.id,
-#         'questions': [
-#             {
-#                 'description': "what is the speed of light?",
-#                 'options': json.dumps(["1e8", "2e8", "3e8", "4e8"]),
-#                 'answers': json.dumps(["3e8"]),
-#             },
-#             {
-#                 'description': "what is the speed of sound?",
-#                 'options': json.dumps(["4e2", "3e2", "2e2", "1e2"]),
-#                 'answers': json.dumps(["3e2"]),
-#             },
-#         ]
-#     }
-#     assert paper_ops.create_paper(user_id=paper['created_by'], description=paper['description'], tags=paper['tags'], questions=paper['questions'])
+    def to_dict(self):
+        return {
+            'user_id' : self.user_id,
+            'email' : self.email,
+            'email_verified': self.email_verified,
+            'company' : self.company,
+            'title' : self.title,
+            'profession': self.profession,
+            'business': self.business,
+        }
 
-#     user = user_ops.get_user(name="Bob")
-#     answers = {
-#         'paper_id': 1,
-#         'answered_by': user.id,
-#         'answers': [
-#             {
-#                 'question_id': 1,
-#                 'answer_text': json.dumps(["2"]),
-#             },
-#             {
-#                 'question_id': 2,
-#                 'answer_text': json.dumps(["3"]),
-#             },
-#         ]
-#     }
-#     assert paper_ops.answer_paper(user_id=user.id, paper_id=1, answers=answers['answers'])
+class ExpertOps:
+    def __init__(self, session):
+        self.session = session
 
-#     user = user_ops.get_user(name="Jason")
-#     answers = {
-#         'paper_id': 2,
-#         'answered_by': user.id,
-#         'answers': [
-#             {
-#                 'question_id': 1,
-#                 'answer_text': json.dumps(["3e8"]),
-#             },
-#             {
-#                 'question_id': 2,
-#                 'answer_text': json.dumps(["3e2"]),
-#             },
-#         ]
-#     }
-#     assert paper_ops.answer_paper(user_id=user.id, paper_id=1, answers=answers['answers'])
+    def register_or_update(self, user_id, email, company, title, profession, business)->bool:
+        current_app.logger.debug(f"register, {user_id}")
+        try:
+            user = self.session.query(User).filter_by(id=user_id).first()
+            if user:
+                user.as_expert = 1
+            else:
+                raise Exception(f'user does not exist, id: {user_id}')
 
-#     session.close()
+            expert = self.session.query(Expert).filter_by(user_id=user_id).first()
+            if expert:
+                expert.email = email
+                expert.company = company
+                expert.title = title
+                expert.profession = profession
+                expert.business = business
 
-# def get():
-#     engine = create_engine('sqlite:///' + GlobalConfig['db_name'])
+                self.session.commit()
+                current_app.logger.debug(f"updated expert {user_id}")
+                return True
+            else:
+                expert = Expert(
+                    user_id=user_id,
+                    email=email,
+                    company=company,
+                    title=title,
+                    profession=profession,
+                    business=business,
+                )
+                self.session.add(expert)
+                self.session.commit()
+                current_app.logger.debug(f"added expert, user_id: {user_id}")
+                return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to add or update expert {user_id}, error {str(e)}")
+        return False
 
-#     Session = sessionmaker(bind=engine)
-#     session = Session()
+    def get_one(self, user_id)->Expert:
+        try:
+            expert = self.session.query(Expert).filter_by(user_id=user_id).first()
+            return expert
+        except Exception as e:
+            current_app.logger.debug(f'failed to get expert, error {str(e)}')
+            return None
 
-#     user_ops = UserOps(session=session)
-#     paper_ops = PaperOps(session=session)
-
-#     assert len(user_ops.get_all_users()) == 3
-
-#     assert len(paper_ops.get_all_paper_ids()) == 2
-
-#     alice = user_ops.get_user(name='Alice')
-#     bob = user_ops.get_user(name='Bob')
-#     jason = user_ops.get_user(name='Jason')
-
-#     papers = paper_ops.get_papers_created_by(user_id=alice.id)
-#     assert len(papers) == 1
-
-#     papers = paper_ops.get_papers_created_by(user_id=bob.id)
-#     assert len(papers) == 0
-
-#     papers = paper_ops.get_papers_created_by(user_id=jason.id)
-#     assert len(papers) == 1
-
-#     papers = paper_ops.get_papers_answered_by(user_id=alice.id)
-#     assert len(papers) == 0
-
-#     papers = paper_ops.get_papers_answered_by(user_id=bob.id)
-#     assert len(papers) == 1
-
-#     papers = paper_ops.get_papers_answered_by(user_id=jason.id)
-#     assert len(papers) == 1
-
-#     paper_questions = paper_ops.get_paper_with_questions(paper_id=papers[0].Paper.id)
-#     assert len(paper_questions) == 2
-
-#     question_answers = paper_ops.get_questions_with_answers(paper_id=papers[0].Paper.id, user_id=jason.id)
-#     assert len(question_answers) == 2
-
-#     session.close()
-
-# if __name__ == '__main__':
-#     # init()
-#     get()
+    def get_all(self)->list:
+        try:
+            experts = self.session.query(Expert).all()
+            current_app.logger.debug(f'len of all experts {len(experts)}')
+            return [expert.to_dict() for expert in experts]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get all experts, error {str(e)}')
+            return []
