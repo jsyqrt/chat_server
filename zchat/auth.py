@@ -9,7 +9,8 @@ from flask import (
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 
-# from flaskr.db import get_db
+from zchat.db import db
+from zchat.models import *
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -70,15 +71,13 @@ def login():
 
     expected_verification_code = current_app.vcode_dict.get(phone_number, None)
     if expected_verification_code is None:
-        return { "error": "Wrong Verification Code!" }, 400
+        return { "error": "Wrong Verification Code, not found!" }, 400
 
     if verification_code != expected_verification_code[1]:
-        return { "error": "Wrong Verification Code!" }, 400
+        return { "error": "Wrong Verification Code, it's wrong!" }, 400
 
-    user_id = phone_number
-    # TODO get user id
-    # user_id = user_ids.get_id(phone_number)
-
+    user_ops = UserOps(session=db.session)
+    user_id = user_ops.get_or_create_user(phone_number=phone_number)
     session['user_id'] = user_id
     return jsonify(
         {
@@ -86,6 +85,27 @@ def login():
             "user_id": user_id
         }
     )
+
+@bp.before_app_request
+def load_logged_in_user():
+    user_id = session.get('user_id')
+    current_app.logger.debug(f"load_logged_in_user {user_id}")
+
+    if user_id is None:
+        g.user = None
+    else:
+        user_ops = UserOps(session=db.session)
+        g.user = user_ops.get_user(id=user_id)
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None:
+            return {'error': 'login required'}, 400
+
+        return view(**kwargs)
+
+    return wrapped_view
 
 @bp.route('/logout', methods=['GET']) # TODO to POST
 def logout():
