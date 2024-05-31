@@ -5,6 +5,8 @@ from flask import (
     Blueprint, request, jsonify, current_app, g
 )
 
+from werkzeug.utils import secure_filename
+
 from zchat.db import db
 from zchat.models import *
 from zchat.auth import login_required
@@ -29,13 +31,18 @@ def get_md5(file):
 def update_avatar():
     avatar = request.files['avatar']
 
-    md5_hash = get_md5(avatar)
-    filename = f"{md5_hash}.{avatar.filename.split('.')[-1]}"
+    # md5_hash = get_md5(avatar)
+    # filename = f"{md5_hash}.{avatar.filename.split('.')[-1]}"
+    # avatar.save(os.path.join(current_app.static_folder, 'images', filename))
+
+    filename = secure_filename(avatar.filename)
     avatar.save(os.path.join(current_app.static_folder, 'images', filename))
 
     user_ops = UserOps(session=db.session)
     succeed = user_ops.update_avatar(id=g.user.id, avatar_name=filename)
-    return {'error': 'Avatar uploaded successfully!'}
+    if succeed:
+        return {'error': 'Avatar uploaded successfully!'}
+    return {'error': 'Failed to update avatar'}, 400
 
 @bp.route('/update_nickname', methods=['POST'])
 @login_required
@@ -44,7 +51,42 @@ def update_nickname():
 
     user_ops = UserOps(session=db.session)
     succeed = user_ops.update_nickname(id=g.user.id, nickname=nickname)
-    return {'error': 'Nickname updated successfully!'}
+    if succeed:
+        return {'error': 'Nickname updated successfully!'}
+    return {'error': 'Failed to update nickname'}, 400
+
+@bp.route('/update_gender', methods=['POST'])
+@login_required
+def update_gender():
+    gender = request.form['gender']
+
+    user_ops = UserOps(session=db.session)
+    succeed = user_ops.update_gender(id=g.user.id, gender=gender)
+    if succeed:
+        return {'error': 'Gender updated successfully!'}
+    return {'error': 'Failed to update gender'}, 400
+
+@bp.route('/update_edubg', methods=['POST'])
+@login_required
+def update_edubg():
+    edubg = request.form['edubg']
+
+    user_ops = UserOps(session=db.session)
+    succeed = user_ops.update_edubg(id=g.user.id, edubg=edubg)
+    if succeed:
+        return {'error': 'EduBg updated successfully!'}
+    return {'error': 'Failed to update edubg'}, 400
+
+@bp.route('/update_yearofwork', methods=['POST'])
+@login_required
+def update_yearofwork():
+    yearofwork = request.form['yearofwork']
+
+    user_ops = UserOps(session=db.session)
+    succeed = user_ops.update_yearofwork(id=g.user.id, yearofwork=yearofwork)
+    if succeed:
+        return {'error': 'Yearofwork updated successfully!'}
+    return {'error': 'Failed to update yearofwork'}, 400
 
 @bp.route('/update_signature', methods=['POST'])
 @login_required
@@ -91,6 +133,9 @@ def register_expert():
         title = request.form['title']
         profession = request.form['profession']
         business = request.form['business']
+        price = request.form['price']
+
+        current_app.logger.warn(f"update price {price}")
 
         expert_ops = ExpertOps(session=db.session)
         succeed = expert_ops.register_or_update(
@@ -100,9 +145,30 @@ def register_expert():
             title=title,
             profession=profession,
             business=business,
+            price=float(price),
         )
         if succeed:
             return { "error": "Register as expert Succeed!" }, 200
         return { "error": "Failed to register as expert!" }, 400
     else:
         return { "error": "Invalid Request Method!" }, 400
+
+@bp.route('/experts', methods=['GET'])
+@login_required
+def get_all_experts():
+    user_ops = UserOps(session=db.session)
+    expert_ops = ExpertOps(session=db.session)
+    experts = expert_ops.get_all()
+    for expert in experts:
+        user_id = expert.get('user_id', 0)
+        user = user_ops.get_one(id=user_id)
+        if user is not None:
+            expert.update(user.to_dict())
+
+            # TODO add those
+            expert['rating'] = 4.5
+            expert['served'] = 28
+        else:
+            current_app.logger.warn(f"no user for id: {user_id}, but it's an expert")
+            continue
+    return experts

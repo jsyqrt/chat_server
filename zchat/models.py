@@ -8,22 +8,22 @@ class User(db.Model):
     __tablename__ = 'USER'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    avatar_name = db.Column(db.String, nullable=True)
-    phone_number = db.Column(db.String, nullable=False)
-    nickname = db.Column(db.String, nullable=True)
-    gender = db.Column(db.String, nullable=True)
-    edubg = db.Column(db.String, nullable=True)
-    yearofwork = db.Column(db.String, nullable=True)
-    signature_text = db.Column(db.String)
+    avatar_name = db.Column(db.String, nullable=False, default='default.jpg')
+    phone_number = db.Column(db.String, nullable=False, default='13800001111')
+    nickname = db.Column(db.String, nullable=False, default='专家785')
+    gender = db.Column(db.String, nullable=False, default='未知')
+    edubg = db.Column(db.String, nullable=False, default='未知')
+    yearofwork = db.Column(db.String, nullable=False, default='未知')
+    signature_text = db.Column(db.String, nullable=False, default='Hello World!')
 
-    as_expert = db.Column(db.Integer, nullable=True)
+    as_expert = db.Column(db.Integer, nullable=False, default=0)
 
-    as_newbie = db.Column(db.Integer, nullable=True)
-    target_company = db.Column(db.String, nullable=True)
-    target_title = db.Column(db.String, nullable=True)
-    target_profession = db.Column(db.String, nullable=True)
-    target_business = db.Column(db.String, nullable=True)
-    target_jd = db.Column(db.String, nullable=True)
+    as_newbie = db.Column(db.Integer, nullable=False, default=0)
+    target_company = db.Column(db.String, nullable=False, default="")
+    target_title = db.Column(db.String, nullable=False, default="")
+    target_profession = db.Column(db.String, nullable=False, default="")
+    target_business = db.Column(db.String, nullable=False, default="")
+    target_jd = db.Column(db.String, nullable=False, default="")
 
     __table_args__ = (
         db.Index('index_USER_phone_number', 'phone_number', unique=True),
@@ -117,6 +117,54 @@ class UserOps:
             current_app.logger.warn(f"failed to update user nickname {id}, error {str(e)}")
         return False
 
+    def update_gender(self, id, gender)->bool:
+        try:
+            user = self.session.query(User).filter_by(id=id).first()
+            if user:
+                user.gender = gender
+
+                self.session.commit()
+                current_app.logger.debug(f"updated user gender {id}")
+                return True
+            else:
+                current_app.logger.warn(f"no user {id}")
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"failed to update user gender {id}, error {str(e)}")
+        return False
+
+    def update_edubg(self, id, edubg)->bool:
+        try:
+            user = self.session.query(User).filter_by(id=id).first()
+            if user:
+                user.edubg = edubg
+
+                self.session.commit()
+                current_app.logger.debug(f"updated user edubg {id}")
+                return True
+            else:
+                current_app.logger.warn(f"no user {id}")
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"failed to update user edubg {id}, error {str(e)}")
+        return False
+
+    def update_yearofwork(self, id, yearofwork)->bool:
+        try:
+            user = self.session.query(User).filter_by(id=id).first()
+            if user:
+                user.yearofwork = yearofwork
+
+                self.session.commit()
+                current_app.logger.debug(f"updated user yearofwork {id}")
+                return True
+            else:
+                current_app.logger.warn(f"no user {id}")
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"failed to update user yearofwork {id}, error {str(e)}")
+        return False
+
     def update_signature(self, id, signature)->bool:
         try:
             user = self.session.query(User).filter_by(id=id).first()
@@ -177,13 +225,14 @@ class Expert(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
 
-    email = db.Column(db.String, nullable=True)
-    email_verified = db.Column(db.Integer, nullable=True)
+    email = db.Column(db.String, nullable=False, default='foo@bar.com')
+    email_verified = db.Column(db.Integer, nullable=False, default=0)
 
-    company = db.Column(db.String, nullable=True)
-    title = db.Column(db.String, nullable=True)
-    profession = db.Column(db.String, nullable=True)
-    business = db.Column(db.String, nullable=True)
+    company = db.Column(db.String, nullable=False, default='')
+    title = db.Column(db.String, nullable=False, default='')
+    profession = db.Column(db.String, nullable=False, default='')
+    business = db.Column(db.String, nullable=False, default='')
+    price = db.Column(db.REAL, nullable=False, default=500.0)
 
     __table_args__ = (
         db.Index('index_EXPERT_email', 'email', unique=False),
@@ -192,6 +241,7 @@ class Expert(db.Model):
         db.Index('index_EXPERT_title', 'title', unique=False),
         db.Index('index_EXPERT_profession', 'profession', unique=False),
         db.Index('index_EXPERT_business', 'business', unique=False),
+        db.Index('index_EXPERT_price', 'price', unique=False),
     )
 
     def to_dict(self):
@@ -203,13 +253,14 @@ class Expert(db.Model):
             'title' : self.title,
             'profession': self.profession,
             'business': self.business,
+            'price': self.price,
         }
 
 class ExpertOps:
     def __init__(self, session):
         self.session = session
 
-    def register_or_update(self, user_id, email, company, title, profession, business)->bool:
+    def register_or_update(self, user_id, email, company, title, profession, business, price)->bool:
         current_app.logger.debug(f"register, {user_id}")
         try:
             user = self.session.query(User).filter_by(id=user_id).first()
@@ -225,6 +276,7 @@ class ExpertOps:
                 expert.title = title
                 expert.profession = profession
                 expert.business = business
+                expert.price = price
 
                 self.session.commit()
                 current_app.logger.debug(f"updated expert {user_id}")
@@ -237,6 +289,7 @@ class ExpertOps:
                     title=title,
                     profession=profession,
                     business=business,
+                    price=price,
                 )
                 self.session.add(expert)
                 self.session.commit()
