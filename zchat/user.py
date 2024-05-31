@@ -179,3 +179,28 @@ def get_all_experts():
             current_app.logger.warn(f"no user for id: {user_id}, but it's an expert")
             continue
     return experts
+
+@bp.route('/register_newbie', methods=['POST'])
+@login_required
+def register_newbie():
+    if request.method == 'POST':
+        company = request.form['company']
+        title = request.form['title']
+        profession = request.form['profession']
+        business = request.form['business']
+        jd = request.form['jd']
+
+        newbie_ops = NewbieOps(session=db.session)
+        succeed = newbie_ops.register_or_update(
+            user_id=g.user.id,
+            company=company,
+            title=title,
+            profession=profession,
+            business=business,
+            jd=jd,
+        )
+        if succeed:
+            return { "error": "Register as newbie Succeed!" }, 200
+        return { "error": "Failed to register as newbie!" }, 400
+    else:
+        return { "error": "Invalid Request Method!" }, 400

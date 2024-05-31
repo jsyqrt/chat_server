@@ -8,59 +8,48 @@ class User(db.Model):
     __tablename__ = 'USER'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    avatar_name = db.Column(db.String, nullable=False, default='default.jpg')
     phone_number = db.Column(db.String, nullable=False, default='13800001111')
-    nickname = db.Column(db.String, nullable=False, default='专家785')
+
+    avatar_name = db.Column(db.String, nullable=False, default='default.jpg')
+    nickname = db.Column(db.String, nullable=False, default='专家785') # TODO use random name
+    signature_text = db.Column(db.String, nullable=False, default='Hello World!')
+
     gender = db.Column(db.String, nullable=False, default='未知')
     edubg = db.Column(db.String, nullable=False, default='未知')
     yearofwork = db.Column(db.String, nullable=False, default='未知')
-    signature_text = db.Column(db.String, nullable=False, default='Hello World!')
 
     as_expert = db.Column(db.Integer, nullable=False, default=0)
-
     as_newbie = db.Column(db.Integer, nullable=False, default=0)
-    target_company = db.Column(db.String, nullable=False, default="")
-    target_title = db.Column(db.String, nullable=False, default="")
-    target_profession = db.Column(db.String, nullable=False, default="")
-    target_business = db.Column(db.String, nullable=False, default="")
-    target_jd = db.Column(db.String, nullable=False, default="")
 
     __table_args__ = (
         db.Index('index_USER_phone_number', 'phone_number', unique=True),
+
         db.Index('index_USER_name', 'nickname', unique=False),
+        db.Index('index_USER_signature_text', 'signature_text', unique=False),
+
         db.Index('index_USER_gender', 'gender', unique=False),
         db.Index('index_USER_edubg', 'edubg', unique=False),
         db.Index('index_USER_yearofwork', 'yearofwork', unique=False),
-        db.Index('index_USER_signature_text', 'signature_text', unique=False),
 
         db.Index('index_USER_as_expert', 'as_expert', unique=False),
-
         db.Index('index_USER_as_newbie', 'as_newbie', unique=False),
-        db.Index('index_USER_target_company', 'target_company', unique=False),
-        db.Index('index_USER_target_title', 'target_title', unique=False),
-        db.Index('index_USER_target_profession', 'target_profession', unique=False),
-        db.Index('index_USER_target_business', 'target_business', unique=False),
-        db.Index('index_USER_target_jd', 'target_jd', unique=False),
     )
 
     def to_dict(self):
         return {
             'id' : self.id,
-            'avatar': url_for('static', filename=f'images/{self.avatar_name}'),
             'phone_number' : self.phone_number,
+
+            'avatar': url_for('static', filename=f'images/{self.avatar_name}'),
             'nickname' : self.nickname,
+            'signature_text': self.signature_text,
+
             'gender' : self.gender,
             'edubg' : self.edubg,
             'yearofwork' : self.yearofwork,
-            'signature_text': self.signature_text,
-            'as_expert': self.as_expert,
 
+            'as_expert': self.as_expert,
             'as_newbie': self.as_newbie,
-            'target_company': self.target_company,
-            'target_title' : self.target_title,
-            'target_profession': self.target_profession,
-            'target_business' : self.target_business,
-            'target_jd' : self.target_jd,
         }
 
 class UserOps:
@@ -186,11 +175,13 @@ class UserOps:
             user = self.session.query(User).filter_by(id=id).first()
             if user:
                 user.phone_number = phone_number
+
                 user.nickname = nickname
+                user.signature_text = signature_text
+
                 user.gender = gender
                 user.edubg = edubg
                 user.yearofwork = yearofwork
-                user.signature_text = signature_text
 
                 self.session.commit()
                 current_app.logger.debug(f"updated user {id}")
@@ -237,6 +228,7 @@ class Expert(db.Model):
     __table_args__ = (
         db.Index('index_EXPERT_email', 'email', unique=False),
         db.Index('index_EXPERT_email_verified', 'email_verified', unique=False),
+
         db.Index('index_EXPERT_company', 'company', unique=False),
         db.Index('index_EXPERT_title', 'title', unique=False),
         db.Index('index_EXPERT_profession', 'profession', unique=False),
@@ -247,8 +239,10 @@ class Expert(db.Model):
     def to_dict(self):
         return {
             'user_id' : self.user_id,
+
             'email' : self.email,
             'email_verified': self.email_verified,
+
             'company' : self.company,
             'title' : self.title,
             'profession': self.profession,
@@ -261,7 +255,7 @@ class ExpertOps:
         self.session = session
 
     def register_or_update(self, user_id, email, company, title, profession, business, price)->bool:
-        current_app.logger.debug(f"register, {user_id}")
+        current_app.logger.debug(f"register expert, {user_id}")
         try:
             user = self.session.query(User).filter_by(id=user_id).first()
             if user:
@@ -272,6 +266,7 @@ class ExpertOps:
             expert = self.session.query(Expert).filter_by(user_id=user_id).first()
             if expert:
                 expert.email = email
+
                 expert.company = company
                 expert.title = title
                 expert.profession = profession
@@ -285,6 +280,7 @@ class ExpertOps:
                 expert = Expert(
                     user_id=user_id,
                     email=email,
+
                     company=company,
                     title=title,
                     profession=profession,
@@ -315,4 +311,93 @@ class ExpertOps:
             return [expert.to_dict() for expert in experts]
         except Exception as e:
             current_app.logger.debug(f'failed to get all experts, error {str(e)}')
+            return []
+
+class Newbie(db.Model):
+    __tablename__ = 'NEWBIE'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+
+    target_company = db.Column(db.String, nullable=False, default="")
+    target_title = db.Column(db.String, nullable=False, default="")
+    target_profession = db.Column(db.String, nullable=False, default="")
+    target_business = db.Column(db.String, nullable=False, default="")
+    target_jd = db.Column(db.String, nullable=False, default="")
+
+    __table_args__ = (
+        db.Index('index_NEWBIE_target_company', 'target_company', unique=False),
+        db.Index('index_NEWBIE_target_title', 'target_title', unique=False),
+        db.Index('index_NEWBIE_target_profession', 'target_profession', unique=False),
+        db.Index('index_NEWBIE_target_business', 'target_business', unique=False),
+        db.Index('index_NEWBIE_target_jd', 'target_jd', unique=False),
+    )
+
+    def to_dict(self):
+        return {
+            'user_id' : self.user_id,
+            'target_company' : self.target_company,
+            'target_title' : self.target_title,
+            'target_profession': self.target_profession,
+            'target_business': self.target_business,
+            'target_jd': self.target_jd,
+        }
+
+class NewbieOps:
+    def __init__(self, session):
+        self.session = session
+
+    def register_or_update(self, user_id, company, title, profession, business, jd)->bool:
+        current_app.logger.debug(f"register newbie, {user_id}")
+        try:
+            user = self.session.query(User).filter_by(id=user_id).first()
+            if user:
+                user.as_newbie = 1
+            else:
+                raise Exception(f'user does not exist, id: {user_id}')
+
+            newbie = self.session.query(Newbie).filter_by(user_id=user_id).first()
+            if newbie:
+                newbie.target_company = company
+                newbie.target_title = title
+                newbie.target_profession = profession
+                newbie.target_business = business
+                newbie.target_jd = jd
+
+                self.session.commit()
+                current_app.logger.debug(f"updated newbie {user_id}")
+                return True
+            else:
+                newbie = Newbie(
+                    user_id=user_id,
+                    target_company=company,
+                    target_title=title,
+                    target_profession=profession,
+                    target_business=business,
+                    target_jd=jd,
+                )
+                self.session.add(newbie)
+                self.session.commit()
+                current_app.logger.debug(f"added newbie, user_id: {user_id}")
+                return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to add or update newbie {user_id}, error {str(e)}")
+        return False
+
+    def get_one(self, user_id)->Expert:
+        try:
+            newbie = self.session.query(Newbie).filter_by(user_id=user_id).first()
+            return expert
+        except Exception as e:
+            current_app.logger.debug(f'failed to get newbie, error {str(e)}')
+            return None
+
+    def get_all(self)->list:
+        try:
+            newbies = self.session.query(Newbie).all()
+            current_app.logger.debug(f'len of all newbies {len(newbies)}')
+            return [newbie.to_dict() for newbie in newbies]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get all newbies, error {str(e)}')
             return []
