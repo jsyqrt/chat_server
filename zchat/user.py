@@ -13,6 +13,15 @@ from zchat.auth import login_required
 
 bp = Blueprint('user', __name__, url_prefix='/user')
 
+@bp.route('/me', methods=['GET'])
+@login_required
+def get_me():
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_one(id=g.user.id)
+    if user is not None:
+        return user.to_dict()
+    return {'error': 'Failed to get user info'}, 400
+
 @bp.route('/all', methods=['GET'])
 @login_required
 def get_all():
@@ -30,10 +39,6 @@ def get_md5(file):
 @login_required
 def update_avatar():
     avatar = request.files['avatar']
-
-    # md5_hash = get_md5(avatar)
-    # filename = f"{md5_hash}.{avatar.filename.split('.')[-1]}"
-    # avatar.save(os.path.join(current_app.static_folder, 'images', filename))
 
     filename = secure_filename(avatar.filename)
     avatar.save(os.path.join(current_app.static_folder, 'images', filename))
@@ -134,8 +139,10 @@ def register_expert():
         profession = request.form['profession']
         business = request.form['business']
         price = request.form['price']
-
-        current_app.logger.warn(f"update price {price}")
+        need_verify = request.form['need_verify']
+        if need_verify:
+            # TODO do email verification
+            pass
 
         expert_ops = ExpertOps(session=db.session)
         succeed = expert_ops.register_or_update(
