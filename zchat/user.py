@@ -10,8 +10,79 @@ from werkzeug.utils import secure_filename
 from zchat.db import db
 from zchat.models import *
 from zchat.auth import login_required
+from zchat.rand import *
 
 bp = Blueprint('user', __name__, url_prefix='/user')
+
+@bp.route('/gen_random', methods=['GET'])
+def gen_random():
+    count = int(request.args.get('count', '50'))
+
+    user_ops = UserOps(session=db.session)
+    expert_ops = ExpertOps(session=db.session)
+    newbie_ops = NewbieOps(session=db.session)
+    for _ in range(count):
+
+        phone_number=random_phone_number()
+        nickname=random_name()
+        id = user_ops.get_or_create_user(phone_number=phone_number)
+        if id is None:
+            current_app.logger.warn("failed tp create user")
+            continue
+
+        succeed = user_ops.update_info(
+            id=id,
+            nickname=nickname,
+            phone_number=phone_number,
+            gender=random_gender(),
+            edubg=random_edubg(),
+            yearofwork=random_yearofwork(),
+            signature_text=random_signature(),
+        )
+        if not succeed:
+            current_app.logger.warn(f"failed tp update user info {id}")
+            continue
+
+        succeed = user_ops.update_avatar(
+            id=id,
+            avatar_name=random_avatar(os.path.join(current_app.static_folder, 'images')))
+        if not succeed:
+            current_app.logger.warn(f"failed tp update user avatar {id}")
+            continue
+
+        as_expert = random_bool()
+        as_newbie = random_bool()
+
+        if as_expert:
+            company=random_company()
+
+            succeed = expert_ops.register_or_update(
+                user_id=id,
+                email=random_email(nickname, company),
+                company=random_company(),
+                title=random_title(),
+                profession=random_profession(),
+                business=random_business(),
+                price=random_price(),
+            )
+            if not succeed:
+                current_app.logger.warn(f"failed tp register as expert {id}")
+                continue
+
+        if as_newbie:
+            succeed = newbie_ops.register_or_update(
+                user_id=id,
+                company=random_company(),
+                title=random_title(),
+                profession=random_profession(),
+                business=random_business(),
+                jd=random_jd(),
+            )
+            if not succeed:
+                current_app.logger.warn(f"failed tp register as newbie {id}")
+                continue
+    return {'error': f'Succeed to gen random data for count {count}'}
+
 
 @bp.route('/me', methods=['GET'])
 @login_required
