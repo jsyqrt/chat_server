@@ -3,6 +3,7 @@ import json
 from flask import current_app, url_for
 
 from zchat.db import db
+from zchat.rand import *
 
 class User(db.Model):
     __tablename__ = 'USER'
@@ -63,7 +64,8 @@ class UserOps:
             if user:
                 return user.id
 
-            user = User(phone_number=phone_number)
+            # TODO with better random name
+            user = User(phone_number=phone_number, nickname=random_name())
             self.session.add(user)
             self.session.commit()
             current_app.logger.debug(f"added user, id: {user.id}, phone_number: {phone_number}")
