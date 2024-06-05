@@ -8,11 +8,17 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for, current_app, jsonify
 )
 from werkzeug.security import check_password_hash, generate_password_hash
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 
 from zchat.db import db
 from zchat.models import *
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
+
+login_manager = LoginManager()
+
+def init_app(app):
+    login_manager.init_app(app)
 
 class ExpiringDict(OrderedDict):
     def __init__(self, expiration_time=60):
@@ -61,6 +67,23 @@ def verification_code():
         }
     )
 
+class LGUser(UserMixin):
+    def __init__(self, user):
+        self.user = user
+
+    def get_id(self):
+        return str(self.user.id)
+
+@login_manager.user_loader
+def user_loader(id):
+    user_ops = UserOps(session=db.session)
+    u = user_ops.get_one(id=int(id))
+    return LGUser(u)
+
+@login_manager.unauthorized_handler
+def unauthorized_handler():
+    return 'Unauthorized', 401
+
 @bp.route('/login', methods=['GET']) # TODO to POST
 def login():
     phone_number = request.args.get('phone_number', '0')
@@ -78,7 +101,13 @@ def login():
 
     user_ops = UserOps(session=db.session)
     user_id = user_ops.get_or_create_user(phone_number=phone_number)
-    session['user_id'] = user_id
+    if user_id is None:
+        return { "error": "No such user!" }, 400
+
+    u = user_ops.get_one(id=user_id)
+    user = LGUser(u)
+    login_user(user)
+
     return jsonify(
         {
             "error": "login succeed",
@@ -86,31 +115,16 @@ def login():
         }
     )
 
-@bp.before_app_request
-def load_logged_in_user():
-    user_id = session.get('user_id')
-    current_app.logger.debug(f"load_logged_in_user {user_id}")
-
-    if user_id is None:
-        g.user = None
-    else:
-        user_ops = UserOps(session=db.session)
-        g.user = user_ops.get_one(id=user_id)
-
-def login_required(view):
-    @functools.wraps(view)
-    def wrapped_view(**kwargs):
-        if g.user is None:
-            return {'error': 'login required'}, 400
-
-        return view(**kwargs)
-
-    return wrapped_view
+@bp.route('/protected')
+@login_required
+def protected():
+    print(session)
+    return 'Logged in as: ' + current_user.get_id()
 
 @bp.route('/logout', methods=['GET']) # TODO to POST
 def logout():
-    user_id = session['user_id']
-    session.clear()
+    user_id = current_user.get_id()
+    logout_user()
     return jsonify(
         {
             "error": "logout succeed",
