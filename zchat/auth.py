@@ -42,6 +42,7 @@ class ExpiringDict(OrderedDict):
         return value
 
 def init_verification_code_dict(app):
+    # TODO change to thread-safe
     app.vcode_dict = ExpiringDict()
 
 @bp.route('/verification_code', methods=['GET'])

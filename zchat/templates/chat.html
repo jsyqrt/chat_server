@@ -21,12 +21,16 @@
       function sendMessage() {
         var message = document.getElementById('message').value;
         socket.emit('send_message', message);
-        // socket.emit('message', message);
+      }
+
+      function getMessages() {
+        socket.emit('get_message', '{"latest_n": 10}');
       }
     </script>
   </head>
   <body>
     <input type="text" id="message" placeholder="Enter a message" />
     <button onclick="sendMessage()">Send</button>
+    <button onclick="getMessages()">GetAll</button>
   </body>
 </html>
