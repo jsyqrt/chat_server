@@ -23,11 +23,11 @@ def init_app(app):
     def handle_disconnect():
         print('Client disconnected')
 
-    @socketio.on('message')
-    @login_required
-    def handle_message(data):
-        print(f'Received message: {data}')
-        socketio.emit('response', data[::-1])
+    # @socketio.on('message')
+    # @login_required
+    # def handle_message(data):
+    #     print(f'Received message: {data}')
+    #     socketio.emit('response', data[::-1])
 
     @socketio.on('send_message')
     @login_required
@@ -45,19 +45,18 @@ def init_app(app):
             # 在这里处理非JSON数据
             socketio.emit('response', data[::-1])
 
+    @socketio.on('join')
+    def on_join(data):
+        username = data['username']
+        room = data['room']
+        join_room(room)
+        # 通知其他用户有新用户加入
+        socketio.emit('user_joined', {'username': username}, room=room)
 
-    # @socketio.on('join')
-    # def on_join(data):
-    #     username = data['username']
-    #     room = data['room']
-    #     join_room(room)
-    #     # 通知其他用户有新用户加入
-    #     socketio.emit('user_joined', {'username': username}, room=room)
-
-    # @socketio.on('xmessage')
-    # def handle_message(data):
-    #     room = data['room']
-    #     message = data['message']
-    #     username = data['username']
-    #     # 将消息发送给同一个房间的所有用户
-    #     socketio.emit('new_message', {'message': message, 'username': username}, room=room)
+    @socketio.on('message')
+    def handle_message(data):
+        room = data['room']
+        message = data['message']
+        username = data['username']
+        # 将消息发送给同一个房间的所有用户
+        socketio.emit('new_message', {'message': message, 'username': username}, room=room, include_self=False)
