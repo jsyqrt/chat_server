@@ -31,7 +31,8 @@ def init_app(app):
 
         # Notify user there are n msgs to receive
         msgs = unsent_msgs.get(uid, [])
-        socketio.emit('response', f'There are {len(msgs)} msgs to receive', to=sid)
+        blob = json.dumps({'type': 'msg_to_get', 'count': len(msgs)})
+        socketio.emit('notice', blob, to=sid)
 
         current_app.logger.debug(f'Client connected {uid}, {sid}')
 
@@ -57,7 +58,8 @@ def init_app(app):
             msg = data_json.get('msg', 'None')
 
             # Send msg to dest
-            blob = json.dumps({'from': from_id, 'msg': msg, 'timestamp': time.time()})
+            msg_dict = {'from': from_id, 'msg': msg, 'timestamp': time.time()}
+            blob = json.dumps(msg_dict)
 
             chatmsg_ops = ChatMsgOps(session=db.session)
             chatmsg_ops.add_msg(sender=int(from_id), receiver=int(to_id), msg=msg, timestamp=time.time())
@@ -65,7 +67,7 @@ def init_app(app):
             to_sid = user_to_session.get(to_id, None)
             if to_sid:
                 # If the user is online
-                socketio.emit('response', blob, to=to_sid)
+                socketio.emit('msg', blob, to=to_sid)
             else:
                 # Save to a map, waiting the user online again
                 # TODO change the map to a db table, in case server is down
@@ -76,7 +78,8 @@ def init_app(app):
 
         except json.JSONDecodeError:
             current_app.logger.debug(f'Received non-JSON data: {data}')
-            socketio.emit('response', f'Invalid json data {data}', to=sid)
+            blob = json.dumps({'type': 'error', 'content': f'Invalid json data {data}'})
+            socketio.emit('notice', blob, to=sid)
 
     @socketio.on('get_messages')
     @login_required
@@ -95,8 +98,10 @@ def init_app(app):
             msgs = chatmsg_ops.get_msgs(p1=int(p1_id), p2=int(p2_id), before_timestamp=before_timestamp, latest_n=latest_n)
 
             for msg in msgs:
-                socketio.emit('response', msg, to=sid)
+                blob = json.dumps(msg)
+                socketio.emit('msg_response', blob, to=sid)
 
         except json.JSONDecodeError:
             current_app.logger.debug(f'Received non-JSON data: {data}')
-            socketio.emit('response', f'Invalid json data {data}', to=sid)
+            blob = json.dumps({'type': 'error', 'content': f'Invalid json data {data}'})
+            socketio.emit('notice', blob, to=sid)

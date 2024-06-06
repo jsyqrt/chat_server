@@ -14,8 +14,16 @@
         console.log('Disconnected from server');
       });
 
-      socket.on('response', function(data) {
-        console.log('Received response:', data);
+      socket.on('notice', function(data) {
+        console.log('Received notice:', data);
+      });
+
+      socket.on('msg', function(data) {
+        console.log('Received msg:', data);
+      });
+
+      socket.on('msg_response', function(data) {
+        console.log('Received msg_response:', data);
       });
 
       function sendMessage() {
