@@ -403,3 +403,66 @@ class NewbieOps:
         except Exception as e:
             current_app.logger.debug(f'failed to get all newbies, error {str(e)}')
             return []
+
+class ChatMsg(db.Model):
+    __tablename__ = 'CHATMSG'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    sender = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    receiver = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    msg = db.Column(db.String, nullable=False, default='')
+    timestamp = db.Column(db.REAL, nullable=False)
+
+    __table_args__ = (
+        db.Index('index_CHATMSG_sender', 'sender', unique=False),
+        db.Index('index_CHATMSG_receiver', 'receiver', unique=False),
+        db.Index('index_CHATMSG_timestamp', 'timestamp', unique=False),
+    )
+
+    def to_dict(self):
+        return {
+            'sender' : self.sender,
+            'receiver' : self.receiver,
+            'msg' : self.msg,
+            'timestamp' : self.timestamp,
+        }
+
+class ChatMsgOps:
+    def __init__(self, session):
+        self.session = session
+
+    def add_msg(self, sender, receiver, msg, timestamp)->bool:
+        current_app.logger.debug(f"new msg, {sender}, {receiver}, {msg}, {timestamp}")
+        try:
+            chatmsg = ChatMsg(
+                sender=sender,
+                receiver=receiver,
+                msg=msg,
+                timestamp=timestamp,
+            )
+
+            self.session.add(chatmsg)
+            self.session.commit()
+            current_app.logger.debug(f"added msg")
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to add msg, error {str(e)}")
+        return False
+
+    def get_msgs(self, p1, p2, before_timestamp, latest_n)->list:
+        try:
+            msgs = self.session.query(ChatMsg).filter(
+                db.and_(
+                    db.or_(
+                        db.and_(ChatMsg.sender == p1, ChatMsg.receiver == p2),
+                        db.and_(ChatMsg.sender == p2, ChatMsg.receiver == p1)
+                    ),
+                    ChatMsg.timestamp < before_timestamp
+                )
+            ).order_by(db.desc(ChatMsg.timestamp)).limit(latest_n).all()
+            current_app.logger.debug(f'len of all msgs {len(msgs)}')
+            return [msg.to_dict() for msg in msgs]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get msgs, error {str(e)}')
+            return []

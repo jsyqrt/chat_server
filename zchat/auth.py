@@ -72,6 +72,12 @@ class LGUser(UserMixin):
     def __init__(self, user):
         self.user = user
 
+    @property
+    def is_authenticated(self):
+        if self.user is None:
+            return False
+        return True
+
     def get_id(self):
         return str(self.user.id)
 

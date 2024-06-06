@@ -14,8 +14,16 @@
         console.log('Disconnected from server');
       });
 
-      socket.on('response', function(data) {
-        console.log('Received response:', data);
+      socket.on('notice', function(data) {
+        console.log('Received notice:', data);
+      });
+
+      socket.on('msg', function(data) {
+        console.log('Received msg:', data);
+      });
+
+      socket.on('msg_response', function(data) {
+        console.log('Received msg_response:', data);
       });
 
       function sendMessage() {
@@ -24,13 +32,13 @@
       }
 
       function getMessages() {
-        socket.emit('get_message', '{"latest_n": 10}');
+        socket.emit('get_messages', '{"p1": "1", "p2": "4"}');
       }
     </script>
   </head>
   <body>
     <input type="text" id="message" placeholder="Enter a message" />
     <button onclick="sendMessage()">Send</button>
-    <button onclick="getMessages()">GetAll</button>
+    <button onclick="getMessages()">Get</button>
   </body>
 </html>
