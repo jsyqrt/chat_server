@@ -24,13 +24,13 @@
       }
 
       function getMessages() {
-        socket.emit('get_message', '{"latest_n": 10}');
+        socket.emit('get_messages', '{"p1": "1", "p2": "4"}');
       }
     </script>
   </head>
   <body>
     <input type="text" id="message" placeholder="Enter a message" />
     <button onclick="sendMessage()">Send</button>
-    <button onclick="getMessages()">GetAll</button>
+    <button onclick="getMessages()">Get</button>
   </body>
 </html>

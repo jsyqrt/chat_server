@@ -6,6 +6,8 @@ from flask import render_template, request, current_app
 from flask_socketio import SocketIO, join_room, leave_room
 
 from zchat.auth import login_required, current_user
+from zchat.db import db
+from zchat.models import *
 
 def init_app(app):
     socketio = SocketIO(app)
@@ -42,32 +44,6 @@ def init_app(app):
 
         current_app.logger.debug(f'Client disconnected {uid}, {request.sid}')
 
-    @socketio.on('get_message')
-    @login_required
-    def handle_get_message(data):
-        sid = request.sid
-        try:
-            data_json = json.loads(data)
-            current_app.logger.debug(f'Received JSON data: {data_json}')
-
-            latest_n = data_json.get('latest_n', 100)
-            after_timestamp = data_json.get('after_timestamp', time.time()-24*60*60)
-            # TODO handle after_timestamp or latest_n, for now, return all
-
-            # Send unsent msgs to user
-            uid = current_user.get_id()
-            msgs = unsent_msgs.get(uid, [])
-            for msg in msgs:
-                socketio.emit('response', msg, to=sid)
-
-            # Remove unsent msgs from map
-            if len(msgs) != 0:
-                unsent_msgs.pop(uid)
-
-        except json.JSONDecodeError:
-            current_app.logger.debug(f'Received non-JSON data: {data}')
-            socketio.emit('response', f'Invalid json data {data}', to=sid)
-
     @socketio.on('send_message')
     @login_required
     def handle_send_message(data):
@@ -82,6 +58,10 @@ def init_app(app):
 
             # Send msg to dest
             blob = json.dumps({'from': from_id, 'msg': msg, 'timestamp': time.time()})
+
+            chatmsg_ops = ChatMsgOps(session=db.session)
+            chatmsg_ops.add_msg(sender=int(from_id), receiver=int(to_id), msg=msg, timestamp=time.time())
+
             to_sid = user_to_session.get(to_id, None)
             if to_sid:
                 # If the user is online
@@ -93,6 +73,29 @@ def init_app(app):
                 msgs.append(blob)
 
                 unsent_msgs[to_id] = msgs
+
+        except json.JSONDecodeError:
+            current_app.logger.debug(f'Received non-JSON data: {data}')
+            socketio.emit('response', f'Invalid json data {data}', to=sid)
+
+    @socketio.on('get_messages')
+    @login_required
+    def handle_all_messages(data):
+        sid = request.sid
+        try:
+            data_json = json.loads(data)
+            current_app.logger.debug(f'Received JSON data: {data_json}')
+
+            p1_id = data_json.get('p1', '0')
+            p2_id = data_json.get('p2', '0')
+            before_timestamp = data_json.get('before_timestamp', time.time())
+            latest_n = data_json.get('latest_n', 100)
+
+            chatmsg_ops = ChatMsgOps(session=db.session)
+            msgs = chatmsg_ops.get_msgs(p1=int(p1_id), p2=int(p2_id), before_timestamp=before_timestamp, latest_n=latest_n)
+
+            for msg in msgs:
+                socketio.emit('response', msg, to=sid)
 
         except json.JSONDecodeError:
             current_app.logger.debug(f'Received non-JSON data: {data}')
