@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 
 from zchat.db import db
 from zchat.models import *
-from zchat.auth import login_required
+from zchat.auth import login_required, current_user
 from zchat.rand import *
 
 bp = Blueprint('user', __name__, url_prefix='/user')
@@ -88,7 +88,7 @@ def gen_random():
 @login_required
 def get_me():
     user_ops = UserOps(session=db.session)
-    user = user_ops.get_one(id=g.user.id)
+    user = user_ops.get_one(id=current_user.get_id_int())
     if user is not None:
         return user.to_dict()
     return {'error': 'Failed to get user info'}, 400
@@ -115,7 +115,7 @@ def update_avatar():
     avatar.save(os.path.join(current_app.static_folder, 'images', filename))
 
     user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_avatar(id=g.user.id, avatar_name=filename)
+    succeed = user_ops.update_avatar(id=current_user.get_id_int(), avatar_name=filename)
     if succeed:
         return {'error': 'Avatar uploaded successfully!'}
     return {'error': 'Failed to update avatar'}, 400
@@ -126,7 +126,7 @@ def update_nickname():
     nickname = request.form['nickname']
 
     user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_nickname(id=g.user.id, nickname=nickname)
+    succeed = user_ops.update_nickname(id=current_user.get_id_int(), nickname=nickname)
     if succeed:
         return {'error': 'Nickname updated successfully!'}
     return {'error': 'Failed to update nickname'}, 400
@@ -137,7 +137,7 @@ def update_gender():
     gender = request.form['gender']
 
     user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_gender(id=g.user.id, gender=gender)
+    succeed = user_ops.update_gender(id=current_user.get_id_int(), gender=gender)
     if succeed:
         return {'error': 'Gender updated successfully!'}
     return {'error': 'Failed to update gender'}, 400
@@ -148,7 +148,7 @@ def update_edubg():
     edubg = request.form['edubg']
 
     user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_edubg(id=g.user.id, edubg=edubg)
+    succeed = user_ops.update_edubg(id=current_user.get_id_int(), edubg=edubg)
     if succeed:
         return {'error': 'EduBg updated successfully!'}
     return {'error': 'Failed to update edubg'}, 400
@@ -159,7 +159,7 @@ def update_yearofwork():
     yearofwork = request.form['yearofwork']
 
     user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_yearofwork(id=g.user.id, yearofwork=yearofwork)
+    succeed = user_ops.update_yearofwork(id=current_user.get_id_int(), yearofwork=yearofwork)
     if succeed:
         return {'error': 'Yearofwork updated successfully!'}
     return {'error': 'Failed to update yearofwork'}, 400
@@ -170,7 +170,7 @@ def update_signature():
     signature = request.form['signature']
 
     user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_signature(id=g.user.id, signature=signature)
+    succeed = user_ops.update_signature(id=current_user.get_id_int(), signature=signature)
     return {'error': 'Signature updated successfully!'}
 
 @bp.route('/update_info', methods=['POST'])
@@ -186,7 +186,7 @@ def update_info():
 
         user_ops = UserOps(session=db.session)
         succeed = user_ops.update_info(
-            id=g.user.id,
+            id=current_user.get_id_int(),
             phone_number=phone_number,
             nickname=nickname,
             gender=gender,
@@ -217,7 +217,7 @@ def register_expert():
 
         expert_ops = ExpertOps(session=db.session)
         succeed = expert_ops.register_or_update(
-            user_id=g.user.id,
+            user_id=current_user.get_id_int(),
             email=email,
             company=company,
             title=title,
@@ -263,7 +263,7 @@ def register_newbie():
 
         newbie_ops = NewbieOps(session=db.session)
         succeed = newbie_ops.register_or_update(
-            user_id=g.user.id,
+            user_id=current_user.get_id_int(),
             company=company,
             title=title,
             profession=profession,

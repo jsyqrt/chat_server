@@ -81,6 +81,9 @@ class LGUser(UserMixin):
     def get_id(self):
         return str(self.user.id)
 
+    def get_id_int(self):
+        return self.user.id
+
 @login_manager.user_loader
 def user_loader(id):
     user_ops = UserOps(session=db.session)
@@ -130,7 +133,7 @@ def protected():
 
 @bp.route('/logout', methods=['GET']) # TODO to POST
 def logout():
-    user_id = current_user.get_id()
+    user_id = current_user.get_id_int()
     logout_user()
     return jsonify(
         {
