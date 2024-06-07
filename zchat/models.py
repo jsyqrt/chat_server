@@ -404,6 +404,66 @@ class NewbieOps:
             current_app.logger.debug(f'failed to get all newbies, error {str(e)}')
             return []
 
+class ChatWith(db.Model):
+    __tablename__ = 'CHATWITH'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    sender = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    receiver = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+
+    __table_args__ = (
+        db.Index('index_CHATWITH_sender', 'sender', unique=False),
+        db.Index('index_CHATWITH_receiver', 'receiver', unique=False),
+    )
+
+    def to_dict(self):
+        return {
+            'sender' : self.sender,
+            'receiver' : self.receiver,
+        }
+
+class ChatWithOps:
+    def __init__(self, session):
+        self.session = session
+
+    def upsert_pair(self, sender, receiver)->bool:
+        current_app.logger.debug(f"upsert_pair, {sender}, {receiver}")
+        try:
+            chat_pair = ChatWith(
+                sender=sender,
+                receiver=receiver,
+            )
+            merged_record = self.session.merge(chat_pair)
+            if merged_record is chat_pair:
+                self.session.add(merged_record)
+                self.session.commit()
+                current_app.logger.debug(f"added chat pair")
+            else:
+                current_app.logger.debug(f"chat pair already exists")
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to upsert chat pair, error {str(e)}")
+        return False
+
+    def get_chatlist(self, self_id)->list:
+        # Return list of ids
+        try:
+            chat_pairs = self.session.query(ChatWith).filter(
+                db.or_(ChatWith.sender == self_id, ChatWith.receiver == self_id),
+            ).all()
+            current_app.logger.debug(f'len of all chat_pairs {len(chat_pairs)}')
+            result = set()
+            for chat_pair in chat_pairs:
+                if chat_pair.sender == self_id:
+                    result.add(chat_pair.receiver)
+                else:
+                    result.add(chat_pair.sender)
+            return list(result)
+        except Exception as e:
+            current_app.logger.debug(f'failed to get chat_pairs, error {str(e)}')
+            return []
+
 class ChatMsg(db.Model):
     __tablename__ = 'CHATMSG'
 
@@ -434,6 +494,11 @@ class ChatMsgOps:
     def add_msg(self, sender, receiver, msg, timestamp)->bool:
         current_app.logger.debug(f"new msg, {sender}, {receiver}, {msg}, {timestamp}")
         try:
+            chatwith_ops = ChatWithOps(self.session)
+            succeed = chatwith_ops.upsert_pair(sender=sender, receiver=receiver)
+            if not succeed:
+                raise Exception('Failed to upsert pair')
+
             chatmsg = ChatMsg(
                 sender=sender,
                 receiver=receiver,

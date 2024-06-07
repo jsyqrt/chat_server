@@ -100,6 +100,14 @@ def get_all():
     all_users = user_ops.get_all()
     return all_users
 
+@bp.route('/chatlist', methods=['GET'])
+@login_required
+def get_chatlist():
+    chatwith_ops = ChatWithOps(session=db.session)
+    user_ops = UserOps(session=db.session)
+    chatlist = chatwith_ops.get_chatlist(current_user.get_id_int())
+    return [user_ops.get_one(id=user_id).to_dict() for user_id in chatlist]
+
 def get_md5(file):
     md5_hash = hashlib.md5()
     for chunk in iter(lambda: file.read(4096), b""):

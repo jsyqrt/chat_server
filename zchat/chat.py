@@ -55,6 +55,8 @@ def init_app(app):
         to_id = data_json.get('receiver', 0)
         msg = data_json.get('msg', 'None')
 
+        # TODO what if from_id == to_id?
+
         # Send msg to dest
         msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'timestamp': time.time()}
 
