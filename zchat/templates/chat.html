@@ -28,11 +28,11 @@
 
       function sendMessage() {
         var message = document.getElementById('message').value;
-        socket.emit('send_message', message);
+        socket.emit('send_message', JSON.parse(message));
       }
 
       function getMessages() {
-        socket.emit('get_messages', '{"p1": "1", "p2": "4"}');
+        socket.emit('get_messages', {"p1": 1, "p2": 4});
       }
     </script>
   </head>

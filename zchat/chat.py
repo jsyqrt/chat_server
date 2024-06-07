@@ -25,14 +25,13 @@ def init_app(app):
     @login_required
     def handle_connect():
         # Save session id
-        uid = current_user.get_id()
+        uid = current_user.get_id_int()
         sid = request.sid
         user_to_session[uid] = sid
 
         # Notify user there are n msgs to receive
         msgs = unsent_msgs.get(uid, [])
-        blob = json.dumps({'type': 'msg_to_get', 'count': len(msgs)})
-        socketio.emit('notice', blob, to=sid)
+        socketio.emit('notice', {'type': 'msg_to_get', 'count': len(msgs)}, to=sid)
 
         current_app.logger.debug(f'Client connected {uid}, {sid}')
 
@@ -40,7 +39,7 @@ def init_app(app):
     @login_required
     def handle_disconnect():
         # Remove session id from session map
-        uid = current_user.get_id()
+        uid = current_user.get_id_int()
         user_to_session.pop(uid)
 
         current_app.logger.debug(f'Client disconnected {uid}, {request.sid}')
@@ -49,59 +48,52 @@ def init_app(app):
     @login_required
     def handle_send_message(data):
         sid = request.sid
-        try:
-            data_json = json.loads(data)
-            current_app.logger.debug(f'Received JSON data: {data_json}')
+        data_json = data
+        current_app.logger.debug(f'Received JSON data: {data_json}')
 
-            from_id = current_user.get_id()
-            to_id = data_json.get('to', '0')
-            msg = data_json.get('msg', 'None')
+        from_id = current_user.get_id_int()
+        to_id = data_json.get('receiver', 0)
+        msg = data_json.get('msg', 'None')
 
-            # Send msg to dest
-            msg_dict = {'from': from_id, 'msg': msg, 'timestamp': time.time()}
-            blob = json.dumps(msg_dict)
+        # TODO what if from_id == to_id?
 
-            chatmsg_ops = ChatMsgOps(session=db.session)
-            chatmsg_ops.add_msg(sender=int(from_id), receiver=int(to_id), msg=msg, timestamp=time.time())
+        # Send msg to dest
+        msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'timestamp': time.time()}
 
-            to_sid = user_to_session.get(to_id, None)
-            if to_sid:
-                # If the user is online
-                socketio.emit('msg', blob, to=to_sid)
-            else:
-                # Save to a map, waiting the user online again
-                # TODO change the map to a db table, in case server is down
-                msgs = unsent_msgs.get(to_id, [])
-                msgs.append(blob)
+        chatmsg_ops = ChatMsgOps(session=db.session)
+        chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, timestamp=time.time())
 
-                unsent_msgs[to_id] = msgs
+        to_sid = user_to_session.get(to_id, None)
+        if to_sid is not None:
+            # If the user is online
+            current_app.logger.debug(f'user is online: {to_id}')
 
-        except json.JSONDecodeError:
-            current_app.logger.debug(f'Received non-JSON data: {data}')
-            blob = json.dumps({'type': 'error', 'content': f'Invalid json data {data}'})
-            socketio.emit('notice', blob, to=sid)
+            socketio.emit('msg', msg_dict, to=to_sid)
+        else:
+            # Save to a map, waiting the user online again
+            # TODO change the map to a db table, in case server is down
+            current_app.logger.debug(f'user is offline: {to_id}')
+
+            msgs = unsent_msgs.get(to_id, [])
+            msgs.append(msg_dict)
+
+            unsent_msgs[to_id] = msgs
 
     @socketio.on('get_messages')
     @login_required
     def handle_all_messages(data):
+        current_app.logger.debug(f'get_messages: {data}')
         sid = request.sid
-        try:
-            data_json = json.loads(data)
-            current_app.logger.debug(f'Received JSON data: {data_json}')
+        data_json = data
+        current_app.logger.debug(f'Received JSON data: {data_json}')
 
-            p1_id = data_json.get('p1', '0')
-            p2_id = data_json.get('p2', '0')
-            before_timestamp = data_json.get('before_timestamp', time.time())
-            latest_n = data_json.get('latest_n', 100)
+        p1_id = data_json.get('p1', 0)
+        p2_id = data_json.get('p2', 0)
+        before_timestamp = data_json.get('before_timestamp', time.time())
+        latest_n = data_json.get('latest_n', 100)
 
-            chatmsg_ops = ChatMsgOps(session=db.session)
-            msgs = chatmsg_ops.get_msgs(p1=int(p1_id), p2=int(p2_id), before_timestamp=before_timestamp, latest_n=latest_n)
+        chatmsg_ops = ChatMsgOps(session=db.session)
+        msgs = chatmsg_ops.get_msgs(p1=p1_id, p2=p2_id, before_timestamp=before_timestamp, latest_n=latest_n)
 
-            for msg in msgs:
-                blob = json.dumps(msg)
-                socketio.emit('msg_response', blob, to=sid)
-
-        except json.JSONDecodeError:
-            current_app.logger.debug(f'Received non-JSON data: {data}')
-            blob = json.dumps({'type': 'error', 'content': f'Invalid json data {data}'})
-            socketio.emit('notice', blob, to=sid)
+        for msg in msgs:
+            socketio.emit('msg_response', msg, to=sid)
