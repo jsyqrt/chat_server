@@ -54,14 +54,15 @@ def init_app(app):
         from_id = current_user.get_id_int()
         to_id = data_json.get('receiver', 0)
         msg = data_json.get('msg', 'None')
+        msg_type = data_json.get('msg_type', 0)
 
         # TODO what if from_id == to_id?
 
         # Send msg to dest
-        msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'timestamp': time.time()}
+        msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'msg_type': msg_type, 'timestamp': time.time()}
 
         chatmsg_ops = ChatMsgOps(session=db.session)
-        chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, timestamp=time.time())
+        chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=time.time())
 
         to_sid = user_to_session.get(to_id, None)
         if to_sid is not None:
