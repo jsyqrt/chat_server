@@ -471,6 +471,7 @@ class ChatMsg(db.Model):
     sender = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
     receiver = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
     msg = db.Column(db.String, nullable=False, default='')
+    msg_type = db.Column(db.Integer, nullable=False, default=0) # 0 is basic msg,
     timestamp = db.Column(db.REAL, nullable=False)
 
     __table_args__ = (
@@ -484,6 +485,7 @@ class ChatMsg(db.Model):
             'sender' : self.sender,
             'receiver' : self.receiver,
             'msg' : self.msg,
+            'msg_type': self.msg_type,
             'timestamp' : self.timestamp,
         }
 
@@ -491,8 +493,8 @@ class ChatMsgOps:
     def __init__(self, session):
         self.session = session
 
-    def add_msg(self, sender, receiver, msg, timestamp)->bool:
-        current_app.logger.debug(f"new msg, {sender}, {receiver}, {msg}, {timestamp}")
+    def add_msg(self, sender, receiver, msg, msg_type, timestamp)->bool:
+        current_app.logger.debug(f"new msg, {sender}, {receiver}, {msg}, {msg_type}, {timestamp}")
         try:
             chatwith_ops = ChatWithOps(self.session)
             succeed = chatwith_ops.upsert_pair(sender=sender, receiver=receiver)
@@ -503,6 +505,7 @@ class ChatMsgOps:
                 sender=sender,
                 receiver=receiver,
                 msg=msg,
+                msg_type=msg_type,
                 timestamp=timestamp,
             )
 
