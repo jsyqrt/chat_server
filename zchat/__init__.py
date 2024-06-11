@@ -43,4 +43,7 @@ def create_app(test_config=None):
     from . import chat
     chat.init_app(app)
 
+    from . import appointment
+    app.register_blueprint(appointment.bp)
+
     return app

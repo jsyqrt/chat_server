@@ -1,0 +1,197 @@
+import os
+import hashlib
+
+from flask import (
+    Blueprint, request, jsonify, current_app, g
+)
+
+from werkzeug.utils import secure_filename
+
+from zchat.db import db
+from zchat.models import *
+from zchat.auth import login_required, current_user
+from zchat.rand import *
+
+bp = Blueprint('appointment', __name__, url_prefix='/appointment')
+
+@bp.route('/new', methods=['POST'])
+@login_required
+def new_appointment():
+    expert = int(request.form['expert'])
+    newbie = current_user.get_id_int()
+
+    if expert == 0 or newbie == 0:
+        return {'error': f'Invalid expert or newbie setting {expert}, {newbie}'}, 400
+
+    app_ops = AppointmentOps(session=db.session)
+    id = app_ops.create_appointment(expert=expert, newbie=newbie)
+    if id is not None:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to create appointment'}, 400
+
+@bp.route('/update_time', methods=['POST'])
+@login_required
+def update_time():
+    id = request.form['id']
+    timestamp = float(request.form['timestamp'])
+    newbie = current_user.get_id_int()
+
+    app_ops = AppointmentOps(session=db.session)
+    succeed = app_ops.update_timestamp(id=id, newbie_id=newbie, timestamp=timestamp)
+    if succeed:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to update appointment'}, 400
+
+@bp.route('/cancel', methods=['POST'])
+@login_required
+def cancel():
+    id = request.form['id']
+    newbie = current_user.get_id_int()
+
+    app_ops = AppointmentOps(session=db.session)
+    succeed = app_ops.newbie_cancel(id=id, newbie_id=newbie)
+    if succeed:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to update appointment'}, 400
+
+@bp.route('/confirm', methods=['POST'])
+@login_required
+def confirm():
+    id = request.form['id']
+    expert = current_user.get_id_int()
+
+    app_ops = AppointmentOps(session=db.session)
+    succeed = app_ops.expert_confirm(id=id, expert_id=expert)
+    if succeed:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to update appointment'}, 400
+
+@bp.route('/pay', methods=['POST'])
+@login_required
+def pay():
+    id = request.form['id']
+    newbie = current_user.get_id_int()
+    price = float(request.form['price'])
+    order_id = request.form['order_id']
+
+    app_ops = AppointmentOps(session=db.session)
+    succeed = app_ops.newbie_pay(id=id, newbie_id=newbie, price=price, order_id=order_id)
+    if succeed:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to update appointment'}, 400
+
+@bp.route('/deliver', methods=['POST'])
+@login_required # TODO change to admin required
+def deliver():
+    id = request.form['id']
+    record_id = request.form['record_id']
+
+    app_ops = AppointmentOps(session=db.session)
+    succeed = app_ops.platform_deliver(id=id, record_id=record_id)
+    if succeed:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to update appointment'}, 400
+
+@bp.route('/comment', methods=['POST'])
+@login_required
+def comment():
+    id = request.form['id']
+    newbie = current_user.get_id_int()
+    content = request.form['content']
+    rating = float(request.form['rating'])
+
+    app_ops = AppointmentOps(session=db.session)
+    succeed = app_ops.newbie_comment(id=id, newbie_id=newbie, content=content, rating=rating)
+    if succeed:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to update appointment'}, 400
+
+@bp.route('/dispute', methods=['POST'])
+@login_required
+def dispute():
+    id = request.form['id']
+    newbie = current_user.get_id_int()
+    content = request.form['content']
+
+    app_ops = AppointmentOps(session=db.session)
+    succeed = app_ops.newbie_dispute(id=id, newbie_id=newbie, content=content)
+    if succeed:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to update appointment'}, 400
+
+@bp.route('/handle_dispute', methods=['POST'])
+@login_required # TODO change to admin required
+def handle_dispute():
+    id = request.form['id']
+    agree = True if request.form['agree'] == 'true' else False
+    content = request.form['content']
+
+    app_ops = AppointmentOps(session=db.session)
+    succeed = app_ops.platform_handle_dispute(id=id, agree=agree, content=content)
+    if succeed:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to update appointment'}, 400
+
+@bp.route('/finish', methods=['POST'])
+@login_required # TODO change to admin required
+def finish():
+    id = request.form['id']
+
+    app_ops = AppointmentOps(session=db.session)
+    succeed = app_ops.platform_finish_it(id=id)
+    if succeed:
+        return {'error': 'succeed', 'appointment_id': id}
+
+    return {'error': 'Failed to update appointment'}, 400
+
+@bp.route('/', methods=['GET'])
+@login_required
+def get():
+    id = request.args.get('id')
+
+    app_ops = AppointmentOps(session=db.session)
+    appointment = app_ops.get_appointment(id=id)
+    if appointment is not None:
+        return appointment.to_dict()
+
+    return {'error': 'Failed to get appointment'}, 400
+
+@bp.route('/as_expert', methods=['GET'])
+@login_required
+def get_as_expert():
+    expert = current_user.get_id_int()
+    app_ops = AppointmentOps(session=db.session)
+    appointments = app_ops.get_appointments_of_expert(expert=expert)
+    return appointments
+
+@bp.route('/as_newbie', methods=['GET'])
+@login_required
+def get_as_newbie():
+    newbie = current_user.get_id_int()
+    app_ops = AppointmentOps(session=db.session)
+    appointments = app_ops.get_appointments_of_newbie(newbie=newbie)
+    return appointments
+
+@bp.route('/disputed', methods=['GET'])
+@login_required # TODO change to admin required
+def get_disputed():
+    app_ops = AppointmentOps(session=db.session)
+    appointments = app_ops.get_appointments_disputed()
+    return appointments
+
+@bp.route('/waiting_finish', methods=['GET'])
+@login_required # TODO change to admin required
+def get_waiting_finish():
+    app_ops = AppointmentOps(session=db.session)
+    appointments = app_ops.get_appointments_waiting_finish()
+    return appointments
+
