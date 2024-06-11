@@ -1,4 +1,7 @@
 import json
+import uuid
+import time
+from enum import Enum
 
 from flask import current_app, url_for
 
@@ -533,4 +536,450 @@ class ChatMsgOps:
             return [msg.to_dict() for msg in msgs]
         except Exception as e:
             current_app.logger.debug(f'failed to get msgs, error {str(e)}')
+            return []
+
+class AppointmentStage(Enum):
+    # after newbie choosed a time and confirmed, before delivered, can go canceled, but count “失约次数”
+    Created = 0
+
+    # after expert confirmed, if not confirm in limit time, go to canceled
+    Confirmed = 1
+
+    # after newbie finished payment, if not pay in limit time, go to canceled
+    Paied = 2
+
+    # after video/voice call finished
+    Delivered = 3
+
+    # after comment submitted, if not comment in limit time, 5 star and go to finished
+    Commented = 4
+
+    # if has dispute, platform will handle it, normal workflow has no button to this stage
+    Disputed = 5
+
+    DisputeDenied = 6
+    DisputeAgreed = 7
+
+    # final stage, if from paied, refund
+    Canceled = 8
+
+    # final stage, if no dispute or denied, pay to expert, else refund newbie
+    Finished = 9
+
+class Appointment(db.Model):
+    __tablename__ = 'APPOINTMENT'
+
+    id = db.Column(db.String, primary_key=True, default=lambda: str(uuid.uuid4()))
+    stage = db.Column(db.Integer, nullable=False, default=0)
+
+    # create
+    expert = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    newbie = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    createTimestamp = db.Column(db.REAL, nullable=False)
+
+    # set time
+    appointmentTimestamp = db.Column(db.REAL, nullable=True)
+
+    # confirm
+    confirmTimestamp = db.Column(db.REAL, nullable=True)
+
+    # pay
+    paymentPrice = db.Column(db.REAL, nullable=True)
+    paymentTimestamp = db.Column(db.REAL, nullable=True)
+    paymentOrderId = db.Column(db.String, nullable=True)
+
+    # deliver
+    appointmentMeetingRecordId = db.Column(db.String, nullable=True)
+    deliverTimestamp = db.Column(db.REAL, nullable=True)
+
+    # comment
+    commentTimestamp = db.Column(db.REAL, nullable=True)
+    commentContent = db.Column(db.String, nullable=True)
+    commentRating = db.Column(db.REAL, nullable=True)
+
+    # dispute, by newbie
+    disputeContent = db.Column(db.String, nullable=True)
+    disputeTimestamp = db.Column(db.REAL, nullable=True)
+
+    # dispute handling, by platform admin
+    disputeHandleContent = db.Column(db.String, nullable=True)
+    disputeHandleTimestamp = db.Column(db.REAL, nullable=True)
+
+    # cancel
+    asNoCredit = db.Column(db.Integer, nullable=False, default=0)
+
+    # canceled or finished
+    finishTimestamp = db.Column(db.REAL, nullable=True)
+
+    __table_args__ = (
+        db.Index('index_APPOINTMENT_expert', 'expert', unique=False),
+        db.Index('index_APPOINTMENT_newbie', 'newbie', unique=False),
+        db.Index('index_APPOINTMENT_stage', 'stage', unique=False),
+    )
+
+    def to_dict(self):
+        return {
+            'id' : self.id,
+            'stage' : self.stage,
+
+            'expert' : self.expert,
+            'newbie' : self.newbie,
+            'createTimestamp' : self.createTimestamp,
+
+            'appointmentTimestamp' : self.appointmentTimestamp,
+
+            'confirmTimestamp' : self.confirmTimestamp,
+
+            'paymentPrice' : self.paymentPrice,
+            'paymentTimestamp' : self.paymentTimestamp,
+            'paymentOrderId' : self.paymentOrderId,
+
+            'deliverTimestamp' : self.deliverTimestamp,
+            'appointmentMeetingRecordId' : self.appointmentMeetingRecordId,
+
+            'commentTimestamp' : self.commentTimestamp,
+            'commentContent' : self.commentContent,
+            'commentRating' : self.commentRating,
+
+            'disputeContent' : self.disputeContent,
+            'disputeTimestamp' : self.disputeTimestamp,
+
+            'disputeHandleContent' : self.disputeHandleContent,
+            'disputeHandleTimestamp' : self.disputeHandleTimestamp,
+
+            'asNoCredit' : self.asNoCredit,
+        }
+
+class AppointmentOps:
+    def __init__(self, session):
+        self.session = session
+
+    def create_appointment(self, expert, newbie)->str:
+        current_app.logger.debug(f"create_appointment, {expert}, {newbie}")
+        try:
+            appointment = Appointment(
+                expert=expert,
+                newbie=newbie,
+                createTimestamp=time.time(),
+            )
+
+            self.session.add(appointment)
+            self.session.commit()
+            current_app.logger.debug(f"added appointment")
+            return appointment.id
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to add appointment, error {str(e)}")
+        return None
+
+    def update_timestamp(self, id, newbie_id, timestamp)->bool:
+        current_app.logger.debug(f"update_timestamp, {id}, {newbie_id}, {timestamp}")
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            if appointment:
+                if newbie_id != appointment.newbie:
+                    current_app.logger.debug(f"update_timestamp not authed {id}, {newbie_id}, {appointment.newbie}")
+                    return False
+
+                if appointment.stage == AppointmentStage.Created.value:
+                    appointment.appointmentTimestamp = timestamp
+                    self.session.commit()
+                    current_app.logger.debug(f"updated appointment {id}")
+                    return True
+                else:
+                    current_app.logger.debug(f"invalid appointment stage, {id}, {appointment.stage}")
+                    return False
+            else:
+                current_app.logger.debug(f"appointment does not exists {id}")
+                False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update appointment, error {str(e)}")
+        return False
+
+    def newbie_cancel(self, id, newbie_id)->bool:
+        current_app.logger.debug(f"newbie_cancel, {id}, {newbie_id}")
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            if appointment:
+                if newbie_id != appointment.newbie:
+                    current_app.logger.debug(f"newbie_canceled not authed {id}, {newbie_id}, {appointment.newbie}")
+                    return False
+
+                if appointment.stage == AppointmentStage.Created.value or \
+                   appointment.stage == AppointmentStage.Confirmed.value or \
+                   appointment.stage == AppointmentStage.Paied.value:
+
+                    if appointment.stage == AppointmentStage.Confirmed.value or \
+                       appointment.stage == AppointmentStage.Paied.value:
+                        appointment.asNoCredit = 1
+
+                        # TODO if paied, refund newbie
+
+                    appointment.stage = AppointmentStage.Canceled.value
+                    appointment.finishTimestamp = time.time()
+
+                    self.session.commit()
+                    current_app.logger.debug(f"newbie_canceled appointment {id}")
+                    return True
+                else:
+                    current_app.logger.debug(f"invalid appointment stage, {id}, {appointment.stage}")
+                    return False
+            else:
+                current_app.logger.debug(f"appointment does not exists {id}")
+                False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update appointment, error {str(e)}")
+        return False
+
+    def expert_confirm(self, id, expert_id)->bool:
+        current_app.logger.debug(f"expert_confirm, {id}, {expert_id}")
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            if appointment:
+                if expert_id != appointment.expert:
+                    current_app.logger.debug(f"expert_confirm not authed {id}, {expert_id}, {appointment.expert}")
+                    return False
+
+                if appointment.stage == AppointmentStage.Created.value:
+                    appointment.stage = AppointmentStage.Confirmed.value
+                    appointment.confirmTimestamp = time.time()
+
+                    self.session.commit()
+                    current_app.logger.debug(f"expert_confirm appointment {id}")
+                    return True
+                else:
+                    current_app.logger.debug(f"invalid appointment stage, {id}, {appointment.stage}")
+                    return False
+            else:
+                current_app.logger.debug(f"appointment does not exists {id}")
+                False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update appointment, error {str(e)}")
+        return False
+
+    def newbie_pay(self, id, newbie_id, price, order_id)->bool:
+        current_app.logger.debug(f"newbie_pay, {id}, {newbie_id}, {price}, {order_id}, {timestamp}")
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            if appointment:
+                if newbie_id != appointment.newbie:
+                    current_app.logger.debug(f"expert_confirm not authed {id}, {expert_id}, {appointment.expert}")
+                    return False
+
+                if appointment.stage == AppointmentStage.Confirmed.value:
+                    appointment.paymentPrice = price
+                    appointment.paymentOrderId = order_id
+                    appointment.paymentTimestamp = time.time()
+                    appointment.stage = AppointmentStage.Paied.value
+
+                    self.session.commit()
+                    current_app.logger.debug(f"newbie_pay appointment {id}")
+                    return True
+                else:
+                    current_app.logger.debug(f"invalid appointment stage, {id}, {appointment.stage}")
+                    return False
+            else:
+                current_app.logger.debug(f"appointment does not exists {id}")
+                False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update appointment, error {str(e)}")
+        return False
+
+    def platform_deliver(self, id, record_id)->bool:
+        current_app.logger.debug(f"platform_deliver, {id}, {record_id}")
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            if appointment:
+                if appointment.stage == AppointmentStage.Paied.value:
+                    appointment.appointmentMeetingRecordId = record_id
+                    appointment.deliverTimestamp  = time.time()
+                    appointment.stage = AppointmentStage.Delivered.value
+
+                    self.session.commit()
+                    current_app.logger.debug(f"platform_deliver appointment {id}")
+                    return True
+                else:
+                    current_app.logger.debug(f"invalid appointment stage, {id}, {appointment.stage}")
+                    return False
+            else:
+                current_app.logger.debug(f"appointment does not exists {id}")
+                False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update appointment, error {str(e)}")
+        return False
+
+    def newbie_comment(self, id, newbie_id, content, rating)->bool:
+        current_app.logger.debug(f"newbie_comment, {id}, {newbie_id}, {content}, {rating}")
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            if appointment:
+                if newbie_id != appointment.newbie:
+                    current_app.logger.debug(f"newbie_comment not authed {id}, {newbie_id}, {appointment.newbie}")
+                    return False
+
+                if appointment.stage == AppointmentStage.Delivered.value:
+                    appointment.stage = AppointmentStage.Commented.value
+                    appointment.commentContent = content
+                    appointment.commentRating = rating
+                    appointment.commentTimestamp = time.time()
+
+                    self.session.commit()
+                    current_app.logger.debug(f"newbie_comment appointment {id}")
+                    return True
+                else:
+                    current_app.logger.debug(f"invalid appointment stage, {id}, {appointment.stage}")
+                    return False
+            else:
+                current_app.logger.debug(f"appointment does not exists {id}")
+                False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update appointment, error {str(e)}")
+        return False
+
+    def newbie_dispute(self, id, newbie_id, content)->bool:
+        current_app.logger.debug(f"newbie_dispute, {id}, {newbie_id}, {content}")
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            if appointment:
+                if newbie_id != appointment.newbie:
+                    current_app.logger.debug(f"newbie_comment not authed {id}, {newbie_id}, {appointment.newbie}")
+                    return False
+
+                if appointment.stage == AppointmentStage.Commented.value:
+                    appointment.stage = AppointmentStage.Disputed.value
+                    appointment.disputeContent = content
+                    appointment.disputeTimestamp = time.time()
+
+                    self.session.commit()
+                    current_app.logger.debug(f"newbie_dispute appointment {id}")
+                    return True
+                else:
+                    current_app.logger.debug(f"invalid appointment stage, {id}, {appointment.stage}")
+                    return False
+            else:
+                current_app.logger.debug(f"appointment does not exists {id}")
+                False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update appointment, error {str(e)}")
+        return False
+
+    def platform_handle_dispute(self, id, agree, content)->bool:
+        current_app.logger.debug(f"platform_handle_dispute, {id}, {agree}, {content}")
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            if appointment:
+                if appointment.stage == AppointmentStage.Disputed.value:
+                    if agree:
+                        appointment.stage = AppointmentStage.DisputeAgreed.value
+                    else:
+                        appointment.stage = AppointmentStage.DisputeDenied.value
+
+                    appointment.disputeHandleContent = content
+                    appointment.disputeHandleTimestamp = time.time()
+
+                    self.session.commit()
+                    current_app.logger.debug(f"platform_handle_dispute appointment {id}")
+                    return True
+                else:
+                    current_app.logger.debug(f"invalid appointment stage, {id}, {appointment.stage}")
+                    return False
+            else:
+                current_app.logger.debug(f"appointment does not exists {id}")
+                False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update appointment, error {str(e)}")
+        return False
+
+    def platform_finish_it(self, id)->bool:
+        current_app.logger.debug(f"platform_finish_it , {id}")
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            if appointment:
+                if appointment.stage == AppointmentStage.Commented.value or \
+                   appointment.stage == AppointmentStage.DisputeAgreed.value or \
+                   appointment.stage == AppointmentStage.DisputeDenied.value:
+
+                    appointment.finishTimestamp = time.time()
+                    appointment.stage = AppointmentStage.Finished.value
+
+                    # TODO do payment or refund
+
+                    self.session.commit()
+                    current_app.logger.debug(f"platform_finish_it appointment {id}")
+                    return True
+                else:
+                    current_app.logger.debug(f"invalid appointment stage, {id}, {appointment.stage}")
+                    return False
+            else:
+                current_app.logger.debug(f"appointment does not exists {id}")
+                False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update appointment, error {str(e)}")
+        return False
+
+    def get_appointment(self, id)->Appointment:
+        try:
+            appointment = self.session.query(Appointment).filter_by(id=id).first()
+            return appointment
+        except Exception as e:
+            current_app.logger.debug(f'failed to get appointment, id {id}, error {str(e)}')
+            return None
+
+    def get_appointments_of_newbie(self, newbie)->list:
+        try:
+            appointments = self.session.query(Appointment).filter_by(
+                newbie=newbie).order_by(db.desc(Appointment.createTimestamp)).all()
+            current_app.logger.debug(f'len of all appointments {len(appointments)}')
+            return [appointment.to_dict() for appointment in appointments]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get appointments, error {str(e)}')
+            return []
+
+    def get_appointments_of_expert(self, expert)->list:
+        try:
+            appointments = self.session.query(Appointment).filter_by(
+                expert=expert).order_by(db.desc(Appointment.createTimestamp)).all()
+            current_app.logger.debug(f'len of all appointments {len(appointments)}')
+            return [appointment.to_dict() for appointment in appointments]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get appointments, error {str(e)}')
+            return []
+
+    def get_appointments_disputed(self)->list:
+        try:
+            appointments = self.session.query(Appointment).filter_by(
+                stage=AppointmentStage.Disputed.value).order_by(Appointment.createTimestamp).all()
+            current_app.logger.debug(f'len of all appointments {len(appointments)}')
+            return [appointment.to_dict() for appointment in appointments]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get appointments, error {str(e)}')
+            return []
+
+    def get_appointments_waiting_finish(self)->list:
+        try:
+            appointments = self.session.query(Appointment).filter(
+                db.or_(
+                    db.and_(
+                        Appointment.stage==AppointmentStage.Commented.value,
+                        Appointment.commentTimestamp<time.time()-24*60*60,
+                    ),
+                    db.or_(
+                        Appointment.stage==AppointmentStage.DisputeAgreed.value,
+                        Appointment.stage==AppointmentStage.DisputeDenied.value,
+                    )
+                )
+            ).order_by(Appointment.createTimestamp).all()
+            current_app.logger.debug(f'len of all appointments {len(appointments)}')
+            return [appointment.to_dict() for appointment in appointments]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get appointments, error {str(e)}')
             return []
