@@ -648,6 +648,8 @@ class Appointment(db.Model):
             'disputeHandleTimestamp' : self.disputeHandleTimestamp,
 
             'asNoCredit' : self.asNoCredit,
+
+            'finishTimestamp' : self.finishTimestamp,
         }
 
 class AppointmentOps:
