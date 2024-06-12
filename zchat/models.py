@@ -763,12 +763,12 @@ class AppointmentOps:
         return False
 
     def newbie_pay(self, id, newbie_id, price, order_id)->bool:
-        current_app.logger.debug(f"newbie_pay, {id}, {newbie_id}, {price}, {order_id}, {timestamp}")
+        current_app.logger.debug(f"newbie_pay, {id}, {newbie_id}, {price}, {order_id}")
         try:
             appointment = self.session.query(Appointment).filter_by(id=id).first()
             if appointment:
                 if newbie_id != appointment.newbie:
-                    current_app.logger.debug(f"expert_confirm not authed {id}, {expert_id}, {appointment.expert}")
+                    current_app.logger.debug(f"newbie_pay not authed {id}, {newbie_id}, {appointment.newbie}")
                     return False
 
                 if appointment.stage == AppointmentStage.Confirmed.value:
