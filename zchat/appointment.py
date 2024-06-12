@@ -26,7 +26,7 @@ def new_appointment():
     app_ops = AppointmentOps(session=db.session)
     id = app_ops.create_appointment(expert=expert, newbie=newbie)
     if id is not None:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to create appointment'}, 400
 
@@ -40,7 +40,7 @@ def update_time():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.update_timestamp(id=id, newbie_id=newbie, timestamp=timestamp)
     if succeed:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -53,7 +53,7 @@ def cancel():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.newbie_cancel(id=id, newbie_id=newbie)
     if succeed:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -66,7 +66,7 @@ def confirm():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.expert_confirm(id=id, expert_id=expert)
     if succeed:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -81,7 +81,7 @@ def pay():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.newbie_pay(id=id, newbie_id=newbie, price=price, order_id=order_id)
     if succeed:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -94,7 +94,7 @@ def deliver():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.platform_deliver(id=id, record_id=record_id)
     if succeed:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -109,7 +109,7 @@ def comment():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.newbie_comment(id=id, newbie_id=newbie, content=content, rating=rating)
     if succeed:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -123,7 +123,7 @@ def dispute():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.newbie_dispute(id=id, newbie_id=newbie, content=content)
     if succeed:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -137,7 +137,7 @@ def handle_dispute():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.platform_handle_dispute(id=id, agree=agree, content=content)
     if succeed:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -149,7 +149,7 @@ def finish():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.platform_finish_it(id=id)
     if succeed:
-        return {'error': 'succeed', 'appointment_id': id}
+        return app_ops.get_appointment(id).to_dict()
 
     return {'error': 'Failed to update appointment'}, 400
 
