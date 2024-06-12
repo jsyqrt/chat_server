@@ -44,7 +44,11 @@ def random_signature():
 
 def random_avatar(image_dir):
     values = os.listdir(image_dir)
-    return random.choices(values)[0]
+    v = random.choices(values)[0]
+    if v.endswith('.jpg'):
+        return v
+    else:
+        return random_avatar(image_dir=image_dir)
 
 def random_email(name, company):
     values = [
