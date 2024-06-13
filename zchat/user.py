@@ -30,6 +30,9 @@ def gen_random():
             current_app.logger.warn("failed tp create user")
             continue
 
+        as_expert = random_bool()
+        as_newbie = random_bool()
+
         succeed = user_ops.update_info(
             id=id,
             nickname=nickname,
@@ -38,6 +41,7 @@ def gen_random():
             edubg=random_edubg(),
             yearofwork=random_yearofwork(),
             signature_text=random_signature(),
+            current_as_expert=as_expert,
         )
         if not succeed:
             current_app.logger.warn(f"failed tp update user info {id}")
@@ -49,9 +53,6 @@ def gen_random():
         if not succeed:
             current_app.logger.warn(f"failed tp update user avatar {id}")
             continue
-
-        as_expert = random_bool()
-        as_newbie = random_bool()
 
         if as_expert:
             company=random_company()
@@ -181,6 +182,15 @@ def update_signature():
     succeed = user_ops.update_signature(id=current_user.get_id_int(), signature=signature)
     return {'error': 'Signature updated successfully!'}
 
+@bp.route('/update_role', methods=['POST'])
+@login_required
+def update_role():
+    as_expert = request.form['current_as_expert']
+
+    user_ops = UserOps(session=db.session)
+    succeed = user_ops.update_role(id=current_user.get_id_int(), current_as_expert=as_expert)
+    return {'error': 'Role updated successfully!'}
+
 @bp.route('/update_info', methods=['POST'])
 @login_required
 def update_info():
@@ -191,6 +201,7 @@ def update_info():
         edubg = request.form['edubg']
         yearofwork = request.form['yearofwork']
         signature_text = request.form['signature_text']
+        as_expert = request.form['current_as_expert']
 
         user_ops = UserOps(session=db.session)
         succeed = user_ops.update_info(
@@ -201,6 +212,7 @@ def update_info():
             edubg=edubg,
             yearofwork=yearofwork,
             signature_text=signature_text,
+            current_as_expert=as_expert,
         )
         if succeed:
             return { "error": "Update Succeed!" }, 200
