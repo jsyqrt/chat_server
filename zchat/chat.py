@@ -13,12 +13,8 @@ bp = Blueprint('chat', __name__, url_prefix='/chat')
 def test_chat():
     return render_template('chat.html')
 
-user_to_session = None
-unsent_msgs = None
-
 def init_app(app):
-    user_to_session = app.multi_processing_manager.dict()
-    unsent_msgs = app.multi_processing_manager.dict()
+    app.unsent_msgs = app.multi_processing_manager.dict()
 
     @app.socketio.on('connect')
     @login_required
@@ -26,10 +22,10 @@ def init_app(app):
         # Save session id
         uid = current_user.get_id_int()
         sid = request.sid
-        user_to_session[uid] = sid
+        app.user_to_session[uid] = sid
 
         # Notify user there are n msgs to receive
-        msgs = unsent_msgs.get(uid, [])
+        msgs = app.unsent_msgs.get(uid, [])
         app.socketio.emit('notice', {'type': 'msg_to_get', 'count': len(msgs)}, to=sid)
 
         app.logger.debug(f'Client connected {uid}, {sid}')
@@ -39,7 +35,7 @@ def init_app(app):
     def handle_disconnect():
         # Remove session id from session map
         uid = current_user.get_id_int()
-        user_to_session.pop(uid)
+        app.user_to_session.pop(uid)
 
         app.logger.debug(f'Client disconnected {uid}, {request.sid}')
 
@@ -63,7 +59,7 @@ def init_app(app):
         chatmsg_ops = ChatMsgOps(session=db.session)
         chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=time.time())
 
-        to_sid = user_to_session.get(to_id, None)
+        to_sid = app.user_to_session.get(to_id, None)
         if to_sid is not None:
             # If the user is online
             app.logger.debug(f'user is online: {to_id}')
@@ -74,10 +70,10 @@ def init_app(app):
             # TODO change the map to a db table, in case server is down
             app.logger.debug(f'user is offline: {to_id}')
 
-            msgs = unsent_msgs.get(to_id, [])
+            msgs = app.unsent_msgs.get(to_id, [])
             msgs.append(msg_dict)
 
-            unsent_msgs[to_id] = msgs
+            app.unsent_msgs[to_id] = msgs
 
     @app.socketio.on('get_messages')
     @login_required
