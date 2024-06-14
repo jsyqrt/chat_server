@@ -219,3 +219,11 @@ def get_waiting_finish():
     appointments = app_ops.get_appointments_waiting_finish()
     return appointments
 
+@bp.route('/comments_of', methods=['GET'])
+@login_required
+def get_comments_of():
+    expert = request.args.get('expert')
+
+    app_ops = AppointmentOps(session=db.session)
+    comments = app_ops.get_comments_of(expert=expert)
+    return comments

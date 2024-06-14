@@ -1007,3 +1007,29 @@ class AppointmentOps:
         except Exception as e:
             current_app.logger.debug(f'failed to get appointments, error {str(e)}')
             return []
+
+    def get_comments_of(self, expert)->list:
+        try:
+            results = self.session.query(
+                Appointment.newbie,
+                Appointment.id,
+                Appointment.commentRating,
+                Appointment.commentContent,
+                Appointment.commentTimestamp
+            ).filter(
+                db.and_(
+                    Appointment.expert==expert,
+                    Appointment.stage==AppointmentStage.Finished.value,
+                )
+            ).order_by(db.desc(Appointment.commentTimestamp)).all()
+            current_app.logger.debug(f'len of all comments {len(results)}')
+            return [{
+                'newbie': result.newbie,
+                'id': result.id,
+                'rating': result.commentRating,
+                'content': result.commentContent,
+                'timestamp': result.commentTimestamp,
+            } for result in results]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get comments, error {str(e)}')
+            return []
