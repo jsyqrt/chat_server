@@ -14,6 +14,12 @@ from zchat.rand import *
 
 bp = Blueprint('appointment', __name__, url_prefix='/appointment')
 
+def appointment_change_event_notify(app, appointment_dict, other_id):
+    sid = app.user_to_session.get(other_id, None)
+    if sid:
+        app.logger.debug(f"sending appointment_update {appointment_dict} to {sid}")
+        app.socketio.emit('appointment_update', appointment_dict, to=sid)
+
 @bp.route('/new', methods=['POST'])
 @login_required
 def new_appointment():
@@ -26,7 +32,9 @@ def new_appointment():
     app_ops = AppointmentOps(session=db.session)
     id = app_ops.create_appointment(expert=expert, newbie=newbie)
     if id is not None:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, expert)
+        return data
 
     return {'error': 'Failed to create appointment'}, 400
 
@@ -40,7 +48,9 @@ def update_time():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.update_timestamp(id=id, newbie_id=newbie, timestamp=timestamp)
     if succeed:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, data['expert'])
+        return data
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -53,7 +63,9 @@ def cancel():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.newbie_cancel(id=id, newbie_id=newbie)
     if succeed:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, data['expert'])
+        return data
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -66,7 +78,9 @@ def confirm():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.expert_confirm(id=id, expert_id=expert)
     if succeed:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, data['newbie'])
+        return data
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -81,7 +95,9 @@ def pay():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.newbie_pay(id=id, newbie_id=newbie, price=price, order_id=order_id)
     if succeed:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, data['expert'])
+        return data
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -94,7 +110,10 @@ def deliver():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.platform_deliver(id=id, record_id=record_id)
     if succeed:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, data['expert'])
+        appointment_change_event_notify(current_app, data, data['newbie'])
+        return data
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -109,7 +128,9 @@ def comment():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.newbie_comment(id=id, newbie_id=newbie, content=content, rating=rating)
     if succeed:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, data['expert'])
+        return data
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -149,7 +170,10 @@ def finish():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.platform_finish_it(id=id)
     if succeed:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, data['expert'])
+        appointment_change_event_notify(current_app, data, data['newbie'])
+        return data
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -195,3 +219,11 @@ def get_waiting_finish():
     appointments = app_ops.get_appointments_waiting_finish()
     return appointments
 
+@bp.route('/comments_of', methods=['GET'])
+@login_required
+def get_comments_of():
+    expert = request.args.get('expert')
+
+    app_ops = AppointmentOps(session=db.session)
+    comments = app_ops.get_comments_of(expert=expert)
+    return comments

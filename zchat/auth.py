@@ -20,6 +20,10 @@ login_manager = LoginManager()
 def init_app(app):
     login_manager.init_app(app)
 
+def init_verification_code_dict(app):
+    # TODO change to thread-safe
+    app.vcode_dict = ExpiringDict()
+
 class ExpiringDict(OrderedDict):
     def __init__(self, expiration_time=60):
         super().__init__()
@@ -40,10 +44,6 @@ class ExpiringDict(OrderedDict):
         self.remove_expired_items()
         insert_time, value = super().__getitem__(key)
         return value
-
-def init_verification_code_dict(app):
-    # TODO change to thread-safe
-    app.vcode_dict = ExpiringDict()
 
 @bp.route('/verification_code', methods=['GET'])
 def verification_code():

@@ -32,6 +32,9 @@ def create_app(test_config=None):
     db.init_app(app)
     db.db.init_app(app)
 
+    from . import websocket
+    websocket.init_app(app)
+
     from . import auth
     app.register_blueprint(auth.bp)
     auth.init_verification_code_dict(app)
@@ -42,6 +45,7 @@ def create_app(test_config=None):
 
     from . import chat
     chat.init_app(app)
+    app.register_blueprint(chat.bp)
 
     from . import appointment
     app.register_blueprint(appointment.bp)

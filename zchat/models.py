@@ -22,8 +22,10 @@ class User(db.Model):
     edubg = db.Column(db.String, nullable=False, default='未知')
     yearofwork = db.Column(db.String, nullable=False, default='未知')
 
-    as_expert = db.Column(db.Integer, nullable=False, default=0)
-    as_newbie = db.Column(db.Integer, nullable=False, default=0)
+    as_expert = db.Column(db.Integer, nullable=False, default=0) # 0 for false, 1 for true
+    as_newbie = db.Column(db.Integer, nullable=False, default=0) # 0 for false, 1 for true
+
+    current_as_expert = db.Column(db.Integer, nullable=False, default=0) # 0 for newbie, 1 for expert
 
     __table_args__ = (
         db.Index('index_USER_phone_number', 'phone_number', unique=True),
@@ -54,6 +56,8 @@ class User(db.Model):
 
             'as_expert': self.as_expert,
             'as_newbie': self.as_newbie,
+
+            'current_as_expert': self.current_as_expert,
         }
 
 class UserOps:
@@ -175,7 +179,23 @@ class UserOps:
             current_app.logger.warn(f"failed to update user signature {id}, error {str(e)}")
         return False
 
-    def update_info(self, id, phone_number, nickname, gender, edubg, yearofwork, signature_text)->bool:
+    def update_role(self, id, current_as_expert)->bool:
+        try:
+            user = self.session.query(User).filter_by(id=id).first()
+            if user:
+                user.current_as_expert = current_as_expert
+
+                self.session.commit()
+                current_app.logger.debug(f"updated user role {id}")
+                return True
+            else:
+                current_app.logger.warn(f"no user {id}")
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"failed to update user role {id}, error {str(e)}")
+        return False
+
+    def update_info(self, id, phone_number, nickname, gender, edubg, yearofwork, signature_text, current_as_expert)->bool:
         try:
             user = self.session.query(User).filter_by(id=id).first()
             if user:
@@ -187,6 +207,8 @@ class UserOps:
                 user.gender = gender
                 user.edubg = edubg
                 user.yearofwork = yearofwork
+
+                user.current_as_expert = current_as_expert
 
                 self.session.commit()
                 current_app.logger.debug(f"updated user {id}")
@@ -984,4 +1006,30 @@ class AppointmentOps:
             return [appointment.to_dict() for appointment in appointments]
         except Exception as e:
             current_app.logger.debug(f'failed to get appointments, error {str(e)}')
+            return []
+
+    def get_comments_of(self, expert)->list:
+        try:
+            results = self.session.query(
+                Appointment.newbie,
+                Appointment.id,
+                Appointment.commentRating,
+                Appointment.commentContent,
+                Appointment.commentTimestamp
+            ).filter(
+                db.and_(
+                    Appointment.expert==expert,
+                    Appointment.stage==AppointmentStage.Finished.value,
+                )
+            ).order_by(db.desc(Appointment.commentTimestamp)).all()
+            current_app.logger.debug(f'len of all comments {len(results)}')
+            return [{
+                'newbie': result.newbie,
+                'id': result.id,
+                'rating': result.commentRating,
+                'content': result.commentContent,
+                'timestamp': result.commentTimestamp,
+            } for result in results]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get comments, error {str(e)}')
             return []
