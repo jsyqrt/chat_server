@@ -94,6 +94,20 @@ def get_me():
         return user.to_dict()
     return {'error': 'Failed to get user info'}, 400
 
+@bp.route('/avatar', methods=['GET'])
+@login_required
+def get_avatar():
+    id = request.args.get('id')
+
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_one(id=id)
+    if user is not None:
+        return {
+            'id' : id,
+            'avatar' : user.to_dict()['avatar'],
+        }
+    return {'error': 'Failed to get user avatar'}, 400
+
 @bp.route('/all', methods=['GET'])
 @login_required
 def get_all():
