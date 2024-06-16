@@ -132,6 +132,7 @@ def protected():
     return 'Logged in as: ' + current_user.get_id()
 
 @bp.route('/logout', methods=['GET']) # TODO to POST
+@login_required
 def logout():
     user_id = current_user.get_id_int()
     logout_user()

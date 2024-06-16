@@ -93,3 +93,47 @@ def init_app(app):
 
         for msg in msgs:
             app.socketio.emit('msg_response', msg, to=sid)
+
+    @app.socketio.on('makeCall')
+    @login_required
+    def makeCall(data):
+        callerId = data.get('callerId')
+        calleeId = data.get('calleeId')
+        sdpOffer = data.get('sdpOffer')
+
+        app.logger.debug(f"got makeCall from {callerId} to {calleeId}")
+
+        to_sid = app.user_to_session.get(calleeId, None)
+        if to_sid is not None:
+            app.socketio.emit('newCall', {"callerId": callerId, "sdpOffer": sdpOffer}, to=to_sid)
+            app.logger.debug(f"sending {sdpOffer} to {calleeId}")
+        else:
+            app.logger.debug(f"callee is not online {calleeId}")
+
+    @app.socketio.on('answerCall')
+    @login_required
+    def answerCall(data):
+        callerId = data.get('callerId')
+        sdpAnswer = data.get('sdpAnswer')
+
+        app.logger.debug(f"got answerCall to {callerId}")
+
+        to_sid = app.user_to_session.get(callerId, None)
+        if to_sid is not None:
+            app.socketio.emit('callAnswered', {"sdpAnswer": sdpAnswer}, to=to_sid)
+        else:
+            app.logger.debug(f"callee is not online {callerId}")
+
+    @app.socketio.on('IceCandidate')
+    @login_required
+    def iceCandidate(data):
+        calleeId = data["calleeId"]
+        candidate = data["iceCandidate"]
+
+        app.logger.debug(f"got IceCandidate to {calleeId}")
+
+        to_sid = app.user_to_session.get(calleeId, None)
+        if to_sid is not None:
+            app.socketio.emit('IceCandidate', {"iceCandidate": candidate}, to=to_sid)
+        else:
+            app.logger.debug(f"callee is not online {callerId}")

@@ -734,6 +734,10 @@ class AppointmentOps:
                    appointment.stage == AppointmentStage.Confirmed.value or \
                    appointment.stage == AppointmentStage.Paied.value:
 
+                    if appointment.appointmentTimestamp and appointment.appointmentTimestamp < time.time():
+                        current_app.logger.debug(f"cancel appointment after appointment timestamp, not allowed, {id}")
+                        return False
+
                     if appointment.stage == AppointmentStage.Confirmed.value or \
                        appointment.stage == AppointmentStage.Paied.value:
                         appointment.asNoCredit = 1
