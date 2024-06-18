@@ -95,7 +95,6 @@ def get_me():
     return {'error': 'Failed to get user info'}, 400
 
 @bp.route('/avatar', methods=['GET'])
-@login_required
 def get_avatar():
     id = request.args.get('id')
 
