@@ -8,6 +8,8 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY='dev', # TODO override this with thevalue in config.py
         SQLALCHEMY_DATABASE_URI="sqlite:///" + os.path.join(app.instance_path, 'zchat.sqlite'),
+        MEILISEARCH_HOST="http://localhost:7700",
+        MEILISEARCH_KEY="aSampleMasterKey",
     )
 
     if test_config is None:
@@ -49,5 +51,8 @@ def create_app(test_config=None):
 
     from . import appointment
     app.register_blueprint(appointment.bp)
+
+    from . import meili
+    meili.init_app(app)
 
     return app
