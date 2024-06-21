@@ -105,7 +105,7 @@ def init_app(app):
 
         to_sid = app.user_to_session.get(calleeId, None)
         if to_sid is not None:
-            app.socketio.emit('newCall', {"callerId": callerId, "sdpOffer": sdpOffer}, to=to_sid)
+            app.socketio.emit('newCall', {"callerId": callerId, "sdpOffer": sdpOffer, "calleeId": calleeId}, to=to_sid)
             app.logger.debug(f"sending {sdpOffer} to {calleeId}")
         else:
             app.logger.debug(f"callee is not online {calleeId}")
@@ -123,6 +123,26 @@ def init_app(app):
             app.socketio.emit('callAnswered', {"sdpAnswer": sdpAnswer}, to=to_sid)
         else:
             app.logger.debug(f"callee is not online {callerId}")
+
+    @app.socketio.on('leaveCall')
+    @login_required
+    def leaveCall(data):
+        callerId = data.get('callerId')
+        calleeId = data["calleeId"]
+        fromCaller = data["fromCaller"]
+
+        app.logger.debug(f"got leaveCall")
+
+        if fromCaller:
+            to_sid = app.user_to_session.get(calleeId, None)
+        else:
+            to_sid = app.user_to_session.get(callerId, None)
+
+        if to_sid is not None:
+            app.socketio.emit('callLeaved', {"callerId": callerId, "calleeId": calleeId}, to=to_sid)
+        else:
+            app.logger.debug(f"opposite is not online {to_sid}")
+
 
     @app.socketio.on('IceCandidate')
     @login_required
