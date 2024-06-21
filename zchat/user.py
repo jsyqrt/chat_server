@@ -11,6 +11,7 @@ from zchat.db import db
 from zchat.models import *
 from zchat.auth import login_required, current_user
 from zchat.rand import *
+from zchat.meili import find_experts_from_meili_for
 
 bp = Blueprint('user', __name__, url_prefix='/user')
 
@@ -60,7 +61,7 @@ def gen_random():
             succeed = expert_ops.register_or_update(
                 user_id=id,
                 email=random_email(nickname, company),
-                company=random_company(),
+                company=company,
                 title=random_title(),
                 profession=random_profession(),
                 business=random_business(),
@@ -263,6 +264,31 @@ def register_expert():
         return { "error": "Failed to register as expert!" }, 400
     else:
         return { "error": "Invalid Request Method!" }, 400
+
+@bp.route('/my_experts', methods=['GET'])
+@login_required
+def get_my_experts():
+    user_ops = UserOps(session=db.session)
+    newbie_ops = NewbieOps(session=db.session)
+
+    newbie = newbie_ops.get_one(user_id=current_user.get_id_int())
+    if newbie is None:
+        return []
+
+    experts = find_experts_from_meili_for(current_app, newbie=newbie)
+    for expert in experts:
+        user_id = expert.get('user_id', 0)
+        user = user_ops.get_one(id=user_id)
+        if user is not None:
+            expert.update(user.to_dict())
+
+            # TODO add those
+            expert['rating'] = 4.5
+            expert['served'] = 28
+        else:
+            current_app.logger.warn(f"no user for id: {user_id}, but it's an expert")
+            continue
+    return experts
 
 @bp.route('/experts', methods=['GET'])
 @login_required

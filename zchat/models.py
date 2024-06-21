@@ -7,6 +7,7 @@ from flask import current_app, url_for
 
 from zchat.db import db
 from zchat.rand import *
+from zchat.meili import add_expert_to_meili
 
 class User(db.Model):
     __tablename__ = 'USER'
@@ -302,6 +303,8 @@ class ExpertOps:
 
                 self.session.commit()
                 current_app.logger.debug(f"updated expert {user_id}")
+                add_to_meili = add_expert_to_meili(current_app, expert)
+                current_app.logger.debug(f"add expert to meili result {add_to_meili}")
                 return True
             else:
                 expert = Expert(
@@ -317,6 +320,8 @@ class ExpertOps:
                 self.session.add(expert)
                 self.session.commit()
                 current_app.logger.debug(f"added expert, user_id: {user_id}")
+                add_to_meili = add_expert_to_meili(current_app, expert)
+                current_app.logger.debug(f"add expert to meili result {add_to_meili}")
                 return True
         except Exception as e:
             self.session.rollback()
@@ -412,10 +417,10 @@ class NewbieOps:
             current_app.logger.debug(f"failed to add or update newbie {user_id}, error {str(e)}")
         return False
 
-    def get_one(self, user_id)->Expert:
+    def get_one(self, user_id)->Newbie:
         try:
             newbie = self.session.query(Newbie).filter_by(user_id=user_id).first()
-            return expert
+            return newbie
         except Exception as e:
             current_app.logger.debug(f'failed to get newbie, error {str(e)}')
             return None
