@@ -459,17 +459,24 @@ class ChatWithOps:
     def upsert_pair(self, sender, receiver)->bool:
         current_app.logger.debug(f"upsert_pair, {sender}, {receiver}")
         try:
+            all = self.session.query(
+                ChatWith,
+            ).filter(
+                ChatWith.sender==sender,
+                ChatWith.receiver==receiver,
+            ).all()
+
+            if len(all) >= 1:
+                current_app.logger.debug(f"chat_pair already exists")
+                return True
+
             chat_pair = ChatWith(
                 sender=sender,
                 receiver=receiver,
             )
-            merged_record = self.session.merge(chat_pair)
-            if merged_record is chat_pair:
-                self.session.add(merged_record)
-                self.session.commit()
-                current_app.logger.debug(f"added chat pair")
-            else:
-                current_app.logger.debug(f"chat pair already exists")
+            self.session.add(chat_pair)
+            self.session.commit()
+            current_app.logger.debug(f"added chat pair")
             return True
         except Exception as e:
             self.session.rollback()
@@ -1042,3 +1049,94 @@ class AppointmentOps:
         except Exception as e:
             current_app.logger.debug(f'failed to get comments, error {str(e)}')
             return []
+
+class MarkExpert(db.Model):
+    __tablename__ = 'MARK_EXPERT'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+
+    newbie = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    expert = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+
+    __table_args__ = (
+        db.Index('index_MARK_EXPERT_newbie', 'newbie', unique=False),
+        db.Index('index_MARK_EXPERT_expert', 'expert', unique=False),
+    )
+
+    def to_dict(self):
+        return {
+            'newbie': self.newbie,
+            'expert': self.expert,
+        }
+
+class MarkExpertOps:
+    def __init__(self, session):
+        self.session = session
+
+    def add_mark(self, newbie, expert)->bool:
+        current_app.logger.debug(f"add_mark, {newbie}, {expert}")
+        try:
+            all = self.session.query(
+                MarkExpert,
+            ).filter(
+                MarkExpert.newbie==newbie,
+                MarkExpert.expert==expert,
+            ).all()
+
+            if len(all) >= 1:
+                current_app.logger.debug(f"mark already exists")
+                return True
+
+            mark = MarkExpert(newbie=newbie, expert=expert)
+            self.session.add(mark)
+            self.session.commit()
+            current_app.logger.debug(f"added mark")
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to add mark, error {str(e)}")
+        return False
+
+    def remove_mark(self, newbie, expert)->bool:
+        current_app.logger.debug(f"add_mark, {newbie}, {expert}")
+        try:
+            result = self.session.query(
+                MarkExpert,
+            ).filter(
+                MarkExpert.newbie==newbie,
+                MarkExpert.expert==expert,
+            ).first()
+            if result is not None:
+                self.session.delete(result)
+                self.session.commit()
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to remove mark, error {str(e)}")
+        return False
+
+    def get_marked_experts(self, newbie)->list:
+        current_app.logger.debug(f"get_marked_experts, {newbie}")
+        try:
+            results = self.session.query(
+                MarkExpert,
+            ).filter(
+                MarkExpert.newbie==newbie,
+            ).order_by(db.desc(MarkExpert.id)).all()
+            return [result.expert for result in results]
+        except Exception as e:
+            current_app.logger.debug(f"failed to get marked experts, error {str(e)}")
+        return []
+
+    def get_marked_by_count(self, expert)->int:
+        current_app.logger.debug(f"get_marked_by_count, {expert}")
+        try:
+            result = self.session.query(
+                MarkExpert,
+            ).filter(
+                MarkExpert.expert==expert,
+            ).count()
+            return result
+        except Exception as e:
+            current_app.logger.debug(f"failed to get marked by count, error {str(e)}")
+        return 0
