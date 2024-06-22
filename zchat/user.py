@@ -265,6 +265,72 @@ def register_expert():
     else:
         return { "error": "Invalid Request Method!" }, 400
 
+@bp.route('/mark_expert', methods=['POST'])
+@login_required
+def mark_expert():
+    if request.method == 'POST':
+        newbie=current_user.get_id_int()
+        expert = request.form['expert']
+
+        mark_ops = MarkExpertOps(session=db.session)
+        succeed = mark_ops.add_mark(
+            newbie=newbie,
+            expert=expert,
+        )
+        if succeed:
+            return { "error": "Add expert mark Succeed!" }, 200
+        return { "error": "Failed to add expert mark!" }, 400
+    else:
+        return { "error": "Invalid Request Method!" }, 400
+
+@bp.route('/mark_expert', methods=['DELETE'])
+@login_required
+def unmark_expert():
+    if request.method == 'DELETE':
+        newbie=current_user.get_id_int()
+        expert = request.form['expert']
+
+        mark_ops = MarkExpertOps(session=db.session)
+        succeed = mark_ops.remove_mark(
+            newbie=newbie,
+            expert=expert,
+        )
+        if succeed:
+            return { "error": "Remove expert mark Succeed!" }, 200
+        return { "error": "Failed to remove expert mark!" }, 400
+    else:
+        return { "error": "Invalid Request Method!" }, 400
+
+@bp.route('/marked_expert', methods=['GET'])
+@login_required
+def get_marked_experts():
+    newbie=current_user.get_id_int()
+
+    user_ops = UserOps(session=db.session)
+    mark_ops = MarkExpertOps(session=db.session)
+    expert_ops = ExpertOps(session=db.session)
+
+    expert_ids = mark_ops.get_marked_experts(
+        newbie=newbie,
+    )
+
+    result = []
+    for id in expert_ids:
+        user = user_ops.get_one(id=id)
+        if user is not None:
+            expert = expert_ops.get_one(user_id=id)
+            data = user.to_dict()
+            data.update(expert.to_dict())
+
+            # TODO add those
+            data['rating'] = 4.5
+            data['served'] = 28
+            result.append(data)
+        else:
+            current_app.logger.warn(f"no user for id: {id}, but it's an expert")
+            continue
+    return result
+
 @bp.route('/my_experts', methods=['GET'])
 @login_required
 def get_my_experts():
