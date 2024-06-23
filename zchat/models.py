@@ -604,6 +604,7 @@ class Appointment(db.Model):
     __tablename__ = 'APPOINTMENT'
 
     id = db.Column(db.String, primary_key=True, default=lambda: str(uuid.uuid4()))
+    type = db.Column(db.Integer, nullable=False, default=0)
     stage = db.Column(db.Integer, nullable=False, default=0)
 
     # create
@@ -654,6 +655,7 @@ class Appointment(db.Model):
     def to_dict(self):
         return {
             'id' : self.id,
+            'type' : self.type,
             'stage' : self.stage,
 
             'expert' : self.expert,
@@ -690,10 +692,11 @@ class AppointmentOps:
     def __init__(self, session):
         self.session = session
 
-    def create_appointment(self, expert, newbie)->str:
-        current_app.logger.debug(f"create_appointment, {expert}, {newbie}")
+    def create_appointment(self, type, expert, newbie)->str:
+        current_app.logger.debug(f"create_appointment, {type}, {expert}, {newbie}")
         try:
             appointment = Appointment(
+                type=type,
                 expert=expert,
                 newbie=newbie,
                 createTimestamp=time.time(),
