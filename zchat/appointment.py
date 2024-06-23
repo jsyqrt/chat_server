@@ -24,13 +24,14 @@ def appointment_change_event_notify(app, appointment_dict, other_id):
 @login_required
 def new_appointment():
     expert = int(request.form['expert'])
+    type = int(request.form['type'])
     newbie = current_user.get_id_int()
 
     if expert == 0 or newbie == 0:
         return {'error': f'Invalid expert or newbie setting {expert}, {newbie}'}, 400
 
     app_ops = AppointmentOps(session=db.session)
-    id = app_ops.create_appointment(expert=expert, newbie=newbie)
+    id = app_ops.create_appointment(type=type, expert=expert, newbie=newbie)
     if id is not None:
         data = app_ops.get_appointment(id).to_dict()
         appointment_change_event_notify(current_app, data, expert)
