@@ -190,6 +190,35 @@ def get():
 
     return {'error': 'Failed to get appointment'}, 400
 
+@bp.route('/check_balances', methods=['GET'])
+@login_required
+def check_balances():
+    balance_ops = BalanceOps(session=db.session)
+    if balance_ops.check_all():
+        return {'error': 'succeed'}
+    return {'error': 'failed'}, 400
+
+@bp.route('/balance', methods=['GET'])
+@login_required
+def get_balance():
+    user_id = current_user.get_id_int()
+    balance_ops = BalanceOps(session=db.session)
+    return balance_ops.balance_of(user=user_id)
+
+@bp.route('/withdraw', methods=['POST'])
+@login_required
+def withdraw():
+    user_id = current_user.get_id_int()
+    amount = float(request.form['amount'])
+    order_id = "no such id" # TODO fix this
+    balance_ops = BalanceOps(session=db.session)
+    succeed = balance_ops.withdraw(user=user_id, amount=amount, order_id=order_id)
+    if succeed:
+        # TODO call alipay payment methods
+        return {"error": "succeed"}
+    else:
+        return {"error": "failed to withdraw"}, 400
+
 @bp.route('/as_expert', methods=['GET'])
 @login_required
 def get_as_expert():
