@@ -783,9 +783,9 @@ class BalanceOps:
 
             fbb = fb.balance
             tbb = tb.balance_locking
-            fbb_ = fbb - to_amount
+            fbb_ = fbb - amount
             tbb_ = tbb + to_amount
-            if fbb_ >= 0 and fbb_ < fbb and fbb_ + to_amount == fbb and \
+            if fbb_ >= 0 and fbb_ < fbb and fbb_ + amount == fbb and \
                 tbb_ > tbb and tbb_ - to_amount == tbb:
                 fb.balance = fbb_
                 tb.balance_locking = tbb_
@@ -853,9 +853,9 @@ class BalanceOps:
 
             fbb = fb.balance
             tbb = tb.balance_locking
-            fbb_ = fbb + to_amount
+            fbb_ = fbb + amount
             tbb_ = tbb - to_amount
-            if fbb_ > fbb and fbb_ - to_amount == fbb and \
+            if fbb_ > fbb and fbb_ - amount == fbb and \
                 tbb_ >= 0 and tbb_ < tbb and tbb_ + to_amount == tbb and \
                     sb.balance - to_sb_amount >= 0:
                 fb.balance = fbb_
