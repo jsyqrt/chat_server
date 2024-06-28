@@ -9,6 +9,9 @@ from zchat.db import db
 from zchat.rand import *
 from zchat.meili import add_expert_to_meili
 
+PLATFORM_DISCOUNT = 0.8
+SYSTEM_ACCOUNT = 0
+
 class User(db.Model):
     __tablename__ = 'USER'
 
@@ -572,6 +575,366 @@ class ChatMsgOps:
             current_app.logger.debug(f'failed to get msgs, error {str(e)}')
             return []
 
+class Transfer(db.Model):
+    __tablename__ = 'TRANSFER'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    order_id = db.Column(db.String, nullable=False)
+    from_user = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    to_user = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    value = db.Column(db.REAL, nullable=False)
+    timestamp = db.Column(db.REAL, nullable=False)
+
+    __table_args__ = (
+        db.Index('index_Transfer_order_id', 'order_id', unique=False),
+        db.Index('index_Transfer_from_user', 'from_user', unique=False),
+        db.Index('index_Transfer_to_user', 'to_user', unique=False),
+    )
+
+    def to_dict(self):
+        return {
+            'order_id' : self.order_id,
+            'from_user' : self.from_user,
+            'to_user' : self.to_user,
+            'value' : self.value,
+            'timestamp' : self.timestamp,
+        }
+
+class TransferOps:
+    def __init__(self, session):
+        self.session = session
+
+    def transfer(self, order_id, from_user, to_user, value, timestamp)->int:
+        current_app.logger.debug(f"transfer, {order_id}, {from_user}, {to_user}, {value}, {timestamp}")
+        try:
+            tx = Transfer(order_id=order_id, from_user=from_user, to_user=to_user, value=value, timestamp=timestamp)
+            self.session.add(tx)
+            self.session.commit()
+            current_app.logger.debug(f"recorded tx, {order_id}, {from_user}, {to_user}, {value}, {timestamp}")
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to add tx, {order_id}, error {str(e)}")
+        return False
+
+
+# Only used to record system accounts
+class BalanceCNY(db.Model):
+    __tablename__ = 'BALANCE_CNY'
+
+    user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), primary_key=True, nullable=False)
+    balance = db.Column(db.REAL, nullable=False)
+
+    def to_dict(self):
+        return {
+            'user_id' : self.user_id,
+            'balance' : self.balance,
+        }
+
+# Balance in zchat
+class Balance(db.Model):
+    __tablename__ = 'BALANCE'
+
+    user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), primary_key=True, nullable=False)
+    balance = db.Column(db.REAL, nullable=False)
+    balance_locking = db.Column(db.REAL, nullable=False)
+    total_income = db.Column(db.REAL, nullable=False)
+
+    def to_dict(self):
+        return {
+            'user_id' : self.user_id,
+            'balance' : self.balance,
+            'balance_locking' : self.balance_locking,
+            'total_income' : self.total_income,
+        }
+
+class BalanceOps:
+    def __init__(self, session):
+        self.session = session
+
+    def balance_of(self, user)->dict:
+        balance = self.session.query(Balance).filter_by(user_id=user).first()
+        if balance:
+            return balance.to_dict()
+        else:
+            return {
+                'user_id' : user_id,
+                'balance' : 0.0,
+                'balance_locking' : 0.0,
+                'total_income' : 0.0,
+            }
+
+    def deposit(self, user, amount, order_id)->bool:
+        current_app.logger.debug(f"deposit, {user}, {amount}, {order_id}")
+        try:
+            if amount <= 0:
+                current_app.logger.debug(f"amount is invalid, {amount}")
+                return False
+
+            balance = self.session.query(Balance).filter_by(user_id=user).first()
+            if balance:
+                b = balance.balance
+                bb = b + amount
+                if bb > amount and bb > b and bb - amount == b:
+                    balance.balance = bb
+                else:
+                    current_app.logger.debug(f"failed to change balance, {b}, {amount}, {bb}")
+                    return False
+            else:
+                balance = Balance(user_id=user, balance=amount, balance_locking=0, total_income=0)
+                self.session.add(balance)
+
+            transfer_ops = TransferOps(self.session)
+            succeed = transfer_ops.transfer(
+                order_id=order_id,
+                from_user=SYSTEM_ACCOUNT, # TODO change to system account
+                to_user=user,
+                value=amount,
+                timestamp=time.time(),
+            )
+
+            system_balance_cny = self.session.query(BalanceCNY).filter_by(user_id=SYSTEM_ACCOUNT).first()
+            if system_balance_cny:
+                system_balance_cny.balance = system_balance_cny.balance + amount
+            else:
+                system_balance_cny = BalanceCNY(user_id=SYSTEM_ACCOUNT, balance=amount)
+                self.session.add(system_balance_cny)
+
+            if not succeed:
+                raise Exception(f'Failed to record tx, order id: {order_id}')
+
+            self.session.commit()
+            current_app.logger.debug(f"deposited {amount} for user {user}")
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to deposit, error {str(e)}")
+        return False
+
+    def withdraw(self, user, amount, order_id)->bool:
+        current_app.logger.debug(f"withdraw, {user}, {amount}, {order_id}")
+        try:
+            if amount <= 0:
+                current_app.logger.debug(f"amount is invalid, {amount}")
+                return False
+
+            balance = self.session.query(Balance).filter_by(user_id=user).first()
+            if balance:
+                b = balance.balance
+                bb = b - amount
+                if bb >= 0 and bb < b and bb + amount == b:
+                    balance.balance = bb
+                else:
+                    current_app.logger.debug(f"failed to change balance, {b}, {amount}, {bb}")
+                    return False
+            else:
+                current_app.logger.debug(f"balance is invalid, {user}")
+                return False
+
+            transfer_ops = TransferOps(self.session)
+            succeed = transfer_ops.transfer(
+                order_id=order_id,
+                from_user=user,
+                to_user=-2, # TODO change to outer user account
+                value=amount,
+                timestamp=time.time(),
+            )
+            if not succeed:
+                raise Exception(f'Failed to record tx, order id: {order_id}')
+
+            system_balance_cny = self.session.query(BalanceCNY).filter_by(user_id=SYSTEM_ACCOUNT).first()
+            if system_balance_cny and system_balance_cny.balance >= amount:
+                system_balance_cny.balance = system_balance_cny.balance - amount
+            else:
+                raise Exception(f'No system account, failed to withdraw: {order_id}')
+
+            self.session.commit()
+            current_app.logger.debug(f"withdraw {amount} for user {user}")
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to deposit, error {str(e)}")
+        return False
+
+    def transfer(self, from_user, to_user, amount, order_id)->bool:
+        current_app.logger.debug(f"transfer, {from_user}, {to_user}, {amount}, {order_id}")
+        try:
+            if amount <= 0:
+                current_app.logger.debug(f"amount is invalid, {amount}")
+                return False
+
+            fb = self.session.query(Balance).filter_by(user_id=from_user).first()
+            if fb is None:
+                current_app.logger.debug(f"from_user and balance is invalid, {from_user}")
+                return False
+
+            tb = self.session.query(Balance).filter_by(user_id=to_user).first()
+            if tb is None:
+                tb = Balance(user_id=to_user, balance=0, balance_locking=0, total_income=0)
+                self.session.add(tb)
+
+            sb = self.session.query(Balance).filter_by(user_id=SYSTEM_ACCOUNT).first()
+            if sb is None:
+                sb = Balance(user_id=SYSTEM_ACCOUNT, balance=0, balance_locking=0, total_income=0)
+                self.session.add(sb)
+
+            to_amount = amount * PLATFORM_DISCOUNT
+            to_sb_amount = amount * (1 - PLATFORM_DISCOUNT)
+
+            fbb = fb.balance
+            tbb = tb.balance_locking
+            fbb_ = fbb - amount
+            tbb_ = tbb + to_amount
+            if fbb_ >= 0 and fbb_ < fbb and fbb_ + amount == fbb and \
+                tbb_ > tbb and tbb_ - to_amount == tbb:
+                fb.balance = fbb_
+                tb.balance_locking = tbb_
+                tb.total_income = tb.total_income + tbb_
+                sb.balance = sb.balance + to_sb_amount
+            else:
+                current_app.logger.debug(f"failed to change balance, {fbb}, {fbb_}, {tbb}, {tbb_}, {amount}, {to_amount}")
+                raise Exception(f"failed to change balance, {fbb}, {fbb_}, {tbb}, {tbb_}, {amount}, {to_amount}")
+
+            transfer_ops = TransferOps(self.session)
+            succeed = transfer_ops.transfer(
+                order_id=order_id,
+                from_user=from_user,
+                to_user=to_user,
+                value=to_amount,
+                timestamp=time.time(),
+            )
+
+            if not succeed:
+                raise Exception(f'Failed to record tx, order id: {order_id}, to {to_user}')
+
+            succeed = transfer_ops.transfer(
+                order_id=order_id,
+                from_user=from_user,
+                to_user=SYSTEM_ACCOUNT,
+                value=to_sb_amount,
+                timestamp=time.time(),
+            )
+
+            if not succeed:
+                raise Exception(f'Failed to record tx, order id: {order_id}, to {SYSTEM_ACCOUNT}')
+
+            self.session.commit()
+            current_app.logger.debug(f"transferd from {from_user} to {to_user} with amount {amount}, {to_amount} for order_id {order_id}")
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to transfer, error {str(e)}")
+        return False
+
+    def refund(self, from_user, to_user, amount, order_id)->bool:
+        current_app.logger.debug(f"refund, {from_user}, {to_user}, {amount}, {order_id}")
+        try:
+            if amount <= 0:
+                current_app.logger.debug(f"amount is invalid, {amount}")
+                return False
+
+            fb = self.session.query(Balance).filter_by(user_id=from_user).first()
+            if fb is None:
+                current_app.logger.debug(f"from_user and balance is invalid, {from_user}")
+                return False
+
+            tb = self.session.query(Balance).filter_by(user_id=to_user).first()
+            if tb is None:
+                current_app.logger.debug(f"to_user and balance is invalid, {to_user}")
+                return False
+
+            sb = self.session.query(Balance).filter_by(user_id=SYSTEM_ACCOUNT).first()
+            if sb is None:
+                current_app.logger.debug(f"system account and balance is invalid, {SYSTEM_ACCOUNT}")
+                return False
+
+            to_amount = amount * PLATFORM_DISCOUNT
+            to_sb_amount = amount * (1 - PLATFORM_DISCOUNT)
+
+            fbb = fb.balance
+            tbb = tb.balance_locking
+            fbb_ = fbb + amount
+            tbb_ = tbb - to_amount
+            if fbb_ > fbb and fbb_ - amount == fbb and \
+                tbb_ >= 0 and tbb_ < tbb and tbb_ + to_amount == tbb and \
+                    sb.balance - to_sb_amount >= 0:
+                fb.balance = fbb_
+                tb.balance_locking = tbb_
+                tb.total_income = tb.total_income - tbb_
+                sb.balance = sb.balance - to_sb_amount
+            else:
+                current_app.logger.debug(f"failed to change balance, {fbb}, {fbb_}, {tbb}, {tbb_}, {amount}, {to_amount}, {to_sb_amount}, {sb.balance}")
+                raise Exception(f"failed to change balance, {fbb}, {fbb_}, {tbb}, {tbb_}, {amount}, {to_amount}, {to_sb_amount}, {sb.balance}")
+
+            transfer_ops = TransferOps(self.session)
+            succeed = transfer_ops.transfer(
+                order_id=order_id,
+                from_user=to_user, # NOTE this is refund, the order is reversed
+                to_user=from_user,
+                value=to_amount,
+                timestamp=time.time(),
+            )
+            if not succeed:
+                raise Exception(f'Failed to record tx, order id: {order_id}, refund {from_user} from {to_user}')
+
+            succeed = transfer_ops.transfer(
+                order_id=order_id,
+                from_user=SYSTEM_ACCOUNT, # NOTE this is refund, the order is reversed
+                to_user=from_user,
+                value=to_sb_amount,
+                timestamp=time.time(),
+            )
+
+            if not succeed:
+                raise Exception(f'Failed to record tx, order id: {order_id}, refund {from_user} from {SYSTEM_ACCOUNT}')
+
+            self.session.commit()
+            current_app.logger.debug(f"refund for {from_user} from {to_user} of amount {amount}, {to_amount} for order_id {order_id}")
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to refund, error {str(e)}")
+        return False
+
+    def unlock(self, user, amount, order_id)->bool:
+        current_app.logger.debug(f"unlock, {user}, {amount}, {order_id}")
+        try:
+            if amount <= 0:
+                current_app.logger.debug(f"amount is invalid, {amount}")
+                return False
+
+            balance = self.session.query(Balance).filter_by(user_id=user).first()
+            if balance is None:
+                current_app.logger.debug(f"balance is invalid, {user}")
+                return False
+
+            b = balance.balance
+            bl = balance.balance_locking
+            b_ = b + amount
+            bl_ = bl - amount
+            if b_ > b and b_ - b == amount and \
+                bl_ >= 0 and bl_ < bl and bl_ + amount == bl and \
+                    b + bl == b_ + bl_:
+                balance.balance = b_
+                balance.balance_locking = bl_
+            else:
+                current_app.logger.debug(f"failed to unlock balance, {b}, {bl}, {b_}, {bl_}, {amount}")
+                raise Exception(f"failed to unlock balance, {b}, {bl}, {b_}, {bl_}, {amount}")
+
+            self.session.commit()
+            current_app.logger.debug(f"unlock {user} with amount {amount} for order_id {order_id}")
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to unlock, error {str(e)}")
+        return False
+
+    def check_all(self)->bool:
+        total_balances = self.session.query(db.func.sum(Balance.balance)).scalar()
+        total_balances_locking = self.session.query(db.func.sum(Balance.balance_locking)).scalar()
+        total_balances_cny = self.session.query(db.func.sum(BalanceCNY.balance)).scalar()
+        return total_balances + total_balances_locking == total_balances_cny
+
 class AppointmentStage(Enum):
     # after newbie choosed a time and confirmed, before delivered, can go canceled, but count “失约次数”
     Created = 0
@@ -757,7 +1120,17 @@ class AppointmentOps:
                        appointment.stage == AppointmentStage.Paied.value:
                         appointment.asNoCredit = 1
 
-                        # TODO if paied, refund newbie
+                        # if paied, refund newbie
+                        if appointment.stage == AppointmentStage.Paied.value:
+                            # refund
+                            balance_ops = BalanceOps(session=self.session)
+                            succeed = balance_ops.refund(
+                                from_user=appointment.newbie,
+                                to_user=appointment.expert,
+                                amount=appointment.paymentPrice,
+                                order_id=appointment.paymentOrderId)
+                            if not succeed:
+                                raise Exception(f'Failed to refund/cancel, id: {id}')
 
                     appointment.stage = AppointmentStage.Canceled.value
                     appointment.finishTimestamp = time.time()
@@ -817,6 +1190,19 @@ class AppointmentOps:
                     appointment.paymentOrderId = order_id
                     appointment.paymentTimestamp = time.time()
                     appointment.stage = AppointmentStage.Paied.value
+
+                    # transfer here
+                    balance_ops = BalanceOps(session=self.session)
+                    succeed = balance_ops.deposit(user=newbie_id, amount=price, order_id=order_id)
+                    if succeed:
+                        succeed = balance_ops.transfer(
+                            from_user=newbie_id,
+                            to_user=appointment.expert,
+                            amount=price,
+                            order_id=order_id,
+                        )
+                    else:
+                        raise Exception(f'Failed to pay, id: {id}')
 
                     self.session.commit()
                     current_app.logger.debug(f"newbie_pay appointment {id}")
@@ -953,7 +1339,25 @@ class AppointmentOps:
                     appointment.finishTimestamp = time.time()
                     appointment.stage = AppointmentStage.Finished.value
 
-                    # TODO do payment or refund
+                    # do payment or refund
+                    balance_ops = BalanceOps(session=self.session)
+                    if appointment.stage == AppointmentStage.DisputeAgreed.value:
+                        # refund
+                        succeed = balance_ops.refund(
+                            from_user=appointment.newbie,
+                            to_user=appointment.expert,
+                            amount=appointment.paymentPrice,
+                            order_id=appointment.paymentOrderId)
+                        if not succeed:
+                            raise Exception(f'Failed to refund/finish, id: {id}')
+                    else:
+                        amount = appointment.paymentPrice * PLATFORM_DISCOUNT
+                        succeed = balance_ops.unlock(
+                            user=appointment.expert,
+                            amount=amount,
+                            order_id=appointment.paymentOrderId)
+                        if not succeed:
+                            raise Exception(f'Failed to unlock/finish, id: {id}')
 
                     self.session.commit()
                     current_app.logger.debug(f"platform_finish_it appointment {id}")
