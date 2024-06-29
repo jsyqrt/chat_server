@@ -675,7 +675,7 @@ class BalanceOps:
             if balance:
                 b = balance.balance
                 bb = b + amount
-                if bb > amount and bb > b and bb - amount == b:
+                if bb >= amount and bb > b and bb - amount == b:
                     balance.balance = bb
                 else:
                     current_app.logger.debug(f"failed to change balance, {b}, {amount}, {bb}")
