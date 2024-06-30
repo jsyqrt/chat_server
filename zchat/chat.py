@@ -101,12 +101,13 @@ def init_app(app):
         calleeId = data.get('calleeId')
         isVideo = data.get('isVideo')
         sdpOffer = data.get('sdpOffer')
+        appid = data.get('appid')
 
         app.logger.debug(f"got makeCall from {callerId} to {calleeId}")
 
         to_sid = app.user_to_session.get(calleeId, None)
         if to_sid is not None:
-            app.socketio.emit('newCall', {"isVideo": isVideo, "callerId": callerId, "sdpOffer": sdpOffer, "calleeId": calleeId}, to=to_sid)
+            app.socketio.emit('newCall', {"isVideo": isVideo, "callerId": callerId, "sdpOffer": sdpOffer, "calleeId": calleeId, "appid": appid}, to=to_sid)
             app.logger.debug(f"sending {sdpOffer} to {calleeId}")
         else:
             app.logger.debug(f"callee is not online {calleeId}")
