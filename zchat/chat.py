@@ -1,6 +1,7 @@
 import time
 
 from flask import render_template, request, current_app, Blueprint
+from livekit import api as livekit_api
 
 from zchat.auth import login_required, current_user
 from zchat.db import db
@@ -12,6 +13,25 @@ bp = Blueprint('chat', __name__, url_prefix='/chat')
 @login_required
 def test_chat():
     return render_template('chat.html')
+
+@bp.route('/get_token')
+@login_required
+def getToken():
+    api_key = current_app.config['LIVEKIT_API_KEY']
+    secret = current_app.config['LIVEKIT_API_SECRET']
+
+    id = current_user.get_id()
+    name = request.args.get('name') # TODO this may be dangerous
+    appointment_id = request.args.get('appid')
+
+    token = livekit_api.AccessToken(api_key, secret) \
+        .with_identity(id) \
+        .with_name(name) \
+        .with_grants(livekit_api.VideoGrants(
+            room_join=True,
+            room=appointment_id,
+        ))
+    return token.to_jwt()
 
 def init_app(app):
     app.unsent_msgs = app.multi_processing_manager.dict()
@@ -112,20 +132,6 @@ def init_app(app):
         else:
             app.logger.debug(f"callee is not online {calleeId}")
 
-    @app.socketio.on('answerCall')
-    @login_required
-    def answerCall(data):
-        callerId = data.get('callerId')
-        sdpAnswer = data.get('sdpAnswer')
-
-        app.logger.debug(f"got answerCall to {callerId}")
-
-        to_sid = app.user_to_session.get(callerId, None)
-        if to_sid is not None:
-            app.socketio.emit('callAnswered', {"sdpAnswer": sdpAnswer}, to=to_sid)
-        else:
-            app.logger.debug(f"callee is not online {callerId}")
-
     @app.socketio.on('leaveCall')
     @login_required
     def leaveCall(data):
@@ -144,18 +150,3 @@ def init_app(app):
             app.socketio.emit('callLeaved', {"callerId": callerId, "calleeId": calleeId}, to=to_sid)
         else:
             app.logger.debug(f"opposite is not online {to_sid}")
-
-
-    @app.socketio.on('IceCandidate')
-    @login_required
-    def iceCandidate(data):
-        calleeId = data["calleeId"]
-        candidate = data["iceCandidate"]
-
-        app.logger.debug(f"got IceCandidate to {calleeId}")
-
-        to_sid = app.user_to_session.get(calleeId, None)
-        if to_sid is not None:
-            app.socketio.emit('IceCandidate', {"iceCandidate": candidate}, to=to_sid)
-        else:
-            app.logger.debug(f"callee is not online {callerId}")

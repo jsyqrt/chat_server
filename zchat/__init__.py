@@ -10,6 +10,8 @@ def create_app(test_config=None):
         SQLALCHEMY_DATABASE_URI="sqlite:///" + os.path.join(app.instance_path, 'zchat.sqlite'),
         MEILISEARCH_HOST="http://localhost:7700",
         MEILISEARCH_KEY="aSampleMasterKey",
+        LIVEKIT_API_KEY="devkey",
+        LIVEKIT_API_SECRET="secret",
     )
 
     if test_config is None:
