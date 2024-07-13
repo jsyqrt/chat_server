@@ -1,4 +1,6 @@
 import time
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
 
 from flask import render_template, request, current_app, Blueprint
 from livekit import api as livekit_api
@@ -8,11 +10,135 @@ from zchat.db import db
 from zchat.models import *
 
 bp = Blueprint('chat', __name__, url_prefix='/chat')
+executor = ThreadPoolExecutor()
+
+async def run_async(func, *args, **kwargs):
+    loop = asyncio.get_running_loop()
+    fut = loop.create_future()
+    loop.create_task(func(fut, *args, **kwargs))
+    return await fut
 
 @bp.route('/test', methods=['GET'])
 @login_required
 def test_chat():
     return render_template('chat.html')
+
+async def livekit_create_room(fut, app, name: str):
+    host = app.config['LIVEKIT_HOST']
+    api_key = app.config['LIVEKIT_API_KEY']
+    secret = app.config['LIVEKIT_API_SECRET']
+
+    lkapi = livekit_api.LiveKitAPI(
+        url=host,
+        api_key=api_key,
+        api_secret=secret,
+    )
+
+    room_info = await lkapi.room.create_room(
+        livekit_api.CreateRoomRequest(
+            name=name,
+            empty_timeout=1000,
+            departure_timeout=1000,
+            egress=livekit_api.RoomEgress(
+                room=livekit_api.RoomCompositeEgressRequest(
+                    room_name=name,
+                    file_outputs=[
+                        livekit_api.EncodedFileOutput(
+                            filepath="/out/{room_name}_{time}.mp4",
+                        )
+                    ]
+                )
+            )
+        ),
+    )
+
+    await lkapi.aclose()
+    fut.set_result(room_info)
+
+async def livekit_list_rooms(fut, app):
+    host = app.config['LIVEKIT_HOST']
+    api_key = app.config['LIVEKIT_API_KEY']
+    secret = app.config['LIVEKIT_API_SECRET']
+
+    lkapi = livekit_api.LiveKitAPI(
+        url=host,
+        api_key=api_key,
+        api_secret=secret,
+    )
+
+    results = await lkapi.room.list_rooms(livekit_api.ListRoomsRequest())
+    await lkapi.aclose()
+    fut.set_result(results)
+
+async def livekit_list_egress_of(fut, app, room_name):
+    host = app.config['LIVEKIT_HOST']
+    api_key = app.config['LIVEKIT_API_KEY']
+    secret = app.config['LIVEKIT_API_SECRET']
+
+    lkapi = livekit_api.LiveKitAPI(
+        url=host,
+        api_key=api_key,
+        api_secret=secret,
+    )
+
+    results = await lkapi.egress.list_egress(
+        list=livekit_api.ListEgressRequest(
+                    room_name=room_name
+        )
+    )
+    await lkapi.aclose()
+    fut.set_result(results)
+
+async def livekit_stop_egress(fut, app, egress_id):
+    host = app.config['LIVEKIT_HOST']
+    api_key = app.config['LIVEKIT_API_KEY']
+    secret = app.config['LIVEKIT_API_SECRET']
+
+    lkapi = livekit_api.LiveKitAPI(
+        url=host,
+        api_key=api_key,
+        api_secret=secret,
+    )
+
+    results = await lkapi.egress.stop_egress(
+        stop=livekit_api.StopEgressRequest(
+            egress_id=egress_id
+        )
+    )
+    await lkapi.aclose()
+    fut.set_result(results)
+
+async def livekit_delete_room(fut, app, room_name):
+    host = app.config['LIVEKIT_HOST']
+    api_key = app.config['LIVEKIT_API_KEY']
+    secret = app.config['LIVEKIT_API_SECRET']
+
+    lkapi = livekit_api.LiveKitAPI(
+        url=host,
+        api_key=api_key,
+        api_secret=secret,
+    )
+
+    results = await lkapi.room.delete_room(
+        delete=livekit_api.DeleteRoomRequest(
+            room=room_name
+        )
+    )
+    await lkapi.aclose()
+    fut.set_result(results)
+
+def stop_egress_of(app, room_name):
+    app.logger.debug(f'ready to stop egress of room {room_name}')
+    egress = asyncio.run(run_async(livekit_list_egress_of, app, room_name))
+    for item in egress.items:
+        if item.status ==  livekit_api.EGRESS_ACTIVE:
+            app.logger.debug(f'ready to stop egress of room {room_name} with egress id {item.egress_id}')
+            egress = asyncio.run(run_async(livekit_stop_egress, app, item.egress_id))
+
+def stop_room(app, room_name):
+    stop_egress_of(app, room_name)
+    app.logger.debug(f'ready to delete room {room_name}')
+    asyncio.run(run_async(livekit_delete_room, app, room_name))
 
 @bp.route('/get_token')
 @login_required
@@ -21,12 +147,28 @@ def getToken():
     secret = current_app.config['LIVEKIT_API_SECRET']
 
     id = current_user.get_id()
-    name = request.args.get('name') # TODO this may be dangerous
+    user_name = request.args.get('name') # TODO this may be dangerous
     appointment_id = request.args.get('appid')
+
+    current_app.logger.debug(f'get token for user {id}, {user_name} for appointment {appointment_id}')
+
+    # create room if necessary, with egress open
+    rooms = asyncio.run(run_async(livekit_list_rooms, current_app))
+    current_app.logger.debug(f'get all rooms {rooms}')
+
+    need_create = True
+    for room in rooms.rooms:
+        if room.name == appointment_id:
+            current_app.logger.debug(f'no need to create room, already exists {room.name}')
+            need_create = False
+
+    if need_create:
+        room_info = asyncio.run(run_async(livekit_create_room, current_app, appointment_id))
+        current_app.logger.debug(f'create room with info \n{room_info}')
 
     token = livekit_api.AccessToken(api_key, secret) \
         .with_identity(id) \
-        .with_name(name) \
+        .with_name(user_name) \
         .with_grants(livekit_api.VideoGrants(
             room_join=True,
             room=appointment_id,
@@ -138,8 +280,11 @@ def init_app(app):
         callerId = data.get('callerId')
         calleeId = data["calleeId"]
         fromCaller = data["fromCaller"]
+        appid = data.get('appid')
 
         app.logger.debug(f"got leaveCall")
+
+        stop_room(app=app, room_name=appid)
 
         if fromCaller:
             to_sid = app.user_to_session.get(calleeId, None)
