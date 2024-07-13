@@ -1,5 +1,10 @@
 .venv/
 
+vectordb/
+
+*.mp4
+*.mp4.json
+
 *.pyc
 __pycache__/
 
