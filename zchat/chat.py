@@ -44,7 +44,7 @@ async def livekit_create_room(fut, app, name: str):
                     room_name=name,
                     file_outputs=[
                         livekit_api.EncodedFileOutput(
-                            filepath="/out/{room_name}_{time}.mp4",
+                            filepath="/out/records/{room_name}/{time}.mp4",
                         )
                     ]
                 )
