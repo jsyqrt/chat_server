@@ -954,14 +954,13 @@ class AppointmentStage(Enum):
     # if has dispute, platform will handle it, normal workflow has no button to this stage
     Disputed = 5
 
-    DisputeDenied = 6
-    DisputeAgreed = 7
+    DisputeHandled = 6
 
     # final stage, if from paied, refund
-    Canceled = 8
+    Canceled = 7
 
     # final stage, if no dispute or denied, pay to expert, else refund newbie
-    Finished = 9
+    Finished = 8
 
 class Appointment(db.Model):
     __tablename__ = 'APPOINTMENT'
@@ -1000,6 +999,7 @@ class Appointment(db.Model):
     disputeTimestamp = db.Column(db.REAL, nullable=True)
 
     # dispute handling, by platform admin
+    disputeHandleAgree = db.Column(db.Integer, nullable=True)
     disputeHandleContent = db.Column(db.String, nullable=True)
     disputeHandleTimestamp = db.Column(db.REAL, nullable=True)
 
@@ -1043,6 +1043,7 @@ class Appointment(db.Model):
             'disputeContent' : self.disputeContent,
             'disputeTimestamp' : self.disputeTimestamp,
 
+            'disputeHandleAgree' : self.disputeHandleAgree,
             'disputeHandleContent' : self.disputeHandleContent,
             'disputeHandleTimestamp' : self.disputeHandleTimestamp,
 
@@ -1305,11 +1306,8 @@ class AppointmentOps:
             appointment = self.session.query(Appointment).filter_by(id=id).first()
             if appointment:
                 if appointment.stage == AppointmentStage.Disputed.value:
-                    if agree:
-                        appointment.stage = AppointmentStage.DisputeAgreed.value
-                    else:
-                        appointment.stage = AppointmentStage.DisputeDenied.value
-
+                    appointment.stage = AppointmentStage.DisputeHandled.value
+                    appointment.disputeHandleAgree = 1 if agree else 0
                     appointment.disputeHandleContent = content
                     appointment.disputeHandleTimestamp = time.time()
 
@@ -1333,15 +1331,14 @@ class AppointmentOps:
             appointment = self.session.query(Appointment).filter_by(id=id).first()
             if appointment:
                 if appointment.stage == AppointmentStage.Commented.value or \
-                   appointment.stage == AppointmentStage.DisputeAgreed.value or \
-                   appointment.stage == AppointmentStage.DisputeDenied.value:
+                   appointment.stage == AppointmentStage.DisputeHandled.value:
 
                     appointment.finishTimestamp = time.time()
                     appointment.stage = AppointmentStage.Finished.value
 
                     # do payment or refund
                     balance_ops = BalanceOps(session=self.session)
-                    if appointment.stage == AppointmentStage.DisputeAgreed.value:
+                    if appointment.disputeHandleAgree == 1:
                         # refund
                         succeed = balance_ops.refund(
                             from_user=appointment.newbie,
@@ -1419,10 +1416,7 @@ class AppointmentOps:
                         Appointment.stage==AppointmentStage.Commented.value,
                         Appointment.commentTimestamp<time.time()-24*60*60,
                     ),
-                    db.or_(
-                        Appointment.stage==AppointmentStage.DisputeAgreed.value,
-                        Appointment.stage==AppointmentStage.DisputeDenied.value,
-                    )
+                    Appointment.stage==AppointmentStage.DisputeHandled.value,
                 )
             ).order_by(Appointment.createTimestamp).all()
             current_app.logger.debug(f'len of all appointments {len(appointments)}')

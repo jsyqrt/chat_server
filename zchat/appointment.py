@@ -145,7 +145,9 @@ def dispute():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.newbie_dispute(id=id, newbie_id=newbie, content=content)
     if succeed:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, data['expert'])
+        return data
 
     return {'error': 'Failed to update appointment'}, 400
 
@@ -159,7 +161,10 @@ def handle_dispute():
     app_ops = AppointmentOps(session=db.session)
     succeed = app_ops.platform_handle_dispute(id=id, agree=agree, content=content)
     if succeed:
-        return app_ops.get_appointment(id).to_dict()
+        data = app_ops.get_appointment(id).to_dict()
+        appointment_change_event_notify(current_app, data, data['expert'])
+        appointment_change_event_notify(current_app, data, data['newbie'])
+        return data
 
     return {'error': 'Failed to update appointment'}, 400
 
