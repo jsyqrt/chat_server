@@ -131,6 +131,18 @@ def protected():
     print(session)
     return 'Logged in as: ' + current_user.get_id()
 
+def admin_required(func):
+    @functools.wraps(func)
+    def decorated_view(*args, **kwargs):
+        user_id=current_user.get_id_int()
+        admin_user_ops = AdminUserOps(session=db.session)
+        is_admin = admin_user_ops.is_admin(user_id=user_id)
+        if not is_admin:
+            return current_app.login_manager.unauthorized()
+        return func(*args, **kwargs)
+
+    return decorated_view
+
 @bp.route('/logout', methods=['GET']) # TODO to POST
 @login_required
 def logout():

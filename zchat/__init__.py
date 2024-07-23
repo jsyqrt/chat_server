@@ -13,6 +13,7 @@ def create_app(test_config=None):
         LIVEKIT_HOST="http://localhost:7880",
         LIVEKIT_API_KEY="devkey",
         LIVEKIT_API_SECRET="secret",
+        LIVEKIT_RECORDS_PATH="livekit/records/",
     )
 
     if test_config is None:
