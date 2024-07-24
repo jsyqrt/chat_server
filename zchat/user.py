@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 
 from zchat.db import db
 from zchat.models import *
-from zchat.auth import login_required, current_user
+from zchat.auth import login_required, current_user, admin_required
 from zchat.rand import *
 from zchat.meili import find_experts_from_meili_for
 
@@ -303,6 +303,7 @@ def unmark_expert():
 
 @bp.route('/as_admin', methods=['GET'])
 @login_required
+@admin_required
 def as_admin():
     user_id=current_user.get_id_int()
     admin_user_ops = AdminUserOps(session=db.session)
