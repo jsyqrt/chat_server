@@ -2,14 +2,14 @@ import os
 import hashlib
 
 from flask import (
-    Blueprint, request, jsonify, current_app, g
+    Blueprint, request, jsonify, current_app, g, send_file
 )
 
 from werkzeug.utils import secure_filename
 
 from zchat.db import db
 from zchat.models import *
-from zchat.auth import login_required, current_user
+from zchat.auth import login_required, current_user, admin_required
 from zchat.rand import *
 
 bp = Blueprint('appointment', __name__, url_prefix='/appointment')
@@ -152,7 +152,8 @@ def dispute():
     return {'error': 'Failed to update appointment'}, 400
 
 @bp.route('/handle_dispute', methods=['POST'])
-@login_required # TODO change to admin required
+@login_required
+@admin_required
 def handle_dispute():
     id = request.form['id']
     agree = True if request.form['agree'] == 'true' else False
@@ -241,14 +242,45 @@ def get_as_newbie():
     return appointments
 
 @bp.route('/disputed', methods=['GET'])
-@login_required # TODO change to admin required
+@login_required
+@admin_required
 def get_disputed():
     app_ops = AppointmentOps(session=db.session)
     appointments = app_ops.get_appointments_disputed()
     return appointments
 
+@bp.route('/deliver_videos', methods=['GET'])
+@login_required
+@admin_required
+def get_deliver_videos():
+    appid = request.args.get('appid')
+    directory = os.path.join(
+        current_app.instance_path,
+        current_app.config['LIVEKIT_RECORDS_PATH'],
+        appid)
+    files = os.listdir(directory)
+    result = []
+    for file in files:
+        if file.endswith('.mp4'):
+            result.append(file)
+    return result
+
+@bp.route('/deliver_video', methods=['GET'])
+@login_required
+@admin_required
+def get_deliver_video():
+    appid = request.args.get('appid')
+    video = request.args.get('video')
+    video_path = os.path.join(
+        current_app.instance_path,
+        current_app.config['LIVEKIT_RECORDS_PATH'],
+        appid, video)
+    print(f'video_path, {video_path}')
+    return send_file(video_path, mimetype='video/mp4')
+
 @bp.route('/waiting_finish', methods=['GET'])
-@login_required # TODO change to admin required
+@login_required
+@admin_required
 def get_waiting_finish():
     app_ops = AppointmentOps(session=db.session)
     appointments = app_ops.get_appointments_waiting_finish()

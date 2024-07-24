@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 
 from zchat.db import db
 from zchat.models import *
-from zchat.auth import login_required, current_user
+from zchat.auth import login_required, current_user, admin_required
 from zchat.rand import *
 from zchat.meili import find_experts_from_meili_for
 
@@ -301,6 +301,29 @@ def unmark_expert():
     else:
         return { "error": "Invalid Request Method!" }, 400
 
+@bp.route('/as_admin', methods=['GET'])
+@login_required
+@admin_required
+def as_admin():
+    user_id=current_user.get_id_int()
+    admin_user_ops = AdminUserOps(session=db.session)
+    admin_id = admin_user_ops.add_as_admin(
+        user_id=user_id
+    )
+
+    current_app.logger.info(f"added {id} as admin")
+    return {'admin_id': admin_id}
+
+@bp.route('/is_admin', methods=['GET'])
+@login_required
+def is_admin():
+    user_id=current_user.get_id_int()
+    current_app.logger.debug(f"user id: {user_id}")
+    admin_user_ops = AdminUserOps(session=db.session)
+    is_admin = admin_user_ops.is_admin(user_id=user_id)
+    current_app.logger.debug(f"is admin: {is_admin}")
+    return {'is_admin': is_admin}
+
 @bp.route('/marked_expert', methods=['GET'])
 @login_required
 def get_marked_experts():
@@ -319,16 +342,18 @@ def get_marked_experts():
         user = user_ops.get_one(id=id)
         if user is not None:
             expert = expert_ops.get_one(user_id=id)
-            data = user.to_dict()
-            data.update(expert.to_dict())
+            if expert is not None:
+                data = user.to_dict()
+                data.update(expert.to_dict())
 
-            # TODO add those
-            data['rating'] = 4.5
-            data['served'] = 28
-            result.append(data)
+                # TODO add those
+                data['rating'] = 4.5
+                data['served'] = 28
+                result.append(data)
+            else:
+                current_app.logger.warn(f"no expert for id: {id}")
         else:
             current_app.logger.warn(f"no user for id: {id}, but it's an expert")
-            continue
     return result
 
 @bp.route('/my_experts', methods=['GET'])

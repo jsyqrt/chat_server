@@ -241,6 +241,52 @@ class UserOps:
             current_app.logger.debug(f'failed to get all users, error {str(e)}')
             return []
 
+class AdminUser(db.Model):
+    __tablename__ = 'ADMIN_USER'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+
+    def to_dict(self):
+        return {
+            'id' : self.id,
+            'user_id' : self.user_id,
+        }
+
+class AdminUserOps:
+    def __init__(self, session):
+        self.session = session
+
+    def add_as_admin(self, user_id)->int:
+        current_app.logger.debug(f"add_as_admin, {user_id}")
+        try:
+            admin_user = AdminUser(user_id=user_id)
+            self.session.add(admin_user)
+            self.session.commit()
+            current_app.logger.debug(f"added admin user, id: {user_id}")
+            return user_id
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to add admin user {user_id}, error {str(e)}")
+        return None
+
+    def is_admin(self, user_id)->bool:
+        try:
+            user = self.session.query(AdminUser).filter_by(user_id=user_id).first()
+            return True
+        except Exception as e:
+            current_app.logger.debug(f'failed to get admin, error {str(e)}')
+            return False
+
+    def get_all(self)->list:
+        try:
+            users = self.session.query(AdminUser).all()
+            current_app.logger.debug(f'len of all admin users {len(users)}')
+            return [user.to_dict() for user in users]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get all admin users, error {str(e)}')
+            return []
+
 class Expert(db.Model):
     __tablename__ = 'EXPERT'
 
