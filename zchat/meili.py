@@ -5,7 +5,20 @@ from zchat.models import *
 def init_app(app):
     host = app.config['MEILISEARCH_HOST']
     key = app.config['MEILISEARCH_KEY']
+
     app.meili_client = meilisearch.Client(host, key)
+    create_indexes_to_meili(app)
+
+def create_indexes_to_meili(app):
+    indexes = app.meili_client.get_indexes()
+    exists = False
+    for index in indexes['results']:
+        if index.uid == 'experts':
+            exists = True
+    if not exists:
+        create_expert_result = app.meili_client.create_index('experts', {'primaryKey': 'user_id'})
+        app.logger.debug(f"create_indexes_to_meili, create_expert_result: {create_expert_result}")
+    return
 
 def add_expert_to_meili(app, expert):
     return app.meili_client.index('experts').add_documents([expert.to_dict()])
