@@ -23,6 +23,15 @@ async def run_async(func, *args, **kwargs):
 def test_chat():
     return render_template('chat.html')
 
+@bp.route('/call_records', methods=['GET'])
+@login_required
+def call_records():
+    appid = request.args.get('appid')
+
+    call_record_ops = CallRecordOps(session=db.session)
+    records = call_record_ops.get_records(appointment_id=appid)
+    return records
+
 async def livekit_create_room(fut, app, name: str):
     host = app.config['LIVEKIT_HOST']
     api_key = app.config['LIVEKIT_API_KEY']
@@ -135,7 +144,7 @@ def stop_egress_of(app, room_name):
             app.logger.debug(f'ready to stop egress of room {room_name} with egress id {item.egress_id}')
             egress = asyncio.run(run_async(livekit_stop_egress, app, item.egress_id))
 
-def stop_room(app, room_name):
+def stop_livekit_egress_room(app, room_name):
     stop_egress_of(app, room_name)
     app.logger.debug(f'ready to delete room {room_name}')
     asyncio.run(run_async(livekit_delete_room, app, room_name))
@@ -267,12 +276,40 @@ def init_app(app):
 
         app.logger.debug(f"got makeCall from {callerId} to {calleeId}")
 
+        call_record_ops = CallRecordOps(session=db.session)
+        call_record_id = call_record_ops.start(
+            appointment_id=appid,
+            type=1 if isVideo else 0,
+            caller=callerId,
+            callee=calleeId,
+            timestamp=time.time(),
+        )
+
+        app.logger.debug(f"call_record_id is {call_record_id}")
+
+        from_sid = app.user_to_session.get(callerId, None)
         to_sid = app.user_to_session.get(calleeId, None)
         if to_sid is not None:
             app.socketio.emit('newCall', {"isVideo": isVideo, "callerId": callerId, "sdpOffer": sdpOffer, "calleeId": calleeId, "appid": appid}, to=to_sid)
             app.logger.debug(f"sending {sdpOffer} to {calleeId}")
         else:
+            app.socketio.emit('callLeaved', {'calleeOnline': False, "callerId": callerId, "calleeId": calleeId}, to=from_sid)
             app.logger.debug(f"callee is not online {calleeId}")
+
+    @app.socketio.on('acceptCall')
+    @login_required
+    def acceptCall(data):
+        calleeId = data.get('calleeId')
+        appid = data.get('appid')
+
+        app.logger.debug(f"got acceptCall from {calleeId}")
+
+        call_record_ops = CallRecordOps(session=db.session)
+        call_record_id = call_record_ops.accept(
+            appointment_id=appid,
+            timestamp=time.time(),
+        )
+        app.logger.debug(f"call_record_id is {call_record_id}")
 
     @app.socketio.on('leaveCall')
     @login_required
@@ -284,14 +321,26 @@ def init_app(app):
 
         app.logger.debug(f"got leaveCall")
 
-        stop_room(app=app, room_name=appid)
-
         if fromCaller:
             to_sid = app.user_to_session.get(calleeId, None)
         else:
             to_sid = app.user_to_session.get(callerId, None)
 
         if to_sid is not None:
+            app.logger.debug(f"sending callLeaved to {to_sid}, fromCaller {fromCaller}, {callerId}, {calleeId}")
             app.socketio.emit('callLeaved', {"callerId": callerId, "calleeId": calleeId}, to=to_sid)
         else:
             app.logger.debug(f"opposite is not online {to_sid}")
+
+        call_record_ops = CallRecordOps(session=db.session)
+        call_record_id = call_record_ops.end(
+            appointment_id=appid,
+            by_user=callerId if fromCaller else calleeId,
+            timestamp=time.time(),
+        )
+        app.logger.debug(f"call_record_id is {call_record_id}")
+
+        try:
+            stop_livekit_egress_room(app=app, room_name=appid)
+        except Exception as e:
+            app.logger.error(f"failed to stop livekit egress room {appid}, error {e}")
