@@ -621,6 +621,132 @@ class ChatMsgOps:
             current_app.logger.debug(f'failed to get msgs, error {str(e)}')
             return []
 
+class CallRecord(db.Model):
+    __tablename__ = 'CALL_RECORD'
+
+    id = db.Column(db.String, primary_key=True) # id == appointment_id + '--' + idx
+    type = db.Column(db.Integer, nullable=False) # 0 for audio, 1 for video
+    appointment_id = db.Column(db.String, db.ForeignKey('APPOINTMENT.id'), nullable=False)
+    idx = db.Column(db.Integer, nullable=False) # [0, inf)
+    caller = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    callee = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    start_timestamp = db.Column(db.REAL, nullable=False)
+
+    accept_timestamp = db.Column(db.REAL, nullable=True)
+    hang_up_by = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=True)
+    end_timestamp = db.Column(db.REAL, nullable=True)
+
+    __table_args__ = (
+        db.Index('index_CALL_RECORD_appointment_id', 'appointment_id', unique=False),
+        db.Index('index_CALL_RECORD_caller', 'caller', unique=False),
+        db.Index('index_CALL_RECORD_callee', 'callee', unique=False),
+    )
+
+    def to_dict(self):
+        return {
+            'type' : self.type,
+            'appointment_id' : self.appointment_id,
+            'idx' : self.idx,
+            'caller' : self.caller,
+            'callee' : self.callee,
+            'start_timestamp' : self.start_timestamp,
+            'accept_timestamp' : self.accept_timestamp,
+            'hang_up_by' : self.hang_up_by,
+            'end_timestamp' : self.end_timestamp,
+        }
+
+class CallRecordOps:
+    def __init__(self, session):
+        self.session = session
+
+    @staticmethod
+    def get_id(appointment_id, idx):
+        return f'{appointment_id}--{idx}'
+
+    def start(self, appointment_id, type, caller, callee, timestamp)->str:
+        current_app.logger.debug(f"start call, {appointment_id}, {type}, {caller}, {callee}, {timestamp}")
+        try:
+            records = self.session.query(CallRecord).filter_by(
+                appointment_id=appointment_id
+            ).order_by(CallRecord.idx).all()
+            idx = len(records)
+
+            id = CallRecordOps.get_id(appointment_id=appointment_id, idx=idx)
+            call_record = CallRecord(
+                id=id,
+                type=type,
+                appointment_id=appointment_id,
+                idx=idx,
+                caller=caller,
+                callee=callee,
+                start_timestamp=timestamp,
+            )
+
+            self.session.add(call_record)
+            self.session.commit()
+            current_app.logger.debug(f"added call record")
+            return call_record.id
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to add call record, error {str(e)}")
+        return None
+
+    def accept(self, appointment_id, timestamp)->str:
+        current_app.logger.debug(f"accept call, {appointment_id}, {timestamp}")
+        try:
+            records = self.session.query(CallRecord).filter_by(
+                appointment_id=appointment_id
+            ).order_by(CallRecord.idx).all()
+            if len(records) == 0:
+                raise Exception(f'Failed to record accept call before start: {appointment_id}')
+
+            idx = len(records) - 1
+            id = CallRecordOps.get_id(appointment_id=appointment_id, idx=idx)
+            call_record = self.session.query(CallRecord).filter_by(id=id).first()
+            call_record.accept_timestamp=timestamp
+
+            self.session.commit()
+            current_app.logger.debug(f"updated call accept record")
+            return call_record.id
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update call accept record, error {str(e)}")
+        return None
+
+    def end(self, appointment_id, by_user, timestamp)->str:
+        current_app.logger.debug(f"end call, {appointment_id}, {by_user}, {timestamp}")
+        try:
+            records = self.session.query(CallRecord).filter_by(
+                appointment_id=appointment_id
+            ).order_by(CallRecord.idx).all()
+            if len(records) == 0:
+                raise Exception(f'Failed to record end call before start: {appointment_id}')
+
+            idx = len(records) - 1
+            id = CallRecordOps.get_id(appointment_id=appointment_id, idx=idx)
+            call_record = self.session.query(CallRecord).filter_by(id=id).first()
+            call_record.hang_up_by=by_user
+            call_record.end_timestamp=timestamp
+
+            self.session.commit()
+            current_app.logger.debug(f"updated call end record")
+            return call_record.id
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update call end record, error {str(e)}")
+        return None
+
+    def get_records(self, appointment_id)->list:
+        try:
+            records = self.session.query(CallRecord).filter_by(
+                appointment_id=appointment_id
+            ).order_by(CallRecord.idx).all()
+            current_app.logger.debug(f'len of all records {len(records)}')
+            return [record.to_dict() for record in records]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get records, error {str(e)}')
+            return []
+
 class Transfer(db.Model):
     __tablename__ = 'TRANSFER'
 

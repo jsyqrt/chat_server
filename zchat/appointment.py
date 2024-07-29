@@ -1,5 +1,6 @@
 import os
 import hashlib
+from pathlib import Path
 
 from flask import (
     Blueprint, request, jsonify, current_app, g, send_file
@@ -258,11 +259,11 @@ def get_deliver_videos():
         current_app.instance_path,
         current_app.config['LIVEKIT_RECORDS_PATH'],
         appid)
-    files = os.listdir(directory)
+    files = sorted(Path(directory).iterdir(), key=os.path.getmtime)
     result = []
     for file in files:
-        if file.endswith('.mp4'):
-            result.append(file)
+        if file.name.endswith('.mp4'):
+            result.append(file.name)
     return result
 
 @bp.route('/deliver_video', methods=['GET'])
