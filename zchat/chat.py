@@ -318,6 +318,7 @@ def init_app(app):
         calleeId = data["calleeId"]
         fromCaller = data["fromCaller"]
         appid = data.get('appid')
+        reason = data.get('reason')
 
         app.logger.debug(f"got leaveCall")
 
@@ -328,7 +329,7 @@ def init_app(app):
 
         if to_sid is not None:
             app.logger.debug(f"sending callLeaved to {to_sid}, fromCaller {fromCaller}, {callerId}, {calleeId}")
-            app.socketio.emit('callLeaved', {"callerId": callerId, "calleeId": calleeId}, to=to_sid)
+            app.socketio.emit('callLeaved', {"fromCaller": fromCaller, "appid":appid, "reason": reason, "callerId": callerId, "calleeId": calleeId}, to=to_sid)
         else:
             app.logger.debug(f"opposite is not online {to_sid}")
 
