@@ -92,7 +92,17 @@ def get_me():
     user_ops = UserOps(session=db.session)
     user = user_ops.get_one(id=current_user.get_id_int())
     if user is not None:
-        return user.to_dict()
+        user_info = user.to_dict()
+        if user.as_newbie:
+            newbie_ops = NewbieOps(session=db.session)
+            newbie = newbie_ops.get_one(user_id=user.id)
+            user_info.update(newbie.to_dict())
+        if user.as_expert:
+            expert_ops = ExpertOps(session=db.session)
+            expert = expert_ops.get_one(user_id=user.id)
+            user_info.update(expert.to_dict())
+        return user_info
+
     return {'error': 'Failed to get user info'}, 400
 
 @bp.route('/avatar', methods=['GET'])
