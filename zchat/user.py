@@ -334,6 +334,32 @@ def is_admin():
     current_app.logger.debug(f"is admin: {is_admin}")
     return {'is_admin': is_admin}
 
+@bp.route('/expert', methods=['GET'])
+@login_required
+def get_expert():
+    user_id = int(request.args.get('id'))
+
+    user_ops = UserOps(session=db.session)
+    expert_ops = ExpertOps(session=db.session)
+    app_ops = AppointmentOps(session=db.session)
+
+    user = user_ops.get_one(id=user_id)
+    if user is not None:
+        expert = expert_ops.get_one(user_id=user_id)
+        if expert is not None:
+            data = user.to_dict()
+            data.update(expert.to_dict())
+            comments = app_ops.get_comments_of(expert=user_id)
+
+            data['rating'] = 4.0 if len(comments) == 0 else sum([comment['rating'] for comment in comments]) / len(comments)
+            data['served'] = len(comments)
+            return data
+        else:
+            current_app.logger.warn(f"no expert for id: {user_id}")
+    else:
+        current_app.logger.warn(f"no user for id: {user_id}")
+    return {"error": f"Failed to Expert {user_id}" }, 400
+
 @bp.route('/marked_expert', methods=['GET'])
 @login_required
 def get_marked_experts():

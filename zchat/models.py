@@ -379,6 +379,7 @@ class ExpertOps:
 
     def get_one(self, user_id)->Expert:
         try:
+            # TODO use join to return more info(i.e. User, Comment info)
             expert = self.session.query(Expert).filter_by(user_id=user_id).first()
             return expert
         except Exception as e:
