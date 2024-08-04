@@ -210,7 +210,7 @@ def check_balances():
 def get_balance():
     user_id = current_user.get_id_int()
     balance_ops = BalanceOps(session=db.session)
-    return balance_ops.balance_of(user=user_id)
+    return balance_ops.balance_of(user_id=user_id)
 
 @bp.route('/withdraw', methods=['POST'])
 @login_required

@@ -861,8 +861,8 @@ class BalanceOps:
     def __init__(self, session):
         self.session = session
 
-    def balance_of(self, user)->dict:
-        balance = self.session.query(Balance).filter_by(user_id=user).first()
+    def balance_of(self, user_id)->dict:
+        balance = self.session.query(Balance).filter_by(user_id=user_id).first()
         if balance:
             return balance.to_dict()
         else:
