@@ -23,6 +23,9 @@ def create_indexes_to_meili(app):
 def add_expert_to_meili(app, expert):
     return app.meili_client.index('experts').add_documents([expert.to_dict()])
 
+def update_expert_to_meili(app, expert):
+    return app.meili_client.index('experts').update_documents([expert.to_dict()])
+
 def find_experts_from_meili_for(app, newbie):
     per_limit = 10
     result_ids = set()

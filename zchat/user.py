@@ -66,6 +66,7 @@ def gen_random():
                 profession=random_profession(),
                 business=random_business(),
                 price=random_price(),
+                services=random_services(),
             )
             if not succeed:
                 current_app.logger.warn(f"failed tp register as expert {id}")
@@ -254,6 +255,7 @@ def register_expert():
         profession = request.form['profession']
         business = request.form['business']
         price = request.form['price']
+        services = request.form['services']
         need_verify = request.form['need_verify']
         if need_verify:
             # TODO do email verification
@@ -268,10 +270,28 @@ def register_expert():
             profession=profession,
             business=business,
             price=float(price),
+            services=services,
         )
         if succeed:
             return { "error": "Register as expert Succeed!" }, 200
         return { "error": "Failed to register as expert!" }, 400
+    else:
+        return { "error": "Invalid Request Method!" }, 400
+
+@bp.route('/expert_services', methods=['POST'])
+@login_required
+def update_expert_services():
+    if request.method == 'POST':
+        services = request.form['services']
+
+        expert_ops = ExpertOps(session=db.session)
+        succeed = expert_ops.update_services(
+            user_id=current_user.get_id_int(),
+            services=services,
+        )
+        if succeed:
+            return { "error": "Update expert services Succeed!" }, 200
+        return { "error": "Failed to update expert services!" }, 400
     else:
         return { "error": "Invalid Request Method!" }, 400
 
