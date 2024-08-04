@@ -1,4 +1,5 @@
 import string
+import json
 import random
 import os
 
@@ -57,7 +58,7 @@ def random_email(name, company):
         'org',
         'cn',
     ]
-    return f'{name}@{company}.{random.choices(values)[0]}'
+    return f'{name}@{company[:4]}.{random.choices(values)[0]}'
 
 def random_company():
     values = [
@@ -161,3 +162,16 @@ def random_price():
 
 def random_jd():
     return ' '.join([random_name() for i in range(30)])
+
+def random_services():
+    values = [
+        "模拟面试",
+        "职业规划建议",
+        "教你摸鱼",
+        "聊聊薪酬体系",
+        "聊聊晋升的事",
+        "行业趋势讨论",
+        "八卦一下",
+    ]
+
+    return json.dumps(random.sample(values, 4), ensure_ascii=False)

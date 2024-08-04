@@ -7,7 +7,7 @@ from flask import current_app, url_for
 
 from zchat.db import db
 from zchat.rand import *
-from zchat.meili import add_expert_to_meili
+from zchat.meili import add_expert_to_meili, update_expert_to_meili
 
 PLATFORM_DISCOUNT = 0.8
 SYSTEM_ACCOUNT = 0
@@ -302,6 +302,8 @@ class Expert(db.Model):
     business = db.Column(db.String, nullable=False, default='')
     price = db.Column(db.REAL, nullable=False, default=500.0)
 
+    services = db.Column(db.String, nullable=False, default='["模拟面试", "职业规划建议"]')
+
     __table_args__ = (
         db.Index('index_EXPERT_email', 'email', unique=False),
         db.Index('index_EXPERT_email_verified', 'email_verified', unique=False),
@@ -325,13 +327,15 @@ class Expert(db.Model):
             'profession': self.profession,
             'business': self.business,
             'price': self.price,
+
+            'services': self.services,
         }
 
 class ExpertOps:
     def __init__(self, session):
         self.session = session
 
-    def register_or_update(self, user_id, email, company, title, profession, business, price)->bool:
+    def register_or_update(self, user_id, email, company, title, profession, business, price, services)->bool:
         current_app.logger.debug(f"register expert, {user_id}")
         try:
             user = self.session.query(User).filter_by(id=user_id).first()
@@ -349,10 +353,12 @@ class ExpertOps:
                 expert.profession = profession
                 expert.business = business
                 expert.price = price
+                if services:
+                    expert.services = services
 
                 self.session.commit()
                 current_app.logger.debug(f"updated expert {user_id}")
-                add_to_meili = add_expert_to_meili(current_app, expert)
+                add_to_meili = update_expert_to_meili(current_app, expert)
                 current_app.logger.debug(f"add expert to meili result {add_to_meili}")
                 return True
             else:
@@ -366,6 +372,10 @@ class ExpertOps:
                     business=business,
                     price=price,
                 )
+
+                if services:
+                    expert.services = services
+
                 self.session.add(expert)
                 self.session.commit()
                 current_app.logger.debug(f"added expert, user_id: {user_id}")
@@ -377,8 +387,35 @@ class ExpertOps:
             current_app.logger.debug(f"failed to add or update expert {user_id}, error {str(e)}")
         return False
 
+    def update_services(self, user_id, services)->bool:
+        current_app.logger.debug(f"update expert services, {user_id}")
+        try:
+            user = self.session.query(User).filter_by(id=user_id).first()
+            if user:
+                user.as_expert = 1
+            else:
+                raise Exception(f'user does not exist, id: {user_id}')
+
+            expert = self.session.query(Expert).filter_by(user_id=user_id).first()
+            if expert:
+                expert.services = services
+
+                self.session.commit()
+                current_app.logger.debug(f"updated expert {user_id}")
+                add_to_meili = update_expert_to_meili(current_app, expert)
+                current_app.logger.debug(f"add expert to meili result {add_to_meili}")
+                return True
+            else:
+                current_app.logger.warn(f"expert does not exist, user_id: {user_id}")
+                return False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f"failed to update expert {user_id}, error {str(e)}")
+        return False
+
     def get_one(self, user_id)->Expert:
         try:
+            # TODO use join to return more info(i.e. User, Comment info)
             expert = self.session.query(Expert).filter_by(user_id=user_id).first()
             return expert
         except Exception as e:

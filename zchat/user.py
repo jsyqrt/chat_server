@@ -66,6 +66,7 @@ def gen_random():
                 profession=random_profession(),
                 business=random_business(),
                 price=random_price(),
+                services=random_services(),
             )
             if not succeed:
                 current_app.logger.warn(f"failed tp register as expert {id}")
@@ -254,6 +255,7 @@ def register_expert():
         profession = request.form['profession']
         business = request.form['business']
         price = request.form['price']
+        services = request.form['services']
         need_verify = request.form['need_verify']
         if need_verify:
             # TODO do email verification
@@ -268,10 +270,28 @@ def register_expert():
             profession=profession,
             business=business,
             price=float(price),
+            services=services,
         )
         if succeed:
             return { "error": "Register as expert Succeed!" }, 200
         return { "error": "Failed to register as expert!" }, 400
+    else:
+        return { "error": "Invalid Request Method!" }, 400
+
+@bp.route('/expert_services', methods=['POST'])
+@login_required
+def update_expert_services():
+    if request.method == 'POST':
+        services = request.form['services']
+
+        expert_ops = ExpertOps(session=db.session)
+        succeed = expert_ops.update_services(
+            user_id=current_user.get_id_int(),
+            services=services,
+        )
+        if succeed:
+            return { "error": "Update expert services Succeed!" }, 200
+        return { "error": "Failed to update expert services!" }, 400
     else:
         return { "error": "Invalid Request Method!" }, 400
 
@@ -333,6 +353,32 @@ def is_admin():
     is_admin = admin_user_ops.is_admin(user_id=user_id)
     current_app.logger.debug(f"is admin: {is_admin}")
     return {'is_admin': is_admin}
+
+@bp.route('/expert', methods=['GET'])
+@login_required
+def get_expert():
+    user_id = int(request.args.get('id'))
+
+    user_ops = UserOps(session=db.session)
+    expert_ops = ExpertOps(session=db.session)
+    app_ops = AppointmentOps(session=db.session)
+
+    user = user_ops.get_one(id=user_id)
+    if user is not None:
+        expert = expert_ops.get_one(user_id=user_id)
+        if expert is not None:
+            data = user.to_dict()
+            data.update(expert.to_dict())
+            comments = app_ops.get_comments_of(expert=user_id)
+
+            data['rating'] = 4.0 if len(comments) == 0 else sum([comment['rating'] for comment in comments]) / len(comments)
+            data['served'] = len(comments)
+            return data
+        else:
+            current_app.logger.warn(f"no expert for id: {user_id}")
+    else:
+        current_app.logger.warn(f"no user for id: {user_id}")
+    return {"error": f"Failed to Expert {user_id}" }, 400
 
 @bp.route('/marked_expert', methods=['GET'])
 @login_required
