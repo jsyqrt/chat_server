@@ -29,7 +29,7 @@ nohup flask --app zchat run --debug -h 0.0.0.0 >> $LOG_DIR/flask.log 2>&1 &
 echo "flask started"
 
 cd $SCRIPT_DIR/vectordb
-nohup ./meilisearch --db-path $INSTANCE_DIR/meilidata.ms --master-key="aSampleMasterKey" --no-analytics >> $LOG_DIR/meili.log 2>&1 &
+nohup ./meilisearch --http-addr 0.0.0.0:7700 --db-path $INSTANCE_DIR/meilidata.ms --master-key="aSampleMasterKey" --no-analytics >> $LOG_DIR/meili.log 2>&1 &
 echo "meili started"
 
 cd $INSTANCE_DIR
