@@ -273,7 +273,7 @@ class AdminUserOps:
     def is_admin(self, user_id)->bool:
         try:
             user = self.session.query(AdminUser).filter_by(user_id=user_id).first()
-            return True
+            return user is not None
         except Exception as e:
             current_app.logger.debug(f'failed to get admin, error {str(e)}')
             return False

@@ -12,6 +12,7 @@ from zchat.models import *
 from zchat.auth import login_required, current_user, admin_required
 from zchat.rand import *
 from zchat.meili import find_experts_from_meili_for
+from zchat.websocket import user_is_online
 
 bp = Blueprint('user', __name__, url_prefix='/user')
 
@@ -354,6 +355,13 @@ def is_admin():
     current_app.logger.debug(f"is admin: {is_admin}")
     return {'is_admin': is_admin}
 
+@bp.route('/is_online', methods=['GET'])
+@login_required
+def is_online():
+    user_id = int(request.args.get('id'))
+    is_online = user_is_online(app=current_app, user_id=user_id)
+    return {'is_online': is_online, "user_id": user_id }
+
 @bp.route('/expert', methods=['GET'])
 @login_required
 def get_expert():
@@ -373,6 +381,7 @@ def get_expert():
 
             data['rating'] = 4.0 if len(comments) == 0 else sum([comment['rating'] for comment in comments]) / len(comments)
             data['served'] = len(comments)
+            data['is_online'] = user_is_online(app=current_app, user_id=user_id)
             return data
         else:
             current_app.logger.warn(f"no expert for id: {user_id}")
@@ -394,10 +403,10 @@ def get_marked_experts():
     )
 
     result = []
-    for id in expert_ids:
-        user = user_ops.get_one(id=id)
+    for expert_id in expert_ids:
+        user = user_ops.get_one(id=expert_id)
         if user is not None:
-            expert = expert_ops.get_one(user_id=id)
+            expert = expert_ops.get_one(user_id=expert_id)
             if expert is not None:
                 data = user.to_dict()
                 data.update(expert.to_dict())
@@ -405,6 +414,7 @@ def get_marked_experts():
                 # TODO add those
                 data['rating'] = 4.5
                 data['served'] = 28
+                data['is_online'] = user_is_online(app=current_app, user_id=expert_id)
                 result.append(data)
             else:
                 current_app.logger.warn(f"no expert for id: {id}")
@@ -432,6 +442,7 @@ def get_my_experts():
             # TODO add those
             expert['rating'] = 4.5
             expert['served'] = 28
+            expert['is_online'] = user_is_online(app=current_app, user_id=user_id)
         else:
             current_app.logger.warn(f"no user for id: {user_id}, but it's an expert")
             continue
@@ -452,6 +463,7 @@ def get_all_experts():
             # TODO add those
             expert['rating'] = 4.5
             expert['served'] = 28
+            expert['is_online'] = user_is_online(app=current_app, user_id=user_id)
         else:
             current_app.logger.warn(f"no user for id: {user_id}, but it's an expert")
             continue
