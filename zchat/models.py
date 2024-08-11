@@ -1651,6 +1651,38 @@ class AppointmentOps:
             current_app.logger.debug(f'len of all comments {len(results)}')
             return [{
                 'newbie': result.newbie,
+                'expert': expert,
+                'id': result.id,
+                'rating': result.commentRating,
+                'content': result.commentContent,
+                'timestamp': result.commentTimestamp,
+            } for result in results]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get comments, error {str(e)}')
+            return []
+
+    def get_comments_for_community(self, offset=0, limit=10)->list:
+        try:
+            results = self.session.query(
+                Appointment.newbie,
+                Appointment.expert,
+                Appointment.id,
+                Appointment.commentRating,
+                Appointment.commentContent,
+                Appointment.commentTimestamp
+            ).filter(
+                Appointment.stage==AppointmentStage.Finished.value,
+            ).order_by(
+                db.desc(Appointment.commentTimestamp)
+            ).offset(
+                offset=offset
+            ).limit(
+                limit=limit
+            ).all()
+            current_app.logger.debug(f'len of all comments {len(results)}')
+            return [{
+                'newbie': result.newbie,
+                'expert': result.expert,
                 'id': result.id,
                 'rating': result.commentRating,
                 'content': result.commentContent,

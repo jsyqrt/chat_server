@@ -16,7 +16,7 @@ from zchat.rand import *
 bp = Blueprint('appointment', __name__, url_prefix='/appointment')
 
 def appointment_change_event_notify(app, appointment_dict, other_id):
-    sid = app.user_to_session.get(other_id, None)
+    sid = app.get_user_session(other_id)
     if sid:
         app.logger.debug(f"sending appointment_update {appointment_dict} to {sid}")
         app.socketio.emit('appointment_update', appointment_dict, to=sid)
@@ -290,8 +290,18 @@ def get_waiting_finish():
 @bp.route('/comments_of', methods=['GET'])
 @login_required
 def get_comments_of():
-    expert = request.args.get('expert')
+    expert = int(request.args.get('expert'))
 
     app_ops = AppointmentOps(session=db.session)
     comments = app_ops.get_comments_of(expert=expert)
+    return comments
+
+@bp.route('/comments_for_community', methods=['GET'])
+@login_required
+def get_comments_for_community():
+    offset = request.args.get('offset', 0)
+    limit = request.args.get('limit', 10)
+
+    app_ops = AppointmentOps(session=db.session)
+    comments = app_ops.get_comments_for_community(offset=offset, limit=limit)
     return comments

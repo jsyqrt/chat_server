@@ -2,12 +2,14 @@ import time
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
 
+import jwt
 from flask import render_template, request, current_app, Blueprint
 from livekit import api as livekit_api
 
 from zchat.auth import login_required, current_user
 from zchat.db import db
 from zchat.models import *
+from zchat.websocket import socketio
 
 bp = Blueprint('chat', __name__, url_prefix='/chat')
 executor = ThreadPoolExecutor()
@@ -184,164 +186,178 @@ def getToken():
         ))
     return token.to_jwt()
 
-def init_app(app):
-    app.unsent_msgs = app.multi_processing_manager.dict()
+def get_user_id_from_jwt(app, token):
+    return jwt.decode(token, app.config["JWT_SECRET_KEY"], algorithms="HS256")['user_id']
 
-    @app.socketio.on('connect')
-    @login_required
-    def handle_connect():
-        # Save session id
-        uid = current_user.get_id_int()
-        sid = request.sid
-        app.user_to_session[uid] = sid
+@socketio.on('connect')
+def handle_connect():
+    uid = get_user_id_from_jwt(current_app, request.headers["token"])
+    sid = request.sid
+    current_app.add_user_session(uid, sid)
 
-        # Notify user there are n msgs to receive
-        msgs = app.unsent_msgs.get(uid, [])
-        app.socketio.emit('notice', {'type': 'msg_to_get', 'count': len(msgs)}, to=sid)
+    current_app.logger.debug(f'{request.headers["token"]}')
+    current_app.logger.debug(f'{request.sid}')
+    current_app.logger.debug(f'Client connected')
 
-        app.logger.debug(f'Client connected {uid}, {sid}')
+@socketio.on('disconnect')
+def handle_disconnect():
+    current_app.logger.debug(f'Client disconnected')
+    current_app.logger.debug(f'{request.headers["token"]}')
 
-    @app.socketio.on('disconnect')
-    @login_required
-    def handle_disconnect():
-        # Remove session id from session map
-        uid = current_user.get_id_int()
-        app.user_to_session.pop(uid)
+    uid = get_user_id_from_jwt(current_app, request.headers["token"])
+    sid = request.sid
+    current_app.remove_user_session(uid)
 
-        app.logger.debug(f'Client disconnected {uid}, {request.sid}')
+@socketio.on('login')
+def handle_login(msg):
+    current_app.logger.debug(f'hello login')
 
-    @app.socketio.on('send_message')
-    @login_required
-    def handle_send_message(data):
-        sid = request.sid
-        data_json = data
-        app.logger.debug(f'Received JSON data: {data_json}')
+    # Save session id
+    uid = get_user_id_from_jwt(current_app, msg['token'])
+    sid = request.sid
+    current_app.add_user_session(uid, sid)
 
-        from_id = current_user.get_id_int()
-        to_id = data_json.get('receiver', 0)
-        msg = data_json.get('msg', 'None')
-        msg_type = data_json.get('msg_type', 0)
+    # Notify user there are n msgs to receive
+    msgs = current_app.unsent_msgs.get(uid, [])
+    socketio.emit('notice', {'type': 'msg_to_get', 'count': len(msgs)}, to=sid)
 
-        # TODO what if from_id == to_id?
+    current_app.logger.debug(f'Client connected {uid}, {sid}')
 
-        # Send msg to dest
-        msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'msg_type': msg_type, 'timestamp': time.time()}
+@socketio.on('logout')
+def handle_logout(msg):
+    # Remove session id from session map
+    uid = get_user_id_from_jwt(current_app, msg['token'])
+    current_app.remove_user_session(uid)
 
-        chatmsg_ops = ChatMsgOps(session=db.session)
-        chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=time.time())
+    current_app.logger.debug(f'Client disconnected {uid}, {request.sid}')
 
-        to_sid = app.user_to_session.get(to_id, None)
-        if to_sid is not None:
-            # If the user is online
-            app.logger.debug(f'user is online: {to_id}')
+@socketio.on('send_message')
+def handle_send_message(data):
+    sid = request.sid
+    data_json = data
+    current_app.logger.debug(f'Received JSON data: {data_json}')
 
-            app.socketio.emit('msg', msg_dict, to=to_sid)
-        else:
-            # Save to a map, waiting the user online again
-            # TODO change the map to a db table, in case server is down
-            app.logger.debug(f'user is offline: {to_id}')
+    from_id  = get_user_id_from_jwt(current_app, data_json['token'])
+    to_id = data_json.get('receiver', 0)
+    msg = data_json.get('msg', 'None')
+    msg_type = data_json.get('msg_type', 0)
 
-            msgs = app.unsent_msgs.get(to_id, [])
-            msgs.append(msg_dict)
+    # TODO what if from_id == to_id?
 
-            app.unsent_msgs[to_id] = msgs
+    # Send msg to dest
+    msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'msg_type': msg_type, 'timestamp': time.time()}
 
-    @app.socketio.on('get_messages')
-    @login_required
-    def handle_all_messages(data):
-        app.logger.debug(f'get_messages: {data}')
-        sid = request.sid
-        data_json = data
-        app.logger.debug(f'Received JSON data: {data_json}')
+    chatmsg_ops = ChatMsgOps(session=db.session)
+    chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=time.time())
 
-        p1_id = data_json.get('p1', 0)
-        p2_id = data_json.get('p2', 0)
-        before_timestamp = data_json.get('before_timestamp', time.time())
-        latest_n = data_json.get('latest_n', 100)
+    to_sid = current_app.get_user_session(to_id)
+    if to_sid is not None:
+        # If the user is online
+        current_app.logger.debug(f'user is online: {to_id}')
 
-        chatmsg_ops = ChatMsgOps(session=db.session)
-        msgs = chatmsg_ops.get_msgs(p1=p1_id, p2=p2_id, before_timestamp=before_timestamp, latest_n=latest_n)
+        socketio.emit('msg', msg_dict, to=to_sid)
+    else:
+        # Save to a map, waiting the user online again
+        # TODO change the map to a db table, in case server is down
+        current_app.logger.debug(f'user is offline: {to_id}')
 
-        for msg in msgs:
-            app.socketio.emit('msg_response', msg, to=sid)
+        msgs = current_app.unsent_msgs.get(to_id, [])
+        msgs.append(msg_dict)
 
-    @app.socketio.on('makeCall')
-    @login_required
-    def makeCall(data):
-        callerId = data.get('callerId')
-        calleeId = data.get('calleeId')
-        isVideo = data.get('isVideo')
-        sdpOffer = data.get('sdpOffer')
-        appid = data.get('appid')
+        current_app.unsent_msgs[to_id] = msgs
 
-        app.logger.debug(f"got makeCall from {callerId} to {calleeId}")
+@socketio.on('get_messages')
+def handle_all_messages(data):
+    current_app.logger.debug(f'get_messages: {data}')
+    sid = request.sid
+    data_json = data
+    current_app.logger.debug(f'Received JSON data: {data_json}')
 
-        call_record_ops = CallRecordOps(session=db.session)
-        call_record_id = call_record_ops.start(
-            appointment_id=appid,
-            type=1 if isVideo else 0,
-            caller=callerId,
-            callee=calleeId,
-            timestamp=time.time(),
-        )
+    p1_id = data_json.get('p1', 0)
+    p2_id = data_json.get('p2', 0)
+    before_timestamp = data_json.get('before_timestamp', time.time())
+    latest_n = data_json.get('latest_n', 100)
 
-        app.logger.debug(f"call_record_id is {call_record_id}")
+    chatmsg_ops = ChatMsgOps(session=db.session)
+    msgs = chatmsg_ops.get_msgs(p1=p1_id, p2=p2_id, before_timestamp=before_timestamp, latest_n=latest_n)
 
-        from_sid = app.user_to_session.get(callerId, None)
-        to_sid = app.user_to_session.get(calleeId, None)
-        if to_sid is not None:
-            app.socketio.emit('newCall', {"isVideo": isVideo, "callerId": callerId, "sdpOffer": sdpOffer, "calleeId": calleeId, "appid": appid}, to=to_sid)
-            app.logger.debug(f"sending {sdpOffer} to {calleeId}")
-        else:
-            app.socketio.emit('callLeaved', {'calleeOnline': False, "callerId": callerId, "calleeId": calleeId}, to=from_sid)
-            app.logger.debug(f"callee is not online {calleeId}")
+    for msg in msgs:
+        socketio.emit('msg_response', msg, to=sid)
 
-    @app.socketio.on('acceptCall')
-    @login_required
-    def acceptCall(data):
-        calleeId = data.get('calleeId')
-        appid = data.get('appid')
+@socketio.on('makeCall')
+def makeCall(data):
+    callerId = data.get('callerId')
+    calleeId = data.get('calleeId')
+    isVideo = data.get('isVideo')
+    sdpOffer = data.get('sdpOffer')
+    appid = data.get('appid')
 
-        app.logger.debug(f"got acceptCall from {calleeId}")
+    current_app.logger.debug(f"got makeCall from {callerId} to {calleeId}")
 
-        call_record_ops = CallRecordOps(session=db.session)
-        call_record_id = call_record_ops.accept(
-            appointment_id=appid,
-            timestamp=time.time(),
-        )
-        app.logger.debug(f"call_record_id is {call_record_id}")
+    call_record_ops = CallRecordOps(session=db.session)
+    call_record_id = call_record_ops.start(
+        appointment_id=appid,
+        type=1 if isVideo else 0,
+        caller=callerId,
+        callee=calleeId,
+        timestamp=time.time(),
+    )
 
-    @app.socketio.on('leaveCall')
-    @login_required
-    def leaveCall(data):
-        callerId = data.get('callerId')
-        calleeId = data["calleeId"]
-        fromCaller = data["fromCaller"]
-        appid = data.get('appid')
-        reason = data.get('reason')
+    current_app.logger.debug(f"call_record_id is {call_record_id}")
 
-        app.logger.debug(f"got leaveCall")
+    from_sid = current_app.get_user_session(callerId)
+    to_sid = current_app.get_user_session(calleeId)
+    if to_sid is not None:
+        socketio.emit('newCall', {"isVideo": isVideo, "callerId": callerId, "sdpOffer": sdpOffer, "calleeId": calleeId, "appid": appid}, to=to_sid)
+        current_app.logger.debug(f"sending {sdpOffer} to {calleeId}")
+    else:
+        socketio.emit('callLeaved', {'calleeOnline': False, "callerId": callerId, "calleeId": calleeId}, to=from_sid)
+        current_app.logger.debug(f"callee is not online {calleeId}")
 
-        if fromCaller:
-            to_sid = app.user_to_session.get(calleeId, None)
-        else:
-            to_sid = app.user_to_session.get(callerId, None)
+@socketio.on('acceptCall')
+def acceptCall(data):
+    calleeId = data.get('calleeId')
+    appid = data.get('appid')
 
-        if to_sid is not None:
-            app.logger.debug(f"sending callLeaved to {to_sid}, fromCaller {fromCaller}, {callerId}, {calleeId}")
-            app.socketio.emit('callLeaved', {"fromCaller": fromCaller, "appid":appid, "reason": reason, "callerId": callerId, "calleeId": calleeId}, to=to_sid)
-        else:
-            app.logger.debug(f"opposite is not online {to_sid}")
+    current_app.logger.debug(f"got acceptCall from {calleeId}")
 
-        call_record_ops = CallRecordOps(session=db.session)
-        call_record_id = call_record_ops.end(
-            appointment_id=appid,
-            by_user=callerId if fromCaller else calleeId,
-            timestamp=time.time(),
-        )
-        app.logger.debug(f"call_record_id is {call_record_id}")
+    call_record_ops = CallRecordOps(session=db.session)
+    call_record_id = call_record_ops.accept(
+        appointment_id=appid,
+        timestamp=time.time(),
+    )
+    current_app.logger.debug(f"call_record_id is {call_record_id}")
 
-        try:
-            stop_livekit_egress_room(app=app, room_name=appid)
-        except Exception as e:
-            app.logger.error(f"failed to stop livekit egress room {appid}, error {e}")
+@socketio.on('leaveCall')
+def leaveCall(data):
+    callerId = data.get('callerId')
+    calleeId = data["calleeId"]
+    fromCaller = data["fromCaller"]
+    appid = data.get('appid')
+    reason = data.get('reason')
+
+    current_app.logger.debug(f"got leaveCall")
+
+    if fromCaller:
+        to_sid = current_app.get_user_session(calleeId)
+    else:
+        to_sid = current_app.get_user_session(callerId)
+
+    if to_sid is not None:
+        current_app.logger.debug(f"sending callLeaved to {to_sid}, fromCaller {fromCaller}, {callerId}, {calleeId}")
+        socketio.emit('callLeaved', {"fromCaller": fromCaller, "appid":appid, "reason": reason, "callerId": callerId, "calleeId": calleeId}, to=to_sid)
+    else:
+        current_app.logger.debug(f"opposite is not online {to_sid}")
+
+    call_record_ops = CallRecordOps(session=db.session)
+    call_record_id = call_record_ops.end(
+        appointment_id=appid,
+        by_user=callerId if fromCaller else calleeId,
+        timestamp=time.time(),
+    )
+    current_app.logger.debug(f"call_record_id is {call_record_id}")
+
+    try:
+        stop_livekit_egress_room(app=current_app, room_name=appid)
+    except Exception as e:
+        current_app.logger.error(f"failed to stop livekit egress room {appid}, error {e}")

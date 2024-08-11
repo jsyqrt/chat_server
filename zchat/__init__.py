@@ -7,6 +7,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev', # TODO override this with thevalue in config.py
+        JWT_SECRET_KEY='dev', # TODO override this with thevalue in config.py
         SQLALCHEMY_DATABASE_URI="sqlite:///" + os.path.join(app.instance_path, 'zchat.sqlite'),
         MEILISEARCH_HOST="http://localhost:7700",
         MEILISEARCH_KEY="aSampleMasterKey",
@@ -50,7 +51,6 @@ def create_app(test_config=None):
     app.register_blueprint(user.bp)
 
     from . import chat
-    chat.init_app(app)
     app.register_blueprint(chat.bp)
 
     from . import appointment
