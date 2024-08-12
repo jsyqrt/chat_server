@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -x
 
 kill -9 $(ps aux|grep flask|awk '{print $2 }')
 pkill meilisearch

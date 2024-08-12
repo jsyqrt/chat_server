@@ -4,6 +4,7 @@ import string
 import time
 from collections import OrderedDict
 
+import jwt
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for, current_app, jsonify
 )
@@ -73,6 +74,12 @@ class LGUser(UserMixin):
         self.user = user
 
     @property
+    def is_active(self):
+        if self.user is None:
+            return False
+        return True
+
+    @property
     def is_authenticated(self):
         if self.user is None:
             return False
@@ -116,11 +123,14 @@ def login():
 
     u = user_ops.get_one(id=user_id)
     user = LGUser(u)
-    login_user(user)
+    succeed = login_user(user)
+    current_app.logger.debug(f'log in succeed, {user.get_id_int()}, {succeed}')
 
+    token = jwt.encode({'user_id': user_id}, current_app.config['JWT_SECRET_KEY'])
     return jsonify(
         {
             "error": "login succeed",
+            "jwt": token,
             "user_id": user_id
         }
     )
@@ -147,7 +157,18 @@ def admin_required(func):
 @login_required
 def logout():
     user_id = current_user.get_id_int()
-    logout_user()
+    current_app.logger.debug(f'loging out user id, {user_id}')
+    try:
+        sid = app.get_user_session(user_id)
+        if sid:
+            app.socketio.disconnect(sid)
+
+        logout_user()
+        current_app.remove_user_session(user_id)
+
+    except Exception as e:
+        pass
+
     return jsonify(
         {
             "error": "logout succeed",
