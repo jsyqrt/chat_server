@@ -18,6 +18,15 @@ def create_indexes_to_meili(app):
     if not exists:
         create_expert_result = app.meili_client.create_index('experts', {'primaryKey': 'user_id'})
         app.logger.debug(f"create_indexes_to_meili, create_expert_result: {create_expert_result}")
+
+    exists = False
+    for index in indexes['results']:
+        if index.uid == 'newbies':
+            exists = True
+    if not exists:
+        create_newbie_result = app.meili_client.create_index('newbies', {'primaryKey': 'user_id'})
+        app.logger.debug(f"create_indexes_to_meili, create_newbie_result: {create_newbie_result}")
+
     return
 
 def add_expert_to_meili(app, expert):
@@ -25,6 +34,12 @@ def add_expert_to_meili(app, expert):
 
 def update_expert_to_meili(app, expert):
     return app.meili_client.index('experts').update_documents([expert.to_dict()])
+
+def add_newbie_to_meili(app, newbie):
+    return app.meili_client.index('newbies').add_documents([newbie.to_dict()])
+
+def update_newbie_to_meili(app, newbie):
+    return app.meili_client.index('newbies').update_documents([newbie.to_dict()])
 
 def find_experts_from_meili_for(app, newbie):
     per_limit = 10
@@ -49,6 +64,35 @@ def find_experts_from_meili_for(app, newbie):
     for hits in [company_hits, title_hits, profession_hits, business_hits]:
         for hit in hits['hits']:
             if hit['user_id'] in result_ids or hit['user_id'] == newbie.user_id:
+                continue
+            result_ids.add(hit['user_id'])
+            result.append(hit)
+
+    return list(result)
+
+def find_newbies_from_meili_for(app, expert):
+    per_limit = 10
+    result_ids = set()
+    result = []
+    company_hits = app.meili_client.index('newbies').search(f'{expert.company}', {
+        'limit': per_limit
+    })
+
+    title_hits = app.meili_client.index('newbies').search(f'{expert.title}', {
+        'limit': per_limit
+    })
+
+    profession_hits = app.meili_client.index('newbies').search(f'{expert.profession}', {
+        'limit': per_limit
+    })
+
+    business_hits = app.meili_client.index('newbies').search(f'{expert.business}', {
+        'limit': per_limit
+    })
+
+    for hits in [company_hits, title_hits, profession_hits, business_hits]:
+        for hit in hits['hits']:
+            if hit['user_id'] in result_ids or hit['user_id'] == expert.user_id:
                 continue
             result_ids.add(hit['user_id'])
             result.append(hit)

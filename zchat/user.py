@@ -11,7 +11,7 @@ from zchat.db import db
 from zchat.models import *
 from zchat.auth import login_required, current_user, admin_required
 from zchat.rand import *
-from zchat.meili import find_experts_from_meili_for
+from zchat.meili import find_experts_from_meili_for, find_newbies_from_meili_for
 from zchat.websocket import user_is_online
 
 bp = Blueprint('user', __name__, url_prefix='/user')
@@ -282,6 +282,7 @@ def register_expert():
 @bp.route('/expert_services', methods=['POST'])
 @login_required
 def update_expert_services():
+    current_app.logger.debug(f"update_expert_services")
     if request.method == 'POST':
         services = request.form['services']
 
@@ -362,6 +363,29 @@ def is_online():
     is_online = user_is_online(app=current_app, user_id=user_id)
     return {'is_online': is_online, "user_id": user_id }
 
+@bp.route('/newbie', methods=['GET'])
+@login_required
+def get_newbie():
+    user_id = int(request.args.get('id'))
+
+    user_ops = UserOps(session=db.session)
+    newbie_ops = NewbieOps(session=db.session)
+
+    user = user_ops.get_one(id=user_id)
+    if user is not None:
+        newbie = newbie_ops.get_one(user_id=user_id)
+        if newbie is not None:
+            data = user.to_dict()
+            data.update(newbie.to_dict())
+
+            data['is_online'] = user_is_online(app=current_app, user_id=user_id)
+            return data
+        else:
+            current_app.logger.warn(f"no newbie for id: {user_id}")
+    else:
+        current_app.logger.warn(f"no user for id: {user_id}")
+    return {"error": f"Failed to Get Newbie {user_id}" }, 400
+
 @bp.route('/expert', methods=['GET'])
 @login_required
 def get_expert():
@@ -387,7 +411,7 @@ def get_expert():
             current_app.logger.warn(f"no expert for id: {user_id}")
     else:
         current_app.logger.warn(f"no user for id: {user_id}")
-    return {"error": f"Failed to Expert {user_id}" }, 400
+    return {"error": f"Failed to Get Expert {user_id}" }, 400
 
 @bp.route('/marked_expert', methods=['GET'])
 @login_required
@@ -421,6 +445,29 @@ def get_marked_experts():
         else:
             current_app.logger.warn(f"no user for id: {id}, but it's an expert")
     return result
+
+@bp.route('/my_newbies', methods=['GET'])
+@login_required
+def get_my_newbies():
+    user_ops = UserOps(session=db.session)
+    expert_ops = ExpertOps(session=db.session)
+
+    expert = expert_ops.get_one(user_id=current_user.get_id_int())
+    if expert is None:
+        return []
+
+    newbies = find_newbies_from_meili_for(current_app, expert=expert)
+    for newbie in newbies:
+        user_id = newbie.get('user_id', 0)
+        user = user_ops.get_one(id=user_id)
+        if user is not None:
+            newbie.update(user.to_dict())
+
+            newbie['is_online'] = user_is_online(app=current_app, user_id=user_id)
+        else:
+            current_app.logger.warn(f"no user for id: {user_id}, but it's an newbie")
+            continue
+    return newbies
 
 @bp.route('/my_experts', methods=['GET'])
 @login_required
