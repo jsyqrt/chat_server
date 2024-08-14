@@ -69,3 +69,32 @@ def find_experts_from_meili_for(app, newbie):
             result.append(hit)
 
     return list(result)
+
+def find_newbies_from_meili_for(app, expert):
+    per_limit = 10
+    result_ids = set()
+    result = []
+    company_hits = app.meili_client.index('newbies').search(f'{expert.company}', {
+        'limit': per_limit
+    })
+
+    title_hits = app.meili_client.index('newbies').search(f'{expert.title}', {
+        'limit': per_limit
+    })
+
+    profession_hits = app.meili_client.index('newbies').search(f'{expert.profession}', {
+        'limit': per_limit
+    })
+
+    business_hits = app.meili_client.index('newbies').search(f'{expert.business}', {
+        'limit': per_limit
+    })
+
+    for hits in [company_hits, title_hits, profession_hits, business_hits]:
+        for hit in hits['hits']:
+            if hit['user_id'] in result_ids or hit['user_id'] == expert.user_id:
+                continue
+            result_ids.add(hit['user_id'])
+            result.append(hit)
+
+    return list(result)
