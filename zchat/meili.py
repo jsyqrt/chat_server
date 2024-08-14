@@ -18,6 +18,15 @@ def create_indexes_to_meili(app):
     if not exists:
         create_expert_result = app.meili_client.create_index('experts', {'primaryKey': 'user_id'})
         app.logger.debug(f"create_indexes_to_meili, create_expert_result: {create_expert_result}")
+
+    exists = False
+    for index in indexes['results']:
+        if index.uid == 'newbies':
+            exists = True
+    if not exists:
+        create_newbie_result = app.meili_client.create_index('newbies', {'primaryKey': 'user_id'})
+        app.logger.debug(f"create_indexes_to_meili, create_newbie_result: {create_newbie_result}")
+
     return
 
 def add_expert_to_meili(app, expert):
@@ -25,6 +34,12 @@ def add_expert_to_meili(app, expert):
 
 def update_expert_to_meili(app, expert):
     return app.meili_client.index('experts').update_documents([expert.to_dict()])
+
+def add_newbie_to_meili(app, newbie):
+    return app.meili_client.index('newbies').add_documents([newbie.to_dict()])
+
+def update_newbie_to_meili(app, newbie):
+    return app.meili_client.index('newbies').update_documents([newbie.to_dict()])
 
 def find_experts_from_meili_for(app, newbie):
     per_limit = 10

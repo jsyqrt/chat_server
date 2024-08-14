@@ -282,6 +282,7 @@ def register_expert():
 @bp.route('/expert_services', methods=['POST'])
 @login_required
 def update_expert_services():
+    current_app.logger.debug(f"update_expert_services")
     if request.method == 'POST':
         services = request.form['services']
 
@@ -362,6 +363,29 @@ def is_online():
     is_online = user_is_online(app=current_app, user_id=user_id)
     return {'is_online': is_online, "user_id": user_id }
 
+@bp.route('/newbie', methods=['GET'])
+@login_required
+def get_newbie():
+    user_id = int(request.args.get('id'))
+
+    user_ops = UserOps(session=db.session)
+    newbie_ops = NewbieOps(session=db.session)
+
+    user = user_ops.get_one(id=user_id)
+    if user is not None:
+        newbie = newbie_ops.get_one(user_id=user_id)
+        if newbie is not None:
+            data = user.to_dict()
+            data.update(newbie.to_dict())
+
+            data['is_online'] = user_is_online(app=current_app, user_id=user_id)
+            return data
+        else:
+            current_app.logger.warn(f"no newbie for id: {user_id}")
+    else:
+        current_app.logger.warn(f"no user for id: {user_id}")
+    return {"error": f"Failed to Get Newbie {user_id}" }, 400
+
 @bp.route('/expert', methods=['GET'])
 @login_required
 def get_expert():
@@ -387,7 +411,7 @@ def get_expert():
             current_app.logger.warn(f"no expert for id: {user_id}")
     else:
         current_app.logger.warn(f"no user for id: {user_id}")
-    return {"error": f"Failed to Expert {user_id}" }, 400
+    return {"error": f"Failed to Get Expert {user_id}" }, 400
 
 @bp.route('/marked_expert', methods=['GET'])
 @login_required

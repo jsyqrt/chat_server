@@ -7,7 +7,7 @@ from flask import current_app, url_for
 
 from zchat.db import db
 from zchat.rand import *
-from zchat.meili import add_expert_to_meili, update_expert_to_meili
+from zchat.meili import add_expert_to_meili, update_expert_to_meili, add_newbie_to_meili, update_newbie_to_meili
 
 PLATFORM_DISCOUNT = 0.8
 SYSTEM_ACCOUNT = 0
@@ -358,8 +358,8 @@ class ExpertOps:
 
                 self.session.commit()
                 current_app.logger.debug(f"updated expert {user_id}")
-                add_to_meili = update_expert_to_meili(current_app, expert)
-                current_app.logger.debug(f"add expert to meili result {add_to_meili}")
+                update_to_meili = update_expert_to_meili(current_app, expert)
+                current_app.logger.debug(f"update expert to meili result {update_to_meili }")
                 return True
             else:
                 expert = Expert(
@@ -484,6 +484,9 @@ class NewbieOps:
 
                 self.session.commit()
                 current_app.logger.debug(f"updated newbie {user_id}")
+
+                update_to_meili = update_newbie_to_meili(current_app, newbie)
+                current_app.logger.debug(f"update newbie to meili result {update_to_meili}")
                 return True
             else:
                 newbie = Newbie(
@@ -497,6 +500,9 @@ class NewbieOps:
                 self.session.add(newbie)
                 self.session.commit()
                 current_app.logger.debug(f"added newbie, user_id: {user_id}")
+
+                add_to_meili = add_newbie_to_meili(current_app, newbie)
+                current_app.logger.debug(f"add newbie to meili result {add_to_meili}")
                 return True
         except Exception as e:
             self.session.rollback()

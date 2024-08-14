@@ -92,13 +92,15 @@ class LGUser(UserMixin):
         return self.user.id
 
 @login_manager.user_loader
-def user_loader(id):
+def user_loader(user_id):
     user_ops = UserOps(session=db.session)
-    u = user_ops.get_one(id=int(id))
+    u = user_ops.get_one(id=int(user_id))
+    current_app.logger.debug(f"load user of id: {user_id}, is None: {u is None}")
     return LGUser(u)
 
 @login_manager.unauthorized_handler
 def unauthorized_handler():
+    current_app.logger.warn(f"unauthorized_handler user id: {current_user.get_id()}")
     return 'Unauthorized', 401
 
 @bp.route('/login', methods=['GET']) # TODO to POST
