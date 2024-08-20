@@ -86,7 +86,9 @@ class LGUser(UserMixin):
         return True
 
     def get_id(self):
-        return str(self.user.id)
+        if self.user is not None:
+            return str(self.user.id)
+        return None
 
     def get_id_int(self):
         return self.user.id
