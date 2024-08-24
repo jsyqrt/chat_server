@@ -1615,10 +1615,10 @@ class AppointmentOps:
 
     def get_appointments_of_mine(self, my_id)->list:
         try:
-            appointments = self.session.query(Appointment).filter_by(
+            appointments = self.session.query(Appointment).filter(
                 db.or_(
-                        Appointment.expert==my_id,
-                        Appointment.newbie==my_id,
+                    Appointment.expert==my_id,
+                    Appointment.newbie==my_id,
                 ),
             ).order_by(db.desc(Appointment.createTimestamp)).all()
             current_app.logger.debug(f'len of all appointments {len(appointments)}')
