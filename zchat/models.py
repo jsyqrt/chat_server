@@ -1613,6 +1613,20 @@ class AppointmentOps:
             current_app.logger.debug(f'failed to get appointments, error {str(e)}')
             return []
 
+    def get_appointments_of_mine(self, my_id)->list:
+        try:
+            appointments = self.session.query(Appointment).filter_by(
+                db.or_(
+                        Appointment.expert==my_id,
+                        Appointment.newbie==my_id,
+                ),
+            ).order_by(db.desc(Appointment.createTimestamp)).all()
+            current_app.logger.debug(f'len of all appointments {len(appointments)}')
+            return [appointment.to_dict() for appointment in appointments]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get appointments, error {str(e)}')
+            return []
+
     def get_appointments_disputed(self)->list:
         try:
             appointments = self.session.query(Appointment).filter_by(

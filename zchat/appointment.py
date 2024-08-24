@@ -242,6 +242,14 @@ def get_as_newbie():
     appointments = app_ops.get_appointments_of_newbie(newbie=newbie)
     return appointments
 
+@bp.route('/mine', methods=['GET'])
+@login_required
+def get_mine():
+    user_id = current_user.get_id_int()
+    app_ops = AppointmentOps(session=db.session)
+    appointments = app_ops.get_appointments_of_mine(my_id=user_id)
+    return appointments
+
 @bp.route('/disputed', methods=['GET'])
 @login_required
 @admin_required
