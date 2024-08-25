@@ -242,13 +242,16 @@ def handle_send_message(data):
     msg = data_json.get('msg', 'None')
     msg_type = data_json.get('msg_type', 0)
 
-    # TODO what if from_id == to_id?
-
     # Send msg to dest
     msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'msg_type': msg_type, 'timestamp': time.time()}
 
     chatmsg_ops = ChatMsgOps(session=db.session)
     chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=time.time())
+
+    # Send to self
+    is_send_to_self = from_id == to_id
+    if is_send_to_self:
+        return
 
     to_sid = current_app.get_user_session(to_id)
     if to_sid is not None:

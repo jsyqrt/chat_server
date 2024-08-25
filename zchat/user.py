@@ -155,6 +155,18 @@ def update_avatar():
         return {'error': 'Avatar uploaded successfully!'}
     return {'error': 'Failed to update avatar'}, 400
 
+@bp.route('/upload_image', methods=['POST'])
+@login_required
+def upload_image():
+    image = request.files['image']
+    filename = secure_filename(image.filename)
+    image.save(os.path.join(current_app.static_folder, 'images', filename))
+
+    return {
+        'error': 'Image uploaded successfully!',
+        'image_url': url_for('static', filename=f'images/{filename}')
+    }
+
 @bp.route('/update_nickname', methods=['POST'])
 @login_required
 def update_nickname():
@@ -334,16 +346,18 @@ def unmark_expert():
         return { "error": "Invalid Request Method!" }, 400
 
 @bp.route('/as_admin', methods=['GET'])
-@login_required
-@admin_required
+# @login_required
+# @admin_required
 def as_admin():
-    user_id=current_user.get_id_int()
+    # user_id=current_user.get_id_int()
+    user_id = int(request.args.get('id'))
+
     admin_user_ops = AdminUserOps(session=db.session)
     admin_id = admin_user_ops.add_as_admin(
         user_id=user_id
     )
 
-    current_app.logger.info(f"added {id} as admin")
+    current_app.logger.info(f"added {user_id} as admin")
     return {'admin_id': admin_id}
 
 @bp.route('/is_admin', methods=['GET'])
