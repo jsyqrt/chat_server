@@ -618,6 +618,51 @@ class ChatMsg(db.Model):
             'timestamp' : self.timestamp,
         }
 
+class LatestReadMsg(db.Model):
+    __tablename__ = 'LATEST_READ_MSG'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    sender = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    receiver = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
+    timestamp = db.Column(db.REAL, nullable=False) # timestamp of the latest read msg
+
+    __table_args__ = (
+        db.Index('index_LATEST_READ_MSG_sender', 'sender', unique=False),
+        db.Index('index_LATEST_READ_MSG_receiver', 'receiver', unique=False),
+    )
+
+    def to_dict(self):
+        return {
+            'sender' : self.sender,
+            'receiver' : self.receiver,
+            'timestamp' : self.timestamp,
+        }
+
+class LatestReadMsgOps:
+    def __init__(self, session):
+        self.session = session
+
+    def get_latest_read_msg(self, sender, receiver)->LatestReadMsg:
+        latest_read_msg = self.session.query(LatestReadMsg).filter_by(sender=sender, receiver=receiver).first()
+        if latest_read_msg:
+            return latest_read_msg.to_dict()
+        else:
+            return {
+                'sender': sender,
+                'receiver': receiver,
+                'timestamp': 0,
+            }
+
+    def update_latest_read_msg(self, sender, receiver, timestamp)->bool:
+        latest_read_msg = self.session.query(LatestReadMsg).filter_by(sender=sender, receiver=receiver).first()
+        if latest_read_msg:
+            latest_read_msg.timestamp = timestamp
+        else:
+            latest_read_msg = LatestReadMsg(sender=sender, receiver=receiver, timestamp=timestamp)
+            self.session.add(latest_read_msg)
+        self.session.commit()
+        return True
+
 class ChatMsgOps:
     def __init__(self, session):
         self.session = session

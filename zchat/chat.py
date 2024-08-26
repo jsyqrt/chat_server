@@ -186,6 +186,21 @@ def getToken():
         ))
     return token.to_jwt()
 
+@bp.route('/latest_read_msg', methods=['GET'])
+@login_required
+def get_latest_read_msg():
+    user_id = current_user.get_id_int()
+    sender = int(request.args.get('sender'))
+    receiver = int(request.args.get('receiver'))
+    if user_id != sender and user_id != receiver:
+        return {'error': 'Unauthorized'}, 401
+
+    current_app.logger.debug(f'get latest read msg for {sender} and {receiver}')
+
+    latest_read_msg_ops = LatestReadMsgOps(session=db.session)
+    latest_read_msg = latest_read_msg_ops.get_latest_read_msg(sender=sender, receiver=receiver)
+    return latest_read_msg
+
 def get_user_id_from_jwt(app, token):
     return jwt.decode(token, app.config["JWT_SECRET_KEY"], algorithms="HS256")['user_id']
 
@@ -268,6 +283,43 @@ def handle_send_message(data):
         msgs.append(msg_dict)
 
         current_app.unsent_msgs[to_id] = msgs
+
+@socketio.on('mark_as_read')
+def handle_mark_as_read(data):
+    current_app.logger.debug(f'mark_as_read: {data}')
+    data_json = data
+    current_app.logger.debug(f'Received JSON data: {data_json}')
+
+    uid = get_user_id_from_jwt(current_app, data_json['token'])
+    from_id = data_json.get('sender', 0)
+    if from_id != uid:
+        current_app.logger.error(f'mark_as_read from_id != uid, {from_id}, {uid}')
+        return
+
+    to_id = data_json.get('receiver', 0)
+    timestamp = data_json.get('timestamp', time.time())
+
+    latest_read_msg_ops = LatestReadMsgOps(session=db.session)
+    latest_read_msg_ops.update_latest_read_msg(sender=from_id, receiver=to_id, timestamp=timestamp)
+
+@socketio.on('get_latest_read_time')
+def handle_get_latest_read_time(data):
+    current_app.logger.debug(f'get_latest_read_time: {data}')
+    sid = request.sid
+    data_json = data
+    current_app.logger.debug(f'Received JSON data: {data_json}')
+
+    uid = get_user_id_from_jwt(current_app, data_json['token'])
+    from_id = data_json.get('sender', 0)
+    if from_id != uid:
+        current_app.logger.error(f'get_latest_read_time from_id != uid, {from_id}, {uid}')
+        return
+
+    receiver = data_json.get('receiver', 0)
+
+    latest_read_msg_ops = LatestReadMsgOps(session=db.session)
+    latest_read_msg = latest_read_msg_ops.get_latest_read_msg(sender=from_id, receiver=receiver)
+    socketio.emit('latest_read_time', latest_read_msg, to=sid)
 
 @socketio.on('get_messages')
 def handle_all_messages(data):
