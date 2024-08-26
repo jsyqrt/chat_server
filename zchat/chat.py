@@ -291,16 +291,22 @@ def handle_mark_as_read(data):
     current_app.logger.debug(f'Received JSON data: {data_json}')
 
     uid = get_user_id_from_jwt(current_app, data_json['token'])
-    from_id = data_json.get('sender', 0)
-    if from_id != uid:
-        current_app.logger.error(f'mark_as_read from_id != uid, {from_id}, {uid}')
+    to_id = data_json.get('receiver', 0)
+    if to_id != uid:
+        current_app.logger.error(f'mark_as_read to_id != uid, {to_id}, {uid}')
         return
 
-    to_id = data_json.get('receiver', 0)
+    from_id = data_json.get('sender', 0)
     timestamp = data_json.get('timestamp', time.time())
 
     latest_read_msg_ops = LatestReadMsgOps(session=db.session)
     latest_read_msg_ops.update_latest_read_msg(sender=from_id, receiver=to_id, timestamp=timestamp)
+
+    sender_sid = current_app.get_user_session(from_id)
+    if sender_sid is not None:
+        socketio.emit('latest_read_time', {'sender': from_id, 'receiver': to_id, 'timestamp': timestamp}, to=sender_sid)
+    else:
+        current_app.logger.debug(f'sender is offline: {from_id}')
 
 @socketio.on('get_latest_read_time')
 def handle_get_latest_read_time(data):

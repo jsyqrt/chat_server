@@ -650,7 +650,7 @@ class LatestReadMsgOps:
             return {
                 'sender': sender,
                 'receiver': receiver,
-                'timestamp': 0,
+                'timestamp': 0.0,
             }
 
     def update_latest_read_msg(self, sender, receiver, timestamp)->bool:
