@@ -256,12 +256,13 @@ def handle_send_message(data):
     to_id = data_json.get('receiver', 0)
     msg = data_json.get('msg', 'None')
     msg_type = data_json.get('msg_type', 0)
+    timestamp = data_json.get('timestamp', time.time())
 
     # Send msg to dest
-    msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'msg_type': msg_type, 'timestamp': time.time()}
+    msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'msg_type': msg_type, 'timestamp': timestamp}
 
     chatmsg_ops = ChatMsgOps(session=db.session)
-    chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=time.time())
+    chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=timestamp)
 
     # Send to self
     is_send_to_self = from_id == to_id
