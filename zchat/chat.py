@@ -241,12 +241,13 @@ def handle_send_message(data):
     to_id = data_json.get('receiver', 0)
     msg = data_json.get('msg', 'None')
     msg_type = data_json.get('msg_type', 0)
+    timestamp = data_json.get('timestamp', time.time())
 
     # Send msg to dest
-    msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'msg_type': msg_type, 'timestamp': time.time()}
+    msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'msg_type': msg_type, 'timestamp': timestamp}
 
     chatmsg_ops = ChatMsgOps(session=db.session)
-    chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=time.time())
+    chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=timestamp)
 
     # Send to self
     is_send_to_self = from_id == to_id
@@ -269,12 +270,57 @@ def handle_send_message(data):
 
         current_app.unsent_msgs[to_id] = msgs
 
+@socketio.on('mark_as_read')
+def handle_mark_as_read(data):
+    current_app.logger.debug(f'mark_as_read: {data}')
+    data_json = data
+    current_app.logger.debug(f'Received JSON data: {data_json}')
+
+    uid = get_user_id_from_jwt(current_app, data_json['token'])
+    to_id = data_json.get('receiver', 0)
+    if to_id != uid:
+        current_app.logger.error(f'mark_as_read to_id != uid, {to_id}, {uid}')
+        return
+
+    from_id = data_json.get('sender', 0)
+    timestamp = data_json.get('timestamp', time.time())
+
+    latest_read_msg_ops = LatestReadMsgOps(session=db.session)
+    latest_read_msg_ops.update_latest_read_msg(sender=from_id, receiver=to_id, timestamp=timestamp)
+
+    sender_sid = current_app.get_user_session(from_id)
+    if sender_sid is not None:
+        socketio.emit('latest_read_time', {'sender': from_id, 'receiver': to_id, 'timestamp': timestamp}, to=sender_sid)
+    else:
+        current_app.logger.debug(f'sender is offline: {from_id}')
+
+@socketio.on('get_latest_read_time')
+def handle_get_latest_read_time(data):
+    current_app.logger.debug(f'get_latest_read_time: {data}')
+    sid = request.sid
+    data_json = data
+    current_app.logger.debug(f'Received JSON data: {data_json}')
+
+    uid = get_user_id_from_jwt(current_app, data_json['token'])
+    from_id = data_json.get('sender', 0)
+    if from_id != uid:
+        current_app.logger.error(f'get_latest_read_time from_id != uid, {from_id}, {uid}')
+        return
+
+    receiver = data_json.get('receiver', 0)
+
+    latest_read_msg_ops = LatestReadMsgOps(session=db.session)
+    latest_read_msg = latest_read_msg_ops.get_latest_read_msg(sender=from_id, receiver=receiver)
+    socketio.emit('latest_read_time', latest_read_msg, to=sid)
+
 @socketio.on('get_messages')
 def handle_all_messages(data):
     current_app.logger.debug(f'get_messages: {data}')
     sid = request.sid
     data_json = data
     current_app.logger.debug(f'Received JSON data: {data_json}')
+
+    uid = get_user_id_from_jwt(current_app, data_json['token'])
 
     p1_id = data_json.get('p1', 0)
     p2_id = data_json.get('p2', 0)
@@ -284,8 +330,11 @@ def handle_all_messages(data):
     chatmsg_ops = ChatMsgOps(session=db.session)
     msgs = chatmsg_ops.get_msgs(p1=p1_id, p2=p2_id, before_timestamp=before_timestamp, latest_n=latest_n)
 
-    for msg in msgs:
-        socketio.emit('msg_response', msg, to=sid)
+    latest_read_msg_ops = LatestReadMsgOps(session=db.session)
+    latest_read_msg = latest_read_msg_ops.get_latest_read_msg(sender=p1_id if p1_id != uid else p2_id, receiver=uid)
+    count = chatmsg_ops.get_msgs_count_after(sender=p1_id if p1_id != uid else p2_id, receiver=uid, timestamp=latest_read_msg['timestamp'])
+
+    socketio.emit('msg_response', {'msgs': msgs, 'unread_count': count, 'latest_timestamp': latest_read_msg['timestamp']}, to=sid)
 
 @socketio.on('makeCall')
 def makeCall(data):
