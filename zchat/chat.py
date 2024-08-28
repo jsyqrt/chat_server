@@ -186,21 +186,6 @@ def getToken():
         ))
     return token.to_jwt()
 
-@bp.route('/latest_read_msg', methods=['GET'])
-@login_required
-def get_latest_read_msg():
-    user_id = current_user.get_id_int()
-    sender = int(request.args.get('sender'))
-    receiver = int(request.args.get('receiver'))
-    if user_id != sender and user_id != receiver:
-        return {'error': 'Unauthorized'}, 401
-
-    current_app.logger.debug(f'get latest read msg for {sender} and {receiver}')
-
-    latest_read_msg_ops = LatestReadMsgOps(session=db.session)
-    latest_read_msg = latest_read_msg_ops.get_latest_read_msg(sender=sender, receiver=receiver)
-    return latest_read_msg
-
 def get_user_id_from_jwt(app, token):
     return jwt.decode(token, app.config["JWT_SECRET_KEY"], algorithms="HS256")['user_id']
 
@@ -335,6 +320,8 @@ def handle_all_messages(data):
     data_json = data
     current_app.logger.debug(f'Received JSON data: {data_json}')
 
+    uid = get_user_id_from_jwt(current_app, data_json['token'])
+
     p1_id = data_json.get('p1', 0)
     p2_id = data_json.get('p2', 0)
     before_timestamp = data_json.get('before_timestamp', time.time())
@@ -343,8 +330,11 @@ def handle_all_messages(data):
     chatmsg_ops = ChatMsgOps(session=db.session)
     msgs = chatmsg_ops.get_msgs(p1=p1_id, p2=p2_id, before_timestamp=before_timestamp, latest_n=latest_n)
 
-    for msg in msgs:
-        socketio.emit('msg_response', msg, to=sid)
+    latest_read_msg_ops = LatestReadMsgOps(session=db.session)
+    latest_read_msg = latest_read_msg_ops.get_latest_read_msg(sender=p1_id if p1_id != uid else p2_id, receiver=uid)
+    count = chatmsg_ops.get_msgs_count_after(sender=p1_id if p1_id != uid else p2_id, receiver=uid, timestamp=latest_read_msg['timestamp'])
+
+    socketio.emit('msg_response', {'msgs': msgs, 'unread_count': count, 'latest_timestamp': latest_read_msg['timestamp']}, to=sid)
 
 @socketio.on('makeCall')
 def makeCall(data):

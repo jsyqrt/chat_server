@@ -709,6 +709,15 @@ class ChatMsgOps:
             current_app.logger.debug(f'failed to get msgs, error {str(e)}')
             return []
 
+    def get_msgs_count_after(self, sender, receiver, timestamp)->int:
+        msgs = self.session.query(ChatMsg).filter(
+            db.and_(
+                db.and_(ChatMsg.sender == sender, ChatMsg.receiver == receiver),
+                ChatMsg.timestamp > timestamp
+            )
+        ).count()
+        return msgs
+
 class CallRecord(db.Model):
     __tablename__ = 'CALL_RECORD'
 
