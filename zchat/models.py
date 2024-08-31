@@ -1325,14 +1325,15 @@ class AppointmentOps:
     def __init__(self, session):
         self.session = session
 
-    def create_appointment(self, type, expert, newbie)->str:
-        current_app.logger.debug(f"create_appointment, {type}, {expert}, {newbie}")
+    def create_appointment(self, type, expert, newbie, timestamp)->str:
+        current_app.logger.debug(f"create_appointment, {type}, {expert}, {newbie}, {timestamp}")
         try:
             appointment = Appointment(
                 type=type,
                 expert=expert,
                 newbie=newbie,
                 createTimestamp=time.time(),
+                appointmentTimestamp=timestamp,
             )
 
             self.session.add(appointment)
