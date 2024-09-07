@@ -47,6 +47,9 @@ def create_app(test_config=None):
     auth.init_verification_code_dict(app)
     auth.init_app(app)
 
+    from . import admin
+    app.register_blueprint(admin.bp)
+
     from . import user
     app.register_blueprint(user.bp)
 
