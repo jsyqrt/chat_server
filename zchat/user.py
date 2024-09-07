@@ -539,6 +539,12 @@ def register_newbie():
         profession = request.form['profession']
         business = request.form['business']
         jd = request.form['jd']
+        jd_images = json.loads(request.form['jd_images'])
+
+        jd_json = json.dumps({
+            'jd': jd,
+            'jd_images': jd_images,
+        })
 
         newbie_ops = NewbieOps(session=db.session)
         succeed = newbie_ops.register_or_update(
@@ -547,10 +553,13 @@ def register_newbie():
             title=title,
             profession=profession,
             business=business,
-            jd=jd,
+            jd=jd_json,
         )
         if succeed:
-            return { "error": "Register as newbie Succeed!" }, 200
+            return {
+                "error": "Register as newbie Succeed!",
+                "newbie": newbie_ops.get_one(user_id=current_user.get_id_int()).to_dict()
+            }, 200
         return { "error": "Failed to register as newbie!" }, 400
     else:
         return { "error": "Invalid Request Method!" }, 400
