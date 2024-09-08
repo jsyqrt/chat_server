@@ -178,38 +178,28 @@ def update_nickname():
         return {'error': 'Nickname updated successfully!'}
     return {'error': 'Failed to update nickname'}, 400
 
-@bp.route('/update_gender', methods=['POST'])
+@bp.route('/update_basic_info', methods=['POST'])
 @login_required
-def update_gender():
+def update_basic_info():
     gender = request.form['gender']
-
-    user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_gender(id=current_user.get_id_int(), gender=gender)
-    if succeed:
-        return {'error': 'Gender updated successfully!'}
-    return {'error': 'Failed to update gender'}, 400
-
-@bp.route('/update_edubg', methods=['POST'])
-@login_required
-def update_edubg():
     edubg = request.form['edubg']
-
-    user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_edubg(id=current_user.get_id_int(), edubg=edubg)
-    if succeed:
-        return {'error': 'EduBg updated successfully!'}
-    return {'error': 'Failed to update edubg'}, 400
-
-@bp.route('/update_yearofwork', methods=['POST'])
-@login_required
-def update_yearofwork():
     yearofwork = request.form['yearofwork']
 
     user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_yearofwork(id=current_user.get_id_int(), yearofwork=yearofwork)
-    if succeed:
-        return {'error': 'Yearofwork updated successfully!'}
-    return {'error': 'Failed to update yearofwork'}, 400
+    update_gender_succeed = user_ops.update_gender(id=current_user.get_id_int(), gender=gender)
+    update_edubg_succeed = user_ops.update_edubg(id=current_user.get_id_int(), edubg=edubg)
+    update_yearofwork_succeed = user_ops.update_yearofwork(id=current_user.get_id_int(), yearofwork=yearofwork)
+    if update_gender_succeed and update_edubg_succeed and update_yearofwork_succeed:
+        return {'error': 'Basic info updated successfully!'}
+    else:
+        current_app.logger.warn(
+            f"""failed to update basic info for user {current_user.get_id_int()}
+            update_gender_succeed: {update_gender_succeed},
+            update_edubg_succeed: {update_edubg_succeed},
+            update_yearofwork_succeed: {update_yearofwork_succeed}
+            """
+        )
+        return {'error': 'Failed to update basic info'}, 400
 
 @bp.route('/update_signature', methods=['POST'])
 @login_required
