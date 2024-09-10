@@ -21,3 +21,10 @@ def notify_upgrade_app():
             current_app.logger.debug(f"user {user['id']} is not online")
     return 'ok'
 
+@bp.route('/stats', methods=['GET'])
+@login_required
+@admin_required
+def get_user_stats():
+    stats = UserOps(session=db.session).get_stats()
+    return stats
+

@@ -31,6 +31,8 @@ class User(db.Model):
 
     current_as_expert = db.Column(db.Integer, nullable=False, default=0) # 0 for newbie, 1 for expert
 
+    create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
+
     __table_args__ = (
         db.Index('index_USER_phone_number', 'phone_number', unique=True),
 
@@ -43,6 +45,8 @@ class User(db.Model):
 
         db.Index('index_USER_as_expert', 'as_expert', unique=False),
         db.Index('index_USER_as_newbie', 'as_newbie', unique=False),
+
+        db.Index('index_USER_create_timestamp', 'create_timestamp', unique=False),
     )
 
     def to_dict(self):
@@ -62,6 +66,7 @@ class User(db.Model):
             'as_newbie': self.as_newbie,
 
             'current_as_expert': self.current_as_expert,
+            'create_timestamp': self.create_timestamp,
         }
 
 class UserOps:
@@ -240,6 +245,67 @@ class UserOps:
         except Exception as e:
             current_app.logger.debug(f'failed to get all users, error {str(e)}')
             return []
+
+    def get_stats(self)->dict:
+        try:
+            total = self.session.query(User).count()
+            newbie = self.session.query(User).filter(User.as_newbie == 1).count()
+            expert = self.session.query(User).filter(User.as_expert == 1).count()
+
+            email_verified_expert = self.session.query(Expert).filter(Expert.email_verified == 1).count()
+
+            total_income = self.session.query(db.func.sum(BalanceCNY.balance)).scalar()
+
+            appointment_total = self.session.query(Appointment).count()
+            appointment_finished = self.session.query(Appointment).filter(Appointment.stage == AppointmentStage.Finished.value).count()
+            appointment_disputed = self.session.query(Appointment).filter(Appointment.stage == AppointmentStage.Disputed.value).count()
+
+            appointment_today = self.session.query(Appointment).filter(Appointment.appointmentTimestamp >= time.time() - 24 * 60 * 60).count()
+            appointment_today_finished = self.session.query(Appointment).filter(Appointment.appointmentTimestamp >= time.time() - 24 * 60 * 60, Appointment.stage == AppointmentStage.Finished.value).count()
+            appointment_today_disputed = self.session.query(Appointment).filter(Appointment.appointmentTimestamp >= time.time() - 24 * 60 * 60, Appointment.stage == AppointmentStage.Disputed.value).count()
+
+            create_today = self.session.query(User).filter(User.create_timestamp >= time.time() - 24 * 60 * 60).count()
+            create_this_week = self.session.query(User).filter(User.create_timestamp >= time.time() - 7 * 24 * 60 * 60).count()
+            create_this_month = self.session.query(User).filter(User.create_timestamp >= time.time() - 30 * 24 * 60 * 60).count()
+
+            create_today_newbie = self.session.query(User).filter(User.as_newbie == 1, User.create_timestamp >= time.time() - 24 * 60 * 60).count()
+            create_today_expert = self.session.query(User).filter(User.as_expert == 1, User.create_timestamp >= time.time() - 24 * 60 * 60).count()
+            create_this_week_newbie = self.session.query(User).filter(User.as_newbie == 1, User.create_timestamp >= time.time() - 7 * 24 * 60 * 60).count()
+            create_this_week_expert = self.session.query(User).filter(User.as_expert == 1, User.create_timestamp >= time.time() - 7 * 24 * 60 * 60).count()
+            create_this_month_newbie = self.session.query(User).filter(User.as_newbie == 1, User.create_timestamp >= time.time() - 30 * 24 * 60 * 60).count()
+            create_this_month_expert = self.session.query(User).filter(User.as_expert == 1, User.create_timestamp >= time.time() - 30 * 24 * 60 * 60).count()
+
+            return {
+                'total': total,
+                'newbie': newbie,
+                'expert': expert,
+
+                'email_verified_expert': email_verified_expert,
+
+                'total_income': total_income,
+
+                'appointment_total': appointment_total,
+                'appointment_finished': appointment_finished,
+                'appointment_disputed': appointment_disputed,
+
+                'appointment_today': appointment_today,
+                'appointment_today_finished': appointment_today_finished,
+                'appointment_today_disputed': appointment_today_disputed,
+
+                'create_today': create_today,
+                'create_this_week': create_this_week,
+                'create_this_month': create_this_month,
+
+                'create_today_newbie': create_today_newbie,
+                'create_today_expert': create_today_expert,
+                'create_this_week_newbie': create_this_week_newbie,
+                'create_this_week_expert': create_this_week_expert,
+                'create_this_month_newbie': create_this_month_newbie,
+                'create_this_month_expert': create_this_month_expert,
+            }
+        except Exception as e:
+            current_app.logger.debug(f'failed to get user stats, error {str(e)}')
+            return {}
 
 class AdminUser(db.Model):
     __tablename__ = 'ADMIN_USER'
