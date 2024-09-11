@@ -360,7 +360,10 @@ class Expert(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
 
     email = db.Column(db.String, nullable=False, default='foo@bar.com')
-    email_verified = db.Column(db.Integer, nullable=False, default=0)
+    email_verified = db.Column(db.Integer, nullable=True, default=0)
+    email_verified_timestamp = db.Column(db.REAL, nullable=True)
+    human_verified = db.Column(db.Integer, nullable=True, default=0)
+    human_verified_timestamp = db.Column(db.REAL, nullable=True)
 
     company = db.Column(db.String, nullable=False, default='')
     title = db.Column(db.String, nullable=False, default='')
@@ -373,6 +376,7 @@ class Expert(db.Model):
     __table_args__ = (
         db.Index('index_EXPERT_email', 'email', unique=False),
         db.Index('index_EXPERT_email_verified', 'email_verified', unique=False),
+        db.Index('index_EXPERT_human_verified', 'human_verified', unique=False),
 
         db.Index('index_EXPERT_company', 'company', unique=False),
         db.Index('index_EXPERT_title', 'title', unique=False),
@@ -387,6 +391,10 @@ class Expert(db.Model):
 
             'email' : self.email,
             'email_verified': self.email_verified,
+            'email_verified_timestamp': self.email_verified_timestamp,
+
+            'human_verified': self.human_verified,
+            'human_verified_timestamp': self.human_verified_timestamp,
 
             'company' : self.company,
             'title' : self.title,
@@ -496,6 +504,46 @@ class ExpertOps:
         except Exception as e:
             current_app.logger.debug(f'failed to get all experts, error {str(e)}')
             return []
+
+    def get_waiting_for_human_verified(self)->list:
+        try:
+            experts = self.session.query(Expert).filter(Expert.human_verified == 0).all()
+            return [expert.to_dict() for expert in experts]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get waiting for review experts, error {str(e)}')
+            return []
+
+    def get_waiting_for_email_verified(self)->list:
+        try:
+            experts = self.session.query(Expert).filter(Expert.email_verified == 0).all()
+            return [expert.to_dict() for expert in experts]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get waiting for email verified experts, error {str(e)}')
+            return []
+
+    def set_email_verified(self, user_id)->bool:
+        try:
+            expert = self.session.query(Expert).filter_by(user_id=user_id).first()
+            expert.email_verified = 1
+            expert.email_verified_timestamp = time.time()
+            self.session.commit()
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f'failed to set email verified, error {str(e)}')
+            return False
+
+    def set_human_verified(self, user_id)->bool:
+        try:
+            expert = self.session.query(Expert).filter_by(user_id=user_id).first()
+            expert.human_verified = 1
+            expert.human_verified_timestamp = time.time()
+            self.session.commit()
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f'failed to set human verified, error {str(e)}')
+            return False
 
 class Newbie(db.Model):
     __tablename__ = 'NEWBIE'
