@@ -1,7 +1,7 @@
 from flask import request, current_app, Blueprint
 from zchat.auth import login_required, admin_required, current_user
 from zchat.db import db
-from zchat.user import UserOps, ExpertOps
+from zchat.user import UserOps, ExpertOps, AppointmentOps
 
 bp = Blueprint('admin', __name__, url_prefix='/admin')
 
@@ -61,4 +61,22 @@ def experts_waiting_for_human_verified():
 def experts_set_human_verified():
     user_id = request.form['user_id']
     ExpertOps(session=db.session).set_human_verified(user_id)
+    return 'ok'
+
+@bp.route('/appointments_waiting_finish', methods=['GET'])
+@login_required
+@admin_required
+def appointments_waiting_finish():
+    appointments = AppointmentOps(session=db.session).get_appointments_waiting_finish()
+    return appointments
+
+
+@bp.route('/appointments_finish_one', methods=['POST'])
+@login_required
+@admin_required
+def appointments_finish_one():
+    appointment_id = request.form['appid']
+    succeed = AppointmentOps(session=db.session).platform_finish_it(appointment_id)
+    if not succeed:
+        return 'fail', 400
     return 'ok'
