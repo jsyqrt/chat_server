@@ -31,6 +31,8 @@ class User(db.Model):
 
     current_as_expert = db.Column(db.Integer, nullable=False, default=0) # 0 for newbie, 1 for expert
 
+    create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
+
     __table_args__ = (
         db.Index('index_USER_phone_number', 'phone_number', unique=True),
 
@@ -43,6 +45,8 @@ class User(db.Model):
 
         db.Index('index_USER_as_expert', 'as_expert', unique=False),
         db.Index('index_USER_as_newbie', 'as_newbie', unique=False),
+
+        db.Index('index_USER_create_timestamp', 'create_timestamp', unique=False),
     )
 
     def to_dict(self):
@@ -62,6 +66,7 @@ class User(db.Model):
             'as_newbie': self.as_newbie,
 
             'current_as_expert': self.current_as_expert,
+            'create_timestamp': self.create_timestamp,
         }
 
 class UserOps:
@@ -241,6 +246,67 @@ class UserOps:
             current_app.logger.debug(f'failed to get all users, error {str(e)}')
             return []
 
+    def get_stats(self)->dict:
+        try:
+            total = self.session.query(User).count()
+            newbie = self.session.query(User).filter(User.as_newbie == 1).count()
+            expert = self.session.query(User).filter(User.as_expert == 1).count()
+
+            email_verified_expert = self.session.query(Expert).filter(Expert.email_verified == 1).count()
+
+            total_income = self.session.query(db.func.sum(BalanceCNY.balance)).scalar()
+
+            appointment_total = self.session.query(Appointment).count()
+            appointment_finished = self.session.query(Appointment).filter(Appointment.stage == AppointmentStage.Finished.value).count()
+            appointment_disputed = self.session.query(Appointment).filter(Appointment.stage == AppointmentStage.Disputed.value).count()
+
+            appointment_today = self.session.query(Appointment).filter(Appointment.appointmentTimestamp >= time.time() - 24 * 60 * 60).count()
+            appointment_today_finished = self.session.query(Appointment).filter(Appointment.appointmentTimestamp >= time.time() - 24 * 60 * 60, Appointment.stage == AppointmentStage.Finished.value).count()
+            appointment_today_disputed = self.session.query(Appointment).filter(Appointment.appointmentTimestamp >= time.time() - 24 * 60 * 60, Appointment.stage == AppointmentStage.Disputed.value).count()
+
+            create_today = self.session.query(User).filter(User.create_timestamp >= time.time() - 24 * 60 * 60).count()
+            create_this_week = self.session.query(User).filter(User.create_timestamp >= time.time() - 7 * 24 * 60 * 60).count()
+            create_this_month = self.session.query(User).filter(User.create_timestamp >= time.time() - 30 * 24 * 60 * 60).count()
+
+            create_today_newbie = self.session.query(User).filter(User.as_newbie == 1, User.create_timestamp >= time.time() - 24 * 60 * 60).count()
+            create_today_expert = self.session.query(User).filter(User.as_expert == 1, User.create_timestamp >= time.time() - 24 * 60 * 60).count()
+            create_this_week_newbie = self.session.query(User).filter(User.as_newbie == 1, User.create_timestamp >= time.time() - 7 * 24 * 60 * 60).count()
+            create_this_week_expert = self.session.query(User).filter(User.as_expert == 1, User.create_timestamp >= time.time() - 7 * 24 * 60 * 60).count()
+            create_this_month_newbie = self.session.query(User).filter(User.as_newbie == 1, User.create_timestamp >= time.time() - 30 * 24 * 60 * 60).count()
+            create_this_month_expert = self.session.query(User).filter(User.as_expert == 1, User.create_timestamp >= time.time() - 30 * 24 * 60 * 60).count()
+
+            return {
+                'total': total,
+                'newbie': newbie,
+                'expert': expert,
+
+                'email_verified_expert': email_verified_expert,
+
+                'total_income': total_income,
+
+                'appointment_total': appointment_total,
+                'appointment_finished': appointment_finished,
+                'appointment_disputed': appointment_disputed,
+
+                'appointment_today': appointment_today,
+                'appointment_today_finished': appointment_today_finished,
+                'appointment_today_disputed': appointment_today_disputed,
+
+                'create_today': create_today,
+                'create_this_week': create_this_week,
+                'create_this_month': create_this_month,
+
+                'create_today_newbie': create_today_newbie,
+                'create_today_expert': create_today_expert,
+                'create_this_week_newbie': create_this_week_newbie,
+                'create_this_week_expert': create_this_week_expert,
+                'create_this_month_newbie': create_this_month_newbie,
+                'create_this_month_expert': create_this_month_expert,
+            }
+        except Exception as e:
+            current_app.logger.debug(f'failed to get user stats, error {str(e)}')
+            return {}
+
 class AdminUser(db.Model):
     __tablename__ = 'ADMIN_USER'
 
@@ -294,7 +360,10 @@ class Expert(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
 
     email = db.Column(db.String, nullable=False, default='foo@bar.com')
-    email_verified = db.Column(db.Integer, nullable=False, default=0)
+    email_verified = db.Column(db.Integer, nullable=True, default=0)
+    email_verified_timestamp = db.Column(db.REAL, nullable=True)
+    human_verified = db.Column(db.Integer, nullable=True, default=0)
+    human_verified_timestamp = db.Column(db.REAL, nullable=True)
 
     company = db.Column(db.String, nullable=False, default='')
     title = db.Column(db.String, nullable=False, default='')
@@ -307,6 +376,7 @@ class Expert(db.Model):
     __table_args__ = (
         db.Index('index_EXPERT_email', 'email', unique=False),
         db.Index('index_EXPERT_email_verified', 'email_verified', unique=False),
+        db.Index('index_EXPERT_human_verified', 'human_verified', unique=False),
 
         db.Index('index_EXPERT_company', 'company', unique=False),
         db.Index('index_EXPERT_title', 'title', unique=False),
@@ -321,6 +391,10 @@ class Expert(db.Model):
 
             'email' : self.email,
             'email_verified': self.email_verified,
+            'email_verified_timestamp': self.email_verified_timestamp,
+
+            'human_verified': self.human_verified,
+            'human_verified_timestamp': self.human_verified_timestamp,
 
             'company' : self.company,
             'title' : self.title,
@@ -430,6 +504,46 @@ class ExpertOps:
         except Exception as e:
             current_app.logger.debug(f'failed to get all experts, error {str(e)}')
             return []
+
+    def get_waiting_for_human_verified(self)->list:
+        try:
+            experts = self.session.query(Expert).filter(Expert.human_verified == 0).all()
+            return [expert.to_dict() for expert in experts]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get waiting for review experts, error {str(e)}')
+            return []
+
+    def get_waiting_for_email_verified(self)->list:
+        try:
+            experts = self.session.query(Expert).filter(Expert.email_verified == 0).all()
+            return [expert.to_dict() for expert in experts]
+        except Exception as e:
+            current_app.logger.debug(f'failed to get waiting for email verified experts, error {str(e)}')
+            return []
+
+    def set_email_verified(self, user_id)->bool:
+        try:
+            expert = self.session.query(Expert).filter_by(user_id=user_id).first()
+            expert.email_verified = 1
+            expert.email_verified_timestamp = time.time()
+            self.session.commit()
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f'failed to set email verified, error {str(e)}')
+            return False
+
+    def set_human_verified(self, user_id)->bool:
+        try:
+            expert = self.session.query(Expert).filter_by(user_id=user_id).first()
+            expert.human_verified = 1
+            expert.human_verified_timestamp = time.time()
+            self.session.commit()
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.debug(f'failed to set human verified, error {str(e)}')
+            return False
 
 class Newbie(db.Model):
     __tablename__ = 'NEWBIE'
