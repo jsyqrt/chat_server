@@ -42,55 +42,60 @@ def update_newbie_to_meili(app, newbie):
     return app.meili_client.index('newbies').update_documents([newbie.to_dict()])
 
 def find_experts_from_meili_for(app, newbie):
-    per_limit = 10
     result_ids = set()
     result = []
-    company_hits = app.meili_client.index('experts').search(f'{newbie.target_company}', {
-        'limit': per_limit
-    })
+    full_hits = app.meili_client.index('experts').search(
+        f'{newbie.target_company} {newbie.target_business} {newbie.target_profession} {newbie.target_title}',
+        { 'limit': 40 })
 
-    title_hits = app.meili_client.index('experts').search(f'{newbie.target_title}', {
-        'limit': per_limit
-    })
+    business_hits = app.meili_client.index('experts').search(
+        f'{newbie.target_business} {newbie.target_profession} {newbie.target_title}',
+        { 'limit': 30 })
 
-    profession_hits = app.meili_client.index('experts').search(f'{newbie.target_profession}', {
-        'limit': per_limit
-    })
+    profession_hits = app.meili_client.index('experts').search(
+        f'{newbie.target_profession} {newbie.target_title}',
+        { 'limit': 20 })
 
-    business_hits = app.meili_client.index('experts').search(f'{newbie.target_business}', {
-        'limit': per_limit
-    })
+    title_hits = app.meili_client.index('experts').search(
+        f'{newbie.target_title}',
+        { 'limit': 10 })
 
-    for hits in [company_hits, title_hits, profession_hits, business_hits]:
+    for hits in [full_hits, business_hits, profession_hits, title_hits]:
         for hit in hits['hits']:
             if hit['user_id'] in result_ids or hit['user_id'] == newbie.user_id:
                 continue
             result_ids.add(hit['user_id'])
             result.append(hit)
 
+    app.logger.debug(f"find_experts_from_meili_for, result: {len(result)}")
+
     return list(result)
 
 def find_newbies_from_meili_for(app, expert):
-    per_limit = 10
     result_ids = set()
     result = []
-    company_hits = app.meili_client.index('newbies').search(f'{expert.company}', {
-        'limit': per_limit
-    })
 
-    title_hits = app.meili_client.index('newbies').search(f'{expert.title}', {
-        'limit': per_limit
-    })
+    full_hits = app.meili_client.index('newbies').search(
+        f'{expert.company} {expert.business} {expert.profession} {expert.title}',
+        {
+            'limit': 40,
+            # 'matchingStrategy': 'frequency', TODO change to frequency
+        })
 
-    profession_hits = app.meili_client.index('newbies').search(f'{expert.profession}', {
-        'limit': per_limit
-    })
+    business_hits = app.meili_client.index('newbies').search(
+        f'{expert.business} {expert.profession} {expert.title}',
+        { 'limit': 30 })
 
-    business_hits = app.meili_client.index('newbies').search(f'{expert.business}', {
-        'limit': per_limit
-    })
+    profession_hits = app.meili_client.index('newbies').search(
+        f'{expert.profession} {expert.title}',
+        { 'limit': 20 })
 
-    for hits in [company_hits, title_hits, profession_hits, business_hits]:
+    title_hits = app.meili_client.index('newbies').search(
+        f'{expert.title}',
+        { 'limit': 10 })
+
+
+    for hits in [full_hits, business_hits, profession_hits, title_hits]:
         for hit in hits['hits']:
             if hit['user_id'] in result_ids or hit['user_id'] == expert.user_id:
                 continue
