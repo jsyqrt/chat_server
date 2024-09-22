@@ -17,7 +17,11 @@ def init_app(app):
 
     app.add_user_session = lambda user_id, session_id: app.user_to_session.__setitem__(user_id, session_id)
     app.get_user_session = lambda user_id: app.user_to_session.get(user_id, None)
-    app.remove_user_session = lambda user_id: app.user_to_session.pop(user_id)
+
+    def remove_user_session(user_to_session, user_id):
+        if user_id in user_to_session:
+            user_to_session.pop(user_id)
+    app.remove_user_session = lambda user_id: remove_user_session(app.user_to_session, user_id)
 
 def user_is_online(app, user_id)->bool:
     is_online = app.get_user_session(user_id) is not None
