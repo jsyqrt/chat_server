@@ -662,20 +662,20 @@ class ChatWithOps:
     def __init__(self, session):
         self.session = session
 
-    def upsert_pair(self, sender, receiver)->bool:
-        current_app.logger.debug(f"upsert_pair, {sender}, {receiver}")
+    def pair_exists(self, sender, receiver)->bool:
+        all = self.session.query(
+            ChatWith,
+        ).filter(
+            db.or_(
+                db.and_(ChatWith.sender == sender, ChatWith.receiver == receiver),
+                db.and_(ChatWith.sender == receiver, ChatWith.receiver == sender)
+            )
+        ).all()
+        return len(all) >= 1
+
+    def add_pair(self, sender, receiver)->bool:
+        current_app.logger.debug(f"add_pair, {sender}, {receiver}")
         try:
-            all = self.session.query(
-                ChatWith,
-            ).filter(
-                ChatWith.sender==sender,
-                ChatWith.receiver==receiver,
-            ).all()
-
-            if len(all) >= 1:
-                current_app.logger.debug(f"chat_pair already exists")
-                return True
-
             chat_pair = ChatWith(
                 sender=sender,
                 receiver=receiver,
@@ -686,7 +686,7 @@ class ChatWithOps:
             return True
         except Exception as e:
             self.session.rollback()
-            current_app.logger.debug(f"failed to upsert chat pair, error {str(e)}")
+            current_app.logger.debug(f"failed to add chat pair, error {str(e)}")
         return False
 
     def get_chatlist(self, self_id)->list:
@@ -784,11 +784,6 @@ class ChatMsgOps:
     def add_msg(self, sender, receiver, msg, msg_type, timestamp)->bool:
         current_app.logger.debug(f"new msg, {sender}, {receiver}, {msg}, {msg_type}, {timestamp}")
         try:
-            chatwith_ops = ChatWithOps(self.session)
-            succeed = chatwith_ops.upsert_pair(sender=sender, receiver=receiver)
-            if not succeed:
-                raise Exception('Failed to upsert pair')
-
             chatmsg = ChatMsg(
                 sender=sender,
                 receiver=receiver,

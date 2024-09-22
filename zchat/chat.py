@@ -195,41 +195,19 @@ def handle_connect():
     sid = request.sid
     current_app.add_user_session(uid, sid)
 
-    current_app.logger.debug(f'{request.headers["token"]}')
-    current_app.logger.debug(f'{request.sid}')
-    current_app.logger.debug(f'Client connected')
+    current_app.logger.debug(f'Client connected, uid: {uid}, sid: {sid}, token: {request.headers["token"]}')
+
+    # Notify user there are n msgs to receive
+    msgs = current_app.unsent_msgs.get(uid, [])
+    socketio.emit('update_chatlist', {'type': 'msg_to_get', 'count': len(msgs)}, to=sid)
 
 @socketio.on('disconnect')
 def handle_disconnect():
-    current_app.logger.debug(f'Client disconnected')
-    current_app.logger.debug(f'{request.headers["token"]}')
-
     uid = get_user_id_from_jwt(current_app, request.headers["token"])
     sid = request.sid
     current_app.remove_user_session(uid)
 
-@socketio.on('login')
-def handle_login(msg):
-    current_app.logger.debug(f'hello login')
-
-    # Save session id
-    uid = get_user_id_from_jwt(current_app, msg['token'])
-    sid = request.sid
-    current_app.add_user_session(uid, sid)
-
-    # Notify user there are n msgs to receive
-    msgs = current_app.unsent_msgs.get(uid, [])
-    socketio.emit('notice', {'type': 'msg_to_get', 'count': len(msgs)}, to=sid)
-
-    current_app.logger.debug(f'Client connected {uid}, {sid}')
-
-@socketio.on('logout')
-def handle_logout(msg):
-    # Remove session id from session map
-    uid = get_user_id_from_jwt(current_app, msg['token'])
-    current_app.remove_user_session(uid)
-
-    current_app.logger.debug(f'Client disconnected {uid}, {request.sid}')
+    current_app.logger.debug(f'Client disconnected, uid: {uid}, sid: {sid}, token: {request.headers["token"]}')
 
 @socketio.on('send_message')
 def handle_send_message(data):
@@ -246,6 +224,15 @@ def handle_send_message(data):
     # Send msg to dest
     msg_dict = {'sender': from_id, 'receiver': to_id, 'msg': msg, 'msg_type': msg_type, 'timestamp': timestamp}
 
+    is_new_chat = False
+    chatwith_ops = ChatWithOps(session=db.session)
+    if not chatwith_ops.pair_exists(sender=from_id, receiver=to_id):
+        succeed = chatwith_ops.add_pair(sender=from_id, receiver=to_id)
+        if not succeed:
+            current_app.logger.error(f'failed to add chat pair, {from_id}, {to_id}')
+            return
+        is_new_chat = True
+
     chatmsg_ops = ChatMsgOps(session=db.session)
     chatmsg_ops.add_msg(sender=from_id, receiver=to_id, msg=msg, msg_type=msg_type, timestamp=timestamp)
 
@@ -254,12 +241,17 @@ def handle_send_message(data):
     if is_send_to_self:
         return
 
+    current_app.logger.debug(f'all users: {current_app.user_to_session}')
+
     to_sid = current_app.get_user_session(to_id)
     if to_sid is not None:
         # If the user is online
-        current_app.logger.debug(f'user is online: {to_id}')
+        current_app.logger.debug(f'user is online: {to_id}, sending msg to {to_id}, msg: {msg_dict}')
 
         socketio.emit('msg', msg_dict, to=to_sid)
+        if is_new_chat:
+            current_app.logger.debug(f'send update_chatlist to {to_id}')
+            socketio.emit('update_chatlist', {}, to=to_sid)
     else:
         # Save to a map, waiting the user online again
         # TODO change the map to a db table, in case server is down
