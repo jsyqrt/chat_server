@@ -9,24 +9,19 @@ def init_app(app):
     app.meili_client = meilisearch.Client(host, key)
     create_indexes_to_meili(app)
 
+def create_index_if_not_exists(app, index_name, pk_name):
+    exists = False
+    for index in app.meili_client.get_indexes()['results']:
+        if index.uid == index_name:
+            exists = True
+    if not exists:
+        return app.meili_client.create_index(index_name, {'primaryKey': pk_name})
+    return
+
 def create_indexes_to_meili(app):
-    indexes = app.meili_client.get_indexes()
-    exists = False
-    for index in indexes['results']:
-        if index.uid == 'experts':
-            exists = True
-    if not exists:
-        create_expert_result = app.meili_client.create_index('experts', {'primaryKey': 'user_id'})
-        app.logger.debug(f"create_indexes_to_meili, create_expert_result: {create_expert_result}")
-
-    exists = False
-    for index in indexes['results']:
-        if index.uid == 'newbies':
-            exists = True
-    if not exists:
-        create_newbie_result = app.meili_client.create_index('newbies', {'primaryKey': 'user_id'})
-        app.logger.debug(f"create_indexes_to_meili, create_newbie_result: {create_newbie_result}")
-
+    create_index_if_not_exists(app, 'experts', 'user_id')
+    create_index_if_not_exists(app, 'newbies', 'user_id')
+    create_roadmaps_index(app)
     return
 
 def add_expert_to_meili(app, expert):
@@ -103,3 +98,48 @@ def find_newbies_from_meili_for(app, expert):
             result.append(hit)
 
     return list(result)
+
+
+def create_roadmaps_index(app):
+    exists = False
+    for index in app.meili_client.get_indexes()['results']:
+        if index.uid == 'user_roadmaps':
+            exists = True
+    if not exists:
+        app.meili_client.create_index( 'user_roadmaps', { 'primaryKey': 'uuid' })
+        app.meili_client.index('user_roadmaps').update_settings({
+            'searchableAttributes': [
+                'roadmap_title',
+            ],
+            'filterableAttributes': [
+                'roadmap_title',
+                'roadmap_type',
+                'roadmap_kind',
+                'created_by'
+            ],
+            'sortableAttributes': [
+                'created_at',
+                'updated_at'
+            ]
+        })
+    return
+
+def add_user_roadmap_to_meili(app, roadmap):
+    return app.meili_client.index('user_roadmaps').add_documents([roadmap])
+
+def update_user_roadmap_to_meili(app, roadmap):
+    return app.meili_client.index('user_roadmaps').update_documents([roadmap])
+
+def find_roadmaps_from_meili_for(app, topic):
+    result = []
+    hits = app.meili_client.index('user_roadmaps').search('', { 'limit': 10, 'filter': [f'roadmap_title={topic}'] })
+    for hit in hits['hits']:
+        result.append(hit)
+    return result
+
+def find_user_roadmaps_from_meili_created_by(app, user_id):
+    result = []
+    hits = app.meili_client.index('user_roadmaps').search('', { 'limit': 10, 'filter': [f'created_by={user_id}'] })
+    for hit in hits['hits']:
+        result.append(hit)
+    return result
