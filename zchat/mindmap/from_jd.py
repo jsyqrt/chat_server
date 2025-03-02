@@ -3,12 +3,15 @@ import openai
 import os
 
 system_prompt_template = """
-请分析提供的职位描述（JD），提取所有关键信息，形成一个JSON格式的结果。关键信息应包括职位标题、地点、薪资范围、学历要求、工作年限要求、部门、主要职责和所需技能等相关字段，确保内容全面且结构清晰。
-接下来，针对一个职场经验{{work_experience}}的用户，规划学习路径（包括硬技能和软技能），以达到该JD要求的水平。学习路径应使用有向图的方式表示，包含节点（需要学习的概念、技能或需要练习/实践的事项，结点数量7到10个）和边（连接相关节点，实线表示直接相关，虚线表示关联性，建议了解）。学习路径的JSON输出中，需为每个节点添加‘learning_suggestions’字段，包含具体的学习资源、方法或实践建议。
+请分析提供的职位描述（JD），提取所有关键信息，并以JSON格式输出。关键信息包括但不限于职位标题、地点、薪资范围、学历要求、工作年限要求、部门、主要职责和所需技能，确保信息全面且结构清晰。
+
+然后，根据用户提供的职场经验（{work_experience}），为用户规划一条学习路径，以达到该JD的要求。学习路径需详细分析JD，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
+
+最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。
 """
 
 user_prompt= """
-请提供以下两个JSON格式的输出：
+请提供以下两个JSON的输出：
 1. 职位描述的关键信息JSON，需符合以下JSON Schema：
 ```json
 {
@@ -41,50 +44,50 @@ user_prompt= """
   "additionalProperties": false
 }
 ```
-2. 学习路径的JSON，使用有向图表示，需符合以下JSON Schema：
+2. 学习路径的JSON，使用思维导图表示，用JSON输出，需要符合以下JSON Schema：
 ```json
 {
-  "type": "object",
-  "properties": {
-    "nodes": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": { "type": "string", "description": "唯一标识符" },
-          "label": { "type": "string", "description": "节点名称或标签" },
-          "type": { "type": "string", "enum": ["hard_skill", "soft_skill", "practice"], "description": "节点类型" },
-          "description": { "type": "string", "description": "节点详细描述" },
-          "learning_suggestions": {
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string",
+            "description": "节点标题"
+        },
+        "children": {
             "type": "array",
-            "items": { "type": "string" },
-            "description": "学习建议或资源"
-          }
-        },
-        "required": ["id", "label", "type", "description", "learning_suggestions"]
-      },
-      "description": "学习路径中的节点"
+            "items": {
+                "$ref": "#/definitions/node"
+            },
+            "description": "子节点列表"
+        }
     },
-    "edges": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "from": { "type": "string", "description": "起始节点ID" },
-          "to": { "type": "string", "description": "目标节点ID" },
-          "type": { "type": "string", "enum": ["solid", "dashed"], "description": "边类型（实线或虚线）" },
-          "description": { "type": "string", "description": "边关系的描述" }
-        },
-        "required": ["from", "to", "type", "description"]
-      },
-      "description": "节点之间的关系"
+    "required": [
+        "title",
+        "children"
+    ],
+    "definitions": {
+        "node": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "节点标题"
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/node"
+                    },
+                    "description": "子节点列表"
+                }
+            },
+            "required": [
+                "title"
+            ]
+        }
     }
-  },
-  "required": ["nodes", "edges"],
-  "additionalProperties": false
 }
 ```
-确保输出严格遵循上述JSON Schema，确保数据完整性和一致性。职位描述和学习路径应针对提供的JD内容进行定制化分析和规划，使其通用且易于扩展到其他类似场景。
 
 """
 
@@ -93,6 +96,11 @@ JD信息：
 ```text
 {jd}
 ```
+
+注意:
+* 学习路径的所有概念总数需要大于200个，需要包含你知道的所有相关概念。
+* 确保输出严格遵循上述JSON Schema，确保数据完整性和一致性。
+
 """
 
 def get_llm_response(jd, work_experience):
@@ -101,13 +109,16 @@ def get_llm_response(jd, work_experience):
     api_key=os.getenv("GROQ_API_KEY"),
     # base_url="http://127.0.0.1:8080/v1",
   )
+  messages=[
+      {"role": "system", "content": system_prompt_template.format(work_experience=work_experience)},
+      {"role": "user", "content": user_prompt + jd_prompt_template.format(jd=jd)},
+    ]
+  print(messages)
+
   response = client.chat.completions.create(
     model="qwen-2.5-32b",
     # model="mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
-    messages=[
-      {"role": "system", "content": system_prompt_template.format(work_experience=work_experience)},
-      {"role": "user", "content": user_prompt + jd_prompt_template.format(jd=jd)},
-    ],
+    messages=messages,
     max_tokens=32768,
   )
   return response.choices[0].message.content
@@ -121,13 +132,13 @@ def parse_llm_response(response):
 
   return json_blocks
 
-def roadmap_from_jd(jd, work_experience):
+def mindmap_from_jd(jd, work_experience):
   response = get_llm_response(jd, work_experience)
   json_blocks = parse_llm_response(response)
   jd_info_json = json_blocks[0]
-  roadmap_json = json_blocks[1]
+  mindmap_json = json_blocks[1]
 
-  return jd_info_json, roadmap_json
+  return jd_info_json, mindmap_json
 
 
 if __name__ == "__main__":
@@ -171,7 +182,7 @@ BOSS
   llm_response = get_llm_response(jd, work_experience)
   print(llm_response)
   jd_info_json = parse_llm_response(llm_response)[0]
-  roadmap_json = parse_llm_response(llm_response)[1]
+  mindmap_json = parse_llm_response(llm_response)[1]
 
   print(jd_info_json)
-  print(roadmap_json)
+  print(mindmap_json)

@@ -65,7 +65,7 @@ def create_app(test_config=None):
     from . import meili
     meili.init_app(app)
 
-    from . import roadmap
-    app.register_blueprint(roadmap.bp)
+    from . import mindmap
+    app.register_blueprint(mindmap.bp)
 
     return app
