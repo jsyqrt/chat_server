@@ -2,6 +2,7 @@ import os
 import json
 import uuid
 import time
+import random
 
 from flask import request, current_app, Blueprint, jsonify
 from werkzeug.utils import secure_filename
@@ -12,12 +13,12 @@ from zchat.db import db
 from zchat.user import UserOps, ExpertOps, AppointmentOps
 from zchat.mindmap.from_jd import mindmap_from_jd
 from zchat.mindmap.from_topic import mindmap_from_topic
-from zchat.mindmap.more_detail import detail_from_topic_path
+from zchat.mindmap.get_description import description_from_topic_path
 from zchat.meili import add_user_mindmap_to_meili, update_user_mindmap_to_meili, find_mindmaps_from_meili_for, find_user_mindmaps_from_meili_created_by
 
 bp = Blueprint('mindmap', __name__, url_prefix='/mindmap')
 
-class MindmapIdGenerator:
+class MindmapModifier:
     def __init__(self):
         self.id_counter = 0
 
@@ -38,6 +39,8 @@ class MindmapIdGenerator:
     def generate_for_map(self, map):
         updated_map = map
         updated_map['id'] = self.generate_id()
+        updated_map['description'] = map.get('title')
+        updated_map['done'] = random.random() > 0.7
 
         children = map.get('children', [])
         if children:
@@ -89,7 +92,7 @@ def from_jd_image():
             jd_info_json, mindmap_json = mindmap_from_jd(jd, work_experience)
             max_retries -= 1
 
-    mindmap_id_generator = MindmapIdGenerator()
+    mindmap_id_generator = MindmapModifier()
     mindmap_info = mindmap_id_generator.generate(mindmap_info)
     mindmap = {
         "uuid": str(uuid.uuid4()),
@@ -123,7 +126,7 @@ def from_topic():
             mindmap_json = mindmap_from_topic(topic)
             max_retries -= 1
 
-    mindmap_id_generator = MindmapIdGenerator()
+    mindmap_id_generator = MindmapModifier()
     mindmap_info = mindmap_id_generator.generate(mindmap_info)
     mindmap = {
         "uuid": str(uuid.uuid4()),
@@ -152,22 +155,41 @@ def my_mindmaps():
     mindmaps = find_user_mindmaps_from_meili_created_by(current_app, current_user.get_id_int())
     return jsonify(mindmaps)
 
-@bp.route('/more_detail', methods=['GET'])
+@bp.route('/description', methods=['GET'])
 @login_required
-def more_detail():
+def description():
     topic = request.args.get('topic')
     topic_path = request.args.get('topic_path')
 
-    detail_json = detail_from_topic_path(topic, topic_path)
+    description_json = description_from_topic_path(topic, topic_path)
     is_valid = False
     max_retries = 3
     while not is_valid and max_retries > 0:
         try:
-            detail_info = json.loads(detail_json)
+            description_info = json.loads(description_json)
             is_valid = True
         except Exception as e:
             # try again
-            detail_json = detail_from_topic_path(topic, topic_path)
+            description_json = description_from_topic_path(topic, topic_path)
             max_retries -= 1
 
-    return jsonify(detail_info)
+    return jsonify(description_info)
+
+@bp.route('/demo_map', methods=['GET'])
+# @login_required
+def demo_map():
+    # name = 'backend-engineer.json'
+    name = 'new-backend.json'
+    with open(os.path.join(current_app.instance_path, name), 'r') as f:
+        mindmap = json.load(f)
+    mindmap_id_generator = MindmapModifier()
+    mindmap = mindmap_id_generator.generate(mindmap)
+    return jsonify({
+        'participants': 1258,
+        'completions': 342,
+        'favorites': 567,
+        'mindmap_title': '后端工程师学习路径',
+        'mindmap_type': 'official',
+        'mindmap_kind': 'role',
+        'mindmap_info': mindmap,
+    })
