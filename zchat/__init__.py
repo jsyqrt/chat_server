@@ -11,10 +11,10 @@ def create_app(test_config=None):
         SQLALCHEMY_DATABASE_URI="sqlite:///" + os.path.join(app.instance_path, 'zchat.sqlite'),
         MEILISEARCH_HOST="http://localhost:7700",
         MEILISEARCH_KEY="aSampleMasterKey",
-        LIVEKIT_HOST="http://localhost:7880",
-        LIVEKIT_API_KEY="devkey",
-        LIVEKIT_API_SECRET="secret",
-        LIVEKIT_RECORDS_PATH="livekit/records/",
+        # LIVEKIT_HOST="http://localhost:7880",
+        # LIVEKIT_API_KEY="devkey",
+        # LIVEKIT_API_SECRET="secret",
+        # LIVEKIT_RECORDS_PATH="livekit/records/",
     )
 
     if test_config is None:
@@ -56,11 +56,11 @@ def create_app(test_config=None):
     from . import avatar
     avatar.init_app(app)
 
-    from . import chat
-    app.register_blueprint(chat.bp)
+    # from . import chat
+    # app.register_blueprint(chat.bp)
 
-    from . import appointment
-    app.register_blueprint(appointment.bp)
+    # from . import appointment
+    # app.register_blueprint(appointment.bp)
 
     from . import meili
     meili.init_app(app)

@@ -19,7 +19,7 @@ set -ex
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 LOG_DIR=$SCRIPT_DIR/log
 INSTANCE_DIR=$SCRIPT_DIR/instance
-LIVEKIT_CONFIG_DIR=$SCRIPT_DIR/zchat/livekit
+# LIVEKIT_CONFIG_DIR=$SCRIPT_DIR/zchat/livekit
 
 cd $SCRIPT_DIR
 mkdir -p $LOG_DIR
@@ -33,20 +33,23 @@ cd $SCRIPT_DIR
 nohup flask --app zchat run --debug -h 0.0.0.0 >> $LOG_DIR/flask.log 2>&1 &
 echo "flask started"
 
-cd $INSTANCE_DIR
-nohup redis-server $LIVEKIT_CONFIG_DIR/redis.conf >> $LOG_DIR/redis.log 2>&1 &
-echo "redis started"
+sleep 10
+tail -n 20 $LOG_DIR/flask.log
 
-sleep 5
-nohup livekit-server --dev --bind 0.0.0.0 --config $LIVEKIT_CONFIG_DIR/livekit.yaml >> $LOG_DIR/livekit.log 2>&1 &
-echo "livekit started"
+# cd $INSTANCE_DIR
+# nohup redis-server $LIVEKIT_CONFIG_DIR/redis.conf >> $LOG_DIR/redis.log 2>&1 &
+# echo "redis started"
 
-sleep 5
-nohup docker run --rm \
-    --cap-add SYS_ADMIN \
-    -e EGRESS_CONFIG_FILE=/config/egress.conf \
-    -v $INSTANCE_DIR/livekit:/out \
-    -v $LIVEKIT_CONFIG_DIR:/config \
-    --security-opt seccomp=$LIVEKIT_CONFIG_DIR/chrome-sandboxing-seccomp-profile.json \
-    livekit/egress:v1.8.5 >> $LOG_DIR/livekit-egress.log 2>&1 &
-echo "livekit egress started"
+# sleep 5
+# nohup livekit-server --dev --bind 0.0.0.0 --config $LIVEKIT_CONFIG_DIR/livekit.yaml >> $LOG_DIR/livekit.log 2>&1 &
+# echo "livekit started"
+
+# sleep 5
+# nohup docker run --rm \
+#     --cap-add SYS_ADMIN \
+#     -e EGRESS_CONFIG_FILE=/config/egress.conf \
+#     -v $INSTANCE_DIR/livekit:/out \
+#     -v $LIVEKIT_CONFIG_DIR:/config \
+#     --security-opt seccomp=$LIVEKIT_CONFIG_DIR/chrome-sandboxing-seccomp-profile.json \
+#     livekit/egress:v1.8.5 >> $LOG_DIR/livekit-egress.log 2>&1 &
+# echo "livekit egress started"
