@@ -10,7 +10,7 @@ from ocrmac import ocrmac
 
 from zchat.auth import login_required, current_user
 from zchat.db import db
-from zchat.user import UserOps, ExpertOps, AppointmentOps
+from zchat.models.user import UserOps
 from zchat.mindmap.from_jd import mindmap_from_jd
 from zchat.mindmap.from_topic import mindmap_from_topic
 from zchat.mindmap.get_description import description_from_topic_path

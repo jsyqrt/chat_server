@@ -8,85 +8,10 @@ from flask import (
 from werkzeug.utils import secure_filename
 
 from zchat.db import db
-from zchat.models import *
+from zchat.models.user import *
 from zchat.auth import login_required, current_user, admin_required
-from zchat.rand import *
-from zchat.meili import find_experts_from_meili_for, find_newbies_from_meili_for
-from zchat.websocket import user_is_online
 
 bp = Blueprint('user', __name__, url_prefix='/user')
-
-@bp.route('/gen_random', methods=['GET'])
-def gen_random():
-    count = int(request.args.get('count', '50'))
-
-    user_ops = UserOps(session=db.session)
-    expert_ops = ExpertOps(session=db.session)
-    newbie_ops = NewbieOps(session=db.session)
-    for _ in range(count):
-
-        phone_number=random_phone_number()
-        nickname=random_name()
-        id = user_ops.get_or_create_user(phone_number=phone_number)
-        if id is None:
-            current_app.logger.warn("failed tp create user")
-            continue
-
-        as_expert = random_bool()
-        as_newbie = random_bool()
-
-        succeed = user_ops.update_info(
-            id=id,
-            nickname=nickname,
-            phone_number=phone_number,
-            gender=random_gender(),
-            edubg=random_edubg(),
-            yearofwork=random_yearofwork(),
-            signature_text=random_signature(),
-            current_as_expert=as_expert,
-        )
-        if not succeed:
-            current_app.logger.warn(f"failed tp update user info {id}")
-            continue
-
-        succeed = user_ops.update_avatar(
-            id=id,
-            avatar_name=random_avatar(os.path.join(current_app.static_folder, 'images')))
-        if not succeed:
-            current_app.logger.warn(f"failed tp update user avatar {id}")
-            continue
-
-        if as_expert:
-            company=random_company()
-
-            succeed = expert_ops.register_or_update(
-                user_id=id,
-                email=random_email(nickname, company),
-                company=company,
-                title=random_title(),
-                profession=random_profession(),
-                business=random_business(),
-                price=random_price(),
-                services=random_services(),
-            )
-            if not succeed:
-                current_app.logger.warn(f"failed tp register as expert {id}")
-                continue
-
-        if as_newbie:
-            succeed = newbie_ops.register_or_update(
-                user_id=id,
-                company=random_company(),
-                title=random_title(),
-                profession=random_profession(),
-                business=random_business(),
-                jd=random_jd(),
-            )
-            if not succeed:
-                current_app.logger.warn(f"failed tp register as newbie {id}")
-                continue
-    return {'error': f'Succeed to gen random data for count {count}'}
-
 
 @bp.route('/me', methods=['GET'])
 @login_required
@@ -95,14 +20,6 @@ def get_me():
     user = user_ops.get_one(id=current_user.get_id_int())
     if user is not None:
         user_info = user.to_dict()
-        if user.as_newbie:
-            newbie_ops = NewbieOps(session=db.session)
-            newbie = newbie_ops.get_one(user_id=user.id)
-            user_info.update(newbie.to_dict())
-        if user.as_expert:
-            expert_ops = ExpertOps(session=db.session)
-            expert = expert_ops.get_one(user_id=user.id)
-            user_info.update(expert.to_dict())
         return user_info
 
     return {'error': 'Failed to get user info'}, 400
@@ -126,14 +43,6 @@ def get_all():
     user_ops = UserOps(session=db.session)
     all_users = user_ops.get_all()
     return all_users
-
-@bp.route('/chatlist', methods=['GET'])
-@login_required
-def get_chatlist():
-    chatwith_ops = ChatWithOps(session=db.session)
-    user_ops = UserOps(session=db.session)
-    chatlist = chatwith_ops.get_chatlist(current_user.get_id_int())
-    return [user_ops.get_one(id=user_id).to_dict() for user_id in chatlist]
 
 def get_md5(file):
     md5_hash = hashlib.md5()
@@ -210,15 +119,6 @@ def update_signature():
     succeed = user_ops.update_signature(id=current_user.get_id_int(), signature=signature)
     return {'error': 'Signature updated successfully!'}
 
-@bp.route('/update_role', methods=['POST'])
-@login_required
-def update_role():
-    as_expert = request.form['current_as_expert']
-
-    user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_role(id=current_user.get_id_int(), current_as_expert=as_expert)
-    return {'error': 'Role updated successfully!'}
-
 @bp.route('/update_info', methods=['POST'])
 @login_required
 def update_info():
@@ -229,7 +129,6 @@ def update_info():
         edubg = request.form['edubg']
         yearofwork = request.form['yearofwork']
         signature_text = request.form['signature_text']
-        as_expert = request.form['current_as_expert']
 
         user_ops = UserOps(session=db.session)
         succeed = user_ops.update_info(
@@ -240,7 +139,6 @@ def update_info():
             edubg=edubg,
             yearofwork=yearofwork,
             signature_text=signature_text,
-            current_as_expert=as_expert,
         )
         if succeed:
             return { "error": "Update Succeed!" }, 200
@@ -248,98 +146,10 @@ def update_info():
     else:
         return { "error": "Invalid Request Method!" }, 400
 
-@bp.route('/register_expert', methods=['POST'])
-@login_required
-def register_expert():
-    if request.method == 'POST':
-        email = request.form['email']
-        company = request.form['company']
-        title = request.form['title']
-        profession = request.form['profession']
-        business = request.form['business']
-        price = request.form['price']
-        services = request.form['services']
-        need_verify = request.form['need_verify']
-        if need_verify:
-            # TODO do email verification
-            pass
-
-        expert_ops = ExpertOps(session=db.session)
-        succeed = expert_ops.register_or_update(
-            user_id=current_user.get_id_int(),
-            email=email,
-            company=company,
-            title=title,
-            profession=profession,
-            business=business,
-            price=float(price),
-            services=services,
-        )
-        if succeed:
-            return { "error": "Register as expert Succeed!" }, 200
-        return { "error": "Failed to register as expert!" }, 400
-    else:
-        return { "error": "Invalid Request Method!" }, 400
-
-@bp.route('/expert_services', methods=['POST'])
-@login_required
-def update_expert_services():
-    current_app.logger.debug(f"update_expert_services")
-    if request.method == 'POST':
-        services = request.form['services']
-
-        expert_ops = ExpertOps(session=db.session)
-        succeed = expert_ops.update_services(
-            user_id=current_user.get_id_int(),
-            services=services,
-        )
-        if succeed:
-            return { "error": "Update expert services Succeed!" }, 200
-        return { "error": "Failed to update expert services!" }, 400
-    else:
-        return { "error": "Invalid Request Method!" }, 400
-
-@bp.route('/mark_expert', methods=['POST'])
-@login_required
-def mark_expert():
-    if request.method == 'POST':
-        newbie=current_user.get_id_int()
-        expert = request.form['expert']
-
-        mark_ops = MarkExpertOps(session=db.session)
-        succeed = mark_ops.add_mark(
-            newbie=newbie,
-            expert=expert,
-        )
-        if succeed:
-            return { "error": "Add expert mark Succeed!" }, 200
-        return { "error": "Failed to add expert mark!" }, 400
-    else:
-        return { "error": "Invalid Request Method!" }, 400
-
-@bp.route('/mark_expert', methods=['DELETE'])
-@login_required
-def unmark_expert():
-    if request.method == 'DELETE':
-        newbie=current_user.get_id_int()
-        expert = request.form['expert']
-
-        mark_ops = MarkExpertOps(session=db.session)
-        succeed = mark_ops.remove_mark(
-            newbie=newbie,
-            expert=expert,
-        )
-        if succeed:
-            return { "error": "Remove expert mark Succeed!" }, 200
-        return { "error": "Failed to remove expert mark!" }, 400
-    else:
-        return { "error": "Invalid Request Method!" }, 400
-
 @bp.route('/as_admin', methods=['GET'])
-# @login_required
-# @admin_required
+@login_required
+@admin_required
 def as_admin():
-    # user_id=current_user.get_id_int()
     user_id = int(request.args.get('id'))
 
     admin_user_ops = AdminUserOps(session=db.session)
@@ -360,196 +170,3 @@ def is_admin():
     current_app.logger.debug(f"is admin: {is_admin}")
     return {'is_admin': is_admin}
 
-@bp.route('/is_online', methods=['GET'])
-@login_required
-def is_online():
-    user_id = int(request.args.get('id'))
-    is_online = user_is_online(app=current_app, user_id=user_id)
-    return {'is_online': is_online, "user_id": user_id }
-
-@bp.route('/newbie', methods=['GET'])
-@login_required
-def get_newbie():
-    user_id = int(request.args.get('id'))
-
-    user_ops = UserOps(session=db.session)
-    newbie_ops = NewbieOps(session=db.session)
-
-    user = user_ops.get_one(id=user_id)
-    if user is not None:
-        newbie = newbie_ops.get_one(user_id=user_id)
-        if newbie is not None:
-            data = user.to_dict()
-            data.update(newbie.to_dict())
-
-            data['is_online'] = user_is_online(app=current_app, user_id=user_id)
-            return data
-        else:
-            current_app.logger.warn(f"no newbie for id: {user_id}")
-    else:
-        current_app.logger.warn(f"no user for id: {user_id}")
-    return {"error": f"Failed to Get Newbie {user_id}" }, 400
-
-@bp.route('/expert', methods=['GET'])
-@login_required
-def get_expert():
-    user_id = int(request.args.get('id'))
-
-    user_ops = UserOps(session=db.session)
-    expert_ops = ExpertOps(session=db.session)
-    app_ops = AppointmentOps(session=db.session)
-
-    user = user_ops.get_one(id=user_id)
-    if user is not None:
-        expert = expert_ops.get_one(user_id=user_id)
-        if expert is not None:
-            data = user.to_dict()
-            data.update(expert.to_dict())
-            comments = app_ops.get_comments_of(expert=user_id)
-
-            data['rating'] = 4.0 if len(comments) == 0 else sum([comment['rating'] for comment in comments]) / len(comments)
-            data['served'] = len(comments)
-            data['is_online'] = user_is_online(app=current_app, user_id=user_id)
-            return data
-        else:
-            current_app.logger.warn(f"no expert for id: {user_id}")
-    else:
-        current_app.logger.warn(f"no user for id: {user_id}")
-    return {"error": f"Failed to Get Expert {user_id}" }, 400
-
-@bp.route('/marked_expert', methods=['GET'])
-@login_required
-def get_marked_experts():
-    newbie=current_user.get_id_int()
-
-    user_ops = UserOps(session=db.session)
-    mark_ops = MarkExpertOps(session=db.session)
-    expert_ops = ExpertOps(session=db.session)
-
-    expert_ids = mark_ops.get_marked_experts(
-        newbie=newbie,
-    )
-
-    result = []
-    for expert_id in expert_ids:
-        user = user_ops.get_one(id=expert_id)
-        if user is not None:
-            expert = expert_ops.get_one(user_id=expert_id)
-            if expert is not None:
-                data = user.to_dict()
-                data.update(expert.to_dict())
-
-                # TODO add those
-                data['rating'] = 4.5
-                data['served'] = 28
-                data['is_online'] = user_is_online(app=current_app, user_id=expert_id)
-                result.append(data)
-            else:
-                current_app.logger.warn(f"no expert for id: {id}")
-        else:
-            current_app.logger.warn(f"no user for id: {id}, but it's an expert")
-    return result
-
-@bp.route('/my_newbies', methods=['GET'])
-@login_required
-def get_my_newbies():
-    user_ops = UserOps(session=db.session)
-    expert_ops = ExpertOps(session=db.session)
-
-    expert = expert_ops.get_one(user_id=current_user.get_id_int())
-    if expert is None:
-        return []
-
-    newbies = find_newbies_from_meili_for(current_app, expert=expert)
-    for newbie in newbies:
-        user_id = newbie.get('user_id', 0)
-        user = user_ops.get_one(id=user_id)
-        if user is not None:
-            newbie.update(user.to_dict())
-
-            newbie['is_online'] = user_is_online(app=current_app, user_id=user_id)
-        else:
-            current_app.logger.warn(f"no user for id: {user_id}, but it's an newbie")
-            continue
-    return newbies
-
-@bp.route('/my_experts', methods=['GET'])
-@login_required
-def get_my_experts():
-    user_ops = UserOps(session=db.session)
-    newbie_ops = NewbieOps(session=db.session)
-
-    newbie = newbie_ops.get_one(user_id=current_user.get_id_int())
-    if newbie is None:
-        return []
-
-    experts = find_experts_from_meili_for(current_app, newbie=newbie)
-    for expert in experts:
-        user_id = expert.get('user_id', 0)
-        user = user_ops.get_one(id=user_id)
-        if user is not None:
-            expert.update(user.to_dict())
-
-            # TODO add those
-            expert['rating'] = 4.5
-            expert['served'] = 28
-            expert['is_online'] = user_is_online(app=current_app, user_id=user_id)
-        else:
-            current_app.logger.warn(f"no user for id: {user_id}, but it's an expert")
-            continue
-    return experts
-
-@bp.route('/experts', methods=['GET'])
-@login_required
-def get_all_experts():
-    user_ops = UserOps(session=db.session)
-    expert_ops = ExpertOps(session=db.session)
-    experts = expert_ops.get_all()
-    for expert in experts:
-        user_id = expert.get('user_id', 0)
-        user = user_ops.get_one(id=user_id)
-        if user is not None:
-            expert.update(user.to_dict())
-
-            # TODO add those
-            expert['rating'] = 4.5
-            expert['served'] = 28
-            expert['is_online'] = user_is_online(app=current_app, user_id=user_id)
-        else:
-            current_app.logger.warn(f"no user for id: {user_id}, but it's an expert")
-            continue
-    return experts
-
-@bp.route('/register_newbie', methods=['POST'])
-@login_required
-def register_newbie():
-    if request.method == 'POST':
-        company = request.form['company']
-        title = request.form['title']
-        profession = request.form['profession']
-        business = request.form['business']
-        jd = request.form['jd']
-        jd_images = json.loads(request.form['jd_images'])
-
-        jd_json = json.dumps({
-            'jd': jd,
-            'jd_images': jd_images,
-        })
-
-        newbie_ops = NewbieOps(session=db.session)
-        succeed = newbie_ops.register_or_update(
-            user_id=current_user.get_id_int(),
-            company=company,
-            title=title,
-            profession=profession,
-            business=business,
-            jd=jd_json,
-        )
-        if succeed:
-            return {
-                "error": "Register as newbie Succeed!",
-                "newbie": newbie_ops.get_one(user_id=current_user.get_id_int()).to_dict()
-            }, 200
-        return { "error": "Failed to register as newbie!" }, 400
-    else:
-        return { "error": "Invalid Request Method!" }, 400

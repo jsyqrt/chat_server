@@ -23,7 +23,7 @@ def init_app(app):
             user_to_session.pop(user_id)
     app.remove_user_session = lambda user_id: remove_user_session(app.user_to_session, user_id)
 
-def user_is_online(app, user_id)->bool:
-    is_online = app.get_user_session(user_id) is not None
-    app.logger.debug(f"user {user_id} is online: {is_online}")
-    return is_online
+# def user_is_online(app, user_id)->bool:
+#     is_online = app.get_user_session(user_id) is not None
+#     app.logger.debug(f"user {user_id} is online: {is_online}")
+#     return is_online

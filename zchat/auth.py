@@ -12,7 +12,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 
 from zchat.db import db
-from zchat.models import *
+from zchat.models.user import *
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
