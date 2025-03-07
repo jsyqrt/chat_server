@@ -1,6 +1,5 @@
 import re
-import openai
-import os
+from zchat.apis.llm import get_response_from_llm
 
 system_prompt_template = """
 请分析提供的职位描述（JD），提取所有关键信息，并以JSON格式输出。关键信息包括但不限于职位标题、地点、薪资范围、学历要求、工作年限要求、部门、主要职责和所需技能，确保信息全面且结构清晰。
@@ -104,24 +103,13 @@ JD信息：
 """
 
 def get_llm_response(jd, work_experience):
-  client = openai.OpenAI(
-    base_url="https://api.groq.com/openai/v1",
-    api_key=os.getenv("GROQ_API_KEY"),
-    # base_url="http://127.0.0.1:8080/v1",
-  )
   messages=[
       {"role": "system", "content": system_prompt_template.format(work_experience=work_experience)},
       {"role": "user", "content": user_prompt + jd_prompt_template.format(jd=jd)},
     ]
   print(messages)
-
-  response = client.chat.completions.create(
-    model="qwen-2.5-32b",
-    # model="mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
-    messages=messages,
-    max_tokens=32768,
-  )
-  return response.choices[0].message.content
+  response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
+  return response
 
 def parse_llm_response(response):
   # 定义正则表达式模式：匹配 ```json 和 ``` 之间的内容

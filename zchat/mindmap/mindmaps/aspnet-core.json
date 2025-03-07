@@ -1,0 +1,1137 @@
+{
+  "title": "ASP.NET Core Developer",
+  "description": "\n",
+  "children": [
+    {
+      "title": "basics-of-csharp",
+      "xid": "NvODRFR0DLINB0RlPSsvt",
+      "description": "basics-of-csharp",
+      "id": "f7e036bf-cba3-45ed-b6d9-d4b05bf0de8d",
+      "children": [
+        {
+          "title": "csharp",
+          "xid": "fxANnSiTb2VzA9u-YeBL1",
+          "description": "csharp",
+          "id": "86de969d-c5c8-4f69-bc7c-8a145473df9d",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "dotnet",
+          "xid": "3GGvuxdfuDwLpNX_gtjCK",
+          "description": "dotnet",
+          "id": "369f22e5-2b4d-4c76-916b-8d8e27922ff3",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "dotnet-cli",
+          "xid": "6HJQ1Evgah0Pki04Z2hQt",
+          "description": "dotnet-cli",
+          "id": "4e00a47f-ac81-4490-8110-4ed4b8e941a2",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "general-development-skills",
+      "xid": "NEnna_8DstfYH4T9qrP3-",
+      "description": "general-development-skills",
+      "id": "0b67a21f-d661-4d0c-b567-f989e36d8ef6",
+      "children": [
+        {
+          "title": "git",
+          "xid": "OtdCmkj0SvrGwCUSfm96C",
+          "description": "git",
+          "id": "5158455a-c7de-4d62-8ca3-e67d01993e14",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "vcs-hosting-services",
+          "xid": "KAZF-mIg-FlfMonfdOLhb",
+          "description": "vcs-hosting-services",
+          "id": "df1cae39-affe-4567-acc1-3756c366e94c",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "http-https",
+          "xid": "YI3cAezupWNntFw4B6elY",
+          "description": "http-https",
+          "id": "0cda8510-02d5-4aff-8d5b-aca604359c89",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "datastructures-and-algorithms",
+          "xid": "RAX2xN37taw9cqA3pnORh",
+          "description": "datastructures-and-algorithms",
+          "id": "64686bdf-19e2-4cce-8311-ff0d9e83593d",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "database-fundamentals",
+      "xid": "tnKUdsgp6bnFtQTexEmfy",
+      "description": "database-fundamentals",
+      "id": "c6252e97-d013-4b00-9b6e-ee1e466434d0",
+      "children": [
+        {
+          "title": "sql-basics",
+          "xid": "aOJMVrTcA_I2y_QHzj7aM",
+          "description": "sql-basics",
+          "id": "c3b45a3c-8872-4f6b-b8d2-6bf43fcee160",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "database-design-basics",
+          "xid": "zlAcgLKxGF_TyrcJIk4X7",
+          "description": "database-design-basics",
+          "id": "390e314a-0c57-4534-8bf7-24e77372d987",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "stored-procedures",
+          "xid": "ZiK-c9zNbi5RZkKUi44wP",
+          "description": "stored-procedures",
+          "id": "e48c954a-c13d-46c9-931f-55473290ee7c",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "constraints",
+          "xid": "1-XdtrGPbUoxpu9ZcQlBA",
+          "description": "constraints",
+          "id": "86c372cc-3576-4a97-88f5-47b03e792d90",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "triggers",
+          "xid": "2f_CJMnXwPxjMEwm5P_QJ",
+          "description": "triggers",
+          "id": "e5c13181-f559-4355-8df6-2b632a870ce8",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "basics-of-aspnet-core",
+      "xid": "v2ZTCQQFQPoJNhOVGMG2g",
+      "description": "basics-of-aspnet-core",
+      "id": "f6bf5014-361c-43ec-a9b4-e5337ba8b7e0",
+      "children": [
+        {
+          "title": "mvc",
+          "xid": "D3aQw0-pk3ycO-n10HBaA",
+          "description": "mvc",
+          "id": "b34657ac-d987-4fae-ae4e-e3a793d9d6c2",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "rest",
+          "xid": "dZ9fYWMBa1OemTmLOI8_q",
+          "description": "rest",
+          "id": "fc832ee0-0f53-42d0-a39d-3146c4c95c70",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "razor-pages",
+          "xid": "qpVxwuyA2oE06MZLtEdP1",
+          "description": "razor-pages",
+          "id": "2b4dce2d-ec50-4cf0-906d-6ed9b4308b98",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "razor-components",
+          "xid": "vePinRjDfSGULKw0LE9K-",
+          "description": "razor-components",
+          "id": "747d9275-6b25-4862-9d03-37ef829061e0",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "middlewares",
+          "xid": "dG--AAcZZdltYCeg6zCz2",
+          "description": "middlewares",
+          "id": "92023b60-9ceb-4534-a05d-470bab40a76a",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "filters-and-attributes",
+          "xid": "U3HXmNq6x2YA3BwZsOTbe",
+          "description": "filters-and-attributes",
+          "id": "c3aebf8b-d342-4eae-8a12-7e81708eae0b",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "app-settings-and-configurations",
+          "xid": "EJxliq-HPVp00CVsFc6kf",
+          "description": "app-settings-and-configurations",
+          "id": "4a4b0653-2b79-44a4-9e0e-70b830054f27",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "orm",
+      "xid": "POQPoN98eqOH2873ZI6Hm",
+      "description": "orm",
+      "id": "c0de7007-1037-40fb-8d5c-dae93d049415",
+      "children": [
+        {
+          "title": "entity-framework-core",
+          "xid": "ET74_7ieahNaGdPT11_NI",
+          "description": "entity-framework-core",
+          "id": "3bd580d9-3bae-4190-a9d0-a74d11dadd63",
+          "children": [
+            {
+              "title": "framework-basics",
+              "xid": "eGVaAz3VhGu3cXBNxTAWd",
+              "description": "framework-basics",
+              "id": "3304ab49-4e8d-4967-ae12-4cdf10c5eca5",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "codefirst-migrations",
+              "xid": "ZPeebwJ3OBuywEgLLgQTG",
+              "description": "codefirst-migrations",
+              "id": "471e9511-3020-4292-8a96-eba28161a16d",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "change-tracker-api",
+              "xid": "wfEOvAkGXkTZGdGX341D4",
+              "description": "change-tracker-api",
+              "id": "a3f4a2f5-01cb-4362-acd6-419b0eccb33b",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "lazy-eager-explicit-loading",
+              "xid": "9AMotSwdEbB8uOg80SykE",
+              "description": "lazy-eager-explicit-loading",
+              "id": "f560fc19-1c00-4897-89c0-1a4b81b05553",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "dapper",
+          "xid": "UkWc41r0bZ1lptjse3As6",
+          "description": "dapper",
+          "id": "af0bc90e-ac12-4d1c-840b-294eb02960c9",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "repodb",
+          "xid": "tYDVcnG0oUF3R8DwASvAh",
+          "description": "repodb",
+          "id": "5b69b1f2-9e46-486c-9ae6-372fecebd619",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "nhibernate",
+          "xid": "z24IJndpQYTl1PhiUI2mx",
+          "description": "nhibernate",
+          "id": "44a30605-69fd-4c80-b472-f462ce3c8f4f",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "dependency-injection",
+      "xid": "IejHMMVKwA0sIInla4FjX",
+      "description": "dependency-injection",
+      "id": "0eedf487-6386-4876-8990-bd4ca5c97120",
+      "children": [
+        {
+          "title": "scrutor",
+          "xid": "f212ztDU_kb7gO71Nn76L",
+          "description": "scrutor",
+          "id": "dcf7f615-e03d-494a-903c-9cb7c194d269",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "life-cycles",
+          "xid": "Tjaczp2E-cCn0qSv89xgo",
+          "description": "life-cycles",
+          "id": "470b3753-7cc0-4ace-a10d-4e1ca497223f",
+          "children": [
+            {
+              "title": "scoped",
+              "xid": "M3BW_63MFQyD8NE68dazD",
+              "description": "scoped",
+              "id": "04df138e-8d95-4a43-a607-e68970f8fbe7",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "transient",
+              "xid": "-N0XM0-VtCZ6QMo2YyMD-",
+              "description": "transient",
+              "id": "bbcd66c7-5e56-4f91-97a8-6fbe0b00a5a8",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "singleton",
+              "xid": "y9bDrCjkDbxSIrEEtu_Mi",
+              "description": "singleton",
+              "id": "935f1036-e6f2-428f-b25e-faa6769f8013",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "di-containers",
+          "xid": "iM760f8Ys66-VSkMiZfIX",
+          "description": "di-containers",
+          "id": "45dcf063-0b74-46f6-9d18-443a5a88785b",
+          "children": [
+            {
+              "title": "microsoft-extensions-dependency-injection",
+              "xid": "J9XdYLo7qJiBoL8p3c68P",
+              "description": "microsoft-extensions-dependency-injection",
+              "id": "8a7fba67-c6bf-40ec-94a3-b7f650381e5a",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "auto-fac",
+              "xid": "gbpSbjF12dBE1Tb3PX8Bz",
+              "description": "auto-fac",
+              "id": "133f11c3-0309-4a62-932c-e0e52a5c095d",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "caching",
+      "xid": "7Nth4LOrM_KirhvjDGkgS",
+      "description": "caching",
+      "id": "d244ecaf-7449-4a52-8e0d-77dffa028917",
+      "children": [
+        {
+          "title": "entity-framework-cache",
+          "xid": "FV4GsPjUyAc99DnIwkkCC",
+          "description": "entity-framework-cache",
+          "id": "8206b905-8b62-42fe-83c0-0f0baf40161a",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "memory-cache",
+          "xid": "8CRsr7UZszjc_fZ-4ZmIx",
+          "description": "memory-cache",
+          "id": "4edd6b9c-649e-4e38-8038-729619a1a12d",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "distributed-cache",
+          "xid": "SiG0FWWznjDg-2mIWlchy",
+          "description": "distributed-cache",
+          "id": "3fd056e3-63b7-4d50-b03f-ce899d9b26d0",
+          "children": [
+            {
+              "title": "memcached",
+              "xid": "u2pc3ZkL0EumAsbM12D5y",
+              "description": "memcached",
+              "id": "13e49c0c-841d-4da4-b4e7-50acbe4f5c6a",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "redis",
+              "xid": "Ts0gJ4DdwFp48LGr4YSvM",
+              "description": "redis",
+              "id": "824f745d-24d2-4d5c-951c-8a20a07096ae",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "databases",
+      "xid": "Ujzn_dILCA7xoupnz398l",
+      "description": "databases",
+      "id": "3ff45d4f-3aac-4be7-9eb3-92a79bd11cb7",
+      "children": [
+        {
+          "title": "search-engines",
+          "xid": "6p5atMYw3b3bXkQuXZsDV",
+          "description": "search-engines",
+          "id": "603909eb-0122-4274-8f4b-e53ee17ba0e6",
+          "children": [
+            {
+              "title": "elasticsearch",
+              "xid": "mK9OAwjReZoQZr1WSLRKJ",
+              "description": "elasticsearch",
+              "id": "ff33dbd6-8134-40d1-9487-6f010096bb6b",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "solr",
+              "xid": "2sY_p_8cOOBmZtDHO2Cmy",
+              "description": "solr",
+              "id": "679f636c-e009-4e3b-8d3d-d9305784fc5c",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "sphinx",
+              "xid": "Ye9WHfwZa-Fc2YDaTCmU1",
+              "description": "sphinx",
+              "id": "b47d1372-174a-4012-8c4c-b8b4750055a8",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "cloud",
+          "xid": "LrjmJs6_rXUkc2A7fEq24",
+          "description": "cloud",
+          "id": "25c6d025-2c0e-4ec8-a044-bcc292374688",
+          "children": [
+            {
+              "title": "dynamodb",
+              "xid": "1Om9aQDZmnj_DN10ogwDL",
+              "description": "dynamodb",
+              "id": "d5a6d61d-e3b8-46cd-bbd6-6c21ebd41d2a",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "cosmosdb",
+              "xid": "KrkV1w9b_Nwm6pe9diDRS",
+              "description": "cosmosdb",
+              "id": "8c5cb5bd-90eb-45dd-a433-3281791e766b",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "relational",
+          "xid": "FnRxRY3uDZdTve1w-nBfc",
+          "description": "relational",
+          "id": "fb978cbc-9cdf-476c-ab02-0d3f9efeccc4",
+          "children": [
+            {
+              "title": "sql-server",
+              "xid": "HQHSzsqBGSVYNLQ9o5EI-",
+              "description": "sql-server",
+              "id": "4110f55f-fa46-4ded-8bb6-110de3ed5bab",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "postgresql",
+              "xid": "An9TLvo-I6NtC8wFU3bh4",
+              "description": "postgresql",
+              "id": "6bdca914-96aa-43ea-aa31-2cb65a6c777b",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "mariadb",
+              "xid": "Gs8XcsTo11MeCsiSGpjkU",
+              "description": "mariadb",
+              "id": "ec6db95d-7cce-453d-9e90-550aeb3608ee",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "mysql",
+              "xid": "WsGwg4qdlu_vBsFEpmBvU",
+              "description": "mysql",
+              "id": "13968549-edb2-4e7f-9449-3e8cf908970e",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "nosql",
+          "xid": "WUis4K9vduriYdVkKvM9r",
+          "description": "nosql",
+          "id": "7d703dd1-e9e0-4d02-a2e3-e5e369e616c4",
+          "children": [
+            {
+              "title": "mongodb",
+              "xid": "-wYRa8qSuKVKo_yOTKV67",
+              "description": "mongodb",
+              "id": "efe2a3fd-ef18-4209-83f2-5b4c04198073",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "litedb",
+              "xid": "3gcXaOnHL4v5OoStrTWNV",
+              "description": "litedb",
+              "id": "794b6b3c-e63e-4049-9032-3651610bd8b8",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "cassandra",
+              "xid": "U_-Gt5csu_hihl7ybFY-B",
+              "description": "cassandra",
+              "id": "00c49951-b88b-4044-b5ae-384ebe52f570",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "couchdb",
+              "xid": "vHcwt6ARi5YR3v-eDDjfl",
+              "description": "couchdb",
+              "id": "99fb4657-bf35-48af-ab8a-4dea4b0ffed1",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "log-frameworks",
+      "xid": "fQ3w8REYWzQfeJ0nPyq6W",
+      "description": "log-frameworks",
+      "id": "65ea2fb6-359d-4d55-b1fe-f660e2d46488",
+      "children": [
+        {
+          "title": "serilog",
+          "xid": "xL0s4-HfRxNy2ru0jiIWR",
+          "description": "serilog",
+          "id": "9ca21289-dcf8-45e3-b793-4281842440c9",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "nlog",
+          "xid": "ykF2bB_68AhCOzeQ_QSW1",
+          "description": "nlog",
+          "id": "c3b2ef42-5573-4982-8031-986943f1c502",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "api-clients",
+      "xid": "GLkDH0X0uy8_1DIdCzbUD",
+      "description": "api-clients",
+      "id": "c54162ae-c636-41cd-a017-41082bea043a",
+      "children": [
+        {
+          "title": "rest",
+          "xid": "KJCtxH3mYsZq3hfBZ6cJF",
+          "description": "rest",
+          "id": "ed2dd92d-1acd-4328-9aef-8caa8d93bfc8",
+          "children": [
+            {
+              "title": "odata",
+              "xid": "YojZ5fpzw-5WgoqqkO6wl",
+              "description": "odata",
+              "id": "65712f5f-86df-4ac5-82ab-b5e76c3025c2",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "grpc",
+          "xid": "x3SJlLc19DNJ-PyDOOj_G",
+          "description": "grpc",
+          "id": "17ff28e1-93e6-490f-bc7d-8137ad98c10b",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "graphql",
+          "xid": "BdTQ5ZMNDNZvkAUoCfL5H",
+          "description": "graphql",
+          "id": "1999c3e0-418d-434a-85dd-6ecd240970c8",
+          "children": [
+            {
+              "title": "hot-chocolate",
+              "xid": "XMrQx9JH0eSQJpMzhvy0F",
+              "description": "hot-chocolate",
+              "id": "753a4e6f-9829-48d2-a6cb-516b01ec1f5d",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "graphql-dotnet",
+              "xid": "Efxu9gDodODMTKJbWcXzB",
+              "description": "graphql-dotnet",
+              "id": "28cc4293-af14-4ef5-aced-af48a598e62c",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "real-time-communication",
+      "xid": "9Vv3OxafB6BlHhi1ZkeVO",
+      "description": "real-time-communication",
+      "id": "72627eff-8fa6-4b16-9e1f-e2ee02c7b5ec",
+      "children": [
+        {
+          "title": "web-sockets",
+          "xid": "tBl8neu3tJd5GPwGfJbjZ",
+          "description": "web-sockets",
+          "id": "1236790c-ec06-465b-aafa-64e92b8919ec",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "singlar-core",
+          "xid": "8dvd4M0TKNyQR8dEolGNT",
+          "description": "singlar-core",
+          "id": "b6ab90c9-0584-4a4b-869c-5f21b9f76449",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "object-mapping",
+      "xid": "9ECykIIvXlDblbFbRVcJS",
+      "description": "object-mapping",
+      "id": "784a812d-cd44-49b1-8ae9-5c496b8fbbd2",
+      "children": [
+        {
+          "title": "atuo-mapper",
+          "xid": "GPmlueMnuLCUW_t4jvGhc",
+          "description": "atuo-mapper",
+          "id": "af2708ae-2905-49c9-bd4e-69a69dd09108",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "task-scheduling",
+      "xid": "s57tKy1rajlJbKFDVXLqs",
+      "description": "task-scheduling",
+      "id": "27555a3b-9cb9-49ef-9205-5b87e3ca1676",
+      "children": [
+        {
+          "title": "native-background-service",
+          "xid": "uP1nqbmFmZL_wA2DoqP8C",
+          "description": "native-background-service",
+          "id": "437a78c2-7a18-4a87-86a9-44706c9d1313",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "quartz",
+          "xid": "zOWlPXIl4XPs_0pA8-yi5",
+          "description": "quartz",
+          "id": "985b85bb-5230-454e-94b9-bfaccd691e74",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "coravel",
+          "xid": "p3bZnKIyRgLmB764Kkhju",
+          "description": "coravel",
+          "id": "cf039298-7012-43e1-b598-8f972d721bf6",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "hangfire",
+          "xid": "QiQsx1udyKcPJ-lZjRQVy",
+          "description": "hangfire",
+          "id": "3a516925-1544-497e-a2f0-049d31e06328",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "testing",
+      "xid": "XofWWhlU_vWCG5oXVMZze",
+      "description": "testing",
+      "id": "3cfe88c8-e664-40ed-adc4-81a6efb4c7e1",
+      "children": [
+        {
+          "title": "e2e-testing",
+          "xid": "",
+          "description": "e2e-testing",
+          "id": "d46b14c6-f088-45ad-a5f9-842214f6c796",
+          "children": [
+            {
+              "title": "playwright",
+              "xid": "AtyL0ij8FeJCBmqG2YvTO",
+              "description": "playwright",
+              "id": "5e124dfe-57b3-4daf-9606-997029d4a15d",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "puppeteer",
+              "xid": "UCpoLiQJ4LeniI9x3uGcY",
+              "description": "puppeteer",
+              "id": "81b96a25-0d97-4769-9829-570e11450f3e",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "cypress",
+              "xid": "f2UP2jDnDr7XEFIdAtBhH",
+              "description": "cypress",
+              "id": "6c6ea8e3-e898-436b-ac39-14ad573d21eb",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "unit-testing",
+          "xid": "",
+          "description": "unit-testing",
+          "id": "d15ad2ed-849d-402d-a44c-cd8718b771ef",
+          "children": [
+            {
+              "title": "mstest",
+              "xid": "236VJJjMvqHfSj-MHSDPV",
+              "description": "mstest",
+              "id": "288142d0-35fb-4369-abd8-a01411f0c4d7",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "xunit",
+              "xid": "R8C6s53RYjkRVma0nCJpy",
+              "description": "xunit",
+              "id": "a2d0ab58-86a3-4cae-83e6-8eff3d8bb96b",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "nunit",
+              "xid": "qHYBlBCvCGUZGh6gyEI63",
+              "description": "nunit",
+              "id": "ada57267-b812-456b-b16b-d49da8bec110",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "shouldly",
+              "xid": "zhn-VLGPfV6FZT2OMl6zf",
+              "description": "shouldly",
+              "id": "80b2713c-df28-4b4a-87b5-b8f373efa2d7",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "nsubstitute",
+              "xid": "iZCxinqlVefBk5-ICqt4v",
+              "description": "nsubstitute",
+              "id": "d3d87ecf-540a-4d9c-9a02-9bcd799a90fb",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "moq",
+              "xid": "eyOXWb1kL80Wqiwc2WHd_",
+              "description": "moq",
+              "id": "306fe518-439e-4829-ac21-7806b3b07f4a",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "fake-it-easy",
+              "xid": "diRJ_F6kx42Ucs0fxidtZ",
+              "description": "fake-it-easy",
+              "id": "e121b7aa-e983-4d08-8061-b1ca63e86e1c",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "integration-testing",
+          "xid": "",
+          "description": "integration-testing",
+          "id": "fe67af75-1b38-409c-9360-1967b0fd5f0a",
+          "children": [
+            {
+              "title": "web-application-factory",
+              "xid": "Xx5G09n4WWnnydCgxnL0A",
+              "description": "web-application-factory",
+              "id": "f7afb5ac-9b31-4047-8b58-e339bd0ef8bd",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "behavior-testing",
+          "xid": "",
+          "description": "behavior-testing",
+          "id": "e634140c-7de0-4cba-a4e2-2ed08f388b71",
+          "children": [
+            {
+              "title": "spec-flow",
+              "xid": "9WZmjiFowydYrkHQ2xeNm",
+              "description": "spec-flow",
+              "id": "836821af-185e-4dfe-854b-6fbc4e9dbdd0",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "light-bdd",
+              "xid": "aWRv5sU9dksgcpE9RGJb1",
+              "description": "light-bdd",
+              "id": "18938b67-dc67-4ff4-9de5-c61fc957469a",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "microservices",
+      "xid": "37c2eCvRdebztkbc5AjYp",
+      "description": "microservices",
+      "id": "09ac7e25-2cdb-4d15-a0f9-f584da231747",
+      "children": [
+        {
+          "title": "message-brokers",
+          "xid": "",
+          "description": "message-brokers",
+          "id": "aab04884-2513-426c-ac4d-84649d06ed30",
+          "children": [
+            {
+              "title": "apache-kafka",
+              "xid": "L8RkeMYm0WGNeLLcHKF1R",
+              "description": "apache-kafka",
+              "id": "869d4c96-1db8-4675-a795-4771018fb8e4",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "rabbit-mq",
+              "xid": "KqvBn2_wvYhFdv0dBZMC9",
+              "description": "rabbit-mq",
+              "id": "c680e8bf-9b08-4b51-9939-eaf72dfaff73",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "active-mq",
+              "xid": "sNYYEBMHV_NO_NToP51VY",
+              "description": "active-mq",
+              "id": "7dfa57d2-f3d4-413c-8c21-e62e9b3b1cbe",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "azure-service-bus",
+              "xid": "gBuaVZfqJ0-g21sKohQtx",
+              "description": "azure-service-bus",
+              "id": "706adf43-ac36-4c47-8045-5994280f6945",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "net-mq",
+              "xid": "8d4f7_3VO03vy7YDWwPI9",
+              "description": "net-mq",
+              "id": "fa2cd33b-e911-45a8-b910-cd53c9d53c84",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "message-bus",
+          "xid": "",
+          "description": "message-bus",
+          "id": "16f4dc66-dc4f-466a-aaf4-fa5f461ca37b",
+          "children": [
+            {
+              "title": "mass-transit",
+              "xid": "SQKIUa_UsJ4cls-Vs9yHU",
+              "description": "mass-transit",
+              "id": "21347b05-97f7-4fc6-aa0c-16ab9326f99b",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "nservice-bus",
+              "xid": "vf8W1FLhcb3awx4JBaY5r",
+              "description": "nservice-bus",
+              "id": "3f83f663-61b4-460c-9ccf-d4ebbf8fb485",
+              "children": [],
+              "links": []
+            },
+            {
+              "title": "easy-net-q",
+              "xid": "X6iSHoHnFFMaGb6YPQFhl",
+              "description": "easy-net-q",
+              "id": "640089da-221d-4736-bbd1-f3df3b4b92fa",
+              "children": [],
+              "links": []
+            }
+          ],
+          "links": []
+        },
+        {
+          "title": "docker",
+          "xid": "rmRESzLiZNWdBFXLrwQFJ",
+          "description": "docker",
+          "id": "053296ef-c7d9-437c-88d7-d5214ff3abf7",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "ocelot",
+          "xid": "2k-rGuhYTTAR9XN3aDAnW",
+          "description": "ocelot",
+          "id": "56d00212-82a9-475e-bd2d-08cfbdc820a3",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "yarp",
+          "xid": "2axfolu26P8XwxMxgMaS3",
+          "description": "yarp",
+          "id": "1491d44c-3667-4d59-a0d1-0c6f29a4b2ad",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "kubernetes",
+          "xid": "02rtFStTeIm8prNskxaUN",
+          "description": "kubernetes",
+          "id": "92067704-ea70-4d79-94bc-cd84aff79c1e",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "dapr",
+          "xid": "IHY9uL3dzYmf2D2wWgIh-",
+          "description": "dapr",
+          "id": "29fd57ad-248c-4a40-9b6c-77d47c1fe608",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "orleans",
+          "xid": "XKsLqDDco5OXKURCcWAmv",
+          "description": "orleans",
+          "id": "68702b5c-c6ed-45a9-911f-f84da61bfb68",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "steel-toe",
+          "xid": "s8evqe2MireS1UhxoXrd1",
+          "description": "steel-toe",
+          "id": "556ec316-6eec-48cc-99de-8a45cfcbd717",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "ci-cd",
+      "xid": "KIFmahcNiSo2NGoLtAyRR",
+      "description": "ci-cd",
+      "id": "263d17b3-7c84-482c-919d-cbe4d9766430",
+      "children": [
+        {
+          "title": "github-actions",
+          "xid": "0-PLMXGlRyRzTk-EjXMs2",
+          "description": "github-actions",
+          "id": "a286dc9b-0b80-4805-90d5-ae50887e8499",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "azure-pipelines",
+          "xid": "_-GQNpsb7KZw76hNNOq3h",
+          "description": "azure-pipelines",
+          "id": "77c7b8a9-82d6-4c8f-86be-d1d7696ea7f2",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "circle-ci",
+          "xid": "KyGjXgG6JFo42qOV0wqfB",
+          "description": "circle-ci",
+          "id": "11f6a98d-e819-4c7a-9943-7e8eea58a7f7",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "client-side-libraries",
+      "xid": "",
+      "description": "client-side-libraries",
+      "id": "b2512170-87d8-4b2d-abb3-11147cadf09e",
+      "children": [
+        {
+          "title": "blazor",
+          "xid": "4iD_hDtgJ15IlJGxiO-E8",
+          "description": "blazor",
+          "id": "b0fda34a-9598-4646-b11d-9c00cc1dfbd6",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "template-engines",
+      "xid": "C85aJvrzj6rP2Hmfj9uPB",
+      "description": "template-engines",
+      "id": "4965519d-9e57-49b7-860c-4280be2465a3",
+      "children": [
+        {
+          "title": "razor",
+          "xid": "nUE2-egUMNFQoPVrVRFPl",
+          "description": "razor",
+          "id": "9997e6fb-8989-442a-bf78-de885cde3f83",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "scriban",
+          "xid": "dWB5OCvWVYkD30Op_dMwy",
+          "description": "scriban",
+          "id": "1f9e7285-7e35-41aa-950c-fe205370d5b9",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "fluid",
+          "xid": "ZaOhWWDgVxrn0hbesJ7xT",
+          "description": "fluid",
+          "id": "ef248730-d6ce-42fc-bf52-507ccd04dd06",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "good-to-know-libraries",
+      "xid": "",
+      "description": "good-to-know-libraries",
+      "id": "fbbac837-6537-4974-9b18-f0143336e179",
+      "children": [
+        {
+          "title": "mediatr",
+          "xid": "cc0UNQwbDlySue-CvpChR",
+          "description": "mediatr",
+          "id": "19f3fc4d-8673-47a5-bf58-3693d489946b",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "fluent-validation",
+          "xid": "sa0zXd8lpNs_SFQ2y-PY4",
+          "description": "fluent-validation",
+          "id": "8d830445-b3bf-46d5-bb5a-edf54f249645",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "polly",
+          "xid": "gQhiEpvx__70N1WbEHGYJ",
+          "description": "polly",
+          "id": "e24577df-05d5-401d-8aa9-d47fbd586b95",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "nuke",
+          "xid": "EsC1JwFOMOlQVelpmxISh",
+          "description": "nuke",
+          "id": "f93b0416-7c47-4a73-92c2-4d8c3c3d0733",
+          "children": [],
+          "links": []
+        },
+        {
+          "title": "benchmark-net",
+          "xid": "9LEVN-uVEwxJooEiB9ApK",
+          "description": "benchmark-net",
+          "id": "056b123b-73d1-45c4-a278-1e1346a3c73c",
+          "children": [],
+          "links": []
+        }
+      ],
+      "links": []
+    }
+  ]
+}

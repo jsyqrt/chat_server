@@ -1,6 +1,5 @@
 import re
-import openai
-import os
+from zchat.apis.llm import get_response_from_llm
 
 system_prompt_template = """
 请分析提供的topic，为用户规划一条学习路径。学习路径需详细分析topic，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
@@ -66,21 +65,12 @@ topic信息：
 """
 
 def get_llm_response(topic):
-  client = openai.OpenAI(
-    base_url="https://api.groq.com/openai/v1",
-    api_key=os.getenv("GROQ_API_KEY"),
-    # base_url="http://127.0.0.1:8080/v1",
-  )
-  response = client.chat.completions.create(
-    model="qwen-2.5-32b",
-    # model="mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
-    messages=[
-      {"role": "system", "content": system_prompt_template.format(topic=topic)},
-      {"role": "user", "content": user_prompt + topic_prompt_template.format(topic=topic)},
-    ],
-    max_tokens=32768,
-  )
-  return response.choices[0].message.content
+  messages=[
+    {"role": "system", "content": system_prompt_template.format(topic=topic)},
+    {"role": "user", "content": user_prompt + topic_prompt_template.format(topic=topic)},
+  ]
+  response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
+  return response
 
 def parse_llm_response(response):
   # 定义正则表达式模式：匹配 ```json 和 ``` 之间的内容

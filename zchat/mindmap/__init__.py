@@ -179,11 +179,11 @@ def description():
 # @login_required
 def demo_map():
     # name = 'backend-engineer.json'
-    name = 'new-backend.json'
+    name = 'mybackend.json'
     with open(os.path.join(current_app.instance_path, name), 'r') as f:
         mindmap = json.load(f)
-    mindmap_id_generator = MindmapModifier()
-    mindmap = mindmap_id_generator.generate(mindmap)
+    # mindmap_id_generator = MindmapModifier()
+    # mindmap = mindmap_id_generator.generate(mindmap)
     return jsonify({
         'participants': 1258,
         'completions': 342,
@@ -193,3 +193,31 @@ def demo_map():
         'mindmap_kind': 'role',
         'mindmap_info': mindmap,
     })
+
+# nodejs.json
+# devops.json
+# server-side-game-developer.json
+# frontend.json
+# computer-science.json
+# python.json
+# software-architect.json
+# data-analyst.json
+# typescript.json
+# mlops.json
+# vue.json
+# aspnet-core.json
+# postgresql-dba.json
+# angular.json
+# qa.json
+# backend.json
+# cyber-security.json
+# blockchain.json
+# full-stack.json
+# android.json
+# system-design.json
+# javascript.json
+# technical-writer.json
+# game-developer.json
+# react.json
+# ux-design.json
+# sql.json

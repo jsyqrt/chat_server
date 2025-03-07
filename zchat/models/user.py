@@ -60,6 +60,9 @@ class UserOps:
     def __init__(self, session):
         self.session = session
 
+    def username_with_phone_number_suffix(self, phone_number)->str:
+        return f"用户{phone_number[-4:]}"
+
     def get_or_create_user(self, phone_number)->int:
         current_app.logger.debug(f"get_or_create_user, {phone_number}")
         try:
@@ -68,7 +71,7 @@ class UserOps:
                 return user.id
 
             # TODO with better random name
-            user = User(phone_number=phone_number, nickname=random_name())
+            user = User(phone_number=phone_number, nickname=self.username_with_phone_number_suffix(phone_number))
             self.session.add(user)
             self.session.commit()
             current_app.logger.debug(f"added user, id: {user.id}, phone_number: {phone_number}")
