@@ -1,18 +1,21 @@
 {
+  "id": "1ac6896d-5684-4d5f-bc01-9f5df578ae4b",
   "title": "QA Engineer",
-  "description": "\n",
+  "description": "Steps to follow in order to become a modern QA Engineer in 2025",
+  "question_title": "",
+  "question_description": "",
   "children": [
     {
       "title": "Learn the Fundamentals",
       "xid": "m1wX27XBWKXZcTMH2U1xp",
       "description": "The phrase \"fit for use or purpose\" sums up quality, which is incredibly difficult to define. It all comes down to fulfilling the requirements and expectations of the consumer in terms of the product's usefulness, design, dependability, durability, and price.\n\nAssurance is nothing more than a confident statement made about a good or service. It is the assurance that a good outcome is guaranteed for a good or service. It offers a warranty that the product will perform faultlessly in accordance with expectations or needs.\n\nQuality Assurance (QA) also known as QA testing is an activity to ensure that an organization provides the best product or service to the customers. QA testing of a software involves the testing of performance, adaptability, and functionality. Yet, software quality assurance extends beyond software quality; it also comprises the quality process used for developing, testing, and release of software products. QA relies on the software development cycle, which includes the management of software requirements, design, coding, testing, and release.",
-      "id": "83a4c9bb-3628-4597-b8f7-3af6aba6cd53",
+      "id": "a8361910-f9b8-4308-99d4-69c2f29aae5d",
       "children": [
         {
           "title": "Test Oracles",
           "xid": "Zja25damM2vXMOYCyRZiq",
           "description": "A test oracle is a mechanism; different from the program itself that can be used to check the correctness of the program's output for the test cases. Conceptually, we can consider testing a process in which the test cases are given to the test oracle and the program under testing.\n\n",
-          "id": "c483e749-58a8-4705-941d-5daf38352607",
+          "id": "3413eed6-5b94-4ede-a8a8-61cf42c98c8f",
           "children": [],
           "links": [
             {
@@ -31,7 +34,7 @@
           "title": "Test Prioritization",
           "xid": "1976f2-opqLqV4ImPJlt0",
           "description": "Test prioritization is ordering the test cases to be conducted eventually. Prioritizing test cases aids to meet two important constraints, namely time and budget in software testing to enhance the fault detection rate as early as possible.\n\n",
-          "id": "f4ac120d-3092-4c43-94b1-43f368e7d921",
+          "id": "59bbcf71-8d4b-4a5d-aa2e-a867cad67f6e",
           "children": [],
           "links": [
             {
@@ -55,13 +58,13 @@
           "title": "Manage your Testing",
           "xid": "pH9h2tjO6raO_g4W8EgKq",
           "description": "Test Management is a process of managing the testing activities in order to ensure high quality and high-end testing of the software application. The method consists of organizing, controlling, ensuring traceability and visibility of the testing process in order to deliver the high quality software application. It ensures that the software testing process runs as expected.\n\n",
-          "id": "ba1d5fba-4c5f-4ba8-9cf3-92c98f774713",
+          "id": "a782b52c-189b-4a41-845f-6f35da870f91",
           "children": [
             {
               "title": "qTest",
               "xid": "FE_Wp2RPWFDHNaQIBLqH6",
               "description": "qTest is a test management tool used for Project Management, Bug Tracking, and Test Management. It follows the centralized test management concept that helps to communicate easily and assists in rapid development of task across QA team and other stakeholders.\n\n",
-              "id": "bc3fe51f-dea6-419a-925c-df60a57f87f3",
+              "id": "c85aad5a-cb0e-4bd6-b02d-8acd987e99c5",
               "children": [],
               "links": [
                 {
@@ -80,7 +83,7 @@
               "title": "TestRail",
               "xid": "5Tn6Wtw8QE56LZ9BlRAmW",
               "description": "TestRail is a web-based test case management tool. It is used by testers, developers and team leads to manage, track, and organize software testing efforts. TestRail allows team members to enter test cases, organize test suites, execute test runs, and track their results, all from a modern and easy to use web interface.\n\n",
-              "id": "e5b2da22-de1c-4243-a9c0-8865195dee65",
+              "id": "d51f510c-880e-43bb-81f6-ca453c03f64d",
               "children": [],
               "links": [
                 {
@@ -99,7 +102,7 @@
               "title": "TestLink",
               "xid": "leiCCxLJgXCpk1a--mE83",
               "description": "TestLink is most widely used web based open source test management tool. It synchronizes both requirements specification and test specification together. Tester can create test project and document test cases using this tool. With TestLink you can create an account for multiple users and assign different user roles.\n\n",
-              "id": "834c868b-bff5-44d8-abbf-6d99a3657f4b",
+              "id": "dad8b267-b751-4388-b3c3-004768776945",
               "children": [],
               "links": [
                 {
@@ -118,7 +121,7 @@
               "title": "Zephyr",
               "xid": "aGvbxmZCHbbt9PgXL1ooJ",
               "description": "Zephyr is a testing solution that improves the quality of your software by managing and monitoring end-to-end testing. It is very effective for managing manual testing. Its key capabilities include:\n\n*   Test-case creation\n*   Organization of tests by product releases and components\n*   Assignment of tests to the Quality Assurance team\n\n",
-              "id": "0323574f-d8bb-4181-8755-668874d53b0f",
+              "id": "8194efb6-7b06-4570-8a98-f269c6924bc5",
               "children": [],
               "links": [
                 {
@@ -146,7 +149,7 @@
           "title": "What is Quality Assurance?",
           "xid": "JInFH3JRvAxjvpIFKjUiP",
           "description": "Quality is extremely hard to define, and it is simply stated: \u201cFit for use or purpose.\u201d It is all about meeting the needs and expectations of customers concerning the functionality, design, reliability, durability, & price of the product.\n\nWhat is Assurance\n-----------------\n\nAssurance is nothing but a positive declaration of a product or service, which gives confidence. It is certain of a product or a service which it will work well. It provides a guarantee that the product will work without any problems as per the expectations or requirements.\n\nQuality Assurance in Software Testing\n-------------------------------------\n\nQuality Assurance in Software Testing is defined as a procedure to ensure the quality of software products or services provided to the customers by an organization. Quality assurance focuses on improving the software development process and making it efficient and effective per the quality standards defined for software products. Quality Assurance is popularly known as QA Testing.\n\n",
-          "id": "c8295879-6be7-4917-b8c6-bf0f54183c7d",
+          "id": "9af0c714-e257-4c22-b256-96c83761e66a",
           "children": [],
           "links": [
             {
@@ -170,7 +173,7 @@
           "title": "QA Mindset",
           "xid": "vZv4Ow5bg_PbKoF557G9S",
           "description": "As a Quality Assurance Engineer, your primary responsibility is to nurture a proactive, quality-centric, and holistic mindset throughout the organization. This involves promoting the understanding that quality is not solely the responsibility of the QA chapter, or achieved through manual testing alone, but rather a shared commitment that requires collaboration from all team members. Quality should be seamlessly integrated into every phase of the software development lifecycle, from requirements gathering to deployment and maintenance. Your role is to take initiative, provide guidance, and lead the company in adopting best practices and methodologies that prioritize quality. By educating and empowering your colleagues, you can foster a culture where everyone understands the significance of delivering high-quality products and is equipped with the knowledge and tools to contribute effectively to this goal.\n\nA few important points:\n\n*   Foster a quality-centric mindset and promote shared responsibility for quality across the organization\n*   Integrate quality processes into every phase of the software development lifecycle and encourage collaboration among team members\n*   Take initiative, provide guidance, and lead the company in adopting best practices for ensuring high-quality products\n*   Implement and maintain robust automation frameworks to enhance testing efficiency, coverage, and reliability\n*   Continuously improve quality processes, stay updated with industry trends, and advocate for the importance of quality in driving customer satisfaction and business success\n*   Think outside the box, ask questions, explore edge cases, and don't be afraid to misuse the product to uncover potential issues\n*   Foster open communication, transparency, and a proactive approach to identifying and mitigating quality risks early in the development process\n\n",
-          "id": "be2947b6-0141-43ee-897c-b890353a8eee",
+          "id": "05e6c2d3-ecfd-424b-96be-0e1146df9609",
           "children": [],
           "links": [
             {
@@ -199,13 +202,13 @@
           "title": "Testing Approaches",
           "xid": "uFOVuenPyOKZGgoJXkwRZ",
           "description": "Test approach has two techniques:\n\n*   Proactive - An approach in which the test design process is initiated as early as possible in order to find and fix the defects before the build is created.\n*   Reactive - An approach in which the testing is not started until after design and coding are completed.\n\nThree approaches are commonly used to implement functional testing:\n\n*   Black Box Testing\n*   White Box Testing\n*   Gray Box Testing\n\n",
-          "id": "c2742f93-47e3-4cff-b252-622808ebfd74",
+          "id": "2361509d-e4f2-4ebb-98b1-96f067875446",
           "children": [
             {
               "title": "White Box Testing",
               "xid": "y4QnZ2xQyc4x6Kr-eGBer",
               "description": "White Box Testing is a technique in which software\u2019s internal structure, design, and coding are tested to verify input-output flow and improve design, usability, and security. In white box testing, code is visible to testers, so it is also called Clear box testing, Open box testing, Transparent box testing, Code-based testing, and Glass box testing.\n\n",
-              "id": "e9a5695c-0159-4098-b283-ee384d03661c",
+              "id": "a0661f59-e663-4540-af5a-9e6df9e1ceeb",
               "children": [],
               "links": [
                 {
@@ -229,7 +232,7 @@
               "title": "Gray Box Testing",
               "xid": "ZmWEG7Wu-h7bZe6pGxqDg",
               "description": "Gray box testing is a software testing technique to test a software product or application with partial knowledge of the internal structure of the application. The purpose of gray box testing is to search and identify the defects due to improper code structure or improper use of applications.\n\n",
-              "id": "a41c5908-b3ab-489a-ae1d-93e09f0e7e7c",
+              "id": "63de75f3-290d-45e6-9dfe-f32d85808330",
               "children": [],
               "links": [
                 {
@@ -248,7 +251,7 @@
               "title": "Black Box Testing",
               "xid": "2zfwE6uzGYc2qnvOZ47LB",
               "description": "Black Box Testing is a software testing method in which the functionalities of software applications are tested without having knowledge of internal code structure, implementation details and internal paths. Black Box Testing mainly focuses on input and output of software applications and it is entirely based on software requirements and specifications. It is also known as Behavioral Testing.\n\n",
-              "id": "de3541d5-fa6f-453b-b273-4c697e77fdc4",
+              "id": "913b78f7-ab7e-4a47-8942-a007bc8ebfaf",
               "children": [],
               "links": [
                 {
@@ -286,13 +289,13 @@
           "title": "Project Management",
           "xid": "ZqgeqqZTGA-y7jVNyPCt4",
           "description": "A project is a temporary endeavor to create a unique product, service, or result. A project is temporary because it has a defined beginning and end time, and it is unique because it has a particular set of operations designed to accomplish a goal.\n\nProject Management is a discipline of planning, organizing, motivating, and controlling the resources to achieve specific project goals. The main objective of project management is to achieve project goals and targets while keeping in mind the project scope, time, quality, and cost. It facilitates the project workflow with team collaboration on a single project.\n\n",
-          "id": "9e71dff2-c756-4c4c-92b8-63ab1fefed10",
+          "id": "6b10e35c-e182-42af-8af4-3f3cd072458e",
           "children": [
             {
               "title": "Atlassian",
               "xid": "wVqbs8Rh0WjLQqJZ0XiF0",
               "description": "Jira is a software application used for issue tracking and project management. The tool, developed by the Australian software company Atlassian, has become widely used by agile development teams to track bugs, stories, epics, and other tasks.\n\n",
-              "id": "175d33ff-f6e8-4d83-a46d-222540dadda4",
+              "id": "4832cb33-a685-4848-885d-1c0bcd3bf355",
               "children": [],
               "links": [
                 {
@@ -326,7 +329,7 @@
               "title": "Assembla",
               "xid": "xLPE9CqqiYz0miMFI3ThY",
               "description": "Assembla is an extensive suite of applications for software development, enabling distributed agile teams. It allows development teams to manage, initiate and maintain agile projects, applications and websites.\n\n",
-              "id": "03cd779b-5073-4fb0-8051-2b0882d51ac4",
+              "id": "d7a8f289-fd31-4226-aeb6-ba1b9be67953",
               "children": [],
               "links": [
                 {
@@ -345,7 +348,7 @@
               "title": "YouTrack",
               "xid": "6bS1YjGJHARAUKTywYMU9",
               "description": "YouTrack is a project management software developed by JetBrains. It\u2019s in the form of a plugin that can be attached to the JetBrains IDEs such as Intellij Idea, and helps create and assign tasks to a development team as well as track the progress of working.\n\n",
-              "id": "5088682f-c2ab-49b0-a3dd-0e831147ac44",
+              "id": "613c40d4-bddc-4b78-aba9-4e0f8b13fcb7",
               "children": [],
               "links": [
                 {
@@ -364,7 +367,7 @@
               "title": "Trello",
               "xid": "dmfMp6ydjtHo6oKv97AzB",
               "description": "Trello is a popular, simple, and easy-to-use collaboration tool that enables you to organize projects and everything related to them into boards. With Trello, you can find all kinds of information, such as:\n\n*   What\u2019s being worked on?\n*   Who\u2019s working on what?\n*   What progress the project is making\n\n",
-              "id": "ef02d309-5456-4049-834c-e707054a73dc",
+              "id": "b45bbf84-a80d-43e4-b6fc-6588a6784c6f",
               "children": [],
               "links": [
                 {
@@ -407,19 +410,19 @@
           "title": "Testing Techniques",
           "xid": "gQLbDFP00itL260i1BiDe",
           "description": "Testing Techniques are methods applied to evaluate a system or a component with a purpose to find if it satisfies the given requirements. Testing of a system helps to identify gaps, errors, or any kind of missing requirements differing from the actual requirements. These techniques ensure the overall quality of the product or software including performance, security, customer experience, and so on.\n\n",
-          "id": "40d51ec8-8674-429e-b587-7eb3e28c1538",
+          "id": "aa84c888-ca76-454c-8f59-45fba2db98fb",
           "children": [
             {
               "title": "Functional Testing",
               "xid": "o4xmFhw_ilWdhpCiEotck",
               "description": "Functional testing is a type of software testing that validates the software system against the functional requirements/specifications. The purpose of Functional tests is to test each function of the software application by providing appropriate input and verifying the output against the Functional requirements.\n\n",
-              "id": "021b58ae-e549-4662-a317-11fa9268ae48",
+              "id": "116e1690-1b4d-44b2-a80e-dcfd5d857b37",
               "children": [
                 {
                   "title": "UAT",
                   "xid": "Ls_pezva7_ZW2HHn7RvO4",
                   "description": "User Acceptance Testing (UAT) is a type of testing performed by the end user or the client to verify/accept the software system before moving the software application to the production environment. UAT is done in the final phase of testing after functional, integration and system testing is done.\n\n",
-                  "id": "658168b8-6c96-4f21-a0b0-191e7056627a",
+                  "id": "84b29f35-4484-400c-9651-cdb025d05324",
                   "children": [],
                   "links": [
                     {
@@ -438,7 +441,7 @@
                   "title": "Exploratory Testing",
                   "xid": "2h6mJeIFCU72J7aggTvnQ",
                   "description": "Exploratory testing is evaluating a product by learning about it through exploration and experimentation, including to some degree: questioning, study, modeling, observation, inference, etc.\n\n",
-                  "id": "6340804c-a74f-4964-b914-391bc3a7c4a3",
+                  "id": "d173a63f-a824-45f5-96c6-d9f1814a5cf1",
                   "children": [],
                   "links": [
                     {
@@ -467,7 +470,7 @@
                   "title": "Sanity Testing",
                   "xid": "Lve3xpC1FU91TQqoDOYv7",
                   "description": "Sanity testing is a kind of Software Testing performed after receiving a software build, with minor changes in code, or functionality, to ascertain that the bugs have been fixed and no further issues are introduced due to these changes. The goal is to determine that the proposed functionality works roughly as expected. If sanity test fails, the build is rejected to save the time and costs involved in a more rigorous testing.\n\n",
-                  "id": "0e3cf41b-9012-43cd-8568-11c54d3b344d",
+                  "id": "4264fe80-7f56-4ff5-9246-ee4cc6ec4dd3",
                   "children": [],
                   "links": [
                     {
@@ -481,7 +484,7 @@
                   "title": "Regression Testing",
                   "xid": "XCeXiKvBblmDArfbWjDvw",
                   "description": "Regression Testing is a type of software testing to confirm that a recent program or code change has not adversely affected existing features. Regression testing is a black box testing technique. Test cases are re-executed to check the previous functionality of the application is working fine and that the new changes have not produced any bugs.\n\n",
-                  "id": "deb711a9-2125-462a-9f88-2858745184a6",
+                  "id": "486a325b-00fb-4766-ac90-3502ee06cd8b",
                   "children": [],
                   "links": [
                     {
@@ -505,7 +508,7 @@
                   "title": "Smoke Testing",
                   "xid": "MVShii4LZiWW_gPTJzkty",
                   "description": "Smoke Testing is a software testing process that determines whether the deployed software build is stable or not. Smoke testing is a confirmation for QA team to proceed with further software testing. It consists of a minimal set of tests run on each build to test software functionalities.\n\n",
-                  "id": "bb12e6ca-4d67-45c8-8bfd-0c426039e72d",
+                  "id": "08e5455c-4d4d-4680-8ac1-5edd5b93f2a1",
                   "children": [],
                   "links": [
                     {
@@ -524,7 +527,7 @@
                   "title": "Unit Testing",
                   "xid": "PMO3M33U6RuvNdINvqIAA",
                   "description": "Unit testing is where individual **units** (modules, functions/methods, routines, etc.) of software are tested to ensure their correctness. This low-level testing ensures smaller components are functionally sound while taking the burden off of higher-level tests. Generally, a developer writes these tests during the development process and they are run as automated tests.\n\n",
-                  "id": "9f503233-55b6-471b-9980-f6c842c3654e",
+                  "id": "4e3ed00d-3a08-46df-86c8-ed1a435b4fc0",
                   "children": [],
                   "links": [
                     {
@@ -548,7 +551,7 @@
                   "title": "Integration Testing",
                   "xid": "a_vwz-onn6QEoc27N6oBc",
                   "description": "Integration Testing is a type of testing where software modules are integrated logically and tested as a group. A typical software project consists of multiple software modules coded by different programmers. This testing level aims to expose defects in the interaction between these software modules when they are integrated. Integration Testing focuses on checking data communication amongst these modules.\n\n",
-                  "id": "6b32af37-7516-413e-b292-d1365bfb08a5",
+                  "id": "d79fd860-92f1-44b1-9b04-c190b878ce51",
                   "children": [],
                   "links": [
                     {
@@ -586,13 +589,13 @@
               "title": "Non-Functional Testing",
               "xid": "vYIEsjTKoO1ciypGIDlil",
               "description": "Non-functional testing is a type of software testing to test non-functional parameters such as reliability, load test, performance, and accountability of the software. The primary purpose of non-functional testing is to test the reading speed of the software system as per non-functional parameters. The parameters of non-functional testing are never tested before the functional testing.\n\n",
-              "id": "a177f74e-ced2-423f-898e-dd281762c60d",
+              "id": "1e6d0233-2ef3-4b96-8ca9-85cb37ad2c3f",
               "children": [
                 {
                   "title": "Load Testing",
                   "xid": "wmMIL-0ytz7a3JygyB-wc",
                   "description": "Load Testing is a type of Performance Testing that determines the performance of a system, software product, or software application under real-life-based load conditions. Load testing determines the behavior of the application when multiple users use it at the same time. It is the response of the system measured under varying load conditions.\n\n",
-                  "id": "430d2eb0-d8d5-49d3-89bc-1753b685b4bb",
+                  "id": "7f8709be-f856-440f-b3f2-dd23413b17a1",
                   "children": [],
                   "links": [
                     {
@@ -611,7 +614,7 @@
                   "title": "Performance Testing",
                   "xid": "bapKhjye4oWQxTEZ4fl_c",
                   "description": "Performance Testing is a subset of Performance Engineering. It is a process of evaluating a system\u2019s behavior under various extreme conditions. The main intent of performance testing is monitoring and improving key performance indicators such as response time, throughput, memory, CPU utilization, and more.\n\nThere are three objectives (three S) of Performance testing to observe and evaluate: `Speed`, `Scalability`, and `Stability`.\n\nTypes of Performance Testing\n----------------------------\n\nFollowing are the commonly used performance testing types, but not limited to:\n\n*   Load Testing\n*   Stress Testing\n*   Spike Testing\n*   Endurance Testing\n*   Volume Testing\n*   Scalability Testing\n*   Capacity Testing\n\n",
-                  "id": "ece1fd5c-1520-4b9b-8a16-89da6e64395e",
+                  "id": "e9d377b0-9e67-4624-9450-8bb9b13ded29",
                   "children": [],
                   "links": [
                     {
@@ -630,7 +633,7 @@
                   "title": "Stress Testing",
                   "xid": "skrOrieK1T0hHj_mJBNsW",
                   "description": "`Stress Testing` is a type of `Performance Testing`. The objective of stress testing is to identify the breaking point of application under test under extreme normal load.\n\ne.g. Injecting high volume of requests per second to an API might cause the disruption to its service, or throws HTTP 503 Service Unavailable or cause other consequences.\n\n",
-                  "id": "82bf2406-b9d3-461f-8595-8e96611c3927",
+                  "id": "658b97ce-7e09-404d-89f5-74844eee73d7",
                   "children": [],
                   "links": [
                     {
@@ -649,7 +652,7 @@
                   "title": "Security Testing",
                   "xid": "MahtxMJD3ETHfgk_PQabQ",
                   "description": "Security Testing is a type of Software Testing that uncovers vulnerabilities, threats, or risks in a software application and prevents malicious attacks from intruders. The purpose of Security Tests is to identify all possible loopholes and weaknesses of the software system which might result in a loss of information, revenue, repute at the hands of the employees or outsiders of the organization.\n\n",
-                  "id": "1b680067-1520-4404-8ca1-2524396a5a6e",
+                  "id": "32e8f520-8f8b-4679-87a7-537b700b8613",
                   "children": [],
                   "links": [
                     {
@@ -673,7 +676,7 @@
                   "title": "Accessibility Testing",
                   "xid": "zGzpjxz3nvVH9Eu3NOPbk",
                   "description": "Accessibility Testing is defined as a type of Software Testing performed to ensure that the application being tested is usable by people with disabilities like hearing, color blindness, old age, low vision and other disadvantaged groups.\n\n",
-                  "id": "6acd87e1-8b0e-416b-b81c-6aea533142ca",
+                  "id": "622d3ee6-a584-4b35-8a22-5467572a95c4",
                   "children": [],
                   "links": [
                     {
@@ -738,19 +741,19 @@
       "title": "SDLC Delivery Model",
       "xid": "Pb3QkhSCgRByJHuPxVAlU",
       "description": "The Software Development Life Cycle (SDLC) is a process followed for a software project, within a software organization. It consists of a detailed plan describing how to develop, maintain, replace and alter or enhance specific software. The life cycle defines a methodology for improving the quality of software and the overall development process.\n\n",
-      "id": "6db60132-7110-4a6d-afb4-3dbf1397b6ee",
+      "id": "419ed532-d78c-4fe0-a814-53ed21aa298f",
       "children": [
         {
           "title": "Agile Model",
           "xid": "47NXgbc1OTGE06qXxlQoh",
           "description": "The agile model refers to a software development approach based on iterative development. Agile methods break tasks into smaller iterations or parts that do not directly involve long-term planning. The project scope and requirements are laid down at the beginning of the development process. Plans regarding the number of iterations, the duration, and the scope of each iteration are clearly defined in advance.\n\nThe Agile software development methodology is one of the simplest and most effective processes to turn a vision for a business need into software solutions.\n\n",
-          "id": "1ecf0ae3-0c0f-46be-8de8-46a4cbcab15d",
+          "id": "100dd31e-cf03-4f6a-9fea-eb78bd718b60",
           "children": [
             {
               "title": "Kanban",
               "xid": "cJyQx-LBcOL11nkK-P2JH",
               "description": "Kanban is a very popular framework for development in the agile software development methodology. It provides a transparent way of visualizing the tasks and work capacity of a team. It mainly uses physical and digital boards to allow the team members to visualize the current state of the project they are working on.\n\nA kanban board is an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency.\n\n",
-              "id": "44d8bb86-1c9c-46d8-8db8-1cec06cf9963",
+              "id": "f1eade91-2748-4136-bd21-cf8ffdb56818",
               "children": [],
               "links": [
                 {
@@ -769,7 +772,7 @@
               "title": "Scrum",
               "xid": "k3xPwDzA1WUEAwJ6-Q8PW",
               "description": "Scrum in Software Testing is a methodology for building complex software applications. It provides easy solutions for executing complicated tasks. Scrum helps the development team to focus on all aspects of the software product development like quality, performance, usability, and so on. It provides with transparency, inspection and adaptation during the software development to avoid complexity.\n\n",
-              "id": "4bfe9133-b6ea-4c74-b868-5d7c3dd6a742",
+              "id": "f59433c6-8715-4b47-b562-03b6330b8ccb",
               "children": [],
               "links": [
                 {
@@ -793,7 +796,7 @@
               "title": "SAFe",
               "xid": "Tdj051ANlwwpo03X1hjbF",
               "description": "Scaled Agile Framework (SAFe) is a freely available online knowledge base that allows you to apply lean-agile practices at the enterprise level. It provides a simple and lightweight experience for software development. It is a set of organizations and workflow patterns intended to guide enterprises for scaling lean and agile practices. It is divided into three segments which are Team, Program and Portfolio.\n\n",
-              "id": "92d2a7d8-e43f-46e4-b57e-bc9eba4dab2b",
+              "id": "e3d84726-cbfc-46c9-8195-895b48d3c3f0",
               "children": [],
               "links": [
                 {
@@ -807,7 +810,7 @@
               "title": "XP",
               "xid": "4SLrNPD_No05CKeAVDFn5",
               "description": "Extreme Programming (XP) is an agile software development framework that aims to produce higher quality software, and higher quality of life for the development team. XP is the most specific of the agile frameworks regarding appropriate engineering practices for software development.\n\n",
-              "id": "7f117624-68f4-44e8-a54c-cc8cc3ea0a44",
+              "id": "9ebd12bd-832f-4615-a220-fcc69a270d52",
               "children": [],
               "links": [
                 {
@@ -845,7 +848,7 @@
           "title": "V Model",
           "xid": "zELjfWwfEYSc1YO8JLoJn",
           "description": "V Model is a highly disciplined SDLC model that has a testing phase parallel to each development phase. The V model is an extension of the waterfall model wherein software development and testing is executed in a sequential way. It's also known as the Validation or Verification Model.\n\n",
-          "id": "e34f7e1f-3271-414f-bb3e-74eae6d8dfd2",
+          "id": "de0b1f19-fb01-45b2-8a1d-408754553354",
           "children": [],
           "links": [
             {
@@ -859,7 +862,7 @@
           "title": "Waterfall",
           "xid": "7h-Xfp2Foiyn7-pI0w7ft",
           "description": "Waterfall Model is a sequential model that divides software development into pre-defined phases. Each phase must be completed before the next phase can begin with no overlap between the phases. Each phase is designed for performing specific activity during the SDLC phase.\n\n",
-          "id": "6d286321-0fad-40e6-8662-2d40fb7e9caa",
+          "id": "9f60fc07-b26b-49ea-aa67-3a477aeaf8c4",
           "children": [],
           "links": [
             {
@@ -892,13 +895,13 @@
       "title": "Manual Testing",
       "xid": "daUEq4xlh4PIltSdiD4F2",
       "description": "Manual Testing is a type of software testing in which test cases are executed manually by a tester without using any automated tools. The purpose of Manual Testing is to identify the bugs, issues, and defects in the software application. Manual software testing is the most primitive technique of all testing types and it helps to find critical bugs in the software application.\n\n",
-      "id": "43beea40-3a3a-4f1f-aaf9-c5e992c2680e",
+      "id": "50cafb70-35ba-4c5b-b5d2-1d549cc9a51b",
       "children": [
         {
           "title": "TDD",
           "xid": "M78baCVYpsk7C6j-VPvPZ",
           "description": "Test Driven Development (TDD) is software development approach in which test cases are developed to specify and validate what the code will do. In simple terms, test cases for each functionality are created and tested first and if the test fails then the new code is written in order to pass the test and making code simple and bug-free.\n\n",
-          "id": "9328affb-b25a-411b-8c9a-c7037752c614",
+          "id": "f2b4d176-fb42-44a7-a082-f3dc5ee68dd2",
           "children": [],
           "links": [
             {
@@ -922,7 +925,7 @@
           "title": "Test Planning",
           "xid": "2U8WRKkuF-YCEWtpgTspF",
           "description": "A Test Plan is a detailed document that describes the test strategy, objectives, schedule, estimation, deliverables, and resources required to perform testing for a software product. Test Plan helps us determine the effort needed to validate the quality of the application under test.\n\n",
-          "id": "55628c27-59d3-4027-9759-c6c181a0af19",
+          "id": "dee936fd-5337-4041-a15d-b969a66335c2",
           "children": [],
           "links": [
             {
@@ -936,7 +939,7 @@
           "title": "Test Cases and Scenarios",
           "xid": "ELnCFVRkO_s5qI_3Yzf5U",
           "description": "A Test Case is a set of actions executed to verify a particular feature or functionality of your software application. A Test Case contains test steps, test data, precondition, and postcondition developed for a specific test scenario to verify any requirement. The test case includes specific variables or conditions, using which a testing engineer can compare expected and actual results to determine whether a software product is functioning as per the requirements of the customer.\n\nA Test Scenario is defined as any functionality that can be tested. It is a collective set of test cases which helps the testing team to determine the positive and negative characteristics of the project.\n\n",
-          "id": "7eacc7b9-6347-4538-8596-133304654a00",
+          "id": "3805575f-7dcc-4667-a9c9-9f44dd0424f7",
           "children": [],
           "links": [
             {
@@ -955,7 +958,7 @@
           "title": "Compatibility",
           "xid": "RD0vRC-OL2ReYLT1leJMs",
           "description": "Compatibility is nothing but the capability of existing or living together. Compatibility Testing is a type of Software testing to check whether your software is capable of running on different hardware, operating systems, applications, network environments or Mobile devices.\n\n",
-          "id": "2d6576df-81ab-4e18-a178-1d79bb2dad6f",
+          "id": "ee3d7b83-5d58-4aff-9422-362b16bd29ae",
           "children": [],
           "links": [
             {
@@ -969,7 +972,7 @@
           "title": "Verification and Validation",
           "xid": "vP76hqx-8Pri7sxdJDGV5",
           "description": "Verification in Software Testing is a process of checking documents, design, code, and program in order to check if the software has been built according to the requirements or not. The main goal of verification process is to ensure quality of software application, design, architecture etc. The verification process involves activities like reviews, walk-throughs and inspection.\n\nValidation in Software Engineering is a dynamic mechanism of testing and validating if the software product actually meets the exact needs of the customer or not. The process helps to ensure that the software fulfills the desired use in an appropriate environment. The validation process involves activities like unit testing, integration testing, system testing and user acceptance testing.\n\n",
-          "id": "73049f22-f2ba-4ae4-849c-a3ad86dc5149",
+          "id": "de02d92c-596c-4d59-925e-0c47016e724b",
           "children": [],
           "links": [
             {
@@ -1007,19 +1010,19 @@
       "title": "qa-automated-testing",
       "xid": "",
       "description": "qa-automated-testing",
-      "id": "1562b50a-2818-4d45-9c6a-3c674f6533d4",
+      "id": "f3b43ada-a252-4dab-8073-225fe02c1534",
       "children": [
         {
           "title": "Mobile Automation",
           "xid": "ITtBvrJ8dsW-5LQV8tWgO",
           "description": "Mobile automation, as the name suggests, refers to 'automation' that is done on mobile devices. Mobile Automation can test a WAP site or an app. As we know, mobile devices consist of hardware and software components, while a mobile application is simply the software. Testing the mobile device is also connected to evaluating the hardware component and the software part.\n\n",
-          "id": "41025539-f07a-408c-98a4-bf81d1691bfd",
+          "id": "d046a320-19b7-4592-aa3e-968c5e675a50",
           "children": [
             {
               "title": "Espresso",
               "xid": "stMeB1U3SfuefZ-yS8wGF",
               "description": "Espresso is a native testing framework for Android to write reliable UI tests. Google released the Espresso framework in October 2013 and, as of release version 2.0, Espresso is part of the Android Support Repository. One of the important features in Espresso is that it automatically synchronizes your test actions with the user interface of your application. The framework also ensures that your activity is started before the test runs. It can also force a test to wait until all observer background activities have finished, which is sometimes a problem with other testing frameworks.\n\n",
-              "id": "71340295-5118-4a13-9ebb-1de64f9d7db8",
+              "id": "a11c1980-3ce5-4c99-97ed-1b40fa38b81c",
               "children": [],
               "links": [
                 {
@@ -1043,7 +1046,7 @@
               "title": "Detox",
               "xid": "gZnNHDjFMI003Od7u2RNa",
               "description": "Detox is a JavaScript mobile testing framework that is built into the application and the test execution starts with app launch. This makes test execution really fast and robust as no external additional tools are needed to orchestrate and synchronize during the test execution.\n\n",
-              "id": "a2e027de-fff9-4268-b68b-97c4003baaca",
+              "id": "5e777ce5-5aec-4bf4-aa01-9f8d3c22e224",
               "children": [],
               "links": [
                 {
@@ -1067,7 +1070,7 @@
               "title": "Appium",
               "xid": "UIKUiCfSw5MkrRJZ3Ah3x",
               "description": "Appium is an open-source framework that allows QAs to conduct automated app testing on different platforms like Android, iOS, and Windows. It is developed and supported by Sauce Labs to automate native and hybrid mobile apps. It is a cross-platform mobile automation tool, which means that it allows the same test to be run on multiple platforms.\n\n",
-              "id": "346ff986-7081-4f30-9983-540442da0a44",
+              "id": "eed56c18-4c5e-4af0-bc5f-a9a5b1e3f00e",
               "children": [],
               "links": [
                 {
@@ -1096,7 +1099,7 @@
               "title": "XCUITest",
               "xid": "Q6eNkuRI6dPa9X44pwrea",
               "description": "Mobile app testing, and more specifically, app UI testing involves checking how the interface behaves when user actions are performed and then compares results with expected outcomes. Here, testers try to replicate exactly how a user would interact with the application and validate the state of the UI. XCUITest allows them to write test cases for these purposes using two fundamental concepts.\n\n",
-              "id": "a61a1515-4dca-49e8-8377-978e25f27dae",
+              "id": "5af8b938-a794-4f2d-9ba8-53b73c6b0a39",
               "children": [],
               "links": [
                 {
@@ -1134,13 +1137,13 @@
           "title": "Backend Automation",
           "xid": "mPaMQ5h8ZcXKOfcuSwB2-",
           "description": "Backend Testing is a testing method that checks the server side or database of web applications or software. Backend testing aims to test the application layer or database layer to ensure that the web application or software is free from database defects like deadlock, data corruption, or data loss.\n\n",
-          "id": "15998cb7-9427-4070-889c-b189f3744387",
+          "id": "0d06ff03-f5a7-46a0-8de2-841a2ffd88eb",
           "children": [
             {
               "title": "Karateframework",
               "xid": "8zXn8R9OGWTmreBpstj03",
               "description": "Karate is the only open-source tool to combine API test-automation, mocks, performance-testing and even UI automation into a single, unified framework. The BDD syntax popularized by Cucumber is language-neutral, and easy for even non-programmers. Assertions and HTML reports are built-in, and you can run tests in parallel for speed.\n\nThere's also a cross-platform stand-alone executable for teams not comfortable with Java. You don't have to compile code. Just write tests in a simple, readable syntax - carefully designed for HTTP, JSON, GraphQL and XML. And you can mix API and UI test-automation within the same test script.\n\nA Java API also exists for those who prefer to programmatically integrate Karate's rich automation and data-assertion capabilities.\n\n",
-              "id": "000b2acf-8825-4f4a-a0ee-5731c7c0baa2",
+              "id": "f5cbcee0-84cd-4c0f-a6ee-9dce4414f28a",
               "children": [],
               "links": [
                 {
@@ -1164,7 +1167,7 @@
               "title": "Cypress",
               "xid": "5cMhZ-7YMQ6ccs-AaIi-0",
               "description": "Cypress framework is a JavaScript-based end-to-end testing framework built on top of Mocha \u2013 a feature-rich JavaScript test framework running on and in the browser, making asynchronous testing simple and convenient. It also uses a BDD/TDD assertion library and a browser to pair with any JavaScript testing framework.\n\n",
-              "id": "00484908-5902-400a-b529-284ea47a1947",
+              "id": "999ad593-23d4-47b4-8995-81d9ddcfc576",
               "children": [],
               "links": [
                 {
@@ -1208,7 +1211,7 @@
               "title": "Soap UI",
               "xid": "eE9F3YviSpmgor6V5NMj5",
               "description": "SoapUI is the world's leading Functional Testing tool for SOAP and REST testing. With its easy-to-use graphical interface, and enterprise-class features, SoapUI allows you to easily and rapidly create and execute automated functional, regression, and load tests.\n\n",
-              "id": "23f4a241-dfa0-4c9e-ad5d-b1167c3b180d",
+              "id": "c2ddda8d-91d7-4387-9dd5-bd2ad18506b8",
               "children": [],
               "links": [
                 {
@@ -1227,7 +1230,7 @@
               "title": "Postman / Newman",
               "xid": "X_nLwzc1QmShivEjfy6v9",
               "description": "Postman is an API platform for building and using APIs. Postman simplifies each step of the API lifecycle and streamlines collaboration so you can create better APIs\u2014faster. It is an API client that makes it easy for developers to create, share, test, and document APIs. With this open-source solution, users can create and save simple and complex HTTP/s requests and read their responses.\n\nNewman is a command-line Collection Runner for Postman. It enables you to run and test a Postman Collection directly from the command line. It's built with extensibility to integrate it with your continuous integration servers and build systems.\n\n",
-              "id": "10e81c28-9a8d-4c3c-9e92-dd66890e4524",
+              "id": "06ea5813-c92d-457f-b3fd-8a462c8627d8",
               "children": [],
               "links": [
                 {
@@ -1261,7 +1264,7 @@
               "title": "REST Assured",
               "xid": "gECIgOii7C5MzilSbQP9t",
               "description": "Rest-assured helps developers and test engineers to test REST APIs in Java ease by using techniques used in dynamic languages such as Groovy and Ruby.\n\n",
-              "id": "878a904b-3854-44c8-807c-11882794ea7b",
+              "id": "56fb25ba-0944-42d3-bdda-80786e835a4a",
               "children": [],
               "links": [
                 {
@@ -1304,19 +1307,19 @@
           "title": "Frontend Automation",
           "xid": "hU5OCnEe3tG206xuGsVFd",
           "description": "Front-end automation is a way to characterize automation that streamlines tasks focused on interactivity, websites, and attended processes. Robotic process automation, or RPA, is considered automation on the front end, or from the user-interface (UI) level. Benefits of front-end automation include quick task building with no programming knowledge, no required changes to existing programs or applications, and those individuals who know the keystrokes can easily build the automation task.\n\n",
-          "id": "6af9536d-e97a-4b7c-b55c-939eb958a50e",
+          "id": "5d651bc2-8799-47d9-88c3-3ea96f86459f",
           "children": [
             {
               "title": "basic-introduction",
               "xid": "",
               "description": "basic-introduction",
-              "id": "2d8518b2-20dc-4d11-90a7-8074f6f6a788",
+              "id": "c70f38c3-3911-4f4c-860a-985b1ab5693a",
               "children": [
                 {
                   "title": "HTML, CSS, JavaScript",
                   "xid": "pYkfl-4gMHRj9wIeH8RTP",
                   "description": "HTML stands for HyperText Markup Language. It is used on the front and gives structure to the webpage, which you can style using CSS and make interactive using JavaScript.\n\nCSS or Cascading Style Sheets is the language used to style the front end of any website. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.\n\nJavaScript allows you to add interactivity to your pages. You may have seen common examples on the websites: sliders, click interactions, popups, and so on.\n\n",
-                  "id": "d3d8e86e-a9e6-491e-b8f0-156a251b6dbf",
+                  "id": "e48bd128-bf15-492e-a2a1-a7f675d89481",
                   "children": [],
                   "links": [
                     {
@@ -1345,7 +1348,7 @@
                   "title": "Browser / Dev Tools",
                   "xid": "cHI05cf8fLh3XB1Bt6jNP",
                   "description": "Every modern web browser includes a powerful suite of developer tools. These tools do a range of things, from inspecting currently-loaded HTML, CSS and JavaScript to showing which assets the page has requested and how long they took to load. This article explains how to use the basic functions of your browser's devtools.\n\n",
-                  "id": "7a8f8a1f-9ebe-4d76-95cb-f2bfa89c3abf",
+                  "id": "5be8f3f3-ebf3-4cf1-82dc-8bf92afcd7a1",
                   "children": [],
                   "links": [
                     {
@@ -1364,7 +1367,7 @@
                   "title": "Ajax",
                   "xid": "jn02FD5hjhZFVWaJjjNN3",
                   "description": "AJAX stands for Asynchronous JavaScript And XML. In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers. It can send and receive information in various formats, including JSON, XML, HTML, and text files.\n\n",
-                  "id": "645db942-3603-494d-ad47-7b37151a843a",
+                  "id": "a9a39c52-ea11-4906-b2bb-f181337b96ad",
                   "children": [],
                   "links": [
                     {
@@ -1388,7 +1391,7 @@
                   "title": "Caching",
                   "xid": "qvlA7iIOvoWMXm5MCAysZ",
                   "description": "Caching ensures that the resources downloaded once are reused instead of doing a fresh fetch again. It is useful for increasing subsequent page load speed by reusing cached images, fonts, and other static assets. Caching should not be typically done on dynamic content. For example list of posts or comments. As part of the testing strategy, both caching and cache invalidation (not getting stale dynamic content) needs to be tested.\n\n",
-                  "id": "515e4020-5420-4f9b-a0c2-13c237ec2f04",
+                  "id": "fc42c481-e5cb-4475-a9a7-170d7fed2f37",
                   "children": [],
                   "links": [
                     {
@@ -1407,7 +1410,7 @@
                   "title": "SWAs, PWAs, JAMStack",
                   "xid": "_2IwBNhB5SqbPRxGhZyhq",
                   "description": "SWAs\n----\n\nA Static Web Application is any web application that can be delivered directly to an end user's browser without any server-side alteration of the HTML, CSS, or JavaScript content. While this can encompass very flat, unchanging sites like a corporate web site, static web applications generally refer to rich sites that utilize technologies in the browser instead of on the server to deliver dynamic content.\n\nPWAs\n----\n\nAt their heart, Progressive Web Apps are just web applications. Using progressive enhancement, new capabilities are enabled in modern browsers. Using service workers and a web app manifest, your web application becomes reliable and installable. If the new capabilities aren't available, users still get the core experience.\n\nProgressive Web Apps provide you with a unique opportunity to deliver a web experience your users will love. Using the latest web features to bring enhanced capabilities and reliability, Progressive Web Apps allow what you build to be installed by anyone, anywhere, on any device with a single codebase.\n\nJamstack\n--------\n\nJamstack is an architectural approach that decouples the web experience layer from data and business logic, improving flexibility, scalability, performance, and maintainability. Jamstack removes the need for business logic to dictate the web experience. It enables a composable architecture for the web where custom logic and 3rd party services are consumed through APIs.\n\n",
-                  "id": "82cdd327-52c8-4c6e-b970-9856d2b80f1b",
+                  "id": "bac23d28-4b0d-4cd5-8bc5-e5b56fb9485d",
                   "children": [],
                   "links": [
                     {
@@ -1436,7 +1439,7 @@
                   "title": "CSR vs SSR",
                   "xid": "-2RU50LUPwCQ8XRaMslY-",
                   "description": "CSR stands for Client Side Rendering and SSR stands for Server Side Rendering. CSR pages are computed in your machine and then shown by your browser while in the case of SSR, the server sends ready to show Html content directly. Primarily React, Vue, and Angular apps are examples of CSR (technically it is possible for them to be executed in SSR mode too) and almost all older tech stacks are SSR like PHP, ruby on rails, java, dot net, etc. From the user's standpoint, CSR apps take higher time to render but compensate by avoiding page reloads later (SPA) while SSR apps often have faster initial load time but do a full page reload often.\n\n",
-                  "id": "6b18a4cb-1a97-4062-bb9f-cd7809ab7b79",
+                  "id": "d883a09f-5300-4471-a949-d7386a49efe0",
                   "children": [],
                   "links": [
                     {
@@ -1460,7 +1463,7 @@
                   "title": "Responsive vs Adaptive",
                   "xid": "6cGPxfJ9ipij40hnmckxV",
                   "description": "There are two approaches to ensuring a website is optimized for mobile, tablet, laptop and PC screens: responsive design and adaptive design. While both are intended to solve the same problem, they use different strategies.\n\nWhat is responsive design?\n==========================\n\nA website created with responsive design serves up the same site to every device, but that site is fluid and will change its layout and appearance based on the size and orientation of the device.\n\nDevelopers use CSS to ensure each page of the site can reformat based on the size of the user's viewport and only need to create one codebase for the site. They use something called breakpoints to tell the site when to adjust to accommodate different screen sizes.\n\nThe majority of new sites now use responsive, which has been made easier for less experienced designers and developers, thanks to the availability of themes accessible through CMS systems such as WordPress, Joomla, and Drupal.\n\nResponsive design does not offer as much control as adaptive, but takes much less work to both build and maintain. Responsive layouts are also fluid, and whilst adaptive can and do use percentages to give a more fluid feel when scaling, these can again cause a jump when a window is resized.\n\nWhat is adaptive design?\n========================\n\nIn adaptive design, a different website layout is created for each device's screen. As it loads, the site recognizes the size of the screen and serves up the layout that was made for that viewport. In fact, you can create a different user experience for each of six common screen sizes from very small to very large: 320px, 480px, 760px, 960px, 1200px and 1600px.\n\nAdaptive is useful for retrofitting an existing site in order to make it more suitable for mobile phones. This allows you to take control of the design and web development for specific, multiple viewports. The number of viewports that you choose to design for is entirely up to you, your company, and your overall budget. It does, however, afford you a certain amount of control (for example over content and layout) that you will not necessarily have using responsive design.",
-                  "id": "a58f72d6-a50f-4c46-8c62-2b47febfabdb",
+                  "id": "2fbaf04d-4c0c-4516-9b9e-a1fec3ae6646",
                   "children": [],
                   "links": []
                 }
@@ -1471,7 +1474,7 @@
               "title": "Selenium IDE",
               "xid": "_3HfVT8IDlcgvUM4h6A0_",
               "description": "Selenium IDE is an open source web automation testing tool from the Selenium Suite used primarily for QA purposes. It functions as a Firefox extension and does not require any programming knowledge and test cases can be created simply by interacting with the browser.\n\nSelenium itself is an open-source, automated testing tool used to test web applications across various browsers. It's primarily built in Java and supports several browsers and programming languages. Selenium IDE was developed to speed up the creation of automation scripts. It\u2019s a rapid prototyping tool and can be used by engineers with no programming knowledge whatsoever. Because of its simplicity, Selenium IDE is best used as a prototyping tool and not a complete solution for developing and maintaining complex test suites.\n\n",
-              "id": "db3390be-1666-44e3-ac42-89e4c55c886e",
+              "id": "9adcc323-4174-4ca0-b0c1-65f3c3bee9da",
               "children": [],
               "links": [
                 {
@@ -1495,7 +1498,7 @@
               "title": "Ghost Inspector",
               "xid": "mX7bNNP7WjFdlsRK6qIgy",
               "description": "Ghost Inspector is a codeless automated testing tool that allows you to easily create and run automated browser tests for websites and web applications. These tests carry out actions in a web browser the same way a real user would to ensure that everything is working properly.\n\n",
-              "id": "2364e0f6-8b28-4ee3-ae66-6e6f1be2ba87",
+              "id": "1e30b6d2-1cd4-4abc-b566-91100685311d",
               "children": [],
               "links": [
                 {
@@ -1514,7 +1517,7 @@
               "title": "Bug Magnet",
               "xid": "wUq-qEIh-tazYhgQQUqGG",
               "description": "Exploratory Testing is all about exploring the software by navigating random paths and discovering what it can do and what it can\u2019t. In exploratory testing we try to verify how well system reacts to special/invalid inputs and edge cases. Bug Magnet will help you configure Data validations and variety input scenarios likely to cause issues.\n\n",
-              "id": "399d1844-8822-4673-a241-66e373b0f368",
+              "id": "690e8a75-53c0-427c-9754-4bbf82ed360c",
               "children": [],
               "links": [
                 {
@@ -1533,13 +1536,13 @@
               "title": "automation-frameworks",
               "xid": "",
               "description": "automation-frameworks",
-              "id": "e8095e5c-ce16-4cdf-a702-584db15f42bf",
+              "id": "2709dcbb-d86e-4e24-bb4f-422268217d63",
               "children": [
                 {
                   "title": "QA Wolf",
                   "xid": "414xO4PX9rU0f39aC7awu",
                   "description": "QA Wolf is a hybrid platform & service that helps software teams ship better software faster by taking QA completely off their plate.\n\n",
-                  "id": "ebb921e3-0019-4d6b-89c1-780d51b9ed38",
+                  "id": "094bf7df-03bd-4692-a7ec-d09565350d70",
                   "children": [],
                   "links": [
                     {
@@ -1573,7 +1576,7 @@
                   "title": "Cypress",
                   "xid": "iQ7xwiA6xmbLyRIkI7tXM",
                   "description": "Cypress framework is a JavaScript-based end-to-end testing framework built on top of Mocha \u2013 a feature-rich JavaScript test framework running on and in the browser, making asynchronous testing simple and convenient. It also uses a BDD/TDD assertion library and a browser to pair with any JavaScript testing framework.\n\n",
-                  "id": "ea8ef242-dfb8-4945-8a56-f272d1a384b9",
+                  "id": "d5cb5f16-308e-464f-b28e-797ed15cd3f5",
                   "children": [],
                   "links": [
                     {
@@ -1617,7 +1620,7 @@
                   "title": "Webdriver.io",
                   "xid": "cFhOYHgq1_MUSXjDI_fFN",
                   "description": "WebdriverIO is a progressive automation framework built to automate modern web and mobile applications. It simplifies the interaction with your app and provides a set of plugins that help you create a scalable, robust and stable test suite.\n\nWebdriverIO leverages the power of the WebDriver protocol that is developed and supported by all browser vendors and guarantees a true cross-browser testing experience. While other automation tools require you to download modified browser that aren't used by actual users or emulate user behavior by injecting JavaScript, WebdriverIO relies on a common agreed standard for automation that is properly tested and ensures compatibility for decades to come.\n\nDuring the development of this automation standard the web has changed a lot and many of the requirements that developers have today to test their web application can not be fulfilled using WebDriver anymore. While some of the core contributors of this project help support the next generation of the WebDriver protocol, WebdriverIO provides an alternative automation solution based on the Chrome DevTools protocol. This allows the user to seamlessly switch between conventional commands based on WebDriver and powerful browser interactions through Puppeteer.\n\n",
-                  "id": "4ce4e950-9990-4e52-9fda-30502c6f7695",
+                  "id": "30d051a0-c2e5-4cd7-bfdd-ad6a68f6dbd6",
                   "children": [],
                   "links": [
                     {
@@ -1646,7 +1649,7 @@
                   "title": "Jasmine",
                   "xid": "HP55XWH18THmCNjCq-gBl",
                   "description": "Jasmine is a very popular JavaScript BDD (behavior-driven development) framework for unit testing JavaScript applications. It provides utilities that can be used to run automated tests for both synchronous and asynchronous code. It does not depend on any other JavaScript frameworks. It does not require a DOM.\n\n",
-                  "id": "7f805e42-a33f-4ab4-8c79-7560d0d0c17c",
+                  "id": "92fef5a1-7b49-48a2-935b-9eb68df8ce1a",
                   "children": [],
                   "links": [
                     {
@@ -1670,7 +1673,7 @@
                   "title": "Nightwatch",
                   "xid": "Ta1leBdu-Y9LryB-0U-CT",
                   "description": "Nightwatch.js is an open-source automated testing framework that is powered by Node.js and provides complete E2E (end to end) solutions to automation testing with Selenium Javascript be it for web apps, browser apps, and websites.\n\n",
-                  "id": "b36fbb4f-c96e-4acb-8276-a2bbf22dacb2",
+                  "id": "70d561b5-30bf-4562-a7fe-e0eb0e2db75e",
                   "children": [],
                   "links": [
                     {
@@ -1689,7 +1692,7 @@
                   "title": "Robot",
                   "xid": "nf76o_NYm0-pSIVBFm7IH",
                   "description": "Robot Framework is a Python-based, extensible keyword-driven automation framework for acceptance testing, acceptance test driven development (ATDD), behavior driven development (BDD) and robotic process automation (RPA).\n\nRobot Framework is open and extensible. Robot Framework can be integrated with virtually any other tool to create powerful and flexible automation solutions.\n\n",
-                  "id": "cef81f58-e084-40ea-b841-b6eed3ff494e",
+                  "id": "acbe669a-b7a3-4ce4-8beb-d1b1b9e42a81",
                   "children": [],
                   "links": [
                     {
@@ -1713,7 +1716,7 @@
                   "title": "Selenium",
                   "xid": "s3HMrqNEVogftCIOZYO61",
                   "description": "Selenium is an open-source tool that automates web browsers. It provides a single interface that lets you write test scripts in programming languages like Ruby, Java, NodeJS, PHP, Perl, Python, and C#, among others.\n\n",
-                  "id": "0de7f26a-6fe4-43eb-bdda-d19a9c749b51",
+                  "id": "fa02f3a6-894d-4fad-9a29-e98313b9e545",
                   "children": [],
                   "links": [
                     {
@@ -1737,7 +1740,7 @@
                   "title": "Jest",
                   "xid": "ZeJSeYs8fkZLQ-Pc3TqEM",
                   "description": "Jest is a delightful JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!\n\n",
-                  "id": "7ad1825e-1b64-4bec-9740-81bd16a3ebcc",
+                  "id": "957b5690-fbe5-4654-8001-5740530afd46",
                   "children": [],
                   "links": [
                     {
@@ -1766,7 +1769,7 @@
                   "title": "Puppeteer",
                   "xid": "YKHlLKIlL-Y4ZtHTLfApu",
                   "description": "Puppeteer is a Node library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol. It can also be configured to use full (non-headless) Chrome or Chromium.\n\n",
-                  "id": "9e97b002-1f18-4e10-b538-9da5898d6b7d",
+                  "id": "758a1b1f-bee1-41de-b83c-112f1c7fbac3",
                   "children": [],
                   "links": [
                     {
@@ -1785,7 +1788,7 @@
                   "title": "Playwright",
                   "xid": "CHqfXjRRdS_c6XMnfVVx-",
                   "description": "Playwright Test was created specifically to accommodate the needs of end-to-end testing. Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox. Test on Windows, Linux, and macOS, locally or on CI, headless or headed with native mobile emulation of Google Chrome for Android and Mobile Safari.Playwright leverages the DevTools protocol to write powerful, stable automated tests.Playwright can actually see into and control the browser rather than relying on a middle translation layer, it allows for the simulation of more insightful and relevant user scenarios.\n\n",
-                  "id": "eca27a74-0ee2-4474-9a22-8eb91adec012",
+                  "id": "43d281e0-e02a-458b-b140-685e1e94bb5b",
                   "children": [],
                   "links": [
                     {
@@ -1824,19 +1827,19 @@
       "title": "qa-non-functional-testing",
       "xid": "",
       "description": "qa-non-functional-testing",
-      "id": "02534c9d-b885-41c8-b304-13584ecfd201",
+      "id": "bc13bc19-817d-4497-9796-baa682722c65",
       "children": [
         {
           "title": "Accessibility Tests",
           "xid": "mmDIqSD6MU3ZhWREGI5E2",
           "description": "In software QA, accessibility testing is the practice of confirming that an application is usable for as many people as possible, including people with disabilities such as vision impairment, hearing problems and cognitive conditions.\n\n",
-          "id": "267663c0-e67f-428f-bbea-f8c02b47ed4e",
+          "id": "63e7c66f-bf0a-48e9-9321-147fe9288ddd",
           "children": [
             {
               "title": "Chrome DevTools",
               "xid": "Xadg2WZTz6Cc_Ir9FsbgY",
               "description": "These are a set of tools built into the browser to aid frontend developers diagnose and solve various issues in their applications \u2014 such as JavaScript and logical bugs, CSS styling issues or even just making quick temporary alterations to the DOM.\n\nTo enter the dev tools, right click and click **Inspect** (or press `ctrl+shift+c`/`cmd+opt+c`) to enter the Elements panel. Here you can debug CSS and HTML issues. If you want to see logged messages or interact with javascript, enter the **Console** tab from the tabs above (or press `ctrl+shift+j`/`cmd+opt+j` to enter it directly). Another very useful feature in the Chrome dev tools is the Lighthouse (for checking performance) \u2014 more on this later.\n\nNOTE: This isn't a chrome-specific feature, and most browsers (Chromium based or otherwise) will have their own, largely-similar set of devtools.\n\n",
-              "id": "b8696f9b-d8c6-4ac0-91ff-5764b43e1a8b",
+              "id": "57f6c5c7-4c73-4583-b8f3-96c146339f18",
               "children": [],
               "links": [
                 {
@@ -1855,7 +1858,7 @@
               "title": "Wave",
               "xid": "Lb1ctvpMcKIvsC0WQ5q43",
               "description": "Wave is a suite of evaluation tools that helps authors make their web content more accessible to individuals with disabilities. WAVE can identify many accessibility and Web Content Accessibility Guideline (WCAG) errors, but also facilitates human evaluation of web content.\n\n",
-              "id": "d9e493c8-3e45-4db1-a074-e1edd44605b9",
+              "id": "982c2e9e-0ac1-4ccf-bf88-d94bd7fbc1f8",
               "children": [],
               "links": [
                 {
@@ -1874,7 +1877,7 @@
               "title": "AXE",
               "xid": "_4jJ8YQeLcaT-z38kxRRR",
               "description": "Axe is a fast and lightweight accessibility testing tool that checks the entire document against the rules and generates a report with all violations, passes, etc.\n\n",
-              "id": "134b99ba-d687-400b-8c42-438af364116d",
+              "id": "5b7b7787-f641-4a49-b409-cf835cf7ae4a",
               "children": [],
               "links": [
                 {
@@ -1907,13 +1910,13 @@
           "title": "Load & Performance Testing",
           "xid": "wTfvbS62eyitDT8pLsVhj",
           "description": "Performance Testing is a subset of Performance Engineering. It is a process of evaluating a system\u2019s behavior under various extreme conditions. The main intent of performance testing is to monitor and improve key performance indicators such as response time, throughput, memory, CPU utilization, and more.\n\nThere are three objectives (three S) of Performance testing to observe and evaluate: `Speed`, `Scalability` and `Stability`. Following are the commonly used performance testing types, but not limited to:\n\n*   Load Testing\n*   Stress Testing\n*   Spike Testing\n*   Endurance Testing\n*   Volume Testing\n*   Scalability Testing\n*   Capacity Testing\n\nLoad Testing is one type of performance testing. It helps to evaluate the application under tests' behaviors such as response time, throughput, pass/fail transactions, and more under the normal workload. e.g., cart checkout response time is 500 milliseconds under typical business hours.",
-          "id": "d50965f9-304e-424b-a5a3-336ff4a20226",
+          "id": "5bf43644-200d-4b97-a65d-5db670dc037f",
           "children": [
             {
               "title": "Vegeta",
               "xid": "LGZlOPNYQp0O_vapnciEI",
               "description": "Vegeta is a versatile HTTP load testing tool built out of a need to drill HTTP services with a constant request rate. It can be used both as a command line utility and a library.\n\n",
-              "id": "6670d0ff-c81c-4c93-9863-ea92c9ae9875",
+              "id": "b21241de-42c0-4670-97d1-b984aff326d0",
               "children": [],
               "links": [
                 {
@@ -1927,7 +1930,7 @@
               "title": "JMeter",
               "xid": "UeeDNUPZ61_HHgcaF9-__",
               "description": "Apache JMeter is an Apache project that can be used as a load testing tool for analyzing and measuring the performance of a variety of services, with a focus on web applications.\n\n",
-              "id": "9dcaf0a4-c963-491c-8ef2-6f3616c97278",
+              "id": "a349e74e-84c3-4394-8626-a1ac0128e292",
               "children": [],
               "links": [
                 {
@@ -1951,7 +1954,7 @@
               "title": "Locust",
               "xid": "QjAJIfSQe7WjbyYdGWSP8",
               "description": "Locust is an easy-to-use, scriptable and scalable performance testing tool. You define the behavior of your users in regular Python code instead of being stuck in a UI or restrictive domain-specific language. This makes Locust infinitely expandable and very developer friendly. Given below are some of the features of Locust.\n\n*   Write test scenarios in plain old Python\n*   Distributed and scalable - supports hundreds of thousands of concurrent users\n*   Web-based UI\n*   Can test any system\n*   Hackable\n\n",
-              "id": "9bc4df81-10d6-437a-8c26-ba6456554dba",
+              "id": "2dc7aa2a-eadd-44ae-989a-b01a4b51bb72",
               "children": [],
               "links": [
                 {
@@ -1970,7 +1973,7 @@
               "title": "Lighthouse",
               "xid": "fkUxhrP3LhtIVgIP9Dxar",
               "description": "Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps, SEO, and more. You can run Lighthouse in Chrome DevTools, from the command line, or as a Node module. You give Lighthouse a URL to audit, run a series of audits against the page, and then generate a report on how well the page did. From there, use the failing audits as indicators on how to improve the page. Each audit has a reference doc explaining why the audit is important and how to fix it.\n\n",
-              "id": "2f2bd7bc-945e-43b9-9b75-86de0ffb76c2",
+              "id": "7a4a1525-4a61-42b6-af47-05535dfa96d6",
               "children": [],
               "links": [
                 {
@@ -1989,7 +1992,7 @@
               "title": "Webpage Test",
               "xid": "igbQfUpmMSKYyAOVkSCLM",
               "description": "WebPageTest is a web performance tool providing deep diagnostic information about how a page performs under a variety of conditions.\n\nEach test can be run from different locations around the world, on real browsers, over any number of customizable network conditions.\n\n",
-              "id": "563c0eab-680f-4215-a429-9d809572414d",
+              "id": "279f3e43-1a94-4689-9d9f-259a01e99d90",
               "children": [],
               "links": [
                 {
@@ -2003,7 +2006,7 @@
               "title": "Gatling",
               "xid": "J1Yx1VcO20Lc3r3PdGpUW",
               "description": "Gatling is a highly capable load testing tool. It is designed for ease of use, maintainability and high performance. Out of the box, Gatling comes with excellent support of the HTTP protocol that makes it a tool of choice for load testing any HTTP server. As the core engine is actually protocol agnostic, it is perfectly possible to implement support for other protocols. For example, Gatling currently also ships JMS support.\n\nGatling\u2019s architecture is asynchronous as long as the underlying protocol, such as HTTP, can be implemented in a non blocking way. This kind of architecture lets us implement virtual users as messages instead of dedicated threads, making them very resource cheap. Thus, running thousands of concurrent virtual users is not an issue.\n\n",
-              "id": "4a491c45-34b2-44ba-a20d-7823ad30db4b",
+              "id": "c9f63b7e-0a69-4b62-9f53-67e46cd2fa9c",
               "children": [],
               "links": [
                 {
@@ -2022,7 +2025,7 @@
               "title": "K6",
               "xid": "Jcp29_ASj9QZ_DjDBIapJ",
               "description": "Grafana k6 is an open-source load testing tool that makes performance testing easy and productive for engineering teams. k6 is free, developer-centric, and extensible.\n\nUsing k6, you can test the reliability and performance of your systems and catch performance regressions and problems earlier. k6 will help you to build resilient and performant applications that scale.\n\n",
-              "id": "049f161a-433b-497d-9ce1-75d1a789e7db",
+              "id": "30469828-d8e0-4865-a3d4-1ae455d01c9f",
               "children": [],
               "links": [
                 {
@@ -2041,7 +2044,7 @@
               "title": "Artillery",
               "xid": "j1DYOQbIUT1tw_9WIPBkE",
               "description": "Artillery is a modern, powerful & easy-to-use performance testing toolkit. Use it to ship scalable applications that stay performant & resilient under high load.\n\nArtillery prioritizes developer productivity and happiness, and follows the \"batteries-included\" philosophy.\n\nFeatures\n--------\n\n*   Emulate complex user behavior with scenarios\n*   Load testing and smoke testing\n*   Batteries included\n*   Extensible & hackable\n*   Integrations and add-ons\n*   Designed for cross-team collaboration\n*   Planet-scale testing\n\n",
-              "id": "c36cc5e6-dc01-4f7c-a812-e2801d26f259",
+              "id": "b7f93c5a-c03d-4c84-b857-e67c4a6f72e5",
               "children": [],
               "links": [
                 {
@@ -2063,13 +2066,13 @@
           "title": "Security Testing",
           "xid": "wsJXMvRbOTh_VXKhmhPmQ",
           "description": "Security testing is a process intended to reveal flaws in the security mechanisms of an information system that protect data and maintain functionality as intended. Due to the logical limitations of security testing, passing the security testing process is not an indication that no flaws exist or that the system adequately satisfies the security requirements.\n\nTypical security requirements may include specific elements of confidentiality, integrity, authentication, availability, authorization and non-repudiation. Actual security requirements tested depend on the security requirements implemented by the system. Security testing as a term has a number of different meanings and can be completed in a number of different ways. As such, a Security Taxonomy helps us to understand these different approaches and meanings by providing a base level to work from.\n\n",
-          "id": "6fed8349-4bd6-4fcd-b4f7-1ca9d851ffec",
+          "id": "5946b4d6-a418-4d9f-8de8-40f2948d8b5c",
           "children": [
             {
               "title": "Authentication / Authorization",
               "xid": "75-XdVA4BL6UrcvpC9grx",
               "description": "`Authentication` is the process of verifying that an individual, entity or website is whom it claims to be. Authentication in the context of web applications is commonly performed by submitting a username or ID and one or more items of private information that only a given user should know.\n\n`Authorization` may be defined as \"the process of verifying that a requested action or service is approved for a specific entity\" (NIST). `Authorization` is distinct from authentication which is the process of verifying an entity's identity. When designing and developing a software solution, it is important to keep these distinctions in mind. A user who has been authenticated (perhaps by providing a username and password) is often not authorized to access every resource and perform every action that is technically possible through a system.\n\n",
-              "id": "78457081-119b-457d-9cce-d56da0c72035",
+              "id": "6a221225-4be3-47e7-ae56-9677911817c6",
               "children": [],
               "links": [
                 {
@@ -2088,7 +2091,7 @@
               "title": "Secrets Management",
               "xid": "YV6ST78AH4J0i2Rw9zhZj",
               "description": "Secrets Management is a systematic way of in managing, storing, securing, and retrieving credentials for any systems, database, and other services. Credentials such as passwords, SSH keys, certificates, API keys, backup codes, and more.\n\n",
-              "id": "d37e575f-d585-4b13-af68-b00fdca5f3be",
+              "id": "f565b09b-514c-49d5-8b2d-b8bcf982e0d7",
               "children": [],
               "links": [
                 {
@@ -2112,7 +2115,7 @@
               "title": "Vulnerability Scanning",
               "xid": "mKM27KrX1CEViOwz1EDtQ",
               "description": "Vulnerability scanning identifies hosts and host attributes (e.g., operating systems, applications, open ports), but it also attempts to identify vulnerabilities rather than relying on human interpretation of the scanning results. Many vulnerability scanners are equipped to accept results from network discovery and network port and service identification, which reduces the amount of work needed for vulnerability scanning.\n\nAlso, some scanners can perform their own network discovery and network port and service identification. Vulnerability scanning can help identify outdated software versions, missing patches, and misconfigurations, and validate compliance with or deviations from an organization\u2019s security policy.\n\nThis is done by identifying the operating systems and major software applications running on the hosts and matching them with information on known vulnerabilities stored in the scanners\u2019 vulnerability databases.\n\n",
-              "id": "23044277-4bce-4930-bcbf-9a9bef0983b4",
+              "id": "944b9a2d-8ddb-4145-874d-0a472c40879e",
               "children": [],
               "links": [
                 {
@@ -2131,7 +2134,7 @@
               "title": "OWASP 10",
               "xid": "JR-MkszNvv96-S3DpyLeX",
               "description": "The Open Web Application Security Project, or OWASP, is an international non-profit organization dedicated to web application security.\n\nThe OWASP Top 10 is a regularly-updated report outlining security concerns for web application security, focusing on the 10 most critical risks. The report is put together by a team of security experts from all over the world. OWASP refers to the Top 10 as an \u2018awareness document\u2019 and they recommend that all companies incorporate the report into their processes in order to minimize and/or mitigate security risks.\n\n",
-              "id": "f1e56bc0-694f-4491-afc5-d90667f1a71d",
+              "id": "97437f0d-76ee-4e94-a9e5-7ffe2da53a51",
               "children": [],
               "links": [
                 {
@@ -2150,7 +2153,7 @@
               "title": " Attack Vectors",
               "xid": "x3HEti8-xF9Mxe5ELBM9T",
               "description": "This metric reflects the context by which vulnerability exploitation is possible. This metric value (and consequently the Base Score) will be larger the more remote (logically, and physically) an attacker can be in order to exploit the vulnerable component. The assumption is that the number of potential attackers for a vulnerability that could be exploited from across a network is larger than the number of potential attackers that could exploit a vulnerability requiring physical access to a device, and therefore warrants a greater Base Score.\n\n",
-              "id": "2e1a3faf-12b8-4e8b-a79c-735d669e3b8a",
+              "id": "1ae5db83-7be5-48f8-83ac-33c943216c09",
               "children": [],
               "links": [
                 {
@@ -2186,13 +2189,13 @@
       "title": "Email Testing",
       "xid": "G-F6jQTOAZ2kQ36F-VrBB",
       "description": "Email testing allows you to view your email before sending it out to your subscriber list to verify links, design, spelling errors, and more.\n\n",
-      "id": "214ad7a6-652e-422a-883d-e49cffbc2f2f",
+      "id": "2637a5a1-bdc9-4856-8f7e-0472ff4f3203",
       "children": [
         {
           "title": "Gmail Tester",
           "xid": "mIM9ausl_tSUNPUerIfEr",
           "description": "Gmail-tester is a simple Node.js Gmail client which checks/returns email message(s) straight from any Gmail-powered account (both private and company).\n\n",
-          "id": "5cfc492c-2d11-488d-8580-2720bf990754",
+          "id": "8993e594-86f5-46b0-accd-8e3462e3369f",
           "children": [],
           "links": [
             {
@@ -2211,7 +2214,7 @@
           "title": "Mailinator",
           "xid": "rFjtp3-cnaUmHiKfjPZBn",
           "description": "Mailinator allows Developers and QA Testing teams to automatically test their SMS and Email workflows like 2FA verifications, sign-ups, and password resets with trillions of inboxes at your fingertips. Whether you do Manual Testing, use an API, or a framework like Selenium, Cypress, Playwright, or Puppeteer - Mailinator will close the loop on email/SMS testing.\n\n",
-          "id": "b9b30357-76bf-4ffd-8dad-58cca42d443c",
+          "id": "45bcf84f-f297-402a-8a97-ddd71cb42d92",
           "children": [],
           "links": [
             {
@@ -2249,13 +2252,13 @@
       "title": "Reporting",
       "xid": "MyAAsHteSr4JCPEpqjsy9",
       "description": "The International Software Testing Qualifications Board (ISTQB) glossary defines a QA report as: _Documentation summarizing test activities and results_. By documenting the testing that was conducted and the results that were achieved, QA reports provide valuable insight into the health of the code base and critical metrics. As such, they should be generated on a regular basis to ensure the quality standards are being met. So basically, test reports should document all of the test cases that were performed during software testing, as well as the results of those tests. They should also deliver relevant information about the product and highlight any areas where improvements can be made.\n\n",
-      "id": "390a1785-ea2b-4c11-b58f-73fb974c96bb",
+      "id": "2eed8c70-6d68-4294-8398-f8af493264b0",
       "children": [
         {
           "title": "jUnit",
           "xid": "5bNdrymdzqL0VbTqWt8r2",
           "description": "JUnit is known as a unit testing framework used for the Java programming language. JUnit has been playing a crucial in the development of test-driven development and is one of a family of unit testing frameworks. JUnit is useful to write repeatable tests for your application code units. JUnit stimulates the idea of \u201ctesting first, then coding,\u201d. The test approach explicates \u2013test a little + code a little = JUnit. JUnit helps the programmer by increasing the productivity and the stability of the program\u2019s code snippets.That will helps in reducing the time of the tester, which is spent on debugging of the code.\n\n",
-          "id": "17b11404-13d9-443a-9865-b3b10ebdf280",
+          "id": "38563886-f5b5-4312-8f19-5a0527d74e79",
           "children": [],
           "links": [
             {
@@ -2269,7 +2272,7 @@
           "title": "Allure",
           "xid": "jaHOo-vZGjTnABxQKMT3_",
           "description": "Allure Report is a flexible, lightweight multi-language test reporting tool. It provides clear graphical reports and allows everyone involved in the development process to extract the maximum of information from the everyday testing process.\n\n",
-          "id": "0a40f783-a3d1-49fe-a827-b371438fe576",
+          "id": "6504d83a-2ef7-4ed8-bfaf-d481d8315583",
           "children": [],
           "links": [
             {
@@ -2288,7 +2291,7 @@
           "title": "TestRail",
           "xid": "o4nkmhEDGwi8yE6DSwZi5",
           "description": "TestRail is a web-based test management tool used by testers, developers and other stake holders to manage, track and organize software testing efforts. It follows a centralized test management concept that helps in easy communication and enables rapid development of task across QA team and other stakeholders .\n\n",
-          "id": "af36ed7e-2671-41ce-ab43-7218550f2cfb",
+          "id": "77e6f6fe-b177-4db5-a3b7-60559bb8669d",
           "children": [],
           "links": [
             {
@@ -2331,13 +2334,13 @@
       "title": "Monitoring & Logs",
       "xid": "pJvijtG-a0vOq16EFu3Gr",
       "description": "DevOps monitoring entails overseeing the entire development process from planning, development, integration and testing, deployment, and operations. It involves a complete and real-time view of the status of applications, services, and infrastructure in the production environment. Features such as real-time streaming, historical replay, and visualizations are critical components of application and service monitoring.\n\n",
-      "id": "d26bf360-227e-44d0-ac9d-904fee7866ad",
+      "id": "557a5022-3c1c-48b1-93f6-cdaa16e54eda",
       "children": [
         {
           "title": "Grafana",
           "xid": "8CztIu0BOPZZRZsqR9asW",
           "description": "Grafana is the open-source platform for monitoring and observability. It allows you to query, visualize, alert on and understand your metrics no matter where they are stored.\n\n",
-          "id": "8ab24f9c-66d4-4764-b21d-4d976fd026d2",
+          "id": "a870ac5b-b5f5-44ec-9068-5e01e1c1e56e",
           "children": [],
           "links": [
             {
@@ -2371,7 +2374,7 @@
           "title": "New Relic",
           "xid": "QnNUZQlQ2Jhv34daeIuW8",
           "description": "New Relic is an observability platform that helps you build better software. You can bring in data from any digital source so that you can fully understand your system and how to improve it.\n\n",
-          "id": "5873c0f3-803a-4357-81a9-e08fac97141d",
+          "id": "89c0e834-08a2-41b7-a66d-a4dc85cedb70",
           "children": [],
           "links": [
             {
@@ -2395,7 +2398,7 @@
           "title": "RunScope",
           "xid": "iceaqeXRYXoGtagWn_B7b",
           "description": "A Simple Tool for Monitoring Complex APIs. Verify that the structure and content of your API calls meets your expectations. Powerful and flexible assertions give you total control over defining a successful API call.\n\nCreate simple monitors with dynamic data for even the most complex use cases. More than simple string matching, build API validations without any code and use them across local dev, staging and production environments.\n\n",
-          "id": "b410c7f1-e226-434b-8c3d-940aa7ca7290",
+          "id": "6eb0ef66-2caa-473a-a7ef-9dfc8147d949",
           "children": [],
           "links": [
             {
@@ -2409,7 +2412,7 @@
           "title": "Sentry",
           "xid": "H-2wWlKxD_Q1xVv99GlBj",
           "description": "Sentry tracks your software performance, measuring metrics like throughput and latency, and displaying the impact of errors across multiple systems. Sentry captures distributed traces consisting of transactions and spans, which measure individual services and individual operations within those services.\n\n",
-          "id": "14f33697-6c9a-41ef-bb23-8bae2ffd4fe5",
+          "id": "79ac8276-9e8d-4697-94c0-f3ab57173aaa",
           "children": [],
           "links": [
             {
@@ -2428,7 +2431,7 @@
           "title": "Kibana",
           "xid": "DCZyXcx8H2MTPcyKOhn2_",
           "description": "Kibana is a free and open user interface that lets you visualize your Elasticsearch data and navigate the Elastic Stack. Do anything from tracking query load to understanding the way requests flow through your apps.\n\n",
-          "id": "b64ccc9a-3c83-48c6-8424-7c4458cc23bf",
+          "id": "a6c45a9b-fc09-4c84-a45a-a5114d7e4e51",
           "children": [],
           "links": [
             {
@@ -2452,7 +2455,7 @@
           "title": "Datadog",
           "xid": "Y2I_dcVZb4xZremXoajjx",
           "description": "Datadog is a monitoring and analytics platform for large-scale applications. It encompasses infrastructure monitoring, application performance monitoring, log management, and user-experience monitoring. Datadog aggregates data across your entire stack with 400+ integrations for troubleshooting, alerting, and graphing.\n\n",
-          "id": "b0a73700-6c51-4c0b-b737-3e647fcef570",
+          "id": "d12ec601-573b-4360-ae5f-3671cb1c9466",
           "children": [],
           "links": [
             {
@@ -2471,7 +2474,7 @@
           "title": "Pager Duty",
           "xid": "DJDegO78Elo83eHjq8IHN",
           "description": "Through its SaaS-based platform, PagerDuty empowers developers, DevOps, IT operations and business leaders to prevent and resolve business-impacting incidents for exceptional customer experience. When revenue and brand reputation depends on customer satisfaction, PagerDuty arms organizations with the insight to proactively manage events that may impact customers across their IT environment. With hundreds of native integrations, on-call scheduling and escalations, machine learning, business-wide response orchestration, analytics, and much more, PagerDuty gets the right data in the hands of the right people in real time, every time.\n\n",
-          "id": "a560b328-bbb2-4413-a4ae-0e3ae99d4d63",
+          "id": "83d8352f-2f82-4104-a277-f5a9df8ee852",
           "children": [],
           "links": [
             {
@@ -2499,13 +2502,13 @@
       "title": "Version Control System",
       "xid": "s8o5fXu3XHrMduh8snLwu",
       "description": "Version control/source control systems allow developers to track and control changes to code over time. These services often include the ability to make atomic revisions to code, branch/fork off of specific points, and to compare versions of code. They are useful in determining the who, what, when, and why code changes were made.\n\n",
-      "id": "2eea4cf8-2398-4042-a16f-f538c9d8ebdd",
+      "id": "67740dae-6acc-4aa5-8d82-ac4187c337ad",
       "children": [
         {
           "title": "Git",
           "xid": "WrqKdOTRUiOnc1aIhTZeB",
           "description": "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.\n\n",
-          "id": "4170653a-bbeb-4047-85fa-145bf8fd5066",
+          "id": "9707a04b-311c-4dc4-ab70-3e262fc993c9",
           "children": [],
           "links": [
             {
@@ -2563,13 +2566,13 @@
       "title": "Repo Hosting Services",
       "xid": "XoYsStVqfMeCHkGBlbRhD",
       "description": "There are different repository hosting services with the most famous one being GitHub, GitLab and BitBucket. I would recommend creating an account on GitHub because that is where most of the OpenSource work is done and most of the developers are.\n\n",
-      "id": "89dddab7-16af-48d1-a78f-81a3e4cdc3d6",
+      "id": "161c7e85-7704-479a-9004-6934d0e80e5a",
       "children": [
         {
           "title": "GitLab",
           "xid": "RfwyTgwfb_xu5H9N-8_s9",
           "description": "GitLab is a provider of internet hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.\n\n",
-          "id": "3128c8b6-62bf-4434-ba3c-46c15d33e952",
+          "id": "f507f93d-1031-45eb-a895-7924a0c8c149",
           "children": [],
           "links": [
             {
@@ -2593,7 +2596,7 @@
           "title": "Bitbucket",
           "xid": "4xlbvY7NS3cemSZsEQAkD",
           "description": "Bitbucket is a Git based hosting and source code repository service that is Atlassian's alternative to other products like GitHub, GitLab etc.\n\nBitbucket offers hosting options via Bitbucket Cloud (Atlassian's servers), Bitbucket Server (customer's on-premise) or Bitbucket Data Centre (number of servers in customers on-premise or cloud environment)\n\n",
-          "id": "37f40d4c-a53f-4033-8176-8604ec00880c",
+          "id": "c89af7ae-3670-4771-aa35-be841bc782ed",
           "children": [],
           "links": [
             {
@@ -2637,7 +2640,7 @@
           "title": "GitHub",
           "xid": "v4gjV1qolrFXdESrY9bzG",
           "description": "GitHub is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.\n\n",
-          "id": "2a2d6cb5-e620-45d8-8caa-68feb9821b04",
+          "id": "994e7546-47d1-4a3d-8f2c-de424ae417a3",
           "children": [],
           "links": [
             {
@@ -2710,13 +2713,13 @@
       "title": "CI / CD",
       "xid": "-n2yAprKdWg3YVi2vp25d",
       "description": "Continuous Integration is a software development method where team members integrate their work at least once daily. An automated build checks every integration to detect errors in this method. In Continuous Integration, the software is built and tested immediately after a code commit. In a large project with many developers, commits are made many times during the day. With each commit, code is built and tested.\n\nContinuous Delivery is a software engineering method in which a team develops software products in a short cycle. It ensures that software can be easily released at any time. The main aim of continuous delivery is to build, test, and release software with good speed and frequency. It helps reduce the cost, time, and risk of delivering changes by allowing for frequent updates in production.\n\n",
-      "id": "ed0fe51c-84dc-480a-a4c1-9a8bf2d1849a",
+      "id": "fc930935-445e-4061-8f6b-c2953adcd0dd",
       "children": [
         {
           "title": "Circle CI",
           "xid": "z1kZkWTL_RRPZY59aWylU",
           "description": "CircleCI is a CI/CD service that can be integrated with GitHub, BitBucket and GitLab repositories. The service that can be used as a SaaS offering or self-managed using your own resources.\n\n",
-          "id": "c2634f1f-c2a7-4154-bbc1-63e655bbed1e",
+          "id": "3615b52e-9bb1-4c98-a45a-d81faf2e035b",
           "children": [],
           "links": [
             {
@@ -2745,7 +2748,7 @@
           "title": "Drone",
           "xid": "3oDyxhhbCCqxuCh1sT9VC",
           "description": "Drone is a CI/CD service offering by Harness. Each build runs on an isolated Docker container, and Drone integrates with many popular source code management repositories like GitHub, BitBucket and GitLab\n\n",
-          "id": "ed172888-e329-4d0d-b9d0-307f8d5d2510",
+          "id": "3a2aa7a7-956b-4e22-8917-890f3a0457fd",
           "children": [],
           "links": [
             {
@@ -2769,7 +2772,7 @@
           "title": "Jenkins",
           "xid": "3l2dkN1vBy9johFhAgZhT",
           "description": "Jenkins is an open-source CI/CD automation server. Jenkins is primarily used for building projects, running tests, static code analysis and deployments.\n\n",
-          "id": "681e38a1-31cb-4b9b-9c99-fc4e845aead8",
+          "id": "dea369e9-22fd-4823-9fae-90984786f144",
           "children": [],
           "links": [
             {
@@ -2798,7 +2801,7 @@
           "title": "Travis CI",
           "xid": "Rz1E97EQCxESu44dTQd5t",
           "description": "Travis CI is a CI/CD service that is primarily used for building and testing projects that are hosted on BitBucket and GitHub. Open source projects can utilized Travis CI for free.\n\n",
-          "id": "acf89a5b-fb1d-41d1-ba23-8f82587276f1",
+          "id": "4823996b-246f-4700-b22c-fb15e0df0424",
           "children": [],
           "links": [
             {
@@ -2827,7 +2830,7 @@
           "title": "GitLab CI",
           "xid": "iW3oaTl7c3a1kNlCKy-13",
           "description": "GitLab offers a CI/CD service that can be used as a SaaS offering or self-managed using your own resources. You can use GitLab CI with any GitLab hosted repository, or any BitBucket Cloud or GitHub repository in the GitLab Premium self-managed, GitLab Premium SaaS and higher tiers.\n\n",
-          "id": "bb646672-efeb-4f64-ae75-7b865125e1ac",
+          "id": "4bebd635-2f9f-4859-bc88-df6a4e1cedf6",
           "children": [],
           "links": [
             {
@@ -2866,7 +2869,7 @@
           "title": "Bamboo",
           "xid": "j4J5OhHEf7t-LVNkNVW3M",
           "description": "Bamboo is a CI/CD service provided by Atlassian. Bamboo is primarily used for automating builds, tests and releases in a single workflow.\n\n",
-          "id": "27e1bfc9-0b34-4602-b903-eb20ae052a1e",
+          "id": "a8679b50-3247-4868-b330-b3e14eff1d04",
           "children": [],
           "links": [
             {
@@ -2890,7 +2893,7 @@
           "title": "TeamCity",
           "xid": "k3TBVtepeQEGzKGceDkPJ",
           "description": "TeamCity is a CI/CD service provided by JetBrains. TeamCity can be used as a SaaS offering or self-managed using your own resources.\n\n",
-          "id": "c9414bd7-5143-4430-9929-7b09009f4aed",
+          "id": "5a24be9c-e99a-4b49-bf25-eb077ed2f86d",
           "children": [],
           "links": [
             {
@@ -2919,7 +2922,7 @@
           "title": "Azure DevOps Services",
           "xid": "u0tKd7HZVN2gGv9Cz3jHz",
           "description": "Azure DevOps is developed by Microsoft as a full scale application lifecycle management and CI/CD service. Azure DevOps provides developer services for allowing teams to plan work, collaborate on code development, and build and deploy applications.\n\n",
-          "id": "ecd40d6c-7827-41d2-9e4c-d64caaaebbec",
+          "id": "e771a71f-4fbe-4606-b523-4595ac3e82ae",
           "children": [],
           "links": [
             {
@@ -2972,13 +2975,13 @@
       "title": "Headless Testing",
       "xid": "Pm-Wx7Z3jCUFcafetsQYi",
       "description": "Headless testing is when end-to-end tests are performed without loading the browser's user interface. Since the browser operates as a typical browser would but does not make use of the user interface, it is considered highly suitable for automated testing.\n\nA few example cases where one may use headless browser testing include:\n\n*   Automating HTML event responses, such as form submission, keyboard events, mouse-clicking, etc.\n*   Web scraping\n*   Generating screenshots of webpages\n\n",
-      "id": "8065f01f-6cb3-4600-8150-a1be892c5d84",
+      "id": "74f7848d-deb4-498b-bc63-75490c66d412",
       "children": [
         {
           "title": "Zombie.js",
           "xid": "m0gT774b59xsSJKrrjTxq",
           "description": "Zombie.js allows you to run Unit or Integration tests without a real web browser. Instead, it uses a simulated browser where it stores the HTML code and runs the JavaScript you may have in your HTML page. This means that an HTML page doesn\u2019t need to be displayed, saving precious time that would otherwise be occupied rendering it.\n\n",
-          "id": "09156bbb-1246-479e-ac5f-a8454de40b64",
+          "id": "45680c0e-b1c7-4ca5-b894-2a236ce1c820",
           "children": [],
           "links": [
             {
@@ -3002,7 +3005,7 @@
           "title": "Playwright",
           "xid": "0TUq4KRbWTLsLuYI9sgi0",
           "description": "Playwright is an open-source test automation library initially developed by Microsoft contributors. It supports programming languages such as Java, Python, C#, and NodeJS. Playwright comes with Apache 2.0 License and is most popular with NodeJS with Javascript/Typescript.\n\n",
-          "id": "543ee91c-f931-437e-89c9-a06d7249df64",
+          "id": "ea8947a8-7a64-44c2-ab8f-43ab935810a8",
           "children": [],
           "links": [
             {
@@ -3021,7 +3024,7 @@
           "title": "Puppeteer",
           "xid": "sHyFCf7XQKxGxchaYxp2B",
           "description": "Puppeteer is a Node library that provides a high-level API to control headless Chrome or Chromium browsers over the DevTools Protocol. It can also be configured to use full (non-headless) Chrome or Chromium.\n\n",
-          "id": "09931339-e533-416b-8fc4-07190a580bab",
+          "id": "997131cc-786c-4490-aa7a-8114cb148640",
           "children": [],
           "links": [
             {
@@ -3040,7 +3043,7 @@
           "title": "Cypress",
           "xid": "D7zGshmgwqWluF-W7OTWe",
           "description": "Cypress framework is a JavaScript-based end-to-end testing framework built on top of Mocha \u2013 a feature-rich JavaScript test framework running on and in the browser, making asynchronous testing simple and convenient. It also uses a BDD/TDD assertion library and a browser to pair with any JavaScript testing framework.\n\n",
-          "id": "2ece5cdb-baf4-4bf6-ab7e-760638fdda01",
+          "id": "c99854ee-853d-4047-8669-7e86dda366a1",
           "children": [],
           "links": [
             {
@@ -3084,7 +3087,7 @@
           "title": "Headless Chrome",
           "xid": "JO--NVMs3saUNjh3mcd7z",
           "description": "Headless Chrome is a way to run the Chrome browser in a headless environment without the full browser UI. One of the benefits of using Headless Chrome (as opposed to testing directly in Node) is that your JavaScript tests will be executed in the same environment as users of your site.\n\n",
-          "id": "5854b01f-b9fe-4caf-bc5b-74f81522e4d7",
+          "id": "e3021757-f91c-4861-91c0-374a6348f32d",
           "children": [],
           "links": [
             {
@@ -3103,7 +3106,7 @@
           "title": "Headless Fox",
           "xid": "ryoSezFNeiunCAZygCbaQ",
           "description": "Headless Browser Testing is a process of running the browser tests without the type of browser UI or GUI. In headless browser testing, to conduct cross-browser testing the tester can run test cases accurately and successfully without requiring the browser on which application needs to be tested.\n\n",
-          "id": "169c0c85-953d-46af-a740-69edc3f7f30f",
+          "id": "6bdaaa7b-a498-4bd5-82a2-43f7669c32ee",
           "children": [],
           "links": [
             {
@@ -3117,7 +3120,7 @@
           "title": "HTML Unit",
           "xid": "-Sf7DLr8Ywoorrmsx3bfd",
           "description": "HtmlUnit is a \"GUI-Less browser for Java programs\". It models HTML documents and provides an API that allows you to invoke pages, fill out forms, click links, etc... just like you do in your \"normal\" browser. It has fairly good JavaScript support (which is constantly improving) and is able to work even with quite complex AJAX libraries, simulating Chrome, Firefox or Internet Explorer depending on the configuration used.\n\nHtmlUnit is not a generic unit testing framework. It is specifically a way to simulate a browser for testing purposes and is intended to be used within another testing framework such as JUnit or TestNG.\n\n",
-          "id": "851d3d36-f1d5-46e9-8125-fcea1e888e04",
+          "id": "b254ca55-1b3f-4b40-a0d9-ce7801489fef",
           "children": [],
           "links": [
             {

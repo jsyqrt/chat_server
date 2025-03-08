@@ -1,18 +1,21 @@
 {
+  "id": "80e77932-57a4-42e6-9156-cf8fc30e855c",
   "title": "Computer Science",
-  "description": "\n",
+  "description": "Computer Science curriculum with free resources for a self-taught developer.",
+  "question_title": "",
+  "question_description": "",
   "children": [
     {
       "title": "Conditional Rendering",
       "xid": "tU4Umtnfu01t9gLlnlK6b",
       "description": "The directive `v-if` is used to conditionally render a block. The block will only be rendered if the directive's expression returns a truthy value.\n\n",
-      "id": "0f6da341-3b70-4777-a53d-33bc6e74bcfd",
+      "id": "a058b4de-c957-420c-b423-4046b5c99f96",
       "children": [
         {
           "title": "Python",
           "xid": "RlKZzs44biQPgxD0tK1qx",
           "description": "Python is a well known programming language which is both a strongly typed and a dynamically typed language. Being an interpreted language, code is executed as soon as it is written and the Python syntax allows for writing code in functional, procedural or object-oriented programmatic ways.\n\n",
-          "id": "bab04765-60be-45d2-b1bc-a8ccd730f946",
+          "id": "9f549bd8-5c16-4827-bd0e-89bc5f5a028b",
           "children": [],
           "links": [
             {
@@ -71,7 +74,7 @@
           "title": "Go",
           "xid": "mWW88VnkqWgDz02qw5zU-",
           "description": "Go is an open source programming language supported by Google. Go can be used to write cloud services, CLI tools, used for API development, and much more.\n\n",
-          "id": "c1a5b99b-1e9e-4036-aed2-c19c1f0ac923",
+          "id": "ceb2fe6e-0c20-4c0d-b09b-f458a782f8b4",
           "children": [],
           "links": [
             {
@@ -120,7 +123,7 @@
           "title": "C#",
           "xid": "jHKCLfLml8oZyj4829gx0",
           "description": "C# (pronounced \"C sharp\") is a general purpose programming language made by Microsoft. It is used to perform different tasks and can be used to create web apps, games, mobile apps, etc.\n\n",
-          "id": "dbf12f2e-92b2-406f-9a37-f9ddc5e22a81",
+          "id": "1ce86eb5-6e0c-4698-b48d-c05d795a2774",
           "children": [],
           "links": [
             {
@@ -154,7 +157,7 @@
           "title": "Rust",
           "xid": "1bDjg-KBDKRmE6f1MWY8l",
           "description": "Rust is a modern systems programming language focusing on safety, speed, and concurrency. It accomplishes these goals by being memory safe without using garbage collection.\n\n",
-          "id": "9a5fed44-09e2-4093-9728-33794d5a913d",
+          "id": "55db065e-1e64-45fc-a364-e1022b0acc0a",
           "children": [],
           "links": [
             {
@@ -188,7 +191,7 @@
           "title": "C++",
           "xid": "1kQJs-3Aw8Bi7d_Xh67zS",
           "description": "C++ is a powerful general-purpose programming language. It can be used to develop operating systems, browsers, games, and so on. C++ supports different ways of programming like procedural, object-oriented, functional, and so on. This makes C++ powerful as well as flexible.\n\n",
-          "id": "09bc366d-e5ce-47f6-9cab-6cfd84aae8bd",
+          "id": "03e43087-9b1a-4f04-803a-1846c13e9764",
           "children": [],
           "links": [
             {
@@ -232,7 +235,7 @@
           "title": "C",
           "xid": "n4IsklfYJXFIyF1rGWuEa",
           "description": "C is a general-purpose computer programming language. It was created in the 1970s by Dennis Ritchie, and remains very widely used and influential. By design, C's features cleanly reflect the capabilities of the targeted CPUs.\n\n",
-          "id": "e4cd7928-a172-4115-b01c-f82156483677",
+          "id": "7b6739ca-8017-4867-8a5a-1c4091843e32",
           "children": [],
           "links": [
             {
@@ -271,7 +274,7 @@
           "title": "Java",
           "xid": "1lQSUFrrIGq19nUnM92-I",
           "description": "Java is general-purpose language, primarily used for Internet-based applications. It was created in 1995 by James Gosling at Sun Microsystems and is one of the most popular options for backend developers.\n\n",
-          "id": "e1ad1412-bfdb-4e27-8856-628062ef80f5",
+          "id": "60f1ccb8-6c2d-4e26-9cde-52161b69ebb4",
           "children": [],
           "links": [
             {
@@ -314,13 +317,13 @@
       "title": "Data Structures",
       "xid": "NM7q5REW1sJgMhxJhPpLT",
       "description": "As the name indicates itself, a **Data Structure** is a way of organizing the data in the **memory** so that it can be used efficiently. Some common data structures are array, linked list, stack, hashtable, queue, tree, heap, and graph.\n\n",
-      "id": "2c7cc7b4-39b5-4fca-a7d3-726429611392",
+      "id": "bff62334-eaa7-4001-b102-d8ebaa288f06",
       "children": [
         {
           "title": "Array",
           "xid": "TwW6SO2IXqkxJXVjLzdwU",
           "description": "Arrays store elements in contiguous memory locations, resulting in easily calculable addresses for the elements stored and this allows faster access to an element at a specific index.\n\n",
-          "id": "679bfb75-8d21-45e9-a582-6e639c014a96",
+          "id": "654f8912-5cd0-4d94-9415-8c3aac111933",
           "children": [],
           "links": [
             {
@@ -364,7 +367,7 @@
           "title": "Linked List",
           "xid": "gr8BK6vq4AVwp_aUozZmf",
           "description": "Arrays store elements in contiguous memory locations, resulting in easily calculable addresses for the elements stored and this allows faster access to an element at a specific index. Linked lists are less rigid in their storage structure and elements are usually not stored in contiguous locations, hence they need to be stored with additional tags giving a reference to the next element. This difference in the data storage scheme decides which data structure would be more suitable for a given situation.\n\n",
-          "id": "11e31897-1c9c-416e-a964-e1ca54297706",
+          "id": "c4d0dc69-1327-45cb-ad76-18e307a58077",
           "children": [],
           "links": [
             {
@@ -418,7 +421,7 @@
           "title": "Stack",
           "xid": "hJB5gO9tosRlC4UmdSNzl",
           "description": "Stack is a linear collection of items where items are inserted and removed in a particular order. Stack is also called a LIFO Data Structure because it follows the \"Last In First Out\" principle i.e. the item that is inserted in the last is the one that is taken out first.\n\n",
-          "id": "419d3084-e48a-4141-bcfa-d05b3b1ae181",
+          "id": "1b3ba74d-cc8f-44d4-a28d-553e1046a3c9",
           "children": [],
           "links": [
             {
@@ -442,7 +445,7 @@
           "title": "Queue",
           "xid": "JI990pDX2jjNe6IH_Y_t0",
           "description": "Queue is a linear collection of items where items are inserted and removed in a particular order. The queue is also called a FIFO Data Structure because it follows the \"First In, First Out\" principle i.e., the item that is inserted in the first is the one that is taken out first.\n\n",
-          "id": "3dea0ec0-4111-4f32-af07-cbb7cf2641b0",
+          "id": "c6146a91-079e-4d17-8eb2-164edab20234",
           "children": [],
           "links": [
             {
@@ -471,7 +474,7 @@
           "title": "Hash Table",
           "xid": "G2dN2FO0SN_I-5AhO_EUk",
           "description": "Hash Table, Map, HashMap, Dictionary or Associative are all the names of the same data structure. It is one of the most commonly used data structures.\n\n",
-          "id": "a69b128f-e5c9-418e-a149-7b221bef3b28",
+          "id": "029414ca-66ed-43a5-bdd2-82299ff29029",
           "children": [],
           "links": [
             {
@@ -525,13 +528,13 @@
           "title": "Tree",
           "xid": "_eWqiWUmOj0zUo_Ix3j1O",
           "description": "A tree is non-linear and a hierarchical data structure consisting of a collection of nodes such that each node of the tree stores a value and a list of references to other nodes (the \u201cchildren\u201d).\n\n",
-          "id": "6f654434-0142-42f8-aa65-f5965b0292ca",
+          "id": "01d5ee31-cb2d-4738-8c55-8ddfd1bbaba3",
           "children": [
             {
               "title": "Binary Tree",
               "xid": "G9dnegZ6zNvxrCZ3O_b_z",
               "description": "A binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.\n\n",
-              "id": "d8f91ba9-3067-4dd0-924c-a2a71a5b9e82",
+              "id": "1cc15858-5b51-4200-902a-0a33dbc3e6bc",
               "children": [],
               "links": [
                 {
@@ -555,7 +558,7 @@
               "title": "Binary Search Tree",
               "xid": "et7l85gnxjvzD2tDyHT_T",
               "description": "A binary search tree, also called an ordered or sorted binary tree, is a rooted binary tree data structure with the key of each internal node being greater than all the keys in the respective node's left subtree and less than the ones in its right subtree.\n\n",
-              "id": "cf82efad-5099-4e84-9110-874362d38c9e",
+              "id": "b00b1bc1-c239-4622-aa8c-0550d0fbb0fb",
               "children": [],
               "links": [
                 {
@@ -614,7 +617,7 @@
               "title": "Full Binary Tree",
               "xid": "Q8ZJNeTbc22Q08Mra-McY",
               "description": "A full Binary tree is a special type of binary tree in which every parent node/internal node has either two or no children. It is also known as a proper binary tree.\n\n",
-              "id": "d090df0c-3930-4d56-90de-36a74035eb46",
+              "id": "01c9ac39-320f-4d3c-b2ff-cf13276e49ac",
               "children": [],
               "links": [
                 {
@@ -628,7 +631,7 @@
               "title": "Complete Binary Tree",
               "xid": "Jx1WWCjm8jkfAGtHv15n1",
               "description": "A complete binary tree is a special type of binary tree where all the levels of the tree are filled completely except the lowest level nodes which are filled from as left as possible.\n\n",
-              "id": "122811d0-e143-42ea-a87b-4708455476c8",
+              "id": "160efda8-c494-4b5c-a8a3-c7c7a409882b",
               "children": [],
               "links": [
                 {
@@ -642,7 +645,7 @@
               "title": " Balanced Tree",
               "xid": "ZaWGLvZyu4sIPn-zwVISN",
               "description": "A balanced binary tree, also referred to as a height-balanced binary tree, is defined as a binary tree in which the height of the left and right subtree of any node differ by not more than 1.\n\n",
-              "id": "4a6065d9-95dd-4217-9422-0e8a34982182",
+              "id": "27f0a64c-009e-4b75-a3d3-6f8ac9010b65",
               "children": [],
               "links": [
                 {
@@ -656,7 +659,7 @@
               "title": "Unbalanced Tree",
               "xid": "w4sxmZR1BjX6wlrZmuOlf",
               "description": "An unbalanced binary tree is one that is not balanced.\n\n",
-              "id": "e313dc99-7bee-4d94-9d21-7da95670624f",
+              "id": "2a699e34-fc2f-4be4-a144-eca7b8b27ca3",
               "children": [],
               "links": [
                 {
@@ -679,13 +682,13 @@
           "title": "Graph",
           "xid": "vQm046o6ozcvLoqg9L6eL",
           "description": "Graphs in data structures are non-linear data structures made up of a finite number of nodes or vertices and the edges that connect them. Graphs in data structures are used to address real-world problems in which it represents the problem area as a network like telephone networks, circuit networks, and social networks.\n\n",
-          "id": "d5212f13-9db7-41aa-9d74-ab3328dc842f",
+          "id": "e9323a63-fe56-4c85-b201-403141d0ea76",
           "children": [
             {
               "title": "Directed Graph",
               "xid": "6Jy8SXHuYA08h9iLjKFWR",
               "description": "A directed graph is graph, i.e., a set of objects (called vertices or nodes) that are connected together, where all the edges are directed from one vertex to another. A directed graph is sometimes called a digraph or a directed network. In contrast, a graph where the edges are bidirectional is called an undirected graph.\n\n",
-              "id": "b1b48d45-6b01-4093-9580-f230b722b8a1",
+              "id": "10963c4e-9ed9-4f20-bace-3689d92905dd",
               "children": [],
               "links": [
                 {
@@ -699,7 +702,7 @@
               "title": "Undirected Graph",
               "xid": "QGx8it2N_85PiPVjpTGK_",
               "description": "An undirected graph is graph, i.e., a set of objects (called vertices or nodes) that are connected together, where all the edges are bidirectional. An undirected graph is sometimes called an undirected network. In contrast, a graph where the edges point in a direction is called a directed graph.\n\n",
-              "id": "83d98709-b46d-40e7-8b1c-e813e8ab8879",
+              "id": "83e90c57-873b-44e7-91e0-7902d2497f1e",
               "children": [],
               "links": [
                 {
@@ -713,7 +716,7 @@
               "title": "Spanning Tree",
               "xid": "L4xtWOdqGUf4SbJkoOsNM",
               "description": "A spanning tree is a subset of Graph G, which has all the vertices covered with minimum possible number of edges. Hence, a spanning tree does not have cycles and it cannot be disconnected..\n\n",
-              "id": "3f8dbf48-429d-4367-a6eb-b89ded9d7392",
+              "id": "22570e6d-aa20-4e1f-94c2-0feb668de87f",
               "children": [],
               "links": [
                 {
@@ -742,7 +745,7 @@
               "title": "Adjacency List",
               "xid": "rTnKJcPniUtqvfOyC88N0",
               "description": "A graph can either be represented as an adjacency matrix or an adjacency list.\n\nThe adjacency matrix is a 2D array of size `V x V` where `V` is the number of vertices in a graph. Let the 2D array be `adj[][]`, a slot `adj[i][j] = 1` indicates that there is an edge from vertex `i` to vertex `j`.\n\nAdjacency list is an array of vectors. Size of the array is equal to the number of vertices. Let the array be `array[]`. An entry `array[i]` represents the list of vertices adjacent to the ith vertex. This representation can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs.\n\n",
-              "id": "85aed2d8-d6e1-4720-a924-702a073aec71",
+              "id": "017b4795-9614-463b-98f6-5edce038cc21",
               "children": [],
               "links": [
                 {
@@ -810,7 +813,7 @@
           "title": "Heap",
           "xid": "pw3ZCC3HKU7D5SQwte4vE",
           "description": "Heap is a tree-based data structure that follows the properties of a complete binary tree and is either a Min Heap or a Max Heap.\n\n",
-          "id": "b08cde78-8a59-492e-baa1-c9030a041a31",
+          "id": "c082bced-f8a3-4f6b-b4f8-6773fee52565",
           "children": [],
           "links": [
             {
@@ -868,13 +871,13 @@
       "title": "Asymptotic Notation",
       "xid": "UpBrpmrUwYUB9eesNxCq5",
       "description": "The efficiency of an algorithm depends on the amount of time, storage and other resources required to execute the algorithm. The efficiency is measured with the help of asymptotic notations.\n\nAn algorithm may not have the same performance for different types of inputs. With the increase in the input size, the performance will change.\n\nThe study of change in performance of the algorithm with the change in the order of the input size is defined as asymptotic analysis.\n\n",
-      "id": "16222133-ff45-4745-8266-90d001fe9a1a",
+      "id": "53e96811-a6a8-4b00-964d-09aaab526c31",
       "children": [
         {
           "title": "Big O",
           "xid": "c-NrTtJuNihbHzyPEOKTW",
           "description": "The Big O notation can be used to describe how the running time of an algorithm scales with the growth of the input size, ignoring implementation details such as programming language and computer speed. Specifically, it denotes the upper bound of the growth rate of a function that relates the running time of an algorithm to its input size. It can be used to compare algorithms and determine which one is better.\n\n",
-          "id": "4daf7435-0422-42f0-9827-a2c65daa175a",
+          "id": "58b0be97-6a57-422d-9870-00b152895ec8",
           "children": [],
           "links": [
             {
@@ -908,7 +911,7 @@
           "title": "Big-Theta",
           "xid": "ThLpVZQIJ4diY5m0dik8m",
           "description": "If a function has the same Big O and Big Omega, they also become the function's Big Theta. Big Theta is used to describe the exact growth rate of a function. It is denoted by the symbol \u0398.\n\n",
-          "id": "6fd160f7-0714-4cab-9340-8665f6275550",
+          "id": "80319487-ec56-4473-baeb-eb310217398e",
           "children": [],
           "links": [
             {
@@ -932,7 +935,7 @@
           "title": "Big Omega",
           "xid": "X33735aeAVSlJ6yv9GS-h",
           "description": "The Big Omega notation is similar to the Big O notation. The only difference is that it denotes the lower bound on the growth rate of a function.\n\n",
-          "id": "98d5a4dc-899a-4298-871f-d19104f661e2",
+          "id": "2a2f781f-ef1b-4894-9137-44ce1550cf68",
           "children": [],
           "links": [
             {
@@ -956,13 +959,13 @@
           "title": "common-runtimes",
           "xid": "",
           "description": "common-runtimes",
-          "id": "638fd0eb-a176-4e62-8b38-71bacd09f427",
+          "id": "8c474399-9a24-49a1-9f19-60a96b26ceb4",
           "children": [
             {
               "title": "Constant",
               "xid": "3F_QBv_sU39ehOxpurF88",
               "description": "Constant time algorithms are the simplest and most efficient algorithms. They are algorithms that always take the same amount of time to run, regardless of the size of the input. This is the best case scenario for an algorithm, and is the goal of all algorithms.\n\n",
-              "id": "726d63e4-d816-4417-aa55-4bf6d2757c41",
+              "id": "49a15863-6700-40a2-93e4-5a16e9274b14",
               "children": [],
               "links": [
                 {
@@ -981,7 +984,7 @@
               "title": "Logarithmic",
               "xid": "nnlMNkQn1HU4U9yPbV9kQ",
               "description": "Logarithmic complexity algorithms are the second fastest algorithms. They are faster than linear algorithms, but slower than constant algorithms.\n\n",
-              "id": "ef29924e-b30f-4d70-bd22-0528e0752f79",
+              "id": "2d2b1dcf-cf8a-4a30-a003-73c095aafd56",
               "children": [],
               "links": [
                 {
@@ -1000,7 +1003,7 @@
               "title": "Linear",
               "xid": "jymhjv8GiFALQpox6aZeu",
               "description": "Linear algorithms are algorithms that have a runtime that is directly proportional to the size of the input. This means that the runtime of the algorithm will increase linearly with the size of the input. For example, if the input size is 10, the runtime will be 10 times the runtime of the algorithm when the input size is 1. If the input size is 100, the runtime will be 100 times the runtime of the algorithm when the input size is 1.\n\n",
-              "id": "9ef239e9-3426-4b28-b8ce-5b0d41a1f5ab",
+              "id": "f113bf97-b655-4c21-b6f9-94a8b37cc1a3",
               "children": [],
               "links": [
                 {
@@ -1019,7 +1022,7 @@
               "title": "Polynomial",
               "xid": "sVFvpsAO1_ZH9aliEj9aF",
               "description": "Polynomial algorithms are algorithms that have a runtime that is a polynomial function of the input size. This means that the runtime is a function of the form `n^k` where `k` is a constant. For example, the runtime of the following algorithm is `n^2`:\n\n    def polynomial_algorithm(n):\n        for i in range(n):\n            for j in range(n):\n                print(i, j)\n    \n\n",
-              "id": "48244e31-40dd-4db0-93e2-63816e95ab85",
+              "id": "24cbbbd4-2c85-48a2-a51d-a714631389d8",
               "children": [],
               "links": [
                 {
@@ -1038,7 +1041,7 @@
               "title": "Exponential",
               "xid": "5mMLr6tWbiSZuox1lx0_B",
               "description": "Exponential algorithms are those that grow at a rate of 2^n. This means that for each additional input, the algorithm will take twice as long to run. The following function is an example of an exponential algorithm:\n\n    def exponential(n):\n        if n == 0:\n            return 1\n        return exponential(n - 1) + exponential(n - 1)\n    \n\nAs you can see, the algorithm's runtime grows exponentially. For each additional input, the algorithm will take twice as long to run.\n\n",
-              "id": "c49df7e3-97e7-4c14-b802-ccd0f794573a",
+              "id": "755f22a2-361d-4508-8557-9feddd3e1902",
               "children": [],
               "links": [
                 {
@@ -1057,7 +1060,7 @@
               "title": "Factorial",
               "xid": "m0umGQNdvg95UiNpQZsQN",
               "description": "Factorial complexity algorithms have a runtime of `O(n!)`. This is the worst case scenario for an algorithm. Factorial complexity algorithms are very inefficient and should be avoided.\n\n    def generate_permutations(s):\n        # Base case: If the string length is 1, return a list containing the string\n        if len(s) == 1:\n            return [s]\n    \n        # Initialize the result list\n        permutations = []\n    \n        # Recursively generate all permutations\n        for i in range(len(s)):\n            # Current character\n            current_char = s[i]\n            # Remaining characters\n            remaining_chars = s[:i] + s[i+1:]\n            # Generate all permutations of the remaining characters\n            for perm in generate_permutations(remaining_chars):\n                # Add the current character to the front of each generated permutation\n                permutations.append(current_char + perm)\n    \n        return permutations",
-              "id": "6c02df12-6d61-450b-ab2a-fda93e74d4f4",
+              "id": "c675132c-6061-4b46-ab96-4ff1f32d1990",
               "children": [],
               "links": []
             }
@@ -1107,19 +1110,19 @@
       "title": "Common Algorithms",
       "xid": "7a6-AnBI-3tAU1dkOvPkx",
       "description": "Here are some common algorithms that you should know. You can find more information about them in the [Algorithms](https://www.khanacademy.org/computing/computer-science/algorithms) section of the Computer Science course.\n\n*   Sorting\n*   Recursion\n*   Searching\n*   Cache Algorithms\n*   Tree Algorithms\n*   Graph Algorithms\n*   Greedy Algorithms\n*   Backtracking\n*   Substring Search\n*   Suffix Arrays\n*   Dynamic Programming",
-      "id": "e6a8a120-15d1-41a8-ac10-cdc2bd0877b6",
+      "id": "ee54e252-841a-4c54-9711-1a61fa8d8c3c",
       "children": [
         {
           "title": "sorting-algorithms",
           "xid": "",
           "description": "sorting-algorithms",
-          "id": "08fd4a79-4a2d-45bc-9166-bed9ac6448b7",
+          "id": "161a0e71-a9a1-42bb-a446-98af88b1383c",
           "children": [
             {
               "title": "Bubble Sort",
               "xid": "4wGBYFZpcdTt97WTbSazx",
               "description": "Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.\n\n",
-              "id": "d9f1da1d-c4be-43ac-ba23-2496edaa0e64",
+              "id": "61b13886-ea14-44c5-8b3c-8a7fdeb0d40e",
               "children": [],
               "links": [
                 {
@@ -1143,7 +1146,7 @@
               "title": "Selection Sort",
               "xid": "rOsHFXQm5jNz0RyZQ5ZGs",
               "description": "Selection sort is a sorting algorithm that selects the smallest unsorted item in the list and swaps it with index 0, then finds the next smallest and places it into index 1 and so on.\n\n",
-              "id": "02eaa78f-a2d1-4c01-83fb-0a10383943f5",
+              "id": "a9b51376-51e1-420b-ad53-f099ab659266",
               "children": [],
               "links": [
                 {
@@ -1162,7 +1165,7 @@
               "title": "Insertion Sort",
               "xid": "ujDCW6zZE8dV_fpNf-oIl",
               "description": "Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time by comparisons. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.\n\n",
-              "id": "d5dcb1e6-3e6a-4481-a37c-1c4215d5bbd2",
+              "id": "3c69f6b0-5967-4865-a5bc-fd41a6c210dc",
               "children": [],
               "links": [
                 {
@@ -1186,7 +1189,7 @@
               "title": "Heap Sort",
               "xid": "CovrRsBY-sYW_xSegcN6N",
               "description": "Heap sort is a comparison based sorting algorithm. It is similar to selection sort where we first find the maximum element and place the maximum element at the end. We repeat the same process for remaining element.\n\n",
-              "id": "4cb7110c-36f9-4535-a84b-73cd9b4be71e",
+              "id": "d3c9c43a-102d-4a55-9aff-39e88c5ab376",
               "children": [],
               "links": [
                 {
@@ -1220,7 +1223,7 @@
               "title": "Quick Sort",
               "xid": "be0Q8GW9ZX1JbPrBvbMji",
               "description": "Quick Sort is a divide and conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.\n\n",
-              "id": "ccc1bab2-6f3a-4808-ae84-43792ebf0f92",
+              "id": "d11438ca-20a4-4031-b67b-626bb4333af7",
               "children": [],
               "links": [
                 {
@@ -1249,7 +1252,7 @@
               "title": "Merge Sort",
               "xid": "Bh-whDbcCjl3m6mRm9w02",
               "description": "Merge sort is a divide and conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves. The `merge()` function is used for merging two halves. The `merge(arr, l, m, r)` is key process that assumes that `arr[l..m]` and `arr[m+1..r]` are sorted and merges the two sorted sub-arrays into one.\n\n",
-              "id": "a5cfd5e3-92e9-4a69-b8dd-5a349a776189",
+              "id": "1276d6f1-3f39-40b9-b46d-0fde0ee86b1d",
               "children": [],
               "links": [
                 {
@@ -1271,13 +1274,13 @@
           "title": "tree-algorithms",
           "xid": "",
           "description": "tree-algorithms",
-          "id": "9b125be9-ca8d-465f-8612-3ea30a887fe2",
+          "id": "0b5a9986-a238-4b0e-84a1-935fb5dda743",
           "children": [
             {
               "title": "Pre-Order Traversal",
               "xid": "psTN5N66xoFHFopgd5faW",
               "description": "Pre-order traversal is a tree traversal algorithm that visits the root node first, then recursively traverses the left subtree, followed by the right subtree.\n\n",
-              "id": "63c3eb38-1391-401e-8b40-2f8fc26f79ba",
+              "id": "b1e76417-7358-49e0-886a-7bf55b41f6ab",
               "children": [],
               "links": [
                 {
@@ -1296,7 +1299,7 @@
               "title": "In-Order Traversal",
               "xid": "KTrgf14Q6rg2f0v4dqq2s",
               "description": "In-order traversal is a tree traversal algorithm that visits the left subtree, the root, and then the right subtree. This is the most common way to traverse a binary search tree. It is also used to create a sorted list of nodes in a binary search tree.\n\n",
-              "id": "7cd28c7f-7f17-4557-84da-ac123026e48a",
+              "id": "e6a50dd8-8eca-49f1-9c6f-470ed4a78be3",
               "children": [],
               "links": [
                 {
@@ -1310,7 +1313,7 @@
               "title": "Post Order Traversal",
               "xid": "4_oGXwjzSY5cX9n7L4iAA",
               "description": "Post-order traversal is a type of tree traversal that visits the left subtree, then the right subtree, and finally the root node. This is the opposite of pre-order traversal, which visits the root node first, then the left subtree, and finally the right subtree.\n\n",
-              "id": "7670625c-c489-451b-9897-887acb48833c",
+              "id": "e755197e-2447-45f0-b8e3-7482d7030c65",
               "children": [],
               "links": [
                 {
@@ -1324,7 +1327,7 @@
               "title": "Breadth First Search",
               "xid": "Ke_ch4fnuKIiGAXUM_LPP",
               "description": "Breadth first search is a graph traversal algorithm that starts at the root node and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.\n\n",
-              "id": "142c4c7a-65de-4d16-8f51-554efe77606f",
+              "id": "d59263f5-149b-46dd-a1d9-facf45a06b28",
               "children": [],
               "links": [
                 {
@@ -1348,7 +1351,7 @@
               "title": "Depth First Search",
               "xid": "chzP5_t2gMi6MstxEzCi5",
               "description": "Depth first search is a graph traversal algorithm that starts at a root node and explores as far as possible along each branch before backtracking.\n\n",
-              "id": "8901de4e-ef85-4de3-ba96-36aa38af28bd",
+              "id": "930ff8ad-9772-4462-90ea-dec891f727b4",
               "children": [],
               "links": [
                 {
@@ -1375,13 +1378,13 @@
           "title": "graph-algorithms",
           "xid": "",
           "description": "graph-algorithms",
-          "id": "6ec7ad03-bd68-4c1b-901f-44d5985a166e",
+          "id": "c35a3d2f-5d67-4ba0-a924-805b87954de6",
           "children": [
             {
               "title": "Breadth First Search",
               "xid": "vcV6TEM_PqXxtThdfMKGw",
               "description": "Breadth first search for a graph is a way to traverse the graph. It starts at the root node and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.\n\n",
-              "id": "821f3568-6fd7-4dda-97a7-a6df6b2885ca",
+              "id": "23666ac2-113b-48b3-a1b8-df9866f85194",
               "children": [],
               "links": [
                 {
@@ -1400,7 +1403,7 @@
               "title": "Depth First Search",
               "xid": "Yf5gOIe7oiL19MjEVcpdw",
               "description": "Depth first search is a graph traversal algorithm that starts at a root node and explores as far as possible along each branch before backtracking.\n\n",
-              "id": "bb3e3a7b-307c-4823-9612-9594f01a8cb4",
+              "id": "b05a54b8-6ee1-42f1-8624-a30e4b129614",
               "children": [],
               "links": []
             },
@@ -1408,7 +1411,7 @@
               "title": "Bellman Ford's Algorithm",
               "xid": "eY4nK2lPYsrR-a_8y2sao",
               "description": "Bellman ford's algorithm is a graph algorithm that finds the shortest path from a source vertex to all other vertices in a graph. It is a dynamic programming algorithm that uses a bottom-up approach to find the shortest path. It is similar to Dijkstra's algorithm but it can handle negative weights. It is also similar to Floyd-Warshall's algorithm but it can handle negative weights and it is faster than Floyd-Warshall's algorithm.\n\n",
-              "id": "713402ea-6f07-42a9-8f19-bb844c7ddbc7",
+              "id": "dc53ae4c-9629-4635-852e-595ea6a1a987",
               "children": [],
               "links": [
                 {
@@ -1432,7 +1435,7 @@
               "title": "Dijkstra's Algorithm",
               "xid": "oJstm-8c-4seWbIWcNgDv",
               "description": "Dijkstra's algorithm is a graph traversal algorithm that finds the shortest path between two nodes in a graph. It is a weighted graph algorithm, meaning that each edge in the graph has a weight associated with it. The algorithm works by finding the shortest path from the starting node to all other nodes in the graph. It does this by keeping track of the distance from the starting node to each node, and then choosing the node with the shortest distance from the starting node to visit next. It then updates the distance of each node from the starting node, and repeats the process until all nodes have been visited.\n\n",
-              "id": "7453be50-a1df-414a-9531-c17c885eafa9",
+              "id": "49f1071a-9d2a-4eca-b756-5ec0089ff97a",
               "children": [],
               "links": [
                 {
@@ -1456,7 +1459,7 @@
               "title": "A* Algorithm",
               "xid": "Yrk2PLUa-_FAPlhCkMl3e",
               "description": "A\\* is a graph traversal algorithm that is used to find the shortest path between two nodes in a graph. It is a modified version of Dijkstra's algorithm that uses heuristics to find the shortest path. It is used in pathfinding and graph traversal.\n\n",
-              "id": "8cb97d2f-c0ec-4ff7-97c8-2c7b9c49c31d",
+              "id": "6ab0360a-e9de-4ae6-8b8b-31fe8551fca2",
               "children": [],
               "links": [
                 {
@@ -1483,13 +1486,13 @@
           "title": "greedy-algorithms",
           "xid": "",
           "description": "greedy-algorithms",
-          "id": "13ebb34a-666c-441f-979a-c3531d3c0dff",
+          "id": "5221e481-b60e-40f5-a0cf-10a1145815d4",
           "children": [
             {
               "title": "Dijkstra's Algorithm",
               "xid": "l3X9UrEYTWs5kBXI1NNCf",
               "description": "Dijkstra's algorithm is a greedy algorithm that finds the shortest path between two nodes in a graph. It is a very common algorithm used in computer science and is used in many applications such as GPS navigation, network routing, and finding the shortest path in a maze.\n\n",
-              "id": "92d78534-fdd6-4053-b7e9-7a52f7be7871",
+              "id": "35aa97bf-038f-474a-84fc-dd458808bbb2",
               "children": [],
               "links": [
                 {
@@ -1518,7 +1521,7 @@
               "title": "Huffman Coding",
               "xid": "QrcijPiVT3bgqfkF-6ssi",
               "description": "Huffman coding is a lossless data compression algorithm. The idea is to assign variable-length codes to input characters, lengths of the assigned codes are based on the frequencies of corresponding characters. The most frequent character gets the smallest code and the least frequent character gets the largest code.\n\n",
-              "id": "baa5d6b5-7658-4d17-8498-64973ce24b78",
+              "id": "60471ca0-e91d-4762-8ff8-5d2909564c82",
               "children": [],
               "links": [
                 {
@@ -1537,7 +1540,7 @@
               "title": "Kruskal's Algorithm",
               "xid": "Wqhg7E-lOz1oNcRXjUej8",
               "description": "Kruskal's algorithm is a greedy algorithm that finds a minimum spanning tree for a connected weighted graph. It is a minimum spanning tree algorithm that takes a graph as input and finds the subset of the edges of that graph which form a tree that includes every vertex, where the total weight of all the edges in the tree is minimized. If the graph is not connected, then it finds a minimum spanning forest (a minimum spanning tree for each connected component).\n\n",
-              "id": "b6f401ab-648b-4501-b089-855a20b04719",
+              "id": "9e922142-f595-45e7-8097-211d5605cc64",
               "children": [],
               "links": [
                 {
@@ -1561,7 +1564,7 @@
               "title": "Ford-Fulkerson Algorithm",
               "xid": "Hqw2eGtgfbVggqXBnIOdI",
               "description": "Ford Fulkerson Algorithm is a greedy algorithm that is used to find the maximum flow in a flow network. It is also known as the Edmonds-Karp Algorithm.\n\n",
-              "id": "79614d12-06df-464c-9201-410f3164c54b",
+              "id": "8f72cae9-780c-4a80-b847-ce05e202655a",
               "children": [],
               "links": [
                 {
@@ -1585,7 +1588,7 @@
               "title": "Prim's Algorithm",
               "xid": "znpFIKwMJlepKJ8dH3kvC",
               "description": "Prim's algorithm is a greedy algorithm that finds a minimum spanning tree for a weighted undirected graph. A minimum spanning tree is a subset of the edges of a connected, edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight. A minimum spanning tree for a weighted undirected graph is also called a minimum weight spanning tree or minimum cost spanning tree.\n\n",
-              "id": "4b7fd97f-cc2b-4bac-b96e-eac57dd7c29f",
+              "id": "5733fd93-d0cc-4989-b771-0e81165785bb",
               "children": [],
               "links": [
                 {
@@ -1612,13 +1615,13 @@
           "title": "back-tracking-algorithms",
           "xid": "",
           "description": "back-tracking-algorithms",
-          "id": "5bcb56e2-72d4-4fcc-a325-b70993787e63",
+          "id": "3760373c-3f28-41c6-ac91-199c8041d5c5",
           "children": [
             {
               "title": "Finding Hamiltonian Paths",
               "xid": "aBjBHpq_OajgQjxdCobXD",
               "description": "Hamiltonian paths are paths that visit every node in a graph exactly once. They are named after the famous mathematician [Hamilton](https://en.wikipedia.org/wiki/William_Rowan_Hamilton). Hamiltonian paths are a special case of [Hamiltonian cycles](https://en.wikipedia.org/wiki/Hamiltonian_cycle), which are cycles that visit every node in a graph exactly once.\n\n",
-              "id": "00c89dc4-e40f-43d8-a9c8-1470484a01fb",
+              "id": "d12574a8-6c1f-42b8-8d14-62b3b4582cd3",
               "children": [],
               "links": [
                 {
@@ -1642,7 +1645,7 @@
               "title": "Solving N Queen Problem",
               "xid": "HlAmTY1udqDT2mTfBU9P-",
               "description": "N Queen Problem is a famous problem in Computer Science. It is a problem of placing n queens on an n x n chessboard such that no two queens attack each other. The problem is to find all possible solutions to the problem.\n\n",
-              "id": "957d0a4f-a938-4573-8820-71b85e68f73e",
+              "id": "f503a5a7-64a7-4ce4-bb26-224fc7331b72",
               "children": [],
               "links": [
                 {
@@ -1661,7 +1664,7 @@
               "title": "Maze Solving Problem",
               "xid": "nODFT-i2YsxUVsgwWkIWn",
               "description": "Maze solving problem is a classic problem in computer science. It is a problem where we have to find a path from a starting point to an end point in a maze. The maze is represented as a grid of cells. Each cell can be either a wall or a path. The path cells are connected to each other. The starting point and the end point are also given. The goal is to find a path from the starting point to the end point. The path can only be made up of path cells. The path cannot go through the wall cells.\n\n",
-              "id": "3ae46e8b-1122-46d6-b10f-568edaccfcaa",
+              "id": "058cfd8e-46a6-4148-8c32-27bf399473e7",
               "children": [],
               "links": [
                 {
@@ -1690,7 +1693,7 @@
               "title": "The Knight's Tour Problem",
               "xid": "NcKW_3vJWL_rVlDBB_Qjs",
               "description": "Knight's Tour Problem is a problem where we have to find a path for a knight to visit all the cells of a chessboard without visiting any cell twice.\n\n",
-              "id": "826a99c4-ad53-4066-880b-3b06576e67a1",
+              "id": "27fa52d4-1881-43be-bdbb-8c6e87ba4fbb",
               "children": [],
               "links": [
                 {
@@ -1717,7 +1720,7 @@
           "title": "Rabin-Karp Algorithm",
           "xid": "l5--4opvZoc_seVn__5R3",
           "description": "Rabin-Karp algorithm is a string searching algorithm that uses hashing to find any one of a set of pattern strings in a text. For strings of average length `n`, it performs in `O(n+m)` time with `O(m)` space, where `m` is the length of the pattern. It is often used in bioinformatics to search for DNA patterns.\n\n",
-          "id": "e603e21f-4514-496f-94ae-61b318f76f1f",
+          "id": "6284945f-78f7-43b6-9113-a354641037f5",
           "children": [],
           "links": [
             {
@@ -1756,13 +1759,13 @@
           "title": "recursion",
           "xid": "",
           "description": "recursion",
-          "id": "2f0c58a1-09c7-4a5f-b14a-079379d2053d",
+          "id": "1d7f3a26-a767-4bc8-8eda-0eccfdc1f4a7",
           "children": [
             {
               "title": "Tail Recursion",
               "xid": "0_qNhprnXU3i8koW3XTdD",
               "description": "Tail recursion is a special kind of recursion where the recursive call is the very last thing in the function. It's a function that does not do anything at all after recursing.\n\n",
-              "id": "33724bcc-8ddc-4bfe-88f4-4d2e108bdb2e",
+              "id": "2cccfc49-1560-485d-b964-9db2251bc3d0",
               "children": [],
               "links": [
                 {
@@ -1786,7 +1789,7 @@
               "title": "Non-Tail Recursion",
               "xid": "iLEOuQgUgU5Jc38iXDpp5",
               "description": "Tail recursion is when a function can directly return the result of a recursive call - there are no outstanding operations, and there is no need for the call stack frame to be preserved. So it can be translated to a \u201cgoto with arguments\u201d, and the stack usage will be constant.\n\nIn \u201cnon-tail recursion\u201d, there are outstanding operations after the recursive call, and the stack frame cannot be nuked.\n\n",
-              "id": "4c61fd09-5a51-43d2-893f-eaeadc2f08a3",
+              "id": "ac09f487-99f3-404a-8214-acb6075a84ed",
               "children": [],
               "links": [
                 {
@@ -1823,13 +1826,13 @@
           "title": "search-algorithms",
           "xid": "",
           "description": "search-algorithms",
-          "id": "1bf74a4e-6de5-4915-a9ff-28237de144bb",
+          "id": "847c4cc1-32ec-4123-8f48-63d8cf8cd13b",
           "children": [
             {
               "title": "Binary Search",
               "xid": "8kTg4O9MrTHRUrp6U-ctA",
               "description": "Binary search is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array.\n\n",
-              "id": "6aad3928-c378-407a-8e19-6f238770ff64",
+              "id": "ae007e7a-d7e4-45a3-af17-2c7592f36519",
               "children": [],
               "links": [
                 {
@@ -1863,7 +1866,7 @@
               "title": "Linear Search",
               "xid": "XwyqBK9rgP1MMcJrdIzm5",
               "description": "Linear search is a very simple algorithm that is used to search for a value in an array. It sequentially checks each element of the array until a match is found or until all the elements have been searched.\n\n",
-              "id": "c5d728e4-1b98-4322-8206-114653188f86",
+              "id": "1c5d79d4-6a5c-433d-b685-a08de6540306",
               "children": [],
               "links": []
             }
@@ -1874,13 +1877,13 @@
           "title": "cache-algorithms",
           "xid": "",
           "description": "cache-algorithms",
-          "id": "9bad5ed7-791c-46fa-a209-c7ab06befcd8",
+          "id": "be3a555d-a85e-4300-9e05-87e3c6687a3e",
           "children": [
             {
               "title": "LRU Cache",
               "xid": "cEsboPT8nLvo0Zt0_oBq6",
               "description": "LRU cache is a cache that evicts the least recently used item first. It is a very common cache algorithm. It is used in many places, such as in the browser cache, the database cache, and the cache of the operating system.\n\n",
-              "id": "dbcfc5a6-c082-4055-a17f-28d0af641b78",
+              "id": "cc38edf8-f4a4-4d6f-b9d9-d2962cc5081a",
               "children": [],
               "links": [
                 {
@@ -1904,7 +1907,7 @@
               "title": "LFU Cache",
               "xid": "n11ujPI3of-52l2KW2CDQ",
               "description": "LFU Cache is a data structure that stores key-value pairs. It has a fixed size and when it is full, it removes the least frequently used key-value pair. It is a variation of the LRU Cache and is used in many applications such as caching web pages, caching database queries, and caching images.\n\n",
-              "id": "0c363f95-bdd7-47e0-9bae-71ba20332f67",
+              "id": "21244328-20b0-43a7-a05a-326256553dee",
               "children": [],
               "links": [
                 {
@@ -1918,7 +1921,7 @@
               "title": "MFU Cache",
               "xid": "hna0HLu0l4NTNNpyGqlW5",
               "description": "MFU Cache is another cache algorithm. The difference is that instead of deleting the least frequently used entry, the MFU Cache deletes the most frequently used entry.\n\n",
-              "id": "c52f1763-00b4-4561-b9f5-9419d8ec9601",
+              "id": "24cfb634-b0ab-4f76-9dc7-c8aef643a0e6",
               "children": [],
               "links": [
                 {
@@ -1943,13 +1946,13 @@
       "title": "String Search & Manipulations",
       "xid": "NUWk-7IXmMU-4TT-oS8fF",
       "description": "String search and manipulation is a very important topic in computer science. It is used in many different applications, such as searching or replacing a specific pattern, word or character in a string.\n\n",
-      "id": "9dee960d-cd1d-4686-9d88-2fb27c9c7497",
+      "id": "a2d34d71-30f8-48c1-8600-c35ba0875b6c",
       "children": [
         {
           "title": "Search Pattern in Text",
           "xid": "L4M5yFRKKR2axKXGcIA7d",
           "description": "Searching pattern in text is a very common task in computer science. It is used in many applications like spell checkers, text editors, and many more.\n\n",
-          "id": "d06a9693-2bf0-4ab0-9ed2-d304e28d24a7",
+          "id": "aca85d32-f11a-49c3-970b-7e460030bcd3",
           "children": [],
           "links": [
             {
@@ -1963,7 +1966,7 @@
           "title": "Suffix Arrays",
           "xid": "Ld1TUNS8713coMNvwhNIJ",
           "description": "Suffix arrays are a data structure that allows us to quickly find all the suffixes of a string in lexicographical order. This is useful for many problems, such as finding the longest common substring between two strings, or finding the number of distinct substrings of a string.\n\n",
-          "id": "f151ac00-ec1a-4a9e-840c-a1d6409e325d",
+          "id": "f81a858a-452f-43ed-9901-1d8bcc5957e4",
           "children": [],
           "links": [
             {
@@ -1992,13 +1995,13 @@
           "title": "Substring Search",
           "xid": "E9hf1ux1KKGHvvAShm67w",
           "description": "Substring search is the problem of finding a substring in a string. This is a very common problem in computer science, and there are many algorithms for solving it.\n\n",
-          "id": "c6955fd4-3bc7-47e1-87cc-eefec44276c2",
+          "id": "30565c16-cee6-4dc1-ad93-05e6241a8fbb",
           "children": [
             {
               "title": "Brute Force Search",
               "xid": "g3b0kt1fCAjjYyS2WelWi",
               "description": "Brute force search is a simple algorithm that checks for a pattern in a string by comparing each character of the string with the first character of the pattern. If the first character matches, it then compares the next character of the string with the next character of the pattern and so on. If all the characters of the pattern match, then the pattern is found. If the first character does not match, then the algorithm compares the second character of the string with the first character of the pattern and so on.\n\n",
-              "id": "1549fd9b-40f2-4095-9ff7-6e5d903994b5",
+              "id": "8127b25c-bc4e-4bee-aa91-ce8fbe33e59c",
               "children": [],
               "links": [
                 {
@@ -2022,7 +2025,7 @@
               "title": "Knuth-Morris Pratt",
               "xid": "8abFKMfaV9H8F38I0DcMT",
               "description": "Knuth morris pratt is a string searching algorithm that uses a precomputed array to find the substring in a string. This array is known as the prefix function. The prefix function is the longest prefix that is also a suffix of a substring. The prefix function is used to skip the characters that are already matched. The algorithm is as follows:\n\n*   Compute the prefix function of the substring.\n*   Traverse through the string and substring simultaneously.\n*   If the characters match, increment the index of both the string and substring.\n*   If the characters don't match, increment the index of the string by the value of the prefix function at the index of the substring.\n\n",
-              "id": "19772a8a-5df1-42eb-9c56-e3b601781298",
+              "id": "3bc35306-4939-49f8-8252-1191ade57520",
               "children": [],
               "links": [
                 {
@@ -2046,7 +2049,7 @@
               "title": "Boyer-Moore",
               "xid": "p6qub32jcaGloHXUDUrlG",
               "description": "Boyer Moore algorithm is a string searching algorithm that is used to find the index of a substring in a string. It is a very efficient algorithm that is used in many applications. It is used in text editors, compilers, and many other applications.\n\n",
-              "id": "a7a98c71-addc-4592-b6a9-4909e1dec295",
+              "id": "d27dfff9-7911-4816-839d-82c3ad5c5385",
               "children": [],
               "links": [
                 {
@@ -2065,7 +2068,7 @@
               "title": "Robin-Karp",
               "xid": "Km5LvcJpyntrW2iA8h5e3",
               "description": "Rabin-Karp algorithm is a string searching algorithm that uses hashing to find any one of a set of pattern strings in a text. For strings of average length `n`, it performs in `O(n+m)` time with `O(m)` space, where `m` is the length of the pattern. It is often used in bioinformatics to search for DNA patterns.\n\n",
-              "id": "665bceae-c6cf-49d4-ac82-96956829db06",
+              "id": "ea248285-44a8-47d1-91d4-d1ee4a805845",
               "children": [],
               "links": [
                 {
@@ -2127,7 +2130,7 @@
       "title": "Floating Point Math",
       "xid": "-bawIWfrYuAxy8cP-AGFS",
       "description": "Floating point numbers are numbers that have a decimal point in them. They are used to represent real numbers. For example, 3.14 is a floating point number. 3 is not a floating point number because it does not have a decimal point in it.\n\n",
-      "id": "0368c7f9-01ea-4c06-9ae8-a218f7493028",
+      "id": "61cb8e47-e840-4c10-a0a9-7e18de009a2b",
       "children": [],
       "links": [
         {
@@ -2146,13 +2149,13 @@
       "title": "Endianess",
       "xid": "vjMqqFsTxSjaiYxmliwLi",
       "description": "Endianness is the order in which bytes are stored in memory. The two most common types of endianness are big endian and little endian. Big endian stores the most significant byte first, while little endian stores the least significant byte first.\n\n",
-      "id": "ec19e8b5-1818-4cfb-9d22-f81baf0b4683",
+      "id": "8b1f17d6-892c-4a3d-a442-51ed49112710",
       "children": [
         {
           "title": "Big Endian",
           "xid": "U8AgY6I-62mN5Ohg9MsG6",
           "description": "Big endian is the most common type of endianness. In this type, the most significant byte is stored at the lowest memory address. This means that the most significant byte is stored first and the least significant byte is stored last.\n\n",
-          "id": "a8a7bb4a-9d8a-4c00-b382-2addf6e7a3d0",
+          "id": "120d81db-7a16-4954-a99f-136e172f6ba1",
           "children": [],
           "links": [
             {
@@ -2166,7 +2169,7 @@
           "title": "Little Endian",
           "xid": "rD_5n5bjiNMVC0cPhEVyG",
           "description": "Little Endian is a way of storing data in memory. It is the opposite of Big Endian. In Little Endian, the least significant byte is stored first. In Big Endian, the most significant byte is stored first.\n\n",
-          "id": "12def34f-f6fc-4938-a9db-ebac7439e5c3",
+          "id": "8b153cf1-eeff-4d02-8de5-eea87834bc0c",
           "children": [],
           "links": [
             {
@@ -2209,13 +2212,13 @@
       "title": "Character Encodings",
       "xid": "DtG9EJonWi4_2oQ4fWOKY",
       "description": "Character encodings are a way of representing characters as numbers. They are used to store and transmit text. The most common character encoding is ASCII, which is a 7-bit encoding. This means that each character is represented by a number between 0 and 127. The ASCII character set contains 128 characters, including letters, numbers, punctuation, and control characters. The ASCII character set is a subset of the Unicode character set, which is a 16-bit encoding. Unicode is a superset of ASCII, so ASCII characters can be represented by Unicode. Unicode is the most common character encoding used on the web.\n\n",
-      "id": "5437d2ac-9a11-440d-9241-286bcaeb3f85",
+      "id": "867d61b8-3508-4068-97a9-ca89fc53ac10",
       "children": [
         {
           "title": "Unicode",
           "xid": "04hpfxI2x958tQI-0clsp",
           "description": "Unicode is a standard for encoding characters. It is a superset of ASCII, which means that ASCII is a subset of Unicode. Unicode is a 16-bit encoding, which means that it can encode 2^16 = 65536 characters. This is a lot more than ASCII, which can only encode 128 characters.\n\n",
-          "id": "3ab9a127-e799-4d8f-8f92-af8956fc0bb5",
+          "id": "5fcf9c1c-2a0c-43d4-97bb-c2ad2a355350",
           "children": [],
           "links": [
             {
@@ -2234,7 +2237,7 @@
           "title": "ASCII",
           "xid": "hmwsNp60alS43kJg4A_Og",
           "description": "ASCII is a character encoding standard for electronic communication. It was developed from telegraph code and uses 7 bits to represent 128 different characters. The first 32 characters are non-printable control characters used to control devices like printers and typewriters. The remaining 96 characters are printable and include the letters of the English alphabet, numbers, punctuation, and various symbols.\n\n",
-          "id": "5403b4f4-b6fe-4143-98d9-f008c546f4ff",
+          "id": "be3e87a0-3700-4694-88ae-45c89797f360",
           "children": [],
           "links": [
             {
@@ -2267,13 +2270,13 @@
       "title": "Common UML Diagrams",
       "xid": "DMuMsEowpevTCALtziwTB",
       "description": "UML is a standard way of visualizing a software system. It is a general-purpose, developmental, modeling language in the field of software engineering that is intended to provide a standard way to visualize the design of a system.\n\n",
-      "id": "1b4bdf20-50b4-4296-b910-75f8958dd6cb",
+      "id": "c99096f6-e065-49fb-a7d1-a20175fc0b04",
       "children": [
         {
           "title": "Class Diagrams",
           "xid": "FZ8znJSz8PvQlnEyRLXmQ",
           "description": "Class Diagrams are used to model the static structure of a system. They are used to show the classes, their attributes, operations (or methods), and the relationships between objects.\n\n",
-          "id": "4b50b50e-1093-4a86-8171-21ad43b13f92",
+          "id": "3a6806e1-3f99-4b55-ae4c-cb65e7c520ca",
           "children": [],
           "links": [
             {
@@ -2292,7 +2295,7 @@
           "title": "Usecase Diagrams",
           "xid": "dVvYbrcaxHLpvtX6HbS7g",
           "description": "Usecase diagrams are a type of diagram that are used to model the interactions between the **actors** and the **usecases** of the system.\n\nAn actor is a person or a system that interacts with the system. Actors are represented by a rectangle with the name of the actor written inside it.\n\nA usecase is a task that the system performs. Usecases are represented by an ellipse with the name of the usecase written inside it.\n\nA usecase diagram is a diagram that shows the actors and the usecases of the system. The diagram is represented by a rectangle that contains the name of the system inside it. The actors are represented by rectangles and the usecases are represented by ellipses.\n\n",
-          "id": "bc1b6f61-7bec-4858-a9d6-4bd9bc189bda",
+          "id": "f3f1f877-f8d2-4bb5-9740-1e809be7f808",
           "children": [],
           "links": [
             {
@@ -2316,7 +2319,7 @@
           "title": "Activity Diagrams",
           "xid": "ptfRNiU0mC0Q5SLA_FWZu",
           "description": "Activity diagrams are used to model the flow of control in a system. They are used in conjunction with use case diagrams to model the behavior of the system for each use case. They are also used to model the behavior of a single class.\n\n",
-          "id": "ed978b32-8dd8-47a7-9968-d397d1b6f779",
+          "id": "9633d47d-1dc4-4d86-b778-19cfb1f4440c",
           "children": [],
           "links": [
             {
@@ -2335,7 +2338,7 @@
           "title": "Statemachine Diagrams",
           "xid": "X0CKM9LaJUrgI5gIdqFvU",
           "description": "State machine diagrams are used to show the different states an object can be in at a given time. The object can be in one and only one state at a given time. State machine diagrams are similar to activity diagrams, but they are more focused on the flow of an object's state rather than the flow of the object itself.\n\n",
-          "id": "e201b52b-5260-4f41-91ef-4c42cd21042a",
+          "id": "06d719df-8bf2-4b5c-b281-6f13005d9e7b",
           "children": [],
           "links": [
             {
@@ -2359,7 +2362,7 @@
           "title": "Sequence Diagrams",
           "xid": "gaUT5K2xS-WQMrIA0Bkb_",
           "description": "Sequence diagrams are a way to show how objects or systems interact with each other over time.\n\n",
-          "id": "a9f3f80a-5236-4e3f-9cab-183c9fa89415",
+          "id": "e445b7fc-f5a9-46e6-b0d4-70c7e57308d7",
           "children": [],
           "links": [
             {
@@ -2387,13 +2390,13 @@
       "title": "Design Patterns",
       "xid": "-De1hU2ONGwhQmUpsyrCO",
       "description": "Design patterns are solutions to common problems in software design. They are formalized best practices that the programmer can use to solve common problems when designing an application or system.\n\n",
-      "id": "a9a6c830-7ad3-41bb-833c-05b1784418e5",
+      "id": "6603acb0-4dc3-4c47-9d7f-600d9f213650",
       "children": [
         {
           "title": "GoF Design Patterns",
           "xid": "iPN9mSyFwYZER5HSkj6oL",
           "description": "Gang of Four (GoF) design patterns are a set of 23 design patterns that were first described in the book \"Design Patterns: Elements of Reusable Object-Oriented Software\" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. The book is commonly referred to as the \"Gang of Four book\".\n\n",
-          "id": "f3c4d7d9-61f5-457d-b545-df0420d04aa9",
+          "id": "e836d6d9-b7c4-4808-bb24-25ff30dca2ca",
           "children": [],
           "links": [
             {
@@ -2407,7 +2410,7 @@
           "title": "Architectural Patterns",
           "xid": "BGhJNtszbYJtKyhqr2jax",
           "description": "Architectural patterns are a high-level design pattern that focuses on the overall structure of the system. They are similar to design patterns, but they are more concerned with the structure of the system. They are used to solve problems that are common to many software systems.\n\n",
-          "id": "db345397-799a-4a5f-b386-07b5d941130a",
+          "id": "3b4530f9-ff73-4b54-be5b-2b444e7df16e",
           "children": [],
           "links": [
             {
@@ -2426,7 +2429,7 @@
           "title": "Dependency Injection",
           "xid": "J7DKRklMtJ94Y-18Jo50r",
           "description": "Dependency injection is a software design pattern that allows us to decouple the dependencies of a class from the class itself. This allows us to write more flexible and testable code.\n\n",
-          "id": "196f8b7a-3ed4-4c05-b867-58384ffd5982",
+          "id": "ee9d58d8-fdaa-4a6c-b59b-b723c1deca13",
           "children": [],
           "links": [
             {
@@ -2450,7 +2453,7 @@
           "title": "Null Object Pattern",
           "xid": "PpFQ0zmObZLvmBvqhTEMz",
           "description": "Null object pattern is a design pattern that is used to represent a null value with an object. It is a way to avoid null reference exceptions by providing a default object that does nothing. It is a way to provide a default behavior in case data is not available.\n\n",
-          "id": "0a392861-6e8b-4043-80fd-69bdf10bf416",
+          "id": "b6746df0-0711-46fb-a299-3e3542cbe6af",
           "children": [],
           "links": [
             {
@@ -2464,7 +2467,7 @@
           "title": "Type Object Pattern",
           "xid": "_2Jddpz_cdwyeIgrg5qt_",
           "description": "Type object pattern is a creational design pattern that allows us to create a new object of a type without exposing the object creation logic to the client. It is used when we need to create a new object of a type, but we don't know which type we need to create until runtime. It is like a factory pattern, but instead of returning a new object of a type, it returns a new object of a type that is already created.\n\n",
-          "id": "0275b1f5-a38a-439a-9250-851598c0c0f5",
+          "id": "f4b9cc49-8f8a-475c-a8b7-98d58b13c407",
           "children": [],
           "links": [
             {
@@ -2502,13 +2505,13 @@
       "title": "Basic Math Skills",
       "xid": "cdNi0EYrQ5nsgNxFVnXL8",
       "description": "Math is a fundamental skill for computer science.\n\n",
-      "id": "07768b87-faf2-4b7a-bd94-4f0833216c73",
+      "id": "7c15d351-eeb1-45a9-b04f-8ec28102ea5b",
       "children": [
         {
           "title": "Probability",
           "xid": "HZ3_xyphbjhBPwwQo_rHH",
           "description": "Probability is the study of how likely an event is to occur. It is a measure of how certain we are that an event will happen.\n\n",
-          "id": "f99934e3-baf8-4ea3-b705-dfd5d3266b77",
+          "id": "b68536b2-5ec6-4d22-9895-08a8a9f5304f",
           "children": [],
           "links": [
             {
@@ -2562,7 +2565,7 @@
           "title": "Combinatorics",
           "xid": "lWnAY0DgrUOmT6yqnxeBN",
           "description": "Combinatorics is the study of counting. It is a branch of mathematics that is used to solve problems in a variety of fields, including computer science, statistics, and physics. In computer science, combinatorics is used to solve problems related to counting the number of possible outcomes of a given problem. For example, if you are given a set of 10 objects, how many different ways can you arrange them? Or, if you are given a set of 10 objects, how many different ways can you choose 3 objects from that set? These are examples of combinatorial problems.\n\n",
-          "id": "3b1f5465-5672-4a6d-aa3b-a42e035de0a5",
+          "id": "6eac0eb5-4f97-43bc-ba0b-703c881d3eec",
           "children": [],
           "links": [
             {
@@ -2670,13 +2673,13 @@
       "title": "Complexity Classes",
       "xid": "YLCmZvoLkhOk9wlgYW2Ms",
       "description": "In computer science, there exist some problems whose solutions are not yet found, the problems are divided into classes known as Complexity Classes. In complexity theory, a Complexity Class is a set of problems with related complexity. These classes help scientists to groups problems based on how much time and space they require to solve problems and verify the solutions. It is the branch of the theory of computation that deals with the resources required to solve a problem.\n\n",
-      "id": "e22da1d3-4bb9-4392-b025-c8ac43f0979f",
+      "id": "72503951-89b4-4cbe-a26b-73ee341f6d81",
       "children": [
         {
           "title": "P",
           "xid": "3aM17dPKNi8tRJsW8lesI",
           "description": "The P in the P class stands for Polynomial Time. It is the collection of decision problems(problems with a \u201cyes\u201d or \u201cno\u201d answer) that can be solved by a deterministic machine in polynomial time.\n\n",
-          "id": "dfb6cf39-0b3a-47ce-bac5-2e6dccaf435b",
+          "id": "336334ef-f2d9-4de9-afa3-7e84b4b67b6c",
           "children": [],
           "links": [
             {
@@ -2750,7 +2753,7 @@
           "title": "NP",
           "xid": "ewXUHpOnjm8YrLhce1dAQ",
           "description": "The NP in NP class stands for Non-deterministic Polynomial Time. It is the collection of decision problems that can be solved by a non-deterministic machine in polynomial time.\n\n",
-          "id": "6c6efe42-fd05-41a9-878c-dc8a5ffed4f2",
+          "id": "9bd929fe-7bc9-4f9e-a082-89e8d0337a4c",
           "children": [],
           "links": [
             {
@@ -2824,7 +2827,7 @@
           "title": "NP Hard",
           "xid": "mJJ8DGUpBuHEJ7I6UTy1T",
           "description": "An NP-hard problem is at least as hard as the hardest problem in NP and it is the class of the problems such that every problem in NP reduces to NP-hard.\n\n",
-          "id": "f2439916-6f48-4e75-9f32-ac9d2c1b62cd",
+          "id": "f20ffcc1-4614-41c3-8c0d-46a1c47db712",
           "children": [],
           "links": [
             {
@@ -2898,7 +2901,7 @@
           "title": "P = NP",
           "xid": "0btHNkzWL1w_-pUgU_k2y",
           "description": "The P = NP problem is one of the most famous problems in computer science. It asks whether a problem that can be solved in polynomial time on a non-deterministic machine (i.e., the problem is in NP) can also be solved in polynomial time on a deterministic machine (i.e., the problem is in P).\n\nIf you can find a polynomial-time solution to an NP-complete problem, then all problems in NP can be solved in polynomial time. This shows that P = NP.\n\nIf you can prove for any single NP-complete problem that it is only solvable in exponential time, then all NP-complete problems are only solvable in exponential time. This shows that P \u2260 NP.\n\nSo far, we don't know whether P = NP or P \u2260 NP.\n\n",
-          "id": "fae38375-14c1-42ba-a5e0-61849083a044",
+          "id": "be549cf2-6b99-4872-83c4-78f978708e7a",
           "children": [],
           "links": [
             {
@@ -2912,13 +2915,13 @@
           "title": "NP Complete",
           "xid": "Lwkz7qozXRlVNA20zJbSw",
           "description": "A problem is NP-complete if it is both NP and NP-hard. NP-complete problems are the hard problems in NP.\n\n",
-          "id": "16207752-8e3a-4074-8916-f4f58e26eb15",
+          "id": "cffe4cf5-b0a1-4964-9803-aca6fe23081a",
           "children": [
             {
               "title": "Travelling Salesman Problem",
               "xid": "ZG-hWjVoS3p9XfrtBL0sD",
               "description": "The Travelling Salesman Problem (TSP) is a classic problem in computer science. It is a problem that is NP-complete, which means that it is a problem that is hard to solve. It is also a problem that is used to test the efficiency of algorithms.\n\n",
-              "id": "54ffb96a-90e1-4ab9-9e22-ba02f3cd03c3",
+              "id": "8ca3112e-1907-4f43-814c-0971afe6fbf2",
               "children": [],
               "links": [
                 {
@@ -2942,7 +2945,7 @@
               "title": "Knapsack Problem",
               "xid": "yHeCRPhfAOWiggZeUHPU9",
               "description": "KnapSack Problem is a classic problem in computer science. It is a problem in which we are given a set of items, each with a weight and a value, and we need to determine which items to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.\n\n",
-              "id": "7473a086-aaa0-4486-9623-d21f1ace71eb",
+              "id": "36af7b5e-cda9-431f-8d96-dd9dbbb35211",
               "children": [],
               "links": [
                 {
@@ -2961,7 +2964,7 @@
               "title": "Longest Path Problem",
               "xid": "4QVVYjDODMWsjnrE-4UBs",
               "description": "Longest path problem is a problem that asks us to find the longest path in a graph.\n\n",
-              "id": "e8c18ebc-03ab-489d-ad28-a3d5811be416",
+              "id": "ef82adc3-6c6b-43d5-aeb9-61a321b3bee2",
               "children": [],
               "links": [
                 {
@@ -3123,7 +3126,7 @@
       "title": "Tries",
       "xid": "4qUVacMEz3XFiL_dMre6P",
       "description": "Tries are a data structure that can be used to store strings. The idea is to store the characters of the string in a tree-like structure, where each node of the tree represents a single character. We can use this structure to store strings in a way that allows us to quickly search for strings with a common prefix.\n\n",
-      "id": "8da5e0cb-f189-4699-a7ff-9c26d1c3e0c2",
+      "id": "fff45b69-01cd-4766-b35a-10abd1777090",
       "children": [],
       "links": [
         {
@@ -3177,13 +3180,13 @@
       "title": "Balanced Search Trees",
       "xid": "7DF3UhefOSqqTuccH8c8X",
       "description": "Balanced search trees are a type of data structure that allow for fast insertion, deletion, and lookup of data. They are a type of self-balancing binary search tree, which means that they are a binary tree that maintains the binary search tree property while also keeping the tree balanced. This means that the tree is always approximately balanced, which allows for fast insertion, deletion, and lookup of data.\n\n",
-      "id": "71ab4d24-9391-4e89-b959-eb9831c9b2fc",
+      "id": "fc69c99d-c601-4b02-8d2f-4ca28888d8a0",
       "children": [
         {
           "title": "AVL Trees",
           "xid": "OUistS7H7hQQxVV-lOg39",
           "description": "AVL trees are a type of self-balancing binary search tree. They are named after their inventors, Adelson-Velskii and Landis. AVL trees are the most popular self-balancing binary search tree.\n\nIn practice: From what I can tell, these aren't used much in practice, but I could see where they would be: The AVL tree is another structure supporting O(log n) search, insertion, and removal. It is more rigidly balanced than red\u2013black trees, leading to slower insertion and removal but faster retrieval. This makes it attractive for data structures that may be built once and loaded without reconstruction, such as language dictionaries (or program dictionaries, such as the opcodes of an assembler or interpreter)\n\n",
-          "id": "b5d3164a-c2fa-47a2-836a-4e9ccfb9fcb4",
+          "id": "7c0c2be6-5b0c-4b23-be04-0d5fa267d730",
           "children": [],
           "links": [
             {
@@ -3212,7 +3215,7 @@
           "title": "Red / Black Trees",
           "xid": "eOL0_SzxBn7_xhNcBDi2D",
           "description": "In computer science, a red\u2013black tree is a kind of self-balancing binary search tree. Each node stores an extra bit representing \"color\", used to ensure that the tree remains balanced during insertions and deletions.\n\nThese are a translation of a 2-3 tree (see below).\n\nIn practice: Red\u2013black trees offer worst-case guarantees for insertion time, deletion time, and search time. Not only does this make them valuable in time-sensitive applications such as real-time applications, but it makes them valuable building blocks in other data structures which provide worst-case guarantees; for example, many data structures used in computational geometry can be based on red\u2013black trees, and the Completely Fair Scheduler used in current Linux kernels uses red\u2013black trees. In the version 8 of Java, the Collection HashMap has been modified such that instead of using a LinkedList to store identical elements with poor hashcodes, a Red-Black tree is used.\n\n",
-          "id": "e2ec7c95-b2b8-4cfa-b8fd-9e2100031041",
+          "id": "d026a18d-98f0-4679-a268-30fafba18e4c",
           "children": [],
           "links": [
             {
@@ -3246,7 +3249,7 @@
           "title": "2 3 Search Trees",
           "xid": "3jiV9R82qxpqIGfpEq_wK",
           "description": "In practice: 2-3 trees have faster inserts at the expense of slower searches (since height is more compared to AVL trees).\n\nYou would use 2-3 tree very rarely because its implementation involves different types of nodes. Instead, people use Red Black trees.\n\n",
-          "id": "82c88963-f1f0-4908-94fb-75470744f065",
+          "id": "49d9b9d8-130d-43f2-901f-bba67a21f966",
           "children": [],
           "links": [
             {
@@ -3270,7 +3273,7 @@
           "title": "2 3 4 Trees",
           "xid": "IaPd_zuLbiOCwoSHQLoIG",
           "description": "In practice: For every 2-4 tree, there are corresponding red\u2013black trees with data elements in the same order. The insertion and deletion operations on 2-4 trees are also equivalent to color-flipping and rotations in red\u2013black trees. This makes 2-4 trees an important tool for understanding the logic behind red\u2013black trees, and this is why many introductory algorithm texts introduce 2-4 trees just before red\u2013black trees, even though 2-4 trees are not often used in practice.\n\n",
-          "id": "23fdc6e1-896b-46f4-8b83-8ebc1de3d5bc",
+          "id": "7ae3c510-2555-4ab6-9fd5-f04e734acbe0",
           "children": [],
           "links": [
             {
@@ -3294,7 +3297,7 @@
           "title": "K-ary / M-ary Tree",
           "xid": "UOYeM-hqIKCrB9hGez4Q_",
           "description": "Note: the N or K is the branching factor (max branches)\n\nBinary trees are a 2-ary tree, with branching factor = 2\n\n2-3 trees are 3-ary\n\n",
-          "id": "6611ed86-ddab-4769-8ab7-85bec7c0e260",
+          "id": "b772c212-1935-4a95-bf3b-3c303f12e201",
           "children": [],
           "links": [
             {
@@ -3308,7 +3311,7 @@
           "title": "B-Tree",
           "xid": "s0Pi6CemUUsmZSEu2j2gH",
           "description": "Fun fact: it's a mystery, but the B could stand for Boeing, Balanced, or Bayer (co-inventor).\n\nIn Practice: B-Trees are widely used in databases. Most modern filesystems use B-trees (or Variants). In addition to its use in databases, the B-tree is also used in filesystems to allow quick random access to an arbitrary block in a particular file. The basic problem is turning the file block i address into a disk block (or perhaps to a cylinder-head-sector) address\n\n",
-          "id": "f1cf2786-b729-4bd3-a572-5ab6e91bba4a",
+          "id": "5b0bfaaa-2690-4bfe-aaba-f2d2c80c8a4c",
           "children": [],
           "links": [
             {
@@ -3371,13 +3374,13 @@
       "title": "System Design",
       "xid": "w-fvEiSJysywR3AOAB0ve",
       "description": "System design is the process of defining the architecture, modules, interfaces, and data for a system to satisfy specified requirements. It is a very broad topic, and there are many ways to approach it.\n\n",
-      "id": "5d95a06d-501c-4f6e-b26a-81558e21f506",
+      "id": "a282b58a-422c-4d4f-927f-f3d2daef0e46",
       "children": [
         {
           "title": "Horizontal vs Vertical Scaling",
           "xid": "-34WGppX6QC5fkCvfCghp",
           "description": "Horizontal scaling is the process of adding more machines to your system. This is also known as scaling out. Vertical scaling is the process of adding more power to a single machine. This is also known as scaling up.\n\n",
-          "id": "6b2413ee-9446-4ab4-88af-1063fdac6806",
+          "id": "b154f189-74c9-4423-aaa5-06c431982713",
           "children": [],
           "links": [
             {
@@ -3401,7 +3404,7 @@
           "title": "Load Balancing",
           "xid": "xDiS0HmrEoPjkQg9x2O3o",
           "description": "Load balancing is the process of distributing network or application traffic across a cluster of servers. Load balancing is used to improve responsiveness and reliability of applications, maximize throughput, minimize response time, and avoid overload of any single server.\n\n",
-          "id": "3d9cf69f-368c-4c9f-8c8c-bafbc6f06bd0",
+          "id": "1042d2ea-4146-4020-b33b-1f2ea0c4abce",
           "children": [],
           "links": [
             {
@@ -3420,7 +3423,7 @@
           "title": "Clustering",
           "xid": "wAsZ-M5N9ERufQnBaXbAE",
           "description": "At a high level, a computer cluster is a group of two or more computers, or nodes, that run in parallel to achieve a common goal. This allows workloads consisting of a high number of individual, parallelizable tasks to be distributed among the nodes in the cluster. As a result, these tasks can leverage the combined memory and processing power of each computer to increase overall performance.\n\n",
-          "id": "47593ec5-b02c-4a79-9800-e116d8f99b5e",
+          "id": "a0ffe27b-673b-4662-8cd8-0d0dedf2126b",
           "children": [],
           "links": [
             {
@@ -3434,7 +3437,7 @@
           "title": "Caching",
           "xid": "4u5w9QCptLWuY9O7_UU8V",
           "description": "Caching is a way of storing data in a temporary storage to make future requests faster. It is one of the most important tools in the computer science toolbox.\n\n",
-          "id": "85876dd4-8c26-4dc9-9b08-4bc1ba07785a",
+          "id": "4db73f06-bec7-476b-9a72-2effaaf2a6e2",
           "children": [],
           "links": [
             {
@@ -3453,7 +3456,7 @@
           "title": "CDN",
           "xid": "r8V9bZpc98SrLvXc070bZ",
           "description": "A CDN is a network of servers that are distributed geographically. The servers are connected to each other and to the internet. The servers are used to deliver content to users. The content is delivered to the user from the server that is closest to the user. This is done to reduce latency and improve the performance of the content delivery.\n\n",
-          "id": "2ad554e7-59ef-4922-a89d-cc6c76c9d8c4",
+          "id": "a0b21e06-1300-424b-acd4-0d31e5f4efd8",
           "children": [],
           "links": [
             {
@@ -3472,7 +3475,7 @@
           "title": "Proxy",
           "xid": "qLLJ_ehC8tSRfXsorYMQz",
           "description": "A proxy server is an intermediary piece of hardware/software sitting between the client and the backend server. It receives requests from clients and relays them to the origin servers. Typically, proxies are used to filter requests, log requests, or sometimes transform requests (by adding/removing headers, encrypting/decrypting, or compression).\n\n",
-          "id": "6152dd8c-1846-4d53-a6d6-e91dd2919cf6",
+          "id": "7660e137-2222-4e56-8879-358bf153a76a",
           "children": [],
           "links": [
             {
@@ -3491,7 +3494,7 @@
           "title": "CAP Theorem",
           "xid": "GZI8EsEqiMJX3fSbO_E-7",
           "description": "The CAP theorem states that it is impossible for a distributed data store to simultaneously provide more than two out of Consistency, Availability and Partition Tolerance.\n\n",
-          "id": "7b7aeeb7-4061-44ce-b0bd-3598bba7d1a5",
+          "id": "e526b09b-979a-4ebe-9eb4-d8a3bf6ab46f",
           "children": [],
           "links": [
             {
@@ -3510,7 +3513,7 @@
           "title": "Queues",
           "xid": "LCPEzpyAuHY3ggN3nYrNN",
           "description": "Messaging queues are a common way to decouple systems. They are used to decouple the producer of a message from the consumer of a message. This allows the producer to send a message and not have to wait for the consumer to process it. It also allows the consumer to process the message at their own pace.\n\n",
-          "id": "c7673ea8-8381-4e20-8d21-53a54d939db2",
+          "id": "ec76cab5-e650-49e2-8890-1b426f874a7f",
           "children": [],
           "links": [
             {
@@ -3534,7 +3537,7 @@
           "title": "Architectural Styles",
           "xid": "X1wv7xV69IEzepg8bF8oZ",
           "description": "Architectural patterns are the fundamental organization of a system, defining how the system is composed and how its components interact. Architectural patterns are identified by their name, like client-server, peer-to-peer, and layered.\n\n",
-          "id": "ea1d4f0f-a8c1-420c-a469-7190a3cb1079",
+          "id": "5197ab57-2aea-49e6-8378-86478094ef94",
           "children": [],
           "links": [
             {
@@ -3548,7 +3551,7 @@
           "title": "REST",
           "xid": "Kvz3Sn7L8CxP5ZXO1hlcU",
           "description": "REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other.\n\n",
-          "id": "bcf95fe2-6342-4a0a-8613-7f98feed38e6",
+          "id": "7510b1da-57d9-4c8d-9c0c-15b3bb3d42ea",
           "children": [],
           "links": [
             {
@@ -3577,7 +3580,7 @@
           "title": "GraphQL",
           "xid": "DeE_dZecLmKCjePovTfFS",
           "description": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.\n\n",
-          "id": "f528b882-de06-42d1-9794-87f9fafb2c40",
+          "id": "ba12287a-cdf8-4f61-98c3-8107fda0cd83",
           "children": [],
           "links": [
             {
@@ -3596,7 +3599,7 @@
           "title": "gRPC",
           "xid": "M4vdwAbjLPrLjWUsG_P1I",
           "description": "gRPC is a platform agnostic serialization protocol that is used to communicate between services. Designed by Google in 2015, it is a modern alternative to REST APIs. It is a binary protocol that uses HTTP/2 as a transport layer. It is a high performance, open source, general-purpose RPC framework that puts mobile and HTTP/2 first.\n\nIt's main use case is for communication between two different languages within the same application. You can use Python to communicate with Go, or Java to communicate with C#.\n\ngRPC uses the protocol buffer language to define the structure of the data that is\n\n",
-          "id": "eb4c1884-d4a5-479a-9e5f-5468270f196b",
+          "id": "0dafca7f-17b9-4fd2-899e-7f03079f54ab",
           "children": [],
           "links": [
             {
@@ -3630,7 +3633,7 @@
           "title": "Cloud Design Patterns",
           "xid": "YMO9oD_sbzyDZPNU2xZwe",
           "description": "These design patterns are useful for building reliable, scalable, secure applications in the cloud.\n\nThe link below has cloud design patterns where each pattern describes the problem that the pattern addresses, considerations for applying the pattern, and an example based on Microsoft Azure. Most patterns include code samples or snippets that show how to implement the pattern on Azure. However, most patterns are relevant to any distributed system, whether hosted on Azure or other cloud platforms.\n\n",
-          "id": "6e1384f4-714d-44c8-95ca-091207b1a0e5",
+          "id": "16e4a7d3-360b-4c6b-82f6-a5776738b271",
           "children": [],
           "links": [
             {
@@ -3649,7 +3652,7 @@
           "title": "Long Polling",
           "xid": "XeJi6TwpI5Uaszj00Uv_2",
           "description": "Long polling is a technique used to implement server push functionality over HTTP. It is a method of opening a request on the server and keeping it open until an event occurs, at which point the server responds. This is in contrast to a regular HTTP request, where the server responds immediately with whatever data is available at the time.\n\n",
-          "id": "c768a1f6-3b1b-4dba-855c-54e799772378",
+          "id": "03165312-eb15-4782-a78c-6d40c6c04b4a",
           "children": [],
           "links": [
             {
@@ -3668,7 +3671,7 @@
           "title": "Short Polling",
           "xid": "gGmNJ8dK28iqrlQHPz6md",
           "description": "In short polling, the client requests information from the server. The server processes the request. If data is available for the request, server responds to the request with the required information. However, if the server has no data available for the client, server returns an empty response. In both the situation, the connection will be closed after returning the response. Clients keep issuing new requests even after server sends the empty responses. This mechanism increases the network cost on the server.\n\n",
-          "id": "da1ddda7-4f3f-4a6c-be67-4fbb68b5acf6",
+          "id": "f712d01c-3f13-43d1-aab1-66ad352d7c76",
           "children": [],
           "links": [
             {
@@ -3682,7 +3685,7 @@
           "title": "Web Sockets",
           "xid": "bVjI14VismTHNCyA0mEBP",
           "description": "Web sockets are a bidirectional communication protocol between a client and a server. They are used for real-time applications like chat, multiplayer games, and live data updates. Web sockets are also used to establish a connection between a server and a client. This connection is then used to send data in both directions.\n\n",
-          "id": "b1bc9d24-abd8-4ad8-b718-793f797ce46f",
+          "id": "1ee82652-cfc3-4db7-afb6-172b213a1e56",
           "children": [],
           "links": []
         },
@@ -3690,7 +3693,7 @@
           "title": "SSE",
           "xid": "JckRqZA8C6IqQLPpTCgf4",
           "description": "Server-Sent Events is a server push technology enabling a client to receive automatic updates from a server via an HTTP connection, and describes how servers can initiate data transmission towards clients once an initial client connection has been established.\n\n",
-          "id": "113d7a55-60f2-49c4-9327-c0020adb1fc1",
+          "id": "ba5acc0f-af00-4e6e-aa30-e175d9a19fae",
           "children": [],
           "links": [
             {
@@ -3748,13 +3751,13 @@
       "title": "Databases",
       "xid": "zvlTQ0A-My4QDrslp_lru",
       "description": "A database is a collection of useful data of one or more related organizations structured in a way to make data an asset to the organization. A database management system is a software designed to assist in maintaining and extracting large collections of data in a timely fashion.\n\n",
-      "id": "13f6fc09-fffa-49e1-afdc-cbbd2e4ea3c4",
+      "id": "f3f4029a-2223-493c-a9be-eb8471bc6770",
       "children": [
         {
           "title": "SQL vs NoSQL Databases",
           "xid": "nprZscHdC_RdRIcGeGyVk",
           "description": "SQL stands for Structured Query Language. It's used for relational databases. A SQL database is a collection of tables that stores a specific set of structured data. Some examples are PostgreSQL, MySQL, MariaDB etc.\n\nNoSQL stands for Not Only SQL. It's used for non-relational databases. A NoSQL database is a collection of collections that stores a specific set of unstructured data. Some examples are MongoDB, CouchDB, Redis etc.\n\n",
-          "id": "0d786818-7481-4ab6-ade2-22aa4a43ac2b",
+          "id": "5e3ec77d-95db-494a-afb0-e6b82401f529",
           "children": [],
           "links": [
             {
@@ -3783,7 +3786,7 @@
           "title": "Normalization / Denormalization",
           "xid": "Rw7QjLC8hLtXSwmU_9kHC",
           "description": "Database normalization is a process used to organize a database into tables and columns. The idea is that a table should be about a specific topic and that only those columns which support that topic are included. This limits the number of duplicate data contained within your database. This makes the database more flexible by eliminating issues stemming from database modifications.\n\nDenormalization is the opposite of normalization. It is the process of adding redundant data to a database to improve read performance. This is done by adding duplicate data into multiple tables to avoid expensive joins. This is done at the expense of increased storage and decreased write performance.\n\n",
-          "id": "c858675d-60ae-4185-9237-9fb0a57cb7e3",
+          "id": "51c0bfc0-85b7-49a8-b87c-70211c104d93",
           "children": [],
           "links": [
             {
@@ -3802,7 +3805,7 @@
           "title": "Entity-Relationship Model",
           "xid": "XnxxEmr2TyW2kOpB4gtR5",
           "description": "Entity relationship model is a high-level data model that describes the logical structure of a database. It is a graphical representation of entities and their relationships to each other, typically used in modeling the organization of data within databases or information systems.\n\n",
-          "id": "d1721620-97b3-46ef-80f9-1e76e2833ba8",
+          "id": "51f05fd6-128c-46c7-a4bc-3479112359b7",
           "children": [],
           "links": [
             {
@@ -3821,7 +3824,7 @@
           "title": "DDL",
           "xid": "ii1vF74u3yrFNlw_21b3B",
           "description": "DDL or Data Definition Language actually consists of the SQL commands that can be used to define the database schema. It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects in the database. DDL is a set of SQL commands used to create, modify, and delete database structures but not data. These commands are normally not used by a general user, who should be accessing the database via an application.\n\n",
-          "id": "5a8ec575-c53c-4bae-965f-5e2082df1dbe",
+          "id": "7bf4a1c8-c3d4-43d7-87c1-e47d6cc399f0",
           "children": [],
           "links": []
         },
@@ -3829,7 +3832,7 @@
           "title": "DML",
           "xid": "tcQSH-eAvJUZuePTDjAIb",
           "description": "The SQL commands that manipulate data in the database belong to DML, or Data Manipulation Language, and this includes most of the SQL statements. DCL is the component of the SQL statement that controls access to data and to the database. Basically, DCL statements are grouped with DML statements.\n\n",
-          "id": "3cfd9a64-c1a8-43af-a004-a8e204fae951",
+          "id": "3487e7a4-6d04-42bf-83d0-af15d2fc454e",
           "children": [],
           "links": [
             {
@@ -3848,7 +3851,7 @@
           "title": "DQL",
           "xid": "05lkb3B86Won7Rkf-8DeD",
           "description": "DQL statements are used for performing queries on the data within schema objects. The purpose of the DQL Command is to get some schema relation based on the query passed to it. We can define DQL as follows it is a component of SQL statement that allows getting data from the database and imposing order upon it. It includes the SELECT statement. This command allows getting the data out of the database to perform operations with it. When a SELECT is fired against a table or tables the result is compiled into a further temporary table, which is displayed or perhaps received by the program i.e. a front-end.\n\n",
-          "id": "c4a52c99-aa46-4e00-b227-9b37200ea069",
+          "id": "7d415393-2500-46ff-85f1-336582e2791e",
           "children": [],
           "links": []
         },
@@ -3856,7 +3859,7 @@
           "title": "DCL",
           "xid": "4bUmfuP2qgcli8I2Vm9zh",
           "description": "DCL includes commands such as GRANT and REVOKE which mainly deal with the rights, permissions, and other controls of the database system.\n\n",
-          "id": "73f4e57b-6727-4021-ad24-8075be6d73f4",
+          "id": "f4f84837-0a38-4020-b2d3-8117539e5ffd",
           "children": [],
           "links": []
         },
@@ -3864,7 +3867,7 @@
           "title": "Locking",
           "xid": "_sm63rZNKoibVndeNgOpW",
           "description": "Locks are used to prevent data from being modified by multiple processes at the same time. This is important because if two processes are modifying the same data at the same time, the data can become corrupted. Locks are used to prevent this from happening.\n\n",
-          "id": "41e098ad-29b5-4780-a261-fd72629cf504",
+          "id": "51a09abb-ffa0-431f-8c5c-6d41ccd30705",
           "children": [],
           "links": [
             {
@@ -3888,7 +3891,7 @@
           "title": "ACID Model",
           "xid": "W5B-v-BFcCRmuN0L1m6PI",
           "description": "ACID are the four properties of any database system that help in making sure that we are able to perform the transactions in a reliable manner. It's an acronym which refers to the presence of four properties: atomicity, consistency, isolation and durability\n\n",
-          "id": "ed381d4d-13c9-4608-81b8-3b7146517eeb",
+          "id": "dd382420-ba34-4d46-bed5-dfef9bc1cabd",
           "children": [],
           "links": [
             {
@@ -3912,7 +3915,7 @@
           "title": "BASE",
           "xid": "q3nRhTYS5wg9tYnQe2sCF",
           "description": "The rise in popularity of NoSQL databases provided a flexible and fluidity with ease to manipulate data and as a result, a new database model was designed, reflecting these properties. The acronym BASE is slightly more confusing than ACID but however, the words behind it suggest ways in which the BASE model is different and acronym BASE stands for:-\n\n*   **B**asically **A**vailable\n*   **S**oft state\n*   **E**ventual consistency\n\n",
-          "id": "c52d3e69-d81f-4df4-86c6-03bbb988c24d",
+          "id": "5a55aceb-1717-45f8-891a-b3c82bb67dd1",
           "children": [],
           "links": []
         },
@@ -3920,7 +3923,7 @@
           "title": "CAP Theorem",
           "xid": "uqfeiQ9K--QkGNwks4kjk",
           "description": "CAP is an acronym for Consistency, Availability, and Partition Tolerance. According to the CAP theorem, any distributed system can only guarantee two of the three properties at any time. You can't guarantee all three properties at once.\n\n",
-          "id": "96fa65b0-02d8-41bd-821e-391852a9dedb",
+          "id": "f405212a-087d-4404-8269-44daa35bdd4b",
           "children": [],
           "links": [
             {
@@ -3954,7 +3957,7 @@
           "title": "PACELC",
           "xid": "g6HeyLptaAYx9QBKuHQyM",
           "description": "The PACELC Theorem is an extension of the CAP Theorem. One of the questions that CAP Theorem wasn\u2019t able to answer was \u201cwhat happens when there is no Partition, What Logical Combination then a Distributed System have?\u201c. So to answer this, In addition to Consistency, Availability, and Partition Tolerance it also includes Latency as one of the desired properties of a Distributed System. The acronym PACELC stands for Partitioned, Availability, Consistency Else Latency, Consistency.\n\n",
-          "id": "44f616c3-ee6e-4d84-993e-a0046bdfc1a3",
+          "id": "27b3c465-8b35-4f23-a29a-5f3a97e06db3",
           "children": [],
           "links": [
             {
@@ -3968,7 +3971,7 @@
           "title": "Indexes",
           "xid": "BEbsUA39kZ5itqCwD585f",
           "description": "An index is a data structure that you build and assign on top of an existing table that basically looks through your table and tries to analyze and summarize so that it can create shortcuts.\n\n",
-          "id": "873cab1c-ba7b-4190-bd0c-6c652ddd5e66",
+          "id": "c801577e-9bc2-4514-a564-d8402f730012",
           "children": [],
           "links": [
             {
@@ -3982,7 +3985,7 @@
           "title": "Views",
           "xid": "lOj_ReWI1kQ3WajJZYOWU",
           "description": "Views in SQL are kind of virtual tables. A view also has rows and columns as they are in a real table in the database. We can create a view by selecting fields from one or more tables present in the database. A View can either have all the rows of a table or specific rows based on certain condition.\n\n",
-          "id": "18e72537-8531-402e-a424-4f65f31681a3",
+          "id": "06e7c89d-77e4-479a-b6e4-37aff42feeb9",
           "children": [],
           "links": [
             {
@@ -4001,7 +4004,7 @@
           "title": "Transactions",
           "xid": "KhvYJtSCUBOpEZXjHpQde",
           "description": "In short, a database transaction is a sequence of multiple operations performed on a database, and all served as a single logical unit of work \u2014 taking place wholly or not at all. In other words, there's never a case where only half of the operations are performed and the results saved.\n\n",
-          "id": "22eb2642-25ad-4c35-b43e-026df094b6fc",
+          "id": "68577df9-6829-46fe-90bb-9129f2e34e97",
           "children": [],
           "links": [
             {
@@ -4015,7 +4018,7 @@
           "title": "Stored Procedures",
           "xid": "FjhZGhzJjYyDn0PShKmpX",
           "description": "Stored Procedures are created to perform one or more DML operations on Database. It is nothing but the group of SQL statements that accepts some input in the form of parameters and performs some task and may or may not returns a value.\n\n",
-          "id": "4170616b-1d87-4b14-8c38-ebfbf5e2399a",
+          "id": "955169e0-3c63-4fe4-9fcb-9cbb313938c1",
           "children": [],
           "links": [
             {
@@ -4029,7 +4032,7 @@
           "title": "Database Federation",
           "xid": "3r21avMlo0xFB9i7PHccX",
           "description": "Federation (or functional partitioning) splits up databases by function. The federation architecture makes several distinct physical databases appear as one logical database to end-users.\n\n",
-          "id": "2d89f623-f668-459c-ad7b-eaa11df01468",
+          "id": "c4a51435-e9bc-4a94-9c0f-f63df4a61655",
           "children": [],
           "links": [
             {
@@ -4048,7 +4051,7 @@
           "title": "Replication",
           "xid": "WUEmEtlszbISSIWDKpvg6",
           "description": "Replication is a process that involves sharing information to ensure consistency between redundant resources such as multiple databases, to improve reliability, fault-tolerance, or accessibility.\n\n",
-          "id": "235f9949-2a85-4bc0-8d2e-294528f4319d",
+          "id": "c60c156a-02e9-4099-82ae-19511290bc3f",
           "children": [],
           "links": [
             {
@@ -4067,7 +4070,7 @@
           "title": "Sharding",
           "xid": "3K65efPag2076dy-MeTg4",
           "description": "Database sharding is a method of distributing data across multiple machines. It is a horizontal scaling technique, as opposed to vertical scaling, which is scaling by adding more power to a single machine. Sharding is a common way to scale a database.\n\n",
-          "id": "68e821e4-1a86-4baa-89cc-4d9d224addc3",
+          "id": "284fafc3-cf53-4f99-9273-7aa41e963608",
           "children": [],
           "links": [
             {
@@ -4125,13 +4128,13 @@
       "title": "Networking",
       "xid": "zG5t3HqbZnh9CGRqp1Sb-",
       "description": "Networking is the process of connecting two or more computing devices together for the purpose of sharing data. In a data network, shared data may be as simple as a printer or as complex as a global financial transaction.\n\nIf you have networking experience or want to be a reliability engineer or operations engineer, expect questions from these topics. Otherwise, this is just good to know.\n\n",
-      "id": "31b19e7a-dfbf-48d4-95cd-698ab3b94947",
+      "id": "cda7d465-8986-443c-860e-727df9b5883f",
       "children": [
         {
           "title": "OSI Model",
           "xid": "pZ5x_zDYGzW9VxYycyXtN",
           "description": "The OSI and TCP/IP model is used to help the developer to design their system for interoperability. The OSI model has 7 layers while the TCP/IP model has a more summarized form of the OSI model only consisting 4 layers. This is important if you're are trying to design a system to communicate with other systems.\n\n",
-          "id": "a8a663c1-43b2-4fde-a76d-aefa500a448f",
+          "id": "9cebe4fd-0d72-49ca-8d54-e236f9e1c240",
           "children": [],
           "links": [
             {
@@ -4150,7 +4153,7 @@
           "title": "TCP/IP Model",
           "xid": "Fed5y1D95WPpqoVg7kmob",
           "description": "The OSI and TCP/IP model is used to help the developer to design their system for interoperability. The OSI model has 7 layers while the TCP/IP model has a more summarized form of the OSI model only consisting 4 layers. This is important if you're are trying to design a system to communicate with other systems.\n\n",
-          "id": "64eda137-a6bd-4612-8ec5-05baad1ebbcf",
+          "id": "b8578ab5-54fa-45fb-8b0c-d0dedfcada82",
           "children": [],
           "links": [
             {
@@ -4169,7 +4172,7 @@
           "title": "DNS",
           "xid": "fYjoXB4rnkM5gg46sqVz5",
           "description": "The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like [nytimes.com](http://nytimes.com) or [espn.com](http://espn.com). Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.\n\n",
-          "id": "ccc4a0b6-c7c3-4588-810d-52d5a8220188",
+          "id": "c17a38c0-d76b-42f9-a792-a91615d8f379",
           "children": [],
           "links": [
             {
@@ -4208,7 +4211,7 @@
           "title": "HTTP",
           "xid": "2tUwl-br-SRuwADSzmQag",
           "description": "HTTP is the `TCP/IP` based application layer communication protocol which standardizes how the client and server communicate with each other. It defines how the content is requested and transmitted across the internet.\n\n",
-          "id": "03dd0a14-3141-4b8d-9e7d-9918775342c0",
+          "id": "44d32b6f-c069-4ab7-b072-397cec4a4fb5",
           "children": [],
           "links": [
             {
@@ -4247,7 +4250,7 @@
           "title": "TLS & HTTPS",
           "xid": "3pu2bGhoCLFIs6kNanwtz",
           "description": "TLS (Transport Layer Security) is a cryptographic protocol that provides privacy and data integrity between two communicating applications. It is widely used to secure HTTP, although it can be used with any protocol. TLS is often used in combination with HTTPS, which is HTTP over TLS.\n\n",
-          "id": "03317339-09eb-4139-9def-f6ecb150ae1f",
+          "id": "15c2ae92-ba0a-4b1a-a1e9-62e41cf746f7",
           "children": [],
           "links": [
             {
@@ -4266,7 +4269,7 @@
           "title": "Sockets",
           "xid": "u-c-UFegRb7xqsmvj9gVb",
           "description": "A socket is an interface for network communication. It is a way for two programs to communicate with each other over a network. It is a way for a client to send a request to a server and for the server to send a response back to the client.\n\n",
-          "id": "05007097-4b6c-4095-9d85-77385f4956df",
+          "id": "7364794c-91a4-4cae-b6a7-7ea95e143ac8",
           "children": [],
           "links": [
             {
@@ -4309,13 +4312,13 @@
       "title": "Security",
       "xid": "JnJbJtsqKbVETY2vdLqCO",
       "description": "Web security refers to the protective measures taken by the developers to protect the web applications from threats that could affect the business.\n\n",
-      "id": "753a8d78-7e96-411d-800c-67419ded977c",
+      "id": "81a10323-96bc-483c-9313-afc9392f4e62",
       "children": [
         {
           "title": "Public Key Cryptography",
           "xid": "bDZ34BPm3lX06ERSE10cY",
           "description": "Public-key cryptography, or asymmetric cryptography, is the field of cryptographic systems that use pairs of related keys. Each key pair consists of a public key and a corresponding private key. Key pairs are generated with cryptographic algorithms based on mathematical problems termed one-way functions.\n\n",
-          "id": "12f2506d-3de1-4668-9ec9-b13e3d679545",
+          "id": "c9aa4b48-d32b-4dda-a9fd-3a8feb2e727d",
           "children": [],
           "links": [
             {
@@ -4344,7 +4347,7 @@
           "title": "Hashing / Encryption / Encoding",
           "xid": "7r7o8pYhFHVAJIv0wNT6X",
           "description": "Hashing is a one-way function that takes an input and produces a fixed-length output. The output is called a hash. The hash is a unique representation of the input. The hash is deterministic, meaning that the same input will always produce the same hash. The hash is irreversible, meaning that it is impossible to go from the hash back to the original input. The hash is not collision-resistant, meaning that it is possible to find two different inputs that produce the same hash.\n\nEncryption is a two-way function that takes an input and produces an output. The output is called ciphertext. The ciphertext is a unique representation of the input. The ciphertext is deterministic, meaning that the same input will always produce the same ciphertext. The ciphertext is reversible, meaning that it is possible to go from the ciphertext back to the original input. The ciphertext is collision-resistant, meaning that it is impossible to find two different inputs that produce the same ciphertext.\n\nEncoding is a two-way function that takes an input and produces an output. The output is called encoded text. The encoded text is a unique representation of the input. The encoded text is deterministic, meaning that the same input will always produce the same encoded text. The encoded text is reversible, meaning that it is possible to go from the encoded text back to the original input. The encoded text is collision-resistant, meaning that it is impossible to find two different inputs that produce the same encoded text.\n\n",
-          "id": "4717d8a4-e397-430b-8152-296b4fa4f25d",
+          "id": "b07c00de-064b-40a5-8d75-3b2b0af66022",
           "children": [],
           "links": [
             {
@@ -4363,7 +4366,7 @@
           "title": "Hashing Algorithms",
           "xid": "EX_e4B6G07zTb4JjJ7482",
           "description": "Hashing algorithms are used to generate a unique value for a given input. This value is called a hash. Hashing algorithms are used to verify the integrity of data, to store passwords, and to generate unique identifiers for data.\n\n",
-          "id": "9d90a577-c27f-4719-a436-68fa21c35b7d",
+          "id": "93dd3026-a9cd-45db-8ab3-83a80aad5612",
           "children": [],
           "links": [
             {
@@ -4392,7 +4395,7 @@
           "title": "OWASP Top 10",
           "xid": "3rPSp135TdSCyvXzEzn4p",
           "description": "OWASP or Open Web Application Security Project is an online community that produces freely-available articles, methodologies, documentation, tools, and technologies in the field of web application security.\n\n",
-          "id": "dc4e8d18-475d-4e00-b17d-cf00453a7ce5",
+          "id": "572171c2-0a65-4332-a94e-3bf3d6bcbbd9",
           "children": [],
           "links": [
             {
@@ -4465,13 +4468,13 @@
       "title": "How Computers Work",
       "xid": "-emdKpD5uRNuvem5rbFXJ",
       "description": "Computers are everywhere. They are in our phones, our cars, our homes, and even in our pockets. But how do they actually work? How do they take in information, and how do they output information?\n\n",
-      "id": "6c6454b4-8849-400a-86df-e47bb4086545",
+      "id": "28f04fbf-e444-437e-84ea-c3096f503f12",
       "children": [
         {
           "title": "How CPU Executes Programs",
           "xid": "1eglba39q426Nh0E0qcdj",
           "description": "",
-          "id": "43cf765f-f0d2-407e-8d6d-8e54a7eb4106",
+          "id": "c0098a7c-7c90-4dc3-9990-692a7691f50a",
           "children": [],
           "links": [
             {
@@ -4490,7 +4493,7 @@
           "title": "How Computers Calculate",
           "xid": "GDLKJkKgB-i7n0YcV2NDa",
           "description": "Computers calculate using the binary system, where all data is represented as 0s and 1s. These binary states correspond to the ON/OFF positions of transistors, which are the building blocks of logic gates (AND, OR, NOT). Numbers, characters, and instructions are broken into binary sequences (bits), and grouped into bytes (8 bits). Arithmetic operations like addition are performed through logic gates, which combine binary values. The CPU executes these calculations by following a fetch-decode-execute cycle. Complex calculations, such as handling decimals, use floating-point representation. Programs written in high-level languages are compiled into machine code for the CPU to execute.\n\n",
-          "id": "adfcbf05-1719-4653-8fd6-890a19858e2a",
+          "id": "883be2a8-18fb-4ac4-b84d-f3b269940491",
           "children": [],
           "links": [
             {
@@ -4504,7 +4507,7 @@
           "title": "Registers and RAM",
           "xid": "U3379F4AO1KSmGtVmPr27",
           "description": "**_Registers_** are the smallest data-holding elements built into the processor itself. Registers are the memory locations that are directly accessible by the processor. The registers hold the instruction or operands currently accessed by the CPU.\n\nRegisters are the high-speed accessible storage elements. The processor accesses the registers within one CPU clock cycle. The processor can decode the instructions and perform operations on the register contents at more than one operation per CPU clock cycle.\n\n**_Memory_** is a hardware device that stores computer programs, instructions, and data. The memory that is internal to the processor is primary memory (RAM), and the memory that is external to the processor is secondary (**Hard Drive**). Primary memory or RAM is a volatile memory, meaning the primary memory data exist when the system's power is on, and the data vanishes as the system is switched off. The primary memory contains the data required by the currently executing program in the CPU. If the data required by the processor is not in primary memory, then the data is transferred from secondary storage to primary memory, and then it is fetched by the processor.\n\n",
-          "id": "a291df08-ed68-44d4-96a8-20182cc12c8d",
+          "id": "62b62ad8-7240-431c-a340-66180cb65db6",
           "children": [],
           "links": [
             {
@@ -4518,7 +4521,7 @@
           "title": "Instructions and Programs",
           "xid": "AxiGqbteK7ZSXEUt_zckH",
           "description": "",
-          "id": "561bed25-a24d-4fb0-be08-14aa56be3bfa",
+          "id": "9b224c16-11f5-4280-a1e0-1e8455ae6117",
           "children": [],
           "links": [
             {
@@ -4532,7 +4535,7 @@
           "title": "CPU Cache",
           "xid": "DjTQjMbika4_yTzrBpcmB",
           "description": "",
-          "id": "e9164c6e-c4fd-46b0-b52e-a475d68a2a36",
+          "id": "81b1716c-245d-432a-a5e0-39381d6ae444",
           "children": [],
           "links": [
             {
@@ -4585,13 +4588,13 @@
       "title": "Processes and Threads",
       "xid": "ETEUA7jaEGyOEX8tAVNWs",
       "description": "Processes and threads are the basic building blocks of a computer program. They are the smallest units of execution in a program. A process is an instance of a program that is being executed. A thread is a sequence of instructions within a process that can be executed independently of other code.\n\n",
-      "id": "2b20223c-e0ce-4b84-80c6-ed6fcb5b323d",
+      "id": "120bae28-725b-4c63-a36b-dee041b65bb2",
       "children": [
         {
           "title": "Process Forking",
           "xid": "RbdT5MOE4L-E7PPWKRITX",
           "description": "Process forking is a way to create a new process from an existing process. The new process is a copy of the existing process. The new process is called a child process and the existing process is called a parent process.\n\n",
-          "id": "128e4186-b2e8-4e19-942c-e0aeca8cad03",
+          "id": "1108f1ec-abcc-4d4c-afc1-b7df6bbfea68",
           "children": [],
           "links": [
             {
@@ -4615,7 +4618,7 @@
           "title": "Memory Management",
           "xid": "jVsZFTzyrYEDyR8LiBQL0",
           "description": "Memory management is the process of allocating and deallocating memory. It is a very important part of any programming language.\n\n",
-          "id": "53c4cc6b-6a47-4e40-84bf-038f0f905461",
+          "id": "3963baf8-76f6-4ba4-9d0d-add9ff438895",
           "children": [],
           "links": [
             {
@@ -4634,7 +4637,7 @@
           "title": "Lock / Mutex / Semaphore",
           "xid": "O6-vG3FuoYet4D0hbiyrv",
           "description": "A lock allows only one thread to enter the part that's locked and the lock is not shared with any other processes.\n\nA mutex is the same as a lock but it can be system wide (shared by multiple processes).\n\nA semaphore does the same as a mutex but allows x number of threads to enter, this can be used for example to limit the number of cpu, io or ram intensive tasks running at the same time.\n\n",
-          "id": "f67a2d42-0a6e-4003-b531-0a59c67a0153",
+          "id": "e04011c6-2c5f-4968-8741-43978d439d60",
           "children": [],
           "links": [
             {
@@ -4653,7 +4656,7 @@
           "title": "Concurrency in Multiple Cores",
           "xid": "xUo5Ox_HTgGyeQMDIkVyK",
           "description": "",
-          "id": "c74a61ec-c18e-4bdb-b45f-2baf5d2737b3",
+          "id": "17422f8c-e3f2-4c0f-b968-9e6d27777450",
           "children": [],
           "links": [
             {
@@ -4672,7 +4675,7 @@
           "title": "Scheduling Algorithms",
           "xid": "Ge2nagN86ofa2y-yYR1lv",
           "description": "CPU Scheduling is the process of selecting a process from the ready queue and allocating the CPU to it. The selection of a process is based on a particular scheduling algorithm. The scheduling algorithm is chosen depending on the type of system and the requirements of the processes.\n\nHere is the list of some of the most commonly used scheduling algorithms:\n\n*   **First Come First Serve (FCFS):** The process that arrives first is allocated the CPU first. It is a non-preemptive algorithm.\n*   **Shortest Job First (SJF):** The process with the smallest execution time is allocated the CPU first. It is a non-preemptive algorithm.\n*   **Shortest Remaining Time First (SRTF):** The process with the smallest remaining execution time is allocated the CPU first. It is a preemptive algorithm.\n*   **Round Robin (RR):** The process is allocated the CPU for a fixed time slice. The time slice is usually 10 milliseconds. It is a preemptive algorithm.\n*   **Priority Scheduling:** The process with the highest priority is allocated the CPU first. It is a preemptive algorithm.\n*   **Multi-level Queue Scheduling:** The processes are divided into different queues based on their priority. The process with the highest priority is allocated the CPU first. It is a preemptive algorithm.\n*   **Multi-level Feedback Queue Scheduling:** The processes are divided into different queues based on their priority. The process with the highest priority is allocated the CPU first. If a process is preempted, it is moved to the next queue. It is a preemptive algorithm.\n*   **Highest Response Ratio Next(HRRN):** CPU is allotted to the next process which has the highest response ratio and not to the process having less burst time. It is a Non-Preemptive algorithm.\n*   **Lottery Scheduling:** The process is allocated the CPU based on a lottery system. It is a preemptive algorithm.\n\nVisit the following resources to learn more :",
-          "id": "b760a708-1705-4c0a-9d69-361369771af4",
+          "id": "6c2729f2-bee0-434f-9c6b-067bf4278eab",
           "children": [],
           "links": [
             {
@@ -4701,7 +4704,7 @@
           "title": "CPU Interrupts",
           "xid": "cpQvB0qMDL3-NWret7oeA",
           "description": "CPU Interrupts are a way for the CPU to communicate with the rest of the computer. They are a way for the CPU to tell the rest of the computer that it needs to do something. For example, if the CPU is running a program and it needs to read from the keyboard, it will send an interrupt to the keyboard to tell it to send the data to the CPU. The CPU will then wait for the keyboard to send the data and then continue running the program.\n\n",
-          "id": "eee587d5-8230-4d72-869a-d3018c3f70b1",
+          "id": "8a8002d2-310c-4028-ad06-a90ec81f6abb",
           "children": [],
           "links": [
             {
@@ -4720,7 +4723,7 @@
           "title": "Processes vs Threads",
           "xid": "IEX6v_MYpE5Ylk_28K2ZU",
           "description": "Processes and threads are the basic building blocks of a computer program. They are the smallest units of execution in a program. A process is an instance of a program that is being executed. A thread is a sequence of instructions within a process that can be executed independently of other code.\n\n",
-          "id": "37c76c00-b650-4da5-8693-70ea698b6006",
+          "id": "e635bd6e-2f97-40d7-80ed-9b7621a99268",
           "children": [],
           "links": [
             {
@@ -4758,7 +4761,7 @@
       "title": "K-D Trees",
       "xid": "C1eNsPjiQo8INbvL2Lt7L",
       "description": "K-D Trees are a data structure that allow for fast nearest neighbor search in high dimensional spaces. They are a generalization of binary search trees, and are used in a variety of applications, including computer vision and computational geometry.\n\n",
-      "id": "062c3cf8-5f39-41e8-afc6-d72c67cf44f7",
+      "id": "fb4b1227-6b80-47c9-bc4e-f9b7e60e5d51",
       "children": [],
       "links": [
         {
@@ -4777,7 +4780,7 @@
       "title": "Skip Lists",
       "xid": "K96ggeWqd5OwoNnkL04pc",
       "description": "Skip lists are a data structure that allows you to perform operations on a sorted list in O(log n) time. Skip lists are a probabilistic data structure, which means that the probability of a certain operation taking a certain amount of time is a certain value. In the case of skip lists, the probability of an operation taking O(log n) time is 1.\n\n",
-      "id": "f70aa252-6dbf-4758-b7e5-cd4087bb45e7",
+      "id": "8dda9827-a65a-4d2d-a921-ddf264f63ed4",
       "children": [],
       "links": [
         {

@@ -1,18 +1,21 @@
 {
+  "id": "e3636c5c-dc56-40d4-8549-0698c7d76d04",
   "title": "Angular Developer",
-  "description": "\n",
+  "description": "Everything that is there to learn about Angular and the ecosystem in 2025.",
+  "question_title": "",
+  "question_description": "",
   "children": [
     {
       "title": "RxJS Basics",
       "xid": "lfp7PIjwITU5gBITQdirD",
       "description": "Reactive Extensions for JavaScript, or RxJS, is a reactive library used to implement reactive programming to deal with async implementation, callbacks, and event-based programs.\n\nThe reactive paradigm can be used in many different languages through the use of reactive libraries. These libraries are downloaded APIs that provide functionalities for reactive tools like observers and operators. It can be used in your browser or with Node.js.\n\n",
-      "id": "e2ced5bb-37fd-45aa-b93f-405d365dbff2",
+      "id": "beee4eef-fbeb-4784-9d7c-d011dce9d8db",
       "children": [
         {
           "title": "Observable Pattern",
           "xid": "krXA6ua7E3m4IIpFkgQZe",
           "description": "The observer pattern is a software design pattern in which an object, named the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.\n\nAngular uses the Observer pattern which simply means \u2014 Observable objects are registered, and other objects observe (in Angular using the subscribe method) them and take action when the observable object is acted on in some way.\n\n",
-          "id": "0306f4d9-0e48-461b-8c0b-4ec9da15a3dc",
+          "id": "947ab3b4-822b-49a4-be06-4ccb43fd4b0e",
           "children": [],
           "links": [
             {
@@ -26,7 +29,7 @@
           "title": "Observable Lifecycle",
           "xid": "b06Y5YrqBbHhWkK6Ws_1c",
           "description": "An observable is a function that acts as a wrapper for a data stream. They support to pass messages inside your application. An observable is useless until an observer subscribes to it. An observer is an object which consumes the data emitted by the observable. An observer keeps receiving data values from the observable until the observable is completed, or the observer unsubscribes from the observable. Otherwise observers can receive data values from the observable continuously and asynchronously. So we can perform various operations such as updating the user interface, or passing the JSON response.\n\nThere are 4 stages for a life cycle of an observable.\n\n*   Creation\n*   Subscription\n*   Execution\n*   Destruction\n\n",
-          "id": "e43a7c77-1d0f-4c1a-8bf4-05251b1f9ee8",
+          "id": "1d3a9f85-4b82-46ba-aaaf-c02dd9fd797b",
           "children": [],
           "links": [
             {
@@ -40,7 +43,7 @@
           "title": "RxJS vs Promises",
           "xid": "e1ZmmxPZuogCNgtbPPWmd",
           "description": "In a nutshell, the main differences between the Promise and the Observable are as follows:\n\n*   The Promise is eager, whereas the Observable is lazy,\n*   The Promise is always asynchronous, while the Observable can be either asynchronous or synchronous,\n*   The Promise can provide a single value, whereas the Observable is a stream of values (from 0 to multiple values), you can apply RxJS operators to the Observable to get a new tailored stream.\n\n",
-          "id": "72f8938a-133b-41ba-b6a8-b1fd8082b3ec",
+          "id": "e2fe203c-7ef8-4fee-bbf9-00a8dec1767b",
           "children": [],
           "links": [
             {
@@ -59,13 +62,13 @@
           "title": "Operators",
           "xid": "ihsjIcF0tkhjs56458teE",
           "description": "RxJS is mostly useful for its operators, even though the Observable is the foundation. Operators are the essential pieces that allow complex asynchronous code to be easily composed in a declarative manner.\n\nOperators are functions. There are two kinds of operators:\n\n**Pipeable Operators** are the kind that can be piped to Observables using the syntax observableInstance.pipe(operator()). These include, filter(...), and mergeMap(...). When called, they do not change the existing Observable instance. Instead, they return a new Observable, whose subscription logic is based on the first Observable.\n\nA Pipeable Operator is essentially a pure function which takes one Observable as input and generates another Observable as output. Subscribing to the output Observable will also subscribe to the input Observable.\n\n**Creation Operators** are the other kind of operator, which can be called as standalone functions to create a new Observable. For example: of(1, 2, 3) creates an observable that will emit 1, 2, and 3, one right after another. Creation operators will be discussed in more detail in a later section.\n\nPiping\n------\n\nPipeable operators are functions, so they could be used like ordinary functions: op()(obs) \u2014 but in practice, there tend to be many of them convolved together, and quickly become unreadable: op4()(op3()(op2()(op1()(obs)))). For that reason, Observables have a method called .pipe() that accomplishes the same thing while being much easier to read:\n\n     obs.pipe(op1(), op2(), op3(), op4());\n    \n\nCreation Operators\n------------------\n\n**What are creation operators?** Distinct from pipeable operators, creation operators are functions that can be used to create an Observable with some common predefined behavior or by joining other Observables.\n\nA typical example of a creation operator would be the interval function. It takes a number (not an Observable) as input argument, and produces an Observable as output:\n\n    import { interval } from 'rxjs';\n    \n    const observable = interval(1000 /* number of milliseconds */);\n    \n\n",
-          "id": "0e9d6613-b6cb-406b-81fe-bdeaf3931542",
+          "id": "4eb2cb13-3c0c-42f7-869d-2de70ecb9b45",
           "children": [
             {
               "title": "Filtering",
               "xid": "nxUbl0eu3LsSL-Z8X6nP5",
               "description": "RxJS provides a variety of filtering operators that you can use to filter and transform the data in a stream. You can use these operators in combination with other RxJS operators to create powerful and efficient data processing pipelines.\n\n",
-              "id": "40994878-bed1-489c-b24f-943266eb69ef",
+              "id": "98b40f8b-f8c7-45d5-96d6-9d3749dbbfb4",
               "children": [],
               "links": [
                 {
@@ -79,7 +82,7 @@
               "title": "Rate Limiting",
               "xid": "bJbbayFQ9WSJT9-qy0H5l",
               "description": "Rate limiting in RxJS refers to the practice of restricting the rate at which events or data can be emitted from an observable. This can be useful in situations where the rate of incoming data is higher than the rate at which it can be processed, or where there are limits on the number of requests that can be made to a server. There are a few different operators in RxJS that can be used for rate limiting, such as throttleTime and sampleTime. These operators can be used to limit the rate of emissions from an observable by discarding emissions that occur too frequently. Another operator is auditTime it emits the last value from the source Observable during periodic time windows.\n\n",
-              "id": "6d438080-2c9f-4884-9bb0-783db9770910",
+              "id": "bed5a054-2b35-4bfb-bfae-512bee96ae06",
               "children": [],
               "links": [
                 {
@@ -108,7 +111,7 @@
               "title": "Transformation",
               "xid": "kdMJHljMzGA3oRlh8Zvos",
               "description": "In RxJS, \"transformation\" refers to the process of modifying or manipulating the data emitted by an Observable. There are a variety of methods available in RxJS that can be used to transform the data emitted by an Observable, including:\n\n*   **map**: applies a function to each item emitted by the Observable and emits the resulting value\n*   **mergeMap**: applies a function to each item emitted by the Observable, and then merges the resulting Observables into a single Observable\n*   **switchMap**: applies a function to each item emitted by the Observable, and then switches to the latest resulting Observable\n*   **concatMap**: applies a function to each item emitted by the Observable, and then concatenates the resulting Observables into a single Observable\n*   **exhaustMap**: applies a function to each item emitted by the Observable, but ignores subsequent emissions until the current Observable completes\n\nThese are just a few examples of the many methods available in RxJS for transforming the data emitted by an Observable. Each method has its own specific use case, and the best method to use will depend on the requirements of your application.\n\n",
-              "id": "880d117d-5974-49cd-99ae-9c02db60db0e",
+              "id": "0e43b070-49ef-4fb4-a8b9-5fa3cb5a526c",
               "children": [],
               "links": [
                 {
@@ -152,7 +155,7 @@
               "title": "Combination",
               "xid": "IgUHqfVhiGpwxT9tY8O88",
               "description": "Combination operators in RxJS are used to combine multiple observables into a single observable. There are several types of combination operators, including:\n\n*   Merge: merges multiple observables into a single observable that emits items from each source observable in a sequence.\n    \n*   Concat: concatenates multiple observables into a single observable that emits the items from each source observable in sequence, one after the other.\n    \n*   Zip: combines the items from multiple observables into a single observable by combining the items from each observable at a corresponding index.\n    \n*   CombineLatest: combines the latest values from multiple observables into a single observable by emitting an item whenever any of the source observables emit an item.\n    \n*   WithLatestFrom: combines the latest value from one observable with the latest values from multiple other observables.\n    \n*   ForkJoin: combines the items from multiple observables into a single observable by emitting an item only after all of the source observables have emitted an item.\n    \n\nFurther documentation can be found in the official RxJS documentation:\n\n*   Merge: [https://rxjs.dev/api/operators/merge](https://rxjs.dev/api/operators/merge)\n    \n*   Concat: [https://rxjs.dev/api/operators/concat](https://rxjs.dev/api/operators/concat)\n    \n*   Zip: [https://rxjs.dev/api/operators/zip](https://rxjs.dev/api/operators/zip)\n    \n*   CombineLatest: [https://rxjs.dev/api/operators/combineLatest](https://rxjs.dev/api/operators/combineLatest)\n    \n*   WithLatestFrom: [https://rxjs.dev/api/operators/withLatestFrom](https://rxjs.dev/api/operators/withLatestFrom)\n    \n*   ForkJoin: [https://rxjs.dev/api/index/function/forkJoin](https://rxjs.dev/api/index/function/forkJoin)",
-              "id": "9ddf1a2f-a59c-45f8-833a-01f3da0e9529",
+              "id": "c6dea871-caaa-48aa-ab07-557e1c554efd",
               "children": [],
               "links": []
             }
@@ -198,13 +201,13 @@
       "title": "angular-basics",
       "xid": "",
       "description": "angular-basics",
-      "id": "58e324f3-4c65-4f19-93dc-c158cff6a034",
+      "id": "fccd4e53-7327-499f-9826-786cd8eb500f",
       "children": [
         {
           "title": "Components",
           "xid": "kGnKzCkQCNFEdgCBRtNuW",
           "description": "Components are the main building block for Angular applications. Each component consists of:\n\n*   An HTML template that declares what renders on the page\n*   A TypeScript class that defines the behavior\n*   A CSS selector that defines how the component is used in a template\n*   Optionally, CSS styles applied to the template\n\n",
-          "id": "8f05ef87-9c8d-4baf-8f03-63dfe2d65231",
+          "id": "effe953c-a13f-4f68-a31f-4dfb6c92d111",
           "children": [],
           "links": [
             {
@@ -233,7 +236,7 @@
           "title": "Templates",
           "xid": "6fhe9xAi_RSVfa-KKbcbV",
           "description": "A Template is a form of HTML which tells Angular to go towards another component. To create many Angular features, special syntax within the templates is used.\n\n",
-          "id": "895491aa-7737-4f31-9f42-8c6a08d76ccd",
+          "id": "35c25cc7-cf63-4c57-9ffd-04eba29c9fa4",
           "children": [],
           "links": [
             {
@@ -252,7 +255,7 @@
           "title": "Modules",
           "xid": "b_kdNS9PDupcUftslkf9i",
           "description": "Modules in Angular act like a container where we can group the components, directives, pipes, and services, related to the application.\n\n",
-          "id": "845989e5-3320-4e87-a889-0aab65c1f86e",
+          "id": "a2b7be32-0453-485e-9c3f-08334a219725",
           "children": [],
           "links": [
             {
@@ -276,7 +279,7 @@
           "title": "Dependency Injection",
           "xid": "8u9uHCRt9RU57erBy79PP",
           "description": "Dependency Injection is one of the fundamental concepts in Angular. DI is wired into the Angular framework and allows classes with Angular decorators, such as Components, Directives, Pipes, and Injectables, to configure dependencies that they need.\n\n",
-          "id": "bcacc405-67a1-4bbf-80f7-bb932408e4bb",
+          "id": "ec177874-9a6a-4038-95a6-db55274b667f",
           "children": [],
           "links": [
             {
@@ -300,7 +303,7 @@
           "title": "Services  & Remote Data",
           "xid": "CpsoIVoCKaZnM_-BbXbCh",
           "description": "Services let you define code or functionalities that are then accessible and reusable in many other components in the Angular project. It also helps you with the abstraction of logic and data that is hosted independently but can be shared across other components.\n\n",
-          "id": "2a683e1d-d19f-4bd9-adae-a959f1313c11",
+          "id": "47885fdd-1c23-479a-a491-0e8476e14e66",
           "children": [],
           "links": [
             {
@@ -329,7 +332,7 @@
           "title": "Routing",
           "xid": "a74v78SvGtWduZpXs7wSq",
           "description": "Routing in Angular allows the users to create a single-page application with multiple views and allows navigation between them.\n\n",
-          "id": "5dbc236e-24d2-46b1-abae-5a04ee38a591",
+          "id": "ec521ff3-9205-4457-9ce8-698904a07740",
           "children": [],
           "links": [
             {
@@ -351,13 +354,13 @@
       "title": "Forms",
       "xid": "Q36LQds8k_cSjijvXyWOM",
       "description": "Forms are used to handle user inputs in many applications. It enables users from entering sensitive information to performing several data entry tasks.\n\nAngular provides two approaches to handle user inputs trough forms: reactive and template-driven forms.\n\n",
-      "id": "3e987f2d-169f-4371-ab98-7bc202de1af7",
+      "id": "e4d36c95-96e9-4cb6-9d6b-1284f68c1f2f",
       "children": [
         {
           "title": "Reactive Forms",
           "xid": "1d3Y4HVnqom8UOok-7EEf",
           "description": "Reactive Forms in angular are those which used to handle the inputs coming from the user. We can define controls by using classes such as FormGroup and FormControl.\n\n",
-          "id": "ba1f6547-62c5-4a3b-add0-6d211f7d7ac0",
+          "id": "acbd85ce-63a0-4e47-bf9e-2f1a2520eb4c",
           "children": [],
           "links": [
             {
@@ -391,7 +394,7 @@
           "title": "Template-driven Forms",
           "xid": "uDx4lPavwsJFBMzdQ70CS",
           "description": "A Template driven form is the simplest form we can build in Angular. It is mainly used for creating simple form application.\n\nIt uses two-way data-binding (ngModel) to create and handle the form components.\n\n",
-          "id": "9872377c-8715-4ad3-81da-2d32ad2e5fc2",
+          "id": "d4e64050-d46b-45b1-a3ec-299f25f2250c",
           "children": [],
           "links": [
             {
@@ -439,13 +442,13 @@
       "title": "rendering-topics",
       "xid": "",
       "description": "rendering-topics",
-      "id": "68bf9a48-daff-4a68-abf6-a56b21dcc804",
+      "id": "61bb87a8-e997-4639-b1a4-924ae3c03a19",
       "children": [
         {
           "title": "Directives",
           "xid": "kGzlumFdZFxTRZ3HnCGFO",
           "description": "SKDirectives are classes that add additional behavior to elements in your Angular applications. Use Angular's built-in directives to manage forms, lists, styles, and what users see.\n\n`NgClass` Adds and removes a set of CSS classes. | `NgStyle` Adds and removes a set of HTML styles. | `NgModel` Adds two-way data binding to an HTML form element.\n\n",
-          "id": "1f5f2846-86fc-4e31-b13e-892208d1b8b4",
+          "id": "5ca7d086-06af-4b9f-82a5-b0cbe3abcfcb",
           "children": [],
           "links": [
             {
@@ -464,7 +467,7 @@
           "title": "Pipes",
           "xid": "j99WQxuTzGeBBVoReDp_y",
           "description": "Use pipes to transform strings, currency amounts, dates, and other data for display. Pipes are simple functions to use in template expressions to accept an input value and return a transformed value. Pipes are useful because you can use them throughout your application , some common pipes are\n\n`DatePipe` | `UpperCasePipe` | `LowerCasePipe` | `CurrencyPipe` | `DecimalPipe` | `PercentPipe`\n\n",
-          "id": "a7a5bca1-1322-4276-b4a7-6843aefe7ca1",
+          "id": "c9441a94-59f7-4d78-b3e5-530749cc6295",
           "children": [],
           "links": [
             {
@@ -483,7 +486,7 @@
           "title": "Change Detection",
           "xid": "_-mTs_FMeob-ZGK-bb3j-",
           "description": "Change detection is the process through which Angular checks to see whether your application state has changed, and if any DOM needs to be updated. At a high level, Angular walks your components from top to bottom, looking for changes. Angular runs its change detection mechanism periodically so that changes to the data model are reflected in an application\u2019s view. Change detection can be triggered either manually or through an asynchronous event\n\n",
-          "id": "7bc10cdd-c23e-4526-9f73-0d1cfd80bbf1",
+          "id": "b4a83486-a219-4b88-8809-48acf26bc050",
           "children": [],
           "links": [
             {
@@ -510,13 +513,13 @@
       "title": "routing",
       "xid": "",
       "description": "routing",
-      "id": "36dc8349-69e6-4938-afd7-5cef6ff32b12",
+      "id": "61b37edf-bada-4356-a4f9-dbfe6316bad0",
       "children": [
         {
           "title": "Configuration",
           "xid": "dbAS-hN1hoCsNJhkxXcGq",
           "description": "The configuration of routes in an Angular application involves defining route mappings in an array and providing these routes to the Angular router.\n\n### Example routes:\n\n    const appRoutes: Routes = [\n      { path: 'custom-path', component: CustomComponet },\n      { path: 'custom-path/:id', component: CustomDetailComponet, data: { title: 'Details component' } },\n      { path: '', redirectTo: '/heroes', pathMatch: 'full'},\n      { path: '**', component: PageNotFoundComponent }\n    ];\n    \n\n*   `'custom-path'`: defining a new url route.\n*   `'custom-path/:id'` defining _**id**_ parameter.\n*   `''` (empty path): instantiate a component without the need for defining a new url route.\n*   `'**'`: for undefined paths.\n*   The `data` property in the second route is a place to store arbitrary data associated with this specific route.\n\n",
-          "id": "9c6c3f24-1513-4adc-9a88-80f14c8d0370",
+          "id": "745e0e98-881b-4ac7-ad6b-ee3e4ed632fb",
           "children": [],
           "links": [
             {
@@ -530,7 +533,7 @@
           "title": "Lazy Loading",
           "xid": "ewbDdPYv2SJl_jW3RVHQs",
           "description": "Lazy loading is a technique in Angular that allows you to load JavaScript components asynchronously when a specific route is activated. It improves the application load time speed by splitting the application into several bundles. The bundles are loaded as required when the user navigates through the app.\n\n",
-          "id": "eba390e5-ff18-4fad-911e-c055dd0c179f",
+          "id": "1fe52d65-c597-4698-93c6-9fe03568b2e7",
           "children": [],
           "links": [
             {
@@ -549,7 +552,7 @@
           "title": "Router Outlets",
           "xid": "1ZwdEL0Gx30Vv_Av3ZTGG",
           "description": "The router-outlet is a directive that's available from the @angular/router package and is used by the router to mark where in a template, a matched component should be inserted.\n\nThanks to the router outlet, your app will have multiple views/pages and the app template acts like a shell of your application. Any element, you add to the shell will be rendered in each view, only the part marked by the router outlet will be changed between views.\n\n",
-          "id": "8e1ad60c-7a7f-4035-bd62-247b3333e83e",
+          "id": "4725f9ad-7a1d-47e6-9e57-f5ca4dc4ccd9",
           "children": [],
           "links": [
             {
@@ -568,7 +571,7 @@
           "title": "Router Links",
           "xid": "8lFyuSx4MUcYRY2L8bZrq",
           "description": "In Angular, routerLink when applied to an element in a template, makes that element a link that initiates navigation to a route. Navigation opens one or more routed components in one or more `<router-outlet>` locations on the page.\n\n",
-          "id": "fa1ea071-3b95-4147-b53d-5c53bd95fe61",
+          "id": "76e90975-a148-4d37-8cb8-66626967efe8",
           "children": [],
           "links": [
             {
@@ -592,7 +595,7 @@
           "title": "Router Events",
           "xid": "YF_sG292HqawIX0siWhrv",
           "description": "The Angular Router raises events when it navigates from one route to another route. It raises several events such as `NavigationStart`, `NavigationEnd`, `NavigationCancel`, `NavigationError`, `ResolveStart`, etc. You can listen to these events and find out when the state of the route changes. Some of the useful events are route change start (NavigationStart) and route change end (NavigationEnd).\n\n",
-          "id": "015571cf-c585-44a6-b766-5e6958ce9d67",
+          "id": "f5f2d05d-6c4e-40dc-8f6a-2f296ee17cfb",
           "children": [],
           "links": [
             {
@@ -616,7 +619,7 @@
           "title": "Guards",
           "xid": "PmC4zeaLpa5LoL4FhYXcG",
           "description": "Use route guards to prevent users from navigating to parts of an application without authorization.\n\nAngular route guards are interfaces provided by Angular that, when implemented, allow us to control the accessibility of a route based on conditions provided in function implementation of that interface.\n\nSome types of angular guards are `CanActivate`, `CanActivateChild`, `CanDeactivate`, `CanMatch` and `Resolve`.\n\n",
-          "id": "eb0ad013-2c64-4a3b-b52b-2b9068d590cb",
+          "id": "9b0ba927-0fe4-4251-a16b-612a9e38d349",
           "children": [],
           "links": [
             {
@@ -638,13 +641,13 @@
       "title": "State Management",
       "xid": "Mqe_s-nwBqAL6X7OGRHEN",
       "description": "Application state management is the process of maintaining knowledge of an application's inputs across multiple related data flows that form a complete business transaction -- or a session -- to understand the condition of the app at any given moment. In computer science, an input is information put into the program by the user and state refers to the condition of an application according to its stored inputs -- saved as variables or constants. State can also be described as the collection of preserved information that forms a complete session.\n\n",
-      "id": "594de771-34e0-4eb6-85a6-51f1259f5b51",
+      "id": "141bf6ff-4948-475a-bc03-e592fb7d6652",
       "children": [
         {
           "title": "NGXS",
           "xid": "N9ZCPgFnFIUv4jMv1w5qK",
           "description": "Ngxs is a state management pattern for the Angular framework. It acts as a single source of truth for our application. Ngxs is very simple and easily implementable. It reduce lots of boilerplate code . It is a replacement for Ngrx. In Ngrx we are creating state, action, reducer, and effects but in Ngxs, we are creating only state and actions instead of all of this. Like Ngrx, Ngxs is also asynchronous and when we dispatch any action we can get a response back.\n\n",
-          "id": "23b2dcd0-d9a6-4155-af98-20cfc27bfefb",
+          "id": "c2cf4c77-e15a-435e-b7ce-04e4756bb08a",
           "children": [],
           "links": [
             {
@@ -668,7 +671,7 @@
           "title": "NgRx",
           "xid": "ir94IdkF1tVAA8ZTD9r0N",
           "description": "NgRx is a framework for building reactive applications in Angular. NgRx simplifies managing application state by enforcing unidirectional data flow and providing tools like NgRx Store, NgRx Effects, NgRx Router Store, NgRx Signals, NgRx Entity, and NgRx Operators.\n\n",
-          "id": "de87ed4a-8d51-4195-87e8-9d325ecc9943",
+          "id": "8eac89ea-a4f3-46dc-a7fb-e8129814a56e",
           "children": [],
           "links": [
             {
@@ -731,7 +734,7 @@
       "title": "Zones",
       "xid": "m4WBnx_9h01Jl6Q1sxi4Y",
       "description": "Zone.js is a signaling mechanism that Angular uses to detect when an application state might have changed. It captures asynchronous operations like setTimeout, network requests, and event listeners. Angular schedules change detection based on signals from Zone.js.\n\n",
-      "id": "d3278dfe-12aa-4401-9882-2d913dd6fb65",
+      "id": "f3dfb359-6b37-41a8-b9dc-e9e721d88cf7",
       "children": [],
       "links": [
         {
@@ -760,13 +763,13 @@
       "title": "creating-a-custom-x",
       "xid": "",
       "description": "creating-a-custom-x",
-      "id": "883e989e-f427-446f-afd0-f9cef2f58c11",
+      "id": "aa20ccb6-4eab-4438-8146-443272d78314",
       "children": [
         {
           "title": "Custom Directives",
           "xid": "7GUvTMVzfdVEDBOz-tHUT",
           "description": "Directives are the functions that will execute whenever the Angular compiler finds them. Angular Directives enhance the capability of HTML elements by attaching custom behaviors to the DOM.\n\nFrom the core concept, Angular directives are categorized into three categories: Attribute Directives, Structural Directives, and Component Directives.\n\n",
-          "id": "8d02e6d0-815a-4879-96b6-acf5b787c52f",
+          "id": "a53ed2b7-135f-4072-aedd-24e81ae995cc",
           "children": [],
           "links": [
             {
@@ -780,7 +783,7 @@
           "title": "Custom Pipes",
           "xid": "BOYXGfULJRiP-XOo_lNX3",
           "description": "Pipes to transform strings, currency amounts, dates, and other data for display. Pipes are simple functions in template expressions to accept an input value and return a transformed value. Pipes are helpful because you can use them throughout your application while only declaring each pipe once. For example, you would use a pipe to show the date as April 15, 1988, rather than the raw string format.\n\n",
-          "id": "80b45741-e3f1-4efa-b5ad-a97d5c58c5fe",
+          "id": "82fa18df-1f98-45a0-a530-6c294f312a13",
           "children": [],
           "links": [
             {
@@ -799,7 +802,7 @@
           "title": "Libraries",
           "xid": "cl89U8atD6gw5rMGUm4Ix",
           "description": "Use the Angular CLI and the npm package manager to build and publish your library as an npm package.\n\n",
-          "id": "8b48fe5c-bea6-42cc-9b36-cc6df1b94f32",
+          "id": "6148acb3-6b71-4b4d-9e10-005c483463e8",
           "children": [],
           "links": [
             {
@@ -816,13 +819,13 @@
       "title": "Testing",
       "xid": "lLa-OnHV6GzkNFZu29BIT",
       "description": "In any software development process, testing the application plays a vital role. If bugs and crashes are not figured out and solved they can defame the development company as well as hurt the clients too. But, Angular\u2019s architecture comes with built-in testability features. As soon as you create a new project with Angular CLI, two essential testing tools are installed. They are: Jasmine and Karma. Jasmine is the testing library which structures individual tests into specifications (\u201cspecs\u201d) and suites. And Karma is the test runner, which enables the different browsers to run the tests mentioned by Jasmine and the browsers will finally report the test results back.\n\nYou can also unit test an Angular application with other testing libraries and test runners. Each library and runner has its own distinctive installation procedures, configuration, and syntax.\n\n",
-      "id": "a4039f09-1b21-4699-9c6f-5f1ea53ecb31",
+      "id": "4f204579-4a49-4885-a42b-5df6efdb6d3a",
       "children": [
         {
           "title": "Testing Pipes",
           "xid": "rH13NBFG02hnn5eABSNCY",
           "description": "An Angular Pipe is a special function that is called from a Component template. Its purpose is to transform a value: You pass a value to the Pipe, the Pipe computes a new value and returns it.\n\n",
-          "id": "15e9c0a7-0471-46a7-8aea-b1989ec8f7ba",
+          "id": "ab0ef024-e723-40a8-a994-e33e24920166",
           "children": [],
           "links": [
             {
@@ -846,7 +849,7 @@
           "title": "Services with Dependencies",
           "xid": "TGRZBizDy83JKg_MhnRdX",
           "description": "When you add a dependency to your service, you must also include it in your tests. For isolated tests, pass an instance of the injectable dependency class into the service\u2019s constructor. Using the `inject` function can add complexity. Injecting the real service is often impractical because dependent services can be difficult to create and control. Instead, mock the dependency, use a dummy value, or create a spy on the relevant service method. By using the TestBed testing utility, you can let Angular\u2019s dependency injection handle service creation and manage constructor argument order.\n\n",
-          "id": "70b39ba0-9b7c-4bec-bb5e-eed653ded18f",
+          "id": "1191270d-617e-41c3-9e0b-aa2b1429f31b",
           "children": [],
           "links": [
             {
@@ -880,7 +883,7 @@
           "title": "Component Bindings",
           "xid": "cXVy1lx2XqY_j8gxz-y60",
           "description": "Angular processes all data bindings once for each JavaScript event cycle, from the root of the application component tree through all child components. Data binding plays an important role in communication between a template and its component, and is also important for communication between parent and child components.\n\n",
-          "id": "8e8072fa-e4cd-4f74-99aa-97430bbcac86",
+          "id": "e0e9ee35-1351-43cc-8245-8796b13b13b8",
           "children": [],
           "links": [
             {
@@ -899,7 +902,7 @@
           "title": "Testing Directives",
           "xid": "SGqb5k6OmWit8PA6ZT3js",
           "description": "Directives are classes that add new behavior or modify the existing behavior to the elements in the template. Basically directives are used to manipulate the DOM, for example adding/removing the element from DOM or changing the appearance of the DOM elements.\n\n",
-          "id": "ced2475c-1308-4e42-8ef8-be6b18847c16",
+          "id": "a75eaf2d-754e-4210-a63f-e3e8e6b5ba42",
           "children": [],
           "links": [
             {
@@ -923,7 +926,7 @@
           "title": "Component Templates",
           "xid": "0dYWO_Zvh9J5_6cRjRjvI",
           "description": "With a component template , you can save and reuse component processes and properties and create components from them; template-based components inherit the template's properties and process.\n\n",
-          "id": "6476b0cd-869f-4d72-aa12-ddd4ba706fd9",
+          "id": "6dcc6fa9-349f-4a8b-a14d-0c9e8da40ace",
           "children": [],
           "links": [
             {
@@ -971,7 +974,7 @@
       "title": "SSG",
       "xid": "b-0yQ74zHtAxI9aRLBohc",
       "description": "SSG (Static Site Generator) helps in building the HTML full website during the process of building and serving that HTML page. This method helps to generate the HTML website on the client side before it's served on the server side. Therefore, whenever a user requests a HTML page, the HTML page will be rendered, and secondly, the Angular app will be rendered. The SSG can be used only if your website is static or its content doesn't change frequently.\n\n",
-      "id": "bdeb18fe-b9c5-4f50-8166-6cc00b59cf32",
+      "id": "6f155471-17d4-438f-9b82-bedb6a117868",
       "children": [],
       "links": [
         {
@@ -995,7 +998,7 @@
       "title": "SSR",
       "xid": "jfHaS8TqE4tcAo59K8Nkn",
       "description": "A normal Angular application executes in the browser, rendering pages in the DOM in response to user actions. Angular Universal executes on the server, generating static application pages that later get bootstrapped on the client. This means that the application generally renders more quickly, giving users a chance to view the application layout before it becomes fully interactive.\n\n",
-      "id": "fadce2bb-5bb1-4799-ad41-d0c263169661",
+      "id": "f9726c32-9c8d-4d36-9fc8-05d0b0601f3e",
       "children": [],
       "links": [
         {
@@ -1019,7 +1022,7 @@
       "title": "Component Lifecycle",
       "xid": "nCpfj_35ZvW-NTygg06XZ",
       "description": "A component instance has a lifecycle that starts when Angular instantiates the component class and renders the component view along with its child views. The lifecycle continues with change detection, as Angular checks to see when data-bound properties change, and updates both the view and the component instance as needed. The lifecycle ends when Angular destroys the component instance and removes its rendered template from the DOM. Directives have a similar lifecycle, as Angular creates, updates, and destroys instances in the course of execution.\n\nYour application can use lifecycle hook methods to tap into key events in the lifecycle of a component or directive to initialize new instances, initiate change detection when needed, respond to updates during change detection, and clean up before deletion of instances.\n\nThe following life cycle hooks of angular are :\n\n`OnChanges` , `OnInit` , `DoCheck` , `OnDestroy` , `AfterContentInit` , `AfterContentChecked` , `AfterViewInit` , `AfterViewChecked`\n\n",
-      "id": "7f81c57b-8584-454a-af31-da63ccf9b949",
+      "id": "810347bb-4bea-47e5-bd19-5f852f2442a4",
       "children": [],
       "links": [
         {
@@ -1043,13 +1046,13 @@
       "title": "Angular CLI",
       "xid": "4YSk6I63Ew--zoXC3xmrC",
       "description": "The Angular CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain Angular applications directly from a command shell. we can install angular latest CLI using the following command\n\n`npm install -g @angular/cli`\n\n",
-      "id": "1937f644-a433-4fac-ad3a-ae8257ee59a3",
+      "id": "e53d6803-35ba-4f38-ab33-a2a01126e283",
       "children": [
         {
           "title": "Schematics",
           "xid": "Uvr0pRk_fOzwRwqn0dQ6N",
           "description": "A schematic is a template-based code generator that supports complex logic. It is a set of instructions for transforming a software project by generating or modifying code.\n\n",
-          "id": "5087e111-4457-4526-9782-35e9840d9408",
+          "id": "74fbd732-c417-409d-abbe-ecb747ad478d",
           "children": [],
           "links": [
             {
@@ -1092,13 +1095,13 @@
       "title": "templates",
       "xid": "",
       "description": "templates",
-      "id": "2b941203-627d-441b-a39a-40881ff25991",
+      "id": "400ecf92-4814-454c-96dc-aae55cbd5bf6",
       "children": [
         {
           "title": "Template Statements",
           "xid": "t2YOeMONlcnKBrVAo0JDc",
           "description": "Template statements are methods or properties that you can use in your HTML to respond to user events. With template statements, your application can engage users through actions such as displaying dynamic content or submitting forms. Enclose the event in `()` which causes Angular to evaluate the right hand side of the assignment as one or more template statements chained together using semicolon `;`.\n\n",
-          "id": "44309f96-20e4-42a0-b2a7-b2df5113f950",
+          "id": "3044c9d8-0d5a-4872-bf1e-72181aa1362a",
           "children": [],
           "links": [
             {
@@ -1117,7 +1120,7 @@
           "title": "Understand Binding",
           "xid": "WH5wlyOtrqFHBJx7RFJwS",
           "description": "In an Angular template, a binding creates a live connection between view and the model and keeps them both in sync.\n\n*   **property**: helps you set values for properties of HTML elements or directives.\n*   **attributes**: helps you set values for attributes of HTML elements directly.\n*   **event**: lets you listen for and respond to user actions such as keystrokes, mouse movements, clicks, and touches.\n*   **data**: It's a combination of property and event binding and helps you share data between components.\n\n",
-          "id": "5db1648b-865a-4179-abbd-f44c75c25ddc",
+          "id": "a9d2f8a8-4d66-4b91-8e62-a9d1971a4ea0",
           "children": [],
           "links": [
             {
@@ -1131,7 +1134,7 @@
           "title": "Interpolation",
           "xid": "XHpfHRIlFh19FJIE07u7i",
           "description": "Interpolation refers to embedding expressions into marked up text. By default, interpolation uses the double curly braces {{ and }} as delimiters. Angular replaces currentCustomer with the string value of the corresponding component property.\n\n",
-          "id": "f553dc56-e1bd-40ed-ba12-216005f53df0",
+          "id": "591d5c05-c9e4-4f22-8b3e-d9996954a479",
           "children": [],
           "links": [
             {
@@ -1150,7 +1153,7 @@
           "title": "Property Binding",
           "xid": "TJOZfHtsLfwA0CZ2bd1b2",
           "description": "Property binding helps you set values for properties of HTML elements or directives. To bind to an element's property, enclose it in square brackets `[]` which causes Angular to evaluate the right-hand side of the assignment as a dynamic expression.\n\n",
-          "id": "24f1c4ea-6a31-46b2-b82e-9601c8d50429",
+          "id": "0d2400d3-eb99-4659-a34e-62511a8b6023",
           "children": [],
           "links": [
             {
@@ -1164,7 +1167,7 @@
           "title": "Template Ref Vars",
           "xid": "nyDry6ZWyEUuTq4pw-lU3",
           "description": "Template reference variables help you use data from one part of a template in another part of the template. A template variable can refer to a DOM element within a template, component or directive. In the template, use the hash symbol, `#`, to declare a template reference variable.\n\n",
-          "id": "4bd84174-8ec2-4c51-80c1-3daff896b264",
+          "id": "730858bd-20c6-4ec3-b8d6-2e23d67e6244",
           "children": [],
           "links": [
             {
@@ -1178,7 +1181,7 @@
           "title": "@Input & @Output",
           "xid": "VsU6713jeIjAOEZnF6gWx",
           "description": "`@Input()` and `@Output()` give a child component a way to communicate with its parent component. `@Input()` lets a parent component update data in the child component. Conversely, `@Output()` lets the child send data to a parent component.\n\n",
-          "id": "14ae0618-0b5d-4c1d-a326-d971f6fc370e",
+          "id": "5be6a25e-6f23-407e-b44c-9c2dfdb9ec55",
           "children": [],
           "links": [
             {

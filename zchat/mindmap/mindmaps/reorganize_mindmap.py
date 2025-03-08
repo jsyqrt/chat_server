@@ -167,7 +167,8 @@ class MindmapFromFiles:
             result = {
                 "title": header_data.get("title", ""),
                 "question_title": header_data.get("question", {}).get("title", ""),
-                "question_description": header_data.get("question", {}).get("description", "")
+                "question_description": header_data.get("question", {}).get("description", ""),
+                "description": header_data.get("description", "")
             }
 
             return result
@@ -178,9 +179,12 @@ class MindmapFromFiles:
     def get_mindmap(self):
         # 初始化结果字典
         result = {
+          "id": str(uuid.uuid4()),
           "title": self.header_info.get("title", ""),
-          "description": f"{self.header_info.get('question_title', '')}\n{self.header_info.get('question_description', '')}",
-          "children": []
+          "description": self.header_info.get('description', ''),
+          "question_title": self.header_info.get('question_title', ''),
+          "question_description": self.header_info.get('question_description', ''),
+          "children": [],
         }
 
         # 创建一个字典来存储所有节点的引用
@@ -198,6 +202,8 @@ class MindmapFromFiles:
                 title = detail.get('title', root)
                 description = detail.get('description', root)
                 description = description.replace("Visit the following resources to learn more:", "")
+                description = description.replace("Learn more from the following links:", "")
+                description = description.replace("Learn more from the following resources:", "")
                 links = detail.get('links', [])
                 id = str(uuid.uuid4())
                 node = {"title": title, "xid": xid, "description": description, "id": id, "children": [], "links": links}
@@ -227,6 +233,8 @@ class MindmapFromFiles:
                     title = detail.get('title', parts[i])
                     description = detail.get('description', parts[i])
                     description = description.replace("Visit the following resources to learn more:", "")
+                    description = description.replace("Learn more from the following links:", "")
+                    description = description.replace("Learn more from the following resources:", "")
                     links = detail.get('links', [])
                     id = str(uuid.uuid4())
                     node = {"title": title, "xid": xid, "description": description, "id": id, "children": [], "links": links}
@@ -246,6 +254,8 @@ class MindmapFromFiles:
                 title = detail.get('title', last_part)
                 description = detail.get('description', last_part)
                 description = description.replace("Visit the following resources to learn more:", "")
+                description = description.replace("Learn more from the following links:", "")
+                description = description.replace("Learn more from the following resources:", "")
                 links = detail.get('links', [])
                 id = str(uuid.uuid4())
                 node = {"title": title, "xid": xid, "description": description, "id": id, "children": [], "links": links}

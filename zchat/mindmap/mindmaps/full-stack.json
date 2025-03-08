@@ -1,12 +1,15 @@
 {
+  "id": "c8ac2843-42ac-4fe3-9b44-1fd926c81504",
   "title": "Full Stack Developer",
-  "description": "What is Full Stack Development?\nFull stack development is the practice of being proficient in both the front-end and back-end aspects of web application development. A full stack developer is capable of working on all layers of a software application, from the user interface and user experience (front-end) to the server, database, and server-side logic (back-end). This versatility allows them to create and maintain complete web applications independently or as part of a development team.\n",
+  "description": "Step by step guide to becoming a modern full stack developer in 2025",
+  "question_title": "What is Full Stack Development?",
+  "question_description": "Full stack development is the practice of being proficient in both the front-end and back-end aspects of web application development. A full stack developer is capable of working on all layers of a software application, from the user interface and user experience (front-end) to the server, database, and server-side logic (back-end). This versatility allows them to create and maintain complete web applications independently or as part of a development team.\n",
   "children": [
     {
       "title": "HTML",
       "xid": "B0kARTODvCBi0iOF8iiqI",
       "description": "HTML stands for HyperText Markup Language. It is used on the frontend and gives the structure to the webpage which you can style using CSS and make interactive using JavaScript.\n\n",
-      "id": "f99deba0-717b-42dd-81f7-f0f4a6093858",
+      "id": "bcb6beac-bd98-4c7f-8154-db0ad4fc9dac",
       "children": [],
       "links": [
         {
@@ -35,7 +38,7 @@
       "title": "CSS",
       "xid": "dAJHWmGeiYdzZ1ZjrWz1S",
       "description": "CSS or Cascading Style Sheets is the language used to style the frontend of any website. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.\n\n",
-      "id": "bae721c7-0fa3-4522-8174-c612c265075c",
+      "id": "123455e5-1e55-4ba0-a35e-fd0ddf3f6bad",
       "children": [],
       "links": [
         {
@@ -69,7 +72,7 @@
       "title": "Checkpoint - Static Webpages",
       "xid": "WsdUAEaI7FX6DKKhPXUHp",
       "description": "Now that you have learnt HTML and CSS, you should be able to build static webpages. I recommend you to build as many test projects at each yellow step of the roadmap as possible to solidify what you learn.\n\nThe practice that I used to follow when I was learning was this:\n\n*   While you are watching a course or reading a book, make sure to code along with the instructor/author \u2014 pause the video at regular intervals and code what you are being taught.\n*   Search on YouTube and watch a few project based tutorials on the topic that you are learning. Apart from coding along with the instructor:\n    *   Try to build the same project at least 2 to 3 times on your own without looking at the video. If you get stuck, refer to the section of the video where the instructor builds that part of the project.\n    *   Build something else that is similar to the project that you just built. For example, if you just built a todo app, try to build a notes app or a reminder app.\n\nProject Ideas\n-------------\n\nNow that you have learnt HTML and CSS, here are a few ideas for you to build:\n\n*   Try to copy the design of a website that you like.\n    *   Here is a [simple blog design in figma](https://www.figma.com/file/nh0V05z3NB87ue9v5PcO3R/writings.dev?type=design&node-id=0%3A1&t=2iQplaIojU3ydAfW-1) that you can try to copy.\n    *   Or try to rebuild the [webpages of this website](https://cs.fyi/).\n*   Take some inspiration from [personal portfolios of others](https://astro.build/showcase/) and build your own personal portfolio",
-      "id": "c8e2f846-f67d-4f4a-baa1-993a5c226233",
+      "id": "84ec4473-6ef7-45bf-b59b-52259753f5b4",
       "children": [],
       "links": []
     },
@@ -77,7 +80,7 @@
       "title": "JavaScript",
       "xid": "T9PB6WQf-Fa9NXKKvVOy_",
       "description": "JavaScript allows you to add interactivity to your pages. Common examples that you may have seen on the websites are sliders, click interactions, popups and so on.\n\n",
-      "id": "942905a1-9f93-4f50-b661-af81e22124d4",
+      "id": "d5369008-45e9-4c6a-9b02-712041700701",
       "children": [],
       "links": [
         {
@@ -111,7 +114,7 @@
       "title": "Checkpoint - Interactivity",
       "xid": "2DFzoIUjKdAKGjfu_SCfa",
       "description": "At this point you should be able to add interactivity to your web pages using JavaScript. You should make sure that you have learnt the following:\n\n*   Know about variables, loops, data types, conditionals, functions.\n*   Know about arrays and objects and different ways to access their data.\n*   Know how to select DOM elements.\n*   Add event listeners to DOM elements (e.g. click, focus, form submission).\n*   Use JavaScript to add and remove DOM elements\n*   Add and remove classes from DOM elements\n*   Use JavaScript to make HTTP requests to external APIs (i.e. `fetch`)\n*   Use JavaScript to store data in the browser's local storage\n\nHere are few ideas to practice your skills:\n\n*   Create a simple to-do list app that allows users to search, add, edit, and delete items. Use local storage to store the data.\n*   Create a simple webpage where user can put in anyone's GitHub username and see their profile information. You can use GitHub's API to fetch the data. For example, here is the [sample URL to fetch my data](https://api.github.com/users/kamranahmedse). Make sure to add validation and error handling.\n*   Create a basic calculator app that allows users to perform basic arithmetic operations.",
-      "id": "c27288df-d8ee-4bc0-945d-9763a7784259",
+      "id": "2e7fd88e-7655-4ed2-84ab-c11ba721bd96",
       "children": [],
       "links": []
     },
@@ -119,7 +122,7 @@
       "title": "npm",
       "xid": "mGgx_QTEPmVKf6AijX9fi",
       "description": "npm is a package manager for the JavaScript programming language maintained by npm, Inc. npm is the default package manager for the JavaScript runtime environment Node.js.\n\n",
-      "id": "adda2ba0-eaf0-4e91-9c6b-7143675b7139",
+      "id": "589e0eae-1cbd-44d0-ab2a-9a686f587854",
       "children": [],
       "links": [
         {
@@ -158,7 +161,7 @@
       "title": "Checkpoint - External Packages",
       "xid": "R4aeJNOrfWyVp3ea-qF4H",
       "description": "At this point, you should be able to install and use external packages using `npm`. You probably know about [npmjs.com](https://npmjs.com/) where you can search for packages and read their documentation. You should also be familiar with the `package.json` file and how to use it to manage your project dependencies.\n\nYou don't need to get into the module bundlers and build tools just yet. Just make sure that you are able to use the dependencies installed in the `node_modules` folder using simple link and script tags in your HTML.\n\nRegarding projects, here are a few ideas that you can try:\n\n*   Create a simple webpage that shows the current time of user. You can use [dayjs](https://day.js.org/) to get the current time and display it on the page. Here is the [sample design for homepage](https://i.imgur.com/yGIMGkr.png).\n*   Install the [micromodal](https://micromodal.vercel.app/#introduction) library. Create a button on the page clicking which should open a modal and let the user select a timezone from a dropdown. Once the user selects a timezone, the modal should close and the time on the page should be updated to show the time in the selected timezone. Here is the [sample design for the modal](https://imgur.com/a/vFY6Sdl).",
-      "id": "05bdf86a-ea08-4fd1-a145-06789dd6e062",
+      "id": "ba6d5056-f743-4f9c-b660-3e40566f0b9c",
       "children": [],
       "links": []
     },
@@ -166,7 +169,7 @@
       "title": "Git",
       "xid": "We2APJpOPTr-VNfowG0kI",
       "description": "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.\n\n",
-      "id": "cc6a3428-1fae-40db-9bd0-3f51f31c93fc",
+      "id": "3c1b3047-9cc0-48e8-812b-a3da29453aa1",
       "children": [],
       "links": [
         {
@@ -210,7 +213,7 @@
       "title": "GitHub",
       "xid": "8sPXL8iClpPqje03ksses",
       "description": "GitHub is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.\n\n",
-      "id": "7e91000d-da99-43db-a775-a76b0a22bac2",
+      "id": "6fe756be-88db-4c88-8e5e-571c86032dc1",
       "children": [],
       "links": [
         {
@@ -259,7 +262,7 @@
       "title": "Checkpoint - Collaborative Work",
       "xid": "zFGWxgLPcZoW7KIzlnSV9",
       "description": "Now that you have learnt git and GitHub you should be ready to work with others. You should now setup your GitHub profile and push all the projects that you have built so far to your GitHub profile. Here are some of my recommendations for your GitHub profile:\n\n*   Keep the repository names lowercase and use hyphens to separate words e.g. `todo-app` instead of `TodoApp` or `Todo-App`.\n*   Add a `README.md` file to each repository that you create. This file should contain a description of the project. Put some effort into the readme and make sure it clearly details what the project is about and how anyone can run it locally.\n*   Add snapshots of your project to the readme file so that anyone can see what the project looks like without having to run it locally.\n*   Add a `LICENSE` file to each repository that you create. This file should contain the license that you want to use for the project. You can use [choosealicense.com](https://choosealicense.com/) to help you choose a license.\n\nYou can have a look at [my GitHub profile](https://github.com/kamranahmedse) and see how I have structured my repositories and how [some of my readme files look like](https://github.com/kamranahmedse/aws-cost-cli).",
-      "id": "1526c3bd-5432-4254-9cca-dd64febfa900",
+      "id": "b1810522-c370-415f-b156-54779012f0de",
       "children": [],
       "links": []
     },
@@ -267,7 +270,7 @@
       "title": "Tailwind CSS",
       "xid": "CVCqdPkq_hGQfI8EEi5RC",
       "description": "CSS Framework that provides atomic CSS classes to help you style components e.g. `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup.\n\n",
-      "id": "c6cdd81a-4e0d-41f1-819f-43f47a0ccb4f",
+      "id": "da9814a7-355a-4a80-a77f-cbaeb3b0c4cb",
       "children": [],
       "links": [
         {
@@ -301,7 +304,7 @@
       "title": "React",
       "xid": "khoUtTUxdf8udAzN9_CAb",
       "description": "React is the most popular front-end JavaScript library for building user interfaces. React can also render on the server using Node and power mobile apps using React Native.\n\n",
-      "id": "16217bff-4daa-4f8a-a5d6-81396c96dd6e",
+      "id": "501a2e1d-e768-4176-9b44-cf3fd70dfa72",
       "children": [],
       "links": [
         {
@@ -345,7 +348,7 @@
       "title": "Checkpoint - Frontend Apps",
       "xid": "7JU1cVggMDoZUV-adGsf-",
       "description": "At this point you should be able to build a complete frontend application including:\n\n*   Structuring your webpages with HTML\n*   Styling your webpages with CSS\n*   Adding interactivity to your webpages with JavaScript\n*   Using the DOM API to manipulate your webpages\n*   Using the Fetch API to make HTTP requests\n*   Understand promises and use `async`/`await` syntax to write asynchronous code\n*   Installing and using external libraries with npm\n*   Version controlling your code with Git\n*   Pushing your code to GitHub\n\nIf you decided to skip React and Tailwind for now, that is fine also but you should be able to build a complete frontend application using vanilla HTML, CSS, and JavaScript. However, keep in mind that the modern frontend applications are mostly built with frameworks like React, Vue, and Angular. So, you should learn at least one of them at any point of time.\n\nThis marks the end of frontend basics that you needed, we will now be moving to the backend development. While you continue with the backend development, know that there is more to frontend development and remember to checkout the [frontend roadmap](/frontend) later in your journey.",
-      "id": "31731e2f-ca61-477e-965b-7d91ab58d435",
+      "id": "ebc983a2-c84d-4d37-9e4a-9af841bf0b71",
       "children": [],
       "links": []
     },
@@ -353,7 +356,7 @@
       "title": "Node.js",
       "xid": "_aA6Hp4KkgJeptqo8oKTg",
       "description": "Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project! Node.js runs the V8 JavaScript engine, Google Chrome's core, outside the browser. This allows Node.js to be very performant. A Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.\n\n",
-      "id": "3c370f85-e3ab-447e-8015-dd0d04d27d38",
+      "id": "3d0587ae-27f8-47e1-b4b0-35da80b83b36",
       "children": [],
       "links": [
         {
@@ -392,7 +395,7 @@
       "title": "Checkpoint \u2014 CLI Apps",
       "xid": "JGu0TKwAw-ieiG92BytYI",
       "description": "At this point you should be able to build CLI applications using Node.js or whatever backend programming language you picked.\n\nYou should be able to build a CLI application that can:\n\n*   Read and write files\n*   Parse command line arguments\n*   Make HTTP requests\n*   Parse JSON\n*   Use a third-party library (e.g. a library for parsing CSV files)\n*   Use a third-party API\n\nHere are some ideas for CLI applications you can build:\n\n*   Create a CLI application that takes a URL and a CSS selector arguments and prints the text content of the element that matches the selector. **Hint** you can use [cheerio](https://github.com/cheeriojs/cheerio)\n*   An application that optionally takes two dates and prints the most starred GitHub projects in that date range. **Hint** you can use [GitHub's search API](https://developer.github.com/v3/search/#search-repositories)\n*   Bulk rename files in a directory. **Hint** you can use [fs](https://nodejs.org/api/fs.html) and [path](https://nodejs.org/api/path.html)\n*   Write a CLI application that takes a path as input and compresses all the images in that directory. It should accept an option for output path; if the output path is not given it should compress images in place otherwise write the compressed images to the output path. **Hint** you can use [sharp](https://github.com/lovell/sharp).",
-      "id": "0bf3e101-f5e8-4f5b-905c-2eaf75dd4217",
+      "id": "cc3df80d-7988-414a-8219-b05615342dc5",
       "children": [],
       "links": []
     },
@@ -400,7 +403,7 @@
       "title": "PostgreSQL",
       "xid": "HGhnbMg6jh6cAmUH4DtOx",
       "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.\n\n",
-      "id": "afb82563-73bc-48c0-bfad-44df99fc4d1e",
+      "id": "7dc3876a-ab3f-488c-b138-9cbe6aa4f782",
       "children": [],
       "links": [
         {
@@ -439,7 +442,7 @@
       "title": "Checkpoint \u2014 Simple CRUD Apps",
       "xid": "3EtGLO6cwkLc1-o9gwFNk",
       "description": "**CRUD** stands for **Create, Read, Update, and Delete**. These are the four basic operations you can perform on any data when working with web applications, databases, and APIs.\n\nNow that you know about programming language and the databases, you should be able to build a simple CLI application that interacts with database. We haven't talked about the APIs yet but you don't need an API to practice CRUD operations. Here are some of the CLI applications you can build to practice CRUD operations:\n\n*   A simple todo list application for the CLI with the following options:\n    *   `--new` to add a new todo item\n    *   `--list [all|pending|done]` to list the todo items\n    *   `--done [id]` to update a todo item\n    *   `--delete [id]` to delete a todo item\n    *   `--help` to list all the available options\n    *   `--version` to print the version of the application",
-      "id": "1546dabb-bc0d-4799-b427-82ed3347838d",
+      "id": "86999ab3-cce5-47d4-aeca-c2f13b11884c",
       "children": [],
       "links": []
     },
@@ -447,7 +450,7 @@
       "title": "RESTful APIs",
       "xid": "vmHbWdmMHF53otXIrqzRV",
       "description": "REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other.\n\n",
-      "id": "864b7df4-788c-4257-a10a-f7c53adf7aa9",
+      "id": "cd260091-993d-4a04-b544-477f1ee49769",
       "children": [],
       "links": [
         {
@@ -476,7 +479,7 @@
       "title": "JWT Auth",
       "xid": "vHojhJYjiN0IwruEqi1Dv",
       "description": "JWT stands for JSON Web Token is a token-based encryption open standard/methodology that is used to transfer information securely as a JSON object. Clients and Servers use JWT to securely share information, with the JWT containing encoded JSON objects and claims. JWTs are designed to be compact, safe to use within URLs, and ideal for SSO contexts.\n\n",
-      "id": "2142be21-1ac2-4c4c-88cc-9fd0b453040d",
+      "id": "ddd301c7-8509-4005-9220-4da409a6bcdb",
       "children": [],
       "links": [
         {
@@ -520,7 +523,7 @@
       "title": "Redis",
       "xid": "Onfd7Sl8LG2sjh2aQY7gb",
       "description": "Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine. Redis provides data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions, and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.\n\n",
-      "id": "8f98b8a5-cd3b-4a0b-8d3b-2b77085d9580",
+      "id": "fd0fcd83-39a2-4c1f-9e2a-fe9c60ff06bd",
       "children": [],
       "links": [
         {
@@ -564,7 +567,7 @@
       "title": "Checkpoint \u2014 Complete App",
       "xid": "v4NF25lJElAtkU0Rm6Fob",
       "description": "At this point, you should have everything that you need to build a complete application that:\n\n*   Has a responsive frontend that users can interact with\n*   Has a backend API that is secured with JWT authentication\n*   Has a database that stores data\n\nAt this point you should practice building as much as you can on your own to solidify your knowledge. If you need inspiration, here are some ideas:\n\n*   Build a simple blogging application where users can register, login, setup their blog and write posts.\n*   A single page site builder where users can pick a template, modify it and publish it. **Hint** you will need filesystem to store the design templates. Template files will have placeholders that you will need to replace with user data.\n*   Build a simple e-commerce application which will have two types of users i.e. **Sellers** who can: Register as Seller, Login, Setup their store, Add products, Edit products, Delete products, View Received Orders, Update Order Status (Pending, Shipped, Delivered), **Buyers** who can register, Login, Browse products by all sellers, Add products to cart, Checkout, View order history, View order status, Cancel order, View seller profile, View seller products\n\nThese are just some ideas to get you started. You can build anything you want. The goal is to practice building a complete application from scratch.",
-      "id": "e7d31e1d-b535-4e99-9322-4cca8d236ae9",
+      "id": "24ec49d1-7131-4714-bbb2-2093cd51572e",
       "children": [],
       "links": []
     },
@@ -572,13 +575,13 @@
       "title": "Basic AWS Services",
       "xid": "cUOfvOlQ_0Uu1VX3i67kJ",
       "description": "AWS has several services but you don't need to know all of them. Some common ones that you can start with are EC2, VPN, S3, Route 53, and SES.\n\nHere are some of the resources to get you started:",
-      "id": "7bf26663-ad06-44e1-9d53-caab44c46bd1",
+      "id": "31f4e810-203e-4f36-8b8d-a3010dd6fc4e",
       "children": [
         {
           "title": "Route53",
           "xid": "5zyYpu9cyuTFwQCjTbHpS",
           "description": "Route53 is AWS's Domain Name System (DNS) service that plays a critical role in connecting user requests to your web application or other resources within your infrastructure. With Route53, you can easily manage domains, redirect traffic, and configure domain-related settings. It has several advantages, including high availability, low latency, and integration with other AWS resources.\n\n",
-          "id": "e633a6ac-197e-4cc1-b5fa-3c10a9a6d006",
+          "id": "1fee42d8-9ffe-4c41-9c75-6197555820c3",
           "children": [],
           "links": [
             {
@@ -607,7 +610,7 @@
           "title": "SES",
           "xid": "B-cphY7Imnv6JBMujVIF7",
           "description": "Amazon SES (Simple Email Service) is a scalable, flexible, and cost-effective cloud-based email service that is specifically designed for developers, marketers, and businesses to send and receive marketing, transactional, and notification emails. SES is useful, especially when you need to send a large volume of emails, as it offers high deliverability, reliability, and ease of use.\n\n",
-          "id": "68b8fd5e-e24a-454f-8332-6b01baea4626",
+          "id": "e2a39f47-6ccb-49e3-9c93-6a56919dbee5",
           "children": [],
           "links": [
             {
@@ -626,7 +629,7 @@
           "title": "EC2",
           "xid": "6oBIxYj8WPcUHidQ99tus",
           "description": "Amazon Elastic Compute Cloud (EC2) is a web service that provides resizable compute capacity in the form of virtual servers, known as instances. With EC2, you can quickly scale your infrastructure up or down as your computing requirements change. This service effectively reduces the time required to obtain and boot new server instances, allowing you to easily adjust capacity according to the needs of your application.\n\n",
-          "id": "28ab5d15-73de-4524-94f0-035d77c0bfd2",
+          "id": "69d0586e-e216-4dd3-9442-5d0360165137",
           "children": [],
           "links": [
             {
@@ -660,7 +663,7 @@
           "title": "VPC",
           "xid": "QtL-bLKtWIdH00K6k_PdC",
           "description": "VPC stands for **Virtual Private Cloud** and is an essential service provided by AWS that allows you to create a private, isolated section within the AWS cloud, where you can define your own virtual network. It offers a more secure and controlled environment, enabling you to easily launch and manage your resources within your personal network.\n\n",
-          "id": "8a228230-c80a-4ecc-bfc7-46c2434a664a",
+          "id": "94ff64a9-5d3e-4acf-a4a9-f191014bd5b9",
           "children": [],
           "links": [
             {
@@ -689,7 +692,7 @@
           "title": "S3",
           "xid": "n2Xp_ijJ2OS8xhE7xMWxk",
           "description": "S3 is a service that allows you to store files in the cloud. It's a simple service that you can use to store files and serve them to your users.\n\n",
-          "id": "5da788b3-5590-4da9-880c-ae035e569dac",
+          "id": "92c79507-c1c5-4ad7-a48f-a48ca4c9b3ad",
           "children": [],
           "links": [
             {
@@ -767,7 +770,7 @@
       "title": "Linux Basics",
       "xid": "SHTSvMDqI7X1_ZT7-m--n",
       "description": "Knowledge of UNIX is a must for almost all kind of development as most of the codes that you write is most likely going to be finally deployed on a UNIX/Linux machine. Linux has been the backbone of the free and open source software movement, providing a simple and elegant operating system for almost all your needs.\n\n",
-      "id": "799b4eb6-1825-4726-a533-9da5aa9510b6",
+      "id": "7cd28e0d-08a9-4834-8779-76920d03f7ed",
       "children": [],
       "links": [
         {
@@ -806,7 +809,7 @@
       "title": "Checkpoint \u2014 Deployment",
       "xid": "J2_IWAb1s9zZcxOY3NXm2",
       "description": "Now that you know the basics of AWS, you should be able to deploy your application to AWS. You don't need to use all the AWS services, here is what you can probably get started with:\n\n*   Setup an EC2 instance using any AMI (e.g. latest version of Ubuntu)\n*   SSH into the EC2 instance using the key pair you created\n*   Install Node.js on the EC2 instance\n*   Install Git on the EC2 instance\n*   Clone your application from GitHub\n*   Install and configure database on the EC2 instance (e.g. PostgreSQL)\n*   Make sure that the security group of the EC2 instance allows HTTP and HTTPS traffic\n*   Try to access your application using the public IP address of the EC2 instance\n*   Purchase or setup a domain name using Route53 (or any other domain name provider) and point it to the public IP address of the EC2 instance\n*   Setup HTTPs using [certbot](https://roadmap.sh/guides/setup-and-auto-renew-ssl-certificates)\n*   And voilla! You have deployed your application to AWS!\n\nIf you get stuck, here is a video that shows how to deploy a Node.js application to AWS EC2:",
-      "id": "17eab6c0-755d-42bb-ac06-29d19abc4628",
+      "id": "d6ffad1b-9b1b-4f6f-8a0a-7b248c656103",
       "children": [],
       "links": [
         {
@@ -825,7 +828,7 @@
       "title": "Monit",
       "xid": "y1SFX7uvWaCy4OYBnECLu",
       "description": "When it comes to monitoring the health of your applications, there are several different options available. My favorite monitoring stack is Prometheus and Grafana, but it can be a bit overwhelming to set up and configure. If you're looking for a simpler solution, **Monit** is a great alternative that can be utilized to monitor and manage system resources such as services, processes, files, directories, devices, and network connections, making your application more reliable and resilient to issues like crashes, unresponsiveness, or resource exhaustion.\n\n",
-      "id": "ffe4644b-33a4-47b3-94ea-ea8fb02e00f4",
+      "id": "93e950b3-29c8-4887-b097-14f2a62d62b9",
       "children": [],
       "links": [
         {
@@ -849,7 +852,7 @@
       "title": "Checkpoint \u2014 Monitoring",
       "xid": "NQmEl27eBPYhivcXdOEz3",
       "description": "You should now implement monitoring and autorestarts for your application using monit. Regarding autorestarts, you can also use [pm2](https://pm2.keymetrics.io/).\n\nHere are some of the monitors you should implement for the application.\n\n*   CPU Usage\n*   Memory Usage\n*   Disk Usage\n*   Network Usage\n*   Service Availability\n*   Process Availability\n\nMonit comes with existing configurations for many services. You can find them in `/etc/monit/conf-available`. You can copy them (and modify if required) to `/etc/monit/conf-enabled` to enable them.",
-      "id": "9b10d1de-349a-4c01-9472-311b836e8640",
+      "id": "82c934ca-5010-4a03-95fc-b36fdaa569b8",
       "children": [],
       "links": []
     },
@@ -857,7 +860,7 @@
       "title": "GitHub Actions",
       "xid": "863KMXcFJzInvTp_-Ldmz",
       "description": "GitHub Actions is a workflow automation tool provided by GitHub that can be used to automate various tasks in the app development process.\n\n",
-      "id": "0647112e-c500-4e98-8289-14d0663f3d3d",
+      "id": "33672f8d-dc4b-4ec9-8aa0-9360601d6d46",
       "children": [],
       "links": [
         {
@@ -896,7 +899,7 @@
       "title": "Checkpoint \u2014 CI / CD",
       "xid": "liaY1GnlOateB_ZKBjNpY",
       "description": "Now that you have the infrastructure setup, it's time to automate the deployment process. This is where CI / CD comes in. If you don't know what CI/CD are, you should watch [DevOps CI/CD Explained in 100 Seconds](https://www.youtube.com/watch?v=scEDHsr3APg).\n\nThe next step at this point is to implement CI/CD for your application using GitHub actions. Setup a GitHub action that, whenever you push to master, will automatically:\n\n*   Run your tests (ignore this step if you haven't learnt it yet)\n*   Deploy your application to AWS\n\nRegarding the deployment to AWS you can use `rsync` to copy the files to the server. Here's a [sample GitHub workflow](https://gist.github.com/kamranahmedse/1e94b412006040f38e24b9443b2da41a) using `rsync`.",
-      "id": "0c39d7f1-4c9e-407e-bdf4-d3f0619591e2",
+      "id": "d7adc17b-4aa2-43f0-8a97-5d3ce71e2c20",
       "children": [],
       "links": []
     },
@@ -904,7 +907,7 @@
       "title": "Ansible",
       "xid": "rFXupYpUFfp7vZO8zh614",
       "description": "Ansible is an open-source configuration management, application deployment and provisioning tool that uses its own declarative language in YAML. Ansible is agentless, meaning you only need remote connections via SSH or Windows Remote Management via Powershell in order to function\n\n",
-      "id": "030f1439-f64d-4289-b729-3821f43e6150",
+      "id": "76c4eb4d-6f49-43ec-8791-5c6400cc06b4",
       "children": [],
       "links": [
         {
@@ -938,7 +941,7 @@
       "title": "Terraform",
       "xid": "2kKHuQZScu7hCDgQWxl5u",
       "description": "Terraform is an extremely popular open source Infrastructure as Code (IaC) tool that can be used with many different cloud and service provider APIs. Terraform focuses on an immutable approach to infrastructure, with a terraform state file center to tracking the status of your real world infrastructure.\n\n",
-      "id": "e046e305-d900-48ae-8350-1c4bec35fc52",
+      "id": "da924a6d-4b1f-40fc-af42-b63cc9d509c3",
       "children": [],
       "links": [
         {
@@ -982,7 +985,7 @@
       "title": "Checkpoint \u2014 Automation",
       "xid": "sO_9-l4FECbaqiaFnyeXO",
       "description": "Now that you have learnt ansible, you can use it to automate the deployment of your application.\n\nA task for you at this point would be to automate the steps that you manually performed earlier when setting up the EC2 instance i.e. SSH into the server, install Node.js, Git, PostgreSQL, Running the application etc. Write an ansible playbook that automates these and see if you can spin up a new EC2 instance without SSHing into it and manually installing all the dependencies.",
-      "id": "cdf2f853-ae9a-4d02-a124-2771b9e42669",
+      "id": "813fd992-4844-4433-8d30-9e44b714f0b6",
       "children": [],
       "links": []
     },
@@ -990,7 +993,7 @@
       "title": "Checkpoint \u2014 Infrastructure",
       "xid": "YVMyHFSCVF-GgXydq-SFJ",
       "description": "If you remember, earlier in the roadmap, you manually logged into the AWS console and had to setup the services. Now that you know terraform, go ahead and automate the process of creating the infrastructure for your application using terraform and with that your deployments will be fully automated i.e., you should have:\n\n*   Infrastructure setup using terraform\n*   Provisioning using Ansible\n*   CI/CD using GitHub Actions\n*   Monitoring using Monit\n\nAnd that is it! You have successfully completed the roadmap and are now a full-stack developer. Congratulations! \ud83c\udf89\n\nWhat's next?\n------------\n\nGo ahead and build something cool! Share your learnings with the community and help others learn as well. If you have any questions, feel free to join our [discord server](https://roadmap.sh/discord) and ask away!",
-      "id": "3f7f81d8-135a-46b4-bc91-9c792b7f4012",
+      "id": "34b2e930-1b4b-4bea-b588-607d9ebd7a31",
       "children": [],
       "links": []
     }

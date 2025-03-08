@@ -1,18 +1,21 @@
 {
+  "id": "4b7b5dd8-137b-4c15-9f6c-6059556a1856",
   "title": "Blockchain Developer",
-  "description": "\n",
+  "description": "Step by step guide to becoming a blockchain developer in 2025.",
+  "question_title": "",
+  "question_description": "",
   "children": [
     {
       "title": "Basic Blockchain Knowledge",
       "xid": "MvpHHpbS-EksUfuOKILOq",
       "description": "A blockchain is a decentralized, distributed, and oftentimes public, digital ledger consisting of records called blocks that is used to record transactions across many computers so that any involved block cannot be altered retroactively, without the alteration of all subsequent blocks.\n\n",
-      "id": "51c7141d-0057-4204-be85-688ef3caa2d1",
+      "id": "810eb684-8750-4982-97ba-57d26355821b",
       "children": [
         {
           "title": "What is Blockchain",
           "xid": "edO8iEehsZtYavlsEKhOy",
           "description": "A blockchain is a decentralized, distributed, and oftentimes public, digital ledger consisting of records called blocks that is used to record transactions across many computers so that any involved block cannot be altered retroactively, without the alteration of all subsequent blocks.\n\n",
-          "id": "5e261f71-7e4f-4529-9870-f75debcff004",
+          "id": "6086a6ec-d4c7-496e-a745-dc0aac200efe",
           "children": [],
           "links": [
             {
@@ -46,7 +49,7 @@
           "title": "Decentralization",
           "xid": "H9jvIlxX6P-C_cgPfZop4",
           "description": "In blockchain, decentralization refers to the transfer of control and decision-making from a centralized entity (individual, organization, or group thereof) to a distributed network. Decentralized networks strive to reduce the level of trust that participants must place in one another, and deter their ability to exert authority or control over one another in ways that degrade the functionality of the network.\n\n",
-          "id": "da46a9aa-9dc2-4dcf-bafa-d84f1a8642e4",
+          "id": "d539b1f4-b19b-43ad-a278-c284013ed67e",
           "children": [],
           "links": [
             {
@@ -80,7 +83,7 @@
           "title": "Why it matters?",
           "xid": "ecT4W5z8Vq9pXjnuhMdpl",
           "description": "The nature of blockchain allows for trustless systems to be built on top of it. Users don\u2019t rely on a centralized group of people, such as a bank, to make decisions and allow transactions to flow through. Because the system is decentralized, users know that transactions will never be denied for non-custodial reasons. This decentralization enables use-cases that were previously impossible, such as parametric insurance, decentralized finance, and decentralized organizations (DAOs), among a few. This allows developers to build products that provide immediate value without having to go through a bureaucratic process of applications, approvals, and general red tape.\n\n",
-          "id": "de4dd982-fcaf-4b70-a274-cf0538b552a5",
+          "id": "fabd6f03-f49c-4d5a-a777-9195ee717cbb",
           "children": [],
           "links": [
             {
@@ -114,7 +117,7 @@
           "title": "Blockchain Structure",
           "xid": "Atv-4Q7edtvfySs_XhgEq",
           "description": "The blockchain gets its name from its underlying structure. The blockchain is organized as a series of \u201cblocks\u201d that are \u201cchained\u201d together.\n\nUnderstanding blockchain security requires understanding how the blockchain is put together. This requires knowing what the blocks and chains of blockchain are and why they are designed the way that they are.\n\n",
-          "id": "81b158bb-a401-465d-9487-753e7360a2c6",
+          "id": "cbd04c7f-2f4e-44fa-a7cd-48d95b9ed5dc",
           "children": [],
           "links": [
             {
@@ -148,7 +151,7 @@
           "title": "Basic Blockchain Operations",
           "xid": "9z0Fqn1qqN8eo6s7_kwcb",
           "description": "Operations in a decentralized networks are the responsibility of the peer participants and their respective computational nodes. These are specific for each type of blockchain.\n\n",
-          "id": "deac01aa-8d7a-4c08-a99c-3a45f3806457",
+          "id": "9fd95398-facb-4b13-bf98-427c640eeeef",
           "children": [],
           "links": [
             {
@@ -187,7 +190,7 @@
           "title": "Applications and Uses",
           "xid": "WD2JH4X4tEE4J0W0XFQ_4",
           "description": "Blockchain applications go far beyond cryptocurrency and bitcoin. With its ability to create more transparency and fairness while also saving businesses time and money, the technology is impacting a variety of sectors in ways that range from how contracts are enforced to making government work more efficiently.\n\n",
-          "id": "108aa302-d83b-49bb-ae75-cd75b6748a30",
+          "id": "47cd921a-47c4-4bf9-8bbc-b18d3a456fe7",
           "children": [],
           "links": [
             {
@@ -250,13 +253,13 @@
       "title": "General Blockchain Knowledge",
       "xid": "bA4V_9AbV3uQi3qrtLWk0",
       "description": "A blockchain is a decentralized, distributed ledger technology that records transactions across many computers in such a way that the registered transactions cannot be altered retroactively. This technology is the backbone of cryptocurrencies like Bitcoin and Ethereum, but its applications extend far beyond digital currencies.\n\n",
-      "id": "d45623ef-a3f8-443b-ad39-e886709b6faa",
+      "id": "6c1b2616-9fb8-4e08-9762-84feb99d11ca",
       "children": [
         {
           "title": "Cryptography",
           "xid": "e_I-4Q6_qIW09Hcn-pgKm",
           "description": "Cryptography, or cryptology, is the practice and study of techniques for secure communication in the presence of adversarial behavior. Cryptography is the technique of protecting information and communications by using codes, so that only those intended to receive the information can read and process it. It involves various algorithms and protocols to secure communication by converting plain text into unreadable formats, making it incomprehensible to unauthorized parties.\n\n",
-          "id": "2f849ef1-d716-489a-9a51-e0fee9f68097",
+          "id": "a28ba651-2ad2-4712-a4a8-a9b2dc10a0c2",
           "children": [],
           "links": [
             {
@@ -290,7 +293,7 @@
           "title": "Consensus Protocols",
           "xid": "_BkpK9qgp9up8nXNH7q4m",
           "description": "Consensus for blockchain is a procedure in which the peers of a Blockchain network reach agreement about the present state of the data in the network. Through this, consensus algorithms establish reliability and trust in the Blockchain network.\n\n",
-          "id": "9efcad10-479e-4a39-b86f-bf73fe72e97e",
+          "id": "aa09d720-fd3d-492b-bffd-21b46d264658",
           "children": [],
           "links": [
             {
@@ -314,7 +317,7 @@
           "title": "Blockchain Interoperability",
           "xid": "nNPa6jKRUaitmHwBip_LE",
           "description": "The concept of \u201cblockchain interoperability\u201d refers to the ability of different blockchain networks to exchange and leverage data between one another and to move unique types of digital assets between the networks\u2019 respective blockchains.\n\n",
-          "id": "8a3ebf55-0664-4fc0-ad3c-a7e46354bde7",
+          "id": "ebc8f83f-7306-4ddd-8b1f-ff9b5ce40cd0",
           "children": [],
           "links": [
             {
@@ -343,7 +346,7 @@
           "title": "storage",
           "xid": "yS_juTsySLqn0ryUJ_SfT",
           "description": "storage",
-          "id": "4fc9053e-c31c-4ade-92fb-c97aacc85f48",
+          "id": "db5d7a60-ef00-400a-b322-739b7af1c07e",
           "children": [],
           "links": []
         },
@@ -351,7 +354,7 @@
           "title": "Mining and Incentive Models",
           "xid": "B7niNXMOTbHn_1ixKQ8ri",
           "description": "Mining is the process of adding transaction details to the Blockchain, like sender address, hash value, etc. The Blockchain contains all the history of the transactions that have taken place in the past for record purposes and it is stored in such a manner that, it can\u2019t be manipulated.\n\nAn Incentive is basically a reward given to a Blockchain Miner for speeding up the transactions and making correct decisions while processing the complete transaction securely.\n\n",
-          "id": "3a8d537d-4d29-426f-8dc0-5273a95b1a4f",
+          "id": "25efdc50-a754-4c10-83bd-f6e35830ca6f",
           "children": [],
           "links": [
             {
@@ -370,7 +373,7 @@
           "title": "Decentralization vs Trust",
           "xid": "E9HR_voxQ2a2tvWUuva_p",
           "description": "Blockchains, cryptocurrency, smart contracts, and oracles have emerged as new technologies for coordinating social and economic activities in a more secure, transparent, and accessible manner. Most importantly, these technologies are revealing the power of cryptographic guarantees\u2014what we often call cryptographic truth\u2014in restoring users\u2019 trust in everyday interactions.\n\n",
-          "id": "b6f11a67-c5a6-44db-9002-fad233962f10",
+          "id": "2e7f58d1-76ca-43fc-b7d1-ea754dc31cf4",
           "children": [],
           "links": [
             {
@@ -399,7 +402,7 @@
           "title": "Blockchain Forking",
           "xid": "L08v-78UsEhcg-mZtMVuk",
           "description": "A fork happens whenever a community makes a change to the blockchain\u2019s protocol, or basic set of rules.\n\n",
-          "id": "e32f4bb4-6d08-4b29-aa97-2d5a0691ccc8",
+          "id": "f1c9953e-9098-4c9e-be63-23e3d3de88db",
           "children": [],
           "links": [
             {
@@ -428,7 +431,7 @@
           "title": "Cryptocurrencies",
           "xid": "s1QqQc0We5yQaNF3Ogt4k",
           "description": "A cryptocurrency, crypto-currency, or crypto is a digital currency designed to work as a medium of exchange through a blockchain, which is not reliant on any central authority, such as a government or bank, to uphold or maintain it.\n\n",
-          "id": "b9284863-a3f4-45af-8959-f3b65340dfee",
+          "id": "db6fdaa3-c249-47fe-817e-846d19c4145e",
           "children": [],
           "links": [
             {
@@ -457,7 +460,7 @@
           "title": "Cryptowallets",
           "xid": "FSThY0R1OAZCIL98W3AMj",
           "description": "A cryptocurrency wallet is an application that functions as a wallet for your cryptocurrency.\n\n",
-          "id": "01f883f9-d8cb-49af-b2eb-89308b74b634",
+          "id": "9f4e7417-3cb8-4061-8aa0-0b2de30edbe9",
           "children": [],
           "links": [
             {
@@ -476,13 +479,13 @@
           "title": "Blockchains",
           "xid": "EQgb4LqXnyq3gOX7Fb85s",
           "description": "Blockchain systems vary considerably in their design, particularly with regard to the consensus mechanisms used to perform the essential task of verifying network data.\n\n",
-          "id": "2ea8e11d-0902-4609-8a88-39875b9b72c7",
+          "id": "806d044a-8797-4081-8a97-569c959eccd0",
           "children": [
             {
               "title": "Solana",
               "xid": "JYHK95Xr0R1MVCda1Epl6",
               "description": "Solana is a public blockchain platform with smart contract functionality. Its native cryptocurrency is SOL.\n\n",
-              "id": "53245ff6-a079-458e-9746-9a29e5245527",
+              "id": "86deae2f-493d-4663-baab-be62fde04a05",
               "children": [],
               "links": [
                 {
@@ -521,7 +524,7 @@
               "title": "TON",
               "xid": "ug4FB4RXItHU0ADnisvve",
               "description": "TON is a fully decentralized layer-1 blockchain designed by\u00a0Telegram to\u00a0onboard billions of\u00a0users. It boasts ultra-fast transactions, tiny fees, easy-to-use apps, and\u00a0is environmentally friendly.\n\n",
-              "id": "dbe5beda-d8be-4d19-8a7b-c216c834bc0e",
+              "id": "e3c95ad4-bf57-4ea3-a681-4697b5ccb677",
               "children": [],
               "links": [
                 {
@@ -545,13 +548,13 @@
               "title": "EVM-Based",
               "xid": "tSJyp46rkJcOtDqVpJX1s",
               "description": "The Ethereum Virtual Machine (EVM) is a dedicated software virtual stack that executes smart contract bytecode and is integrated into each Ethereum node. Simply said, EVM is a software framework that allows developers to construct Ethereum-based decentralized applications (DApps). All Ethereum accounts and smart contracts are stored on this virtual computer. Many blockchains have forked the Ethereum blockchain and added functionality on top, these blockchains are referred to as EVM-based blockchains.\n\n",
-              "id": "486f7970-92f0-4ba6-8b9a-89c628e45a32",
+              "id": "12c50512-1bbb-487d-8bfe-60cedaec02f6",
               "children": [
                 {
                   "title": "Ethereum",
                   "xid": "JLXIbP-y8C2YktIk3R12m",
                   "description": "Ethereum is a programmable blockchain platform with the capacity to support smart contracts, dapps (decentralized apps), and other DeFi projects. The Ethereum native token is the Ether (ETH), and it\u2019s used to fuel operations on the blockchain. The Ethereum platform launched in 2015, and it\u2019s now the second largest form of crypto next to Bitcoin (BTC).\n\n",
-                  "id": "d1e54ab4-a16a-4013-8296-5f77e9491a6d",
+                  "id": "8257699b-b543-40c5-8f11-4fb817023d49",
                   "children": [],
                   "links": [
                     {
@@ -580,7 +583,7 @@
                   "title": "Polygon",
                   "xid": "JNilHFQnnVDOz-Gz6eNo5",
                   "description": "Polygon, formerly known as the Matic Network, is a protocol that allows anyone to create and exchange value, powered by zero-knowledge technology. Polygon provides multiple solutions including Polygon zkEVM, Polygon PoS, Polygon CDK, and Polygon ID.\n\n",
-                  "id": "32432824-d593-4457-be49-854bb378b854",
+                  "id": "705817c3-50eb-4fac-898f-ea4163a5cf4e",
                   "children": [],
                   "links": [
                     {
@@ -619,7 +622,7 @@
                   "title": "Binance Smart Chain",
                   "xid": "sJj-6wG5KjjzYYia_eo63",
                   "description": "Binance Smart Chain (also known as BNB Chain) is a blockchain project initiated by Binance as a central piece of their cryptocurrency exchange, which is the largest exchange in the world in terms of daily trading volume of cryptocurrencies.\n\n",
-                  "id": "92ea896f-fb33-4fd2-9e8e-be6c7b54d693",
+                  "id": "59b8c06c-c0ed-4081-8e5c-515d4c94f10a",
                   "children": [],
                   "links": [
                     {
@@ -648,7 +651,7 @@
                   "title": "Gnosis Chain",
                   "xid": "UQ9AejYV6_Sk6ZJkXYWf7",
                   "description": "Gnosis is a blockchain based on Ethereum, which changed the consensus model to PoS to solve major issues on the Ethereum mainnet. While the platform solves problems surrounding transaction fees and speed, it also means that the Gnosis chain is less decentralized, as it is somewhat reliant on the Ethereum chain.\n\n",
-                  "id": "674df227-0c65-4997-8c62-03561295fbb0",
+                  "id": "49a1bae7-3f12-4905-b7a1-34b20c07c111",
                   "children": [],
                   "links": [
                     {
@@ -672,7 +675,7 @@
                   "title": "Huobi Eco Chain",
                   "xid": "PkRAYBZQAUAHxWEeCCX4U",
                   "description": "Huobi's ECO Chain (also known as HECO) is a public blockchain that provides developers with a low-cost onchain environment for running decentralized apps (dApps) of smart contracts and storing digital assets.\n\n",
-                  "id": "b6a83b22-b1c9-4a55-a47a-1c4040e419d9",
+                  "id": "7916376f-5f34-4c8e-b7bc-680f627b676f",
                   "children": [],
                   "links": [
                     {
@@ -691,7 +694,7 @@
                   "title": "Avalanche",
                   "xid": "txQ9U1wcnZkQVh6B49krk",
                   "description": "Avalanche describes itself as an \u201copen, programmable smart contracts platform for decentralized applications.\u201d What does that mean? Like many other decentralized protocols, Avalanche has its own token called AVAX, which is used to pay transaction fees and can be staked to secure the network.\n\n",
-                  "id": "4fe5bfda-1f95-4f3a-896e-3cfb5c9aa2aa",
+                  "id": "20252888-c111-4f32-a792-e32a5d520cf7",
                   "children": [],
                   "links": [
                     {
@@ -715,7 +718,7 @@
                   "title": "Fantom",
                   "xid": "trcGwYcFW5LQUUrAcbUf_",
                   "description": "Fantom is a decentralized, open-source smart contract platform that supports decentralized applications (dApps) and digital assets. It's one of many blockchain networks built as a faster, more efficient alternative to Ethereum, it uses the proof-of-stake consensus mechanism.\n\n",
-                  "id": "ab7ea60b-1724-4f03-afa0-cb75a4974b55",
+                  "id": "10ee6469-111d-4c84-adbd-30eb415f56e2",
                   "children": [],
                   "links": [
                     {
@@ -734,7 +737,7 @@
                   "title": "Moonbeam / Moonriver",
                   "xid": "VVbvueVMJKLUoJYhbJB1z",
                   "description": "Moonbeam is a Polkadot network parachain that promises cross-chain interoperability between the Ethereum and Polkadot . More specifically, Moonbeam is a smart contract platform that enables developers to move dApps between the two networks without having to rewrite code or redeploy infrastructure. Moonriver is an incentivized testnet. It enables developers to create, test, and adjust their protocols prior to launching on Moonbeam. Moonbeam is the mainnet of the ecosystem.\n\n",
-                  "id": "bdcd5443-77a2-49c1-bf0c-8643937cc4b6",
+                  "id": "51e2eff5-494c-443b-b1df-19090a661824",
                   "children": [],
                   "links": [
                     {
@@ -782,13 +785,13 @@
               "title": "L2 Blockchains",
               "xid": "i_Dw3kUZ7qKPG-tk-sFPf",
               "description": "Layer-2 refers to a network or technology that operates on top of an underlying blockchain protocol to improve its scalability and efficiency. This category of scaling solutions entails shifting a portion of Ethereum's transactional burden to an adjacent system architecture, which then handles the brunt of the network\u2019s processing and only subsequently reports back to Ethereum to finalize its results.\n\n",
-              "id": "3f0bf179-7f1a-4be7-9484-7d38ec45b697",
+              "id": "b6ec50e0-9480-4013-b83e-8125fbe111e3",
               "children": [
                 {
                   "title": "Arbitrum",
                   "xid": "ixTIn2Uhs-i5-UPt9jKAa",
                   "description": "Arbitrum aims to reduce transaction fees and congestion by moving as much computation and data storage off of Ethereum's main blockchain (layer 1) as it can. Storing data off of Ethereum's blockchain is known as Layer 2 scaling solutions.\n\n",
-                  "id": "4a61fe5d-92fb-40a8-a79a-ecf9ff6cb4a7",
+                  "id": "a35eceaf-9c7d-4991-ac28-eb3bb7ec0807",
                   "children": [],
                   "links": [
                     {
@@ -812,7 +815,7 @@
                   "title": "Moonbeam / Moonriver",
                   "xid": "Ib9STGxQa8yeoB-GFeGDE",
                   "description": "Moonbeam is a Polkadot network parachain that promises cross-chain interoperability between the Ethereum and Polkadot . More specifically, Moonbeam is a smart contract platform that enables developers to move dApps between the two networks without having to rewrite code or redeploy infrastructure. Moonriver is an incentivized testnet. It enables developers to create, test, and adjust their protocols prior to launching on Moonbeam. Moonbeam is the mainnet of the ecosystem.\n\n",
-                  "id": "db78bdf1-290f-411b-839b-a0912595e416",
+                  "id": "3b1239e3-ff48-42f6-9d68-7c1b2ea7e11f",
                   "children": [],
                   "links": [
                     {
@@ -898,13 +901,13 @@
       "title": "Oracles",
       "xid": "sK8G-41D3EfYNSLFJ3XYf",
       "description": "A blockchain oracle is a third-party service that connects smart contracts with the outside world, primarily to feed information in from the world, but also the reverse. Information from the world encapsulates multiple sources so that decentralized knowledge is obtained.\n\n",
-      "id": "33c85c42-3c54-45d4-9f65-cdf7182206a6",
+      "id": "d141278b-55b6-4651-81f3-ea47c54adf2c",
       "children": [
         {
           "title": "Hybrid Smart Contracts",
           "xid": "JbgBwG6KmeTdyle9U6WAv",
           "description": "Hybrid smart contracts combine code running on the blockchain (on-chain) with data and computation from outside the blockchain (off-chain) provided by Decentralized Oracle Networks.\n\n",
-          "id": "7190c800-9e98-435a-934c-87096d3203b4",
+          "id": "6e19aeaa-5b04-4d65-9853-8d2610b3e583",
           "children": [],
           "links": [
             {
@@ -923,7 +926,7 @@
           "title": "Chainlink",
           "xid": "omQOhNfMO09pBc7oy76Wo",
           "description": "Chainlink is a decentralized network of oracles that enables smart contracts to securely interact with real-world data and services that exist outside of blockchain networks.\n\n",
-          "id": "b7ebb4f2-780b-4f10-9b20-9f36e79edfbb",
+          "id": "01b3d777-a18d-49cb-8dad-fb895e4c14b8",
           "children": [],
           "links": [
             {
@@ -942,7 +945,7 @@
           "title": "Oracle Networks",
           "xid": "CzfsAQIk3zIsDaDAorG9K",
           "description": "By leveraging many different data sources, and implementing an oracle system that isn\u2019t controlled by a single entity, decentralized oracle networks provide an increased level of security and fairness to smart contracts.\n\n",
-          "id": "c2292439-0374-4f70-ac91-92f2351c67f9",
+          "id": "e39015ab-79e3-405b-bf19-46e9c379bb83",
           "children": [],
           "links": [
             {
@@ -990,19 +993,19 @@
       "title": "Smart Contracts",
       "xid": "BV6lEwCAKaYxSPWD0LV_d",
       "description": "A smart contract is a computer program or a transaction protocol that is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.\n\n",
-      "id": "e8263688-5cb7-46e3-8696-9ae96b9dcd07",
+      "id": "ff42a404-5d18-4b76-bdfa-c82f57e2077a",
       "children": [
         {
           "title": "programming-languages",
           "xid": "",
           "description": "programming-languages",
-          "id": "1f03c600-206a-4a6b-90d0-005e88c2e37d",
+          "id": "97b031ff-eaae-4158-ad46-fbc2fb3ea13a",
           "children": [
             {
               "title": "Solidity",
               "xid": "chaIKoE1uE8rpZLkDSfV-",
               "description": "Solidity is an object-oriented programming language created specifically by Ethereum Network team for constructing smart contracts on various blockchain platforms, most notably, Ethereum. It's used to create smart contracts that implements business logic and generate a chain of transaction records in the blockchain system. It acts as a tool for creating machine-level code and compiling it on the Ethereum Virtual Machine (EVM).\n\n",
-              "id": "8f09dfba-239d-46b8-a2c9-3e97af45e177",
+              "id": "6af0113c-f889-4b84-9c7d-65dd9fc25491",
               "children": [],
               "links": [
                 {
@@ -1041,7 +1044,7 @@
               "title": "Vyper",
               "xid": "jgHa_LeCac0pl6dSADizF",
               "description": "Vyper is a contract-oriented, pythonic programming language that targets the Ethereum Virtual Machine (EVM).\n\n",
-              "id": "3df80a51-738a-441f-9181-f0dba68f9905",
+              "id": "4b14ce1e-f631-42b3-82e9-0e7978b31d89",
               "children": [],
               "links": [
                 {
@@ -1060,7 +1063,7 @@
               "title": "Rust",
               "xid": "Larbhjzi-MnPQKH1Pzn2R",
               "description": "Rust is a multi-paradigm, general-purpose programming language. Rust emphasizes performance, type safety, and concurrency. It is popular on smart contract chains Solana and Polkadot.\n\n",
-              "id": "62267045-e98e-4183-ad38-025251e19623",
+              "id": "e8e044b8-7c08-4b49-b399-54ae828b0bcf",
               "children": [],
               "links": [
                 {
@@ -1092,13 +1095,13 @@
           "title": "testing",
           "xid": "",
           "description": "testing",
-          "id": "81f00c0c-5219-45e4-950b-a67eae83fc70",
+          "id": "9740ef6d-3f51-4172-bbdc-d8c2c66fef9a",
           "children": [
             {
               "title": "Unit Tests",
               "xid": "IXs4nUzy_A5vBjI_44kaT",
               "description": "Unit testing involves testing individual components in a smart contract for correctness. A unit test is simple, quick to run, and provides a clear idea of what went wrong if the test fails.\n\n",
-              "id": "1d85e621-d1a3-43bc-938c-1e702b264c36",
+              "id": "391dd012-317e-4262-9b3f-176b1bb1751a",
               "children": [],
               "links": [
                 {
@@ -1122,7 +1125,7 @@
               "title": "Integration Tests",
               "xid": "QNfnbUGkT3N-pj5epnHcM",
               "description": "Integration tests validate interactions between multiple components. For smart contract testing this can mean interactions between different components of a single contract, or across multiple contracts.\n\n",
-              "id": "e4c90b53-933d-462e-8582-9823ed735065",
+              "id": "add03519-50ae-49a9-bc97-75db34b02bae",
               "children": [],
               "links": [
                 {
@@ -1146,7 +1149,7 @@
               "title": "Code Coverage",
               "xid": "4V-dj9x9hSAAGCxpBWsbE",
               "description": "Code coverage is a metric that can help you understand how much of your source is tested. It's a very useful metric that can help you assess the quality of your test suite.\n\n",
-              "id": "a167601f-7aa6-48a7-aec3-e1f28970303f",
+              "id": "a3b61146-0d2c-4933-b4fa-38308ac935ef",
               "children": [],
               "links": [
                 {
@@ -1173,7 +1176,7 @@
           "title": "Deployment",
           "xid": "7goaYnedUlfgfl5qApoO2",
           "description": "Unlike other software, smart contracts don\u2019t run on a local computer or a remote server: they live on the blockchain. Thus, interacting with them is different from more traditional applications.\n\n",
-          "id": "bff6f40b-596d-4d82-8136-9db4adfc742c",
+          "id": "b326c4eb-4025-48b2-a11a-f29123f97158",
           "children": [],
           "links": [
             {
@@ -1197,7 +1200,7 @@
           "title": "Monitoring",
           "xid": "H3jNM_0sJrB7ZbYzrVhF7",
           "description": "Monitoring smart contracts allow their authors to view its activity and interactions based on generated transactions and events, allowing verification of the contract's intended purpose and functionality.\n\n",
-          "id": "8e085ae2-4afb-45ff-bb51-656c9d3f01a0",
+          "id": "7cc43df3-efe9-484b-aab9-ee6fb8692e8f",
           "children": [],
           "links": [
             {
@@ -1216,7 +1219,7 @@
           "title": "Upgrades",
           "xid": "OotJnHgm622NQJc2WRI7c",
           "description": "Smart contracts are immutable by default. Once they are created there is no way to alter them, effectively acting as an unbreakable contract among participants. However, for some scenarios, it is desirable to be able to modify them.\n\n",
-          "id": "abf4ddb8-880c-420a-9c2b-e3be5f65fdc0",
+          "id": "9eeecfd0-7ad5-4a27-a5c2-7f73525f1225",
           "children": [],
           "links": [
             {
@@ -1245,7 +1248,7 @@
           "title": "IDEs",
           "xid": "lXukWXEatsF87EWFSYyOO",
           "description": "An integrated development environment is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of at least a source code editor, build automation tools and a debugger.\n\n",
-          "id": "08d35785-798a-4f15-bd83-1b128eccb79c",
+          "id": "5780eb0d-95e8-4042-b174-a6fbdded0611",
           "children": [],
           "links": [
             {
@@ -1269,7 +1272,7 @@
           "title": "ERC Tokens",
           "xid": "bjUuL7WALETzgFxL6-ivU",
           "description": "An \u2018Ethereum Request for Comments\u2019 (ERC) is a document that programmers use to write smart contracts on Ethereum Blockchain. They describe rules in these documents that Ethereum-based tokens must comply with. While there are several Ethereum standards. These ERC Ethereum standards are the most well-known and popular: ERC-20, ERC-721, ERC-1155, and ERC-777.\n\n",
-          "id": "1e4c3fd3-528c-45be-8b7a-19e04819b5c8",
+          "id": "d3d4273b-b096-4104-a881-09c50748a6b9",
           "children": [],
           "links": [
             {
@@ -1298,7 +1301,7 @@
           "title": "Crypto Wallets",
           "xid": "SM8Wt3iNM_nncLj69KCuy",
           "description": "A cryptocurrency wallet is a device, physical medium, program, or service which stores the public and/or private keys for cryptocurrency transactions. In addition to this basic function of storing the keys, a cryptocurrency wallet more often also offers the functionality of encrypting and/or signing information.\n\n",
-          "id": "8303ab70-8a1b-40ef-9de4-ca047fbf053a",
+          "id": "66d052d5-f25b-4fc4-a680-dbf15b2a0d9e",
           "children": [],
           "links": [
             {
@@ -1322,7 +1325,7 @@
           "title": "Crypto Faucets",
           "xid": "S68IUKs0k_FFHEH97xxs7",
           "description": "A crypto faucet lets users earn small crypto rewards by completing simple tasks. The metaphor is based on how even one drop of water from a leaky faucet could eventually fill up a cup. There are various kinds of crypto faucets, including bitcoin (BTC), Ethereum (ETH), and BNB faucets.\n\nFaucets are common in development environments where developers obtain testnet crypto in order develop and test their application prior to mainnet deployment.\n\n",
-          "id": "a43e17d6-824b-4a2a-9306-b3002588c8a5",
+          "id": "95b5c4c1-f765-48f7-a2ed-5d79648a877d",
           "children": [],
           "links": [
             {
@@ -1346,7 +1349,7 @@
           "title": "Decentralized Storage",
           "xid": "tvk1Wh04BcFbAAwYWMx27",
           "description": "Decentralized storage is where data is stored on a decentralized network across multiple locations by users or groups who are incentivized to join, store, and keep data accessible. The servers used are hosted by people, rather than a single company. Anyone is free to join, they are kept honest due to smart contracts, and they are incentivized to participate via tokens.\n\n",
-          "id": "5e6699ef-16e2-4c13-8a5a-ae69f999b93f",
+          "id": "d332a70c-ade3-4f15-9342-83481bab55a6",
           "children": [],
           "links": [
             {
@@ -1394,13 +1397,13 @@
       "title": "Smart Contract Frameworks",
       "xid": "KRtEN0845lV5e85SOi6oZ",
       "description": "Building a full-fledged dapp requires different pieces of technology. Software frameworks include many of the needed features or provide easy plugin systems to pick the tools you desire.\n\n",
-      "id": "ef60f350-f188-4c49-8adb-becd046a7446",
+      "id": "0b0c27af-e63f-4c0f-b0ef-a337c3276b74",
       "children": [
         {
           "title": "Hardhat",
           "xid": "l110d4NqTQt9lfEoxqXMX",
           "description": "Hardhat is an Ethereum development environment. It allows users to compile contracts and run them on a development network. Get Solidity stack traces, console.log and more.\n\n",
-          "id": "32733d41-b215-4604-8da1-605fe2b899e1",
+          "id": "4f882b4e-28d5-432a-a8bf-ba76d9a4e774",
           "children": [],
           "links": [
             {
@@ -1429,7 +1432,7 @@
           "title": "Brownie",
           "xid": "Q64AbQlvYPiqJl8BtoJj9",
           "description": "Brownie is a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine.\n\n",
-          "id": "bddc258b-f3f6-4110-aabd-3cc59842420b",
+          "id": "1d7d348e-dfd9-426f-a702-9f88979c1729",
           "children": [],
           "links": [
             {
@@ -1448,7 +1451,7 @@
           "title": "Truffle",
           "xid": "Vl9XHtc22HnqaCnF9yJv9",
           "description": "A development environment, testing framework, and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier.\n\n",
-          "id": "99a3f16c-8432-4591-b607-07731a81637d",
+          "id": "978ac2ab-c76d-4e4b-8e62-556446b6371a",
           "children": [],
           "links": [
             {
@@ -1472,7 +1475,7 @@
           "title": "Foundry",
           "xid": "F1EUAxODBJ3GEoh7cqM-K",
           "description": "Foundry is a smart contract development toolchain. Foundry manages your dependencies, compiles your project, runs tests, deploys, and lets you interact with the chain from the command-line and via Solidity scripts.\n\n",
-          "id": "50a459a8-c7c7-4145-8c58-299e49320f4b",
+          "id": "c8c7f505-55e1-4b38-8fdc-da113267fb81",
           "children": [],
           "links": [
             {
@@ -1510,19 +1513,19 @@
       "title": "Security",
       "xid": "snQA5_4H2dDkT1pENgaYD",
       "description": "Smart contracts are extremely flexible, capable of both holding large quantities of tokens (often in excess of $1B) and running immutable logic based on previously deployed smart contract code. While this has created a vibrant and creative ecosystem of trustless, interconnected smart contracts, it is also the perfect ecosystem to attract attackers looking to profit by exploiting vulnerabilities\n\n",
-      "id": "ef6a61ad-7b80-41b8-ae39-23f042ad6a39",
+      "id": "8320e7e0-1df1-4372-b99c-589ef32c3c23",
       "children": [
         {
           "title": "Practices",
           "xid": "UOF7Ep97i1l3Own6YEWlq",
           "description": "Smart contract programming requires a different engineering mindset. The cost of failure can be high, and change can be difficult.\n\n",
-          "id": "c33247fa-aa99-4134-a3a3-8cca257dd241",
+          "id": "bf87cc3e-0937-4e54-a08c-24b7bf85489c",
           "children": [
             {
               "title": "Fuzz Testing & Static Analysis",
               "xid": "wypJdjTW4jHm9FCqv7Lhb",
               "description": "Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a smart contract. Static analysis is the analysis of smart contracts performed without executing them.\n\n",
-              "id": "c5c8612c-6016-41a7-b1fe-9cf400f8345e",
+              "id": "1ef969e6-2ab9-451e-8fa0-18e72662a382",
               "children": [],
               "links": [
                 {
@@ -1551,7 +1554,7 @@
               "title": "Common Threat Vectors",
               "xid": "GxD-KybtmkwT3wqDzIfHp",
               "description": "Smart contract audits enable developers to provide a thorough analysis of smart contract sets. The main goal of a smart contract audit is to detect and eliminate vulnerabilities, starting with the most common threat vectors.\n\n",
-              "id": "b38c7f09-12ff-4952-9c38-539c068e9725",
+              "id": "f6657318-20e3-4bd8-b684-7814dac8973d",
               "children": [],
               "links": [
                 {
@@ -1575,7 +1578,7 @@
               "title": "Source of Randomness Attacks",
               "xid": "f60P5RNNdgCbrhDDzkY25",
               "description": "The security of cryptographic systems depends on some secret data that is known to authorized persons but unknown and unpredictable to others. To achieve this unpredictability, some randomization is typically employed. Modern cryptographic protocols often require frequent generation of random quantities. Cryptographic attacks that subvert or exploit weaknesses in this process are known as randomness attacks.\n\n",
-              "id": "fafabc1e-b044-4cf2-aa4d-ac43f4190652",
+              "id": "2ce5fb5e-77f2-403a-9732-671faae229af",
               "children": [],
               "links": [
                 {
@@ -1608,13 +1611,13 @@
           "title": "Tools",
           "xid": "n3pipnNb76aaQeUwrDLk_",
           "description": "Blockchain and smart contract technology is fairly new, therefore, you should expect constant changes in the security landscape, as new bugs and security risks are discovered, and new best practices are developed. Keeping track of this constantly moving landscape proves difficult, so using tools to aid this mission is important. The cost of failing to properly secure smart contracts can be high, and because change can be difficult, we must make use of these tools.\n\n",
-          "id": "23642e1e-011c-4792-8590-9e26dd3a3759",
+          "id": "a26208e6-71b2-4d44-a8d6-3dae4651d295",
           "children": [
             {
               "title": "Slither",
               "xid": "YA3-7EZBRW-T-8HuVI7lk",
               "description": "Slither is a Solidity static analysis framework written in Python 3. It runs a suite of vulnerability detectors, prints visual information about contract details, and provides an API to easily write custom analyses. Slither enables developers to find vulnerabilities, enhance their code comprehension, and quickly prototype custom analyses.\n\n",
-              "id": "cbe066f0-6f23-4ff9-8d82-52e36bf7885d",
+              "id": "3c059462-3d75-44a9-816f-cc6ce202b799",
               "children": [],
               "links": [
                 {
@@ -1633,7 +1636,7 @@
               "title": "Manticore",
               "xid": "twR3UdzUNSztjpwbAUT4F",
               "description": "Manticore is a symbolic execution tool for analysis of smart contracts and binaries.\n\n",
-              "id": "8efcc952-1483-4868-8722-3ea02c7d838a",
+              "id": "6ef95c01-ab17-4800-a203-ca63b5a448e0",
               "children": [],
               "links": [
                 {
@@ -1647,7 +1650,7 @@
               "title": "MythX",
               "xid": "XIgczUc3yKo6kw-_3gskC",
               "description": "MythX is a comprehensive smart contract security analysis tools developed by Consensys. It allows users to detect security vulnerabilities in Ethereum smart contracts throughout the development life cycle as well as analyze Solidity dapps for security holes and known smart contract vulnerabilities.\n\n",
-              "id": "e0d18107-daf4-4763-b04f-d23821309e98",
+              "id": "ed66469f-a98e-4768-957e-fa65e361857d",
               "children": [],
               "links": [
                 {
@@ -1666,7 +1669,7 @@
               "title": "Echidna",
               "xid": "U4H62lVac8wIgxNJ3N3ga",
               "description": "Echidna is a Haskell program designed for fuzzing/property-based testing of Ethereum smarts contracts. It uses sophisticated grammar-based fuzzing campaigns based on a contract ABI to falsify user-defined predicates or Solidity assertions.\n\n",
-              "id": "89274c58-5d96-4e44-9199-db69368dd2d8",
+              "id": "cd7d52c7-b951-458b-884d-2f7860d3add6",
               "children": [],
               "links": [
                 {
@@ -1718,13 +1721,13 @@
       "title": "Management Platforms",
       "xid": "fbESHQGYqxKRi-5DW8TY3",
       "description": "Managing smart contracts in a production environment (mainnet) can prove difficult as users must keep track of different versions, blockchains, deployments, etc. Using a tool for this process eliminates a lot of the risk that comes with manual tracking.\n\n",
-      "id": "02256122-eb42-4fe0-9eed-43dc076865a5",
+      "id": "275a3535-ca80-4d36-b783-fdf4a4824481",
       "children": [
         {
           "title": "OpenZeppelin",
           "xid": "qox-x_q-Q7aWcNFWD7RkT",
           "description": "OpenZeppelin Contracts helps you minimize risk by using battle-tested libraries of smart contracts for Ethereum and other blockchains. It includes the most used implementations of ERC standards.\n\n",
-          "id": "ddfdf655-d4ac-4c49-95e9-8586e879a0c9",
+          "id": "e46d714f-67d1-4676-a35e-9ea590d7efbf",
           "children": [],
           "links": [
             {
@@ -1747,19 +1750,19 @@
       "title": "dApps - Decentralized Applications",
       "xid": "SXXvFtf_7Rx64cHSEWxMS",
       "description": "A decentralized application (dApp) is an application that can operate autonomously, through the use of smart contracts that run on a blockchain. Like traditional applications, dApps provide some function or utility to its users.\n\n",
-      "id": "93e1539e-c23c-4c06-b719-e9d29dc9fd20",
+      "id": "62e9a156-167f-4ca9-b7d7-1da9abfdda69",
       "children": [
         {
           "title": "Frontend Frameworks",
           "xid": "YR-U2njkUrEMO0JxCU1PH",
           "description": "Web frameworks are designed to write web applications. Frameworks are collections of libraries that aid in the development of a software product or website. Frameworks for web application development are collections of various tools. Frameworks vary in their capabilities and functions, depending on the tasks set. They define the structure, establish the rules, and provide the development tools required.\n\n",
-          "id": "86445492-845f-4bbd-bc12-b37a589e623b",
+          "id": "eab3d288-291d-42b4-9591-b04e348c9680",
           "children": [
             {
               "title": "React",
               "xid": "0DUYS40_-BTpk2rLQ1a0e",
               "description": "React is the most popular front-end JavaScript library for building user interfaces. React can also render on the server using Node and power mobile apps using React Native.\n\n",
-              "id": "5ecf2ab2-0b40-4338-94e4-51212d628e2a",
+              "id": "c964304f-fb8a-4be0-bef9-98682cb3ba5e",
               "children": [],
               "links": [
                 {
@@ -1803,7 +1806,7 @@
               "title": "Angular",
               "xid": "UY_vAsixTyocvo8zvAF4b",
               "description": "Angular is a component based front-end development framework built on TypeScript which includes a collection of well-integrated libraries that include features like routing, forms management, client-server communication, and more.\n\n",
-              "id": "408c6ad0-cfe3-4287-8f14-55fd0f84413a",
+              "id": "04e752d5-b8e8-4aab-853a-ee3d93f41023",
               "children": [],
               "links": [
                 {
@@ -1832,7 +1835,7 @@
               "title": "Vue",
               "xid": "Ke97bMHGfb-8hB_xSwMbk",
               "description": "Vue.js is an open-source JavaScript framework for building user interfaces and single-page applications. It is mainly focused on front end development.\n\n",
-              "id": "fc66b22a-c2d8-4398-b59e-6fd483225ea7",
+              "id": "a3d0ec02-378b-47c7-abd3-5b81f6d93f7a",
               "children": [],
               "links": [
                 {
@@ -1895,13 +1898,13 @@
           "title": "Client Libraries",
           "xid": "vZiDpX9pEB9gfueSKZiQL",
           "description": "You don't need to write every smart contract in your project from scratch. There are many open source smart contract libraries available that provide reusable building blocks for your project that can save you from having to reinvent the wheel.\n\n",
-          "id": "a843b3f4-cf90-40c3-ad29-aa871cf14083",
+          "id": "01de6ee0-1257-41a6-81f7-c8641046fd5f",
           "children": [
             {
               "title": "ethers.js",
               "xid": "i-ltfXPTCu3WaBo-xaN05",
               "description": "The ethers.js library aims to be a complete and compact library for interacting with the Ethereum Blockchain and its ecosystem. It was originally designed for use with [ethers.io](http://ethers.io) and has since expanded into a more general-purpose library.\n\n",
-              "id": "34acad79-0a95-4ff4-b7c9-8c10adc678e2",
+              "id": "ebb241f4-717e-4e07-b5d1-e55f30eaa2b5",
               "children": [],
               "links": [
                 {
@@ -1920,7 +1923,7 @@
               "title": "web3.js",
               "xid": "jwuMeo9TwaQviGIMO13Jf",
               "description": "web3.js is a collection of libraries that allow you to interact with a local or remote ethereum node using HTTP, IPC or WebSocket.\n\n",
-              "id": "b3c2948a-bae2-46a8-b631-ac1f90f8f7f1",
+              "id": "a6c0ad89-beb6-4932-af83-ba5df6e2ecb1",
               "children": [],
               "links": [
                 {
@@ -1939,7 +1942,7 @@
               "title": "Moralis",
               "xid": "RFgetmTvKvpV2PG6Vfev7",
               "description": "A library that gives you access to the powerful Moralis Server backend from your JavaScript app.\n\n",
-              "id": "99eb350d-d64d-48db-8cf6-d3c63eae3460",
+              "id": "ebcc9030-8ae7-4690-b770-bd8cc226df21",
               "children": [],
               "links": [
                 {
@@ -1987,13 +1990,13 @@
           "title": "Client Nodes",
           "xid": "CoYEwHNNmrQ0i0sSQTcB7",
           "description": "A blockchain is a distributed network of computers (known as nodes) running software that can verify blocks and transaction data. The software application, known as a client, must be run on your computer to turn it into a blockchain node.\n\n",
-          "id": "3e08d9c3-f0f5-4ab3-aa45-fb7abb468f0f",
+          "id": "99982977-9076-48cd-bd5d-54da08bf6266",
           "children": [
             {
               "title": "Geth",
               "xid": "DBRaXtwvdq2UGE8rVCmI1",
               "description": "Go Ethereum (Geth) is one of the three original implementations (along with C++ and Python) of the Ethereum protocol. It is written in Go, fully open source and licensed under the GNU LGPL v3.\n\n",
-              "id": "ae4f2690-74b9-4d97-8034-1453a8228464",
+              "id": "3d1a11b1-64a7-46a3-869a-ec63b35e04c0",
               "children": [],
               "links": [
                 {
@@ -2012,7 +2015,7 @@
               "title": "Besu",
               "xid": "Gnnp5qrFmuSVtaq31rvMX",
               "description": "Besu is an Apache 2.0 licensed, MainNet compatible, Ethereum client written in Java.\n\n",
-              "id": "9ebd0c94-582f-485b-90d5-159afe506d1a",
+              "id": "7ddce66e-f2dc-4041-9e7f-fdc6bd307cd7",
               "children": [],
               "links": [
                 {
@@ -2036,7 +2039,7 @@
               "title": "Nethermind",
               "xid": "xtYwg0WAcE8Ea9VgC2RSc",
               "description": "Nethermind is a high-performance, highly configurable full Ethereum protocol client built on .NET that runs on Linux, Windows, and macOS, and supports Clique, Aura, Ethash, and Proof-of-Stake consensus algorithms.\n\n",
-              "id": "255155a7-70a6-4147-8cf9-17d9f0fc10cd",
+              "id": "780cdd2a-74eb-46bd-ac0b-add8a74ad78f",
               "children": [],
               "links": [
                 {
@@ -2055,7 +2058,7 @@
               "title": "Substrate",
               "xid": "E4uuJZFZz-M1vlpZmdJTO",
               "description": "Substrate is a Software Development Kit (SDK) specifically designed to provide you with all of the fundamental components s blockchain requires so you can focus on crafting the logic that makes your chain unique and innovative.\n\n",
-              "id": "90e3ee9d-ff52-4b2a-969d-5b0a33d597d3",
+              "id": "22fc44b0-e5f8-44fe-adb8-91ae31cd59d7",
               "children": [],
               "links": [
                 {
@@ -2083,7 +2086,7 @@
           "title": "Testing",
           "xid": "-7Bq2ktD0nt7of9liuCDL",
           "description": "A key to building software that meets requirements without defects is testing. Software testing helps developers know they are building the right software. When tests are run as part of the development process (often with continuous integration tools), they build confidence and prevent regressions in the code.\n\n",
-          "id": "59784bc0-a288-4338-9b42-007604db368c",
+          "id": "3bb6bb1d-fcf3-4af4-8944-a5a26dd2f204",
           "children": [],
           "links": [
             {
@@ -2112,7 +2115,7 @@
           "title": "Deployment",
           "xid": "cW3_Ki9Bx7fYluDLKKKgl",
           "description": "Deploying a dApp involves deployment of all of its layers, generally through a management framework.\n\n",
-          "id": "3ae04952-3be6-49f4-ba0e-11611eb8f3d7",
+          "id": "d25a7b34-2311-4082-81e5-b168119d05bf",
           "children": [],
           "links": [
             {
@@ -2136,7 +2139,7 @@
           "title": "Maintenance",
           "xid": "XvVpnlYhT_yOsvjAvwZpr",
           "description": "dApps can be harder to maintain because the code and data published to the blockchain is harder to modify. It\u2019s hard for developers to make updates to their dapps (or the underlying data stored by a dapp) once they are deployed, even if bugs or security risks are identified in an old version.\n\n",
-          "id": "9063b59a-54f2-4d43-a9fd-bdabc5707833",
+          "id": "28a9f121-5ae5-4610-8c10-191bb470c0c8",
           "children": [],
           "links": [
             {
@@ -2150,7 +2153,7 @@
           "title": "Architecture",
           "xid": "B6GGTUbzEaIz5yu32WrAq",
           "description": "Unlike Web2 applications, in Web3 there\u2019s no centralized database that stores the application state or user identity, and there\u2019s no centralized web server where the backend logic resides.\n\n",
-          "id": "506a10c0-328b-41d0-b3d6-e69fbdb1d793",
+          "id": "4e800dd7-c182-46c2-b511-8f30abee6bf1",
           "children": [],
           "links": [
             {
@@ -2174,7 +2177,7 @@
           "title": "Security",
           "xid": "PBTrg9ivOpw9uNTVisIpx",
           "description": "dApps face unique security challenges as they run on immutable blockchains. dApps are harder to maintain, and developers cannot modify or update their codes once deployed. Therefore, special consideration must be taken before putting it on the blockchain.\n\n",
-          "id": "ddb97299-605a-4068-b958-59ae6c6ab6bb",
+          "id": "752c0d00-13d4-4a78-8559-ac8425b840bb",
           "children": [],
           "links": [
             {
@@ -2203,13 +2206,13 @@
           "title": "Supporting Languages",
           "xid": "NK02dunI3i6C6z7krENCC",
           "description": "While the bulk of the logic in blockchain applications is handled by smart contracts, all the surrounding services that support those smart contracts (frontend, monitoring, etc.) are often written in other languages.\n\n",
-          "id": "ab2676a5-79c0-4939-b6c8-3da09b75b7ff",
+          "id": "cb4d3d32-c449-4ee0-92c1-9b00857b7c7d",
           "children": [
             {
               "title": "JavaScript",
               "xid": "fF06XiQV4CPEJnt_ESOvv",
               "description": "JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. It lets us add interactivity to pages e.g. you might have seen sliders, alerts, click interactions, and popups etc on different websites -- all of that is built using JavaScript. Apart from being used in the browser, it is also used in other non-browser environments as well such as Node.js for writing server-side code in JavaScript, Electron for writing desktop applications, React Native for mobile applications and so on.\n\n",
-              "id": "3150defe-8d04-43c3-8d7d-c450e5205b61",
+              "id": "db358758-f4e2-4e8f-b2ef-993e2e033d27",
               "children": [],
               "links": [
                 {
@@ -2253,7 +2256,7 @@
               "title": "Python",
               "xid": "pVG7bGqVGCeSBlZxRNHJs",
               "description": "Python is a well known programming language which is both a strongly typed and a dynamically typed language. Being an interpreted language, code is executed as soon as it is written and the Python syntax allows for writing code in functional, procedural or object-oriented programmatic ways.\n\n",
-              "id": "cae06d5a-e70f-4182-8556-8a18abe1667e",
+              "id": "3ebd38a6-cdd7-42eb-993d-9aba9ffbfeea",
               "children": [],
               "links": [
                 {
@@ -2297,7 +2300,7 @@
               "title": "Go",
               "xid": "jxlQ1ibcCv6ZlcEvobZ_G",
               "description": "Go is an open source programming language supported by Google. Go can be used to write cloud services, CLI tools, used for API development, and much more.\n\n",
-              "id": "cd41f3b5-49ed-4841-a363-ca79957fcdaf",
+              "id": "bc768fa2-59fa-418b-84eb-871025c66250",
               "children": [],
               "links": [
                 {
@@ -2350,13 +2353,13 @@
           "title": "Applicability",
           "xid": "aATSuiqPG-yctr3ChEBa_",
           "description": "dApps can be used for just about anything that requires two or more parties to agree on something. When the appropriate conditions are met, the smart contract will execute automatically. An important differentiation is that these transactions are no longer based on trust but they are rather based on cryptographically-backed smart contracts.\n\n",
-          "id": "5b24abf6-300f-4556-8fa1-4a1ee989255e",
+          "id": "866b533a-979a-4726-abba-14bdc14ee8ae",
           "children": [
             {
               "title": "Defi",
               "xid": "1AhombZUkZN6Ra5fysSpg",
               "description": "Decentralized finance offers financial instruments without relying on intermediaries such as brokerages, exchanges, or banks by using smart contracts on a blockchain.\n\n",
-              "id": "f6b12255-b3ba-47e3-8781-9cd6e3eeaae8",
+              "id": "fb66024c-dba4-4521-8db7-79c031c5acb1",
               "children": [],
               "links": [
                 {
@@ -2385,7 +2388,7 @@
               "title": "DAOs",
               "xid": "RsoOgixZlyQU6h7nIaY9J",
               "description": "A decentralized autonomous organization (DAO) is an emerging form of legal structure. With no central governing body, every member within a DAO typically shares a common goal and attempt to act in the best interest of the entity. Popularized through cryptocurrency enthusiasts and blockchain technology, DAOs are used to make decisions in a bottoms-up management approach.\n\n",
-              "id": "3c09a8d9-e339-4eeb-aeb7-615cc64d1472",
+              "id": "71b2048a-84f9-4c6e-be0a-1a3fc48a0c62",
               "children": [],
               "links": [
                 {
@@ -2404,7 +2407,7 @@
               "title": "NFTs",
               "xid": "e4OHLOfa_AqEShpMQe6Dx",
               "description": "A non-fungible token (NFT) is a financial security consisting of digital data stored in a blockchain, a form of distributed ledger. The ownership of an NFT is recorded in the blockchain, and can be transferred by the owner, allowing NFTs to be sold and traded.\n\n",
-              "id": "3a8cb455-cefc-453c-80b1-94815961a7fa",
+              "id": "c34105fd-b855-4127-a3df-7bca12893b27",
               "children": [],
               "links": [
                 {
@@ -2438,7 +2441,7 @@
               "title": "Payments",
               "xid": "vTGSDThkDDHvCanNlgP07",
               "description": "Blockchain technology has the ability to eliminate all the tolls exacted by centralized organization when transferring payments.\n\n",
-              "id": "11d8aa2e-725d-4b24-90ac-779f4e1a8ed5",
+              "id": "cb9d7488-79f6-4c46-8d32-5ad17c314d4e",
               "children": [],
               "links": [
                 {
@@ -2457,7 +2460,7 @@
               "title": "Insurance",
               "xid": "uMXcKCUoUN8-Hq_IOBRCp",
               "description": "Blockchain technology has the ability to automate claims functions by verifying real-world data through the use of an oracle. It also automates payments between parties for claims and thus lower administrative costs for insurance companies.\n\n",
-              "id": "dfda038d-eaed-49de-bf77-109eccee89b8",
+              "id": "fd33cd7f-df85-4416-9720-c1f75619e56b",
               "children": [],
               "links": [
                 {
@@ -2495,13 +2498,13 @@
           "title": "Node as a Service",
           "xid": "dDPhMNPpl3rZh3EgXy13P",
           "description": "Running your own blockchain node can be challenging, especially when getting started or while scaling fast. There are a number of services that run optimized node infrastructures for you, so you can focus on developing your application or product instead.\n\n",
-          "id": "9690313b-a0c0-4219-9256-a54d83f2cdb3",
+          "id": "221de32d-ed06-487a-8e00-280b423d71fc",
           "children": [
             {
               "title": "Alchemy",
               "xid": "lOoubzXNILBk18jGsc-JX",
               "description": "Alchemy is a developer platform that empowers companies to build scalable and reliable decentralized applications without the hassle of managing blockchain infrastructure in-house.\n\n",
-              "id": "745cecef-9a16-4ecd-a53a-2c46a2b03bc9",
+              "id": "f2ad7646-cd7a-415e-b703-4dbb39a58543",
               "children": [],
               "links": [
                 {
@@ -2515,7 +2518,7 @@
               "title": "Infura",
               "xid": "hJmNuEMHaMSM0QQlABFRS",
               "description": "Infura provides the tools and infrastructure that allow developers to easily take their blockchain application from testing to scaled deployment - with simple, reliable access to Ethereum and IPFS.\n\n",
-              "id": "3b3b204e-bccd-4bce-85a6-1361d6a9dc7e",
+              "id": "d7d7bae2-c85d-4ea9-a554-457747644308",
               "children": [],
               "links": [
                 {
@@ -2534,7 +2537,7 @@
               "title": "Moralis",
               "xid": "pJhR9OQo8YFQmAZXQbikJ",
               "description": "Moralis provides a single workflow for building high performance dapps. Fully compatible with your favorite web3 tools and services.\n\n",
-              "id": "d3db9912-6754-4020-8b82-3ce355ed039f",
+              "id": "32aacd2b-de1c-4a51-8e45-466e38c3cac0",
               "children": [],
               "links": [
                 {
@@ -2553,7 +2556,7 @@
               "title": "Quicknode",
               "xid": "FGih8w9We52PHpBnnGO6H",
               "description": "QuickNode is a Web3 developer platform used to build and scale blockchain applications.\n\n",
-              "id": "43d6b449-dbd2-4e9a-a7ca-d991671a3765",
+              "id": "64b33d8f-6148-4ee8-80e9-238205d9a37c",
               "children": [],
               "links": [
                 {
@@ -2595,13 +2598,13 @@
       "title": "Version Control Systems",
       "xid": "Fs9rcEh_f9fJ2tF-bkAUE",
       "description": "Version control/source control systems allow developers to track and control changes to code over time. These services often include the ability to make atomic revisions to code, branch/fork off of specific points, and to compare versions of code. They are useful in determining the who, what, when, and why code changes were made.\n\n",
-      "id": "af0e5d03-986a-49c2-8da2-9c0e96d42bdd",
+      "id": "59a0b228-90e9-43ed-8fe1-fb4b672f3b01",
       "children": [
         {
           "title": "Git",
           "xid": "gpS5CckcQZX3TMFQ2jtIL",
           "description": "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.\n\n",
-          "id": "3cccbbc9-6876-4f49-af24-ee4f99131df5",
+          "id": "c5ef6256-da29-4545-91f8-499336cf5cdd",
           "children": [],
           "links": [
             {
@@ -2664,13 +2667,13 @@
       "title": "Repo Hosting Services",
       "xid": "oSK3MRQD_4j1gGDORN7RO",
       "description": "When working on a team, you often need a remote place to put your code so others can access it, create their own branches, and create or review pull requests. These services often include issue tracking, code review, and continuous integration features. A few popular choices are GitHub, GitLab, BitBucket, and AWS CodeCommit.\n\n",
-      "id": "9cd08f12-4a7b-4e02-99f8-32260cbb0045",
+      "id": "073585d4-e885-494b-97a4-47e97879c05c",
       "children": [
         {
           "title": "GitHub",
           "xid": "GOgeaQoRvqg-7mAfL_A8t",
           "description": "GitHub is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.\n\n",
-          "id": "655b7af3-0ff0-4641-8202-68921a05c9f4",
+          "id": "a43176c4-50b7-42b2-b264-87f77889c53f",
           "children": [],
           "links": [
             {
@@ -2714,7 +2717,7 @@
           "title": "GitLab",
           "xid": "CWqwv4asouS-dssAwIdxv",
           "description": "GitLab is a provider of internet hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.\n\n",
-          "id": "2cbb3268-4fa4-4abf-8b6d-30151d24a80a",
+          "id": "74c8f659-980d-40a3-8d9a-9588b7b1b048",
           "children": [],
           "links": [
             {
@@ -2738,7 +2741,7 @@
           "title": "Bitbucket",
           "xid": "TMPB62h9LGIA0pMmjfUun",
           "description": "Bitbucket is a Git based hosting and source code repository service that is Atlassian's alternative to other products like GitHub, GitLab etc. Bitbucket offers hosting options via Bitbucket Cloud (Atlassian's servers), Bitbucket Server (customer's on-premise) or Bitbucket Data Centre (number of servers in customers on-premise or cloud environment)\n\n",
-          "id": "e21105d6-951d-426c-9ec5-aa3cb05d409f",
+          "id": "83802383-42d9-4796-9863-4421171aa9eb",
           "children": [],
           "links": [
             {
@@ -2796,13 +2799,13 @@
       "title": "Building for Scale",
       "xid": "bTdRKEiIUmu1pnp8UbJK9",
       "description": "Due to the limited number of transactions-per-second (TPS) built-in to blockchains, a number of alternative mechanism and technologies have emerged to aid the scaling of blockchain dApps.\n\n",
-      "id": "d3b9f52c-b21e-410b-860e-3353c2e23aa9",
+      "id": "0a295364-5db9-4b4e-9a40-ed3b229d3b0b",
       "children": [
         {
           "title": "State & Payment Channels",
           "xid": "5T5c3SrFfMZLEKAzxJ-_S",
           "description": "State channels refer to the process in which users transact with one another directly outside of the blockchain, or \u2018off-chain,\u2019 and greatly minimize their use of \u2018on-chain\u2019 operations.\n\n",
-          "id": "54c90fea-b4f9-4211-bbbc-4f30f62533c9",
+          "id": "84bd3014-8d11-4c15-9df7-6a660f4a129a",
           "children": [],
           "links": [
             {
@@ -2821,7 +2824,7 @@
           "title": "Optimistic Rollups & Fraud Proofs",
           "xid": "ti6-LSK52dTCLVdxArp9q",
           "description": "\u200dOptimistic rollups are a layer 2 (L2) construction that improves throughput and latency on Ethereum\u2019s base layer by moving computation and data storage off-chain. An optimistic rollup processes transactions outside of Ethereum Mainnet, reducing congestion on the base layer and improving scalability. Optimistic rollups allow anyone to publish blocks without providing proofs of validity. However, to ensure the chain remains safe, optimistic rollups specify a time window during which anyone can dispute a state transition.\n\n",
-          "id": "cef91a1f-fda1-4eb0-a7ed-2e46280b1f57",
+          "id": "e5299c1d-9963-4963-8fe2-bdb0b6f9001e",
           "children": [],
           "links": [
             {
@@ -2835,7 +2838,7 @@
           "title": " Zk Rollups & Zero Knowledge Proof",
           "xid": "PykoX4j5Q3eJWIpUoczjM",
           "description": "Zero-knowledge rollups (ZK-rollups) are layer 2 scaling solutions that increase the throughput of a blockchain by moving computation and state-storage off-chain.\n\n",
-          "id": "09395c1f-2ed9-4aa0-8ace-f29628efc3c0",
+          "id": "06bd9cd8-e028-49b0-b811-c8b92a65efd9",
           "children": [],
           "links": [
             {
@@ -2859,7 +2862,7 @@
           "title": "Validium",
           "xid": "chmxDwNVOefp98IbjEgNl",
           "description": "Validium is a scaling solution that enforces integrity of transactions using validity proofs like ZK-rollups, but doesn\u2019t store transaction data on the Ethereum Mainnet. While off-chain data availability introduces trade-offs, it can lead to massive improvements in scalability\n\n",
-          "id": "ce3dc8a1-8b2f-4faa-a1de-f708a398173a",
+          "id": "4d844a9b-03b1-4af9-921d-03549dfa2dc6",
           "children": [],
           "links": [
             {
@@ -2873,7 +2876,7 @@
           "title": "Plasma",
           "xid": "dMesiPUPBegYQ7hgeMMJK",
           "description": "Plasma is a framework that allows the creation of child blockchains that use the main Ethereum chain as a layer of trust and arbitration. In Plasma, child chains can be designed to meet the requirements of specific use cases, specifically those that are not currently feasible on Ethereum.\n\n",
-          "id": "cc5c8c43-9b28-4309-ba29-21ec93bd04eb",
+          "id": "c470a87f-76bf-48ec-8953-dfe5843cbac2",
           "children": [],
           "links": [
             {
@@ -2887,7 +2890,7 @@
           "title": "Sidechains",
           "xid": "lSQA3CfQBugEBhAh2yxro",
           "description": "A sidechain is a separate blockchain network that connects to another blockchain \u2013 called a parent blockchain or mainnet \u2013 via a two-way peg.\n\n",
-          "id": "dd635394-ee85-40cb-945d-c3b7328d99a5",
+          "id": "4cbcee5d-d4fd-47e1-97c7-92abe4e3f0b6",
           "children": [],
           "links": [
             {
@@ -2906,7 +2909,7 @@
           "title": "Ethereum 2.0",
           "xid": "9uz6LBQwYpOid61LrK5dl",
           "description": "Ethereum 2.0 marks a long-anticipated upgrade to the Ethereum public mainnet. Designed to accelerate Ethereum\u2019s usage and adoption by improving its performance, Ethereum 2.0 implements Proof of Stake.\n\n",
-          "id": "b47fef36-9e5e-41f8-bbf4-2ea0024d87c9",
+          "id": "31d3d285-6d15-4d76-85ae-b7ade4444e90",
           "children": [],
           "links": [
             {
@@ -2930,7 +2933,7 @@
           "title": "On-Chain Scaling",
           "xid": "1bUD9-vFo-tsHiB1a06tO",
           "description": "On-chain scaling refers to any direct modification made to a blockchain, like data sharding and execution sharding in the incoming version of Ethereum 2.0. Another type of on-chain scaling would be a sidechain with two-way bridge to Ethereum, like Polygon.\n\n",
-          "id": "4bd98612-93fa-4439-975a-3a5822a22054",
+          "id": "145eed04-e76d-4850-9f84-295babb9c423",
           "children": [],
           "links": [
             {

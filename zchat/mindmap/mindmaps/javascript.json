@@ -1,18 +1,21 @@
 {
+  "id": "eb2fc928-3d2a-4d7f-874d-0f9a3ef9e0d0",
   "title": "JavaScript Roadmap",
-  "description": "\n",
+  "description": "Step by step guide to learn JavaScript in 2025",
+  "question_title": "",
+  "question_description": "",
   "children": [
     {
       "title": "Introduction to JavaScript",
       "xid": "6khAD6mzZ9S96JJuC5_j6",
       "description": "JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. It lets us add interactivity to pages e.g. you might have seen sliders, alerts, click interactions, popups, etc on different websites -- all of that is built using JavaScript. Apart from being used in the browser, it is also used in other non-browser environments as well such as Node.js for writing server-side code in JavaScript, Electron for writing desktop applications, React Native for mobile applications, and so on.\n\n",
-      "id": "9ea02b62-c23b-4b23-8f90-323423a44fb2",
+      "id": "60533fb2-ab28-44e9-b99d-c41d61187115",
       "children": [
         {
           "title": "What is JavaScript",
           "xid": "UBB-8hUcwo4Mfd0cmEcdA",
           "description": "JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. It lets us add interactivity to pages e.g. you might have seen sliders, alerts, click interactions, popups, etc on different websites -- all of that is built using JavaScript. Apart from being used in the browser, it is also used in other non-browser environments as well such as Node.js for writing server-side code in JavaScript, Electron for writing desktop applications, React Native for mobile applications, and so on.\n\n",
-          "id": "093c69da-43e2-4a16-8247-86b5e6caceb4",
+          "id": "f26f400b-567b-4a49-ac21-f0f720e4f502",
           "children": [],
           "links": [
             {
@@ -66,7 +69,7 @@
           "title": "History of JavaScript",
           "xid": "l-GKzcsBNA0r6Jax8hwnP",
           "description": "JavaScript was initially created by Brendan Eich of NetScape and was first announced in a press release by Netscape in 1995. It has a bizarre history of naming; initially, it was named Mocha by the creator, which was later renamed LiveScript. In 1996, about a year later after the release, NetScape decided to rename it to JavaScript with hopes of capitalizing on the Java community (although JavaScript did not have any relationship with Java) and released Netscape 2.0 with the official support of JavaScript.\n\n",
-          "id": "7f0a3f3d-57ab-40f6-afcf-7b4d1e79f5d8",
+          "id": "f1845e13-1a1b-4618-95a2-af87ea346a69",
           "children": [],
           "links": [
             {
@@ -90,7 +93,7 @@
           "title": "JavaScript Versions",
           "xid": "SFPsWnVpZBAw3_re7op4h",
           "description": "JavaScript, invented by Brendan Eich, achieved the status of an ECMA standard in 1997 and adopted the official name ECMAScript. This language has evolved through several versions, namely ES1, ES2, ES3, ES5, and the transformative ES6. These updates have played a crucial role in improving and standardizing JavaScript, making it widely used and valuable in the ever-changing field of web development.\n\n",
-          "id": "f99713b7-d0b9-4ea4-9965-b32d435012a7",
+          "id": "34ad5748-4c3f-4ae2-af42-97c60c506cae",
           "children": [],
           "links": [
             {
@@ -119,7 +122,7 @@
           "title": "How to run JavaScript",
           "xid": "uXsWIUUxtc4H_iRx3uZv0",
           "description": "JavaScript can be run in the browser by including the external script file using the `script` tag, writing it within the HTML page using the `script` tag again, running it in the browser console or you can also use [REPL](https://www.digitalocean.com/community/tutorials/how-to-use-the-node-js-repl).\n\n",
-          "id": "9a8502b0-1320-4ed4-a28b-381baf65f1de",
+          "id": "51c29058-4fb2-4219-a543-680aae577736",
           "children": [],
           "links": [
             {
@@ -197,13 +200,13 @@
       "title": "All about Variables",
       "xid": "kvActjpU4FUJdrmuFoFEe",
       "description": "Most of the time, a JavaScript application needs to work with information. To store and represent this information in the JavaScript codebase, we use variables. A variable is a container for a value.\n\n",
-      "id": "183471ba-a4e2-45fe-acac-2ae3db32fd44",
+      "id": "15e05594-f961-4948-ab6e-9efecf1f8d3f",
       "children": [
         {
           "title": "Hoisting",
           "xid": "Lb5jLF91WO5V5CWpifciW",
           "description": "JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, or classes to the top of their scope, prior to execution of the code.\n\n",
-          "id": "8eb74e20-a542-490b-bc23-14f0663cf0af",
+          "id": "6337a500-f7b0-4df2-bdbb-94c96f0b0bf2",
           "children": [],
           "links": [
             {
@@ -227,13 +230,13 @@
           "title": "Variable Declarations",
           "xid": "BqbAWt--Guqex-rrb4ZUv",
           "description": "To use variables in JavaScript, we first need to create it i.e. declare a variable. To declare variables, we use one of the `var`, `let`, or `const` keywords.\n\n",
-          "id": "c48988d6-362c-47a4-82a9-fc52b9f2e4c1",
+          "id": "779f7ed4-aa41-4a49-8da1-000b293d7021",
           "children": [
             {
               "title": "var",
               "xid": "JSjeM8qnBg4onXq9mn5gB",
               "description": "The var statement declares a function-scoped or globally-scoped variable, optionally initializing it to a value.\n\n",
-              "id": "d54d2604-b641-4448-9cd7-30d590fd5186",
+              "id": "6f73227f-4ed0-4c4c-adde-f60da21b111b",
               "children": [],
               "links": [
                 {
@@ -262,7 +265,7 @@
               "title": "let",
               "xid": "kDRa9G3pMp0Cb0mqYUawM",
               "description": "The `let` declaration declares a block-scoped local variable, optionally initializing it to a value.\n\n",
-              "id": "a1185697-2824-4779-b402-24a6ec360077",
+              "id": "7ec10c0b-103a-42b9-8b69-c602ee2c8757",
               "children": [],
               "links": [
                 {
@@ -281,7 +284,7 @@
               "title": "const",
               "xid": "q85z6x1Lc-yLWepwtIT2_",
               "description": "Constants are block-scoped, much like variables declared using the `let` keyword. The value of a constant can't be changed through reassignment (i.e. by using the assignment operator), and it can't be re-declared (i.e. through a variable declaration). However, if a constant is an object or array its properties or items can be updated or removed.\n\n",
-              "id": "e89f0b0c-283c-4946-af9b-ad4855ca6eed",
+              "id": "1de4d635-ffc6-45cc-a033-862c41988c14",
               "children": [],
               "links": [
                 {
@@ -319,7 +322,7 @@
           "title": "Variable Naming Rules",
           "xid": "HfieG3v3wnmpZDfNwEJvZ",
           "description": "A variable name should accurately identify your variable. When you create good variable names, your JavaScript code becomes easier to understand and easier to work with. Properly naming variables is really important. JavaScript also has some rules when it comes to naming variables; read about these rules through the links below.\n\n",
-          "id": "0ced1a6d-76d4-4e35-b55c-470eae2eb801",
+          "id": "a694df63-7bb5-4610-9317-14f3f1fa1867",
           "children": [],
           "links": [
             {
@@ -353,13 +356,13 @@
           "title": "Variable Scopes",
           "xid": "7iMJuaB7yKlSIbT4dBe5L",
           "description": "In JavaScript, scope refers to the visibility of a variable or how it can be used after it is declared. The scope of a variable depends on the keyword that was used to declare it.\n\nThe three types of Scope are Global Scope, Function Scope, and Block Scope. Before ES6 (2015), JavaScript had only Global Scope and Function Scope with the `var` keyword. ES6 introduced `let` and `const` which allow Block Scope in JavaScript.\n\nGlobal Scope: Variables declared outside any function or curly braces '{}' have Global Scope, and can be accessed from anywhere within the same Javascript code. `var`, `let` and `const` all provide this Scope.\n\nFunction Scope: Variables declared within a function can only be used within that same function. Outside that function, they are undefined. `var`, `let` and `const` all provide this Scope.\n\nBlock Scope: A block is any part of JavaScript code bounded by '{}'. Variables declared within a block can not be accessed outside that block. This Scope is only provided by the `let` and `const` keywords. If you declare a variable within a block using the `var` keyword, it will NOT have Block Scope.\n\nLocal Scope: Local variables are only recognized inside their functions, variables with the same name can be used in different functions. Local variables are created when a function starts, and deleted when the function is completed. `var`, `let` and `const` all provide this Scope.\n\n",
-          "id": "b7ce037f-882d-4b54-8c7e-b8a5210f3774",
+          "id": "fbe04ca0-47c2-4284-ae78-a5178a686ee7",
           "children": [
             {
               "title": "Block",
               "xid": "uqEzHYx13Y2EpvTTRzykn",
               "description": "This scope restricts the variable that is declared inside a specific block, from access by the outside of the block. The let & const keyword facilitates the variables to be block scoped. In order to access the variables of that specific block, we need to create an object for it. Variables declared with the var keyword, do not have block scope.\n\n",
-              "id": "62d302f7-d437-455d-a47e-197b9ffebde8",
+              "id": "84a0637a-0cbf-4a13-999e-45d55d02bfb1",
               "children": [],
               "links": [
                 {
@@ -378,7 +381,7 @@
               "title": "Function",
               "xid": "YMT7O6lrMSMtNo0EnmsnQ",
               "description": "When a variable is declared inside a function, it is only accessible within that function and cannot be used outside that function.\n\n",
-              "id": "a79c425a-f647-462e-8c7c-e95a95b074ca",
+              "id": "f462c790-ac47-4686-baaa-2dc03ebd8a5e",
               "children": [],
               "links": [
                 {
@@ -397,7 +400,7 @@
               "title": "Global",
               "xid": "oC4o6GLEES_nUgCJu9Q6I",
               "description": "Variables declared Globally (outside any function) have Global Scope. Global variables can be accessed from anywhere in a JavaScript program. Variables declared with `var`, `let` and `const` are quite similar when declared outside a block.\n\nNote\n----\n\nIf you assign a value to a variable that has not been declared i.e `potato = true` it will automatically become a _GLOBAL_ variable.\n\n",
-              "id": "1c9b89cc-c2c7-42b5-80a6-1941b11b3ef1",
+              "id": "df1aec8a-75bd-42eb-a801-b8025de7eb59",
               "children": [],
               "links": [
                 {
@@ -449,13 +452,13 @@
       "title": "Data Types",
       "xid": "-jbPPuEXacBR0d0CWPHgd",
       "description": "Data type refers to the type of data that a JavaScript variable can hold. There are seven primitive data types in JavaScript (Number, BigInt, String, Boolean, Null, Undefined and Symbol). Objects are non-primitives.\n\n",
-      "id": "7b8172b1-f271-4bc0-b633-51637ff19cf4",
+      "id": "36035a8c-18af-4049-8493-da1d9bed7e17",
       "children": [
         {
           "title": "string",
           "xid": "1RcwBHU3jzx0YxxUGZic4",
           "description": "String is a primitive type that holds a sequence of characters. String in Javascript is written within a pair of single quotation marks `''`, double quotation marks `\"\"`, or backticks ` `` ` (template literals). All types of quotes can be used to contain a string but only if the starting quote is the same as the end quote.\n\n",
-          "id": "2ec21e77-d00d-4b01-aa06-22f251576d16",
+          "id": "72c966e1-343f-47c5-9815-c67bdf32cadb",
           "children": [],
           "links": [
             {
@@ -474,13 +477,13 @@
           "title": "Object",
           "xid": "xe8HZ8Mt1fK8yJMcDPYHJ",
           "description": "JavaScript object is a data structure that allows us to have key-value pairs; so we can have distinct keys and each key is mapped to a value that can be of any JavaScript data type. Comparing it to a real-world object, a pen is an object with several properties such as color, design, the material it is made of, etc. In the same way, JavaScript objects can have properties that define their characteristics.\n\n",
-          "id": "346ca6ac-e6da-4b21-8df5-a1db361144ae",
+          "id": "a9e6b74e-8a13-4f87-9e2b-cbcfac1e1a23",
           "children": [
             {
               "title": "Prototypal Inheritance",
               "xid": "Xge6eru1hRGobnOEHLZqv",
               "description": "The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the Prototype of an object, we use Object.getPrototypeOf and Object.setPrototypeOf.\n\n",
-              "id": "cc4fcf51-b135-4f51-9120-236369cdcb40",
+              "id": "4edd7dd8-4d54-4b7b-b98a-85cafac93b35",
               "children": [],
               "links": [
                 {
@@ -499,7 +502,7 @@
               "title": "Object Prototype",
               "xid": "0I6dJE0ygXPGjeRAe8AtT",
               "description": "JavaScript is an object-oriented language built around a prototype model. In JavaScript, every object inherits properties from its prototype, if there are any. A prototype is simply an object from which another object inherits properties. To create complex programs using JavaScript, one has to be proficient in working with prototypes \u2014 they form the very core of OOP in the language.\n\n",
-              "id": "e7c7749d-6b66-480f-9824-0a9e21509e35",
+              "id": "d9b0d754-bed4-4f30-a6c5-a82352e89db2",
               "children": [],
               "links": [
                 {
@@ -528,7 +531,7 @@
               "title": "Built-in Objects",
               "xid": "D95ndkkwmT5X_HqboEn6E",
               "description": "Built-in objects, or \"global objects\", are those built into the language specification itself. There are numerous built-in objects with the JavaScript language, all of which are accessible at the global scope. Some examples are:\n\n*   `Number`\n*   `Math`\n*   `Date`\n*   `String`\n*   `Error`\n*   `Function`\n*   `Boolean`\n\n",
-              "id": "145399a7-437a-4244-9e4b-8a89c1f20611",
+              "id": "cef19797-d7e0-4942-af2d-783df48ae240",
               "children": [],
               "links": [
                 {
@@ -566,7 +569,7 @@
           "title": "typeof operator",
           "xid": "RRACLQ6-aopkxImIp3Toc",
           "description": "You can use the typeOf operator to find the data type of a JavaScript variable. It returns a string indicating the type of provided operand's value.\n\n",
-          "id": "fb9fb186-0e82-4ee8-a912-4503d7be11b0",
+          "id": "0a5507de-5c37-4dfd-b341-300fd64cd217",
           "children": [],
           "links": [
             {
@@ -614,13 +617,13 @@
       "title": "Type Casting",
       "xid": "XPmBieVCXvL3WbWkYRoKr",
       "description": "Type conversion (or typecasting) means the transfer of data from one data type to another. Implicit conversion happens when the compiler (for compiled languages) or runtime (for script languages like [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript)) automatically converts data types. The source code can also explicitly require a conversion to take place.\n\n",
-      "id": "3d395aa0-c9f9-409b-ac5e-ed8d0c15ff6b",
+      "id": "b7d7b821-a333-4436-81fa-0ef8068958c6",
       "children": [
         {
           "title": "Type Conversion vs Coercion",
           "xid": "_Bo2YZqZ_gY35SLPML4T6",
           "description": "Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Type conversion is similar to type coercion because they convert values from one data type to another with one key difference \u2014 type coercion is implicit. In contrast, type conversion can be either implicit or explicit.\n\n",
-          "id": "6699d6f7-6b84-475a-98ec-9308418b0548",
+          "id": "ec46f634-6bb6-4833-b9e0-60b16a0759bf",
           "children": [],
           "links": [
             {
@@ -644,7 +647,7 @@
           "title": "Explicit Type Casting",
           "xid": "1xhjrRN-Rfekei2JwwU7Y",
           "description": "Type casting means transferring data from one data type to another by explicitly specifying the type to convert the given data to. Explicit type casting is normally done to make data compatible with other variables. Examples of typecasting methods are `parseInt()`, `parseFloat()`, `toString()`.\n\n",
-          "id": "8e14d3ff-1871-44f5-bcf1-7422ecf42a07",
+          "id": "b4157901-671d-47d6-8e61-8d33e87d1aa5",
           "children": [],
           "links": [
             {
@@ -673,7 +676,7 @@
           "title": "Implicit Type Casting",
           "xid": "pP42K_eH4RCdUdUS8BJlP",
           "description": "Implicit type conversion happens when the compiler or runtime automatically converts data types. JavaScript is loosely typed language and most of the time operators automatically convert a value to the right type.\n\n",
-          "id": "24393de0-fd2d-4af9-87cf-2729b86393cd",
+          "id": "5b06799b-9d9b-44c6-9ce6-50839c6cd54e",
           "children": [],
           "links": [
             {
@@ -721,19 +724,19 @@
       "title": "Data Structures",
       "xid": "ADarwihuI2nBq1C3U7-Zr",
       "description": "A Data structure is a format to organize, manage and store data in a way that allows efficient access and modification. JavaScript has primitive (built-in) and non-primitive (not built-in) data structures. Primitive data structures come by default with the programming language and you can implement them out of the box (like arrays and objects). Non-primitive data structures don't come by default and you have to code them up if you want to use them.\n\n",
-      "id": "fc2e8e99-2a67-4d03-a437-aa01190d721e",
+      "id": "c76d88ce-41e2-49ee-adc8-b8286e6330c2",
       "children": [
         {
           "title": "Keyed Collections",
           "xid": "rhJrrqkRqy2Qw_he4SPGz",
           "description": "Keyed collections are data collections that are ordered by key not index. They are associative in nature. Map and set objects are keyed collections and are iterable in the order of insertion.\n\n",
-          "id": "c706bf4e-cd53-4c1b-b7f2-4426e10a765d",
+          "id": "4e4ff551-c132-48c7-a9ba-96701cd68cf7",
           "children": [
             {
               "title": "Map",
               "xid": "Xc0jL4rafpI-ixIaAxo9O",
               "description": "[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) is a collection of keyed data items, just like an `Object`. But the main difference is that `Map` allows keys of any type.\n\n",
-              "id": "e1f06399-d00c-4dcb-85f8-ef0ebe971160",
+              "id": "783f7b52-d48d-4a33-9c57-5e62c0ab2360",
               "children": [],
               "links": [
                 {
@@ -752,7 +755,7 @@
               "title": "Weak Map",
               "xid": "6icsjC4aisDgPWasVuCOt",
               "description": "[WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap) is a Map-like collection of key/value pairs whose keys must be objects, it removes them once they become inaccessible by other means\n\n",
-              "id": "91ba2850-8c5c-4769-85ee-bde48849cb7b",
+              "id": "686a4ee9-bf34-4bd7-a354-ec9e477f2655",
               "children": [],
               "links": [
                 {
@@ -771,7 +774,7 @@
               "title": "Set",
               "xid": "sciU68E13mcfL577y6Vim",
               "description": "The `Set` object lets you store unique values of any type, whether [primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) values or object references. A value in the `Set` may only occur once; it is unique in the `Set`'s collection.\n\n",
-              "id": "47059067-5b21-4f5b-81c1-f94292991d5a",
+              "id": "71dfdb88-fdca-43e0-8f58-3da1f55c196e",
               "children": [],
               "links": [
                 {
@@ -790,7 +793,7 @@
               "title": "Weak Set",
               "xid": "DSFzj61N9ojz29mjExhVa",
               "description": "`WeakSet` objects are collections of objects. Just as with `Sets`, each object in a `WeakSet` may occur only once; all objects in a `WeakSet`'s collection are unique.\n\n",
-              "id": "ca707263-91ae-4529-b92e-f2cfe85414de",
+              "id": "f6ebc7a2-3cf0-4827-9e79-233842358771",
               "children": [],
               "links": [
                 {
@@ -828,13 +831,13 @@
           "title": "Structured Data",
           "xid": "JwLGAuSOTyZ5BHSqeBDU6",
           "description": "Structured data is used by search-engines, like Google, to understand the content of the page, as well as to gather information about the web and the world in general.\n\nIt is also coded using in-page markup on the page that the information applies to.\n\n",
-          "id": "38548502-3444-46b4-b6e1-caee2f557814",
+          "id": "29eff4ac-885b-476c-a9a3-e0549be55b44",
           "children": [
             {
               "title": "JSON",
               "xid": "bFNvtHp97OzKnPJgr7WaH",
               "description": "JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa).\n\n",
-              "id": "638b2a6e-ba20-4384-b96c-1e50e25df7b9",
+              "id": "95147b19-c14e-4990-a652-61b37d619e08",
               "children": [],
               "links": [
                 {
@@ -862,13 +865,13 @@
           "title": "Indexed Collections",
           "xid": "lBOGoHZrmnIRatvryDwTm",
           "description": "Indexed Collections are collections that have numeric indices i.e. the collections of data that are ordered by an index value. In JavaScript, an array is an indexed collection. An array is an ordered set of values that has a numeric index.\n\n",
-          "id": "482b5afc-44b5-4506-8b2e-1c61c93afe73",
+          "id": "5858ec90-6d22-46c3-b313-7fcd053bc95e",
           "children": [
             {
               "title": "Typed Arrays",
               "xid": "8X1mdQ3NDBVOZZWBbAFRE",
               "description": "In Javascript, a typed array is an array-like buffer of binary data. There is no JavaScript property or object named TypedArray, but properties and methods can be used with typed array objects.\n\n",
-              "id": "06e8fd06-cc4b-4cd9-9929-7b285bbf2b4b",
+              "id": "88c75b14-3b14-482b-8927-89d246d55d75",
               "children": [],
               "links": [
                 {
@@ -887,7 +890,7 @@
               "title": "Arrays",
               "xid": "NZedBxG9B9TRVOf2QE2yL",
               "description": "Arrays are objects that store a collection of items and can be assigned to a variable. They have their methods that can perform operations on the array.\n\n",
-              "id": "369a5a2a-7aa5-4f1e-b754-64f177b5f770",
+              "id": "e7e94625-efa5-4587-9489-27c3df187815",
               "children": [],
               "links": [
                 {
@@ -969,13 +972,13 @@
       "title": "Equality Comparisons",
       "xid": "23Xa6q5VvRVlzc6Dx8vST",
       "description": "Comparison operators are used in logical statements to determine equality or difference between variables or values. Comparison operators can be used in conditional statements to compare values and take action depending on the result.\n\n",
-      "id": "efa29d75-9a51-41c2-860f-6bfa35eea53c",
+      "id": "6176ff84-ba46-4398-be52-8a38d58b3f13",
       "children": [
         {
           "title": "==",
           "xid": "RonBj1htt6jnBt3W7zoTA",
           "description": "In javascript, the `==` operator does the type conversion of the operands before comparison, whereas the `===` operator compares the values and the data types of the operands. The `Object.is()` method determines whether two values are the same value: `Object.is(value1, value2)`.\n\n`Object.is()` is not equivalent to the `==` operator. The `==` operator applies various coercions to both sides (if they are not the same type) before testing for equality (resulting in such behavior as `\"\" == false` being `true`), but `Object.is()` doesn't coerce either value.\n\n`Object.is()` is also not equivalent to the `===` operator. The only difference between `Object.is()` and `===` is in their treatment of signed zeros and `NaN` values. The `===` operator (and the `==` operator) treats the number values `-0` and `+0` as equal but treats `NaN` as not equal to each other.\n\n",
-          "id": "158f3724-e5ef-4fcf-aa06-205c876c272f",
+          "id": "eeb091c7-5300-4d78-8fde-e1183767a10e",
           "children": [],
           "links": [
             {
@@ -989,13 +992,13 @@
           "title": "equality-algorithms",
           "xid": "",
           "description": "equality-algorithms",
-          "id": "bf942f3b-5ab6-45e4-a3ab-dffc0a0b8492",
+          "id": "4ed0cb83-8e23-4f11-8085-157a5166b6da",
           "children": [
             {
               "title": "isLooselyEqual",
               "xid": "PLallt_T33W6bUEn0Hc3W",
               "description": "[isLooselyEqual](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality) checks whether its two operands are equal, returning a `Boolean` result. It attempts to convert and compare operands that are of different types.\n\n",
-              "id": "83b8db05-361c-441f-895f-74824dd9a286",
+              "id": "38e28b62-18ef-4132-9033-0199d7ef9028",
               "children": [],
               "links": [
                 {
@@ -1014,7 +1017,7 @@
               "title": "isStrictlyEqual",
               "xid": "pcILon_Jjm2_XS10iUJ0E",
               "description": "[isStrictlyEqual](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality) checks whether its two operands are equal, returning a `Boolean` result. It always considers operands of different types to be different.\n\n",
-              "id": "9b7bd164-ec15-434d-be72-95f851554a85",
+              "id": "5af27c50-23fa-4727-a064-0d7f559422ab",
               "children": [],
               "links": [
                 {
@@ -1033,7 +1036,7 @@
               "title": "SameValueZero",
               "xid": "fL3B2hkTgMb0oEwMiWJtK",
               "description": "[SameValueZero](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality) equality determines whether two values are functionally identical in all contexts with +0 and -0 are also considered equal.\n\n",
-              "id": "5d9b5ded-e9d7-43d4-8091-2e924959d9c6",
+              "id": "21f681f2-3722-4a18-b389-0524f72ac22d",
               "children": [],
               "links": [
                 {
@@ -1069,13 +1072,13 @@
       "title": "Loops and Iterations",
       "xid": "YD-2l_amfqqqCdtc_Zdzo",
       "description": "Loops offer a quick and easy way to do something repeatedly.\n\nYou can think of a loop as a computerized version of the game where you tell someone to take X steps in one direction, then Y steps in another. For example, the idea \"Go five steps to the east\" could be expressed this way as a loop:\n\n    for (let step = 0; step < 5; step++) {\n      // Runs 5 times, with values of step 0 through 4.\n      console.log('Walking east one step');\n    }\n    \n\n",
-      "id": "b8f628bb-031a-44f1-a3f7-90037ca96c4d",
+      "id": "84274507-3dbd-4d1f-97ed-26afe1904474",
       "children": [
         {
           "title": "for",
           "xid": "2M211rcaPSWbZ-sPoSEVR",
           "description": "The `for` loop is a standard control-flow construct in many programming languages, including JavaScript. It's commonly used to iterate over given sequences or iterate a known number of times and execute a piece of code for each iteration.\n\n",
-          "id": "2bf6f11d-fd50-45f9-b413-e375ebfb2acb",
+          "id": "bb30c5db-52ce-4ff3-8acb-0cd94cf8f47e",
           "children": [],
           "links": [
             {
@@ -1094,7 +1097,7 @@
           "title": "do...while",
           "xid": "57lO_3uxJaWsFXS-0J1AK",
           "description": "The `do...while` statement creates a loop that executes a specified statement until the test condition evaluates to `false`. The condition is evaluated after executing the statement, resulting in the specified statement executing at least once.\n\n",
-          "id": "970fb531-7000-4343-888d-a67576ca043f",
+          "id": "57a9c1a6-5456-432a-9070-bea8e018992e",
           "children": [],
           "links": [
             {
@@ -1113,7 +1116,7 @@
           "title": "while",
           "xid": "9-MpHmzK_IiCi6IcvAlGM",
           "description": "The `while` statement creates a loop that executes a specified statement as long as the test condition evaluates to `true`. The condition is evaluated before executing the statement.\n\n",
-          "id": "91af9bd0-24d7-48a8-9c03-fd26d28f2833",
+          "id": "5b89939e-d7a4-4d8e-81bd-6c22d1e82087",
           "children": [],
           "links": [
             {
@@ -1132,7 +1135,7 @@
           "title": "for...in loop",
           "xid": "cq3vvFZoNnAAZJ6oEBUwb",
           "description": "The for...in statement iterates over all enumerable properties of an object that are keyed by strings (ignoring ones keyed by Symbols), including inherited enumerable properties.\n\n",
-          "id": "73ea3be1-d172-493f-87e5-ddd3ac63c3fa",
+          "id": "cd73d789-64ab-4550-9db2-702cb8efc9ff",
           "children": [],
           "links": [
             {
@@ -1151,7 +1154,7 @@
           "title": "for...of loop",
           "xid": "FBz6h_AmTJBXoBN-a38a5",
           "description": "The for...of statement executes a loop that operates on a sequence of values sourced from an iterable object. Iterable objects include instances of built-ins such as Array, String, TypedArray, Map, Set, NodeList (and other DOM collections), and the arguments object, generators produced by generator functions, and user-defined iterables.\n\n",
-          "id": "8e21620d-340b-448a-91d4-021cc9f520c4",
+          "id": "7db51a3a-44d4-4eca-9afc-4ad5aa3cbde2",
           "children": [],
           "links": [
             {
@@ -1165,7 +1168,7 @@
           "title": "break / continue",
           "xid": "4oHFzn7R7xLxfuLpsJjr-",
           "description": "`break` statement, without a label reference, can only be used to jump out of a loop or a switch block.\n\n`continue` statement, with or without a label reference, can only be used to skip one loop iteration.\n\n",
-          "id": "07a8be6f-0613-424b-8df3-366129aff21f",
+          "id": "60a45e71-9106-4f5a-aba8-1f3ec3e5961e",
           "children": [],
           "links": [
             {
@@ -1203,19 +1206,19 @@
       "title": "Control Flow",
       "xid": "3tckJ2Sci7z-sNx9jx9eF",
       "description": "In JavaScript, the `Control flow` is a way of how your computer runs code from top to bottom. It starts from the first line and ends at the last line unless it hits any statement that changes the control flow of the program such as loops, conditionals, etc.\n\nWe can control the flow of the program through any of these control structures:\n\n*   Sequential (default mode)\n*   Conditional Statements\n*   Exception Handling\n*   Loops and Iterations\n\n",
-      "id": "705c22c5-aa13-4b11-a78b-9169cdfcddde",
+      "id": "ff708b7b-428d-4c0c-abbc-1e9bd762c302",
       "children": [
         {
           "title": "Conditional Statements",
           "xid": "ttCsd2_H2SuRivCjGv1OX",
           "description": "When you write code, you often want to perform different actions for different decisions. You can use conditional statements in your code to do this. In JavaScript, we have three conditional statements: `if`, `if...else`, and `switch`.\n\n",
-          "id": "959bbd2d-45a2-4027-8db3-fab0c7638ce8",
+          "id": "93d0a3e8-de3e-46f4-b484-3ab5734fa48f",
           "children": [
             {
               "title": "if...else",
               "xid": "ndbDXAx6bL4lZmpXv16Y_",
               "description": "The `if` statement executes a statement if a specified condition is `truthy`. If the condition is `falsy`, another statement in the optional `else` clause will be executed.\n\nExample\n-------\n\n    if (condition) {\n      statement1;\n    } else {\n      statement2;\n    }\n    \n\n",
-              "id": "aceecb62-1cfe-4351-b81f-20867beba09e",
+              "id": "d90a6d86-cc2b-451a-b386-7d589fa0a0ee",
               "children": [],
               "links": [
                 {
@@ -1234,7 +1237,7 @@
               "title": "Switch",
               "xid": "H_QlcUlavKKfcNK8CYAvb",
               "description": "The `switch` statement evaluates an expression, matching the expression's value against a series of `case` clauses, and executes statements after the first `case` clause with a matching value, until a `break` statement is encountered. The `default` clause of a `switch` statement will be jumped to if no `case` matches the expression's value.\n\nExample\n-------\n\n    switch (expression) {\n      case value1:\n        //Statements executed when the result of expression matches value1\n        break;\n      case value2:\n        //Statements executed when the result of expression matches value2\n        break;\n      ...\n      case valueN:\n        //Statements executed when the result of expression matches valueN\n        break;\n      default:\n        //Statements executed when none of the values match the value of the expression\n        break;\n    }\n    \n\n",
-              "id": "9124e124-b0aa-4f36-b5ba-8cf8a7dccb5c",
+              "id": "032a7626-a108-4b9d-92c2-678c93a8cc23",
               "children": [],
               "links": [
                 {
@@ -1272,13 +1275,13 @@
           "title": "Exceptional Handling",
           "xid": "34TKGxV9YziOWMh9rT_KE",
           "description": "In JavaScript, all exceptions are simply objects. While the majority of exceptions are implementations of the global Error class, any old object can be thrown. With this in mind, there are two ways to throw an exception: directly via an Error object, and through a custom object. (excerpt from Rollbar)\n\n",
-          "id": "f4605081-5c12-48c2-8a4f-939af499c83d",
+          "id": "d9bffc45-72eb-461f-9d98-79e0eb27cbde",
           "children": [
             {
               "title": "throw statement",
               "xid": "ReGIniyLYl5hGExchrJd2",
               "description": "The throw statement throws a user-defined exception. Execution of the current function will stop (the statements after throw won't be executed), and control will be passed to the first catch block in the call stack. If no catch block exists among caller functions, the program will terminate. (excerpt from MDN)\n\n",
-              "id": "e09df1e4-f2f6-4096-8f06-65d235162a44",
+              "id": "04c8a72a-69b8-4fa5-b294-c0720bc1675d",
               "children": [],
               "links": [
                 {
@@ -1307,7 +1310,7 @@
               "title": "try/catch/finally",
               "xid": "rbjEZe5vxCJ8reI1oZ-jf",
               "description": "These are ways of handling errors in your JavaScript code. Inside the try code block we have the code to run, inside the catch block we handle the errors, and inside the finally block we have code that runs after the execution of the previous code blocks, regardless of the result.\n\n",
-              "id": "76700bdc-a677-462f-b706-d8ddce613d21",
+              "id": "3d3259e0-9df3-465a-b51c-13452bd9b3a3",
               "children": [],
               "links": [
                 {
@@ -1321,7 +1324,7 @@
               "title": "Error Objects",
               "xid": "-z-4VTaC3tOThqChgyoMs",
               "description": "When a runtime error occurs, a new `Error` object is created and thrown. With this `Error` object, we can determine the type of the Error and handle it according to its type.\n\nTypes of Errors\n---------------\n\nBesides error constructors, Javascript also has other core Error constructors. Like\n\n*   AggregateError - A collection of errors thrown simultaneously.\n*   EvalError - An error occurred during the evaluation of a JavaScript expression.\n*   InternalError - An internal JavaScript error, often indicating a bug in the engine.\n*   RangeError - A value is outside the allowed range for a given operation.\n*   ReferenceError - A variable or object is referenced before it's declared or doesn't exist.\n*   SyntaxError - The code contains incorrect syntax, preventing it from being parsed.\n\nExample\n-------\n\n    try {\n      willGiveErrorSometime();\n    } catch (error) {\n      if (error instanceof RangeError) {\n        rangeErrorHandler(error);\n      } else if (error instanceof ReferenceError) {\n        referenceErrorHandle(error);\n      } else {\n        errorHandler(error);\n      }\n    }\n    \n\n",
-              "id": "3676716b-5568-424b-9625-76c2dd7ed926",
+              "id": "333df538-ba17-429c-8308-ab9525f530db",
               "children": [],
               "links": [
                 {
@@ -1398,13 +1401,13 @@
       "title": "Expressions & Operators",
       "xid": "_6vZa43gWjxO2OcD1iCCQ",
       "description": "At a high level, an expression is a valid unit of code that resolves to a value. There are two types of expressions: those that have side effects (such as assigning values) and those that purely evaluate. The expression `x = 7` is an example of the first type. This expression uses the `=` operator to assign the value seven to the variable x. The expression itself evaluates to 7. The expression `3 + 4` is an example of the second type. This expression uses the `+` operator to add `3` and `4` together and produces a value, `7`. However, if it's not eventually part of a bigger construct (for example, a variable declaration like `const z = 3 + 4`), its result will be immediately discarded `\u2014` this is usually a programmer mistake because the evaluation doesn't produce any effects. As the examples above also illustrate, all complex expressions are joined by operators, such as `=` and `+`.\n\n",
-      "id": "74a463b3-2ba9-40df-9e05-fce8c76101de",
+      "id": "a37f6487-4295-4f95-af0c-db7e08a1f085",
       "children": [
         {
           "title": "Assignment Operators",
           "xid": "IvBtUzIGnkgGXrJjqmjf4",
           "description": "An assignment operator assigns a value to its left operand based on the value of its right operand. The simple assignment operator is equal (`=`), which assigns the value of its right operand to its left operand. That is, `x = f()` is an assignment expression that assigns the value of `f()` to `x`.\n\n",
-          "id": "c1b8f3bc-5edd-4135-84cf-b35604538344",
+          "id": "3f35baae-746e-4b3a-ba28-0ea7e5c9a6de",
           "children": [],
           "links": [
             {
@@ -1423,7 +1426,7 @@
           "title": "Comparison Operators",
           "xid": "-v4_V4UuoZSgUk2sqOCim",
           "description": "Comparison operators are the operators that compare values and return true or false. The operators include: `>`, `<`, `>=`, `<=`, `==`, `===`, `!=` and `!==`\n\n",
-          "id": "d1f131f3-7db7-4aa5-8db3-47ede794fa3e",
+          "id": "fec0dfb1-0f38-4db0-971e-76428fc60cb9",
           "children": [],
           "links": [
             {
@@ -1447,7 +1450,7 @@
           "title": "Arithmetic Operators",
           "xid": "0PK1NwlgkNe2Vf-We4uLH",
           "description": "The Arithmetic operators perform addition, subtraction, multiplication, division, exponentiation, and remainder operations.\n\nArithmetic operators in JavaScript are as follows:\n\n*   `+` (Addition)\n*   `-` (Subtraction)\n*   `*` (Multiplication)\n*   `**` (Exponentiation)\n*   `/` (Division)\n*   `%` (Modulus i.e. Remainder)\n*   `++` (Increment)\n*   `--` (Decrement)\n\n",
-          "id": "e65cefcc-f706-41e7-b99d-6421cc8e7e79",
+          "id": "e98ae175-0eb5-407f-a828-724d3993ce68",
           "children": [],
           "links": [
             {
@@ -1471,7 +1474,7 @@
           "title": "Bitwise Operators",
           "xid": "ghjNJW67Wj5L5QK46xwL-",
           "description": "Bitwise operators treat arguments as 32-bits (zeros & ones) and work on the level of their binary representation. Ex. Decimal number `9` has a binary representation of `1001`. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.\n\nBitwise operators in JavaScript are as follows:\n\n*   `&` (AND)\n*   `|` (OR)\n*   `^` (XOR)\n*   `~` (NOT)\n*   `<<` (Left SHIFT)\n*   `>>` (Right SHIFT)\n*   `>>>` (Zero-Fill Right SHIFT)\n\n",
-          "id": "0c6ce5f5-53ea-4a27-837d-7864f04dab54",
+          "id": "d1c84516-f9d2-4c16-af9c-846db9209905",
           "children": [],
           "links": [
             {
@@ -1490,7 +1493,7 @@
           "title": "Logical Operators",
           "xid": "bo4SvzU4BrPl3c99zW7Y5",
           "description": "There are four logical operators in JavaScript: `||` (OR), `&&` (AND), `!` (NOT), `??` (Nullish Coalescing).\n\n",
-          "id": "8998b91b-2d9a-43e8-aa03-9300988716d0",
+          "id": "3dbe9046-68ff-44ce-ae13-1965102507dd",
           "children": [],
           "links": [
             {
@@ -1504,7 +1507,7 @@
           "title": "BigInt Operators",
           "xid": "udoz0DZi7f-vm30dSnYKu",
           "description": "Most operators that can be used with the `Number` data type will also work with `BigInt` values (e.g. arithmetic, comparison, etc.). However, the unsigned right shift `>>>` operator is an exception and is not supported. Similarly, some operators may have slight differences in behaviour (for example, division with `BigInt` will round towards zero).\n\n",
-          "id": "f8f0f27a-2bc5-4cad-9207-8a6613260921",
+          "id": "f76e2332-a619-4465-8b04-b471c3b207ec",
           "children": [],
           "links": [
             {
@@ -1518,7 +1521,7 @@
           "title": "String Operators",
           "xid": "c38b6t5f17Zg2O2yg3eFP",
           "description": "In addition to the comparison operators, which can be used on string values, the concatenation operator (`+`) concatenates two string values together, returning another string that is the union of the two operand strings.\n\nThe shorthand assignment operator `+=` can also be used to concatenate strings.\n\n",
-          "id": "68ac240d-1ba9-4786-97f5-6924591ed358",
+          "id": "d2655bce-5a64-4216-af73-095f9fab0496",
           "children": [],
           "links": [
             {
@@ -1537,7 +1540,7 @@
           "title": "Conditional Operators",
           "xid": "640mk-m5mB90Mme-7jcXV",
           "description": "Conditional operator also known as Ternary operator is the only JS operator that takes three operands.\n\nThe operator can have one of two values based on a condition.\n\nSyntax:\n\n`condition ? val_for_true : val_for_false`\n\n",
-          "id": "5b98a06f-5c47-4a9d-9b7a-e2353d550164",
+          "id": "7255dc86-0e20-4f02-b65c-3a2908b5753e",
           "children": [],
           "links": [
             {
@@ -1556,7 +1559,7 @@
           "title": "Comma Operators",
           "xid": "6_8EwyZY2jBkZr7xnfRY3",
           "description": "The comma operator (`,`) evaluates each of its operands (from left to right) and returns the value of the last operand. This lets you create a compound expression in which multiple expressions are evaluated, with the compound expression's final value being the value of the rightmost of its member expressions. This is commonly used to provide multiple parameters to a `for` loop.\n\n",
-          "id": "cbe76711-a0a2-4275-a66a-e0399b25ed8d",
+          "id": "a8b40462-cdc6-4709-bc7a-641da97ca39a",
           "children": [],
           "links": [
             {
@@ -1570,7 +1573,7 @@
           "title": "Unary Operators",
           "xid": "k9rSR-YQ8B_iRcXNm2btP",
           "description": "JavaScript Unary Operators are the special operators that consider a single operand and perform all the types of operations on that single operand. These operators include unary plus, unary minus, prefix increments, postfix increments, prefix decrements, and postfix decrements.\n\n",
-          "id": "0edbef02-f7da-45ae-bd59-56c3557c9d3c",
+          "id": "b5d44388-ba31-46a5-b492-e2fe02104c16",
           "children": [],
           "links": [
             {
@@ -1589,7 +1592,7 @@
           "title": "relational-operators",
           "xid": "BbrrliATuH9beTypRaFey",
           "description": "relational-operators",
-          "id": "8d76d5f2-8a63-4727-a982-513a5e7e7138",
+          "id": "82dbdd9d-598c-457b-9176-4e82770903b1",
           "children": [],
           "links": []
         }
@@ -1611,19 +1614,19 @@
       "title": "Functions",
       "xid": "k8bJH9qydZm8I9rhH7rXw",
       "description": "Functions exist so we can reuse code. They are blocks of code that execute whenever they are invoked. Each function is typically written to perform a particular task, like an addition function used to find the sum of two or more numbers. When numbers need to be added anywhere within your code, the addition function can be invoked as many times as necessary.\n\n",
-      "id": "beb60298-482d-4db2-9d4c-bdc35f1bf6b5",
+      "id": "a73a9e75-7cbe-4883-be32-11e1dbd90bf4",
       "children": [
         {
           "title": "Function Parameters",
           "xid": "R1D4fsZliHv7wIo8Tj-kp",
           "description": "The parameter is the name given to the variable declared inside the definition of a function. There are two special kinds of syntax: default and rest parameters.\n\n",
-          "id": "7aa56957-866b-4f3f-855c-5d704b267d33",
+          "id": "cdd6fe9a-e3f9-432f-9d6b-1dff2e3ff221",
           "children": [
             {
               "title": "Default Params",
               "xid": "8X8mRl-puL0Lp43dO5mha",
               "description": "Default function parameters allow named parameters to be initialized with default values if no value or `undefined` is passed.\n\n",
-              "id": "26d608d8-9cd3-4ffd-b71b-30ee0598008a",
+              "id": "17d91610-dac3-49a3-a9d3-d71fb8f7b37c",
               "children": [],
               "links": [
                 {
@@ -1637,7 +1640,7 @@
               "title": "Rest",
               "xid": "-_6q0bIjQrvAaCWrVkASO",
               "description": "The rest parameter syntax allows a function to accept an indefinite number of arguments as an array, providing a way to represent [variadic functions](https://en.wikipedia.org/wiki/Variadic_function) in JavaScript.\n\n",
-              "id": "cecfc528-3506-4187-b9ae-d44b888c6367",
+              "id": "e3e5cbcf-93c7-40d5-bad6-689fa5aab431",
               "children": [],
               "links": [
                 {
@@ -1670,7 +1673,7 @@
           "title": "Arrow Functions",
           "xid": "fr0NChxMXLpJizyMhXcXS",
           "description": "Arrow Function is a new way of creating functions with the '=>' operator with a shorter syntax.\n\nExample\n-------\n\n    const sayHello = () => {\n        console.log(`Hello from Arrow Function !`);\n    }\n    \n\n",
-          "id": "05f8382d-ec35-4521-96ac-bf0f188ae837",
+          "id": "19e6d029-ceb5-4ba1-bffd-392724b85f13",
           "children": [],
           "links": [
             {
@@ -1689,7 +1692,7 @@
           "title": "IIFEs",
           "xid": "YZlCoPvZuX5MmpLOTj5d4",
           "description": "Immediately-Invoked Function Expression is a function that is executed immediately after it is created.\n\nExample\n-------\n\n    // An Async IIFE\n    ( async() => {\n        \n        const x = 1;\n        const y = 9;\n    \n        console.log(`Hello, The Answer is ${x+y}`);\n    \n    })();\n    \n\n",
-          "id": "abc51f32-8d33-4851-adad-b5cb2cf362b0",
+          "id": "17169ae4-2296-4584-a5e4-c1e0eeacfd60",
           "children": [],
           "links": [
             {
@@ -1708,7 +1711,7 @@
           "title": "arguments object",
           "xid": "QLC7bW-qHskLH2HOA-Sko",
           "description": "The arguments object is an Array-like object accessible inside functions that contains the values of the arguments passed to that function, available within all non-arrow functions. You can refer to a function's arguments inside that function by using its arguments object. It has entries for each argument the function was called with, with the first entry's index at 0. But, in modern code, rest parameters should be preferred.\n\n",
-          "id": "5c34a6e8-e54f-4ac2-9f3a-ead10832881f",
+          "id": "bdc58ca1-9aca-441f-8c54-c1db0298ca34",
           "children": [],
           "links": [
             {
@@ -1722,13 +1725,13 @@
           "title": "Scope & Function Stack",
           "xid": "ISNzEYtrWe2v0R7Xfl5k-",
           "description": "Scope\n-----\n\nA space or environment in which a particular variable or function can be accessed or used. Accessibility of this variable or function depends on where it is defined.\n\nJavaScript has the following kinds of scopes:\n\n*   **Global scope**: The default scope for all code running in script mode.\n*   **Module scope**: The scope for code running in module mode.\n*   **Function scope**: The scope created with a function.\n*   **Block scope**: The scope created with a pair of curly braces (a block).\n\nFunction Stack (Call stack)\n---------------------------\n\nThe function stack is how the interpreter keeps track of its place in a script that calls multiple functions, like which function is currently executing and which functions within that function are being called.\n\n",
-          "id": "517650a9-ef2c-4895-a05c-06d6519b79f2",
+          "id": "5eaaf30c-f333-49f9-b694-59425c73e498",
           "children": [
             {
               "title": "Recursion",
               "xid": "YJGhhFuWmFvhRKOg6nwON",
               "description": "One of the most powerful and elegant concept of functions, recursion is when a function invokes itself. Such a function is called a **_recursive function_**. As recursion happens, the underlying code of the recursive function gets executed again and again until a terminating condition, called the _base case_, gets fulfilled. As you dive into the world of algorithms, you'll come across recursion in many many instances.\n\n",
-              "id": "03f89a46-ce86-44d0-a473-445051bda556",
+              "id": "8cf8065b-6576-4ea8-9084-a7085d10f3cc",
               "children": [],
               "links": [
                 {
@@ -1757,7 +1760,7 @@
               "title": "Lexical Scoping",
               "xid": "q7b5iMJ1Lfka5A-K-YcaN",
               "description": "Before one can make an intuition of closures in JavaScript, it's important to first get the hang of the term '**_lexical environment_**'. In simple words, the lexical environment for a function `f` simply refers to the environment enclosing that function's definition in the source code.\n\n",
-              "id": "4d241dec-6dbb-4cf7-9348-fef012764792",
+              "id": "74217cee-68f6-4c03-b12f-46e6c5a159a1",
               "children": [],
               "links": [
                 {
@@ -1776,7 +1779,7 @@
               "title": "Closures",
               "xid": "itS6B12I8I1KNCPvc0KCQ",
               "description": "Function closures are one of the most powerful, yet most misunderstood, concepts of JavaScript that are actually really simple to understand. A closure refers to a function along with its lexical environment. It is essentially what allows us to return a function `A`, from another function `B`, that remembers the local variables defined in `B`, even after `B` exits. The idea of closures is employed in nearly every other JavaScript program, hence, it's paramount for a JavaScript developer to know it really well.\n\n",
-              "id": "24347f09-cb6f-4d96-8d8b-bb1ab2805342",
+              "id": "59042e0e-a87e-46ca-a785-3bfc94221bef",
               "children": [],
               "links": [
                 {
@@ -1809,7 +1812,7 @@
           "title": "Built-in Functions",
           "xid": "s8wUJivWmetysJ8bt9FBC",
           "description": "*   A JavaScript **method** is a property containing a **function definition** . In other words, when the data stored on an object is a function we call that a method.\n*   To differentiate between properties and methods, we can think of it this way: **A property is what an object has, while a method is what an object does.**\n*   Since JavaScript methods are actions that can be performed on objects, we first need to have objects to start with. There are several objects built into JavaScript which we can use.\n\n",
-          "id": "b22b086a-5396-4087-8573-08ae97a464fa",
+          "id": "05067c63-db29-44a1-addd-63446bf6ed8c",
           "children": [],
           "links": [
             {
@@ -1852,7 +1855,7 @@
       "title": "Strict Mode",
       "xid": "Xw8lb0xCWKmNs4KZfhBUy",
       "description": "JavaScript's strict mode is a way to opt-in to a restricted variant of JavaScript, thereby implicitly opting out of \"sloppy mode\". Strict mode isn't just a subset: it intentionally has different semantics from regular code. Browsers not supporting strict mode will run strict mode code with different behavior from browsers that do, so don't rely on strict mode without feature-testing for support for the relevant aspects of strict mode. Strict mode code and non-strict mode code can coexist so that scripts can opt into strict mode incrementally.\n\nStrict mode makes several changes to normal JavaScript semantics:\n\n*   Eliminates some JavaScript silent errors by changing them to throw errors.\n*   Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes run faster than identical code that's not strict mode.\n*   Prohibits some syntax likely to be defined in future versions of ECMAScript.\n\n",
-      "id": "5090da5c-1b0a-4bec-b7b8-4bd7d896694d",
+      "id": "7b85e638-3fc1-43b2-8eae-eaf2a3a2de2d",
       "children": [],
       "links": [
         {
@@ -1876,13 +1879,13 @@
       "title": "Using (this) keyword",
       "xid": "fm2CuL1IZp3hnrLrPUX7U",
       "description": "In JavaScript, the `this` keyword is a little different compared to other languages. It refers to an object, but it depends on how or where it is being invoked. It also has some differences between strict mode and non-strict mode.\n\n*   In an object method, `this` refers to the object\n*   Alone, `this` refers to the global object\n*   In a function, `this` refers to the global object\n*   In a function, in strict mode, `this` is undefined\n*   In an event, `this` refers to the element that received the event\n*   Methods like call(), apply(), and bind() can refer `this` to any object\n\n",
-      "id": "e98f5adc-1246-4e5b-bcf1-e9e0b115cead",
+      "id": "7ab53ae8-bd72-4749-aecb-bb544dd2161f",
       "children": [
         {
           "title": "Function Borrowing",
           "xid": "EAN6DCiCfSq04R4vKgZ0q",
           "description": "Function borrowing allows us to use the methods of one object on a different object without having to make a copy of that method and maintain it in two separate places. It is accomplished through the use of `.call()`, `.apply()`, or `.bind()`, all of which exist to explicitly set this on the method we are borrowing.\n\n",
-          "id": "c50ca7cc-0438-4760-bd8d-f4441cd31cc6",
+          "id": "e1aab78f-c8ad-4e32-8919-f1999bf31d51",
           "children": [],
           "links": [
             {
@@ -1901,7 +1904,7 @@
           "title": "Explicit Binding",
           "xid": "p2NhSwPYMtRiPRHjPaqmX",
           "description": "Explicit binding is when you use the `call` or `apply` methods to explicitly set the value of `this` in a function. Explicit Binding can be applied using `call()`, `apply()`, and `bind()`.\n\n",
-          "id": "121931cd-bd9d-4948-ab35-b50a7747ef85",
+          "id": "57c7d54c-07f3-4707-8d26-8816b9424b1a",
           "children": [],
           "links": [
             {
@@ -1920,7 +1923,7 @@
           "title": "in a method",
           "xid": "3E5MuxPvEJU-dwgTrbQAR",
           "description": "Methods are properties of an object which are functions. The value of this inside a method is equal to the calling object. In simple words, this value is the object \u201cbefore dot\u201d, the one used to call the method.\n\n",
-          "id": "d4e84087-7efb-4542-af05-7157623c48d6",
+          "id": "fbe6ad06-8ff4-416f-86a9-0d5aac4a07c8",
           "children": [],
           "links": [
             {
@@ -1939,7 +1942,7 @@
           "title": "in a function",
           "xid": "azsXq6Y5iCvQDgTWZpWQ3",
           "description": "The keyword `this` when used in a function refers to the global object.\n\n_Note: in a browser window the global object is the `window` object._\n\n",
-          "id": "1dcf1e73-5d5e-496b-8f5b-c91595208f69",
+          "id": "8157f9dd-e4a4-446a-bec8-2e33f2a8c63b",
           "children": [],
           "links": [
             {
@@ -1953,7 +1956,7 @@
           "title": "using it alone",
           "xid": "qps2Mdm-lwa4Wr0IxKm0C",
           "description": "The keyword `this` when used alone refers to the global object.\n\n_Note: in a browser window the global object is the `window` object._\n\n",
-          "id": "189370cf-5add-4604-ac77-642a007d9eb7",
+          "id": "40cbc48f-2972-4240-8950-2383f4f3cf3c",
           "children": [],
           "links": [
             {
@@ -1967,7 +1970,7 @@
           "title": "in event handlers",
           "xid": "JVbEBtVrTTFnTF3_yUIAC",
           "description": "The keyword `this` when used in an event handler refers to the element that received the event.\n\n",
-          "id": "25748cb1-292a-4448-9142-2c29a8606281",
+          "id": "df34efb8-362e-4cb7-b3e2-9ec949501a56",
           "children": [],
           "links": [
             {
@@ -1981,7 +1984,7 @@
           "title": "in arrow functions",
           "xid": "P0190rTm2wLQmCzWOKour",
           "description": "The keyword `this` when used in an arrow function refers to the parent object.\n\n",
-          "id": "79501228-e7a8-4a7e-b474-fcd6d682497d",
+          "id": "575030ac-cd20-4dee-a98a-6a2a8881b160",
           "children": [],
           "links": [
             {
@@ -2014,13 +2017,13 @@
       "title": "Asynchronous JavaScript",
       "xid": "sFOqx6_7poVIVuXhJVY0E",
       "description": "Asynchronous programming is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that task has finished, your program is presented with the result.\n\nMany functions provided by browsers, especially the most interesting ones, can potentially take a long time, and therefore, are asynchronous. For example:\n\n*   Making HTTP requests using `fetch()`\n*   Accessing a user's camera or microphone using `getUserMedia()`\n*   Asking a user to select files using `showOpenFilePicker()`\n\nSo even though you may not have to implement your own asynchronous functions very often, you are very likely to need to use them correctly.\n\n",
-      "id": "c0670cbf-240a-465b-9fd7-5232aea53293",
+      "id": "e0422f27-6571-4fb2-b6eb-0653becd43f6",
       "children": [
         {
           "title": "Event Loop",
           "xid": "_bs5NNHVdHLWGBmpYwHMi",
           "description": "The Event Loop is one of the most important aspects to understand about Node.js. Why is this so important? Because it explains how Node.js can be asynchronous and have non-blocking I/O, it explains the \"killer feature\" of Node.js, which made it this successful.\n\n",
-          "id": "6656b323-80e3-4afe-af48-6d5e3455b405",
+          "id": "728ead49-52e9-45a3-948d-7e22dc0ff343",
           "children": [],
           "links": [
             {
@@ -2049,7 +2052,7 @@
           "title": "setTimeout",
           "xid": "wXypuqEmFLIubx-QQvDIr",
           "description": "The setTimeout runs a function after the specified period expires. Times are declared in milliseconds.\n\n",
-          "id": "78ca89f1-0c6c-42e2-a35d-25771d73d3a9",
+          "id": "5dab5b69-3962-49c5-ad2f-b6b9561e955c",
           "children": [],
           "links": [
             {
@@ -2078,7 +2081,7 @@
           "title": "setInterval",
           "xid": "jaC3XXudd7OBKwwCpoPFf",
           "description": "The `setInterval()` method helps us to repeatedly execute a function after a fixed delay. It returns a unique interval ID which can later be used by the `clearInterval()` method, which stops further repeated execution of the function.\n\n`setInterval()` is similar to setTimeout, with a difference. Instead of running the callback function once, it will run it forever, at the specific time interval you specify (in milliseconds):\n\n",
-          "id": "91776260-0bd4-42c9-b1ca-2ecfccb1f2b4",
+          "id": "b9f2a019-9736-4a38-8b4f-c543c81037d8",
           "children": [],
           "links": [
             {
@@ -2092,13 +2095,13 @@
           "title": "Callbacks",
           "xid": "D8oGY7pdviRByaz6c9sU6",
           "description": "A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.\n\n",
-          "id": "5283188c-e47b-4e03-8106-3d7d57bfa438",
+          "id": "fd365a84-dff9-4dc6-a004-d01c59b9363b",
           "children": [
             {
               "title": "Callback Hell",
               "xid": "PJSdqvh5OBwPCNpn3q_S5",
               "description": "The callback hell is when we try to write asynchronous JavaScript in a way where execution happens visually from top to bottom, creating a code that has a pyramid shape with many **})** at the end.\n\n",
-              "id": "ee88dc14-a56a-4e84-9757-172e6e804406",
+              "id": "361f9be7-3189-4596-9a35-e6c04706c033",
               "children": [],
               "links": [
                 {
@@ -2131,13 +2134,13 @@
           "title": "Promises",
           "xid": "yXSF5gGST7l2X-4z1g0d_",
           "description": "Promises are a much better way to work with asynchronous code in JavaScript than the old and error-prone callback approach. They were introduced into JavaScript with ECMAScript 6. Using promises, we can manage extremely complex asynchronous code with rigorous error-handling setup, write code in a more or less synchronous style, and keep ourselves from running into the so-called callback hell.\n\n",
-          "id": "12be0642-43db-45a7-ad76-f71c8adfe980",
+          "id": "3a5d4eac-1b7c-4fc3-9363-d1d0e34a210f",
           "children": [
             {
               "title": "async/await",
               "xid": "Dn872mgexmxoLtbkIgIgz",
               "description": "`async/await` is a special syntax to work with promises in a more comfortable fashion. We use `async` keyword to declare a async function that return a Promise, and the `await` keyword makes a function wait for a Promise.\n\n",
-              "id": "37eae5dd-7816-433e-a9e1-f226533b2b85",
+              "id": "ea272439-3de8-45f1-b1c8-c9b6a5e68bc7",
               "children": [],
               "links": [
                 {
@@ -2214,13 +2217,13 @@
       "title": "Working with APIs",
       "xid": "q6vciQb_Jk-Up16Pk5NeE",
       "description": "When working with remote APIs, you need a way to interact with those APIs. Modern JavaScript provides two native ways to send HTTP requests to remote servers, `XMLHttpRequest` and `Fetch`.\n\n",
-      "id": "1b6cdff6-38a8-4ea5-9192-a647ff36c206",
+      "id": "f573ca5b-c6be-47a5-a831-42bf082f2e3a",
       "children": [
         {
           "title": "XMLHTTPRequest",
           "xid": "LiuhBE7dIlkoWkthSoCsa",
           "description": "`XMLHttpRequest` (XHR) is a built-in browser object that can be used to interact with server. XHR allows you to update data without having to reload a web page. Despite the word XML in its name, XHR not only used to retrieve data with XML format, we can use it with any type of data, like JSON, file(s), and much more.\n\n",
-          "id": "5b042b0b-59e4-4a90-9cbf-b436eaab1ead",
+          "id": "112e51ca-daf9-49ac-9333-b12ba222ae1c",
           "children": [],
           "links": [
             {
@@ -2244,7 +2247,7 @@
           "title": "Fetch",
           "xid": "kL5rfWxXe4J44ENru1uJS",
           "description": "The `fetch()` method in JavaScript is used to request to the server and load the information on the webpages. The request can be of any APIs that return the data of the format JSON or XML. This method returns a promise.\n\n",
-          "id": "0f65fe34-a075-4b8b-b138-3918398863ed",
+          "id": "232f5446-0275-48bd-82ed-c8a199676532",
           "children": [],
           "links": [
             {
@@ -2302,7 +2305,7 @@
       "title": "Iterators and Generators",
       "xid": "TZ8XGdykSJjKBjX6Nivwo",
       "description": "Iterators and generators, introduced into JavaScript with ECMAScript 6, represent an extremely useful concept related to iteration in the language. Iterators are objects, abiding by the iterator protocol, that allows us to easily iterate over a given sequence in various ways, such as using the `for...of` loop. Generators, on the other hand, allow us to use functions and the `yield` keyword to easily define iterable sequences that are iterators as well.\n\n",
-      "id": "250c9342-6b06-41c6-8e3e-aca33a01e93d",
+      "id": "ce41ea31-27ee-4f4b-ae36-76b68098c031",
       "children": [],
       "links": [
         {
@@ -2331,7 +2334,7 @@
       "title": "Classes",
       "xid": "F_Lrj0F7UXriqJ0mhwxCy",
       "description": "Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but have some syntax and semantics that are not shared with ES5 class-like semantics.\n\n",
-      "id": "39e65679-e29f-49a1-a894-22562da60ac6",
+      "id": "d5e91ebc-5387-4d26-9bae-9e88dc756e1e",
       "children": [],
       "links": [
         {
@@ -2355,13 +2358,13 @@
       "title": "Modules in JavaScript",
       "xid": "hLnJlwnECFbVMeFpH0M5Q",
       "description": "Modules encapsulate all sorts of code like functions and variables and expose all this to other files. Generally, we use it to break our code into separate files to make it more maintainable. They were introduced into JavaScript with ECMAScript 6.\n\n",
-      "id": "5e2f4243-b2fd-487a-84ca-f81caa7d36f0",
+      "id": "f344afe2-1666-408a-8dce-a0fdf24d67a6",
       "children": [
         {
           "title": "CommonJS",
           "xid": "4EXeGkOpfAViB9Uo4zL6O",
           "description": "CommonJS modules are the original way to package JavaScript code for Node.js. Node.js also supports the ESModules standard used by browsers and other JavaScript run-times, but CJS is still widely used in backend Node.js applications. Sometimes these modules will be written with a .cjs extension.\n\n",
-          "id": "664ae187-7348-4a76-b9e1-e881e582f516",
+          "id": "8e171e9d-c88c-4d1f-aa84-02ac7e24b5be",
           "children": [],
           "links": [
             {
@@ -2385,7 +2388,7 @@
           "title": "ESM",
           "xid": "jLNmYeo20Mbu4WRvVgvwU",
           "description": "ESModules is a standard that was introduced with ES6 (2015). The idea was to standardize how JS modules work and implement these features in browsers. This standard is widely used with frontend frameworks such as react and can also be used in the backend with Node.js. Sometimes these modules will be written with a .mjs extension.\n\n",
-          "id": "3b85345b-1922-4830-8aed-c7d9897dcfd4",
+          "id": "71300989-9656-44fb-b84b-e31d3456ba64",
           "children": [],
           "links": [
             {
@@ -2438,13 +2441,13 @@
       "title": "Memory Management",
       "xid": "MatU4SthAAhByJ40XdZQn",
       "description": "Low-level languages like C, have manual memory management primitives such as `malloc()` and `free()`. In contrast, JavaScript automatically allocates memory when objects are created and frees it when they are not used anymore (garbage collection). This automaticity is a potential source of confusion: it can give developers the false impression that they don't need to worry about memory management.\n\n",
-      "id": "fbbc103e-ba20-47c2-a713-d882dedcfec3",
+      "id": "4bc58355-c2ad-43b5-a0d1-d507cd21a74f",
       "children": [
         {
           "title": "Memory Lifecycle",
           "xid": "ZR2WfH1cerA-V_kaPwRvm",
           "description": "Regardless of the programming language, the memory life cycle is pretty much always the same:\n\n*   Allocate the memory you need\n*   Use the allocated memory (read, write)\n*   Release the allocated memory when it is not needed anymore\n\nThe second part is explicit in all languages. The first and last parts are explicit in low-level languages but are mostly implicit in high-level languages like JavaScript.\n\n",
-          "id": "45b96306-4b74-4a43-9e58-eb6e5b274e8e",
+          "id": "0eacfb7d-eda4-4e4c-b189-15c7b550cea6",
           "children": [],
           "links": [
             {
@@ -2463,7 +2466,7 @@
           "title": "Garbage Collection",
           "xid": "KKyX8N4lTgN0w-Khm6Ztq",
           "description": "Memory management in JavaScript is performed automatically and invisibly to us. We create primitives, objects, functions\u2026 All that takes memory. The main concept of memory management in JavaScript is reachability.\n\n",
-          "id": "060c8123-cecc-4227-9059-f210dbaf207b",
+          "id": "5da484eb-f4bd-4903-9ff1-ae79a4f5d1cb",
           "children": [],
           "links": [
             {
@@ -2501,13 +2504,13 @@
       "title": "Using Browser DevTools",
       "xid": "rc5WzBBOm2cus-rQl8EOE",
       "description": "These are a set of tools built into the browser to aid frontend developers diagnose and solve various issues in their applications \u2014 such as JavaScript and logical bugs, CSS styling issues or even just making quick temporary alterations to the DOM.\n\nTo enter the dev tools, right click and click **Inspect** (or press `ctrl+shift+c`/`cmd+opt+c`) to enter the Elements panel. Here you can debug CSS and HTML issues. If you want to see logged messages or interact with javascript, enter the **Console** tab from the tabs above (or press `ctrl+shift+j` or `F12` / `cmd+opt+j` to enter it directly). Another very useful feature in the Chrome dev tools is the Lighthouse (for checking performance).\n\nNOTE: This isn't a chrome-specific feature, and most browsers (Chromium based or otherwise) will have their own, largely-similar set of devtools.\n\n",
-      "id": "96b2dad2-7cd8-433a-8ea1-8524ef218ec3",
+      "id": "0246625c-2fda-48c0-b86c-c1fdfafffde8",
       "children": [
         {
           "title": "Debugging Issues",
           "xid": "dhEtcgv7G9fNV-AUNJdWk",
           "description": "When you're just starting out with JavaScript development, you might use a lot of `console.log()` statement in your code to log and check values of variables while debugging. The results of these would show up in the **Console** panel, along with a reference to the line and file of code which originated it.\n\nHowever, for quicker, more complex and easier to handler debugging (which also doesn't litter your codebase with `console.log()`s), breakpoints and the sources panel is your friend.\n\n",
-          "id": "40571a11-e8fa-4f30-bbb9-ebf0f767d6e6",
+          "id": "cfdcf2c2-6758-4fe3-8469-08c6223bd300",
           "children": [],
           "links": [
             {
@@ -2521,7 +2524,7 @@
           "title": "Debugging Memory Leaks",
           "xid": "BA_ArmZMnVMaL_zl3W3Pt",
           "description": "In JavaScript, memory leaks commonly occur within heap allocated memory, where short lived objects are attached to long lived ones and the Garbage Collector cannot safely de-allocate that memory as it is still referenced from the root set (the global object).\n\n",
-          "id": "3bde8a59-2c48-47a5-8971-101a664e4dd9",
+          "id": "e890f740-a7a4-42d2-847c-9007a4476404",
           "children": [],
           "links": [
             {
@@ -2555,7 +2558,7 @@
           "title": "Debugging Performance",
           "xid": "ECxISKUAU7js_JsfSHzud",
           "description": "Enter the dev tools and check out the Lighthouse tab. This is essentially a series of tests which analyses the currently open website on a bunch of metrics related to performance, page speed, accessibility, etc. Feel free to run the tests by clicking the **Analyze Page Load** button (you might want to do this in an incognito tab to avoid errors arising from extensions you're using). Once you have the results, take your time and read through them (and do click through to the reference pages mentioned alongside each test result to know more about it!)\n\n",
-          "id": "da21551b-f97e-4502-9773-d6d099732a2e",
+          "id": "eddb80b0-6a9e-43c5-b282-a1cd2c83affe",
           "children": [],
           "links": [
             {

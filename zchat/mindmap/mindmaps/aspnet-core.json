@@ -1,18 +1,21 @@
 {
+  "id": "964452dd-ba5d-490f-828e-f3a4fd8d438c",
   "title": "ASP.NET Core Developer",
-  "description": "\n",
+  "description": "Step by step guide to becoming an ASP.NET core developer in 2025",
+  "question_title": "",
+  "question_description": "",
   "children": [
     {
       "title": "basics-of-csharp",
       "xid": "NvODRFR0DLINB0RlPSsvt",
       "description": "basics-of-csharp",
-      "id": "f7e036bf-cba3-45ed-b6d9-d4b05bf0de8d",
+      "id": "fcb5469f-9fa2-482e-9c4b-d9a38a83c6ce",
       "children": [
         {
           "title": "csharp",
           "xid": "fxANnSiTb2VzA9u-YeBL1",
           "description": "csharp",
-          "id": "86de969d-c5c8-4f69-bc7c-8a145473df9d",
+          "id": "b36f83d6-b5ef-4f2d-9841-2e59c028bdfc",
           "children": [],
           "links": []
         },
@@ -20,7 +23,7 @@
           "title": "dotnet",
           "xid": "3GGvuxdfuDwLpNX_gtjCK",
           "description": "dotnet",
-          "id": "369f22e5-2b4d-4c76-916b-8d8e27922ff3",
+          "id": "88ad31c9-0a19-4c22-855a-40efac7a9020",
           "children": [],
           "links": []
         },
@@ -28,7 +31,7 @@
           "title": "dotnet-cli",
           "xid": "6HJQ1Evgah0Pki04Z2hQt",
           "description": "dotnet-cli",
-          "id": "4e00a47f-ac81-4490-8110-4ed4b8e941a2",
+          "id": "2ff29c7b-c557-4679-b9c2-34bded5d96e7",
           "children": [],
           "links": []
         }
@@ -39,13 +42,13 @@
       "title": "general-development-skills",
       "xid": "NEnna_8DstfYH4T9qrP3-",
       "description": "general-development-skills",
-      "id": "0b67a21f-d661-4d0c-b567-f989e36d8ef6",
+      "id": "a2b8d63c-3c4e-4a15-a126-6f0e3a054137",
       "children": [
         {
           "title": "git",
           "xid": "OtdCmkj0SvrGwCUSfm96C",
           "description": "git",
-          "id": "5158455a-c7de-4d62-8ca3-e67d01993e14",
+          "id": "60fe6412-9991-43e6-b55c-f13bf44b9551",
           "children": [],
           "links": []
         },
@@ -53,7 +56,7 @@
           "title": "vcs-hosting-services",
           "xid": "KAZF-mIg-FlfMonfdOLhb",
           "description": "vcs-hosting-services",
-          "id": "df1cae39-affe-4567-acc1-3756c366e94c",
+          "id": "c93295c2-2a8a-4794-96e6-9b372529c65a",
           "children": [],
           "links": []
         },
@@ -61,7 +64,7 @@
           "title": "http-https",
           "xid": "YI3cAezupWNntFw4B6elY",
           "description": "http-https",
-          "id": "0cda8510-02d5-4aff-8d5b-aca604359c89",
+          "id": "c133e786-903a-4ce3-a865-9eab2bd77f6f",
           "children": [],
           "links": []
         },
@@ -69,7 +72,7 @@
           "title": "datastructures-and-algorithms",
           "xid": "RAX2xN37taw9cqA3pnORh",
           "description": "datastructures-and-algorithms",
-          "id": "64686bdf-19e2-4cce-8311-ff0d9e83593d",
+          "id": "419a384d-70ee-4cc3-ac01-ce2d9aea237e",
           "children": [],
           "links": []
         }
@@ -80,13 +83,13 @@
       "title": "database-fundamentals",
       "xid": "tnKUdsgp6bnFtQTexEmfy",
       "description": "database-fundamentals",
-      "id": "c6252e97-d013-4b00-9b6e-ee1e466434d0",
+      "id": "f9f4c87e-dfb1-457a-b297-88e180a98d5f",
       "children": [
         {
           "title": "sql-basics",
           "xid": "aOJMVrTcA_I2y_QHzj7aM",
           "description": "sql-basics",
-          "id": "c3b45a3c-8872-4f6b-b8d2-6bf43fcee160",
+          "id": "a573f3bb-1e09-494d-acdb-d104081ee442",
           "children": [],
           "links": []
         },
@@ -94,7 +97,7 @@
           "title": "database-design-basics",
           "xid": "zlAcgLKxGF_TyrcJIk4X7",
           "description": "database-design-basics",
-          "id": "390e314a-0c57-4534-8bf7-24e77372d987",
+          "id": "937d8721-6b38-4d75-929f-0c7ead205f5e",
           "children": [],
           "links": []
         },
@@ -102,7 +105,7 @@
           "title": "stored-procedures",
           "xid": "ZiK-c9zNbi5RZkKUi44wP",
           "description": "stored-procedures",
-          "id": "e48c954a-c13d-46c9-931f-55473290ee7c",
+          "id": "0dcb776e-69c5-4d0b-8a31-50c1b699f746",
           "children": [],
           "links": []
         },
@@ -110,7 +113,7 @@
           "title": "constraints",
           "xid": "1-XdtrGPbUoxpu9ZcQlBA",
           "description": "constraints",
-          "id": "86c372cc-3576-4a97-88f5-47b03e792d90",
+          "id": "36ea09d1-1d17-423e-a65f-691de68bb478",
           "children": [],
           "links": []
         },
@@ -118,7 +121,7 @@
           "title": "triggers",
           "xid": "2f_CJMnXwPxjMEwm5P_QJ",
           "description": "triggers",
-          "id": "e5c13181-f559-4355-8df6-2b632a870ce8",
+          "id": "25d3aba4-265a-4766-bfb5-be93724b280e",
           "children": [],
           "links": []
         }
@@ -129,13 +132,13 @@
       "title": "basics-of-aspnet-core",
       "xid": "v2ZTCQQFQPoJNhOVGMG2g",
       "description": "basics-of-aspnet-core",
-      "id": "f6bf5014-361c-43ec-a9b4-e5337ba8b7e0",
+      "id": "85e14a60-310c-4c2f-82fa-0edba240ff3e",
       "children": [
         {
           "title": "mvc",
           "xid": "D3aQw0-pk3ycO-n10HBaA",
           "description": "mvc",
-          "id": "b34657ac-d987-4fae-ae4e-e3a793d9d6c2",
+          "id": "8f475127-74e6-4926-8ea7-f3285f890241",
           "children": [],
           "links": []
         },
@@ -143,7 +146,7 @@
           "title": "rest",
           "xid": "dZ9fYWMBa1OemTmLOI8_q",
           "description": "rest",
-          "id": "fc832ee0-0f53-42d0-a39d-3146c4c95c70",
+          "id": "3e121ecf-491e-4e45-bb8a-d721d9bf2959",
           "children": [],
           "links": []
         },
@@ -151,7 +154,7 @@
           "title": "razor-pages",
           "xid": "qpVxwuyA2oE06MZLtEdP1",
           "description": "razor-pages",
-          "id": "2b4dce2d-ec50-4cf0-906d-6ed9b4308b98",
+          "id": "94b15192-9bc0-4070-af7a-2fbe2dd1d0a2",
           "children": [],
           "links": []
         },
@@ -159,7 +162,7 @@
           "title": "razor-components",
           "xid": "vePinRjDfSGULKw0LE9K-",
           "description": "razor-components",
-          "id": "747d9275-6b25-4862-9d03-37ef829061e0",
+          "id": "3dede0b1-bc01-4066-9bcc-1cf96f1e6b07",
           "children": [],
           "links": []
         },
@@ -167,7 +170,7 @@
           "title": "middlewares",
           "xid": "dG--AAcZZdltYCeg6zCz2",
           "description": "middlewares",
-          "id": "92023b60-9ceb-4534-a05d-470bab40a76a",
+          "id": "b854c5b1-ef0d-42a6-8cfa-534ab9ad4cdc",
           "children": [],
           "links": []
         },
@@ -175,7 +178,7 @@
           "title": "filters-and-attributes",
           "xid": "U3HXmNq6x2YA3BwZsOTbe",
           "description": "filters-and-attributes",
-          "id": "c3aebf8b-d342-4eae-8a12-7e81708eae0b",
+          "id": "5b1b40db-b789-4387-b3de-b6e08f16d84d",
           "children": [],
           "links": []
         },
@@ -183,7 +186,7 @@
           "title": "app-settings-and-configurations",
           "xid": "EJxliq-HPVp00CVsFc6kf",
           "description": "app-settings-and-configurations",
-          "id": "4a4b0653-2b79-44a4-9e0e-70b830054f27",
+          "id": "a789d6a7-1ad9-4423-b613-a39c33380254",
           "children": [],
           "links": []
         }
@@ -194,19 +197,19 @@
       "title": "orm",
       "xid": "POQPoN98eqOH2873ZI6Hm",
       "description": "orm",
-      "id": "c0de7007-1037-40fb-8d5c-dae93d049415",
+      "id": "4deb61ef-37c6-4c5f-8e8b-8c761626cae2",
       "children": [
         {
           "title": "entity-framework-core",
           "xid": "ET74_7ieahNaGdPT11_NI",
           "description": "entity-framework-core",
-          "id": "3bd580d9-3bae-4190-a9d0-a74d11dadd63",
+          "id": "f4d96d1a-e6ab-4787-a39c-b1c6a8cba2b0",
           "children": [
             {
               "title": "framework-basics",
               "xid": "eGVaAz3VhGu3cXBNxTAWd",
               "description": "framework-basics",
-              "id": "3304ab49-4e8d-4967-ae12-4cdf10c5eca5",
+              "id": "6c116fae-8a04-4fe3-a129-d9a30b3d3ec4",
               "children": [],
               "links": []
             },
@@ -214,7 +217,7 @@
               "title": "codefirst-migrations",
               "xid": "ZPeebwJ3OBuywEgLLgQTG",
               "description": "codefirst-migrations",
-              "id": "471e9511-3020-4292-8a96-eba28161a16d",
+              "id": "6c3081ed-76e3-4090-8c5f-0aaed9adb2a8",
               "children": [],
               "links": []
             },
@@ -222,7 +225,7 @@
               "title": "change-tracker-api",
               "xid": "wfEOvAkGXkTZGdGX341D4",
               "description": "change-tracker-api",
-              "id": "a3f4a2f5-01cb-4362-acd6-419b0eccb33b",
+              "id": "404a552d-f25c-4d08-81db-27bf03b5695e",
               "children": [],
               "links": []
             },
@@ -230,7 +233,7 @@
               "title": "lazy-eager-explicit-loading",
               "xid": "9AMotSwdEbB8uOg80SykE",
               "description": "lazy-eager-explicit-loading",
-              "id": "f560fc19-1c00-4897-89c0-1a4b81b05553",
+              "id": "850b7bef-b5b5-4e5f-929e-1124c7dfa4cc",
               "children": [],
               "links": []
             }
@@ -241,7 +244,7 @@
           "title": "dapper",
           "xid": "UkWc41r0bZ1lptjse3As6",
           "description": "dapper",
-          "id": "af0bc90e-ac12-4d1c-840b-294eb02960c9",
+          "id": "e3d42b5c-546d-4b0c-885b-eb4725ef29e1",
           "children": [],
           "links": []
         },
@@ -249,7 +252,7 @@
           "title": "repodb",
           "xid": "tYDVcnG0oUF3R8DwASvAh",
           "description": "repodb",
-          "id": "5b69b1f2-9e46-486c-9ae6-372fecebd619",
+          "id": "4ac0bca3-d94a-4f09-b7c1-6765e305925d",
           "children": [],
           "links": []
         },
@@ -257,7 +260,7 @@
           "title": "nhibernate",
           "xid": "z24IJndpQYTl1PhiUI2mx",
           "description": "nhibernate",
-          "id": "44a30605-69fd-4c80-b472-f462ce3c8f4f",
+          "id": "3f124966-c44a-41eb-aca7-c90ea732f1f6",
           "children": [],
           "links": []
         }
@@ -268,13 +271,13 @@
       "title": "dependency-injection",
       "xid": "IejHMMVKwA0sIInla4FjX",
       "description": "dependency-injection",
-      "id": "0eedf487-6386-4876-8990-bd4ca5c97120",
+      "id": "40f1f7a7-23c4-496e-929e-07048bd6db25",
       "children": [
         {
           "title": "scrutor",
           "xid": "f212ztDU_kb7gO71Nn76L",
           "description": "scrutor",
-          "id": "dcf7f615-e03d-494a-903c-9cb7c194d269",
+          "id": "1d322cb4-0792-4f8c-88b4-84e41d9c9d50",
           "children": [],
           "links": []
         },
@@ -282,13 +285,13 @@
           "title": "life-cycles",
           "xid": "Tjaczp2E-cCn0qSv89xgo",
           "description": "life-cycles",
-          "id": "470b3753-7cc0-4ace-a10d-4e1ca497223f",
+          "id": "869a9d70-ba44-4366-9782-2eb88a23adb0",
           "children": [
             {
               "title": "scoped",
               "xid": "M3BW_63MFQyD8NE68dazD",
               "description": "scoped",
-              "id": "04df138e-8d95-4a43-a607-e68970f8fbe7",
+              "id": "9c2011f8-854e-4b8b-8b07-e36f97fd1225",
               "children": [],
               "links": []
             },
@@ -296,7 +299,7 @@
               "title": "transient",
               "xid": "-N0XM0-VtCZ6QMo2YyMD-",
               "description": "transient",
-              "id": "bbcd66c7-5e56-4f91-97a8-6fbe0b00a5a8",
+              "id": "989c3813-e12a-4938-a8d2-fee4ba901584",
               "children": [],
               "links": []
             },
@@ -304,7 +307,7 @@
               "title": "singleton",
               "xid": "y9bDrCjkDbxSIrEEtu_Mi",
               "description": "singleton",
-              "id": "935f1036-e6f2-428f-b25e-faa6769f8013",
+              "id": "89500fea-58d9-4fc5-9457-f73d682cf328",
               "children": [],
               "links": []
             }
@@ -315,13 +318,13 @@
           "title": "di-containers",
           "xid": "iM760f8Ys66-VSkMiZfIX",
           "description": "di-containers",
-          "id": "45dcf063-0b74-46f6-9d18-443a5a88785b",
+          "id": "5ea99f66-f09a-4201-ac85-79b026c13885",
           "children": [
             {
               "title": "microsoft-extensions-dependency-injection",
               "xid": "J9XdYLo7qJiBoL8p3c68P",
               "description": "microsoft-extensions-dependency-injection",
-              "id": "8a7fba67-c6bf-40ec-94a3-b7f650381e5a",
+              "id": "cb7eee5f-cb49-48af-8541-b4295f6bb929",
               "children": [],
               "links": []
             },
@@ -329,7 +332,7 @@
               "title": "auto-fac",
               "xid": "gbpSbjF12dBE1Tb3PX8Bz",
               "description": "auto-fac",
-              "id": "133f11c3-0309-4a62-932c-e0e52a5c095d",
+              "id": "33f208fd-b9b9-46ea-a3fe-89369e61d69a",
               "children": [],
               "links": []
             }
@@ -343,13 +346,13 @@
       "title": "caching",
       "xid": "7Nth4LOrM_KirhvjDGkgS",
       "description": "caching",
-      "id": "d244ecaf-7449-4a52-8e0d-77dffa028917",
+      "id": "052e9f46-ab00-4dd8-b81a-51e0ee55530f",
       "children": [
         {
           "title": "entity-framework-cache",
           "xid": "FV4GsPjUyAc99DnIwkkCC",
           "description": "entity-framework-cache",
-          "id": "8206b905-8b62-42fe-83c0-0f0baf40161a",
+          "id": "dd637d00-dc0e-41d8-9680-71cdb27b2afb",
           "children": [],
           "links": []
         },
@@ -357,7 +360,7 @@
           "title": "memory-cache",
           "xid": "8CRsr7UZszjc_fZ-4ZmIx",
           "description": "memory-cache",
-          "id": "4edd6b9c-649e-4e38-8038-729619a1a12d",
+          "id": "f6300e98-2cf6-4b9a-8845-3e81eeca78d7",
           "children": [],
           "links": []
         },
@@ -365,13 +368,13 @@
           "title": "distributed-cache",
           "xid": "SiG0FWWznjDg-2mIWlchy",
           "description": "distributed-cache",
-          "id": "3fd056e3-63b7-4d50-b03f-ce899d9b26d0",
+          "id": "13164964-3c36-47fe-a92b-69d4eb7cc533",
           "children": [
             {
               "title": "memcached",
               "xid": "u2pc3ZkL0EumAsbM12D5y",
               "description": "memcached",
-              "id": "13e49c0c-841d-4da4-b4e7-50acbe4f5c6a",
+              "id": "675053a6-28ac-4649-98c8-df38168af926",
               "children": [],
               "links": []
             },
@@ -379,7 +382,7 @@
               "title": "redis",
               "xid": "Ts0gJ4DdwFp48LGr4YSvM",
               "description": "redis",
-              "id": "824f745d-24d2-4d5c-951c-8a20a07096ae",
+              "id": "8bf00613-42ff-4d64-9b32-7464e69b0ba6",
               "children": [],
               "links": []
             }
@@ -393,19 +396,19 @@
       "title": "databases",
       "xid": "Ujzn_dILCA7xoupnz398l",
       "description": "databases",
-      "id": "3ff45d4f-3aac-4be7-9eb3-92a79bd11cb7",
+      "id": "d0632523-6ccf-445d-8e7f-9264ee53bdd8",
       "children": [
         {
           "title": "search-engines",
           "xid": "6p5atMYw3b3bXkQuXZsDV",
           "description": "search-engines",
-          "id": "603909eb-0122-4274-8f4b-e53ee17ba0e6",
+          "id": "4bff013b-98d9-4fcc-837c-0586b26d997d",
           "children": [
             {
               "title": "elasticsearch",
               "xid": "mK9OAwjReZoQZr1WSLRKJ",
               "description": "elasticsearch",
-              "id": "ff33dbd6-8134-40d1-9487-6f010096bb6b",
+              "id": "52750b22-afc8-4757-b203-59e3a4633fed",
               "children": [],
               "links": []
             },
@@ -413,7 +416,7 @@
               "title": "solr",
               "xid": "2sY_p_8cOOBmZtDHO2Cmy",
               "description": "solr",
-              "id": "679f636c-e009-4e3b-8d3d-d9305784fc5c",
+              "id": "417e822e-3703-469b-9971-44e143a042a0",
               "children": [],
               "links": []
             },
@@ -421,7 +424,7 @@
               "title": "sphinx",
               "xid": "Ye9WHfwZa-Fc2YDaTCmU1",
               "description": "sphinx",
-              "id": "b47d1372-174a-4012-8c4c-b8b4750055a8",
+              "id": "6e806cb1-fd1c-4706-a509-f31737083eac",
               "children": [],
               "links": []
             }
@@ -432,13 +435,13 @@
           "title": "cloud",
           "xid": "LrjmJs6_rXUkc2A7fEq24",
           "description": "cloud",
-          "id": "25c6d025-2c0e-4ec8-a044-bcc292374688",
+          "id": "212f12b0-735c-4c29-975e-3330665dcf63",
           "children": [
             {
               "title": "dynamodb",
               "xid": "1Om9aQDZmnj_DN10ogwDL",
               "description": "dynamodb",
-              "id": "d5a6d61d-e3b8-46cd-bbd6-6c21ebd41d2a",
+              "id": "0f52a260-dd91-4db4-b5a1-d6f18fa8264c",
               "children": [],
               "links": []
             },
@@ -446,7 +449,7 @@
               "title": "cosmosdb",
               "xid": "KrkV1w9b_Nwm6pe9diDRS",
               "description": "cosmosdb",
-              "id": "8c5cb5bd-90eb-45dd-a433-3281791e766b",
+              "id": "a60ef0a8-29e8-4279-963f-8ccc9c5cfd6a",
               "children": [],
               "links": []
             }
@@ -457,13 +460,13 @@
           "title": "relational",
           "xid": "FnRxRY3uDZdTve1w-nBfc",
           "description": "relational",
-          "id": "fb978cbc-9cdf-476c-ab02-0d3f9efeccc4",
+          "id": "adb89576-5a67-407e-ac29-e51668b56a97",
           "children": [
             {
               "title": "sql-server",
               "xid": "HQHSzsqBGSVYNLQ9o5EI-",
               "description": "sql-server",
-              "id": "4110f55f-fa46-4ded-8bb6-110de3ed5bab",
+              "id": "d4e1d6d1-3061-4475-9ec5-9ba2952890d2",
               "children": [],
               "links": []
             },
@@ -471,7 +474,7 @@
               "title": "postgresql",
               "xid": "An9TLvo-I6NtC8wFU3bh4",
               "description": "postgresql",
-              "id": "6bdca914-96aa-43ea-aa31-2cb65a6c777b",
+              "id": "13feb5e4-e3ce-418d-8ce1-e32a8dcf1635",
               "children": [],
               "links": []
             },
@@ -479,7 +482,7 @@
               "title": "mariadb",
               "xid": "Gs8XcsTo11MeCsiSGpjkU",
               "description": "mariadb",
-              "id": "ec6db95d-7cce-453d-9e90-550aeb3608ee",
+              "id": "08312959-0151-4971-b755-f715effe5b89",
               "children": [],
               "links": []
             },
@@ -487,7 +490,7 @@
               "title": "mysql",
               "xid": "WsGwg4qdlu_vBsFEpmBvU",
               "description": "mysql",
-              "id": "13968549-edb2-4e7f-9449-3e8cf908970e",
+              "id": "9f52faa3-1b0a-422c-8d99-1dd242523d12",
               "children": [],
               "links": []
             }
@@ -498,13 +501,13 @@
           "title": "nosql",
           "xid": "WUis4K9vduriYdVkKvM9r",
           "description": "nosql",
-          "id": "7d703dd1-e9e0-4d02-a2e3-e5e369e616c4",
+          "id": "28706164-90e1-4bf7-a223-edf77863cdc5",
           "children": [
             {
               "title": "mongodb",
               "xid": "-wYRa8qSuKVKo_yOTKV67",
               "description": "mongodb",
-              "id": "efe2a3fd-ef18-4209-83f2-5b4c04198073",
+              "id": "3471db91-1da0-4c09-a53a-9843c4e3030c",
               "children": [],
               "links": []
             },
@@ -512,7 +515,7 @@
               "title": "litedb",
               "xid": "3gcXaOnHL4v5OoStrTWNV",
               "description": "litedb",
-              "id": "794b6b3c-e63e-4049-9032-3651610bd8b8",
+              "id": "d939b7fa-e0a5-46f2-930d-07fbb91fa370",
               "children": [],
               "links": []
             },
@@ -520,7 +523,7 @@
               "title": "cassandra",
               "xid": "U_-Gt5csu_hihl7ybFY-B",
               "description": "cassandra",
-              "id": "00c49951-b88b-4044-b5ae-384ebe52f570",
+              "id": "aa8dee26-d359-48b2-b2d8-df770baa566a",
               "children": [],
               "links": []
             },
@@ -528,7 +531,7 @@
               "title": "couchdb",
               "xid": "vHcwt6ARi5YR3v-eDDjfl",
               "description": "couchdb",
-              "id": "99fb4657-bf35-48af-ab8a-4dea4b0ffed1",
+              "id": "82fd65ac-79e5-40a4-baf7-cfc9bb2f4ef6",
               "children": [],
               "links": []
             }
@@ -542,13 +545,13 @@
       "title": "log-frameworks",
       "xid": "fQ3w8REYWzQfeJ0nPyq6W",
       "description": "log-frameworks",
-      "id": "65ea2fb6-359d-4d55-b1fe-f660e2d46488",
+      "id": "bcb7bb01-f58b-4367-93a5-3d22590a30c7",
       "children": [
         {
           "title": "serilog",
           "xid": "xL0s4-HfRxNy2ru0jiIWR",
           "description": "serilog",
-          "id": "9ca21289-dcf8-45e3-b793-4281842440c9",
+          "id": "0e7fc58f-a2bf-4328-a115-961676567e36",
           "children": [],
           "links": []
         },
@@ -556,7 +559,7 @@
           "title": "nlog",
           "xid": "ykF2bB_68AhCOzeQ_QSW1",
           "description": "nlog",
-          "id": "c3b2ef42-5573-4982-8031-986943f1c502",
+          "id": "0bf5854b-1d13-4f1d-883b-3b55c90b2043",
           "children": [],
           "links": []
         }
@@ -567,19 +570,19 @@
       "title": "api-clients",
       "xid": "GLkDH0X0uy8_1DIdCzbUD",
       "description": "api-clients",
-      "id": "c54162ae-c636-41cd-a017-41082bea043a",
+      "id": "25f214e1-2dba-4d67-8e95-20fa8acdcd9c",
       "children": [
         {
           "title": "rest",
           "xid": "KJCtxH3mYsZq3hfBZ6cJF",
           "description": "rest",
-          "id": "ed2dd92d-1acd-4328-9aef-8caa8d93bfc8",
+          "id": "273b1a1c-6590-40f9-aae5-e602d0bd4a2e",
           "children": [
             {
               "title": "odata",
               "xid": "YojZ5fpzw-5WgoqqkO6wl",
               "description": "odata",
-              "id": "65712f5f-86df-4ac5-82ab-b5e76c3025c2",
+              "id": "1cafa3fc-b212-4fdc-84fd-ae7b75457677",
               "children": [],
               "links": []
             }
@@ -590,7 +593,7 @@
           "title": "grpc",
           "xid": "x3SJlLc19DNJ-PyDOOj_G",
           "description": "grpc",
-          "id": "17ff28e1-93e6-490f-bc7d-8137ad98c10b",
+          "id": "46197a9c-1517-4f03-9dc0-f500f18f42ab",
           "children": [],
           "links": []
         },
@@ -598,13 +601,13 @@
           "title": "graphql",
           "xid": "BdTQ5ZMNDNZvkAUoCfL5H",
           "description": "graphql",
-          "id": "1999c3e0-418d-434a-85dd-6ecd240970c8",
+          "id": "acf9d5b9-a68f-46ec-a190-4198b6fc6f17",
           "children": [
             {
               "title": "hot-chocolate",
               "xid": "XMrQx9JH0eSQJpMzhvy0F",
               "description": "hot-chocolate",
-              "id": "753a4e6f-9829-48d2-a6cb-516b01ec1f5d",
+              "id": "a854581a-f089-4ff1-8369-3af9a99e292f",
               "children": [],
               "links": []
             },
@@ -612,7 +615,7 @@
               "title": "graphql-dotnet",
               "xid": "Efxu9gDodODMTKJbWcXzB",
               "description": "graphql-dotnet",
-              "id": "28cc4293-af14-4ef5-aced-af48a598e62c",
+              "id": "4e9e1fd8-911d-42ee-8b96-21177062f5a5",
               "children": [],
               "links": []
             }
@@ -626,13 +629,13 @@
       "title": "real-time-communication",
       "xid": "9Vv3OxafB6BlHhi1ZkeVO",
       "description": "real-time-communication",
-      "id": "72627eff-8fa6-4b16-9e1f-e2ee02c7b5ec",
+      "id": "1b16c49c-bed3-49cb-8644-920dfd01c6ae",
       "children": [
         {
           "title": "web-sockets",
           "xid": "tBl8neu3tJd5GPwGfJbjZ",
           "description": "web-sockets",
-          "id": "1236790c-ec06-465b-aafa-64e92b8919ec",
+          "id": "f53ba397-f75c-4d05-a744-741fbdacd458",
           "children": [],
           "links": []
         },
@@ -640,7 +643,7 @@
           "title": "singlar-core",
           "xid": "8dvd4M0TKNyQR8dEolGNT",
           "description": "singlar-core",
-          "id": "b6ab90c9-0584-4a4b-869c-5f21b9f76449",
+          "id": "83428e15-c043-4fed-8617-6d5b70cc42e6",
           "children": [],
           "links": []
         }
@@ -651,13 +654,13 @@
       "title": "object-mapping",
       "xid": "9ECykIIvXlDblbFbRVcJS",
       "description": "object-mapping",
-      "id": "784a812d-cd44-49b1-8ae9-5c496b8fbbd2",
+      "id": "052558b3-21d8-46d7-a513-bf644dd36fcb",
       "children": [
         {
           "title": "atuo-mapper",
           "xid": "GPmlueMnuLCUW_t4jvGhc",
           "description": "atuo-mapper",
-          "id": "af2708ae-2905-49c9-bd4e-69a69dd09108",
+          "id": "bebe2a63-78a6-4bd9-aada-693f0a2161a8",
           "children": [],
           "links": []
         }
@@ -668,13 +671,13 @@
       "title": "task-scheduling",
       "xid": "s57tKy1rajlJbKFDVXLqs",
       "description": "task-scheduling",
-      "id": "27555a3b-9cb9-49ef-9205-5b87e3ca1676",
+      "id": "8c3bfe51-5cf6-4a0c-a07a-d398a3a483b9",
       "children": [
         {
           "title": "native-background-service",
           "xid": "uP1nqbmFmZL_wA2DoqP8C",
           "description": "native-background-service",
-          "id": "437a78c2-7a18-4a87-86a9-44706c9d1313",
+          "id": "2de345bf-4c95-4fe4-b3d5-1d83ac4f3f68",
           "children": [],
           "links": []
         },
@@ -682,7 +685,7 @@
           "title": "quartz",
           "xid": "zOWlPXIl4XPs_0pA8-yi5",
           "description": "quartz",
-          "id": "985b85bb-5230-454e-94b9-bfaccd691e74",
+          "id": "4c67c5e7-64d8-4174-a187-478ea1d7fcd8",
           "children": [],
           "links": []
         },
@@ -690,7 +693,7 @@
           "title": "coravel",
           "xid": "p3bZnKIyRgLmB764Kkhju",
           "description": "coravel",
-          "id": "cf039298-7012-43e1-b598-8f972d721bf6",
+          "id": "51f63e51-c3de-412b-b93e-2e1e79d63f67",
           "children": [],
           "links": []
         },
@@ -698,7 +701,7 @@
           "title": "hangfire",
           "xid": "QiQsx1udyKcPJ-lZjRQVy",
           "description": "hangfire",
-          "id": "3a516925-1544-497e-a2f0-049d31e06328",
+          "id": "d7933775-a44d-49d3-90a2-f2d0be7e6234",
           "children": [],
           "links": []
         }
@@ -709,19 +712,19 @@
       "title": "testing",
       "xid": "XofWWhlU_vWCG5oXVMZze",
       "description": "testing",
-      "id": "3cfe88c8-e664-40ed-adc4-81a6efb4c7e1",
+      "id": "95db4d0e-8959-4614-a2fe-4072f77da2ef",
       "children": [
         {
           "title": "e2e-testing",
           "xid": "",
           "description": "e2e-testing",
-          "id": "d46b14c6-f088-45ad-a5f9-842214f6c796",
+          "id": "200c2a23-0a61-4165-885d-6df447c6574d",
           "children": [
             {
               "title": "playwright",
               "xid": "AtyL0ij8FeJCBmqG2YvTO",
               "description": "playwright",
-              "id": "5e124dfe-57b3-4daf-9606-997029d4a15d",
+              "id": "87db168f-505c-48ce-98d5-861238cea374",
               "children": [],
               "links": []
             },
@@ -729,7 +732,7 @@
               "title": "puppeteer",
               "xid": "UCpoLiQJ4LeniI9x3uGcY",
               "description": "puppeteer",
-              "id": "81b96a25-0d97-4769-9829-570e11450f3e",
+              "id": "c10bdbad-f3dd-4564-bc98-9a053e4014df",
               "children": [],
               "links": []
             },
@@ -737,7 +740,7 @@
               "title": "cypress",
               "xid": "f2UP2jDnDr7XEFIdAtBhH",
               "description": "cypress",
-              "id": "6c6ea8e3-e898-436b-ac39-14ad573d21eb",
+              "id": "b97d690f-004c-40f8-9d76-4e0c0715c161",
               "children": [],
               "links": []
             }
@@ -748,13 +751,13 @@
           "title": "unit-testing",
           "xid": "",
           "description": "unit-testing",
-          "id": "d15ad2ed-849d-402d-a44c-cd8718b771ef",
+          "id": "81ebd697-b225-44e7-bbd3-c6bb0959f31e",
           "children": [
             {
               "title": "mstest",
               "xid": "236VJJjMvqHfSj-MHSDPV",
               "description": "mstest",
-              "id": "288142d0-35fb-4369-abd8-a01411f0c4d7",
+              "id": "dfda6390-aa3a-4b3c-ba20-0974e020f358",
               "children": [],
               "links": []
             },
@@ -762,7 +765,7 @@
               "title": "xunit",
               "xid": "R8C6s53RYjkRVma0nCJpy",
               "description": "xunit",
-              "id": "a2d0ab58-86a3-4cae-83e6-8eff3d8bb96b",
+              "id": "53bac96d-1bcc-498a-9d52-e0795dcf2133",
               "children": [],
               "links": []
             },
@@ -770,7 +773,7 @@
               "title": "nunit",
               "xid": "qHYBlBCvCGUZGh6gyEI63",
               "description": "nunit",
-              "id": "ada57267-b812-456b-b16b-d49da8bec110",
+              "id": "5ad51e28-0445-4acf-a291-ee58d0098266",
               "children": [],
               "links": []
             },
@@ -778,7 +781,7 @@
               "title": "shouldly",
               "xid": "zhn-VLGPfV6FZT2OMl6zf",
               "description": "shouldly",
-              "id": "80b2713c-df28-4b4a-87b5-b8f373efa2d7",
+              "id": "77aa9c5e-87e6-46bd-9155-297fa500f4e6",
               "children": [],
               "links": []
             },
@@ -786,7 +789,7 @@
               "title": "nsubstitute",
               "xid": "iZCxinqlVefBk5-ICqt4v",
               "description": "nsubstitute",
-              "id": "d3d87ecf-540a-4d9c-9a02-9bcd799a90fb",
+              "id": "ada9d0fb-34d7-4284-a0e4-6d9785248920",
               "children": [],
               "links": []
             },
@@ -794,7 +797,7 @@
               "title": "moq",
               "xid": "eyOXWb1kL80Wqiwc2WHd_",
               "description": "moq",
-              "id": "306fe518-439e-4829-ac21-7806b3b07f4a",
+              "id": "006a73e5-084c-426b-aa4e-47cae2bdc31c",
               "children": [],
               "links": []
             },
@@ -802,7 +805,7 @@
               "title": "fake-it-easy",
               "xid": "diRJ_F6kx42Ucs0fxidtZ",
               "description": "fake-it-easy",
-              "id": "e121b7aa-e983-4d08-8061-b1ca63e86e1c",
+              "id": "5121362b-54c9-4636-b976-2582d11ad969",
               "children": [],
               "links": []
             }
@@ -813,13 +816,13 @@
           "title": "integration-testing",
           "xid": "",
           "description": "integration-testing",
-          "id": "fe67af75-1b38-409c-9360-1967b0fd5f0a",
+          "id": "f6deadf3-4867-4322-80f1-7a26ff6eca3c",
           "children": [
             {
               "title": "web-application-factory",
               "xid": "Xx5G09n4WWnnydCgxnL0A",
               "description": "web-application-factory",
-              "id": "f7afb5ac-9b31-4047-8b58-e339bd0ef8bd",
+              "id": "6edcc9b5-4c3d-42b4-9a82-139a79e9d5b6",
               "children": [],
               "links": []
             }
@@ -830,13 +833,13 @@
           "title": "behavior-testing",
           "xid": "",
           "description": "behavior-testing",
-          "id": "e634140c-7de0-4cba-a4e2-2ed08f388b71",
+          "id": "8a2b13b4-6f13-4b44-9eeb-7bb1752c0b61",
           "children": [
             {
               "title": "spec-flow",
               "xid": "9WZmjiFowydYrkHQ2xeNm",
               "description": "spec-flow",
-              "id": "836821af-185e-4dfe-854b-6fbc4e9dbdd0",
+              "id": "396ce0e5-cb30-40b4-8408-5d650da8b0cf",
               "children": [],
               "links": []
             },
@@ -844,7 +847,7 @@
               "title": "light-bdd",
               "xid": "aWRv5sU9dksgcpE9RGJb1",
               "description": "light-bdd",
-              "id": "18938b67-dc67-4ff4-9de5-c61fc957469a",
+              "id": "1752f8bf-cd8a-4945-92cf-161b3d007f96",
               "children": [],
               "links": []
             }
@@ -858,19 +861,19 @@
       "title": "microservices",
       "xid": "37c2eCvRdebztkbc5AjYp",
       "description": "microservices",
-      "id": "09ac7e25-2cdb-4d15-a0f9-f584da231747",
+      "id": "0f9f8bcf-5104-4544-8a3f-1ee8cb863b5e",
       "children": [
         {
           "title": "message-brokers",
           "xid": "",
           "description": "message-brokers",
-          "id": "aab04884-2513-426c-ac4d-84649d06ed30",
+          "id": "72da34df-0a28-4630-8dda-d3f5edc93f18",
           "children": [
             {
               "title": "apache-kafka",
               "xid": "L8RkeMYm0WGNeLLcHKF1R",
               "description": "apache-kafka",
-              "id": "869d4c96-1db8-4675-a795-4771018fb8e4",
+              "id": "103a99ef-ad2f-4d50-9e4a-004eb4c1d0f7",
               "children": [],
               "links": []
             },
@@ -878,7 +881,7 @@
               "title": "rabbit-mq",
               "xid": "KqvBn2_wvYhFdv0dBZMC9",
               "description": "rabbit-mq",
-              "id": "c680e8bf-9b08-4b51-9939-eaf72dfaff73",
+              "id": "8ebcd30a-c4bd-4418-9a1b-cc0e67f8e1ec",
               "children": [],
               "links": []
             },
@@ -886,7 +889,7 @@
               "title": "active-mq",
               "xid": "sNYYEBMHV_NO_NToP51VY",
               "description": "active-mq",
-              "id": "7dfa57d2-f3d4-413c-8c21-e62e9b3b1cbe",
+              "id": "980797e8-b871-468c-ada7-a700990f985f",
               "children": [],
               "links": []
             },
@@ -894,7 +897,7 @@
               "title": "azure-service-bus",
               "xid": "gBuaVZfqJ0-g21sKohQtx",
               "description": "azure-service-bus",
-              "id": "706adf43-ac36-4c47-8045-5994280f6945",
+              "id": "4dc08116-ca8f-420c-a539-b182b1663fab",
               "children": [],
               "links": []
             },
@@ -902,7 +905,7 @@
               "title": "net-mq",
               "xid": "8d4f7_3VO03vy7YDWwPI9",
               "description": "net-mq",
-              "id": "fa2cd33b-e911-45a8-b910-cd53c9d53c84",
+              "id": "62da513a-90aa-4bda-96f2-ab470acde508",
               "children": [],
               "links": []
             }
@@ -913,13 +916,13 @@
           "title": "message-bus",
           "xid": "",
           "description": "message-bus",
-          "id": "16f4dc66-dc4f-466a-aaf4-fa5f461ca37b",
+          "id": "0d1d86e4-3e08-4ac3-a837-26b657c5156d",
           "children": [
             {
               "title": "mass-transit",
               "xid": "SQKIUa_UsJ4cls-Vs9yHU",
               "description": "mass-transit",
-              "id": "21347b05-97f7-4fc6-aa0c-16ab9326f99b",
+              "id": "a6f1fd33-01cb-43c0-bdef-ca16dcc101ac",
               "children": [],
               "links": []
             },
@@ -927,7 +930,7 @@
               "title": "nservice-bus",
               "xid": "vf8W1FLhcb3awx4JBaY5r",
               "description": "nservice-bus",
-              "id": "3f83f663-61b4-460c-9ccf-d4ebbf8fb485",
+              "id": "5287e80a-5de6-440e-96ae-cc9614758135",
               "children": [],
               "links": []
             },
@@ -935,7 +938,7 @@
               "title": "easy-net-q",
               "xid": "X6iSHoHnFFMaGb6YPQFhl",
               "description": "easy-net-q",
-              "id": "640089da-221d-4736-bbd1-f3df3b4b92fa",
+              "id": "2a22799b-d911-4c37-8307-27bfe4039691",
               "children": [],
               "links": []
             }
@@ -946,7 +949,7 @@
           "title": "docker",
           "xid": "rmRESzLiZNWdBFXLrwQFJ",
           "description": "docker",
-          "id": "053296ef-c7d9-437c-88d7-d5214ff3abf7",
+          "id": "baa32c2e-55c3-472c-b5b6-9577e113b432",
           "children": [],
           "links": []
         },
@@ -954,7 +957,7 @@
           "title": "ocelot",
           "xid": "2k-rGuhYTTAR9XN3aDAnW",
           "description": "ocelot",
-          "id": "56d00212-82a9-475e-bd2d-08cfbdc820a3",
+          "id": "c58d4b2e-8cc7-4ea8-947e-f8101c59bd43",
           "children": [],
           "links": []
         },
@@ -962,7 +965,7 @@
           "title": "yarp",
           "xid": "2axfolu26P8XwxMxgMaS3",
           "description": "yarp",
-          "id": "1491d44c-3667-4d59-a0d1-0c6f29a4b2ad",
+          "id": "b45bf0a9-da7c-46ff-bc10-5786029c299e",
           "children": [],
           "links": []
         },
@@ -970,7 +973,7 @@
           "title": "kubernetes",
           "xid": "02rtFStTeIm8prNskxaUN",
           "description": "kubernetes",
-          "id": "92067704-ea70-4d79-94bc-cd84aff79c1e",
+          "id": "3bb44cfa-ec26-4a6d-aad6-ec62a69ed9f7",
           "children": [],
           "links": []
         },
@@ -978,7 +981,7 @@
           "title": "dapr",
           "xid": "IHY9uL3dzYmf2D2wWgIh-",
           "description": "dapr",
-          "id": "29fd57ad-248c-4a40-9b6c-77d47c1fe608",
+          "id": "4a3c4ade-9f2b-4f7e-b856-b70c42966dc5",
           "children": [],
           "links": []
         },
@@ -986,7 +989,7 @@
           "title": "orleans",
           "xid": "XKsLqDDco5OXKURCcWAmv",
           "description": "orleans",
-          "id": "68702b5c-c6ed-45a9-911f-f84da61bfb68",
+          "id": "eddc95a0-8bd5-4810-8ae1-b986d57b66d7",
           "children": [],
           "links": []
         },
@@ -994,7 +997,7 @@
           "title": "steel-toe",
           "xid": "s8evqe2MireS1UhxoXrd1",
           "description": "steel-toe",
-          "id": "556ec316-6eec-48cc-99de-8a45cfcbd717",
+          "id": "7d07621b-b153-4db9-a9aa-a70e21f1c813",
           "children": [],
           "links": []
         }
@@ -1005,13 +1008,13 @@
       "title": "ci-cd",
       "xid": "KIFmahcNiSo2NGoLtAyRR",
       "description": "ci-cd",
-      "id": "263d17b3-7c84-482c-919d-cbe4d9766430",
+      "id": "ea4f6a8c-0b7c-4db3-b40c-c543dc6384bc",
       "children": [
         {
           "title": "github-actions",
           "xid": "0-PLMXGlRyRzTk-EjXMs2",
           "description": "github-actions",
-          "id": "a286dc9b-0b80-4805-90d5-ae50887e8499",
+          "id": "963dc62e-cf1b-44f6-8d40-f01c2852b8d8",
           "children": [],
           "links": []
         },
@@ -1019,7 +1022,7 @@
           "title": "azure-pipelines",
           "xid": "_-GQNpsb7KZw76hNNOq3h",
           "description": "azure-pipelines",
-          "id": "77c7b8a9-82d6-4c8f-86be-d1d7696ea7f2",
+          "id": "3c9aea15-f6cb-455f-99c9-657d8857b466",
           "children": [],
           "links": []
         },
@@ -1027,7 +1030,7 @@
           "title": "circle-ci",
           "xid": "KyGjXgG6JFo42qOV0wqfB",
           "description": "circle-ci",
-          "id": "11f6a98d-e819-4c7a-9943-7e8eea58a7f7",
+          "id": "d3022b0f-82d8-40ee-8afa-21bc611da83a",
           "children": [],
           "links": []
         }
@@ -1038,13 +1041,13 @@
       "title": "client-side-libraries",
       "xid": "",
       "description": "client-side-libraries",
-      "id": "b2512170-87d8-4b2d-abb3-11147cadf09e",
+      "id": "e392cf49-6b57-4dc6-841a-5fc78cca54c6",
       "children": [
         {
           "title": "blazor",
           "xid": "4iD_hDtgJ15IlJGxiO-E8",
           "description": "blazor",
-          "id": "b0fda34a-9598-4646-b11d-9c00cc1dfbd6",
+          "id": "a59ccc8a-6de1-4a90-b3ba-11c8e0ce19c6",
           "children": [],
           "links": []
         }
@@ -1055,13 +1058,13 @@
       "title": "template-engines",
       "xid": "C85aJvrzj6rP2Hmfj9uPB",
       "description": "template-engines",
-      "id": "4965519d-9e57-49b7-860c-4280be2465a3",
+      "id": "5b4dace6-c039-4c18-92be-e3f02d0e638d",
       "children": [
         {
           "title": "razor",
           "xid": "nUE2-egUMNFQoPVrVRFPl",
           "description": "razor",
-          "id": "9997e6fb-8989-442a-bf78-de885cde3f83",
+          "id": "c93e90c6-fbe3-4979-a154-38b69e22e638",
           "children": [],
           "links": []
         },
@@ -1069,7 +1072,7 @@
           "title": "scriban",
           "xid": "dWB5OCvWVYkD30Op_dMwy",
           "description": "scriban",
-          "id": "1f9e7285-7e35-41aa-950c-fe205370d5b9",
+          "id": "e6e3c572-3e78-4f1f-9b81-f8d8f787f65c",
           "children": [],
           "links": []
         },
@@ -1077,7 +1080,7 @@
           "title": "fluid",
           "xid": "ZaOhWWDgVxrn0hbesJ7xT",
           "description": "fluid",
-          "id": "ef248730-d6ce-42fc-bf52-507ccd04dd06",
+          "id": "38a691b4-7d4e-4256-83ed-8272114de1de",
           "children": [],
           "links": []
         }
@@ -1088,13 +1091,13 @@
       "title": "good-to-know-libraries",
       "xid": "",
       "description": "good-to-know-libraries",
-      "id": "fbbac837-6537-4974-9b18-f0143336e179",
+      "id": "070f3263-5294-4b3a-a40c-cbb3a3bcfe94",
       "children": [
         {
           "title": "mediatr",
           "xid": "cc0UNQwbDlySue-CvpChR",
           "description": "mediatr",
-          "id": "19f3fc4d-8673-47a5-bf58-3693d489946b",
+          "id": "5549364e-eb65-4a51-8e0a-a08f4a22bb14",
           "children": [],
           "links": []
         },
@@ -1102,7 +1105,7 @@
           "title": "fluent-validation",
           "xid": "sa0zXd8lpNs_SFQ2y-PY4",
           "description": "fluent-validation",
-          "id": "8d830445-b3bf-46d5-bb5a-edf54f249645",
+          "id": "5cdd2c0a-44ea-4f6d-8ca8-5ce09d5b578f",
           "children": [],
           "links": []
         },
@@ -1110,7 +1113,7 @@
           "title": "polly",
           "xid": "gQhiEpvx__70N1WbEHGYJ",
           "description": "polly",
-          "id": "e24577df-05d5-401d-8aa9-d47fbd586b95",
+          "id": "a7af767f-1bc9-4eb8-9b85-46404197f923",
           "children": [],
           "links": []
         },
@@ -1118,7 +1121,7 @@
           "title": "nuke",
           "xid": "EsC1JwFOMOlQVelpmxISh",
           "description": "nuke",
-          "id": "f93b0416-7c47-4a73-92c2-4d8c3c3d0733",
+          "id": "2ca9ccf2-e7b0-4fd4-aef3-f4f9f8165917",
           "children": [],
           "links": []
         },
@@ -1126,7 +1129,7 @@
           "title": "benchmark-net",
           "xid": "9LEVN-uVEwxJooEiB9ApK",
           "description": "benchmark-net",
-          "id": "056b123b-73d1-45c4-a278-1e1346a3c73c",
+          "id": "c9e25460-cd64-47f1-8688-e47632234cad",
           "children": [],
           "links": []
         }

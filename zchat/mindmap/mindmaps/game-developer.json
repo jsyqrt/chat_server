@@ -1,12 +1,15 @@
 {
+  "id": "5609ddef-71f9-4fa7-b191-92b9c7a482b3",
   "title": "Game Developer",
-  "description": "\n",
+  "description": "Roadmap to becoming a Game Developer in 2025",
+  "question_title": "",
+  "question_description": "",
   "children": [
     {
       "title": "Client Side Development",
       "xid": "rQArtuVKGVgLn_fw9yO3b",
       "description": "In game development, the term \"Client Side\" refers to all the operations and activities that occur on the player's machine, which could be a console, computer, or even a phone. The client side is responsible for rendering graphics, handling input from the user and sometimes processing game logic. This is in contrast to the server-side operations, which involve handling multiplayer connections and synchronizing game states among multiple clients. On the client side, developers need to ensure performance optimization, smooth UI/UX, quick load times, and security to provide an engaging, lag-free gaming experience. Security is also crucial to prevent cheating in multiplayer games, which can be tackled through measures like Data obfuscation and encryption.\n\n",
-      "id": "304ef181-4707-498a-9f8f-f04e38e371f4",
+      "id": "671f8f27-422a-4116-8b57-f11e9face1d3",
       "children": [],
       "links": [
         {
@@ -20,13 +23,13 @@
       "title": "Learn the Fundamentals",
       "xid": "m1wX27XBWKXZcTMH2U1xp",
       "description": "The phrase \"fit for use or purpose\" sums up quality, which is incredibly difficult to define. It all comes down to fulfilling the requirements and expectations of the consumer in terms of the product's usefulness, design, dependability, durability, and price.\n\nAssurance is nothing more than a confident statement made about a good or service. It is the assurance that a good outcome is guaranteed for a good or service. It offers a warranty that the product will perform faultlessly in accordance with expectations or needs.\n\nQuality Assurance (QA) also known as QA testing is an activity to ensure that an organization provides the best product or service to the customers. QA testing of a software involves the testing of performance, adaptability, and functionality. Yet, software quality assurance extends beyond software quality; it also comprises the quality process used for developing, testing, and release of software products. QA relies on the software development cycle, which includes the management of software requirements, design, coding, testing, and release.",
-      "id": "f0b3318f-39e2-44f8-a005-88162066fdff",
+      "id": "927feb23-dcc1-42d0-b620-ac2c83f2961b",
       "children": [
         {
           "title": "Linear Algebra",
           "xid": "grRf-MmaXimDB4iODOV47",
           "description": "Linear Algebra is a vital field in Mathematics that is extensively used in game development. It revolves around vector spaces and the mathematical structures used therein, including matrices, determinants, vectors, eigenvalues, and eigenvectors, among others. In the context of game development, linear algebra is used mainly for computer graphics, physics, AI, and many more. It allows developers to work with spatial transformations, helping them manipulate and critically interact with the 3D space of the game. On a broader context, it is important in computer programming for algorithms, parallax shifting, polygonal modeling, collision detection, etc. From object movements, positional calculations, game physics, to creating dynamism in games, linear algebra is key.\n\n",
-          "id": "5e20f4b9-d5a9-4cea-81ee-665d8bfdd5c8",
+          "id": "7763ebac-58eb-41f6-9dcd-66c2484b074c",
           "children": [],
           "links": [
             {
@@ -50,7 +53,7 @@
           "title": "Vector",
           "xid": "yLEyh5XJ3sl8eHD-PoSvJ",
           "description": "`Vector` in game development is a mathematical concept and an integral part of game physics. It represents a quantity that has both magnitude and direction. A vector can be used to represent different elements in a game like positions, velocities, accelerations, or directions. In 3D games, it's commonly used to define 3D coordinates (x, y, z). For example, if you have a character in a game and you want to move it up, you'd apply a vector that points upward. Hence, understanding how to manipulate vectors is a fundamental skill in game development.\n\n",
-          "id": "f5feb52e-cb3a-457e-bf60-b94a8f22afb3",
+          "id": "832058e7-c794-4e5f-81d8-8b2f2a145c83",
           "children": [],
           "links": [
             {
@@ -69,7 +72,7 @@
           "title": "Matrix",
           "xid": "Kg6Mg9ieUUGXWX9Lai7B0",
           "description": "In game development, a **matrix** is a fundamental part of game mathematics. It's a grid of numbers arranged into rows and columns that's particularly important in 3D game development. These matrices are typically 4x4, meaning they contain 16 floating point numbers, and they're used extensively for transformations. They allow for the scaling, rotation, and translation (moving) of 3D vertices in space. With matrices, these transformations can be combined, and transformed vertices can be used to draw the replicas of 3D models into 2D screen space for rendering.\n\n",
-          "id": "d0306222-4e03-4aa7-8c5b-bcb23306b98a",
+          "id": "885dc60e-6af5-41b0-99f3-662f3d2dc9e8",
           "children": [],
           "links": [
             {
@@ -88,7 +91,7 @@
           "title": "Geometry",
           "xid": "XWxW2ZBw3LcQ4DRk4tgAG",
           "description": "Geometry in game development refers to the mathematical study used to define the spatial elements within a game. This is vital in determining how objects interact within a game's environment. Particularly, geometry is employed in various aspects like object rendering, collision detection, character movement, and the calculation of angles and distance. It allows developers to create the spatial parameters for a game, including object dimensions and orientations. Understanding the basics such as 2D vs 3D, polygons, vertices, meshes and more advanced topics such as vectors, matrices, quaternions etc. is crucial to this field.\n\n",
-          "id": "1c2a5b6e-ed65-4595-bc9f-45630d47aabe",
+          "id": "ad0ad101-8d36-486b-9529-797845ab2470",
           "children": [],
           "links": [
             {
@@ -107,7 +110,7 @@
           "title": "Linear Transformation",
           "xid": "XABzEU9owCx9-zw1id9xU",
           "description": "`Linear transformations` or `linear maps` are an important concept in mathematics, particularly in the fields of linear algebra and functional analysis. A linear transformation can be thought of as a transformation that preserves the operations of addition and scalar multiplication. In other words, a transformation T is linear if for every pair of vectors `x` and `y`, the equation `T(x + y) = T(x) + T(y)` holds true. Similarly, for any scalar `c` and any vector `x`, the equation `T(cx)=cT(x)` should also hold true. This property makes them very useful when dealing with systems of linear equations, matrices, and in many areas of computer graphics, including game development.\n\n",
-          "id": "f855f781-a8fb-4418-b08c-0a69a9e6f994",
+          "id": "c1347a90-e2bc-49af-9f98-4281ac4d66c8",
           "children": [],
           "links": [
             {
@@ -126,7 +129,7 @@
           "title": "Affine Space",
           "xid": "r5TcXQsU9s4NlAQIPvZ3U",
           "description": "In the context of game mathematics, an **Affine Space** is a fundamental concept you should understand. It is a geometric structure with properties related to both geometry and algebra. The significant aspect of an affine space is that it allows you to work more comfortably with points and vectors. While a vector space on its own focuses on vectors which have both magnitude and direction, it does not involve points. An affine space makes it easy to add vectors to points or subtract points from each other to get vectors. This concept proves extremely useful in the field of game development, particularly when dealing with graphical models, animations, and motion control.\n\n",
-          "id": "586c3914-d79e-43e4-974d-4c6415aa4b22",
+          "id": "b40c56e3-2f7d-4c70-889e-e65a2571da0f",
           "children": [],
           "links": [
             {
@@ -145,7 +148,7 @@
           "title": "Affine Transformation",
           "xid": "SkCreb6g4i-OFtJWhRYqO",
           "description": "An **affine transformation**, in the context of game mathematics, is a function between affine spaces which preserves points, straight lines and planes. Also, sets of parallel lines remain parallel after an affine transformation. In video games, it's typically used for manipulating an object's position in 3D space. This operation allows game developers to perform multiple transformations such as translation (moving an object from one place to another), scaling (changing the size of an object), and rotation (spinning the object around a point). An important feature of affine transformation is that it preserves points uniqueness; if two points are distinct to start with, they remain distinct after transformation. It's important to note that these transformations are applied relative to an object's own coordinate system, not the world coordinate system.\n\n",
-          "id": "f4708dbb-69a8-4349-a184-53590b2a2310",
+          "id": "962adb01-2cf1-4107-9b81-09a1c41287b1",
           "children": [],
           "links": [
             {
@@ -164,13 +167,13 @@
           "title": "Orientation",
           "xid": "iIWEjpkNFBj4R5wQ0mcWY",
           "description": "In the context of game development, **Orientation** refers to the aspect or direction in which an object is pointed in a 3D space. To determine an object's orientation in 3D space, we typically use three angles namely: pitch, yaw, and roll collectively known as Euler's angles. **Pitch** is the rotation around the X-axis, **Yaw** around the Y-axis and **Roll** around the Z-axis. Alternatively, orientation can also be represented using a Quaternion. Quaternions have the advantage of avoiding a problem known as Gimbal lock (a loss of one degree of freedom in 3D space), present when using Euler's angles.\n\n",
-          "id": "a7a37e04-c60c-45af-a354-c2907214524e",
+          "id": "5600705c-e5fc-46e9-abcf-cd63d503b24b",
           "children": [
             {
               "title": "Quaternion",
               "xid": "zPs_LlDvkfxvvCrk5fXB2",
               "description": "The **quaternion** is a complex number system that extends the concept of rotations in three dimensions. It involves four components: one real and three imaginary parts. Quaternions are used in game development for efficient and accurate calculations of rotations and orientation. They are particularly useful over other methods, such as Euler angles, due to their resistance to problems like Gimbal lock. Despite their complex nature, understanding and implementing quaternions can greatly enhance a game's 3D rotational mechanics and accuracy.\n\n",
-              "id": "9360b281-6708-4d01-a38e-5c430f53672a",
+              "id": "a0e6e52d-4020-4bae-b839-f8a38950831f",
               "children": [],
               "links": [
                 {
@@ -194,7 +197,7 @@
               "title": "Euler Angle",
               "xid": "L0J2kvveJNsmN9ueXhqKf",
               "description": "The **Euler angle** is a concept in mathematics and physics used to describe the orientation of a rigid body or a coordinate system in 3D space. It uses three angles, typically named as alpha (\u03b1), beta (\u03b2), and gamma (\u03b3), and represents three sequential rotations around the axes of the original coordinate system. Euler angles can represent any rotation as a sequence of three elementary rotations. Keep in mind, however, that Euler angles are not unique, and different sequences of rotations can represent identical total effects. It's also noteworthy that Euler angles are prone to a problem known as gimbal lock, where the first and third axis align, causing a loss of a degree of freedom, and unpredictable behavior in particular orientations.\n\n",
-              "id": "37e96e22-4a6a-4804-ae4d-732c897d5eb9",
+              "id": "98c6e864-3c2c-46a9-82b4-e31683ed6a0c",
               "children": [],
               "links": [
                 {
@@ -208,7 +211,7 @@
               "title": "Spline",
               "xid": "nTiHZXRh2j3_FsBotmlGf",
               "description": "`Spline` is a mathematical function widely used in computer graphics for generating curves and surfaces. It connects two or more points through a smooth curve, often used in games for defining pathways, movement paths, object shapes, and flow control. Splines are not confined to two dimensions and can be extended to 3D or higher dimensions. Types of splines include `Linear`, `Cubic`, and `Bezier` splines. While linear splines generate straight lines between points, cubic and bezier splines provide more control and complexity with the addition of control points and handles. Developing a good understanding of splines and their usage can vastly improve the fluidity and visual aesthetics of a game.\n\n",
-              "id": "c787e59a-b378-4567-aab5-cc04eb697977",
+              "id": "4aa88c13-fb1c-48e5-a1c3-a6c940e4b160",
               "children": [],
               "links": [
                 {
@@ -227,7 +230,7 @@
               "title": "Hermite",
               "xid": "m4AuHjEBnHS0wyATG-I1Z",
               "description": "Hermite refers to Hermite interpolation, a fundamental technique in game development for executing smooth transitions. Essentially, Hermite interpolation is an application of polynomial mathematics, with two points applied as start/end (they're usually 3D positional vectors), and the tangents at these points controlling the curve's shape. The technique's name is derived from its inventor, Charles Hermite, a French mathematician. Hermite interpolation can be useful in different aspects of game development, such as creating smooth animations, camera paths, or motion patterns. Note, however, that while Hermite interpolation offers control over the start and end points of a sequence, it might not precisely predict the curve's full behavior.\n\n",
-              "id": "97620e3e-447f-42ff-91a9-57a88b5b500d",
+              "id": "70c87a2d-fc5f-40c8-81ac-c27d4414aa91",
               "children": [],
               "links": [
                 {
@@ -240,8 +243,8 @@
             {
               "title": "Bezier",
               "xid": "DUEEm9sAaZqSI-W-PFZ8f",
-              "description": "`Bezier curves` are named after Pierre Bezier, a French engineer working at Renault, who used them in the 1960s for designing car bodies. A Bezier curve is defined by a set of control points with a minimum of two but no upper limit. The curve is calculated between the first and the last control point and does not pass through the controlling points, which only influence the direction of the curve. There are linear, quadratic, and cubic Bezier curves, but curves with more control points are also possible. They are widely used in computer graphics, animations, and are extensively used in vector images and tools to create shapes, texts, and objects.\n\nLearn more from the following resources:",
-              "id": "1dcc1fb2-afcc-4825-b5af-58852952c39e",
+              "description": "`Bezier curves` are named after Pierre Bezier, a French engineer working at Renault, who used them in the 1960s for designing car bodies. A Bezier curve is defined by a set of control points with a minimum of two but no upper limit. The curve is calculated between the first and the last control point and does not pass through the controlling points, which only influence the direction of the curve. There are linear, quadratic, and cubic Bezier curves, but curves with more control points are also possible. They are widely used in computer graphics, animations, and are extensively used in vector images and tools to create shapes, texts, and objects.\n\n",
+              "id": "7fb88b75-9daf-45ed-a1b7-b554ecf37b66",
               "children": [],
               "links": [
                 {
@@ -260,7 +263,7 @@
               "title": "Catmull-Rom",
               "xid": "N9GoA3YvOaKwYjljj6NZv",
               "description": "The **Catmull-Rom** spline is a form of interpolation used in 2D and 3D graphics. Named after Edwin Catmull and Raphael Rom, it offers a simple way to smoothly move objects along a set of points or, in terms of graphics, to smoothly draw a curve connecting several points. It's a cubic interpolating spline, meaning it uses the cubic polynomial to compute coordinates. This makes Catmull-Rom ideal for creating smooth and natural curves in graphics and animation. It also has a feature called C1 continuity, ensuring the curve doesn't have any abrupt changes in direction. However, if not managed properly, it can create loops between points.\n\n",
-              "id": "347c28fd-49a1-44c8-92a5-d99e10323bd1",
+              "id": "0352eb7c-15ad-4e3c-ade2-00ba58bdfc77",
               "children": [],
               "links": [
                 {
@@ -293,13 +296,13 @@
           "title": "Projection",
           "xid": "5qfoD77wU4ETI7rUSy4Nc",
           "description": "`Projection` in game mathematics often refers to the method by which three-dimensional images are transferred to a two-dimensional plane, typically a computer screen. There are two main types of projection in game development; `Orthographic Projection` and `Perspective Projection`. In the Orthographic Projection, objects maintain their size regardless of their distance from the camera. This is often used in 2D games or 3D games where perspective is not important. On the other hand, Perspective Projection mimics human eye perspective, where distant objects appear smaller. This method provides a more realistic rendering for 3D games. It's crucial to understand projection in game development because it governs how virtual 3D spaces and objects are displayed on 2D viewing platforms.\n\n",
-          "id": "196307f1-5c22-4d77-8086-64c6f9f0ce64",
+          "id": "42146572-de31-4c83-b4fb-8399026eb315",
           "children": [
             {
               "title": "Perspective",
               "xid": "LEJymJ2EaAW5FM5LgKW38",
               "description": "In game development, **Perspective** plays a significant role in creating a three-dimensional world on a two-dimensional space. It mimics the way our eyes perceive distance and depth, with objects appearing smaller as they go farther away. Essentially, this is achieved by projecting 3D co-ordinates on a virtual screen. Perspective projection is done in two types - one-point where only one axis displays a change in size with depth and two-point where both axis display a change. It creates more realistic views, enhancing game visualization and immersion. An important aspect is the player's viewpoint, which is the vanishing point where parallel lines converge in the distance.\n\n",
-              "id": "75545115-12dc-45a3-b133-1a26bd205e3d",
+              "id": "7061f952-a350-4e98-9ab4-2bc026832abd",
               "children": [],
               "links": [
                 {
@@ -313,7 +316,7 @@
               "title": "Orthogonal",
               "xid": "d6C1qFv-Tad3AtMBDLI6r",
               "description": "Orthogonal projection, or orthographic projection, is a type of parallelogram projection in game development where the lines of projection are perpendicular to the projection plane. This creates a view that is straight-on, essentially removing any form of perspective. Unlike perspective projection where objects further from the viewer appear smaller, objects in orthogonal projection remain the same size regardless of distance. The lack of perspective in orthogonal projection can be useful for specific types of games like platformers or strategy games. It is commonly used in CAD (Computer-Aided Design) and technical drawings as well.\n\n",
-              "id": "6fb8cc2c-6be8-4004-aa0d-9862187be0ea",
+              "id": "9dcb6c32-2aed-4af0-88c7-5e57185a3766",
               "children": [],
               "links": [
                 {
@@ -335,8 +338,8 @@
         {
           "title": "Curve",
           "xid": "YTkOF_33oL1ZkA-loc_DP",
-          "description": "A `curve` in game development is a mathematical tool for creating smooth lines or paths, used in areas like animation, 3D modeling, UI design, and level layouts. Curves simplify complex shapes and movements, enabling more natural results compared to linear approaches. They're key for `lifelike animations`, organic shapes, `realistic physics`, and smooth camera movements, essential for polished, fluid game design.\n\nLearn more from the following resources:",
-          "id": "6974eecf-3fc3-44bf-b76d-f816cd09cef0",
+          "description": "A `curve` in game development is a mathematical tool for creating smooth lines or paths, used in areas like animation, 3D modeling, UI design, and level layouts. Curves simplify complex shapes and movements, enabling more natural results compared to linear approaches. They're key for `lifelike animations`, organic shapes, `realistic physics`, and smooth camera movements, essential for polished, fluid game design.\n\n",
+          "id": "a4ffcabb-fa04-464c-9e36-3a2ccac39609",
           "children": [],
           "links": [
             {
@@ -358,19 +361,19 @@
       "title": "Game Physics",
       "xid": "UTBnrQiZ6Bf96yJYIUf3b",
       "description": "Game Physics is an integral part of game development that simulates the laws of physics in a virtual environment. This simulation brings realism into the game by defining how objects move, interact, and react to collisions and forces. Game physics ranges from how a character jumps or moves in a 2D or 3D space, to more complex mechanics such as fluid dynamics or ragdoll physics. Two main types of game physics are 'arcade physics', which are simpler and more abstract; and 'realistic physics', attempting to fully recreate real-life physics interactions. Implementing game physics requires a combination of mathematical knowledge and programming skills to integrate physics engines like Unity's PhysX and Unreal Engine's built-in physics tool.\n\n",
-      "id": "ae7a69ff-1c26-426d-b843-d697980c123a",
+      "id": "20b58e76-cfac-4722-a36a-bb2092677ba4",
       "children": [
         {
           "title": "Dynamics",
           "xid": "0D7KQlF-9ylmILTBBVxot",
           "description": "**Dynamics** in game physics refers to the calculation and simulation of the movement and interaction of objects over time, taking into account properties such as mass, force, and velocity. Its purpose is to ensure the motion of game elements matches expectations in the real-world, or the specific conditions defined by the game designers. This typically includes topics like kinematics (velocity and acceleration), Newton's laws of motion, forces (like gravity or friction), and conservation laws (such as momentum or energy). This also involves solving equations of motions for the game objects, detecting collisions and resolving them. Dynamics, together with Statics (dealing with how forces balance on rigid bodies at rest), makes up the core of game physics simulation.\n\n",
-          "id": "9bf04dcd-aaa4-42e2-8d9a-94803411c501",
+          "id": "f4be09d2-fa27-4e77-b4f5-10de205f1975",
           "children": [
             {
               "title": "Center of Mass",
               "xid": "HWtU4q-YPXxSi64t43VNF",
               "description": "The **center of mass** is a position defined relative to an object or system of objects. Typically denoted by the symbol (COM), it refers to the average position of all the parts of the system, weighted according to their masses. For instance, if you have a uniformly dense object, the center of mass would be in the geometric center of that object. In gaming, the center of mass of an object can have a significant impact on how the object behaves when forces are applied to it. This includes how the object moves in response to these forces, and can affect the realism of the physics simulations in a game.\n\n",
-              "id": "8d1c8a79-35dd-4a28-8a12-1a3d24c52dac",
+              "id": "9471bd15-150d-42e3-821d-d92b573b9849",
               "children": [],
               "links": [
                 {
@@ -389,7 +392,7 @@
               "title": "Moment of Inertia",
               "xid": "6E2mkXuAzoYnrT1SEIA16",
               "description": "The **moment of inertia**, also known as rotational inertia, is a measure of an object's resistance to changes to its rotation. In simpler terms, it's essentially how difficult it is to start or stop an object from spinning. It is determined by both the mass of an object and its distribution of mass around the axis of rotation. In the context of game development, the moment of inertia is crucial for creating realistic movements of characters, objects or vehicles within the game. This is particularly relevant in scenarios where the motion involves spinning or revolving entities. Calculating and applying these physics ensures a more immersive and believable gaming experience.\n\n",
-              "id": "98da5a0f-713d-47fc-bf51-729bd524b98b",
+              "id": "81d7b476-2c08-4c11-a09a-c0f455367431",
               "children": [],
               "links": [
                 {
@@ -403,7 +406,7 @@
               "title": "Acceleration",
               "xid": "ejZMnxZ0QrN-jBqo9Vrj8",
               "description": "**Acceleration** refers to the rate of change in velocity per unit time. This physical concept is translated into game dynamics where it impacts the movement and speed of game characters or objects. For example, when a character starts moving, there is usually a slight delay before they reach their top speed, which then continues as long as the move button is held down. This is caused by acceleration. Conversely, when the button is released, the character doesn't stop instantly but slows down gradually - this is due to deceleration, which is negative acceleration. By mastering acceleration and deceleration, game developers can create more realistic and interesting movements for their characters.\n\n",
-              "id": "f63bdbce-5422-4b9c-94b0-0d76f49547e1",
+              "id": "93d2dddb-765e-403e-98ed-3c2d64981484",
               "children": [],
               "links": [
                 {
@@ -417,7 +420,7 @@
               "title": "Joints",
               "xid": "m2_wUW2VHMCXHnn5B91qr",
               "description": "Joints in game development primarily refer to the connections between two objects, often used in the context of physics simulations and character animations. These might simulate the physics of real-world joints like hinges or springs. Developers can control various characteristics of joints such as their constraints, forces, and reactions. The different types come with various properties suitable for specific needs. For example, Fixed joints keep objects together, Hinge joints allow rotation around an axis, and Spring joints apply a force to keep objects apart.\n\n",
-              "id": "fd4834d4-42bc-47b1-9ae9-d84b4b6203ed",
+              "id": "3ce07815-88df-41c6-89e0-f0c33a17a32f",
               "children": [],
               "links": [
                 {
@@ -441,7 +444,7 @@
               "title": "Force",
               "xid": "qduFRhmrzJ2sn0g7L-tza",
               "description": "**Force** is a vital concept in game development, especially when crafting physics in games. In the context of game physics, 'Force' is an influence that causes an object to undergo a certain change, either concerning its movement, direction, or geometrical construction. It's typically implemented in game engines, with part of the physics simulation that computes forces like gravity, friction, or custom forces defined by the developer. Incorporating forces gives a realistic feel to the game, allowing objects to interact naturally following the laws of physics. This is central in genres like racing games, sports games, and any game featuring physical interactions between objects. Remember that `F = ma`, the acceleration of an object is directly proportional to the force applied and inversely proportional to its mass. The balance and manipulation of these forces are integral to dynamic, immersive gameplay.\n\n",
-              "id": "da07cba3-d1c4-4011-997c-61ff027dd9bb",
+              "id": "ab412be2-512c-4eeb-957e-5ee92d75412e",
               "children": [],
               "links": [
                 {
@@ -455,7 +458,7 @@
               "title": "Restitution",
               "xid": "egOcxFTQP7vPIGrxcieuk",
               "description": "In game development, **Restitution** is a property closely related to the physics of objects. Essentially, restitution represents the \"bounciness\" of an object or, in more scientific terms, the ratio of the final relative velocity to the initial relative velocity of two objects after a collision. In the context of game physics, when objects collide, restitution is used to calculate how much each object should bounce back or recoil. Restitution values typically fall between 0 and 1 where a value of 0 means an object will not bounce at all and a value of 1 refers to a perfectly elastic collision with no energy lost. Therefore, the higher the restitution value, the higher the bounce back of the object after a collision.\n\n",
-              "id": "e7381316-b8c8-448f-b308-810c3bc8b3d2",
+              "id": "636c2371-c2e3-4c68-bc32-aa73c3345f71",
               "children": [],
               "links": [
                 {
@@ -469,7 +472,7 @@
               "title": "Angular Velocity",
               "xid": "Y7HYY5eq7OG42V9yQz0Q1",
               "description": "Angular velocity, denoted by the symbol '\u03c9', is a measure of the rate of change of an angle per unit of time. In simpler terms, it corresponds to how quickly an object moves around a circle or rotates around a central point. Angular velocity is typically measured in radians per second (rad/s). If you think of an object moving in a circular path, the angular velocity would be the speed at which the angle changes as the object travels along the circumference of the object. Angular velocity is a vector quantity, implying it has both magnitude and direction. The direction of the angular velocity vector is perpendicular to the plane of rotation, following the right-hand rule. It plays a crucial role in game development, especially in physics simulation and character control.\n\n",
-              "id": "37adb653-2538-4903-a4be-c2d1bd9ac4c5",
+              "id": "16c2b333-16c8-44c7-840a-2dc28ed6f721",
               "children": [],
               "links": [
                 {
@@ -487,8 +490,8 @@
             {
               "title": "Buoyancy",
               "xid": "WzcmdW_fKHv3gwdBnvI0_",
-              "description": "**Buoyancy** refers to a specific interaction in physics where an object submerged in fluid (such as a game character in water) experiences an upward force that counteracts the force of gravity. This makes the object either float or appear lighter. In game development, implementing buoyancy can enhance realism particularly in games that involve water-based activities or environments. Buoyancy can be manipulated through adjustments in density and volume to create various effects - from making heavy objects float to sinking light ones. Calculating it typically requires approximating the object to a sphere or another simple geometric shape, and using this in Archimedes' Principle. This principle states that buoyant force equals the weight of the fluid that the object displaces. In the realm of video games, programming buoyancy can involve complex physics equations and careful testing to achieve a balance between realism and playability.\n\nLearn more from the following resources:",
-              "id": "b7ef225b-2709-432b-8f54-539f5f9f5224",
+              "description": "**Buoyancy** refers to a specific interaction in physics where an object submerged in fluid (such as a game character in water) experiences an upward force that counteracts the force of gravity. This makes the object either float or appear lighter. In game development, implementing buoyancy can enhance realism particularly in games that involve water-based activities or environments. Buoyancy can be manipulated through adjustments in density and volume to create various effects - from making heavy objects float to sinking light ones. Calculating it typically requires approximating the object to a sphere or another simple geometric shape, and using this in Archimedes' Principle. This principle states that buoyant force equals the weight of the fluid that the object displaces. In the realm of video games, programming buoyancy can involve complex physics equations and careful testing to achieve a balance between realism and playability.\n\n",
+              "id": "088a2f5c-2395-406e-8aa7-847971b5fd6d",
               "children": [],
               "links": [
                 {
@@ -502,7 +505,7 @@
               "title": "Friction",
               "xid": "Hz9R4YGYtD0jAur8rYist",
               "description": "`Friction` is a crucial concept in game dynamics. In the context of games, it's typically used to slow down or impede movement, providing a realistic feel to characters or objects movement. For example, when a player's character runs on a smooth surface as compared to a rough one, friction influences the speed and control of that character. It can be seen in how cars skid on icy surfaces, how walking speed changes depending on the terrain, or how a ball rolls and eventually slows. The equation to compute friction is usually `f = \u03bcN`, where `f` is the force of friction, `\u03bc` is the coefficient of friction (which depends on the two surfaces interacting), and `N` is the normal force (which is generally the weight of the object). You can adjust the coefficient of friction in a game to have different effects depending upon the desired outcome.\n\n",
-              "id": "83ec3fd6-484f-4338-9d1b-835fdb46e10f",
+              "id": "05a502c9-c63b-49a7-a95b-0b67f051f0e1",
               "children": [],
               "links": [
                 {
@@ -521,7 +524,7 @@
               "title": "Linear Velocity",
               "xid": "Z_U6abGV_wVkTGZ2LVkFK",
               "description": "**Linear Velocity** is a fundamental concept in physics that is extensively used in game development. It refers to the rate of change of an object's position with respect to a frame of reference. It's calculated by dividing the change in position by the change in time, often represented with the vector 'v'. In game development, an object's linear velocity can be manipulated to control its speed and direction. This is especially important in the development of physics simulations or movement-dependent gameplay elements. For instance, it can be used to make a character run or drive, or to throw an object at different speeds and directions.\n\n",
-              "id": "4c72cf35-eb57-471b-ba30-fe92e5896d87",
+              "id": "13747ef1-0456-4607-bb44-9b83c13cf995",
               "children": [],
               "links": [
                 {
@@ -549,25 +552,25 @@
           "title": "Collision Detection",
           "xid": "AdOfOJtLtNgDwuABb6orE",
           "description": "**Collision Detection** is a critical aspect in game physics that handles the computer\u2019s ability to calculate and respond when two or more objects come into contact in a game environment. This is vital to ensure objects interact realistically, don't pass through each other, and impact the game world in intended ways. Techniques for collision detection can vary based on the complexity required by the game. Simple methods may involve bounding boxes or spheres that encapsulate objects. When these spheres or boxes overlap, a collision is assumed. More complex methods consider the object's shape and volume for precise detection. Several libraries and game engines offer built-in support for collision detection, making it easier for developers to implement in their games.\n\n",
-          "id": "fb0443ec-2f61-4cb8-a7fc-632359ea0e93",
+          "id": "3334600b-96ba-4af8-9be8-8ab822d79f3a",
           "children": [
             {
               "title": "Narrow Phase",
               "xid": "SuemqQuiePab0Qpm2EGy9",
               "description": "The **Narrow Phase** of collision detection is a process that dives deeply into detailed collision checks for pairs of objects that are already found to be potentially colliding during the broad phase. Narrow phase is essentially a fine-tuning process. Upon positive detection from the broad phase, it identifies the precise points of collision between the two objects, and it may involve more detailed shape representations and more expensive algorithms. It might also calculate additional information necessary for the physics simulation (like the exact time of impact and contact normals). The usual methods used for this phase involve bounding box, bounding sphere or separating axis theorem. However, the method can vary depending on the complexity of shapes of objects and the specific needs of the game.\n\n",
-              "id": "98ad8e28-1436-4afa-af98-b1048ec52154",
+              "id": "9f10d47b-dab0-4b7b-95ec-17ca21411df6",
               "children": [
                 {
                   "title": "Intersection",
                   "xid": "vmRYaXNVCe0N73xG8bsEK",
                   "description": "`Intersection` is a concept in the narrow phase of game development where the exact point or points of collision are determined between two potentially colliding objects. This process takes place once a potential collision is determined in the broad phase. Algorithms such as Axis-Aligned Bounding Boxes (AABB), Separating Axis Theorem (SAT), Spherical or Capsule bounding, and many others are used for different intersection tests based on the shape of the objects. The intersection provides valuable data such as the point of contact, direction and depth of penetration, which are used to calculate the accurate physical response in the collision.\n\n",
-                  "id": "584fe234-46bc-4e3c-85dd-b4b4a8c30b66",
+                  "id": "a1e6d8f9-e92a-4a31-8f46-0f525736cf10",
                   "children": [
                     {
                       "title": "SAT",
                       "xid": "kSMz7mZ243qMKtT_YD3AD",
                       "description": "`Sat`, or separating axis theorem, is frequently used in collision detection in game development. Its primary benefit is for simple and fast detection of whether two convex polygons intersect. The theorem is somewhat complex\u2014it works by projecting all points of both polygons onto numerous axes around the shapes, then checking for overlaps. However, it can be relatively time-consuming when dealing with more complex models or numerous objects as it has to calculate the projections, so often it is used in a broad-phase detection system. A deep explanation of how `sat` works might involve some mathematical concepts or visual aids, but this is the foundation of its use in game development.\n\n",
-                      "id": "6b4836b9-f494-40b3-81cc-4394aac37e1c",
+                      "id": "d05c305a-8c7f-4099-8608-abe44f4f4a40",
                       "children": [],
                       "links": [
                         {
@@ -586,7 +589,7 @@
                       "title": "GJK",
                       "xid": "lwd3Gz9bJEKCIwhXD6m-v",
                       "description": "The **GJK algorithm** (Gilbert\u2013Johnson\u2013Keerthi) is a computational geometry algorithm that is widely used to detect collisions between convex objects in video games and simulations. The primary role of this algorithm is to assess the intersection between two convex shapes. What makes it unique and widely used is its efficiency and accuracy even when dealing with complex three-dimensional shapes. It uses the concept of \"Minkowski Difference\" to simplify its calculations and determine if two shapes are intersecting.\n\n",
-                      "id": "c3211c29-f51b-4575-b274-400ec17c9f9a",
+                      "id": "e57ff71d-e833-42b5-8190-0e19a8538ee4",
                       "children": [],
                       "links": [
                         {
@@ -610,7 +613,7 @@
                       "title": "EPA",
                       "xid": "vWLKYK2KUzV1fO-vQunzW",
                       "description": "The **EPA** (Expanding Polytope Algorithm) is an iterative algorithm used for calculating the penetration depth between two shapes in collision detection. It is commonly used in physics engines and robotics. The algorithm takes the resulting simplex from a previously applied GJK algorithm, iteratively expanding the polytope towards the Minkowski Difference boundary until it finds the closest point to the origin. The vector from that point to the origin is the penetration vector and its magnitude is equal to the penetration depth between the two shapes.\n\n",
-                      "id": "3fa68797-f387-4ab3-8b37-f6a64c68d523",
+                      "id": "77c666b5-25a3-4cc0-bb78-20a16137ef24",
                       "children": [],
                       "links": [
                         {
@@ -643,19 +646,19 @@
                   "title": "Convexity",
                   "xid": "YLusnwCba7BIdKOYUoY6F",
                   "description": "Convexity is a significant concept used in game development, particularly in the narrow phase of collision detection. A shape is considered convex if, for every pair of points inside the shape, the complete line segment between them is also inside the shape. Essentially, a convex shape has no angles pointing inwards. Convex shapes can be of great benefit in game development because they're simpler to handle computationally. For instance, in collision detection algorithms such as separating axis theorem (SAT) and Gilbert\u2013Johnson\u2013Keerthi (GJK), the input shapes are often convex. Non-convex shapes or concave shapes usually require more complex methods for collision detection, often involving partitioning the shape into smaller convex parts.\n\n",
-                  "id": "9262bc9f-3850-45ec-ad12-d8311ea212f8",
+                  "id": "187a3356-5865-492e-993d-b9034a71cfb8",
                   "children": [
                     {
                       "title": "Convex",
                       "xid": "pG_V12qhS4HevoP_KHTvh",
                       "description": "The term \"convex\" in game development relates primarily to shapes and collision detection within the gaming environment. A shape is convex if all line segments between any two points in the shape lie entirely within the shape. This is an essential concept when programming collision detection and physics engines in games since the mathematical calculations can be more straightforward and efficient when the objects are convex. In addition to this, many rendering algorithms also operate optimally on convex objects, thereby helping improve the game\u2019s graphical performance.\n\n",
-                      "id": "599bfcab-7c58-4cfd-a262-50dfd948e475",
+                      "id": "5adb8ecd-227e-48b2-bdd4-98c84cd83a5d",
                       "children": [
                         {
                           "title": "Convex Hull",
                           "xid": "jixffcPBELkhoG0e7Te8g",
                           "description": "The **Convex Hull** is a foundational concept used in various areas of game development, particularly in the creation of physics engines and collision detection. Essentially, it is the smallest convex polygon that can enclose a set of points in a two-dimensional space, or the smallest convex polyhedron for a set of points in a three-dimensional space. It can be thought of as the shape that a rubber band would take if it was stretched around the points and then released. In computational geometry, various algorithms like Graham's Scan and QuickHull have been developed to compute Convex Hulls rapidly. Using Convex Hulls in game engines can drastically improve the performance of collision detection routines as fewer points need to be checked for overlap, which in turn helps in creating smoother gameplay.\n\n",
-                          "id": "79da816d-bbea-401b-996d-88b6b82ee4b5",
+                          "id": "36bde04a-4d78-4d00-9ac2-eda95c626c9a",
                           "children": [],
                           "links": [
                             {
@@ -678,13 +681,13 @@
                       "title": "Concave",
                       "xid": "jslk7Gy58VspO1uXGDgBp",
                       "description": "In game development, a shape is said to be \"concave\" if it has an interior angle greater than 180 degrees. In simpler terms, if the shape has a portion \"inwards curved\" or a \"cave-like\" indentation, it's concave. Unlike convex shapes, a straight line drawn within a concave shape may not entirely lie within the boundaries of the shape. Concave shapes add complexity in game physics, especially in collision detection, as there are more points and angles to consider compared to convex shapes. These shapes are commonly seen in game elements like terrains, mazes, game level boundaries and gaming characters. Let's remember that the practical application of concave shapes largely depends on the gameplay requirements and the level of realism needed in the game.\n\n",
-                      "id": "27fd848a-83b9-4a91-8111-e90cfe6adb1d",
+                      "id": "3d81e090-a3e7-48e7-b6d3-a37e46ade4cc",
                       "children": [
                         {
                           "title": "Convex Decomposition",
                           "xid": "bgP9NpD0DJGqN4VCt65xP",
                           "description": "`Convex Decomposition` represents a process within game development that involves breaking down complex, concave shapes into simpler, convex shapes. This technique considerably simplifies the computation involved in collision detection, a critical aspect of any game development project that involves physical simulations. In concrete terms, a concave shape has one or more parts that 'cave in' or have recesses, while a convex shape has no such depressions - in simplistic terms, it 'bulges out' with no interior angles exceeding 180 degrees. So, Convex decomposition is essentially a process of breaking down a shape with 'caves' or 'recesses' into simpler shapes that only 'bulge out'.\n\n",
-                          "id": "e09bd94e-daea-453a-9428-62c1a42d5b0f",
+                          "id": "f4aebe49-f48a-4087-897e-3cebc1792857",
                           "children": [],
                           "links": [
                             {
@@ -725,19 +728,19 @@
               "title": "Broad Phase",
               "xid": "AKd2UpITqBZV7cZszSRps",
               "description": "**Broad Phase Collision Detection** is the first step in the collision detection process. Its primary function is to identify which pairs of objects might potentially collide. Rather than examining the entire body of every object for possible collision, it wraps up each one in a simpler shape like a bounding box or sphere, aiming to reduce the number of calculations. The output of this phase is a list of 'candidate pairs' which are passed onto the next phase, often referred to as the narrow phase, for in-depth overlap checks.\n\n",
-              "id": "efdf7222-07f8-4342-aca1-3fde2b507d77",
+              "id": "6ffafe98-6170-4b29-bdfb-8997d52e6dd0",
               "children": [
                 {
                   "title": "Bounding Volume",
                   "xid": "PLR_4yoRifoTzkOR4c7ym",
                   "description": "`Bounding Volume` is a simple shape that fully encompasses a more complex game model. It is less expensive to check for the intersection of bounding volumes when compared to checking for intersection of the actual models. Some commonly used types of bounding volume in game development include Axis-Aligned Bounding Boxes (AABBs), Bounding Spheres, and Oriented Bounding Boxes (OBBs). AABBs and Bounding Spheres are simple to implement and work well with static objects, while OBBs are slightly more complex and are often used with dynamic objects that need to rotate.\n\n",
-                  "id": "66d4f344-76ec-4866-b58f-3d3da3bfde08",
+                  "id": "4f050b3b-769d-4cca-ad7b-2cb6b950171a",
                   "children": [
                     {
                       "title": "AABB",
                       "xid": "aTeYGd4JlPr5txNPyBezn",
                       "description": "`AABB`, short for Axis-Aligned Bounding Box, is a commonly used form of bounding volume in game development. It is a box that directly aligns with the axes of the coordinate system and encapsulates a game object. The sides of an AABB are aligned with the axes, which is helpful when carrying out certain calculations, as non-axis-aligned boxes would require more complex math. AABBs are primarily used for broad-phase collision detection, which means checking whether two objects might be in the process of colliding. Although AABBs are relatively conservative and can have more bounding volume than oriented bounding boxes (OBBs), they are simpler and faster to use in collision detection.\n\n",
-                      "id": "6ac4760a-ff85-436f-b1ee-ff4b2e1b32e7",
+                      "id": "28f0de64-4100-4399-b62a-30cc4c8fb3f6",
                       "children": [],
                       "links": [
                         {
@@ -751,7 +754,7 @@
                       "title": "OBB",
                       "xid": "7nGtvbxoEAheiF4IPMfPf",
                       "description": "`Oriented Bounding Box (OBB)` is a type of bounding volume used in computer graphics and computational geometry. It is often used to simplify complex geometric objects by correlating them as a box much closer in size and orientation to the actual object. Unlike the `Axis-Aligned Bounding Box (AABB)`, the `OBB` is not constrained to align with the axis, so the box can be rotated. This orientation is usually chosen based on the object's local coordinate system, so the `OBB` maintains its rotation. Properties of an `OBB` include its center, dimensions, and orientation. However, it is worth noting that `OBBs` can be more computationally intensive than `AABBs` due to mathematical complexity.\n\n",
-                      "id": "94fb6bc5-76d6-40f3-abe9-75639498d9d2",
+                      "id": "2681769a-cf58-4f31-b3b2-facac9b85d86",
                       "children": [],
                       "links": [
                         {
@@ -784,13 +787,13 @@
                   "title": "Spatial Partitioning",
                   "xid": "9Fk3XSINBr2NNdbMtwsIK",
                   "description": "\"Spatial partitioning\" is a technique used in computational geometry, intended to make calculations involving objects in space more efficient. It involves dividing a large virtual space into a series of smaller spaces, or \"partitions\". These partitions can be used to quickly eliminate areas that are irrelevant to a particular calculation or query, thus lowering the overall computational cost. This technique is widely used in game development in contexts such as collision detection, rendering, pathfinding, and more. Various methods exist for spatial partitioning, including grid-based, tree-based (like Quadtree and Octree), and space-filling curve (like Z-order or Hilbert curve) approaches.\n\n",
-                  "id": "d2230e2b-d576-4b70-943b-2fd239c0ddef",
+                  "id": "ec8e1d0b-7abf-43f8-b2c2-9959a1df825b",
                   "children": [
                     {
                       "title": "Sort & Sweep",
                       "xid": "STdvFYM9V0a36IkPXjvrB",
                       "description": "**Sort and Sweep** is an algorithm used in collision detection in game development which optimizes the process of identifying potential intersecting objects. Here's how it works: first, all objects in the game are sorted along a specific axis (typically the 'x' axis). Then a line (known as the 'sweep line') is moved along this axis. As the line sweeps over the scene, any objects that cross this line are added to an 'active' list. When an object no longer intersects with the sweep line, it's removed from this list. The only objects checked for intersection are those within this 'active' list reducing the number of checks required. This makes sort and sweep an efficient spatial partitioning strategy.\n\n",
-                      "id": "04b1ab96-dff6-4833-a850-d1a16bb3e188",
+                      "id": "9a5fbfc2-d140-4737-9126-500123c2cbf6",
                       "children": [],
                       "links": [
                         {
@@ -809,13 +812,13 @@
                       "title": "BVH",
                       "xid": "FCc5xwb_G3VsDRXOcg3hV",
                       "description": "BVH, or Bounding Volume Hierarchy, is an algorithm used in 3D computer graphics to speed up the rendering process. It organizes the geometry in a hierarchical structure where each node in the tree represents a bounding volume (a volume enclosing or containing one or more geometric objects). The root node of the BVH contains all other nodes or geometric objects, its child nodes represent a partition of the space, and the leaf nodes are often individual geometric objects. The main objective of using BVH is to quickly exclude large portions of the scene from the rendering process, to reduce the computational load of evaluating every single object in the scene individually.\n\n",
-                      "id": "2754fdf9-7682-40a8-9fd2-d12cb211b09a",
+                      "id": "b63b217b-c19f-434b-a7e2-8524e85eb466",
                       "children": [
                         {
                           "title": "DBVT",
                           "xid": "XHFV4d6Ab4kWQ3-XcZTyT",
-                          "description": "`DBVT` or `Dynamic Bounding Volume Tree` is an acceleration data structure that's primarily used in physics simulations like collision detection. It's a type of BVH (`Bounding Volume Hierarchy`), but the unique aspect of a DBVT is its handling of dynamic objects. As the name suggests, it's specifically designed to efficiently handle changing scenarios, such as objects moving or environments evolving, better than a typical BVH. Unlike a static BVH, a DBVT dynamically updates the tree as objects move, maintaining efficiency of collision queries. It primarily does this through tree rotations and refitting bounding volumes rather than fully rebuilding the tree. This makes DBVT a highly appealing option for scenarios with considerable dynamics.\n\nLearn more from the following resources:",
-                          "id": "f65bc74a-dedd-45f8-a56d-0e489f38d731",
+                          "description": "`DBVT` or `Dynamic Bounding Volume Tree` is an acceleration data structure that's primarily used in physics simulations like collision detection. It's a type of BVH (`Bounding Volume Hierarchy`), but the unique aspect of a DBVT is its handling of dynamic objects. As the name suggests, it's specifically designed to efficiently handle changing scenarios, such as objects moving or environments evolving, better than a typical BVH. Unlike a static BVH, a DBVT dynamically updates the tree as objects move, maintaining efficiency of collision queries. It primarily does this through tree rotations and refitting bounding volumes rather than fully rebuilding the tree. This makes DBVT a highly appealing option for scenarios with considerable dynamics.\n\n",
+                          "id": "68220697-b909-4c9b-b234-9e94ade4e3d8",
                           "children": [],
                           "links": [
                             {
@@ -866,7 +869,7 @@
               "title": "CCD",
               "xid": "1yK8TH4Pn7Ag8VQoug54i",
               "description": "**CCD (Continuous Collision Detection)** is a sophisticated technique used in detecting collisions within games, more advanced than the traditional discrete collision. Rather than checking for collisions at designated time frames, CCD checks for any possible collisions that may happen during the entire time period or motion path of the moving object. This can prevent instances of \"tunneling\", where an object moves so fast that it passes through walls or obstacles undetected by discrete collision detection due to being at different points in one frame to another. Although more computationally heavy than discrete detection, CCD offers an increased accuracy in collision detection, making it vital in games where precise movements are needed.\n\n",
-              "id": "333105f2-2ecd-47f0-b919-e641152a90bf",
+              "id": "3aff984c-c623-46c2-a777-3a1a8162be52",
               "children": [],
               "links": [
                 {
@@ -903,13 +906,13 @@
       "title": "Game Engine",
       "xid": "fv5tivGad2P9GRZOodfn2",
       "description": "A _Game Engine_ is a software framework designed to facilitate the creation and development of video games. Developers use them to create games for consoles, mobile devices, and personal computers. The core functionality typically provided by a game engine includes a rendering engine (\"renderer\") for 2D or 3D graphics, a physics engine or collision detection (and collision response), sound, scripting, animation, artificial intelligence, networking, streaming, memory management, and a scene graph. Game Engines can save a significant amount of development time by providing these reusable components. However, they aren't one-size-fits-all solutions, as developers must still customize much of the code to fit their games' unique needs. Some popular game engines are Unity, Unreal Engine, and Godot.\n\n",
-      "id": "0ec81ada-26a8-482a-bc0e-d9dc84d5185f",
+      "id": "d4ae35ed-d90e-499a-b153-64bd52b4d5c1",
       "children": [
         {
           "title": "Unity 3D",
           "xid": "rNeOti8DDyWTMP9FB9kJ_",
           "description": "**Unity 3D** is a versatile, cross-platform game engine that supports the development of both 2D and 3D games. This game engine allows users to create a wide variety of games including AR, VR, Mobile, Consoles, and Computers in C#. It provides a host of powerful features and tools, such as scripting, asset bundling, scene building, and simulation, to assist developers in creating interactive content. Unity 3D also boasts a large, active community that regularly contributes tutorials, scripts, assets, and more, making it a robust platform for all levels of game developers.\n\n",
-          "id": "ac26e3ae-22ba-4330-aaa9-ba64791096ba",
+          "id": "3adaa086-7012-4297-9f1d-4fba7e245ba9",
           "children": [],
           "links": [
             {
@@ -938,7 +941,7 @@
           "title": "Unreal Engine",
           "xid": "a6H-cZtp3A_fB8jnfMxBR",
           "description": "The **Unreal Engine** is a powerful game development engine created by Epic Games. Used by game developers worldwide, it supports the creation of high-quality games across multiple platforms such as iOS, Android, Windows, Mac, Xbox, and PlayStation. Unreal Engine is renowned for its photo-realistic rendering, dynamic physics and effects, robust multiplayer framework, and its flexible scripting system called Blueprint. The engine is also fully equipped with dedicated tools and functionalities for animation, AI, lighting, cinematography, and post-processing effects. The most recent version, Unreal Engine 5, introduces real-time Global Illumination and makes film-quality real-time graphics achievable.\n\n",
-          "id": "6a1ed4ed-cfc7-49e3-b1f1-ba008f40840e",
+          "id": "a2980296-61e5-43ae-8422-24d62ee5a779",
           "children": [],
           "links": [
             {
@@ -967,7 +970,7 @@
           "title": "Native",
           "xid": "CeAUEN233L4IoFSZtIvvl",
           "description": "You don't necessarily have to use tools like Unreal, Unity3d, or Godot to make games. You can also use native languages like C++ or Rust to make games. However, you will have to do a lot of work yourself, and you will have to learn a lot of things that are already done for you in game engines.\n\n",
-          "id": "18bafb00-7b6e-4ba6-a6e0-d165c0dadafd",
+          "id": "df03d174-51d5-43da-b156-5811374748f9",
           "children": [],
           "links": [
             {
@@ -996,7 +999,7 @@
           "title": "Godot",
           "xid": "7OffO2mBmfBKqPBTZ9ngI",
           "description": "Godot is an open-source, multi-platform game engine that is known for being feature-rich and user-friendly. It is developed by hundreds of contributors from around the world and supports the creation of both 2D and 3D games. Godot uses its own scripting language, GDScript, which is similar to Python, but it also supports C#. It is equipped with a unique scene system and comes with a multitude of tools that can expedite the development process. Godot's design philosophy centers around flexibility, extensibility, and ease of use, providing a handy tool for both beginners and pros in game development.\n\n",
-          "id": "c04d9835-d30e-4dd2-879b-0f878e89156a",
+          "id": "f35b3301-fbd2-40f0-a7d9-b5a50a34bc0f",
           "children": [],
           "links": [
             {
@@ -1049,13 +1052,13 @@
       "title": "Programming Languages",
       "xid": "4YgbrXLXf5mfaL2tlYkzk",
       "description": "Programming languages are very crucial to game development as they are the backbone of game design and functionality. A variety of languages can be used, but some are more commonly preferred in the industry due to their robustness and efficiency. The most popular ones include C++, C#, and Java. **C++**, a high-level language primarily used for developing video games, is known for its speed and efficiency. **C#**, which was developed by Microsoft, is extensively used with the Unity game engine to develop multi-platform games. **Java** is well-established in the sector as well, and it often utilized in the development of Android games. It's pivotal for a game developer to select a language that aligns with the project's requirements and nature. Despite the programming language you choose, a deep understanding of its constructs, logic, and capabilities is required for successful game development.\n\n",
-      "id": "1a53969a-e0af-4d85-8c77-ba92e270d3fc",
+      "id": "baf29bc0-e3c8-47f8-9159-770d7279096f",
       "children": [
         {
           "title": "C#",
           "xid": "Ph3ZqmSnwwzUBUC-6dgf-",
           "description": "**CSharp (C#)** is a modern, object-oriented programming language developed and maintained by Microsoft. It's primarily used for developing desktop applications and, more prominently, for Windows applications within the [Microsoft.Net](http://Microsoft.Net) framework. However, the language is versatile and has a wide range of uses in web services, websites, enterprise software, and even mobile app development. C# is known for its simplicity, type-safety, and support for component-oriented software development. It's also been adopted by Unity, a widely used game engine, thus making it one of the preferred languages for game development.\n\n",
-          "id": "ebff940a-2ee0-42b6-96d8-942442b7c6a5",
+          "id": "9d7161ad-e13c-479d-91f8-40627141bb80",
           "children": [],
           "links": [
             {
@@ -1074,7 +1077,7 @@
           "title": "C/C++",
           "xid": "jsq0UXnIIC0Z_nbK2w48f",
           "description": "**C** and **C++ (commonly known as CPP)** are two of the most foundational high-level programming languages in computer science. **C** was developed in the 1970s and it is a procedural language, meaning it follows a step-by-step approach. Its fundamental principles include structured programming and lexical variable scope.\n\nOn the other hand, **C++** follows the paradigm of both procedural and object-oriented programming. It was developed as an extension to C to add the concept of \"classes\" - a core feature of object-oriented programming. C++ enhances C by introducing new features like function overloading, exception handling, and templates.\n\n",
-          "id": "a3135bba-0d7f-4796-9fa0-d8638f35024a",
+          "id": "cfdaedf8-1300-4af2-b04c-c80e63304f4c",
           "children": [],
           "links": [
             {
@@ -1092,8 +1095,8 @@
         {
           "title": "GDScript",
           "xid": "AaRZiItRcn8fYb5R62vfT",
-          "description": "GDScript is a high-level, dynamically-typed programming language designed specifically for the Godot Engine, an open-source game development platform. It is tailored for ease of use and rapid development of game logic and functionality. GDScript features a syntax similar to Python, which simplifies learning and coding for developers familiar with Python, while providing direct access to Godot's rich set of built-in functions and game-specific APIs. The language integrates closely with Godot's scene system and scripting environment, enabling developers to create and manipulate game objects, handle input, and control game behavior efficiently.\n\nLearn more from the following resources:",
-          "id": "053bb1ff-4a52-4071-bd0f-27b287d43c5b",
+          "description": "GDScript is a high-level, dynamically-typed programming language designed specifically for the Godot Engine, an open-source game development platform. It is tailored for ease of use and rapid development of game logic and functionality. GDScript features a syntax similar to Python, which simplifies learning and coding for developers familiar with Python, while providing direct access to Godot's rich set of built-in functions and game-specific APIs. The language integrates closely with Godot's scene system and scripting environment, enabling developers to create and manipulate game objects, handle input, and control game behavior efficiently.\n\n",
+          "id": "1a70d007-829f-45ca-98ea-deef13ace1ee",
           "children": [],
           "links": [
             {
@@ -1112,7 +1115,7 @@
           "title": "Rust",
           "xid": "ts9pWxUimvFqfNJYCmNNw",
           "description": "**Rust** is a modern, open-source, multi-paradigm programming language designed for performance and safety, especially safe concurrency. It was initially designed by Mozilla Research as a language that can provide memory safety without garbage collection. Since then, it has gained popularity due to its features and performance that often compare favorably to languages like C++. Its rich type system and ownership model guarantee memory-safety and thread-safety while maintaining a high level of abstraction. Rust supports a mixture of imperative procedural, concurrent actor, object-oriented and pure functional styles.\n\n",
-          "id": "31be8d5c-b170-44e4-a514-b9a0ca20fd74",
+          "id": "e8c8b40f-c396-4c95-86a1-8318713756c2",
           "children": [],
           "links": [
             {
@@ -1136,7 +1139,7 @@
           "title": "Python",
           "xid": "AJp_QRLgSG5ETXDIjUjmm",
           "description": "Python is a popular high-level programming language that was designed by Guido van Rossum and published in 1991. It is preferred for its simplicity in learning and usage, making it a great choice for beginners. Python's design philosophy emphasizes code readability with its use of significant indentation. Its language constructs and object-oriented approach aim to help developers write clear, logical code for small and large-scale projects. Python is dynamically-typed and garbage-collected. Moreover, it supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python is often used for web development, software development, database operations, and machine learning. Although not typically used for game development, some game developers utilize Python for scripting and automating tasks.\n\n",
-          "id": "57504317-8e51-458c-a07d-56181f0dc625",
+          "id": "6413700d-0220-494d-884f-0d30557f659e",
           "children": [],
           "links": [
             {
@@ -1189,13 +1192,13 @@
       "title": "Computer Graphics",
       "xid": "lIb5MeDoqVj6HycveOgTS",
       "description": "Computer Graphics is a subfield of computer science that studies methods for digitally synthesizing and manipulating visual content. It involves creating and manipulating visual content using specialized computer software and hardware. This field is primarily used in the creation of digital and video games, CGI in films, and also in visual effects for commercials. The field is divided into two major categories: **Raster graphics** and **Vector graphics**. Raster graphics, also known as bitmap, involve the representation of images through a dot matrix data structure, while Vector graphics involve the use of polygons to represent images in computer graphics. Both of these methods have their unique usage scenarios. Other concepts integral to the study of computer graphics include rendering (including both real-time rendering and offline rendering), animation, and 3D modeling. Generally, computer graphics skills are essential for game developers and animation experts.\n\n",
-      "id": "6296b2fd-fde5-482b-9206-06c4ef89ee9f",
+      "id": "da8d2792-ac4c-4860-94c5-674fa39162f0",
       "children": [
         {
           "title": "Ray Tracing",
           "xid": "JW5c_0JEtO-OiBoXUia6A",
           "description": "Ray tracing is a rendering technique in computer graphics that simulates the physical behavior of light. It generates images with a high degree of visual realism, as it captures shadows, reflections, and refracts light. Ray tracing follows the path of light backwards from the camera (eye) to the source (light object), calculating the color of each pixel in the image on the way. The color value calculation considers the object from which the ray has reflected or refracted, and the nature of the light source i.e. whether it's ambient, point or spot. Ray tracing algorithm handles effects that rasterization algorithms like scanline rendering and 'Z-buffer' find complex to handle.\n\n",
-          "id": "bbb82998-ee1b-4023-aacc-162c35aba88f",
+          "id": "1ee0cb35-d042-4ecd-bb5a-49288acd74cf",
           "children": [],
           "links": [
             {
@@ -1214,7 +1217,7 @@
           "title": "Rasterization",
           "xid": "vYNj9nzu90e9xlrzHULnP",
           "description": "In the realm of computer graphics, **Rasterization** refers to the process of converting the image data into a bitmap form, i.e., pixels or dots. It is predominantly used in 3D rendering where three-dimensional polygonal shapes are transformed into a two-dimensional image, possessing height, width, and color data. It is a scan-conversion process where vertices and primitives, upon being processed through the graphics pipeline, are mathematically converted into fragments. Every fragment finds its position in a raster grid. The process culminates in fragments becoming pixels in the frame buffer, the final rendered image you see on the screen. However, it's essential to note that rasterization does limit the image's resolution to the resolution of the device on which it is displayed.\n\n",
-          "id": "dcd17742-4a07-4f02-9379-3371ae1ef4e4",
+          "id": "c35a45f9-411d-4ca1-980f-dc92cdbaa9c7",
           "children": [],
           "links": [
             {
@@ -1228,7 +1231,7 @@
           "title": "Graphics Pipeline",
           "xid": "shSRnMf4NONuZ3TGPAoQc",
           "description": "The **Graphics Pipeline**, also often referred to as the rendering pipeline, is a sequence of steps that a graphics system follows to convert a 3D model into a 2D image or view that can be displayed onto a screen. These steps typically include transformation, clipping, lighting, rasterization, shading, and other processes. Each step in the pipeline represents an operation that prepares or manipulates data to be used in downstream stages. The pipeline begins with a high-level description of a scene and ends with the final image rendered onto the screen. It is a primary concept in computer graphics that developers should learn as it can help in efficient rendering and high-quality visualization.\n\n",
-          "id": "7c4f1869-b65f-4b2c-98a6-d1c28f4fdcb5",
+          "id": "e7b87435-6b64-4a6b-8e98-7d65808b7e6a",
           "children": [],
           "links": [
             {
@@ -1247,7 +1250,7 @@
           "title": "Sampling",
           "xid": "rmtxybcavWV6A53R4ZWgc",
           "description": "**Sampling** in computer graphics is a method used to convert a continuous mathematical function (image, signal, light and sound), into a discrete digital representation. The process is done by taking snapshots at regular intervals which are also known as samples, and it's this that gives us the concept of 'sampling'. Some common types of sampling techniques include: uniform sampling (evenly spaced samples), random sampling (samples taken at random intervals), and jittered sampling (a compromise between uniform and random sampling). The higher the sampling rate, the more accurately the original function can be reconstructed from the discrete samples. Effective sampling is a significant aspect of achieving realistic computer graphics.\n\n",
-          "id": "d2ccc8ae-3c5b-4828-a715-885572f2f76a",
+          "id": "c8943dac-edc7-45f6-b38d-e06cc5ec3d50",
           "children": [],
           "links": [
             {
@@ -1261,13 +1264,13 @@
           "title": "Shader",
           "xid": "qIrePusMuvcUva9LMDmDx",
           "description": "Shaders are a type of software used in 3D computer graphics. They are utilized to render quality visual effects by making calculations and transformations on image data. Also, a shader is responsible for determining the final color of an object. There are several types of shaders: vertex shaders, geometry shaders, pixel shaders, and compute shaders. Each of these is programmed to manipulate specific attributes of an image, such as its vertices, pixels, and overall geometry. They are essential tools for game developers aiming to produce realistic and engaging visual experiences.\n\n",
-          "id": "0ba55311-5558-499a-8a24-d2813eab5bfb",
+          "id": "7b43c862-7f96-432e-b5ad-7965499e9991",
           "children": [
             {
               "title": "Rendering Equation",
               "xid": "WVgozaQPFbYthZLWMbNUg",
               "description": "The **Render Equation**, also known as the **Rendering Equation**, is a fundamental principle in computer graphics that serves as the basis for most advanced lighting algorithms today. First introduced by James Kajiya in 1986, it defines how light interacts with physical objects in a given environment. The equation tries to simulate light's behavior, taking into account aspects such as transmission, absorption, scattering, and emission. The equation can be computationally intensive to solve accurately. It's worth mentioning, however, that many methods have been developed to approximate and solve it, allowing the production of highly realistic images in computer graphics.\n\n",
-              "id": "f2783519-692e-439b-87b4-fc626077ec74",
+              "id": "24e5dea5-a418-45ac-8546-0758fd8b10fd",
               "children": [],
               "links": [
                 {
@@ -1286,13 +1289,13 @@
               "title": "Reflection",
               "xid": "eI2jym4AAz3ani-lreSKE",
               "description": "Reflection in game development, specifically in shaders, is a phenomena that simulates the bouncing off of light from objects similar to the way it happens in the real world. Shaders replicate this effect by emitting rays from the lighting source against the object's surface. When the ray strikes the surface, it will calculate the light\u2019s color and angle to define how light should reflect off that surface. Reflection in shaders can further be classified into two types: Specular Reflection and Diffuse Reflection. Specular Reflection is the mirror-like reflection of light from a surface, where each incident ray is reflected with the light ray reflected at an equal but opposite angle. Diffuse Reflection, on the other hand, is the reflection of light into many directions, giving a softer effect. These reflections are quantified in computer graphics often using a reflection model such as the Phong reflection model or the Lambertian reflectance model.\n\n",
-              "id": "d91ac16f-b176-4ae7-a784-bd644cfc8e60",
+              "id": "290f9514-7b20-4e74-ab87-c632e2ef9e1b",
               "children": [
                 {
                   "title": "Diffuse",
                   "xid": "0g1z5G2dsF4PTIfFAG984",
                   "description": "In the world of 3D rendering and game development, \"diffuse\" refers to diffuse lighting or diffuse reflection. It's a key concept in making objects look three-dimensional and realistically lit.\n\n",
-                  "id": "ad59df5f-ac3c-4b7f-9264-4b19fde5801c",
+                  "id": "483bfa53-aeee-4ac4-b6a7-c7ef274e6af3",
                   "children": [],
                   "links": [
                     {
@@ -1311,7 +1314,7 @@
                   "title": "Specular",
                   "xid": "odfZWKtPbb-lC35oeTCNV",
                   "description": "`Specular` reflections are mirror-like reflections. In these cases, the rays of light are reflected, more than they are absorbed. The angle of incidence is equal to the angle of reflection, that is to say that the angle at which the light enters the medium and then bounces off, the angle of the beam that bounced off would be the same.\n\n",
-                  "id": "44168849-0a77-4c5f-a5b8-a3a0992c053a",
+                  "id": "d1175b62-80f9-4025-a7d6-5607a35c7218",
                   "children": [],
                   "links": [
                     {
@@ -1349,13 +1352,13 @@
               "title": "Mapping",
               "xid": "THMmnx8p_P0X-dSPoHvst",
               "description": "\"Mapping\" in game development, especially in the context of shaders, predominantly refers to Texture Mapping and Normal Mapping. **Texture Mapping** is the application of a texture (an image or colour data) onto a 3D model's surface. It's a process of defining how a 2D surface wraps around a 3D model or the way that a flat image is stretched across a model's surface to paint its appearance. This could be anything from the colour of objects to their roughness or reflectivity. Whereas, **Normal Mapping** is a technique used to create the illusion of complexity in the surface of a 3D model without adding any additional geometry. A Normal Map is a special kind of texture that allows the addition of surface details, such as bumps, grooves, and scratches which catch the light as if they are represented by real geometry, making a low-polygon model appear as a much more complex shape.\n\n",
-              "id": "9941a6cd-960b-48e3-b50a-cd365e5b78a8",
+              "id": "194f3a2b-4d35-436b-9c4c-5a8bf6258a0f",
               "children": [
                 {
                   "title": "Texture",
                   "xid": "iBZ1JsEWI0xuLgUvfWfl-",
                   "description": "`Texture` is the visual quality of an object. Where the `mesh` determines the shape or `topology` of an object, the texture describes the quality of said object. For instance, if there is a spherical mesh, is it supposed to be shiny? is it supposed to be rough? is it supposed to be of rock or of wood? questions of this ilk are often resolved using textures. Textures are often just 2D images that are wrapped onto 3D meshes. The 3D mesh is first divided into segments and unfurled; the 3D meshes are converted into 2D chunks, this process is known as `UV Unwrapping`. Once a mesh has been unwrapped, the textures in the form of an image are applied to the 2D chunks of the 3D mesh, this way the texture knows how to properly wrap around the mesh and avoid any conflicts. Textures determine the visual feel and aesthetics of the game.\n\n",
-                  "id": "87feb03e-9146-4a10-93b7-10a5b401efed",
+                  "id": "42319dc7-5411-4f96-9a89-d1276d0412fe",
                   "children": [],
                   "links": [
                     {
@@ -1378,8 +1381,8 @@
                 {
                   "title": "Bump",
                   "xid": "r4UkMd5QURbvJ3Jlr_H9H",
-                  "description": "`Bump` is very similar to texture. It is, as a matter of fact, a type of texture itself. If you take the texture of a bricked wall, it will becoming increasingly obvious that the amount of detail present inside the wall, if geometrically processed would be incredibly demanding and wasteful. In order to combat this ineffeciency, the `bump` maps were created. Traditionally, a flat texture would just be an image of something called a `color map`, that is to say, where does each individual color of the pixel should be to represent a texture. When you take the picture of your floor, wall, or any object, that image in essence is the color map. The bump map is different as it informs the texture about it's `normal` values. So, if you take a flat 2D mesh and apply a bump map on it, it will render the same 2D mesh with all the normal values baked into the flat 2D mesh, creating a graphically effect mimicking 3-dimensionality.\n\nLearn more from the following resources:",
-                  "id": "515e3f62-8c7c-4190-b73d-dae34fa930a2",
+                  "description": "`Bump` is very similar to texture. It is, as a matter of fact, a type of texture itself. If you take the texture of a bricked wall, it will becoming increasingly obvious that the amount of detail present inside the wall, if geometrically processed would be incredibly demanding and wasteful. In order to combat this ineffeciency, the `bump` maps were created. Traditionally, a flat texture would just be an image of something called a `color map`, that is to say, where does each individual color of the pixel should be to represent a texture. When you take the picture of your floor, wall, or any object, that image in essence is the color map. The bump map is different as it informs the texture about it's `normal` values. So, if you take a flat 2D mesh and apply a bump map on it, it will render the same 2D mesh with all the normal values baked into the flat 2D mesh, creating a graphically effect mimicking 3-dimensionality.\n\n",
+                  "id": "7f8aebbc-d79a-4936-b260-329badba77e2",
                   "children": [],
                   "links": [
                     {
@@ -1403,7 +1406,7 @@
                   "title": "Parallax",
                   "xid": "YGeGleEN203nokiZIYJN8",
                   "description": "In game development and graphics, parallax refers to the apparent displacement or difference in the apparent position of an object viewed along two different lines of sight, and is measured by the angle or semi-angle of inclination between those two lines. In simpler terms, parallax is a technique used to create the illusion of depth in 2D environments by moving background layers at different speeds relative to the foreground.\n\n",
-                  "id": "e084a585-f38b-4494-8ea2-ccff2abe02c2",
+                  "id": "327e0d62-bc84-4e62-a5c4-0befb3e0c9d6",
                   "children": [],
                   "links": [
                     {
@@ -1417,7 +1420,7 @@
                   "title": "Horizon",
                   "xid": "9cBOfj58I4hBlxlQIyV9g",
                   "description": "In graphics, the horizon refers to a horizontal line that represents the visual boundary where the sky meets the earth or a flat surface, such as the ocean. It's a fundamental concept in perspective and art, serving as a reference point for creating a sense of depth and distance in an image. The placement of the horizon line can significantly impact the composition and mood of an image, with high or low horizon lines creating different effects on the viewer's perception of the scene.\n\n",
-                  "id": "010f4ed0-e215-4850-ac15-7ef0cef1fa10",
+                  "id": "eec87eaa-d120-4258-8b88-13395ffa4d05",
                   "children": [],
                   "links": [
                     {
@@ -1459,7 +1462,7 @@
           "title": "Computer Animation",
           "xid": "1RdyzTI_TXqmct2bIbNh9",
           "description": "Computer animation refers to the art of creating moving images via the use of computers. Increasingly, it's becoming a critical component in the game development industry. Essentially, it's divided into two categories, 2D animation and 3D animation. 2D animation, also referred to as vector animation, involves creation of images in a two-dimensional environment, including morphing, twining, and onion skinning. On the other hand, 3D animation, also known as CGI, involves moving objects and characters in a three-dimensional space. The animation process typically involves the creation of a mathematical representation of a three-dimensional object. This object is then manipulated within a virtual space by an animator to create the final animation. Software like Unity, Maya, and Blender are commonly used for computer animation in game development.\n\n",
-          "id": "2770f4f8-b265-4593-8756-56742ebf9771",
+          "id": "195727f3-74a4-42ce-932f-f71c3ee274ad",
           "children": [],
           "links": [
             {
@@ -1477,8 +1480,8 @@
         {
           "title": "Color",
           "xid": "WK6fLWJq9Vh2ySVrSqd-U",
-          "description": "In the realm of computer graphics, color plays an integral role. It can be defined in various color models such as RGB (Red, Green, Blue), CYMK (Cyan, Yellow, Magenta, Black), and others. RGB is a color model that combines the primary colors (red, green, blue) in different amounts to produce a spectrum of colors. This model is often used in digital displays. In contrast, CMYK is a color model used in color printing. It uses cyan, magyenta, yellow, and black as the primary colors. HSL (Hue, Saturation, Lightness) and HSV (Hue, Saturation, Value) are other useful models that represent colors based on human perceptions. Another important element of color in computer graphics is the color depth, also known as bit depth, which determines the number of colors that can be displayed at once.\n\nLearn more from the following resources:",
-          "id": "faa69b8a-898c-4416-9ae9-bd9fb20e75cd",
+          "description": "In the realm of computer graphics, color plays an integral role. It can be defined in various color models such as RGB (Red, Green, Blue), CYMK (Cyan, Yellow, Magenta, Black), and others. RGB is a color model that combines the primary colors (red, green, blue) in different amounts to produce a spectrum of colors. This model is often used in digital displays. In contrast, CMYK is a color model used in color printing. It uses cyan, magyenta, yellow, and black as the primary colors. HSL (Hue, Saturation, Lightness) and HSV (Hue, Saturation, Value) are other useful models that represent colors based on human perceptions. Another important element of color in computer graphics is the color depth, also known as bit depth, which determines the number of colors that can be displayed at once.\n\n",
+          "id": "fc1618a4-ea7c-44ca-881e-6294b890afc3",
           "children": [],
           "links": [
             {
@@ -1492,7 +1495,7 @@
           "title": "Visual Perception",
           "xid": "1S1qPogijW2SQCiF7KLZe",
           "description": "Visual Perception is a fundamental aspect of game development, widely explored within the field of computer graphics. It involves the ability to interpret and understand the visual information that our eyes receive, essential to create immersive and dynamic visual experiences in games. The study involves the understanding of light, color, shape, form, depth, and motion, among others, which are key elements to create aesthetically pleasing and engaging graphics. Making full use of visual perception allows the game developers to control and manipulate how the gamers interact with and experience the game world, significantly enhancing not only the visual appeal but also the overall gameplay.\n\n",
-          "id": "c5ed236b-6203-423a-9c7e-ec7de36b3bb8",
+          "id": "0386810f-7451-44ad-b0db-8f6748746ea3",
           "children": [],
           "links": [
             {
@@ -1511,7 +1514,7 @@
           "title": "Tone Reproduction",
           "xid": "RgC9TOc0wbr2QSuvrpIDV",
           "description": "`Tone Reproduction` or `Tone Mapping` is the technique used in computer graphics to simulate the appearance of high-dynamic-range images in media with a more limited dynamic range. Print-outs, CRT, LCD monitors, and other displays can only reproduce a reduced dynamic range. This technique is widely used in gaming development, where developers employ it to improve the visual experience. The process involves taking light from a scene and mapping it to a smaller range of tones while preserving the visual appearance\u2014i.e., regarding brightness, saturation, and hue. There are various tone mapping algorithms available, each with unique attributes suitable for different imaging tasks.\n\n",
-          "id": "8f0f7f33-9797-4129-81a5-ad5e1d2f6c17",
+          "id": "c371c451-0187-44e4-9566-5608780dcdf4",
           "children": [],
           "links": [
             {
@@ -1530,13 +1533,13 @@
           "title": "Lighting and Shadow",
           "xid": "DDN3mn0LTueBhjRzXFcbU",
           "description": "**Lighting and Shadows** are paramount elements in computer graphics, significantly contributing to the visual realism of a game. They create depth and a sense of a three-dimensional space in a two-dimensional display. **Lighting** in game development mimics real-world light properties. It involves calculating how light interacts with different objects and surfaces based on their material characteristics and the light's intensity, direction, and color. Various algorithms, like Ray Tracing or Rasterization, are used to simulate these interactions. On the other hand, **shadows** are the areas unlit due to the blockage of light by an object. Producing realistic shadows involves complex computations, factoring in the light's position, the blocking object's shape and size, and the affected area's distance. Shadow Mapping and Shadow Volume are common techniques for creating shadows in game development. Special attention to these aspects can dramatically increase the perceived realism and immersion in the game environment.\n\n",
-          "id": "17423028-3539-407b-b4c4-d31da7fcb0f4",
+          "id": "ff3c1d76-5c1f-4c9b-abee-7c20910c6ca4",
           "children": [
             {
               "title": "Stencil Shadow",
               "xid": "AEAVc8Ih4fctSGGVJG0Np",
               "description": "`Stencil shadows` are a technique used in 3D computer graphics for creating shadows. The stencil shadow algorithm operates by treating a shadow as a 3D volume of space, known as a shadow volume. Any part of the scene that lies inside this shadow volume will be in shadow. If it lies outside the shadow volume, it will be in light. The shadow volume is created by extruding the polygonal silhouette of a 3D object into space along the lines of sight from the light source. For equivalent complex objects, the number of edges or vertices to fill the stencil buffer will generally be less than the number of pixels needed to compute shadow maps, making stencil shadows more efficient in that regard. However, the shadows produced by this technique can look blocky or unrealistic if not further refined.\n\n",
-              "id": "236f3a10-82bc-4873-81a3-e1b55c41117a",
+              "id": "8ca70fbd-e044-4249-8977-2c9e64d0391e",
               "children": [],
               "links": [
                 {
@@ -1550,13 +1553,13 @@
               "title": "Shadow Map",
               "xid": "ygtru6fqQ3gpFZRN_I8rP",
               "description": "Shadow mapping is a technique used in computer graphics to add shadows to a scene. This process involves two steps - generating the shadow map and then rendering the scene. In the shadow map generating step, the scene is rendered from the perspective of the light source capturing depth information. This results in a texture that stores the distance from the light to the nearest surface along each light direction, a \u201cshadow map\u201d. In the scene rendering step, the scene is rendered from the camera\u2019s perspective. For each visible surface point, its distance from the light is calculated and compared to the corresponding stored distance in the shadow map. If the point's distance is greater than the stored distance, the point is in shadow; otherwise, it's lit. This information is used to adjust the color of the point, producing the shadow effect.\n\n",
-              "id": "42ad1294-d17b-419a-a2f9-55b140ba946e",
+              "id": "f556a905-9729-4e1b-ad65-508a926365c2",
               "children": [
                 {
                   "title": "2D",
                   "xid": "Wq8siopWTD7sylNi0575X",
                   "description": "2D Game Development involves creating games in a two-dimensional plane, utilizing flat graphics and typically making use of x and y coordinates. From classic arcade games of the \u201980s and \u201990s to the rich array of indie games today, 2D game development is a vibrant and diverse sector of the gaming industry. Not only are 2D games visually appealing and nostalgic, but they\u2019re also often more accessible for developers to create due to the simpler mechanics compared to 3D game development.\n\n",
-                  "id": "3a11aa66-046b-49dd-ae3e-7ad7c4c6abe5",
+                  "id": "3a5f4409-778e-43a5-9c42-b1ace6cfd1bb",
                   "children": [],
                   "links": [
                     {
@@ -1575,7 +1578,7 @@
                   "title": "Cube",
                   "xid": "cv1-AwewuqJsZDBI3h84G",
                   "description": "In computer graphics, \"cube\" in the context of shadows often refers to using a cube-shaped object to visualize the concept of a \"shadow volume.\" Imagine a light source shining on a cube. The silhouette of the cube from the light's perspective, extended infinitely outwards, forms a volume. Any object inside this \"shadow volume\" is considered to be in shadow. While helpful for understanding, shadow volumes themselves are not always shaped like cubes - their complexity depends on the object casting the shadow.\n\n",
-                  "id": "dcdcf817-aab3-4839-bc1c-2714cf52a1eb",
+                  "id": "293e2fde-526d-4388-afbe-738222208679",
                   "children": [],
                   "links": [
                     {
@@ -1589,7 +1592,7 @@
                   "title": "Cascaded",
                   "xid": "Lu38SfZ38y89BffLRMmGk",
                   "description": "Cascaded usually refers to cascaded shadow maps, a technique for rendering realistic shadows over a large area.\n\n",
-                  "id": "58346dd6-d671-4892-8ac3-60233ea5b689",
+                  "id": "f6d790e0-f1e3-428c-a119-4f991e609823",
                   "children": [],
                   "links": [
                     {
@@ -1617,13 +1620,13 @@
               "title": "Light Source",
               "xid": "VLrcBE1vb6N5fw5YESCge",
               "description": "In game development, a **light source** is a critical component that impacts the visual appeal and realism of the scene. It represents any object in the game scene that emits light, such as the sun, a lamp, or a torch. Light sources can be categorized as static or dynamic. Static light sources do not move or change throughout the game, while dynamic light sources can move and their properties can change in real-time. The properties of light sources that can be manipulated include intensity (how bright the light is), color, range (how far the light extends), direction, and type (point, directional, or spot). The lighting and shading effects are then computed based on these light source properties and how they interact with various objects in the game scene.\n\n",
-              "id": "7cc31c2b-5697-4de5-a598-2094361539ef",
+              "id": "b01cf484-f8e2-42c1-8fca-6e6ff54914fa",
               "children": [
                 {
                   "title": "Directional",
                   "xid": "foD8K7V0yIxgeXwl687Bv",
                   "description": "Directional light simulates a distant light source like the sun. It has only a direction, not a specific position, meaning its light rays are parallel and cast consistent shadows regardless of object location within the scene. This makes it ideal for simulating sunlight or moonlight, providing realistic outdoor lighting while being relatively performant for rendering.\n\n",
-                  "id": "90ec8de4-d665-4a7e-9fd7-a38e1522f65c",
+                  "id": "3571d54c-729a-4005-b8ac-9cccb0e3b0fc",
                   "children": [],
                   "links": [
                     {
@@ -1637,7 +1640,7 @@
                   "title": "Point",
                   "xid": "aNhyXWW2b7yKTv8y14zk9",
                   "description": "Point lights are one of the most common types of lights used in computer graphics and games. They resemble real-world light bulbs, emitting light uniformly in all directions. These lights are available out of the box in most game engines and offer a range of customizable parameters, such as intensity, falloff, color, and more. Point lights are the most straightforward type of light, making them ideal for quickly and intuitively lighting up your scenes.\n\n",
-                  "id": "7d676939-e523-46a6-95bb-7508c0654dcd",
+                  "id": "5db1a870-b350-4b25-94f8-d08457393d13",
                   "children": [],
                   "links": [
                     {
@@ -1656,7 +1659,7 @@
                   "title": "Spot",
                   "xid": "FetbhcK1RDt4izZ6NEUEP",
                   "description": "Spotlights are a common type of light in computer graphics and games that mimic the behavior of real-world spotlights. They offer a range of parameters to adjust their behavior, such as radius, cone angle, falloff, and intensity Spotlights are readily available out of the box in both Unreal and Unity game engines, making them an accessible and powerful tool for adding realistic and dynamic lighting to your scenes.\n\n",
-                  "id": "215480e5-390d-4ed3-a63e-26c5d69e405f",
+                  "id": "7f7da47a-9154-4f56-824e-15bc7d2b07e8",
                   "children": [],
                   "links": [
                     {
@@ -1670,7 +1673,7 @@
                   "title": "Infinite",
                   "xid": "sC3omOmL2DOyTSvET5cDa",
                   "description": "",
-                  "id": "a59170de-e9a3-4943-a79d-0f17ca695fc5",
+                  "id": "81f70d1b-8b32-4b8d-8a7b-5de2c3b9e694",
                   "children": [],
                   "links": []
                 }
@@ -1711,19 +1714,19 @@
           "title": "Visibility and Occlusion",
           "xid": "OcxesFnB5wO6VXrHYnhz-",
           "description": "\"Visibility and occlusion\" in computer graphics refers to the process of determining which parts of a particular object are visible from a certain viewpoint and which are hidden. \"Occlusion\" describes the phenomenon where an object is blocked from view by another object. Understanding these concepts is important for creating realistic renderings in game design. Real-time engines typically use data structures like BSP-trees, Quad-trees or Octrees to quickly identify occlusion. Advanced techniques such as Occlusion culling and Z-buffering are used to further optimize the representation of visible and hidden parts of 3D objects. Understanding the depths and dimensions related to visibility and occlusion empowers the game developer to enhance presentation and performance.\n\n",
-          "id": "c2f93523-9fcd-4da5-8dbf-07c3e8706f7f",
+          "id": "0b8cf282-cafd-4729-8e99-1050fd509c21",
           "children": [
             {
               "title": "Occluder",
               "xid": "MlLYqO_8JDNOwKRvaM-bf",
               "description": "An **Occluder** in game development is basically a tool or method used to hide other objects in the game environment. When a certain object, which is known as the occluder, blocks the line of sight to another object from the camera's perspective, the hidden or blocked object does not need to be rendered. This object could be anything from a building to a terrain feature. The process of managing these occluders is known as occlusion culling. The purpose of using occluders is to optimize the game and improve its performance by reducing unnecessary rendering workload. However, it's important to note that setting up occluders requires careful planning to ensure that it does not impact the gameplay or visual quality.\n\n",
-              "id": "8602f2f6-a951-436e-bcd7-2eb402290323",
+              "id": "7d8e91c5-3eb8-4275-bea6-695fd8e27f02",
               "children": [
                 {
                   "title": "Fog",
                   "xid": "2ocwC0P1-ZFmjA9EmA1lV",
                   "description": "Fog in game development refers to a visual effect used to simulate atmospheric conditions and enhance the depth perception in a game environment. It creates a gradient of visibility, often fading objects into the background, which can improve performance by reducing the number of objects rendered at a distance. Fog can be implemented in various ways, such as linear fog, which gradually obscures objects based on their distance from the camera, or exponential fog, which creates a more dramatic effect by rapidly increasing the density of fog with distance.\n\n",
-                  "id": "9e65b0f3-322c-40dc-9137-61220d1f29ae",
+                  "id": "49a5f034-4ee0-41de-a80d-8b5405a26355",
                   "children": [],
                   "links": [
                     {
@@ -1751,13 +1754,13 @@
               "title": "Culling",
               "xid": "1gdDeUPBRco10LpOxug4k",
               "description": "**Culling** is a performance optimization strategy employed in game development to improve efficiency and speed. Culling helps in reducing the rendering workload by eliminating the elements that are not visible to the player or are outside the viewport of the game. There are several types of culling, two main being; **frustum culling** and **occlusion culling**. Frustum culling involves eliminating objects that are outside of the camera's field of view. On the other hand, Occlusion culling discards objects that are hidden or blocked by other objects. Culling ensures that only the elements that are necessary or add value to the player's experience are processed.\n\n",
-              "id": "7a53a9b6-3392-45a6-baa3-db72e3fa3003",
+              "id": "accae1ef-0469-4e0c-ab04-73a204e8d6d6",
               "children": [
                 {
                   "title": "Frustum",
                   "xid": "UcLGWYu41Ok2NYdLNIY5C",
                   "description": "Frustum culling is a standard practice in computer graphics, used in virtually all games to optimize performance by not rendering objects outside of your field of view. Think of your field of view as a frustum, a truncated pyramid shape. The farthest side is called the far clip plane, and the closest side is the near clip plane. Any object in the game that doesn't fall within this frustum is culled, meaning it\u2019s not rendered, to improve performance. This feature comes built-in with Unreal Engine.\n\n",
-                  "id": "5553f105-a654-48a1-8aa3-1ea7efaaa802",
+                  "id": "f26b550a-3456-467f-8cff-815f96db048b",
                   "children": [],
                   "links": [
                     {
@@ -1776,7 +1779,7 @@
                   "title": "Light",
                   "xid": "_1LkU258hzizSIgXipE0b",
                   "description": "Light refers to a visual representation of illumination in a 3D environment. It is used to simulate the way light behaves in the real world, adding depth, volume, and realism to objects and scenes. Lighting can be categorized into different types, such as ambient, diffuse, specular, and emissive, each serving a specific purpose in creating a believable and immersive visual experience. Proper lighting can greatly enhance the mood, atmosphere, and overall aesthetic of a scene, making it an essential aspect of graphics and game development.\n\n",
-                  "id": "2bc9b714-34a1-4f47-839c-65ff7196b07a",
+                  "id": "81e1fcbd-828e-4d78-91a8-3bc9a6b1376e",
                   "children": [],
                   "links": [
                     {
@@ -1795,7 +1798,7 @@
                   "title": "Shadow",
                   "xid": "lqfW8hkuN3vWtacrqBBtI",
                   "description": "Shadows play a crucial role in enhancing the realism and depth of scenes in video games. They help to create a more immersive experience by simulating how light interacts with objects in a 3D environment.\n\n",
-                  "id": "447f2baa-023e-431f-84d9-f34cad2f85e3",
+                  "id": "aaba402b-581e-4a46-afd0-ea5b4cf70dfb",
                   "children": [],
                   "links": [
                     {
@@ -1833,13 +1836,13 @@
               "title": "Clipping",
               "xid": "xP_VDMu1z9jiVnZaBFKJQ",
               "description": "`Clipping` is a fundamental technique in computer graphics primarily used for efficiently rendering a three-dimensional scene. This process involves eliminating certain parts of objects in the scene that are out-of-view or obstructed by other objects. Clipping can occur in various ways, one of the most common methods being `View-frustum culling` where objects completely outside of the camera view are discarded. The aim of clipping is to optimize the graphic rendering pipeline by reducing the number of polygons that the graphic hardware needs to process. Consequently, this helps in improving the speed and overall performance of the rendering process.\n\n",
-              "id": "da1110e6-5cb3-4761-a04b-07af938e28e0",
+              "id": "5d7568ad-89b9-4cb8-854c-2a1c63fd14f1",
               "children": [
                 {
                   "title": "Polygon",
                   "xid": "-r15srXTBLnUGokpXKclH",
                   "description": "In computer graphics and game development, a polygon is a 2D or 3D shape composed of a set of vertices connected by edges. Polygons are used to represent objects, characters, and environments in games and simulations.\n\n",
-                  "id": "91d781a4-0e90-4b8c-b2be-e1e83fd05fd8",
+                  "id": "db674d66-2332-47bf-a4f7-ca9158b45ac5",
                   "children": [],
                   "links": [
                     {
@@ -1853,7 +1856,7 @@
                   "title": "Polyhedron",
                   "xid": "GHfLMtgmc36OCvjQvW_Su",
                   "description": "In computer graphics and game development, a polyhedron is a 3D shape composed of a set of polygons that enclose a volume. Polyhedra are used to represent objects, characters, and environments in games and simulations.\n\n",
-                  "id": "5c322018-ad25-4442-95f3-48452ca44ddf",
+                  "id": "d10c4d9d-bb27-4884-bd9c-6c2c135c9fa5",
                   "children": [],
                   "links": [
                     {
@@ -1914,19 +1917,19 @@
       "title": "Graphics API",
       "xid": "Kx7O7RLp7aPGtOvK8e314",
       "description": "A Graphics API (Application Programming Interface) is a collection of commands, functions, protocols, and tools that game developers use to build games. It forms an interface between the game and the hardware of the device, usually a computer or console, and assists in rendering 2D and 3D graphics performance. Complex tasks such as drawing polygons, texturing, or lighting are encapsulated in a more manageable, higher-level process by the API. Common examples are Vulkan, DirectX, OpenGL, and Metal. Each one varies in availability and performance across different platforms and devices and has unique features that can be utilized for game development.\n\n",
-      "id": "17e30c28-2f6b-406f-b8d6-f8eac2e83354",
+      "id": "3190f761-db32-434f-bd35-b411ee7e671c",
       "children": [
         {
           "title": "DirectX",
           "xid": "bgWFV09AtDv1yJS5t0EaB",
           "description": "**DirectX** is a collection of Application Programming Interfaces (APIs) developed by Microsoft to handle tasks related to multimedia, especially game programming and video, on Microsoft platforms. It was first introduced in 1995 and has become a crucial component for PC gaming. DirectX serves as an intermediary between a hardware and a software, managing the state of the hardware and giving commands to it. Some technologies under DirectX includes Direct3D for 3D graphics, DirectDraw for 2D graphics, DirectSound for sound, and DirectInput for interfacing with input devices such as keyboard and mouse.\n\n",
-          "id": "70bbc8c9-4e4e-49ce-94ef-df28ad6f133e",
+          "id": "31ee914f-2c77-4fff-b1fc-ee5bff55cf7e",
           "children": [
             {
               "title": "HLSL",
               "xid": "wYUDJb-q1rtM4w2QV3Wr1",
               "description": "**HLSL** stands for High-Level Shader Language, and it is the proprietary shading language developed by Microsoft for use with the Microsoft Direct3D API. Just like its counterpart from OpenGL - GLSL, it opens up the power of programmable GPUs for developers by providing capability for creating customized rendering effects or performing operations that are computationally expensive in CPU. HLSL resembles the C programming language, thereby making it easier for developers coming from traditional programming backgrounds. It is often considered an integral part of the Direct X ecosystem and is used for developing complex and visually impressive graphics for games.\n\n",
-              "id": "12759c99-57c9-4643-a5b1-05b493f5c4bb",
+              "id": "86b322ee-70ef-4ffe-87f0-396992278a09",
               "children": [],
               "links": [
                 {
@@ -1959,13 +1962,13 @@
           "title": "OpenGL",
           "xid": "ffa5-YxRhE3zhWg7KXQ4r",
           "description": "Open GL, also known as Open Graphics Library, is a cross-language, cross-platform API designed to render 2D and 3D vector graphics. As a software interface for graphics hardware, Open GL provides programmers the ability to create complex graphics visuals in detail. It was first developed by Silicon Graphics Inc. in 1992 and quickly became a highly popular tool in the graphics rendering industry. Open GL is widely used in CAD, virtual reality, scientific visualization, information visualization, and flight simulation. It is also used in video games production where real-time rendering is a requirement. The API is designed to work with a broad range of hardware from different manufacturers. Being open-source, Open GL's code capabilities can be extended by anyone in the software community.\n\n",
-          "id": "aed80067-445f-4d66-87cf-e306fdaaf0a2",
+          "id": "c5281731-2380-4a1d-896d-5ff80cd443e9",
           "children": [
             {
               "title": "GLSL",
               "xid": "j8mWMFMQCEIPUzegDDsm1",
               "description": "**GLSL** (Graphics Library Shader Language) is a high-level shading language inspired by C, based on the syntax of the OpenGL Shading Language. It is used in graphics programming for defining how the graphical content should look. GLSL allows developers to harness the power of modern GPUs (Graphics Processing Units), enabling direct, unconstrained control over graphics rendering. A key aspect of the language is its ability to create shaders, which are small programs that run on the GPU. Shaders are used for various graphical effects like vertex manipulation, pixel color calculations, or post-processing effects.\n\n",
-              "id": "c1145bb5-5312-4e51-96ab-d660b089236e",
+              "id": "61f3718a-012b-42d5-9f80-1ed7c963f9f5",
               "children": [],
               "links": [
                 {
@@ -1998,13 +2001,13 @@
           "title": "Vulkan",
           "xid": "yPfhJSTFS7a72UcqF1ROK",
           "description": "Vulkan is a high-performance, cross-platform API for graphics and computation tasks published by the Khronos Group. Unlike other graphics APIs, Vulkan provides developers with direct control over the GPU and aims to take full advantage of multicore processors, enabling significant performance gains in 3D applications. It supports Windows, Linux, Android, iOS, and MacOS platforms. It's built from ground-up to ensure minimal overhead on the CPU side, providing a more balanced CPU/GPU usage, hence not limiting the game to a single core. Vulkan can be seen as the successor to OpenGL, as it offers lower-level functionality and more efficient multi-threading capabilities.\n\n",
-          "id": "0c90e981-9aea-4081-8c34-af1a0e1acb2e",
+          "id": "97ee51f5-9bc5-43e0-bcaa-3b2639e44e58",
           "children": [
             {
               "title": "SPIR-V",
               "xid": "DvV32n3NoXNEej8Fsqqs2",
               "description": "`SPIR-V` is a binary intermediate language for graphics and computation kernels, which is defined by the Khronos Group. This programming language has been largely adopted and used by Vulkan, a low-overhead, cross-platform 3D graphics and computing API. Vulkan consumes `SPIR-V` directly, serving as the final shader stage before the GPU. The `SPIR-V` binary format is designed for portability and flexibility, allowing it to be a powerful tool for developers because of its extensibility through the addition of new instructions, without the need to rebuild toolchains or shaders. This makes `SPIR-V` an essential part of Vulkan, especially for game developers creating large, diverse worldscapes and intricate graphics.\n\n",
-              "id": "5275dcef-0275-471a-bae1-2395cf549b49",
+              "id": "14985a50-c614-47aa-b3b1-1a242307ac97",
               "children": [],
               "links": [
                 {
@@ -2042,7 +2045,7 @@
           "title": "WebGL",
           "xid": "CeydBMwckqKll-2AgOlyd",
           "description": "`WebGL` (Web Graphics Library) is a JavaScript API that is used to render interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. It leverages the power of the Graphics Processing Unit (GPU), which provides high-efficiency rendering. WebGL programs consist of control code written in JavaScript and shader code that's written in OpenGL Shading Language (GLSL), allowing developers to control the fine details of graphics rendering. Besides its compatibility with HTML5 and its ability to render on any platform that supports the web, WebGL is entirely integrated into all web standards, facilitating GPU-accelerated image processing and effects.\n\n",
-          "id": "768d15a5-ffc6-4155-ae50-ed92da7adb53",
+          "id": "99cda48c-55fa-4e41-868a-7c9adcf3c485",
           "children": [],
           "links": [
             {
@@ -2061,7 +2064,7 @@
           "title": "OpenGL ES",
           "xid": "EVOiWAeZsIvjLTt3EYu-6",
           "description": "OpenGL ES (Open Graphics Library for Embedded Systems) is a simplified version of OpenGL, designed for use on systems with lower computational power, such as mobile devices and embedded systems. Despite its semantic simplifications, OpenGL ES still retains high versatility and capability, allowing for high-performance 2D and 3D graphics on these smaller, less powerful systems. OpenGL ES has become particularly popular in mobile game development, with major platforms like Android and iOS providing full support for it. The API is divided into several versions, the latest of which, OpenGL ES 3.2, was released in 2016.\n\n",
-          "id": "bcbdda78-b5d4-4a52-b64a-4d58a3e9c15d",
+          "id": "9a557604-24ee-410e-aae5-9756de0285dd",
           "children": [],
           "links": [
             {
@@ -2080,7 +2083,7 @@
           "title": "Metal",
           "xid": "oEznLciLxZJaulMlBGgg4",
           "description": "Metal is a low-level, high-performance, application programming interface (API) developed by Apple. It debuted in iOS 8 and is dedicated to graphics and data-parallel computations. Essentially, it's designed to exploit modern GPU architecture on Apple devices, optimizing performance and power efficiency. This API applies to various platforms, including iOS, macOS, and tvOS. In contrast to high-level APIs like OpenGL, Metal offers a much lower overhead, allowing more direct control over the GPU. For developers, it means that they can squeeze better performance out of the hardware compared to higher-level APIs. With Metal, developers have a much more detailed view and control on the GPU which results in better graphical output and smoother performance.",
-          "id": "6283f81a-6873-4794-a63b-6b28dd86a2a0",
+          "id": "098ae626-7b1f-47c4-8744-15b23df69e54",
           "children": [],
           "links": [
             {
@@ -2103,19 +2106,19 @@
       "title": "Game AI",
       "xid": "Hpf_CPmLpCSP8Qo07Kq1X",
       "description": "Game AI is a subfield of artificial intelligence (AI) that is used to create video game characters that act and react like real human players. Game AI is used in a variety of video games, from simple puzzle games to complex strategy games. Game AI can be used to create non-player characters (NPCs) that interact with the player, as well as to create intelligent opponents that challenge the player.\n\n",
-      "id": "bfeb0272-3e6f-4b6f-8368-02881e74485a",
+      "id": "ba3bafbd-b345-4575-b5fc-45af76ccec2e",
       "children": [
         {
           "title": "Decision Making",
           "xid": "Ky-95ipdgyPZGAIdqwMCk",
           "description": "In game development, decision making often refers to the logic or processes that determine the behavior of non-playable characters or game environments. Three main types of decision making are used: deterministic, stochastic, and strategic. Deterministic decision making is based on predefined rules. With stochastic decision making, outcomes are probability-based, providing an element of randomness. Strategic decision making involves planning a sequence of actions to achieve a specified goal. Decisions can also be guided using various API tools such as **pathfinding algorithms** (which determine the shortest path between two points) or **decision trees** (which facilitate the selection of an action based on certain conditions). The choice of decision-making method depends largely on the desired complexity and behavior of your game elements.\n\n",
-          "id": "0080b6f6-0104-4bb4-905f-640f16117728",
+          "id": "08bb7def-8054-4614-b2d0-370161ac3d08",
           "children": [
             {
               "title": "Decision Tree",
               "xid": "rwGivalwv2ozdSlVMSc4U",
               "description": "A **Decision Tree** is a graphical representation used in game development which helps to visualize the possible outcomes or paths a game could take depending on certain choices made by a gamer. Each branch of the tree represents a possible decision, outcome, or reaction and each node on the tree represents a game situation or event. Decision Trees help game developers in making strategic designs, create complex enemy AI, and overall assists in predicting the interaction or course of the game. It allows game developers to layout the decision points, possible choices and their outcomes, thus making it easier to trace the direction in which the game progresses.\n\n",
-              "id": "fe7f191b-0529-426c-b3ee-88b1817cffc6",
+              "id": "c18b09f1-8ccf-4b85-9faf-00872f1da3ce",
               "children": [],
               "links": [
                 {
@@ -2134,7 +2137,7 @@
               "title": "State Machine",
               "xid": "aJa_2xkZuSjQ5bt6Kj5oe",
               "description": "A **State Machine** is a conceptual model that is frequently used in game development to manage game states, or conditions. It consists of a number of different 'states', or modes, and the transitions between them. For instance, a mobile game could have states such as 'Start Screen', 'Playing', 'Paused' and 'Game Over'. Each one of these states will have specific commands associated and rules for transitioning to other states. This will govern the flow and behavior of the game. It can be used in AI character behaviors, UI systems, or game-level states. State Machines keep the code organized and manageable, making it easier for developers to implement complex game logic.\n\n",
-              "id": "21018aea-f06f-44bb-83d2-6edacaf6f14a",
+              "id": "e569276f-d7a1-4589-9467-668098b93e10",
               "children": [],
               "links": [
                 {
@@ -2148,7 +2151,7 @@
               "title": "Behavior Tree",
               "xid": "ztoW8fBY73Es624A_tjd7",
               "description": "The **Behavior Tree** is a decision-making system used in game development, primarily for AI character behavior. These trees help define the actions an AI character will take, based on predefined tasks and conditions. The tree structure starts from a single root, branching out to nodes that represent these decisions or tasks. The tasks can be simple, such as moving from one point to another, or can be complex decisions like whether to attack or retreat. This kind of structure is advantageous because it is easy to add, remove, or modify tasks without breaking the tree or affecting other tasks. This makes it highly flexible and easy to manage, irrespective of the complexity of the tasks.\n\n",
-              "id": "58fe4b71-e95f-4d4c-a31c-5cf6a9738268",
+              "id": "5754182e-264f-4684-a395-00180cbb9ac2",
               "children": [],
               "links": [
                 {
@@ -2167,7 +2170,7 @@
               "title": "Fuzzy Logic",
               "xid": "4ZCVUpYrCT14d_JULulLe",
               "description": "Fuzzy Logic is a mathematical logic method that resolves problem-solving and system control. Unlike traditional binary sets (true or false), fuzzy logic variables have a truth value that ranges in degree between 0 and 1. This allows them to handle the concept of partial truth, where the truth value may range between completely true and completely false. In game development, fuzzy logic is often used in artificial intelligence to make the game more realistic. For instance, it can be used to program non-player characters (NPCs) who respond to situational changes dynamically, making the gameplay more engaging and interactive.\n\n",
-              "id": "d57cb7b3-d647-4789-8e59-8f6a39d21b63",
+              "id": "fb38d56d-73a4-41e9-aa1b-a0edaac695e6",
               "children": [],
               "links": [
                 {
@@ -2181,7 +2184,7 @@
               "title": "Markov System",
               "xid": "c6j-30p84vk3MZEF1R2hN",
               "description": "A **Markov System** or **Markov Chain** represents a statistical model that is used in decision-making scenarios within game development. This model is based on the notion of \"memorylessness\" where a certain event's probability depends solely on the state attained in the previous event. It employs a sequence of possible events where the probability of each event hinges on the state achieved in the previous event. A common usage of a Markov System is in designing AI behavior within games, where each state symbolizes a different behavior, and transitions between them are governed by the Markov chain probabilities.\n\n",
-              "id": "ee35eebe-0629-4040-a1f3-3d69a3501d3b",
+              "id": "750e564e-ef61-46f2-a1d2-5b02c9faf07e",
               "children": [],
               "links": [
                 {
@@ -2200,7 +2203,7 @@
               "title": "Goal Oriented Behavior",
               "xid": "Cuc0xvCAkVyUtwOxO_Uua",
               "description": "Goal oriented behavior in game development refers to the artificial intelligence algorithms employed that give non-player characters (NPCs) the ability to make decisions based on certain objectives or tasks. These NPCs analyze the circumstances in the game environment, formulate a plan to achieve specific goals, and then execute it. The degree of sophistication in these algorithms can range from simple pathways to complex problem-solving solutions. As the behavior models are not hard-coded, it provides NPCs with greater adaptability and autonomy.\n\n",
-              "id": "bff7074a-d9ef-432d-b399-b04573b8e001",
+              "id": "b9b826f6-39f1-4c42-94f8-901bc16502e5",
               "children": [],
               "links": [
                 {
@@ -2223,7 +2226,7 @@
           "title": "Movement",
           "xid": "mUyzX-DXnIKDl-r9o8d38",
           "description": "In the context of game development and game API (Application Programming Interface), movement refers to the process of changing the position or orientation of game objects. This involves using programming functions to control objects' movement like walk, run, jump, fly, or any such physical action in the game world. Movement is at the core to creating the dynamics of a game and is critical to both game physics and game logic. Different game engines offer different ways for handling movement. In some APIs, this process could be as simple as setting a new position directly, such as `object.position = new Vector3(5, 10, 0)`. Meanwhile, in others, more complex methods involving real-world physics are required, such as applying forces or altering velocity.\n\n",
-          "id": "f56189ef-34e3-416f-98ce-a6dc249077a2",
+          "id": "e58e976b-7349-4165-9ec9-5e05738cf881",
           "children": [],
           "links": [
             {
@@ -2237,13 +2240,13 @@
           "title": "Board Game",
           "xid": "eoK70YRCz73GmzbNhh5kg",
           "description": "**Board Games** represent a type of tabletop game that involves counters or pieces moved or placed on a pre-marked surface or \"board\", according to a set of rules. Some games are based on pure strategy, but many contain an element of chance, and others are purely chance, with no element of skill. Games usually have a goal that a player aims to achieve. Early board games represented a battle between two armies, and most modern board games are still based on defeating opponents in terms of counters, winning position, or accruement of points. With the digitalization of board games, developers use various **Game APIs** to create engaging and interactive board game experiences. An API defines a set of rules and protocols for building and interacting with different software applications. Game APIs allow developers to integrate with game-specific features like game mechanics, player statistics, achievements, and more.\n\n",
-          "id": "a1a578c5-8273-46e4-b23b-ab09f98309b1",
+          "id": "d1229c86-86a9-45d3-9bb3-d9da5c14bfc4",
           "children": [
             {
               "title": "Minimax",
               "xid": "oOjGqicW3eqRwWyIwJdBA",
               "description": "`Minimax` is an artificial intelligence (AI) decision-making algorithm mainly used in decision making and game theory, particularly for two player zero-sum games. It formulates a strategy by simulating all possible game scenarios and assuming that the opponent is playing an optimal game. Minimax operates by the player minimizing the possible loss for a worst case scenario and thus making the 'maximum of the minimum' possible scenarios. This algorithm is often combined with `alpha-beta pruning` technique to increase its efficiency.\n\n",
-              "id": "251a747b-2158-4ad5-b640-c154a528a0fe",
+              "id": "54a4305d-b509-477e-ac2f-4b1a809d4d76",
               "children": [],
               "links": [
                 {
@@ -2257,7 +2260,7 @@
               "title": "AB Pruning",
               "xid": "KYCi4d475zZfNwlj6HZVD",
               "description": "`Alpha-Beta pruning` is an optimization technique for the minimax algorithm used in artificial intelligence (AI) programming, such as game development. It cuts off branches in the game tree that don't need to be searched because there's already a better move available. It uses two parameters, alpha and beta, which represent the minimum score that the maximizing player is assured of and the maximum score that the minimizing player is assured of, respectively. During the traversal of the game tree, branches of the tree that cannot possibly influence the final decision are not explored. This process 'prunes' the minimax tree, saving computational time and resources.\n\n",
-              "id": "42e3c624-36eb-470f-b8af-6055af45b0c8",
+              "id": "87c90447-6b3c-4323-bf9f-3e174645cd4d",
               "children": [],
               "links": [
                 {
@@ -2276,7 +2279,7 @@
               "title": "MCTS",
               "xid": "QD9TfZn3yhGPVwiyJ6d0V",
               "description": "\"MCTS\", or Monte Carlo Tree Search, is a search algorithm that utilizes methods of decision-making to solve complex problems, commonly implemented in a range of applications, including board games. It essentially operates through building a search tree, node by node, for probable states of a game and then using Monte Carlo simulations to provide a statistical analysis of potential outcomes. It randomly generates moves using the game's determined rules, then makes decisions based on the results of these simulations. In board games, it's often used to determine AI decisions by simulating possible game scenarios, hence contributing to making the AI system more robust and challenging.\n\n",
-              "id": "0d63dc32-321f-4bbe-9c38-2db641491398",
+              "id": "cf1594bd-279e-42f3-bf55-732896d4cf8e",
               "children": [],
               "links": [
                 {
@@ -2318,19 +2321,19 @@
       "title": "Game AI",
       "xid": "Hpk8eOaOepERMmOvUgkxa",
       "description": "Game AI is a subfield of artificial intelligence (AI) that is used to create video game characters that act and react like real human players. Game AI is used in a variety of video games, from simple puzzle games to complex strategy games. Game AI can be used to create non-player characters (NPCs) that interact with the player, as well as to create intelligent opponents that challenge the player.\n\n",
-      "id": "5104cfcf-4d89-4960-8785-6f7c7c032d00",
+      "id": "38bab115-e4ef-4d07-85a0-ac60b456c440",
       "children": [
         {
           "title": "Learning",
           "xid": "9_OcZ9rzedDFfwEYxAghh",
           "description": "Machine Learning is a field of study that gives computers the ability to learn without being explicitly programmed. It is a branch of artificial intelligence based on the idea that systems can learn from data, identify patterns and make decisions with minimal human intervention. In terms of game development, machine learning can be used to create NPCs that can learn from the player's actions and adapt to them.\n\n",
-          "id": "8285afd2-575b-4418-9bdb-e6b9192d4b95",
+          "id": "38b4e17a-2df4-4686-9d98-06eac3b27d9f",
           "children": [
             {
               "title": "Decision Learning",
               "xid": "ul5XnVwQCwr4ZaL4kBNpd",
               "description": "In the realm of game development, **Decision Learning** refers to information systems that recognize and analyze patterns to help in making decisions. It\u2019s particularly used in AI game development where decision-making algorithms or artificial intelligence are programmed to learn from and make decisions based on past experiences or an established decision tree. These decisions can be about game behaviors, player interactions, environment changes and so on. Various methods such as reinforcement learning, Bayesian methods, Decision trees, Neural networks are used to facilitate decision learning in game development.\n\n",
-              "id": "3694efb6-506f-4258-81c5-6b0fc9d61b3f",
+              "id": "e689efd5-9102-41c6-980b-84a1e2d2c10a",
               "children": [],
               "links": [
                 {
@@ -2344,7 +2347,7 @@
               "title": "Naive Bayes Classifier",
               "xid": "aw1BAGqrdBBmUwB6vMF_A",
               "description": "The Naive Bayes Classifier is a type of probabalistic machine learning model that is utilized for classification tasks. These tasks can range from email filtering to sentiment analysis or even document categorization. This model is termed 'naive' because it operates under the assumption that each input feature is independent from one another. This simplifying assumption allows for the computation of the probabilities involved to be severely less complicated. It follows the Bayes' Theorem equation to predict the class of the given data point. While this classifier might seem simplistic, it holds its own quite well in complex real-world situations. Due to its simplicity and high efficiency, the Naive Bayes Classifier is one of the most reliable and practical methods in machine learning applications.\n\n",
-              "id": "1b45395e-a7aa-4d19-92d4-f7f7918bf766",
+              "id": "a1a716c2-00bc-4359-9532-9425a49496d7",
               "children": [],
               "links": [
                 {
@@ -2363,7 +2366,7 @@
               "title": "Decision Tree Learning",
               "xid": "sz1047M8_kScjth84yPwU",
               "description": "`Decision Tree Learning` is an important concept in game development, particularly in the development of artificial intelligence for game characters. It is a kind of machine learning method that is based on using decision tree models to predict or classify information. A decision tree is a flowchart-like model, where each internal node denotes a test on an attribute, each branch represents an outcome of that test, and each leaf node holds a class label (decision made after testing all attributes). By applying decision tree learning models, computer-controlled characters can make decisions based on different conditions or states. They play a key role in creating complex and interactive gameplay experiences, by enabling game characters to adapt to the player's actions and the ever-changing game environment.\n\n",
-              "id": "0e29b6b7-ac93-4d0d-84f2-9f2a4805cd1b",
+              "id": "e88edfe3-557f-4b5c-b1d3-cdc574a68ad7",
               "children": [],
               "links": [
                 {
@@ -2387,7 +2390,7 @@
               "title": "Deep Learning",
               "xid": "ltkEyfuDxExs7knqs79ya",
               "description": "Deep Learning is a sub-field of machine learning, inspired by the structure and function of the human brain, specifically designed to process complex input/output transformations. It uses artificial neural networks with many layers (hence the term 'deep' learning) to model complex, non-linear hypotheses and discover hidden patterns within large datasets. Deep learning techniques are crucial in game development, primarily in creating intelligent behaviors and features in gaming agents, procedural content generation, and player profiling. You might have heard about the uses of deep learning technologies in popular, cutting-edge games like Google DeepMind's AlphaGo. Coding languages like Python, R, and frameworks like TensorFlow, Keras, and PyTorch are commonly used for deep learning tasks. Learning Deep Learning can be a prominent game-changer in your game development journey.\n\n",
-              "id": "821c95d1-be30-44f9-b3c3-11c8525ba9bf",
+              "id": "b243aaef-4c15-46c7-84a8-efca961c86ef",
               "children": [],
               "links": [
                 {
@@ -2416,7 +2419,7 @@
               "title": "Artificial Neural Network",
               "xid": "AoH2r4EOHyZd8YaV24rBk",
               "description": "Artificial Neural Networks (ANN) are a branch of machine learning that draw inspiration from biological neural networks. ANNs are capable of 'learning' from observational data, thereby enhancing game development in numerous ways. They consist of interconnected layers of nodes, or artificial neurons, that process information through their interconnected network. Each node's connection has numerical weight that gets adjusted during learning, which helps in optimizing problem solving. ANNs are utilized in various aspects of game development, such as improving AI behavior, procedural content generation, and game testing. They can also be used for image recognition tasks, such as identifying objects or actions in a game environment.\n\n",
-              "id": "d9120bfb-99d9-438b-985d-2f9d41da0bd3",
+              "id": "8e4d1d31-0c6f-4c4c-b68a-c2dc33d6d703",
               "children": [],
               "links": [
                 {
@@ -2440,7 +2443,7 @@
               "title": "Reinforcements Learning",
               "xid": "rGEHTfdNeBAX3_XqC-vvI",
               "description": "`Reinforcement Learning` is a type of Machine Learning which is geared towards making decisions. It involves an agent that learns to behave in an environment, by performing certain actions and observing the results or rewards/results it gets. The main principle of reinforcement learning is to reward good behavior and penalize bad behavior. The agent learns from the consequences of its actions, rather than from being taught explicitly. In the context of game development, reinforcement learning could be used to develop an AI (Artificial Intelligence) which can improve its performance in a game based on reward-driven behavior. The AI gradually learns the optimal strategy, known as policy, to achieve the best result.\n\n",
-              "id": "c9da47ad-3282-40da-905c-0784c6b73095",
+              "id": "03b84bf7-f46d-4a58-b1d5-8755fe154abb",
               "children": [],
               "links": [
                 {
@@ -2487,19 +2490,19 @@
       "title": "Advanced Rendering",
       "xid": "CDYszS1U4v95GozB_drbt",
       "description": "**Advanced rendering** is a sophisticated technique used in game development that involves translating a 3D model or scene into a 2D image or animation. Advanced rendering techniques can involve various complex methods such as physically-based rendering, ray tracing, global illumination, subsurface scattering, caustics, and volumetric rendering. The use of advanced rendering can result in highly realistic graphics, as it uses complex calculations to depict how light behaves in the real world. Advanced rendering often requires powerful hardware resources and specialized software tools in order to achieve the desired images and animations.\n\n",
-      "id": "b3b126af-7fa9-4cb7-b03b-ff5c79a3930c",
+      "id": "7413ae9a-4bf9-4646-91e7-be501810d1a3",
       "children": [
         {
           "title": "Real-time Ray Tracing",
           "xid": "_i7BXZq-iLxQc3QZRMees",
           "description": "**Real-time Ray Tracing** is a notable advancement in rendering technology. It aims to mimic the way light works in the real world by simulating how each ray of light interacts with different surfaces. In real-time ray tracing, rays of light are generated from the viewer's perspective and sent into the scene. They can reflect off surfaces, refract through materials, or scatter in different directions. These rays can also be absorbed, producing shadows and shaping the visibility of objects. What makes real-time ray tracing special is its ability to calculate all these interactions in real-time, which allows graphics to be much more dynamic and interactive. The complexity of real-time ray tracing involves extensive computational power and it has been a groundbreaking feature in newer hardware and software releases.\n\n",
-          "id": "cdb0404a-d0db-4397-aa23-ff9ade8ae1a6",
+          "id": "6099cbbb-cfd1-4a89-b8d3-d1963c0c3dd1",
           "children": [
             {
               "title": "DirectX Ray Tracing",
               "xid": "qoIkw9o8iMx7MzUyVYoR2",
               "description": "DirectX Ray Tracing (DXR) is an advanced Windows API introduced with DirectX 12. It delivers real-time, cinema-quality rendering to contend development in gaming and professional visualization. It provides highly efficient and straightforward access to RT Core hardware. DXR adds four new concepts to DirectX 12: The acceleration structure, The Ray tracing pipeline state object, Shader tables, and the Command list method (DispatchRays). It represents a significant step forward by Microsoft in embracing Ray Tracing as a new standard in real-time rendering pipelines. For developers, DirectX Ray tracing is straightforward to integrate into existing engines given its easy compatibility with existing DirectX 12 programming models. However, to truly maximize DXR's potential, a deep understanding of both graphics workloads and tracing algorithms is necessary.\n\n",
-              "id": "cc64ab3c-dc4d-4b6e-a5fe-ac5f3c63ecbc",
+              "id": "c13c3ea9-00fa-4242-8faa-93fb53b62a3b",
               "children": [],
               "links": [
                 {
@@ -2523,7 +2526,7 @@
               "title": "Vulkan Ray Tracing",
               "xid": "tDGnV8dGIFr_diz4HcEjr",
               "description": "`Vulkan Ray Tracing` is an extension of the Vulkan API (Application Programming Interface), which is an open-source, cross-platform API developed by the Khronos Group. Its main goal is to provide developers with greater control over the GPU, enabling better performance and more efficient multisystem and multicore use. The Vulkan Ray Tracing extension provides a standardized ray tracing interface similar to DirectX Raytracing, enabling real-time ray tracing applications to be built on Vulkan. This extension includes a number of functionalities such as acceleration structure building and management, ray tracing shader stages and pipelines, and indirect ray tracing dispatch.\n\n",
-              "id": "ce8ddf4f-5dde-4990-aa11-10852c81318a",
+              "id": "ecbad5e6-2a4d-4ed1-abe2-a3b04307540e",
               "children": [],
               "links": [
                 {
@@ -2542,7 +2545,7 @@
               "title": "OptiX",
               "xid": "GDLysy3__cbYidEaOmFze",
               "description": "`OptiX` is an application framework developed by NVIDIA for achieving high performance ray tracing in graphics processing unit (GPU) programming. It's mainly intended for use in real-time graphics application, scientific simulations, and other visual computing applications. `OptiX` provides key functionalities such as hierarchical object acceleration, programmable ray generation, material shading, and dynamic scene management to achieve fast and state-of-the-art rendering. This highly efficient, scalable and flexible API supports the coding of applications, not just for graphic rendering but also for collision detection and physics simulation. Please note that access to `OptiX` currently requires NVIDIA GeForce, Quadro and Tesla products with Kepler, Maxwell, Pascal, Volta, Turing and later generation GPUs.\n\n",
-              "id": "ef17ef40-e0eb-4ddf-adea-6033a8561845",
+              "id": "cfe2e1d3-e95c-4007-a7b0-8ed94434d3ab",
               "children": [],
               "links": [
                 {
@@ -2575,13 +2578,13 @@
           "title": "Physically-Based Rendering",
           "xid": "XvFtMHrYsBREmuerE7CGc",
           "description": "Physically Based Rendering (PBR) is a technique in computer graphics that aims to mimic the interaction of light with surfaces in the real world. It models how light behaves, from reflection to refraction, in a way that accurately represents reality. The PBR model factors in physical properties of materials, such as roughness or metallicity, making the rendering output more consistent and predictable under different lighting conditions. It uses complex shading algorithms and light calculations to generate a high level of realism. In order to achieve this, many PBR systems use a combination of two important components: the Bidirectional Reflectance Distribution Function (BRDF), which defines how light is reflected off an object, and the Bidirectional Surface Scattering Reflectance Distribution Function (BSSRDF), which handles how light scatters under the surface of an object.\n\n",
-          "id": "c3bcc8b8-5d9b-4448-bf62-14b0380e7610",
+          "id": "f7bb2fe7-5df9-4731-a8fe-b748303b44bd",
           "children": [
             {
               "title": "Conservation of Energy",
               "xid": "H3hkafXO9zqEnWuwHa38P",
               "description": "In the realm of physically-based rendering, **translucency** and **transparency** act as key aspects in creating visually authentic and compelling images. Transparency refers to the property of an object that allows light to pass through it unhindered, hence making the object clear or invisible. This is commonly seen in materials such as glass, clear plastic, and water. On the other hand, translucency describes how light interacts with a semi-transparent object. Instead of passing directly through, light enters the object, travels within for some distance and then exits at a different location. Common examples of such surfaces include human skin, marble, milk, or wax, which exhibit a soft, diffused lighting effect when light rays pass through them. The technique to achieve this effect in graphics involves subsurface scattering, where incoming light is scattered beneath the object's surface, illuminated it in a way that showcases the material's internal structure.\n\n",
-              "id": "2601a7cc-b417-4b83-ade8-60ede8414816",
+              "id": "e8dfd4d2-884a-4f60-8077-5a14c3d1124c",
               "children": [],
               "links": [
                 {
@@ -2595,7 +2598,7 @@
               "title": "Metallicity",
               "xid": "olY1ibR7kw1yJ58TfU-37",
               "description": "In Physically Based Rendering (PBR), **Metallicity** is a critical property of a material, which influences how it interacts with light. It's a binary property, indicating whether the material is a 'metal' or 'non-metal'. Metals have a high metallicity value (often 1), non-metals (such as wood, plastic, etc.) have a low metallicity value (often 0). Interestingly, with PBR, there exists no 'partially metal' materials \u2015 it's an all or nothing characteristic. This property significantly impacts color handling, too, as metals derive their color from specular reflection while non-metals derive from subsurface scattering (diffuse).\n\n",
-              "id": "56d6e090-adfb-4546-bd21-016affba547c",
+              "id": "85f6dea1-11ea-4f82-b83d-5e12b8bbdacb",
               "children": [],
               "links": [
                 {
@@ -2614,7 +2617,7 @@
               "title": "Microsurface Scattering",
               "xid": "YrQgfjsdLCIUxrwflpEHO",
               "description": "Microsurface scattering, also known as sub-surface scattering, is an important phenomenon in Physically Based Rendering (PBR). This process involves the penetration of light into the surface of a material, where it is scattered by interacting with the material. In other words, when light strikes an object, rather than simply bouncing off the surface, some of it goes into the object and gets scattered around inside before getting re-emitted. It is key to achieving more realistic rendering of translucent materials like skin, marble, milk, and more. Consider it essential for replicating how light interacts with real-world materials in a convincing manner in your game.\n\n",
-              "id": "e7af7f23-d9e1-4d13-b3a9-419ebcae566b",
+              "id": "d3843ce7-593c-4a03-844b-a452fb2a71f9",
               "children": [],
               "links": [
                 {

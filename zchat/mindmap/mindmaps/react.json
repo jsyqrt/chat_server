@@ -1,18 +1,21 @@
 {
+  "id": "077be015-5087-4231-b444-ef0a5a21357b",
   "title": "React Developer",
-  "description": "\n",
+  "description": "Everything that is there to learn about React and the ecosystem in 2025.",
+  "question_title": "",
+  "question_description": "",
   "children": [
     {
       "title": "Conditional Rendering",
       "xid": "tU4Umtnfu01t9gLlnlK6b",
       "description": "The directive `v-if` is used to conditionally render a block. The block will only be rendered if the directive's expression returns a truthy value.\n\n",
-      "id": "17106daf-f35e-4c31-8230-2d7916f65c1f",
+      "id": "b5e84996-2840-427a-b910-5a6ef8e77b91",
       "children": [
         {
           "title": "create-vue",
           "xid": "y9ToYDix-koRbR6FLydFw",
           "description": "create-vue is a CLI tool that helps you create a new Vue project with a single command. It is a simple and easy-to-use tool that saves you time and effort when setting up a new Vue project.\n\nLearn more using the following resources:",
-          "id": "c156bcde-9b1e-4094-a7b0-bd47ac48b9e5",
+          "id": "e21333f7-0a01-47fa-808d-369da47632aa",
           "children": [],
           "links": [
             {
@@ -45,13 +48,13 @@
       "title": "Components",
       "xid": "79K4xgljcoSHkCYI1D55O",
       "description": "Components are the building blocks of React applications. They let us split the UI into independent, reusable pieces, and think about each piece in isolation.\n\n",
-      "id": "e5155855-a05d-49db-b213-f272599fc7c5",
+      "id": "936a97ef-b300-4b6d-9ca8-cf1a36a68fa0",
       "children": [
         {
           "title": "Functional Components",
           "xid": "8mw4TxlLN4ZKAlLl-_NVV",
           "description": "Functional components are some of the more common components that will come across while working in React. These are simply JavaScript functions. We can create a functional component to React by writing a JavaScript function. These functions may or may not receive data as parameters. In the functional Components, the return value is the JSX code to render to the DOM tree. Functional components can also have state which is managed using React hooks.\n\n",
-          "id": "bd1ae7ac-bb36-462b-adec-23a39fc0981a",
+          "id": "270e68d0-d946-4a78-9e51-e3e949be4772",
           "children": [],
           "links": [
             {
@@ -90,7 +93,7 @@
           "title": "JSX",
           "xid": "WREBxWSNQDD_6fzpHL6CE",
           "description": "JSX stands for JavaScript XML. It allows writing HTML in JavaScript and converts the HTML tags into React elements.\n\n",
-          "id": "3a1c2c27-e2a5-4a34-b099-f9cbacd97849",
+          "id": "3b82396c-1f98-4538-8ea7-3f209adab957",
           "children": [],
           "links": [
             {
@@ -124,7 +127,7 @@
           "title": "Props vs State",
           "xid": "RFuy3Eho3mnW1GpP08BVw",
           "description": "Props (short for \u201cproperties\u201d) and state are both plain JavaScript objects. While both hold information that influences the output of component render, they are different in one important way: props get passed to the component (similar to function parameters) whereas state is managed within the component (similar to variables declared within a function).\n\n",
-          "id": "3957f0e7-ecaa-426b-b67c-963f279a7c44",
+          "id": "ad9cb157-1303-48eb-94ad-a67c3d7fd24e",
           "children": [],
           "links": [
             {
@@ -153,7 +156,7 @@
           "title": "Conditional Rendering",
           "xid": "aE6XBgH23135_9QmD4ff2",
           "description": "In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.\n\nConditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like [if](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or the [conditional operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to create elements representing the current state, and let React update the UI to match them.\n\n",
-          "id": "4152cce4-13e4-438f-9c4f-d426f0285627",
+          "id": "fbf0ab95-f8c5-4e7a-b80e-2a45d06bed45",
           "children": [],
           "links": [
             {
@@ -177,7 +180,7 @@
           "title": "Composition",
           "xid": "4T59gdcwdXqj9kCuK7cfp",
           "description": "React has a powerful composition model, and it is recommended to use composition instead of inheritance to reuse code between components.\n\n",
-          "id": "7ea0545c-d878-4eb1-b064-4565da92e6b6",
+          "id": "d859dc2f-1f02-4ae2-98aa-bd04651c75c5",
           "children": [],
           "links": [
             {
@@ -230,13 +233,13 @@
       "title": "Rendering",
       "xid": "0uiGsC5SWavNdlFqizkKe",
       "description": "React follows a declarative approach to rendering components, which means that developers specify what a component should look like, and React takes care of rendering the component to the screen. This is in contrast to an imperative approach, where developers would write code to manually manipulate the DOM (Document Object Model) to update the UI.\n\nThe virtual DOM (VDOM) is an important aspect of how React works. It is a lightweight in-memory representation of the DOM (Document Object Model), and it is used to optimize the rendering of components in a React application.\n\n*   Components are written as JavaScript classes or functions that define a render method. The render method returns a description of what the component should look like, using JSX syntax.\n*   When a component is rendered, React creates a virtual DOM (VDOM) representation of the component. The VDOM is a lightweight in-memory representation of the DOM, and it is used to optimize the rendering of components.\n*   React compares the VDOM representation of the component with the previous VDOM representation (if it exists). If there are differences between the two VDOMs, React calculates the minimum number of DOM updates needed to bring the actual DOM into line with the new VDOM.\n*   React updates the actual DOM with the minimum number of DOM updates needed to reflect the changes in the VDOM.\n\nThis process is known as reconciliation, and it is an important aspect of how React works. By using a declarative approach and a VDOM, React is able to optimize the rendering of components and improve the performance of web applications.\n\n",
-      "id": "9e7465e1-d1db-4efc-a53d-9ac677cb38a5",
+      "id": "b51075c3-8a8f-4bc6-a866-cdc930910d68",
       "children": [
         {
           "title": "Component Lifecycle",
           "xid": "8OBlgDRUg-CTgDXY-QHyO",
           "description": "React components have a lifecycle consisting of three phases: Mounting, Updating, and Unmounting along with several \u201clifecycle methods\u201d that you can override to run code at particular times in the process.\n\nIt is not recommended to use lifecycle methods manually. Instead, use the useEffect hook with functional components.\n\n",
-          "id": "32b7b63d-acc2-4bb9-b595-be76c640d873",
+          "id": "903d2caf-eb58-4154-ba0d-e0af1f2f7020",
           "children": [],
           "links": [
             {
@@ -275,7 +278,7 @@
           "title": "Lists and Keys",
           "xid": "HeWVCPHqVnnbOn6zIim4K",
           "description": "When you render lists in React, you can use the `key` prop to specify a unique key for each item. This key is used to identify which item to update when you want to update a specific item.\n\n",
-          "id": "7b5f55a9-2333-4681-b8f5-dad349f52e73",
+          "id": "2ad2eae0-f4fe-479e-9966-9f12371b5077",
           "children": [],
           "links": [
             {
@@ -304,7 +307,7 @@
           "title": "Render Props",
           "xid": "vdumdIglnouf1KyGIGZnc",
           "description": "The term 'render props' refers to a technique for sharing code between React components using a prop whose value is a function.\n\nA component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic.\n\n",
-          "id": "0c26fd75-e1ca-4e03-b49b-a132117759be",
+          "id": "ce429a04-e16d-4151-b00b-badbdc598c58",
           "children": [],
           "links": [
             {
@@ -328,7 +331,7 @@
           "title": "Refs",
           "xid": "_zNAOhFWMcWqP4oxNPCXF",
           "description": "Refs provide a way to access DOM nodes or React elements created in the render method.\n\nIn the typical React dataflow, props are the only way that parent components interact with their children. To modify a child, you re-render it with new props. However, there are a few cases where you need to imperatively modify a child outside of the typical dataflow. The child to be modified could be an instance of a React component, or it could be a DOM element. For both of these cases, React provides an escape hatch.\n\n",
-          "id": "a3563ce2-8378-4811-bfc2-35b283f6d65b",
+          "id": "38c855be-69fa-4817-8bf4-f37737f6de1e",
           "children": [],
           "links": [
             {
@@ -367,7 +370,7 @@
           "title": "Events",
           "xid": "Nex2HcTOYIbfqUzXyxSMY",
           "description": "Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:\n\n*   React events are named using camelCase, rather than lowercase.\n*   With JSX you pass a function as the event handler, rather than a string.\n\n",
-          "id": "74aa4a6a-2450-4000-8f52-bed5d9c3c766",
+          "id": "a8562ee8-8fb7-4a85-9b7b-9b1b7c973b0e",
           "children": [],
           "links": [
             {
@@ -391,7 +394,7 @@
           "title": "High Order Components",
           "xid": "zOENl96GUZRw2PP2KxIck",
           "description": "A higher-order component (HOC) is an advanced technique in React for reusing component logic. HOCs are not part of the React API, per se. They are a pattern that emerges from React\u2019s compositional nature.\n\nConcretely, a higher-order component is a function that takes a component and returns a new component.\n\nHigher-order components are not commonly used in modern React code. In order to reuse logic, React hooks are mainly used now.\n\n",
-          "id": "14b7a29e-1a86-46fa-ab16-7b078e3f75a3",
+          "id": "7d833c9b-1978-404b-814e-aa29242d210b",
           "children": [],
           "links": [
             {
@@ -449,19 +452,19 @@
       "title": "Hooks",
       "xid": "LbLQhonBqzxHU6B-L--Vq",
       "description": "Hooks were introduced in React 16.8 and they let us use React's features-like managing your component's state and or performing an after effect when certain changes occur in state(s) without writing a class.\n\n",
-      "id": "b6f22969-5008-4d45-bc5a-97037441cca1",
+      "id": "e7e5bffe-c0da-4618-9660-b263b680daa9",
       "children": [
         {
           "title": "basic-hooks",
           "xid": "",
           "description": "basic-hooks",
-          "id": "84045e01-eb97-4d2b-b767-fdc8e3a5021d",
+          "id": "0dc75464-e10f-4154-bdb7-1e8cb13782ea",
           "children": [
             {
               "title": "useState",
               "xid": "FK59Zsm5ENA9g11XWCan_",
               "description": "`useState` hook is used to manage the state of a component in functional components. Calling `useState` returns an array with two elements: the current state value and a function to update the state.\n\n",
-              "id": "374a5180-093a-4519-a482-0ce012136b34",
+              "id": "91f9044b-1bc5-483b-869e-c9d9db2e8439",
               "children": [],
               "links": [
                 {
@@ -480,7 +483,7 @@
               "title": "useEffect",
               "xid": "8OnzX03hkZ9K9i__tjmFX",
               "description": "`useEffect` is a special hook that lets you run side effects in React. It is similar to componentDidMount and componentDidUpdate, but it only runs when the component (or some of its props) changes and during the initial mount.\n\n",
-              "id": "a4677434-30f0-4a9b-a5c0-8dcbf3ac306a",
+              "id": "798ad126-518f-4f6e-b280-c64b7d65ecdd",
               "children": [],
               "links": [
                 {
@@ -502,7 +505,7 @@
           "title": "Creating Custom Hooks",
           "xid": "HX75SExuzR5AP7TQ94qid",
           "description": "Building your own Hooks lets you extract component logic into reusable functions.\n\n",
-          "id": "f80be2f1-e075-4ff8-95e2-d172a975ab9e",
+          "id": "91190140-7194-41f0-a650-ff145b19631e",
           "children": [],
           "links": [
             {
@@ -531,7 +534,7 @@
           "title": "useCallback",
           "xid": "dgoDNDtW2_q9R9yhkXrcz",
           "description": "`useCallback` is a React hook that returns a memoized version of a callback function. It's used to optimize performance by preventing unnecessary re-renders. Specifically, it helps avoid recreating functions when their dependencies haven't changed, which can be useful when passing callbacks to child components that rely on referential equality to prevent re-rendering.\n\n",
-          "id": "0a02b7bb-8ea0-43e1-a01a-2927edbdc3c7",
+          "id": "cc05d200-0130-4bf6-9e4d-3b2f44c2aebd",
           "children": [],
           "links": [
             {
@@ -569,13 +572,13 @@
       "title": "Routers",
       "xid": "NStw6bi_pPB49K41BFSgo",
       "description": "Routing is an essential concept in Single Page Applications (SPA). When your application is divided into separated logical sections, and all of them are under their own URL, your users can easily share links among each other.\n\n",
-      "id": "b30f38d5-fb05-45d2-8031-4dcf43a66dea",
+      "id": "7576410e-ea2f-48c1-8d6e-66ea0ea1e820",
       "children": [
         {
           "title": "React Router",
           "xid": "jvp43wFkKlGQX2y7IxkbM",
           "description": "React router is the most famous library when it comes to implementing routing in React applications.\n\n",
-          "id": "9bc035b3-5614-4c3a-8926-1c6960bf0651",
+          "id": "cc817d45-146e-4f24-99a1-cb80d57a9c60",
           "children": [],
           "links": [
             {
@@ -638,13 +641,13 @@
       "title": "State Management",
       "xid": "I7_mX4h-Yywp1YyTJRKXI",
       "description": "Application state management is the process of maintaining knowledge of an application's inputs across multiple related data flows that form a complete business transaction -- or a session -- to understand the condition of the app at any given moment. In computer science, an input is information put into the program by the user and state refers to the condition of an application according to its stored inputs -- saved as variables or constants. State can also be described as the collection of preserved information that forms a complete session.\n\n",
-      "id": "0f7ab4ed-5c0d-4e93-8888-0d6ff563be57",
+      "id": "7b6692d6-50bb-4b9a-ab40-6ad3ebcbce8a",
       "children": [
         {
           "title": "Context",
           "xid": "10uL0r388lKh8pWYWqRZD",
           "description": "Context provides a way to pass data through the component tree without having to pass props down manually at every level.\n\nIn a typical React application, data is passed top-down (parent to child) via props, but such usage can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.\n\n",
-          "id": "f8f7eda2-0396-4aef-90ff-1748a05ffce0",
+          "id": "2f19c317-8a8e-4f37-bdc3-c33ea7ef2864",
           "children": [],
           "links": [
             {
@@ -673,7 +676,7 @@
           "title": "Zustand",
           "xid": "nl5imPsdY2oEWlg-9TTuk",
           "description": "Zustand is a small, fast and scalable bearbones state-management solution using simplified flux principles. Has a comfy api based on hooks, isn't boilerplatey or opinionated.\n\nZustand is often used as an alternative to other state management libraries, such as Redux and MobX, because of its simplicity and small size. It is particularly well-suited for small to medium-sized applications, where the complexity of larger state management libraries is not required.\n\n",
-          "id": "7addfc90-1968-4e70-b86f-b72f6efd34a5",
+          "id": "ddffef9b-7832-4899-98d3-08ca64ebb611",
           "children": [],
           "links": [
             {
@@ -721,13 +724,13 @@
       "title": "Writing CSS",
       "xid": "DfrCkbD-HEHwLymv10zb5",
       "description": "While \"CSS in JS\" is the most predominant way of styling modern frontend applications, there are several different ways to style your React applications whether it is vanilla CSS, [CSS Modules](https://github.com/css-modules/css-modules), or [CSS in JS](https://css-tricks.com/a-thorough-analysis-of-css-in-js/) etc and each has several frameworks available.\n\n",
-      "id": "4a955a35-a8b8-476b-b7ab-7c64a25e76d0",
+      "id": "b42952f4-390d-4e4d-9511-386a113be545",
       "children": [
         {
           "title": "Tailwind CSS",
           "xid": "KO3viVIJJREtxXxsocN7j",
           "description": "CSS Framework that provides atomic CSS classes to help you style components e.g. `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup.\n\n",
-          "id": "28336a38-f76d-47e8-9f0b-0442cbe44c73",
+          "id": "fa26a2b3-e73c-42ff-8f23-dd79071aa93f",
           "children": [],
           "links": [
             {
@@ -766,7 +769,7 @@
           "title": "Chakra UI",
           "xid": "uqphqAnlcJOLnwHZs5jWu",
           "description": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.\n\n",
-          "id": "c0eceb83-aac9-4b22-b158-be8467d610d2",
+          "id": "d8dbc720-04f1-4a96-8a24-98e227e2cbfb",
           "children": [],
           "links": [
             {
@@ -795,7 +798,7 @@
           "title": "CSS Modules",
           "xid": "awoEhwPKjUcR84XGL6Som",
           "description": "CSS files in which all class names and animation names are scoped locally by default.\n\n",
-          "id": "1374d852-ca6b-4fab-b353-9a49cf55cd5f",
+          "id": "172640f6-cb25-4d54-89d2-d896efa2399a",
           "children": [],
           "links": [
             {
@@ -833,13 +836,13 @@
       "title": "API Calls",
       "xid": "b4AP2OggxFAwsQtUwiUJJ",
       "description": "APIs, short for Application Programming Interfaces, are software-to-software interfaces. Meaning, they allow different applications to talk to each other and exchange information or functionality. This allows businesses to access another business\u2019s data, piece of code, software, or services in order to extend the functionality of their own products \u2014 all while saving time and money. There are several options available to make API calls from your React.js applications.\n\n",
-      "id": "52a768bd-c2f5-45b4-8aa1-037704834677",
+      "id": "d4867094-714e-4bb5-87dd-dfecc00ed25a",
       "children": [
         {
           "title": "Apollo",
           "xid": "8nMbfGxe3STMbrAVcqHHh",
           "description": "Apollo is a platform for building a unified graph, a communication layer that helps you manage the flow of data between your application clients (such as web and native apps) and your back-end services.\n\n",
-          "id": "3e0ed775-52b7-4e7c-bf65-527829650b56",
+          "id": "7be8992a-9a88-4c50-86fa-113b6af4168b",
           "children": [],
           "links": [
             {
@@ -873,7 +876,7 @@
           "title": "Relay",
           "xid": "cLfM342sZfsCwmPPxQpEI",
           "description": "Relay is a JavaScript client used in the browser to fetch GraphQL data. It's a JavaScript framework developed by Facebook for managing and fetching data in React applications. It is built with scalability in mind in order to power complex applications like Facebook. The ultimate goal of GraphQL and Relay is to deliver instant UI-response interactions.\n\n",
-          "id": "b7ba6c3c-a775-47e2-bc12-9972b6effe23",
+          "id": "822f5bf8-e7e0-4f35-851f-18d572ea2efc",
           "children": [],
           "links": [
             {
@@ -892,7 +895,7 @@
           "title": "urql",
           "xid": "9M5jRu0pj8KMvg9f-2oqZ",
           "description": "urql (Universal React Query Library) is a library for managing GraphQL data in React applications. It is developed and maintained by Formidable Labs and is available as open-source software.\n\nurql is designed to be easy to use and flexible, with a simple API for performing GraphQL queries and mutations. It is based on the concept of a client, which is used to manage the GraphQL data for an application. The client provides a set of utilities and APIs for managing GraphQL data, including:\n\n*   executeQuery: A utility for executing a GraphQL query.\n*   executeMutation: A utility for executing a GraphQL mutation.\n*   useQuery: A hook for executing a GraphQL query and accessing the result in a component.\n*   useMutation: A hook for executing a GraphQL mutation and accessing the result in a component.\n\nurql is often used as an alternative to other GraphQL libraries, such as Apollo Client, because of its simplicity and lightweight size. It is particularly well-suited for small to medium-sized React applications where the complexity of other GraphQL libraries may not be required.\n\n",
-          "id": "b80cd862-0e95-49f3-94dd-b5246956c75b",
+          "id": "2bdd9038-a816-4d70-852b-5dba3fbbed9e",
           "children": [],
           "links": [
             {
@@ -906,7 +909,7 @@
           "title": "swr",
           "xid": "-ea1KsXEyz-4voHXklG_J",
           "description": "SWR is a React Hooks library for data fetching.\n\nThe name \u201cSWR\u201d is derived from stale-while-revalidate, a cache invalidation strategy popularized by HTTP RFC 5861. SWR first returns the data from cache (stale), then sends the request (revalidate), and finally comes with the up-to-date data again.\n\nWith just one hook, you can significantly simplify the data fetching logic in your project.\n\n",
-          "id": "431d1997-84ed-4182-af20-d9786ad75864",
+          "id": "f24aad4f-6602-4d3c-a068-88036e466e40",
           "children": [],
           "links": [
             {
@@ -925,7 +928,7 @@
           "title": "react-query",
           "xid": "5EPmbiNdP_vhIXclv_GjV",
           "description": "Powerful asynchronous state management, server-state utilities and data fetching for TS/JS, React, Solid, Svelte and Vue.\n\n",
-          "id": "30b96758-4492-4363-a59b-fd7f2298b43a",
+          "id": "78f77793-b89e-4cd6-bc8e-ccd6bb910f1f",
           "children": [],
           "links": [
             {
@@ -954,7 +957,7 @@
           "title": "Axios",
           "xid": "ElqWQClryfSYdL7P_mgYK",
           "description": "The most common way for frontend programs to communicate with servers is through the HTTP protocol. You are probably familiar with the Fetch API and the XMLHttpRequest interface, which allows you to fetch resources and make HTTP requests.\n\nAxios is a client HTTP API based on the XMLHttpRequest interface provided by browsers.\n\n",
-          "id": "15406491-bfd7-4156-94e1-844995961a53",
+          "id": "ad7cf3ca-16ff-4573-814d-6b7998458028",
           "children": [],
           "links": [
             {
@@ -978,7 +981,7 @@
           "title": "rtk-query",
           "xid": "h49-tjEkKcq7d7ikRHIOx",
           "description": "[RTK Query](https://redux-toolkit.js.org/rtk-query/overview) is a data fetching and caching tool that is included in the Redux Toolkit package. It is designed to simplify common use cases for fetching data, including caching, polling, and invalidation.\n\n",
-          "id": "0b91fc0d-40f0-477d-bf9a-cdc3f26d5d2f",
+          "id": "4f72ca12-acd6-4d00-8d60-36048293a2af",
           "children": [],
           "links": [
             {
@@ -1006,13 +1009,13 @@
       "title": "Testing",
       "xid": "e_lwZ-a72-tAan2KDX6k3",
       "description": "A key to building software that meets requirements without defects is testing. Software testing helps developers know they are building the right software. When tests are run as part of the development process (often with continuous integration tools), they build confidence and prevent regressions in the code.\n\n",
-      "id": "628e51ab-c7b8-4cb4-9241-f79c98d248ad",
+      "id": "252d82ea-d6de-4840-aa0f-112f38f4dd65",
       "children": [
         {
           "title": "Jest",
           "xid": "opa61u9gYgSpoPtxp58wu",
           "description": "Jest is a delightful JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!\n\n",
-          "id": "df5aceb3-ef30-4a4f-9273-2d7cabfb843a",
+          "id": "08643a40-3a3c-426d-886f-847aba960637",
           "children": [],
           "links": [
             {
@@ -1036,7 +1039,7 @@
           "title": "Vitest",
           "xid": "LULjhsPNONyI5912DKzPw",
           "description": "Vitest is a fast Vite-native unit test framework with out-of-box ESM, TypeScript and JSX support. Works on React, Vue, Svelte and more projects created with Vite\n\n",
-          "id": "3f2eafaa-6e17-4f96-b4fc-f7f9ce164089",
+          "id": "5c32049b-b086-4561-82e2-b74a340374ef",
           "children": [],
           "links": [
             {
@@ -1055,7 +1058,7 @@
           "title": "react-testing-library",
           "xid": "cQllxv7qGbRtM9O5llgN6",
           "description": "The React Testing Library is a very lightweight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices. Its primary guiding principle is: The more your tests resemble the way your software is used, the more confidence they can give you.\n\n",
-          "id": "193c550f-3179-4a9e-ad29-2f4db19c4314",
+          "id": "42d5c382-08f7-4515-9f3a-cf11be5c5f00",
           "children": [],
           "links": [
             {
@@ -1079,7 +1082,7 @@
           "title": "Cypress",
           "xid": "zN7Ps1puD-YpHbKi1pHH8",
           "description": "Cypress framework is a JavaScript-based end-to-end testing framework built on top of Mocha \u2013 a feature-rich JavaScript test framework running on and in the browser, making asynchronous testing simple and convenient. It also uses a BDD/TDD assertion library and a browser to pair with any JavaScript testing framework.\n\n",
-          "id": "1133a2ec-3919-4d0c-b996-9e7c8fa21605",
+          "id": "917919ca-54a9-4f5a-88b2-9ad26b378f41",
           "children": [],
           "links": [
             {
@@ -1108,7 +1111,7 @@
           "title": "Playwright",
           "xid": "g39P0c6M2sHNoUPs0m8tr",
           "description": "Playwright Test was created specifically to accommodate the needs of end-to-end testing. Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox. Test on Windows, Linux, and macOS, locally or on CI, headless or headed with native mobile emulation of Google Chrome for Android and Mobile Safari.Playwright leverages the DevTools protocol to write powerful, stable automated tests.Playwright can actually see into and control the browser rather than relying on a middle translation layer, it allows for the simulation of more insightful and relevant user scenarios.\n\n",
-          "id": "4d028fa4-b114-4455-a33b-fa0063b64a96",
+          "id": "1192563f-500b-4ab7-b4b6-0fcec223aafc",
           "children": [],
           "links": [
             {
@@ -1151,13 +1154,13 @@
       "title": "Frameworks",
       "xid": "W-atg_Msa9uPLr6RXAKSb",
       "description": "Server-side rendering (SSR) is a technique for rendering a JavaScript application on the server, rather than in the browser. This can improve the performance and user experience of a web application, as the initial render of the application is done on the server and the content is sent to the browser as a fully-rendered HTML page.\n\nThere are several frameworks and libraries available for server-side rendering React applications, most common being Next.js and Remix:\n\n",
-      "id": "24d3d75c-6c26-42ca-a0df-a46055a15b44",
+      "id": "a97a8cf2-a8b1-4f38-afd0-7fed44a688fd",
       "children": [
         {
           "title": "react-router",
           "xid": "-WjJBYCmRRj08n_9HxohY",
           "description": "There used to be Remix in this list but they announced to merge Remix into react-router after v7.\n\n",
-          "id": "b8896764-bb9c-4224-95d5-86045087eae3",
+          "id": "0f3f8288-9cc1-4c19-bb62-1afdfbcdb84b",
           "children": [],
           "links": [
             {
@@ -1176,7 +1179,7 @@
           "title": "Next.js",
           "xid": "HdWq9ue0JdwmwqSIN2OD_",
           "description": "Next.js is an open-source development framework built on top of Node.js enabling React based web applications functionalities such as server-side rendering and generating static websites.\n\n",
-          "id": "a064ed95-f0d3-4dee-91e9-38cef7687185",
+          "id": "c3211600-cfb3-4144-9e50-b95e0f04b9b0",
           "children": [],
           "links": [
             {
@@ -1239,13 +1242,13 @@
       "title": "Forms",
       "xid": "KHcC5pFN3qLnsbPPKpYd2",
       "description": "Although you can build forms using vanilla React, it normally requires a lot of boilerplate code. This is because the form is built using a combination of state and props. To make it easier to manage forms, we use some sort of library.\n\n",
-      "id": "82b9df6a-617d-4959-b628-2256c5fada6f",
+      "id": "0322ef68-55df-4307-b494-74a4dca5cdfa",
       "children": [
         {
           "title": "React Hook Form",
           "xid": "_5ht0PAdVOJWPzTRS1mVg",
           "description": "React hook form is an opensource form library for react. Performant, flexible and extensible forms with easy-to-use validation.\n\n",
-          "id": "946001a2-7581-4fe4-ab85-31192c7716e1",
+          "id": "d7764e66-53d0-41a7-ae6c-43eb62114c6c",
           "children": [],
           "links": [
             {
@@ -1269,7 +1272,7 @@
           "title": "Formik",
           "xid": "gr1CaLvL7tFOkIRywSsID",
           "description": "Formik is another famous opensource form library that helps with getting values in and out of form state, validation and error messages, and handling form submissions.\n\n",
-          "id": "cae830b3-ea9b-4071-8d90-fad661ca8532",
+          "id": "aca81019-e550-4470-a503-7b9b5337a375",
           "children": [],
           "links": [
             {
@@ -1312,7 +1315,7 @@
       "title": "Suspense",
       "xid": "_F3WMxhzaK9F8_-zHDDMF",
       "description": "React Suspense is a feature in React that allows components to \"suspend\" rendering while they are waiting for something to happen, such as data to be fetched from an API or an image to be loaded. Suspense allows developers to create a more seamless user experience by rendering a placeholder or fallback component while the component is waiting for the required data to be available.\n\nHere is a general overview of how React Suspense works:\n\n*   A component that uses Suspense wraps a component that may need to \"suspend\" rendering in a `Suspense` component.\n*   The wrapped component throws a promise when it needs to suspend rendering.\n*   The `Suspense` component catches the promise and renders a fallback component while the promise is pending.\n*   When the promise resolves, the wrapped component is rendered with the required data.\n\n",
-      "id": "0bcdc776-85b0-46f4-8ca5-b3aac25c0db0",
+      "id": "9954c314-6d25-4bfc-801b-18683f512fe4",
       "children": [],
       "links": [
         {
@@ -1331,7 +1334,7 @@
       "title": "Portals",
       "xid": "DcDggX4OmmwvJGHwuV86t",
       "description": "Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.\n\n",
-      "id": "c6b19625-aaa7-4c51-b67b-8f9171a1b0ce",
+      "id": "1acda2d4-4921-4d9c-81c5-2f2c457ee319",
       "children": [],
       "links": [
         {
@@ -1350,7 +1353,7 @@
       "title": "Error Boundaries",
       "xid": "gMHMjsh0i8paLZUH5mDX3",
       "description": "In the past, JavaScript errors inside components used to corrupt React\u2019s internal state and cause it to emit cryptic errors on next renders. These errors were always caused by an earlier error in the application code, but React did not provide a way to handle them gracefully in components, and could not recover from them.\n\nError boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.\n\n",
-      "id": "7db9a4c8-c842-4d8b-94e2-59a212f0cccf",
+      "id": "9b144adb-cb88-4e4c-a3c5-6976b139cedd",
       "children": [],
       "links": [
         {
@@ -1364,13 +1367,13 @@
       "title": "Mobile Applications",
       "xid": "txARr3lgTvy-vJCj5zAb1",
       "description": "React Native is an open-source UI software framework created by Meta Platforms, Inc. It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows and UWP by enabling developers to use the React framework along with native platform capabilities.",
-      "id": "8a325aba-cc67-40a7-9bad-e1de740e76f0",
+      "id": "4a269093-d9f7-4c50-8144-eed608898920",
       "children": [
         {
           "title": "React Native",
           "xid": "NvXAq1vN2wpncdW-yTL4c",
           "description": "React Native is an open-source UI software framework created by Meta Platforms, Inc. It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows and UWP by enabling developers to use the React framework along with native platform capabilities.\n\n",
-          "id": "33c94fc9-c082-49bf-a38b-63fce7c2af8e",
+          "id": "80292025-9867-4a83-85fc-289587f23fbf",
           "children": [],
           "links": [
             {

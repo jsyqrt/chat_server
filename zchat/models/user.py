@@ -8,9 +8,6 @@ from flask import current_app, url_for
 from zchat.db import db
 from zchat.rand import *
 
-PLATFORM_DISCOUNT = 0.8
-SYSTEM_ACCOUNT = 0
-
 class User(db.Model):
     __tablename__ = 'USER'
 
