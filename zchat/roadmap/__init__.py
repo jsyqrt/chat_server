@@ -12,9 +12,9 @@ from zchat.auth import login_required, current_user, admin_required
 from zchat.db import db
 from zchat.models.user import UserOps
 from zchat.models.roadmap import RoadmapOps, RoadmapInteractionOps
-from zchat.mindmap.from_jd import mindmap_from_jd
-from zchat.mindmap.from_topic import mindmap_from_topic
-from zchat.mindmap.get_description import description_from_topic_path
+from zchat.roadmap.from_jd import mindmap_from_jd
+from zchat.roadmap.from_topic import mindmap_from_topic
+from zchat.roadmap.get_description import description_from_topic_path
 from zchat.meili import \
     add_user_mindmap_to_meili, \
     update_user_mindmap_to_meili, \
@@ -25,7 +25,7 @@ from zchat.meili import \
     find_user_mindmap_status_from_meili, \
     list_all_user_mindmap_status_from_meili
 
-bp = Blueprint('mindmap', __name__, url_prefix='/mindmap')
+bp = Blueprint('roadmap', __name__, url_prefix='/roadmap')
 
 class MindmapModifier:
     def __init__(self):
@@ -203,7 +203,9 @@ def demo_map():
         'mindmap_info': mindmap,
     })
 
-def stats_of_roadmap(mindmap):
+# ------------------------------------------------------------
+
+def stats_of_mindmap(mindmap):
     num_stages = len(mindmap.get('children', []))
 
     num_skills = 0
@@ -234,7 +236,7 @@ def official_maps():
         with open(os.path.join(current_app.instance_path, item['id']), 'r') as f:
             mindmap = json.load(f)
 
-        item['description'] = stats_of_roadmap(mindmap)
+        item['description'] = stats_of_mindmap(mindmap)
 
     return jsonify(official_roadmaps)
 
@@ -257,10 +259,10 @@ def get_map():
                 'completions': interaction_stats['completions'],
                 'favorites': interaction_stats['favorites'],
                 'shares': interaction_stats['shares'],
-                'mindmap_title': roadmap.roadmap_title,
-                'mindmap_type': roadmap.roadmap_type,
-                'mindmap_kind': roadmap.roadmap_kind,
-                'mindmap_info': mindmap,
+                'title': roadmap.roadmap_title,
+                'type': roadmap.roadmap_type,
+                'kind': roadmap.roadmap_kind,
+                'mindmap': mindmap,
             })
 
         # TODO other roadmap types
@@ -342,7 +344,7 @@ def recent_maps():
                 with open(os.path.join(current_app.instance_path, roadmap.roadmap_id), 'r') as f:
                     mindmap = json.load(f)
                 result = roadmap.to_dict()
-                result['description'] = stats_of_roadmap(mindmap)
+                result['description'] = stats_of_mindmap(mindmap)
                 result['progress'] = recent_map['completed_nodes'] / recent_map['total_nodes']
                 result['progressText'] = f'{recent_map["completed_nodes"]/recent_map["total_nodes"]*100:.2f}%'
                 result['stageText'] = f'{recent_map["completed_nodes"]}/{recent_map["total_nodes"]}已掌握'
