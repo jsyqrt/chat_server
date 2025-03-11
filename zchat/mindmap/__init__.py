@@ -22,7 +22,8 @@ from zchat.meili import \
     find_user_mindmaps_from_meili_created_by, \
     add_user_mindmap_status_to_meili, \
     update_user_mindmap_status_to_meili, \
-    find_user_mindmap_status_from_meili
+    find_user_mindmap_status_from_meili, \
+    list_all_user_mindmap_status_from_meili
 
 bp = Blueprint('mindmap', __name__, url_prefix='/mindmap')
 
@@ -202,6 +203,28 @@ def demo_map():
         'mindmap_info': mindmap,
     })
 
+def stats_of_roadmap(mindmap):
+    num_stages = len(mindmap.get('children', []))
+
+    num_skills = 0
+    for stage in mindmap.get('children', []):
+        num_skills += len(stage.get('children', []))
+
+    num_resources = 0
+    for stage in mindmap.get('children', []):
+        for skill in stage.get('children', []):
+            num_resources += len(skill.get('links', []))
+
+    resources_str = ''
+    if num_resources > 10:
+        resources_str = f'· {num_resources//10*10}+资源'
+    elif num_resources > 0:
+        resources_str = f'· {num_resources}个资源'
+    else:
+        resources_str = ''
+
+    return f'{num_stages}个阶段 · {num_skills}个核心技能' + resources_str
+
 @bp.route('/official_maps', methods=['GET'])
 @login_required
 def official_maps():
@@ -211,26 +234,7 @@ def official_maps():
         with open(os.path.join(current_app.instance_path, item['id']), 'r') as f:
             mindmap = json.load(f)
 
-        num_stages = len(mindmap.get('children', []))
-
-        num_skills = 0
-        for stage in mindmap.get('children', []):
-            num_skills += len(stage.get('children', []))
-
-        num_resources = 0
-        for stage in mindmap.get('children', []):
-            for skill in stage.get('children', []):
-                num_resources += len(skill.get('links', []))
-
-        resources_str = ''
-        if num_resources > 10:
-            resources_str = f'· {num_resources//10*10}+资源'
-        elif num_resources > 0:
-            resources_str = f'· {num_resources}个资源'
-        else:
-            resources_str = ''
-
-        item['description'] = f'{num_stages}个阶段 · {num_skills}个核心技能' + resources_str
+        item['description'] = stats_of_roadmap(mindmap)
 
     return jsonify(official_roadmaps)
 
@@ -258,6 +262,9 @@ def get_map():
                 'mindmap_kind': roadmap.roadmap_kind,
                 'mindmap_info': mindmap,
             })
+
+        # TODO other roadmap types
+
     return jsonify({'error': 'Roadmap not found'}), 404
 
 
@@ -303,3 +310,45 @@ def learning_status():
         current_app.logger.debug(f"learning status not found: {mindmap_id}")
         return jsonify({'message': 'Learning status not found'})
 
+
+@bp.route('/recent_maps', methods=['GET'])
+@login_required
+def recent_maps():
+    user_id = current_user.get_id_int()
+    mindmap_statuses = list_all_user_mindmap_status_from_meili(current_app, user_id)
+    recent_maps = []
+    for mindmap_status in mindmap_statuses:
+        total_nodes = len(mindmap_status.status)
+        completed_nodes = 0
+        for node in mindmap_status.status.items():
+            if node[1] == 'done':
+                completed_nodes += 1
+
+        recent_maps.append({
+            'mindmap_id': mindmap_status.mindmap_id,
+            'updated_at': mindmap_status.updated_at,
+            'completed_nodes': completed_nodes,
+            'total_nodes': total_nodes,
+        })
+
+    results = []
+
+    recent_maps = sorted(recent_maps, key=lambda x: x['updated_at'], reverse=True)
+    roadmap_ops = RoadmapOps(db.session)
+    for recent_map in recent_maps:
+        roadmap = roadmap_ops.get_roadmap_by_mindmap_id(recent_map['mindmap_id'])
+        if roadmap:
+            if roadmap.roadmap_type == 'official':
+                with open(os.path.join(current_app.instance_path, roadmap.roadmap_id), 'r') as f:
+                    mindmap = json.load(f)
+                result = roadmap.to_dict()
+                result['description'] = stats_of_roadmap(mindmap)
+                result['progress'] = recent_map['completed_nodes'] / recent_map['total_nodes']
+                result['progressText'] = f'{recent_map["completed_nodes"]/recent_map["total_nodes"]*100:.2f}%'
+                result['stageText'] = f'{recent_map["completed_nodes"]}/{recent_map["total_nodes"]}已掌握'
+                results.append(result)
+
+            # TODO other roadmap types
+
+
+    return jsonify(results)

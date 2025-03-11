@@ -515,6 +515,9 @@ class RoadmapOps:
     def get_roadmap(self, roadmap_id: str)->Roadmap:
         return self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
 
+    def get_roadmap_by_mindmap_id(self, mindmap_id: str)->Roadmap:
+        return self.session.query(Roadmap).filter_by(mindmap_id=mindmap_id).first()
+
     def get_public_roadmaps(self)->list:
         public_roadmaps = self.session.query(Roadmap).filter_by(roadmap_status=2).all()
         return [roadmap.to_dict() for roadmap in public_roadmaps]

@@ -82,3 +82,5 @@ def update_user_mindmap_status_to_meili(app, user_id, mindmap_status):
 def find_user_mindmap_status_from_meili(app, user_id, mindmap_id):
     return app.meili_client.index(f'user_mindmap_status_{user_id}').search('', { 'filter': [f'mindmap_id={mindmap_id}'] })
 
+def list_all_user_mindmap_status_from_meili(app, user_id):
+    return app.meili_client.index(f'user_mindmap_status_{user_id}').get_documents().results
