@@ -22,8 +22,9 @@ from zchat.meili import \
     find_user_mindmaps_from_meili_created_by, \
     add_user_mindmap_status_to_meili, \
     update_user_mindmap_status_to_meili, \
-    find_user_mindmap_status_from_meili, \
-    list_all_user_mindmap_status_from_meili
+    get_learning_status_from_meili, \
+    get_learning_list_from_meili, \
+    delete_index_from_meili
 
 bp = Blueprint('roadmap', __name__, url_prefix='/roadmap')
 
@@ -303,7 +304,7 @@ def submit_learning_status():
 def learning_status():
     mindmap_id = request.args.get('mindmap_id')
 
-    mindmap_status = find_user_mindmap_status_from_meili(current_app, current_user.get_id_int(), mindmap_id)
+    mindmap_status = get_learning_status_from_meili(current_app, current_user.get_id_int(), mindmap_id)
     if mindmap_status:
         mindmap_status = mindmap_status['hits'][0]
         current_app.logger.debug(f"learning status: {mindmap_status}")
@@ -316,19 +317,23 @@ def learning_status():
 @bp.route('/recent_maps', methods=['GET'])
 @login_required
 def recent_maps():
+    offset = int(request.args.get('offset', '0'))
+    limit = int(request.args.get('limit', '3'))
+
     user_id = current_user.get_id_int()
-    mindmap_statuses = list_all_user_mindmap_status_from_meili(current_app, user_id)
+    mindmap_statuses = get_learning_list_from_meili(current_app, user_id, offset, limit)
+
     recent_maps = []
     for mindmap_status in mindmap_statuses:
-        total_nodes = len(mindmap_status.status)
+        total_nodes = len(mindmap_status['status'])
         completed_nodes = 0
-        for node in mindmap_status.status.items():
+        for node in mindmap_status['status'].items():
             if node[1] == 'done':
                 completed_nodes += 1
 
         recent_maps.append({
-            'mindmap_id': mindmap_status.mindmap_id,
-            'updated_at': mindmap_status.updated_at,
+            'mindmap_id': mindmap_status['mindmap_id'],
+            'updated_at': mindmap_status['updated_at'],
             'completed_nodes': completed_nodes,
             'total_nodes': total_nodes,
         })
@@ -354,3 +359,14 @@ def recent_maps():
 
 
     return jsonify(results)
+
+# ------------------------------------------------------------
+# only for admin
+
+@bp.route('/delete_index', methods=['DELETE'])
+@login_required
+@admin_required
+def delete_index():
+    delete_index_from_meili(current_app, 'user_mindmap_status_1')
+    current_app.logger.debug('index deleted')
+    return jsonify({'message': 'Index deleted'})

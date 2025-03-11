@@ -49,6 +49,10 @@ def create_user_mindmap_status_index(app, user_id):
                 'mindmap_id',
                 'learning_status', # todo, doing, done
             ],
+            'sortableAttributes': [
+                'created_at',
+                'updated_at'
+            ]
         })
     return
 
@@ -79,8 +83,13 @@ def add_user_mindmap_status_to_meili(app, user_id, mindmap_status):
 def update_user_mindmap_status_to_meili(app, user_id, mindmap_status):
     return app.meili_client.index(f'user_mindmap_status_{user_id}').update_documents([mindmap_status])
 
-def find_user_mindmap_status_from_meili(app, user_id, mindmap_id):
+def get_learning_status_from_meili(app, user_id, mindmap_id):
     return app.meili_client.index(f'user_mindmap_status_{user_id}').search('', { 'filter': [f'mindmap_id={mindmap_id}'] })
 
-def list_all_user_mindmap_status_from_meili(app, user_id):
-    return app.meili_client.index(f'user_mindmap_status_{user_id}').get_documents().results
+def get_learning_list_from_meili(app, user_id, offset=0, limit=3):
+    return app.meili_client.index(f'user_mindmap_status_{user_id}').search('', { 'offset': offset, 'limit': limit, 'sort': ['updated_at:desc'] })['hits']
+
+# DANGER!
+# only for admin
+def delete_index_from_meili(app, index_name):
+    return app.meili_client.delete_index(index_name)
