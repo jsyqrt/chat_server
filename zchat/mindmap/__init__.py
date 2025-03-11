@@ -222,7 +222,15 @@ def official_maps():
             for skill in stage.get('children', []):
                 num_resources += len(skill.get('links', []))
 
-        item['description'] = f'{num_stages}个阶段 · {num_skills}个核心技能 · {num_resources}+学习资源'
+        resources_str = ''
+        if num_resources > 10:
+            resources_str = f'· {num_resources//10*10}+资源'
+        elif num_resources > 0:
+            resources_str = f'· {num_resources}个资源'
+        else:
+            resources_str = ''
+
+        item['description'] = f'{num_stages}个阶段 · {num_skills}个核心技能' + resources_str
 
     return jsonify(official_roadmaps)
 

@@ -1,5 +1,6 @@
 import openai
 import os
+import re
 
 def get_api_url_and_key(platform="groq"):
   if platform == "groq":
@@ -23,3 +24,12 @@ def get_response_from_llm(messages, model, max_tokens, platform="groq"):
     max_tokens=max_tokens,
   )
   return response.choices[0].message.content
+
+def get_json_blocks_from_llm_response(response):
+  # 定义正则表达式模式：匹配 ```json 和 ``` 之间的内容
+  pattern = r'```json\n(.*?)\n```'
+
+  # 查找所有匹配的代码块
+  json_blocks = re.findall(pattern, response, re.DOTALL)
+
+  return json_blocks

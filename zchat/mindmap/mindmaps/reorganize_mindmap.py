@@ -2,7 +2,7 @@ import json
 import uuid
 import re
 import os
-from zchat.apis.llm import get_response_from_llm
+from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response
 import yaml
 
 class AllMindmapLoader:
@@ -185,6 +185,7 @@ class MindmapFromFiles:
           "question_title": self.header_info.get('question_title', ''),
           "question_description": self.header_info.get('question_description', ''),
           "children": [],
+          "links": [],
         }
 
         # 创建一个字典来存储所有节点的引用
@@ -264,6 +265,70 @@ class MindmapFromFiles:
 
         return result
 
+    def translate_mindmap(self, mindmap):
+        mindmap_to_translate = {
+          "title": mindmap['title'],
+          "description": mindmap['description'],
+          "links": mindmap['links'],
+        }
+
+        if mindmap.get('question_title', None):
+          mindmap_to_translate['question_title'] = mindmap['question_title']
+
+        if mindmap.get('question_description', None):
+          mindmap_to_translate['question_description'] = mindmap['question_description']
+
+        mindmap_to_translate_json = json.dumps(mindmap_to_translate, indent=2)
+
+        system_prompt = """
+你是一个专业的翻译，擅长将英文翻译为中文，尤其是在保持专业术语的准确性，以及保持JSON格式方面。
+在翻译专业术语时，对于首次翻译，提供中文翻译并在括号内注明术语原文。
+在整个翻译中，对术语的翻译要连贯一致，不要出现同一个术语在不同的地方翻译不同的情况。
+翻译title，description的内容，如果字段存在时，翻译question_title，question_description的内容。
+翻译links中的title的内容。但保持links中的url和type的内容不变。
+保持JSON的格式不变。
+"""
+
+        user_prompt = f"""
+```json
+翻译下面的JSON：
+{mindmap_to_translate_json}
+```
+输出相同格式的JSON：
+"""
+        messages = [
+          {"role": "system", "content": system_prompt},
+          {"role": "user", "content": user_prompt},
+        ]
+
+        try_count = 0
+        while try_count < 3:
+            try_count += 1
+            try:
+                response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
+                # response = get_response_from_llm(messages, "deepseek-chat", 8192, platform='deepseek')
+                json_blocks = get_json_blocks_from_llm_response(response)
+                new_mindmap = json.loads(json_blocks[0])
+                print(new_mindmap)
+                break
+            except Exception as e:
+                print(f"error: {e}")
+
+        if try_count >= 3:
+            print('!!!!!!!! Failed to translate !!!!!!!!!! for json:')
+            print(mindmap_to_translate_json)
+
+        new_children = []
+        for child in mindmap['children']:
+            new_child = self.translate_mindmap(child)
+            new_children.append(new_child)
+        new_mindmap['children'] = new_children
+
+        new_mindmap['id'] = str(uuid.uuid4())
+        new_mindmap['xid'] = mindmap['id']
+
+        return new_mindmap
+
 if __name__ == "__main__":
     # all_mindmap_loader = AllMindmapLoader()
     # filename = "/Users/liuqian/mycode/github/sf/be/chat_server/zchat/mindmap/mindmaps/backend_png_gpt4o.json"
@@ -274,11 +339,25 @@ if __name__ == "__main__":
     all_mindmap_loader = AllMindmapLoader()
     base_dir = "/Users/liuqian/mycode/github/sf/archive/developer-roadmap/src/data/roadmaps"
     result_dir = "/Users/liuqian/mycode/github/sf/be/chat_server/zchat/mindmap/mindmaps"
-    for directory in os.listdir(base_dir):
+    # for directory in os.listdir(base_dir):
+    for directory in [
+      # "backend",
+      ]:
         if os.path.isdir(os.path.join(base_dir, directory)):
             if os.path.exists(os.path.join(base_dir, directory, "migration-mapping.json")):
                 mindmap_from_files = MindmapFromFiles(os.path.join(base_dir, directory), all_mindmap_loader)
-                json_str_result = json.dumps(mindmap_from_files.get_mindmap(), indent=2)
+
+                mindmap_en = mindmap_from_files.get_mindmap()
+
+                # 生成原始mindmap
+                json_str_result = json.dumps(mindmap_en, indent=2)
                 with open(os.path.join(result_dir, f"{directory}.json"), "w") as f:
                     print(f"writing {directory}.json")
+                    f.write(json_str_result)
+
+                # 生成翻译后的mindmap
+                mindmap_cn = mindmap_from_files.translate_mindmap(mindmap_en)
+                json_str_result = json.dumps(mindmap_cn, indent=2, ensure_ascii=False).replace("。", "。\n\n").replace("\n\n\n\n", "\n\n")
+                with open(os.path.join(result_dir, f"{directory}_cn.json"), "w") as f:
+                    print(f"writing {directory}_cn.json")
                     f.write(json_str_result)

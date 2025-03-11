@@ -161,6 +161,8 @@ class RoadmapOps:
         self.session = session
 
     def reset_official_roadmaps(self)->bool:
+        # backend_cn.json
+
         # nodejs.json
         # devops.json
         # server-side-game-developer.json
@@ -340,12 +342,22 @@ class RoadmapOps:
                 "kind": "role",
                 "status": 2,
             },
+            # backend_cn.json
+            {
+                "id": "backend_cn.json",
+                "icon": "⚙️",
+                "title": "后端开发",
+                "subtitle": "软件开发",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+            },
             # backend.json
             {
                 "id": "backend.json",
                 "icon": "⚙️",
-                "title": "后端开发",
-                "subtitle": "软件开发",
+                "title": "Backend Engineer",
+                "subtitle": "Software Development",
                 "type": "official",
                 "kind": "role",
                 "status": 2,
