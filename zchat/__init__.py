@@ -62,6 +62,9 @@ def create_app(test_config=None):
     # from . import appointment
     # app.register_blueprint(appointment.bp)
 
+    from . import customer_service
+    app.register_blueprint(customer_service.bp)
+
     from . import meili
     meili.init_app(app)
 

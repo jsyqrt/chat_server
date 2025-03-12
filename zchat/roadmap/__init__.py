@@ -416,8 +416,10 @@ def heading_quote():
         "学习是最不会背叛你的投资",
     ]
     user_id = current_user.get_id_int()
-    today = time.time() / 86400
-    random.seed(user_id + today)
+    today = int(time.time() / 86400)
+    seed = user_id + today
+    random.seed(seed)
+    current_app.logger.debug(f"user_id: {user_id}, today: {today}, seed: {seed}")
     quote = random.choice(quotes)
 
     return jsonify({'quote': quote})
