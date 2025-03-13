@@ -7,6 +7,7 @@ from flask import current_app, url_for
 
 from zchat.db import db
 from zchat.rand import *
+from zchat.meili import *
 
 class Roadmap(db.Model):
     __tablename__ = 'ROADMAP'
@@ -19,6 +20,7 @@ class Roadmap(db.Model):
     roadmap_kind = db.Column(db.String, nullable=False) # role, skill, concept
     roadmap_status = db.Column(db.Integer, nullable=False, default=0) # 0->create, 1->verified, 2->public
     mindmap_id = db.Column(db.String, nullable=False)
+    created_by = db.Column(db.String, nullable=True)
 
     create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
     update_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
@@ -89,7 +91,7 @@ class RoadmapInteractionOps:
                 self.session.commit()
                 return True
         else:
-            interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, participated=1)
+            interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, participanted=1)
             self.session.add(interaction)
             self.session.commit()
             return True
@@ -98,12 +100,12 @@ class RoadmapInteractionOps:
         interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
         if interaction:
             if interaction.completed == 0:
-                interaction.participated = 1
+                interaction.participanted = 1
                 interaction.completed = 1
                 self.session.commit()
                 return True
         else:
-            interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, participated=1, completed=1)
+            interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, participanted=1, completed=1)
             self.session.add(interaction)
             self.session.commit()
             return True
@@ -159,6 +161,27 @@ class RoadmapInteractionOps:
 class RoadmapOps:
     def __init__(self, session):
         self.session = session
+
+    def create_roadmap(self, id, icon, title, subtitle, type, kind, status, mindmap_id, created_by)->Roadmap:
+        try:
+            roadmap = Roadmap(
+                roadmap_id=id,
+                roadmap_icon=icon,
+                roadmap_title=title,
+                roadmap_subtitle=subtitle,
+                roadmap_type=type,
+                roadmap_kind=kind,
+                roadmap_status=status,
+                mindmap_id=mindmap_id,
+                created_by=created_by,
+            )
+            self.session.add(roadmap)
+            self.session.commit()
+            return roadmap
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.error(f'create_roadmap: {e}')
+            return None
 
     def reset_official_roadmaps(self)->bool:
         # backend_cn.json
@@ -487,6 +510,7 @@ class RoadmapOps:
             roadmap_type = item['type']
             roadmap_kind = item['kind']
             roadmap_status = item['status']
+            created_by = 'official'
 
             if self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first():
                 self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).delete()
@@ -500,9 +524,17 @@ class RoadmapOps:
                 roadmap_kind=roadmap_kind,
                 roadmap_status=roadmap_status,
                 mindmap_id=mindmap_id,
+                created_by=created_by,
             )
             self.session.add(roadmap)
             self.session.commit()
+
+            mindmap['roadmap_id'] = roadmap_id
+            mindmap['created_by'] = 'official'
+            mindmap['created_at'] = time.time()
+            mindmap['updated_at'] = time.time()
+            add_result = add_mindmap_to_meili(current_app, mindmap)
+            current_app.logger.debug(f'meili add_result: {add_result}')
 
             current_app.logger.info(f'reset_official_roadmaps: {roadmap_id} {roadmap_title} {roadmap_subtitle} {roadmap_type} {roadmap_kind} {roadmap_status} {mindmap_id}')
 

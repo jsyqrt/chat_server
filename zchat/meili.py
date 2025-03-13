@@ -8,25 +8,27 @@ def init_app(app):
     create_indexes_to_meili(app)
 
 def create_indexes_to_meili(app):
-    create_user_mindmaps_index(app)
+    create_mindmaps_index(app)
     return
 
-def create_user_mindmaps_index(app):
+# --- mindmaps ---
+
+def create_mindmaps_index(app):
     exists = False
     for index in app.meili_client.get_indexes()['results']:
-        if index.uid == 'user_mindmaps':
+        if index.uid == 'mindmaps':
             exists = True
     if not exists:
-        app.meili_client.create_index( 'user_mindmaps', { 'primaryKey': 'uuid' })
-        app.meili_client.index('user_mindmaps').update_settings({
+        app.meili_client.create_index( 'mindmaps', { 'primaryKey': 'id' })
+        app.meili_client.index('mindmaps').update_settings({
             'searchableAttributes': [
-                'mindmap_title',
+                'title',
+                'description',
             ],
             'filterableAttributes': [
-                'mindmap_title',
-                'mindmap_type',
-                'mindmap_kind',
-                'created_by'
+                'title',
+                'created_by',
+                'roadmap_id',
             ],
             'sortableAttributes': [
                 'created_at',
@@ -34,6 +36,46 @@ def create_user_mindmaps_index(app):
             ]
         })
     return
+
+def add_mindmap_to_meili(app, mindmap):
+    return app.meili_client.index('mindmaps').add_documents([mindmap])
+
+def update_mindmap_to_meili(app, mindmap):
+    return app.meili_client.index('mindmaps').update_documents([mindmap])
+
+def get_mindmap_from_meili(app, mindmap_id):
+    doc = app.meili_client.index('mindmaps').get_document(mindmap_id)
+    result = {}
+    for key, value in doc:
+        result[key] = value
+    return result
+
+def get_mindmap_from_meili_by_roadmap_id(app, roadmap_id):
+    result = {}
+    hits = app.meili_client.index('mindmaps').search('', { 'filter': [f'roadmap_id={roadmap_id}'] })
+    for hit in hits['hits']:
+        result = hit
+        break
+    return result
+
+def search_mindmaps_from_meili_for(app, topic, offset=0, limit=10):
+    result = []
+    hits = app.meili_client.index('mindmaps').search(topic, { 'offset': offset, 'limit': limit, 'sort': ['updated_at:desc'] })
+    for hit in hits['hits']:
+        result.append(hit)
+    return result
+
+def find_mindmaps_from_meili_created_by(app, user_id):
+    result = []
+    hits = app.meili_client.index('mindmaps').search('', { 'filter': [f'created_by={user_id}'] })
+    for hit in hits['hits']:
+        result.append(hit)
+    return result
+
+def delete_mindmap_from_meili(app, mindmap_id):
+    return app.meili_client.index('mindmaps').delete_document(mindmap_id)
+
+# --- user mindmap status ---
 
 def create_user_mindmap_status_index(app, user_id):
     exists = False
@@ -55,26 +97,6 @@ def create_user_mindmap_status_index(app, user_id):
             ]
         })
     return
-
-def add_user_mindmap_to_meili(app, mindmap):
-    return app.meili_client.index('user_mindmaps').add_documents([mindmap])
-
-def update_user_mindmap_to_meili(app, mindmap):
-    return app.meili_client.index('user_mindmaps').update_documents([mindmap])
-
-def find_mindmaps_from_meili_for(app, topic):
-    result = []
-    hits = app.meili_client.index('user_mindmaps').search('', { 'limit': 10, 'filter': [f'mindmap_title={topic}'] })
-    for hit in hits['hits']:
-        result.append(hit)
-    return result
-
-def find_user_mindmaps_from_meili_created_by(app, user_id):
-    result = []
-    hits = app.meili_client.index('user_mindmaps').search('', { 'filter': [f'created_by={user_id}'] })
-    for hit in hits['hits']:
-        result.append(hit)
-    return result
 
 def add_user_mindmap_status_to_meili(app, user_id, mindmap_status):
     create_user_mindmap_status_index(app, user_id)

@@ -119,6 +119,24 @@ def update_signature():
     succeed = user_ops.update_signature(id=current_user.get_id_int(), signature=signature)
     return {'error': 'Signature updated successfully!'}
 
+@bp.route('/update_interested_tags', methods=['POST'])
+@login_required
+def update_interested_tags():
+    interested_industries = request.form['interested_industries']
+    interested_roles = request.form['interested_roles']
+    interested_skills = request.form['interested_skills']
+
+    user_ops = UserOps(session=db.session)
+    succeed = user_ops.update_interested_tags(
+        id=current_user.get_id_int(),
+        interested_industries=interested_industries,
+        interested_roles=interested_roles,
+        interested_skills=interested_skills
+    )
+    if succeed:
+        return {'error': 'Interested tags updated successfully!'}
+    return {'error': 'Failed to update interested tags'}, 400
+
 @bp.route('/update_info', methods=['POST'])
 @login_required
 def update_info():
@@ -130,6 +148,10 @@ def update_info():
         yearofwork = request.form['yearofwork']
         signature_text = request.form['signature_text']
 
+        interested_industries = request.form['interested_industries']
+        interested_roles = request.form['interested_roles']
+        interested_skills = request.form['interested_skills']
+
         user_ops = UserOps(session=db.session)
         succeed = user_ops.update_info(
             id=current_user.get_id_int(),
@@ -139,6 +161,9 @@ def update_info():
             edubg=edubg,
             yearofwork=yearofwork,
             signature_text=signature_text,
+            interested_industries=interested_industries,
+            interested_roles=interested_roles,
+            interested_skills=interested_skills,
         )
         if succeed:
             return { "error": "Update Succeed!" }, 200

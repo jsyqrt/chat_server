@@ -1,10 +1,10 @@
 import re
 from zchat.apis.llm import get_response_from_llm
 
-system_prompt_template = """
+system_prompt = """
 请分析提供的职位描述（JD），提取所有关键信息，并以JSON格式输出。关键信息包括但不限于职位标题、地点、薪资范围、学历要求、工作年限要求、部门、主要职责和所需技能，确保信息全面且结构清晰。
 
-然后，根据用户提供的职场经验（{work_experience}），为用户规划一条学习路径，以达到该JD的要求。学习路径需详细分析JD，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
+然后，为用户规划一条学习路径，以达到该JD的要求。学习路径需详细分析JD，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
 
 最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。
 """
@@ -87,25 +87,33 @@ user_prompt= """
     }
 }
 ```
-
-"""
-
-jd_prompt_template = """
-JD信息：
-```text
-{jd}
-```
-
 注意:
-* 学习路径的所有概念总数需要大于200个，需要包含你知道的所有相关概念。
+* 学习路径的所有概念总数需要大于100个，需要包含你知道的所有相关概念。
 * 确保输出严格遵循上述JSON Schema，确保数据完整性和一致性。
 
 """
 
-def get_llm_response(jd, work_experience):
+jd_prompt_template = """
+JD信息，你需要考虑JD中要求的技能和经验，为用户量身定制学习计划，设定不同阶段，以及每一个阶段要学习的知识，技能，或者要实践和参与的项目等：
+```text
+{jd}
+```
+"""
+
+resume_prompt_template = """
+简历信息，你需要考虑用户的职场经验，以及用户掌握的技能，为用户提供更合适，更准确的学习路径：
+```text
+{resume}
+```
+"""
+
+
+def get_llm_response(jd, resume):
   messages=[
-      {"role": "system", "content": system_prompt_template.format(work_experience=work_experience)},
-      {"role": "user", "content": user_prompt + jd_prompt_template.format(jd=jd)},
+      {"role": "system", "content": system_prompt},
+      {"role": "user", "content":  jd_prompt_template.format(jd=jd) + \
+                                    (resume_prompt_template.format(resume=resume) if resume else '') + \
+                                      user_prompt },
     ]
   print(messages)
   response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
@@ -120,9 +128,12 @@ def parse_llm_response(response):
 
   return json_blocks
 
-def mindmap_from_jd(jd, work_experience):
-  response = get_llm_response(jd, work_experience)
+def mindmap_from_jd_and_resume(jd, resume):
+  response = get_llm_response(jd, resume)
   json_blocks = parse_llm_response(response)
+  if len(json_blocks) < 2:
+    return None, None
+
   jd_info_json = json_blocks[0]
   mindmap_json = json_blocks[1]
 

@@ -2,10 +2,13 @@ import re
 from zchat.apis.llm import get_response_from_llm
 
 system_prompt_template = """
-请分析提供的topic，为用户规划一条学习路径。学习路径需详细分析topic，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
+请分析用户提供的topic，为用户规划一条学习路径。学习路径需详细分析topic，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
+
+要求总共不少于100个节点。
 
 最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。
 
+如果用户输入的主题，涉及政治敏感、暴力、色情、赌博、毒品、枪支等敏感内容，请直接返回None。
 """
 
 user_prompt= """
@@ -58,17 +61,27 @@ user_prompt= """
 """
 
 topic_prompt_template = """
-topic信息：
-```text
-{topic}
-```
+topic信息： {topic}
 """
 
-def get_llm_response(topic):
+learning_goal_prompt_template = """
+学习目标： {learning_goal}
+"""
+
+skill_level_prompt_template = """
+用户水平： {skill_level}
+"""
+
+def get_llm_response(topic, learning_goal, skill_level):
   messages=[
-    {"role": "system", "content": system_prompt_template.format(topic=topic)},
-    {"role": "user", "content": user_prompt + topic_prompt_template.format(topic=topic)},
+    {"role": "system", "content": system_prompt_template},
+    {"role": "user", "content":
+        topic_prompt_template.format(topic=topic) + \
+        (learning_goal_prompt_template.format(learning_goal=learning_goal) if learning_goal else '') + \
+        (skill_level_prompt_template.format(skill_level=skill_level) if skill_level else '') + \
+        user_prompt  },
   ]
+  print(messages)
   response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
   return response
 
@@ -81,9 +94,12 @@ def parse_llm_response(response):
 
   return json_blocks
 
-def mindmap_from_topic(topic):
-  response = get_llm_response(topic)
+def mindmap_from_topic(topic, learning_goal, skill_level):
+  response = get_llm_response(topic, learning_goal, skill_level)
   json_blocks = parse_llm_response(response)
+  print(json_blocks)
+  if len(json_blocks) == 0:
+    return None
   mindmap_json = json_blocks[0]
 
   return mindmap_json
@@ -94,5 +110,13 @@ if __name__ == "__main__":
   招聘基础知识
   """
 
-  mindmap_json = mindmap_from_topic(topic)
+  learning_goal = """
+  了解招聘流程和招聘渠道
+  """
+
+  skill_level = """
+  初级
+  """
+
+  mindmap_json = mindmap_from_topic(topic, learning_goal, skill_level)
   print(mindmap_json)

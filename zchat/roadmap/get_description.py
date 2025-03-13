@@ -3,7 +3,7 @@ import openai
 import os
 
 system_prompt_template = """
-用户正在学习一个大的topic：{topic}。
+用户正在学习一个topic：{topic}。
 在思维导图中，用户已经学习了部分内容，现在需要更详细的学习。 请根据用户提供的思维导图路径topic/sub_topic/leaf_topic的关键词信息，尽可能完善地描述right most的topic的内容。
 """
 
@@ -74,6 +74,9 @@ def parse_llm_response(response):
 def description_from_topic_path(topic, topic_path):
   response = get_llm_response(topic, topic_path)
   json_blocks = parse_llm_response(response)
+  if len(json_blocks) == 0:
+    return None
+
   description = json_blocks[0]
 
   return description

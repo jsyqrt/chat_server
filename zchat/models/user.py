@@ -22,6 +22,10 @@ class User(db.Model):
     edubg = db.Column(db.String, nullable=False, default='未知')
     yearofwork = db.Column(db.String, nullable=False, default='未知')
 
+    interested_industries = db.Column(db.String, nullable=True)
+    interested_roles = db.Column(db.String, nullable=True)
+    interested_skills = db.Column(db.String, nullable=True)
+
     create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
 
     __table_args__ = (
@@ -49,6 +53,10 @@ class User(db.Model):
             'gender' : self.gender,
             'edubg' : self.edubg,
             'yearofwork' : self.yearofwork,
+
+            'interested_industries' : self.interested_industries,
+            'interested_roles' : self.interested_roles,
+            'interested_skills' : self.interested_skills,
 
             'create_timestamp': self.create_timestamp,
         }
@@ -175,7 +183,25 @@ class UserOps:
             current_app.logger.warn(f"failed to update user signature {id}, error {str(e)}")
         return False
 
-    def update_info(self, id, phone_number, nickname, gender, edubg, yearofwork, signature_text)->bool:
+    def update_interested_tags(self, id, interested_industries, interested_roles, interested_skills)->bool:
+        try:
+            user = self.session.query(User).filter_by(id=id).first()
+            if user:
+                user.interested_industries = interested_industries
+                user.interested_roles = interested_roles
+                user.interested_skills = interested_skills
+
+                self.session.commit()
+                current_app.logger.debug(f"updated user interested tags {id}")
+                return True
+            else:
+                current_app.logger.warn(f"no user {id}")
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"failed to update user interested tags {id}, error {str(e)}")
+        return False
+
+    def update_info(self, id, phone_number, nickname, gender, edubg, yearofwork, signature_text, interested_industries, interested_roles, interested_skills)->bool:
         try:
             user = self.session.query(User).filter_by(id=id).first()
             if user:
@@ -187,6 +213,10 @@ class UserOps:
                 user.gender = gender
                 user.edubg = edubg
                 user.yearofwork = yearofwork
+
+                user.interested_industries = interested_industries
+                user.interested_roles = interested_roles
+                user.interested_skills = interested_skills
 
                 self.session.commit()
                 current_app.logger.debug(f"updated user {id}")

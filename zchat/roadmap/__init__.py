@@ -3,30 +3,35 @@ import json
 import uuid
 import time
 import random
+from enum import Enum
 
 from flask import request, current_app, Blueprint, jsonify
 from werkzeug.utils import secure_filename
-from ocrmac import ocrmac
 
 from zchat.auth import login_required, current_user, admin_required
 from zchat.db import db
 from zchat.models.user import UserOps
 from zchat.models.roadmap import RoadmapOps, RoadmapInteractionOps
-from zchat.roadmap.from_jd import mindmap_from_jd
+from zchat.roadmap.from_jd import mindmap_from_jd_and_resume
 from zchat.roadmap.from_topic import mindmap_from_topic
 from zchat.roadmap.get_description import description_from_topic_path
-from zchat.meili import \
-    add_user_mindmap_to_meili, \
-    update_user_mindmap_to_meili, \
-    find_mindmaps_from_meili_for, \
-    find_user_mindmaps_from_meili_created_by, \
-    add_user_mindmap_status_to_meili, \
-    update_user_mindmap_status_to_meili, \
-    get_learning_status_from_meili, \
-    get_learning_list_from_meili, \
-    delete_index_from_meili
+from zchat.meili import *
+from zchat.apis.ocr import ocr_file
 
 bp = Blueprint('roadmap', __name__, url_prefix='/roadmap')
+
+class RoadmapType(Enum):
+    OFFICIAL = 'official'
+    USER = 'user'
+
+class RoadmapKind(Enum):
+    SKILL = 'skill'
+    JOB = 'job'
+
+class RoadmapStatus(Enum):
+    CREATED = 0
+    VERIFIED = 1
+    PUBLIC = 2
 
 class MindmapModifier:
     def __init__(self):
@@ -49,8 +54,8 @@ class MindmapModifier:
     def generate_for_map(self, map):
         updated_map = map
         updated_map['id'] = self.generate_id()
-        updated_map['description'] = map.get('title')
-        updated_map['done'] = random.random() > 0.7
+        # updated_map['description'] = map.get('title')
+        # updated_map['done'] = random.random() > 0.7
 
         children = map.get('children', [])
         if children:
@@ -63,32 +68,40 @@ class MindmapModifier:
         return updated_map
 
 
-@bp.route('/from_jd_image', methods=['POST'])
+@bp.route('/create_from_jd_and_resume', methods=['POST'])
 @login_required
-def from_jd_image():
-    image_file = request.files.get('image')
-    if not image_file:
-        return jsonify({'error': 'No image file provided'}), 400
+def create_from_jd_and_resume():
+    jd_file = request.files.get('jd_file', None)
+    jd_text = request.form.get('jd_text', None)
+    resume_file = request.files.get('resume_file', None)
+    user_id = current_user.get_id_int()
 
-    current_app.logger.debug("received jd image")
+    if not jd_file and not jd_text:
+        return jsonify({'error': 'No JD file or JD text provided'}), 400
 
-    filename = secure_filename(image_file.filename)
-    file_path = os.path.join(current_app.static_folder, 'images', filename)
-    image_file.save(file_path)
+    if jd_file:
+        filename = secure_filename(jd_file.filename)
+        file_path = os.path.join(current_app.static_folder, 'images', filename)
+        jd_file.save(file_path)
+        jd = ocr_file(file_path)
+    elif jd_text:
+        jd = jd_text
+    else:
+        pass
 
-    current_app.logger.debug(f"saved jd image to {file_path}")
+    if resume_file:
+        filename = secure_filename(resume_file.filename)
+        file_path = os.path.join(current_app.static_folder, 'images', filename)
+        resume_file.save(file_path)
+        resume = ocr_file(file_path)
+    else:
+        resume = ''
 
-    work_experience = request.form.get('work_experience', '1-3年')
+    current_app.logger.debug(f"received jd text: {jd}, resume text: {resume}")
 
-    # 处理图片文件
-    annotations = ocrmac.OCR(file_path, language_preference=['zh-Hans']).recognize()
-    jd = '\n'.join([a[0] for a in annotations])
+    jd_info_json, mindmap_json = mindmap_from_jd_and_resume(jd, resume)
 
-    current_app.logger.debug(f"ocr result: {jd}")
-
-    jd_info_json, mindmap_json = mindmap_from_jd(jd, work_experience)
-
-    current_app.logger.debug(f"got mindmap json")
+    current_app.logger.debug(f"got mindmap json, jd_info_json: {jd_info_json}, mindmap_json: {mindmap_json}")
 
     is_valid = False
     max_retries = 3
@@ -99,58 +112,140 @@ def from_jd_image():
             is_valid = True
         except Exception as e:
             # try again
-            jd_info_json, mindmap_json = mindmap_from_jd(jd, work_experience)
+            jd_info_json, mindmap_json = mindmap_from_jd_and_resume(jd, resume)
             max_retries -= 1
 
+    if not jd_info or not mindmap_info:
+        return jsonify({'error': 'Failed to create mindmap'}), 400
+
     mindmap_id_generator = MindmapModifier()
-    mindmap_info = mindmap_id_generator.generate(mindmap_info)
-    mindmap = {
-        "uuid": str(uuid.uuid4()),
-        'mindmap_title': jd_info['job_title'],
-        'mindmap_type': 'user',
-        'mindmap_kind': 'job',
-        'jd_info': jd_info,
-        'mindmap_info': mindmap_info,
-        'created_at': time.time(),
-        'updated_at': time.time(),
-        'created_by': current_user.get_id_int(),
-    }
+    mindmap = mindmap_id_generator.generate(mindmap_info)
+    mindmap['roadmap_id'] = str(uuid.uuid4())
+    mindmap['created_by'] = user_id
+    mindmap['created_at'] = time.time()
+    mindmap['updated_at'] = time.time()
+    mindmap['jd'] = jd_info
 
-    add_user_mindmap_to_meili(current_app, mindmap)
-    return jsonify(mindmap)
+    roadmap_id = mindmap['roadmap_id']
+    # https://emojipedia.org/people
+    roadmap_icon = '🧑‍💻'
+    roadmap_title = mindmap['title']
+    roadmap_subtitle = '定制专属职业成长路径'
+    roadmap_type = RoadmapType.USER.value
+    roadmap_kind = RoadmapKind.JOB.value
+    roadmap_status = RoadmapStatus.VERIFIED.value
+    mindmap_id = mindmap['id']
+    created_by = user_id
 
-@bp.route('/from_topic', methods=['GET'])
+    roadmap_ops = RoadmapOps(db.session)
+    roadmap = roadmap_ops.create_roadmap(
+        id=roadmap_id,
+        icon=roadmap_icon,
+        title=roadmap_title,
+        subtitle=roadmap_subtitle,
+        type=roadmap_type,
+        kind=roadmap_kind,
+        status=roadmap_status,
+        mindmap_id=mindmap_id,
+        created_by=created_by,
+    )
+
+    interaction_ops = RoadmapInteractionOps(db.session)
+    interaction_ops.participant(roadmap_id, user_id)
+    interaction_ops.favorite(roadmap_id, user_id)
+
+    add_mindmap_to_meili(current_app, mindmap)
+
+    return jsonify({
+        'participants': 1,
+        'completions': 0,
+        'favorites': 1,
+        'shares': 0,
+        'id': roadmap.roadmap_id,
+        'icon': roadmap.roadmap_icon,
+        'title': roadmap.roadmap_title,
+        'subtitle': roadmap.roadmap_subtitle,
+        'type': roadmap.roadmap_type,
+        'kind': roadmap.roadmap_kind,
+        'mindmap': mindmap,
+    })
+
+
+@bp.route('/create_from_topic', methods=['POST'])
 @login_required
-def from_topic():
-    topic = request.args.get('topic')
-    mindmap_json = mindmap_from_topic(topic)
+def create_from_topic():
+    topic = request.form.get('topic')
+    learning_goal = request.form.get('learning_goal')
+    skill_level = request.form.get('skill_level')
+    user_id = current_user.get_id_int()
+
 
     is_valid = False
     max_retries = 3
     while not is_valid and max_retries > 0:
         try:
-            mindmap_info = json.loads(mindmap_json)
-            is_valid = True
+            mindmap = mindmap_from_topic(topic, learning_goal, skill_level)
+            if mindmap:
+                mindmap = json.loads(mindmap)
+                is_valid = True
         except Exception as e:
             # try again
-            mindmap_json = mindmap_from_topic(topic)
+            mindmap = mindmap_from_topic(topic, learning_goal, skill_level)
             max_retries -= 1
 
-    mindmap_id_generator = MindmapModifier()
-    mindmap_info = mindmap_id_generator.generate(mindmap_info)
-    mindmap = {
-        "uuid": str(uuid.uuid4()),
-        'mindmap_title': topic,
-        'mindmap_type': 'user',
-        'mindmap_kind': 'skill',
-        'mindmap_info': mindmap_info,
-        'created_at': time.time(),
-        'updated_at': time.time(),
-        'created_by': current_user.get_id_int(),
-    }
+    if not mindmap:
+        return jsonify({'error': 'Failed to create mindmap'}), 400
 
-    add_user_mindmap_to_meili(current_app, mindmap)
-    return jsonify(mindmap)
+    mindmap_id_generator = MindmapModifier()
+    mindmap = mindmap_id_generator.generate(mindmap)
+    mindmap['roadmap_id'] = str(uuid.uuid4())
+    mindmap['created_by'] = user_id
+    mindmap['created_at'] = time.time()
+    mindmap['updated_at'] = time.time()
+
+    roadmap_id = mindmap['roadmap_id']
+    # https://emojipedia.org/people
+    roadmap_icon = '🧑‍💻'
+    roadmap_title = topic
+    roadmap_subtitle = learning_goal
+    roadmap_type = RoadmapType.USER.value
+    roadmap_kind = RoadmapKind.SKILL.value
+    roadmap_status = RoadmapStatus.VERIFIED.value
+    mindmap_id = mindmap['id']
+    created_by = user_id
+
+    roadmap_ops = RoadmapOps(db.session)
+    roadmap = roadmap_ops.create_roadmap(
+        id=roadmap_id,
+        icon=roadmap_icon,
+        title=roadmap_title,
+        subtitle=roadmap_subtitle,
+        type=roadmap_type,
+        kind=roadmap_kind,
+        status=roadmap_status,
+        mindmap_id=mindmap_id,
+        created_by=created_by,
+    )
+
+    interaction_ops = RoadmapInteractionOps(db.session)
+    interaction_ops.participant(roadmap_id, user_id)
+    interaction_ops.favorite(roadmap_id, user_id)
+
+    add_mindmap_to_meili(current_app, mindmap)
+
+    return jsonify({
+        'participants': 0,
+        'completions': 0,
+        'favorites': 0,
+        'shares': 0,
+        'id': roadmap.roadmap_id,
+        'icon': roadmap.roadmap_icon,
+        'title': roadmap.roadmap_title,
+        'subtitle': roadmap.roadmap_subtitle,
+        'type': roadmap.roadmap_type,
+        'kind': roadmap.roadmap_kind,
+        'mindmap': mindmap,
+    })
 
 @bp.route('/search_topic', methods=['GET'])
 @login_required
@@ -185,25 +280,6 @@ def description():
 
     return jsonify(description_info)
 
-@bp.route('/demo_map', methods=['GET'])
-# @login_required
-def demo_map():
-    # name = 'backend-engineer.json'
-    name = 'mybackend.json'
-    with open(os.path.join(current_app.instance_path, name), 'r') as f:
-        mindmap = json.load(f)
-    # mindmap_id_generator = MindmapModifier()
-    # mindmap = mindmap_id_generator.generate(mindmap)
-    return jsonify({
-        'participants': 1258,
-        'completions': 342,
-        'favorites': 567,
-        'mindmap_title': '后端工程师学习路径',
-        'mindmap_type': 'official',
-        'mindmap_kind': 'role',
-        'mindmap_info': mindmap,
-    })
-
 # ------------------------------------------------------------
 
 def stats_of_mindmap(mindmap):
@@ -234,9 +310,7 @@ def official_maps():
     roadmap_ops = RoadmapOps(db.session)
     official_roadmaps = roadmap_ops.get_official_roadmaps()
     for item in official_roadmaps:
-        with open(os.path.join(current_app.instance_path, item['id']), 'r') as f:
-            mindmap = json.load(f)
-
+        mindmap = get_mindmap_from_meili_by_roadmap_id(current_app, item['id'])
         item['description'] = stats_of_mindmap(mindmap)
 
     return jsonify(official_roadmaps)
@@ -248,37 +322,51 @@ def get_map():
     roadmap_ops = RoadmapOps(db.session)
     roadmap = roadmap_ops.get_roadmap(id)
     if roadmap:
-        if roadmap.roadmap_type == 'official':
-            with open(os.path.join(current_app.instance_path, id), 'r') as f:
-                mindmap = json.load(f)
+        mindmap = get_mindmap_from_meili_by_roadmap_id(current_app, id)
+        interaction_ops = RoadmapInteractionOps(db.session)
+        interaction_stats = interaction_ops.get_stats(id)
 
-            interaction_ops = RoadmapInteractionOps(db.session)
-            interaction_stats = interaction_ops.get_stats(id)
-
-            return jsonify({
-                'participants': interaction_stats['participants'],
-                'completions': interaction_stats['completions'],
-                'favorites': interaction_stats['favorites'],
-                'shares': interaction_stats['shares'],
-                'title': roadmap.roadmap_title,
-                'type': roadmap.roadmap_type,
-                'kind': roadmap.roadmap_kind,
-                'mindmap': mindmap,
-            })
-
-        # TODO other roadmap types
+        return jsonify({
+            'participants': interaction_stats['participants'],
+            'completions': interaction_stats['completions'],
+            'favorites': interaction_stats['favorites'],
+            'shares': interaction_stats['shares'],
+            'title': roadmap.roadmap_title,
+            'type': roadmap.roadmap_type,
+            'kind': roadmap.roadmap_kind,
+            'mindmap': mindmap,
+        })
 
     return jsonify({'error': 'Roadmap not found'}), 404
 
 
 @bp.route('/reset_official_roadmaps', methods=['SET'])
-@login_required
-@admin_required
+# @login_required
+# @admin_required
 def reset_official_roadmaps():
     roadmap_ops = RoadmapOps(db.session)
     roadmap_ops.reset_official_roadmaps()
     return jsonify({'message': 'Official roadmaps reset'})
 
+
+@bp.route('/submit_update', methods=['POST'])
+@login_required
+def submit_update():
+    mindmap_id = request.form.get('mindmap_id')
+    mindmap = request.form.get('mindmap')
+    mindmap = json.loads(mindmap)
+
+    old_mindmap = get_mindmap_from_meili(current_app, mindmap_id)
+    if old_mindmap:
+        if old_mindmap['created_by'] == current_user.get_id_int():
+            mindmap['updated_at'] = time.time()
+            result =  add_mindmap_to_meili(current_app, mindmap)
+            current_app.logger.debug(f"update mindmap: {result}")
+            return jsonify({'message': 'Update submitted'})
+        else:
+            return jsonify({'error': 'You are not the creator of this roadmap'}), 403
+
+    return jsonify({'error': 'Roadmap not found'}), 404
 
 @bp.route('/submit_learning_status', methods=['POST'])
 @login_required
@@ -305,7 +393,7 @@ def learning_status():
     mindmap_id = request.args.get('mindmap_id')
 
     mindmap_status = get_learning_status_from_meili(current_app, current_user.get_id_int(), mindmap_id)
-    if mindmap_status:
+    if mindmap_status and len(mindmap_status['hits']) > 0:
         mindmap_status = mindmap_status['hits'][0]
         current_app.logger.debug(f"learning status: {mindmap_status}")
         return jsonify(mindmap_status)
@@ -345,18 +433,12 @@ def recent_maps():
     for recent_map in recent_maps:
         roadmap = roadmap_ops.get_roadmap_by_mindmap_id(recent_map['mindmap_id'])
         if roadmap:
-            if roadmap.roadmap_type == 'official':
-                with open(os.path.join(current_app.instance_path, roadmap.roadmap_id), 'r') as f:
-                    mindmap = json.load(f)
-                result = roadmap.to_dict()
-                result['description'] = stats_of_mindmap(mindmap)
-                result['progress'] = recent_map['completed_nodes'] / recent_map['total_nodes']
-                result['progressText'] = f'{recent_map["completed_nodes"]/recent_map["total_nodes"]*100:.2f}%'
-                result['stageText'] = f'{recent_map["completed_nodes"]}/{recent_map["total_nodes"]}已掌握'
-                results.append(result)
-
-            # TODO other roadmap types
-
+            mindmap = get_mindmap_from_meili_by_roadmap_id(current_app, roadmap.roadmap_id)
+            result = roadmap.to_dict()
+            result['description'] = stats_of_mindmap(mindmap)
+            result['completed'] = recent_map['completed_nodes']
+            result['total'] = recent_map['total_nodes']
+            results.append(result)
 
     return jsonify(results)
 
@@ -431,6 +513,7 @@ def heading_quote():
 @login_required
 @admin_required
 def delete_index():
-    delete_index_from_meili(current_app, 'user_mindmap_status_1')
+    index_name = request.args.get('name')
+    delete_index_from_meili(current_app, index_name)
     current_app.logger.debug('index deleted')
     return jsonify({'message': 'Index deleted'})
