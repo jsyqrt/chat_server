@@ -1,6 +1,5 @@
 import re
-import openai
-import os
+from zchat.apis.llm import get_response_from_llm
 
 system_prompt_template = """
 用户正在学习一个topic：{topic}。
@@ -46,21 +45,13 @@ output_schema = """
 """
 
 def get_llm_response(topic, topic_path):
-  client = openai.OpenAI(
-    base_url="https://api.groq.com/openai/v1",
-    api_key=os.getenv("GROQ_API_KEY"),
-    # base_url="http://127.0.0.1:8080/v1",
-  )
-  response = client.chat.completions.create(
-    model="qwen-2.5-32b",
-    # model="mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
-    messages=[
-      {"role": "system", "content": system_prompt_template.format(topic=topic)},
-      {"role": "user", "content": user_prompt_template.format(topic_path=topic_path) + output_schema},
-    ],
-    max_tokens=32768,
-  )
-  return response.choices[0].message.content
+  messages=[
+    {"role": "system", "content": system_prompt_template.format(topic=topic)},
+    {"role": "user", "content": user_prompt_template.format(topic_path=topic_path) + output_schema},
+  ]
+  print(messages)
+  response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
+  return response
 
 def parse_llm_response(response):
   # 定义正则表达式模式：匹配 ```json 和 ``` 之间的内容
