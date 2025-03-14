@@ -234,9 +234,9 @@ def create_from_topic():
     add_mindmap_to_meili(current_app, mindmap)
 
     return jsonify({
-        'participants': 0,
+        'participants': 1,
         'completions': 0,
-        'favorites': 0,
+        'favorites': 1,
         'shares': 0,
         'id': roadmap.roadmap_id,
         'icon': roadmap.roadmap_icon,
@@ -310,7 +310,7 @@ def official_maps():
     roadmap_ops = RoadmapOps(db.session)
     official_roadmaps = roadmap_ops.get_official_roadmaps()
     for item in official_roadmaps:
-        mindmap = get_mindmap_from_meili_by_roadmap_id(current_app, item['id'])
+        mindmap = get_mindmap_from_meili(current_app, item['mindmap_id'])
         item['description'] = stats_of_mindmap(mindmap)
 
     return jsonify(official_roadmaps)
@@ -322,7 +322,7 @@ def get_map():
     roadmap_ops = RoadmapOps(db.session)
     roadmap = roadmap_ops.get_roadmap(id)
     if roadmap:
-        mindmap = get_mindmap_from_meili_by_roadmap_id(current_app, id)
+        mindmap = get_mindmap_from_meili(current_app, roadmap.mindmap_id)
         interaction_ops = RoadmapInteractionOps(db.session)
         interaction_stats = interaction_ops.get_stats(id)
 
@@ -360,8 +360,8 @@ def submit_update():
     if old_mindmap:
         if old_mindmap['created_by'] == current_user.get_id_int():
             mindmap['updated_at'] = time.time()
-            result =  add_mindmap_to_meili(current_app, mindmap)
-            current_app.logger.debug(f"update mindmap: {result}")
+            result =  update_mindmap_to_meili(current_app, mindmap)
+            current_app.logger.debug(f"update mindmap: {result}, mindmap: {mindmap}")
             return jsonify({'message': 'Update submitted'})
         else:
             return jsonify({'error': 'You are not the creator of this roadmap'}), 403
@@ -371,21 +371,33 @@ def submit_update():
 @bp.route('/submit_learning_status', methods=['POST'])
 @login_required
 def submit_learning_status():
+    """提交学习状态"""
     mindmap_id = request.form.get('mindmap_id')
     status = request.form.get('status')
-    status = json.loads(status)
 
+    if not mindmap_id or not status:
+        return jsonify({'error': 'Missing required fields'}), 400
+
+    user_id = current_user.get_id_int()
+
+    # 确保 status 是字典对象
+    if isinstance(status, str):
+        try:
+            status = json.loads(status)
+        except json.JSONDecodeError:
+            return jsonify({'error': 'Invalid status format'}), 400
+
+    # 使用 upsert 替代原来的 add 或 update
     mindmap_status = {
         'mindmap_id': mindmap_id,
-        'status': status,
-        'created_at': time.time(),
-        'updated_at': time.time(),
-        'created_by': current_user.get_id_int(),
+        'status': status,  # 这里应该是一个字典，而不是字符串
+        'user_id': user_id,
+        'updated_at': time.time()
     }
 
-    add_user_mindmap_status_to_meili(current_app, current_user.get_id_int(), mindmap_status)
-    current_app.logger.debug(f"submit learning status: {mindmap_id}, {status}")
-    return jsonify({'message': 'Learning status submitted'})
+    upsert_user_mindmap_status_to_meili(current_app, user_id, mindmap_status)
+
+    return jsonify({'message': 'Learning status submitted successfully'})
 
 @bp.route('/learning_status', methods=['GET'])
 @login_required
@@ -411,12 +423,29 @@ def recent_maps():
     user_id = current_user.get_id_int()
     mindmap_statuses = get_learning_list_from_meili(current_app, user_id, offset, limit)
 
+    current_app.logger.debug(f'mindmap_statuses: {mindmap_statuses}')
+
     recent_maps = []
     for mindmap_status in mindmap_statuses:
-        total_nodes = len(mindmap_status['status'])
+        # 确保 status 是字典对象
+        status = mindmap_status['status']
+        if isinstance(status, str):
+            try:
+                # 尝试将字符串解析为 JSON
+                status = json.loads(status)
+            except json.JSONDecodeError:
+                # 如果解析失败，则创建一个空字典
+                current_app.logger.error(f"Failed to parse status: {status}")
+                status = {}
+
+        # 如果 status 仍然不是字典，则创建一个空字典
+        if not isinstance(status, dict):
+            status = {}
+
+        total_nodes = len(status)
         completed_nodes = 0
-        for node in mindmap_status['status'].items():
-            if node[1] == 'done':
+        for node_id, node_status in status.items():
+            if node_status == 'done':
                 completed_nodes += 1
 
         recent_maps.append({
@@ -433,7 +462,7 @@ def recent_maps():
     for recent_map in recent_maps:
         roadmap = roadmap_ops.get_roadmap_by_mindmap_id(recent_map['mindmap_id'])
         if roadmap:
-            mindmap = get_mindmap_from_meili_by_roadmap_id(current_app, roadmap.roadmap_id)
+            mindmap = get_mindmap_from_meili(current_app, recent_map['mindmap_id'])
             result = roadmap.to_dict()
             result['description'] = stats_of_mindmap(mindmap)
             result['completed'] = recent_map['completed_nodes']
@@ -517,3 +546,11 @@ def delete_index():
     delete_index_from_meili(current_app, index_name)
     current_app.logger.debug('index deleted')
     return jsonify({'message': 'Index deleted'})
+
+def find_mindmaps_from_meili_for(app, topic, limit=10):
+    """Find mindmaps matching a topic"""
+    return app.meili_client.index('mindmaps').search(topic, {'limit': limit})['hits']
+
+def find_user_mindmaps_from_meili_created_by(app, user_id, limit=10):
+    """Find mindmaps created by a user"""
+    return app.meili_client.index('mindmaps').search('', {'filter': [f'created_by={user_id}'], 'limit': limit})['hits']

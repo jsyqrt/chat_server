@@ -9,6 +9,11 @@ def create_app(test_config=None):
         SECRET_KEY='dev', # TODO override this with thevalue in config.py
         JWT_SECRET_KEY='dev', # TODO override this with thevalue in config.py
         SQLALCHEMY_DATABASE_URI="sqlite:///" + os.path.join(app.instance_path, 'zchat.sqlite'),
+        DOCUMENT_STORE_TYPE='sqlite',
+        DOCUMENT_STORE_CONFIG={
+            'db_path': os.path.join(app.instance_path, 'document_store.db')
+        },
+        # 保留原有的MeiliSearch配置，以便兼容
         MEILISEARCH_HOST="http://localhost:7700",
         MEILISEARCH_KEY="aSampleMasterKey",
         # LIVEKIT_HOST="http://localhost:7880",
