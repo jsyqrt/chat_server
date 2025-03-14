@@ -15,5 +15,7 @@ from zchat.storage.api import (
     get_learning_list as get_learning_list_from_meili,
     delete_collection as delete_index_from_meili,
     find_mindmaps_for as find_mindmaps_from_meili_for,
-    find_user_mindmaps_created_by as find_user_mindmaps_from_meili_created_by
+    find_user_mindmaps_created_by as find_user_mindmaps_from_meili_created_by,
+    set_favorites as set_favorites_to_meili,
+    get_favorites as get_favorites_from_meili
 )

@@ -29,6 +29,17 @@ def create_initial_collections(app):
         app: Flask应用
     """
     create_mindmaps_collection(app)
+    create_favorites_collection(app)
+    return
+
+def create_favorites_collection(app):
+    """创建用户收藏集合
+
+    Args:
+        app: Flask应用
+    """
+
+    create_favorites_collection(app)
     return
 
 # --- 思维导图 ---
@@ -48,6 +59,23 @@ def create_mindmaps_collection(app):
 
     if not exists:
         app.document_store.create_collection('mindmaps', {'primaryKey': 'id'})
+    return
+
+def create_favorites_collection(app):
+    """创建用户收藏集合
+
+    Args:
+        app: Flask应用
+    """
+    collections = app.document_store.list_collections()
+    exists = False
+    for collection in collections['collections']:
+        if collection['name'] == 'favorites':
+            exists = True
+            break
+
+    if not exists:
+        app.document_store.create_collection('favorites', {'primaryKey': 'user_id'})
     return
 
 def add_mindmap(app, mindmap: Dict[str, Any]) -> Dict[str, Any]:
@@ -221,3 +249,30 @@ def upsert_user_mindmap_status(app, user_id: str, mindmap_status: Dict[str, Any]
         操作结果
     """
     return app.document_store.upsert_user_mindmap_status(user_id, mindmap_status)
+
+# --- 用户收藏 ---
+
+def set_favorites(app, user_id: str, favorites: Dict[str, Any]) -> Dict[str, Any]:
+    """设置用户收藏
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+        favorites: 收藏
+
+    Returns:
+        操作结果
+    """
+    return app.document_store.set_favorites(user_id, favorites)
+
+def get_favorites(app, user_id: str) -> Dict[str, Any]:
+    """获取用户收藏
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+
+    Returns:
+        收藏列表
+    """
+    return app.document_store.get_favorites(user_id)

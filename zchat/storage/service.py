@@ -344,3 +344,33 @@ class DocumentStoreService:
             if 'created_at' not in mindmap_status_with_timestamp:
                 mindmap_status_with_timestamp['created_at'] = now
             return self.add_document(collection_name, mindmap_status_with_timestamp)
+
+    def set_favorites(self, user_id: str, favorites: Dict[str, Any]) -> Dict[str, Any]:
+        """设置用户收藏
+
+        Args:
+            user_id: 用户ID
+            favorites: 收藏
+        """
+        existing = self.get_favorites(user_id)
+        if existing:
+            return self.update_document('favorites', {
+                'user_id': user_id,
+                'favorites': favorites
+            })
+        else:
+            return self.add_document('favorites', {
+                'user_id': user_id,
+                'favorites': favorites
+            })
+
+    def get_favorites(self, user_id: str) -> Dict[str, Any]:
+        """获取用户收藏
+
+        Args:
+            user_id: 用户ID
+
+        Returns:
+            收藏列表
+        """
+        return self.get_document('favorites', user_id)

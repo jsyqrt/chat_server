@@ -10,6 +10,7 @@ from werkzeug.utils import secure_filename
 from zchat.db import db
 from zchat.models.user import *
 from zchat.auth import login_required, current_user, admin_required
+from zchat.meili import *
 
 bp = Blueprint('user', __name__, url_prefix='/user')
 
@@ -195,3 +196,45 @@ def is_admin():
     current_app.logger.debug(f"is admin: {is_admin}")
     return {'is_admin': is_admin}
 
+
+@bp.route('/sync_favorites', methods=['POST'])
+@login_required
+def sync_favorites():
+    roadmaps = request.form['roadmaps']
+    cards = request.form['cards']
+    user_id = current_user.get_id_int()
+
+    set_favorites_to_meili(current_app, user_id, {
+        'roadmaps': roadmaps,
+        'cards': cards
+    })
+
+    return {'error': 'Favorites synced successfully!'}
+
+
+@bp.route('/favorites', methods=['GET'])
+@login_required
+def get_favorites():
+    user_id = current_user.get_id_int()
+    favorites = get_favorites_from_meili(current_app, user_id)
+    current_app.logger.debug(f"favorites: {favorites}")
+    if favorites:
+        if isinstance(favorites['favorites'], str):
+            try:
+                # 尝试将字符串解析为 JSON
+                favorites['favorites'] = json.loads(favorites['favorites'])
+                current_app.logger.debug(f"favorites: {favorites['favorites']}")
+            except json.JSONDecodeError:
+                # 如果解析失败，则创建一个空字典
+                current_app.logger.error(f"Failed to parse favorites: {favorites['favorites']}")
+                favorites['favorites'] = {
+                    "roadmaps": {},
+                    "cards": {}
+                }
+
+        return jsonify(favorites['favorites'])
+    else:
+        return jsonify({
+            "roadmaps": {},
+            "cards": {}
+        }), 200
