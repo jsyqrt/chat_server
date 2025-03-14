@@ -76,4 +76,7 @@ def create_app(test_config=None):
     from . import roadmap
     app.register_blueprint(roadmap.bp)
 
+    from . import assessment
+    app.register_blueprint(assessment.bp)
+
     return app

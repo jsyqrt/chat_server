@@ -276,3 +276,67 @@ def get_favorites(app, user_id: str) -> Dict[str, Any]:
         收藏列表
     """
     return app.document_store.get_favorites(user_id)
+
+# --- 用户报告 ---
+
+def create_user_assessment_report_collection(app, user_id: str) -> Dict[str, Any]:
+    """创建用户报告集合
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+
+    Returns:
+        操作结果
+    """
+    collections = app.document_store.list_collections()
+    exists = False
+    for collection in collections['collections']:
+        if collection['name'] == f'user_assessment_report_{user_id}':
+            exists = True
+            break
+
+    if not exists:
+        app.document_store.create_collection(f'user_assessment_report_{user_id}', {'primaryKey': 'report_id'})
+    return
+
+def add_user_assessment_report(app, user_id: str, report: Dict[str, Any]) -> Dict[str, Any]:
+    """添加用户报告
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+        report: 报告
+
+    Returns:
+        操作结果
+    """
+    create_user_assessment_report_collection(app, user_id)
+    return app.document_store.add_user_assessment_report(user_id, report)
+
+def get_user_assessment_report(app, user_id: str, report_id: str) -> Dict[str, Any]:
+    """获取用户报告
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+        report_id: 报告ID
+
+    Returns:
+        用户报告
+    """
+    return app.document_store.get_user_assessment_report(user_id, report_id)
+
+def get_user_assessment_report_list(app, user_id: str, offset: int = 0, limit: int = 10) -> List[Dict[str, Any]]:
+    """获取用户报告列表
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+        offset: 偏移量
+        limit: 限制
+
+    Returns:
+        用户报告列表
+    """
+    return app.document_store.get_user_assessment_report_list(user_id, offset, limit)

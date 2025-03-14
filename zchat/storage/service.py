@@ -374,3 +374,41 @@ class DocumentStoreService:
             收藏列表
         """
         return self.get_document('favorites', user_id)
+
+    def add_user_assessment_report(self, user_id: str, report: Dict[str, Any]) -> Dict[str, Any]:
+        """添加用户报告
+
+        Args:
+            user_id: 用户ID
+            report: 报告
+        """
+        return self.add_document(f'user_assessment_report_{user_id}', report)
+
+    def get_user_assessment_report(self, user_id: str, report_id: str) -> Dict[str, Any]:
+        """获取用户报告
+
+        Args:
+            user_id: 用户ID
+            report_id: 报告ID
+
+        Returns:
+            用户报告
+        """
+        return self.get_document(f'user_assessment_report_{user_id}', report_id)
+
+    def get_user_assessment_report_list(self, user_id: str, offset: int = 0, limit: int = 10) -> List[Dict[str, Any]]:
+        """获取用户报告列表
+
+        Args:
+            user_id: 用户ID
+            offset: 偏移量
+            limit: 限制
+
+        Returns:
+            用户报告列表
+        """
+        return self.search(f'user_assessment_report_{user_id}', '', {
+            'offset': offset,
+            'limit': limit,
+            'sort': ['created_at:desc']
+        })['hits']
