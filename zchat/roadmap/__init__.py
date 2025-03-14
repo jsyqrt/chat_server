@@ -373,6 +373,7 @@ def submit_update():
 def submit_learning_status():
     """提交学习状态"""
     mindmap_id = request.form.get('mindmap_id')
+    roadmap_id = request.form.get('roadmap_id')
     status = request.form.get('status')
 
     if not mindmap_id or not status:
@@ -394,6 +395,9 @@ def submit_learning_status():
         'user_id': user_id,
         'updated_at': time.time()
     }
+
+    interaction_ops = RoadmapInteractionOps(db.session)
+    interaction_ops.participant(roadmap_id, user_id)
 
     upsert_user_mindmap_status_to_meili(current_app, user_id, mindmap_status)
 
