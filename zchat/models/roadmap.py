@@ -123,6 +123,10 @@ class RoadmapInteractionOps:
             self.session.commit()
             return True
 
+    def get_favorites(self, user_id: str)->list:
+        interactions = self.session.query(RoadmapInteraction).filter_by(user_id=user_id).all()
+        return [interaction.roadmap_id for interaction in interactions if interaction.favorited == 1]
+
     def un_favorite(self, roadmap_id: str, user_id: str)->bool:
         interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
         if interaction:

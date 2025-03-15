@@ -9,6 +9,7 @@ from werkzeug.utils import secure_filename
 
 from zchat.db import db
 from zchat.models.user import *
+from zchat.models.roadmap import *
 from zchat.auth import login_required, current_user, admin_required
 from zchat.meili import *
 
@@ -208,6 +209,24 @@ def sync_favorites():
         'roadmaps': roadmaps,
         'cards': cards
     })
+
+    interaction_ops = RoadmapInteractionOps(db.session)
+    favorites = interaction_ops.get_favorites(user_id)
+
+    current_app.logger.debug(f"roadmaps: {roadmaps}")
+
+    roadmaps = json.loads(roadmaps)
+    for roadmap_id in favorites:
+        if roadmap_id not in roadmaps.keys():
+            interaction_ops.un_favorite(roadmap_id, user_id)
+            current_app.logger.debug(f"unfavorited roadmap {roadmap_id}")
+
+    for roadmap_id in roadmaps.keys():
+        if roadmap_id not in favorites:
+            interaction_ops.favorite(roadmap_id, user_id)
+            current_app.logger.debug(f"favorited roadmap {roadmap_id}")
+
+    # NOTE: cards are counted as favorites
 
     return {'error': 'Favorites synced successfully!'}
 
