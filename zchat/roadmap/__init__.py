@@ -251,7 +251,9 @@ def create_from_topic():
 @login_required
 def search_topic():
     topic = request.args.get('topic')
-    mindmaps = find_mindmaps_from_meili_for(current_app, topic)
+    limit = int(request.args.get('limit', '10'))
+    current_app.logger.debug(f'search_topic: {topic}, limit: {limit}')
+    mindmaps = find_mindmaps_from_meili_for_title(current_app, topic, limit)
     return jsonify(mindmaps)
 
 @bp.route('/my_mindmaps', methods=['GET'])

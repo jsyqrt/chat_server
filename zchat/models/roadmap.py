@@ -539,7 +539,7 @@ class RoadmapOps:
             mindmap['updated_at'] = time.time()
 
             delete_result = delete_mindmap_from_meili(current_app, mindmap_id=mindmap_id)
-            current_app.logger.debug(f'meili delete_result: {add_result}')
+            current_app.logger.debug(f'meili delete_result: {delete_result}')
 
             add_result = add_mindmap_to_meili(current_app, mindmap)
             current_app.logger.debug(f'meili add_result: {add_result}')

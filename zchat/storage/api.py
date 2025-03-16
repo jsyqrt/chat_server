@@ -1,5 +1,6 @@
 from flask import current_app
 from typing import Dict, List, Any, Optional
+import time
 
 def init_app(app):
     """初始化应用
@@ -58,7 +59,13 @@ def create_mindmaps_collection(app):
             break
 
     if not exists:
-        app.document_store.create_collection('mindmaps', {'primaryKey': 'id'})
+        app.document_store.create_collection(
+            collection_name='mindmaps',
+            options={
+                'primaryKey': 'id',
+                'indexedFields': ['created_by', 'updated_at', 'created_at', 'title', 'roadmap_id']
+            }
+        )
     return
 
 def create_favorites_collection(app):
@@ -75,7 +82,12 @@ def create_favorites_collection(app):
             break
 
     if not exists:
-        app.document_store.create_collection('favorites', {'primaryKey': 'user_id'})
+        app.document_store.create_collection(
+            collection_name='favorites',
+            options={
+                'primaryKey': 'user_id',
+            }
+        )
     return
 
 def add_mindmap(app, mindmap: Dict[str, Any]) -> Dict[str, Any]:
@@ -88,7 +100,7 @@ def add_mindmap(app, mindmap: Dict[str, Any]) -> Dict[str, Any]:
     Returns:
         操作结果
     """
-    return app.document_store.add_mindmap(mindmap)
+    return app.document_store.add_document('mindmaps', mindmap)
 
 def update_mindmap(app, mindmap: Dict[str, Any]) -> Dict[str, Any]:
     """更新思维导图
@@ -100,7 +112,7 @@ def update_mindmap(app, mindmap: Dict[str, Any]) -> Dict[str, Any]:
     Returns:
         操作结果
     """
-    return app.document_store.update_mindmap(mindmap)
+    return app.document_store.update_document('mindmaps', mindmap)
 
 def get_mindmap(app, mindmap_id: str) -> Dict[str, Any]:
     """获取思维导图
@@ -112,7 +124,7 @@ def get_mindmap(app, mindmap_id: str) -> Dict[str, Any]:
     Returns:
         思维导图
     """
-    result = app.document_store.get_mindmap(mindmap_id)
+    result = app.document_store.get_document('mindmaps', mindmap_id)
     return result if result else {}
 
 def delete_mindmap(app, mindmap_id: str) -> Dict[str, Any]:
@@ -125,7 +137,7 @@ def delete_mindmap(app, mindmap_id: str) -> Dict[str, Any]:
     Returns:
         操作结果
     """
-    return app.document_store.delete_mindmap(mindmap_id)
+    return app.document_store.delete_document('mindmaps', mindmap_id)
 
 # --- 用户思维导图状态 ---
 
@@ -139,7 +151,27 @@ def create_user_mindmap_status_collection(app, user_id: str) -> Dict[str, Any]:
     Returns:
         操作结果
     """
-    return app.document_store.create_user_mindmap_status_collection(user_id)
+    collection_name = f'user_mindmap_status_{user_id}'
+
+    # 检查集合是否已存在
+    collections = app.document_store.list_collections()
+    exists = False
+    for collection in collections['collections']:
+        if collection['name'] == collection_name:
+            exists = True
+            break
+
+    if not exists:
+        # 创建集合，指定主键为 mindmap_id 并添加索引字段
+        return app.document_store.create_collection(
+            collection_name=collection_name,
+            options={
+                'primaryKey': 'mindmap_id',
+                'indexedFields': ['updated_at']
+            }
+        )
+
+    return {"status": "success", "message": f"Collection {collection_name} already exists"}
 
 def add_user_mindmap_status(app, user_id: str, mindmap_status: Dict[str, Any]) -> Dict[str, Any]:
     """添加用户思维导图状态
@@ -152,7 +184,9 @@ def add_user_mindmap_status(app, user_id: str, mindmap_status: Dict[str, Any]) -
     Returns:
         操作结果
     """
-    return app.document_store.add_user_mindmap_status(user_id, mindmap_status)
+    create_user_mindmap_status_collection(app, user_id)
+    index_name = f'user_mindmap_status_{user_id}'
+    return app.document_store.add_document(index_name, mindmap_status)
 
 def update_user_mindmap_status(app, user_id: str, mindmap_status: Dict[str, Any]) -> Dict[str, Any]:
     """更新用户思维导图状态
@@ -165,7 +199,9 @@ def update_user_mindmap_status(app, user_id: str, mindmap_status: Dict[str, Any]
     Returns:
         操作结果
     """
-    return app.document_store.update_user_mindmap_status(user_id, mindmap_status)
+    create_user_mindmap_status_collection(app, user_id)
+    index_name = f'user_mindmap_status_{user_id}'
+    return app.document_store.update_document(index_name, mindmap_status)
 
 def get_learning_status(app, user_id: str, mindmap_id: str) -> Dict[str, Any]:
     """获取学习状态
@@ -178,7 +214,9 @@ def get_learning_status(app, user_id: str, mindmap_id: str) -> Dict[str, Any]:
     Returns:
         学习状态
     """
-    return app.document_store.get_user_mindmap_status(user_id, mindmap_id)
+    create_user_mindmap_status_collection(app, user_id)
+    index_name = f'user_mindmap_status_{user_id}'
+    return app.document_store.get_document(index_name, mindmap_id)
 
 def get_learning_list(app, user_id: str, offset: int = 0, limit: int = 3) -> List[Dict[str, Any]]:
     """获取学习列表
@@ -192,10 +230,17 @@ def get_learning_list(app, user_id: str, offset: int = 0, limit: int = 3) -> Lis
     Returns:
         学习列表
     """
-    return app.document_store.get_user_mindmap_status_list(user_id, offset, limit)
+    create_user_mindmap_status_collection(app, user_id)
+    index_name = f'user_mindmap_status_{user_id}'
+    result = app.document_store.search(index_name, '', {
+        'offset': offset,
+        'limit': limit,
+        'sort': ['updated_at:desc']
+    })
+    return result['hits']
 
 # 搜索函数
-def find_mindmaps_for(app, topic: str, limit: int = 10) -> List[Dict[str, Any]]:
+def find_mindmaps_for_title(app, title: str, limit: int = 10) -> List[Dict[str, Any]]:
     """按主题查找思维导图
 
     Args:
@@ -206,7 +251,8 @@ def find_mindmaps_for(app, topic: str, limit: int = 10) -> List[Dict[str, Any]]:
     Returns:
         思维导图列表
     """
-    return app.document_store.find_mindmaps_by_topic(topic, limit)
+    index_name = 'mindmaps'
+    return app.document_store.search(index_name, '', {'filter': [f'title={title}'], 'limit': limit})['hits']
 
 def find_user_mindmaps_created_by(app, user_id: str, limit: int = 10) -> List[Dict[str, Any]]:
     """按用户查找思维导图
@@ -219,21 +265,8 @@ def find_user_mindmaps_created_by(app, user_id: str, limit: int = 10) -> List[Di
     Returns:
         思维导图列表
     """
-    return app.document_store.find_mindmaps_by_user(user_id, limit)
-
-# 危险操作！
-# 仅供管理员使用
-def delete_collection(app, collection_name: str) -> Dict[str, Any]:
-    """删除集合
-
-    Args:
-        app: Flask应用
-        collection_name: 集合名称
-
-    Returns:
-        操作结果
-    """
-    return app.document_store.delete_collection(collection_name)
+    index_name = 'mindmaps'
+    return app.document_store.search(index_name, '', {'filter': [f'created_by={user_id}'], 'limit': limit})['hits']
 
 def upsert_user_mindmap_status(app, user_id: str, mindmap_status: Dict[str, Any]) -> Dict[str, Any]:
     """更新或插入用户思维导图状态
@@ -248,7 +281,29 @@ def upsert_user_mindmap_status(app, user_id: str, mindmap_status: Dict[str, Any]
     Returns:
         操作结果
     """
-    return app.document_store.upsert_user_mindmap_status(user_id, mindmap_status)
+
+    index_name = f'user_mindmap_status_{user_id}'
+
+    # 检查文档是否存在
+    if 'mindmap_id' not in mindmap_status:
+        return {"status": "error", "message": "mindmap_id is required"}
+
+    mindmap_id = mindmap_status['mindmap_id']
+    existing = app.document_store.search(index_name, '', {'filter': [f'mindmap_id={mindmap_id}']})
+
+    # 更新时间戳
+    now = time.time()
+    mindmap_status_with_timestamp = mindmap_status.copy()
+    mindmap_status_with_timestamp['updated_at'] = now
+
+    if existing and len(existing.get('hits', [])) > 0:
+        # 文档存在，更新它
+        return app.document_store.update_document(index_name, mindmap_status_with_timestamp)
+    else:
+        # 文档不存在，添加它
+        if 'created_at' not in mindmap_status_with_timestamp:
+            mindmap_status_with_timestamp['created_at'] = now
+        return app.document_store.add_document(index_name, mindmap_status_with_timestamp)
 
 # --- 用户收藏 ---
 
@@ -263,7 +318,18 @@ def set_favorites(app, user_id: str, favorites: Dict[str, Any]) -> Dict[str, Any
     Returns:
         操作结果
     """
-    return app.document_store.set_favorites(user_id, favorites)
+    existing = app.document_store.get_document('favorites', user_id)
+    if existing:
+        return app.document_store.update_document('favorites', {
+            'user_id': user_id,
+            'favorites': favorites
+        })
+    else:
+        return app.document_store.add_document('favorites', {
+            'user_id': user_id,
+            'favorites': favorites
+        })
+
 
 def get_favorites(app, user_id: str) -> Dict[str, Any]:
     """获取用户收藏
@@ -275,7 +341,7 @@ def get_favorites(app, user_id: str) -> Dict[str, Any]:
     Returns:
         收藏列表
     """
-    return app.document_store.get_favorites(user_id)
+    return app.document_store.get_document('favorites', user_id)
 
 # --- 用户报告 ---
 
@@ -297,7 +363,13 @@ def create_user_assessment_report_collection(app, user_id: str) -> Dict[str, Any
             break
 
     if not exists:
-        app.document_store.create_collection(f'user_assessment_report_{user_id}', {'primaryKey': 'report_id'})
+        app.document_store.create_collection(
+            collection_name=f'user_assessment_report_{user_id}',
+            options={
+                'primaryKey': 'report_id',
+                'indexedFields': ['created_at', 'assessment_type']
+            }
+        )
     return
 
 def add_user_assessment_report(app, user_id: str, report: Dict[str, Any]) -> Dict[str, Any]:
@@ -312,7 +384,8 @@ def add_user_assessment_report(app, user_id: str, report: Dict[str, Any]) -> Dic
         操作结果
     """
     create_user_assessment_report_collection(app, user_id)
-    return app.document_store.add_user_assessment_report(user_id, report)
+    index_name = f'user_assessment_report_{user_id}'
+    return app.document_store.add_document(index_name, report)
 
 def get_user_assessment_report(app, user_id: str, report_id: str) -> Dict[str, Any]:
     """获取用户报告
@@ -325,7 +398,8 @@ def get_user_assessment_report(app, user_id: str, report_id: str) -> Dict[str, A
     Returns:
         用户报告
     """
-    return app.document_store.get_user_assessment_report(user_id, report_id)
+    index_name = f'user_assessment_report_{user_id}'
+    return app.document_store.get_document(index_name, report_id)
 
 def get_user_assessment_report_list(app, user_id: str, offset: int = 0, limit: int = 10) -> List[Dict[str, Any]]:
     """获取用户报告列表
@@ -339,4 +413,23 @@ def get_user_assessment_report_list(app, user_id: str, offset: int = 0, limit: i
     Returns:
         用户报告列表
     """
-    return app.document_store.get_user_assessment_report_list(user_id, offset, limit)
+    index_name = f'user_assessment_report_{user_id}'
+    return app.document_store.search(index_name, '', {
+        'offset': offset,
+        'limit': limit,
+        'sort': ['created_at:desc']
+    })['hits']
+
+# --- 危险操作！仅供管理员使用 ---
+def delete_collection(app, collection_name: str) -> Dict[str, Any]:
+    """删除集合
+
+    Args:
+        app: Flask应用
+        collection_name: 集合名称
+
+    Returns:
+        操作结果
+    """
+    return app.document_store.delete_collection(collection_name)
+
