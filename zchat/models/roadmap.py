@@ -292,9 +292,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "concept",
                 "status": 2,
-                "industry_tag": "基础知识",
+                "industry_tag": "信息技术",
                 "job_tag": "",
-                "skill_tag": "计算机科学",
+                "skill_tag": "计算机基础",
             },
             # python.json
             {
@@ -617,6 +617,7 @@ class RoadmapOps:
 
             if self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first():
                 self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).delete()
+                self.session.commit()
 
             roadmap = Roadmap(
                 roadmap_id=roadmap_id,
@@ -676,17 +677,27 @@ class RoadmapOps:
         roadmaps = self.session.query(Roadmap).filter(Roadmap.skill_tag.like(f'%{skill_tag}%')).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
+    def search_roadmaps_for_topic(self, topic, roadmap_type, limit: int=10)->list:
+        roadmaps = self.session.query(Roadmap).filter(
+            Roadmap.roadmap_type == roadmap_type,
+            (Roadmap.roadmap_title.like(f'%{topic}%') |
+            Roadmap.industry_tag.like(f'%{topic}%') |
+            Roadmap.job_tag.like(f'%{topic}%') |
+            Roadmap.skill_tag.like(f'%{topic}%'))
+        ).distinct().limit(limit).all()
+        return [roadmap.to_dict() for roadmap in roadmaps]
+
     def all_industry_tags(self)->list:
         industry_tags = self.session.query(Roadmap.industry_tag).distinct().all()
-        return [industry_tag[0] for industry_tag in industry_tags]
+        return [industry_tag[0] for industry_tag in industry_tags if industry_tag[0] is not None]
 
     def job_tags_of_industry_tag(self, industry_tag: str)->list:
         job_tags = self.session.query(Roadmap.job_tag).filter(Roadmap.industry_tag == industry_tag).distinct().all()
-        return [job_tag[0] for job_tag in job_tags]
+        return [job_tag[0] for job_tag in job_tags if job_tag[0] is not None]
 
     def skill_tags_of_job_tag(self, job_tag: str)->list:
         skill_tags = self.session.query(Roadmap.skill_tag).filter(Roadmap.job_tag == job_tag).distinct().all()
-        return [skill_tag[0] for skill_tag in skill_tags]
+        return [skill_tag[0] for skill_tag in skill_tags if skill_tag[0] is not None]
 
     def get_public_roadmaps(self)->list:
         public_roadmaps = self.session.query(Roadmap).filter_by(roadmap_status=2).all()

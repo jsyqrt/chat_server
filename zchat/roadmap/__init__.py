@@ -81,7 +81,10 @@ def create_from_jd_and_resume():
 
     if jd_file:
         filename = secure_filename(jd_file.filename)
-        file_path = os.path.join(current_app.static_folder, 'images', filename)
+        dir_path = os.path.join(current_app.instance_path, 'jds')
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+        file_path = os.path.join(dir_path, filename)
         jd_file.save(file_path)
         jd = ocr_file(file_path)
     elif jd_text:
@@ -91,7 +94,10 @@ def create_from_jd_and_resume():
 
     if resume_file:
         filename = secure_filename(resume_file.filename)
-        file_path = os.path.join(current_app.static_folder, 'images', filename)
+        dir_path = os.path.join(current_app.instance_path, 'resumes')
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+        file_path = os.path.join(dir_path, filename)
         resume_file.save(file_path)
         resume = ocr_file(file_path)
     else:
@@ -252,7 +258,9 @@ def create_from_topic():
 def industry_tags():
     roadmap_ops = RoadmapOps(db.session)
     industry_tags = roadmap_ops.all_industry_tags()
-    return jsonify(industry_tags)
+    return jsonify({
+        'industry_tags': industry_tags,
+    })
 
 @bp.route('/job_tags_of_industry_tags', methods=['GET'])
 # @login_required
@@ -263,7 +271,9 @@ def job_tags_of_industry_tags():
     job_tags = []
     for industry_tag in industry_tags:
         job_tags.extend(roadmap_ops.job_tags_of_industry_tag(industry_tag))
-    return jsonify(job_tags)
+    return jsonify({
+        'job_tags': job_tags,
+    })
 
 @bp.route('/skill_tags_of_job_tags', methods=['GET'])
 # @login_required
@@ -274,26 +284,38 @@ def skill_tags_of_job_tags():
     skill_tags = []
     for job_tag in job_tags:
         skill_tags.extend(roadmap_ops.skill_tags_of_job_tag(job_tag))
-    return jsonify(skill_tags)
+    return jsonify({
+        'skill_tags': skill_tags,
+    })
 
 @bp.route('/search_topic', methods=['GET'])
 @login_required
 def search_topic():
     topics = request.args.get('topics')
     topics = topics.split(',')
-    limit = int(request.args.get('limit', '10'))
-    current_app.logger.debug(f'search_topic: {topics}, limit: {limit}')
+    limit = int(request.args.get('limit', '5'))
 
-    results = []
     roadmap_ops = RoadmapOps(db.session)
+    result_ids = set()
+    results = {}
+    enough = False
     for topic in topics:
-        roadmaps_with_title_like = roadmap_ops.search_roadmaps_with_title_like(topic)
-        for item in roadmaps_with_title_like:
-            mindmap = get_mindmap_from_meili(current_app, item['mindmap_id'])
-            item['description'] = stats_of_mindmap(mindmap)
-        results.append(item)
+        roadmaps = roadmap_ops.search_roadmaps_for_topic(topic, RoadmapType.OFFICIAL.value, limit)
+        for roadmap in roadmaps:
+            if roadmap['id'] not in result_ids:
+                if len(results) < limit:
+                    result_ids.add(roadmap['id'])
+                    results[roadmap['id']] = roadmap
+                    mindmap = get_mindmap_from_meili(current_app, roadmap['mindmap_id'])
+                    stats = stats_of_mindmap(mindmap)
+                    roadmap['description'] = stats
+                else:
+                    enough = True
+                    break
+        if enough:
+            break
 
-    return jsonify(results)
+    return jsonify(list(results.values()))
 
 @bp.route('/my_mindmaps', methods=['GET'])
 @login_required

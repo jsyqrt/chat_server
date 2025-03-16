@@ -124,9 +124,9 @@ def update_signature():
 @bp.route('/update_interested_tags', methods=['POST'])
 @login_required
 def update_interested_tags():
-    interested_industries = request.form['interested_industries']
-    interested_roles = request.form['interested_roles']
-    interested_skills = request.form['interested_skills']
+    interested_industries = request.form['industries']
+    interested_roles = request.form['roles']
+    interested_skills = request.form['skills']
 
     user_ops = UserOps(session=db.session)
     succeed = user_ops.update_interested_tags(
