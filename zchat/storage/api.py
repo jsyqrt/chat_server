@@ -31,16 +31,7 @@ def create_initial_collections(app):
     """
     create_mindmaps_collection(app)
     create_favorites_collection(app)
-    return
-
-def create_favorites_collection(app):
-    """创建用户收藏集合
-
-    Args:
-        app: Flask应用
-    """
-
-    create_favorites_collection(app)
+    create_file_records_collection(app)
     return
 
 # --- 思维导图 ---
@@ -89,6 +80,61 @@ def create_favorites_collection(app):
             }
         )
     return
+
+def create_file_records_collection(app):
+    """创建文件记录集合
+
+    Args:
+        app: Flask应用
+    """
+    collections = app.document_store.list_collections()
+    exists = False
+    for collection in collections['collections']:
+        if collection['name'] == 'file_records':
+            exists = True
+            break
+
+    if not exists:
+        app.document_store.create_collection(
+            collection_name='file_records',
+            options={
+                'primaryKey': 'user_id',
+            }
+        )
+    return
+
+def add_file_records(app, file_records: Dict[str, Any]) -> Dict[str, Any]:
+    """添加文件记录
+
+    Args:
+        app: Flask应用
+        file_records: 文件记录
+
+    Returns:
+        操作结果
+    """
+    return app.document_store.add_document('file_records', file_records)
+
+def get_file_records(app, user_id: str) -> Dict[str, Any]:
+    """获取文件记录
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+    """
+    return app.document_store.get_document('file_records', user_id)
+
+def update_file_records(app, file_records: Dict[str, Any]) -> Dict[str, Any]:
+    """更新文件记录
+
+    Args:
+        app: Flask应用
+        file_records: 文件记录
+
+    Returns:
+        操作结果
+    """
+    return app.document_store.update_document('file_records', file_records)
 
 def add_mindmap(app, mindmap: Dict[str, Any]) -> Dict[str, Any]:
     """添加思维导图

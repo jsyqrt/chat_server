@@ -25,4 +25,7 @@ from zchat.storage.api import (
     get_feedback as get_feedback_from_meili,
     update_feedback as update_feedback_to_meili,
     get_feedback_list as get_feedback_list_from_meili,
+    add_file_records as add_file_records_to_meili,
+    get_file_records as get_file_records_from_meili,
+    update_file_records as update_file_records_to_meili,
 )

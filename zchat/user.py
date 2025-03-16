@@ -304,3 +304,10 @@ def get_favorites():
             "roadmaps": json.dumps(results),
             "cards": "",
         }), 200
+
+@bp.route('/file_records', methods=['GET'])
+@login_required
+def get_file_records():
+    user_id = current_user.get_id_int()
+    file_records = get_file_records_from_meili(current_app, user_id)
+    return file_records

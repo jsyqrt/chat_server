@@ -72,38 +72,91 @@ class MindmapModifier:
 @login_required
 def create_from_jd_and_resume():
     jd_file = request.files.get('jd_file', None)
+    jd_file_name = request.form.get('jd_file_name', None)
     jd_text = request.form.get('jd_text', None)
     resume_file = request.files.get('resume_file', None)
+    resume_file_name = request.form.get('resume_file_name', None)
     user_id = current_user.get_id_int()
 
-    if not jd_file and not jd_text:
+    if not jd_file and not jd_text and not jd_file_name:
         return jsonify({'error': 'No JD file or JD text provided'}), 400
+
+    file_records = {}
 
     if jd_file:
         filename = secure_filename(jd_file.filename)
+        filename = f'{uuid.uuid4()}_{filename}'
         dir_path = os.path.join(current_app.instance_path, 'jds')
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
+        file_records['jd_files'] = [
+            {
+                'filename': jd_file.filename,
+                'path': f'/jds/{filename}',
+            }
+        ]
         file_path = os.path.join(dir_path, filename)
         jd_file.save(file_path)
         jd = ocr_file(file_path)
+    elif jd_file_name:
+        old_file_records = get_file_records_from_meili(current_app, user_id)
+        if old_file_records:
+            for jd_file in old_file_records['jd_files']:
+                if jd_file['filename'] == jd_file_name:
+                    file_path = jd_file['path']
+                    break
+        if file_path:
+            full_file_path = f"{current_app.instance_path}/{file_path}"
+            jd = ocr_file(full_file_path)
+        else:
+            jd = ''
     elif jd_text:
         jd = jd_text
     else:
         pass
 
+    if not jd:
+        return jsonify({'error': 'No JD provided'}), 400
+
     if resume_file:
         filename = secure_filename(resume_file.filename)
+        filename = f'{uuid.uuid4()}_{filename}'
         dir_path = os.path.join(current_app.instance_path, 'resumes')
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
+        file_records['resume_files'] = [
+            {
+                'filename': resume_file.filename,
+                'path': f'/resumes/{filename}',
+            }
+        ]
         file_path = os.path.join(dir_path, filename)
         resume_file.save(file_path)
         resume = ocr_file(file_path)
+    elif resume_file_name:
+        old_file_records = get_file_records_from_meili(current_app, user_id)
+        if old_file_records:
+            for resume_file in old_file_records['resume_files']:
+                if resume_file['filename'] == resume_file_name:
+                    file_path = resume_file['path']
+                    break
+        if file_path:
+            full_file_path = f"{current_app.instance_path}/{file_path}"
+            resume = ocr_file(full_file_path)
+        else:
+            resume = ''
     else:
         resume = ''
 
     current_app.logger.debug(f"received jd text: {jd}, resume text: {resume}")
+
+    if len(file_records.keys()) > 0:
+        file_records['user_id'] = user_id
+        old_file_records = get_file_records_from_meili(current_app, user_id)
+        if old_file_records:
+            file_records['jd_files'] = old_file_records['jd_files'] + file_records['jd_files']
+            file_records['resume_files'] = old_file_records['resume_files'] + file_records['resume_files']
+        add_file_records_to_meili(current_app, file_records)
 
     jd_info_json, mindmap_json = mindmap_from_jd_and_resume(jd, resume)
 
@@ -625,11 +678,3 @@ def delete_index():
     delete_index_from_meili(current_app, index_name)
     current_app.logger.debug('index deleted')
     return jsonify({'message': 'Index deleted'})
-
-def find_mindmaps_from_meili_for(app, topic, limit=10):
-    """Find mindmaps matching a topic"""
-    return app.meili_client.index('mindmaps').search(topic, {'limit': limit})['hits']
-
-def find_user_mindmaps_from_meili_created_by(app, user_id, limit=10):
-    """Find mindmaps created by a user"""
-    return app.meili_client.index('mindmaps').search('', {'filter': [f'created_by={user_id}'], 'limit': limit})['hits']
