@@ -420,6 +420,81 @@ def get_user_assessment_report_list(app, user_id: str, offset: int = 0, limit: i
         'sort': ['created_at:desc']
     })['hits']
 
+def create_feedback_collection(app):
+    """创建反馈集合
+
+    Args:
+        app: Flask应用
+    """
+    collections = app.document_store.list_collections()
+    exists = False
+    for collection in collections['collections']:
+        if collection['name'] == 'feedback':
+            exists = True
+            break
+
+    if not exists:
+        app.document_store.create_collection(
+            collection_name='feedback',
+            options={
+                'primaryKey': 'id',
+                'indexedFields': ['created_at', 'created_by', 'category', 'status']
+            }
+        )
+    return
+
+def add_feedback(app, feedback: Dict[str, Any]) -> Dict[str, Any]:
+    """添加反馈
+
+    Args:
+        app: Flask应用
+        feedback: 反馈
+
+    Returns:
+        操作结果
+    """
+    create_feedback_collection(app)
+    index_name = 'feedback'
+    return app.document_store.add_document(index_name, feedback)
+
+def get_feedback(app, feedback_id: str) -> Dict[str, Any]:
+    """获取反馈
+
+    Args:
+        app: Flask应用
+        feedback_id: 反馈ID
+    """
+    create_feedback_collection(app)
+    index_name = 'feedback'
+    return app.document_store.get_document(index_name, feedback_id)
+
+def update_feedback(app, feedback: Dict[str, Any]) -> Dict[str, Any]:
+    """更新反馈
+
+    Args:
+        app: Flask应用
+        feedback: 反馈
+    """
+    create_feedback_collection(app)
+    index_name = 'feedback'
+    return app.document_store.update_document(index_name, feedback)
+
+def get_feedback_list(app, status: str = 'pending', offset: int = 0, limit: int = 10) -> List[Dict[str, Any]]:
+    """获取反馈列表
+
+    Args:
+        app: Flask应用
+        status: 状态
+        offset: 偏移量
+        limit: 限制
+
+    Returns:
+        反馈列表
+    """
+    create_feedback_collection(app)
+    index_name = 'feedback'
+    return app.document_store.search(index_name, '', {'filter': [f'status={status}'], 'offset': offset, 'limit': limit})['hits']
+
 # --- 危险操作！仅供管理员使用 ---
 def delete_collection(app, collection_name: str) -> Dict[str, Any]:
     """删除集合

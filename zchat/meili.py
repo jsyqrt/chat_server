@@ -21,4 +21,8 @@ from zchat.storage.api import (
     add_user_assessment_report as add_user_assessment_report_to_meili,
     get_user_assessment_report as get_user_assessment_report_from_meili,
     get_user_assessment_report_list as get_user_assessment_report_list_from_meili,
+    add_feedback as add_feedback_to_meili,
+    get_feedback as get_feedback_from_meili,
+    update_feedback as update_feedback_to_meili,
+    get_feedback_list as get_feedback_list_from_meili,
 )

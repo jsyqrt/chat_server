@@ -46,7 +46,7 @@ class User(db.Model):
             'id' : self.id,
             'phone_number' : self.phone_number,
 
-            'avatar': url_for('static', filename=f'images/{self.avatar_name}'),
+            'avatar': self.avatar_name,
             'nickname' : self.nickname,
             'signature_text': self.signature_text,
 

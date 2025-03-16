@@ -1,8 +1,10 @@
 import os
 import hashlib
+import time
+import uuid
 
 from flask import (
-    Blueprint, request, jsonify, current_app, g
+    Blueprint, request, jsonify, current_app, g, send_file
 )
 
 from werkzeug.utils import secure_filename
@@ -56,14 +58,18 @@ def get_md5(file):
 @login_required
 def update_avatar():
     avatar = request.files['avatar']
-
     filename = secure_filename(avatar.filename)
-    avatar.save(os.path.join(current_app.static_folder, 'images', filename))
+    # Generate a unique filename to prevent collisions
+    unique_filename = f"{uuid.uuid4()}_{filename}"
+    save_dir = os.path.join(current_app.instance_path, 'images')
+    os.makedirs(save_dir, exist_ok=True)
+    file_path = os.path.join(save_dir, unique_filename)
+    avatar.save(file_path)
 
     user_ops = UserOps(session=db.session)
-    succeed = user_ops.update_avatar(id=current_user.get_id_int(), avatar_name=filename)
+    succeed = user_ops.update_avatar(id=current_user.get_id_int(), avatar_name=f'/user/image?filename={unique_filename}')
     if succeed:
-        return {'error': 'Avatar uploaded successfully!'}
+        return {'message': 'Avatar uploaded successfully!', 'avatar_name': f'/user/image?filename={unique_filename}'}
     return {'error': 'Failed to update avatar'}, 400
 
 @bp.route('/upload_image', methods=['POST'])
@@ -71,12 +77,43 @@ def update_avatar():
 def upload_image():
     image = request.files['image']
     filename = secure_filename(image.filename)
-    image.save(os.path.join(current_app.static_folder, 'images', filename))
+    # Generate a unique filename to prevent collisions
+    unique_filename = f"{uuid.uuid4()}_{filename}"
+    save_dir = os.path.join(current_app.instance_path, 'images')
+    os.makedirs(save_dir, exist_ok=True)
+    file_path = os.path.join(save_dir, unique_filename)
+    image.save(file_path)
 
+    # Return a URL that can be used to access the image
     return {
-        'error': 'Image uploaded successfully!',
-        'image_url': url_for('static', filename=f'images/{filename}')
+        'message': 'Image uploaded successfully!',
+        'image_url': f'/user/image?filename={unique_filename}'
     }
+
+@bp.route('/image', methods=['GET'])
+def get_image():
+    filename = request.args.get('filename')
+    if not filename:
+        return {'error': 'No filename provided'}, 400
+
+    # Ensure the filename is secure to prevent directory traversal attacks
+    filename = secure_filename(filename)
+    file_path = os.path.join(current_app.instance_path, 'images', filename)
+
+    if not os.path.exists(file_path):
+        return {'error': 'Image not found'}, 404
+
+    # Determine the MIME type based on file extension
+    mime_type = 'image/jpeg'  # Default
+    if filename.lower().endswith('.png'):
+        mime_type = 'image/png'
+    elif filename.lower().endswith('.gif'):
+        mime_type = 'image/gif'
+    elif filename.lower().endswith('.webp'):
+        mime_type = 'image/webp'
+
+    # Return the image file with the appropriate MIME type
+    return send_file(file_path, mimetype=mime_type)
 
 @bp.route('/update_nickname', methods=['POST'])
 @login_required
