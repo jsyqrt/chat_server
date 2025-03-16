@@ -26,13 +26,13 @@ def init_verification_code_dict(app):
     app.vcode_dict = ExpiringDict()
 
 class ExpiringDict(OrderedDict):
-    def __init__(self, expiration_time=60):
+    def __init__(self, expiration_time=60, cooldown_time=60):
         super().__init__()
         self.expiration_time = expiration_time
+        self.cooldown_time = cooldown_time
 
     def __setitem__(self, key, value):
         self.remove_expired_items()
-
         super().__setitem__(key, (time.time(), value))
 
     def remove_expired_items(self):
@@ -43,8 +43,26 @@ class ExpiringDict(OrderedDict):
 
     def __getitem__(self, key):
         self.remove_expired_items()
+        if key not in self:
+            return None
         insert_time, value = super().__getitem__(key)
-        return value
+        return (insert_time, value)
+
+    def get(self, key, default=None):
+        try:
+            return self.__getitem__(key)
+        except:
+            return default
+
+    def can_resend(self, key):
+        """Check if enough time has passed to allow resending a code"""
+        item = self.get(key)
+        if item is None:
+            return True
+
+        insert_time, _ = item
+        current_time = time.time()
+        return current_time - insert_time > self.cooldown_time
 
 @bp.route('/verification_code', methods=['GET'])
 def verification_code():
@@ -55,8 +73,9 @@ def verification_code():
     if phone_number == '0':
         return { "error": "Invalid Phone Number!" }, 400
 
-    if current_app.vcode_dict.get(phone_number, None) is not None:
-        return { "error": "Retry Later!" }, 400
+    # Check if we can send a new code (cooldown period)
+    if not current_app.vcode_dict.can_resend(phone_number):
+        return { "error": "Please wait before requesting another code" }, 429
 
     current_app.vcode_dict[phone_number] = verification_code
 
@@ -113,12 +132,24 @@ def login():
     if phone_number == '0' or verification_code == '0':
         return { "error": "Invalid Phone Number or Verification Code!" }, 400
 
-    expected_verification_code = current_app.vcode_dict.get(phone_number, None)
-    if expected_verification_code is None:
-        return { "error": "Wrong Verification Code, not found!" }, 400
+    code_data = current_app.vcode_dict.get(phone_number)
+    if code_data is None:
+        return { "error": "Verification code not found or expired" }, 400
 
-    if verification_code != expected_verification_code[1]:
-        return { "error": "Wrong Verification Code, it's wrong!" }, 400
+    insert_time, expected_code = code_data
+    current_time = time.time()
+
+    # Check if the code has expired
+    if current_time - insert_time > current_app.vcode_dict.expiration_time:
+        # Remove expired code
+        del current_app.vcode_dict[phone_number]
+        return { "error": "Verification code has expired" }, 400
+
+    if verification_code != expected_code:
+        return { "error": "Incorrect verification code" }, 400
+
+    # Remove the used verification code
+    del current_app.vcode_dict[phone_number]
 
     user_ops = UserOps(session=db.session)
     user_id = user_ops.get_or_create_user(phone_number=phone_number)

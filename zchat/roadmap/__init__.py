@@ -247,14 +247,53 @@ def create_from_topic():
         'mindmap': mindmap,
     })
 
+@bp.route('/industry_tags', methods=['GET'])
+# @login_required
+def industry_tags():
+    roadmap_ops = RoadmapOps(db.session)
+    industry_tags = roadmap_ops.all_industry_tags()
+    return jsonify(industry_tags)
+
+@bp.route('/job_tags_of_industry_tags', methods=['GET'])
+# @login_required
+def job_tags_of_industry_tags():
+    industry_tags = request.args.get('industry_tags')
+    industry_tags = industry_tags.split(',')
+    roadmap_ops = RoadmapOps(db.session)
+    job_tags = []
+    for industry_tag in industry_tags:
+        job_tags.extend(roadmap_ops.job_tags_of_industry_tag(industry_tag))
+    return jsonify(job_tags)
+
+@bp.route('/skill_tags_of_job_tags', methods=['GET'])
+# @login_required
+def skill_tags_of_job_tags():
+    job_tags = request.args.get('job_tags')
+    job_tags = job_tags.split(',')
+    roadmap_ops = RoadmapOps(db.session)
+    skill_tags = []
+    for job_tag in job_tags:
+        skill_tags.extend(roadmap_ops.skill_tags_of_job_tag(job_tag))
+    return jsonify(skill_tags)
+
 @bp.route('/search_topic', methods=['GET'])
 @login_required
 def search_topic():
-    topic = request.args.get('topic')
+    topics = request.args.get('topics')
+    topics = topics.split(',')
     limit = int(request.args.get('limit', '10'))
-    current_app.logger.debug(f'search_topic: {topic}, limit: {limit}')
-    mindmaps = find_mindmaps_from_meili_for_title(current_app, topic, limit)
-    return jsonify(mindmaps)
+    current_app.logger.debug(f'search_topic: {topics}, limit: {limit}')
+
+    results = []
+    roadmap_ops = RoadmapOps(db.session)
+    for topic in topics:
+        roadmaps_with_title_like = roadmap_ops.search_roadmaps_with_title_like(topic)
+        for item in roadmaps_with_title_like:
+            mindmap = get_mindmap_from_meili(current_app, item['mindmap_id'])
+            item['description'] = stats_of_mindmap(mindmap)
+        results.append(item)
+
+    return jsonify(results)
 
 @bp.route('/my_mindmaps', methods=['GET'])
 @login_required

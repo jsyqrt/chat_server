@@ -21,6 +21,9 @@ class Roadmap(db.Model):
     roadmap_status = db.Column(db.Integer, nullable=False, default=0) # 0->create, 1->verified, 2->public
     mindmap_id = db.Column(db.String, nullable=False)
     created_by = db.Column(db.String, nullable=True)
+    industry_tag = db.Column(db.String, nullable=True)
+    job_tag = db.Column(db.String, nullable=True)
+    skill_tag = db.Column(db.String, nullable=True)
 
     create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
     update_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
@@ -32,6 +35,9 @@ class Roadmap(db.Model):
         db.Index('index_ROADMAP_kind', 'roadmap_kind', unique=False),
         db.Index('index_ROADMAP_type', 'roadmap_type', unique=False),
         db.Index('index_ROADMAP_mindmap_id', 'mindmap_id', unique=False),
+        db.Index('index_ROADMAP_industry_tag', 'industry_tag', unique=False),
+        db.Index('index_ROADMAP_job_tag', 'job_tag', unique=False),
+        db.Index('index_ROADMAP_skill_tag', 'skill_tag', unique=False),
         db.Index('index_ROADMAP_create_timestamp', 'create_timestamp', unique=False),
         db.Index('index_ROADMAP_update_timestamp', 'update_timestamp', unique=False),
     )
@@ -46,6 +52,9 @@ class Roadmap(db.Model):
             'kind' : self.roadmap_kind,
             'status': self.roadmap_status,
             'mindmap_id': self.mindmap_id,
+            'industry_tag': self.industry_tag,
+            'job_tag': self.job_tag,
+            'skill_tag': self.skill_tag,
             'create_timestamp': self.create_timestamp,
             'update_timestamp': self.update_timestamp,
         }
@@ -166,7 +175,7 @@ class RoadmapOps:
     def __init__(self, session):
         self.session = session
 
-    def create_roadmap(self, id, icon, title, subtitle, type, kind, status, mindmap_id, created_by)->Roadmap:
+    def create_roadmap(self, id, icon, title, subtitle, type, kind, status, mindmap_id, created_by, industry_tag, job_tag, skill_tag)->Roadmap:
         try:
             roadmap = Roadmap(
                 roadmap_id=id,
@@ -178,6 +187,9 @@ class RoadmapOps:
                 roadmap_status=status,
                 mindmap_id=mindmap_id,
                 created_by=created_by,
+                industry_tag=industry_tag,
+                job_tag=job_tag,
+                skill_tag=skill_tag,
             )
             self.session.add(roadmap)
             self.session.commit()
@@ -228,6 +240,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "后端开发",
+                "skill_tag": "Node.js",
             },
             # devops.json
             {
@@ -238,6 +253,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "后端开发",
+                "skill_tag": "运维",
             },
             # server-side-game-developer.json
             {
@@ -248,6 +266,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "游戏开发",
+                "job_tag": "服务器端开发",
+                "skill_tag": "服务端游戏开发",
             },
             # frontend.json
             {
@@ -258,6 +279,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "前端开发",
+                "skill_tag": "前端开发",
             },
             # computer-science.json
             {
@@ -268,6 +292,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "concept",
                 "status": 2,
+                "industry_tag": "基础知识",
+                "job_tag": "",
+                "skill_tag": "计算机科学",
             },
             # python.json
             {
@@ -278,6 +305,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "后端开发",
+                "skill_tag": "Python",
             },
             # software-architect.json
             {
@@ -288,6 +318,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "架构师",
+                "skill_tag": "软件架构",
             },
             # data-analyst.json
             {
@@ -298,6 +331,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "数据科学",
+                "job_tag": "数据分析师",
+                "skill_tag": "数据分析",
             },
             # typescript.json
             {
@@ -308,6 +344,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "前端开发",
+                "skill_tag": "TypeScript",
             },
             # mlops.json
             {
@@ -318,6 +357,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "机器学习",
+                "job_tag": "机器学习工程师",
+                "skill_tag": "机器学习运维",
             },
             # vue.json
             {
@@ -328,6 +370,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "前端开发",
+                "skill_tag": "Vue",
             },
             # aspnet-core.json
             {
@@ -338,6 +383,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "后端开发",
+                "skill_tag": "ASP.NET Core",
             },
             # postgresql-dba.json
             {
@@ -348,6 +396,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "后端开发",
+                "skill_tag": "PostgreSQL",
             },
             # angular.json
             {
@@ -358,6 +409,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "前端开发",
+                "skill_tag": "Angular",
             },
             # qa.json
             {
@@ -368,6 +422,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "测试工程师",
+                "skill_tag": "QA",
             },
             # backend_cn.json
             {
@@ -378,6 +435,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "后端开发",
+                "skill_tag": "后端开发",
             },
             # backend.json
             {
@@ -388,6 +448,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "后端开发",
+                "skill_tag": "后端开发",
             },
             # cyber-security.json
             {
@@ -398,6 +461,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "安全",
+                "job_tag": "安全工程师",
+                "skill_tag": "网络安全",
             },
             # blockchain.json
             {
@@ -408,6 +474,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "后端开发",
+                "skill_tag": "区块链",
             },
             # full-stack.json
             {
@@ -418,6 +487,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "全栈开发",
+                "skill_tag": "全栈开发",
             },
             # android.json
             {
@@ -428,6 +500,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "移动开发",
+                "skill_tag": "Android",
             },
             # system-design.json
             {
@@ -438,6 +513,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "架构师",
+                "skill_tag": "系统设计",
             },
             # javascript.json
             {
@@ -448,6 +526,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "前端开发",
+                "skill_tag": "JavaScript",
             },
             # technical-writer.json
             {
@@ -458,6 +539,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "技术写作",
+                "job_tag": "技术文案",
+                "skill_tag": "技术文档写作",
             },
             # game-developer.json
             {
@@ -468,6 +552,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "游戏开发",
+                "job_tag": "游戏开发",
+                "skill_tag": "游戏开发",
             },
             # react.json
             {
@@ -478,6 +565,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "前端开发",
+                "skill_tag": "React",
             },
             # ux-design.json
             {
@@ -488,6 +578,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "role",
                 "status": 2,
+                "industry_tag": "设计",
+                "job_tag": "设计师",
+                "skill_tag": "UX设计",
             },
             # sql.json
             {
@@ -498,6 +591,9 @@ class RoadmapOps:
                 "type": "official",
                 "kind": "skill",
                 "status": 2,
+                "industry_tag": "软件开发",
+                "job_tag": "后端开发",
+                "skill_tag": "SQL",
             },
         ]
 
@@ -514,6 +610,9 @@ class RoadmapOps:
             roadmap_type = item['type']
             roadmap_kind = item['kind']
             roadmap_status = item['status']
+            industry_tag = item['industry_tag']
+            job_tag = item['job_tag']
+            skill_tag = item['skill_tag']
             created_by = 'official'
 
             if self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first():
@@ -529,6 +628,9 @@ class RoadmapOps:
                 roadmap_status=roadmap_status,
                 mindmap_id=mindmap_id,
                 created_by=created_by,
+                industry_tag=industry_tag,
+                job_tag=job_tag,
+                skill_tag=skill_tag,
             )
             self.session.add(roadmap)
             self.session.commit()
@@ -557,6 +659,34 @@ class RoadmapOps:
 
     def get_roadmap_by_mindmap_id(self, mindmap_id: str)->Roadmap:
         return self.session.query(Roadmap).filter_by(mindmap_id=mindmap_id).first()
+
+    def search_roadmaps_with_title_like(self, title: str)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_title.like(f'%{title}%')).all()
+        return [roadmap.to_dict() for roadmap in roadmaps]
+
+    def search_roadmaps_with_industry_tag_like(self, industry_tag: str)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.industry_tag.like(f'%{industry_tag}%')).all()
+        return [roadmap.to_dict() for roadmap in roadmaps]
+
+    def search_roadmaps_with_job_tag_like(self, job_tag: str)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.job_tag.like(f'%{job_tag}%')).all()
+        return [roadmap.to_dict() for roadmap in roadmaps]
+
+    def search_roadmaps_with_skill_tag_like(self, skill_tag: str)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.skill_tag.like(f'%{skill_tag}%')).all()
+        return [roadmap.to_dict() for roadmap in roadmaps]
+
+    def all_industry_tags(self)->list:
+        industry_tags = self.session.query(Roadmap.industry_tag).distinct().all()
+        return [industry_tag[0] for industry_tag in industry_tags]
+
+    def job_tags_of_industry_tag(self, industry_tag: str)->list:
+        job_tags = self.session.query(Roadmap.job_tag).filter(Roadmap.industry_tag == industry_tag).distinct().all()
+        return [job_tag[0] for job_tag in job_tags]
+
+    def skill_tags_of_job_tag(self, job_tag: str)->list:
+        skill_tags = self.session.query(Roadmap.skill_tag).filter(Roadmap.job_tag == job_tag).distinct().all()
+        return [skill_tag[0] for skill_tag in skill_tags]
 
     def get_public_roadmaps(self)->list:
         public_roadmaps = self.session.query(Roadmap).filter_by(roadmap_status=2).all()

@@ -238,11 +238,14 @@ class SQLiteDocumentStore(DocumentStore):
             索引字段列表
         """
         conn = self._get_connection()
-        with self.lock:
-            cursor = conn.cursor()
-            cursor.execute('SELECT field_name FROM indexed_fields WHERE collection_name = ?', (collection_name,))
+        cursor = conn.cursor()
 
-            return [row['field_name'] for row in cursor.fetchall()]
+        cursor.execute(
+            'SELECT field_name FROM indexed_fields WHERE collection_name = ?',
+            (collection_name,)
+        )
+
+        return [row['field_name'] for row in cursor.fetchall()]
 
     def add_document(self, collection_name: str, document: Dict[str, Any]) -> Dict[str, Any]:
         """向集合中添加文档
@@ -465,24 +468,51 @@ class SQLiteDocumentStore(DocumentStore):
 
             # 构建查询
             sql = 'SELECT DISTINCT d.content FROM documents d'
-            params = [collection_name]
+            params = []
 
             # 处理过滤器
+            filter_conditions = []
             if filters:
                 for i, filter_expr in enumerate(filters):
-                    field, value = filter_expr.split('=', 1)
-                    sql += f' JOIN field_values fv{i} ON d.collection_name = fv{i}.collection_name AND d.doc_id = fv{i}.doc_id'
-                    sql += f' AND fv{i}.field_name = ? AND fv{i}.field_value = ?'
-                    params.extend([field, value])
+                    # 支持多种过滤器格式: field=value, field:value, field=value1,value2
+                    if '=' in filter_expr:
+                        field, value = filter_expr.split('=', 1)
+                    elif ':' in filter_expr:
+                        field, value = filter_expr.split(':', 1)
+                    else:
+                        continue  # 跳过无效的过滤器
+
+                    field = field.strip()
+                    value = value.strip()
+
+                    # 检查字段是否是索引字段
+                    cursor.execute(
+                        'SELECT field_name FROM indexed_fields WHERE collection_name = ? AND field_name = ?',
+                        (collection_name, field)
+                    )
+                    if not cursor.fetchone():
+                        # 如果不是索引字段，使用 JSON 提取
+                        filter_conditions.append(f'json_extract(d.content, "$.{field}") = ?')
+                        params.append(value)
+                    else:
+                        # 如果是索引字段，使用索引表
+                        sql += f' JOIN field_values fv{i} ON d.collection_name = fv{i}.collection_name AND d.doc_id = fv{i}.doc_id'
+                        filter_conditions.append(f'fv{i}.field_name = ? AND fv{i}.field_value = ?')
+                        params.extend([field, value])
 
             # 添加基本条件
-            sql += ' WHERE d.collection_name = ?'
+            filter_conditions.append('d.collection_name = ?')
+            params.append(collection_name)
 
             # 处理查询
             if query:
                 # 简单的模糊匹配
-                sql += ' AND d.content LIKE ?'
+                filter_conditions.append('d.content LIKE ?')
                 params.append(f'%{query}%')
+
+            # 添加 WHERE 子句
+            if filter_conditions:
+                sql += ' WHERE ' + ' AND '.join(filter_conditions)
 
             # 处理排序
             if sort:
@@ -499,7 +529,22 @@ class SQLiteDocumentStore(DocumentStore):
             params.extend([limit, offset])
 
             # 执行查询
-            cursor.execute(sql, params)
+            try:
+                cursor.execute(sql, params)
+            except sqlite3.Error as e:
+                # 记录错误并返回空结果
+                print(f"SQLite error: {e}")
+                print(f"SQL: {sql}")
+                print(f"Params: {params}")
+                return {
+                    "hits": [],
+                    "offset": offset,
+                    "limit": limit,
+                    "estimatedTotalHits": 0,
+                    "query": query,
+                    "processingTimeMs": 0,
+                    "error": str(e)
+                }
 
             # 处理结果
             hits = []
@@ -508,23 +553,60 @@ class SQLiteDocumentStore(DocumentStore):
 
             # 获取总数
             count_sql = 'SELECT COUNT(DISTINCT d.doc_id) as count FROM documents d'
-            count_params = [collection_name]
+            count_params = []
 
+            # 处理过滤器
+            count_filter_conditions = []
             if filters:
                 for i, filter_expr in enumerate(filters):
-                    field, value = filter_expr.split('=', 1)
-                    count_sql += f' JOIN field_values fv{i} ON d.collection_name = fv{i}.collection_name AND d.doc_id = fv{i}.doc_id'
-                    count_sql += f' AND fv{i}.field_name = ? AND fv{i}.field_value = ?'
-                    count_params.extend([field, value])
+                    # 支持多种过滤器格式
+                    if '=' in filter_expr:
+                        field, value = filter_expr.split('=', 1)
+                    elif ':' in filter_expr:
+                        field, value = filter_expr.split(':', 1)
+                    else:
+                        continue
 
-            count_sql += ' WHERE d.collection_name = ?'
+                    field = field.strip()
+                    value = value.strip()
 
+                    # 检查字段是否是索引字段
+                    cursor.execute(
+                        'SELECT field_name FROM indexed_fields WHERE collection_name = ? AND field_name = ?',
+                        (collection_name, field)
+                    )
+                    if not cursor.fetchone():
+                        # 如果不是索引字段，使用 JSON 提取
+                        count_filter_conditions.append(f'json_extract(d.content, "$.{field}") = ?')
+                        count_params.append(value)
+                    else:
+                        # 如果是索引字段，使用索引表
+                        count_sql += f' JOIN field_values fv{i} ON d.collection_name = fv{i}.collection_name AND d.doc_id = fv{i}.doc_id'
+                        count_filter_conditions.append(f'fv{i}.field_name = ? AND fv{i}.field_value = ?')
+                        count_params.extend([field, value])
+
+            # 添加基本条件
+            count_filter_conditions.append('d.collection_name = ?')
+            count_params.append(collection_name)
+
+            # 处理查询
             if query:
-                count_sql += ' AND d.content LIKE ?'
+                count_filter_conditions.append('d.content LIKE ?')
                 count_params.append(f'%{query}%')
 
-            cursor.execute(count_sql, count_params)
-            count = cursor.fetchone()['count']
+            # 添加 WHERE 子句
+            if count_filter_conditions:
+                count_sql += ' WHERE ' + ' AND '.join(count_filter_conditions)
+
+            try:
+                cursor.execute(count_sql, count_params)
+                count = cursor.fetchone()['count']
+            except sqlite3.Error as e:
+                # 记录错误并使用 hits 长度作为总数
+                print(f"SQLite count error: {e}")
+                print(f"SQL: {count_sql}")
+                print(f"Params: {count_params}")
+                count = len(hits)
 
             return {
                 "hits": hits,
@@ -545,7 +627,11 @@ class SQLiteDocumentStore(DocumentStore):
             document: 文档内容
         """
         # 获取索引字段
-        indexed_fields = self._get_indexed_fields(collection_name)
+        cursor.execute(
+            'SELECT field_name FROM indexed_fields WHERE collection_name = ?',
+            (collection_name,)
+        )
+        indexed_fields = [row['field_name'] for row in cursor.fetchall()]
 
         # 删除现有的索引值
         cursor.execute(
@@ -557,9 +643,11 @@ class SQLiteDocumentStore(DocumentStore):
         for field in indexed_fields:
             value = self._get_field_value(document, field)
             if value is not None:
+                # 确保值是字符串
+                str_value = str(value)
                 cursor.execute(
                     'INSERT INTO field_values (collection_name, field_name, field_value, doc_id) VALUES (?, ?, ?, ?)',
-                    (collection_name, field, str(value), doc_id)
+                    (collection_name, field, str_value, doc_id)
                 )
 
     def _get_field_value(self, doc: Dict[str, Any], field: str) -> Any:
