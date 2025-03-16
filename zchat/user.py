@@ -290,7 +290,17 @@ def get_favorites():
 
         return jsonify(favorites['favorites'])
     else:
+        results = {}
+        roadmap_ops = RoadmapOps(db.session)
+        interaction_ops = RoadmapInteractionOps(db.session)
+        favorites = interaction_ops.get_favorites(user_id)
+        for roadmap_id in favorites:
+            roadmap = roadmap_ops.get_roadmap(roadmap_id=roadmap_id)
+            if roadmap:
+                roadmap_dict = roadmap.to_dict()
+                results[roadmap_id] = roadmap_dict
+
         return jsonify({
-            "roadmaps": {},
-            "cards": {}
+            "roadmaps": json.dumps(results),
+            "cards": "",
         }), 200

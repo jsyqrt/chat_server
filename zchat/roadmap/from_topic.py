@@ -2,11 +2,12 @@ import re
 from zchat.apis.llm import get_response_from_llm
 
 system_prompt_template = """
-请分析用户提供的topic，为用户规划一条学习路径。学习路径需详细分析topic，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
+请分析用户提供的topic，为用户规划一条学习路径。
 
-要求总共不少于100个节点。
+学习路径需详细分析topic，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
+如果topic是一个具体的职业或岗位，那么，需要包括用户所有要学习和理解的知识，还需要包括软技能，行业或职业的资质证书，职业生涯的不同发展阶段的划分，需要的经验能力和年限，岗位职责，以及对应的工作内容。
 
-最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。
+最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。 要求总共不少于100个节点。思维导图尽可能扁平化。如果可能的话，在根节点中包含行业、岗位、技能标签。
 
 如果用户输入的主题，涉及政治敏感、暴力、色情、赌博、毒品、枪支等敏感内容，请直接返回None。
 """
@@ -27,11 +28,26 @@ user_prompt= """
                 "$ref": "#/definitions/node"
             },
             "description": "子节点列表"
+        },
+        "industry_tag": {
+            "type": "string",
+            "description": "行业标签"
+        },
+        "job_tag": {
+            "type": "string",
+            "description": "岗位标签"
+        },
+        "skill_tag": {
+            "type": "string",
+            "description": "技能标签"
         }
     },
     "required": [
         "title",
-        "children"
+        "children",
+        "industry_tag",
+        "job_tag",
+        "skill_tag"
     ],
     "definitions": {
         "node": {

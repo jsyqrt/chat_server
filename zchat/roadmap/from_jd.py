@@ -5,8 +5,10 @@ system_prompt = """
 请分析提供的职位描述（JD），提取所有关键信息，并以JSON格式输出。关键信息包括但不限于职位标题、地点、薪资范围、学历要求、工作年限要求、部门、主要职责和所需技能，确保信息全面且结构清晰。
 
 然后，为用户规划一条学习路径，以达到该JD的要求。学习路径需详细分析JD，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
+需要包括用户所有要学习和理解的知识，技能，软技能等。
 
-最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。
+最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。要求总共不少于100个节点。思维导图尽可能扁平化。如果可能的话，在根节点中包含行业、岗位、技能标签。
+
 """
 
 user_prompt= """
@@ -58,11 +60,26 @@ user_prompt= """
                 "$ref": "#/definitions/node"
             },
             "description": "子节点列表"
+        },
+        "industry_tag": {
+            "type": "string",
+            "description": "行业标签"
+        },
+        "job_tag": {
+            "type": "string",
+            "description": "岗位标签"
+        },
+        "skill_tag": {
+            "type": "string",
+            "description": "技能标签"
         }
     },
     "required": [
         "title",
-        "children"
+        "children",
+        "industry_tag",
+        "job_tag",
+        "skill_tag"
     ],
     "definitions": {
         "node": {

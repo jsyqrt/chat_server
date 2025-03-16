@@ -142,6 +142,9 @@ def create_from_jd_and_resume():
     roadmap_status = RoadmapStatus.VERIFIED.value
     mindmap_id = mindmap['id']
     created_by = user_id
+    industry_tag = mindmap['industry_tag']
+    job_tag = mindmap['job_tag']
+    skill_tag = mindmap['skill_tag']
 
     roadmap_ops = RoadmapOps(db.session)
     roadmap = roadmap_ops.create_roadmap(
@@ -154,6 +157,9 @@ def create_from_jd_and_resume():
         status=roadmap_status,
         mindmap_id=mindmap_id,
         created_by=created_by,
+        industry_tag=industry_tag,
+        job_tag=job_tag,
+        skill_tag=skill_tag,
     )
 
     interaction_ops = RoadmapInteractionOps(db.session)
@@ -218,6 +224,9 @@ def create_from_topic():
     roadmap_kind = RoadmapKind.SKILL.value
     roadmap_status = RoadmapStatus.VERIFIED.value
     mindmap_id = mindmap['id']
+    industry_tag = mindmap['industry_tag']
+    job_tag = mindmap['job_tag']
+    skill_tag = mindmap['skill_tag']
     created_by = user_id
 
     roadmap_ops = RoadmapOps(db.session)
@@ -231,6 +240,9 @@ def create_from_topic():
         status=roadmap_status,
         mindmap_id=mindmap_id,
         created_by=created_by,
+        industry_tag=industry_tag,
+        job_tag=job_tag,
+        skill_tag=skill_tag,
     )
 
     interaction_ops = RoadmapInteractionOps(db.session)
