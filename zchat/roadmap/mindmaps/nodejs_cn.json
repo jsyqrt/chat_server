@@ -1,0 +1,2937 @@
+{
+  "title": "Node.js 开发者",
+  "description": "逐步指南，助你在2025年成为一名现代 Node.js 开发者",
+  "links": [],
+  "children": [
+    {
+      "title": "TypeScript简介",
+      "description": "TypeScript是一种静态类型编程语言，它是JavaScript的超集。
+
+它由微软开发和维护。
+
+TypeScript旨在解决构建大规模JavaScript应用程序时遇到的挑战，并通过为该语言添加可选的类型注解（type annotations）、类（classes）、接口（interfaces）和其他特性。
+
+使用TypeScript的主要好处包括：\n\n*   类型安全\n*   提升的工具支持\n*   提升的可维护性\n*   向后兼容性\n\n",
+      "links": [
+        {
+          "title": "TypeScript概览",
+          "url": "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html",
+          "type": "article"
+        },
+        {
+          "title": "TypeScript官方手册",
+          "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+          "type": "article"
+        },
+        {
+          "title": "什么是TypeScript？",
+          "url": "https://thenewstack.io/what-is-typescript/",
+          "type": "article"
+        },
+        {
+          "title": "关于TypeScript的热门文章",
+          "url": "https://app.daily.dev/tags/typescript?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "视频：TypeScript的优势",
+          "url": "https://youtu.be/BUo7B6UuoJ4",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "什么是Node.js？",
+          "description": "Node.js 是一个开源的和跨平台的JavaScript运行时环境（runtime environment）。
+
+它几乎适用于任何类型的项目！Node.js 运行V8 JavaScript引擎（JavaScript引擎），这是Google Chrome的核心部分，但在浏览器之外运行。
+
+这使得Node.js性能非常高。
+
+一个Node.js应用程序在一个进程中运行，而不会为每个请求创建一个新的线程。
+
+\n\nNode.js 在其标准库中提供了一组异步I/O原语（asynchronous I/O primitives），以防止JavaScript代码阻塞。
+
+通常，Node.js中的库是使用非阻塞范例（non-blocking paradigms）编写的，使阻塞性行为成为例外而不是常态。
+
+\n\n",
+          "links": [
+            {
+              "title": "官方网站",
+              "url": "https://nodejs.org/en/about/",
+              "type": "article"
+            },
+            {
+              "title": "Node.js - 开始使用",
+              "url": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs",
+              "type": "article"
+            },
+            {
+              "title": "Node.js - 简介",
+              "url": "https://www.w3schools.com/nodejs/nodejs_intro.asp",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Node.js的热门帖子",
+              "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是Node.js？",
+              "url": "https://www.youtube.com/watch?v=uVwtVBpw7RQ",
+              "type": "video"
+            },
+            {
+              "title": "Node.js如何工作？",
+              "url": "https://www.youtube.com/watch?v=jOupHNvDIq8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "95be09a8-590e-4d66-868d-7f1197c980a5",
+          "xid": "2c8399de-cc96-4061-b931-9ddcd0b846eb"
+        },
+        {
+          "title": "为什么使用Node.js？",
+          "description": "Node.js 是一个跨平台运行时（cross-platform runtime），适用于各种使用场景。
+
+庞大的社区使得使用它变得非常容易上手。
+
+Node.js 使用 V8 引擎编译 JavaScript，以闪电般的速度运行。
+
+Node.js 应用非常可扩展且易于维护。
+
+跨平台支持允许创建各种类型的应用程序 -- 桌面应用程序，软件即服务（Software as a Service, SaaS），甚至移动应用程序。
+
+由于使用了事件驱动的、非阻塞的I/O模型，Node.js对于数据密集型和实时应用来说非常理想，此外，庞大的社区中拥有大量的Node.js包，从而简化和加速了开发。
+
+\n\n",
+          "links": [
+            {
+              "title": "学习Node.js",
+              "url": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs",
+              "type": "article"
+            },
+            {
+              "title": "为什么选择Node.js？",
+              "url": "https://medium.com/selleo/why-choose-node-js-b0091ad6c3fc",
+              "type": "article"
+            },
+            {
+              "title": "选择Node.js的五大理由",
+              "url": "https://www.bitovi.com/blog/5-reasons-to-choose-nodejs",
+              "type": "article"
+            },
+            {
+              "title": "探索有关Node.js的顶级文章",
+              "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b753415d-bfd0-477f-8951-c2f8fe73381a",
+          "xid": "7104e715-6b8a-4946-84a4-f980bb81e680"
+        },
+        {
+          "title": "Node.js的历史",
+          "description": "Node.js最初由Ryan Dahl于2009年编写，距首个服务器端JavaScript环境Netscape的LiveWire Pro Web推出已有大约十三年时间。
+
+初始版本仅支持Linux和macOS X系统。
+
+其开发和维护主要由Dahl领导，后来得到了Joyent的赞助。
+
+",
+          "links": [
+            {
+              "title": "Rising Stack - 时间轴上的Node.js历史",
+              "url": "https://blog.risingstack.com/history-of-node-js/",
+              "type": "article"
+            },
+            {
+              "title": "SAP Press - Node.js是如何出现的？",
+              "url": "https://blog.sap-press.com/how-did-node.js-come-about",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Node.js的热门帖子",
+              "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Node.js:纪录片 | 源起故事",
+              "url": "https://youtu.be/LB8KwiiUGy0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "89633357-1980-4ff2-be63-4d1c5a0e3964",
+          "xid": "685af276-1642-4267-85cc-cb92090171a6"
+        },
+        {
+          "title": "Node.js 与 浏览器",
+          "description": "浏览器和 Node.js (Node.js) 均使用 JavaScript 作为编程语言。
+
+在浏览器中构建应用程序与构建 Node.js 应用程序是完全不同的。
+
+尽管始终是 JavaScript，但一些关键的区别使得体验大相径庭。
+
+\n\n",
+          "links": [
+            {
+              "title": "Node.js 与浏览器的区别",
+              "url": "https://nodejs.org/en/learn/getting-started/differences-between-nodejs-and-the-browser/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Node.js 的热门帖子",
+              "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "149d6e13-3c5f-4add-bc78-7bb166fd7869",
+          "xid": "8bde0381-7b13-4208-8648-9a8eeaef90a9"
+        },
+        {
+          "title": "运行Node.js代码",
+          "description": "运行Node.js程序的通常方式是运行全局可用的`node`命令（在安装Node.js之后），并传递要执行的文件名称。
+
+\n\n",
+          "links": [
+            {
+              "title": "从命令行运行Node.js",
+              "url": "https://nodejs.org/en/learn/command-line/run-nodejs-scripts-from-the-command-line/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Node.js的热门文章",
+              "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "bae2b4c0-2ef1-423d-9a67-525e798c3ca9",
+          "xid": "0321e88f-8615-4313-9d17-89fd7600e99d"
+        }
+      ],
+      "id": "3e15ddbf-2bd5-4a59-b627-452503d39da4",
+      "xid": "bd789a38-3304-4e75-98bf-3de0fe839c5d"
+    },
+    {
+      "title": "模块",
+      "description": "我们将代码拆分为不同的文件以便维护、组织和尽可能重复使用代码。
+
+模块系统允许我们将代码拆分和包含，并在需要时导入其他开发人员编写的代码。
+
+简单来说，一个模块不过就是一个JavaScript文件。
+
+Node.js有许多内置的模块（built-in modules），它们是平台的一部分并随Node.js安装一起提供，例如HTTP、fs（文件系统）、path（路径模块）等。
+
+\n\n",
+      "links": [
+        {
+          "title": "模块：CommonJS模块",
+          "url": "https://nodejs.org/api/modules.html#modules-commonjs-modules",
+          "type": "article"
+        },
+        {
+          "title": "CommonJS与ES模块在Node.js中的对比",
+          "url": "https://blog.logrocket.com/commonjs-vs-es-modules-node-js/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Node.js的热门文章",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Node.js中的模块",
+          "url": "https://www.youtube.com/watch?v=9Amxzvq5LY8&",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "CommonJS",
+          "description": "CommonJS（通用JS）和ES（EcmaScript）是在Node.js中使用的模块系统。
+
+CommonJS是默认的模块系统。
+
+然而，最近在NodeJS中增加了一个新的模块系统——ES模块。
+
+CommonJS模块使用require()语句导入模块和module.exports导出模块，而ES使用import和export。
+
+\n\n",
+          "links": [
+            {
+              "title": "CommonJS与ESM的区别",
+              "url": "https://blog.logrocket.com/commonjs-vs-es-modules-node-js/",
+              "type": "article"
+            },
+            {
+              "title": "如何使用CommonJS",
+              "url": "https://www.javascripttutorial.net/nodejs-tutorial/nodejs-modules/",
+              "type": "article"
+            },
+            {
+              "title": "如何使用ES模块",
+              "url": "https://blog.logrocket.com/es-modules-in-node-today/",
+              "type": "article"
+            },
+            {
+              "title": "CommonJS与ES模块：NodeJS中的模块和导入",
+              "url": "https://reflectoring.io/nodejs-modules-imports/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Node.js的热门文章",
+              "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "如何使用模块",
+              "url": "https://www.youtube.com/watch?v=pP4kjXykbio",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f1a31c2a-ef36-4d2f-ac67-d06feac8a184",
+          "xid": "e5d20b6d-3b66-4244-b7d4-8ca44baeabbc"
+        },
+        {
+          "title": "创建与导入",
+          "description": "模块是将JavaScript代码收集到一个单独的逻辑文件中，以便在外部应用程序中根据其相关功能使用这些代码。
+
+在Node.js中，创建模块有两种方法，即通过CommonJS（通用JS）或ESM（ECMAScript模块）。
+
+\n\n",
+          "links": [
+            {
+              "title": "Node.js中的CommonJS与ESM",
+              "url": "https://blog.logrocket.com/commonjs-vs-es-modules-node-js/",
+              "type": "article"
+            },
+            {
+              "title": "Node.js中的模块和导入",
+              "url": "https://reflectoring.io/nodejs-modules-imports/",
+              "type": "article"
+            },
+            {
+              "title": "在Node.js中创建模块",
+              "url": "https://www.youtube.com/watch?v=Cxo4UKpHv5s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "25135476-6662-4219-8fc8-76f1ca0dcaa7",
+          "xid": "4d223a18-c3ac-45b9-8418-5e94d6079d3a"
+        },
+        {
+          "title": "[全局] 关键字",
+          "description": "在浏览器中，顶级作用域是全局作用域，它的全局对象称为 `window` 对象。
+
+在浏览器内，`var something` 会在 `window` 对象内定义一个新的全局变量。
+
+而在 Node.js 中情况不同。
+
+顶级作用域**不是**全局作用域；在 Node.js 模块内的 `var something` 会变为局部变量。
+
+\n\n",
+          "links": [
+            {
+              "title": "Node.js 中的全局[关键字]",
+              "url": "https://nodejs.org/api/globals.html#global",
+              "type": "article"
+            },
+            {
+              "title": "NodeJS中的'全局'对象是什么",
+              "url": "https://stackoverflow.com/questions/43627622/",
+              "type": "article"
+            },
+            {
+              "title": "什么是全局对象？",
+              "url": "https://www.youtube.com/watch?v=jn8PZNBmKm0",
+              "type": "video"
+            },
+            {
+              "title": "Node中的全局对象",
+              "url": "https://www.youtube.com/watch?v=PY-AycMkEAg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "37a5933c-bcdd-4247-9035-fee1abf578ed",
+          "xid": "f4477627-4ffa-4f91-92a7-19d7c6909953"
+        }
+      ],
+      "id": "599f5886-abb0-4441-a962-e3256d696e7b",
+      "xid": "b17afd40-ff85-43e5-ae70-c8d58d531ad3"
+    },
+    {
+      "title": "npm",
+      "description": "npm 是Node.js的标准包管理器。
+
+\n\n它包括两个组成部分：首先，它是一个在线仓库，用以发布开源的Node.js项目；其次，它是一个命令行工具，用于与该仓库进行交互，有助于包的安装、版本管理和依赖管理。
+
+大量的Node.js库和应用程序都在npm上发布，并且每天都有更多新的包被添加进来。
+
+\n\n",
+      "links": [
+        {
+          "title": "什么是npm？",
+          "url": "https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager",
+          "type": "article"
+        },
+        {
+          "title": "npm包管理器简介",
+          "url": "https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager",
+          "type": "article"
+        },
+        {
+          "title": "官方网站",
+          "url": "https://www.npmjs.com/",
+          "type": "article"
+        },
+        {
+          "title": "官方文档",
+          "url": "https://docs.npmjs.com/",
+          "type": "article"
+        },
+        {
+          "title": "发现关于Node.js的顶级文章",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "npm速成课程",
+          "url": "https://www.youtube.com/watch?v=jHDhaSSKmB0",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "npx",
+          "description": "npx 是一个非常强大的命令，自2017年7月发布的 npm 5.2 版本起可用。
+
+如果你不想安装 npm，可以单独安装 npx。
+
+npx 允许你运行通过 npm 仓库发布的、使用 Node.js 编写的代码，而无需安装该包本身。
+
+这对于尝试新工具、运行一次性命令或在全局安装不合适的共享环境中使用包特别有用。
+
+npx 负责临时下载包、运行所需的命令，然后清理临时安装。
+
+这有助于保持项目依赖项的精简，并避免版本冲突。
+
+\n\n",
+          "links": [
+            {
+              "title": "npx Node.js 包运行器入门",
+              "url": "https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b",
+              "type": "article"
+            },
+            {
+              "title": "官方文档",
+              "url": "https://docs.npmjs.com/cli/commands/npx/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "48736307-5cd7-4155-8f62-9f12882eb084",
+          "xid": "d1d88030-1738-4149-9fe0-367c743a0a29"
+        },
+        {
+          "title": "创建软件包",
+          "description": "npm 软件包（package）允许您将特定功能捆绑到可重复使用的软件包中，然后将其上传到某个包注册表（registry），如 npm 或 GitHub Packages，然后可以使用 npm 在项目中安装和重用这些软件包。
+
+\n\n",
+          "links": [
+            {
+              "title": "创建现代 npm 软件包的最佳实践",
+              "url": "https://snyk.io/blog/best-practices-create-modern-npm-package/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e593ddfa-460c-4db5-b37d-5a5bd99abad8",
+          "xid": "77e18acf-a362-4904-9fc8-8f7731edc762"
+        },
+        {
+          "title": "更新软件包",
+          "description": "npm 提供了各种功能，以帮助安装和维护项目的依赖项。
+
+依赖项会因为新功能和修复而更新，因此建议升级到较新版本。
+
+我们使用 `npm update` 命令来实现这一目的。
+
+\n\n",
+          "links": [
+            {
+              "title": "更新从注册表下载的软件包",
+              "url": "https://docs.npmjs.com/updating-packages-downloaded-from-the-registry",
+              "type": "article"
+            },
+            {
+              "title": "如何一次性更新所有NPM依赖项",
+              "url": "https://www.youtube.com/watch?v=Ghdfdq17JAY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "624e452d-28b7-4ec7-ae4c-e96ef5f50cf3",
+          "xid": "be373350-b323-4667-b58b-7c28587e1a33"
+        },
+        {
+          "title": "运行脚本",
+          "description": "在Node.js中，npm脚本（npm scripts）用于启动服务器、启动项目的构建以及运行测试。
+
+我们可以在文件夹中的package.json文件中定义这些脚本。
+
+如果需要，还可以将大的脚本分解为许多更小的片段。
+
+\n\n",
+          "links": [
+            {
+              "title": "运行脚本示例",
+              "url": "https://riptutorial.com/node-js/example/4592/running-scripts",
+              "type": "article"
+            },
+            {
+              "title": "运行脚本",
+              "url": "https://docs.npmjs.com/cli/using-npm/scripts",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1913ff12-cc73-4190-92c4-22f3a3843e82",
+          "xid": "4eef0481-23b5-4484-a62b-fc1402529b37"
+        },
+        {
+          "title": "npm 工作区(npm workspaces)",
+          "description": "工作区(workspaces)是一个泛指术语，指的是 npm 命令行界面(CLI)功能集，用于支持从本地文件系统从单个顶级根包中管理多个包。
+
+",
+          "links": [
+            {
+              "title": "npm 工作区(npm workspaces)",
+              "url": "https://docs.npmjs.com/cli/using-npm/workspaces",
+              "type": "article"
+            },
+            {
+              "title": "使用 npm 工作区入门",
+              "url": "https://ruanmartinelli.com/posts/npm-7-workspaces-1",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 NPM 的热门文章",
+              "url": "https://app.daily.dev/tags/npm?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "96b0f2a0-9335-4961-af7e-80dd7ebd1ce9",
+          "xid": "e7bcb923-ab61-43b3-8ec4-51fce00a1ff0"
+        },
+        {
+          "title": "全局安装",
+          "description": "NodeJS 和 NPM 允许两种方法来安装依赖项/包：局部安装和全局安装。
+
+局部安装主要在为正在开发的特定项目添加包或依赖项时使用。
+
+包会连同其依赖项一起安装在项目的 `node_modules` 文件夹下。
+
+此外，在 `package.json` 文件中，会在 `dependencies` 标签下为已安装的依赖项添加新行。
+
+此时，你可以通过导入包在 NodeJS 代码中使用该包。
+
+与局部安装不同的是，你可以选择全局安装。
+
+全局安装会将其安装在系统路径下，这些包可供这台特定计算机上运行的任何程序使用。
+
+这种方法通常用于安装命令行工具（例如，即使是 `npm` 程序也是一个全局安装的 npm 包）。
+
+\n\n",
+          "links": [
+            {
+              "title": "局部下载和安装包",
+              "url": "https://docs.npmjs.com/downloading-and-installing-packages-locally",
+              "type": "article"
+            },
+            {
+              "title": "全局下载和安装包",
+              "url": "https://docs.npmjs.com/downloading-and-installing-packages-globally",
+              "type": "article"
+            },
+            {
+              "title": "NPM 安装文档",
+              "url": "https://docs.npmjs.com/cli/commands/npm-install",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3234631b-6b8a-4fed-a24a-9d0d24bef4bc",
+          "xid": "61614c9c-f33d-417e-8be9-5e6be0bec9ac"
+        }
+      ],
+      "id": "9db8f69d-b483-4912-a37e-eafdf3818d89",
+      "xid": "69c45df6-e338-4008-99bc-b26a2dbdc2b2"
+    },
+    {
+      "title": "错误处理",
+      "description": "错误处理是一种用于尽可能快地发现和解决问题的方式。
+
+在Node.js中，错误可以分为操作错误或编程错误。
+
+阅读以下链接中的文章，了解如何处理Node.js中的不同类型的错误\n\n",
+      "links": [
+        {
+          "title": "Node.js 错误处理最佳实践",
+          "url": "https://sematext.com/blog/node-js-error-handling",
+          "type": "article"
+        },
+        {
+          "title": "Node.js 中的错误处理",
+          "url": "https://blog.logrocket.com/error-handling-node-js/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Node.js的热门文章",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "调用堆栈 / 堆栈跟踪 (Callstack / Stack Trace)",
+          "description": "堆栈跟踪用于跟踪程序执行过程中某一特定时刻的活动堆栈帧。
+
+在调试代码时，堆栈跟踪非常有用，因为它可以显示导致错误的确切位置。
+
+\n\n",
+          "links": [
+            {
+              "title": "在node.js中记录堆栈跟踪的多种方法",
+              "url": "https://www.cloudhadoop.com/nodejs-print-stack-trace-error/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0efa8ba5-4866-4884-92a2-aa44c0bac78f",
+          "xid": "41679163-01b5-447a-be77-edff74c5aa35"
+        },
+        {
+          "title": "使用调试器",
+          "description": "Node.js 包含了一个命令行调试实用工具。
+
+Node.js 调试器客户端不是一个功能完善的调试器，但简单的步进（stepping）和检查（inspection）是可以实现的。
+
+使用时，用带有 inspect 参数的命令启动 Node.js，后面接要调试的脚本路径。
+
+\n\n示例 - `$ node inspect myscript.js`\n\n",
+          "links": [
+            {
+              "title": "官方文档",
+              "url": "https://nodejs.org/api/debugger.html",
+              "type": "article"
+            },
+            {
+              "title": "Freecodecamp.org - 调试",
+              "url": "https://www.freecodecamp.org/news/how-to-debug-node-js-applications/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b42b9941-b3ea-4ac2-a2ee-715996ed15f6",
+          "xid": "563a302e-9a09-4f88-91b7-60412ac6f431"
+        },
+        {
+          "title": "未捕获的异常",
+          "description": "当JavaScript错误没有被妥善处理时，将触发一个未捕获的异常（uncaughtException）。
+
+这些异常表明程序员犯了错，应该以最高优先级处理它们。
+
+\n\n正确使用未捕获的异常（uncaughtException）的方式是在进程关闭之前同步释放分配的资源（例如文件描述符、句柄等）。
+
+在未捕获的异常（uncaughtException）之后恢复正常使用是不安全的，因为系统已经处于受损状态。
+
+最好的做法是让应用程序崩溃，记录错误，然后使用nodemon或pm2自动重启进程。
+
+\n\n",
+          "links": [
+            {
+              "title": "未捕获异常错误事件",
+              "url": "https://nodejs.org/api/process.html#event-uncaughtexception",
+              "type": "article"
+            },
+            {
+              "title": "让它崩溃：关闭时处理Node.js错误的最佳实践",
+              "url": "https://blog.heroku.com/best-practices-nodejs-errors",
+              "type": "article"
+            },
+            {
+              "title": "Node.js中的未捕获异常",
+              "url": "https://shapeshed.com/uncaught-exceptions-in-node/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "780b8a36-36c0-41a0-b0c7-80b4d49bbbac",
+          "xid": "09a05eaf-69b7-4d91-b153-166e71da1f2b"
+        },
+        {
+          "title": "错误类型",
+          "description": "错误类型",
+          "links": [],
+          "children": [
+            {
+              "title": "JavaScript 错误",
+              "description": "JavaScript 错误用于在执行脚本时向开发人员报告各种问题。
+
+这些问题可以是因开发人员/程序员使用错误语法导致的语法错误，可能是由于用户输入错误或其他问题。
+
+\n\n在脚本执行期间，JavaScript 可能会发生六种类型的错误：\n\n*   EvalError (EvalError)\n*   RangeError (RangeError)\n*   ReferenceError (ReferenceError)\n*   SyntaxError (SyntaxError)\n*   TypeError (TypeError)\n*   URIError (URIError)\n\n",
+              "links": [
+                {
+                  "title": "JavaScript 中的错误类型",
+                  "url": "https://blog.bitsrc.io/types-of-native-errors-in-javascript-you-must-know-b8238d40e492",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 错误参考 - MDN",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关 JavaScript 的热门帖子",
+                  "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7c0e1ba5-13f7-434a-87ce-4c36d93bf52b",
+              "xid": "1106ae8b-5be1-41a0-839a-f517a9b3bba6"
+            },
+            {
+              "title": "系统错误",
+              "description": "当Node.js运行环境内发生异常时，会生成系统错误。
+
+这些错误通常发生在应用程序违反操作系统约束时。
+
+例如，如果应用程序尝试读取一个不存在的文件，系统错误就会发生。
+
+\n\n在编写Node.js程序时经常会遇到以下系统错误\n\n1.  EACCES - 权限被拒绝 (Permission denied)\n2.  EADDRINUSE - 地址已经在使用中 (Address already in use)\n3.  ECONNRESET - 连接被对等方重置 (Connection reset by peer)\n4.  EEXIST - 文件已存在 (File exists)\n5.  EISDIR - 是目录 (Is a directory)\n6.  EMFILE - 系统文件打开数过多 (Too many open files in system)\n7.  ENOENT - 没有此文件或目录 (No such file or directory)\n8.  ENOTDIR - 不是一个目录 (Not a directory)\n9.  ENOTEMPTY - 目录非空 (Directory not empty)\n10. ENOTFOUND - DNS查询失败 (DNS lookup failed)\n11. EPERM - 操作不可用 (Operation not permitted)\n12. EPIPE - 管道断开 (Broken Pipe)\n13. ETIMEDOUT - 操作超时 (Operation timed out)\n\n",
+              "links": [
+                {
+                  "title": "Node.js 错误 - 官方文档",
+                  "url": "https://nodejs.org/api/errors.html#errors_class_systemerror",
+                  "type": "article"
+                },
+                {
+                  "title": "@Article@Node.js中常见的16种错误及其解决方法",
+                  "url": "https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6a56e48c-ad70-40e7-bde6-e1f3e0efb9de",
+              "xid": "f6dc3964-e281-4ce8-8a2a-03f0c41a3902"
+            },
+            {
+              "title": "用户指定的错误",
+              "description": "用户指定的错误可以通过扩展内置的错误类（Error 对象）来创建。
+
+以这种方式创建错误时，应传递一个描述错误的消息字符串。
+
+此消息可以通过对象的 message 属性访问。
+
+Error 对象还包含一个 name 和一个 stack 属性，这些属性指示错误的名称和在代码中创建它的位置。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Node.js 中错误处理的全面指南",
+                  "url": "https://www.honeybadger.io/blog/errors-nodejs/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "80e68b58-d06b-4671-be5d-dd3c9502fe73",
+              "xid": "f523be5c-b0f1-44b2-9123-0ca3c459a5bf"
+            },
+            {
+              "title": "断言错误(Assertion Errors)",
+              "description": "在Node.js中，当`assert`模块确定给定的表达式不是真值时，会抛出一个`AssertionError`错误。
+
+`assert`模块是Node.js的一个内置模块，提供了简单的一系列断言测试，可用于测试代码的行为。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Node.js 断言(Node.js Assert)",
+                  "url": "https://nodejs.org/api/assert.html#new-assertassertionerroroptions",
+                  "type": "article"
+                },
+                {
+                  "title": "Node.js 错误处理 - 断言错误(Node.js Error Handling - AssertionError)",
+                  "url": "https://blog.airbrake.io/blog/nodejs-error-handling/assertionerror-nodejs",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "dc452df8-9501-4133-8e8a-eb5293a9dd7e",
+              "xid": "e29ce0cd-c1c7-42ca-930e-4f2abf4962b4"
+            }
+          ],
+          "id": "092a7f80-6158-4fe6-8b29-47810896032e",
+          "xid": "814f7ab8-31e8-4a30-843e-0d60bfe7331d"
+        },
+        {
+          "title": "处理异步错误",
+          "description": "错误必须始终被处理。
+
+如果你使用的是同步编程，你可以使用try catch语句。
+
+但是如果在进行异步编程时，这不起作用！异步错误只能在回调函数内部被处理！\n\n",
+          "links": [
+            {
+              "title": "异步错误",
+              "url": "https://www.mariokandut.com/handling-errors-in-asynchronous-functions-node-js/",
+              "type": "article"
+            },
+            {
+              "title": "处理异步javascript错误的最佳方式",
+              "url": "https://dev.to/m__mdy__m/the-best-way-to-handle-errors-in-asynchronous-javascript-16bb",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4203fee2-543e-490a-8d66-bc66dc49656f",
+          "xid": "ea7af96c-c2f6-4ebb-9268-4d408a68e21e"
+        }
+      ],
+      "id": "997aff47-5dc3-4227-a022-448d1aa22a57",
+      "xid": "5bc5b8de-146f-459b-b49e-6876949db77a"
+    },
+    {
+      "title": "异步编程",
+      "description": "异步代码意味着事情可以独立于主程序流程发生。
+
+在JavaScript中的异步函数会在后台处理，不会阻塞其他请求。
+
+它保证了非阻塞代码执行。
+
+异步代码执行没有依赖性，也没有特定顺序。
+
+这提高了系统的效率和吞吐量。
+
+制作Web应用需要了解异步概念，因为我们将会处理需要一段时间才能处理完成的操作。
+
+",
+      "links": [
+        {
+          "title": "异步JS简介",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Node.js的热门文章",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "异步编程与同步编程对比",
+          "url": "https://www.youtube.com/watch?v=Kpn2ajSa92c",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "事件发射器（Event Emitter）",
+          "description": "在Node.js中，事件可以简单地描述为一个字符串和一个对应的回调函数。
+
+事件可以被“发射”（或者说，对应的回调被调用）多次，或者你也可以选择只监听它第一次被发射时的情况。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是事件发射器（Event Emitters）？",
+              "url": "https://nodejs.org/en/learn/asynchronous-work/the-nodejs-event-emitter",
+              "type": "article"
+            },
+            {
+              "title": "如何在Node.js中使用事件发射器（Event Emitters）",
+              "url": "https://www.digitalocean.com/community/tutorials/using-event-emitters-in-node-js",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ab4df421-90b4-4476-bcd7-a66fe9287779",
+          "xid": "3b8c8d37-9f1b-4f91-a05d-35fcefa85c9e"
+        },
+        {
+          "title": "事件循环 (Event Loop)",
+          "description": "事件循环 (Event Loop) 是 Node.js 中最重要的方面之一。
+
+为什么它如此重要？因为它解释了 Node.js 如何实现异步（asynchronous）和非阻塞（non-blocking）I/O，它解释了 Node.js 的“杀手级特性（killer feature）”，这个特性让 Node.js 取得了巨大的成功。
+
+\n\n",
+          "links": [
+            {
+              "title": "Node.js 事件循环 (Event Loop)",
+              "url": "https://www.coursera.org/lecture/secure-full-stack-mean-developer/the-node-js-event-loop-j5fbT",
+              "type": "course"
+            },
+            {
+              "title": "Node.js 事件循环 (Event Loop)",
+              "url": "https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 可视化：事件循环 (Event Loop)",
+              "url": "https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif",
+              "type": "article"
+            },
+            {
+              "title": "NodeJS 事件循环 (Event Loop)",
+              "url": "https://nodejs.org/en/guides/event-loop-timers-and-nexttick",
+              "type": "article"
+            },
+            {
+              "title": "不要阻塞事件循环 (Event Loop)",
+              "url": "https://nodejs.org/en/guides/dont-block-the-event-loop",
+              "type": "article"
+            },
+            {
+              "title": "Node.js 中的事件循环 (Event Loop) - Mixu 的 Node 书",
+              "url": "https://book.mixu.net/node/ch2.html#the-event-loop-understanding-how-node-executes-javascript-code",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6dec31f7-32a8-4fe2-84a5-39c1326d65de",
+          "xid": "fb502a54-3241-4b50-a177-3ca375b3aa38"
+        },
+        {
+          "title": "承诺(Promises)",
+          "description": "承诺(Promise)通常定义为某个最终会可用的值的代理。
+
+异步函数在后台使用承诺(Promise)，因此理解承诺(Promise)的工作原理对于理解\"async\"和\"await\"的工作机制是基础性的。
+
+一旦调用了承诺(Promise)，它将开始处于挂起状态。
+
+这意味着调用函数继续执行，直到承诺(Promise)解决，并给调用函数提供所请求的数据。
+
+\n\n创建承诺(Promise): Promise API 提供了 Promise 构造函数，你可以使用 new Promise() 进行初始化。
+
+\n\n通过使用 resolve() 和 reject()，我们可以向调用者传达结果承诺(Promise)的状态，并确定采取相应的操作。
+
+\n\n",
+          "links": [
+            {
+              "title": "Promise 方法",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+              "type": "article"
+            },
+            {
+              "title": "Promise",
+              "url": "https://www.promisejs.org/",
+              "type": "article"
+            },
+            {
+              "title": "异步JavaScript - 承诺(Promises)",
+              "url": "https://www.youtube.com/watch?v=a_8nrslImo4/",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8520bcab-067f-4df4-8d11-2160935e8634",
+          "xid": "81dcc4a7-f014-47d0-a994-b92ca9d5ed23"
+        },
+        {
+          "title": "async/await（异步/等待）",
+          "description": "Async/Await（异步/等待）是一种特殊的语法，用于更方便地与Promise（承诺）一起工作。
+
+它易于理解和使用。
+
+在函数前面加上async（异步）关键字，可以确保该函数返回一个Promise（承诺），而await（等待）关键字使得JavaScript等待直到Promise（承诺）解决并返回结果。
+
+\n\n",
+          "links": [
+            {
+              "title": "Async/Await文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function",
+              "type": "article"
+            },
+            {
+              "title": "更多关于async await的内容",
+              "url": "https://javascript.info/async-await",
+              "type": "article"
+            },
+            {
+              "title": "W3Docs Async/Await",
+              "url": "https://www.w3docs.com/learn-javascript/async-await.html",
+              "type": "article"
+            },
+            {
+              "title": "使用async await",
+              "url": "https://www.youtube.com/watch?v=V_Kr9OSfDeU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "cb22a94c-6bc5-4204-83a9-cdd1bfc6302d",
+          "xid": "5a2c05f7-81eb-4481-aa90-939a6e86185d"
+        },
+        {
+          "title": "回调函数",
+          "description": "作为一个异步平台，Node.js 不会等待文件输入/输出（I/O）之类的任务完成 - Node.js 使用回调函数。
+
+回调函数是在给定任务完成时调用的函数；这可防止阻塞情况的发生，并允许在等待时运行其他代码。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是回调函数？",
+              "url": "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function",
+              "type": "article"
+            },
+            {
+              "title": "编程语言中的异步性",
+              "url": "https://nodejs.org/en/learn/asynchronous-work/javascript-asynchronous-programming-and-callbacks",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8ffda5d7-27ea-4719-a0c8-73a7d48469dd",
+          "xid": "fd36125d-ef64-43f3-b503-99a88f450709"
+        },
+        {
+          "title": "setTimeout",
+          "description": "setTimeout函数在指定的时间段结束后运行。
+
+时间以毫秒（milliseconds）为单位。
+
+\n\n",
+          "links": [
+            {
+              "title": "JavaScript MDN 文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/setTimeout",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools – JavaScript - setTimeout",
+              "url": "https://www.w3schools.com/jsref/met_win_settimeout.asp",
+              "type": "article"
+            },
+            {
+              "title": "setInterval 和 setTimeout: 时间间隔事件",
+              "url": "https://www.youtube.com/watch?v=kOcFZV3c75I",
+              "type": "video"
+            },
+            {
+              "title": "在6分钟内学会 JavaScript setTimeout()!",
+              "url": "https://www.youtube.com/watch?v=shWr5DNVeCI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b8fbc1a0-1e49-4eed-9726-5217dda33329",
+          "xid": "8f5de134-63f3-4b1c-9cda-d8814f4572e3"
+        },
+        {
+          "title": "setInterval（定时器函数）",
+          "description": "`setInterval()` 方法帮助我们以固定的时间间隔重复执行某个函数。
+
+它会返回一个唯一的定时器ID，这个ID可以稍后被 `clearInterval()` 方法使用，来停止进一步的函数重复执行。
+
+\n\n`setInterval()` 与 `setTimeout` 类似，但有一个区别：`setInterval()` 不仅仅执行一次回调函数，而是每间隔指定的时间（以毫秒为单位）无限次地运行它，直到被清空。
+
+\n\n",
+          "links": [
+            {
+              "title": "定时器：setTimeout 和 setInterval",
+              "url": "https://javascript.info/settimeout-setinterval",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e141a12a-d1d6-4800-826a-0999f07de743",
+          "xid": "95d19b45-446b-4a46-93cc-1b434c1b9783"
+        },
+        {
+          "title": "setImmediate",
+          "description": "`setImmediate` 函数会延迟一个函数的执行，直到当前事件循环结束它们的所有执行后才调用该函数。
+
+它与使用 0 毫秒延迟调用 `setTimeout` 非常相似。
+
+\n\n",
+          "links": [
+            {
+              "title": "理解setImmediate",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate",
+              "type": "article"
+            },
+            {
+              "title": "理解setImmediate",
+              "url": "https://nodejs.org/en/learn/asynchronous-work/understanding-setimmediate",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e94f8045-b4c5-44cc-a0cb-1f3ea1957bc1",
+          "xid": "d7af7706-2eb7-462c-b7e8-7778de0f2413"
+        },
+        {
+          "title": "process.nextTick",
+          "description": "每当事件循环完成一个完整周期，我们称之为一个tick。
+
+当我们把一个函数传递给`process.nextTick()`时，我们指示引擎在当前操作结束且下一次事件循环tick开始之前执行这个函数。
+
+\n\n",
+          "links": [
+            {
+              "title": "理解Process.NextTick()",
+              "url": "https://nodejs.org/en/learn/asynchronous-work/understanding-processnexttick",
+              "type": "article"
+            },
+            {
+              "title": "Node.js中的process.nextTick()",
+              "url": "https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/",
+              "type": "article"
+            },
+            {
+              "title": "process.nextTick函数",
+              "url": "https://www.youtube.com/watch?v=-niA5XOlCWI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "594770a1-20dd-4d48-bcc3-7da54725d9c7",
+          "xid": "74c95f82-e0bd-41a3-a94c-ed3b1b902db0"
+        }
+      ],
+      "id": "1bc5be2c-4536-4fa8-a1af-7c68f884c19d",
+      "xid": "22023f87-6d57-4e81-b081-ee53ec99c860"
+    },
+    {
+      "title": "处理文件",
+      "description": "您可以通过 Node.js 内置的 `fs`（文件系统）模块来程序化地操作文件。
+
+该模块包含了在本地计算机上读取、写入和删除文件所需的所有功能。
+
+\n\n",
+      "links": [
+        {
+          "title": "如何使用 Node.js 中的 fs 模块处理文件",
+          "url": "https://www.digitalocean.com/community/tutorials/how-to-work-with-files-using-the-fs-module-in-node-js",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 Node.js 的热门文章",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "process.cwd()",
+          "description": "`process.cwd()` 方法返回 Node.js 进程的当前工作目录。
+
+\n\n",
+          "links": [
+            {
+              "title": "官方网站",
+              "url": "https://nodejs.org/api/process.html#processcwd",
+              "type": "article"
+            },
+            {
+              "title": "process.cwd() 和 __dirname 之间的区别是什么？",
+              "url": "https://stackoverflow.com/questions/9874382/whats-the-difference-between-process-cwd-vs-dirname",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cd679b8e-3c70-4bd8-adc4-ae766627d3f8",
+          "xid": "4aa4e376-e64e-4790-ae27-0dfefc939ed9"
+        },
+        {
+          "title": "path模块",
+          "description": "`path`模块提供了处理文件和目录路径的实用工具。
+
+它内置于Node.js核心，可以通过引入它来使用。
+
+\n\n",
+          "links": [
+            {
+              "title": "路径文档",
+              "url": "https://nodejs.org/api/path.html",
+              "type": "article"
+            },
+            {
+              "title": "学习Node.js文件路径",
+              "url": "https://nodejs.org/en/learn/manipulating-files/nodejs-file-paths",
+              "type": "article"
+            },
+            {
+              "title": "Node.js中的路径模块",
+              "url": "https://youtu.be/j95Lwxvi9JY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "760d968a-9815-4bc0-8617-e3a8472d9698",
+          "xid": "c4e554f1-caa3-4b64-9795-db5a649b3466"
+        },
+        {
+          "title": "文件系统(fs)模块",
+          "description": "文件系统(`File System`或`fs`模块)是Node内置的模块，它使使用JavaScript与文件系统进行交互成为可能。
+
+所有文件系统操作都有同步、回调和基于Promise的形式，同时可以使用CommonJS语法和ES6模块进行访问。
+
+\n\n",
+          "links": [
+            {
+              "title": "官方文档",
+              "url": "https://nodejs.org/api/fs.html",
+              "type": "article"
+            },
+            {
+              "title": "更多关于文件系统(fs)模块",
+              "url": "https://www.w3schools.com/nodejs/nodejs_filesystem.asp",
+              "type": "article"
+            },
+            {
+              "title": "使用文件系统(fs)",
+              "url": "https://www.youtube.com/watch?v=ZySsdm576wE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4b8bd875-15dd-4fa4-ac1d-ca523d715815",
+          "xid": "1374c54d-a7c1-4f26-8014-2c8880e69564"
+        },
+        {
+          "title": "glob",
+          "description": "glob 模式（glob pattern）最常用的是指定文件名，称之为通配符字符（wildcard characters），以及进行字符串的通配符匹配（wildcard matching）。
+
+\n\n",
+          "links": [
+            {
+              "title": "NPM Glob",
+              "url": "https://www.npmjs.com/package/glob",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b0fdfe9b-92d1-4f18-a9af-178160b4fd5c",
+          "xid": "45612d47-e40e-434f-890a-db79a557e34a"
+        },
+        {
+          "title": "fs-extra",
+          "description": "fs-extra 增加了文件系统方法，这些方法在原生 fs 模块中并不包含，同时为 fs 方法提供了 promise 支持。
+
+它还使用了 graceful-fs 来防止 EMFILE 错误。
+
+它可以作为 fs 模块的直接替换。
+
+\n\n",
+          "links": [
+            {
+              "title": "官方网站",
+              "url": "https://www.npmjs.com/package/fs-extra",
+              "type": "article"
+            },
+            {
+              "title": "fs-extra 与 fs 的比较",
+              "url": "https://ar.al/2021/03/07/fs-extra-to-fs/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "07781408-af9b-4bc3-b723-5f806ec8fac8",
+          "xid": "d33ce085-e530-4105-8436-71a840c780b4"
+        },
+        {
+          "title": "globby",
+          "description": "_用户友好的glob匹配_\n\n基于fast-glob但增加了许多有用的功能。
+
+\n\n",
+          "links": [
+            {
+              "title": "Globby Github",
+              "url": "https://github.com/sindresorhus/globby",
+              "type": "opensource"
+            },
+            {
+              "title": "Globby NPM",
+              "url": "https://www.npmjs.com/package/globby",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9b09a1de-d51b-4398-9a4d-a60f7936df95",
+          "xid": "238f594a-1387-4a2d-a577-ecc50d73358a"
+        },
+        {
+          "title": "Chokidar",
+          "description": "Chokidar（文件监视器）是一个用于Node.js的快速开源文件监视器。
+
+您可以给它一批文件，它会监视这些文件的变化，并在旧文件被编辑或新文件被创建时通知您。
+
+\n\n",
+          "links": [
+            {
+              "title": "NPM 文档",
+              "url": "https://www.npmjs.com/package/chokidar",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "35e0624c-111c-47a3-b26e-2afa277abc66",
+          "xid": "d21e3008-b1b2-432b-bae2-c3b73581c546"
+        },
+        {
+          "title": "__dirname",
+          "description": "在Node脚本中，`__dirname` 返回当前JavaScript文件所在的目录路径。
+
+`__filename` 和 `__dirname` 用于获取正在执行的文件的文件名和目录名。
+
+\n\n",
+          "links": [
+            {
+              "title": "官方网站",
+              "url": "https://nodejs.org/docs/latest/api/modules.html#__dirname",
+              "type": "article"
+            },
+            {
+              "title": "如何使用__dirname",
+              "url": "https://www.digitalocean.com/community/tutorials/nodejs-how-to-use__dirname",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9979cf1b-155a-4300-bcca-d83fe556aac1",
+          "xid": "5ee38e59-50d7-43fb-80e1-112986b4921b"
+        },
+        {
+          "title": "__filename",
+          "description": "在Node.js中，`__filename` 返回执行代码的文件名。
+
+它提供代码文件的绝对路径。
+
+以下方法涵盖了在Node.js项目中实现`__filename`的方法。
+
+\n\n",
+          "links": [
+            {
+              "title": "官方文档",
+              "url": "https://nodejs.org/docs/latest/api/modules.html#__filename",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1c44235a-d831-4aa8-9c68-5d51a71022c1",
+          "xid": "747590a5-b456-493a-9f5b-15649fc6453d"
+        }
+      ],
+      "id": "114e0ec6-4101-4007-8b72-23b180c80682",
+      "xid": "a6e9d354-d29b-4619-b48a-11834cd44f81"
+    },
+    {
+      "title": "命令行应用程序",
+      "description": "命令行应用程序是可以从命令行运行的应用程序。
+
+它们也被称为CLI（命令行界面）应用程序。
+
+用户完全可以通过终端命令与客户端进行交互。
+
+它们对于自动化和构建工具非常有用。
+
+\n\n",
+      "links": [
+        {
+          "title": "使用Node.js构建命令行应用程序",
+          "url": "https://developer.okta.com/blog/2019/06/18/command-line-app-with-nodejs",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Node.js的热门帖子",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "5分钟Node.js CLI项目",
+          "url": "https://www.youtube.com/watch?v=_oHByo8tiEY",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "退出码 (Exit Codes)",
+          "description": "退出是指通过使用Node.js的进程模块终止Node.js进程的方式。
+
+\n\n",
+          "links": [
+            {
+              "title": "退出文档 (Exit Documentation)",
+              "url": "https://nodejs.org/api/process.html#event-exit",
+              "type": "article"
+            },
+            {
+              "title": "如何在Node.js中退出进程 (How to Exit a Process in Node.js)",
+              "url": "https://betterstack.com/community/questions/how-to-exit-in-node-js/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b71b8ce7-962b-4655-9ea3-7a66a944967f",
+          "xid": "6359db3f-0eda-482b-9065-2e128e978e30"
+        },
+        {
+          "title": "环境变量",
+          "description": "环境变量",
+          "links": [],
+          "children": [
+            {
+              "title": "process.env",
+              "description": "在Node.js中，process.env 是一个在运行时注入的全局变量。
+
+它是一种观察系统环境变量状态的方式。
+
+当我们将环境变量设置之后，它会在运行时加载到 process.env 中，并且可以在后续中被访问。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Node.js 学习环境变量",
+                  "url": "https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs",
+                  "type": "article"
+                },
+                {
+                  "title": "Node.js 的 process.env",
+                  "url": "https://www.knowledgehut.com/blog/web-development/node-environment-variables",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "82de152d-25d4-4050-a1fb-7e50fcc2ddfb",
+              "xid": "35e352b3-8dd1-4522-a429-8cad79ccb832"
+            },
+            {
+              "title": "dotenv包",
+              "description": "dotenv是一个零依赖模块，可从`.env`文件加载环境变量到`process.env`中。
+
+在代码之外将配置存储在环境中是基于The Twelve-Factor App (十二要素应用) 方法论的。
+
+\n\n",
+              "links": [
+                {
+                  "title": "dotenv文档",
+                  "url": "https://github.com/motdotla/dotenv#readme",
+                  "type": "opensource"
+                },
+                {
+                  "title": "The Twelve-Factor App 方法论",
+                  "url": "https://12factor.net/config",
+                  "type": "article"
+                },
+                {
+                  "title": "process.env 文档",
+                  "url": "https://nodejs.org/docs/latest/api/process.html#process_process_env",
+                  "type": "article"
+                },
+                {
+                  "title": "Dotenv包",
+                  "url": "https://www.npmjs.com/package/dotenv",
+                  "type": "article"
+                },
+                {
+                  "title": "Dotenv教程",
+                  "url": "https://zetcode.com/javascript/dotenv/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于通用编程的热门文章",
+                  "url": "https://app.daily.dev/tags/general-programming?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "34d3fd79-efd2-446c-a83a-bbda63e92c01",
+              "xid": "1f434c5c-307f-4efa-909a-4ac5359a2065"
+            }
+          ],
+          "id": "d5cd14ae-15ad-48d2-9835-c39892cc3ef3",
+          "xid": "27ae9a4a-cddc-4641-8d07-cd364f33c955"
+        },
+        {
+          "title": "接收输入",
+          "description": "接收输入",
+          "links": [],
+          "children": [
+            {
+              "title": "process.stdin",
+              "description": "`process.stdin` 是一个标准的可读流（Readable stream），通过 process 模块可以监听用户输入并访问它。
+
+它使用 `on()` 函数来监听输入事件。
+
+\n\n",
+              "links": [
+                {
+                  "title": "官方文档",
+                  "url": "https://nodejs.org/api/process.html#processstdin",
+                  "type": "article"
+                },
+                {
+                  "title": "Node.js 进程 stdin & stdout",
+                  "url": "https://nodecli.com/node-stdin-stdout",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "eb85a649-ae1a-446a-9be0-1ec57a6030c6",
+              "xid": "aeeb2497-387a-45ef-9e3e-8ae46f0d234f"
+            },
+            {
+              "title": "Inquirer包",
+              "description": "Inquirer.js是一个收集用户输入的常用交互式命令行界面的集合。
+
+它是基于Promise的，支持将一系列提示问题链接在一起，接收文本输入、复选框、选择列表等。
+
+\n\n你可以使用它来增强需要用户输入的终端应用程序，或者用来构建你自己的命令行界面(CLI)。
+
+\n\n",
+              "links": [
+                {
+                  "title": "官方文档",
+                  "url": "https://github.com/SBoudrias/Inquirer.js#readme",
+                  "type": "opensource"
+                },
+                {
+                  "title": "如何使用Inquirer.js创建交互式命令行提示",
+                  "url": "https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts",
+                  "type": "article"
+                },
+                {
+                  "title": "如何使用Inquirer在Node.js中制作命令行界面",
+                  "url": "https://www.youtube.com/watch?v=0xjfkl9nODQ",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "d84c6398-a40e-44e9-b383-f7b0dc012b9d",
+              "xid": "acdad2c1-0919-467b-b9c2-3388ff3f3e52"
+            },
+            {
+              "title": "prompts软件包",
+              "description": "Prompts（prompts软件包）是一个基于Node.js内置的`Readline`模块的高级且用户友好的界面。
+
+它支持不同类型的问题输入，如文本、密码、自动完成、日期等。
+
+它是一个交互式模块，具备内置的验证支持功能。
+
+\n\n",
+              "links": [
+                {
+                  "title": "官方文档",
+                  "url": "https://www.npmjs.com/package/prompts",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d09ad110-8088-4375-b9f3-5f7a6b41595a",
+              "xid": "ef592095-e65c-4255-a6fe-98264d5f8dd4"
+            }
+          ],
+          "id": "173c9cc4-bd4e-4880-83aa-4ea9292d8cec",
+          "xid": "2951ebc5-072a-4464-95a5-09838c4e2136"
+        },
+        {
+          "title": "打印输出",
+          "description": "打印输出",
+          "links": [],
+          "children": [
+            {
+              "title": "标准输出 / 标准错误",
+              "description": "`process.stdout` 属性是进程模块中内置的应用程序编程接口 (API)，用于将数据输出到我们的程序外部。
+
+一个写入流用于标准输出 (stdout)。
+
+它实现了 `write()` 方法。
+
+`console.log()` 通过调用 `process.stdout.write()` 将格式化的输出或换行输出到标准输出。
+
+",
+              "links": [
+                {
+                  "title": "进程的标准输出 (process.stdout)",
+                  "url": "https://nodejs.org/api/process.html#processstdout",
+                  "type": "article"
+                },
+                {
+                  "title": "进程的标准输出 vs 控制台日志 (process.stdout vs console.log)",
+                  "url": "https://stackoverflow.com/questions/4976466/difference-between-process-stdout-write-and-console-log-in-node-js/4984464#4984464",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c94ae769-ae95-4e57-a0b6-70fba65d40c0",
+              "xid": "ac744ac5-3064-4499-8e1d-229ad73d4049"
+            },
+            {
+              "title": "chalk 包 (chalk package)",
+              "description": "chalk 是一个干净且专注于在终端应用中进行字符串样式的库。
+
+通过它，你可以在控制台中打印出不同样式的消息，例如更改字体颜色、字体粗细、字体透明度以及消息背景。
+
+\n\n",
+              "links": [
+                {
+                  "title": "chalk 文档 (Chalk Docs)",
+                  "url": "https://github.com/chalk/chalk#readme",
+                  "type": "opensource"
+                },
+                {
+                  "title": "使用 chalk 包在 Node.js 中格式化命令行输出 (Style Command Line Output with Chalk Package in Node.js)",
+                  "url": "https://www.positronx.io/style-command-line-output-with-chalk-library-in-node-js/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "020ae2b4-4dfe-4566-ae26-ad832af04bc4",
+              "xid": "9841e3ba-b2a1-403e-9cb1-d416425ad2c6"
+            },
+            {
+              "title": "figlet 包",
+              "description": "该包旨在使用JavaScript完整实现FIGfont规范（FIGfont spec），该规范描述了用于表示较大字符的字符图形排列。
+
+它在浏览器和Node.js中均可工作。
+
+\n\n",
+              "links": [
+                {
+                  "title": "GitHub 代码仓库",
+                  "url": "https://github.com/patorjk/figlet.js",
+                  "type": "opensource"
+                }
+              ],
+              "children": [],
+              "id": "081e334c-5785-4544-8a91-8f9b02b1669b",
+              "xid": "728adcb6-f7b6-4db3-8975-8726bd3b4577"
+            },
+            {
+              "title": "cli-progress",
+              "description": "CLI-Progress是一款为命令行界面（Command Line Interface，CLI）应用程序提供自定义进度条的软件包。
+
+\n\n",
+              "links": [
+                {
+                  "title": "CLI-Progress 文档",
+                  "url": "https://www.npmjs.com/package/cli-progress",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于CLI的热门文章",
+                  "url": "https://app.daily.dev/tags/cli?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "79a85615-596d-4e5f-a66f-c68fc1fa05bd",
+              "xid": "fc78afa5-f2d1-41e8-8dfd-ed48ab44ee13"
+            }
+          ],
+          "id": "dacf0154-c79d-4c4e-8942-424f9ab09a90",
+          "xid": "a3e8c5e5-eda6-4670-aae5-bffcd5777a49"
+        },
+        {
+          "title": "命令行参数(command-line-args)",
+          "description": "命令行参数(command-line-args)",
+          "links": [],
+          "children": [
+            {
+              "title": "process.argv",
+              "description": "`process.argv` 是一个参数数组，当你运行一个 Node.js 文件或 Node.js 进程时会发送这些参数。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Node.js 文档中的 process.argv",
+                  "url": "https://nodejs.org/docs/latest/api/process.html#processargv",
+                  "type": "article"
+                },
+                {
+                  "title": "命令行参数 - 编程洞穴",
+                  "url": "https://youtu.be/nr7i2HOAjeE",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "bd66f52b-10e7-4bde-adb3-cb81cf5cbd0e",
+              "xid": "5375a2d7-b8cb-4c02-bc1d-db1d8c447001"
+            },
+            {
+              "title": "指挥官(Commander)",
+              "description": "指挥官(Commander)是用于node.js的一个轻量级、表达性且强大的命令行框架(command-line framework)。
+
+使用指挥官(Commander.js)，你可以创建自己的命令行界面(command-line interface, CLI).\n\n",
+              "links": [
+                {
+                  "title": "官方文档(Official Documentation)",
+                  "url": "https://www.npmjs.com/package/commander",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关JavaScript的热门文章(Explore top posts about JavaScript)",
+                  "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "23a918b3-abdb-4375-a86d-6eff093d6f9e",
+              "xid": "8037fbb6-795a-40a7-98d3-f7d124bb16e7"
+            }
+          ],
+          "id": "a9b79930-2cfb-4abb-ae70-c7928af1a5af",
+          "xid": "70dd1ab4-b0a5-49f6-bbc7-9a79e6c0f3e5"
+        }
+      ],
+      "id": "a91b309e-890d-49f9-99fe-825a0bef862b",
+      "xid": "df28d4ce-e79b-4774-9597-d2d03bb94d35"
+    },
+    {
+      "title": "构建与消费API",
+      "description": "API是应用程序编程接口（Application Programming Interface）的缩写，它是一种软件中介，使两个应用程序能够相互通信。
+
+\n\n",
+      "links": [
+        {
+          "title": "什么是API？",
+          "url": "https://aws.amazon.com/what-is/api/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Node.js的顶级帖子",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "什么是API（在5分钟内了解）",
+          "url": "https://youtu.be/ByGJQzlzxQg?si=9EB9lgRvEOgt3xPJ",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Express.js",
+          "description": "Express 是一个提供广泛特性的 Node.js 网络应用框架（web application framework），用于构建 web 和移动应用。
+
+它可用于构建单页、多页以及混合 web 应用。
+
+",
+          "links": [
+            {
+              "title": "Express.js 官方网站",
+              "url": "https://expressjs.com/",
+              "type": "article"
+            },
+            {
+              "title": "官方入门指南",
+              "url": "https://expressjs.com/en/starter/installing.html",
+              "type": "article"
+            },
+            {
+              "title": "Express 完全指南",
+              "url": "https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm",
+              "type": "article"
+            },
+            {
+              "title": "示例项目",
+              "url": "https://auth0.com/blog/create-a-simple-and-stylish-node-express-app/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 Express.js 的顶级文章",
+              "url": "https://app.daily.dev/tags/express?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4f79120b-d0cc-4fc1-809b-8cca5b1f3578",
+          "xid": "ec9caedb-5f49-4949-9219-f57e32e9e782"
+        },
+        {
+          "title": "fastify",
+          "description": "Fastify 是一款网络框架，专注于提供最佳的开发人员体验，同时具有最低的开销和强大的插件架构（Architecture），其灵感来源于 Hapi 和 Express。
+
+\n\n",
+          "links": [
+            {
+              "title": "Fastify 官方网站",
+              "url": "https://www.fastify.io/",
+              "type": "article"
+            },
+            {
+              "title": "Fastify 官方文档",
+              "url": "https://www.fastify.io/docs/latest/",
+              "type": "article"
+            },
+            {
+              "title": "查看有关 Fastify 的热门文章",
+              "url": "https://app.daily.dev/tags/fastify?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Fastify 入门教程",
+              "url": "https://www.youtube.com/watch?v=Lk-uVEVGxOA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a131dd1e-c583-4072-85c1-84cc49eb202e",
+          "xid": "20d88548-73dc-4d72-b9ed-1b406bc28187"
+        },
+        {
+          "title": "NestJS",
+          "description": "NestJS 是一个用于创建高效和可扩展的服务器端应用的渐进式 Node.js 框架。
+
+\n\n",
+          "links": [
+            {
+              "title": "NestJS 网站",
+              "url": "https://nestjs.com",
+              "type": "article"
+            },
+            {
+              "title": "NestJS 官方文档",
+              "url": "https://docs.nestjs.com",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 NestJS 的热门文章",
+              "url": "https://app.daily.dev/tags/nestjs?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "NestJS 入门教程",
+              "url": "https://www.youtube.com/watch?v=GHTA143_b-s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b302a420-5b1e-44e1-a959-7d1c02048eeb",
+          "xid": "e47b0399-740b-4d15-a7c3-67772a065ae5"
+        },
+        {
+          "title": "HTTP 模块 (http module)",
+          "description": "您也可以使用 Node.js 中的 `http` 模块来发起 API 请求。
+
+这里是您可以使用的两种方法：\n\n*   `http.get()` - 发起 HTTP GET 请求。
+
+\n*   `http.request()` - 与 `http.get()` 类似，但可以发送其他类型的 HTTP 请求（包括 GET 请求）。
+
+\n\n",
+          "links": [
+            {
+              "title": "Node.js http.get() 文档 (Node.js http.get() documentation)",
+              "url": "https://nodejs.org/docs/latest-v16.x/api/http.html#httpgeturl-options-callback",
+              "type": "article"
+            },
+            {
+              "title": "Node http.request() 文档 (Node http.request() documentation)",
+              "url": "https://nodejs.org/docs/latest-v16.x/api/http.html#httprequesturl-options-callback",
+              "type": "article"
+            },
+            {
+              "title": "如何使用 Node.js 的内核 HTTP 创建 HTTP 客户端 (How To Create an HTTP Client with Core HTTP in Node.js)",
+              "url": "https://www.digitalocean.com/community/tutorials/how-to-create-an-http-client-with-core-http-in-node-js",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d2cc85ab-5a02-4547-9e12-8b06c88d7648",
+          "xid": "db9f8f60-24ff-4910-8b35-b737e9ad9e23"
+        },
+        {
+          "title": "axios",
+          "description": "Axios（Axios）是基于Promise的HTTP客户端，用于node.js和浏览器环境。
+
+它用于向web服务器发起请求。
+
+在服务端，它使用的是原生的node.js http模块，而在客户端（浏览器），它使用的是XMLHttpRequest。
+
+\n\n",
+          "links": [
+            {
+              "title": "Axios官方文档",
+              "url": "https://axios-http.com/docs/intro",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Axios的热门文章",
+              "url": "https://app.daily.dev/tags/axios?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Axios教程",
+              "url": "https://www.youtube.com/watch?v=6LyagkoRWYA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1e27e67b-a5f5-4267-8aba-36be49e7a86b",
+          "xid": "b4205d3b-44cd-408d-9ded-9fb6dbbc5ac2"
+        },
+        {
+          "title": "got 包",
+          "description": "Got 是一款轻量级、易用且功能强大的HTTP请求库，专为Node.js 设计。
+
+它支持分页、符合RFC规范的缓存、如果请求失败则会重试、默认支持Cookies 等功能。
+
+\n\n",
+          "links": [
+            {
+              "title": "官方文档",
+              "url": "https://www.npmjs.com/package/got",
+              "type": "article"
+            },
+            {
+              "title": "如何在Node.js中使用GOT消费API？",
+              "url": "https://rapidapi.com/guides/call-apis-got",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c0045276-369c-4fda-a745-001a2de920f6",
+          "xid": "b6ffb777-f6bb-49d6-bc05-d94a0c613095"
+        },
+        {
+          "title": "jsonwebtoken",
+          "description": "JWT（JSON-Web-Token）是用于两个实体之间（客户端和服务器）共享安全信息的开放标准。
+
+每个JWT包含编码的JSON对象，包括一组声明。
+
+JWT使用加密算法进行签名，以确保一旦发放，这些声明不会被更改。
+
+\n\n",
+          "links": [
+            {
+              "title": "软件包文档",
+              "url": "https://www.npmjs.com/package/jsonwebtoken",
+              "type": "article"
+            },
+            {
+              "title": "什么是JWT",
+              "url": "https://www.akana.com/blog/what-is-jwt",
+              "type": "article"
+            },
+            {
+              "title": "JWT实施",
+              "url": "https://www.youtube.com/watch?v=mbsmsi7l3r4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "418067cc-d7d4-4a6b-935e-8415bb352f1f",
+          "xid": "98304214-7f77-4105-b23c-0d84b54f7637"
+        },
+        {
+          "title": "passport.js",
+          "description": "Passport.js [1]是Node.js的认证中间件。
+
+它使得在Express应用程序中实现认证变得非常容易和迅速。
+
+它极其灵活且模块化。
+
+它使用\"策略\"（strategies）来支持使用用户名和密码、Facebook、Twitter以及很多其他网站进行认证。
+
+\n\n",
+          "links": [
+            {
+              "title": "PassportJS 网站",
+              "url": "https://www.passportjs.org/",
+              "type": "article"
+            },
+            {
+              "title": "PassportJS 官方文档",
+              "url": "https://www.passportjs.org/docs/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关JavaScript的顶级帖子",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "使用passportjs实现OAuth",
+              "url": "https://www.youtube.com/watch?v=sakQbeRjgwg&list=PL4cUxeGkcC9jdm7QX143aMLAqyM-jTZ2x",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a2a882d4-a920-4fb4-8848-49b7076c6c75",
+          "xid": "d32fc211-c87e-499f-8cea-d27673b34b3c"
+        }
+      ],
+      "id": "f37065ab-7166-4c10-b71f-c39d4d23901f",
+      "xid": "43d7f4f9-1ba1-4ef6-a5a5-c22db7503c52"
+    },
+    {
+      "title": "监控变更（开发）",
+      "description": "在Node.js中，你需要重启进程才能使更改生效。
+
+这给你的工作流程增加了额外的步骤。
+
+你可以通过使用`nodemon`自动重启进程来消除这个额外步骤。
+
+\n\n从Node.js 18.11.0版本开始，你可以使用`--watch`标志运行Node，每当文件发生变化时重新加载你的应用。
+
+因此，你现在不需要再使用`nodemon`。
+
+[Node.js 18.11.0变更日志](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V18.md#18.11.0).",
+      "links": [],
+      "children": [
+        {
+          "title": "nodemon",
+          "description": "在Node.js中，您需要重新启动进程使更改生效。
+
+这会给您的工作流程增加额外的步骤。
+
+可以通过使用[nodemon](https://nodemon.io/)或[PM2](https://pm2.keymetrics.io/docs/usage/quick-start/)来自动重新启动进程，从而消除这额外的步骤。
+
+\n\n`nodemon`是一个由[@rem](https://twitter.com/rem)开发的命令行界面(CLI)工具，该工具包裹你的Node应用程序，监视文件系统，并自动重启进程。
+
+\n\n",
+          "links": [
+            {
+              "title": "如何使用nodemon自动重启您的Node.js应用",
+              "url": "https://www.digitalocean.com/community/tutorials/workflow-nodemon",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Node.js的热门文章",
+              "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3294af6e-50a3-41de-905c-692a25087771",
+          "xid": "2eed0b1d-af67-4ca7-a041-4ab7dddbf9ae"
+        }
+      ],
+      "id": "20147434-ac3a-4ae6-94f3-7b0d6b0f18c9",
+      "xid": "82d87c3c-3efc-4149-9b91-a4b731e27c2f"
+    },
+    {
+      "title": "模板引擎",
+      "description": "模板引擎帮助我们使用最少的代码来创建HTML模板。
+
+此外，还可以在客户端将数据注入HTML模板，并生成最终的HTML。
+
+\n\nNode.js中的一些模板引擎示例有：\n\n*   Nunjucks\n*   Jade\n*   Vash\n*   EJS\n*   Handlebars\n*   HAML",
+      "links": [],
+      "children": [
+        {
+          "title": "ejs",
+          "description": "EJS（模板语言或引擎）允许你使用纯JavaScript生成HTML标记。
+
+这正是它对于Nodejs（应用）完美适用之处。
+
+简单来说，EJS模板引擎帮助你轻松地将JavaScript嵌入HTML模板中。
+
+\n\n",
+          "links": [
+            {
+              "title": "EJS官网",
+              "url": "https://ejs.co/",
+              "type": "article"
+            },
+            {
+              "title": "EJS官方文档",
+              "url": "https://ejs.co/#docs",
+              "type": "article"
+            },
+            {
+              "title": "EJS官方包",
+              "url": "https://www.npmjs.com/package/ejs",
+              "type": "article"
+            },
+            {
+              "title": "在线尝试EJS",
+              "url": "https://ionicabizau.github.io/ejs-playground/",
+              "type": "article"
+            },
+            {
+              "title": "如何使用EJS",
+              "url": "https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application",
+              "type": "article"
+            },
+            {
+              "title": "逐步EJS指南",
+              "url": "https://codeforgeek.com/ejs-template-engine-in-nodejs/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f34e0d76-03b9-4320-985c-2580a0286c1e",
+          "xid": "d4d76b41-7a5f-4af0-bbfd-ce396b1e9faf"
+        },
+        {
+          "title": "Pug",
+          "description": "Pug（模板引擎）是一种JavaScript模板引擎。
+
+它受到Haml（一种简洁的模板语言）的极大影响，并在Node.js和浏览器中使用JavaScript实现。
+
+Pug以前被称为Jade（先前名称）。
+
+\n\nPug（模板引擎）是一种高性能模板引擎，它受到Haml（一种简洁的模板语言）的极大影响，并在Node.js和浏览器中使用JavaScript实现。
+
+",
+          "links": [
+            {
+              "title": "使用PugJs开始",
+              "url": "https://pugjs.org/api/getting-started.html",
+              "type": "article"
+            },
+            {
+              "title": "如何使用Pug模板构建Node应用",
+              "url": "https://blog.bitsrc.io/how-to-build-a-node-application-using-a-pug-template-7319ab1bba69?gi=40b338891148",
+              "type": "article"
+            },
+            {
+              "title": "Pug.js 教程",
+              "url": "https://zetcode.com/javascript/pugjs/",
+              "type": "article"
+            },
+            {
+              "title": "Node.js + Express - 教程 - PugJS模板引擎",
+              "url": "https://www.youtube.com/watch?v=DSp9ExFw3Ig",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "917ceec8-1f01-4224-93f1-d2fc9f8c7d79",
+          "xid": "a65d3089-5967-46a9-9a8a-4fc7ea8b5379"
+        },
+        {
+          "title": "马克欧",
+          "description": "马克欧（Marko）是一款基于HTML的快速且轻量级的模板引擎，它将模板编译为CommonJS模块，并支持流处理、异步渲染和自定义标签。
+
+马克欧重新定义了HTML，使其成为一种构建动态和响应式用户界面的语言。
+
+\n\n",
+          "links": [
+            {
+              "title": "马克欧文档",
+              "url": "https://markojs.com/docs/guides-overview/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "eca3e58d-56c6-4cd0-8a3e-e2d857f290bd",
+          "xid": "228df3a8-2b50-49bc-861b-566837851794"
+        }
+      ],
+      "id": "c22c4a21-9a09-4eb7-a646-2028e4565446",
+      "xid": "927353a4-1386-4dbb-9313-ffafc3e726ff"
+    },
+    {
+      "title": "使用数据库",
+      "description": "数据库是结构化信息或数据的组织集合，通常以电子形式存储在计算机系统中。
+
+数据库通常由数据库管理系统（Database Management System，DBMS）控制。
+
+",
+      "links": [
+        {
+          "title": "Wikipedia - 什么是数据库？",
+          "url": "https://en.wikipedia.org/wiki/Database",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "文档",
+          "description": "文档",
+          "links": [],
+          "children": [
+            {
+              "title": "Mongoose (Mongoose)",
+              "description": "Mongoose 是一个面向 MongoDB 和 Node.js 的对象数据建模 (ODM) 库。
+
+Mongoose 提供了一种基于模式的简洁解决方案来建模应用程序数据。
+
+它内置了类型转换、验证、查询构建、业务逻辑钩子等一系列功能。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Mongoose 官方网站",
+                  "url": "https://mongoosejs.com",
+                  "type": "article"
+                },
+                {
+                  "title": "开始使用 MongoDB 和 Mongoose",
+                  "url": "https://www.mongodb.com/developer/languages/javascript/getting-started-with-mongodb-and-mongoose/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Mongoose 的热门文章",
+                  "url": "https://app.daily.dev/tags/mongoose?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1e8846d9-7730-4523-9d48-6d7eedc6382b",
+              "xid": "e764ee7a-9e1c-4af7-be61-91efd5b2d3f6"
+            },
+            {
+              "title": "Prisma",
+              "description": "Prisma 提供了一个开源的下一代对象关系映射器（ORM）在 TypeScript 生态系统中。
+
+它提供了一个专门用于关系过滤的API。
+
+Prisma 提供了一个抽象层，使您比手写SQL更高效。
+
+Prisma 目前支持 `PostgreSQL`（PostgreSQL），`MySQL`（MySQL），`SQL Server`（SQL服务器），`SQLite`（SQLite），`MongoDB`（MongoDB）和 `CockroachDB`（CockroachDB）数据库。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Prisma 官方网站",
+                  "url": "https://www.prisma.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "关于 Prisma 的热门文章",
+                  "url": "https://app.daily.dev/tags/prisma?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Prisma & MongoDB Youtube 教程",
+                  "url": "https://www.youtube.com/watch?v=-7r4whMKt1s",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "1cec34ac-88ed-4ffe-977f-b9a3ebb17100",
+              "xid": "267b5b42-c094-4580-89bd-70bafd6e016e"
+            },
+            {
+              "title": "原生驱动程序(Native Drivers)",
+              "description": "在Node.js中连接不同数据库的另一种方法是使用数据库提供的官方原生驱动程序。
+
+例如，这里是[MongoDB的驱动程序列表](https://www.mongodb.com/docs/drivers/)",
+              "links": [],
+              "children": [],
+              "id": "353ae23c-d398-4a91-9e5d-f2864c0a2054",
+              "xid": "af13457d-6879-4318-a5d5-a584e868984b"
+            }
+          ],
+          "id": "b88ab566-7826-4968-a353-01ca95214865",
+          "xid": "4aae1b41-a10f-49a7-acb9-3e95fb0d1d3e"
+        },
+        {
+          "title": "关系型（relational）",
+          "description": "关系型（relational）",
+          "links": [],
+          "children": [
+            {
+              "title": "Knex",
+              "description": "Knex.js 是一个用于 PostgreSQL, CockroachDB, MSSQL, MySQL, MariaDB, SQLite3, Better-SQLite3, Oracle 和 Amazon Redshift 的 SQL 查询生成器，旨在提供灵活、可移植且有趣易用的解决方案。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Knex.js 文档",
+                  "url": "https://knexjs.org",
+                  "type": "article"
+                },
+                {
+                  "title": "浏览关于 Node.js 的热门文章",
+                  "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "85ffe0d2-432c-4d49-8d51-3968888c0716",
+              "xid": "4615faa7-57fd-4d6d-8000-03e3e86c6bf8"
+            },
+            {
+              "title": "TypeORM",
+              "description": "TypeORM 是一个可以在 NodeJS、Browser、Cordova、PhoneGap、Ionic、React Native、NativeScript、Expo 和 Electron 平台上运行的 ORM，可以与 TypeScript 和 JavaScript（ES5，ES6，ES7，ES8）一起使用。
+
+它的目标是始终支持最新JavaScript特性，并提供额外的功能，帮助你开发任何类型的使用数据库的应用程序 - 从小规模的应用程序几表到大规模的企业级多数据库应用。
+
+\n\nTypeORM 支持 [Active Record](https://typeorm.io/active-record-data-mapper#what-is-the-active-record-pattern) 和 [Data Mapper](https://typeorm.io/active-record-data-mapper#what-is-the-data-mapper-pattern) 模式，而当前存在的所有其他JavaScript ORM都不具备这一特点，这意味着你可以以最具生产力的方式编写高质量、松耦合可扩展、易于维护的应用程序。
+
+\n\n",
+              "links": [
+                {
+                  "title": "TypeORM 文档",
+                  "url": "https://typeorm.io",
+                  "type": "article"
+                },
+                {
+                  "title": "TypeORM 快速入门",
+                  "url": "https://www.youtube.com/watch?v=JaTbzPcyiOE",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "c55494e0-c3bb-405d-af20-10b2df1075bf",
+              "xid": "36c7f263-1857-469d-955f-ff9605716d0f"
+            },
+            {
+              "title": "Sequelize",
+              "description": "Sequelize 是一个简单易用且基于 Promise 的 Node.js ORM (对象关系映射) 工具，适用于 PostgreSQL、MySQL、MariaDB、SQLite、DB2、Microsoft SQL Server 和 Snowflake。
+
+它支持事务、关系、急切和懒加载、读复制等功能。
+
+\n\n什么是 ORM ？\n----------------\n\nORM (对象关系映射) 是指一种工具或抽象层次，它可以将关系数据库中的数据映射（转换）成程序员可以使用编程语言（通常是面向对象编程语言）操作的程序对象。
+
+ORM 的主要功能是解决两个数据源之间由于不匹配而无法共存的问题。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Sequelize 官网",
+                  "url": "https://sequelize.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Sequelize - NPM 包",
+                  "url": "https://www.npmjs.com/package/sequelize",
+                  "type": "article"
+                },
+                {
+                  "title": "官方 Sequelize 文档",
+                  "url": "https://sequelize.org/docs/v6/getting-started/",
+                  "type": "article"
+                },
+                {
+                  "title": "使用 Sequelize 开始",
+                  "url": "https://levelup.gitconnected.com/the-ultimate-guide-to-get-started-with-sequelize-orm-238588d3516e",
+                  "type": "article"
+                },
+                {
+                  "title": "探索 Node.js 的热门文章",
+                  "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d638fd07-765f-4218-9b3f-ece16c80678b",
+              "xid": "521015e2-a80d-495e-8ebe-0ee4eb972179"
+            },
+            {
+              "title": "Prisma",
+              "description": "Prisma（对象关系映射，ORM）有助于应用程序开发人员更快地构建应用程序并减少错误。
+
+结合其数据平台，开发人员在处理数据库时能获得更高的可靠性和可见性。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Prisma官网",
+                  "url": "https://www.prisma.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "Prisma官方文档",
+                  "url": "https://www.prisma.io/docs/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于Prisma的热门文章",
+                  "url": "https://app.daily.dev/tags/prisma?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "820daa24-2d60-4c05-9dec-b9ae3bc3d9ae",
+              "xid": "fb658b46-ca99-4dd7-8924-9ea120cf8dfe"
+            },
+            {
+              "title": "本地驱动程序",
+              "description": "NativeDriver 是 WebDriver API 的一种实现，用于驱动本地应用程序的用户界面，而不是 Web 应用程序。
+
+它在几个关键地方扩展了 WebDriver API，并重新解释了适用于本地应用程序的现有 API。
+
+\n\n*   MySQL:\n    *   [mysql](https://www.npmjs.com/package/mysql)\n    *   [mysql2](https://www.npmjs.com/package/mysql2)\n*   MariaDB:\n    *   [mariadb](https://www.npmjs.com/package/mariadb)\n*   PostgreSQL:\n    *   [pg](https://www.npmjs.com/package/pg)\n*   Microsoft SQL Server:\n    *   [tedious](https://www.npmjs.com/package/tedious)\n    *   [mssql](https://www.npmjs.com/package/mssql)\n*   Oracle:",
+              "links": [
+                {
+                  "title": "oracledb",
+                  "url": "https://www.npmjs.com/package/oracledb",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "951ce52a-9771-4a87-bb0e-612e36ef5cb2",
+              "xid": "59ccadb1-e1f0-4dd1-8ce1-7343d7b81bb5"
+            }
+          ],
+          "id": "108eae5d-f055-46b7-b191-69567f6c3de4",
+          "xid": "2051e3ad-798a-47c9-ba1c-0a0acb37a953"
+        }
+      ],
+      "id": "5e3f0d3a-fdff-4363-ae9f-9fbf637365fc",
+      "xid": "82cbe905-482d-44a1-b496-81b82ef4be1c"
+    },
+    {
+      "title": "日志记录",
+      "description": "**日志记录**是理解`Node.js`应用完整应用生命周期的关键部分。
+
+在整个开发过程中，从创建、调试到设计新功能，通过查看日志，我们可以更快更轻松地解决错误。
+
+在`Node.js`中，**错误**（Error）、**警告**（warn）、**信息**（info）和**调试**（debug）是四个基本的日志记录级别。
+
+日志记录涉及持久性地收集有关应用运行行为的信息。
+
+\n\n",
+      "links": [
+        {
+          "title": "Node.js日志记录",
+          "url": "https://stackify.com/node-js-logging/",
+          "type": "article"
+        },
+        {
+          "title": "日志记录的最佳实践",
+          "url": "https://blog.appsignal.com/2021/09/01/best-practices-for-logging-in-nodejs.html",
+          "type": "article"
+        },
+        {
+          "title": "日志记录",
+          "url": "https://stackify.com/node-js-logging/",
+          "type": "article"
+        },
+        {
+          "title": "浏览有关日志记录的顶级文章",
+          "url": "https://app.daily.dev/tags/logging?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Winston",
+          "description": "Winston被设计为一个简单且通用的日志库，支持多种传输（transports）。
+
+传输本质上是日志的存储设备。
+
+每个Winston日志器可以配置多个不同级别的传输。
+
+例如，可能希望错误日志存储在一个持久的远程位置（如数据库），而所有日志则输出到控制台或本地文件。
+
+\n\n",
+          "links": [
+            {
+              "title": "Winston官网",
+              "url": "https://github.com/winstonjs/winston",
+              "type": "opensource"
+            },
+            {
+              "title": "Node.js中使用Winston日志记录的完整指南",
+              "url": "https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2c709021-8c0e-46e5-aa1f-34f74f49034e",
+          "xid": "a3c64372-5504-4ae3-abaf-be73697bbeea"
+        },
+        {
+          "title": "Morgan",
+          "description": "Morgan 是一个 NodeJS 和 express.js 的中间件（middleware），用于记录 HTTP 请求和错误，简化了调试过程。
+
+它提供了定义日志消息格式的灵活性，并帮助你覆盖日志的输出目标（destination）。
+
+\n\n",
+          "links": [
+            {
+              "title": "官方网站",
+              "url": "https://www.npmjs.com/package/morgan",
+              "type": "article"
+            },
+            {
+              "title": "如何使用 Morgan|DigitalOcean",
+              "url": "https://www.digitalocean.com/community/tutorials/nodejs-getting-started-morgan",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1b8f0a88-bb54-4aa2-8e37-1e6764b8cb8c",
+          "xid": "e3c087a8-7dc6-4b33-9887-45186b29b395"
+        }
+      ],
+      "id": "cf950ba0-b353-4b29-8085-4b85798b540a",
+      "xid": "e44b37b7-9b43-4d37-8660-21f8558c3f8b"
+    },
+    {
+      "title": "测试",
+      "description": "软件测试是用来验证我们所创建的内容是否按照预期执行的过程。
+
+测试是为了预防bug并提高代码质量。
+
+\n\n最常用的两种测试方法是单元测试（unit testing）和端到端测试（end-to-end testing）。
+
+在单元测试中，我们检查代码的片段；在端到端测试中，我们测试完整用户流程。
+
+\n\n",
+      "links": [
+        {
+          "title": "维基百科 - 软件测试",
+          "url": "https://en.wikipedia.org/wiki/Software_testing",
+          "type": "article"
+        },
+        {
+          "title": "Vitest",
+          "url": "https://vitest.dev/",
+          "type": "article"
+        },
+        {
+          "title": "Jest",
+          "url": "https://jest.io",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Jest",
+          "description": "Jest是一款注重简洁性的JavaScript单元测试框架。
+
+它适用于使用Babel、TypeScript、Node、React、Angular、Vue等技术的项目。
+
+\n\n",
+          "links": [
+            {
+              "title": "Jest官网",
+              "url": "https://jestjs.io",
+              "type": "article"
+            },
+            {
+              "title": "Jest文档",
+              "url": "https://jestjs.io/docs/getting-started",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于Jest的热门帖子",
+              "url": "https://app.daily.dev/tags/jest?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d26628bf-6b5a-42c9-af90-58d850c3017c",
+          "xid": "8ec13b6d-fa19-475d-8a3d-9bff666baf06"
+        },
+        {
+          "title": "Cypress",
+          "description": "Cypress是一款专为现代网络打造的新前端测试工具。
+
+它能让你编写更加快速、简单且可靠的测试。
+
+",
+          "links": [
+            {
+              "title": "Cypress官网",
+              "url": "https://www.cypress.io/",
+              "type": "article"
+            },
+            {
+              "title": "Cypress文档",
+              "url": "https://docs.cypress.io/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Cypress的热门文章",
+              "url": "https://app.daily.dev/tags/cypress?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "01d3422c-a8ec-47c1-ab0b-de8c126c77e5",
+          "xid": "9dc220d7-1ba2-4d11-99ea-21398c46b4d7"
+        }
+      ],
+      "id": "b43ecc36-623e-4635-93a8-ad096c5b46a2",
+      "xid": "147c66f2-cfb4-49e0-92a5-afcbd720cc30"
+    },
+    {
+      "title": "保持应用运行",
+      "description": "PM2（进程管理器）让你的Node.js脚本持续运行。
+
+如果应用崩溃，PM2会自动重启它。
+
+\n\n",
+      "links": [
+        {
+          "title": "保持Node.js应用程序持续运行",
+          "url": "https://devtut.github.io/nodejs/keep-a-node-application-constantly-running.html#use-pm2-as-a-process-manager",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Node.js的热门文章",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "pm2",
+          "description": "PM2 是一个针对 Node.js 应用程序的生产进程管理器，内置了负载均衡器。
+
+它使您能够永久保持应用程序运行，无中断地重新加载应用程序，并简化常见的系统管理任务。
+
+\n\n",
+          "links": [
+            {
+              "title": "PM2 官方网站",
+              "url": "https://pm2.keymetrics.io/",
+              "type": "article"
+            },
+            {
+              "title": "PM2 官方文档",
+              "url": "https://pm2.keymetrics.io/docs/usage/quick-start/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0310058b-6d52-4cac-88ef-cc4cc77a801e",
+          "xid": "75943b95-37da-4a9a-a08e-e030217e5ace"
+        }
+      ],
+      "id": "cccc1615-da64-4eb0-84c4-e771cb939af1",
+      "xid": "28ea105f-ac8b-4c92-92f7-366e367a2fe0"
+    },
+    {
+      "title": "线程(Threads)",
+      "description": "Node.js是一种单线程语言，并提供了方法使我们能够并行于主线程。
+
+注意到当今的多核系统环境下，单线程非常节省内存。
+
+\n\n",
+      "links": [
+        {
+          "title": "Node.js中的单线程 vs 子进程 vs 工作者线程 vs 集群(Single Thread vs Child Process vs Worker Threads vs Cluster)",
+          "url": "https://alvinlal.netlify.app/blog/single-thread-vs-child-process-vs-worker-threads-vs-cluster-in-nodejs",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Node.js的顶级文章(Explore top posts about Node.js)",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "子进程",
+          "description": "child_process模块赋予了Node通过访问操作系统命令，通过IPC（进程间通信）来运行子进程的能力。
+
+\n\n该模块中的三个主要方法是：`child_process.spawn()` `child_process.fork()` `child_process.exec()`\n\n",
+          "links": [
+            {
+              "title": "child_process模块文档",
+              "url": "https://nodejs.org/api/child_process.html#child-process",
+              "type": "article"
+            },
+            {
+              "title": "保护Node.js应用程序免受命令注入",
+              "url": "https://www.nodejs-security.com/blog/securing-your-nodejs-apps-by-analyzing-real-world-command-injection-examples",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "383f7a9e-ad2c-4097-864e-715836a362a0",
+          "xid": "1db097b5-3516-4715-a990-867c712fa84d"
+        },
+        {
+          "title": "集群",
+          "description": "集群(Cluster)模块允许您轻松创建子进程，每个子进程都在自己的单线程上同时运行，以处理其应用程序线程的工作负载。
+
+\n\n",
+          "links": [
+            {
+              "title": "集群文档",
+              "url": "https://nodejs.org/api/cluster.html#cluster",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "393483e4-dc5c-488d-941c-d012c9f67b65",
+          "xid": "8bc68761-6cd7-4d48-9907-66032153a1e6"
+        },
+        {
+          "title": "工作者线程 (Worker Threads)",
+          "description": "工作者线程是一种连续的并行线程，它会持续运行并接收消息，直到被显式关闭或终止。
+
+通过使用工作者线程，我们可以在不产生死锁的情况下实现更高效的应用。
+
+与子进程不同，工作者线程可以交换内存。
+
+\n\n",
+          "links": [
+            {
+              "title": "工作者线程文档 (Worker Threads Docs)",
+              "url": "https://nodejs.org/api/worker_threads.html#worker-threads",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d0567518-22d9-47ba-a420-b8855f994fc0",
+          "xid": "28baf75c-5430-4d7d-a876-74cc670d8a80"
+        }
+      ],
+      "id": "da464e60-9b12-4605-8618-30906aff748d",
+      "xid": "63ca292b-c7e1-4269-ad97-c8a1fef57e60"
+    },
+    {
+      "title": "流",
+      "description": "流是一种数据处理方法，用于逐块读取、写入或转换数据部分，而不需要一次性将所有数据加载到内存中。
+
+在 Node.js 中有四种类型的流。
+
+\n\n*   **Readable**（可供读取的流）: 数据可从中读取。
+
+\n*   **Writable**（可供写入的流）: 数据可以写入其中。
+
+\n*   **Duplex**（双工流）: 既可读又可写的流。
+
+\n*   **Transform**（转换流）: 在写入和读取数据时能够修改或转换数据的流。
+
+\n\n多个流可以通过 `pipe()` 方法串联起来。
+
+\n\n",
+      "links": [
+        {
+          "title": "流 API 官方文档",
+          "url": "https://nodejs.org/api/stream.html",
+          "type": "article"
+        },
+        {
+          "title": "理解 Node.js 中的流",
+          "url": "https://nodesource.com/blog/understanding-streams-in-nodejs",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 Node.js 的热门文章",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Node.js 流教程",
+          "url": "https://www.youtube.com/watch?v=GlybFFMXXmQ",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "106fa2e8-953a-4535-8f9c-812f6271febd",
+      "xid": "4c6ad6bf-3b00-4dd0-8a60-45f3324e9a6d"
+    },
+    {
+      "title": "调试(Debugging)",
+      "description": "调试是识别并从软件应用程序中移除错误的概念。
+
+在这里，我们将学习调试 Node.js 应用程序的技术。
+
+\n\n为什么不能使用 console.log() 进行调试?\n-------------------------------------\n\n使用 `console.log` 调试代码通常会导致一个无限循环的“停止应用程序并添加一个 console.log，然后再次启动应用程序”操作。
+
+除了减慢应用程序的开发速度外，它还会让代码变得不整洁，并产生不必要的代码。
+
+最终，在尝试获取正在调试的变量值时，试图从其他潜在的输出操作中筛选出这些变量值可能会让调试过程变得困难。
+
+\n\n",
+      "links": [
+        {
+          "title": "维基百科 - 什么是调试(Debugging)?",
+          "url": "https://en.wikipedia.org/wiki/Debugging",
+          "type": "article"
+        },
+        {
+          "title": "Node.js - 开始(Debugging)",
+          "url": "https://nodejs.org/en/learn/getting-started/debugging",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "内存泄漏",
+          "description": "当您的Node.js应用程序的CPU和内存使用量随时间不断增加，而又没有明显原因时，就会发生内存泄漏。
+
+简单来说，Node.js（Node.js）内存泄漏是堆（Heap）上不再被应用程序使用的区块，因为此区块未被垃圾回收器（garbage collector）释放。
+
+这是一个无用的内存区块。
+
+这些区块随时间增长会导致您的应用程序因内存不足而崩溃。
+
+\n\n",
+          "links": [
+            {
+              "title": "Node.js中的内存泄漏",
+              "url": "https://sematext.com/blog/nodejs-memory-leaks/",
+              "type": "article"
+            },
+            {
+              "title": "内存泄漏的原因",
+              "url": "https://sematext.com/blog/nodejs-memory-leaks/#what-causes-them-common-node-js-memory-leaks",
+              "type": "article"
+            },
+            {
+              "title": "内存泄漏检测器",
+              "url": "https://sematext.com/blog/nodejs-memory-leaks/#node-js-memory-leak-detectors",
+              "type": "article"
+            },
+            {
+              "title": "探索关于通用编程的热门文章",
+              "url": "https://app.daily.dev/tags/general-programming?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "垃圾回收",
+              "description": "JavaScript 中的内存管理是自动且对我们透明的。
+
+我们创建原始值，对象，函数……所有这些会占用内存。
+
+JavaScript 中内存管理的主要概念是可达性。
+
+\n\n",
+              "links": [
+                {
+                  "title": "JavaScript 垃圾回收",
+                  "url": "https://javascript.info/garbage-collection",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 内存管理",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "971a2b06-3df4-4f14-abcb-921922dccced",
+              "xid": "54efc54f-96c8-4ba3-b6b4-3c9c49d68521"
+            }
+          ],
+          "id": "8da83a55-3fae-4e96-95ae-80acf2611cc2",
+          "xid": "6c7719b4-c503-4542-a416-4037f07ae2b8"
+        },
+        {
+          "title": "node --inspect",
+          "description": "Node.js 提供了一个基于 DevTools 的调试器（DevTools），用于调试 Node.js 应用程序。
+
+\n\n",
+          "links": [
+            {
+              "title": "使用 Chrome DevTools 调试 Node.js",
+              "url": "https://medium.com/@paul_irish/debugging-node-js-nightlies-with-chrome-devtools-7c4a1b95ae27",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5e4eb9d8-0780-4d1d-84f6-799ad6c8bc98",
+          "xid": "a4fb729b-338b-45d6-9a41-79ac9675e50b"
+        },
+        {
+          "title": "使用APM",
+          "description": "尽管使用inspect拦截你的容器请求并在代码中单步调试很有趣，但在生产环境中你无法选择这样做。
+
+因此，尝试以生产环境中相同的方式在本地调试你的应用程序是很合理的。
+
+\n\n在生产环境中，你的工具之一是登录到远程服务器查看控制台日志，就如你在本地操作一样。
+
+然而，这种方法可能会很繁琐。
+
+幸运的是，有一些工具可以执行所谓的日志聚合，比如Stackify。
+
+\n\n这些工具可以将运行中的应用程序的日志发送到一个单一位置。
+
+它们常常带有强大的搜索和查询工具，帮助你轻松解析和可视化日志。
+
+\n\n",
+          "links": [
+            {
+              "title": "使用APM进行调试",
+              "url": "https://stackify.com/node-js-debugging-tips/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于APM的热门文章",
+              "url": "https://app.daily.dev/tags/apm?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8e95c346-90e7-44d9-81e4-ad698f29fcc7",
+          "xid": "c4b76a10-9fbd-4588-9661-a0fea6d2fef0"
+        }
+      ],
+      "id": "74c1f869-469d-4ab5-9e01-30a7ad8bb97d",
+      "xid": "a091b9b3-ccc9-4f2e-8397-b9769847af2d"
+    },
+    {
+      "title": "常用的内置模块",
+      "description": "这些是与`Node.js`（Node.js）一起提供的核心模块。
+
+这些模块提供了执行某些标准`Node.js`操作的工具或API，如与文件系统交互、URL解析或将信息记录到控制台。
+
+",
+      "links": [
+        {
+          "title": "Nodejs 文件系统模块（fs module）",
+          "url": "https://nodejs.org/api/fs.html",
+          "type": "article"
+        },
+        {
+          "title": "Nodejs URL 模块（url module）",
+          "url": "https://nodejs.org/api/url.html",
+          "type": "article"
+        },
+        {
+          "title": "Nodejs 控制台模块（console module）",
+          "url": "https://nodejs.org/api/console.html",
+          "type": "article"
+        },
+        {
+          "title": "Nodejs 常用工具模块（util module）",
+          "url": "https://nodejs.org/api/util.html",
+          "type": "article"
+        },
+        {
+          "title": "Nodejs 事件模块（events module）",
+          "url": "https://nodejs.org/api/events.html",
+          "type": "article"
+        },
+        {
+          "title": "Nodejs 操作系统模块（os module）",
+          "url": "https://nodejs.org/api/os.html",
+          "type": "article"
+        },
+        {
+          "title": "Nodejs 工作线程模块（worker threads module）",
+          "url": "https://nodejs.org/api/worker_threads.html",
+          "type": "article"
+        },
+        {
+          "title": "Nodejs 子进程模块（child process module）",
+          "url": "https://nodejs.org/api/child_process.html",
+          "type": "article"
+        },
+        {
+          "title": "Nodejs 进程对象（process object）",
+          "url": "https://nodejs.org/api/process.html",
+          "type": "article"
+        },
+        {
+          "title": "Nodejs 加密模块（crypto module）",
+          "url": "https://nodejs.org/api/crypto.html",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "312bddde-fd23-4f40-a0f9-43edc816e061",
+      "xid": "81f65ee3-a5ff-4b1a-9cef-045250487f53"
+    }
+  ],
+  "id": "b0d90354-7fbc-4177-94c9-5d3c9ec27045",
+  "xid": "5e222d72-d896-4599-8766-3234e0ae01ac"
+}

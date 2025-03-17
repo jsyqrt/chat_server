@@ -55,8 +55,8 @@ class Roadmap(db.Model):
             'industry_tag': self.industry_tag,
             'job_tag': self.job_tag,
             'skill_tag': self.skill_tag,
-            'create_timestamp': self.create_timestamp,
-            'update_timestamp': self.update_timestamp,
+            'created_at': self.create_timestamp,
+            'updated_at': self.update_timestamp,
         }
 
 class RoadmapInteraction(db.Model):
@@ -104,6 +104,12 @@ class RoadmapInteractionOps:
             self.session.add(interaction)
             self.session.commit()
             return True
+
+    def get_participants_count_of_roadmap(self, roadmap_id: str)->int:
+        return self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, participanted=1).count()
+
+    def get_participants_count_of_user(self, user_id: str)->int:
+        return self.session.query(RoadmapInteraction).filter_by(user_id=user_id, participanted=1).count()
 
     def completion(self, roadmap_id: str, user_id: str)->bool:
         interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
@@ -660,6 +666,12 @@ class RoadmapOps:
 
     def get_roadmap_by_mindmap_id(self, mindmap_id: str)->Roadmap:
         return self.session.query(Roadmap).filter_by(mindmap_id=mindmap_id).first()
+
+    def get_roadmaps_by_user_id(self, user_id: str, offset: int, limit: int)->list:
+        return [roadmap.to_dict() for roadmap in self.session.query(Roadmap).filter_by(created_by=user_id).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()]
+
+    def get_roadmaps_count_by_user_id(self, user_id: str)->int:
+        return self.session.query(Roadmap).filter_by(created_by=user_id).count()
 
     def search_roadmaps_with_title_like(self, title: str)->list:
         roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_title.like(f'%{title}%')).all()

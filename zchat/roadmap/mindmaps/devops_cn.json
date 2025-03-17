@@ -1,0 +1,4865 @@
+{
+  "title": "DevOps 路线图",
+  "description": "2025年DevOps、SRE或任何其他运营角色的逐步指南",
+  "links": [],
+  "question_title": "什么是DevOps？",
+  "question_description": "DevOps是一种文化和协作的理念，强调开发团队和运营团队之间的沟通、协作、集成和[自动化](https://roadmap.sh/devops/automation)，以实现更快和更可靠的软件交付。
+
+\n\nDevOps不是一个特定的职位或角色，而是一套可以应用于软件开发和IT运营中的不同角色的[原则和实践](https://roadmap.sh/devops/principles)。
+
+任何参与软件开发和交付过程的人都可以采纳DevOps理念并在工作中应用DevOps实践，包括开发者、测试人员、运营工程师、产品经理等。
+
+\n\n## 什么是DevOps工程师？\n尽管DevOps不是一个特定的职位或角色，组织常常会招聘\"DevOps工程师\"角色。
+
+一个[DevOps工程师](https://roadmap.sh/devops/devops-engineer)是一个专门从事使软件连续交付成为可能的实践和技术的软件工程师。
+
+DevOps工程师负责为其组织设计和实现应用、软件和服务，并且与开发者、测试人员和运营人员紧密合作，监督代码发布。
+
+\n",
+  "children": [
+    {
+      "title": "学习一种编程语言",
+      "description": "你选择哪种语言并不重要，但学习至少一种语言是非常重要的。
+
+你将能够使用那种编程语言来编写自动化脚本。
+
+",
+      "links": [
+        {
+          "title": "为DevOps选择编程语言的指南",
+          "url": "https://cs.fyi/guide/programming-language-for-devops",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Python",
+          "description": "Python 是一种高级解释型编程语言，以其简洁性、可读性和通用性而闻名。
+
+它支持多种编程范式，包括过程式、面向对象和函数式编程。
+
+Python 拥有广泛的内置函数库和大量的第三方软件包生态系统，适用于各种应用，如网站开发、数据分析、人工智能和科学计算等。
+
+其简单干净的语法和动态类型使得快速开发和原型设计成为可能。
+
+Python 提倡的“一饱即满”(batteries included)哲学提供了丰富的内置功能，而其跨平台兼容性确保了代码的移植性。
+
+在强大的社区支持和持续发展中，Python 已成为最流行的编程语言之一，在学术界、工业界和开源项目中广泛用于从简单脚本到复杂软件开发的各种任务。
+
+",
+          "links": [
+            {
+              "title": "访问专为Python设计的路线图",
+              "url": "https://roadmap.sh/python",
+              "type": "article"
+            },
+            {
+              "title": "Python官网",
+              "url": "https://www.python.org/",
+              "type": "article"
+            },
+            {
+              "title": "自动执行枯燥的任务",
+              "url": "https://automatetheboringstuff.com/",
+              "type": "article"
+            },
+            {
+              "title": "Python速成课程",
+              "url": "https://ehmatthes.github.io/pcc/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Python 的顶级文章",
+              "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "免费完整Python课程",
+              "url": "https://www.youtube.com/watch?v=ix9cRaBkVe0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e900411d-0435-4577-8f7f-96233802aa88",
+          "xid": "a990690d-4ac0-4981-8360-ecdaa77deba7"
+        },
+        {
+          "title": "Go",
+          "description": "Go（Golang）是一种由Google开发的静态类型、编译型编程语言。
+
+它强调简洁性、效率和内置的并发支持。
+
+Go具有快速编译、垃圾回收和强大的标准库。
+
+其语法简洁清晰，有利于易读性和可维护性。
+
+Go的协程（goroutines）和通道（channels）为并发编程提供了强大的工具。
+
+该语言特别适合系统编程、网络服务和云原生应用。
+
+Go高效的内存使用和快速的执行使其成为构建可扩展的服务器端应用和微服务的流行选择。
+
+由于其对简洁性和性能的专注，Go在DevOps工具、容器化技术以及云基础设施项目中获得了广泛采用。
+
+\n\n",
+          "links": [
+            {
+              "title": "访问专门的Go路线图",
+              "url": "https://roadmap.sh/golang",
+              "type": "article"
+            },
+            {
+              "title": "Go 之旅 – Go 基础",
+              "url": "https://go.dev/tour/welcome/1",
+              "type": "article"
+            },
+            {
+              "title": "Go 参考文档",
+              "url": "https://go.dev/doc/",
+              "type": "article"
+            },
+            {
+              "title": "通过示例学习Go - 注解示例程序",
+              "url": "https://gobyexample.com/",
+              "type": "article"
+            },
+            {
+              "title": "用 Go 编写一个RESTful JSON API",
+              "url": "https://thenewstack.io/make-a-restful-json-api-go/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Golang的热门文章",
+              "url": "https://app.daily.dev/tags/golang?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Go 在 100 秒内",
+              "url": "https://www.youtube.com/watch?v=446E-r0rXHI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "fa9c0e1e-e5c7-404c-865a-38dc0d614a10",
+          "xid": "df30069f-8777-4bb1-abf3-9601a56f2f8a"
+        },
+        {
+          "title": "Ruby",
+          "description": "Ruby 是一种动态、面向对象的编程语言，以其简洁性和生产力著称。
+
+Ruby 由 Yukihiro Matsumoto 创建，强调“最小惊诧”原则（principle of \"least astonishment\"），旨在实现自然且易于阅读的语法。
+
+Ruby 提供自动内存管理、动态类型以及对多种编程范式的支持，包括函数式编程（functional programming）和命令式编程（imperative programming）。
+
+Ruby 的灵活性和表达能力使其在网页开发中特别受欢迎，尤其是与 Ruby on Rails 框架结合时。
+
+它在文本处理、脚本编写和快速原型设计方面表现出色。
+
+Ruby 拥有丰富的标准库和包管理器（RubyGems），构成了第三方库的丰富生态系统。
+
+尽管在性能上不如某些编译语言，但由于其专注于开发者的幸福感和生产力，Ruby 在初创公司和快速构建网络应用程序方面受到青睐。
+
+\n\n",
+          "links": [
+            {
+              "title": "Ruby 官方网站",
+              "url": "https://www.ruby-lang.org/en/",
+              "type": "article"
+            },
+            {
+              "title": "20分钟学会Ruby",
+              "url": "https://www.ruby-lang.org/en/documentation/quickstart/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Ruby的热门文章",
+              "url": "https://app.daily.dev/tags/ruby?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Ruby编程速成课",
+              "url": "https://www.youtube.com/watch?v=w9yNsTAp-Mg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "7c68c999-f38a-4577-896e-e423034eaaf9",
+          "xid": "dd496cfe-d361-4c78-9371-70a315662c9d"
+        },
+        {
+          "title": "Rust",
+          "description": "Rust是一种系统编程语言，侧重于安全性、并发和性能。
+
+由Mozilla Research开发，Rust结合了对系统资源的低级控制和高级抽象，防止常见的编程错误，如在编译时出现空指针或悬空指针引用。
+
+它具有借用检查器来管理内存并防止数据竞争，使其非常适合构建可靠高效的软件。
+
+Rust的零开销抽象、模式匹配和基于特征的泛型提供了强大的工具，可以清晰地表达复杂思想。
+
+虽然主要用于系统编程、WebAssembly和游戏开发，但Rust不断壮大的生态系统支持各种领域。
+
+在不影响性能的情况下强调内存安全，使得Rust在从操作系统到网络服务等多个领域中越来越受欢迎。
+
+\n\n",
+          "links": [
+            {
+              "title": "实际操作学习Rust - Rust互动课程",
+              "url": "https://practice.course.rs/",
+              "type": "course"
+            },
+            {
+              "title": "访问专门的Rust路线图",
+              "url": "https://roadmap.sh/rust",
+              "type": "article"
+            },
+            {
+              "title": "Rust编程语言 - 在线书籍",
+              "url": "https://doc.rust-lang.org/book/",
+              "type": "article"
+            },
+            {
+              "title": "Google推出的全面Rust课 - 4天内学会Rust",
+              "url": "https://google.github.io/comprehensive-rust/",
+              "type": "article"
+            },
+            {
+              "title": "Rust kata - 小型互动的Rust练习",
+              "url": "https://rustlings.cool/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Rust的热门文章",
+              "url": "https://app.daily.dev/tags/rust?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Rust编程书籍 - 视频版本",
+              "url": "https://youtube.com/playlist?list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8",
+              "type": "video"
+            },
+            {
+              "title": "面向初学者的全面速成Rust教程",
+              "url": "https://www.youtube.com/watch?v=R33h77nrMqc&list=PLPoSdR46FgI412aItyJhj2bF66cudB6Qs",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "dda53da3-1b1d-4eb2-ba4b-c96bc976bb5a",
+          "xid": "52fbc6fd-8d4a-4f2b-8ca9-ca12d39b5f80"
+        },
+        {
+          "title": "JavaScript / Node.js",
+          "description": "JavaScript 是一种高级、解释型的编程语言，主要用于客户端的网络开发。
+
+它使网页内容变得互动和动态，并允许开发者创建响应式用户界面和复杂的网络应用程序。
+
+JavaScript 是网络的核心技术之一，与 HTML 和 CSS 一起构成了网页的基础技术。
+
+JavaScript 支持面向对象编程、命令式编程和函数式编程范式。
+
+随着 Node.js 的出现，JavaScript 也因其强大的服务器端开发应用而流行起来。
+
+该语言支持动态类型、一等函数（first-class functions）以及基于原型（prototype-based）的面向对象编程。
+
+由于 JavaScript 在网络浏览器中的普及，丰富的库和框架生态系统（如 React、Angular 和 Vue.js），以及其在前端和后端开发中的多功能性，它已成为现代软件开发中使用最广泛的语言之一。
+
+\n\n",
+          "links": [
+            {
+              "title": "访问专用的 JavaScript 路线图",
+              "url": "https://roadmap.sh/javascript",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools – JavaScript 教程",
+              "url": "https://www.w3schools.com/js/",
+              "type": "article"
+            },
+            {
+              "title": "现代 JavaScript 教程",
+              "url": "https://javascript.info/",
+              "type": "article"
+            },
+            {
+              "title": "什么是 NPM？",
+              "url": "https://www.w3schools.com/nodejs/nodejs_npm.asp",
+              "type": "article"
+            },
+            {
+              "title": "查阅关于 JavaScript 的顶级文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "面向初学者的 JavaScript 入门速成课",
+              "url": "https://youtu.be/hdI2bqOjy3c",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "75948fc3-eb56-4ff3-94c4-992adeb3be9d",
+          "xid": "86395c00-5b52-4196-8e51-6cf3a7462863"
+        }
+      ],
+      "id": "7147d0bf-94f5-4f8e-b4be-f09e6a1a54ad",
+      "xid": "9f1c6ba4-debd-4f47-9c34-7240f2265a16"
+    },
+    {
+      "title": "操作系统",
+      "description": "操作系统（Operating System, OS）是管理计算机硬件和软件资源的基本软件，为计算机程序提供通用服务。
+
+它们在应用程序和硬件之间充当接口，处理诸如内存管理、进程调度、文件系统管理和设备控制等任务。
+
+常见的桌面操作系统有Microsoft Windows、macOS和各种Linux发行版。
+
+移动设备通常运行iOS或Android系统。
+
+服务器环境常常使用如Ubuntu Server、Red Hat Enterprise Linux或Windows Server之类的Linux发行版。
+
+每种操作系统类型提供不同的功能、用户界面，以及兼容不同的软件和硬件。
+
+操作系统在系统安全、性能优化以及提供多样计算设备和环境下的统一用户体验中发挥着关键作用。
+
+\n\n",
+      "links": [
+        {
+          "title": "操作系统 - 维基百科",
+          "url": "https://en.wikipedia.org/wiki/Operating_system",
+          "type": "article"
+        },
+        {
+          "title": "关于操作系统你需要知道的一切。
+
+",
+          "url": "https://www.javatpoint.com/operating-system",
+          "type": "article"
+        },
+        {
+          "title": "学习操作系统",
+          "url": "https://www.tutorialspoint.com/operating_system/os_overview.htm",
+          "type": "article"
+        },
+        {
+          "title": "什么是操作系统？",
+          "url": "https://www.youtube.com/watch?v=pVzRTmdd9j0",
+          "type": "video"
+        },
+        {
+          "title": "操作系统",
+          "url": "https://www.youtube.com/watch?v=vBURTt97EkA&list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Windows",
+          "description": "Windows是由微软开发的一系列操作系统，广泛应用于个人、商业和服务器环境。
+
+它提供了一个图形用户界面（GUI），使与计算机的交互更加简单，其桌面环境包括图标、窗口和菜单。
+
+关键版本包括Windows 10，以其用户友好的界面和对现代应用的支持而闻名，以及Windows 11，它引入了一个全新的设计和新功能，如改进的虚拟桌面和增强的安全性。
+
+Windows支持一系列软件应用程序和硬件设备，使其成为许多用户和组织的多才多艺和受欢迎的选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Microsoft Windows",
+              "url": "http://microsoft.com/windows",
+              "type": "article"
+            },
+            {
+              "title": "开发人员的Windows文档",
+              "url": "https://learn.microsoft.com/en-us/windows/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关Windows的热门文章",
+              "url": "https://app.daily.dev/tags/windows?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "你必须知道的40个Windows命令",
+              "url": "https://www.youtube.com/watch?v=Jfvg3CS1X3A&",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "bd9d1f4f-b58b-4feb-a8f3-477ae7941922",
+          "xid": "f001921a-e458-4db6-812a-77d4ce12daa0"
+        },
+        {
+          "title": "Unix",
+          "description": "Unix",
+          "links": [],
+          "children": [
+            {
+              "title": "FreeBSD",
+              "description": "FreeBSD 是一个免费的、开源的类似 Unix 的操作系统，源自伯克利软件发行版（Berkeley Software Distribution，BSD）。
+
+以稳定性、性能和高级网络功能而闻名，FreeBSD 在服务器环境、嵌入式系统以及作为网络设备的基础方面非常受欢迎。
+
+它拥有一个单内核、一套全面的用户空间工具和一个用于轻松软件安装的端口集合。
+
+FreeBSD 支持广泛的处理器架构，并提供了先进的特性，如 ZFS 文件系统、用于容器化的Jails和pf包过滤器。
+
+虽然在桌面环境中不太常见，但它在互联网基础设施、存储系统和需要强大、可定制且带有宽松许可证的操作系统的公司中被广泛使用。
+
+\n\n",
+              "links": [
+                {
+                  "title": "FreeBSD",
+                  "url": "https://www.freebsd.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "FreeBSD 新手资源",
+                  "url": "https://www.freebsd.org/projects/newbies/",
+                  "type": "article"
+                },
+                {
+                  "title": "FreeBSD 文档",
+                  "url": "https://docs.freebsd.org/en/",
+                  "type": "article"
+                },
+                {
+                  "title": "FreeBSD 手册",
+                  "url": "https://docs.freebsd.org/en/books/handbook/",
+                  "type": "article"
+                },
+                {
+                  "title": "百秒了解 FreeBSD",
+                  "url": "https://www.youtube.com/watch?v=NKHzcXwTdB4",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "1c385901-3b8f-45d8-9571-8601a0d36d35",
+              "xid": "2356ce2d-e089-4e97-9e6d-1832bc9af7ee"
+            },
+            {
+              "title": "OpenBSD",
+              "description": "OpenBSD是一款自由、开源的操作系统，类似于Unix，以其对安全性的强烈关注、代码的准确性以及积极消除漏洞的方法而闻名。
+
+它因其严格的质量审查过程、集成的加密技术以及默认的安全特性（如栈保护和内存保护）而著称。
+
+OpenBSD率先实现了许多安全创新，包括OpenSSH，并坚持一种\"默认安全\"的哲学。
+
+该系统因其全面的文档、干净且一致的代码库以及遵循标准而受到重视。
+
+虽然在服务器环境（特别是作为防火墙和网络设备）中主要使用，OpenBSD也支持桌面使用。
+
+其对安全性和稳定性的重视使其在高安全环境以及注重系统级编程和网络安全的开发者中非常流行。
+
+\n\n",
+              "links": [
+                {
+                  "title": "OpenBSD",
+                  "url": "https://www.openbsd.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "在最快的iMac G3上安装OpenBSD",
+                  "url": "https://www.youtube.com/watch?v=-7gSMEsF3Q0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "307e2581-1e26-40e4-af99-d425adf8a1a8",
+              "xid": "b8e23156-bce2-46c4-861b-b6fbb0d83e12"
+            },
+            {
+              "title": "NetBSD",
+              "description": "NetBSD 是一个自由的、开源的类Unix操作系统，源自伯克利软件分发（Berkeley Software Distribution，BSD）。
+
+它以其高度可移植性而著称，支持从大型服务器到嵌入设备的广泛硬件平台。
+
+NetBSD 强调设计的清晰性、代码编写质量以及遵守标准。
+
+它具有模块化的内核架构，使其适应各种环境。
+
+NetBSD 包括高级功能如内核 ASLR（地址空间布局随机化）以增强安全性。
+
+NetBSD 在研究环境、嵌入式系统以及重视不同硬件之间系统一致性的用户中特别受欢迎。
+
+尽管在桌面环境中的使用相对较少，但NetBSD 对可移植性和清晰代码的关注使其成为跨平台开发和特定计算应用程序的理想选择。
+
+\n\n",
+              "links": [
+                {
+                  "title": "NetBSD 网站",
+                  "url": "https://netbsd.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "官方 NetBSD 文档",
+                  "url": "https://netbsd.org/docs/",
+                  "type": "article"
+                },
+                {
+                  "title": "NetBSD 指南",
+                  "url": "https://netbsd.org/docs/guide/en/index.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "9760c2ba-7315-46b2-a27d-c7945d7648db",
+              "xid": "08628efb-bf0f-4e07-9663-816311925085"
+            }
+          ],
+          "id": "08b6ac43-d7a7-4ab7-9cb9-f638a4209eaf",
+          "xid": "d236c003-fc26-4cb0-9b47-9b4c2dc80b10"
+        },
+        {
+          "title": "Linux",
+          "description": "Linux",
+          "links": [],
+          "children": [
+            {
+              "title": "Ubuntu / Debian",
+              "description": "Ubuntu 和 Debian 都是非常流行的 Linux 发行版，而 Debian 作为 Ubuntu 的上游基础。
+
+Debian 以其稳定性、广泛的软件包仓库和严格的测试过程著称，因此成为需要长期支持的服务器和系统的首选。
+
+Ubuntu，源于 Debian，旨在提供更友好易用的体验，具备定期发布、注重易用性以及商业支持选项。
+
+其拥有一套更为简化的安装流程、全面的文档和一个活跃的社区。
+
+这两个发行版均使用 Debian 软件包管理系统 (APT) 并共享许多底层技术，但 Ubuntu 更加注重桌面体验的优化和完善，以及快速的发布周期。
+
+\n\n",
+              "links": [
+                {
+                  "title": "通过实践实验室练习 Linux 命令\"",
+                  "url": "https://labex.io/courses/linux-basic-commands-practice-online",
+                  "type": "course"
+                },
+                {
+                  "title": "Debian 网站",
+                  "url": "https://www.debian.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Ubuntu 网站",
+                  "url": "https://ubuntu.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Ubuntu 的热门文章",
+                  "url": "https://app.daily.dev/tags/ubuntu?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "如何使用 Ubuntu",
+                  "url": "https://www.youtube.com/watch?v=lmeDvSgN6zY",
+                  "type": "video"
+                },
+                {
+                  "title": "初学者的 Debian 12 教程",
+                  "url": "https://www.youtube.com/watch?v=zOZEkzwhThc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "3aa2f56c-d2ec-48df-ab97-ed93f2036b10",
+              "xid": "6d6d34f2-7a04-4083-a3d6-cd735ae92723"
+            },
+            {
+              "title": "SUSE Linux",
+              "description": "openSUSE 是一种基于Linux的操作系统，以其稳定性、灵活性和用户友好的系统管理而著称。
+
+它提供了两个主要版本：openSUSE Leap，是一个稳定的企业级版本，具有定期的小版本更新；以及openSUSE Tumbleweed，是一个持续更新的版本，包含最新的软件更新。
+
+openSUSE 广泛应用于开发者、系统管理员和企业环境，其强大的包管理功能通过Zypper和YaST（Yet another Setup Tool）实现，简化了系统配置。
+
+它还支持广泛的硬件，并提供强大的社区支持。
+
+\n\n",
+              "links": [
+                {
+                  "title": "openSUSE Linux官方网站",
+                  "url": "https://www.opensuse.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "openSUSE 文档",
+                  "url": "https://en.opensuse.org/Main_Page",
+                  "type": "article"
+                },
+                {
+                  "title": "非官方openSUSE入门指南",
+                  "url": "https://opensuse-guide.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "浏览顶级Linux文章",
+                  "url": "https://app.daily.dev/tags/linux?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "OpenSuSE - 你应该试试",
+                  "url": "https://www.youtube.com/watch?v=CZwAgf3f8CM",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "08bd7a1d-4f4c-4b49-995b-ce781cda6a94",
+              "xid": "19606723-04ce-4fea-a53e-46f76eaf2d2b"
+            },
+            {
+              "title": "RHEL / 衍生版",
+              "description": "Red Hat 企业版 Linux (RHEL) 是一款广受欢迎的 Linux 操作系统发行版，旨在满足企业级使用需求。
+
+RHEL 由 Red Hat, Inc. 开发和维护，并以订阅模式提供。
+
+有多种 Linux 发行版基于 RHEL 或从某种意义上说是从 RHEL 衍生出来的。
+
+这些发行版被称为 RHEL 衍生版。
+
+RHEL 衍生版的一些例子包括：AlmaLinux、CentOS、CloudLinux、Oracle Linux 和 Scientific Linux。
+
+RHEL 衍生版在企业环境中经常被使用，因为它们提供了 RHEL 的稳定性和可靠性，同时又拥有了免费或低成本的替代优势。
+
+",
+              "links": [
+                {
+                  "title": "Red Hat 企业版 Linux 网站",
+                  "url": "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux",
+                  "type": "article"
+                },
+                {
+                  "title": "RHEL 文档",
+                  "url": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/",
+                  "type": "article"
+                },
+                {
+                  "title": "学习 Linux 101",
+                  "url": "https://developer.ibm.com/series/learn-linux-101/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是 Red Hat 企业版 Linux？",
+                  "url": "https://www.youtube.com/watch?v=HEBvdSI0wGQ",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "fdbc5de2-bf5d-4f83-955f-ef04d520f1c1",
+              "xid": "118cb5b5-a7d0-4709-8966-a2447d89db21"
+            }
+          ],
+          "id": "63b93182-0e99-4345-a8d9-78ea42af41f5",
+          "xid": "08429b5a-15d1-4050-a104-5e14fcb89496"
+        }
+      ],
+      "id": "f26b0c2e-3fbc-4dfb-8959-a889d716c56e",
+      "xid": "ef3d8aba-44ed-4972-8eea-6cf884f2146c"
+    },
+    {
+      "title": "终端知识",
+      "description": "终端是一个基于文本的计算机界面，用于通过命令行界面（Command Line Interface, CLI）与计算机系统进行交互。
+
+\n\n",
+      "links": [
+        {
+          "title": "什么是CLI？",
+          "url": "https://en.wikipedia.org/wiki/Command-line_interface",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "脚本编写(scripting)",
+          "description": "脚本编写(scripting)",
+          "links": [],
+          "children": [
+            {
+              "title": "Bash",
+              "description": "Bash（Bourne Again Shell）是一种强大的Unix shell和命令语言解释器，是大多数Linux发行版和macOS的默认shell。
+
+它提供了一个命令行界面，用于与操作系统进行交互、执行命令，并通过shell脚本自动化任务。
+
+Bash支持变量、控制结构、函数和命令替换，使其成为系统管理员、DevOps任务和通用脚本编写时的多面手。
+
+它能够通过管道链接命令、重定向输入/输出，并使用大量的内置命令和工具，使其成为在类Unix环境中管理和自动化工作流程的开发人员和系统管理员的重要工具。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Bash脚本教程（初学者适用）",
+                  "url": "https://www.youtube.com/watch?v=tK9Oc6AEnR4",
+                  "type": "course"
+                },
+                {
+                  "title": "交互式Shell脚本教程",
+                  "url": "https://www.learnshell.org/en/Welcome",
+                  "type": "article"
+                },
+                {
+                  "title": "Bash脚本教程",
+                  "url": "https://www.javatpoint.com/bash",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于Bash的热门帖子",
+                  "url": "https://app.daily.dev/tags/bash?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "在100秒内了解Bash",
+                  "url": "https://www.youtube.com/watch?v=I4EWvMFj37g",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "a237d494-3e68-41a6-8b38-54957bb14814",
+              "xid": "ea3f8ea8-f9db-45f4-b0e6-aa3c310eda82"
+            },
+            {
+              "title": "PowerShell",
+              "description": "PowerShell 是一款来自微软的任务自动化和配置管理框架，包含一个命令行外壳与相关的脚本语言。
+
+PowerShell 建立在 .NET 框架之上，提供对 COM 和 WMI 的完全访问，使管理员能够在本地和远程 Windows 系统上执行管理任务。
+
+它使用 cmdlets（“command-lets”的发音）来进行操作，并使用管道系统将这些命令连成串。
+
+由于其基于对象的特性（与基于文本的输出相反），PowerShell 可以更高效地进行数据操作。
+
+依托其广泛的应用脚本能力、对别名的支持，以及与各种微软及第三方产品的集成，PowerShell 已成为一款强大的工具，用于自动化系统管理任务、管理云资源以及在以 Windows 为中心的环境中开发 DevOps 实践。
+
+\n\n",
+              "links": [
+                {
+                  "title": "PowerShell 文档",
+                  "url": "https://learn.microsoft.com/en-us/powershell/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 PowerShell 的顶级帖子",
+                  "url": "https://app.daily.dev/tags/powershell?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "在不到2小时内学习 PowerShell",
+                  "url": "https://www.youtube.com/watch?v=ZOoCaWyifmI",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "fa269a54-6468-4050-8a40-805a36aa5ceb",
+              "xid": "1b2071ba-190d-4e78-8719-e38cc1131d39"
+            }
+          ],
+          "id": "daf4596a-2981-41ce-98cf-f1acbd5bb7f5",
+          "xid": "1d184e99-8c04-4526-9829-a08e3e6cc7be"
+        },
+        {
+          "title": "进程监控",
+          "description": "进程监控是对IT系统或组织内的进程进行持续观察和分析的过程，以确保其性能、效率和合规性处于最优状态。
+
+它涉及追踪关键指标、资源利用率以及系统上运行的单个进程或应用程序的行为。
+
+此实践有助于在整体系统性能或用户体验受到影响之前，识别异常、瓶颈或潜在问题。
+
+进程监控工具通常提供有关CPU使用率、内存消耗、I/O操作和线程活动的实时数据。
+
+它们通常包括告警、日志和进程数据可视化的功能。
+
+在现代IT环境中，进程监控对于维持系统稳定性、优化资源分配、解决性能问题以及支持复杂分布式系统的容量规划至关重要。
+
+\n\nLsof（进程打开文件列表）在其标准输出文件中列出关于进程打开文件的信息。
+
+",
+          "links": [
+            {
+              "title": "lsof 快速参考指南",
+              "url": "https://neverendingsecurity.wordpress.com/2015/04/13/lsof-commands-cheatsheet/",
+              "type": "article"
+            },
+            {
+              "title": "lsof 文档",
+              "url": "https://man7.org/linux/man-pages/man8/lsof.8.html",
+              "type": "article"
+            },
+            {
+              "title": "关于监控的热门帖子",
+              "url": "https://app.daily.dev/tags/monitoring?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Linux 快速入门 - lsof 命令",
+              "url": "https://www.youtube.com/watch?v=n9nZ1ellaV0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "98faa9a9-788a-4b82-be7a-5927f98024a3",
+          "xid": "cc386275-02c3-41cb-b7f3-3c36dec9fac9"
+        },
+        {
+          "title": "性能监控",
+          "description": "性能监控是对IT系统的操作效率和效果进行系统的观察和测量。
+
+它涉及收集、分析和报告关键性能指标（关键性能指标KPIs），包括应用程序、网络、服务器和数据库等各个组件。
+
+此过程使用专用工具跟踪诸如响应时间、吞吐量、资源利用率和错误率等指标。
+
+性能监控有助于识别瓶颈、预测潜在问题并优化系统资源。
+
+对于维护服务水平协议（服务水平协议SLAs）、确保用户满意度和支持容量规划十分重要。
+
+在现代IT环境中，性能监控通常结合实时分析、基于AI的见解和自动化报警系统，以实现实时管理和优化复杂、分布式的系统，并支持IT运营和服务交付中的持续改进。
+
+\n",
+          "links": [
+            {
+              "title": "Linux命令：使用vmstat探索虚拟内存",
+              "url": "https://www.redhat.com/sysadmin/linux-commands-vmstat",
+              "type": "article"
+            },
+            {
+              "title": "vmstat 手册页",
+              "url": "https://man7.org/linux/man-pages/man8/vmstat.8.html",
+              "type": "article"
+            },
+            {
+              "title": "vmstat 教程",
+              "url": "https://phoenixnap.com/kb/vmstat-command",
+              "type": "article"
+            },
+            {
+              "title": "查看关于监控的热门文章",
+              "url": "https://app.daily.dev/tags/monitoring?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "87b1e8b3-cf3b-4491-9208-1698fca048e2",
+          "xid": "e623a598-1208-4cc7-92cc-b87ca3ffa562"
+        },
+        {
+          "title": "网络工具",
+          "description": "网络工具是用于监控、分析、故障排除和管理计算机网络的必要软件工具。
+
+它们包括一系列应用，如用于深度数据包分析的Wireshark，用于网络扫描和安全审核的Nmap，用于测试基本连通性的Ping，用于可视化网络路径的Traceroute，用于显示网络连接的Netstat，用于命令行数据包捕获的Tcpdump，用于性能测试的Iperf，用于各种网络操作的Netcat，用于DNS查询的Nslookup/Dig，以及用于通过SSH或telnet进行远程访问的PuTTY。
+
+这些工具共同使网络管理员和安全专业人员能够诊断问题、优化性能、进行安全评估，并维护整个网络结构的总体健康和效率，从小型局域网到大规模企业环境。
+
+\n\n",
+          "links": [
+            {
+              "title": "10个SCP命令示例",
+              "url": "https://www.tecmint.com/scp-commands-examples/",
+              "type": "article"
+            },
+            {
+              "title": "SCP命令详解",
+              "url": "https://phoenixnap.com/kb/linux-scp-command",
+              "type": "article"
+            },
+            {
+              "title": "Top 5 Linux网络命令",
+              "url": "https://www.youtube.com/watch?v=MT85eMsMN6o",
+              "type": "video"
+            },
+            {
+              "title": "你需要掌握的60个Linux命令",
+              "url": "https://www.youtube.com/watch?v=gd7BXuUQ91w",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6568c472-a9d4-47f5-8a0d-d41abd849cd1",
+          "xid": "ec9e00ab-6d17-4d2d-ad2d-8dbebaa2af77"
+        },
+        {
+          "title": "文本操作",
+          "description": "文本操作工具是允许用户高效修改、处理和转换文本数据的实用程序或软件。
+
+这些工具在脚本编写、数据清洗和自动化任务中被广泛使用。
+
+常见的文本操作工具有 `sed`（流编辑器）用于搜索和替换，`awk` 用于模式扫描和数据提取，`grep` 用于通过正则表达式搜索文本。
+
+其他流行的工具有 `cut`、`sort`、`tr` 和 `uniq`，可用于各种文本处理功能。
+
+这些命令行工具在UNIX/Linux环境中广泛用于处理大量文本文件、自动化工作流和执行复杂的文本转换。
+
+\n\n",
+          "links": [
+            {
+              "title": "Linux 文本处理命令",
+              "url": "https://earthly.dev/blog/linux-text-processing-commands/",
+              "type": "article"
+            },
+            {
+              "title": "对Linux用户而言学习Awk是必不可少的",
+              "url": "https://www.youtube.com/watch?v=9YOZmI-zWok",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "160e171b-c5eb-43f4-b198-182e61d6d2fa",
+          "xid": "c9b76aee-16d1-4e64-aebe-872550f85a25"
+        },
+        {
+          "title": "Vim / Nano /  Emacs",
+          "description": "文本编辑器是用于创建、编辑和管理文本文件的软件工具。
+
+它们从具有基本功能的简单编辑器到包含复杂功能的集成开发环境（IDEs）都有。
+
+流行的文本编辑器包括：\n\n*   **Notepad**：适用于Windows的基本编辑器，适用于简单的文本文件。
+
+\n*   **Vim**：一个高度可配置的强大编辑器，以其效率和模态界面而闻名。
+
+\n*   **Emacs**：一个多功能编辑器，具有广泛的定制选项和各种插件。
+
+\n*   **Sublime Text**：一个特性丰富的编辑器，专注于速度和用户友好的界面。
+
+\n*   **Visual Studio Code**：一个现代、开源编辑器，具有内置的调试支持、扩展和与各种开发工具的集成。
+
+\n\n",
+          "links": [
+            {
+              "title": "Vim",
+              "url": "https://www.vim.org",
+              "type": "article"
+            },
+            {
+              "title": "GNU Nano",
+              "url": "https://www.nano-editor.org/",
+              "type": "article"
+            },
+            {
+              "title": "GNU Emacs",
+              "url": "https://www.gnu.org/software/emacs/",
+              "type": "article"
+            },
+            {
+              "title": "Vim Adventures",
+              "url": "https://vim-adventures.com/",
+              "type": "article"
+            },
+            {
+              "title": "Vim Tutorial for Beginners",
+              "url": "https://www.youtube.com/watch?v=RZ4p-saaQkc",
+              "type": "video"
+            },
+            {
+              "title": "Linux Crash Course - nano",
+              "url": "https://www.youtube.com/watch?v=DLeATFgGM-A",
+              "type": "video"
+            },
+            {
+              "title": "The Absolute Beginner's Guide to Emacs",
+              "url": "https://www.youtube.com/watch?v=48JlgiBpw_I",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b42ce8fa-2c84-445e-b554-3bd18fde2895",
+          "xid": "f83cd8cb-9372-4a9f-850b-210d3d3935f5"
+        }
+      ],
+      "id": "79731c8b-260f-4f4a-ad99-0ad5f89100bc",
+      "xid": "3b47b31c-a629-47bf-89a3-249cbe70329a"
+    },
+    {
+      "title": "版本控制系统托管",
+      "description": "当团队协作时，通常需要一个远程位置来存放代码，以便其他人可以访问它，创建自己的分支，并创建或审查拉取请求。
+
+这些服务通常包括问题跟踪、代码审查和持续集成功能。
+
+一些流行的选择包括GitHub（GitHub）、GitLab（GitLab）、BitBucket（BitBucket）和AWS CodeCommit（AWS CodeCommit）。
+
+\n\n",
+      "links": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com",
+          "type": "article"
+        },
+        {
+          "title": "GitLab",
+          "url": "https://about.gitlab.com/",
+          "type": "article"
+        },
+        {
+          "title": "BitBucket",
+          "url": "https://bitbucket.org/product/guides/getting-started/overview",
+          "type": "article"
+        },
+        {
+          "title": "GitHub vs GitLab vs BitBucket - 哪个更好？",
+          "url": "https://www.youtube.com/watch?v=FQGXIIqziQg",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "GitHub",
+          "description": "GitHub 是一个基于 Web 的平台，使用 Git 进行版本控制和协作。
+
+它提供基于云的 Git 仓库托管，提供诸如错误跟踪、任务管理和项目维基等功能。
+
+GitHub 通过拉请求（pull requests）促进代码审查，支持问题追踪，并通过仓库克隆（forking）和星标（starring）等功能实现社交编程。
+
+它提供公共和私有仓库，对于开源项目和私有开发来说都非常受欢迎。
+
+GitHub 的生态系统包括与各种开发工具和持续集成及持续部署（CI/CD）平台的集成。
+
+GitHub Actions 用于自动化，GitHub Packages 用于包管理，GitHub Pages 用于网络托管，作为一个全面的软件开发工作流程平台，推动了全球开发者的协作。
+
+",
+          "links": [
+            {
+              "title": "GitHub",
+              "url": "https://github.com",
+              "type": "article"
+            },
+            {
+              "title": "访问专门的 Git & GitHub 学习路线",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "如何在专业开发团队中使用 Git",
+              "url": "https://ooloo.io/project/github-flow",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 GitHub 的热门文章",
+              "url": "https://app.daily.dev/tags/github?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是 GitHub？",
+              "url": "https://www.youtube.com/watch?v=pBy1zgt0XPc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f7f18910-d45b-4bb8-a4b9-2fe4d178060e",
+          "xid": "5ca44f1c-cccb-4a7b-bc43-3afe244394cc"
+        },
+        {
+          "title": "GitLab",
+          "description": "GitLab 是一个基于Web的DevOps生命周期工具（Development and Operations，简称DevOps），提供Git仓库管理器，包括维基（wiki）、问题跟踪（issue tracking）和持续集成/持续交付（CI/CD）流水线功能。
+
+它提供一个完整的DevOps平台，作为单一应用程序交付，覆盖从规划到监控的整个软件开发生命周期。
+
+GitLab 支持云托管和自托管选项，满足各种组织需求。
+
+关键特性包括集成的CI/CD（Continuous Integration/Continuous Deployment）、容器注册表、软件包注册表和安全扫描工具。
+
+它强调内部开源（innersource）方法论，使团队能够在组织内部更有效地协作。
+
+GitLab 内置的DevOps功能以及专注于单一集成平台，使它成为希望优化开发流程并高效实施DevOps实践的组织的流行选择。
+
+",
+          "links": [
+            {
+              "title": "GitLab 官方网站",
+              "url": "https://gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "GitLab 文档",
+              "url": "https://docs.gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于GitLab的热门文章",
+              "url": "https://app.daily.dev/tags/gitlab?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "GitLab 解析：什么是GitLab以及为何使用它？",
+              "url": "https://www.youtube.com/watch?v=bnF7f1zGpo4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1eec0ee6-5738-4065-85a8-65a035e4d979",
+          "xid": "3dc01a8f-4b36-45aa-a5cc-64b0b87cdf96"
+        },
+        {
+          "title": "Bitbucket",
+          "description": "Bitbucket 是一个由 Atlassian 所有的基于网络的版本控制系统存储库托管服务，主要用于源码管理和使用 Git 或 Mercurial (版本控制系统的) 开发项目。
+
+它提供基于云的选项和自托管选项（self-hosted options），并能无缝地与 Jira 和 Trello 等其他 Atlassian 工具集成。
+
+Bitbucket 提供功能，如拉取请求（pull requests）、代码审查、通过 Bitbucket Pipelines（管培生计划，此处为 CI/CD 管道服务）进行持续集成和持续部署管道，以及内置的用于文档的维基。
+
+它为私人仓库（private repositories）提供免费服务，使得小型团队和大型企业都非常热衷于使用它。
+
+通过其对团队协作、项目管理和部署自动化（deployment automation）的关注，Bitbucket 作为一个全面的平台服务于整个软件开发生命周期。
+
+",
+          "links": [
+            {
+              "title": "Bitbucket 官网",
+              "url": "https://bitbucket.org",
+              "type": "article"
+            },
+            {
+              "title": "Bitbucket 概览",
+              "url": "https://bitbucket.org/product/guides/getting-started/overview",
+              "type": "article"
+            },
+            {
+              "title": "Git 和 Bitbucket 入门",
+              "url": "https://www.w3schools.com/git/git_intro.asp?remote=bitbucket",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 Bitbucket 的热门文章",
+              "url": "https://app.daily.dev/tags/bitbucket?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Bitbucket 教程 | 如何使用 Bitbucket Cloud",
+              "url": "https://www.youtube.com/watch?v=M44nEyd_5To",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ed73f91e-a2ee-4c43-ae67-ff535f443e7c",
+          "xid": "116817cb-ee1d-45fa-9f9f-05afac4782fe"
+        }
+      ],
+      "id": "7427d1cc-f8d6-48bc-84dc-6f1adb5809c1",
+      "xid": "7533e1c9-e204-472b-a754-0843fe45fb88"
+    },
+    {
+      "title": "版本控制系统",
+      "description": "版本控制系统（Version Control Systems，VCS）是用于追踪代码和文件随时间变化的工具，使多个用户能够协作完成项目，维护历史记录，并管理代码库的不同版本。
+
+它们有助于追踪修改，合并变更，以及解决冲突。
+
+版本控制系统主要有两类：集中式和分布式的。
+
+集中式系统（如Subversion和CVS）依赖于单一的中央仓库，而分布式的系统（如Git和Mercurial）允许每个用户都拥有仓库的完整副本，包括其历史记录。
+
+诸如Git之类的分布式版本控制系统因其灵活性，分支能力以及对协作工作流程的强大支持而特别受欢迎。
+
+",
+      "links": [
+        {
+          "title": "访问专用的 Git & GitHub 路线图",
+          "url": "https://roadmap.sh/git-github",
+          "type": "article"
+        },
+        {
+          "title": "Git",
+          "url": "https://git-scm.com/",
+          "type": "article"
+        },
+        {
+          "title": "Mercurial",
+          "url": "https://www.mercurial-scm.org/",
+          "type": "article"
+        },
+        {
+          "title": "Subversion",
+          "url": "https://subversion.apache.org/",
+          "type": "article"
+        },
+        {
+          "title": "什么是版本控制？",
+          "url": "https://www.atlassian.com/git/tutorials/what-is-version-control",
+          "type": "article"
+        },
+        {
+          "title": "版本控制系统（VCS）",
+          "url": "https://www.youtube.com/watch?v=SVkuliabq4g",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Git",
+          "description": "Git 是一个分布式版本控制系统，设计用于在软件开发过程中跟踪源代码的变化。
+
+它允许多名开发人员同时在同一项目上工作，同时维护完整的修改历史记录。
+
+Git 在每个开发人员的机器上都有本地仓库，支持离线工作和快速操作。
+
+通过分支(branching)和合并(merging)，它支持非线性开发，促进并行工作流。
+
+Git 分布式特性增强了协作、备份和实验的性能。
+
+核心概念包括提交(commits)、分支(branches)、合并(merges)和远程仓库(remote repositories)。
+
+凭借其速度、灵活性以及强大的分支和合并功能，Git 已成为现代软件开发中版本控制的标准，为平台如 GitHub 和 GitLab 提供支持。
+
+\n\n",
+          "links": [
+            {
+              "title": "通过实例学习 Git - 短小精悍的教程",
+              "url": "https://antonz.org/git-by-example/",
+              "type": "course"
+            },
+            {
+              "title": "访问 Git & GitHub 路线图",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "在 Atlassian 上通过教程、新闻和技巧学习 Git",
+              "url": "https://www.atlassian.com/git",
+              "type": "article"
+            },
+            {
+              "title": "Git 快速参考手册",
+              "url": "https://cs.fyi/guide/git-cheatsheet",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于 Git 的热门文章",
+              "url": "https://app.daily.dev/tags/git?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Git & GitHub 入门速成课程",
+              "url": "https://www.youtube.com/watch?v=SWYqp7iY_Tc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1061a6a0-4187-4349-b0a0-d18b4d0ea79e",
+          "xid": "83f2f580-b9b3-4e20-87de-e7db8347206a"
+        }
+      ],
+      "id": "ed82d704-092b-4864-869b-299a72d71a24",
+      "xid": "f6e22a97-09e1-4d1c-8e6f-662eda0ba0b6"
+    },
+    {
+      "title": "什么是X以及如何设置？",
+      "description": "学习如何设置：\n\n*   前置代理 (Forward Proxy)\n*   反向代理 (Reverse Proxy)\n*   负载均衡器 (Load Balancer)\n*   防火墙 (Firewall)\n*   缓存服务器 (Caching Server)\n*   WEB服务器 (Web Server)",
+      "links": [],
+      "children": [
+        {
+          "title": "负载均衡器",
+          "description": "负载均衡器充当**交通警察**，位于服务器的前面，将客户端请求路由到能够完成这些请求的所有服务器，以最大化速度和容量利用率，并确保没有一台服务器过载。
+
+如果其中一个服务器宕机，负载均衡器会将流量重定向到其他在线服务器。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是负载均衡？",
+              "url": "https://www.nginx.com/resources/glossary/load-balancing/",
+              "type": "article"
+            },
+            {
+              "title": "负载均衡概念和算法",
+              "url": "https://www.cloudflare.com/en-gb/learning/performance/what-is-load-balancing/",
+              "type": "article"
+            },
+            {
+              "title": "NGINX 反向代理和负载均衡",
+              "url": "https://dzone.com/articles/nginx-reverse-proxy-and-load-balancing",
+              "type": "article"
+            },
+            {
+              "title": "什么是负载均衡器？",
+              "url": "https://www.youtube.com/watch?v=sCR3SAVdyCc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d5439e24-a5a3-4228-a0d7-1135ac58fc65",
+          "xid": "8b8b6429-6ea4-4f78-9b6c-2781f56cfc31"
+        },
+        {
+          "title": "防火墙 (Firewall)",
+          "description": "防火墙 (firewall) 是一种**网络安全设备 (network security device)**，根据组织预先建立的安全策略对进出的网络流量进行监控和过滤。
+
+它位于一个私有内部网络和公共互联网之间。
+
+防火墙的主要目的是允许无威胁的流量进入，并防止危险流量进入。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是防火墙 (Firewall)？",
+              "url": "https://www.checkpoint.com/cyber-hub/network-security/what-is-firewall/",
+              "type": "article"
+            },
+            {
+              "title": "防火墙的类型",
+              "url": "https://www.cisco.com/c/en_in/products/security/firewalls/what-is-a-firewall.html",
+              "type": "article"
+            },
+            {
+              "title": "非复杂防火墙 (Uncomplicated Firewall, UFW)",
+              "url": "https://dev.to/coder7475/uncomplicated-firewall-ufw-1638",
+              "type": "article"
+            },
+            {
+              "title": "为何我们需要防火墙？",
+              "url": "https://www.tutorialspoint.com/what-is-a-firewall-and-why-do-you-need-one",
+              "type": "article"
+            },
+            {
+              "title": "阅读关于防火墙 (Firewall) 的顶级文章",
+              "url": "https://app.daily.dev/tags/firewall?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "防火墙与网络安全 - SimpliLearn",
+              "url": "https://www.youtube.com/watch?v=9GZlVOafYTg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d118bd75-888b-410a-8dea-c622f62e6845",
+          "xid": "3d6cd674-57bd-412a-b514-203a4eac0da2"
+        },
+        {
+          "title": "缓存服务器",
+          "description": "缓存服务器（Caching Server），也称为代理服务器或缓存服务器，是一种专用网络服务器，它在本地保存网页和其他互联网内容以减少带宽使用、服务器负载和感知延迟。
+
+它通过拦截来自客户端的请求、保存来自网络服务器的响应，并将缓存的内容提供给后续相同信息的请求来工作。
+
+缓存服务器可以显著提高响应时间并降低网络流量，特别是在频繁访问的内容上。
+
+它们常被用在内容传递网络（CDN）中、企业网络和互联网服务提供商中，以优化性能、降低成本并通过从离最终用户更近的位置提供内容，从而改善用户体验。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是缓存（Caching）？",
+              "url": "https://www.cloudflare.com/en-gb/learning/cdn/what-is-caching/",
+              "type": "article"
+            },
+            {
+              "title": "什么是缓存服务器（Cache Server）？",
+              "url": "https://networkencyclopedia.com/cache-server/",
+              "type": "article"
+            },
+            {
+              "title": "站点缓存 vs 浏览器缓存 vs 服务器缓存",
+              "url": "https://nordvpn.com/cybersecurity/glossary/caching-server/",
+              "type": "article"
+            },
+            {
+              "title": "每个开发者都应了解的缓存系统",
+              "url": "https://www.youtube.com/watch?v=dGAgxozNWFE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "729a3833-e827-4c80-8e3f-0da4b1d9f340",
+          "xid": "61657153-0388-4852-b502-7edcdeeb9667"
+        },
+        {
+          "title": "正向代理（Forward Proxy）",
+          "description": "正向代理（forward proxy），通常简称为代理（proxy），是位于客户端设备和互联网之间的服务器，它将客户端的请求转发到Web服务器。
+
+作为客户端的代表，它可能提供如匿名访问、安全性提升和访问控制等益处。
+
+正向代理可以缓存频繁请求的内容，过滤Web流量，规避地理位置的限制，并记录用户活动。
+
+它们常用于企业网络来实施互联网使用策略，通过隐藏内部网络细节来增强安全性，并通过缓存来提高性能。
+
+不同于代表服务器的反向代理（reverse proxy），正向代理主要满足客户端的需求，作为对外请求到更广大互联网的中间人。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是正向代理（Forward Proxy）？",
+              "url": "https://www.fortinet.com/resources/cyberglossary/proxy-server",
+              "type": "article"
+            },
+            {
+              "title": "正向代理与反向代理（Forward vs Reverse Proxy）",
+              "url": "https://oxylabs.io/blog/reverse-proxy-vs-forward-proxy",
+              "type": "article"
+            },
+            {
+              "title": "理解代理、正向代理和反向代理（Understanding Proxy, Forward Proxy, and Reverse Proxy）",
+              "url": "https://www.youtube.com/watch?v=HrG0MHkSsCA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "aed6cc0d-9038-4a5f-adba-64a1c1fdfbbd",
+          "xid": "ef8b57ad-ee89-436b-aeb8-a68ccfa4da55"
+        },
+        {
+          "title": "反向代理 (Reverse Proxy)",
+          "description": "反向代理 (reverse proxy) 是一种位于客户端设备和后端服务器之间的服务器，它拦截来自客户端的请求，并将这些请求转发到适当的后端服务器。
+
+反向代理服务器代表后端服务器运作，提供了诸如负载均衡 (load balancing)、缓存 (caching)、SSL终止 (SSL termination) 和安全性 (security) 等功能。
+
+它可以将在进入流量分布式多台后端服务器上，以提高性能和可靠性；缓存频繁请求的内容，减少后端服务器负载；处理SSL加密和解密操作，从而降低后端服务器的负担；通过隐藏服务器细节来增强安全性。
+
+常见的应用场景包括提高Web应用性能、支持微服务架构 (microservices architectures) 以及在Web托管环境中增强安全性。
+
+流行的反向代理软件包括NGINX、HAProxy 和 Apache (附带mod_proxy模块)。
+
+\n",
+          "links": [
+            {
+              "title": "什么是反向代理 (Reverse Proxy)?",
+              "url": "https://www.cloudflare.com/en-gb/learning/cdn/glossary/reverse-proxy/",
+              "type": "article"
+            },
+            {
+              "title": "NGINX 文档",
+              "url": "https://www.nginx.com/resources/glossary/reverse-proxy-server/",
+              "type": "article"
+            },
+            {
+              "title": "理解作为反向代理 (Reverse Proxy) 的NGINX",
+              "url": "https://medium.com/globant/understanding-nginx-as-a-reverse-proxy-564f76e856b2",
+              "type": "article"
+            },
+            {
+              "title": "代理与反向代理 (Proxy vs Reverse Proxy) (真实世界的例子)",
+              "url": "https://www.youtube.com/watch?v=4NB0NDtOwIQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c5045974-a2ef-4bd0-9b4f-6596d52d7844",
+          "xid": "470c6be6-7ca9-4343-8688-93e48239f551"
+        },
+        {
+          "title": "IIS",
+          "description": "Microsoft Internet Information Services (IIS) 是一款灵活、安全且易于管理的Web服务器，用于托管互联网上的任何内容。
+
+它是微软为Windows NT家族操作系统创建的一种可扩展的Web服务器。
+
+IIS支持HTTP, HTTPS, FTP, FTPS, SMTP和NNTP协议。
+
+自Windows NT 4.0以来，IIS一直是Windows NT系列不可或缺的一部分，并且包含在Windows Server版本中。
+
+IIS具备模块化架构，允许管理员自定义服务器功能。
+
+它支持各种编程语言和框架，特别是[ASP.NET](http://ASP.NET)。
+
+IIS提供了用于Web应用程序部署、安全管理及性能优化的工具，使其成为企业环境中托管基于Windows Web应用程序的热门选择。
+
+",
+          "links": [
+            {
+              "title": "Microsoft IIS",
+              "url": "https://www.iis.net/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于.NET的热门文章",
+              "url": "https://app.daily.dev/tags/.net?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "学习Windows Web服务器IIS",
+              "url": "https://www.youtube.com/watch?v=1VdxPWwtISA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "60338a55-2f40-4c9d-84e7-9a22e2301a71",
+          "xid": "f4a6c9cc-4a8f-4fff-8a16-95167db293d1"
+        },
+        {
+          "title": "Apache",
+          "description": "Apache HTTP服务器（Apache）是一款开源的网络服务器软件，用于在网络中提供网页内容和应用程序。
+
+它是最古老且使用最广泛的网络服务器之一，以其强大的稳定性、灵活性和丰富的功能集而著称。
+
+Apache支持各种模块，以增强其功能，如身份验证、URL重写和SSL/TLS加密。
+
+通过其`.conf`文件高度可配置，管理员可以根据特定需求调整服务器的行为。
+
+Apache与多种操作系统兼容，并且可以与其他技术集成，因此成为托管网站和网络应用程序的热门选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Apache服务器网站",
+              "url": "https://httpd.apache.org/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Apache的热门文章",
+              "url": "https://app.daily.dev/tags/apache?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是Apache网络服务器？",
+              "url": "https://www.youtube.com/watch?v=kaaenHXO4t4",
+              "type": "video"
+            },
+            {
+              "title": "在Ubuntu 22.04上安装Apache网络服务器（带SSL）",
+              "url": "https://www.youtube.com/watch?v=VXSgEvZKp-8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "3f9367d2-0f92-4ac8-818f-66921b435d1d",
+          "xid": "5c3d3d2a-5221-4a81-b7c4-a2f827dddbed"
+        },
+        {
+          "title": "Tomcat",
+          "description": "Apache Tomcat 是一个开源的[Web服务器]和[Servlet容器]，实现了Java Servlet规范、JavaServer Pages (JSP)和Java[表达式语言] (EL)。
+
+它广泛用于部署和管理基于Java的Web应用。
+
+Tomcat提供了一个运行Java Web应用的稳定平台，具有诸如请求处理、会话管理和资源池等功能。
+
+它以性能佳、扩展性强，以及易于与其他Java技术集成而著称，因此成为开发人员在生产环境中运行Java应用时的热门选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Tomcat官网",
+              "url": "https://tomcat.apache.org/",
+              "type": "article"
+            },
+            {
+              "title": "Tomcat文档",
+              "url": "https://tomcat.apache.org/tomcat-10.0-doc/index.html",
+              "type": "article"
+            },
+            {
+              "title": "Apache Tomcat全面教程",
+              "url": "https://www.youtube.com/watch?v=rElJIPRw5iM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ef54e18d-cb40-4b66-a118-3cf7a34bde60",
+          "xid": "f4e2a9a5-dcc5-448f-a2ae-99324ae75605"
+        },
+        {
+          "title": "Nginx（Nginx）",
+          "description": "Nginx 是一个高性能、开源的Web服务器、反向代理服务器和负载均衡器。
+
+因其在处理并发连接方面的效率而闻名，Nginx 使用事件驱动、异步架构，消耗资源较少。
+
+它在提供静态内容、将请求代理到应用服务器以及在多个后端之间进行负载均衡方面表现出色。
+
+Nginx 因其提高网站性能、扩展性和安全性的能力而被广泛使用。
+
+它支持包括 HTTP、HTTPS、SMTP 和 WebSocket 在内的多种协议，提供 SSL/TLS 卸载、缓存和内容压缩等功能。
+
+无论在小规模还是企业环境中，Nginx 都是许多现代网络架构的关键组件，特别是在微服务和容器化部署中。
+
+\n\n",
+          "links": [
+            {
+              "title": "Nginx（Nginx）",
+              "url": "https://nginx.org/",
+              "type": "article"
+            },
+            {
+              "title": "在Ubuntu上设置基本Nginx：创建功能性和安全网站的指南",
+              "url": "https://swissmade.host/en/blog/basic-nginx-setup-ubuntu-guide-to-a-functional-and-secure-website-serving",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Nginx的热门文章",
+              "url": "https://app.daily.dev/tags/nginx?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "88秒内了解Nginx",
+              "url": "https://www.youtube.com/watch?v=JKxlsvZXG7c",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "67b22c93-fdb4-49c3-9895-acfb4915fc60",
+          "xid": "494bd7de-e823-4624-aba9-084833eff233"
+        }
+      ],
+      "id": "9f724d19-c30b-4c2f-b00a-7439b60ccd4d",
+      "xid": "d8a74729-37d3-4bdc-b08b-5d1308951d15"
+    },
+    {
+      "title": "容器编排 (Container Orchestration)",
+      "description": "容器编排是指管理和自动化容器的生命周期，包括在多个主机上部署、扩缩容和网络配置。
+
+它是运行生产环境中复杂容器化应用程序的关键技术。
+
+\n\n通过使用Kubernetes、Docker Swarm和Apache Mesos等工具，组织可以确保其应用程序的高可用性、可扩展性和可靠性。
+
+容器编排通过自动化常规任务并为微服务、云原生开发和DevOps实践提供强大的基础结构来简化操作。
+
+\n\n",
+      "links": [
+        {
+          "title": "什么是容器编排？ (What is Container Orchestration?)",
+          "url": "https://www.redhat.com/en/topics/containers/what-is-container-orchestration",
+          "type": "article"
+        },
+        {
+          "title": "什么是Kubernetes？ (What is Kubernetes?)",
+          "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+          "type": "article"
+        },
+        {
+          "title": "Docker Swarm (Docker Swarm)",
+          "url": "https://docs.docker.com/engine/swarm/",
+          "type": "article"
+        },
+        {
+          "title": "Kubernetes简介 (Introduction to Kubernetes)",
+          "url": "https://www.youtube.com/watch?v=PH-2FfFD2PU",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "LXC",
+          "description": "LXC (Linux Containers, Linux 容器) 是一种操作系统级虚拟化方法，可以在单个主机上使用单个 Linux 内核运行多个隔离的 Linux 系统。
+
+LXC 提供了一种轻量级的完整机器虚拟化替代方案，可以提供接近原生的性能和密度。
+
+LXC 使用 Linux 内核功能如 cgroups 和命名空间创建具有自己进程和网络空间的容器，同时与宿主机系统共享相同的内核。
+
+这项技术可以实现高效资源利用和快速部署应用程序。
+
+LXC 常用于创建开发环境、测试以及在单台机器上运行多个服务。
+
+尽管在概念上类似于 Docker，LXC 提供了更偏向于系统容器的方法，而 Docker 更专注于应用容器。
+
+",
+          "links": [
+            {
+              "title": "LXC 官方网站",
+              "url": "https://linuxcontainers.org/",
+              "type": "article"
+            },
+            {
+              "title": "LXC 文档",
+              "url": "https://linuxcontainers.org/lxc/documentation/",
+              "type": "article"
+            },
+            {
+              "title": "开始使用 LXC 容器",
+              "url": "https://www.youtube.com/watch?v=CWmkSj_B-wo",
+              "type": "video"
+            },
+            {
+              "title": "指导您构建 LXC 实验室",
+              "url": "https://www.youtube.com/watch?v=cqOtksmsxfg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "55e5a198-00e6-4f06-b7e3-81a865f2c648",
+          "xid": "d7fca242-37eb-483d-bb2d-e2be98928a9d"
+        },
+        {
+          "title": "GKE / EKS / AKS",
+          "description": "GKE - Google Kubernetes Engine (谷歌Kubernetes引擎)\n------------------------------\n\nGoogle Kubernetes Engine (GKE) 是由谷歌云平台提供的托管Kubernetes服务。
+
+该服务允许组织使用Kubernetes编排工具部署、管理和扩展容器化应用。
+
+GKE可以自动化集群管理任务，包括升级、扩展和安全补丁，同时提供与Google Cloud服务的集成。
+
+它具备如自动扩展、负载均衡和私有集群等特性，使开发人员能够更多关注应用开发而不是基础设施管理。
+
+\n\nEKS - Amazon Elastic Kubernetes Service (亚马逊弹性Kubernetes服务)\n---------------------------------------\n\nAmazon Elastic Kubernetes Service (EKS) 是AWS提供的托管Kubernetes平台。
+
+它简化了使用Kubernetes部署、管理和扩展容器化应用程序的过程。
+
+EKS自动处理Kubernetes控制平面，确保高可用性和安全补丁。
+
+它可以无缝集成到其他AWS服务中，支持EC2以及Fargate启动类型，并提供托管节点组和集群自动扩展等特性，允许组织高效运行Kubernetes工作负载，无需管理Kubernetes基础架构的操作负担。
+
+\n\nAKS - Azure Kubernetes Service (Azure Kubernetes服务)\n------------------------------\n\nAzure Kubernetes Service (AKS) 是微软在其Azure云平台中的托管Kubernetes产品。
+
+它提供了一种简单方式来使用Kubernetes部署、管理和扩展容器化应用。
+
+AKS负责处理诸如Kubernetes控制平面的健康监控和维护等关键任务，同时与Azure服务如Azure Active Directory、Azure Monitor和Azure容器注册表集成无缝。
+
+它提供自动扩展、与Azure DevOps集成以及Windows容器支持等特性，使组织专注于应用开发与创新，而非集群管理。
+
+\n\n",
+          "links": [
+            {
+              "title": "GKE",
+              "url": "https://cloud.google.com/kubernetes-engine",
+              "type": "article"
+            },
+            {
+              "title": "EKS",
+              "url": "https://aws.amazon.com/eks/",
+              "type": "article"
+            },
+            {
+              "title": "AKS",
+              "url": "https://azure.microsoft.com/en-us/products/kubernetes-service/",
+              "type": "article"
+            },
+            {
+              "title": "AWS EKS 教程",
+              "url": "https://www.youtube.com/watch?v=CukYk43agA4",
+              "type": "video"
+            },
+            {
+              "title": "什么是Google Kubernetes Engine (GKE)?",
+              "url": "https://www.youtube.com/watch?v=Rl5M1CzgEH4",
+              "type": "video"
+            },
+            {
+              "title": "AWS EKS 教程",
+              "url": "https://www.youtube.com/watch?v=CukYk43agA4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f8a42585-d277-48f9-8344-8051d621066b",
+          "xid": "56945161-7c0f-4ed3-8fba-f9beec191c83"
+        },
+        {
+          "title": "AWS ECS（Elastic Container Service）/ Fargate",
+          "description": "ECS（容器编排服务）是一种允许您在EC2实例集群上运行Docker容器的服务。
+
+如果希望在EC2实例上运行Docker容器并完全控制底层基础设施，ECS是一个很好的选择。
+
+Fargate是一种无服务器容器编排服务，可以让您在不管理服务器、集群或任何其他基础设施的情况下运行Docker容器。
+
+如果您希望无需管理服务器或集群就能运行Docker容器，Fargate是一个很好的选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "AWS - Fargate 文档",
+              "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html",
+              "type": "article"
+            },
+            {
+              "title": "AWS - ECS 文档",
+              "url": "https://docs.aws.amazon.com/ecs/",
+              "type": "article"
+            },
+            {
+              "title": "Amazon ECS：AWS Fargate 概述",
+              "url": "https://www.youtube.com/watch?v=yi22xrvPnPk",
+              "type": "video"
+            },
+            {
+              "title": "AWS ECS 教程",
+              "url": "https://www.youtube.com/watch?v=esISkPlnxL0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "97aff7b7-784a-40b5-8ebd-762420d078ff",
+          "xid": "5694ba57-1d85-40d7-b1d3-2180f3fa55fb"
+        },
+        {
+          "title": "Docker集群(Docker Swarm)",
+          "description": "Docker集群是一个由运行Docker应用的物理机或虚拟机构成的集群，这些机器已被配置为组成一个集群。
+
+一旦机器组被集群化，您仍然可以运行熟悉的Docker命令，但现在它们将通过集群中的机器执行。
+
+集群的活动由集群管理器(Docker Swarm Manager)控制，加入集群的机器被称为节点(nodess)。
+
+\n\n",
+          "links": [
+            {
+              "title": "Docker集群文档(Docker Swarm Documentation)",
+              "url": "https://docs.docker.com/engine/swarm/",
+              "type": "article"
+            },
+            {
+              "title": "教程：使用Portainer管理Docker集群(Tutorial: Manage Docker Swarm with Portainer)",
+              "url": "https://thenewstack.io/tutorial-manage-docker-swarm-with-portainer/",
+              "type": "article"
+            },
+            {
+              "title": "教程：使用GlusterFS创建具有持久存储的Docker集群(Tutorial: Create a Docker Swarm with Persistent Storage Using GlusterFS)",
+              "url": "https://thenewstack.io/tutorial-create-a-docker-swarm-with-persistent-storage-using-glusterfs/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Docker的热门文章(Explore top posts about Docker)",
+              "url": "https://app.daily.dev/tags/docker?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Docker集群介绍：逐步示例(Docker Swarm | Introduction | Step By Step Examples)",
+              "url": "https://www.youtube.com/watch?v=Xaea-XnJTJU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "cfdef6a0-bc91-4ae0-aca6-9d1c01d9997a",
+          "xid": "48d0ddcf-1685-47c4-b1de-fe66213676e8"
+        }
+      ],
+      "id": "57c5b633-d8d0-4094-b613-f68645e9f648",
+      "xid": "875486cc-f43e-4362-b5b3-68bb3ba58e00"
+    },
+    {
+      "title": "云服务提供商",
+      "description": "云服务提供商提供了一层API，以抽象化基础设施，并基于安全性和计费边界来部署。
+
+云在数据中心的服务器上运行，但这些抽象巧妙地呈现出与单一\"平台\"或大型应用交互的效果。
+
+快速配置资源、设定资源并使用云服务提供商进行资源安全的能力，是现代DevOps的巨大成功和复杂性关键所在。
+
+\n\n",
+      "links": [
+        {
+          "title": "云服务提供商",
+          "url": "https://www.techtarget.com/searchitchannel/definition/cloud-service-provider-cloud-provider",
+          "type": "article"
+        },
+        {
+          "title": "什么是云服务提供商？",
+          "url": "https://www.redhat.com/en/topics/cloud-computing/what-are-cloud-providers",
+          "type": "article"
+        },
+        {
+          "title": "探索关于云的热门文章",
+          "url": "https://app.daily.dev/tags/cloud?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Azure",
+          "description": "Microsoft Azure（微软Azure）是一个全面的云计算平台，提供一系列服务，用于通过Microsoft管理的数据中心来构建、部署和管理应用程序。
+
+它提供基础设施即服务（Infrastructure as a Service，IaaS）、平台即服务（Platform as a Service，PaaS）和软件即服务（Software as a Service，SaaS）的解决方案，支持各种编程语言、工具和框架，包括Microsoft专有系统和第三方系统。
+
+Azure的服务涵盖计算、分析、存储、网络等多个领域，使企业能够扩大运营规模、转型其运作模式、利用人工智能和机器学习，并实施强大的安全措施，同时通过其按需付费的定价模型有可能降低IT成本。
+
+\n\n",
+          "links": [
+            {
+              "title": "Microsoft Azure指南",
+              "url": "https://github.com/mikeroyal/Azure-Guide",
+              "type": "opensource"
+            },
+            {
+              "title": "Azure官方网站",
+              "url": "https://azure.microsoft.com/en-us/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Azure的顶尖帖子",
+              "url": "https://app.daily.dev/tags/azure?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Microsoft Azure基础认证课程 (AZ-900)",
+              "url": "https://www.youtube.com/watch?v=5abffC-K40c",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "02fc5a7a-f7e1-4ed9-ab61-ac96b1a4aaca",
+          "xid": "f1cd94dc-b37b-495e-96af-75264bbeda55"
+        },
+        {
+          "title": "AWS",
+          "description": "自2011年以来，Amazon Web Services (AWS) 一直是领先的云计算平台，领先于Azure和Google Cloud。
+
+AWS提供超过200项服务，其数据中心遍布全球。
+
+AWS服务是一个在线平台，提供可伸缩的和成本有效的云计算解决方案。
+
+它是一个被广泛采用的云平台，提供如计算能力、数据库存储、内容交付等按需操作。
+
+\n\n",
+          "links": [
+            {
+              "title": "2024年AWS完整课程100小时",
+              "url": "https://www.youtube.com/watch?v=zA8guDqfv40",
+              "type": "course"
+            },
+            {
+              "title": "AWS官方网站",
+              "url": "https://aws.amazon.com/",
+              "type": "article"
+            },
+            {
+              "title": "AWS云端基础",
+              "url": "https://aws.amazon.com/getting-started/cloud-essentials/",
+              "type": "article"
+            },
+            {
+              "title": "Amazon Web Services概述",
+              "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+              "type": "article"
+            },
+            {
+              "title": "创建AWS账户",
+              "url": "https://grapplingdev.com/tutorials/how-to-create-aws-account",
+              "type": "article"
+            },
+            {
+              "title": "探索有关AWS的热门文章",
+              "url": "https://app.daily.dev/tags/aws?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "efd5d61a-1e97-4d1e-8d21-6ca6b0af92f3",
+          "xid": "0d2dc044-ee33-4d2a-97be-725c201c0c47"
+        },
+        {
+          "title": "谷歌云",
+          "description": "谷歌云是谷歌的云 computing 服务，提供超过150种产品和服务供选择。
+
+它包括一组诸如计算机和硬盘驱动器等物理资产，以及诸如虚拟机(VM)等虚拟资源，这些资源包含在谷歌的数据中心内。
+
+它运行在谷歌为其最终用户产品（如搜索、Gmail、谷歌硬盘和YouTube）使用的同一基础设施上。
+
+\n\n",
+          "links": [
+            {
+              "title": "谷歌云",
+              "url": "https://cloud.google.com/",
+              "type": "article"
+            },
+            {
+              "title": "成为谷歌云认证专业架构师的5个技巧",
+              "url": "https://thenewstack.io/5-tips-to-become-a-google-cloud-certified-professional-architect/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于云技术的热门文章",
+              "url": "https://app.daily.dev/tags/cloud?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "2023谷歌云平台完整课程",
+              "url": "https://www.youtube.com/watch?v=fZOz13joN0o",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0ca378ba-0843-40d8-95a9-9e3cf25f4818",
+          "xid": "8604ca1b-f567-4546-a594-9ed2aab0bf2e"
+        },
+        {
+          "title": "Digital Ocean",
+          "description": "DigitalOcean [数字海洋] 是一家提供简单、经济且面向开发者的虚拟私有服务器的云基础设施供应商，这些虚拟私有服务器被称为 \"Droplets\" [滴流]。
+
+它专注于提供简单的云计算服务，包括虚拟机、托管数据库、对象存储和Kubernetes [可瑞伯内茨] 集群。
+
+DigitalOcean以用户友好的界面、透明的价格结构和丰富的文档而闻名，这使得它在开发者、初创企业和中小型企业中非常受欢迎。
+
+该平台强调简化性和性能，提供诸如一键式应用、团队管理和强大的用于自动化任务的API等功能。
+
+虽然在其功能上可能不及一些大型云服务提供商丰富，但DigitalOcean以简洁的方法和具有竞争力的价格使其成为寻求简单云基础设施解决方案的理想选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "DigitalOcean",
+              "url": "https://www.digitalocean.com/",
+              "type": "article"
+            },
+            {
+              "title": "DigitalOcean Hacktoberfest",
+              "url": "https://hacktoberfest.com/",
+              "type": "article"
+            },
+            {
+              "title": "Explore top posts about DigitalOcean",
+              "url": "https://app.daily.dev/tags/digitalocean?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Getting Started With Kubernetes on DigitalOcean",
+              "url": "https://www.youtube.com/watch?v=cJKdo-glRD0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "50e1c47b-bfe7-403b-9c54-8642f7546da5",
+          "xid": "f7fd4839-d04f-4a88-9d85-f381880b84a0"
+        },
+        {
+          "title": "阿里云",
+          "description": "阿里云是阿里巴巴集团的云计算部门，提供广泛的产品和服务，旨在支持企业的IT基础设施和数字化转型。
+
+它提供具有弹性和灵活性的云计算资源，包括虚拟机、存储、数据库和网络。
+
+阿里云的服务还涵盖了大数据分析、人工智能、机器学习和安全解决方案。
+
+以其全球数据中心网络而闻名，支持企业满足高可用性、灾难恢复和合规性需求。
+
+阿里云是云计算市场的主要参与者，特别是在亚洲市场，为企业提供了全面的工具，用于在云端构建、部署和管理应用程序及服务。
+
+\n\n",
+          "links": [
+            {
+              "title": "阿里云",
+              "url": "https://www.alibabacloud.com/",
+              "type": "article"
+            },
+            {
+              "title": "开始使用阿里云",
+              "url": "https://www.alibabacloud.com/getting-started",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于云的热门文章",
+              "url": "https://app.daily.dev/tags/cloud?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "51085cb9-9ccc-429b-8008-336ffd66e011",
+          "xid": "970b85d4-a6a2-4dd3-8282-733931b2447d"
+        }
+      ],
+      "id": "7a160195-2b54-4b6e-a55b-4ffadff0404c",
+      "xid": "5204c713-7cfb-4223-9272-2dcf039dd75c"
+    },
+    {
+      "title": "网络与协议",
+      "description": "网络协议是规范数据在计算机网络中传输、接收和解释的标准规则和程序。
+
+它们定义了数据通信中的格式、时机、顺序和错误控制。
+
+关键协议包括：\n\n1.  TCP/IP（传输控制协议/网际协议）：互联网通信的基本套件。
+
+\n2.  HTTP/HTTPS：用于网页浏览和网页上的安全数据传输。
+
+\n3.  FTP/SFTP：文件传输协议。
+
+\n4.  SMTP/POP3/IMAP：电子邮件通信协议。
+
+\n5.  DNS：用于域名解析。
+
+\n6.  DHCP：用于自动分配IP地址。
+
+\n7.  SSL/TLS：用于安全的加密通信。
+
+\n8.  UDP：用于快速的无连接数据传输。
+
+\n\n以下是一些关于SSH的学习资源：",
+      "links": [
+        {
+          "title": "Cloudflare - 什么是SSL？",
+          "url": "https://www.cloudflare.com/learning/ssl/what-is-ssl/",
+          "type": "article"
+        },
+        {
+          "title": "Cloudflare - 什么是TLS？",
+          "url": "https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/",
+          "type": "article"
+        },
+        {
+          "title": "关于HTTP你需要知道的一切",
+          "url": "https://cs.fyi/guide/http-in-depth",
+          "type": "article"
+        },
+        {
+          "title": "什么是HTTP？",
+          "url": "https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/",
+          "type": "article"
+        },
+        {
+          "title": "什么是HTTPS？",
+          "url": "https://www.cloudflare.com/en-gb/learning/ssl/what-is-https/",
+          "type": "article"
+        },
+        {
+          "title": "什么是DNS？",
+          "url": "https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/",
+          "type": "article"
+        },
+        {
+          "title": "DNS 以及它是如何工作的？",
+          "url": "https://www.youtube.com/watch?v=Wj0od2ag5sk",
+          "type": "video"
+        },
+        {
+          "title": "DNS 记录",
+          "url": "https://www.youtube.com/watch?v=7lxgpKh_fRY",
+          "type": "video"
+        },
+        {
+          "title": "SSH vs SSL vs TLS",
+          "url": "https://www.youtube.com/watch?v=k3rFFLmQCuY",
+          "type": "video"
+        },
+        {
+          "title": "OpenSSH 完全指南",
+          "url": "https://www.youtube.com/watch?v=YS5Zh7KExvE",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "安全套接层（SSL）/传输层安全（TLS）",
+          "description": "安全套接层（Secure Sockets Layer，SSL）和传输层安全（Transport Layer Security，TLS）是用于互联网通信安全的加密协议。
+
+这些协议加密通过网络传输的数据，使得任何人尝试拦截数据包都无法解读数据。
+
+需要注意的区别是，由于安全缺陷，SSL已被弃用，现代大多数网络浏览器不再支持它。
+
+而TLS仍然是安全且广泛应用的，因此建议使用TLS。
+
+\n\n",
+          "links": [
+            {
+              "title": "Cloudflare - 什么是SSL？",
+              "url": "https://www.cloudflare.com/learning/ssl/what-is-ssl/",
+              "type": "article"
+            },
+            {
+              "title": "Cloudflare - 什么是TLS？",
+              "url": "https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/",
+              "type": "article"
+            },
+            {
+              "title": "维基百科 - SSL/TLS",
+              "url": "https://en.wikipedia.org/wiki/Transport_Layer_Security",
+              "type": "article"
+            },
+            {
+              "title": "SSH vs SSL vs TLS",
+              "url": "https://www.youtube.com/watch?v=k3rFFLmQCuY",
+              "type": "video"
+            },
+            {
+              "title": "7分钟内理解SSL/TLS",
+              "url": "https://www.youtube.com/watch?v=67Kfsmy_frM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "aac4e003-c38f-4f56-8c60-b1aab2881b18",
+          "xid": "181eefc3-a358-4587-9629-be7212b63c85"
+        },
+        {
+          "title": "SSH (安全外壳协议)",
+          "description": "SSH (Secure Shell) 安全外壳协议是一种加密网络协议，用于通过不安全的网络安全访问和管理远程机器。
+
+它提供加密通信，确保保密性和完整性，允许安全的文件传输、命令执行和隧道传输。
+
+SSH 广泛用于服务器、云基础设施和网络设备的远程管理，通常使用基于密钥的身份验证或密码。
+
+OpenSSH 等工具常用于建立 SSH 连接，提供了一种比 Telnet 等旧且不安全的协议更安全的替代方案。
+
+\n\n",
+          "links": [
+            {
+              "title": "SSH介绍",
+              "url": "https://www.baeldung.com/cs/ssh-intro",
+              "type": "article"
+            },
+            {
+              "title": "SSH是什么？",
+              "url": "https://www.ssh.com/academy/ssh/protocol",
+              "type": "article"
+            },
+            {
+              "title": "使用SSH进行SFTP",
+              "url": "https://www.goanywhere.com/blog/how-sftp-works",
+              "type": "article"
+            },
+            {
+              "title": "探索关于SSH的顶级文章",
+              "url": "https://app.daily.dev/tags/ssh?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "SSH的工作原理",
+              "url": "https://www.youtube.com/watch?v=5JvLV2-ngCI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f186cbbb-8131-4ee8-aaf1-5c75ad19feab",
+          "xid": "d057910f-a3a4-484c-b2f5-b59e21bcf730"
+        },
+        {
+          "title": "超文本传输协议（HTTP）",
+          "description": "超文本传输协议（Hypertext Transfer Protocol, HTTP）是万维网上数据通信的基础。
+
+作为应用层协议，HTTP 使各种类型的数据能在客户端（通常是网络浏览器）和服务器之间进行传输，主要是网页及其组成部分。
+
+HTTP 采用请求-响应模型，其中客户端发送资源请求，服务器返回请求的数据或错误消息。
+
+HTTP 是无状态的，这意味着每个请求都是独立的，与之前的请求无关。
+
+HTTP 支持多种方法（GET, POST, PUT, DELETE 等），用于不同的操作类型。
+
+尽管最初设计用于文本传输，但 HTTPS（HTTP Security），即通过加密技术使用的安全版 HTTP，如今广泛应用以保护传输中的数据。
+
+",
+          "links": [
+            {
+              "title": "关于 HTTP 你需要知道的一切",
+              "url": "https://cs.fyi/guide/http-in-depth",
+              "type": "article"
+            },
+            {
+              "title": "什么是 HTTP？",
+              "url": "https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/",
+              "type": "article"
+            },
+            {
+              "title": "HTTP 概述",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+              "type": "article"
+            },
+            {
+              "title": "从 HTTP/1 到 HTTP/2 到 HTTP/3",
+              "url": "https://www.youtube.com/watch?v=a-sBfyiXysI",
+              "type": "video"
+            },
+            {
+              "title": "HTTP 快速入门及探索",
+              "url": "https://www.youtube.com/watch?v=iYM2zFP3Zn0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "084a3d0d-2033-4ff6-8130-30db9c1243df",
+          "xid": "3b19af13-b506-4f91-b64f-5e46c0578033"
+        },
+        {
+          "title": "HTTPS",
+          "description": "HTTPS （Hypertext Transfer Protocol Secure，安全超文本传输协议）是HTTP的安全版本，通过SSL/TLS协议对客户端和服务器之间交换的数据进行加密。
+
+这种方法提供了身份验证、数据完整性和保密性。
+
+HTTPS 通过加密所有通信，防止窃听、篡改和中间人攻击。
+
+它使用数字证书来验证网站的身份，从而增强信任和安全性。
+
+HTTPS 对保护敏感信息如登录凭证和金融数据至关重要。
+
+随着主要浏览器将非HTTPS站点标记为“不安全”，HTTPS 已成为安全网络通信的标准。
+
+此外，HTTPS 还提供了SEO优化的优势，并且对于许多现代网络功能和渐进式Web应用程序来说是必不可少的。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是 HTTPS？",
+              "url": "https://www.cloudflare.com/en-gb/learning/ssl/what-is-https/",
+              "type": "article"
+            },
+            {
+              "title": "为什么 HTTPS 重要？",
+              "url": "https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https",
+              "type": "article"
+            },
+            {
+              "title": "如何在服务器上启用 HTTPS？",
+              "url": "https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https",
+              "type": "article"
+            },
+            {
+              "title": "HTTPS如何工作（漫画）",
+              "url": "https://howhttps.works/",
+              "type": "article"
+            },
+            {
+              "title": "HTTPS真的能让你安全吗？",
+              "url": "https://www.youtube.com/watch?v=25mXesOV9-8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d1a8916b-bd94-433a-8a56-122a123a9b30",
+          "xid": "883b69a3-d746-4f2c-b6b7-9a3b77407aab"
+        },
+        {
+          "title": "FTP / SFTP",
+          "description": "FTP（文件传输协议）是用于计算机网络中客户端和服务器之间传输文件的标准网络协议。
+
+它采用客户端-服务器模型，在客户端和服务器之间通常使用单独的控制连接和数据连接。
+
+FTP允许用户在远程系统上上传、下载和管理文件，支持身份验证和匿名访问。
+
+尽管因其简单性和兼容性而广受欢迎，但FTP在安全性方面存在局限，因为它以明文形式传输数据和凭证。
+
+因此，对于敏感数据传输，更安全的替代方案如SFTP（SSH文件传输协议）和FTPS（FTP安全）更受欢迎。
+
+尽管FTP已经历史悠久，但仍然被广泛用于各种文件传输需求，特别是在旧系统中，或者在安全需求不那么严格的情况下。
+
+\n\nSFTP（SSH文件传输协议）是一种通过安全外壳（SSH）数据流提供文件访问、传输和管理功能的加密文件传输协议。
+
+它设计为SSH的扩展，提供安全的文件传输能力。
+
+SFTP在传输过程中加密命令和数据，防止窃听和中间人攻击。
+
+与传统的FTP不同，SFTP使用单一连接，并不分离控制和数据通道。
+
+它支持诸如恢复中断的传输、目录列表和远程文件删除等功能。
+
+SFTP广泛用于企业环境中的安全文件传输、自动化脚本，以及作为FTP的更安全替代方案。
+
+其与SSH的集成使其成为系统管理员和与远程系统安全工作的开发者的首选。
+
+",
+          "links": [
+            {
+              "title": "FTP与SFTP与FTPS的对比",
+              "url": "https://www.fortinet.com/resources/cyberglossary/file-transfer-protocol-ftp-meaning",
+              "type": "article"
+            },
+            {
+              "title": "SFTP是什么?",
+              "url": "https://www.kiteworks.com/risk-compliance-glossary/sftp/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ecb0bb49-c9b5-43a3-ba75-c999985aa9d2",
+          "xid": "56daec53-5768-4517-9931-7b4df15a8720"
+        },
+        {
+          "title": "DNS",
+          "description": "DNS（域名系统）是为连接到互联网或私有网络的计算机、服务或其他资源提供的一种层次化、分布式命名系统。
+
+它将易于人们阅读的域名（如 [www.example.com](http://www.example.com)）翻译成IP地址（如 192.0.2.1），后者是计算机用于在网络中标识彼此的。
+
+DNS就像是互联网的电话簿，允许用户使用易于记忆的名字而不是数值IP地址来访问网站。
+
+该系统包括DNS服务器、解析器和记录（如A记录、CNAME记录、MX记录），它们共同工作以实现互联网流量的有效路由。
+
+DNS对互联网功能至关重要，影响了从网页浏览和电子邮件到现代云架构中的负载均衡和服务发现的方方面面。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是DNS？",
+              "url": "https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/",
+              "type": "article"
+            },
+            {
+              "title": "DNS是如何工作的（漫画）",
+              "url": "https://howdns.works/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关DNS的热门文章",
+              "url": "https://app.daily.dev/tags/dns?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "DNS及其工作原理？",
+              "url": "https://www.youtube.com/watch?v=Wj0od2ag5sk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e0f56b63-5656-4a93-9edb-a484f5b63dc2",
+          "xid": "e9343606-d447-4e92-b90c-655aa75530d3"
+        },
+        {
+          "title": "OSI模型 (OSI Model)",
+          "description": "OSI (开放系统互连) 模型是一个概念框架，将电信或计算系统的功能标准化为七个抽象层。
+
+这些层从下到上依次是：物理层，数据链路层，网络层，传输层，会话层，表示层，和应用层。
+
+每一层在数据通信过程中都具有特定的功能，较低的层次处理更多面向硬件的任务，而较高的层次处理与软件和用户界面相关的方面。
+
+该模型有助于理解数据如何在网络中传输、解决网络问题以及设计网络协议和硬件。
+
+尽管在实际实现中并不严格遵循，OSI模型仍然是网络工程师和开发人员宝贵的教育工具和参考点，为讨论网络操作和架构提供了一种通用语言。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是OSI模型 (What is OSI Model)?",
+              "url": "https://www.cloudflare.com/en-gb/learning/ddos/glossary/open-systems-interconnection-model-osi/",
+              "type": "article"
+            },
+            {
+              "title": "OSI模型 (OSI Model)",
+              "url": "https://www.youtube.com/watch?v=dV8mjZd1OtU",
+              "type": "video"
+            },
+            {
+              "title": "OSI vs TCP/IP模型 (OSI vs TCP/IP Model)",
+              "url": "https://www.youtube.com/watch?v=F5rni9fr1yE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "75198bae-d2eb-4ec7-95fb-394b2aad0b9f",
+          "xid": "a6ebfed7-83de-4181-9713-097f171b24cf"
+        },
+        {
+          "title": "电子邮件",
+          "description": "电子邮件",
+          "links": [],
+          "children": [
+            {
+              "title": "白名单/灰名单",
+              "description": "白名单涉及创建一个可信实体列表（如IP地址、电子邮件地址或应用程序），这些实体被明确允许访问系统或发送消息。
+
+白名单上没有的实体，默认会被拒绝。
+
+白名单通过将访问权限限制为已知且经过批准的实体，提供了高级别的安全性，但可能会不够灵活，并且需要频繁更新才能适应合法的变化。
+
+灰名单是一种更灵活的方法，主要用于电子邮件过滤。
+
+当从未知发件人收到电子邮件时，服务器会暂时拒绝接收，并返回\"稍后再试\"的响应。
+
+合法的邮件服务器会在短延迟后重新发送邮件，而通常不尝试重发的垃圾邮件发送者将被阻止。
+
+利用垃圾邮件发送者通常不遵循重试机制这一事实，灰名单可以减少垃圾邮件。
+
+与白名单相比，灰名单可能会更少地干预，但可能会对初次发件者造成轻微的邮件发送延迟。
+
+\n\n",
+              "links": [
+                {
+                  "title": "灰名单的详细介绍",
+                  "url": "https://en.wikipedia.org/wiki/Greylisting_(email)",
+                  "type": "article"
+                },
+                {
+                  "title": "灰名单",
+                  "url": "https://www.youtube.com/watch?v=ljtU6I0sIiw",
+                  "type": "video"
+                },
+                {
+                  "title": "如何将电子邮件地址列入白名单？",
+                  "url": "https://www.youtube.com/watch?v=NqQIBtY7ySw",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "42c0a373-c5f0-41b9-95a7-2abeddbaa397",
+              "xid": "5da4a002-7736-4bd8-9ef6-7a6272a16623"
+            },
+            {
+              "title": "简单邮件传输协议(SMTP)",
+              "description": "电子邮件已成为当今互联网上最有价值的服务之一。
+
+大部分互联网系统使用简单邮件传输协议(SMTP)作为从一个用户向另一个用户传输邮件的方法。
+
+SMTP是一种推送协议，用于发送邮件，而 POP（邮局协议）或 IMAP（互联网消息访问协议）用于在接收方检索这些邮件。
+
+SMTP是一种应用层协议。
+
+想要发送邮件的客户端会与SMTP服务器建立一个TCP连接，然后通过该连接发送邮件。
+
+SMTP服务器始终处于监听模式，一旦监听到客户端发起的TCP连接就立刻通过25端口连接。
+
+建立TCP连接后，客户端过程会立即发送邮件。
+
+",
+              "links": [
+                {
+                  "title": "什么是SMTP？- Cloudflare",
+                  "url": "https://www.cloudflare.com/learning/email-security/what-is-smtp",
+                  "type": "article"
+                },
+                {
+                  "title": "SMTP - 维基百科",
+                  "url": "https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于无服务器计算的顶级文章",
+                  "url": "https://app.daily.dev/tags/serverless?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是SMTP？它如何工作？",
+                  "url": "https://www.youtube.com/watch?v=iUhDT3ZtWS0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "a129c38e-e0db-4b02-8136-7065ec0a3cc0",
+              "xid": "414f88e6-6519-49f7-bc15-d9a45f4535da"
+            },
+            {
+              "title": "DMARC",
+              "description": "DMARC（基于域的消息身份验证、报告和一致性）是一个基于SPF（Sender Policy Framework）和DKIM（DomainKeys Identified Mail）的电子邮件认证协议，用于保护电子邮件免受伪造和网络钓鱼攻击。
+
+它允许域所有者指定电子邮件接收者如何处理无法通过身份验证检查的消息。
+
+DMARC提供了反馈机制，使域所有者能够接收有关电子邮件身份验证结果的报告，帮助他们监控并提高电子邮件安全性。
+
+通过实施DMARC策略，组织可以增强电子邮件的送达率，保护品牌声誉，并减少其域被用作欺诈性电子邮件活动的风险。
+
+DMARC被各大电子邮件提供商广泛采用，被认为是现代电子邮件安全策略的重要组成部分。
+
+\n",
+              "links": [
+                {
+                  "title": "DMARC",
+                  "url": "https://dmarc.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于安全的顶级帖子",
+                  "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是DMARC：您需要了解的电子邮件安全性",
+                  "url": "https://www.youtube.com/watch?v=zLxJLKf-ua8",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "8dc93600-23b4-4ceb-b5be-05269ee4104f",
+              "xid": "a2bdddfe-0fcc-498e-a89d-de528cf92cb8"
+            },
+            {
+              "title": "IMAP (互联网消息访问协议)",
+              "description": "IMAP (互联网消息访问协议) 是一种标准的电子邮件协议，允许电子邮件客户端访问存储在邮件服务器上的消息。
+
+与 POP3 不同，IMAP 保留服务器上的邮件，从而支持从多个设备访问邮件，并保持此过程的同步。
+
+它支持文件夹结构、消息标记和部分消息检索功能，使其对于管理大量电子邮件变得非常高效。
+
+IMAP 允许用户在服务器端搜索邮件，从而减少带宽使用。
+
+它的设计目的是在服务器上进行长期的邮件存储，非常适合需要从各种设备或地方访问电子邮件的用户。
+
+由于 IMAP 的同步能力和服务器端管理特性，这种协议是大多数现代电子邮件系统的选择，尤其是移动和多设备环境。
+
+",
+              "links": [
+                {
+                  "title": "Wikipedia: Internet Message Access Protocol (IMAP)",
+                  "url": "https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是POP3、IMAP和SMTP？",
+                  "url": "https://www.youtube.com/watch?v=gLNOVbcyWbI",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "4f0628f9-417e-4460-a0f0-5e7d91665de9",
+              "xid": "93387305-b257-41e7-8700-375038d96af0"
+            },
+            {
+              "title": "发件人策略框架 (Sender Policy Framework, SPF)",
+              "description": "发件人策略框架 (SPF) 用于验证电子邮件的发件人。
+
+有了SPF记录，互联网服务提供商可以验证邮件服务器是否被授权代表特定域发送邮件。
+
+SPF记录是一个DNS TXT记录，其中包含一组允许代表您的域名发送邮件的IP地址列表。
+
+\n\n",
+              "links": [
+                {
+                  "title": "什么是DNS SPF记录？",
+                  "url": "https://www.cloudflare.com/learning/dns/dns-records/dns-spf-record/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是SPF？发件人策略框架详解",
+                  "url": "https://www.youtube.com/watch?v=5HG8xJ2lWuc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "6ec50d7a-4a65-4df5-b895-1582f905b15e",
+              "xid": "91fe7e1d-c9f1-4834-9983-b3f6f8298b69"
+            },
+            {
+              "title": "POP3S",
+              "description": "POP3（端口110）或 POP3s（端口995）代表邮局协议（The Post Office Protocol）。
+
+它是用于本地电子邮件软件客户端通过TCP/IP连接从远程邮件服务器获取电子邮件的互联网标准协议。
+
+由互联网服务提供商托管的电子邮件服务器也使用POP3来接收和保存发给其订户的电子邮件。
+
+订户会定期使用电子邮件客户端软件，检查远程服务器上的邮箱并下载发送给他们的电子邮件。
+
+一旦电子邮件客户端下载了邮件，它们通常会被删除，尽管一些电子邮件客户端允许用户指定将邮件在服务器上保留一段时间或进行复制。
+
+\n\n",
+              "links": [
+                {
+                  "title": "什么是POP3？",
+                  "url": "https://www.techtarget.com/whatis/definition/POP3-Post-Office-Protocol-3",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是POP3、IMAP和SMTP？",
+                  "url": "https://www.youtube.com/watch?v=gLNOVbcyWbI",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "1ec45325-e2af-4f88-9093-0a8359641760",
+              "xid": "827cdb24-1f8e-4be8-a925-11b51789ab7e"
+            },
+            {
+              "title": "域名密钥 (Domain Keys)",
+              "description": "DomainKeys 是一种电子邮件认证方法，旨在验证电子邮件发送者的域，并确保信息的完整性。
+
+它是由 Yahoo 开发的，并成为 DKIM（域名密钥识别邮件 (DomainKeys Identified Mail)）的先驱。
+
+DomainKeys 使用公钥加密技术，使电子邮件系统可以验证邮件是否由授权发送者发出，并在传输过程中未被篡改。
+
+发送服务器使用私有密钥 (private key) 对传出邮件进行签名，接收服务器可使用发送方 DNS 记录中发布的公钥 (public key) 验证签名。
+
+虽然 DomainKeys 在很大程度上被 DKIM 取代，但在打击电子邮件欺骗和网络钓鱼攻击的电子邮件认证技术发展中，DomainKeys 做出了关键性的贡献。
+
+\n\n",
+              "links": [
+                {
+                  "title": "域名密钥识别邮件 (DomainKeys Identified Mail)",
+                  "url": "https://www.brainkart.com/article/DomainKeys-Identified-Mail_8493/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是 DKIM？域名密钥识别邮件 (DomainKeys Identified Mail)",
+                  "url": "https://www.youtube.com/watch?v=IBhO0akhMlQ",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "cdced6d8-6c15-4f23-9c13-7c239b52ab64",
+              "xid": "a2ab6bd9-ed6a-4ca6-82f4-4f5627e84f08"
+            }
+          ],
+          "id": "b80e3979-d9f4-4ad1-b668-4f032ed56efa",
+          "xid": "a122a96e-47f4-4f03-91b5-1fa28fd702bf"
+        }
+      ],
+      "id": "d4f6dc68-d847-4fd4-afb9-d7cfbcb21dc8",
+      "xid": "33c81201-940e-47d1-aed1-1e92409ec6b5"
+    },
+    {
+      "title": "无服务器计算（Serverless）",
+      "description": "无服务器计算（Serverless）是一种云计算执行模型，其中云服务提供商动态管理基础设施，使开发人员可以专注于编写代码。
+
+在这个模型中，资源将根据需求自动分配和扩展，并且计费基于实际使用情况而不是预购容量。
+
+无服务器架构通常用于事件驱动的工作负载和微服务，提高了开发效率并减少了操作开销。
+
+无服务器计算的流行平台包括AWS Lambda、Azure Functions和Google Cloud Functions。
+
+\n\n",
+      "links": [
+        {
+          "title": "什么是无服务器计算（Serverless）？",
+          "url": "https://www.redhat.com/en/topics/cloud-native-apps/what-is-serverless",
+          "type": "article"
+        },
+        {
+          "title": "探索关于无服务器计算（Serverless）的热门文章",
+          "url": "https://app.daily.dev/tags/serverless?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "什么是无服务器计算（Serverless）？",
+          "url": "https://www.youtube.com/watch?v=vxJobGtqKVM",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Cloudflare",
+          "description": "Cloudflare 是一家互联网公司，提供一系列旨在保护和加速网站及应用程序的服务。
+
+在核心技术方面，Cloudflare 是一个内容分发网络（CDN）和反向代理云提供商。
+
+这意味着它作为网站的原始服务器和访问者之间的中介，缓存内容并过滤恶意流量。
+
+Cloudflare 由 Matthew Prince、Lee Holloway 和 Michelle Zatlyn 于2009年7月创立。
+
+这家公司是风险投资支持的，并在2019年8月在纽约证券交易所提交了首次公开募股（IPO）的S-1文件。
+
+它于2019年9月13日以每股15美元的价格开始公开交易。
+
+\n\n",
+          "links": [
+            {
+              "title": "Cloudflare",
+              "url": "https://cloudflare.com/",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于Cloudflare的热门文章",
+              "url": "https://app.daily.dev/tags/cloudflare?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Cloudflare介绍",
+              "url": "https://www.youtube.com/watch?v=24cml1rKGBs",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "367e1e95-caa9-4f47-a3b7-4f25aeded78c",
+          "xid": "e0a92d3e-4a44-420c-be04-06d9ec41c8b2"
+        },
+        {
+          "title": "AWS Lambda",
+          "description": "AWS Lambda 是一种无服务器计算服务（serverless compute service），允许您在无需预配或管理服务器的情况下运行代码。
+
+它自动扩展、响应触发器执行代码，并仅对消耗的计算时间收费。
+
+Lambda 支持多种编程语言，并与其它 AWS 服务无缝集成，使其非常适合构建微服务（microservices）、自动化任务和处理数据流，且运营开销（operational overhead）极小。
+
+\n\n",
+          "links": [
+            {
+              "title": "AWS Lambda 简介",
+              "url": "https://docs.aws.amazon.com/lambda/latest/operatorguide/intro.html",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 AWS 的热门文章",
+              "url": "https://app.daily.dev/tags/aws?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "AWS Lambda 教程：开始无服务器计算之旅",
+              "url": "https://www.youtube.com/watch?v=RtiWU1DrMaM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0bc704f8-e22a-4ef3-bac6-9b21e0cfedb4",
+          "xid": "77e30baf-ebad-4907-9890-4c82fd6d4c57"
+        },
+        {
+          "title": "Azure Functions（Azure Functions）",
+          "description": "Azure Functions 是 Microsoft Azure 中的一项无服务器计算服务，它允许开发人员在不管理基础设施的情况下运行事件触发的代码。
+
+Azure Functions 支持多种编程语言，并且可以无缝地与其他 Azure 服务集成，允许可扩展的、按需执行小型、集中式的代码片段。
+
+Azure Functions 根据需求自动扩展，仅按实际使用的计算时间收费，并且可以由各种事件触发，例如 HTTP 请求、计时器或云服务中的更改，使其成为微服务、数据处理和工作流自动化任务的理想选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Azure Functions - 无服务器计算",
+              "url": "https://azure.microsoft.com/en-in/products/functions",
+              "type": "article"
+            },
+            {
+              "title": "Azure Functions 概述",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Azure 的热门帖子",
+              "url": "https://app.daily.dev/tags/azure?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "开始使用 Azure Functions",
+              "url": "https://www.youtube.com/watch?v=l3beXs3o-0w",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2cf17b3d-e869-4a5d-bf21-508675d78788",
+          "xid": "6f2343fc-dc93-4343-a601-590fe4ca8be7"
+        },
+        {
+          "title": "GCP 函数(GCP Functions)",
+          "description": "Google Cloud Functions 是一个用于构建和连接云服务的无服务器执行环境。
+
+它允许开发人员编写单一用途的独立函数，以响应云事件，无需管理服务器或运行时环境。
+
+这些函数可以由 Google Cloud 服务的各种事件、HTTP 请求或 Firebase 功能触发。
+
+Cloud Functions 根据工作负载自动扩展，并且用户只需为使用的计算时间付费。
+
+它们支持多种编程语言，包括 Node.js、Python 和 Go。
+
+Cloud Functions 常用于实时数据处理、webhooks、轻量级 API 以及在微服务架构中集成系统。
+
+该服务使用户能够在 Google Cloud 生态系统中快速开发和部署代码。
+
+",
+          "links": [
+            {
+              "title": "GCP Cloud Functions 概览",
+              "url": "https://cloud.google.com/functions/docs/concepts/overview",
+              "type": "article"
+            },
+            {
+              "title": "GCP Cloud Functions 教程",
+              "url": "https://antonputra.com/google/google-cloud-functions-tutorial/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Google Cloud Platform 的热门文章",
+              "url": "https://app.daily.dev/tags/gcp?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "一分钟了解 Cloud Functions",
+              "url": "https://www.youtube.com/watch?v=BL4ZlPEamDo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "45862c48-7498-40e4-b5f5-0953c7c62037",
+          "xid": "f74d15a4-fc21-44ea-9ea7-b02b90f78808"
+        },
+        {
+          "title": "Vercel",
+          "description": "Vercel 是一家提供前端云服务的供应商（Front-end Cloud Provider），它提供的基础设施用于构建、扩展和保护一个更快、更个性化的网络。
+
+换句话说，Vercel 是一个云平台，旨在简化基于现代框架（如 React、Next 等）构建的 Web 应用程序的部署过程，通过将 GitHub 仓库连接到 Vercel，就可以将选定的 GitHub 分支（branch）部署到 Vercel 域名上。
+
+同时，它还提供了自定义域名，用于在实时服务器上部署代码。
+
+这些服务器的域名后缀包含 `vercel.app`。
+
+\n\n",
+          "links": [
+            {
+              "title": "Vercel",
+              "url": "https://vercel.com/",
+              "type": "article"
+            },
+            {
+              "title": "Vercel 文档",
+              "url": "https://vercel.com/docs",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Vercel 的热门文章",
+              "url": "https://app.daily.dev/tags/vercel?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Vercel 产品演示",
+              "url": "https://www.youtube.com/watch?v=sPmat30SE4k",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6550d3d1-ca23-4f66-9c54-dbd3dd7f8f9f",
+          "xid": "620c6a58-d080-4c06-acbf-2a675a77b023"
+        },
+        {
+          "title": "Netlify",
+          "description": "Netlify Functions (服务器端函数)允许开发者在JAMstack环境中运行服务器端代码，而无需管理服务器。
+
+这些函数基于AWS Lambda构建，并会自动与Netlify站点一同部署。
+
+这些函数可以处理如API请求、表单提交和数据库操作等任务，使得静态站点具有动态功能。
+
+这些函数支持多种语言，包括JavaScript、TypeScript和Go。
+
+Netlify Functions与Netlify的部署管道无缝集成，提供了简单开发、测试和生产部署的功能。
+
+\n\n",
+          "links": [
+            {
+              "title": "Netlify 文档",
+              "url": "https://docs.netlify.com/platform/primitives/#functions",
+              "type": "article"
+            },
+            {
+              "title": "Netlify Functions 2.0 介绍",
+              "url": "https://www.netlify.com/blog/introducing-netlify-functions-2-0/",
+              "type": "article"
+            },
+            {
+              "title": "Daily.dev Netlify 源",
+              "url": "https://app.daily.dev/tags/netlify",
+              "type": "article"
+            },
+            {
+              "title": "如何在Netlify上部署网站",
+              "url": "https://www.youtube.com/watch?v=0P53S34zm44",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "549b3583-facf-4e39-a781-832de93b5a4f",
+          "xid": "aaea9173-ef40-4d8c-b954-077a6e673fbb"
+        }
+      ],
+      "id": "d33f4c89-b45e-4b78-bfd5-2452c56a91c3",
+      "xid": "0b50507a-5c9c-43d5-8c09-027b34f57e2e"
+    },
+    {
+      "title": "配置管理",
+      "description": "配置管理（Provisioning）是指设置和配置必要的IT基础设施以支持应用或服务的过程。
+
+这包括分配和准备资源，如服务器、存储、网络和软件环境。
+
+配置管理可以手动完成，但在现代DevOps实践中，通常会使用Terraform、Pulumi或CloudFormation等工具进行自动化。
+
+这些工具有助于将基础设施作为代码（Infrastructure-as-code），其中，整个配置管理过程都可以在受版本控制的脚本或模板中定义。
+
+这种方法使在不同环境中进行一致、可重复的部署成为可能，减少了人为错误，并促进快速扩展和灾难恢复。
+
+",
+      "links": [
+        {
+          "title": "什么是配置管理？ - RedHat",
+          "url": "https://www.redhat.com/en/topics/automation/what-is-provisioning",
+          "type": "article"
+        },
+        {
+          "title": "什么是配置管理？ - IBM",
+          "url": "https://www.ibm.com/topics/provisioning",
+          "type": "article"
+        },
+        {
+          "title": "Open Answers: 什么是配置管理？",
+          "url": "https://www.youtube.com/watch?v=hWvDlmhASpk",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "AWS 云开发工具包 (AWS CDK)",
+          "description": "AWS 云开发工具包 (AWS CDK) 是一个开源软件开发框架，它通过 AWS CloudFormation 以安全、重复一致的方式配置云基础设施资源。
+
+AWS CDK 提供了在流行语言如 JavaScript、TypeScript、Python、Java、C# 和 Go 中编写基础设施即代码 (infrastructure as code) 的灵活性。
+
+\n\n",
+          "links": [
+            {
+              "title": "AWS CDK 快速入门教程",
+              "url": "https://www.youtube.com/watch?v=D4Asp5g4fp8",
+              "type": "course"
+            },
+            {
+              "title": "AWS CDK 示例",
+              "url": "https://github.com/aws-samples/aws-cdk-examples",
+              "type": "opensource"
+            },
+            {
+              "title": "AWS CDK",
+              "url": "https://aws.amazon.com/cdk/",
+              "type": "article"
+            },
+            {
+              "title": "AWS CDK 文档",
+              "url": "https://docs.aws.amazon.com/cdk/index.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 AWS 的热门文章",
+              "url": "https://app.daily.dev/tags/aws?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5593db21-3048-44ba-880e-2573e16aaf70",
+          "xid": "97db896f-e894-42a6-81a6-3aedf528fa7c"
+        },
+        {
+          "title": "CloudFormation",
+          "description": "AWS CloudFormation 是一种基础架构即代码服务，允许用户通过模板定义和调配 AWS 基础架构资源。
+
+这些模板使用 JSON 或 YAML 编写，描述了期望的 AWS 资源及其属性。
+
+CloudFormation 自动化了资源的创建、更新和删除，确保在多个环境中实现一致且可重复的部署。
+
+它支持广泛的 AWS 服务，并能管理资源之间的复杂依赖关系。
+
+CloudFormation 还提供如更改集（change sets）预览更改、嵌套堆栈（nested stacks）进行模块化设计和偏移检测（drift detection）来识别手工更改等功能。
+
+这项服务使团队能够对其基础设施进行版本控制，实施最佳实践，并在整个生命周期中简化 AWS 资源的管理。
+
+",
+          "links": [
+            {
+              "title": "AWS CloudFormation",
+              "url": "https://aws.amazon.com/cloudformation/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 AWS CloudFormation 的热门文章",
+              "url": "https://app.daily.dev/tags/aws-cloudformation?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "创建和删除 AWS CloudFormation 堆栈",
+              "url": "https://www.youtube.com/watch?v=fmDG-W5TFp4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "7d46834e-5a44-4214-abbd-fd64006fcd98",
+          "xid": "dc8dc331-61dc-47ae-80ae-2c85efada516"
+        },
+        {
+          "title": "Pulumi",
+          "description": "Pulumi 是一个开源的基础设施即代码（Infrastructure as Code, IaC）平台，允许开发人员使用熟悉的编程语言（如 JavaScript、TypeScript、Python、Go 和 .NET 语言）定义和管理云资源。
+
+它支持多个云提供商，包括 AWS、Azure、Google Cloud 和 Kubernetes。
+
+Pulumi 的方法论使开发人员能够使用标准编程结构（如循环、函数和类）来创建可重用和模块化的基础设施代码。
+
+它提供了一个统一的工作流程，用于跨不同云环境部署和管理资源，提供诸如状态管理、漂移检测以及在部署前预览更改等功能。
+
+Pulumi 的生态系统包括一个预构建组件注册表，并与 CI/CD 系统集成，使其成为采用 DevOps 实践并管理复杂多云基础设施的团队的强大工具。
+
+",
+          "links": [
+            {
+              "title": "Pulumi 网站",
+              "url": "https://www.pulumi.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Pulumi 的热门文章",
+              "url": "https://app.daily.dev/tags/pulumi?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "三分钟了解 Pulumi",
+              "url": "https://www.youtube.com/watch?v=Q8tw6YTD3ac",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a6a9c519-fbe6-41ce-b985-fd8ed9b41e8a",
+          "xid": "c612beda-a9c1-4e68-9219-dda1e2693e09"
+        },
+        {
+          "title": "Terraform",
+          "description": "Terraform是由HashiCorp开发的一种开源基础设施即代码（Infrastructure as Code, IaC）工具，它使用声明式配置文件来定义、供应和管理云和本地基础设施。
+
+Terraform支持包括AWS、Azure和Google Cloud在内的多个云提供商以及各种服务和平台，能够在不同环境中实现基础设施自动化。
+
+Terraform的状态管理和模块化结构使得基础设施可以高效地进行扩展、重复利用，并实现版本控制。
+
+它广泛用于自动化的基础设施部署，减少人工错误，提高基础设施的一致性和可重复性。
+
+\n\n",
+          "links": [
+            {
+              "title": "完整的Terraform课程",
+              "url": "https://www.youtube.com/watch?v=7xngnjfIlK4",
+              "type": "course"
+            },
+            {
+              "title": "访问专用Terraform路线图",
+              "url": "https://roadmap.sh/terraform",
+              "type": "article"
+            },
+            {
+              "title": "Terraform文档",
+              "url": "https://www.terraform.io/docs",
+              "type": "article"
+            },
+            {
+              "title": "Terraform教程",
+              "url": "https://learn.hashicorp.com/terraform",
+              "type": "article"
+            },
+            {
+              "title": "如何扩展您的Terraform基础设施",
+              "url": "https://thenewstack.io/how-to-scale-your-terraform-infrastructure/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Terraform的热门文章",
+              "url": "https://app.daily.dev/tags/terraform?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b9763486-9663-4115-8380-6a171cc000a4",
+          "xid": "7834edd1-8b04-4638-9a76-9248c79e50dc"
+        }
+      ],
+      "id": "d8a82d85-b732-4836-a393-6e4cb9103088",
+      "xid": "88097583-c219-4e4a-b16a-04e1592bc2b6"
+    },
+    {
+      "title": "配置管理",
+      "description": "配置管理是一种系统工程过程，用于在整个产品生命周期中保持产品属性的一致性。
+
+在技术世界中，配置管理是IT管理过程的一部分，它跟踪IT系统的各个配置项。
+
+IT系统由IT资产构成，这些资产的细节层次各异。
+
+IT资产可以代表一个软件程序，或一台服务器，或一个服务器集群。
+
+下文重点讨论配置管理在IT软件资产和软件资产CI/CD(持续集成/持续交付)中的直接应用。
+
+在软件开发中，配置管理通常与版本控制和CI/CD基础设施一同使用。
+
+本文重点讨论配置管理在敏捷CI/CD软件环境中的现代应用和使用。
+
+\n\n",
+      "links": [
+        {
+          "title": "什么是配置管理？",
+          "url": "https://www.atlassian.com/microservices/microservices-architecture/configuration-management",
+          "type": "article"
+        },
+        {
+          "title": "什么是配置管理？- RedHat",
+          "url": "https://www.redhat.com/en/topics/automation/what-is-configuration-management",
+          "type": "article"
+        },
+        {
+          "title": "为什么你需要学习配置管理",
+          "url": "https://www.youtube.com/watch?v=9In7ysQJGBs",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Ansible",
+          "description": "Ansible（Ansible）是一款开源自动化工具，用于配置管理、应用程序部署和任务自动化。
+
+它通过使用声明式语言来定义期望的状态和配置，简化了管理和编排基础设施的过程。
+
+Ansible（Ansible）使用称为playbook（剧本）的YAML文件来描述要在远程系统上执行的任务。
+
+它采用无代理架构，这意味着它使用SSH或其他远程协议在目标机器上执行任务，无需额外安装软件。
+
+Ansible（Ansible）广泛用于自动化重复性任务，确保一致性，并管理跨各种环境的大规模部署。
+
+",
+          "links": [
+            {
+              "title": "Ansible初学者完整课程",
+              "url": "https://www.youtube.com/watch?v=9Ua2b06oAr4",
+              "type": "course"
+            },
+            {
+              "title": "Ansible官网",
+              "url": "https://www.ansible.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Ansible的最佳帖子",
+              "url": "https://app.daily.dev/tags/ansible?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "100秒内了解Ansible",
+              "url": "https://www.youtube.com/watch?v=xRMPKQweySE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5d1d09f6-58f3-4b98-b02c-edf1f11730f7",
+          "xid": "dc4b4068-32e0-44eb-ba57-a117b90831ea"
+        },
+        {
+          "title": "Chef(主厨软件)",
+          "description": "Chef（现在称为Progress Chef）于2009年面世，它是最先获得广泛认可的配置管理工具之一。
+
+Chef的\"Recipes\"（配方）用Ruby语言编写，并主要采用声明式风格。
+
+Chef要求在要管理的服务器上安装一个客户端。
+
+该客户端定期向Chef-Server（主服务器）进行查询，以确定其配置应如何组织。
+
+同时，也提供了一个称为Chef-Solo的版本，允许通过本地运行Chef来配置单一的节点。
+
+Chef配方设计的基本原则之一是幂等性。
+
+所有的Chef配方都应该能够在多次运行后产生相同的结果——这在上述客户端/服务器模型中使用时尤其必要。
+
+这种配置管理模式对于类似Terraform和CloudFormation的将来声明式工具有着深远的影响。
+
+",
+          "links": [
+            {
+              "title": "Chef官方网站",
+              "url": "https://www.chef.io/products/chef-infra",
+              "type": "article"
+            },
+            {
+              "title": "Chef教程",
+              "url": "https://www.tutorialspoint.com/chef/index.htm",
+              "type": "article"
+            },
+            {
+              "title": "查看关于Chef的顶尖文章",
+              "url": "https://app.daily.dev/tags/chef?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "chef/chef",
+              "url": "https://github.com/chef/chef",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d5248e5b-3adf-4a79-ae7f-3b7e8fcd53dd",
+          "xid": "779abecd-0a15-4323-aa85-8c36b98a9b2e"
+        },
+        {
+          "title": "Puppet",
+          "description": "Puppet 是一种开源的配置管理工具（Configuration Management Tool），能够自动执行基础设施中服务器和应用程序的调配、配置和管理。
+
+它采用声明式、模型驱动的方法，管理员使用 Puppet 的领域特定语言（Domain-Specific Language）或 Ruby 来定义系统的期望状态。
+
+运行在受管理节点上的 Puppet 代理（Puppet Agent）会定期与中央 Puppet 服务器进行同步，应用必要的更改以达到定义的状态。
+
+这种方法确保了环境间的一致性，并简化了可扩展的基础设施管理。
+
+Puppet 支持各种操作系统和云平台，并提供模块以供通用服务和应用程序使用。
+
+配备了包括报告（Reporting）、基于角色的访问控制（Role-based Access Control）以及与其他 DevOps 工具的集成等功能，Puppet 帮助组织在多样化和复杂的环境中实现基础设施即代码（Infrastructure as Code）、强制执行合规性并优化 IT 操作。
+
+\n\n",
+          "links": [
+            {
+              "title": "Puppet 完整课程 | 学习 Puppet 训练",
+              "url": "https://www.youtube.com/watch?v=Ns_tRKD20c4",
+              "type": "course"
+            },
+            {
+              "title": "Puppet 官方网站",
+              "url": "https://puppet.com/",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于 Puppet 的顶级文章",
+              "url": "https://app.daily.dev/tags/puppet?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5388bbde-bb4c-40a5-a1f4-a60a4aef2d01",
+          "xid": "7e7d4a4a-f899-4b4f-a7cc-677dab4b9584"
+        }
+      ],
+      "id": "ad68193f-ba51-40fb-9fbc-deb93526a172",
+      "xid": "52f4dce4-1289-4f67-bb1e-10dd3615abd2"
+    },
+    {
+      "title": "持续集成/持续交付工具 (CI/CD Tools)",
+      "description": "CI/CD 通过在应用开发的各个阶段引入自动化，以频繁地向客户交付应用程序的一种方法。
+
+CI/CD 的核心概念包括持续集成（Continuous Integration）、持续交付（Continuous Delivery）和持续部署（Continuous Deployment）。
+
+CI/CD 是解决集成新代码时可能为开发和运营团队带来的一系列问题的解决方案。
+
+具体来说，CI/CD 提供了在整个应用程序生命周期中的持续监控和自动化，从集成和测试阶段一直到交付和部署。
+
+这些相互关联的实践通常被称为 \"CI/CD 流水线\"，并由开发和运营团队以敏捷（Agile）方式合作，采用 DevOps 或站点可靠性工程（SRE, Site Reliability Engineering）的方法支持。
+
+",
+      "links": [
+        {
+          "title": "CI 与 CD 比较",
+          "url": "https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment",
+          "type": "article"
+        },
+        {
+          "title": "什么是 CI/CD？",
+          "url": "https://www.redhat.com/en/topics/devops/what-is-ci-cd",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 CI/CD 的热门文章",
+          "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "100 秒解释 DevOps CI/CD",
+          "url": "https://www.youtube.com/watch?v=scEDHsr3APg",
+          "type": "video"
+        },
+        {
+          "title": "5 分钟内了解 CI/CD",
+          "url": "https://www.youtube.com/watch?v=42UP1fxi2SY",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "GitLab CI",
+          "description": "GitLab CI 是 GitLab 生态系统中的一个集成持续集成和交付平台。
+
+它通过在 YAML 文件中定义的流水线 (pipeline) 自动化代码更改的构建、测试和部署过程。
+
+GitLab CI 提供了诸如并行执行、容器仓库集成、自动 DevOps (auto-DevOps) 等特性，使团队能够直接从他们的 GitLab 仓库中实现稳健的 CI/CD (持续集成和持续交付) 工作流，而无需额外的工具或基础设施。
+
+\n\n",
+          "links": [
+            {
+              "title": "GitLab 网站",
+              "url": "https://gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "GitLab 文档",
+              "url": "https://docs.gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 GitLab 的热门文章",
+              "url": "https://app.daily.dev/tags/gitlab?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "GitLab CI/CD 流水线初学者教程 (2024)",
+              "url": "https://www.youtube.com/watch?v=z7nLsJvEyMY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2677d165-0d67-49ba-af25-6d22fd137725",
+          "xid": "7e8a0709-0428-41b5-ad04-47098c15ad11"
+        },
+        {
+          "title": "Jenkins",
+          "description": "Jenkins 是一个开源自动化服务器，广泛用于构建、测试和部署软件。
+
+它通过自动化开发管道的各个阶段来促进持续集成和持续交付（CI/CD）。
+
+Jenkins 支持众多插件，允许与软件开发生命周期中的几乎任何工具进行集成。
+
+它具有一个用于配置和监控的网站界面，支持多台机器的分布式构建，并通过插件架构提供了可扩展性。
+
+Jenkins 可用于创建复杂的流程，自动化重复性任务，并编排作业序列。
+
+其灵活性、广泛的社区支持以及与各种工具的集成能力使其成为各行各业组织实施 DevOps 实践的热门选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Jenkins 网站",
+              "url": "https://www.jenkins.io/",
+              "type": "article"
+            },
+            {
+              "title": "Jenkins 入门指南",
+              "url": "https://www.jenkins.io/doc/pipeline/tour/getting-started/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Jenkins 的热门文章",
+              "url": "https://app.daily.dev/tags/jenkins?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "学习 Jenkins！完全的 Jenkins 课程 - 从零到英雄",
+              "url": "https://www.youtube.com/watch?v=6YZvp2GwT0A",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "de805366-9a9b-443b-a205-c5fd4d231881",
+          "xid": "72434401-913a-4f5e-aa88-1db7f096277b"
+        },
+        {
+          "title": "GitHub Actions",
+          "description": "GitHub Actions 是一款集成在 GitHub 存储库中的持续集成 (Continuous Integration, CI) 和持续交付 (Continuous Delivery, CD) 平台。
+
+它允许开发者通过构建、测试和部署应用程序来自动化软件工作流程。
+
+动作通过 YAML 文件定义，并由多种 GitHub 事件触发，例如推送、拉请求或预设的任务。
+
+该平台提供了预构建动作的市场，并且支持自定义动作。
+
+GitHub Actions 支持矩阵构建、并行作业执行，并兼容多种操作系统和语言。
+
+它与 GitHub 的生态系统无缝集成，从而促进了自动代码审查、问题跟踪以及项目管理。
+
+这款工具使开发人员能够高效地在 GitHub 工作流程中实施 DevOps 实践，提升生产力和代码质量。
+
+",
+          "links": [
+            {
+              "title": "GitHub Actions 认证 – 完整课程成功通过考试",
+              "url": "https://www.youtube.com/watch?v=Tz7FsunBbfQ",
+              "type": "course"
+            },
+            {
+              "title": "GitHub Actions 文档",
+              "url": "https://docs.github.com/en/actions",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 GitHub 的顶级帖子",
+              "url": "https://app.daily.dev/tags/github?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是 GitHub Actions？",
+              "url": "https://www.youtube.com/watch?v=URmeTqglS58",
+              "type": "video"
+            },
+            {
+              "title": "使用 GitHub Actions 自动化您的工作流",
+              "url": "https://www.youtube.com/watch?v=nyKZTKQS_EQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "cd91b3f3-6e2b-421d-8d14-89f170748cb3",
+          "xid": "36c3d78f-496d-406f-a748-c10f10bf8b57"
+        },
+        {
+          "title": "Travis CI",
+          "description": "Travis CI 是一种基于云的持续集成（Continuous Integration, CI）服务，它会自动构建和测试存放在 GitHub 仓库中的代码变更。
+
+通过在代码推送或拉取请求时自动运行测试并构建应用程序，它可以帮助简化软件开发流程。
+
+Travis CI 支持多种编程语言，并与其他工具和服务提供集成，提供诸如构建矩阵配置（Build Matrix Configurations）、部署流水线（Deployment Pipelines）和通知（Notifications）等功能。
+
+由于其易于设置并能与 GitHub 集成，Travis CI 成为了开源和私人项目实施 CI/CD 实践的流行选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Travis CI 文档",
+              "url": "https://docs.travis-ci.com/",
+              "type": "article"
+            },
+            {
+              "title": "Travis CI 教程",
+              "url": "https://docs.travis-ci.com/user/tutorial/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 CI/CD 的热门文章",
+              "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "面向 DevOps 工程师的 Travis CI 完整教程",
+              "url": "https://www.youtube.com/watch?v=xLWDOLhTH38",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1b92303d-ca23-4838-9827-29cb151d1847",
+          "xid": "c6a2eeef-ffa4-460a-83df-740b3dc5dd20"
+        },
+        {
+          "title": "Circle CI",
+          "description": "CircleCI 是一个流行的持续集成和持续交付（CI/CD）平台，它自动化了软件项目的构建、测试和部署流程。
+
+它支持广泛的编程语言，并与各种版本控制系统集成，主要与GitHub和Bitbucket集成。
+
+CircleCI 使用 YAML 配置文件来定义流水线，允许开发人员指定复杂的工作流、并行作业执行和自定义环境。
+
+它提供了如缓存、制品存储和 Docker 层缓存等功能来加快构建速度。
+
+通过其基于云和自托管的选项，CircleCI 为各种规模的项目提供了可扩展的解决方案，帮助团队提高代码质量、加速发布周期并简化开发工作流。
+
+\n\n",
+          "links": [
+            {
+              "title": "CircleCI 官网",
+              "url": "https://circleci.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 CI/CD 的热门文章",
+              "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "CircleCI 入门教程",
+              "url": "https://www.youtube.com/watch?v=_XaYv9zvHUk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b79ae953-e12e-4441-a144-97d8f15c1f7f",
+          "xid": "5679b590-3bfb-4c56-840c-979ed885a8d1"
+        },
+        {
+          "title": "无人机 (Drone)",
+          "description": "无人机是一个基于容器技术的开源持续集成（Continuous Integration, CI）平台。
+
+它使用简单的基于YAML的流水线配置来自动化代码的构建、测试和部署，这些配置与源代码一起存储。
+
+无人机在一个隔离的Docker容器中执行CI/CD流程的每个步骤，确保一致性和可重复性。
+
+无人机支持多种版本控制系统，提供并行执行流水线步骤的功能，并提供插件，以便与各种工具和服务进行集成。
+
+无人机轻量、可扩展的架构使其适合各种规模的项目，从小型团队到大型企业。
+
+无人机对简单性和容器化的关注与现代DevOps实践和微服务架构相得益彰。
+
+",
+          "links": [
+            {
+              "title": "无人机",
+              "url": "https://www.drone.io/",
+              "type": "article"
+            },
+            {
+              "title": "无人机文档",
+              "url": "https://docs.drone.io/",
+              "type": "article"
+            },
+            {
+              "title": "无人机CI快速入门",
+              "url": "https://www.youtube.com/watch?v=Qf8EHRzAgHQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "741a5918-4fa2-4928-999b-127a54c8b6e4",
+          "xid": "3deb9305-8eec-4a37-a839-fdfe1a1e1b8a"
+        },
+        {
+          "title": "TeamCity",
+          "description": "TeamCity 是由 JetBrains 开发的一个持续集成 (Continuous Integration, CI) 和持续交付 (Continuous Delivery, CD) 服务器，旨在自动化软件开发中的构建、测试和部署过程。
+
+它支持多种语言和框架，并提供了一个灵活且可扩展的环境来进行管理管道。
+
+TeamCity 提供了强大的功能，如版本控制集成、构建链、并行执行和详细报告。
+
+此外，它还提供了用户友好的 Web 界面、可定制的构建配置以及丰富的插件支持，使其成为希望简化其 CI/CD 流程的团队的受欢迎选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "TeamCity 文档",
+              "url": "https://www.jetbrains.com/help/teamcity/teamcity-documentation.html",
+              "type": "article"
+            },
+            {
+              "title": "TeamCity 教程",
+              "url": "https://www.jetbrains.com/teamcity/tutorials/",
+              "type": "article"
+            },
+            {
+              "title": "查看关于 CI/CD 的热门帖子",
+              "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "使用 JetBrains TeamCity 实现 CI/CD",
+              "url": "https://www.youtube.com/watch?v=zqi4fDF-S60",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b4ad67f4-00d3-44d7-b749-bd119c6fa6d1",
+          "xid": "2245813a-79ba-4443-a089-7f07cb51996e"
+        }
+      ],
+      "id": "0d2bedfd-5839-45a2-9378-f83728c2c64f",
+      "xid": "411e9cd1-5aaa-4b63-acae-a33edb93da01"
+    },
+    {
+      "title": "密钥管理",
+      "description": "密钥管理指的是在组织的IT基础设施中，安全地处理、存储和分发敏感信息，如密码（passwords）、API密钥（API keys）和证书（certificates）。
+
+这包括使用专门的工具和实践来保护密钥免受未经授权的访问，同时确保它们在需要时可以被授权的系统和用户使用。
+
+密钥管理解决方案通常提供诸如静态和传输中数据加密、访问控制、审计、轮换策略以及与各种平台和服务的集成等功能。
+
+这些系统旨在集中化密钥存储，减少暴露风险，自动化密钥生命周期管理，并为应用程序和DevOps工作流程提供无缝集成。
+
+有效的密钥管理对于维持现代复杂IT环境的安全性、合规性和操作效率至关重要。
+
+",
+      "links": [
+        {
+          "title": "如何在Web应用程序中管理密钥？",
+          "url": "https://cs.fyi/guide/secret-management-best-practices",
+          "type": "article"
+        },
+        {
+          "title": "为何DevSecOps团队需要密钥管理",
+          "url": "https://www.keepersecurity.com/blog/2023/01/26/why-devsecops-teams-need-secrets-management/",
+          "type": "article"
+        },
+        {
+          "title": "在生产中管理密钥的DevOps技巧",
+          "url": "https://www.youtube.com/watch?v=u_L-f7Th_7o",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Sealed Secrets（加密秘密）",
+          "description": "Sealed Secrets（加密秘密）是一个由Bitnami开发的Kubernetes控制器和工具，它允许用户将其Kubernetes Secrets加密为加密的“SealedSecrets”，这些“SealedSecrets”可以安全地存储在公共仓库或不安全环境中。
+
+它解决了在基于Git的工作流和集群管理中管理敏感信息的挑战。
+
+集群中运行的控制器将SealedSecrets（加密秘密）解密为常规Secrets，确保原始敏感数据从未离开集群。
+
+这种方法使得在Kubernetes环境中加密信息的管理是安全且声明式的，与GitOps实践相一致。
+
+Sealed Secrets（加密秘密）使用非对称加密技术，只有集群中的控制器拥有私钥来解密秘密。
+
+该工具通过允许秘密与Kubernetes资源一并版本管理和控制，而不暴露敏感数据，增强了Kubernetes部署的安全性。
+
+\n\n",
+          "links": [
+            {
+              "title": "bitname/sealed-secrets",
+              "url": "https://github.com/bitnami-labs/sealed-secrets",
+              "type": "opensource"
+            },
+            {
+              "title": "Sealed Secrets（加密秘密）",
+              "url": "https://fluxcd.io/flux/guides/sealed-secrets/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2f249eb5-0f94-485f-8706-2bfe35434a8e",
+          "xid": "5344f993-7802-40a5-8101-b188bcd9d5a1"
+        },
+        {
+          "title": "云特定工具",
+          "description": "有几种专用于云的安全存储和管理密钥的工具，例如：\n\n*   AWS Secrets Manager（AWS密钥管理器）：AWS Secrets Manager 是 Amazon Web Services (AWS) 提供的一项服务，用于安全地存储和管理密钥。
+
+它提供自动轮换密钥和与其它 AWS 服务集成等功能。
+
+\n*   Google Cloud Secret Manager（Google Cloud密钥管理器）：Google Cloud Secret Manager 是 Google Cloud 提供的一项服务，用于安全地存储和管理密钥。
+
+它提供自动轮换密钥和与其它 Google Cloud 服务集成等功能。
+
+\n*   Azure Key Vault（Azure密钥保管库）：Azure Key Vault 是 Microsoft Azure 提供的一项服务，用于安全地存储和管理密钥。
+
+它提供自动轮换密钥和与其它 Azure 服务集成等功能。
+
+\n\n",
+          "links": [
+            {
+              "title": "AWS Secrets Manager - Amazon Web Services",
+              "url": "https://aws.amazon.com/secrets-manager/",
+              "type": "article"
+            },
+            {
+              "title": "Google Cloud Secret Manager - Google Cloud",
+              "url": "https://cloud.google.com/secret-manager",
+              "type": "article"
+            },
+            {
+              "title": "Azure Key Vault - Microsoft Azure",
+              "url": "https://azure.microsoft.com/en-us/services/key-vault/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关云的热门文章",
+              "url": "https://app.daily.dev/tags/cloud?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "AWS Secrets Manager 服务概览和演示",
+              "url": "https://www.youtube.com/watch?v=GwVWWn2ZKj0",
+              "type": "video"
+            },
+            {
+              "title": "Google Cloud Secret Manager",
+              "url": "https://www.youtube.com/watch?v=nsrADMrp4BI",
+              "type": "video"
+            },
+            {
+              "title": "Azure Key Vault 的用途是什么",
+              "url": "https://www.youtube.com/watch?v=pnOFP_oijxw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "035c8450-66a8-4520-93a2-00496c98df0a",
+          "xid": "9ef13ce5-b585-400e-8859-8f3d8f3c1855"
+        },
+        {
+          "title": "金库（Vault）",
+          "description": "HashiCorp金库是一款设计用于安全管理和保护敏感数据（如密码、API密钥和加密密钥）的工具。
+
+它提供了集中式密钥管理、访问控制和审计功能。
+
+金库支持多种身份验证方法和动态密钥，能够即时生成密钥并管理其生命周期。
+
+此外，金库还提供了强大的加密功能，包括在静态数据和传输数据中的加密。
+
+金库广泛应用于DevOps环境中，确保敏感信息的安全和可扩展管理，并与多种基础设施和应用程序平台集成。
+
+\n\n",
+          "links": [
+            {
+              "title": "hashicorp/vault",
+              "url": "https://github.com/hashicorp/vault",
+              "type": "opensource"
+            },
+            {
+              "title": "HashiCorp金库（Vault）",
+              "url": "https://www.vaultproject.io/",
+              "type": "article"
+            },
+            {
+              "title": "180秒内解开HashiCorp金库（Vault）",
+              "url": "https://www.youtube.com/watch?v=nG8fCdWkLzc",
+              "type": "video"
+            },
+            {
+              "title": "HashiCorp金库（Vault）初学者教程",
+              "url": "https://www.youtube.com/watch?v=ae72pKpXe-s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b313f0b2-e004-4d8a-883e-359340e2d4b4",
+          "xid": "bb6d2aff-6db1-4b54-83ea-03f80b0063a7"
+        },
+        {
+          "title": "SOPs",
+          "description": "SOPS (Secrets OPerationS) 是一个开源工具，用于管理和加密敏感数据，如密码、API 密钥和证书。
+
+它允许开发人员通过加密文件的特定部分，通常使用 AWS KMS、GCP KMS、Azure Key Vault 或 PGP，将机密安全地存储在受版本控制的文件中。
+
+SOPS 可以无缝集成到基础设施即代码的工作流程中，确保在整个开发生命周期中机密的安全，同时仅在受信任的环境中允许解密。
+
+它在机密管理方面平衡了安全性和易用性。
+
+",
+          "links": [
+            {
+              "title": "getsops/sops",
+              "url": "https://github.com/getsops/sops",
+              "type": "opensource"
+            },
+            {
+              "title": "SOPS 网站",
+              "url": "https://getsops.io",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "620f0880-8cd3-4a93-af5f-bc98bffc6f58",
+          "xid": "9020762b-f4e0-4df7-a840-0d9ded4a740e"
+        }
+      ],
+      "id": "b61ce860-ac19-4565-80b5-e3bee8b0ccbb",
+      "xid": "31bfc787-5df2-4e1a-b62b-b249eb0d87f3"
+    },
+    {
+      "title": "基础设施监控",
+      "description": "监控指的是使基础设施的性能和状态可见的行为。
+
+本节包含常用的监控工具。
+
+这是一个供应商产品非常繁多的领域 - 当研究特定产品或项目的材料时，需谨慎，因为对于不同策略和意见，有很多相互矛盾的观点。
+
+对于面向互联网的复杂应用系统，没有单一有效的解决方案，了解这些工具的优缺点将有助于制定监测系统以达成特定目标的计划。
+
+\n\n",
+      "links": [
+        {
+          "title": "在DevOps团队中优化基础设施监控的最佳实践",
+          "url": "https://thenewstack.io/best-practices-to-optimize-infrastructure-monitoring-within-devops-teams/",
+          "type": "article"
+        },
+        {
+          "title": "实现云原生基础设施监控的有效七步骤",
+          "url": "https://thenewstack.io/seven-steps-to-effective-cloud-native-infrastructure-monitoring/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于基础设施的热门文章",
+          "url": "https://app.daily.dev/tags/infrastructure?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "使用Telegraf、Grafana和InfluxDB掌握基础设施监控基础",
+          "url": "https://www.youtube.com/watch?v=ESub4SAKouI",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Prometheus",
+          "description": "Prometheus 是一款开源的系统监控和告警工具包，专为可靠性和可扩展性设计。
+
+它具有多维度的数据模型，灵活的查询语言（PromQL），以及高效的时间序列数据库。
+
+Prometheus 以设定的间隔从配置的目标中收集指标，评估规则表达式，显示结果，并在发现特定条件时触发告警。
+
+它采用拉取模型，从 HTTP 端点抓取指标，并支持服务发现以适应动态环境。
+
+Prometheus 尤其适用于监控微服务（microservices）和容器化环境，并能无缝集成至如 Kubernetes 系统中。
+
+其生态系统包括多种第三方系统的导出器（exporters）和内置的告警管理器（alert manager）。
+
+在云原生架构中广泛采用，Prometheus 是现代可观测性栈的核心组件之一，经常与 Grafana 等可视化工具一起使用。
+
+\n\n",
+          "links": [
+            {
+              "title": "Prometheus 官网",
+              "url": "https://prometheus.io/",
+              "type": "article"
+            },
+            {
+              "title": "浏览有关 Prometheus 的顶级文章",
+              "url": "https://app.daily.dev/tags/prometheus?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Prometheus 监控系统简介 | 核心概念和功能",
+              "url": "https://www.youtube.com/watch?v=STVMGrYIlfg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "03209bfc-6755-4e57-b217-e813eded2f52",
+          "xid": "39e7cd22-5c48-48a1-837c-6e3f16a46d0f"
+        },
+        {
+          "title": "Grafana",
+          "description": "Grafana[格拉法纳] 是一个开源的分析和互动可视化网络应用程序。
+
+它能连接到各种数据源，包括时间序列数据库、关系数据库和云服务，以创建可定制的仪表板。
+
+Grafana 在可视化用于基础设施和应用程序分析的时间序列数据方面表现出色，支持广泛的图表类型和插件。
+
+它具有警报功能、用户认证以及基于角色的访问控制。
+
+Grafana 常用于监控系统指标、应用程序性能和业务分析。
+
+它的灵活性以及能够结合来自多个来源的数据使其在DevOps[开发运维]环境中成为创建全面监控解决方案的热门选择。
+
+Grafana 的用户友好界面和广泛的定制选项允许用户为实时数据可视化和分析创建视觉上吸引人且信息丰富的仪表板。
+
+",
+          "links": [
+            {
+              "title": "Grafana[格拉法纳]",
+              "url": "https://grafana.com/",
+              "type": "article"
+            },
+            {
+              "title": "关于 Grafana[格拉法纳] 的网络研讨会和视频",
+              "url": "https://grafana.com/videos/",
+              "type": "article"
+            },
+            {
+              "title": "探索最受欢迎的关于 Grafana[格拉法纳] 的文章",
+              "url": "https://app.daily.dev/tags/grafana?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "服务器监控 // Prometheus[普罗米修斯] 和 Grafana[格拉法纳] 教程",
+              "url": "https://www.youtube.com/watch?v=9TJx7QTrTyo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8d0c9473-b5a7-4f18-a351-441367e62c51",
+          "xid": "5f1ec216-ff4f-4581-96e7-af4c59c4ad70"
+        },
+        {
+          "title": "Zabbix",
+          "description": "Zabbix 是一款开源监控解决方案，专为跟踪IT基础设施的性能、可用性和健康状况而设计。
+
+它通过集中的平台提供了对服务器、网络、应用和运维服务的全面监控功能。
+
+Zabbix 支持多种数据收集方法，包括基于代理(agent)的监控、简单网络管理协议(SNMP)、智能平台管理接口(IPMI)和自定义脚本。
+
+它提供实时告警、可视化可定制的仪表板以及详细的报告功能。
+
+其可伸缩性和灵活性使其适用于各种规模的环境，从小型网络到大型企业系统。
+
+",
+          "links": [
+            {
+              "title": "Zabbix 官网",
+              "url": "https://www.zabbix.com/",
+              "type": "article"
+            },
+            {
+              "title": "Zabbix 文档",
+              "url": "https://www.zabbix.com/manuals",
+              "type": "article"
+            },
+            {
+              "title": "如何免费监控家中的所有事项 - Zabbix 概览",
+              "url": "https://www.youtube.com/watch?v=R_EQzBkz4sE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a67f2f31-66c8-4819-a778-f8f6515f2ccf",
+          "xid": "3a956a8b-48ea-4e9a-b04b-90a957eaee23"
+        },
+        {
+          "title": "Datadog",
+          "description": "Datadog 是一个适用于大规模应用的监控和分析平台（monitoring and analytics platform）。
+
+它涵盖了基础设施监控（infrastructure monitoring）、应用性能监控（application performance monitoring）、日志管理（log management）以及用户体验监控（user-experience monitoring）。
+
+Datadog 在整个技术栈中聚合数据，拥有400多个集成（integrations），可用于故障排查、告警和绘图（troubleshooting, alerting, and graphing）。
+
+\n\n",
+          "links": [
+            {
+              "title": "Datadog 官网",
+              "url": "https://www.datadoghq.com/",
+              "type": "article"
+            },
+            {
+              "title": "Datadog 文档",
+              "url": "https://docs.datadoghq.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索顶级 DevOps 文章",
+              "url": "https://app.daily.dev/tags/devops?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6a5e1cf4-280f-47e5-b4cc-e22572c966c3",
+          "xid": "1b61d92c-7e34-4df8-9165-da1cc84965c5"
+        }
+      ],
+      "id": "ceed0185-59cc-4d2b-82f0-9fcf35b1ffce",
+      "xid": "0bcc1fd7-ab31-44c5-b460-7d977bf9bf65"
+    },
+    {
+      "title": "应用监控",
+      "description": "应用监控涉及软件应用程序的持续观察和分析，以确保它们表现最优，识别问题，并提供有关其运行情况的见解。
+
+此过程包括跟踪指标，如响应时间、错误率（Error rates）、资源利用率（CPU、内存和磁盘），以及事务性能。
+
+应用监控工具收集和分析数据以检测异常，如果出现潜在问题则发出警报，并提供关于应用行为和性能的详细见解。
+
+通过监控应用，组织可以主动解决问题，优化性能，改善用户体验，最终确保其软件系统的可靠性和效率。
+
+",
+      "links": [
+        {
+          "title": "应用基本与高级监控技术",
+          "url": "https://thenewstack.io/applying-basic-vs-advanced-monitoring-techniques/",
+          "type": "article"
+        },
+        {
+          "title": "为什么废弃的应用程序也需要监控",
+          "url": "https://thenewstack.io/why-legacy-apps-need-your-monitoring-love-too/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于监控的热门文章",
+          "url": "https://app.daily.dev/tags/monitoring?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "应用监控 - 4项黄金信号",
+          "url": "https://www.youtube.com/watch?v=PHcnmTdVPT0",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "OpenTelemetry",
+          "description": "OpenTelemetry 是一个开源的云原生软件可观测性框架（observability framework），提供了一种标准化的方式收集和导出遥测数据（telemetry data），如指标（metrics）、日志（logs）和跟踪（traces）。
+
+它通过提供一个供应商中立且统一的API、库、代理和仪器（instrumentation），旨在使可观测性成为云原生应用程序的内置特征。
+
+OpenTelemetry 简化了跨不同语言和平台的可观测性实现，使开发人员能够一次性地对其代码进行监测（instrument），并将数据发送到多个后端。
+
+它支持许多流行框架和库的自动仪器，减少了向应用程序添加可观测性所需的工作量。
+
+通过提供一致的数据收集和导出方法，OpenTelemetry 促进了现代分布式软件环境中的观测工具和平台之间的更好互操作性。
+
+",
+          "links": [
+            {
+              "title": "OpenTelemetry 官网",
+              "url": "https://opentelemetry.io/",
+              "type": "article"
+            },
+            {
+              "title": "OpenTelemetry 文档",
+              "url": "https://opentelemetry.io/docs/",
+              "type": "article"
+            },
+            {
+              "title": "什么是 OpenTelemetry？",
+              "url": "https://www.youtube.com/watch?v=mUA-uzk94ro",
+              "type": "video"
+            },
+            {
+              "title": "OpenTelemetry 课程 - 理解软件性能",
+              "url": "https://www.youtube.com/watch?v=r8UvWSX3KA8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "75bf80c3-9b31-45a7-9f42-8865264ef555",
+          "xid": "057034f6-d335-4c43-9e4a-033747df396f"
+        },
+        {
+          "title": "Datadog",
+          "description": "Datadog 是一个面向大规模应用的监控和分析平台。
+
+它涵盖了基础设施监控、应用程序性能监控（Application Performance Monitoring, APM）、日志管理和用户体验监控。
+
+Datadog 通过400个以上的集成来收集整个技术栈的数据，以进行故障排查、告警和图表展示。
+
+\n\n",
+          "links": [
+            {
+              "title": "Datadog 官方网站",
+              "url": "https://www.datadoghq.com/",
+              "type": "article"
+            },
+            {
+              "title": "Datadog 文档",
+              "url": "https://docs.datadoghq.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于DevOps的顶级文章",
+              "url": "https://app.daily.dev/tags/devops?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "bfce0cbc-acf9-4fe2-b10d-a37b0ec598df",
+          "xid": "f30e55d2-a0a2-410b-a815-810f07e4b722"
+        },
+        {
+          "title": "New Relic",
+          "description": "New Relic 是一款基于云的可观测性平台（observability platform），为软件应用程序和基础设施提供全栈的可见性。
+
+它提供了跨各种环境的实时性能监控、分析和警报功能，包括网页、移动和云应用程序。
+
+New Relic 的套件包括应用程序性能监控 (APM)、基础设施监控、日志管理和数字客户体验跟踪的工具。
+
+通过分布式追踪和人工智能驱动的分析，New Relic 帮助开发人员和运维团队快速识别和解决问题。
+
+New Relic 的平台支持多种编程语言，并与许多流行的开发和部署工具集成，使其成为 DevOps 环境中现代软件可观测性和性能优化的全面解决方案。
+
+\n",
+          "links": [
+            {
+              "title": "New Relic",
+              "url": "https://newrelic.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关DevOps的热门文章",
+              "url": "https://app.daily.dev/tags/devops?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "New Relic 平台演示",
+              "url": "https://www.youtube.com/watch?v=8kx7nRGVJRg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "abdac31c-3814-41c0-9ccc-763963f15814",
+          "xid": "b6f28dd1-584e-4e22-a83c-51d3796deae4"
+        },
+        {
+          "title": "Jaeger",
+          "description": "Jaeger 是由 Uber Technologies 开发的开源端到端分布式追踪系统（Distributed Tracing System）。
+
+设计用于监控和排查基于微服务（microservices）的分布式系统的故障。
+
+Jaeger 能够追踪请求在复杂分布式系统中的流动情况，识别性能瓶颈并理解系统行为。
+
+它支持 OpenTracing 标准，允许应用程序以厂商中立的方式进行监控。
+
+Jaeger 的特性包括分布式上下文传播（distributed context propagation）、依赖关系分析（dependency analysis）以及根本原因分析（root cause analysis）。
+
+它提供一个用于追踪数据可视化的 Web UI 和一个支持多种存储后端的灵活架构。
+
+Jaeger 尤其有助于云原生环境中，帮助开发人员和运维人员理解延迟的问题，优化性能，并在微服务架构（microservices architectures）中调试问题。
+
+\n\n",
+          "links": [
+            {
+              "title": "jaegertracing/jaeger",
+              "url": "https://github.com/jaegertracing/jaeger",
+              "type": "opensource"
+            },
+            {
+              "title": "Jaeger",
+              "url": "https://www.jaegertracing.io/",
+              "type": "article"
+            },
+            {
+              "title": "Jaeger 文档",
+              "url": "https://www.jaegertracing.io/docs/1.37/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cb78ce5b-2735-421e-aee0-fb52d329c6c2",
+          "xid": "d912b2ed-7c3d-4e69-8b32-f45a8a7b488d"
+        }
+      ],
+      "id": "476e6a18-e915-4fab-b07f-fd2d27f5b2aa",
+      "xid": "b2e615a3-c712-42a6-a4ab-d15381f37ab3"
+    },
+    {
+      "title": "日志管理",
+      "description": "日志管理是处理所有软件应用及其运行所依赖的基础设施生成的日志事件的过程。
+
+它包括日志收集、聚合、解析、存储、分析、搜索、归档和处置等步骤，目的是通过数据分析来解决故障和获得业务洞察，同时确保应用和基础设施的合规性和安全性。
+
+\n\n",
+      "links": [
+        {
+          "title": "日志管理简介",
+          "url": "https://sematext.com/guides/log-management",
+          "type": "article"
+        },
+        {
+          "title": "日志管理：DevOps团队需要了解的内容",
+          "url": "https://devops.com/log-management-what-devops-teams-need-to-know/",
+          "type": "article"
+        },
+        {
+          "title": "Kubernetes的日志记录：记录什么以及如何记录",
+          "url": "https://thenewstack.io/logging-for-kubernetes-what-to-log-and-how-to-log-it/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Elastic Stack (弹性堆栈)",
+          "description": "Elastic Stack，以前称为ELK Stack (ELK堆栈)，是一套开源工具，用于实时搜索、分析和可视化数据。
+
+它由四个主要组件构成：Elasticsearch (分布式搜索和分析引擎)、Logstash (数据处理管道)、Kibana (数据可视化和管理工具)和Beats (轻量级数据发送器)。
+
+这些工具结合在一起，使用户能够从各种来源收集数据，处理并丰富数据，以可搜索的格式存储，并创建交互式可视化和仪表板。
+
+Elastic Stack (弹性堆栈)广泛用于日志分析、应用程序性能监控、安全信息和事件管理 (SIEM)以及商业智能应用，提供了处理大量多样化数据的可扩展性和灵活性。
+
+\n\n",
+          "links": [
+            {
+              "title": "Elastic Stack (弹性堆栈)",
+              "url": "https://www.elastic.co/elastic-stack/",
+              "type": "article"
+            },
+            {
+              "title": "Logstash vs Fluentd",
+              "url": "https://logz.io/blog/fluentd-logstash/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于ELK的顶级文章",
+              "url": "https://app.daily.dev/tags/elk?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "精通Elastic Stack: Elastic Stack概览",
+              "url": "https://www.youtube.com/watch?v=CfCTWVAwFbQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "51e7424d-51df-4643-8a3c-386888f194e2",
+          "xid": "3fc6e21b-f234-4d22-99c3-22d753e38804"
+        },
+        {
+          "title": "Loki",
+          "description": "Loki 是由 Grafana Labs 设计的一种水平可扩展、高可用、多租户日志聚合系统（log aggregation system）。
+
+它专门设计为具有成本效益且易于操作，特别适合于存储和查询来自 Kubernetes 集群的日志。
+
+Loki 索引日志的元数据而非全文，这使得它比传统的日志管理系统更加资源高效。
+
+它使用与 Prometheus（Prometheus）相同的查询语言（LogQL），使得熟悉 Prometheus 的用户更容易采纳。
+
+Loki 可以无缝地与 Grafana（Grafana）集成进行可视化，并且经常与 Prometheus 和 Grafana 一起用于云原生日观测系统（cloud-native observability stacks）。
+
+其设计重点在于简洁性，对于寻求容器化环境（containerized environments）中高效日志管理解决方案的组织来说，它是一个具有吸引力的选择。
+
+",
+          "links": [
+            {
+              "title": "Loki",
+              "url": "https://grafana.com/oss/loki/",
+              "type": "article"
+            },
+            {
+              "title": "Loki 文档",
+              "url": "https://grafana.com/docs/loki/latest/?pg=oss-loki&plcmt=quick-links",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于 Grafana 的热门文章",
+              "url": "https://app.daily.dev/tags/grafana?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "了解适用于一切的日志聚合系统 Grafana LOKI",
+              "url": "https://www.youtube.com/watch?v=h_GGd7HfKQ8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5d34ac44-5c73-419f-a13a-78e0efbca442",
+          "xid": "d5cffbb1-443b-49b1-9ca1-bc84186932f2"
+        },
+        {
+          "title": "Papertrail",
+          "description": "Papertrail（日志管理服务）是一个云托管的日志管理服务，使从各种来源收集、分析和监控日志数据变得更加简单。
+
+它提供了实时日志聚合、搜索和告警功能，让开发者和系统管理员更容易排查问题并深入了解其应用程序和基础设施。
+
+Papertrail支持各种类型的日志，并且能够与众多平台和服务集成，使用户可以集中来自服务器、数据库、应用程序和网络设备的日志。
+
+其用户友好的界面提供了强大的搜索功能、实时跟踪功能和可定制的仪表板。
+
+借助保存的搜索、可配置的告警和团队协作工具等功能，Papertrail能够实现高效日志分析，并帮助组织在不同的IT环境维持系统可靠性、安全性和合规性。
+
+",
+          "links": [
+            {
+              "title": "Papertrail 官方网站",
+              "url": "https://www.papertrail.com/",
+              "type": "article"
+            },
+            {
+              "title": "Papertrail 指南",
+              "url": "https://www.papertrail.com/solution/guides/",
+              "type": "article"
+            },
+            {
+              "title": "Papertrail 博客",
+              "url": "https://www.papertrail.com/blog/",
+              "type": "article"
+            },
+            {
+              "title": "SolarWinds Papertrail 简介",
+              "url": "https://www.youtube.com/watch?v=gFFtrzoQEfI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4d3561ab-b3b4-4b96-a1bc-ef31fc4ed27f",
+          "xid": "4a82505e-5e3b-4419-b07d-5a75b41015c1"
+        },
+        {
+          "title": "Splunk",
+          "description": "Splunk 是一款强大的平台，用于实时搜索、监控和分析由机器生成的数据。
+
+它可以收集来自各种来源的日志数据，如服务器（servers）、应用程序（applications）、网络（networks）和设备（devices），并通过仪表板（dashboards）、告警（alerts）和可视化（visualizations）将其转化为可执行的见解。
+
+Splunk 在IT运维、安全性和商业分析中被广泛应用，帮助团队检测问题、解决问题并确保符合规定，提供对系统和应用程序行为的深度可见性。
+
+其处理大量数据的能力使它成为可观察性和日志管理的热门选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Splunk 官网",
+              "url": "https://www.splunk.com/",
+              "type": "article"
+            },
+            {
+              "title": "Splunk 文档",
+              "url": "https://docs.splunk.com/Documentation",
+              "type": "article"
+            },
+            {
+              "title": "Splunk 视频",
+              "url": "https://www.splunk.com/en_us/resources/videos.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于日志记录的顶级帖子",
+              "url": "https://app.daily.dev/tags/logging?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Splunk 初学者教程",
+              "url": "https://www.youtube.com/watch?v=3CiRs6WaWaU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2653bb27-1ded-408b-b60d-13a59069f55a",
+          "xid": "adcebcff-7c8c-4a5b-b416-54e4a9d3a14d"
+        },
+        {
+          "title": "Graylog",
+          "description": "Graylog是一款开源的日志管理系统，旨在实时从各种来源收集、索引和分析日志数据。
+
+Graylog提供了一个集中化的日志聚合、搜索和分析系统，使问题排查、系统健康监控以及确保安全合规更加容易。
+
+Graylog具有可扩展的架构，支持高容量的日志处理，并提供用于日志探索和仪表板创建的Web界面。
+
+它包括告警通知、基于角色的访问控制和数据保留策略等功能。
+
+Graylog支持多种输入类型，包括syslog、GELF和原始TCP/UDP，并能与多个外部系统集成。
+
+其灵活性和强大的搜索能力使其在不同的环境里被广泛用于IT运维、安全监控和合规管理。
+
+\n\n",
+          "links": [
+            {
+              "title": "Graylog2/graylog2-server",
+              "url": "https://github.com/Graylog2/graylog2-server",
+              "type": "opensource"
+            },
+            {
+              "title": "Graylog 网站",
+              "url": "https://www.graylog.org/",
+              "type": "article"
+            },
+            {
+              "title": "产品视频",
+              "url": "https://www.graylog.org/resources-videos",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ad3e0c90-9dd3-4be0-8552-02e233ec3015",
+          "xid": "2b8cb274-7a00-4649-92ff-9925865f207c"
+        }
+      ],
+      "id": "ac06fb17-0d63-442b-ad8e-fba4db2fae43",
+      "xid": "153b9dee-0be8-4f63-bd77-0c3741ff2744"
+    },
+    {
+      "title": "工件管理",
+      "description": "在软件开发中，工件是开发生命周期中产生的各种输出，包括源代码、二进制文件、文档、配置文件、构建输出以及测试结果。
+
+这些工件对于管理、部署和维护应用程序至关重要，因为它们为开发、测试和生产环境提供了必要的资源和文档。
+
+它们有助于跟踪项目的进展，确保一致性，并促进软件系统的有效交付和运行。
+
+\n\n",
+      "links": [
+        {
+          "title": "什么是工件 - Oracle",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/devops/using/artifacts.htm",
+          "type": "article"
+        },
+        {
+          "title": "什么是工件 - Atlassian",
+          "url": "https://support.atlassian.com/bitbucket-cloud/docs/use-artifacts-in-steps/",
+          "type": "article"
+        },
+        {
+          "title": "了解GitLab工件和缓存",
+          "url": "https://www.youtube.com/watch?v=gEfsCU-Sj1g",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "云匠（Cloud Smith）",
+          "description": "Cloudsmith 是一个云原生的包管理平台，它允许组织在其基础设施范围内管理和分发软件包。
+
+提供一个集中的仓库来存储、管理和部署包，从而使管理复杂的软件依赖关系和确保环境一致性变得更加容易。
+
+Cloudsmith 支持广泛类型的包格式，包括 Docker、Helm、npm、pip 等等。
+
+它还与流行的开发工具如 Jenkins、GitLab 和 CircleCI 集成，使得自动化的包管理和部署流程变得更加便捷。
+
+\n\n",
+          "links": [
+            {
+              "title": "云匠（Cloud Smith）",
+              "url": "https://cloudsmith.com/",
+              "type": "article"
+            },
+            {
+              "title": "云匠（Cloud Smith）产品概览",
+              "url": "https://cloudsmith.com/product/",
+              "type": "article"
+            },
+            {
+              "title": "了解云匠（Cloud Smith）",
+              "url": "https://www.youtube.com/watch?v=wVtRfpjKqBM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f817c0d0-9458-4cc3-bfbb-a642748bc997",
+          "xid": "4b01aea4-4a94-477e-9e3b-a830bffe4d7f"
+        },
+        {
+          "title": "Artifactory",
+          "description": "Artifactory是一款通用的DevOps（开发运维）解决方案，用于托管、管理和分发二进制文件和工件（Artifact）。
+
+任何类型的二进制软件——如应用程序安装程序、容器镜像、库、配置文件等——都可以通过Artifactory进行策划、保护、存储和分发。
+
+名称“Artifactory”反映了它可以托管软件开发“工厂”中所需的任何类型的“工件”。
+
+在软件开发中，工件是软件开发和交付过程中生成的任何对象。
+
+工件包括用于安装和运行应用程序的文件以及配置或管理软件所需的任何补充信息。
+
+Artifactory作为DevOps流程的中央枢纽。
+
+所有的工件、依赖项、包等最终都会存放进Artifactory并从Artifactory中提取。
+
+\n",
+          "links": [
+            {
+              "title": "Artifactory官方网站",
+              "url": "https://jfrog.com/artifactory/",
+              "type": "article"
+            },
+            {
+              "title": "探索Artifactory的热门文章",
+              "url": "https://app.daily.dev/tags/artifactory?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "五分钟了解JFrog Artifactory的顶级功能",
+              "url": "https://www.youtube.com/watch?v=ZCNOtVj7bow",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b95b7d75-b553-486a-8cea-f13888facc11",
+          "xid": "4aa3f4aa-5965-435e-a07e-716f7e010c91"
+        },
+        {
+          "title": "Nexus",
+          "description": "Nexus存储库管理器（Nexus Repository Manager）是由Sonatype开发的一款广泛使用的存储库管理软件。
+
+它设计用于管理二进制组件，例如Java库、Docker镜像、npm包、NuGet包等。
+
+Nexus Repository Manager 允许组织安全高效地存储、管理和分发软件组件。
+
+\n\n",
+          "links": [
+            {
+              "title": "存储库管理基础",
+              "url": "https://learn.sonatype.com/courses/nxrm-admin-100/",
+              "type": "article"
+            },
+            {
+              "title": "Nexus最佳实践",
+              "url": "https://help.sonatype.com/repomanager3/nexus-repository-best-practices",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c3f93caa-f639-457e-93d8-3647a42388d5",
+          "xid": "5ce5f76b-7c2b-472d-a818-f008986ab138"
+        }
+      ],
+      "id": "fb7e4415-2cc5-4432-a758-837021ef4ea5",
+      "xid": "2c5f4593-fa43-44d4-ba0d-1d10d50e2aa5"
+    },
+    {
+      "title": "GitOps",
+      "description": "GitOps是一种利用Git作为单一数据源来管理和部署基础设施及应用程序的范式（paradigm）。
+
+它通过在Git仓库中存储基础设施和应用程序的声明式描述来扩展DevOps实践。
+
+变更通过拉取请求（pull requests）进行，触发自动化流程以使实际状态与期望状态保持一致。
+
+GitOps依赖于持续部署工具，这些工具通过自动将生产系统与Git中定义的期望状态进行对齐来运作。
+
+这种做法提供了诸如基础设施版本控制、改进的审计性、更简单的回滚以及增强的协作等好处。
+
+GitOps特别适合于云原生应用和Kubernetes环境，能够为管理复杂、分布式系统提供一个高效的方法。
+
+\n\n",
+      "links": [
+        {
+          "title": "GitOps入门指南",
+          "url": "https://www.weave.works/technologies/gitops/",
+          "type": "article"
+        },
+        {
+          "title": "关于GitOps的热门文章",
+          "url": "https://app.daily.dev/tags/gitops?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "什么是GitOps，GitOps如何工作以及为什么如此有用",
+          "url": "https://www.youtube.com/watch?v=f5EpcWp0THw",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "FluxCD",
+          "description": "FluxCD是一款基于GitOps的持续交付工具，用于Kubernetes集群。
+
+它使用Git仓库作为定义系统期望状态的真实来源，通过这种方法来自动部署应用程序。
+
+FluxCD持续监控这些仓库，并在检测到差异时自动将变更应用于集群。
+
+它支持多租户、Helm发布，并提供自动镜像更新和通知等功能。
+
+FluxCD使基础设施和应用程序管理具有声明性和版本控制，从而促进环境间的一致性，简化部署流程。
+
+其与Kubernetes的集成使得它特别适用于云原生应用，使得团队可以实施高效、自动化的并可审计的部署工作流。
+
+\n\n",
+          "links": [
+            {
+              "title": "Flux CD",
+              "url": "https://docs.fluxcd.io/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Flux CD的文章",
+              "url": "https://app.daily.dev/tags/flux?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Kubernetes上Flux CD的介绍",
+              "url": "https://www.youtube.com/watch?v=X5W_706-jSY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f8aa8d02-95f2-4a0d-b722-ab63b5975cbb",
+          "xid": "6d307194-1b5a-4763-90a4-df05be7e5370"
+        },
+        {
+          "title": "ArgoCD",
+          "description": "Argo CD（Argo CD）是一款基于GitOps方法论的持续交付工具，适用于Kubernetes（Kubernetes）。
+
+它被用来通过持续同步生产环境中应用程序的实际状态和期望状态来自动化部署和管理云原生应用程序。
+
+在Argo CD的工作流程中，应用程序的更改可以通过将代码或配置更改提交到Git仓库来进行。
+
+Argo CD监控该仓库，并利用持续交付管道将更改自动部署到生产环境中。
+
+管道由Git仓库的更改触发，负责构建、测试并将更改部署到生产环境中。
+
+Argo CD旨在为管理和操作云原生应用程序提供一个简单而有效的方法。
+
+开发人员可以使用熟悉的工具和流程来对系统进行更改，并且能提供对系统所有更改的清晰和可审计的历史记录。
+
+通常，它会与诸如Helm（Helm）等工具一起使用，以实现云原生应用程序部署和管理的自动化。
+
+",
+          "links": [
+            {
+              "title": "Argo CD - Argo项目",
+              "url": "https://argo-cd.readthedocs.io/en/stable/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于ArgoCD的热门文章",
+              "url": "https://app.daily.dev/tags/argocd?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "初学者的ArgoCD教程",
+              "url": "https://www.youtube.com/watch?v=MeU5_k9ssrs",
+              "type": "video"
+            },
+            {
+              "title": "什么是ArgoCD",
+              "url": "https://www.youtube.com/watch?v=p-kAqxuJNik",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c2b21e6e-ecd1-4fa2-a4f8-f3947a5ec9a6",
+          "xid": "c97ad906-dd99-4e6b-89d3-1d3cc81cfd3e"
+        }
+      ],
+      "id": "5f94c368-9062-4385-9671-83b3a6d4a50e",
+      "xid": "3cbf29cb-260e-452e-ba56-fc5ab5d9150c"
+    },
+    {
+      "title": "服务网格 (Service Mesh)",
+      "description": "服务网格是一个专门的基础设施层，用于管理分布式应用中微服务之间的通信。
+
+它提供了负载均衡、服务发现、加密、可观测性和流量管理等功能，使服务能够安全高效地沟通。
+
+通过将网络相关问题从应用代码中抽象出来，服务网格提高了可靠性与安全性，同时简化了微服务交互的管理。
+
+流行的服务网格实现包括Istio、Linkerd和Consul。
+
+\n\n",
+      "links": [
+        {
+          "title": "什么是服务网格 (Whats a Service Mesh)?",
+          "url": "https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh",
+          "type": "article"
+        },
+        {
+          "title": "关于服务网格的最新消息 (The Latest News About Service Mesh)",
+          "url": "https://thenewstack.io/category/service-mesh/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于服务网格的热门文章",
+          "url": "https://app.daily.dev/tags/service-mesh?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Istio & 服务网格 - 简单解释",
+          "url": "https://www.youtube.com/watch?v=16fgzklcF7Y",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Istio",
+          "description": "Istio是一个开源的服务网格(platform)平台，它提供了一种控制微服务如何共享数据的方法。
+
+它包含的API可以使Istio与任何日志平台、遥测(telemetry)或策略系统进行集成。
+
+Istio设计为能在多种环境中运行：本地部署环境(on-premise)、云托管环境、Kubernetes容器中、虚拟机上运行的服务中，以及其他环境中。
+
+",
+          "links": [
+            {
+              "title": "什么是Istio？",
+              "url": "https://www.redhat.com/en/topics/microservices/what-is-istio",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Istio的热门帖子",
+              "url": "https://app.daily.dev/tags/istio?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Istio服务网格解释",
+              "url": "https://www.youtube.com/watch?v=6zDrLvpfCK4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "133bdd79-a48c-42ed-8756-a69d6955ad40",
+          "xid": "7273e293-5a2c-434f-880d-20dbc845a524"
+        },
+        {
+          "title": "Consul",
+          "description": "Consul 是一个服务网格（Service Mesh）解决方案，提供了一个完整的控制平面（Control Plane），包括服务发现、配置和分段功能。
+
+这些功能可以根据需要单独使用，也可以一起使用来构建完整的服务网格。
+
+Consul 需要一个数据平面（Data Plane），并支持代理（Proxy）和原生集成模型。
+
+Consul 自带一个简单的内置代理，以确保开箱即用，但也支持 Envoy 等第三方代理集成。
+
+\n\n",
+          "links": [
+            {
+              "title": "Consul 指南",
+              "url": "https://github.com/hashicorp/consul-guides",
+              "type": "opensource"
+            },
+            {
+              "title": "什么是 Consul？",
+              "url": "https://www.consul.io/docs/intro",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 HashiCorp 的热门文章",
+              "url": "https://app.daily.dev/tags/hashicorp?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "面向初学者的 Consul 服务网格教程",
+              "url": "https://www.youtube.com/watch?v=s3I1kKKfjtQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "753b2685-8b6d-4990-8a93-627f9b8a58bb",
+          "xid": "0c7fc876-9ac4-4ed7-ba19-1cc8a7140834"
+        },
+        {
+          "title": "Envoy",
+          "description": "由Lyft最初创建，Envoy是一种专为服务网格架构设计的高性能数据平面。
+
+Lyft已将其开源并捐赠给CNCF（云原生计算基金会），现在它已成为CNCF的毕业开源项目之一。
+
+Envoy是一个自包含进程，旨在与每个应用服务器一起运行。
+
+所有的Envoy实例共同形成一个透明的通信网格，在这个网格中，每个应用程序向和从localhost发送和接收消息，并不了解网络拓扑结构。
+
+\n\n",
+          "links": [
+            {
+              "title": "envoyproxy/envoy",
+              "url": "https://github.com/envoyproxy/envoy",
+              "type": "opensource"
+            },
+            {
+              "title": "Envoy",
+              "url": "https://www.envoyproxy.io/",
+              "type": "article"
+            },
+            {
+              "title": "Envoy是什么？",
+              "url": "https://www.envoyproxy.io/docs/envoy/latest/intro/what_is_envoy",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于Envoy的热门文章",
+              "url": "https://app.daily.dev/tags/envoy?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "357e96dc-eefc-41eb-8e5e-390376d3a023",
+          "xid": "903d7fdb-d44a-4315-acf7-b03a75255074"
+        },
+        {
+          "title": "Linkerd",
+          "description": "Linkerd是一款开源的服务网格（service mesh），设计用于部署到各种容器调度器和框架中，如Kubernetes。
+
+当其创建者Buoyant在2016年首次提出“服务网格（service mesh）”这一术语时，Linkerd即成为了初始的服务网格实现。
+
+与基于Twitter的Finagle类似，Linkerd最初是用Scala编写的，设计为在每台主机基础上进行部署。
+
+Linkerd是与服务网格（service mesh）这一术语紧密关联的产品之一，它支持Docker和Kubernetes等平台。
+
+\n\n",
+          "links": [
+            {
+              "title": "Linkerd官网",
+              "url": "https://linkerd.io/",
+              "type": "article"
+            },
+            {
+              "title": "什么是Linkerd？",
+              "url": "https://www.techtarget.com/searchitoperations/definition/Linkerd",
+              "type": "article"
+            },
+            {
+              "title": "探索有关基础设施的热门文章",
+              "url": "https://app.daily.dev/tags/infrastructure?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是Linkerd服务网格？",
+              "url": "https://www.youtube.com/watch?v=up3fKwXdEgc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "7eca9460-7916-443f-885d-50167ae5f0a7",
+          "xid": "f64dc154-0660-46d0-8c59-96338007c3bc"
+        }
+      ],
+      "id": "a5b1ad7a-b666-4352-99fa-bb9be14f1226",
+      "xid": "fdd13d4a-42c7-4769-ab10-bec950f6329c"
+    },
+    {
+      "title": "可用性",
+      "description": "可用性是指系统正常工作的时间百分比，通常称为正常运行时间。
+
+可用性可能会受到硬件或软件错误、基础设施问题、恶意攻击和系统负载的影响。
+
+许多云服务提供商通常会为他们的用户提供服务水平协议（Service Level Agreement，SLA），其中明确规定了承诺的正常运行时间/停机时间百分比。
+
+在某种意义上，可用性与可靠性相关。
+
+例如，一家公司可能承诺其服务的正常运行时间为99.99%。
+
+\n\n",
+      "links": [
+        {
+          "title": "SRE中可用性、可维护性和可靠性的定义",
+          "url": "https://devops.com/defining-availability-maintainability-and-reliability-in-sre/",
+          "type": "article"
+        },
+        {
+          "title": "实现高可用性的技术",
+          "url": "https://www.sqlservercentral.com/articles/cloud-computing-basics-achieving-high-availability-2",
+          "type": "article"
+        },
+        {
+          "title": "SLIs，SLOs，SLAs，哦！（类SRE实现DevOps）",
+          "url": "https://www.youtube.com/watch?v=tEylFyxbDLE",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "d0ce8c4e-24ee-4627-854e-f83a729e25a1",
+      "xid": "a1c119b7-9fb3-4e53-806c-c4f691beb52c"
+    },
+    {
+      "title": "数据管理",
+      "description": "数据管理是云应用程序的关键组成部分，并影响大多数质量属性。
+
+出于性能、可扩展性或可用性的原因，数据通常托管在不同的位置和多个服务器上，这可能会带来一系列挑战。
+
+例如，必须维护数据一致性，并且数据通常需要在不同位置之间进行同步。
+
+此外，数据应通过授权访问机制在静态和传输过程中受到保护，以维持机密性、完整性和可用性的安全保证。
+
+请参阅Azure Security Benchmark Data Protection Control以获取更多信息。
+
+\n\n",
+      "links": [
+        {
+          "title": "数据管理模式",
+          "url": "https://docs.microsoft.com/en-us/azure/architecture/patterns/category/data-management",
+          "type": "article"
+        },
+        {
+          "title": "探索有关数据管理的热门文章",
+          "url": "https://app.daily.dev/tags/data-management?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "什么是主数据管理 (Master Data Management)",
+          "url": "https://www.youtube.com/watch?v=l83bkKJh1wM",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "b4447226-2915-425d-bf96-06c92bcf3984",
+      "xid": "9eafc8b9-5de7-4861-9ecb-05bf6c4033c7"
+    },
+    {
+      "title": "设计与实现",
+      "description": "良好的设计包括组件设计和部署的一致性和连贯性、可维护性以便简化管理和开发、以及可重用性以允许组件和子系统在其他应用程序和其他场景中使用。
+
+在设计与实现阶段做出的决策对云托管应用和服务的质量和总体拥有成本有着巨大的影响。
+
+\n\n",
+      "links": [
+        {
+          "title": "设计与实现模式",
+          "url": "https://docs.microsoft.com/en-us/azure/architecture/patterns/category/design-implementation",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "f55d18dd-e5bd-4fb8-8531-3a054ecf8b8c",
+      "xid": "0dfa2642-e603-47f6-af1e-3b848f912170"
+    },
+    {
+      "title": "管理和监控",
+      "description": "DevOps管理和监控（DevOps management and monitoring）包含从规划、开发、集成、测试、部署到操作的整个开发过程的监督。
+
+它包括对生产环境中应用程序、服务和基础设施的状态进行完整和实时的视图。
+
+实时流、历史回放和可视化是应用程序和服务监控的关键组成部分。
+
+",
+      "links": [
+        {
+          "title": "管理和监控入门指南",
+          "url": "https://www.atlassian.com/devops/devops-tools/devops-monitoring",
+          "type": "article"
+        },
+        {
+          "title": "浏览关于监控的热门文章",
+          "url": "https://app.daily.dev/tags/monitoring?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "d595b723-120e-4416-9a5f-71b9cccc5829",
+      "xid": "a76498db-4b72-465b-8eb3-a3e69aeff2ef"
+    }
+  ],
+  "id": "48365568-711f-471a-a4d4-5f65b40a17d9",
+  "xid": "878e0389-dea9-4a26-8763-3ec4ca38e8aa"
+}

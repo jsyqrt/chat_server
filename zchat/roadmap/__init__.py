@@ -244,7 +244,6 @@ def create_from_topic():
     skill_level = request.form.get('skill_level')
     user_id = current_user.get_id_int()
 
-
     is_valid = False
     max_retries = 3
     while not is_valid and max_retries > 0:
@@ -358,7 +357,10 @@ def skill_tags_of_job_tags():
 def search_topic():
     topics = request.args.get('topics')
     topics = topics.split(',')
+    allow_user_created = request.args.get('allow_user_created', 'false') == 'true'
     limit = int(request.args.get('limit', '5'))
+
+    current_app.logger.debug(f"search_topic: {topics}, allow_user_created: {allow_user_created}, limit: {limit}")
 
     roadmap_ops = RoadmapOps(db.session)
     result_ids = set()
@@ -366,6 +368,8 @@ def search_topic():
     enough = False
     for topic in topics:
         roadmaps = roadmap_ops.search_roadmaps_for_topic(topic, RoadmapType.OFFICIAL.value, limit)
+        if allow_user_created:
+            roadmaps.extend(roadmap_ops.search_roadmaps_for_topic(topic, RoadmapType.USER.value, limit))
         for roadmap in roadmaps:
             if roadmap['id'] not in result_ids:
                 if len(results) < limit:
@@ -382,11 +386,24 @@ def search_topic():
 
     return jsonify(list(results.values()))
 
-@bp.route('/my_mindmaps', methods=['GET'])
+@bp.route('/my_roadmaps', methods=['GET'])
 @login_required
-def my_mindmaps():
-    mindmaps = find_user_mindmaps_from_meili_created_by(current_app, current_user.get_id_int())
-    return jsonify(mindmaps)
+def my_roadmaps():
+    user_id = current_user.get_id_int()
+    offset = int(request.args.get('offset', '0'))
+    limit = int(request.args.get('limit', '10'))
+
+    roadmap_ops = RoadmapOps(db.session)
+    roadmaps = roadmap_ops.get_roadmaps_by_user_id(user_id, offset, limit)
+    count = roadmap_ops.get_roadmaps_count_by_user_id(user_id)
+    for roadmap in roadmaps:
+        mindmap = get_mindmap_from_meili(current_app, roadmap['mindmap_id'])
+        roadmap['description'] = stats_of_mindmap(mindmap)
+
+    return jsonify({
+        'roadmaps': roadmaps,
+        'count': count,
+    })
 
 @bp.route('/description', methods=['GET'])
 @login_required
@@ -551,8 +568,11 @@ def learning_status():
 def recent_maps():
     offset = int(request.args.get('offset', '0'))
     limit = int(request.args.get('limit', '3'))
-
     user_id = current_user.get_id_int()
+
+    interaction_ops = RoadmapInteractionOps(db.session)
+    count = interaction_ops.get_participants_count_of_user(user_id)
+
     mindmap_statuses = get_learning_list_from_meili(current_app, user_id, offset, limit)
 
     current_app.logger.debug(f'mindmap_statuses: {mindmap_statuses}')
@@ -601,7 +621,10 @@ def recent_maps():
             result['total'] = recent_map['total_nodes']
             results.append(result)
 
-    return jsonify(results)
+    return jsonify({
+        'roadmaps': results,
+        'count': count,
+    })
 
 @bp.route('/heading_quote', methods=['GET'])
 @login_required
