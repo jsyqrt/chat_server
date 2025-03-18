@@ -1,0 +1,4464 @@
+{
+  "title": "前端开发工程师",
+  "description": "2025年成为现代前端开发工程师的分步指南",
+  "links": [],
+  "question_title": "什么是前端开发工程师？",
+  "question_description": "前端开发工程师是一项专业工作，其使用HTML、CSS和JavaScript来设计和构建用户直接交互的网站和应用的视觉和互动元素。
+
+确保界面具有响应性、可访问性并与视觉上吸引人。
+
+你在网站上看到并交互的所有功能（如按钮、菜单和动画）都是由前端开发工程师创建的。
+
+\n\n## 前端开发工程师的角色是什么？\n\n虽然这并不是一个完整的前端开发工程师职位描述，但它可以作为一个很好的介绍：你将负责创建网站的用户界面，确保它既美观又易于使用，重点放在设计原则和用户体验上。
+
+你将与设计师、后端开发人员及项目经理紧密合作，确保最终产品满足客户需求并为终端用户提供最佳体验。
+
+\n\n## 前端开发使用哪些语言？\n\n作为一名前端开发者的职位，选择可用于前端开发的语言和技术（不像后端开发）相对较少。
+
+\n\n作为前端开发工程师，你将会使用以下技术：\n\n- **HTML**：用于创建页面骨架的标记语言。
+
+你希望在网页上显示的所有信息都将通过HTML进行排版。
+
+\n- **CSS**：级联样式表语言允许你调整HTML元素的渲染方式，改善你的网页视觉。
+
+\n- **JavaScript**：这是前端开发的实际编程语言，可以让你为网站/应用添加动态性。
+
+它的替代选项是TypeScript，这是一种JavaScript的强类型超集（superset），你也可以选择使用。
+
+然而，你将需要设置一个转译器将你的代码翻译成JavaScript，以便能够在浏览器中运行。
+
+\n\n## 成为一名前端开发工程师需要哪些技能？\n\n成为一名前端开发工程师所需的主要技能包括HTML、CSS和JavaScript。
+
+其余的技能也很重要，但没有这三种核心的技能，你就无法应用其他技能。
+
+\n\n如果你想提升自己，成为更高水平的前端开发工程师，以下是你应该熟悉的所有技能的完整列表：\n\n**1. 理解核心技术**：HTML、CSS和JavaScript。
+
+\n**2. 理解可访问性**：知道它如何影响用户体验。
+
+\n**3. 版本控制系统**：熟悉Git等工具。
+
+\n**4. 响应式设计**：实施能够适应不同设备和屏幕尺寸的设计。
+
+\n**5. 用户体验（UX）**：理解基本的用户体验原则。
+
+\n**6. 搜索引擎优化（SEO）**：了解如何运作以及如何利用它来优化你的代码。
+
+\n**7. RESTful API**：理解基本的RESTful API并能够使用它们。
+
+\n**8. 测试与调试**：实施测试实践并有效地调试。
+
+\n**9. 开发工具**：精通浏览器开发者工具进行代码的检查、调试和优化。
+
+\n**10. 框架**：具有一种常用前端框架（如React或Vue），并在高级层面理解其他的框架。
+
+\n**11. 网页性能**：理解网页性能优化和关键的网页核心指标（Core Web Vitals）。
+
+\n**12. TypeScript**：理解如何使用TypeScript，何时使用它。
+
+\n\n具备这些基本技能将为未来你可能遇到的任何类型的前端开发面试问题做好准备，并增强你在当前的角色中能力。
+
+\n",
+  "children": [
+    {
+      "title": "互联网",
+      "description": "互联网是一个全球互连的计算机网络系统，它使用互联网协议套件（Internet Protocol Suite (TCP/IP)）进行通信。
+
+它支持数据、信息和服务在全球范围内的交换，连接了数十亿的设备和用户。
+
+互联网彻底改变了沟通、商务、教育和娱乐方式，成为现代社会不可或缺的一部分。
+
+互联网支持多种应用和服务，从网页浏览和即时消息到媒体流和在线游戏。
+
+虽然互联网提供了前所未有的信息访问和连接性，但它也引发了有关隐私、安全和数字鸿沟问题的担忧。
+
+\n\n",
+      "links": [
+        {
+          "title": "互联网简介",
+          "url": "https://roadmap.sh/guides/what-is-internet",
+          "type": "article"
+        },
+        {
+          "title": "互联网",
+          "url": "https://en.wikipedia.org/wiki/Internet",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "互联网是如何工作的?",
+          "description": "互联网是通过使用标准化协议（主要是TCP/IP）进行通信的全球互联计算机网络。
+
+当你请求一个网页时，你的设备通过互联网服务提供商（ISP）将数据包发送到DNS服务器，该服务器将网站的域名转换成一个IP地址。
+
+然后该数据包通过各种网络（使用路由器和交换机）被路由到目的地服务器，该服务器处理请求并发送回响应。
+
+这种来回的数据交换使得像网页、电子邮件和文件这样的数据能够传输，从而使得互联网成为一个动态的、去中心化的全球通信系统。
+
+",
+          "links": [
+            {
+              "title": "互联网如何工作?",
+              "url": "https://cs.fyi/guide/how-does-internet-work",
+              "type": "article"
+            },
+            {
+              "title": "互联网的解释",
+              "url": "https://www.vox.com/2014/6/16/18076282/the-internet",
+              "type": "article"
+            },
+            {
+              "title": "互联网如何工作?",
+              "url": "http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm",
+              "type": "article"
+            },
+            {
+              "title": "互联网简介",
+              "url": "/guides/what-is-internet",
+              "type": "article"
+            },
+            {
+              "title": "互联网如何工作?",
+              "url": "https://www.youtube.com/watch?v=x3c1ih2NJEg",
+              "type": "video"
+            },
+            {
+              "title": "互联网如何工作？（完整课程）",
+              "url": "https://www.youtube.com/watch?v=zN8YNNHcaZc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "964228b2-8a2c-4520-8156-c1f5d2099b50",
+          "xid": "2c4dd06e-69e4-4f35-8ae2-2c4ffdfec9c8"
+        },
+        {
+          "title": "什么是HTTP？",
+          "description": "HTTP (Hypertext Transfer Protocol，超文本传输协议) 是一种用于通过World Wide Web (万维网) 传输超文本的协议。
+
+它定义了消息的格式和传输方式，以及网络服务器和浏览器如何响应各种命令。
+
+HTTP 采用请求-响应模型：客户端（通常是网页浏览器）向服务器发送HTTP请求以获取资源，例如网页或文件，服务器则以所请求的内容与HTTP状态码响应，该状态码指示请求的结果。
+
+HTTP是无状态的，这意味着客户端向服务器发出的每一个请求都是独立的，不保留之前交互的信息。
+
+HTTP构成了网页数据通信的基础，通常与加密通信的HTTPS (Secure HTTP，安全超文本传输协议) 一同使用。
+
+\n\n",
+          "links": [
+            {
+              "title": "完整的HTTP网络课程",
+              "url": "https://www.youtube.com/watch?v=2JYT5f2isg4",
+              "type": "course"
+            },
+            {
+              "title": "什么是HTTP？",
+              "url": "https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/",
+              "type": "article"
+            },
+            {
+              "title": "HTTP概述",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+              "type": "article"
+            },
+            {
+              "title": "从A到Z的HTTP/3核心概念",
+              "url": "https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/",
+              "type": "article"
+            },
+            {
+              "title": "从HTTP/1到HTTP/2到HTTP/3",
+              "url": "https://www.youtube.com/watch?v=a-sBfyiXysI",
+              "type": "video"
+            },
+            {
+              "title": "SSL、TLS、HTTPS解析",
+              "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4f99c421-9465-46e8-a21b-6912baad5eab",
+          "xid": "146dcb52-26b8-451d-a29a-4939db6c55a4"
+        },
+        {
+          "title": "什么是域名？",
+          "description": "域名是一种易于人类识别的互联网地址，用于标识互联网上的特定位置，使访问网站和在线服务变得更加容易。
+
+它转换为IP地址，IP地址是由计算机用来定位和连接到服务器的数字标识。
+
+一个域名主要由两部分组成：**二级域名**（例如，\"example\"在\"[example.com](http://example.com)\"中）和**顶级域名**（例如，\".com\"）。
+
+域名由域名注册商管理，对于建立网络存在非常重要，提供了一种用户友好的方式来导航到网站，而不是使用数字形式的IP地址。
+
+",
+          "links": [
+            {
+              "title": "什么是域名？",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_domain_name",
+              "type": "article"
+            },
+            {
+              "title": "什么是域名？|域名与URL的比较",
+              "url": "https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name/",
+              "type": "article"
+            },
+            {
+              "title": "域名工作原理的初学者指南",
+              "url": "https://www.youtube.com/watch?v=Y4cRx19nhJk",
+              "type": "video"
+            },
+            {
+              "title": "关于域名你需要知道的一切",
+              "url": "https://www.youtube.com/watch?v=qO5qcQgiNX4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2a6f1cb5-f081-4d81-9fcc-d27c55f5934b",
+          "xid": "ccb6826c-f448-4a17-9af3-f251a2321ed2"
+        },
+        {
+          "title": "什么是主机服务？",
+          "description": "主机服务是指提供服务器空间和资源来存储网站文件和应用程序，并通过互联网向用户提供这些文件和应用程序。
+
+主机服务提供商提供所需的基础设施，如服务器、存储和网络连接，以使网站和应用程序能够在互联网上访问。
+
+主机服务有多种形式，包括共享主机（multiple websites share a single 服务器）、虚拟专用服务器（VPS）、托管主机（dedicated hosting，一整台服务器专供一个用户使用）以及云主机（cloud hosting，使用一组服务器提供可扩展的资源）。
+
+主机服务通常包括域名注册、安全功能和技术支持，以确保网站能够可靠地运行并表现良好。
+
+\n\n",
+          "links": [
+            {
+              "title": "网页、网站、网络服务器和搜索引擎之间有什么区别？",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/Pages_sites_servers_and_search_engines",
+              "type": "article"
+            },
+            {
+              "title": "什么是网络服务器？",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server",
+              "type": "article"
+            },
+            {
+              "title": "什么是主机服务，它是如何工作的？",
+              "url": "https://www.youtube.com/watch?v=H8oAvyqQwew",
+              "type": "video"
+            },
+            {
+              "title": "不同类型的主机服务详解",
+              "url": "https://www.youtube.com/watch?v=AXVZYzw8geg",
+              "type": "video"
+            },
+            {
+              "title": "如何在预算范围内为主项目选择主机",
+              "url": "https://www.youtube.com/watch?v=Kx_1NYYJS7Q",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4a5749b2-6612-40ea-8d63-8d3af3d44070",
+          "xid": "97d896ea-5eeb-46fb-b087-f6d79292668b"
+        },
+        {
+          "title": "DNS及其工作原理？",
+          "description": "DNS（Domain Name System 域名系统）是一种分层的、去中心化的命名系统，用于标识连接到互联网或私有网络的计算机、服务或其他资源。
+
+它将人类可读的域名（如 `www.example.com`）转换成计算机用于相互识别的IP地址（如 192.0.2.1）。
+
+世界各地分布的DNS服务器协同工作以解决这些查询，形成一个全球目录服务。
+
+该系统使用树状结构，最上层是根服务器，接着是顶级域服务器（如 .com、.org 等），特定域的权威名称服务器，以及本地DNS服务器。
+
+DNS对互联网的功能至关重要，使用户能够通过记忆性强的名字而不是数字IP地址访问网站和服务。
+
+它还支持电子邮件路由、服务发现及其他网络协议。
+
+",
+          "links": [
+            {
+              "title": "什么是DNS？",
+              "url": "https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/",
+              "type": "article"
+            },
+            {
+              "title": "DNS的工作原理（漫画）",
+              "url": "https://howdns.works/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于DNS的热门帖子",
+              "url": "https://app.daily.dev/tags/dns?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "DNS及其工作方式",
+              "url": "https://www.youtube.com/watch?v=Wj0od2ag5sk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e6cab55e-6d79-425e-bb2f-f090f256d3f1",
+          "xid": "738db12d-f1b7-4aaa-b7f8-d6a9e3c97a06"
+        },
+        {
+          "title": "浏览器及其工作原理?",
+          "description": "网络浏览器是软件应用程序，使用户能够访问、检索和导航互联网上的信息。
+
+它们解释并显示HTML（超文本标记语言）、CSS（层叠样式表）和JavaScript来呈现网页。
+
+现代浏览器如Google Chrome（谷歌浏览器）、Mozilla Firefox（火狐浏览器）、Apple Safari（苹果浏览器）和Microsoft Edge（微软边缘浏览器）提供了诸如标签浏览、书签、扩展程序和跨设备同步等功能。
+
+它们集成了渲染引擎（如Blink、Gecko、WebKit）来处理网页内容，并使用JavaScript引擎来执行代码。
+
+浏览器通过沙箱技术、HTTPS强制实施和弹出阻止等功能来管理安全性。
+
+它们支持各种网络标准和技术，包括HTML5、CSS3和Web API（Web应用程序接口），从而实现丰富、交互式的网络体验。
+
+随着网络应用程序复杂性的不断增加，浏览器已经演变为强大的平台，平衡着性能、安全和用户体验，在不断变化的互联网景观中适应变化。
+
+",
+          "links": [
+            {
+              "title": "浏览器的工作原理",
+              "url": "https://www.ramotion.com/blog/what-is-web-browser/",
+              "type": "article"
+            },
+            {
+              "title": "填充页面：浏览器的工作原理",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于浏览器的热门文章",
+              "url": "https://app.daily.dev/tags/browsers?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "网络浏览器是如何工作的？",
+              "url": "https://www.youtube.com/watch?v=5rLFYtXHo9s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5532523f-8742-4348-961b-570f992fdea6",
+          "xid": "bbcd9f61-58cf-4f66-b2fe-6b3b981e8098"
+        }
+      ],
+      "id": "de7c332e-017b-414f-bd2a-a0d208ec628a",
+      "xid": "029b8a63-14de-4fea-b284-97e9d7a25b2c"
+    },
+    {
+      "title": "超文本标记语言 (HTML)",
+      "description": "超文本标记语言 (HTML) 是用于创建网页和网络应用的标准标记语言。
+
+它通过元素和属性的系统结构，在互联网上提供内容的结构，以定义文档的布局和内容。
+
+HTML 元素以标签形式表示，浏览器解析这些标签以呈现网页的视觉和音频元素。
+
+语言经历了多个版本的进化，当前的标准版本是 HTML5，它引入了语义元素、改进的多媒体支持和增强的表单控件。
+
+HTML 与层叠样式表 (CSS) 配合使用进行样式设计，与 JavaScript 配合使用实现互动性，构成了现代网络开发的基础。
+
+\n\n",
+      "links": [
+        {
+          "title": "响应式网页设计认证 - 通过指导项目学习 HTML & CSS",
+          "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+          "type": "course"
+        },
+        {
+          "title": "W3Schools：学习超文本标记语言 (HTML)",
+          "url": "https://www.w3schools.com/html/html_intro.asp",
+          "type": "article"
+        },
+        {
+          "title": "查看关于 HTML 的热门文章",
+          "url": "https://app.daily.dev/tags/html?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "HTML 完全课程 - 初学者课程",
+          "url": "https://youtu.be/mJgBOIoGihA",
+          "type": "video"
+        },
+        {
+          "title": "HTML 完全课程 - 构建网站教程",
+          "url": "https://www.youtube.com/watch?v=pQN-pnXPaVg",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "学习基础",
+          "description": "HTML代表HyperText Markup Language（超文本标记语言）。
+
+它用于前端，可以为网页提供结构，你可以使用CSS进行样式设计，并使用JavaScript使其具有交互性。
+
+\n\n",
+          "links": [
+            {
+              "title": "W3Schools: 学习HTML",
+              "url": "https://www.w3schools.com/html/html_intro.asp",
+              "type": "article"
+            },
+            {
+              "title": "web.dev: 学习HTML",
+              "url": "https://web.dev/learn/html",
+              "type": "article"
+            },
+            {
+              "title": "HTML 全课程 - 网站教程",
+              "url": "https://www.youtube.com/watch?v=kUMe1FH4CHE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b39ac6b2-657c-43fe-8bc8-e57daa6cbc68",
+          "xid": "d55de827-472b-4a49-b2b8-35304a9a069f"
+        },
+        {
+          "title": "编写语义化HTML",
+          "description": "语义化HTML指的是使用HTML标签强化网页内容的意义，而不是仅仅定义其外观。
+
+它涉及使用能够清晰描述其目的和内容的HTML元素。
+
+语义化HTML可以提高可访问性（accessibility）、搜索引擎优化（SEO）和代码的可读性。
+
+关键元素包括 `<header>`、`<nav>`、`<main>`、`<article>`、`<section>`、`<aside>` 和 `<footer>`。
+
+语义化HTML还包括使用适当的标题级别（`<h1>` 到 `<h6>`）、列表（`<ul>`、`<ol>`、`<li>`）和数据表格（`<table>`、`<th>`、`<td>`）。
+
+语义化HTML有助于屏幕阅读器解读页面内容，改善浏览器的渲染效果，并为开发人员提供更清晰的结构。
+
+通过使用语义上正确的元素，开发人员可以创建更容易被人类和机器理解与处理的更有意义、更易于访问和维护的网络文档。
+
+\n\n",
+          "links": [
+            {
+              "title": "编写语义化HTML指南",
+              "url": "https://cs.fyi/guide/writing-semantic-html",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools: 语义化HTML",
+              "url": "https://www.w3schools.com/html/html5_semantic_elements.asp",
+              "type": "article"
+            },
+            {
+              "title": "web.dev: 语义化HTML",
+              "url": "https://web.dev/learn/html/semantic-html/",
+              "type": "article"
+            },
+            {
+              "title": "何时及为何使用语义化HTML元素而非Div",
+              "url": "https://www.youtube.com/watch?v=bOUhq46fd5g",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "769a49df-8cdc-44d2-b056-b5019de0866b",
+          "xid": "4a97b725-cece-44db-b6b3-9ecb366bf1a9"
+        },
+        {
+          "title": "表单和验证",
+          "description": "在将数据提交到服务器之前，确保所有必填的表单控件已正确填写是至关重要的。
+
+这称为客户端表单验证（Client-side form validation），有助于确保提交的数据符合表单控件设置的各项要求。
+
+\n\n",
+          "links": [
+            {
+              "title": "MDN Web Docs: 客户端表单验证",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation",
+              "type": "article"
+            },
+            {
+              "title": "web.dev: 学习表单",
+              "url": "https://web.dev/learn/forms/",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools: JavaScript 表单验证",
+              "url": "https://www.w3schools.com/js/js_validation.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8a651477-f6fa-4dd0-b677-444e699beb6d",
+          "xid": "23eb02ac-6675-471e-9b87-8d5cea83dae5"
+        },
+        {
+          "title": "无障碍性",
+          "description": "网站无障碍性是指设计和开发能够让所有人使用（包括残障人士）的网站。
+
+这涉及到实现可以让所有用户都能够感知（perceivable）、操作（operable）、理解(understandable)和功能强大（robust）的特征和标准，无论他们身体或认知能力如何。
+
+这包括为图像提供文字替代（text alternatives）、确保键盘导航、使用充分的颜色对比(contrast)、为音频内容提供字幕（captions），以及创建一致且可预测的布局（layout）。
+
+遵守无障碍性指南不仅改善了残障人士的使用体验，同时也提高了所有访问者的整体使用体验，同时可能增加网站的访问范围并提高法律合规性（legal compliance）。
+
+",
+          "links": [
+            {
+              "title": "Google的开发人员无障碍性指南",
+              "url": "https://web.dev/accessibility",
+              "type": "article"
+            },
+            {
+              "title": "关于无障碍性的热门帖子",
+              "url": "https://app.daily.dev/tags/accessibility?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "完整的无障碍性播放列表",
+              "url": "https://youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "750ecb56-5cd1-4297-a25d-a662a545048e",
+          "xid": "9b7b4d18-24ed-4340-ae56-360c30a0611c"
+        },
+        {
+          "title": "搜索引擎优化基础",
+          "description": "搜索引擎优化（SEO）基础涉及提高网站在搜索引擎结果中的可见性和排名的策略。
+
+关键要素包括创建相关的高质量内容，正确使用关键词，优化元标签和URL，确保移动友好性，提高网站速度，以及构建高质量的反向链接。
+
+SEO 还关注用户体验，包括易于导航和响应式设计。
+
+技术方面如XML站点地图、HTTPS安全性和结构化数据标记扮演着至关重要的角色。
+
+理解用户意图、定期更新内容并遵守搜索引擎指南是重要实践。
+
+有效的SEO结合了页面优化、离页策略和技术改进，以增加有机流量、提高用户参与度，并在日益竞争的数字环境中增强在线存在感。
+
+",
+          "links": [
+            {
+              "title": "适合初学者的SEO课程",
+              "url": "https://www.youtube.com/watch?v=xsVTqzratPs",
+              "type": "course"
+            },
+            {
+              "title": "2024年SEO完整指南",
+              "url": "https://www.youtube.com/watch?v=8YDUP-RH_4g",
+              "type": "course"
+            },
+            {
+              "title": "Google搜索中心 - SEO 文档",
+              "url": "https://developers.google.com/search/docs",
+              "type": "article"
+            },
+            {
+              "title": "探索关于SEO的顶级文章",
+              "url": "https://app.daily.dev/tags/seo?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "337014b8-32cc-4373-aefd-251403063b78",
+          "xid": "cc87e4e3-f9ff-4297-80ec-e9f635afd60a"
+        }
+      ],
+      "id": "61578aea-528d-4552-adda-fe47723539b5",
+      "xid": "69b2a383-f921-4738-a33c-075d742d6be3"
+    },
+    {
+      "title": "CSS",
+      "description": "CSS（层叠样式表）是一种用于描述HTML或XML编写文档的呈现样式的样式语言。
+
+它定义了元素在屏幕、纸张或其他媒体上的显示方式。
+
+CSS将设计与内容分离，使网页布局、颜色和字体方面具有更大的灵活性和控制力。
+
+它使用选择器系统来定位HTML元素，并向它们应用样式。
+
+CSS通过媒体查询支持响应式设计，可创建适应不同屏幕尺寸和设备的布局。
+
+层叠（cascade）、继承（inheritance）和特异性（specificity）是CSS中的关键概念，这些概念决定了多条规则指向同一元素时样式如何应用。
+
+现代CSS包括Flexbox和Grid等高级布局控制功能，以及用于创建动态用户界面的动画和过渡效果。
+
+\n",
+      "links": [
+        {
+          "title": "CSS 完整课程",
+          "url": "https://youtu.be/n4R2E7O-Ngo",
+          "type": "course"
+        },
+        {
+          "title": "HTML & CSS 完整课程 - 初学者到专家",
+          "url": "https://www.youtube.com/watch?v=G3e-cpL7ofc",
+          "type": "course"
+        },
+        {
+          "title": "响应式网页设计认证 - 使用引导项目学习HTML & CSS",
+          "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+          "type": "course"
+        },
+        {
+          "title": "由Google提供的Web.dev - 学习CSS",
+          "url": "https://web.dev/learn/css/",
+          "type": "article"
+        },
+        {
+          "title": "探索顶部关于CSS的文章",
+          "url": "https://app.daily.dev/tags/css?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "学习基础",
+          "description": "CSS（层叠样式表）是用于为任何网站的前端设计样式的语言。
+
+CSS是与HTML和JavaScript一起构成万维网基石的技术之一。
+
+\n\n",
+          "links": [
+            {
+              "title": "W3Schools — 学习CSS",
+              "url": "https://www.w3schools.com/css/",
+              "type": "article"
+            },
+            {
+              "title": "web.dev — 学习CSS",
+              "url": "https://web.dev/learn/css/",
+              "type": "article"
+            },
+            {
+              "title": "CSS 快速入门教程 - 绝对新手篇",
+              "url": "https://www.youtube.com/watch?v=yfoY53QXEnI",
+              "type": "video"
+            },
+            {
+              "title": "CSS 主修课 - 新手教程与课程",
+              "url": "https://www.youtube.com/watch?v=FqmB-Zj2-PA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ce22f47e-501b-48b1-b489-d9607f6c4f11",
+          "xid": "f4a85b6a-3119-4646-9f2e-5466f852f896"
+        },
+        {
+          "title": "创建布局",
+          "description": "在网页设计中，创建布局涉及在页面上组织内容和视觉元素，以创建一个有效且美观的用户界面。
+
+现代布局技术主要使用CSS，关键方法包括：\n\n1.  Flexbox（弹性盒子布局）用作一维布局（行或列）\n2.  CSS Grid（CSS网格布局）用于二维布局\n3.  响应式设计原则以适应各种设备\n4.  CSS框架，如Bootstrap或Tailwind，用于快速开发\n5.  自定义CSS属性（变量）以保持一致的样式\n6.  媒体查询以适应设备特定调整\n7.  CSS定位和浮动以特定元素放置\n\n这些工具使设计师能够创建复杂的、响应式的布局，这些布局在各种屏幕尺寸和设备上保持一致性和易用性。
+
+有效的布局考虑视觉层次结构、用户流程、无障碍性和内容优先级，以提高整体用户体验并实现设计目标。
+
+\n\n",
+          "links": [
+            {
+              "title": "学习和实践Flexbox",
+              "url": "https://flexboxfroggy.com/",
+              "type": "article"
+            },
+            {
+              "title": "盒模型",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model",
+              "type": "article"
+            },
+            {
+              "title": "学习CSS Grid - 课程",
+              "url": "https://cssgrid.io/",
+              "type": "article"
+            },
+            {
+              "title": "最终通过CSS Grid布局模块使用Grid",
+              "url": "https://thenewstack.io/get-grid-last-css-grid-template-markup/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "78346023-8d6c-4670-b87c-9f74433944b1",
+          "xid": "4ffbb921-7e98-4a00-a8f3-aad08fbe8e0f"
+        },
+        {
+          "title": "响应式设计",
+          "description": "响应式网页设计是一种网页开发方法，它根据用于查看网站的设备的屏幕尺寸和方向动态改变网站的外观。
+
+它使用流体网格、灵活的图像和CSS媒体查询来适应不同的视图环境。
+
+目标是构建能够检测访问者屏幕尺寸和方向并相应地调整布局的网页，以在从台式机到手机的广泛设备上提供最佳的浏览体验。
+
+此方法消除了为市场上每种新设备设计和开发不同版本的需要，同时确保在所有设备上都能有一致且直观的用户体验。
+
+\n\n",
+          "links": [
+            {
+              "title": "征服响应式布局",
+              "url": "https://courses.kevinpowell.co/conquering-responsive-layouts",
+              "type": "course"
+            },
+            {
+              "title": "学习响应式设计",
+              "url": "https://web.dev/learn/design/",
+              "type": "article"
+            },
+            {
+              "title": "响应式网页设计初学者指南",
+              "url": "https://kinsta.com/blog/responsive-web-design/",
+              "type": "article"
+            },
+            {
+              "title": "响应式网页设计介绍",
+              "url": "https://www.youtube.com/watch?v=srvUrASNj0s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "82033d3d-9f8b-44dd-af2c-72bea6d0ba89",
+          "xid": "0e94b164-0eea-4266-9305-018940b2dfd7"
+        }
+      ],
+      "id": "b05a508b-108e-4d83-a85a-69b7c588e338",
+      "xid": "10a82cb4-4cf1-4144-a518-a60e9ac06e8a"
+    },
+    {
+      "title": "JavaScript",
+      "description": "JavaScript 是一种高级的、解释型的编程语言，是万维网的核心技术之一。
+
+它允许在网页浏览器中进行动态的、客户端的脚本编写，从而使网页和用户界面具有互动性。
+
+JavaScript 支持面向对象、命令式和函数式编程风格。
+
+通过 Node.js，它也用于服务器端的编程，用于 Electron 框架开发桌面应用程序，以及其他各种场合。
+
+该语言具有动态类型、一等函数及基于原型的面向对象编程特性。
+
+JavaScript 在 Web 开发中的普遍性，以及通过 ECMAScript 标准的灵活性和持续发展，使其成为当今使用最广泛的编程语言之一。
+
+\n\n",
+      "links": [
+        {
+          "title": "访问专用的 JavaScript 学习路线图",
+          "url": "https://roadmap.sh/javascript",
+          "type": "article"
+        },
+        {
+          "title": "现代化 JavaScript 教程",
+          "url": "https://javascript.info/",
+          "type": "article"
+        },
+        {
+          "title": "在30天内构建30个JavaScript项目",
+          "url": "https://javascript30.com/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 JavaScript 的热门帖子",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "学习基础知识",
+          "description": "JavaScript 允许你给页面添加交互性。
+
+你可能在网站上看到的常见示例包括滑块（sliders）、点击交互（click interactions）、弹出窗口（popups）等。
+
+\n\n",
+          "links": [
+            {
+              "title": "W3Schools – JavaScript 教程",
+              "url": "https://www.w3schools.com/js/",
+              "type": "article"
+            },
+            {
+              "title": "现代 JavaScript 教程",
+              "url": "https://javascript.info/",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 完整教程 - 从入门到精通 (2024)",
+              "url": "https://www.youtube.com/watch?v=EerdGm-ehJQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "aff2fee6-62d2-4381-844a-f52af0fb6157",
+          "xid": "0b9e99dd-7ca9-4ea8-97ff-b0dacdb5826c"
+        },
+        {
+          "title": "学习DOM操作",
+          "description": "文档对象模型（Document Object Model, DOM）是为HTML和XML文档构建的一种编程接口。
+
+DOM 代表页面，允许程序和脚本动态更新文档结构、内容和样式。
+
+通过DOM，我们可以轻松访问和操作标签、ID、类、属性等。
+
+\n\n",
+          "links": [
+            {
+              "title": "DOM树",
+              "url": "https://javascript.info/dom-nodes",
+              "type": "article"
+            },
+            {
+              "title": "通过练习学习HTML DOM - CodeGuage",
+              "url": "https://www.codeguage.com/courses/js/html-dom-introduction",
+              "type": "article"
+            },
+            {
+              "title": "探索有关DOM的热门文章",
+              "url": "https://app.daily.dev/tags/dom?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是DOM、Shadow DOM和虚拟DOM？",
+              "url": "https://www.youtube.com/watch?v=7Tok22qxPzQ",
+              "type": "video"
+            },
+            {
+              "title": "JavaScript DOM速成课程",
+              "url": "https://www.youtube.com/watch?v=0ik6X4DJKCc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "261540c9-7e70-48d7-9ead-8959f12509a2",
+          "xid": "e718189d-8aaa-455f-a6fc-e28f74374f36"
+        },
+        {
+          "title": "Fetch API / Ajax (XHR)",
+          "description": "Fetch API 是一种现代的JavaScript接口，用于在Web浏览器中进行HTTP请求。
+
+与老的方法如 XMLHttpRequest 相比，它提供了更强大、更灵活的方式来发送和接收数据。
+
+Fetch 使用 Promises（承诺），使得异步代码更加整洁。
+
+它支持各种数据格式、自定义头文件和不同类型的请求（GET、POST等）。
+
+该API被设计为可扩展的，并且与其他Web技术集成良好。
+
+虽然对于基本用例来说较为简单，但Fetch 也处理复杂的场景，比如请求取消和读取流式响应。
+
+它在现代浏览器中得到了广泛支持，并已成为客户端 JavaScript 应用中的网络请求标准。
+
+",
+          "links": [
+            {
+              "title": "Fetch API MDN 文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript Fetch API 简明指南",
+              "url": "https://www.javascripttutorial.net/web-apis/javascript-fetch-api/",
+              "type": "article"
+            },
+            {
+              "title": "Fetch 介绍",
+              "url": "https://web.dev/introduction-to-fetch/",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript Fetch API",
+              "url": "https://www.youtube.com/watch?v=-ZI0ea5O2oA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0947fcf6-4faf-43fd-b7bc-c909f44765c6",
+          "xid": "cf9e173e-e0c8-45e8-a891-92c4831af73a"
+        }
+      ],
+      "id": "5ebb71b4-19f2-42f0-87da-eb60e0b8fc0d",
+      "xid": "40bf09e2-5787-48f9-843b-21257824d439"
+    },
+    {
+      "title": "版本控制系统",
+      "description": "版本控制系统（VCS）是帮助开发人员跟踪和管理代码随时间变化的工具。
+
+它们允许多人同时进行项目的工作，保持修改历史记录。
+
+Git是最流行的VCS，以其分布式特性和分支模型而闻名。
+
+其他系统还包括Subversion（SVN）和Mercurial。
+
+VCS提供了诸如并行开发分支、合并更改、回退到以前状态等功能。
+
+它们通过远程存储库、拉取请求和代码审查促进协作。
+
+VCS还提供了备份和恢复能力、冲突解决以及标记历史特定点的能力。
+
+通过维护详细的更改记录并支持非线性开发，VCS已成为现代软件开发中的必备工具，提高了生产力、代码质量以及团队协作。
+
+",
+      "links": [
+        {
+          "title": "访问专用的Git & Github路线图",
+          "url": "https://roadmap.sh/git-github",
+          "type": "article"
+        },
+        {
+          "title": "Git 文档",
+          "url": "https://git-scm.com/docs",
+          "type": "article"
+        },
+        {
+          "title": "Atlassian Git 学习",
+          "url": "https://www.atlassian.com/git",
+          "type": "article"
+        },
+        {
+          "title": "什么是版本控制系统以及为什么你应该一直使用它",
+          "url": "https://www.youtube.com/watch?v=IeXhYROClZk",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Git",
+          "description": "Git 是一个分布式的版本控制系统（Version Control System, VCS），设计用于以速度和效率处理各种规模的项目。
+
+由 Linus Torvalds 于 2005 年创建，Git 在软件开发过程中跟踪源代码的变化，允许多个开发者协同进行非线性开发。
+
+它为分支（branching）、合并（merging）和分布开发工作流程提供了强力支持。
+
+Git 维护着所有修改的完整历史记录，允许轻松回滚（rollback）和版本比较。
+
+其分布性质意味着每位开发者都拥有一份完整的仓库副本，支持离线工作及备份。
+
+由于速度、灵活性，以及强大的分支和合并功能，Git 成为了软件开发中最广泛使用的版本控制系统，特别适用于开源项目。
+
+\n\n",
+          "links": [
+            {
+              "title": "访问专为Git和GitHub设计的路线图",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "Git快捷指南",
+              "url": "https://cs.fyi/guide/git-cheatsheet",
+              "type": "article"
+            },
+            {
+              "title": "教程：适用于所有人的Git",
+              "url": "https://thenewstack.io/tutorial-git-for-absolutely-everyone/",
+              "type": "article"
+            },
+            {
+              "title": "查看关于Git的最佳文章",
+              "url": "https://app.daily.dev/tags/git?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Git与GitHub入门课程（初学者适用）",
+              "url": "https://www.youtube.com/watch?v=SWYqp7iY_Tc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "db8f6e1e-aacb-4e39-abe0-a84efcfb966e",
+          "xid": "9337b208-c31a-4872-bd85-6b46339f5ada"
+        }
+      ],
+      "id": "e05abd77-e019-4699-8640-c3a9dff0c6d5",
+      "xid": "b64028c2-b3da-4b8e-899d-c059e8224cc6"
+    },
+    {
+      "title": "版本控制系统托管",
+      "description": "代码仓库托管服务提供了存储、管理和协作软件项目的平台，主要使用版本控制系统，特别是Git。
+
+这些服务提供诸如问题追踪（issue tracking）、拉取请求（pull requests）、代码审查工具、维基（wikis）以及持续集成/持续交付（Continuous Integration/Continuous Deployment，CI/CD）流水线等特性。
+
+流行的平台包括GitHub、GitLab、Bitbucket和SourceForge，每个平台都有其独特的服务。
+
+GitHub，由微软拥有，是规模最大、使用最广泛的一个，以其开源社区而闻名。
+
+GitLab提供了一个完整的DevOps平台，内置了CI/CD。
+
+Bitbucket作为Atlassian产品套件的一部分，与其他Atlassian工具集成得很好。
+
+这些服务促进团队协作、代码共享和项目管理，是现代软件开发流程不可或缺的一部分。
+
+它们通常还提供访问控制、分支保护以及与各种开发工具的集成等特性，从而增强整个开发流程。
+
+\n\n",
+      "links": [
+        {
+          "title": "访问专用的Git及GitHub路线图",
+          "url": "https://roadmap.sh/git-github",
+          "type": "article"
+        },
+        {
+          "title": "GitHub网站",
+          "url": "https://github.com",
+          "type": "article"
+        },
+        {
+          "title": "GitLab网站",
+          "url": "https://about.gitlab.com",
+          "type": "article"
+        },
+        {
+          "title": "Codeberg网站",
+          "url": "https://codeberg.org/",
+          "type": "article"
+        },
+        {
+          "title": "BitBucket网站",
+          "url": "https://bitbucket.com",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "GitHub",
+          "description": "GitHub 已成为一个开源项目的核心中心，被开发人员、公司和组织广泛用于私有和公共仓库。
+
+微软于2018年收购GitHub，但其仍作为一个相对独立的实体运营。
+
+GitHub 的流行使其成为现代软件开发工作流程中的一个重要工具，也是展示编码项目并为开源软件做出贡献的关键平台。
+
+\n\n",
+          "links": [
+            {
+              "title": "访问 Git & GitHub 相关的学习路线图",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "GitHub: 快速入门",
+              "url": "https://docs.github.com/en/get-started/quickstart/hello-world",
+              "type": "article"
+            },
+            {
+              "title": "实践操作来学习 GitHub",
+              "url": "https://skills.github.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 GitHub 的热门文章",
+              "url": "https://app.daily.dev/tags/github?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是 GitHub?",
+              "url": "https://www.youtube.com/watch?v=w3jLJU7DT5E",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ed95f8d7-cad5-4f80-974d-7d431cbc01a3",
+          "xid": "7e2909db-78bf-4b6f-b085-d139e11db9d0"
+        },
+        {
+          "title": "GitLab",
+          "description": "GitLab 是一款基于网络的 DevOps（DevOps）平台，提供了一整套软件开发生命周期的解决方案。
+
+GitLab 以其一体化方法为特点，将各种开发工具集成到一个平台上。
+
+它既可作为云托管服务，也可作为自托管解决方案，为企业提供了部署的灵活性。
+
+GitLab 关注 DevOps 实践及其全面的功能集使其在寻求统一平台的组织和团队中非常受欢迎。
+
+尽管在许多方面与 GitHub 类似，但 GitLab 的集成 CI/CD（持续集成/持续部署）功能和自托管选项经常被视为主要区分点。
+
+\n\n",
+          "links": [
+            {
+              "title": "GitLab 网站",
+              "url": "https://gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "GitLab 文档",
+              "url": "https://docs.gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "开发：将 Git 连接到 GitLab 用于小型项目",
+              "url": "https://thenewstack.io/development-connect-git-to-gitlab-for-small-projects/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 GitLab 的热门文章",
+              "url": "https://app.daily.dev/tags/gitlab?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f43b4d58-802a-44a2-bb7f-2737adec7e51",
+          "xid": "10c4fa1c-5320-4f72-9798-9deed0c945e2"
+        },
+        {
+          "title": "Bitbucket",
+          "description": "Bitbucket（代码托管服务）是Atlassian拥有的一个基于网络的版本控制仓库托管服务。
+
+它为开源和私有项目提供了Git和Mercurial版本控制系统。
+
+Bitbucket提供了一些特性，例如拉取请求(pull requests)、分支权限(branch permissions)以及代码审查中的内联评论(in-line commenting)。
+
+它无缝地与诸如Jira和Trello之类的其他Atlassian产品集成在一起，便于项目管理和问题跟踪。
+
+Bitbucket提供了云端托管和自托管两种选项，以满足不同组织的需求。
+
+它通过Bitbucket Pipelines支持持续集成和部署(CI/CD)。
+
+\n\n",
+          "links": [
+            {
+              "title": "如何使用Bitbucket？",
+              "url": "https://bitbucket.org/product/guides",
+              "type": "article"
+            },
+            {
+              "title": "Bitbucket官网",
+              "url": "https://bitbucket.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Bitbucket的热门文章",
+              "url": "https://app.daily.dev/tags/bitbucket?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "eb9fbb8d-feb3-4369-b803-1e1a4cb82887",
+          "xid": "72d353bd-6cfd-4a1a-a7b0-be8239c4c2da"
+        }
+      ],
+      "id": "6eb0232c-be7e-4c5b-a8e5-081accd8e80f",
+      "xid": "34a08763-7ad7-42ba-bb84-97dd793863e0"
+    },
+    {
+      "title": "选择一个Web框架",
+      "description": "Web框架（Web Framework）是为了编写Web应用程序而设计的。
+
+框架（Framework）是由各种库组成的集合，有助于软件产品或网站的开发。
+
+Web应用开发框架（Web application development framework）是由各种工具组成的集合。
+
+框架在功能和能力上的差异，取决于设定的任务目标。
+
+它们定义了结构，确立了规则，并提供了所需的开发工具。
+
+\n\n",
+      "links": [
+        {
+          "title": "15个你尚不了解的新JS框架功能",
+          "url": "https://www.youtube.com/watch?v=466U-2D86bc",
+          "type": "video"
+        },
+        {
+          "title": "哪种JS框架是最好的？",
+          "url": "https://www.youtube.com/watch?v=cuHDQhDhvPE",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "React",
+          "description": "React是一个开源的JavaScript库，主要用于构建用户界面，特别是在单页应用中。
+
+它是由Facebook开发和维护的，它允许开发人员创建可复用的UI组件，这些组件可以根据数据的变化高效地更新和渲染。
+
+React使用虚拟DOM进行性能优化，并支持单向数据流。
+
+其基于组件的架构促进了模块化和可复用性。
+
+React的生态系统包括用于状态管理的Redux工具和用于移动应用开发的React Native。
+
+React的声明式特性、高效的渲染以及强大的社区支持使其成为现代Web应用前端开发中最受欢迎的选择之一。
+
+\n\n",
+          "links": [
+            {
+              "title": "全栈React开发课程",
+              "url": "https://www.youtube.com/watch?v=Bvwq_S0n2pk",
+              "type": "course"
+            },
+            {
+              "title": "访问专用的React路线图",
+              "url": "https://roadmap.sh/react",
+              "type": "article"
+            },
+            {
+              "title": "React官网",
+              "url": "https://react.dev",
+              "type": "article"
+            },
+            {
+              "title": "探索有关React的最佳文章",
+              "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "74629e76-b7ed-4a46-b8e7-2945b4e34ec2",
+          "xid": "91a3cbfc-959a-42e4-bee1-9de6fc5203b6"
+        },
+        {
+          "title": "Vue.js",
+          "description": "Vue.js 是一种用于构建用户界面的渐进式 (progressive) JavaScript 框架。
+
+它被设计为可以逐步采用，允许开发者将它逐渐集成到项目中。
+
+Vue 使用基于模板 (template-based) 方式和虚拟 DOM (Virtual DOM) 进行高效的渲染。
+
+它具有反应式 (reactive) 和可组合的 (composable) 组件系统，使组织和重用代码变得容易。
+
+Vue 的核心库专注于视图层 (view layer)，但可以轻松使用官方和社区构建的工具扩展其功能，以实现状态管理 (state management)、路由 (routing) 和构建工具 (build tooling)。
+
+以其温和的学习曲线和灵活性而闻名，Vue 在小型项目和大型应用程序中都受到了欢迎。
+
+其性能、轻量级特性和详尽的文档促使其在 Web 开发社区中被广泛采用。
+
+",
+          "links": [
+            {
+              "title": "访问专为 Vue 设定的路线图",
+              "url": "https://roadmap.sh/vue",
+              "type": "article"
+            },
+            {
+              "title": "Vue.js 官网",
+              "url": "https://vuejs.org/",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于 Vue.js 的热门文章",
+              "url": "https://app.daily.dev/tags/vuejs?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Vue.js 新手课程",
+              "url": "https://www.youtube.com/watch?v=VeNfHj6MhgA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "54cd500d-c13b-4922-b3d8-104e0e905b7e",
+          "xid": "80f174f6-b1ee-496d-8008-453d0fb8a148"
+        },
+        {
+          "title": "Angular",
+          "description": "Angular 是一个流行的产品，由谷歌开发和维护的开源网页应用框架。
+
+它使用 TypeScript (一种静态类型化的JavaScript超集) 来构建可扩展且高效的单页应用程序（单页应用，SPAs）。
+
+Angular 遵循基于组件的架构，即用户界面由可重复使用、自包含的组件组成。
+
+该框架提供了诸如双向数据绑定、依赖注入和强大的模板语法等功能，简化了复杂网页应用程序的开发。
+
+Angular 还包括一套全面的测试、路由和状态管理工具，使其成为一个完善的前端开发解决方案。
+
+其模块化结构和对最佳实践的强调，使其特别适用于大型企业级应用程序。
+
+",
+          "links": [
+            {
+              "title": "访问专门的Angular学习路线",
+              "url": "https://roadmap.sh/angular",
+              "type": "article"
+            },
+            {
+              "title": "开始学习Angular",
+              "url": "https://angular.dev/tutorials/learn-angular",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Angular的最佳文章",
+              "url": "https://app.daily.dev/tags/angular?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Angular初学者课程",
+              "url": "https://www.youtube.com/watch?v=3qBXWUpoPHo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b324e377-ca88-4b3f-b0c4-45534f7db64e",
+          "xid": "c408931e-0443-4759-9ba0-715e7718e3e4"
+        },
+        {
+          "title": "Svelte",
+          "description": "Svelte 是一种用于构建用户界面的现代 JavaScript 框架，它在 Web 开发中采用了一种独特的方法。
+
+与传统框架在浏览器中进行大量工作不同，Svelte 将这部分工作转移到了构建应用时的编译步骤中。
+
+它将代码编译成高效的原生 JavaScript，从而产生较小的包大小并提高运行时性能。
+
+Svelte 采用基于组件的架构，提供简单直观的语法，允许开发人员编写更少的代码。
+
+它内置状态管理(State Management)、CSS 作用域(scoping)和动画。
+
+Svelte 的方法消除了对虚拟 DOM 的需求，导致初始加载和更新速度更快。
+
+这些简洁性和性能的优点使得 Svelte 在前端开发社区中日益流行起来。
+
+",
+          "links": [
+            {
+              "title": "适合初学者的 Svelte 课程播放列表",
+              "url": "https://www.youtube.com/playlist?list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO",
+              "type": "course"
+            },
+            {
+              "title": "Svelte 官方网站",
+              "url": "https://svelte.dev/",
+              "type": "article"
+            },
+            {
+              "title": "对广受喜爱的状态驱动 Web 框架 Svelte 的全面介绍",
+              "url": "https://thenewstack.io/all-about-svelte-the-much-loved-state-driven-web-framework/",
+              "type": "article"
+            },
+            {
+              "title": "Svelte 与前端开发的未来",
+              "url": "https://thenewstack.io/svelte-and-the-future-of-front-end-development/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Svelte 的热门文章",
+              "url": "https://app.daily.dev/tags/svelte?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5cd450da-96fb-4ad5-9c7d-0562622081b7",
+          "xid": "f3d6e2a1-beb5-4de8-b38a-d1874882ed13"
+        },
+        {
+          "title": "Solid JS",
+          "description": "SolidJS 是一个声明式、高效且灵活的 JavaScript 库，用于构建用户界面。
+
+它采用细粒度的反应系统(reactivity system)，只更新发生变化的部分，从而实现高性能。
+
+SolidJS 将模板编译为真实的 DOM 节点，并在原位更新它们，避免了虚拟 DOM 的开销。
+
+SolidJS 提供与 React 相似的语法，使许多开发人员感到熟悉，但其底层机制不同。
+
+SolidJS 支持 JSX，内置状态管理(state management)，并强调组合(composition)胜过继承。
+
+它的体积小且没有运行时开销，特别适合需要高性能的应用程序。
+
+尽管与其他一些框架相比相对较新，但 SolidJS 以其简单性、性能和面向开发者的反应式编程方式而迅速流行起来。
+
+\n\n",
+          "links": [
+            {
+              "title": "SolidJS 网站",
+              "url": "https://www.solidjs.com/",
+              "type": "article"
+            },
+            {
+              "title": "SolidJS 教程",
+              "url": "https://www.solidjs.com/tutorial/introduction_basics",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 JavaScript 的顶级文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "100 秒了解 SolidJS",
+              "url": "https://www.youtube.com/watch?v=hw3Bx5vxKl0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "abbbd95e-9d47-4aff-be90-bf4b1791d738",
+          "xid": "c17549e4-5e7e-4270-9184-f3ddc1f33295"
+        },
+        {
+          "title": "Qwik",
+          "description": "Qwik（Qwik）是一款开源的前端框架，旨在实现最佳性能和近乎瞬时的网页应用加载时间。
+
+它专注于提供一个“可恢复的”应用程序模型，让应用可以在下载最少的JavaScript代码后开始运行。
+
+Qwik 通过细化的懒加载、应用程序状态的序列化以及预提取等技术手段实现了这一目标。
+
+它采用了一种独特的页面激活方式，仅在必要时为可交互元素加载JavaScript。
+
+Qwik 遵循现代Web标准，并着力解决大规模网页应用的性能问题。
+
+尽管与其他成熟框架相比仍较为新进，Qwik 在性能优化方面的创新方法已经吸引了Web开发社区的关注。
+
+\n\n",
+          "links": [
+            {
+              "title": "Qwik官方网站",
+              "url": "https://qwik.dev",
+              "type": "article"
+            },
+            {
+              "title": "Qwik - 世界上首个O(1) JavaScript框架？",
+              "url": "https://www.youtube.com/watch?v=x2eF3YLiNhY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "dbf2bf62-91c7-4fae-9d32-91638df7b4c6",
+          "xid": "7e56a009-0a9c-4da4-8561-3dafa7998524"
+        }
+      ],
+      "id": "3ebd14db-2692-4597-b4ef-8c78eda974fd",
+      "xid": "21999b24-1042-469f-ac4e-d1ee29d262ee"
+    },
+    {
+      "title": "包管理器",
+      "description": "包管理器是自动化工具，能够以一致的方式安装、更新、配置和卸载软件包。
+
+它们处理依赖项解析（dependency resolution）、版本管理（version management）和软件包分发（package distribution）任务，适用于各种编程语言和操作系统。
+
+流行的包管理器包括用于JavaScript的npm、用于Python的pip以及用于Debian-based Linux发行版的apt。
+
+这些工具维护着集中式的软件包仓库，使得开发人员能够轻松地共享和复用代码。
+
+包管理器简化了项目设置，确保了不同开发环境间的一致性，并帮助管理复杂的依赖项树。
+
+它们通过简化工作流程、增强协作和提高代码复用性，在现代软件开发中发挥了重要作用。
+
+",
+      "links": [
+        {
+          "title": "PNPM：比npm更快更有效的包管理器",
+          "url": "https://pnpm.io/",
+          "type": "article"
+        },
+        {
+          "title": "Yarn - 入门指南",
+          "url": "https://yarnpkg.com/en/docs/getting-started",
+          "type": "article"
+        },
+        {
+          "title": "从零开始使用npm：新手绝对指南",
+          "url": "https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/",
+          "type": "article"
+        },
+        {
+          "title": "npm快速入门",
+          "url": "https://www.youtube.com/watch?v=jHDhaSSKmB0",
+          "type": "video"
+        },
+        {
+          "title": "Yarn快速入门",
+          "url": "https://www.youtube.com/watch?v=g9_6KmiBISk",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "npm",
+          "description": "npm (Node Package Manager)是Node.js的默认包管理器，提供了庞大的可重用JavaScript代码生态系统。
+
+它允许开发人员轻松地分享、发现和安装项目所需的包（库和工具）。
+
+npm 包含一个用于包安装和管理的命令行界面，以及一个开源包的在线仓库。
+
+它处理 Node.js 项目的依赖管理、版本控制和脚本运行。
+
+npm 注册表是世界上最大的软件注册表，包含超过一百万个包。
+
+npm 的 package.json 文件定义了项目元数据和依赖关系，使得在不同的环境中实现可重现的构建。
+
+尽管有像Yarn这样的竞争者，但npm仍然是JavaScript生态系统中使用最广泛的包管理器。
+
+\n\n",
+          "links": [
+            {
+              "title": "如何使用NPM",
+              "url": "https://github.com/workshopper/how-to-npm",
+              "type": "opensource"
+            },
+            {
+              "title": "NPM官网",
+              "url": "https://www.npmjs.com/",
+              "type": "article"
+            },
+            {
+              "title": "NPM文档",
+              "url": "https://docs.npmjs.com/",
+              "type": "article"
+            },
+            {
+              "title": "面向史前巨兽的现代 JavaScript",
+              "url": "https://peterxjang.com/blog/modern-javascript-explained-for-dinosaurs.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 NPM 的热门文章",
+              "url": "https://app.daily.dev/tags/npm?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "面向初学者的 NPM 教程",
+              "url": "https://www.youtube.com/watch?v=2V1UUhBJ62Y",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5978cc05-4007-4c26-a170-2db46bb01e29",
+          "xid": "817bec5d-1470-4148-b75a-67c10c096779"
+        },
+        {
+          "title": "pnpm",
+          "description": "pnpm（高效npm）是一种适用于JavaScript和Node.js项目的快速、节省磁盘空间的包管理器。
+
+它通过使用独特的依赖存储和链接方法解决了npm和Yarn的低效率问题。
+
+pnpm为所有包创建单一的全局存储，并使用硬链接来引用项目node_modules中的内容，这显著减少了磁盘空间使用和安装时间。
+
+它严格遵守package.json规范，确保在不同环境中的安装一致性。
+
+pnpm提供了例如monorepos的工作区支持、并行版本控制以及通过更好地隔离依赖关系来提高安全性等功能。
+
+尽管相对于npm或Yarn来说使用范围较小，但pnpm的性能优势和高效的磁盘使用已在JavaScript社区中引起了更多关注。
+
+\n\n",
+          "links": [
+            {
+              "title": "pnpm官网",
+              "url": "https://pnpm.io",
+              "type": "article"
+            },
+            {
+              "title": "了解pnpm：更快、更高效的npm",
+              "url": "https://blog.bitsrc.io/pnpm-javascript-package-manager-4b5abd59dc9",
+              "type": "article"
+            },
+            {
+              "title": "开始使用pnpm",
+              "url": "https://www.youtube.com/watch?v=MvbReZDSKHI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b832cdd7-1d06-4a78-8532-605277a47e47",
+          "xid": "124e1b8a-926c-4d61-95c4-787cd86c84ba"
+        },
+        {
+          "title": "yarn(JavaScript包管理器)",
+          "description": "Yarn是一个快速、可靠且安全的JavaScript包管理器，由Facebook开发，作为npm（Node包管理器）的一个替代方案。
+
+它解决了依赖管理的一致性、安全性和性能问题。
+
+Yarn使用lockfile文件来确保在不同环境中安装的一致性，并提供并行安装包功能，显著加快了安装过程。
+
+它还提供了离线模式，允许从缓存包中进行安装，并通过请求队列和重试提供了改进的网络性能。
+
+Yarn注重安全性，包括安装每个包的校验和验证。
+
+尽管Yarn与npm有许多共同的功能，但Yarn对速度、可靠性和安全性的着重关注让它成为开发者的流行之选，特别是在大型项目中。
+
+Yarn的新版本（Berry）引入了像即插即用（Plug'n'Play）这样的新功能，让包解析更加快速和高效。
+
+\n\n",
+          "links": [
+            {
+              "title": "Yarn - 上手指南",
+              "url": "https://yarnpkg.com/en/docs/getting-started",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Yarn的热门帖子",
+              "url": "https://app.daily.dev/tags/yarn?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Yarn速成课程",
+              "url": "https://www.youtube.com/watch?v=g9_6KmiBISk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9b8f75fb-7cb8-43f2-a0ed-31b686f2be8a",
+          "xid": "b489b5d6-b055-4544-9bc0-4da9d348acfa"
+        }
+      ],
+      "id": "38279e9b-ee36-428e-a189-775549e64ef7",
+      "xid": "ed3e6c8e-b521-4b3e-ae18-ecdd1b98dc16"
+    },
+    {
+      "title": "编写CSS",
+      "description": "现代CSS强调响应式设计，运用媒体查询和流式排版等技术。
+
+它还包括CSS-in-JS（CSS-in-JS）和实用优先框架（例如Tailwind CSS）等方法。
+
+CSS逻辑属性等特性有助于国际化，而CSS Houdini（CSS Houdini）则允许更强大的自定义样式。
+
+现代CSS专注于性能优化、可维护性以及在不同设备和屏幕尺寸上创建自适应和无障碍设计，显著提升了网页样式的功能和效率。
+
+\n\n",
+      "links": [
+        {
+          "title": "现代CSS概览",
+          "url": "https://moderncss.dev/",
+          "type": "article"
+        },
+        {
+          "title": "CSS-Tricks：现代CSS",
+          "url": "https://css-tricks.com/modern-css/",
+          "type": "article"
+        },
+        {
+          "title": "查找有关CSS的热门文章",
+          "url": "https://app.daily.dev/tags/css?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "fcbf5cbd-9b93-48eb-bf4d-eb1f143f2a60",
+      "xid": "d7d9b9ef-ea52-41a8-af07-d485043d8867"
+    },
+    {
+      "title": "CSS框架",
+      "description": "CSS框架",
+      "links": [],
+      "children": [
+        {
+          "title": "js-first",
+          "description": "js-first",
+          "links": [],
+          "children": [
+            {
+              "title": "Tailwind",
+              "description": "Tailwind CSS 是一种以实用程序为主（utility-first）的CSS框架，它提供了一系列低级别的实用程序类，使您无需离开HTML就能构建自定义设计。
+
+Tailwind CSS 提供了一系列高度可定制的预定义类（pre-defined classes），包括布局、排版、色彩等，从而实现快速的用户界面（UI）开发。
+
+Tailwind 强调灵活性和可组合性（composability），让开发人员无需编写自定义CSS，即可创建独特的设计。
+
+它采用移动端优先的方法，并内置了清除未使用的样式的功能，从而减少生成代码的文件大小。
+
+Tailwind 的设计理念在保持设计一致性的同时提供了自由创作独特风格的灵活性。
+
+Tailwind CSS 因在原型制作和快速构建响应式设计方面的效率而越来越受欢迎。
+
+",
+              "links": [
+                {
+                  "title": "面向初学者的Tailwind CSS完整课程",
+                  "url": "https://www.youtube.com/watch?v=lCxcTsOHrjo",
+                  "type": "course"
+                },
+                {
+                  "title": "Tailwind网站",
+                  "url": "https://tailwindcss.com",
+                  "type": "article"
+                },
+                {
+                  "title": "在线编程练习场",
+                  "url": "https://play.tailwindcss.com",
+                  "type": "article"
+                },
+                {
+                  "title": "关于CSS的热门帖子",
+                  "url": "https://app.daily.dev/tags/css?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "应该使用Tailwind CSS吗？",
+                  "url": "https://www.youtube.com/watch?v=hdGsFpZ0J2E",
+                  "type": "video"
+                },
+                {
+                  "title": "官方屏幕录制视频",
+                  "url": "https://www.youtube.com/c/TailwindLabs/videos",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "fafeebfe-54ef-4f39-a40c-10ea8fc4adce",
+              "xid": "bdd2c874-3004-4874-8379-c80bb497147a"
+            }
+          ],
+          "id": "e409e92a-17fe-4b59-9fde-9c629582603e",
+          "xid": "f074f90c-eb0d-4b54-bd83-452ca0bb6cea"
+        }
+      ],
+      "id": "f49f4422-ad75-40b8-b58d-eb61a6ff49d8",
+      "xid": "e473f026-c4a6-406a-999f-d216cd7d7cbf"
+    },
+    {
+      "title": "CSS 架构",
+      "description": "CSS 架构是指在大规模网络项目中，用于构建和维护 CSS 代码的策略和组织方法。
+
+其重点是创建可扩展的、可维护的、模块化的样式表以管理网络应用程序不断增加的复杂性。
+
+关键概念包括命名约定（如 BEM 或 SMACSS）、基于组件的设计，关注点分离，以及预处理器（如 Sass 或 Less）的使用。
+
+CSS 架构通常采用 CSS 模块、实用类或 CSS-in-JS 解决方案等技术，以提高代码复用性和减少特异性冲突。
+
+通过创建系统化的样式方法，可以提高开发者的协作效率，减少代码重复，简化整个应用程序或网站的视觉设计更新和维护工作。
+
+",
+      "links": [
+        {
+          "title": "如何使用模块化架构组织 CSS",
+          "url": "https://snipcart.com/blog/organize-css-modular-architecture",
+          "type": "article"
+        },
+        {
+          "title": "探索有关架构的顶级文章",
+          "url": "https://app.daily.dev/tags/architecture?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "适用于动态组件基础架构的现代 CSS",
+          "url": "https://www.youtube.com/watch?v=Y50iqMlrqU8",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "BEM（Block, Element, Modifier方法论）",
+          "description": "Block, Element, Modifier方法论（通常简称为BEM）是一种流行的HTML和CSS类命名约定。
+
+该方法论由Yandex团队开发，旨在帮助开发者更好地理解项目中HTML和CSS之间的关系。
+
+\n\n",
+          "links": [
+            {
+              "title": "BEM官方网站",
+              "url": "https://en.bem.info",
+              "type": "article"
+            },
+            {
+              "title": "BEM文档",
+              "url": "https://en.bem.info/methodology/quick-start",
+              "type": "article"
+            },
+            {
+              "title": "使用BEM标记法的5大理由",
+              "url": "https://www.elpassion.com/blog/5-reasons-to-use-bem-a",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b0fb497c-1ede-41ad-8f26-98c051ffe7cc",
+          "xid": "490f73af-9d1d-4944-8da9-ed7e3051bf7c"
+        }
+      ],
+      "id": "22579262-3961-4dc1-a025-2a1c88a97d00",
+      "xid": "11677dba-59c1-4db1-b491-6355c57c8ad0"
+    },
+    {
+      "title": "CSS预处理器",
+      "description": "CSS预处理器是扩展标准CSS功能的脚本语言，使开发人员能够编写更具可维护性和效率的样式表。
+
+它们引入了变量、嵌套、混合（mixins）、函数和数学运算等功能，这些功能随后会被编译成标准CSS。
+
+流行的预处理器包括Sass、Less和Stylus。
+
+这些工具使开发人员能够更逻辑地组织样式，更有效地重用代码，并用较少的重复创建复杂的CSS结构。
+
+预处理器通常支持用于模块化样式表的部分文件和内置的颜色处理功能。
+
+通过使用预处理器，开发人员可以编写更符合DRY（Don't Repeat Yourself）原则的代码，更容易地管理大规模项目，并在编译过程中通过优化潜在地提高样式表的性能。
+
+\n\n",
+      "links": [
+        {
+          "title": "Sass官方网站",
+          "url": "https://sass-lang.com/",
+          "type": "article"
+        },
+        {
+          "title": "Less官方网站",
+          "url": "https://lesscss.org/",
+          "type": "article"
+        },
+        {
+          "title": "Stylus官方网站",
+          "url": "https://stylus-lang.com/",
+          "type": "article"
+        },
+        {
+          "title": "PostCSS官方网站",
+          "url": "https://postcss.org/",
+          "type": "article"
+        },
+        {
+          "title": "了解关于CSS的热门文章",
+          "url": "https://app.daily.dev/tags/css?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Sass",
+          "description": "Sass（Syntactically Awesome Style Sheets）是一种成熟、稳定且强大的专业级CSS扩展语言。
+
+它通过变量、嵌套规则、混合（mixins）、内联导入等功能扩展了CSS，所有这些功能都使用完全符合CSS规范的语法。
+
+Sass使得在复杂的项目中更容易地组织、维护和重用样式。
+
+它可以编译为干净的标准CSS，并支持两种语法：原始的缩进语法和更为流行的SCSS（Sassy CSS）语法。
+
+Sass提供了库控制指令等功能，使得编写结构良好、可扩展的CSS变得更加容易。
+
+这些功能有助于减少CSS中的重复代码并节省时间，因此它成为前端开发者管理大型复杂样式表时的热门选择。
+
+\n",
+          "links": [
+            {
+              "title": "Sass 网站",
+              "url": "https://sass-lang.com/",
+              "type": "article"
+            },
+            {
+              "title": "在线Sass测试平台",
+              "url": "https://sass-lang.com/playground/",
+              "type": "article"
+            },
+            {
+              "title": "Sass初学者教程",
+              "url": "https://www.youtube.com/watch?v=_a5j7KoflTs",
+              "type": "video"
+            },
+            {
+              "title": "Sass、BEM及响应式设计",
+              "url": "https://www.youtube.com/watch?v=jfMHA8SqUL4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6bddfddc-f216-4369-a8da-c88f451fda15",
+          "xid": "6c8243f7-5df6-473f-99e0-6149f9612b4b"
+        },
+        {
+          "title": "PostCSS",
+          "description": "PostCSS 是一种用于使用 JavaScript 插件转换 CSS 的工具。
+
+它允许开发人员通过自动化重复任务、添加厂商前缀以及实现未来的 CSS 特性来增强其 CSS 开发流程。
+
+作为 CSS 预处理器工作的 PostCSS，与 Sass 或 Less 不同，它具有高度模块化和可定制化的特点。
+
+用户可以选择广泛范围的插件或创建自己的插件以满足特定需求。
+
+流行的插件包括用于添加厂商前缀的 Autoprefixer，用于使用未来 CSS 特性的 cssnext，以及用于压缩的 cssnano。
+
+PostCSS 可以很好地与各种构建工具集成，并且可以与传统的 CSS 预处理器一起使用。
+
+它的灵活性和性能使其成为现代 Web 开发流程中优化 CSS 的流行选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "PostCSS 官方网站",
+              "url": "https://postcss.org/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 CSS 的热门文章",
+              "url": "https://app.daily.dev/tags/css?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "15分钟学习 PostCSS",
+              "url": "https://www.youtube.com/watch?v=Kn2SKUOaoT4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d98c4995-8494-43ab-8c3e-d41d1feccc6a",
+          "xid": "8b90190c-e209-4375-80a8-f4fc9dd57b9a"
+        }
+      ],
+      "id": "4149dafa-4a28-45ee-b9e9-abc9a10aa1fa",
+      "xid": "ad167768-7406-494f-a40d-9f6ccdaa9661"
+    },
+    {
+      "title": "构建工具",
+      "description": "构建工具是旨在从源代码自动创建可执行应用程序的软件实用工具。
+
+它们负责处理诸如编译（compiling）、链接（linking）、压缩（minifying）、捆绑（bundling）代码、运行测试和管理依赖关系（dependencies）等任务。
+
+常见的构建工具包括Make、Gradle、Maven、Webpack和Gulp。
+
+这些工具通过减少手动步骤、确保不同环境之间的一致性以及为生产环境优化输出，从而简化开发工作流。
+
+它们通常支持增量构建（incremental builds）、并行处理（parallel processing）和自定义任务定义（custom task definitions）等特性。
+
+在现代软件开发中，尤其是大型项目中，构建工具至关重要，可以提升效率，减少错误，并促进持续集成和部署流程。
+
+",
+      "links": [
+        {
+          "title": "Webpack 官网",
+          "url": "https://webpack.js.org/",
+          "type": "article"
+        },
+        {
+          "title": "Vite 官网",
+          "url": "https://vitejs.dev",
+          "type": "article"
+        },
+        {
+          "title": "Parcel 官网",
+          "url": "https://parceljs.org/",
+          "type": "article"
+        },
+        {
+          "title": "关于 Tools 的热门文章",
+          "url": "https://app.daily.dev/tags/tools?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "模块打包器（Module Bundlers）",
+          "description": "模块打包器是开发工具，它们将多个JavaScript文件及其依赖项合并成一个文件，以便优化用于Web浏览器。
+
+模块打包器可以解析和管理依赖关系，转换和优化代码，并通常支持代码分割（code splitting）和延迟加载（lazy loading）等功能。
+
+流行的模块打包器包括Webpack、Rollup和Parcel。
+
+这些工具通过将代码组织到模块中，消除全局作用域污染，并提高加载时间等方法来处理管理复杂JavaScript应用程序时的挑战。
+
+模块打包器通常支持各种文件格式，通过转译支持现代JavaScript特性，并与任务运行器和其他构建工具集成。
+
+其主要目标是简化开发过程，并在生产环境中提升应用程序性能。
+
+",
+          "links": [
+            {
+              "title": "完整的JavaScript模块打包器指南",
+              "url": "https://snipcart.com/blog/javascript-module-bundler",
+              "type": "article"
+            },
+            {
+              "title": "Rollup打包器（Rollup Bundler）",
+              "url": "https://rollupjs.org/",
+              "type": "article"
+            },
+            {
+              "title": "Webpack网站",
+              "url": "https://webpack.js.org/",
+              "type": "article"
+            },
+            {
+              "title": "模块打包器详解",
+              "url": "https://www.youtube.com/watch?v=5IG4UmULyoA",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "Vite",
+              "description": "Vite 是一款现代构建工具和开发服务器，专为开发快速且简洁的Web应用程序而设计。
+
+由 Vue.js 作者 Evan You 开发，Vite 利用浏览器中的原生 ES 模块实现近乎瞬时的服务启动和闪电般的热模块替换（HMR）。
+
+它开箱支持各种框架，包括 Vue、React 和 Svelte。
+
+ Vite 使用 Rollup 进行生产构建，生成高度优化的包。
+
+它提供的功能包括 CSS 预处理器支持、TypeScript 集成和插件可扩展性。
+
+Vite 的架构分离了开发和构建职责，这使得开发周期更快，提高了开发者的体验，特别是在传统捆绑器可能在性能方面遇到困难的大规模项目中。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Vite - 用于Web的构建工具",
+                  "url": "https://vite.dev",
+                  "type": "article"
+                },
+                {
+                  "title": "Vite 文档",
+                  "url": "https://vite.dev/guide/",
+                  "type": "article"
+                },
+                {
+                  "title": "浏览关于 Vite 的热门帖子",
+                  "url": "https://app.daily.dev/tags/vite?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Vite 入门课程",
+                  "url": "https://youtu.be/LQQ3CR2JTX8",
+                  "type": "video"
+                },
+                {
+                  "title": "Vite 教程视频",
+                  "url": "https://www.youtube.com/watch?v=VAeRhmpcWEQ",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "331cda84-46f2-4e13-a164-cc99c8ea346a",
+              "xid": "11479711-d532-491b-a9e7-941d3f299ec4"
+            },
+            {
+              "title": "esbuild",
+              "description": "esbuild 是一个高性能的JavaScript打包工具和压缩器，旨在追求速度和效率。
+
+由Evan Wallace创建，以Go语言编写，并编译为原生代码，使其比传统的基于JavaScript的构建工具快得多。
+
+esbuild默认支持现代JavaScript特性、TypeScript和JSX，即使在处理大型项目时也能在近实时的时间内完成打包。
+
+它提供了一个简单的API和命令行界面，使其易于集成到现有的构建流程中。
+
+尽管主要关注速度，esbuild还提供了基本的代码分割、摇树优化和源映射生成功能。
+
+其极高的性能使其特别适合开发环境并且可以作为其他构建工具的基础，尽管它可能缺少一些在更成熟的打包工具中发现的高级特性。
+
+",
+              "links": [
+                {
+                  "title": "让我们学习esbuild！（与Sunil Pai一起学习）— Learn With Jason",
+                  "url": "https://www.youtube.com/watch?v=KLdF1yu_bmI",
+                  "type": "course"
+                },
+                {
+                  "title": "esbuild官网",
+                  "url": "https://esbuild.github.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关Web开发的热门文章",
+                  "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是esbuild？",
+                  "url": "https://www.youtube.com/watch?v=ZY8Vu8cbWF0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "f20134bc-7c05-4da3-b25e-ffcf2326c114",
+              "xid": "ef72a78e-b4ef-40b8-827c-0728b7d68a40"
+            },
+            {
+              "title": "Webpack",
+              "description": "Webpack 是一个流行的开源 JavaScript 模块打包工具（module bundler），用于转化、打包或封装网络资源。
+
+它接受包含依赖关系的模块，并生成代表这些模块的静态资源。
+
+Webpack 不仅可以处理 JavaScript，还能处理 CSS、图像和字体等其他资源，使用加载器（loaders）预处理文件，使用插件（plugins）执行范围更广的任务，例如捆绑优化。
+
+Webpack 的主要特性包括代码分割（code splitting）、懒加载（lazy loading）以及丰富的扩展生态系统。
+
+它支持热模块替换（hot module replacement），加快开发速度，还支持摇树优化（tree shaking）来消除未使用代码。
+
+尽管与某些替代工具相比，Webpack 的学习曲线更陡峭，但它的灵活性和强大功能使它成为许多现代 JavaScript 开发工作流程中的标准工具，特别是对于复杂应用。
+
+",
+              "links": [
+                {
+                  "title": "Webpack",
+                  "url": "https://webpack.js.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Getting Started with Webpack",
+                  "url": "https://webpack.js.org/guides/getting-started/",
+                  "type": "article"
+                },
+                {
+                  "title": "A Complete Guide to Webpack 5",
+                  "url": "https://www.valentinog.com/blog/webpack",
+                  "type": "article"
+                },
+                {
+                  "title": "Explore top posts about Webpack",
+                  "url": "https://app.daily.dev/tags/webpack?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d23a2936-d932-4278-a55c-afa5b966310a",
+              "xid": "af9ee327-0e2b-4ad5-83d2-3214fccfb5c4"
+            },
+            {
+              "title": "Rollup",
+              "description": "Rollup是一个用于JavaScript的模块打包器（module bundler），它可以将小块代码编译成更大、更复杂的结构。
+
+Rollup擅长为ECMAScript模块（ES modules）生成更小、更高效的包。
+
+它在树摇（tree-shaking）方面表现出色，能够消除未使用的代码，从而产生更轻量的输出效果。
+
+Rollup特别适合使用ECMAScript模块格式的库和应用程序。
+
+Rollup支持各种输出格式，包括UMD和CommonJS，使得其在不同的部署场景下具有很强的灵活性。
+
+虽然Rollup可能需要比一些替代方案更多的配置，但其对ECMAScript模块的专著以及高效的模块打包，使得它成为那些重视较小包尺寸和现代JavaScript实践的项目的流行选择。
+
+\n",
+              "links": [
+                {
+                  "title": "Rollup官网和文档",
+                  "url": "https://rollupjs.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于Web开发的热门文章",
+                  "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "如何使用Rollup设置JavaScript打包",
+                  "url": "https://www.youtube.com/watch?v=ICYLOZuFMz8",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "d68f72aa-1628-4a06-8368-d8589b91aa62",
+              "xid": "ff87e702-07f5-4c60-80d0-8cf3db610548"
+            },
+            {
+              "title": "打包工具 Parcel",
+              "description": "Parcel 是一种零配置的 web 应用打包工具，简化了构建和部署 web 项目的流程。
+
+它开箱即用地支持多种编程语言和文件类型，包括 JavaScript、CSS、HTML 以及各种图像格式。
+
+Parcel 自动分析依赖关系、转换代码并优化资源，无需复杂的配置文件。
+
+默认提供诸如热模块替换（Hot Module Replacement）、代码拆分（Code Splitting）及摇树优化（Tree Shaking）等功能。
+
+Parcel 的主要卖点在于其易用性和快速构建时间，这得益于并行处理和缓存机制。
+
+虽然与 Webpack 等更加成熟的打包器相比，Parcel 在一些高级功能上有所欠缺，但其简单性和性能仍使其成为快速原型设计和小型项目的理想选择。
+
+",
+              "links": [
+                {
+                  "title": "Parcel 官方网站",
+                  "url": "https://parceljs.org/plugin-system/bundler/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索最热门的 Web Development 文章",
+                  "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "使用 Parcel.js 构建 Web 应用",
+                  "url": "https://www.youtube.com/watch?v=R02ehdTzi3I",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "75501ac5-d6d1-41c3-8067-901ce7223598",
+              "xid": "1b09c797-aefe-46b5-844a-5599a0c5dadb"
+            }
+          ],
+          "id": "b1e9e753-c194-4700-adb6-bee1132cbc67",
+          "xid": "331077f8-e933-45d4-a723-b9bbba80aa0f"
+        },
+        {
+          "title": "代码检查器和格式化工具",
+          "description": "代码检查器（Linters）和格式化工具（Formatters）是软件开发中用于提高代码质量和一致性的一类工具。
+
+代码检查器分析源代码以检测编程错误、错误、风格问题和可疑结构，并通常执行一组预定义或自定义规则。
+
+格式化工具自动重构代码以遵循一致的风格，调整诸如缩进、换行和空格等元素。
+
+这些工具共同帮助跨项目和团队维护代码标准，增强可读性，早期捕获潜在错误，并减轻代码审查期间开发者的认知负担。
+
+热门示例包括用于JavaScript代码检查的ESLint和用于代码格式化的Prettier，它们都可以集成到开发工作流程和IDE中以实现实时反馈和自动修正。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是代码检查器？",
+              "url": "https://www.testim.io/blog/what-is-a-linter-heres-a-definition-and-quick-start-guide/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Prettier",
+              "description": "Prettier 是一种对多种编程语言（包括 JavaScript、TypeScript、CSS 等）均有支持的具有明确规则的意见化代码格式化工具（code formatter）。
+
+它自动格式化代码，以便符合一致的风格，在开发团队中消除了对代码格式化方式的争论。
+
+Prettier 会解析并根据自己的规则重新打印代码，同时考虑最大行长度并根据需要适当换行。
+
+它与大多数编辑器集成，并可以在开发工作流中运行，或在提交前的钩子（pre-commit hooks）中使用。
+
+Prettier 的主要优势包括节省代码审查时间，减轻开发者的认知负担，并在项目之间保持一致的代码风格。
+
+其“零配置”理念（\"zero-config\" philosophy）以及广泛的语言支持使其成为现代开发环境中备受欢迎的工具。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Prettier 官网",
+                  "url": "https://prettier.io",
+                  "type": "article"
+                },
+                {
+                  "title": "为什么选择 Prettier",
+                  "url": "https://prettier.io/docs/en/why-prettier.html",
+                  "type": "article"
+                },
+                {
+                  "title": "如何设置 Prettier",
+                  "url": "https://www.youtube.com/watch?v=DqfQ4DPnRqI",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "209eb5c9-b713-44e6-b471-a616d179bab9",
+              "xid": "5b133dac-52a1-4ca9-830a-5715bcc0cba5"
+            },
+            {
+              "title": "ESLint",
+              "description": "ESLint 是一个流行的开源静态代码分析工具，用于识别和修复 JavaScript 代码中的问题。
+
+它通过执行编码标准，检测潜在错误，促进跨项目的统一编码实践。
+
+ESLint 具有高度可配置性，允许开发人员定义自定义规则或使用预设配置。
+
+ESLint 通过插件支持现代 JavaScript 特性、JSX 和 TypeScript。
+
+ESLint 可以通过 IDE 扩展、构建过程或 git hooks 集成到开发工作流程中，为开发人员提供实时反馈。
+
+它能够自动修复检测到的许多问题，使其成为维持代码质量和一致性的重要工具，尤其是在大型团队或项目中。
+
+ESLint 的可扩展性和在 JavaScript 生态系统中的广泛应用使其成为现代 JavaScript 开发中的标准工具。
+
+",
+              "links": [
+                {
+                  "title": "ESLint 网站",
+                  "url": "https://eslint.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是 ESLint，如何使用 ESLint 检测和修复 JavaScript 项目的代码",
+                  "url": "https://2coffee.dev/en/articles/what-is-eslint-and-how-to-use-eslint-to-detect-fix-code-for-javascript-projects",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 JavaScript 的顶级文章",
+                  "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "ESLint 快速入门 - 自动查找错误",
+                  "url": "https://www.youtube.com/watch?v=qhuFviJn-es",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "a0d4ac4d-3427-4586-b66c-7a3966ea4ae8",
+              "xid": "cb260baf-0338-43ff-a645-18cc30d4ef31"
+            }
+          ],
+          "id": "2aad0b77-2c92-420c-8b79-32e90a367a19",
+          "xid": "1eedd276-940b-40c8-9b1b-b5faf2b49f89"
+        }
+      ],
+      "id": "c538bbd8-7fa0-474c-86b4-164fe204dd1e",
+      "xid": "67a0279d-a9fb-4c45-a0de-7bded7004cad"
+    },
+    {
+      "title": "测试",
+      "description": "测试应用程序涉及系统地评估软件，以确保它满足要求、正确运行并保持质量。
+
+主要的测试类型包括：\n\n1.  单元测试(Unit testing)：验证各个组件或功能\n2.  集成测试(Integration testing)：检查应用程序不同部分之间的交互\n3.  功能测试(Functional testing)：确保应用程序满足指定需求\n4.  UI/UX测试(UI/UX testing)：评估用户界面和体验\n5.  性能测试(Performance testing)：评估应用程序的速度、响应性和稳定性\n6.  安全性测试(Security testing)：识别漏洞并确保数据保护\n7.  可访问性测试(Accessibility testing)：验证应用程序对残疾人士的可用性\n8.  兼容性测试(Compatibility testing)：检查应用程序在不同设备和平台上的功能\n\n现代测试通常包含自动化测试工具和持续集成/持续部署（CI/CD）流水线。
+
+测试驱动开发（Test-driven development，TDD）和行为驱动开发（Behavior-driven development，BDD）是两种强调在编写代码之前或同时编写测试的方法论。
+
+有效的测试策略有助于早期发现错误，提高代码质量，并确保可靠用户体验。
+
+\n\n",
+      "links": [
+        {
+          "title": "软件测试的各种类型",
+          "url": "https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing",
+          "type": "article"
+        },
+        {
+          "title": "了解有关测试的热门文章",
+          "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "如何测试Web应用程序 - dotJS 2024",
+          "url": "https://www.youtube.com/watch?v=l3qjQpYBR8c",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Vitest",
+          "description": "Vitest 是针对 JavaScript 和 TypeScript 项目设计的快速轻量级测试框架，作为 Jest 的 Vite 原生替代品。
+
+它利用 Vite 的转换管道和配置解析功能，为测试提供几乎即时的执行和热模块替换 (HMR)。
+
+Vitest 提供兼容 Jest 的 API，对于已使用 Jest 的项目而言，这有助于简化迁移过程。
+
+它开箱即支持快照测试、模拟(mocking) 和代码覆盖率等功能。
+
+Vitest 的架构允许并行测试执行和监视模式，极大地加快了测试流程的速度。
+
+其与 Vite 生态系统的集成使其特别适用于已经使用 Vite 的项目，但也可以用在任何 JavaScript 项目中。
+
+Vitest 对速度和开发者体验的关注使其成为现代 Web 开发工作流程中的日益受欢迎的选择。
+
+",
+          "links": [
+            {
+              "title": "Vitest - 下一代测试框架",
+              "url": "https://vitest.dev/",
+              "type": "article"
+            },
+            {
+              "title": "Vitest 文档",
+              "url": "https://vitest.dev/guide/",
+              "type": "article"
+            },
+            {
+              "title": "简单易懂的 Vitest",
+              "url": "https://www.youtube.com/watch?v=snCLQmINqCU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "58466229-8709-413d-9490-58988d594d6d",
+          "xid": "24d03128-4c6e-48ca-8e6e-3c9c2621b3b4"
+        },
+        {
+          "title": "Jest",
+          "description": "Jest 是由 Facebook 开发的一种流行 JavaScript 测试框架。
+
+它为 JavaScript 代码的单元测试提供了一个全面的解决方案，重点在于简单和最小的配置。
+
+Jest 提供了诸如自动模拟(mock)、代码覆盖率报告和快照测试(snapshot testing)等特性。
+
+Jest 支持同步(sync)和异步(async)代码的测试，并可与各种 JavaScript 框架和库结合使用，包括 React、Angular 和 Vue。
+
+Jest 内置的断言库和测试运行器使编写和执行测试变得快捷便利。
+
+它能够并行运行测试以及智能测试监视模式使得测试执行速度非常快，因此在 JavaScript 生态系统中，成为许多开发者和组织的首选。
+
+\n\n",
+          "links": [
+            {
+              "title": "Jest 网站",
+              "url": "https://jestjs.io/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Jest 的热门文章",
+              "url": "https://app.daily.dev/tags/jest?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "使用 Jest 进行 JavaScript 测试",
+              "url": "https://youtu.be/IPiUDhwnZxA?si=2_lE2bDo2fRuo2CU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6aeaf7c5-b5cb-4b5f-83f1-d13268c9273e",
+          "xid": "0aed5179-b4b1-4bc5-b4f9-5ec567e2f355"
+        },
+        {
+          "title": "Playwright",
+          "description": "Playwright是由微软开发的一款开源自动化框架，用于对网络应用进行端到端测试（end-to-end testing）。
+
+它提供了一个单一API，用于自动化Chromium、Firefox和WebKit浏览器，在Windows、macOS和Linux系统上运行。
+
+Playwright支持包括JavaScript、TypeScript、Python和.NET在内的多种编程语言。
+
+它提供了一些特性，例如自动等待（auto-waiting）、网络拦截（network interception）和移动设备模拟（mobile emulation）。
+
+该框架在处理具有动态内容的现代网络应用时尤为出色，通过在执行操作前等待元素就绪，确保了可靠的自动化。
+
+Playwright的跨浏览器和跨平台功能，加上其强大的调试和测试生成工具，使其成为网络应用自动化测试的有力选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Playwright官网",
+              "url": "https://playwright.dev/",
+              "type": "article"
+            },
+            {
+              "title": "Playwright：一款节省时间的端到端测试框架",
+              "url": "https://thenewstack.io/playwright-a-time-saving-end-to-end-testing-framework/",
+              "type": "article"
+            },
+            {
+              "title": "开始使用Playwright进行端到端测试",
+              "url": "https://www.youtube.com/playlist?list=PLQ6Buerc008ed-F9OksF7ek37wR3y916p",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b6282d1e-cbd3-4e41-bcd3-396cf1edaf2e",
+          "xid": "edd4bfb0-97d8-44a3-be32-3c87cbfa6ff1"
+        },
+        {
+          "title": "Cypress",
+          "description": "Cypress（Cypress框架）是一个基于JavaScript的端到端测试框架，构建在Mocha之上——Mocha是一个功能丰富的JavaScript测试框架，它在浏览器内部和外部运行，使异步测试变得简单且方便。
+
+此外，它还使用BDD/TDD断言库和浏览器来配合任何JavaScript测试框架。
+
+\n\n",
+          "links": [
+            {
+              "title": "Cypress官方网站",
+              "url": "https://www.cypress.io/",
+              "type": "article"
+            },
+            {
+              "title": "Cypress文档",
+              "url": "https://docs.cypress.io/",
+              "type": "article"
+            },
+            {
+              "title": "探索Cypress相关热门文章",
+              "url": "https://app.daily.dev/tags/cypress?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Cypress端到端测试",
+              "url": "https://www.youtube.com/watch?v=BQqzfHQkREo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "849bd72b-dccd-46b0-9bac-a38fddd725d2",
+          "xid": "18835686-67c2-400f-a0dd-0c31321a70f7"
+        }
+      ],
+      "id": "7c8298bd-8adf-4849-94c9-a05ed415ae81",
+      "xid": "86976524-f7a6-4dcf-bfea-24fec600b22c"
+    },
+    {
+      "title": "认证策略",
+      "description": "认证策略是用来验证用户或系统的身份，以便授予对受保护资源的访问权限的方法或技术。
+
+有多种不同的认证策略可供使用，包括：\n\n*   基本认证（Basic Authentication）\n*   会话认证（Session Based Authentication）\n*   令牌认证（Token Based Authentication）\n*   JWT认证（JWT Authentication）\n*   OAuth\n*   单一登录（SSO）\n\n你不一定需要一开始就学习所有这些认证策略的实现方法及其细节。
+
+然而，了解它们是什么以及它们如何工作是非常重要的。
+
+这将帮助你在为应用程序选择认证策略时做出更好的决策。
+
+\n\n",
+      "links": [
+        {
+          "title": "基本认证",
+          "url": "https://roadmap.sh/guides/basic-authentication",
+          "type": "article"
+        },
+        {
+          "title": "会话认证",
+          "url": "https://roadmap.sh/guides/session-authentication",
+          "type": "article"
+        },
+        {
+          "title": "令牌认证",
+          "url": "https://roadmap.sh/guides/token-authentication",
+          "type": "article"
+        },
+        {
+          "title": "JWT认证",
+          "url": "https://roadmap.sh/guides/jwt-authentication",
+          "type": "article"
+        },
+        {
+          "title": "OAuth",
+          "url": "https://roadmap.sh/guides/oauth",
+          "type": "article"
+        },
+        {
+          "title": "单点登录（SSO）",
+          "url": "https://roadmap.sh/guides/sso",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "2f1032fc-7886-4e26-8aaf-c0d656558586",
+      "xid": "344635ca-362d-405a-bb84-4382c7aa94f9"
+    },
+    {
+      "title": "Web安全基础",
+      "description": "网络安全性知识涵盖了保护网站、网络应用和网络服务免于各种网络威胁的理解与实践。
+
+关键领域包括：\n\n1. 使用HTTPS和TLS进行安全数据传输\n2. 防止跨站脚本攻击（Cross-Site Scripting, XSS）\n3. 防护SQL注入\n4. 减轻跨站请求伪造（Cross-Site Request Forgery, CSRF）威胁\n5. 实现内容安全策略（Content Security Policy, CSP）\n6. 安全身份验证和会话管理\n7. 输入验证和清理\n8. 保护防范Clickjacking\n9. 安全处理Cookie\n10. 定期安全更新和补丁管理\n\n网络安全性还涉及了解OWASP Top Ten中列出的常见漏洞，落实适当访问控制，并采用安全编码实践。
+
+它需要持续的教育和警惕，因为新的威胁不断出现。
+
+有效的网络安全策略通常包括预防措施、定期安全审计和事件响应计划，以确保网络资源和用户数据的保密性、完整性和可用性。
+
+\n\n",
+      "links": [
+        {
+          "title": "OWASP官网",
+          "url": "https://owasp.org/",
+          "type": "article"
+        },
+        {
+          "title": "OWASP速查表",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/AJAX_Security_Cheat_Sheet.html",
+          "type": "article"
+        },
+        {
+          "title": "内容安全策略（CSP）",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
+          "type": "article"
+        },
+        {
+          "title": "浏览安全主题的顶级帖子",
+          "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "OWASP ZAP逐步教程",
+          "url": "https://www.youtube.com/playlist?list=PLH8n_ayg-60J9i3nsLybper-DR3zJw6Z5",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "跨源资源共享(CORS)",
+          "description": "跨源资源共享(CORS)是Web浏览器实现的一种安全机制，用于控制网页上从不同域名（与网页服务域名不同）获取资源（如API或字体）的权限。
+
+它扩展并增加了同源策略的灵活性，允许服务器指定谁可以访问它们的资源。
+
+CORS通过一个HTTP头部系统工作，其中浏览器向托管跨源资源的服务器发送预检请求，服务器通过响应头指示是否允许实际请求。
+
+这种机制有助于防止未经授权访问敏感数据，同时允许合法的跨源请求。
+
+对于集成多个域名的服务和资源的现代Web应用而言，CORS至关重要，它在满足安全需求的同时，也满足了复杂的分布式Web系统的功能需求。
+
+\n\n",
+          "links": [
+            {
+              "title": "跨源资源共享(CORS)",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS",
+              "type": "article"
+            },
+            {
+              "title": "理解CORS",
+              "url": "https://rbika.com/blog/understanding-cors",
+              "type": "article"
+            },
+            {
+              "title": "6分钟理解CORS",
+              "url": "https://www.youtube.com/watch?v=PNtFSVU-YTI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "712116b0-62e4-49fe-b0fd-0011578e92c8",
+          "xid": "c884c4c0-1577-4918-a80c-7b660adfcd62"
+        },
+        {
+          "title": "HTTPS",
+          "description": "安全的超文本传输协议 (Hypertext Transfer Protocol Secure，HTTPS) 是 HTTP 的安全版本，HTTP 是在 Web 浏览器和网站之间传输数据的主要协议。
+
+HTTPS 通过加密来增加数据传输的安全性，这对于用户发送敏感数据尤其重要，例如登录银行账户、电子邮件服务或健康保险供应商时。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是 HTTPS？",
+              "url": "https://www.cloudflare.com/en-gb/learning/ssl/what-is-https/",
+              "type": "article"
+            },
+            {
+              "title": "为什么 HTTPS 重要",
+              "url": "https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https",
+              "type": "article"
+            },
+            {
+              "title": "在您的服务器上启用 HTTPS",
+              "url": "https://web.dev/enable-https/",
+              "type": "article"
+            },
+            {
+              "title": "HTTPS 的工作原理 (漫画)",
+              "url": "https://howhttps.works/",
+              "type": "article"
+            },
+            {
+              "title": "SSL、TLS、HTTP、HTTPS 的解释",
+              "url": "https://www.youtube.com/watch?v=hExRDVZHhig",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "cb262cea-6607-4509-976a-9320a79ea7ef",
+          "xid": "b01ffd34-7529-448d-808a-2c779276a6ca"
+        },
+        {
+          "title": "内容安全策略",
+          "description": "内容安全策略（Content Security Policy，CSP）是一种由网络浏览器实施的安全标准，用于防止跨站脚本（XSS）、点击劫持和其他代码注入攻击。
+
+它通过允许Web开发人员指定哪些内容源可以信任并且可以在网页上加载来工作。
+
+内容安全策略一般通过HTTP头部或元标签来实现，定义用于脚本、样式表、图像和字体等各种类型资源的规则。
+
+通过限制可以加载内容的来源，CSP大大降低了恶意代码执行的风险。
+
+它还提供了例如报告违规的功能，有助于开发人员识别和修复潜在的安全问题。
+
+尽管功能强大，但实施内容安全策略需要仔细配置，平衡安全性和功能，尤其是对于使用第三方资源或内联脚本的网站。
+
+\n\n",
+          "links": [
+            {
+              "title": "MDN 内容安全策略（CSP）",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
+              "type": "article"
+            },
+            {
+              "title": "Web.dev - 内容安全策略（CSP）",
+              "url": "https://web.dev/csp/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于网络安全的顶级文章",
+              "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b4a9708b-b4e3-40d8-aad4-3f48b0b339ca",
+          "xid": "b0514e8c-4297-4993-9ee6-078042b1bc28"
+        },
+        {
+          "title": "OWASP 安全风险",
+          "description": "OWASP（开放Web应用安全项目）确定并评估了对Web应用最具威胁的安全风险。
+
+OWASP Top 10 列表包括注入漏洞、身份验证漏洞、敏感数据泄漏、XML外部实体 (XXE) 、访问控制漏洞、安全配置错误、跨站脚本 (XSS) 、不安全的反序列化、使用具有已知漏洞的组件、以及日志和监控不足。
+
+这些风险是恶意行为者经常利用的常见攻击渠道，以攻破Web应用及其底层系统。
+
+OWASP为缓解这些风险提供了指导和最佳实践，强调安全编码实践、定期安全评估以及在整个软件开发生命周期中实施强大安全控制的重要性。
+
+理解并解决这些风险对于开发者和组织提高其Web应用的安全态势至关重要。
+
+",
+          "links": [
+            {
+              "title": "OWASP Web应用安全测试检查清单",
+              "url": "https://github.com/0xRadi/OWASP-Web-Checklist",
+              "type": "opensource"
+            },
+            {
+              "title": "OWASP 网站",
+              "url": "https://owasp.org/",
+              "type": "article"
+            },
+            {
+              "title": "OWASP 快速入门指南",
+              "url": "https://cheatsheetseries.owasp.org/cheatsheets/AJAX_Security_Cheat_Sheet.html",
+              "type": "article"
+            },
+            {
+              "title": "OWASP Top 10：最糟的软件漏洞指南",
+              "url": "https://thenewstack.io/owasp-top-10-a-guide-to-the-worst-software-vulnerabilities/",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于安全的热门文章",
+              "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1a0ff5c7-6cde-42fb-8913-f88c28952304",
+          "xid": "4464e634-a96d-41c4-b46f-1961c3c4f80d"
+        }
+      ],
+      "id": "6e725d53-62bc-4875-9801-dda0942db5bd",
+      "xid": "a3516b2f-2872-4747-a49e-0dfa582d92f0"
+    },
+    {
+      "title": "Web组件",
+      "description": "Web组件是一系列标准化的浏览器技术，允许开发人员为网页和应用程序创建可重用的、封装的HTML元素。
+
+它们主要由三种技术组成：自定义元素(custom elements)用于定义新的HTML标签，影子DOM(Shadow DOM)用于封装样式和标记，以及HTML模板(HTML Templates)用于声明可重用的HTML片段。
+
+Web组件使创建模块化，可分享的组件成为可能，这些组件可以在不同的框架和浏览器中通用。
+
+Web组件提供强大的封装，减少样式冲突并促进代码重用。
+
+尽管与流行的JavaScript框架相比，其采用速度较慢，但Web组件提供了一种基于标准的组件开发方法，确保了在网络生态中的长期兼容性和互操作性。
+
+",
+      "links": [
+        {
+          "title": "Web组件 - MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Web_Components",
+          "type": "article"
+        },
+        {
+          "title": "WebComponents.org",
+          "url": "https://webcomponents.github.io/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Web组件的热门帖子",
+          "url": "https://app.daily.dev/tags/web-components?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Web组件速成课程",
+          "url": "https://www.youtube.com/watch?v=PCWaFLy3VUo",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "HTML模板",
+          "description": "在页面加载时，`<template>` HTML元素是一种用于暂存不立即渲染的HTML内容的机制，这些内容可以在运行时通过JavaScript进行实例化。
+
+<template>元素可视为存储在文档中供后续使用的片段内容。
+
+\n\n",
+          "links": [
+            {
+              "title": "在MDN使用模板和插槽 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots",
+              "type": "article"
+            },
+            {
+              "title": "HTML Template标记",
+              "url": "https://www.w3schools.com/tags/tag_template.asp",
+              "type": "article"
+            },
+            {
+              "title": "探索有关HTML的热门帖子",
+              "url": "https://app.daily.dev/tags/html?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ab884803-2b4b-4db4-a583-39eef888b1c3",
+          "xid": "8278fb28-9560-41e3-8d54-69dd166f4f94"
+        },
+        {
+          "title": "自定义元素(Custom Elements)",
+          "description": "Web Components标准的一个关键特性是可以创建自定义元素，将你的功能封装到HTML页面中，而不需要使用一系列嵌套的元素来共同提供一个自定义页面功能。
+
+\n\n",
+          "links": [
+            {
+              "title": "使用自定义元素(Custom Elements) - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements",
+              "type": "article"
+            },
+            {
+              "title": "探索顶级Web开发文章",
+              "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Web Components | 自定义元素(Custom Elements)",
+              "url": "https://www.youtube.com/watch?v=1GT35DSdZbI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "790b6ad2-7190-4221-8b9d-792ea7cd028f",
+          "xid": "be5f49a9-d3c9-4014-ac5a-6472494bc1cf"
+        },
+        {
+          "title": "阴影 DOM（Shadow DOM）",
+          "description": "阴影 DOM（Shadow DOM）是一种网络标准，为 JavaScript、CSS 和网页组件的模板提供了封装。
+
+它允许开发人员在元素内创建隔离的 DOM 树，与主文档 DOM 分离。
+
+这种封装防止了样式和脚本彼此之间泄漏，确保组件内部结构与页面其余部分独立。
+
+阴影 DOM 可以通过减少命名冲突和 CSS 选择器特异性问题来实现更模块化和可维护的代码。
+
+它特别适合于创建具有自包含样式的可重用自定义元素。
+
+尽管主要用于网页组件，阴影 DOM 也可以在各种场景中应用，以改善代码组织并减少复杂网络应用程序中未预期的副作用。
+
+\n\n",
+          "links": [
+            {
+              "title": "使用阴影 DOM（Shadow DOM） | MDN 网络文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM",
+              "type": "article"
+            },
+            {
+              "title": "阅读关于 DOM 的热门文章",
+              "url": "https://app.daily.dev/tags/dom?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "DOM 与虚拟 DOM 与阴影 DOM（Shadow DOM）对比",
+              "url": "https://youtu.be/7Tok22qxPzQ?si=2cw36PNSgFTcNHWx",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "fac80a6d-053c-49f8-a2d2-b7c30eb8ee19",
+          "xid": "4e1c18c8-8524-4fc0-ae0b-1707fef53970"
+        }
+      ],
+      "id": "1e4bb2cd-c792-49b2-a36b-917e3fd12e47",
+      "xid": "efe264d2-dbda-439f-825d-4e423bd7469b"
+    },
+    {
+      "title": "服务器端渲染 (SSR)",
+      "description": "服务器端渲染 (SSR) 是在 Web 开发中使用的一种技术，其中网页在服务器上生成并以完全渲染好的 HTML 发送给客户端。
+
+这种方法与客户端渲染形成对比，后者使用 JavaScript 构建页面。
+
+SSR 可以通过向网络爬虫提供完整内容，从而提高初始页面加载速度和搜索引擎优化 (SEO)。
+
+对于内容丰富且需要更快第一次页面加载的应用程序，SSR 特别有益。
+
+SSR 可以使用诸如 React 的 Next.js 或 Vue.js 的 Nuxt.js 等各种框架实现。
+
+尽管它会增加服务器负载和复杂性，但 SSR 在性能感知方面具有优势，特别是在较慢的设备或网络上，并且在初始加载后可以与客户端激活 (hydration) 结合使用，以实现动态互动。
+
+\n\n",
+      "links": [
+        {
+          "title": "服务器端渲染 (SSR)",
+          "url": "https://vuejs.org/guide/scaling-up/ssr.html",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 Web 开发的热门文章",
+          "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "服务器端渲染 (SSR) 与客户端渲染 (CSR) 是什么？",
+          "url": "https://www.youtube.com/watch?v=ObrSuDYMl1s",
+          "type": "video"
+        },
+        {
+          "title": "Web 开发中的服务器端渲染是什么？",
+          "url": "https://www.youtube.com/watch?v=okvg3MRAPs0",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "React",
+          "description": "React 是一个开源的 JavaScript 库，用于构建用户界面 (user interfaces)，主要应用于单页应用程序 (single-page applications)。
+
+它由 Facebook 开发和维护，允许开发人员创建可复用的 UI 组件，这些组件可以在数据变化时高效地更新和渲染。
+
+React 使用虚拟 DOM 进行性能优化，并支持单向数据流 (unidirectional data flow)。
+
+其组件化架构 (component-based architecture) 促进了模块化和复用性。
+
+React 的生态系统包括用于状态管理的 Redux 工具和用于移动应用开发的 React Native。
+
+该库的声明式特性 (declarative nature)、高效的渲染 (efficient rendering) 以及强大的社区支持 (community support) 使其成为现代 Web 应用中前端开发的最流行选择之一。
+
+\n\n",
+          "links": [
+            {
+              "title": "全栈 React 开发课程",
+              "url": "https://www.youtube.com/watch?v=Bvwq_S0n2pk",
+              "type": "course"
+            },
+            {
+              "title": "访问专属的 React 路线图",
+              "url": "https://roadmap.sh/react",
+              "type": "article"
+            },
+            {
+              "title": "React 官网",
+              "url": "https://react.dev",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于 React 的热门文章",
+              "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Next.js",
+              "description": "Next.js 是一款基于 React 的开源框架，用于构建服务器端渲染（Server-side Rendering, SSR）和静态生成的 web 应用程序。
+
+它提供了自动代码分割、优化性能和简化路由等特色功能。
+
+Next.js 支持静态网站生成（Static Site Generation, SSG）和服务器端渲染（Server-side Rendering, SSR），允许开发人员为每个页面选择最合适的渲染方法。
+
+该框架提供内置的 CSS 支持、后端功能的 API 路由和简单的部署选项。
+
+Next.js 以开发者友好而闻名，其特色包括热模块替换（Hot Module Replacement, HMR）和自动预取（Automatic Prefetching）。
+
+它创建结合了静态页面和服务器渲染页面的混合应用的能力，使其成为构建可扩展和具有搜索引擎友好性的 web 应用程序的热门选择。
+
+\n\n",
+              "links": [
+                {
+                  "title": "官方网站",
+                  "url": "https://nextjs.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于JavaScript的顶级文章",
+                  "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Next.js 初学者教程 - 在 freeCodeCamp YouTube 频道上的完整课程",
+                  "url": "https://youtu.be/1WmNXEVia8I",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "cc7192cf-97e0-4775-9fc4-2fa34877cee0",
+              "xid": "4550444a-bd5e-4ff3-b992-9452b139535b"
+            },
+            {
+              "title": "React Router",
+              "description": "React Router是React应用程序中一个流行的路由库（routing library），它使开发者能够在客户端实现动态的路由（routing）。
+
+借助React Router，开发者可以创建具有多个视图的单页应用（single-page applications），同时管理浏览器的URL和历史记录（history），并使UI与URL保持同步（sync）。
+
+React Router提供了一种声明式的方法来定义路由，支持嵌套路由（nested routes）、路由参数（route parameters）和编程式导航（programmatic navigation）。
+
+它提供了BrowserRouter、Route和Link等组件来处理路由逻辑和导航。
+
+此外，该库还支持组件的懒加载（lazy loading）、路由守卫（route guards）和自定义历史记录管理（custom history management）。
+
+由于React Router与React的组件模型（component model）出色地结合（integration），它成为了在React生态系统中管理导航和构建复杂多视图应用的首选方案（go-to solution）。
+
+",
+              "links": [
+                {
+                  "title": "React Router官网",
+                  "url": "https://reactrouter.com/en/main",
+                  "type": "article"
+                },
+                {
+                  "title": "在React中路由的完全指南",
+                  "url": "https://hygraph.com/blog/routing-in-react",
+                  "type": "article"
+                },
+                {
+                  "title": "React Router - 完整教程",
+                  "url": "https://www.youtube.com/watch?v=oTIJunBa6MA",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "8041b4a5-816c-457c-bb22-7c2656d67d5a",
+              "xid": "9e98fa3c-d182-4e39-9846-ea27c6bb09cc"
+            }
+          ],
+          "id": "1a6bddfe-3a49-49b5-a38a-fc55e0a0ddcc",
+          "xid": "c3864a78-a009-45b4-b9af-799cbd3ff774"
+        },
+        {
+          "title": "Angular",
+          "description": "Angular 是一个由 Google 开发和维护的开源网络应用框架。
+
+它使用 TypeScript（JavaScript 的一种静态类型超集）来构建可扩展且高效的单页应用程序 (SPAs)。
+
+Angular 采用了基于组件的架构，用户界面由可复用的自包含组件构成。
+
+框架提供了双向数据绑定、依赖注入、功能强大的模板语法等功能，简化了复杂网页应用的开发。
+
+Angular 还包括一套全面的工具，用于测试、路由和状态管理，使其成为前端开发的完整解决方案。
+
+其模块化结构和对最佳实践的强调，使其特别适合大型企业应用。
+
+\n\n",
+          "links": [
+            {
+              "title": "访问 Angular 专用路线图",
+              "url": "https://roadmap.sh/angular",
+              "type": "article"
+            },
+            {
+              "title": "Angular 入门",
+              "url": "https://angular.dev/tutorials/learn-angular",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Angular 的热门文章",
+              "url": "https://app.daily.dev/tags/angular?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Angular 入门课程",
+              "url": "https://www.youtube.com/watch?v=3qBXWUpoPHo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "7bf6f902-6e88-4531-8c8f-23946b1423d4",
+          "xid": "e416382e-7c77-4641-8acf-e36c37dfd471"
+        },
+        {
+          "title": "Vue.js",
+          "description": "Vue.js 是一种用于构建用户界面的渐进式（progressive）JavaScript 框架。
+
+它旨在逐步采用，允许开发人员逐步将其集成到项目中。
+
+Vue 采用基于模板的虚拟 DOM（Virtual DOM）方式进行高效渲染。
+
+它具有响应式且可组合的组件系统，使其易于组织和复用代码。
+
+Vue 的核心库专注于视图层，但可以使用官方和社区提供的工具进行扩展，以支持状态管理、路由和构建工具。
+
+由于其学习曲线平缓，灵活性高，Vue 在小型项目和大型应用程序中都获得了广泛流行。
+
+其性能优异，体积轻巧，且文档详尽，这些优点在 web 开发者社群中为其赢得了广泛的接纳。
+
+",
+          "links": [
+            {
+              "title": "Vue.js 官网",
+              "url": "https://vuejs.org/",
+              "type": "article"
+            },
+            {
+              "title": "了解 Vue.js，灵活的 JavaScript 框架",
+              "url": "https://thenewstack.io/meet-vue-js-flexible-javascript-framework/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Vue.js 的热门文章",
+              "url": "https://app.daily.dev/tags/vuejs?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Vue.js 初学者课程",
+              "url": "https://www.youtube.com/watch?v=VeNfHj6MhgA",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "Nuxt.js",
+              "description": "Nuxt.js 是一个建立在 Vue.js 之上的高级框架，旨在创建通用的或单页的 Vue 应用程序。
+
+它通过提供结构化的目录布局、自动路由和服务器端渲染能力来简化开发过程。
+
+Nuxt.js 提供了诸如静态站点生成、代码分割、和异步数据获取等功能。
+
+它支持客户端渲染和服务器端渲染，让开发者可以为每个页面选择最合适的渲染方式。
+
+Nuxt.js 强调开发者的体验和性能优化，使其成为构建可扩展的、对搜索引擎友好的 Vue 应用程序的流行选择。
+
+其模块化架构和丰富的插件生态系统使添加额外功能变得容易。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Nuxt.js基本原则",
+                  "url": "https://vueschool.io/courses/nuxtjs-fundamentals",
+                  "type": "course"
+                },
+                {
+                  "title": "Nuxt.js官网",
+                  "url": "https://nuxtjs.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "开始使用Nuxt.js",
+                  "url": "https://explorers.netlify.com/learn/get-started-with-nuxt",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关JavaScript的热门文章",
+                  "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f11f4ad4-50e5-41fd-bf65-a02b3520587b",
+              "xid": "f25f9821-9716-4bbe-93ef-7d9a6d0ad0ff"
+            }
+          ],
+          "id": "765ff5e2-6a66-48ee-84bf-c371fdc40ed3",
+          "xid": "d2807879-9580-4a94-bb10-65ec068ab4d1"
+        },
+        {
+          "title": "Svelte",
+          "description": "Svelte是一种现代的JavaScript框架（JavaScript框架），用于构建用户界面，并以一种独特的方式进行网络开发（web development）。
+
+与传统的框架在浏览器中完成大部分工作的做法不同，Svelte在编译步骤（compile step）中进行这些工作，该步骤在构建应用程序时发生。
+
+它将您的代码编译为高效的普通的JavaScript（vanilla JavaScript），从而实现较小的包大小和更好的运行时性能。
+
+Svelte采用基于组件的架构（component-based architecture），拥有简洁直观的语法，允许开发人员编写更少的代码。
+
+它内置了状态管理（state management）、CSS作用域和动画功能。
+
+Svelte的方法消除了对虚拟DOM（virtual DOM）的需求，导致初始加载和更新速度更快。
+
+由于其简单性和性能上的优势，Svelte在前端开发社区中的受欢迎程度与日俱增。
+
+",
+          "links": [
+            {
+              "title": "面向初学者的Svelte课程播放列表",
+              "url": "https://www.youtube.com/playlist?list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO",
+              "type": "course"
+            },
+            {
+              "title": "Svelte官方网站",
+              "url": "https://svelte.dev/",
+              "type": "article"
+            },
+            {
+              "title": "关于Svelte的一切，一个受人喜爱的状态驱动网络框架（state-driven web framework）",
+              "url": "https://thenewstack.io/all-about-svelte-the-much-loved-state-driven-web-framework/",
+              "type": "article"
+            },
+            {
+              "title": "Svelte和前端开发的未来",
+              "url": "https://thenewstack.io/svelte-and-the-future-of-front-end-development/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Svelte的顶级文章",
+              "url": "https://app.daily.dev/tags/svelte?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Svelte Kit",
+              "description": "SvelteKit 是用于使用 Svelte（一种基于组件的 JavaScript 框架）构建 Web 应用程序的框架。
+
+它提供全栈开发体验，同时处理服务端和客户端渲染。
+
+SvelteKit 提供基于文件的路由、代码分割和服务器端渲染等功能。
+
+它支持静态站点生成和服务器端渲染，允许开发人员为每个页面选择最合适的策略。
+
+SvelteKit 强调简单性和性能，利用 Svelte 的编译时方法生成高度优化的 JavaScript。
+
+它内置了开发工具、易于部署的选项，并且可以与各种后端服务良好集成。
+
+SvelteKit 的高效开发体验和灵活性，使其成为构建现代高性能 Web 应用程序的吸引人的选择。
+
+",
+              "links": [
+                {
+                  "title": "Svelte Kit",
+                  "url": "https://kit.svelte.dev/",
+                  "type": "article"
+                },
+                {
+                  "title": "Svelte Kit 文档",
+                  "url": "https://kit.svelte.dev/docs/introduction",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Svelte 的热门帖子",
+                  "url": "https://app.daily.dev/tags/svelte?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "100 秒了解 SvelteKit",
+                  "url": "https://www.youtube.com/watch?v=H1eEFfAkIik",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "ad0f7cc4-d669-443a-b587-25df53b8b5ec",
+              "xid": "a9df5e1b-7a91-48d9-9955-86fb8c680b5f"
+            }
+          ],
+          "id": "0073e30c-f278-4f3d-96f9-8c607afdf3b5",
+          "xid": "86632c3f-355d-4cd9-befd-80e391e6163a"
+        }
+      ],
+      "id": "7d2399cd-a0a2-4d76-bc8f-0d7ff253bfc5",
+      "xid": "a8612ae2-4550-485f-ae57-c99c82277d19"
+    },
+    {
+      "title": "类型检查器",
+      "description": "类型检查器是用于分析代码以检测和防止与类型相关的错误而无需执行程序的工具。
+
+它们强制类型一致性，帮助开发人员在开发过程的早期阶段捕捉错误。
+
+流行的类型检查器包括适用于JavaScript的TypeScript、适用于JavaScript的Flow，以及适用于Python的mypy。
+
+这些工具为动态类型语言添加了静态类型，提供了诸如改进代码可靠性、更好的文档和增强的开发人员工具支持的好处。
+
+类型检查器能够在许多情况下推断出类型，并允许在现有项目中逐步采用。
+
+它们帮助防止常见的运行时错误，便于重构，并改善代码的可维护性。
+
+虽然为开发过程增加了某些开销，但类型检查器因其在运行时之前捕获错误和提高整体代码质量的能力而在大规模应用程序中得到了广泛采用。
+
+\n\n",
+      "links": [
+        {
+          "title": "Flow - 适用于JavaScript的静态类型检查器",
+          "url": "https://flow.org/",
+          "type": "article"
+        },
+        {
+          "title": "TypeScript",
+          "url": "https://www.typescriptlang.org/",
+          "type": "article"
+        },
+        {
+          "title": "Mypy - 适用于Python的静态类型检查器",
+          "url": "https://mypy.readthedocs.io/en/stable/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "TypeScript",
+          "description": "TypeScript 是一种强类型、面向对象的编程语言，它在 JavaScript 的基础上添加了可选的静态类型及其他特性。
+
+TypeScript 由微软开发和维护，可以编译成普通的 JavaScript，使其可以在任何支持 JavaScript 的环境中运行。
+
+TypeScript 提供了增强的 IDE 支持，包括更好的代码补全、重构和开发期间的错误检测功能。
+
+它引入了接口（interface）、泛型（generic）和装饰器（decorator）等概念，使软件架构更加健壮。
+
+对于大规模应用而言，TypeScript 特别有价值，因为它提高了代码的可维护性和可读性。
+
+其类型系统有助于在开发的早期阶段发现错误，从而减少运行时错误。
+
+随着生态系统的发展和在 Angular 等流行框架中的采用，TypeScript 已成为现代网页开发中的标准工具。
+
+",
+          "links": [
+            {
+              "title": "访问专用的TypeScript路线图",
+              "url": "https://roadmap.sh/typescript",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript官网",
+              "url": "https://www.typescriptlang.org/",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript在线编程环境",
+              "url": "https://www.typescriptlang.org/play",
+              "type": "article"
+            },
+            {
+              "title": "The TypeScript手册",
+              "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于TypeScript的热门文章",
+              "url": "https://app.daily.dev/tags/typescript?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript入门教程",
+              "url": "https://www.youtube.com/watch?v=BwuLxPH8IDs",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0c09aa01-a8b8-486a-8be3-37a9a9a34c34",
+          "xid": "c3af7a94-e3ca-4635-b541-4c1332514f8a"
+        }
+      ],
+      "id": "15bd73a0-05e6-4da1-adc5-0e48b633a7ce",
+      "xid": "e6c44987-c0a0-4528-9de8-3cd08c2e2889"
+    },
+    {
+      "title": "GraphQL",
+      "description": "GraphQL是由Facebook开发的一种查询语言和运行时环境（query language and runtime），专用于API。
+
+GraphQL的灵活性和效率使其在构建复杂应用时非常受欢迎，特别是当客户端需求多样化时。
+
+对于移动应用而言，其带宽效率的关键性使其特别有用。
+
+虽然从REST转换到GraphQL需要实现一种新的范式，但许多开发者和组织认为GraphQL带来的好处超过了学习曲线，特别是在大规模API或快速演进API的场景下。
+
+\n\n",
+      "links": [
+        {
+          "title": "访问专为GraphQL设计的学习路径",
+          "url": "https://roadmap.sh/graphql",
+          "type": "article"
+        },
+        {
+          "title": "GraphQL介绍",
+          "url": "https://graphql.org/learn/",
+          "type": "article"
+        },
+        {
+          "title": "GraphQL介绍",
+          "url": "https://thenewstack.io/introduction-to-graphql/",
+          "type": "article"
+        },
+        {
+          "title": "如何执行一个简单的GraphQL查询",
+          "url": "https://thenewstack.io/how-to-execute-a-simple-graphql-query/",
+          "type": "article"
+        },
+        {
+          "title": "浏览关于GraphQL的顶级文章",
+          "url": "https://app.daily.dev/tags/graphql?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "GraphQL入门课程",
+          "url": "https://www.youtube.com/watch?v=ed8SzALpx1Q",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "阿波罗(Apollo)",
+          "description": "Apollo GraphQL 是一个全面的平台，用于在现代应用程序中构建和管理基于GraphQL的数据层。
+
+它提供了一套开源工具和库，简化了客户端和服务器端GraphQL的实现。
+
+在客户端，Apollo Client 提供强大的缓存、状态管理和数据获取功能，无缝集成各种前端框架。
+
+在服务器端，Apollo Server 加速了GraphQL API的创建，高效处理查询、变更和订阅。
+
+Apollo 平台还包括开发工具，用于模式管理、性能监控和API治理。
+
+通过抽象GraphQL实现的许多复杂性，Apollo 使开发人员能够构建更快、更可扩展和更易维护的应用，提供统一的数据图。
+
+",
+          "links": [
+            {
+              "title": "Apollo 官网",
+              "url": "https://www.apollographql.com",
+              "type": "article"
+            },
+            {
+              "title": "Apollo 文档",
+              "url": "https://www.apollographql.com/docs/",
+              "type": "article"
+            },
+            {
+              "title": "访问专用的GraphQL路线图",
+              "url": "https://roadmap.sh/graphql",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Apollo的热门文章",
+              "url": "https://app.daily.dev/tags/apollo?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cf23e575-ebbb-44d2-b210-cb1e5b5eb58c",
+          "xid": "a1830226-b98a-4924-aa91-fbf6b8b55424"
+        },
+        {
+          "title": "Relay 现代版 (Relay Modern)",
+          "description": "Relay 是由 Facebook 开发的一个 JavaScript 框架，用于构建数据驱动的 React 应用程序。
+
+它专门针对 GraphQL 进行设计，提供了用于在复杂 Web 应用程序中获取和管理数据的声明性方法。
+
+Relay 通过将数据需求与组件合并来优化数据获取，实现高效更新并尽量减少过度抓取。
+
+它开箱即用，支持缓存、实时更新和乐观 UI 更新。
+
+Relay 的架构通过管理数据依赖关系和减少网络请求，有助于在大型应用程序中实现可扩展性和性能。
+
+虽然它的学习曲线比简单的数据获取解决方案更陡峭，但对于具有复杂数据需求的应用程序来说，特别是当它与 React 和 GraphQL 结合使用时，Relay 提供了显著的好处。
+
+\n\n",
+          "links": [
+            {
+              "title": "facebook/relay",
+              "url": "https://github.com/facebook/relay",
+              "type": "opensource"
+            },
+            {
+              "title": "Relay 官网",
+              "url": "https://relay.dev/",
+              "type": "article"
+            },
+            {
+              "title": "ELI5 - Relay",
+              "url": "https://www.youtube.com/watch?v=A4POd93GI_I",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "68ea4a7d-2285-4137-a046-472d5adff4c0",
+          "xid": "9ccec141-b55b-450a-b2da-13a1e937750d"
+        }
+      ],
+      "id": "1be88491-9957-460b-ae14-0b11010062c0",
+      "xid": "92b34382-5549-4291-b2ce-ba092f1e611b"
+    },
+    {
+      "title": "静态网站生成器",
+      "description": "静态网站生成器（Static Site Generators，SSGs）是将原始数据和模板转换成HTML网站的工具，在构建时而不是运行时生成预渲染的页面。
+
+它们结合了静态网站的优点（速度、安全性、简单性）与动态网站的灵活性。
+
+SSGs 通常使用像 Markdown 这样的标记语言来编写内容，使用模板引擎来设计布局，并生成一个可以在简单的网络服务器或内容分发网络托管的完全静态网站。
+
+流行的 SSG 包括 Jekyll、Hugo、Gatsby 和 Eleventy。
+
+它们非常适合博客、文档网站和内容为中心的网站。
+
+SSGs 在性能、版本控制集成以及减少服务器端复杂性等方面具备优势，因此在各种网络项目中越来越受欢迎。
+
+",
+      "links": [
+        {
+          "title": "什么是静态网站生成器？",
+          "url": "https://www.cloudflare.com/learning/performance/static-site-generator/",
+          "type": "article"
+        },
+        {
+          "title": "借助静态网站生成器回归基础",
+          "url": "https://thenewstack.io/get-back-basics-static-website-generators/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Web开发的顶级帖子",
+          "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "什么是静态网站生成器",
+          "url": "https://www.youtube.com/watch?v=Qms4k6y7OgI",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Vuepress",
+          "description": "VuePress是一种由Vue.js (Vue.js) 驱动的静态网站生成器，主要用于创建文档网站。
+
+它为每个页面生成预渲染的静态HTML，从而实现快速加载时间和SEO友好的内容。
+
+VuePress具有一个由Vue (Vue) 引擎的模板系统、自动代码语法高亮和优化技术文档的默认主题。
+
+它支持带有Vue组件的Markdown (Markdown) 内容，从而允许创建动态和交互式的文档。
+
+VuePress提供了内置的搜索功能、响应式布局并通过插件和模板实现简单的定制化。
+
+虽然主要用于文档创建，但它的灵活性能够支持博客和简单的网站。
+
+VuePress结合了简单性、性能和Vue.js (Vue.js) 集成的特点，使其成为创建现代、快速加载的文档网站和技术博客的流行选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Vuepress",
+              "url": "https://vuepress.vuejs.org/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Vue.js的热门文章",
+              "url": "https://app.daily.dev/tags/vuejs?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是VuePress?",
+              "url": "https://www.youtube.com/watch?v=iRhRdY7SQJg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c5560f8b-ecc1-45e8-8ca0-45ae8a702bb6",
+          "xid": "f78653fc-d254-4e16-aeba-31479bfa3fa4"
+        },
+        {
+          "title": "Astro",
+          "description": "Astro是一个现代的静态网站生成器（SSG）和网络框架，旨在构建快速、以内容为中心的网站。
+
+它允许开发人员在同一项目中使用多种前端框架（如React、Vue或Svelte），在构建时自动将组件渲染为静态HTML。
+
+Astro独特的“部分激活”方法仅在必要时将JavaScript发送到浏览器，从而导致显著较小的捆绑包大小和更快的加载时间。
+
+该框架支持基于文件的路由，Markdown内容和内置的图像和资源优化。
+
+Astro的组件岛屿架构使开发人员能够创建交互式组件，同时保持静态HTML的性能优势，因此特别适合构建博客、文档和营销页面等内容丰富的站点。
+
+\n\n",
+          "links": [
+            {
+              "title": "Astro网络框架速成课程",
+              "url": "https://www.youtube.com/watch?v=e-hTm5VmofI",
+              "type": "course"
+            },
+            {
+              "title": "Astro官网",
+              "url": "https://astro.build/",
+              "type": "article"
+            },
+            {
+              "title": "Astro入门",
+              "url": "https://docs.astro.build/en/getting-started/",
+              "type": "article"
+            },
+            {
+              "title": "什么是Astro？",
+              "url": "https://www.contentful.com/blog/what-is-astro/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7286b3cd-afd0-407a-bd2f-6b99fea95b45",
+          "xid": "a5a25c77-955a-4595-903b-6da69a557b3a"
+        },
+        {
+          "title": "Next.js",
+          "description": "Next.js 是一个基于React的开源框架，用于构建服务器端渲染（Server-Side Rendering, SSR）和静态生成的Web应用程序。
+
+它提供了诸如自动代码分割、优化性能和简化路由等功能。
+
+Next.js 支持静态站点生成（Static Site Generation, SSG）和服务器端渲染（Server-Side Rendering, SSR），允许开发人员为每个页面选择最合适的渲染方法。
+
+该框架提供内置CSS支持、API路由以支持后端功能，以及简单的部署选项。
+
+Next.js 因其开发者友好的特性而知名，例如热模块替换（Hot Module Replacement, HMR）和自动预取（Automatic Prefetching）。
+
+它创建结合静态和服务器端渲染页面的混合应用的能力，使其非常适合构建可扩展、搜索引擎友好的Web应用程序。
+
+",
+          "links": [
+            {
+              "title": "Next.js 官方网站",
+              "url": "https://nextjs.org/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于JavaScript的热门文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Next.js 入门 - freeCodeCamp YouTube 频道上的全课程",
+              "url": "https://youtu.be/1WmNXEVia8I",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2a0e9158-f1e8-4ad7-a424-45d092e19a8a",
+          "xid": "6d7a3b89-6ffa-4bd0-a85a-373d7c2b9a66"
+        },
+        {
+          "title": "Eleventy",
+          "description": "Eleventy（11ty）是一个易于使用、易于定制且性能卓越的静态网站生成器，并配备了一套有助于网站开发的插件（例如导航，构建时图像转换，缓存资产）。
+
+页面可以用多种模板语言构建和编写（HTML，Markdown，JavaScript，Liquid，Nunjucks，Handlebars，Mustache，EJS，Haml，Pug或JS模板文字）。
+
+它还允许从本地数据或外部来源动态创建页面，这些页面在构建时进行编译。
+
+它不需要任何客户端JavaScript依赖项。
+
+",
+          "links": [
+            {
+              "title": "Eleventy",
+              "url": "https://www.11ty.dev/",
+              "type": "article"
+            },
+            {
+              "title": "一个收集了11ty启动模板、项目、插件和资源的集合",
+              "url": "https://11ty.rocks/",
+              "type": "article"
+            },
+            {
+              "title": "Eleventy简介",
+              "url": "https://www.youtube.com/watch?v=-dM6AmNmMFA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e4400a69-6760-4a87-857c-21010851feb0",
+          "xid": "c77e0d8c-25da-44d0-ba04-e6a8a2a742e3"
+        },
+        {
+          "title": "Nuxt.js",
+          "description": "Nuxt.js 是一个基于 Vue.js 的更高层次框架，旨在创建通用应用程序或单页 Vue 应用程序。
+
+它通过提供结构化的目录布局、自动路由和服务器端渲染功能，简化了开发过程。
+
+Nuxt.js 提供了静态站点生成、代码分割和异步数据获取等功能。
+
+它支持客户端和服务端渲染，允许开发人员为每个页面选择最适当的方法。
+
+Nuxt.js 侧重于优化开发者体验和性能，因此成为构建可扩展、SEO友好的Vue 应用程序的热门选择。
+
+其模块化架构和丰富的插件生态系统使得集成额外功能变得容易。
+
+\n\n",
+          "links": [
+            {
+              "title": "Nuxt.js 基础知识",
+              "url": "https://vueschool.io/courses/nuxtjs-fundamentals",
+              "type": "course"
+            },
+            {
+              "title": "Nuxt 网站",
+              "url": "https://nuxtjs.org/",
+              "type": "article"
+            },
+            {
+              "title": "开始使用 Nuxt",
+              "url": "https://explorers.netlify.com/learn/get-started-with-nuxt",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 JavaScript 的热门文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0e6e0f79-349f-4183-8a89-7a468a2f2358",
+          "xid": "249cddde-751f-4ced-a91c-4a63c041c319"
+        }
+      ],
+      "id": "4d2c6b3c-210f-4362-8e6b-28a9e6216aa5",
+      "xid": "ec818ee8-31a8-40d2-8bb1-5b156a52c881"
+    },
+    {
+      "title": "渐进式网络应用（PWAs）",
+      "description": "渐进式网络应用（Progressive Web Apps，PWAs）是使用现代网络能力为用户提供类似应用体验的网络应用。
+
+它们结合了网络应用和原生应用的最佳特性，提供可靠性、速度和用户参与度。
+
+PWAs 使用网络技术（HTML，CSS，JavaScript）构建，但提供通常与原生应用相关的特性，如离线功能、推送通知和主屏幕安装。
+
+它们具有响应性，可在不同的设备和浏览器间通用，并可通过搜索引擎发现。
+
+PWAs 使用服务工作线程（service workers）进行后台处理和缓存，提高加载速度并支持离线访问。
+
+这种方法允许开发人员创建跨平台应用，既易于开发又便于维护，同时为用户提供通过其网络浏览器直接访问的顺畅、类似应用的体验。
+
+",
+      "links": [
+        {
+          "title": "学习 PWAs",
+          "url": "https://web.dev/learn/pwa/",
+          "type": "article"
+        },
+        {
+          "title": "MDN - 渐进式网络应用",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/",
+          "type": "article"
+        },
+        {
+          "title": "探索有关 Web 开发的热门文章",
+          "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "2024 年渐进式网络应用",
+          "url": "https://www.youtube.com/watch?v=3ODP6tTpjqA",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "PRPL 模式",
+          "description": "PRPL 模式是一种旨在提高性能的 Web 应用程序架构策略，特别是在移动设备上。
+
+PRPL 代表 Push（推送）、Render（渲染）、Pre-cache（预缓存）和 Lazy-load（懒加载）四大核心步骤。
+
+该模式专注于优化初始加载时间和后续导航速度。
+
+这种模式涉及推送初始路由的关键资源、尽可能快速地渲染初始路由、预缓存剩余的路由，并懒加载其他路由和非关键资源。
+
+该方法旨在为用户提供近乎瞬间的加载体验，特别是在较慢的网络和较弱的设备上。
+
+PRPL 通常使用诸如 Service Worker（服务工作者）等现代 Web 技术实现，并且与 Progressive Web Apps（渐进式 Web 应用，PWA）密切相关，不过它也可应用于各种 Web 应用程序架构。
+
+\n\n",
+          "links": [
+            {
+              "title": "PRPL 模式 - Google 开发者",
+              "url": "https://developers.google.com/web/fundamentals/performance/prpl-pattern",
+              "type": "article"
+            },
+            {
+              "title": "PRPL 模式",
+              "url": "https://www.patterns.dev/vanilla/prpl/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "850b256f-2430-42cf-946c-bb4ed7bcee80",
+          "xid": "e77b7ef5-7c0b-428c-b10a-4b29974df4b1"
+        },
+        {
+          "title": "RAIL 模型",
+          "description": "RAIL 模型是由谷歌开发的一种以用户为中心的性能模型，旨在提高网页应用的响应性和用户体验。
+
+RAIL 代表 Response（响应）、Animation（动画）、Idle（空闲）和 Load（加载）。
+
+它设定了具体的性能目标：响应用户输入应在100毫秒内完成；动画应以每秒60帧（每帧16毫秒）运行；空闲时间用来完成延迟工作；以及交互内容的加载时间应少于5秒。
+
+该模型强调感知性能的重要性，鼓励开发者优先处理用户交互并拆分长任务。
+
+按RAIL 指南操作，开发者可以创建出感觉快速且响应迅速的网页应用程序，从而提升用户满意度和参与度。
+
+",
+          "links": [
+            {
+              "title": "RAIL 模型 - Google 开发者",
+              "url": "https://developers.google.com/web/fundamentals/performance/rail",
+              "type": "article"
+            },
+            {
+              "title": "RAIL 性能模型概述",
+              "url": "https://www.keycdn.com/blog/rail-performance-model",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cbba7ef2-f87f-475b-8977-1730e976c64c",
+          "xid": "e21a7fde-1ecc-429c-af45-feb89a71cd4c"
+        },
+        {
+          "title": "性能指标",
+          "description": "网络性能指标是衡量网页或应用程序性能的定量指标。
+
+它们用于评估网页的速度和效率，可以帮助识别改进的领域。
+
+一些常见的网络性能指标包括：\n\n*   加载时间（Load time）：网页完全加载并变得可以交互所需的时间。
+
+\n*   第一次内容绘制（First contentful paint, FCP）：页面上第一次出现内容所需的时间。
+
+\n*   可交互时间（Time to interactive, TTI）：页面变得完全可以交互所需的时间。
+
+\n*   首次输入延迟（First input delay, FID）：页面对用户第一次输入作出反应所需的时间。
+
+\n*   总阻塞时间（Total blocking time, TBT）：页面变得完全互动所需要的时间，考虑到阻塞主线程所花费的时间。
+
+\n\n",
+          "links": [
+            {
+              "title": "网络性能指标 - Google 开发者",
+              "url": "https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics",
+              "type": "article"
+            },
+            {
+              "title": "2024年的网络性能测量",
+              "url": "https://requestmetrics.com/web-performance/measure-web-performance/",
+              "type": "article"
+            },
+            {
+              "title": "衡量性能和用户体验 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Guide/Performance",
+              "type": "article"
+            },
+            {
+              "title": "探索关于性能的顶部文章",
+              "url": "https://app.daily.dev/tags/performance?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8926de8b-f47f-403a-8377-fdbf9a6a2fff",
+          "xid": "df51804b-73be-4879-8af9-b5d9ced2b2a9"
+        },
+        {
+          "title": "使用Lighthouse",
+          "description": "Lighthouse是由Google开发的一种开源工具(open-source tool)，用于审核网页的性能、可访问性及搜索引擎优化。
+
+它作为一种浏览器扩展和命令行工具而存在，可以在任何网页上运行以生成一份报告，其中包含改进的建议。
+
+Lighthouse通过模拟网页的加载和交互过程并测量各种性能指标，如加载时间、首次绘制时间和交互时间来工作。
+
+它还检查诸如图像大小不正确、缺少替代文本(alt text)和链接损坏等常见问题。
+
+Lighthouse提供了一个全面且易于使用的工具，用于识别和修复网页上的性能和可访问性问题，它被广大网页开发者广泛使用并集成到了许多流行开发工具中。
+
+",
+          "links": [
+            {
+              "title": "Lighthouse - Google开发者",
+              "url": "https://developers.google.com/web/tools/lighthouse",
+              "type": "article"
+            },
+            {
+              "title": "探讨Lighthouse的相关文章",
+              "url": "https://app.daily.dev/tags/lighthouse?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是Google Lighthouse以及如何使用它",
+              "url": "https://www.youtube.com/watch?v=VyaHwvPWuZU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0dab9e3c-c75f-425b-b548-de255489643c",
+          "xid": "3c3a9e3c-5a93-42cd-ad78-7362584cea0e"
+        },
+        {
+          "title": "使用开发工具（DevTools）",
+          "description": "浏览器开发工具，通常称为开发工具（DevTools），是现代浏览器中内置的功能，提供了一套调试和开发能力。
+
+这些工具允许开发人员在网页上实时检查、编辑和调试HTML、CSS和JavaScript。
+
+关键特性包括：\n\n1.  DOM检查器，用于查看和修改页面结构\n2.  控制台，用于JavaScript调试和日志记录\n3.  网络面板，用于分析HTTP请求和响应\n4.  性能分析器，用于优化页面加载和运行时性能\n5.  应用程序面板，用于管理存储、缓存和服务工作线程（Service Workers）\n6.  源代码面板，用于设置断点和调试JavaScript\n7.  元素面板，用于实时CSS编辑\n8.  设备模拟，用于测试响应式设计\n\n开发工具是前端开发、性能优化和跨浏览器兼容性测试的关键，为开发人员提供了关于Web应用程序行为和结构的重要洞见。
+
+\n\n",
+          "links": [
+            {
+              "title": "Chrome 开发工具（Chrome DevTools） - Google 开发者",
+              "url": "https://developers.google.com/web/tools/chrome-devtools",
+              "type": "article"
+            },
+            {
+              "title": "Firefox 开发工具用户文档",
+              "url": "https://firefox-source-docs.mozilla.org/devtools-user/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于开发工具（DevTools）的顶级文章",
+              "url": "https://app.daily.dev/tags/devtools?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "20e29275-9a3a-495e-827f-d537830ae5f9",
+          "xid": "2f42e2d1-97ff-4c00-b18a-f563cba5aef3"
+        },
+        {
+          "title": "存储",
+          "description": "Web 存储 API 提供了在 Web 浏览器中存储键值对的机制。
+
+它包括两个存储对象：`localStorage`（本地存储）和 `sessionStorage`（会话存储），它们分别允许您在客户端保存数据，并在多个浏览器会话中持久化这些数据。
+
+Web 存储 API 设计为简单易用，并且在现代 Web 浏览器中得到了广泛支持。
+
+它常被用作 Cookie 的替代方案，因为它允许存储更大数量的数据，从性能角度看也更为高效。
+
+\n",
+          "links": [
+            {
+              "title": "Web 存储 API - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API",
+              "type": "article"
+            },
+            {
+              "title": "Web 存储 API —— 如何在浏览器中存储数据",
+              "url": "https://www.freecodecamp.org/news/web-storage-api-how-to-store-data-on-the-browser/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于存储的热门文章",
+              "url": "https://app.daily.dev/tags/storage?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "21ccf928-6985-4064-9557-b0a83bfc577a",
+          "xid": "94f0a11f-7ccb-4b02-8928-c1fe99774d83"
+        },
+        {
+          "title": "Web Sockets（Web套接字）",
+          "description": "Web Sockets是一种技术，它允许在一个单一的TCP连接上进行全双工通信。
+
+它使客户端和服务器之间能够实时双向通信，并且通常用于需要高速、低延迟通信的应用程序，例如在线游戏和实时数据流。
+
+Web Sockets在客户端和服务器之间建立了持久连接，允许连续的数据交换，客户端无需发送额外请求到服务器。
+
+这使得Web Sockets比其他技术（如HTTP，每一段数据都需要发送新的请求）更加高效和快速。
+
+Web Sockets得到了大多数现代网络浏览器的支持，并且可以与各种编程语言和框架一起使用。
+
+",
+          "links": [
+            {
+              "title": "Web Sockets - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+              "type": "article"
+            },
+            {
+              "title": "什么是Web Sockets？",
+              "url": "https://www.pubnub.com/guides/websockets/",
+              "type": "article"
+            },
+            {
+              "title": "Web Sockets的工作原理",
+              "url": "https://www.youtube.com/watch?v=pnj3Jbho5Ck",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1d6bd4e4-9902-4bf1-b353-3e96b85d90f4",
+          "xid": "8b9e1e33-7369-4f1a-a780-6cf2040ffc28"
+        },
+        {
+          "title": "服务器发送事件（Server-Sent Events）",
+          "description": "服务器发送事件（Server-Sent Events，SSE）是一种允许网络服务器实时将其数据推送到客户端的技术。
+
+它使用一个HTTP连接从服务器向客户端发送数据流，客户端可以侦听这些事件并在接收到时采取措施。
+
+SSE对于需要实时更新的应用程序非常有用，如聊天系统、股票行情和社交媒体流。
+
+它是一种在客户端和服务器之间建立长期连接的简单而有效的方式，并且大多数现代网络浏览器都支持它。
+
+\n\n使用SSE时，客户端必须创建一个EventSource对象并指定将发送事件的服务器端脚本的URL。
+
+服务器然后可以通过将事件以正确的格式写入响应流中来发送事件。
+
+\n\n",
+          "links": [
+            {
+              "title": "服务器发送事件 （Server-Sent Events） - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events",
+              "type": "article"
+            },
+            {
+              "title": "服务器发送事件 （Server-Sent Events） - Postman",
+              "url": "https://www.youtube.com/watch?v=KrE044J8jEQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ee371bef-066d-4a14-bc6f-5c0e6eb2ec88",
+          "xid": "5150bbc1-ce3b-472e-8353-e5a498149370"
+        },
+        {
+          "title": "服务工作线程 (Service Workers)",
+          "description": "服务工作线程是一种在网页和网络之间充当代理的Web Worker，允许Web开发者构建面向离线的第一步和可靠的Web应用程序。
+
+服务工作线程能够拦截网络请求，访问缓存，并基于可用资源对请求作出响应决定。
+
+服务工作线程用JavaScript编写，并由一个Web页面注册。
+
+一旦注册，它们可以控制页面及其所有请求，甚至当页面未打开时也是如此。
+
+这样可以让服务工作线程启用如推送通知、后台同步和离线支持等功能。
+
+服务工作线程受到大多数现代Web浏览器的支持，是渐进式Web应用程序(PWAs)的重要组成部分。
+
+\n\n",
+          "links": [
+            {
+              "title": "服务工作线程 (Service Workers) - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API",
+              "type": "article"
+            },
+            {
+              "title": "服务工作线程 (Service Workers) - Google",
+              "url": "https://web.dev/learn/pwa/service-workers",
+              "type": "article"
+            },
+            {
+              "title": "Web Worker 说明",
+              "url": "https://www.youtube.com/watch?v=JMKLXGwltGc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "395014f9-dc27-4dd1-960f-0284d30919b8",
+          "xid": "414a901f-7a48-4b7f-a514-6c8d8b6f3423"
+        },
+        {
+          "title": "位置",
+          "description": "Geolocation API（地理位置API）是一个Web API，提供访问设备的位置数据，如纬度和经度。
+
+它使Web开发者能够通过使用设备的GPS、Wi-Fi和其他传感器来确定用户的位置，从而构建基于位置的应用，如地图和位置共享。
+
+要使用Geolocation API，网页必须首先请求用户许可，访问他们的位置。
+
+如果用户授予了许可，页面便可以使用`navigator.geolocation`对象来访问设备的位置数据。
+
+此API提供了多种方法来获取用户的当前位置、监视位置变化以及计算两点之间的距离。
+
+\n\n",
+          "links": [
+            {
+              "title": "Geolocation API - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API",
+              "type": "article"
+            },
+            {
+              "title": "Geolocation API概述",
+              "url": "https://developers.google.com/maps/documentation/geolocation/overview",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9ac7dde6-b667-4083-9e79-7aabdc14927e",
+          "xid": "283bc4a6-9391-4b10-8816-2edd7e9958fb"
+        },
+        {
+          "title": "通知",
+          "description": "通知API是一个Web API，允许网页向用户显示系统级通知。
+
+这些通知可以用来提醒用户重要的事件，如新消息或更新，即使网页未在浏览器中打开。
+
+要使用通知API，网页必须首先请求用户许可以显示通知。
+
+如果获得许可，网页可以使用`Notification`构造函数创建并显示新的通知。
+
+通知可以包含标题、主体文本及图标，还可以通过设置诸如超时和点击行为等选项来进行定制化。
+
+\n\n",
+          "links": [
+            {
+              "title": "使用通知API入门",
+              "url": "https://web.dev/articles/codelab-notifications-get-started",
+              "type": "article"
+            },
+            {
+              "title": "通知API - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API",
+              "type": "article"
+            },
+            {
+              "title": "如何使用JavaScript发送推送通知",
+              "url": "https://youtu.be/Bm0JjR4kP8w?si=-2Nu0I2Zl9f-R1zj",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ad0af965-3414-4a00-9763-e1b0314b1833",
+          "xid": "963deab2-bd72-4d72-a4c3-6d25b0baf45e"
+        },
+        {
+          "title": "设备方向",
+          "description": "设备方向API（Device Orientation API）是一款提供访问设备方向和运动数据（如俯仰角、翻滚角和偏航角）的Web API。
+
+它允许Web开发者构建响应设备方向和运动的应用程序，如增强现实和动作控制游戏。
+
+使用设备方向API之前，网页必须首先请求用户许可，以便访问设备的方向数据。
+
+获得许可后，页面可以使用DeviceOrientationEvent对象来访问设备的方向数据并响应方向的变化。
+
+该API提供了多个属性用于访问设备的方向和运动数据，以及检测方向变化的事件。
+
+\n\n",
+          "links": [
+            {
+              "title": "设备方向API - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Device_orientation_events",
+              "type": "article"
+            },
+            {
+              "title": "使用JS检测设备方向",
+              "url": "https://www.youtube.com/watch?v=fMDuFoqSQfw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ef68a933-a4e5-4555-ade0-08d275d5198a",
+          "xid": "0679ffd5-efdf-4211-a301-de1288489df0"
+        },
+        {
+          "title": "支付",
+          "description": "Payment Request API（支付请求API）是一种Web API，允许Web开发者在他们的Web应用程序中构建结账流程。
+
+它提供了一个标准化的、基于浏览器的用户支付和运输信息收集界面，支持各种支付方式，包括信用卡、借记卡和数字钱包。
+
+要使用Payment Request API（支付请求API），网页必须首先创建一个`PaymentRequest`对象并指定用户可用的支付和运输选项。
+
+然后，页面可以通过调用`PaymentRequest`对象的`show()`方法来调用支付请求用户界面。
+
+用户可以然后选择他们首选的支付和运输选项并确认支付，在确认支付后，支付请求API将返回一个支付响应对象（payment response object），用于完成交易。
+
+",
+          "links": [
+            {
+              "title": "Payment Request API - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API",
+              "type": "article"
+            },
+            {
+              "title": "Payment Request API",
+              "url": "https://www.w3.org/TR/payment-request/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "28a577c9-71b3-4be0-96bf-a375c77b65d4",
+          "xid": "1e9bb324-b888-4f8d-a843-b5e99b56979b"
+        },
+        {
+          "title": "凭证",
+          "description": "凭证管理API（Credential Management API）是一种网络标准，允许网站与浏览器中的凭证管理器交互以存储、检索和管理用户凭证。
+
+它提供了一个用于无缝且安全的用户认证的编程接口，支持自动登录和一键注册等功能。
+
+该API支持各种各样的凭证类型，包括密码、联合身份（federated identities）和公钥凭证（public key credentials）。
+
+通过使用此API，开发人员可减少登录摩擦，使账户切换过程更加顺畅并提升整体安全性。
+
+该API与密码管理器和平台验证器协同工作，有助于在多个设备和浏览器之间简化认证流程，同时遵循现代安全实践。
+
+\n\n",
+          "links": [
+            {
+              "title": "Credential Management API - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API",
+              "type": "article"
+            },
+            {
+              "title": "凭证管理API",
+              "url": "https://web.dev/articles/security-credential-management",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8e34c058-3885-4197-b18b-8340d5c4518b",
+          "xid": "62150dda-508f-4794-acb0-9d3600f3192a"
+        }
+      ],
+      "id": "ebc96998-e543-41ff-b9b2-d0aedea148f0",
+      "xid": "e200cc0f-a5d5-4e03-acaf-7a0fdd7477b0"
+    },
+    {
+      "title": "桌面应用",
+      "description": "桌面应用程序通常使用如Electron（电子）、NW.js（Node-WebKit）或Tauri等框架，这些框架将JavaScript运行时与本地GUI工具包相结合。
+
+这种做法使开发人员能够利用网页开发技能来创建跨平台的桌面应用。
+
+Electron由GitHub开发，尤其流行，为Visual Studio Code、Atom和Discord等应用提供支持。
+
+这些框架提供了与本地系统特性交互的API接口，使JavaScript能够与文件系统、系统托盘及其他操作系统特定功能进行互动。
+
+尽管JavaScript桌面应用提供了快速开发和跨平台兼容性的优势，但在性能和资源使用方面可能与传统本地应用相比存在挑战。
+
+但是，由于庞大的JavaScript库和工具生态系统，它们对众多开发人员和企业来说仍是一个有吸引力的选择。
+
+\n\n",
+      "links": [
+        {
+          "title": "Electron官网",
+          "url": "https://www.electronjs.org/",
+          "type": "article"
+        },
+        {
+          "title": "NW.js官网",
+          "url": "https://nwjs.io/",
+          "type": "article"
+        },
+        {
+          "title": "Tauri官网",
+          "url": "https://tauri.app/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Electron",
+          "description": "Electron 是由 GitHub 开发的一款开源框架，它使开发人员可以使用 Web 技术构建跨平台的桌面应用程序。
+
+Electron 将 Chromium 渲染引擎与 Node.js 运行时环境结合在一起，从而允许应用使用 HTML、CSS 和 JavaScript 编写。
+
+Electron 提供了访问原生操作系统功能的 API（应用程序接口），弥合了 Web 开发与桌面开发之间的差距。
+
+它被广泛应用于创建诸如 Visual Studio Code、Atom 和 Discord 等受欢迎的应用程序。
+
+使用 Electron 开发的应用程序受益于快速迭代开发周期、跨平台兼容性和访问庞大 Web 技术生态系统及 Node.js 模块的优点。
+
+然而，它们在资源消耗和性能方面相较于原生应用程序可能会面临挑战。
+
+尽管如此，Electron 依然是寻求利用 Web 技巧进行桌面应用开发的开发者的流行选择。
+
+",
+          "links": [
+            {
+              "title": "Electron 官网",
+              "url": "https://www.electronjs.org/",
+              "type": "article"
+            },
+            {
+              "title": "Electron 文档",
+              "url": "https://www.electronjs.org/docs/latest/",
+              "type": "article"
+            },
+            {
+              "title": "探索 Electron 相关的热门文章",
+              "url": "https://app.daily.dev/tags/electron?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "使用 JavaScript 和 Electron 创建桌面应用",
+              "url": "https://www.youtube.com/watch?v=ML743nrkMHw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b43c0506-c3e7-46b5-996c-91f3e35533f1",
+          "xid": "b136c11b-5053-4781-a479-4efe1927bbf9"
+        },
+        {
+          "title": "Tauri",
+          "description": "Tauri 是一个使用 web 技术构建轻量级、安全桌面应用程序的开源框架。
+
+它允许开发者使用 HTML、CSS 和 JavaScript 创建跨平台应用，而使用 Rust 作为后端核心功能。
+
+得益于使用操作系统的原生网页控件（WebView），而不是捆绑 Chromium，Tauri 的程序包大小比 Electron 更小。
+
+它提供了强大的安全特性，包括用于进程间通信（IPC, Inter-Process Communication）的自定义协议和细粒度权限。
+
+Tauri 支持多种 JavaScript 框架，并提供多种系统级操作的 API 绑定。
+
+它注重性能、安全性和较小的二进制文件大小，使其成为寻求使用 web 技术创建高效桌面应用程序的开发者的理想选择。
+
+\n\n",
+          "links": [
+            {
+              "title": "Tauri 官网",
+              "url": "https://tauri.app/",
+              "type": "article"
+            },
+            {
+              "title": "Tauri 文档",
+              "url": "https://tauri.app/v1/guides/",
+              "type": "article"
+            },
+            {
+              "title": "Tauri 如何将网页设计转化为紧凑的本地应用",
+              "url": "https://thenewstack.io/how-tauri-turns-web-designs-into-compact-native-apps/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "45a70db5-97c5-4f11-9525-bf627683baf3",
+          "xid": "1e5bef14-75ce-43fc-a16e-7c2934978461"
+        },
+        {
+          "title": "Flutter",
+          "description": "Flutter是谷歌开发的一款开源UI软件开发工具包，用于构建跨平台的原生应用。
+
+它使用Dart编程语言，并提供了一系列预先设计好的小部件，用于创建响应快速、视觉吸引的用户界面。
+
+Flutter的架构支持热重载功能，使得开发者能够即时看到更改效果。
+
+Flutter支持iOS、Android、网络和桌面平台，实现了真正的跨平台开发。
+
+Flutter使用自定义渲染引擎（Skia）来绘制UI组件，保证设备间的一致性。
+
+除了在移动应用开发中广为人知，Flutter 随着其生态系统扩展和性能的提升，亦越来越多地应用于网络和桌面应用的开发。
+
+",
+          "links": [
+            {
+              "title": "Flutter初学者教程",
+              "url": "https://www.youtube.com/watch?v=VPvVD8t02U8",
+              "type": "course"
+            },
+            {
+              "title": "访问Flutter路线图",
+              "url": "https://roadmap.sh/flutter",
+              "type": "article"
+            },
+            {
+              "title": "Flutter官方网站",
+              "url": "https://flutter.dev",
+              "type": "article"
+            },
+            {
+              "title": "Flutter用于桌面开发",
+              "url": "https://flutter.dev/multi-platform/desktop",
+              "type": "article"
+            },
+            {
+              "title": "12种Flutter提升应用开发的方式",
+              "url": "https://thenewstack.io/12-ways-flutter-streamlines-app-development/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Flutter的顶级文章",
+              "url": "https://app.daily.dev/tags/flutter?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1c8ff992-604b-4c8f-b024-f8652a2ec38c",
+          "xid": "4f010dff-dabe-4276-a0b2-7a3ffdd67b2c"
+        }
+      ],
+      "id": "205cf0cc-0459-4418-b640-2ec7c0377174",
+      "xid": "a98d110e-2f75-4fa6-9fab-ee449ac5f140"
+    },
+    {
+      "title": "移动应用程序",
+      "description": "移动应用程序是专门设计在智能手机和平板电脑等移动设备上运行的软件程序。
+
+它们通常通过Google Play或Apple的App Store等应用商店进行分发。
+
+移动应用程序可以是原生的（使用Swift（iOS）或Kotlin（Android）等语言专门为一个平台构建），混合型（用原生容器封装的网络技术）或跨平台的（使用React Native或Flutter等框架）。
+
+这些应用程序可以利用设备特有的功能，例如GPS、相机和传感器，来提供丰富、互动的体验。
+
+它们涵盖了从生产效率和娱乐到社交网络和电子商务的广泛功能。
+
+移动应用程序开发要考虑到用户界面设计、性能优化、离线功能和安全性等因素，以确保在各种设备和操作系统上的顺畅用户体验。
+
+",
+      "links": [
+        {
+          "title": "React Native",
+          "url": "https://reactnative.dev/",
+          "type": "article"
+        },
+        {
+          "title": "Flutter",
+          "url": "https://flutter.dev",
+          "type": "article"
+        },
+        {
+          "title": "Ionic",
+          "url": "https://ionicframework.com",
+          "type": "article"
+        },
+        {
+          "title": "NativeScript",
+          "url": "https://nativescript.org/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于移动开发的热门文章",
+          "url": "https://app.daily.dev/tags/mobile?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "React Native",
+          "description": "React Native 是由 Facebook 创建的开源移动应用开发框架。
+
+它允许开发者使用 JavaScript 和 React 构建适用于 iOS 和 Android 的原生移动应用。
+
+React Native 将 JavaScript 代码转换为原生组件，提供接近原生的性能和真正的原生用户界面。
+
+它支持跨平台代码重用，加快开发速度并降低成本。
+
+该框架提供热重载功能以实现快速迭代，能够访问原生 API，并拥有大量第三方插件生态系统。
+
+React Native 的“学一次，随处编写”的理念及其桥接网络和移动开发的能力使其成为创建跨平台移动应用的热门选择，尤其受已经熟悉用于网络开发的 React 的团队欢迎。
+
+",
+          "links": [
+            {
+              "title": "访问专属的 React 路线图",
+              "url": "https://roadmap.sh/react-native",
+              "type": "article"
+            },
+            {
+              "title": "React Native 官网",
+              "url": "https://reactnative.dev/",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于 React 的顶级文章",
+              "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "004dc2ea-3709-407f-a610-56a6b30d673a",
+          "xid": "44e8783a-6b58-4f32-91b0-414ecb72db89"
+        },
+        {
+          "title": "Flutter",
+          "description": "Flutter 是由 Google 创建的开源用户界面 (UI) 软件开发工具包，可用于从单一代码库构建本地编译、多平台的应用程序。
+
+它使用 Dart 编程语言，并提供丰富的预先设计好的部件以创建响应式和视觉上吸引人的用户界面。
+
+Flutter 的架构允许通过热重载 (hot reload) 快速开发，使开发人员能够即时看到更改。
+
+Flutter 支持 iOS、Android、Web 和桌面平台，实现了真正的跨平台开发。
+
+Flutter 使用自定义渲染引擎 Skia (斯凯亚) 来绘制用户界面组件，确保设备间的外观一致。
+
+虽然 Flutter 以移动应用程序开发而闻名，但其不断扩大的生态系统及其性能改进也使得它越来越多地被用于 Web 和桌面应用程序的开发中。
+
+\n\n",
+          "links": [
+            {
+              "title": "针对初学者的 Flutter 课程",
+              "url": "https://www.youtube.com/watch?v=VPvVD8t02U8",
+              "type": "course"
+            },
+            {
+              "title": "访问 Flutter 专用路线图",
+              "url": "https://roadmap.sh/flutter",
+              "type": "article"
+            },
+            {
+              "title": "Flutter 网站",
+              "url": "https://flutter.dev",
+              "type": "article"
+            },
+            {
+              "title": "适用于桌面的 Flutter",
+              "url": "https://flutter.dev/multi-platform/desktop",
+              "type": "article"
+            },
+            {
+              "title": "12 种方式让你了解 Flutter 简化应用开发",
+              "url": "https://thenewstack.io/12-ways-flutter-streamlines-app-development/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Flutter 的顶级文章",
+              "url": "https://app.daily.dev/tags/flutter?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "56fe65b3-69fb-48f4-8b62-653a95985358",
+          "xid": "ac5599a6-10c1-42f2-8700-311a278d4f52"
+        },
+        {
+          "title": "Ionics (Ionic)",
+          "description": "Ionics (Ionic) 是一个开源的用户界面工具包，用于使用网络技术 (HTML、CSS 和 JavaScript) 构建高质量的跨平台移动和桌面应用程序。
+
+Ionics (Ionic) 利用了流行的Web框架，如 Angular、React 或 Vue.js，用于应用程序逻辑，同时提供了丰富的预建UI组件和原生设备功能。
+
+Ionics (Ionic) 使用 Cordova 或 Capacitor 将Web应用包裹起来部署到原生环境，使开发人员能够创建通过插件访问设备功能的混合应用。
+
+该框架注重性能和原生外观，为不同的平台提供自适应样式。
+
+由于Ionics (Ionic) 关注Web标准和跨平台兼容性，开发人员可以对多个平台维护一个单一的代码库，因此它成为快速移动应用开发的流行选择。
+
+",
+          "links": [
+            {
+              "title": "ionic-team/ionic-framework",
+              "url": "https://github.com/ionic-team/ionic-framework",
+              "type": "opensource"
+            },
+            {
+              "title": "Ionics (Ionic) 框架网站",
+              "url": "https://ionicframework.com/",
+              "type": "article"
+            },
+            {
+              "title": "Ionics (Ionic) 8 发布公告",
+              "url": "https://ionic.io/blog/ionic-8-is-here",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Ionics (Ionic) 的热门文章",
+              "url": "https://app.daily.dev/tags/ionic?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "35a1c1ba-3442-4467-a446-44c8ad9e05e4",
+          "xid": "f5ef01a2-ca74-42e8-b557-77cc05100685"
+        }
+      ],
+      "id": "a5e75cba-7a58-4fe0-afe1-13049f2777b4",
+      "xid": "0b83a0ea-5486-45cd-8e21-51bb7bad4461"
+    }
+  ],
+  "id": "f75bc382-765b-46e4-8a35-7ca729094e36",
+  "xid": "820aa2b3-d644-44fd-b900-dae9053610ad"
+}
