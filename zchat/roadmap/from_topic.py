@@ -6,8 +6,9 @@ system_prompt_template = """
 
 学习路径需详细分析topic，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
 如果topic是一个具体的职业或岗位，那么，需要包括用户所有要学习和理解的知识，还需要包括软技能，行业或职业的资质证书，职业生涯的不同发展阶段的划分，需要的经验能力和年限，岗位职责，以及对应的工作内容。
+你需要考虑用户目前水平，以及用户想要达到的水平。不要输出用户对于用户来说非常基本的内容。
 
-最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。 要求总共不少于100个节点。思维导图尽可能扁平化。如果可能的话，在根节点中包含行业、岗位、技能标签。
+最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。 要求总共不少于100个节点。如果可能的话，在根节点中包含行业、岗位、技能标签。
 
 如果用户输入的主题，涉及政治敏感、暴力、色情、赌博、毒品、枪支等敏感内容，请直接返回None。
 """
@@ -85,7 +86,7 @@ learning_goal_prompt_template = """
 """
 
 skill_level_prompt_template = """
-用户水平： {skill_level}
+用户目前水平： {skill_level}
 """
 
 def get_llm_response(topic, learning_goal, skill_level):
@@ -98,7 +99,8 @@ def get_llm_response(topic, learning_goal, skill_level):
         user_prompt  },
   ]
   print(messages)
-  response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
+  response = get_response_from_llm(messages, "qwen-qwq-32b", 32768)
+#   response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
   return response
 
 def parse_llm_response(response):

@@ -1,0 +1,5933 @@
+{
+  "title": "计算机科学",
+  "description": "适用于自学开发者的计算机科学课程，包含免费资源。
+
+",
+  "links": [],
+  "children": [
+    {
+      "title": "条件渲染",
+      "description": "指令 `v-if` 用于条件性地渲染一个块。
+
+只有当指令的表达式返回一个 truthy (truthy) 值时，该块才会被渲染。
+
+\n\n",
+      "links": [
+        {
+          "title": "条件渲染",
+          "url": "https://vuejs.org/guide/essentials/conditional.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Python",
+          "description": "Python 是一种知名（well known）的编程语言，它既是强类型语言也是动态类型语言。
+
+作为一种解释型语言 (interpreted language)，代码一经编写即刻执行，并且 Python 语法允许以函数式、过程式或面向对象（object-oriented）的编程方式编写代码。
+
+\n\n",
+          "links": [
+            {
+              "title": "访问专用的 Python 学习路线图",
+              "url": "https://roadmap.sh/python",
+              "type": "article"
+            },
+            {
+              "title": "Python 官网",
+              "url": "https://www.python.org/",
+              "type": "article"
+            },
+            {
+              "title": "Python 入门",
+              "url": "https://www.python.org/about/gettingstarted/",
+              "type": "article"
+            },
+            {
+              "title": "自动化枯燥的工作",
+              "url": "https://automatetheboringstuff.com/",
+              "type": "article"
+            },
+            {
+              "title": "Python 原则 - Python基础",
+              "url": "https://pythonprinciples.com/",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools - Python 教程",
+              "url": "https://www.w3schools.com/python/",
+              "type": "article"
+            },
+            {
+              "title": "Python 快速上手",
+              "url": "https://ehmatthes.github.io/pcc/",
+              "type": "article"
+            },
+            {
+              "title": "为非程序员介绍 Python",
+              "url": "https://thenewstack.io/an-introduction-to-python-for-non-programmers/",
+              "type": "article"
+            },
+            {
+              "title": "使用 Python 和 InfluxDB 入门",
+              "url": "https://thenewstack.io/getting-started-with-python-and-influxdb/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Python 的顶级帖子",
+              "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ef2709ee-141c-4e2d-928b-6164fdd600f9",
+          "xid": "2cb62d5f-914c-420f-b1ce-83437216831b"
+        },
+        {
+          "title": "Go",
+          "description": "Go 是一种由 Google 支持的开源编程语言。
+
+Go 可用于编写云计算服务、CLI工具、用于 API 开发，及更多功能。
+
+\n\n",
+          "links": [
+            {
+              "title": "访问专用 Go 路线图",
+              "url": "https://roadmap.sh/golang",
+              "type": "article"
+            },
+            {
+              "title": "Go 之旅 – Go 基础",
+              "url": "https://go.dev/tour/welcome/1",
+              "type": "article"
+            },
+            {
+              "title": "Go 参考文档",
+              "url": "https://go.dev/doc/",
+              "type": "article"
+            },
+            {
+              "title": "通过示例学习 Go – 带注释的示例程序",
+              "url": "https://gobyexample.com/",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools Go 教程",
+              "url": "https://www.w3schools.com/go/",
+              "type": "article"
+            },
+            {
+              "title": "使用 Go 语言构建 RESTful JSON API",
+              "url": "https://thenewstack.io/make-a-restful-json-api-go/",
+              "type": "article"
+            },
+            {
+              "title": "Go，云编程语言",
+              "url": "https://thenewstack.io/go-the-programming-language-of-the-cloud/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 Golang 的热门文章",
+              "url": "https://app.daily.dev/tags/golang?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8864d954-4ed7-4e8b-a18b-e0f618320675",
+          "xid": "e8a379c3-e9d7-494f-97b0-8192c11272fb"
+        },
+        {
+          "title": "C#（C Sharp）",
+          "description": "C#（发音为'C sharp'）是由Microsoft开发的一种通用编程语言。
+
+它被用于执行不同的任务，可以用来创建Web应用程序、游戏、移动应用程序等。
+
+",
+          "links": [
+            {
+              "title": "C# 学习路径",
+              "url": "https://docs.microsoft.com/en-us/learn/paths/csharp-first-steps/?WT.mc_id=dotnet-35129-website",
+              "type": "article"
+            },
+            {
+              "title": "W3 schools上的C#",
+              "url": "https://www.w3schools.com/cs/index.php",
+              "type": "article"
+            },
+            {
+              "title": "C# 介绍",
+              "url": "https://docs.microsoft.com/en-us/shows/CSharp-101/?WT.mc_id=Educationalcsharp-c9-scottha",
+              "type": "article"
+            },
+            {
+              "title": "探索关于C#编程的顶级帖子",
+              "url": "https://app.daily.dev/tags/csharp?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "C# 教程",
+              "url": "https://www.youtube.com/watch?v=gfkTfcpWqAY&list=PLTjRvDozrdlz3_FPXwb6lX_HoGXa09Yef",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a82be154-78c8-4a23-b036-57151c441436",
+          "xid": "c5575149-d5ef-431f-a299-141bc474fdd0"
+        },
+        {
+          "title": "Rust",
+          "description": "Rust 是一种现代的系统编程语言，专注于安全性、速度和并发性。
+
+通过内存安全（memory safe）的方式实现这些目标，而无需使用垃圾回收（garbage collection）。
+
+\n\n",
+          "links": [
+            {
+              "title": "编程语言Rust——在线图书",
+              "url": "https://doc.rust-lang.org/book/",
+              "type": "article"
+            },
+            {
+              "title": "通过实例学Rust——可运行示例集",
+              "url": "https://doc.rust-lang.org/stable/rust-by-example/index.html",
+              "type": "article"
+            },
+            {
+              "title": "Rust vs. Go：为何它们合在一起会更好",
+              "url": "https://thenewstack.io/rust-vs-go-why-theyre-better-together/",
+              "type": "article"
+            },
+            {
+              "title": "Rust编程语言2021数据报告",
+              "url": "https://thenewstack.io/rust-by-the-numbers-the-rust-programming-language-in-2021/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Rust的热门帖子",
+              "url": "https://app.daily.dev/tags/rust?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f2726a78-e875-41f8-9d6d-02d640d8b0e7",
+          "xid": "c33c8fac-7e92-4ec4-8e56-2c16a7bdc34e"
+        },
+        {
+          "title": "C++",
+          "description": "C++（C++）是一种强大的通用编程语言。
+
+它可以用来开发操作系统、浏览器、游戏等。
+
+C++支持不同的编程方式，如过程化（procedural）、面向对象（object-oriented）、函数式（functional）等。
+
+这使得C++既强大又灵活。
+
+\n\n",
+          "links": [
+            {
+              "title": "学习C++",
+              "url": "https://learncpp.com/",
+              "type": "article"
+            },
+            {
+              "title": "C++参考",
+              "url": "https://en.cppreference.com/",
+              "type": "article"
+            },
+            {
+              "title": "CPlusPlus",
+              "url": "https://cplusplus.com/",
+              "type": "article"
+            },
+            {
+              "title": "C++教程要点",
+              "url": "https://www.tutorialspoint.com/cplusplus/index.htm",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools C++",
+              "url": "https://www.w3schools.com/cpp/default.asp",
+              "type": "article"
+            },
+            {
+              "title": "C++技术路线图",
+              "url": "https://roadmap.sh/cpp",
+              "type": "article"
+            },
+            {
+              "title": "探索C++编程的热门文章",
+              "url": "https://app.daily.dev/tags/c++?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3172a3d7-e123-4461-a5f7-bebe785fd616",
+          "xid": "9571079d-4e30-442e-805c-ed6a392ee60c"
+        },
+        {
+          "title": "C",
+          "description": "C 是一种通用的计算机编程语言（computer programming language）。
+
+它由 Dennis Ritchie 于 20 世纪 70 年代创建，并且至今仍被广泛使用（very widely used）和具有影响力（influential）。
+
+C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilities）。
+
+",
+          "links": [
+            {
+              "title": "学习 C 语言 - W3Schools",
+              "url": "https://www.w3schools.com/c/",
+              "type": "article"
+            },
+            {
+              "title": "学习 C 语言 - Tutorials Point",
+              "url": "https://www.tutorialspoint.com/cprogramming/index.htm",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 C 编程的热门帖子",
+              "url": "https://app.daily.dev/tags/c?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "初学者的 C 语言教程",
+              "url": "https://www.youtube.com/watch?v=KJgsSFOSQv0",
+              "type": "video"
+            },
+            {
+              "title": "使用 Dr. Chuck 学习 C 编程",
+              "url": "https://www.youtube.com/watch?v=j-_s8f5K30I",
+              "type": "video"
+            },
+            {
+              "title": "C 编程完整教程 (Bro Code)",
+              "url": "https://youtu.be/87SH2Cn0s9A",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "27ca4eb5-d60e-4e2a-8ca3-3049de76842a",
+          "xid": "860a40f5-be27-4cbc-8439-609c879a09c2"
+        },
+        {
+          "title": "Java",
+          "description": "Java 是一种通用语言，主要用于基于互联网的应用程序。
+
+它由 James Gosling（詹姆斯·高斯林）在 1995 年于 Sun Microsystems（太阳微系统公司）创建，是后端开发人员最受欢迎的选择之一。
+
+\n\n",
+          "links": [
+            {
+              "title": "访问专用 Java 路线图",
+              "url": "https://roadmap.sh/java",
+              "type": "article"
+            },
+            {
+              "title": "Java 官方网站",
+              "url": "https://www.java.com/",
+              "type": "article"
+            },
+            {
+              "title": "W3 Schools 教程",
+              "url": "https://www.w3schools.com/java/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Java 的热门文章",
+              "url": "https://app.daily.dev/tags/java?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Java 快速入门课程",
+              "url": "https://www.youtube.com/watch?v=eIrMbAQSU34",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c7c5a1f0-74d9-4a55-99d5-c901816095a3",
+          "xid": "2fd3b343-14a2-4c5b-a7da-47641986727c"
+        }
+      ],
+      "id": "a11c5d93-fa01-40cf-ad40-d561a1b3d3ff",
+      "xid": "018d6b0c-24c2-40ad-9c07-1a68063357eb"
+    },
+    {
+      "title": "数据结构",
+      "description": "正如其名，**数据结构**是将数据在**内存**中组织起来的一种方式，以便能够高效地使用。
+
+一些常见的数据结构包括数组、链表、栈、哈希表、队列、树、堆和图。
+
+\n\n",
+      "links": [
+        {
+          "title": "由谷歌提供的数据结构和算法",
+          "url": "https://techdevguide.withgoogle.com/paths/data-structures-and-algorithms/",
+          "type": "course"
+        },
+        {
+          "title": "数据结构和算法",
+          "url": "https://www.javatpoint.com/data-structure-tutorial",
+          "type": "article"
+        },
+        {
+          "title": "探索关于数据结构的热门文章",
+          "url": "https://app.daily.dev/tags/data-structures?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "图表解析数据结构",
+          "url": "https://www.youtube.com/watch?v=9rhT3P1MDHk&list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY",
+          "type": "video"
+        },
+        {
+          "title": "数据结构播放列表",
+          "url": "https://youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu&si=_EEf7x58G6lUcMGG",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "数组",
+          "description": "数组将元素存储在连续的内存位置，使得存储元素的地址易于计算，这允许更快速访问特定索引处的元素。
+
+\n\n",
+          "links": [
+            {
+              "title": "数组数据结构 - Coursera",
+              "url": "https://www.coursera.org/lecture/data-structures/arrays-OsBSF",
+              "type": "course"
+            },
+            {
+              "title": "动态数组 - Coursera",
+              "url": "https://www.coursera.org/lecture/data-structures/dynamic-arrays-EwbnV",
+              "type": "course"
+            },
+            {
+              "title": "数组数据结构 | 数据结构的图形化表示",
+              "url": "https://www.youtube.com/watch?v=QJNwK2uJyGs",
+              "type": "video"
+            },
+            {
+              "title": "UC 伯克利 CS61B - 线性与多维数组（从15分钟32秒开始观看）",
+              "url": "https://archive.org/details/ucberkeley_webcast_Wp8oiO_CZZE",
+              "type": "video"
+            },
+            {
+              "title": "动态数组与静态数组",
+              "url": "https://www.youtube.com/watch?v=PEnFFiQe1pM&list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu&index=6",
+              "type": "video"
+            },
+            {
+              "title": "动态数组代码",
+              "url": "https://www.youtube.com/watch?v=tvw4v7FEF1w&list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu&index=5",
+              "type": "video"
+            },
+            {
+              "title": "不规则数组",
+              "url": "https://www.youtube.com/watch?v=1jtrQqYpt7g",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f1e2bebc-62e1-49b6-8a22-a87fd0a86eab",
+          "xid": "e196420b-4dfc-40ef-8509-de3c8be1f0a3"
+        },
+        {
+          "title": "链表",
+          "description": "数组将元素存储在连续的内存位置，使得存储元素的地址容易计算，并且这可以使访问特定索引的元素更快。
+
+链表在存储结构上更灵活，通常不将元素存储在连续的位置，因此需要通过附加标签来存储，这些标签指向下一个元素。
+
+这种数据存储方案的差异决定了哪种数据结构在特定情况下更合适。
+
+\n\n",
+          "links": [
+            {
+              "title": "单向链表",
+              "url": "https://www.coursera.org/lecture/data-structures/singly-linked-lists-kHhgK",
+              "type": "course"
+            },
+            {
+              "title": "核心：链表与数组",
+              "url": "https://www.coursera.org/lecture/data-structures-optimizing-performance/core-linked-lists-vs-arrays-rjBs9",
+              "type": "course"
+            },
+            {
+              "title": "实践：链表与数组",
+              "url": "https://www.coursera.org/lecture/data-structures-optimizing-performance/in-the-real-world-lists-vs-arrays-QUaUd",
+              "type": "course"
+            },
+            {
+              "title": "双向链表",
+              "url": "https://www.coursera.org/lecture/data-structures/doubly-linked-lists-jpGKD",
+              "type": "course"
+            },
+            {
+              "title": "链表数据结构 | 图解数据结构",
+              "url": "https://www.youtube.com/watch?v=odW9FU8jPRQ",
+              "type": "video"
+            },
+            {
+              "title": "4分钟了解链表",
+              "url": "https://www.youtube.com/watch?v=F8AbIC-vgmo",
+              "type": "video"
+            },
+            {
+              "title": "CS 61B 讲座7：链表I",
+              "url": "https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0",
+              "type": "video"
+            },
+            {
+              "title": "CS 61B 讲座7：链表II",
+              "url": "https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w",
+              "type": "video"
+            },
+            {
+              "title": "为什么你应该避免使用链表？",
+              "url": "https://www.youtube.com/watch?v=YQs6IC-vgmo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ed8f4da6-c29b-4d88-ae40-8a308e693297",
+          "xid": "6f3f1286-7869-4fcd-b234-0bb6d335eca0"
+        },
+        {
+          "title": "栈",
+          "description": "栈是一种线性数据集合，其中元素按特定顺序插入和移除。
+
+栈被叫做一种LIFO（Last In First Out，后进先出）数据结构，即最后插入的元素是第一个被移除的。
+
+\n\n",
+          "links": [
+            {
+              "title": "栈数据结构",
+              "url": "https://www.coursera.org/lecture/data-structures/stacks-UdKzQ",
+              "type": "course"
+            },
+            {
+              "title": "栈数据结构 | 插图数据结构",
+              "url": "https://www.youtube.com/watch?v=I5lq6sCuABE",
+              "type": "video"
+            },
+            {
+              "title": "3分钟了解栈",
+              "url": "https://www.youtube.com/watch?v=KcT3aVgrrpU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6e295c6d-0e16-400f-9c70-70aa99f6bb88",
+          "xid": "03e4668c-245f-410e-b7d8-9cf08eef841a"
+        },
+        {
+          "title": "队列",
+          "description": "队列是一种线性数据结构，其中元素按特定顺序插入和移除。
+
+队列也称为FIFO（First In, First Out）数据结构，因为它遵循“先进先出”的原则，即最先插入的元素是最开始被移除的元素。
+
+",
+          "links": [
+            {
+              "title": "队列 - Coursera",
+              "url": "https://www.coursera.org/lecture/data-structures/queues-EShpq",
+              "type": "course"
+            },
+            {
+              "title": "循环缓冲区 - Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Circular_buffer",
+              "type": "article"
+            },
+            {
+              "title": "队列数据结构 | 图解数据结构",
+              "url": "https://www.youtube.com/watch?v=mDCi1lXd9hc",
+              "type": "video"
+            },
+            {
+              "title": "3分钟讲解队列",
+              "url": "https://www.youtube.com/watch?v=D6gu-_tmEpQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2afa827d-a350-4afe-ab8e-0e849091dcf3",
+          "xid": "521e288b-f3e0-4f2a-bc36-2a79bbbe2295"
+        },
+        {
+          "title": "哈希表(Hash Table)",
+          "description": "哈希表(Hash Table)，映射(Map)，哈希映射(HashMap)，字典(Dictionary)或关联数组(Associative Array)都是指同一种数据结构。
+
+这是最常用的数据结构之一。
+
+\n\n",
+          "links": [
+            {
+              "title": "哈希表(Hash Table) | 数据结构图文教程",
+              "url": "https://www.youtube.com/watch?v=jalSiaIi8j4",
+              "type": "video"
+            },
+            {
+              "title": "四分钟内学完哈希表(Hash Table)",
+              "url": "https://youtu.be/knV86FlSXJ8",
+              "type": "video"
+            },
+            {
+              "title": "链式哈希处理",
+              "url": "https://www.youtube.com/watch?v=0M_kIqhwbFo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=9",
+              "type": "video"
+            },
+            {
+              "title": "扩容表倍增，Karp-Rabin",
+              "url": "https://www.youtube.com/watch?v=BRO7mVIFt08&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=10",
+              "type": "video"
+            },
+            {
+              "title": "开放寻址法，密码学哈希",
+              "url": "https://www.youtube.com/watch?v=rvdJDijO2Ro&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=11",
+              "type": "video"
+            },
+            {
+              "title": "PyCon 2010: 强大的字典(Dictionary)",
+              "url": "https://www.youtube.com/watch?v=C4Kc8xzcA68",
+              "type": "video"
+            },
+            {
+              "title": "PyCon 2017: 更强大的字典(Dictionary)",
+              "url": "https://www.youtube.com/watch?v=66P5FMkWoVU",
+              "type": "video"
+            },
+            {
+              "title": "(高级) 随机化：通用哈希与完美哈希",
+              "url": "https://www.youtube.com/watch?v=z0lJ2k0sl1g&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=11",
+              "type": "video"
+            },
+            {
+              "title": "(高级) 完美哈希",
+              "url": "https://www.youtube.com/watch?v=N0COwN14gt0&list=PL2B4EEwhKD-NbwZ4ezj7gyc_3yNrojKM9&index=4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "fe509594-19e4-4540-a391-8cd23be1eab5",
+          "xid": "c419a069-c7af-4dcb-bd27-6f5a125e14ec"
+        },
+        {
+          "title": "树",
+          "description": "树是非线性的、分层的数据结构，由一系列节点组成，每个节点存储一个值和对其他节点的引用列表（即“子节点”）。
+
+",
+          "links": [
+            {
+              "title": "树 | 图解数据结构",
+              "url": "https://www.youtube.com/watch?v=S2W3SXGPVyU",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "二叉树 (Binary Tree)",
+              "description": "二叉树 (Binary Tree) 是一种树形数据结构，每个节点最多有两个子节点，分别称为左子节点 (left child) 和右子节点 (right child)。
+
+\n\n",
+              "links": [
+                {
+                  "title": "关于二叉树 (Binary Tree) 的热门帖子",
+                  "url": "https://app.daily.dev/tags/binary-tree?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "二叉树 (Binary Trees) - 第一部分",
+                  "url": "https://www.youtube.com/watch?v=76dhtgZt38A&list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY&index=9",
+                  "type": "video"
+                },
+                {
+                  "title": "二叉树 (Binary Trees) - 第二部分",
+                  "url": "https://www.youtube.com/watch?v=U1JYwHcFfso&list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY&index=10",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "b2158cd1-0ab5-4c93-ae5b-90230e5367ab",
+              "xid": "7fe86261-ac24-4817-ae6a-ae07e6365693"
+            },
+            {
+              "title": "二叉搜索树",
+              "description": "二叉搜索树，也被称为有序（ordered）或排序（sorted）二叉树，是一种以每个内部节点的关键字大于其左子树中任何节点的关键字并且小于其右子树中任何节点的关键字为特性的根二叉树数据结构。
+
+\n\n",
+              "links": [
+                {
+                  "title": "二叉搜索树 - Coursera",
+                  "url": "https://www.coursera.org/learn/data-structures/lecture/E7cXP/introduction",
+                  "type": "course"
+                },
+                {
+                  "title": "探索关于通用编程的文章",
+                  "url": "https://app.daily.dev/tags/general-programming?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "树 | 图解数据结构",
+                  "url": "https://www.youtube.com/watch?v=S2W3SXGPVyU",
+                  "type": "video"
+                },
+                {
+                  "title": "二叉搜索树 - MIT",
+                  "url": "https://www.youtube.com/watch?v=76dhtgZt38A",
+                  "type": "video"
+                },
+                {
+                  "title": "二叉搜索树在C++中的实现",
+                  "url": "https://www.youtube.com/watch?v=COZK7NATh4k&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=29",
+                  "type": "video"
+                },
+                {
+                  "title": "BST的实现 - 栈和堆中的内存分配",
+                  "url": "https://www.youtube.com/watch?v=hWokyBoo0aI&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=30",
+                  "type": "video"
+                },
+                {
+                  "title": "在二叉搜索树中查找最小和最大元素",
+                  "url": "https://www.youtube.com/watch?v=Ut90klNN264&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=31",
+                  "type": "video"
+                },
+                {
+                  "title": "检查给定树是否为二叉搜索树",
+                  "url": "https://www.youtube.com/watch?v=yEwSGhSsT0U&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=36",
+                  "type": "video"
+                },
+                {
+                  "title": "从二叉搜索树中删除一个元素",
+                  "url": "https://www.youtube.com/watch?v=gcULXE7ViZw&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=37",
+                  "type": "video"
+                },
+                {
+                  "title": "在二叉搜索树中的中序后继",
+                  "url": "https://www.youtube.com/watch?v=5cPbNCrdotA&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=38",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "6633f735-650d-4268-b1b8-856d9eac9022",
+              "xid": "b4c3e550-2551-4de9-a329-41b1741fe2de"
+            },
+            {
+              "title": "完全二叉树",
+              "description": "完全二叉树是一种特殊的二叉树，其中每个父节点（internal node）都有两个或零个子节点。
+
+它也被称为正确二叉树（proper binary tree）。
+
+\n\n",
+              "links": [
+                {
+                  "title": "完全二叉树",
+                  "url": "https://www.programiz.com/dsa/full-binary-tree",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "52578d75-2789-4eaf-b36a-31d8800faeea",
+              "xid": "89d66bbe-607f-40a6-b78f-e7d25685d5ba"
+            },
+            {
+              "title": "完全二叉树",
+              "description": "完全二叉树是一种特殊的二叉树，其中树的所有层级都是完全填充的，除了最底层的节点，它们也是尽可能地从左边开始填充。
+
+\n\n",
+              "links": [
+                {
+                  "title": "完全二叉树 - Programiz",
+                  "url": "https://www.programiz.com/dsa/complete-binary-tree",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "3855086c-d544-45e5-bd09-049c98e2dfbd",
+              "xid": "24ae17fe-adc9-4dec-8f1e-c9c5ce8040f1"
+            },
+            {
+              "title": "平衡树 (Balanced Tree)",
+              "description": "平衡二叉树，也被称为高度平衡二叉树，定义为一个二叉树，其中任何节点的左子树和右子树的高度差不超过1。
+
+\n\n",
+              "links": [
+                {
+                  "title": "平衡二叉树 (Balanced Binary Tree)",
+                  "url": "https://www.programiz.com/dsa/balanced-binary-tree",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "468c8a84-6be6-46fb-9993-fa355b878a5d",
+              "xid": "4ba3fd09-b49b-4bf2-b5c1-748d7dc777cc"
+            },
+            {
+              "title": "不平衡的树",
+              "description": "不平衡的二叉树（unbalanced binary tree）是指不是平衡的二叉树的那部分。
+
+\n\n",
+              "links": [
+                {
+                  "title": "平衡二叉树",
+                  "url": "https://www.programiz.com/dsa/balanced-binary-tree",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7e8b4042-cf28-41db-93ed-48eed9bc1755",
+              "xid": "c92887a1-06e6-4bfe-be13-46b4fbcd2e78"
+            }
+          ],
+          "id": "4a44e006-8ce4-4e95-a3f5-cf504f4ab681",
+          "xid": "da2e8b0f-4725-445d-8b31-d27fa31d06fd"
+        },
+        {
+          "title": "图",
+          "description": "数据结构中的图(Graph)是非线性数据结构，由有限个节点(或顶点)和连接它们的边组成。
+
+数据结构中的图用于解决表示为网络的各种实际问题，如电话网络，电路网络和社交网络等。
+
+",
+          "links": [
+            {
+              "title": "图数据结构",
+              "url": "https://www.simplilearn.com/tutorials/data-structure-tutorial/graphs-in-data-structure",
+              "type": "article"
+            },
+            {
+              "title": "图数据结构 | 以图解方式展示的数据结构",
+              "url": "https://www.youtube.com/watch?v=0sQE8zKhad0",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第10讲 - 图数据结构",
+              "url": "https://www.youtube.com/watch?v=Sjk0xqWWPCc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=10",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第11讲 - 图遍历",
+              "url": "https://www.youtube.com/watch?v=ZTwjXj81NVY&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=11",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第12讲 - 深度优先搜索",
+              "url": "https://www.youtube.com/watch?v=KyordYB3BOs&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=12",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第13讲 - 最小生成树",
+              "url": "https://www.youtube.com/watch?v=oolm2VnJUKw&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=13",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第14讲 - 最小生成树(续)",
+              "url": "https://www.youtube.com/watch?v=RktgPx0MarY&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=14",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第15讲 - 图算法(续2)",
+              "url": "https://www.youtube.com/watch?v=MUe5DXRhyAo&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=15",
+              "type": "video"
+            },
+            {
+              "title": "6.006 单源最短路径问题",
+              "url": "https://www.youtube.com/watch?v=Aa2sqUhIn-E&index=15&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "有向图",
+              "description": "有向图是一种图，即由一组对象（称为顶点或节点）构成，这些对象通过边连接在一起。
+
+在有向图中，所有的边都由一个顶点指向另一个顶点。
+
+有向图有时也被称为有向图(digraph)或有向网络。
+
+相反地，如果边是双向的，这样的图称为无向图。
+
+\n\n",
+              "links": [
+                {
+                  "title": "有向图",
+                  "url": "https://en.wikipedia.org/wiki/Directed_graph",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "98882478-be27-47c1-a09f-4d2d78aad0fd",
+              "xid": "8cce12e2-f2da-453e-85c6-521739ebed39"
+            },
+            {
+              "title": "无向图",
+              "description": "无向图（Undirected Graph）是一种图，即一组对象（称为顶点或节点），其中所有的边都是双向的。
+
+无向图有时候也被称为无向网络（Undirected Network）。
+
+与之相对，边有方向的图被称为有向图（Directed Graph）。
+
+",
+              "links": [
+                {
+                  "title": "无向图",
+                  "url": "https://mathinsight.org/definition/undirected_graph",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "78d8c1a6-6179-4dfd-80c6-11f8ab54b240",
+              "xid": "05eb9951-e27f-46d2-9a54-13b490375dd8"
+            },
+            {
+              "title": "生成树",
+              "description": "生成树是图G的一个子集，覆盖了所有顶点，并使用可能的最少数量的边。
+
+因此，生成树中没有回路，并且它是不可分离的。
+
+\n\n",
+              "links": [
+                {
+                  "title": "生成树",
+                  "url": "https://www.tutorialspoint.com/data_structures_algorithms/spanning_tree.htm",
+                  "type": "article"
+                },
+                {
+                  "title": "CSE373 2020 - 第13讲 - 最小生成树",
+                  "url": "https://www.youtube.com/watch?v=oolm2VnJUKw&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=13",
+                  "type": "video"
+                },
+                {
+                  "title": "CSE373 2020 - 第14讲 - 最小生成树（续）",
+                  "url": "https://www.youtube.com/watch?v=RktgPx0MarY&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=14",
+                  "type": "video"
+                },
+                {
+                  "title": "贪心算法：最小生成树",
+                  "url": "https://www.youtube.com/watch?v=tKwnms5iRBU&index=16&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "b7fba661-4787-42dd-8bee-2000161ec6dc",
+              "xid": "bb2b83e8-88e7-4ce5-9090-30d496b4f322"
+            },
+            {
+              "title": "邻接表(Adjacency List)",
+              "description": "图可以被表示为邻接矩阵或邻接表。
+
+\n\n邻接矩阵是一个二维数组`V x V`，其中`V`表示图中顶点的数量。
+
+令二维数组为`adj[][]`，槽位`adj[i][j] = 1`表示存在从顶点`i`到顶点`j`的边。
+
+\n\n邻接表是一个向量数组。
+
+数组的大小等于顶点的数量。
+
+令数组为`array[]`。
+
+一个条目`array[i]`表示与第i个顶点相邻的顶点列表。
+
+这种表示方式也可以用来表示带权图。
+
+边的权重可以表示成成对列表。
+
+\n\n",
+              "links": [
+                {
+                  "title": "邻接矩阵 - 图的表示(Adjacency Matrix - Graph Representation)",
+                  "url": "https://www.programiz.com/dsa/graph-adjacency-matrix",
+                  "type": "article"
+                },
+                {
+                  "title": "邻接表 - 图的表示(Adjacency List - Graph Representation)",
+                  "url": "https://www.programiz.com/dsa/graph-adjacency-list",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "b41b3ea9-2c09-4caf-98b9-b60fa4198f63",
+              "xid": "0d897447-ed92-405c-8a4f-c80150795c12"
+            }
+          ],
+          "id": "02d39561-832e-4d28-b5f8-44c456928825",
+          "xid": "5c0043f6-b6dc-4220-888f-e966bf80640b"
+        },
+        {
+          "title": "堆",
+          "description": "堆（Heap）是一种基于树的数据结构，遵循完全二叉树的性质，可以是小顶堆（Min Heap）或大顶堆（Max Heap）。
+
+\n\n",
+          "links": [
+            {
+              "title": "优先队列 - 简介",
+              "url": "https://www.coursera.org/lecture/data-structures/introduction-2OpTs",
+              "type": "course"
+            },
+            {
+              "title": "CS 61B 第24讲：优先队列",
+              "url": "https://archive.org/details/ucberkeley_webcast_yIUFT6AKBGE",
+              "type": "article"
+            },
+            {
+              "title": "堆 | 数据结构详解",
+              "url": "https://www.youtube.com/watch?v=F_r0sJ1RqWk",
+              "type": "video"
+            },
+            {
+              "title": "堆与堆排序",
+              "url": "https://www.youtube.com/watch?v=B7hVxCmfPtM&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=5",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9b457ea6-3dc7-4bd0-a0b1-86d1dde1e525",
+          "xid": "19e81a6f-8f90-4708-aa14-d83db787ccb6"
+        }
+      ],
+      "id": "92e9ac48-0d87-42c7-8225-6836830238d8",
+      "xid": "de2522f4-b886-4528-bd2a-f1d93ebe5b68"
+    },
+    {
+      "title": "渐近记号(Asymptotic Notation)",
+      "description": "算法的效率取决于执行该算法所需的运行时间、存储空间和其他资源的数量。
+
+算法的效率是借助渐近记号(Asymptotic Notations)来衡量的。
+
+\n\n一个算法对于不同类型的输入可能不会表现出相同的性能。
+
+随着输入规模的增加，其性能将会发生变化。
+
+\n\n随着输入规模的顺序变化，算法性能变化的研究被称为渐近分析(Asymptotic Analysis)。
+
+\n\n",
+      "links": [
+        {
+          "title": "渐近分析：大O记号及其他(Asymptotic Analysis: Big-O Notation and More)",
+          "url": "https://www.programiz.com/dsa/asymptotic-notations",
+          "type": "article"
+        },
+        {
+          "title": "大O速查表(Big-O Cheat Sheet)",
+          "url": "https://www.bigocheatsheet.com/",
+          "type": "article"
+        },
+        {
+          "title": "大O记号：数学与科学维基(Big O Notation | Brilliant Math & Science Wiki)",
+          "url": "https://brilliant.org/wiki/big-o-notation/",
+          "type": "article"
+        },
+        {
+          "title": "大O记号：计算时间复杂度(Big O Notation — Calculating Time Complexity)",
+          "url": "https://www.youtube.com/watch?v=Z0bH0cMY0E8",
+          "type": "video"
+        },
+        {
+          "title": "五分钟了解大O记号(Big O Notation in 5 Minutes)",
+          "url": "https://www.youtube.com/watch?v=__vX2sjlpXU",
+          "type": "video"
+        },
+        {
+          "title": "渐近记号 - CS50(Asymptotic Notation - CS50)",
+          "url": "https://www.youtube.com/watch?v=iOq5kSKqeR4",
+          "type": "video"
+        },
+        {
+          "title": "CS 61B 第19次课：渐近分析(CS 61B Lecture 19: Asymptotic Analysis)",
+          "url": "https://archive.org/details/ucberkeley_webcast_VIS4YDpuP98",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "大O符号",
+          "description": "大O符号（Big O notation）可以用来描述算法的运行时间随着输入规模的增长而如何扩大，忽略诸如编程语言和计算机速度这样的实现细节。
+
+更为具体地说，它表示函数的增长率的上界，该函数将算法的运行时间与输入规模联系起来。
+
+大O符号可以用来比较算法并决定哪个更好。
+
+\n\n",
+          "links": [
+            {
+              "title": "moviesCS 61B Lecture 19: 渐近分析",
+              "url": "https://archive.org/details/ucberkeley_webcast_VIS4YDpuP98",
+              "type": "article"
+            },
+            {
+              "title": "大O符号 | 精英数学与科学维基",
+              "url": "https://brilliant.org/wiki/big-o-notation/",
+              "type": "article"
+            },
+            {
+              "title": "大O符号 — 计算时间复杂性",
+              "url": "https://www.youtube.com/watch?v=Z0bH0cMY0E8",
+              "type": "video"
+            },
+            {
+              "title": "大O符号",
+              "url": "https://www.youtube.com/watch?v=V6mKVRU1evU",
+              "type": "video"
+            },
+            {
+              "title": "大O符号（及大欧米伽和大西塔符号）",
+              "url": "https://www.youtube.com/watch?v=ei-A_wy5Yxw&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN&index=3",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "42b451fd-29c7-4578-a728-db3a2f2c5033",
+          "xid": "42c61e69-5242-4860-9f57-fd26084ed756"
+        },
+        {
+          "title": "大Θ（Big-Theta）",
+          "description": "如果一个函数的Big O和Big Omega相同，那么它们就成为该函数的大Θ。
+
+大Θ用于描述一个函数的确切增长速率。
+
+它用符号Θ表示。
+
+\n\n",
+          "links": [
+            {
+              "title": "大O符号 | 精英数学与科学维基",
+              "url": "https://brilliant.org/wiki/big-o-notation/",
+              "type": "article"
+            },
+            {
+              "title": "大O表示法（以及大Ω和大Θ）",
+              "url": "https://www.youtube.com/watch?v=ei-A_wy5Yxw&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN&index=3",
+              "type": "video"
+            },
+            {
+              "title": "渐近记号 - CS50",
+              "url": "https://www.youtube.com/watch?v=iOq5kSKqeR4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "cd4b9932-2d99-4070-9add-4327941c3e7c",
+          "xid": "af707fba-69a1-49b8-9e02-561d1294d63b"
+        },
+        {
+          "title": "大欧米咖（Big Omega）",
+          "description": "大欧米咖记号（Big Omega notation）与大O记号（Big O notation）相似。
+
+唯一的区别在于它表示函数增长速率的下界（lower bound）。
+
+\n\n",
+          "links": [
+            {
+              "title": "大O记号（Big O Notation） | 精英数学与科学维基",
+              "url": "https://brilliant.org/wiki/big-o-notation/",
+              "type": "article"
+            },
+            {
+              "title": "大O记号（Big Oh Notation）（及大欧米咖（Omega）和大西塔（Theta））",
+              "url": "https://www.youtube.com/watch?v=ei-A_wy5Yxw&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN&index=3",
+              "type": "video"
+            },
+            {
+              "title": "渐近记号（Asymptotic Notation） - CS50",
+              "url": "https://www.youtube.com/watch?v=iOq5kSKqeR4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "68e9b549-e726-445f-b2e8-9757ac3fe220",
+          "xid": "c2cbeb7a-0aae-4f83-977b-0814a2b092a0"
+        },
+        {
+          "title": "常见运行时环境(common-runtimes)",
+          "description": "常见运行时环境(common-runtimes)",
+          "links": [],
+          "children": [
+            {
+              "title": "常数时间算法",
+              "description": "常数时间算法是最简单和最高效的算法。
+
+这类算法总是以相同的时间运行，与输入的大小无关。
+
+这是算法运行的最佳情况，也是所有算法追求的目标。
+
+\n\n",
+              "links": [
+                {
+                  "title": "时间复杂度 - 大O符号",
+                  "url": "https://www.youtube.com/watch?v=Z0bH0cMY0E8",
+                  "type": "video"
+                },
+                {
+                  "title": "大O符号",
+                  "url": "https://www.youtube.com/watch?v=V6mKVRU1evU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "5072625f-a3be-4695-bdda-d9f2c959f85a",
+              "xid": "cfc38457-76a5-475f-b547-0d39c26b552d"
+            },
+            {
+              "title": "对数型",
+              "description": "对数型复杂度算法是第二快的算法。
+
+它们比线性算法（Linear algorithms）快，但比常数算法（Constant algorithms）慢。
+
+\n\n",
+              "links": [
+                {
+                  "title": "大O表示法——计算时间复杂度",
+                  "url": "https://www.youtube.com/watch?v=Z0bH0cMY0E8",
+                  "type": "video"
+                },
+                {
+                  "title": "大O表示法",
+                  "url": "https://www.youtube.com/watch?v=V6mKVRU1evU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "e8a13c1e-7ed3-4d8e-a39c-ae418f9e280d",
+              "xid": "237079f8-bb45-429b-b60d-0509e107182a"
+            },
+            {
+              "title": "线性",
+              "description": "线性算法是运行时间与输入大小成正比的算法。
+
+这意味着算法的运行时间将与输入大小线性增长。
+
+例如，如果输入大小为10，则当输入大小为1时，运行时间将是其10倍。
+
+如果输入大小为100，则当输入大小为1时，运行时间将是其100倍。
+
+\n\n",
+              "links": [
+                {
+                  "title": "大O符号——计算时间复杂度",
+                  "url": "https://www.youtube.com/watch?v=Z0bH0cMY0E8",
+                  "type": "video"
+                },
+                {
+                  "title": "大O符号",
+                  "url": "https://www.youtube.com/watch?v=V6mKVRU1evU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "7539e2be-39b9-4bb1-b657-7c25993c0827",
+              "xid": "b006b15d-6a70-46fc-afb8-15c4beb9812d"
+            },
+            {
+              "title": "多项式",
+              "description": "多项式算法是运行时间是对输入大小的多项式函数的算法。
+
+这意味着运行时间是一个形如`n^k`的函数，其中`k`是一个常数。
+
+例如，以下算法的运行时间是`n^2`:\n\n    def 多项式算法(n):\n        for i in range(n):\n            for j in range(n):\n                print(i, j)\n    \n\n",
+              "links": [
+                {
+                  "title": "大O表示法—计算时间复杂度",
+                  "url": "https://www.youtube.com/watch?v=Z0bH0cMY0E8",
+                  "type": "video"
+                },
+                {
+                  "title": "大O表示法",
+                  "url": "https://www.youtube.com/watch?v=V6mKVRU1evU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "9982f568-1a90-4137-bfb8-c38c24c4d365",
+              "xid": "85b8ae86-5300-4971-8889-02b7fe53bbd0"
+            },
+            {
+              "title": "指数",
+              "description": "指数算法是指以2^n的速率增长的算法。
+
+这意味着对于每个额外的输入，算法的运行时间将翻倍。
+
+下面的函数就是指数算法的一个例子：\n\n    def 指数(n):\n        if n == 0:\n            return 1\n        return 指数(n - 1) + 指数(n - 1)\n    \n\n如你所见，算法的运行时间呈指数级增长。
+
+对于每个额外的输入，算法的运行时间将翻倍。
+
+\n\n",
+              "links": [
+                {
+                  "title": "大O符号 — 计算时间复杂度",
+                  "url": "https://www.youtube.com/watch?v=Z0bH0cMY0E8",
+                  "type": "video"
+                },
+                {
+                  "title": "大O符号",
+                  "url": "https://www.youtube.com/watch?v=V6mKVRU1evU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "891a31b2-5b68-4999-ae74-623e20176cac",
+              "xid": "eb8e83ef-284a-4796-a5e5-061afbbba47b"
+            },
+            {
+              "title": "阶乘",
+              "description": "阶乘复杂度（Factorial complexity）算法具有 `O(n!)` 的运行时间。
+
+这是算法最糟糕的情况。
+
+阶乘复杂度算法非常低效，应该被避免。
+
+\n\n    def generate_permutations(s):\n        # 基础情况：如果字符串长度为1，则返回一个包含该字符串的列表\n        if len(s) == 1:\n            return [s]\n    \n        # 初始化结果列表\n        permutations = []\n    \n        # 递归生成所有排列\n        for i in range(len(s)):\n            # 当前字符\n            current_char = s[i]\n            # 其余字符\n            remaining_chars = s[:i] + s[i+1:]\n            # 生成其余字符的所有排列\n            for perm in generate_permutations(remaining_chars):\n                # 将当前字符添加到每个生成排列的前面\n                permutations.append(current_char + perm)\n    \n        return permutations",
+              "links": [],
+              "children": [],
+              "id": "9e601abb-7076-44b5-89ff-39709b395764",
+              "xid": "0ecff936-f4ff-470d-85ab-9a17a582620a"
+            }
+          ],
+          "id": "9bbc6976-ec59-4f90-80e4-b6dfef696818",
+          "xid": "d252e5a0-b061-4b93-b2e2-91abad12c0ee"
+        }
+      ],
+      "id": "56320b0c-1058-458a-86ff-d51eac4767bd",
+      "xid": "4ba485af-e6a3-4c9f-9d85-af114c52dec5"
+    },
+    {
+      "title": "常见的算法",
+      "description": "这里列出了一些你应该知道的常见算法。
+
+你可以在计算机科学课程的[算法](https://www.khanacademy.org/computing/computer-science/algorithms)部分找到更多关于它们的信息。
+
+\n\n* 排序\n* 递归\n* 搜索\n* 缓存算法\n* 树算法\n* 图算法\n* 贪婪算法\n* 回溯\n* 子串搜索\n* 后缀数组\n* 动态规划",
+      "links": [],
+      "children": [
+        {
+          "title": "排序算法",
+          "description": "排序算法",
+          "links": [],
+          "children": [
+            {
+              "title": "冒泡排序 (Bubble Sort)",
+              "description": "冒泡排序 (Bubble Sort) 是一种简单的排序算法，它通过多次遍历列表并与相邻元素进行比较来工作，如果元素顺序错误，则交换它们。
+
+这一遍历过程会重复进行，直到列表完全排序。
+
+\n\n",
+              "links": [
+                {
+                  "title": "冒泡排序 (Bubble Sort)",
+                  "url": "https://www.youtube.com/watch?v=P00xJgWzz2c&index=1&list=PL89B61F78B552C1AB",
+                  "type": "video"
+                },
+                {
+                  "title": "分析冒泡排序 (Analyzing Bubble Sort)",
+                  "url": "https://www.youtube.com/watch?v=ni_zk257Nqo&index=7&list=PL89B61F78B552C1AB",
+                  "type": "video"
+                },
+                {
+                  "title": "2分钟内理解冒泡排序 (Bubble sort in 2 minutes)",
+                  "url": "https://youtu.be/xli_FI7CuzA",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "ac517302-2950-499a-a6ce-1be4f73b77cd",
+              "xid": "c44bd4d5-0092-489b-ab04-95f51f7f7d92"
+            },
+            {
+              "title": "选择排序",
+              "description": "选择排序是一种排序算法，它在列表中选择未排序的最小项目，并将其与索引0交换，然后找到下一个最小的项目并将其放置在索引1位置，依次类推。
+
+\n\n",
+              "links": [
+                {
+                  "title": "选择排序",
+                  "url": "https://www.coursera.org/lecture/algorithms-part1/selection-UQxFT",
+                  "type": "course"
+                },
+                {
+                  "title": "3分钟内了解选择排序",
+                  "url": "https://www.youtube.com/watch?v=g-PGLbMth_g",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "287098c9-f8bc-443a-9f61-b0c26d9ac5f3",
+              "xid": "8c48e087-f4b5-44a6-b2f0-c879eadeb293"
+            },
+            {
+              "title": "插入排序(Insertion Sort)",
+              "description": "插入排序是一个简单的排序算法，通过比较逐步构建最终排序的数组。
+
+它在大型列表中的效率远低于更先进的算法，如快速排序（quicksort）、堆排序（heapsort）或归并排序（merge sort）。
+
+\n\n",
+              "links": [
+                {
+                  "title": "插入排序算法(Insertion Sort Algorithm)",
+                  "url": "https://www.programiz.com/dsa/insertion-sort",
+                  "type": "article"
+                },
+                {
+                  "title": "插入排序 —— MIT",
+                  "url": "https://www.youtube.com/watch?v=Kg4bqzAqRBM&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=4",
+                  "type": "video"
+                },
+                {
+                  "title": "三分钟内理解插入排序",
+                  "url": "https://www.youtube.com/watch?v=JU767SDMDvA",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "3d9da4b5-d7ec-42e2-853a-52653e905081",
+              "xid": "61988ca5-1f66-46df-9331-7257e0851775"
+            },
+            {
+              "title": "堆排序(Heap Sort)",
+              "description": "堆排序是一种基于比较的排序算法。
+
+它类似于选择排序，在这里我们首先找到最大元素并将最大元素放到列表的末尾。
+
+我们对剩余的元素重复同样的过程。
+
+\n\n",
+              "links": [
+                {
+                  "title": "堆排序算法(Heap Sort Algorithm)",
+                  "url": "https://www.coursera.org/lecture/data-structures/heap-sort-hSzMO",
+                  "type": "course"
+                },
+                {
+                  "title": "堆排序算法(Heap Sort Algorithm)",
+                  "url": "https://www.programiz.com/dsa/heap-sort",
+                  "type": "article"
+                },
+                {
+                  "title": "4分钟内理解堆排序(Heap Sort in 4 Minutes)",
+                  "url": "https://www.youtube.com/watch?v=2DmK_H7IdTo",
+                  "type": "video"
+                },
+                {
+                  "title": "MIT堆排序算法演示(Heap Sort Algorithm - MIT)",
+                  "url": "https://www.youtube.com/watch?v=odNJmw5TOEE&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&t=3291s",
+                  "type": "video"
+                },
+                {
+                  "title": "第四讲-堆与堆排序(Lecture 4 - Heaps and Heap Sort)",
+                  "url": "https://www.youtube.com/watch?v=B7hVxCmfPtM&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=5",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "7dd8a2d0-6991-46fb-b8f4-f14a0039fbdc",
+              "xid": "21b290e1-e96b-47d8-a25c-6f16d928f4bc"
+            },
+            {
+              "title": "快速排序",
+              "description": "快速排序是一种分治算法（divide and conquer algorithm）。
+
+它选择一个元素作为基准（pivot），并以选择的基准为轴心重新排列给定数组。
+
+快速排序有许多不同的版本，它们选择基准的方式不同。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Python 中的快速排序实现",
+                  "url": "https://github.com/jwasham/practice-python/blob/master/quick_sort/quick_sort.py",
+                  "type": "opensource"
+                },
+                {
+                  "title": "快速排序算法",
+                  "url": "https://www.programiz.com/dsa/quick-sort",
+                  "type": "article"
+                },
+                {
+                  "title": "C 语言中的快速排序实现",
+                  "url": "http://www.cs.yale.edu/homes/aspnes/classes/223/examples/randomization/quick.c",
+                  "type": "article"
+                },
+                {
+                  "title": "4分钟了解快速排序",
+                  "url": "https://www.youtube.com/watch?v=Hoixgm4-P4M&feature=youtu.be",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "318b3db9-772f-42a1-aacb-a271a44d1729",
+              "xid": "7ac0c776-3d55-422e-a82d-b2e5490bd5fe"
+            },
+            {
+              "title": "归并排序 (Merge Sort)",
+              "description": "归并排序是一种分治算法 (divide and conquer algorithm)。
+
+它将输入数组分成两半，分别对两半递归调用自己，然后将这两半已排序的部分合并。
+
+`merge()` 函数用于合并两个子数组。
+
+`merge(arr, l, m, r)` 是该过程的关键步骤，它假定 `arr[l..m]` 和 `arr[m+1..r]` 已排好序，然后将这二个有序子数组合并为一个。
+
+\n\n",
+              "links": [
+                {
+                  "title": "归并排序算法 (Merge Sort Algorithm)",
+                  "url": "https://www.programiz.com/dsa/merge-sort",
+                  "type": "article"
+                },
+                {
+                  "title": "3分钟了解归并排序 (Merge Sort in 3 Minutes)",
+                  "url": "https://www.youtube.com/watch?v=4VqmGXwpLqc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "5180aef1-be4f-4b0a-b742-e1d6de828bb9",
+              "xid": "57ddfbd0-f532-404e-82e8-966baefbd418"
+            }
+          ],
+          "id": "0b5b4805-a712-4802-8583-7383e388fe7f",
+          "xid": "6902d991-d0ca-44c6-a53a-e4ed02cd2d3a"
+        },
+        {
+          "title": "树算法",
+          "description": "树算法",
+          "links": [],
+          "children": [
+            {
+              "title": "先序遍历(Pre-Order Traversal)",
+              "description": "先序遍历是一种树遍历算法，首先访问根节点，然后递归地遍历左子树，再遍历右子树。
+
+\n\n",
+              "links": [
+                {
+                  "title": "树结构详解(Illustrated Data Structures)",
+                  "url": "https://www.youtube.com/watch?v=S2W3SXGPVyU",
+                  "type": "video"
+                },
+                {
+                  "title": "3分钟理解先序遍历(Pre-order tree traversal in 3 minutes)",
+                  "url": "https://www.youtube.com/watch?v=1WxLM2hwL-U",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "16ce294c-8cef-4bef-8cda-c0eea13470be",
+              "xid": "947a77ca-b1fb-4bde-a0a5-3222eeb81860"
+            },
+            {
+              "title": "中序遍历",
+              "description": "中序遍历是一种树遍历算法，该算法首先访问左子树，然后访问根节点，最后访问右子树。
+
+这是遍历二叉查找树最为常见的方式。
+
+它还被用于生成二叉查找树中节点的有序列表。
+
+\n\n",
+              "links": [
+                {
+                  "title": "树 | 数据结构插图",
+                  "url": "https://www.youtube.com/watch?v=S2W3SXGPVyU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "dfd02cd5-dc44-4995-9256-11860e457943",
+              "xid": "0bff1040-ecd1-46ca-a89f-c20ac91bd7ab"
+            },
+            {
+              "title": "后序遍历(Post Order Traversal)",
+              "description": "后序遍历(post-order traversal)是一种树遍历方法，该方法首先访问左子树，然后访问右子树，最后访问根节点(root node)。
+
+这与先序遍历(pre-order traversal)相反，先序遍历首先访问根节点，然后访问左子树，最后访问右子树。
+
+\n\n",
+              "links": [
+                {
+                  "title": "树的图解数据结构(Tree | Illustrated Data Structures)",
+                  "url": "https://www.youtube.com/watch?v=S2W3SXGPVyU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "def83765-f6b9-4021-b100-c2aefdd797fe",
+              "xid": "fad5bd52-f842-435b-b4bd-29af175cab2e"
+            },
+            {
+              "title": "广度优先搜索(Breadth First Search)",
+              "description": "广度优先搜索是一种图遍历算法，该算法从根节点开始，在移动到下一层节点之前，先探索所有当前深度的邻居节点。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Java中二叉树的广度优先搜索(Breadth-First Search, BFS) 和 深度优先搜索(Depth-First Search, DFS)",
+                  "url": "https://www.digitalocean.com/community/tutorials/breadth-first-search-depth-first-search-bfs-dfs",
+                  "type": "article"
+                },
+                {
+                  "title": "二叉树中的广度优先搜索(BFS)和深度优先搜索(DFS)",
+                  "url": "https://www.youtube.com/watch?v=uWL6FJhq5fM",
+                  "type": "video"
+                },
+                {
+                  "title": "4分钟内理解广度优先搜索",
+                  "url": "https://www.youtube.com/watch?v=HZ5YTanv5QE",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "2ceaec27-9c15-4011-8fa5-7aea4c91f2aa",
+              "xid": "f536826f-31d6-4eec-a03b-e1dec1dc3f26"
+            },
+            {
+              "title": "深度优先搜索 (Depth First Search)",
+              "description": "深度优先搜索 (Depth First Search) 是一种图遍历算法，从一个根节点开始，尽可能地沿着每个分支探索，然后再进行回溯。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Java中二叉树的广度优先搜索 (BFS) 和深度优先搜索 (DFS)",
+                  "url": "https://www.digitalocean.com/community/tutorials/breadth-first-search-depth-first-search-bfs-dfs",
+                  "type": "article"
+                },
+                {
+                  "title": "二叉树中的广度优先搜索 (BFS) 和深度优先搜索 (DFS)",
+                  "url": "https://www.youtube.com/watch?v=uWL6FJhq5fM",
+                  "type": "video"
+                },
+                {
+                  "title": "4分钟内理解深度优先搜索 (Depth First Search)",
+                  "url": "https://www.youtube.com/watch?v=Urx87-NMm6c",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "063ea51f-0609-485b-9244-82231b6923af",
+              "xid": "d982cd5d-30eb-4534-84bf-5c2ebcade4eb"
+            }
+          ],
+          "id": "43d8bab4-1653-4a18-9062-7adb288236de",
+          "xid": "92af7108-b27f-4b55-a21d-ad5e6a46d651"
+        },
+        {
+          "title": "图算法",
+          "description": "图算法",
+          "links": [],
+          "children": [
+            {
+              "title": "广度优先搜索(Breadth First Search)",
+              "description": "广度优先搜索(Breadth first search)是一种遍历图的方法。
+
+它从根节点开始，先探索当前深度的所有邻接节点，然后再移动到下一层深度的节点。
+
+\n\n",
+              "links": [
+                {
+                  "title": "图算法 II - 深度优先搜索(DFS)，广度优先搜索(BFS)，克鲁斯卡尔算法(Kruskal Algorithm)，并查集(Union Find)数据结构 - 第7讲",
+                  "url": "https://www.youtube.com/watch?v=ufj5_bppBsA&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=7",
+                  "type": "video"
+                },
+                {
+                  "title": "4分钟内了解广度优先搜索(Breadth-first search)",
+                  "url": "https://www.youtube.com/watch?v=HZ5YTanv5QE",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "5b269f30-46f9-4c1f-afb9-af32071af723",
+              "xid": "71227f41-d3b5-4da7-9107-5856c7e3563f"
+            },
+            {
+              "title": "深度优先搜索（Depth First Search）",
+              "description": "深度优先搜索（depth first search）是一种图遍历算法，从根节点开始，沿着每个分支尽可能深入探索，然后再回溯。
+
+\n\n",
+              "links": [],
+              "children": [],
+              "id": "c3eb38b1-c086-49c0-9f77-70ee07c3babb",
+              "xid": "2f67af99-a624-4062-ad75-c7395d1b1e2b"
+            },
+            {
+              "title": "Bellman-Ford算法",
+              "description": "Bellman-Ford算法是一种图算法，用于从一个源顶点找到到图中所有其他顶点的最短路径。
+
+它是一种动态规划算法，采用自底向上的方法来寻找最短路径。
+
+它类似于Dijkstra算法（迪杰斯特拉算法），但它可以处理负权值。
+
+它也类似于Floyd-Warshall算法（弗洛伊德-瓦尔沙算法），但它可以处理负权值，并且比Floyd-Warshall算法更快。
+
+\n\n",
+              "links": [
+                {
+                  "title": "探索关于数据科学的热门文章",
+                  "url": "https://app.daily.dev/tags/data-science?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Bellman-Ford - MIT",
+                  "url": "https://www.youtube.com/watch?v=f9cVS_URPc0&ab_channel=MITOpenCourseWare",
+                  "type": "video"
+                },
+                {
+                  "title": "4分钟内理解Bellman-Ford算法",
+                  "url": "https://www.youtube.com/watch?v=9PHkk0UavIM",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "11515c0c-1fc4-4def-bba8-b042cef23f15",
+              "xid": "76da7b57-f9e4-4b80-8a3c-76d95836247d"
+            },
+            {
+              "title": "Dijkstra算法",
+              "description": "Dijkstra算法是一种图遍历算法，用于找到图中两个节点之间的最短路径。
+
+它是一种加权图算法（weighted graph algorithm），意味着图中的每条边都与一个权重相关联。
+
+该算法通过从起始节点开始找到到图中所有其他节点的最短路径来运行。
+
+它通过记录从起始节点到每个节点的距离，然后选择与起始节点距离最短的节点访问。
+
+随后更新每个节点从起始节点的距离，并重复这个过程直到访问完所有节点。
+
+\n\n",
+              "links": [
+                {
+                  "title": "探索关于数据科学的顶级文章",
+                  "url": "https://app.daily.dev/tags/data-science?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Dijkstra算法 - MIT",
+                  "url": "https://www.youtube.com/watch?v=NSHizBK9JD8&t=1731s&ab_channel=MITOpenCourseWare",
+                  "type": "video"
+                },
+                {
+                  "title": "3分钟内了解Dijkstra算法",
+                  "url": "https://www.youtube.com/watch?v=_lHSawdgXpI",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "148aefc4-f179-4e99-841a-88e0102ec88c",
+              "xid": "52d19cfa-cb7d-45c2-aa24-c2764cc5c3ff"
+            },
+            {
+              "title": "A* (A星)算法",
+              "description": "A* (A星)是一种图遍历算法，用于在一个图中找到两个节点之间的最短路径。
+
+它是Dijkstra (迪杰斯特拉)算法的改进版，通过引入启发式函数来找到最短路径。
+
+A* (A星)算法在路径规划和图遍历中被广泛使用。
+
+\n\n",
+              "links": [
+                {
+                  "title": "A* (A星)搜索算法 - 维基百科",
+                  "url": "https://en.wikipedia.org/wiki/A*_search_algorithm",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于数据科学的热门帖子",
+                  "url": "https://app.daily.dev/tags/data-science?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "A* (A星)路径规划(E01: 算法解释)",
+                  "url": "https://www.youtube.com/watch?v=-L-WgKMFuhE",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "7459a9cd-1268-4ef1-be4d-15469b78c0e0",
+              "xid": "cbdcbea7-0f15-41ba-a6ab-96bc7f9a08a0"
+            }
+          ],
+          "id": "13b63b09-14c0-4d8a-a62e-bf2f5226f540",
+          "xid": "af60e440-a390-4fe8-a0fb-a4c7452b7829"
+        },
+        {
+          "title": "贪心算法(greedy-algorithms)",
+          "description": "贪心算法(greedy-algorithms)",
+          "links": [],
+          "children": [
+            {
+              "title": "Dijkstra算法",
+              "description": "Dijkstra算法是一种贪心算法，用于在一个图中找到两个节点之间的最短路径。
+
+这是一种非常常见的算法，广泛应用于计算机科学领域，例如GPS导航、网络路由和迷宫的最短路径查找。
+
+\n\n",
+              "links": [
+                {
+                  "title": "关于数据科学的热门文章",
+                  "url": "https://app.daily.dev/tags/data-science?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Dijkstra算法3分钟速成",
+                  "url": "https://www.youtube.com/watch?v=_lHSawdgXpI",
+                  "type": "video"
+                },
+                {
+                  "title": "Dijkstra算法 - MIT",
+                  "url": "https://www.youtube.com/watch?v=NSHizBK9JD8&t=1731s&ab_channel=MITOpenCourseWare",
+                  "type": "video"
+                },
+                {
+                  "title": "加速Dijkstra算法 - MIT",
+                  "url": "https://www.youtube.com/watch?v=CHvQ3q_gJ7E&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=18",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "e026c5d3-4af7-43bd-bd64-3e7bcd608697",
+              "xid": "4e346e4b-110f-4b62-b03f-38931ee85d8b"
+            },
+            {
+              "title": "哈夫曼编码(Huffman Coding)",
+              "description": "哈夫曼编码是一种无损数据压缩算法。
+
+其思想是为输入字符分配可变长度的编码，所分配编码的长度基于相应字符的频率。
+
+出现频率最高的字符获得最短的编码，而出现频率最低的字符获得最长的编码。
+
+\n\n",
+              "links": [
+                {
+                  "title": "哈夫曼编码(Huffman Coding)",
+                  "url": "https://www.programiz.com/dsa/huffman-coding",
+                  "type": "article"
+                },
+                {
+                  "title": "哈夫曼编码 - 贪心方法(Huffman Coding - Greedy Method)",
+                  "url": "https://www.youtube.com/watch?v=co4_ahEDCho",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "63c196f6-2891-4827-8c69-e9a946c61da3",
+              "xid": "dac2de94-64da-4036-be3b-538cdb181aec"
+            },
+            {
+              "title": "克鲁斯卡尔算法(Kruskal's Algorithm)",
+              "description": "克鲁斯卡尔算法(Kruskal's algorithm)是一种贪心算法(greedy algorithm)，用于在一个连接的加权图中找到一个最小生成树(minimum spanning tree)。
+
+该算法输入一个图，找到该图中形成树的边的子集，这个树包含每一个顶点，并且树中所有边的总权重最小。
+
+如果图不是连接的，那么它会找到一个最小生成森林(minimum spanning forest)，为每个连通分量找到一个最小生成树(minimum spanning tree)。
+
+",
+              "links": [
+                {
+                  "title": "探索关于数据科学的顶级帖子",
+                  "url": "https://app.daily.dev/tags/data-science?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "2分钟理解克鲁斯卡尔算法(Kruskals Algorithm)",
+                  "url": "https://www.youtube.com/watch?v=71UQH7Pr9kU",
+                  "type": "video"
+                },
+                {
+                  "title": "图算法II - 深度优先搜索(DFS)、广度优先搜索(BFS)、克鲁斯卡尔算法(Kruskal's Algorithm)、并查集数据结构(Union Find Data Structure) - 第7讲",
+                  "url": "https://www.youtube.com/watch?v=ufj5_bppBsA&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=8",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "c0a15047-8781-4bdb-a34d-30bdbc446cbc",
+              "xid": "d0a4139d-142d-44d5-bae4-ecd892d04b3d"
+            },
+            {
+              "title": "Ford-Fulkerson算法（Ford-Fulkerson Algorithm）",
+              "description": "Ford-Fulkerson算法是一种贪心算法，用于在网络流中找到最大流。
+
+它也被称为Edmonds-Karp算法（Edmonds-Karp Algorithm）。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Ford-Fulkerson算法",
+                  "url": "https://www.programiz.com/dsa/ford-fulkerson-algorithm",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于数据科学的热门文章",
+                  "url": "https://app.daily.dev/tags/data-science?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "五分钟了解Ford-Fulkerson算法",
+                  "url": "https://www.youtube.com/watch?v=Tl90tNtKvxs",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "0b99aff1-1814-43a6-9d53-83391c16d9b3",
+              "xid": "9ebcc7bf-a33b-4539-ab9d-ee4adf201433"
+            },
+            {
+              "title": "普里姆算法(Prim's Algorithm)",
+              "description": "普里姆算法是一个贪心算法，用于找到加权无向图的最小生成树。
+
+最小生成树是一个连通加权无向图的边的子集，它连接所有顶点，没有形成任何环路，且具有可能的最小总边权重。
+
+加权无向图的最小生成树也被称为最小权重生成树或最小成本生成树。
+
+\n\n",
+              "links": [
+                {
+                  "title": "普里姆算法(Prims Algorithm)",
+                  "url": "https://www.programiz.com/dsa/prim-algorithm",
+                  "type": "article"
+                },
+                {
+                  "title": "探索数据科学方面的热门文章",
+                  "url": "https://app.daily.dev/tags/data-science?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "图算法 I - 拓扑排序，普里姆算法 - 第6讲",
+                  "url": "https://www.youtube.com/watch?v=i_AQT_XfvD8&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=7",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "1704e242-5712-4025-904e-a1732e861852",
+              "xid": "6b73da2e-f79e-405e-8c67-da9fbee55d43"
+            }
+          ],
+          "id": "a7f1b1f7-5bc5-4b72-b598-c769fc01d39d",
+          "xid": "3562922c-3728-4b55-815c-f5b08725db6a"
+        },
+        {
+          "title": "回溯算法(back-tracking-algorithms)",
+          "description": "回溯算法(back-tracking-algorithms)",
+          "links": [],
+          "children": [
+            {
+              "title": "寻找哈密顿路径",
+              "description": "哈密顿路径（Hamiltonian paths）是指在图中恰好访问每个节点一次的路径。
+
+它们是以著名数学家[Hamilton](https://en.wikipedia.org/wiki/William_Rowan_Hamilton)的名字命名的。
+
+哈密顿路径是[哈密顿环（Hamiltonian cycles）](https://en.wikipedia.org/wiki/Hamiltonian_cycle)的特例，后者是指在图中恰好访问每个节点一次的环路。
+
+\n\n",
+              "links": [
+                {
+                  "title": "哈密顿路径",
+                  "url": "https://www.hackerearth.com/practice/algorithms/graphs/hamiltonian-path/tutorial/",
+                  "type": "article"
+                },
+                {
+                  "title": "哈密顿路径和环路",
+                  "url": "https://medium.com/stamatics-iit-kanpur/hamiltonian-paths-and-cycles-4f233bfbc53a",
+                  "type": "article"
+                },
+                {
+                  "title": "哈密顿路径 - 第7次讲座",
+                  "url": "https://people.csail.mit.edu/virgi/6.s078/lecture17.pdf",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "b51e1e03-c3fc-4253-ac34-bbe0cb54bdfe",
+              "xid": "cbb3480f-2659-4abd-b348-11acd882ef38"
+            },
+            {
+              "title": "解决N皇后问题",
+              "description": "N皇后问题（N Queen Problem）是计算机科学中的一个著名问题。
+
+该问题是在n x n的棋盘上放置n个皇后（queen），使得没有任何两个皇后在同一条横行、竖列或斜线上。
+
+问题的目标是找出所有可能的解决方案。
+
+\n\n",
+              "links": [
+                {
+                  "title": "使用回溯法在Java/C++中解决N皇后问题",
+                  "url": "https://www.digitalocean.com/community/tutorials/n-queens-problem-java-c-plus-plus",
+                  "type": "article"
+                },
+                {
+                  "title": "6.1 使用回溯法解决N皇后问题",
+                  "url": "https://www.youtube.com/watch?v=xFv_Hl4B83A",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "5a4fbf05-427d-4815-88d7-c01e3dd6db9c",
+              "xid": "3fd53f27-951a-4c9b-a8dc-f1104446b3b4"
+            },
+            {
+              "title": "迷宫求解问题",
+              "description": "迷宫求解问题（Maze Solving Problem）是计算机科学中的一个经典问题。
+
+这个问题要求我们找到从起点到终点的一条路径。
+
+迷宫用一个单元格组成的网格表示。
+
+每个单元格可以是墙壁或路径。
+
+路径单元格彼此相连。
+
+起点和终点也被给出。
+
+目标是从起点到终点找到一条路径。
+
+路径只能由路径单元格组成。
+
+路径不能穿过墙壁单元格。
+
+\n\n",
+              "links": [
+                {
+                  "title": "迷宫求解算法",
+                  "url": "https://github.com/john-science/mazelib/blob/main/docs/MAZE_SOLVE_ALGOS.md",
+                  "type": "opensource"
+                },
+                {
+                  "title": "迷宫求解算法",
+                  "url": "https://kidscodecs.com/maze-solving-algorithms/",
+                  "type": "article"
+                },
+                {
+                  "title": "迷宫求解 - Computerphile",
+                  "url": "https://www.youtube.com/watch?v=rop0W4QDOUI",
+                  "type": "video"
+                },
+                {
+                  "title": "Python 迷宫求解教程（使用递归）",
+                  "url": "https://www.youtube.com/watch?v=XP94WC_XnZc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "e1a30fd8-d69e-43d4-b7df-98ce40f54165",
+              "xid": "b3cce45c-c0dd-4fa6-8d45-983662a70f7f"
+            },
+            {
+              "title": "骑士周游问题",
+              "description": "骑士周游问题（Knight's Tour Problem）是一个问题，其中我们需要找到一种路径，使骑士能够访问棋盘上的所有单元格，并且不重复访问任何一个单元格。
+
+\n\n",
+              "links": [
+                {
+                  "title": "骑士周游",
+                  "url": "https://bradfieldcs.com/algos/graphs/knights-tour/",
+                  "type": "article"
+                },
+                {
+                  "title": "骑士周游问题",
+                  "url": "https://www.codesdope.com/course/algorithms-knights-tour-problem/",
+                  "type": "article"
+                },
+                {
+                  "title": "回溯法：骑士周游问题",
+                  "url": "https://www.codingninjas.com/codestudio/library/backtracking-the-knights-tour-problem",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "005e4f45-664a-4b2e-bc73-8fd2a8c1d150",
+              "xid": "542077c7-983f-4c72-9083-304cd7646353"
+            }
+          ],
+          "id": "1f7f2b0f-4ed1-4588-b5f5-e467f243ac44",
+          "xid": "dd13b273-d0a1-4216-a136-c507e8d13b6b"
+        },
+        {
+          "title": "Rabin-Karp算法",
+          "description": "Rabin-Karp算法是一种字符串搜索算法，它使用哈希（hashing）方法在文本中找到一组模式字符串中的任何一个。
+
+对于平均长度为`n`的字符串，它在`O(n+m)`的时间内完成，需要`O(m)`的空间，其中`m`是模式的长度。
+
+该算法在生物信息学中常用于搜索DNA模式。
+
+\n\n",
+          "links": [
+            {
+              "title": "Rabin-Karp算法",
+              "url": "https://www.coursera.org/lecture/data-structures/rabin-karps-algorithm-c0Qkw",
+              "type": "course"
+            },
+            {
+              "title": "优化：预计算",
+              "url": "https://www.coursera.org/learn/data-structures/lecture/nYrc8/optimization-precomputation",
+              "type": "course"
+            },
+            {
+              "title": "优化：实现和分析",
+              "url": "https://www.coursera.org/learn/data-structures/lecture/h4ZLc/optimization-implementation-and-analysis",
+              "type": "course"
+            },
+            {
+              "title": "探索关于数据科学的热门文章",
+              "url": "https://app.daily.dev/tags/data-science?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "讲座9：表扩容，Karp-Rabin",
+              "url": "https://www.youtube.com/watch?v=BRO7mVIFt08&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=9",
+              "type": "video"
+            },
+            {
+              "title": "滚动哈希，摊销分析",
+              "url": "https://www.youtube.com/watch?v=w6nuXg0BISo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=33",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "03be2c0c-fee2-4b43-b673-b45e39ec6749",
+          "xid": "3aa3db7c-44be-4983-9e23-90d0c032b87a"
+        },
+        {
+          "title": "递归(recursion)",
+          "description": "递归(recursion)",
+          "links": [],
+          "children": [
+            {
+              "title": "尾递归(Tail Recursion)",
+              "description": "尾递归(Tail Recursion)是一种特殊的递归形式，在这种形式中，递归调用是函数中的最后一项。
+
+递归之后函数不再执行任何操作。
+
+\n\n",
+              "links": [
+                {
+                  "title": "尾递归(Tail Recursion)",
+                  "url": "https://www.coursera.org/lecture/programming-languages/tail-recursion-YZic1",
+                  "type": "course"
+                },
+                {
+                  "title": "什么是尾递归(Tail Recursion)？为什么它被认为那么糟糕？",
+                  "url": "https://www.quora.com/What-is-tail-recursion-Why-is-it-so-bad",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于递归(Recursion)的热门帖子",
+                  "url": "https://app.daily.dev/tags/recursion?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2e0226df-107f-465b-9c57-a18744c60534",
+              "xid": "0d8ec7cd-bbe7-4e1c-a0d4-cc22129b5d4f"
+            },
+            {
+              "title": "非尾递归（Non-Tail Recursion）",
+              "description": "尾递归是指函数可以直接返回递归调用的结果，没有剩余的待执行操作，也不需要保留调用栈帧。
+
+因此，尾递归可以被翻译为一种“附带参数的goto指令”，使栈使用量保持恒定。
+
+\n\n在“非尾递归（Non-tail Recursion）”中，递归调用之后仍有待执行的操作，调用栈帧不能被丢弃。
+
+\n\n",
+              "links": [
+                {
+                  "title": "什么是非尾递归（Non-tail recursion）",
+                  "url": "https://www.quora.com/What-is-non-tail-recursion",
+                  "type": "article"
+                },
+                {
+                  "title": "尾递归与非尾递归（Tail vs Non-Tail Recursion）",
+                  "url": "https://www.baeldung.com/cs/tail-vs-non-tail-recursion",
+                  "type": "article"
+                },
+                {
+                  "title": "探索热门的递归相关文章",
+                  "url": "https://app.daily.dev/tags/recursion?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "递归（已解决的问题1）",
+                  "url": "https://www.youtube.com/watch?v=IVLUGb_gDDE",
+                  "type": "video"
+                },
+                {
+                  "title": "递归类型（第2部分）| 尾递归与非尾递归（Tail & Non-tail Recursion）",
+                  "url": "https://www.youtube.com/watch?v=HIt_GPuD7wk",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "f81f1f45-f3f7-4a8e-b383-8818b51a06f8",
+              "xid": "dddffbfa-af3a-4eef-8e34-9e6b296e8236"
+            }
+          ],
+          "id": "006df871-349e-41e7-9b1c-ee55e5016e38",
+          "xid": "f3877f05-1ca3-4dd5-953d-7fac511267ee"
+        },
+        {
+          "title": "搜索算法",
+          "description": "搜索算法",
+          "links": [],
+          "children": [
+            {
+              "title": "二分查找",
+              "description": "二分查找（binary search）是一种在有序数组中查找目标值位置的搜索算法。
+
+二分查找将目标值与数组的中间元素进行比较。
+
+如果它们不相等，则目标值不可能存在于数组中被排除的一半，然后在剩下的半部分继续进行搜索，再次取中间元素进行比较，重复这个过程直到找到目标值。
+
+如果搜索结束时剩余部分为空，则说明数组中不存在目标值。
+
+\n\n",
+              "links": [
+                {
+                  "title": "二分查找 - 可汗学院",
+                  "url": "https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search",
+                  "type": "article"
+                },
+                {
+                  "title": "二分查找",
+                  "url": "https://www.topcoder.com/thrive/articles/Binary%20Search",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于二分查找的热门帖子",
+                  "url": "https://app.daily.dev/tags/binary-search?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "四分钟内掌握二分查找",
+                  "url": "https://www.youtube.com/watch?v=fDKIpRe8GW4&feature=youtu.be",
+                  "type": "video"
+                },
+                {
+                  "title": "二分查找 - CS50",
+                  "url": "https://www.youtube.com/watch?v=D5SrAga1pno",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "0ecad594-f3aa-45ee-be8a-bddefd00b07d",
+              "xid": "5e83a6e3-c251-4acf-97b1-a6129a424794"
+            },
+            {
+              "title": "线性搜索(Linear Search)",
+              "description": "线性搜索(Linear Search)是一种非常简单的算法，用于在一个数组中搜索某个值。
+
+它会依次检查数组中的每个元素，直到找到匹配项或者搜索完所有元素为止。
+
+\n\n",
+              "links": [],
+              "children": [],
+              "id": "c3f362b3-f98d-4112-bc9a-1efba775476a",
+              "xid": "1dcb912f-b9c3-4e2f-8aee-742cfa1a2337"
+            }
+          ],
+          "id": "fffc3ddc-0842-401b-8d8a-38ae98f44437",
+          "xid": "b6efcc17-ddc9-450e-80cd-11d24687b51a"
+        },
+        {
+          "title": "缓存算法(cache-algorithms)",
+          "description": "缓存算法(cache-algorithms)",
+          "links": [],
+          "children": [
+            {
+              "title": "LRU 缓存（LRU Cache）",
+              "description": "LRU 缓存是一种首先淘汰最久未使用的项目的缓存算法。
+
+它是一种非常常见的缓存算法，被广泛应用于浏览器缓存、数据库缓存以及操作系统缓存中。
+
+\n\n",
+              "links": [
+                {
+                  "title": "LRU 缓存的魔力（100 Days of Google Dev）",
+                  "url": "https://www.youtube.com/watch?v=R5ON3iwx78M",
+                  "type": "video"
+                },
+                {
+                  "title": "实现 LRU 缓存（Udacity）",
+                  "url": "https://www.youtube.com/watch?v=bq6N7Ym81iI",
+                  "type": "video"
+                },
+                {
+                  "title": "LeetCode | 146 LRU 缓存 | C++ | 解释",
+                  "url": "https://www.youtube.com/watch?v=8-FZRAjR7qU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "7471a7e8-7523-4e3a-8f19-c5027b4c23ee",
+              "xid": "32093fb2-3aa1-4634-b9c6-09e1f9e768dd"
+            },
+            {
+              "title": "LFU 缓存 (LFU Cache)",
+              "description": "LFU 缓存 (LFU Cache) 是一种存储键值对的数据结构。
+
+它具有固定的大小，当达到上限时，会移除使用频率最低的键值对。
+
+LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用，例如网页缓存、数据库查询缓存以及图像缓存。
+
+\n\n",
+              "links": [
+                {
+                  "title": "1117. 数据结构 - LFU 缓存 (LFU Cache)",
+                  "url": "https://jojozhuang.github.io/algorithm/data-structure-lfu-cache/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f2719a7e-78d0-4cf0-bb01-d8db79c3e4f9",
+              "xid": "aa0036c0-d1fc-4c1e-9002-31f210267863"
+            },
+            {
+              "title": "MFU缓存",
+              "description": "MFU缓存是另一种缓存算法。
+
+区别在于，它不是删除最少使用的条目，而是删除最频繁使用的条目。
+
+\n\n",
+              "links": [
+                {
+                  "title": "比较MFU和LRU页面替换算法",
+                  "url": "https://stackoverflow.com/questions/13597246/comparison-of-mfu-and-lru-page-replacement-algorithms",
+                  "type": "article"
+                },
+                {
+                  "title": "为什么缓存使用最近最常使用（MRU）算法作为驱逐策略？",
+                  "url": "https://stackoverflow.com/questions/5088128/why-does-cache-use-most-recently-used-mru-algorithm-as-evict-policy",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "92a5641e-6f88-4479-bb54-fbd456a62bd4",
+              "xid": "ac6f85b0-17cc-4f77-8635-8f333a2fc16e"
+            }
+          ],
+          "id": "81360f1b-71de-4f16-b56a-18c321b0f5de",
+          "xid": "2effa4e5-ca54-400e-8854-6b95f20935b6"
+        }
+      ],
+      "id": "0a84d100-f819-4c38-924e-a4d3daf6f421",
+      "xid": "caddee67-2916-4534-bc7b-78cde61ebaba"
+    },
+    {
+      "title": "字符串搜索与操作",
+      "description": "字符串搜索与操作是计算机科学中一个非常重要的主题。
+
+它被广泛应用于各种不同应用中，比如在字符串中搜索或替换特定模式、单词或字符。
+
+\n\n",
+      "links": [
+        {
+          "title": "字符串搜索算法",
+          "url": "https://en.wikipedia.org/wiki/String-searching_algorithm",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "文本中的模式搜索",
+          "description": "在文本中搜索模式是在计算机科学中非常常见的任务。
+
+它被应用于拼写检查器、文本编辑器等许多应用程序中。
+
+\n\n",
+          "links": [
+            {
+              "title": "文本中的模式搜索",
+              "url": "https://www.coursera.org/learn/data-structures/lecture/tAfHI/search-pattern-in-text",
+              "type": "course"
+            }
+          ],
+          "children": [],
+          "id": "bc6e1f50-9d02-45b2-9ae1-26e23ddecc79",
+          "xid": "5f98dbf3-d8b5-4fef-8cb1-d4ecb63414bb"
+        },
+        {
+          "title": "后缀数组（Suffix Arrays）",
+          "description": "后缀数组是一种数据结构，它允许我们快速地按字典顺序找到一个字符串的所有后缀。
+
+这在解决许多问题时非常有用，比如找出两个字符串之间的最长公共子串，或者找出一个字符串中的不同子串的数量。
+
+\n\n",
+          "links": [
+            {
+              "title": "后缀数组（Suffix Arrays） - Coursera",
+              "url": "https://www.coursera.org/learn/algorithms-part2/lecture/TH18W/suffix-arrays",
+              "type": "course"
+            },
+            {
+              "title": "后缀数组（Suffix Arrays）简介",
+              "url": "https://www.youtube.com/watch?v=zqKlL3ZpTqs",
+              "type": "video"
+            },
+            {
+              "title": "高级数据结构：后缀数组（Suffix Arrays）",
+              "url": "https://www.youtube.com/watch?v=IzMxbboPcqQ",
+              "type": "video"
+            },
+            {
+              "title": "后缀数组（Suffix Arrays）：构建",
+              "url": "https://www.youtube.com/watch?v=ZWlbhBjjwyA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "90f5c033-c857-4dd8-b4ee-6f9fafb600a0",
+          "xid": "0d5e1161-950f-4776-b9c2-2dad1d77bbb7"
+        },
+        {
+          "title": "子字符串搜索",
+          "description": "子字符串搜索是指在字符串中查找子字符串的问题。
+
+这是一个在计算机科学中非常常见的问题，有着多种解决方案算法。
+
+\n\n",
+          "links": [
+            {
+              "title": "子字符串搜索简介",
+              "url": "https://www.coursera.org/lecture/algorithms-part2/introduction-to-substring-search-n3ZpG",
+              "type": "course"
+            },
+            {
+              "title": "最快的子字符串搜索算法是什么？",
+              "url": "https://stackoverflow.com/questions/3183582/what-is-the-fastest-substring-search-algorithm",
+              "type": "article"
+            },
+            {
+              "title": "子字符串搜索 - 练习",
+              "url": "https://algs4.cs.princeton.edu/53substring/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "暴力搜索",
+              "description": "暴力搜索算法是一种简单的算法，通过比较字符串中的每个字符与模式中的第一个字符来查找模式。
+
+如果第一个字符匹配，则继续比较字符串中的下一个字符和模式中的下一个字符，依此类推。
+
+如果模式中的所有字符都匹配，则找到该模式。
+
+如果第一个字符不匹配，则算法将比较字符串中的第二个字符与模式中的第一个字符，依此类推。
+
+\n\n",
+              "links": [
+                {
+                  "title": "暴力子串搜索",
+                  "url": "https://www.coursera.org/learn/algorithms-part2/lecture/2Kn5i/brute-force-substring-search",
+                  "type": "course"
+                },
+                {
+                  "title": "关于子串搜索中暴力算法的入门指南",
+                  "url": "https://nulpointerexception.com/2019/02/10/a-beginner-guide-to-brute-force-algorithm-for-substring-search/",
+                  "type": "article"
+                },
+                {
+                  "title": "网络安全与字符串搜索中的暴力算法",
+                  "url": "https://www.baeldung.com/cs/brute-force-cybersecurity-string-search",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "fbf3e21d-0f4e-4829-b24b-9df59772a502",
+              "xid": "e137c409-94d7-42e2-b5a5-9fe2f1703f18"
+            },
+            {
+              "title": "克努特-莫里斯-普拉特算法（Knuth-Morris Pratt）",
+              "description": "克努特-莫里斯-普拉特算法（Knuth-Morris Pratt）是一种字符串搜索算法，它使用一个预先计算的数组来在字符串中查找子串。
+
+这个数组被称为前缀函数（prefix function）。
+
+前缀函数是指最长的既是前缀又是后缀的子串。
+
+前缀函数用于跳过已经匹配的字符。
+
+算法如下：\n\n*   计算子串的前缀函数。
+
+\n*   同时遍历字符串和子串。
+
+\n*   如果字符匹配，则同时增加字符串和子串的索引。
+
+\n*   如果字符不匹配，则根据子串当前索引对应的前缀函数值增加字符串的索引。
+
+\n\n",
+              "links": [
+                {
+                  "title": "克努特-莫里斯-普拉特算法（Knuth-Morris Pratt）",
+                  "url": "https://www.coursera.org/learn/algorithms-part2/lecture/TAtDr/knuth-morris-pratt",
+                  "type": "course"
+                },
+                {
+                  "title": "克努特-莫里斯-普拉特（KMP）算法（Knuth-Morris-Pratt Algorithm）",
+                  "url": "https://www.javatpoint.com/daa-knuth-morris-pratt-algorithm",
+                  "type": "article"
+                },
+                {
+                  "title": "9.1 克努特-莫里斯-普拉特（KMP）字符串匹配算法",
+                  "url": "https://www.youtube.com/watch?v=V5-7GzOfADQ",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "8a271dbc-785b-44ec-bfe3-1dd800fa0bc7",
+              "xid": "70a48bdd-6b81-443e-b4fd-3eb110d22699"
+            },
+            {
+              "title": "Boyer-Moore算法",
+              "description": "Boyer-Moore算法是一种字符串搜索算法，用于在一个字符串中查找子字符串的索引。
+
+它是一种非常高效的算法，被应用于许多应用程序中。
+
+Boyer-Moore算法被用于文本编辑器、编译器和其他许多应用。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Boyer-Moore算法",
+                  "url": "https://www.coursera.org/learn/algorithms-part2/lecture/CYxOT/boyer-moore",
+                  "type": "course"
+                },
+                {
+                  "title": "Boyer-Moore算法",
+                  "url": "https://www.javatpoint.com/daa-boyer-moore-algorithm",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6b07f91a-cb83-43d8-a177-69353f719d89",
+              "xid": "284631d2-5f88-47e0-9f31-03a3e5865e2e"
+            },
+            {
+              "title": "Robin-Karp算法",
+              "description": "Rabin-Karp算法是一种字符串搜索算法，它使用哈希（hashing）技术在一个文本中查找一组模式字符串中的任意一个。
+
+对于平均长度为 `n` 的字符串，它的时间复杂度为 `O(n+m)`，空间复杂度为 `O(m)`，其中 `m` 是模式串的长度。
+
+该算法在生物信息学中常用于搜索DNA模式。
+
+\n\n",
+              "links": [
+                {
+                  "title": "Rabin-Karp算法",
+                  "url": "https://www.coursera.org/lecture/data-structures/rabin-karps-algorithm-c0Qkw",
+                  "type": "course"
+                },
+                {
+                  "title": "优化：预计算",
+                  "url": "https://www.coursera.org/learn/data-structures/lecture/nYrc8/optimization-precomputation",
+                  "type": "course"
+                },
+                {
+                  "title": "优化：实现和分析",
+                  "url": "https://www.coursera.org/learn/data-structures/lecture/h4ZLc/optimization-implementation-and-analysis",
+                  "type": "course"
+                },
+                {
+                  "title": "讲座9：表拓展，Karp-Rabin算法",
+                  "url": "https://www.youtube.com/watch?v=BRO7mVIFt08&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=9",
+                  "type": "video"
+                },
+                {
+                  "title": "滚动哈希，摊还分析",
+                  "url": "https://www.youtube.com/watch?v=w6nuXg0BISo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=33",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "96242da9-aed0-4bbd-bd6e-e8550415c464",
+              "xid": "ebd9a572-2eeb-4b23-8537-5cf8d86376ad"
+            }
+          ],
+          "id": "f9bb738f-ad02-4b00-8376-12e711363c21",
+          "xid": "28d1f6cd-3860-44d4-b72a-09b4df155b44"
+        }
+      ],
+      "id": "c240f2a1-255c-4999-b571-cb7771901345",
+      "xid": "5a6a2dec-85f7-4d48-a1e2-07b2f814fb0e"
+    },
+    {
+      "title": "浮点数学",
+      "description": "浮点数（Floating Point Numbers）是指包含小数点的数字。
+
+它们被用来表示实数。
+
+例如，3.14就是一个浮点数。
+
+3不是一个浮点数，因为它不包含小数点。
+
+\n\n",
+      "links": [
+        {
+          "title": "浮点数的表示方法 - 1",
+          "url": "https://www.youtube.com/watch?v=ji3SfClm8TU",
+          "type": "video"
+        },
+        {
+          "title": "为什么0.1 + 0.2 != 0.3？ | 浮点数学",
+          "url": "https://www.youtube.com/watch?v=RIiq4tTt6rI",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "ada7058e-d981-4629-a963-6f60778cb908",
+      "xid": "6fc3fdf3-3b21-4acd-8da4-87799ccd0d07"
+    },
+    {
+      "title": "字节序(Endianess)",
+      "description": "字节序(Endianness)是指字节在内存中存储的顺序。
+
+最常见的两种字节序类型是大端序和小端序。
+
+大端序(big endian)首先存储最高有效字节，而小端序(little endian)首先存储最低有效字节。
+
+\n\n",
+      "links": [
+        {
+          "title": "字节序(Endianness)",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Endianness",
+          "type": "article"
+        },
+        {
+          "title": "大端序 vs 小端序(Examples with) 讲解",
+          "url": "https://www.freecodecamp.org/news/what-is-endianness-big-endian-vs-little-endian/",
+          "type": "article"
+        },
+        {
+          "title": "大端序 vs 小端序.mp4",
+          "url": "https://www.youtube.com/watch?v=JrNF0KRAlyo",
+          "type": "video"
+        },
+        {
+          "title": "大端序讲解：使用一个鸡蛋模拟(Endianness Explained With an Egg) - Computerphile",
+          "url": "https://www.youtube.com/watch?v=NcaiHcBvDR4",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "大端序 (Big Endian)",
+          "description": "大端序是常见的端序类型。
+
+在这种类型中，最高有效字节存储在最低的内存地址中。
+
+这意味着最高有效字节首先被存储，而最低有效字节最后被存储。
+
+\n\n",
+          "links": [
+            {
+              "title": "讲座22. 大端序和小端序 (Big Endian and Little Endian)",
+              "url": "https://www.youtube.com/watch?v=T1C9Kj_78ek",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0ba3470e-d823-437c-a61b-74a40268023d",
+          "xid": "76737869-15f2-4004-b124-b7a9e1d011b8"
+        },
+        {
+          "title": "小端序 (Little Endian)",
+          "description": "小端序 (Little Endian) 是一种在内存中存储数据的方式。
+
+它是大端序 (Big Endian) 的相反概念。
+
+在小端序中，最低有效字节（least significant byte）最先被存储；而在大端序中，最高有效字节（most significant byte）最先被存储。
+
+\n\n",
+          "links": [
+            {
+              "title": "大端序与小端序 (Big Endian vs Little Endian).mp4",
+              "url": "https://www.youtube.com/watch?v=JrNF0KRAlyo",
+              "type": "video"
+            },
+            {
+              "title": "通过鸡蛋解释字节序 (Endianness Explained With an Egg) - Computerphile",
+              "url": "https://www.youtube.com/watch?v=NcaiHcBvDR4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9321e8cb-da9b-4869-8aa8-28a7a5c12d55",
+          "xid": "a96a7834-bc1a-431f-8f24-dbda6bb51a22"
+        }
+      ],
+      "id": "ea570561-5a99-4fc0-8660-0c0902f51fa5",
+      "xid": "222b25ef-31ec-46af-8bfe-ec60800a49a0"
+    },
+    {
+      "title": "字符编码",
+      "description": "字符编码是将字符表示为数字的一种方式。
+
+它们用于存储和传输文本。
+
+最常见的字符编码是ASCII，它是一种7位编码。
+
+这意味着每个字符由0到127之间的数字表示。
+
+ASCII字符集包含128个字符，包括字母、数字、标点符号和控制字符。
+
+ASCII字符集是Unicode字符集的子集，而Unicode是一种16位编码。
+
+Unicode是ASCII的超集，因此ASCII字符可以用Unicode表示。
+
+Unicode是网络上最常用的字符编码。
+
+\n\n",
+      "links": [
+        {
+          "title": "必须了解的字符编码知识",
+          "url": "https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/",
+          "type": "article"
+        },
+        {
+          "title": "字符编码",
+          "url": "https://cs.lmu.edu/~ray/notes/charenc/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "统一码（Unicode）",
+          "description": "统一码是一种字符编码标准。
+
+它包含了ASCII，这意味着ASCII是统一码的一个子集。
+
+统一码是16位编码，因此它可以编码2^16 = 65536个字符。
+
+这比ASCII所能编码的128个字符多得多。
+
+\n\n",
+          "links": [
+            {
+              "title": "统一码工作原理：每个开发人员需要了解的字符串知识与🦄",
+              "url": "https://deliciousbrains.com/how-unicode-works/",
+              "type": "article"
+            },
+            {
+              "title": "字符、符号与统一码奇迹 - Computerphile",
+              "url": "https://www.youtube.com/watch?v=MijmeoH9LT4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "7904d845-b591-4e61-8dbd-ca2e54a49504",
+          "xid": "6f5bbab9-6f07-4ece-b29a-1e5e6e3d2199"
+        },
+        {
+          "title": "ASCII",
+          "description": "ASCII是一种用于电子通信的字符编码标准。
+
+它从电报码发展而来，使用7位来表示128个不同的字符。
+
+前32个字符是非打印的控制字符，用于控制打印机和打字机等设备。
+
+剩下的96个字符是可以打印的，包括英文字母、数字、标点符号和各种符号。
+
+\n\n",
+          "links": [
+            {
+              "title": "必须知道的字符编码知识",
+              "url": "https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/",
+              "type": "article"
+            },
+            {
+              "title": "字符编码",
+              "url": "https://cs.lmu.edu/~ray/notes/charenc/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8f132a76-817e-457e-aa7a-b3ccadc8fc6b",
+          "xid": "2716c370-6ef5-46aa-be9b-da58151c3e94"
+        }
+      ],
+      "id": "dadb9c05-586f-47ef-ab29-f13250e3d3a3",
+      "xid": "2f4701cb-5385-4f8c-9ff1-249398399330"
+    },
+    {
+      "title": "常见的UML图",
+      "description": "UML（统一建模语言）是一种可视化软件系统的标准方式。
+
+它是一种通用的、开发性的、在软件工程领域内的建模语言，旨在提供一种统一的方式来可视化系统的设计。
+
+\n\n",
+      "links": [
+        {
+          "title": "UML图完整课程（统一建模语言）",
+          "url": "https://www.youtube.com/watch?v=WnMQ8HlmeXc",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "类图",
+          "description": "类图用于建模系统的静态结构。
+
+它们用于展示类、类的属性、操作（或方法）以及对象之间的关系。
+
+\n\n",
+          "links": [
+            {
+              "title": "UML 类图教程",
+              "url": "https://www.youtube.com/watch?v=UI6lqHOVHic",
+              "type": "video"
+            },
+            {
+              "title": "UML 类图教程",
+              "url": "https://www.youtube.com/watch?v=3cmzqZzwNDM&list=PLfoY2ARMh0hC2FcJKP5voAKCpk6PZXSd5&index=2",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b8d98ecb-aefb-4958-9b79-4e2b1bdf23c6",
+          "xid": "4ffe8c5b-383e-4cc3-a0fc-6b1352bbe603"
+        },
+        {
+          "title": "用例图（Usecase Diagrams）",
+          "description": "用例图（Usecase diagrams）是一种用于描述系统中**角色（actors）**和**用例（usecases）**之间交互情况的图。
+
+\n\n角色（actor）是与系统进行交互的人或系统。
+
+角色通过一个内写角色名称的矩形来表示。
+
+\n\n用例（usecase）是系统执行的任务。
+
+用例通过一个内写用例名称的椭圆来表示。
+
+\n\n用例图（usecase diagram）展示系统的角色和用例。
+
+该图通过一个内部包含系统名称的矩形表示。
+
+角色用矩形表示，用例用椭圆表示。
+
+\n",
+          "links": [
+            {
+              "title": "UML用例图教程（UML Use Case Diagram Tutorial）",
+              "url": "https://www.lucidchart.com/pages/uml-use-case-diagram",
+              "type": "article"
+            },
+            {
+              "title": "什么是用例图？（What is Use Case Diagram?）",
+              "url": "https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/",
+              "type": "article"
+            },
+            {
+              "title": "UML用例图教程（UML Use Case Diagram Tutorial）",
+              "url": "https://www.youtube.com/watch?v=zid-MVo7M-E",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "672b4cd8-59aa-4b4c-8e74-89c991bee08c",
+          "xid": "d31de47a-9560-45dd-9be4-5aacb07d829c"
+        },
+        {
+          "title": "活动图(Activity Diagrams)",
+          "description": "活动图用于建模系统中的控制流。
+
+它们通常与用例图(Use Case Diagram)结合使用，来描述系统在每个用例下的行为。
+
+活动图还用于描述单个类的行为。
+
+\n\n",
+          "links": [
+            {
+              "title": "UML活动图教程(UML Activity Diagram Tutorial)",
+              "url": "https://www.lucidchart.com/pages/uml-activity-diagram",
+              "type": "article"
+            },
+            {
+              "title": "什么是活动图(What is Activity Diagram)?",
+              "url": "https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-activity-diagram/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e177c59a-01d3-44ab-812c-21d5c18d63f0",
+          "xid": "bb4dfe56-362d-46a5-b788-90395276645f"
+        },
+        {
+          "title": "状态机图(State Machine Diagrams)",
+          "description": "状态机图用于展示对象在给定时间可能处于的不同状态。
+
+该对象一次只能处于一种状态。
+
+状态机图类似于活动图(activity diagrams)，但它们更专注于对象状态的流转，而不是对象自身的流转。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是状态机图(State Machine Diagram)?",
+              "url": "https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-state-machine-diagram/",
+              "type": "article"
+            },
+            {
+              "title": "状态机图教程(State Machine Diagram Tutorial)",
+              "url": "https://www.lucidchart.com/pages/uml-state-machine-diagram",
+              "type": "article"
+            },
+            {
+              "title": "状态机图(State Machine Diagram)",
+              "url": "https://www.sciencedirect.com/topics/computer-science/state-machine-diagram",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2d8d01bb-ada1-49ee-9726-ae8da49b8722",
+          "xid": "0a8dc99a-35f4-417c-9615-65d4b4c4966a"
+        },
+        {
+          "title": "序列图",
+          "description": "序列图是用来展示对象或系统之间如何随着时间相互交互的一种方式。
+
+\n\n",
+          "links": [
+            {
+              "title": "如何绘制UML序列图",
+              "url": "https://www.youtube.com/watch?v=pCK6prSq8aw",
+              "type": "video"
+            },
+            {
+              "title": "序列图教程",
+              "url": "https://www.youtube.com/watch?v=cxG-qWthxt4&list=PLfoY2ARMh0hBthB9VqsQzogSouTjzkMHe&index=2",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4bdf4b41-dfbb-44b0-a4d1-de52327d532f",
+          "xid": "25eb6060-d8ae-4440-92fb-edc27b6936ea"
+        }
+      ],
+      "id": "0a0f6a30-f8d7-4929-a253-4dd0d9c44e41",
+      "xid": "fd4b8c40-ba03-4d9f-b451-d31534ea2a77"
+    },
+    {
+      "title": "设计模式",
+      "description": "设计模式是软件设计中解决常见问题的方法。
+
+它们是程序员在设计应用程序或系统时可以使用的成熟最佳实践。
+
+\n\n",
+      "links": [
+        {
+          "title": "设计模式对人类",
+          "url": "https://github.com/kamranahmedse/design-patterns-for-humans",
+          "type": "opensource"
+        },
+        {
+          "title": "设计模式 - 维基百科",
+          "url": "https://en.wikipedia.org/wiki/Software_design_pattern",
+          "type": "article"
+        },
+        {
+          "title": "Refactoring Guru - 设计模式",
+          "url": "https://refactoring.guru/design-patterns/",
+          "type": "article"
+        },
+        {
+          "title": "浏览有关设计模式的热门文章",
+          "url": "https://app.daily.dev/tags/design-patterns?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "GoF 设计模式 (GoF Design Patterns)",
+          "description": "所谓的\"四人帮\"(Gang of Four, GoF)设计模式一共包含了23种设计模式，首次出现在《设计模式：可复用面向对象软件的基础》(\"Design Patterns: Elements of Reusable Object-Oriented Software\")一书中，该书由Erich Gamma、Richard Helm、Ralph Johnson和John Vlissides合著。
+
+这本书通常被称为“四人帮”(Gang of Four)一书。
+
+\n\n",
+          "links": [
+            {
+              "title": "设计模式简明指南 (Design Patterns for Humans)",
+              "url": "https://github.com/kamranahmedse/design-patterns-for-humans",
+              "type": "opensource"
+            }
+          ],
+          "children": [],
+          "id": "a94f7db9-e60f-42b5-8318-817f16defd86",
+          "xid": "518c4417-4422-483d-ad41-a7657007c919"
+        },
+        {
+          "title": "架构模式",
+          "description": "架构模式是一种高层设计模式，专注于系统的整体结构。
+
+它们与设计模式类似，但更关注系统的结构。
+
+它们用于解决许多软件系统常见的问题。
+
+\n\n",
+          "links": [
+            {
+              "title": "10 种常见的软件架构模式简介",
+              "url": "https://towardsdatascience.com/10-common-software-architectural-patterns-in-a-nutshell-a0b47a1e9013",
+              "type": "article"
+            },
+            {
+              "title": "架构模式 - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/Architectural_pattern",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0f1fcdfd-faef-4f66-94c4-b26533e34046",
+          "xid": "a1b36ee5-393b-4a75-b09a-090f373e05cb"
+        },
+        {
+          "title": "依赖注入(Dependency Injection)",
+          "description": "依赖注入是一种软件设计模式，它使我们能够将类的依赖项与类本身解耦。
+
+这使得我们能够编写更灵活和可测试的代码。
+
+\n\n",
+          "links": [
+            {
+              "title": "依赖注入(Dependency Injection) - StackOverflow",
+              "url": "https://stackoverflow.com/questions/130794/what-is-dependency-injection",
+              "type": "article"
+            },
+            {
+              "title": "探索关于依赖注入(Dependency Injection)的热门文章",
+              "url": "https://app.daily.dev/tags/dependency-injection?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是依赖注入(Dependency Injection)?",
+              "url": "https://www.youtube.com/watch?v=0yc2UANSDiw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4ab6cbf2-a01d-4171-844e-b64e5f20f024",
+          "xid": "6acac396-b6d8-48e4-8e83-36ab315a4784"
+        },
+        {
+          "title": "空对象模式 (Null Object Pattern)",
+          "description": "空对象模式 (Null Object Pattern) 是一种设计模式，用于用对象表示空值。
+
+该模式通过提供一个默认的对象（该对象不做任何事情）来避免空引用异常。
+
+当数据不可用时，它提供了一种默认的行为方式。
+
+\n\n",
+          "links": [
+            {
+              "title": "设计模式 - 空对象模式 (Null Object Pattern)",
+              "url": "https://www.tutorialspoint.com/design_pattern/null_object_pattern.htm",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0e891ccf-2bb1-434f-b6ae-6fb9297fd9aa",
+          "xid": "ebbccec1-df34-4632-b1e0-859c1f91568b"
+        },
+        {
+          "title": "类型对象模式 (Type Object Pattern)",
+          "description": "类型对象模式是一种创建型设计模式，它允许我们在不向客户端暴露对象创建逻辑的情况下创建类型的新对象。
+
+当我们需要创建某种类型的新对象，但我们直到运行时才知道需要创建哪种类型的对象时，我们可以使用这种模式。
+
+它类似于工厂模式，但与其返回已创建类型的对象，它返回的是一个已经创建好的类型的新对象。
+
+\n\n",
+          "links": [
+            {
+              "title": "类型对象模式 (Type Object Pattern)",
+              "url": "https://gameprogrammingpatterns.com/type-object.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "bbaa1a2e-5613-4b40-8597-a05467bda273",
+          "xid": "fc3e6c9d-b326-4509-90bd-3ee1d9f144ca"
+        }
+      ],
+      "id": "3654ecf3-1f1e-4e25-a708-ed4b3f99861a",
+      "xid": "38e7bb22-cf16-40ff-ad8c-857f52ff6446"
+    },
+    {
+      "title": "基础数学技能",
+      "description": "数学是计算机科学的一项基本技能。
+
+\n\n",
+      "links": [
+        {
+          "title": "计算机科学70，001 - 2015年春季 - 离散数学和概率论",
+          "url": "http://www.infocobuild.com/education/audio-video-courses/computer-science/cs70-spring2015-berkeley.html",
+          "type": "article"
+        },
+        {
+          "title": "离散数学（由罗帕尔IIT提供）",
+          "url": "https://nptel.ac.in/courses/106/106/106106183/",
+          "type": "article"
+        },
+        {
+          "title": "探索有关数学的热门文章",
+          "url": "https://app.daily.dev/tags/math?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "MIT 6.042J 计算机科学数学，2010年秋季 - 第1讲",
+          "url": "https://www.youtube.com/watch?v=L3LMbpZIKhQ&list=PLB7540DEDD482705B",
+          "type": "video"
+        },
+        {
+          "title": "整数算术，Karasuba乘法",
+          "url": "https://www.youtube.com/watch?v=eCaXlAaN2uE&index=11&list=PLWX710qNZo_sNlSWRMVIh6kfTjolNaZ8t",
+          "type": "video"
+        },
+        {
+          "title": "剩余定理（用于密码学）",
+          "url": "https://www.youtube.com/watch?v=ru7mWZJlRQg",
+          "type": "video"
+        },
+        {
+          "title": "离散数学 由 Shai Simonson 教授（19个视频）",
+          "url": "https://www.youtube.com/playlist?list=PLWX710qNZo_sNlSWRMVIh6kfTjolNaZ8t",
+          "type": "video"
+        },
+        {
+          "title": "MIT 6.042J - 概率论入门",
+          "url": "https://www.youtube.com/watch?v=SmFwFdESMHI&index=18&list=PLB7540DEDD482705B",
+          "type": "video"
+        },
+        {
+          "title": "MIT 6.042J - 条件概率",
+          "url": "https://www.youtube.com/watch?v=E6FbvM-FGZ8&index=19&list=PLB7540DEDD482705B",
+          "type": "video"
+        },
+        {
+          "title": "MIT 6.042J - 独立性",
+          "url": "https://www.youtube.com/watch?v=l1BCv3qqW4A&index=20&list=PLB7540DEDD482705B",
+          "type": "video"
+        },
+        {
+          "title": "MIT 6.042J - 随机变量",
+          "url": "https://www.youtube.com/watch?v=MOfhhFaQdjw&list=PLB7540DEDD482705B&index=21",
+          "type": "video"
+        },
+        {
+          "title": "MIT 6.042J - 期望值I",
+          "url": "https://www.youtube.com/watch?v=gGlMSe7uEkA&index=22&list=PLB7540DEDD482705B",
+          "type": "video"
+        },
+        {
+          "title": "MIT 6.042J - 期望值II",
+          "url": "https://www.youtube.com/watch?v=oI9fMUqgfxY&index=23&list=PLB7540DEDD482705B",
+          "type": "video"
+        },
+        {
+          "title": "MIT 6.042J - 大偏差",
+          "url": "https://www.youtube.com/watch?v=q4mwO2qS2z4&index=24&list=PLB7540DEDD482705B",
+          "type": "video"
+        },
+        {
+          "title": "MIT 6.042J - 随机行走",
+          "url": "https://www.youtube.com/watch?v=56iFMY8QW2k&list=PLB7540DEDD482705B&index=25",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "概率论",
+          "description": "概率论是研究事件发生可能性的领域。
+
+这是衡量事件将要发生的确信度的尺度。
+
+\n\n",
+          "links": [
+            {
+              "title": "统计学相关热门文章",
+              "url": "https://app.daily.dev/tags/statistics?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "MIT 6.042J - 概率论导论(Introduction)",
+              "url": "https://www.youtube.com/watch?v=SmFwFdESMHI&index=18&list=PLB7540DEDD482705B",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.042J - 条件概率(Conditional Probability)",
+              "url": "https://www.youtube.com/watch?v=E6FbvM-FGZ8&index=19&list=PLB7540DEDD482705B",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.042J - 独立性(Independence)",
+              "url": "https://www.youtube.com/watch?v=l1BCv3qqW4A&index=20&list=PLB7540DEDD482705B",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.042J - 随机变量(Random Variables)",
+              "url": "https://www.youtube.com/watch?v=MOfhhFaQdjw&list=PLB7540DEDD482705B&index=21",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.042J - 期望值I(Expectation I)",
+              "url": "https://www.youtube.com/watch?v=gGlMSe7uEkA&index=22&list=PLB7540DEDD482705B",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.042J - 期望值II(Expectation II)",
+              "url": "https://www.youtube.com/watch?v=oI9fMUqgfxY&index=23&list=PLB7540DEDD482705B",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.042J - 大数定律(Large Deviations)",
+              "url": "https://www.youtube.com/watch?v=q4mwO2qS2z4&index=24&list=PLB7540DEDD482705B",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.042J - 随机游走(Random Walks)",
+              "url": "https://www.youtube.com/watch?v=56iFMY8QW2k&list=PLB7540DEDD482705B&index=25",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e256055d-9017-45f5-a59a-b76eae59b1a6",
+          "xid": "a5f0fc21-5bcd-4415-87a5-822e003e7f9b"
+        },
+        {
+          "title": "组合数学",
+          "description": "组合数学是研究计数的学问。
+
+它是一门数学分支，应用于解决计算机科学、统计学以及物理学等多个领域的难题。
+
+在计算机科学中，组合数学被用来解决计算给定问题可能结果的数量相关问题。
+
+例如，如果你有一个包含10个对象的集合，有多少种不同的方式可以排列它们？或者，如果你有一个包含10个对象的集合，有多少种不同的方式可以从其中选择3个对象？这些都是组合问题的例子。
+
+",
+          "links": [
+            {
+              "title": "概率与组合学主题",
+              "url": "https://www.khanacademy.org/math/probability/probability-and-combinatorics-topic",
+              "type": "article"
+            },
+            {
+              "title": "数学技能：如何计算阶乘、排列和组合",
+              "url": "https://www.youtube.com/watch?v=8RRo6Ti9d0U",
+              "type": "video"
+            },
+            {
+              "title": "Make School: 概率",
+              "url": "https://www.youtube.com/watch?v=sZkAAk9Wwa4",
+              "type": "video"
+            },
+            {
+              "title": "Make School: 更多的概率和马尔可夫链",
+              "url": "https://www.youtube.com/watch?v=dNaJg-mLobQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "547a132d-045b-4760-bf19-3ae4f9f8a72b",
+          "xid": "e38237a1-807e-47df-ad00-b57efa51b19e"
+        }
+      ],
+      "id": "08779817-6178-4ec7-adc3-51b0220670ef",
+      "xid": "9910db1e-4b2d-4231-a4f9-4d9f7d512899"
+    },
+    {
+      "title": "复杂性类",
+      "description": "在计算机科学中，存在一些尚未找到解决方案的问题，将这些问题分为所谓复杂性类(complexity classes)。
+
+在复杂性理论(complexity theory)中，复杂性类是一个具有相关复杂性的问题集合。
+
+这些类别帮助科学家们根据解决这些问题及验证解决方案所需的时间和空间将问题进行分组。
+
+这是计算理论的一个分支，研究解决问题所需的资源。
+
+",
+      "links": [
+        {
+          "title": "理解 P vs NP vs NP完全(NP-Complete) vs NP难(NP-Hard)",
+          "url": "https://softwareengineering.stackexchange.com/questions/308178/trying-to-understand-p-vs-np-vs-np-complete-vs-np-hard",
+          "type": "article"
+        },
+        {
+          "title": "复杂性：P、NP、NP完全(NP-Completeness)、规约(Reductions)",
+          "url": "https://www.youtube.com/watch?v=eHZifpgyH_4&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=22",
+          "type": "video"
+        },
+        {
+          "title": "复杂性：近似算法(Approximation Algorithms)",
+          "url": "https://www.youtube.com/watch?v=MEz1J9wY2iM&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=24",
+          "type": "video"
+        },
+        {
+          "title": "复杂性：参数固定算法(Fixed-Parameter Algorithms)",
+          "url": "https://www.youtube.com/watch?v=4q-jmGrmxKs&index=25&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+          "type": "video"
+        },
+        {
+          "title": "讲义23：计算复杂性(Computational Complexity)",
+          "url": "https://www.youtube.com/watch?v=moPtwq_cVH8&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=24",
+          "type": "video"
+        },
+        {
+          "title": "贪心算法II和NP完全性(NP Completeness)简介",
+          "url": "https://youtu.be/qcGnJ47Smlo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&t=2939",
+          "type": "video"
+        },
+        {
+          "title": "NP完全性II和规约(Reductions)",
+          "url": "https://www.youtube.com/watch?v=e0tGC6ZQdQE&index=16&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+          "type": "video"
+        },
+        {
+          "title": "NP完全性III",
+          "url": "https://www.youtube.com/watch?v=fCX1BGT3wjE&index=17&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+          "type": "video"
+        },
+        {
+          "title": "NP完全性IV",
+          "url": "https://www.youtube.com/watch?v=NKLDp3Rch3M&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=18",
+          "type": "video"
+        },
+        {
+          "title": "CSE373 2020 讲义23：NP完全性",
+          "url": "https://www.youtube.com/watch?v=ItHp5laE1VE&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=23",
+          "type": "video"
+        },
+        {
+          "title": "CSE373 2020 讲义24：可满足性(Satisfiability)",
+          "url": "https://www.youtube.com/watch?v=inaFJeCzGxU&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=24",
+          "type": "video"
+        },
+        {
+          "title": "CSE373 2020 讲义25：更多的NP完全性(NP-Completeness)",
+          "url": "https://www.youtube.com/watch?v=B-bhKxjZLlc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=25",
+          "type": "video"
+        },
+        {
+          "title": "CSE373 2020 讲义26：NP完全性挑战(NP-Completeness Challenge)",
+          "url": "https://www.youtube.com/watch?v=_EzetTkG_Cc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=26",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "P类",
+          "description": "P类中的P代表多项式时间（Polynomial Time）。
+
+P类是所有能够在确定性机器上以多项式时间解决的决策问题（答案为“是”或“否”的问题）的集合。
+
+\n\n",
+          "links": [
+            {
+              "title": "理解P与NP与NP完全与NP难",
+              "url": "https://softwareengineering.stackexchange.com/questions/308178/trying-to-understand-p-vs-np-vs-np-complete-vs-np-hard",
+              "type": "article"
+            },
+            {
+              "title": "复杂度：P，NP，NP完全性，规约",
+              "url": "https://www.youtube.com/watch?v=eHZifpgyH_4&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=22",
+              "type": "video"
+            },
+            {
+              "title": "复杂度：近似算法",
+              "url": "https://www.youtube.com/watch?v=MEz1J9wY2iM&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=24",
+              "type": "video"
+            },
+            {
+              "title": "复杂度：参数化算法",
+              "url": "https://www.youtube.com/watch?v=4q-jmGrmxKs&index=25&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+              "type": "video"
+            },
+            {
+              "title": "第23课：计算复杂度",
+              "url": "https://www.youtube.com/watch?v=moPtwq_cVH8&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=24",
+              "type": "video"
+            },
+            {
+              "title": "贪婪算法II与NP完全性介绍",
+              "url": "https://youtu.be/qcGnJ47Smlo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&t=2939",
+              "type": "video"
+            },
+            {
+              "title": "NP完全性II与规约",
+              "url": "https://www.youtube.com/watch?v=e0tGC6ZQdQE&index=16&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+              "type": "video"
+            },
+            {
+              "title": "NP完全性III",
+              "url": "https://www.youtube.com/watch?v=fCX1BGT3wjE&index=17&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+              "type": "video"
+            },
+            {
+              "title": "NP完全性IV",
+              "url": "https://www.youtube.com/watch?v=NKLDp3Rch3M&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=18",
+              "type": "video"
+            },
+            {
+              "title": "2020年CSE373课第23讲：NP完全性",
+              "url": "https://www.youtube.com/watch?v=ItHp5laE1VE&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=23",
+              "type": "video"
+            },
+            {
+              "title": "2020年CSE373课第24讲：可满足性问题",
+              "url": "https://www.youtube.com/watch?v=inaFJeCzGxU&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=24",
+              "type": "video"
+            },
+            {
+              "title": "2020年CSE373课第25讲：更多的NP完全性",
+              "url": "https://www.youtube.com/watch?v=B-bhKxjZLlc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=25",
+              "type": "video"
+            },
+            {
+              "title": "2020年CSE373课第26讲：NP完全性挑战",
+              "url": "https://www.youtube.com/watch?v=_EzetTkG_Cc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=26",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ae00672e-94c9-4aaf-bf55-2a04661905ff",
+          "xid": "46e0f751-297c-488b-a3d8-5b45d7ba0d95"
+        },
+        {
+          "title": "NP",
+          "description": "NP类中的NP代表非确定性多项式时间（Non-deterministic Polynomial Time）。
+
+它是可以通过非确定性机器在多项式时间内解决的决策问题的集合。
+
+\n\n",
+          "links": [
+            {
+              "title": "尝试理解P vs NP vs NP 完全 vs NP 难",
+              "url": "https://softwareengineering.stackexchange.com/questions/308178/trying-to-understand-p-vs-np-vs-np-complete-vs-np-hard",
+              "type": "article"
+            },
+            {
+              "title": "复杂性: P, NP, NP-完全, 规约",
+              "url": "https://www.youtube.com/watch?v=eHZifpgyH_4&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=22",
+              "type": "video"
+            },
+            {
+              "title": "复杂性: 近似算法",
+              "url": "https://www.youtube.com/watch?v=MEz1J9wY2iM&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=24",
+              "type": "video"
+            },
+            {
+              "title": "复杂性: 算法参数固定",
+              "url": "https://www.youtube.com/watch?v=4q-jmGrmxKs&index=25&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+              "type": "video"
+            },
+            {
+              "title": "第23讲 计算复杂性",
+              "url": "https://www.youtube.com/watch?v=moPtwq_cVH8&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=24",
+              "type": "video"
+            },
+            {
+              "title": "贪心算法II与NP完全性介绍",
+              "url": "https://youtu.be/qcGnJ47Smlo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&t=2939",
+              "type": "video"
+            },
+            {
+              "title": "NP 完全性II与规约",
+              "url": "https://www.youtube.com/watch?v=e0tGC6ZQdQE&index=16&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+              "type": "video"
+            },
+            {
+              "title": "NP 完全性III",
+              "url": "https://www.youtube.com/watch?v=fCX1BGT3wjE&index=17&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+              "type": "video"
+            },
+            {
+              "title": "NP 完全性IV",
+              "url": "https://www.youtube.com/watch?v=NKLDp3Rch3M&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=18",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第23讲 - NP完全性",
+              "url": "https://www.youtube.com/watch?v=ItHp5laE1VE&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=23",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第24讲 - 可满足性",
+              "url": "https://www.youtube.com/watch?v=inaFJeCzGxU&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=24",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第25讲 - 更多NP完全性",
+              "url": "https://www.youtube.com/watch?v=B-bhKxjZLlc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=25",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 第26讲 - NP完全性挑战",
+              "url": "https://www.youtube.com/watch?v=_EzetTkG_Cc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=26",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d5ccc7ae-dc51-425b-9201-5999a4a66341",
+          "xid": "a24b2519-ef77-4038-ba08-a9b7cb3b1bdb"
+        },
+        {
+          "title": "NP难（NP Hard）",
+          "description": "NP难问题至少与NP中最难的问题一样难解，其定义是NP中的每个问题都可以归约（reduce）到NP难问题。
+
+\n\n",
+          "links": [
+            {
+              "title": "理解P与NP与NP完全问题与NP难问题",
+              "url": "https://softwareengineering.stackexchange.com/questions/308178/trying-to-understand-p-vs-np-vs-np-complete-vs-np-hard",
+              "type": "article"
+            },
+            {
+              "title": "复杂度：P、NP、NP完全问题、归约",
+              "url": "https://www.youtube.com/watch?v=eHZifpgyH_4&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=22",
+              "type": "video"
+            },
+            {
+              "title": "复杂度：近似算法",
+              "url": "https://www.youtube.com/watch?v=MEz1J9wY2iM&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=24",
+              "type": "video"
+            },
+            {
+              "title": "复杂度：固定参数算法",
+              "url": "https://www.youtube.com/watch?v=4q-jmGrmxKs&index=25&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+              "type": "video"
+            },
+            {
+              "title": "讲座23：计算复杂度",
+              "url": "https://www.youtube.com/watch?v=moPtwq_cVH8&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=24",
+              "type": "video"
+            },
+            {
+              "title": "贪心算法II及NP完全问题初步",
+              "url": "https://youtu.be/qcGnJ47Smlo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&t=2939",
+              "type": "video"
+            },
+            {
+              "title": "NP完全性II及归约",
+              "url": "https://www.youtube.com/watch?v=e0tGC6ZQdQE&index=16&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+              "type": "video"
+            },
+            {
+              "title": "NP完全性III",
+              "url": "https://www.youtube.com/watch?v=fCX1BGT3wjE&index=17&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+              "type": "video"
+            },
+            {
+              "title": "NP完全性IV",
+              "url": "https://www.youtube.com/watch?v=NKLDp3Rch3M&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=18",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 讲座23 - NP完全性",
+              "url": "https://www.youtube.com/watch?v=ItHp5laE1VE&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=23",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 讲座24 - 可满足性",
+              "url": "https://www.youtube.com/watch?v=inaFJeCzGxU&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=24",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 讲座25 - 更多NP完全性",
+              "url": "https://www.youtube.com/watch?v=B-bhKxjZLlc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=25",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - 讲座26 - NP完全性挑战",
+              "url": "https://www.youtube.com/watch?v=_EzetTkG_Cc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=26",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0f11d03f-e6d5-4420-8b92-f5a52dec8a1f",
+          "xid": "419326fb-3f34-4f33-81b6-4628f700838d"
+        },
+        {
+          "title": "P = NP",
+          "description": "P = NP 问题是计算机科学中最著名的问题之一。
+
+这个问题询问的是一个能在非确定性机器上（即问题属于非确定性多项式时间【NP】）以多项式时间解决的问题是否也能够在确定性机器上（即问题属于确定性多项式时间【P】）以多项式时间解决。
+
+\n\n如果你能找到一个NP完全问题的多项式时间解法，那么所有NP问题可以在多项式时间内解决。
+
+这表明P = NP。
+
+\n\n如果你证明对于任何一个NP完全问题，其只可以用指数时间解决，那么所有NP完全问题都只能用指数时间解决。
+
+这表明P ≠ NP。
+
+\n\n迄今为止，我们还不知道P 是否等于 NP。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是P=NP？为什么这是一个著名的问题？",
+              "url": "https://stackoverflow.com/questions/111307/whats-p-np-and-why-is-it-such-a-famous-question",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "646c9463-5560-426f-b76d-028cbe6d5b6b",
+          "xid": "9ab75191-0552-4449-bb43-c19172950807"
+        },
+        {
+          "title": "NP 完全（NP Complete）",
+          "description": "一个问题如果既是 NP [nondeterministic polynomial time] 问题又是 NP 困难（NP-hard）问题，那么它就是 NP 完全（NP-Complete）问题。
+
+NP 完全问题是 NP 难题中最难的那个类型。
+
+\n\n",
+          "links": [
+            {
+              "title": "理解 P vs NP vs NP 完全（NP Complete） vs NP 困难（NP-hard）",
+              "url": "https://softwareengineering.stackexchange.com/questions/308178/trying-to-understand-p-vs-np-vs-np-complete-vs-np-hard",
+              "type": "article"
+            },
+            {
+              "title": "复杂性：P、NP、NP 完全（NP Complete）、规约",
+              "url": "https://www.youtube.com/watch?v=eHZifpgyH_4&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=22",
+              "type": "video"
+            },
+            {
+              "title": "P 与 NP 以及计算复杂性动物园",
+              "url": "https://www.youtube.com/watch?v=YX40hbAHx3s",
+              "type": "video"
+            },
+            {
+              "title": "复杂性：近似算法",
+              "url": "https://www.youtube.com/watch?v=MEz1J9wY2iM&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=24",
+              "type": "video"
+            },
+            {
+              "title": "复杂性：固定参数算法",
+              "url": "https://www.youtube.com/watch?v=4q-jmGrmxKs&index=25&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+              "type": "video"
+            },
+            {
+              "title": "Lecture 23：计算复杂性",
+              "url": "https://www.youtube.com/watch?v=moPtwq_cVH8&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=24",
+              "type": "video"
+            },
+            {
+              "title": "贪心算法 II 及 NP 完全（NP Completeness）介绍",
+              "url": "https://youtu.be/qcGnJ47Smlo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&t=2939",
+              "type": "video"
+            },
+            {
+              "title": "NP 完全（NP Completeness）II 及规约",
+              "url": "https://www.youtube.com/watch?v=e0tGC6ZQdQE&index=16&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+              "type": "video"
+            },
+            {
+              "title": "NP 完全（NP Completeness）III",
+              "url": "https://www.youtube.com/watch?v=fCX1BGT3wjE&index=17&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm",
+              "type": "video"
+            },
+            {
+              "title": "NP 完全（NP Completeness）IV",
+              "url": "https://www.youtube.com/watch?v=NKLDp3Rch3M&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=18",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - Lecture 23 - NP 完全（NP-Completeness）",
+              "url": "https://www.youtube.com/watch?v=ItHp5laE1VE&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=23",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - Lecture 24 - 可满足性",
+              "url": "https://www.youtube.com/watch?v=inaFJeCzGxU&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=24",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - Lecture 25 - 更多 NP 完全（NP-Completeness）",
+              "url": "https://www.youtube.com/watch?v=B-bhKxjZLlc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=25",
+              "type": "video"
+            },
+            {
+              "title": "CSE373 2020 - Lecture 26 - NP 完全（NP-Completeness）挑战",
+              "url": "https://www.youtube.com/watch?v=_EzetTkG_Cc&list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&index=26",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "旅行商问题（Travelling Salesman Problem）",
+              "description": "旅行商问题（Travelling Salesman Problem, TSP）是计算机科学中的一个经典问题。
+
+这是一个NP完全问题，这意味着它是一个难以解决的问题。
+
+此外，它还用于测试算法的效率。
+
+\n\n",
+              "links": [
+                {
+                  "title": "什么是旅行商问题（Travelling Salesman Problem）?",
+                  "url": "https://www.youtube.com/watch?v=1pmBjIZ20pE",
+                  "type": "video"
+                },
+                {
+                  "title": "4.7 旅行商问题 - 动态规划（Dynamic Programming）",
+                  "url": "https://www.youtube.com/watch?v=XaXsJJh-Q5Y",
+                  "type": "video"
+                },
+                {
+                  "title": "旅行商问题 | 动态规划（Dynamic Programming） | 图论",
+                  "url": "https://www.youtube.com/watch?v=cY4HiiFHO1o",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "4720a125-710c-4044-80ce-7b052a33f813",
+              "xid": "d240adc5-8cca-4d7e-bb81-2f93b1a4dd2d"
+            },
+            {
+              "title": "背包问题",
+              "description": "背包问题在计算机科学中是一个经典问题。
+
+在这个问题中，我们得到一组每个都具有重量和价值的物品，我们需要确定哪些物品应该被包含在集合中，使得总重量小于或等于给定限制并且总价值尽可能大。
+
+",
+              "links": [
+                {
+                  "title": "如何用动态规划解决背包问题",
+                  "url": "https://medium.com/@fabianterh/how-to-solve-the-knapsack-problem-with-dynamic-programming-eb88c706d3cf",
+                  "type": "article"
+                },
+                {
+                  "title": "3.1 背包问题 - 贪心方法",
+                  "url": "https://www.youtube.com/watch?v=oTTzNMHM05I",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "1c72404f-7d7d-405d-93a8-77be46103e4f",
+              "xid": "f19f6478-b7b0-44c6-bafe-ab653525e3db"
+            },
+            {
+              "title": "最长路径问题",
+              "description": "最长路径问题要求我们在图中找到最长的路径。
+
+\n\n",
+              "links": [
+                {
+                  "title": "有向无环图（DAG）上的最短/最长路径 | 图论",
+                  "url": "https://www.youtube.com/watch?v=TXkDpqjDMHA",
+                  "type": "video"
+                },
+                {
+                  "title": "最长简单路径 - 算法导论",
+                  "url": "https://www.youtube.com/watch?v=lRH0tax5dFA",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "2a8da1b0-a146-4f31-a695-dc0d3c78cea3",
+              "xid": "9203bbd4-f3e9-4fcf-8772-e0707433a098"
+            }
+          ],
+          "id": "ec87c018-578b-42ec-89d6-9989ba7ef1ef",
+          "xid": "5b223e02-3b8c-4011-948a-89e99db3fa6f"
+        }
+      ],
+      "id": "a79a9abc-7c97-415d-a627-ab613921a47b",
+      "xid": "bdf5b233-729f-4309-9a86-7def2aa22d62"
+    },
+    {
+      "title": "字典树(Tries)",
+      "description": "字典树(Tries)是一种用于存储字符串的数据结构。
+
+其思路是将字符串的字符存储在类似树的结构中，其中树的每个节点表示一个单独的字符。
+
+我们可以使用这种结构来存储字符串，以便能快速搜索具有共同前缀的字符串。
+
+\n\n",
+      "links": [
+        {
+          "title": "0. 字典树(Tries) - Coursera",
+          "url": "https://www.coursera.org/learn/algorithms-part2/home/week/4",
+          "type": "course"
+        },
+        {
+          "title": "1. R 路字典树(Tries)",
+          "url": "https://www.coursera.org/learn/algorithms-part2/lecture/CPVdr/r-way-tries",
+          "type": "course"
+        },
+        {
+          "title": "2. 三向检索字典树(Ternary Search Tries)",
+          "url": "https://www.coursera.org/learn/algorithms-part2/lecture/yQM8K/ternary-search-tries",
+          "type": "course"
+        },
+        {
+          "title": "3. 基于字符的操作",
+          "url": "https://www.coursera.org/learn/algorithms-part2/lecture/jwNmV/character-based-operations",
+          "type": "course"
+        },
+        {
+          "title": "字典树(Tries) - 数据结构笔记",
+          "url": "http://www.cs.yale.edu/homes/aspnes/classes/223/notes.html#Tries",
+          "type": "article"
+        },
+        {
+          "title": "被忽视的数据结构：字典树(Trie)",
+          "url": "https://www.toptal.com/java/the-trie-a-neglected-data-structure",
+          "type": "article"
+        },
+        {
+          "title": "TopCoder - 使用字典树(Tries)",
+          "url": "https://www.topcoder.com/thrive/articles/Using%20Tries",
+          "type": "article"
+        },
+        {
+          "title": "斯坦福讲座(实际应用场景)",
+          "url": "https://www.youtube.com/watch?v=TJ8SkcUSdbU",
+          "type": "video"
+        },
+        {
+          "title": "麻省理工学院，高级数据结构，字符串(半程后内容较为复杂)",
+          "url": "https://www.youtube.com/watch?v=NinWEPPrkDQ&index=16&list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "5809b06e-9a64-4fb1-a8ff-9548f03c8256",
+      "xid": "6b67d435-15fb-4719-aa54-dcf6a1ff9434"
+    },
+    {
+      "title": "平衡搜索树",
+      "description": "平衡搜索树是一种数据结构，它允许快速插入、删除和查找数据。
+
+它们是一种自我平衡的二叉搜索树（Self-balancing binary search tree），这意味着它们是具有二叉搜索树属性并且同时保持树平衡的二叉树。
+
+这意味着树总是保持近似平衡，从而实现数据的快速插入、删除和查找。
+
+\n\n",
+      "links": [
+        {
+          "title": "自我平衡二叉搜索树（Self-balancing binary search tree） - 维基百科",
+          "url": "https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree",
+          "type": "article"
+        },
+        {
+          "title": "平衡搜索树操作及其应用 11分钟",
+          "url": "https://www.youtube.com/watch?v=IbNZ-x1I2IM",
+          "type": "video"
+        },
+        {
+          "title": "平衡二叉搜索树旋转",
+          "url": "https://www.youtube.com/watch?v=q4fnJZr8ztY",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "AVL 树",
+          "description": "AVL 树是一种自平衡二叉搜索树。
+
+这些树是以它们的发明者 Adelson-Velskii 和 Landis 命名的。
+
+AVL 树是最受欢迎的自平衡二叉搜索树。
+
+\n\n在实际应用中：据我了解，这些树在实践中并不常用，但可以理解为什么它们会被使用：AVL 树是另一个支持 O(log n) 搜索、插入和删除的数据结构。
+
+它比红色-黑色树更严格地平衡，导致插入和删除速度较慢但检索速度更快。
+
+这使得它对于可能一次性构建并在不需重构的情况下加载的数据结构（例如语言字典或程序字典，如汇编器或解释器的指令码）具有吸引力。
+
+",
+          "links": [
+            {
+              "title": "AVL 树",
+              "url": "https://www.coursera.org/learn/data-structures/lecture/Qq5E0/avl-trees",
+              "type": "course"
+            },
+            {
+              "title": "AVL 树实现",
+              "url": "https://www.coursera.org/learn/data-structures/lecture/PKEBC/avl-tree-implementation",
+              "type": "course"
+            },
+            {
+              "title": "分裂与合并",
+              "url": "https://www.coursera.org/learn/data-structures/lecture/22BgE/split-and-merge",
+              "type": "course"
+            },
+            {
+              "title": "MIT AVL 树 / AVL 排序",
+              "url": "https://www.youtube.com/watch?v=FNeL18KsWPc&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=6",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f0ab9356-f68a-4f8c-85c9-36d33ef92c5b",
+          "xid": "fe85fb06-5621-471c-9839-68596ed4e143"
+        },
+        {
+          "title": "红黑树",
+          "description": "在计算机科学中，红黑树是一种自平衡二叉搜索树。
+
+每个节点存储一个额外的位，表示\"颜色\"，用于确保在插入和删除过程中树保持平衡。
+
+\n\n这些树是2-3树的一种变形（见下文）。
+
+\n\n在实际应用中：红黑树对其插入时间、删除时间和搜索时间提供了最坏情况下的性能保证。
+
+这不仅使它们在实时应用程序等对时间敏感的应用中很有价值，而且使它们成为其他提供最坏情况性能保证的数据结构中的重要组成部分。
+
+例如，计算几何中使用的许多数据结构基于红黑树，而在当前的Linux内核中使用的完全公平调度器使用红黑树。
+
+在Java的版本8中，集合HashMap已经被修改，将使用红黑树（Red-Black树）而不是链表（LinkedList）来存储具有较差哈希码的相同元素。
+
+\n\n",
+          "links": [
+            {
+              "title": "红黑树 - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/Red%E2%80%93black_tree",
+              "type": "article"
+            },
+            {
+              "title": "二叉搜索和红黑树简介",
+              "url": "https://www.topcoder.com/thrive/articles/An%20Introduction%20to%20Binary%20Search%20and%20Red-Black%20Trees",
+              "type": "article"
+            },
+            {
+              "title": "30分钟内了解红黑树 (播放列表)",
+              "url": "https://www.youtube.com/playlist?list=PL9xmBV_5YoZNqDI8qfOZgzbqahCUmUEin",
+              "type": "video"
+            },
+            {
+              "title": "Aduni - 算法 - 第4讲（链接跳转至开始点）",
+              "url": "https://youtu.be/1W3x0f_RmUo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&t=3871",
+              "type": "video"
+            },
+            {
+              "title": "Aduni - 算法 - 第5讲",
+              "url": "https://www.youtube.com/watch?v=hm2GHwyKF1o&list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&index=5",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6cb7afdb-c61f-44fd-a7d9-abedfe561a82",
+          "xid": "5ea42d14-a934-4a71-8383-2829026490d9"
+        },
+        {
+          "title": "2-3搜索树",
+          "description": "在实际应用中：2-3搜索树（2-3 Search Trees）的插入速度较快，但搜索速度较慢（因为其高度相比AVL树更高）。
+
+\n\n2-3搜索树由于其实现中包含不同类型的节点，所以很少被使用。
+
+相比之下，人们更倾向于使用红黑树（Red Black Trees）。
+
+\n\n",
+          "links": [
+            {
+              "title": "2-3树的直观理解和定义",
+              "url": "https://www.youtube.com/watch?v=C3SsdUqasD4&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6&index=2",
+              "type": "video"
+            },
+            {
+              "title": "2-3树的二叉视图",
+              "url": "https://www.youtube.com/watch?v=iYvBtGKsqSg&index=3&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6",
+              "type": "video"
+            },
+            {
+              "title": "2-3搜索树（学生辅导）",
+              "url": "https://www.youtube.com/watch?v=TOb1tuEZ2X4&index=5&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1b7d34bc-0a45-4784-8eee-e7b5a8576339",
+          "xid": "63db270b-7d64-47aa-a775-04c7d12fbbe7"
+        },
+        {
+          "title": "2-3-4树",
+          "description": "在实践中：对于每一个2-3-4树，都有与之相对应的红黑树（red–black trees），其中的数据元素保持相同的顺序。
+
+2-3-4树中的插入和删除操作也等同于红黑树中的颜色翻转（color-flipping）和旋转（rotations）。
+
+这使得2-3-4树成为理解红黑树逻辑的重要工具，这也是为什么许多入门算法书籍在介绍红黑树之前会首先介绍2-3-4树的原因，尽管2-3-4树在实际应用中并不常用。
+
+\n\n",
+          "links": [
+            {
+              "title": "CS 61B 讲座26：平衡搜索树",
+              "url": "https://archive.org/details/ucberkeley_webcast_zqrqYXkth6Q",
+              "type": "article"
+            },
+            {
+              "title": "自底向上234树",
+              "url": "https://www.youtube.com/watch?v=DQdMYevEyE4&index=4&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6",
+              "type": "video"
+            },
+            {
+              "title": "自顶向下234树",
+              "url": "https://www.youtube.com/watch?v=2679VQ26Fp4&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6&index=5",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "7c16f453-6685-462f-9548-cbb2a33a82c6",
+          "xid": "e8175ed3-307e-467b-8b76-49b50fb889c1"
+        },
+        {
+          "title": "K-叉/M-叉树",
+          "description": "注意：N或K是分支因子（最大分支数）\n\n二叉树是2-叉树，分支因子 = 2\n\n2-3树是3-叉树\n\n",
+          "links": [
+            {
+              "title": "K-叉树",
+              "url": "https://en.wikipedia.org/wiki/K-ary_tree",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e2227229-7a32-4f1c-aef2-a301a2a63bca",
+          "xid": "064281c1-d6ab-47bc-bc75-88478608d497"
+        },
+        {
+          "title": "B-树",
+          "description": "趣味知识：B的实际含义尚存争议，它可能代表波音公司(Boeing)、平衡树(Balanced)或费迪南德·拜尔(Friedrich Bayer, 共同发明人)。
+
+\n\n实际应用：B-树在数据库中被广泛应用。
+
+大多数现代文件系统使用B-树(或其变体)。
+
+除了在数据库中的应用，B-树还在文件系统中使用，以快速随机访问特定文件中的任意块。
+
+基本问题是如何将文件块i的地址转换为磁盘块(或者可能是柱面-磁头-扇区)的地址。
+
+\n\n",
+          "links": [
+            {
+              "title": "B-树 - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/B-tree",
+              "type": "article"
+            },
+            {
+              "title": "B-树数据结构",
+              "url": "http://btechsmartclass.com/data_structures/b-trees.html",
+              "type": "article"
+            },
+            {
+              "title": "B-树简介",
+              "url": "https://www.youtube.com/watch?v=I22wEC1tTGo&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6&index=6",
+              "type": "video"
+            },
+            {
+              "title": "B-树定义和插入",
+              "url": "https://www.youtube.com/watch?v=s3bCdZGrgpA&index=7&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6",
+              "type": "video"
+            },
+            {
+              "title": "B-树删除",
+              "url": "https://www.youtube.com/watch?v=svfnVhJOfMc&index=8&list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.851 - 内存层次模型",
+              "url": "https://www.youtube.com/watch?v=V3omVLzI0WE&index=7&list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf",
+              "type": "video"
+            },
+            {
+              "title": "26分钟理解B-树（播放列表）",
+              "url": "https://www.youtube.com/playlist?list=PL9xmBV_5YoZNFPPv98DjTdD9X6UI9KMHz",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8bf573ff-3be8-43e6-9d96-09399bca4cca",
+          "xid": "bd68943a-89c0-4962-b04d-5c5665577856"
+        }
+      ],
+      "id": "5fac4dd1-121d-47c2-8503-3ad14437722c",
+      "xid": "702d64cb-c6c3-4c9a-a024-19f4746a3102"
+    },
+    {
+      "title": "系统设计",
+      "description": "系统设计是定义系统架构、模块、接口和数据的过程，以满足指定的要求。
+
+这是一个非常广泛的课题，有许多方法可以处理它。
+
+\n\n",
+      "links": [
+        {
+          "title": "系统设计入门指南",
+          "url": "https://github.com/donnemartin/system-design-primer",
+          "type": "opensource"
+        },
+        {
+          "title": "系统设计：完整课程",
+          "url": "https://dev.to/karanpratapsingh/system-design-the-complete-course-10fo",
+          "type": "article"
+        },
+        {
+          "title": "探索职业相关的顶级文章",
+          "url": "https://app.daily.dev/tags/career?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "系统设计101",
+          "url": "https://www.youtube.com/watch?v=Y-Gl4HEyeUQ",
+          "type": "video"
+        },
+        {
+          "title": "扩大不可扩展性",
+          "url": "https://www.youtube.com/watch?v=a2rcgzludDU",
+          "type": "video"
+        },
+        {
+          "title": "系统设计面试：扩展至100万用户",
+          "url": "https://www.youtube.com/watch?v=YkGHxOg9d3M",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "水平扩展 vs 垂直扩展",
+          "description": "水平扩展是指向系统中添加更多的机器。
+
+这也可以被称为向外扩展（Horizontal Scaling）。
+
+垂直扩展是指向单个机器中添加更多的计算能力。
+
+这也可以被称为向上扩展（Vertical Scaling）。
+
+",
+          "links": [
+            {
+              "title": "水平扩展 vs 垂直扩展",
+              "url": "https://www.digitalocean.com/resources/article/horizontal-scaling-vs-vertical-scaling",
+              "type": "article"
+            },
+            {
+              "title": "系统设计基础：水平扩展 vs 垂直扩展",
+              "url": "https://www.youtube.com/watch?v=xpDnVSmNFX0",
+              "type": "video"
+            },
+            {
+              "title": "数据库服务器的垂直扩展 vs 水平扩展",
+              "url": "https://www.youtube.com/watch?v=R99R-SNbo9g",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "260e1c39-5dea-48de-8199-fbbed94b1fff",
+          "xid": "4c40f755-304d-422e-8118-ad3a929528d6"
+        },
+        {
+          "title": "负载均衡",
+          "description": "负载均衡是将网络或应用流量分配到一组服务器的过程。
+
+负载均衡用于提高应用程序的响应性和可靠性，最大化吞吐量，最小化响应时间，并避免任何单个服务器过载。
+
+",
+          "links": [
+            {
+              "title": "负载均衡器入门",
+              "url": "https://www.youtube.com/watch?v=galcDRNd5Ow",
+              "type": "video"
+            },
+            {
+              "title": "什么是负载均衡？",
+              "url": "https://www.youtube.com/watch?v=gGLophKzJs8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "02597e2d-7482-4acf-85d3-7e44d0e21f9b",
+          "xid": "cbad4dbe-c373-4c72-921c-d6c3f039b8f7"
+        },
+        {
+          "title": "聚类(Clustering)",
+          "description": "从高层次来看，计算机群集是一种运行并行的两台或更多计算机或节点的组合，以达到共同的目标。
+
+这允许由大量独立的、可并行处理的任务组成的工作负载在群集中的各个节点之间进行分配。
+
+因此，这些任务能够利用每台计算机的结合内存和处理能力，从而提高整体性能。
+
+\n\n",
+          "links": [
+            {
+              "title": "系统设计：聚类(System Design: Clustering)",
+              "url": "https://dev.to/karanpratapsingh/system-design-clustering-3726",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d2de98ad-92ce-4464-99be-eaca63b96cd3",
+          "xid": "4a015dbd-c5fe-414f-94be-1e3b4a569fe2"
+        },
+        {
+          "title": "缓存(Caching)",
+          "description": "缓存(Caching)是将数据存储在临时存储中以加快未来请求的一种方式。
+
+它是计算机科学工具箱中最重要工具之一。
+
+\n\n",
+          "links": [
+            {
+              "title": "系统设计 - 缓存(Caching)",
+              "url": "https://dev.to/karanpratapsingh/system-design-the-complete-course-10fo#caching",
+              "type": "article"
+            },
+            {
+              "title": "什么是缓存(Caching) | 系统设计基础",
+              "url": "https://www.youtube.com/watch?v=joifNgoXXFk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "fa7ae754-c0ed-45a6-bd66-a20112af9cbb",
+          "xid": "6a17eb50-3fb5-483a-a0e4-0e0608367d12"
+        },
+        {
+          "title": "内容分发网络（CDN）",
+          "description": "CDN 是一组地理位置上分布的服务器网络。
+
+这些服务器相互连接并且连接到互联网。
+
+服务器用于向用户分发内容，并从距离用户最近的服务器向用户交付内容。
+
+这旨在减少延迟并提高内容分发的性能。
+
+\n\n",
+          "links": [
+            {
+              "title": "内容分发网络 (CDN) - 系统设计",
+              "url": "https://dev.to/karanpratapsingh/system-design-the-complete-course-10fo#content-delivery-network-cdn",
+              "type": "article"
+            },
+            {
+              "title": "内容分发网络",
+              "url": "https://www.youtube.com/watch?v=6DXEPcXKQNY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6420a650-c45e-46fe-b920-f903050e2cba",
+          "xid": "c6965213-2fc3-4283-88d7-3b835ed8b87b"
+        },
+        {
+          "title": "代理服务器 (Proxy)",
+          "description": "代理服务器 (Proxy server) 是位于客户端和后端服务器之间的硬件/软件中介。
+
+它接收客户端的请求并将其转发到原始服务器 (origin servers)。
+
+通常，代理服务器 (proxies) 用于过滤请求，记录请求，或者有时用于转换请求 (如添加/移除头信息，加密/解密，或压缩)。
+
+\n\n",
+          "links": [
+            {
+              "title": "代理服务器 (Proxy) - 系统设计",
+              "url": "https://dev.to/karanpratapsingh/system-design-the-complete-course-10fo#proxy",
+              "type": "article"
+            },
+            {
+              "title": "代理服务器 (Proxy Servers)",
+              "url": "https://roadmap.sh/guides/proxy-servers",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9716b8be-07d2-4822-8254-81b0d88c6ba8",
+          "xid": "9c56f06a-f514-4bad-bbab-fd8b323aff38"
+        },
+        {
+          "title": "CAP定理(CAP Theorem)",
+          "description": "CAP定理指出，一个分布式数据存储不能同时提供一致性(Consistency)、可用性(Availability)和分区容忍性(Partition Tolerance)中的全部三种特性，最多只能同时满足其中的两种。
+
+\n\n",
+          "links": [
+            {
+              "title": "CAP定理(CAP Theorem) - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/CAP_theorem",
+              "type": "article"
+            },
+            {
+              "title": "什么是CAP定理(CAP Theorem)?",
+              "url": "https://www.youtube.com/watch?v=_RbsFXWRZ10",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2b97e4d3-4677-4323-92ad-a5f582527cf1",
+          "xid": "11f20ebb-ae04-434c-a04c-a500ab1c7c64"
+        },
+        {
+          "title": "队列",
+          "description": "消息队列是解耦系统的一种常见方式。
+
+它们被用来将消息的生产者和消费者解耦。
+
+这使得生产者可以发送消息而不必等待消费者来处理它。
+
+它也使得消费者可以以自己的速度来处理消息。
+
+\n\n",
+          "links": [
+            {
+              "title": "消息队列 - 系统设计",
+              "url": "https://dev.to/karanpratapsingh/system-design-the-complete-course-10fo#message-queues",
+              "type": "article"
+            },
+            {
+              "title": "什么是消息队列？",
+              "url": "https://www.youtube.com/watch?v=xErwDaOc-Gs",
+              "type": "video"
+            },
+            {
+              "title": "什么是消息队列？消息队列在哪里使用？",
+              "url": "https://www.youtube.com/watch?v=oUJbuFMyBDk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5c9fb6b6-7264-45ec-be2b-35ca0e9873a1",
+          "xid": "812f2b83-d6ed-464f-b304-058811c24f43"
+        },
+        {
+          "title": "架构风格",
+          "description": "架构模式是系统的基本组织方式，定义了系统是如何构成的以及其组件如何交互。
+
+常见的架构模式有客户机-服务器（client-server）、对等（peer-to-peer）和分层（layered）等。
+
+\n\n",
+          "links": [
+            {
+              "title": "软件架构风格和模式列表",
+              "url": "https://en.wikipedia.org/wiki/List_of_software_architecture_styles_and_patterns",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1b7a81aa-a0e9-416d-ae24-5564c50100b1",
+          "xid": "60213541-feb6-4aa8-8a06-04f336283ae6"
+        },
+        {
+          "title": "REST",
+          "description": "REST(代表ational State Transfer的缩写)是一种为网络上的计算机系统提供标准的架构风格，使系统之间更容易相互通信。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是REST API?",
+              "url": "https://www.redhat.com/en/topics/api/what-is-a-rest-api",
+              "type": "article"
+            },
+            {
+              "title": "Roy Fielding的博士论文章节，Representational State Transfer (REST)",
+              "url": "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm",
+              "type": "article"
+            },
+            {
+              "title": "学习REST: 一个RESTful教程",
+              "url": "https://restapitutorial.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索顶级REST API文章",
+              "url": "https://app.daily.dev/tags/rest-api?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ddf8380a-27c1-4578-903d-77d1be350145",
+          "xid": "36edd511-d86d-49da-bff8-57d62058797d"
+        },
+        {
+          "title": "GraphQL",
+          "description": "GraphQL 是一种用于 APIs 的查询语言（query language）以及一种以现有数据来满足这些查询的运行时环境（runtime）。
+
+GraphQL 提供了对您 API 中的数据的完整且易于理解的描述，赋予客户端请求所需数据的能力而不获取多余的信息，使得随着时间的推移更容易地演变 API，并实现了强大的开发者工具。
+
+\n\n",
+          "links": [
+            {
+              "title": "Apollo GraphQL 教程",
+              "url": "https://www.apollographql.com/tutorials/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 GraphQL 的热门文章",
+              "url": "https://app.daily.dev/tags/graphql?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "71b3ed47-f239-402b-bed7-d47bb88a78d8",
+          "xid": "ddcd9064-5283-4fb5-9cb8-c071c067fe0f"
+        },
+        {
+          "title": "gRPC",
+          "description": "gRPC 是一种无平台依赖的序列化协议，用于服务之间的通信。
+
+由 Google 在 2015 年设计，它是 REST API 的一种现代替代方案。
+
+这是一种二进制协议，使用 HTTP/2 作为传输层。
+
+gRPC 是一个高性能、开源、通用的 RPC 框架，优先支持移动设备和 HTTP/2。
+
+\n\n其主要应用场景是在同一应用内不同语言的服务之间通信。
+
+您可以使用 Python 与 Go 通信，也可以使用 Java 与 C# 通信。
+
+\n\ngRPC 使用协议缓冲区（Protocol Buffer）语言来定义数据的结构，\n\n",
+          "links": [
+            {
+              "title": "gRPC 官方网站",
+              "url": "https://grpc.io/",
+              "type": "article"
+            },
+            {
+              "title": "gRPC 简介",
+              "url": "https://grpc.io/docs/what-is-grpc/introduction/",
+              "type": "article"
+            },
+            {
+              "title": "gRPC 核心概念",
+              "url": "https://grpc.io/docs/what-is-grpc/core-concepts/",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于 gRPC 的热门文章",
+              "url": "https://app.daily.dev/tags/grpc?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Stephane Maarek - gRPC 简介",
+              "url": "https://youtu.be/XRXTsQwyZSU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a6bfdc20-26f9-4c05-a927-13345fcff8e0",
+          "xid": "b7e82969-8b60-4f46-b5dd-13abad03b9c4"
+        },
+        {
+          "title": "云设计模式",
+          "description": "这些设计模式对于构建可靠的、可扩展的、安全的云应用程序非常有用。
+
+\n\n下面的链接包含云设计模式，每个模式都描述了该模式解决的问题，应用模式时的注意事项，以及基于Microsoft Azure的示例。
+
+大多数模式包括代码示例或代码片段，显示如何在Azure上实现该模式。
+
+然而，大多数模式对于任何分布式系统都是相关的，无论是在Azure上托管，还是在其他云平台上托管。
+
+\n\n",
+          "links": [
+            {
+              "title": "云设计模式",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于云的热门帖子",
+              "url": "https://app.daily.dev/tags/cloud?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ab4a0cd0-356c-4250-869d-2c0df97e77b1",
+          "xid": "d5dfe6d0-5114-487f-9429-dabe4179e937"
+        },
+        {
+          "title": "长轮询（Long Polling）",
+          "description": "长轮询是一种用于在HTTP上实现服务器推送功能的技术。
+
+它是一种在服务器上开启请求并持续保持请求打开，直到事件发生时由服务器响应的方法。
+
+这与常规的HTTP请求不同，后者服务器会在当时可用任何数据时立即做出响应。
+
+",
+          "links": [
+            {
+              "title": "长轮询（Long Polling）",
+              "url": "https://javascript.info/long-polling",
+              "type": "article"
+            },
+            {
+              "title": "长轮询、Websockets、服务器发送事件（SSE）和Comet分别是什么？",
+              "url": "https://stackoverflow.com/questions/11077857/what-are-long-polling-websockets-server-sent-events-sse-and-comet",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "10f1bb2e-9eeb-4283-a371-7adbe36514e9",
+          "xid": "c63022ee-6bf3-42ac-8585-60446786970a"
+        },
+        {
+          "title": "短轮询(Short Polling)",
+          "description": "在短轮询(short polling)中，客户端向服务器请求信息。
+
+服务器处理请求，如果请求的数据可用，服务器将返回所需信息。
+
+然而，如果服务器没有可提供给客户端的数据，服务器会返回一个空响应。
+
+在两种情况下，服务器在返回响应后都会关闭连接。
+
+即使服务器发送空响应，客户端也会不断发出新的请求。
+
+这种机制会增加服务器的网络成本。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是长轮询(Long-Polling)、WebSocket、服务器发送事件(Server-Sent Events, SSE) 和 Comet？",
+              "url": "https://stackoverflow.com/questions/11077857/what-are-long-polling-websockets-server-sent-events-sse-and-comet",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "254f612f-8c43-46a1-8a0a-a2a851f3a91c",
+          "xid": "071e17c7-13d5-487e-a56e-e3a142669feb"
+        },
+        {
+          "title": "Web Sockets (Web套接字)",
+          "description": "Web套接字是在客户端和服务器之间的一种双向通信协议（bidirectional communication protocol）。
+
+它们用于实时应用，例如聊天（chat）、多人游戏（multiplayer games）和实时数据更新（live data updates）。
+
+Web套接字也用于在服务器和客户端之间建立连接。
+
+建立的这个连接可以用于两个方向的数据传输。
+
+",
+          "links": [],
+          "children": [],
+          "id": "62b96ff5-a8c2-4341-9d2e-9b121977553a",
+          "xid": "265c4b71-d29b-4681-8f73-29b939a6a95b"
+        },
+        {
+          "title": "SSE（Server-Sent Events）",
+          "description": "服务器发送事件（Server-Sent Events）是一种服务器推送技术，使客户端可以通过HTTP连接从服务器接收自动更新，并描述了服务器如何在初始客户端连接建立后，主动向客户端发送数据传输。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是服务器发送事件（SSE）以及如何实现它？",
+              "url": "https://medium.com/yemeksepeti-teknoloji/what-is-server-sent-events-sse-and-how-to-implement-it-904938bffd73",
+              "type": "article"
+            },
+            {
+              "title": "使用服务器发送事件",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+              "type": "article"
+            },
+            {
+              "title": "探索关于密码学的热门文章",
+              "url": "https://app.daily.dev/tags/cryptography?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "23b50dc5-30ac-4bef-a436-b3ba724b8590",
+          "xid": "69251f88-8d84-45ac-9a0c-3a03c7b10cb2"
+        }
+      ],
+      "id": "fbf1549b-4412-4281-abd4-466c0e4928b0",
+      "xid": "2fb02bff-3a7b-40c1-a391-b613aa6d481e"
+    },
+    {
+      "title": "数据库",
+      "description": "数据库是一个或多个相关组织的有用数据的集合，其结构化方式使数据成为组织的资产。
+
+数据库管理系统（Database Management System）是一种设计用于帮助及时维护和提取大量数据的软件。
+
+\n\n",
+      "links": [
+        {
+          "title": "Oracle：什么是数据库？",
+          "url": "https://www.oracle.com/database/what-is-database/",
+          "type": "article"
+        },
+        {
+          "title": "Prisma.io：什么是数据库？",
+          "url": "https://www.prisma.io/dataguide/intro/what-are-databases",
+          "type": "article"
+        },
+        {
+          "title": "探索后端开发方面的热门文章",
+          "url": "https://app.daily.dev/tags/backend?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "斯坦福的DBMS课程",
+          "url": "https://www.youtube.com/watch?v=D-k-h0GuFmE&list=PL9ysvtVnryGpnIj9rcIqNDxakUn6v72Hm",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "SQL与NoSQL数据库",
+          "description": "SQL代表结构化查询语言（Structured Query Language）。
+
+它用于关系型数据库。
+
+SQL数据库是一系列存储结构化数据表的集合。
+
+例如PostgreSQL、MySQL、MariaDB等。
+
+\n\nNoSQL代表不仅仅是SQL（Not Only SQL）。
+
+它用于非关系型数据库。
+
+NoSQL数据库是一系列存储非结构化数据的集合。
+
+例如MongoDB、CouchDB、Redis等。
+
+\n\n",
+          "question_title": "",
+          "question_description": "",
+          "links": [
+            {
+              "title": "探索关于NoSQL的热门文章",
+              "url": "https://app.daily.dev/tags/nosql?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "SQL与NoSQL：有何不同？",
+              "url": "https://www.youtube.com/watch?v=Q5aTUc7c4jg",
+              "type": "video"
+            },
+            {
+              "title": "数据库设计技巧 | 在系统设计面试中选择最佳数据库",
+              "url": "https://www.youtube.com/watch?v=cODCpXtPHbQ&t=22s",
+              "type": "video"
+            },
+            {
+              "title": "NoSQL与SQL —— 你应该使用哪种类型的数据库？",
+              "url": "https://www.youtube.com/watch?v=FzlpwoeSrE0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e2b88d61-457e-4e2d-ab26-bd46e069397c",
+          "xid": "c5a78fed-957e-4778-9741-e58c791e4eeb"
+        },
+        {
+          "title": "规范化 / 反规范化",
+          "description": "数据库规范化是一个用来组织数据库中的表和列的过程。
+
+其理念是表应该专注于一个特定的主题，并且只包含与该主题相关的列。
+
+这样可以限制数据库中的数据重复数量。
+
+这会使数据库更加灵活，消除由数据库修改带来的问题。
+
+\n\n反规范化是规范化的反向过程。
+
+它是指通过向数据库中添加冗余数据来提高读取性能的过程。
+
+这通过将重复数据添加到多个表中以避免代价较高的连接操作来实现。
+
+这是以增加存储空间和降低写入性能为代价的。
+
+\n",
+          "links": [
+            {
+              "title": "规范化 vs. 反规范化 | 事件和事件流",
+              "url": "https://www.youtube.com/watch?v=sDU94hraq8g",
+              "type": "video"
+            },
+            {
+              "title": "规范化 - 1NF, 2NF, 3NF 和 4NF",
+              "url": "https://www.youtube.com/watch?v=UrYLYV7WSHM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "51534160-0b14-471d-a19a-5828334b1fc9",
+          "xid": "d14da02c-0599-4a61-99ad-1453277843d1"
+        },
+        {
+          "title": "实体-关系模型（Entity-Relationship Model）",
+          "description": "实体关系模型是描述数据库逻辑结构的高层数据模型。
+
+它是一种图形化表示实体及其相互之间关系的方式，通常用于建模数据库或信息系统中的数据组织结构。
+
+\n\n",
+          "links": [
+            {
+              "title": "实体关系图（ERD）教程 - 第一部分",
+              "url": "https://www.youtube.com/watch?v=QpdhBUYk7Kk",
+              "type": "video"
+            },
+            {
+              "title": "实体关系图（ERD）教程 - 第二部分",
+              "url": "https://www.youtube.com/watch?v=-CuY5ADwn24",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b2945f0e-3e8b-47ed-a050-18015f21e8a8",
+          "xid": "8f65dff7-96f1-48a1-8afa-0e44f7e0f6c7"
+        },
+        {
+          "title": "DDL (Data Definition Language)",
+          "description": "DDL (Data Definition Language) 实际上是由SQL命令组成，可以用来定义数据库模式。
+
+它只是处理数据库模式的描述，并用于创建和修改数据库中的数据库对象的结构。
+
+DDL是一组SQL命令，用于创建、修改和删除数据库结构，但不涉及数据库中的数据。
+
+这些命令通常不是由一般用户使用的，用户应通过应用程序访问数据库。
+
+",
+          "links": [],
+          "children": [],
+          "id": "e7f52b39-28c7-491d-a415-3362a96500f5",
+          "xid": "d09aab8b-5b06-409d-bbbd-f4e2a2341e7f"
+        },
+        {
+          "title": "DML（数据操纵语言）",
+          "description": "用于在数据库中操纵数据的SQL命令归属于DML（数据操纵语言），这包括大多数SQL语句。
+
+DCL（数据控制语言）是控制数据和数据库访问权限的SQL语句的组成部分。
+
+基本上，DCL语句与DML语句一起分类。
+
+\n\n",
+          "links": [
+            {
+              "title": "DML：数据操纵语言",
+              "url": "https://satoricyber.com/glossary/dml-data-manipulation-language",
+              "type": "article"
+            },
+            {
+              "title": "DDL和DML之间的差异",
+              "url": "https://appmaster.io/blog/difference-between-ddl-and-dml",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f748f5c1-99b1-4344-9a6e-5f5b03322e48",
+          "xid": "66477d6d-6be9-4105-a1b4-df73f460d99c"
+        },
+        {
+          "title": "数据查询语言 (DQL)",
+          "description": "数据查询语言（DQL）语句用于在架构对象内的数据上执行查询。
+
+DQL语句的目的是基于传入的查询获取某些架构关系。
+
+我们可以将DQL定义如下：它是SQL语句的一个组成部分，允许从数据库中获取数据，并对数据进行排序。
+
+它包括SELECT语句。
+
+此命令允许将数据从数据库中取出，以便对其进行操作。
+
+当针对表或多个表执行SELECT语句时，结果将编译成一个进一步的临时表，该临时表被显示或由程序（即前端）接收。
+
+\n\n",
+          "links": [],
+          "children": [],
+          "id": "eb996977-eb9c-4f4b-8700-998ac44e2a2e",
+          "xid": "686b000f-a933-473c-aead-94a40454c1ec"
+        },
+        {
+          "title": "DCL",
+          "description": "DCL 包括 GRANT（授权）和 REVOKE（撤销）等命令，主要处理数据库系统的权限、许可和其他控制措施。
+
+\n\n",
+          "links": [],
+          "children": [],
+          "id": "b4f68880-aa79-49b5-8635-8fb6d4e2920d",
+          "xid": "5e652281-fd7b-45e9-81cc-404459c60a57"
+        },
+        {
+          "title": "锁定",
+          "description": "锁定用于防止多个进程同时修改数据。
+
+这是很重要的，因为如果两个进程同时修改相同的数据，数据可能会被破坏。
+
+锁定用于防止这种情况发生。
+
+\n\n",
+          "links": [
+            {
+              "title": "数据库中的锁定和隔离机制",
+              "url": "https://medium.com/inspiredbrilliance/what-are-database-locks-1aff9117c290",
+              "type": "article"
+            },
+            {
+              "title": "理解数据库锁定超时和死锁",
+              "url": "https://www.dbta.com/Columns/DBA-Corner/Understanding-Database-Lock-Timeouts-and-Deadlocks-148659.aspx",
+              "type": "article"
+            },
+            {
+              "title": "行级数据库锁定详解 - (读取与独占)",
+              "url": "https://www.youtube.com/watch?v=nuBi2XbHH18",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c2910649-3f3e-4762-8616-cd414ad95aef",
+          "xid": "14276858-ba88-4c47-95ed-7e544f49c7c8"
+        },
+        {
+          "title": "ACID模型",
+          "description": "ACID是任何数据库系统中的四个属性，有助于我们以可靠的方式执行事务。
+
+它是一个首字母缩略词，指的是四个属性的存在：原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）和持久性（Durability）。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是ACID兼容的数据库？",
+              "url": "https://retool.com/blog/whats-an-acid-compliant-database/",
+              "type": "article"
+            },
+            {
+              "title": "什么是ACID兼容性？：原子性、一致性、隔离性",
+              "url": "https://fauna.com/blog/what-is-acid-compliance-atomicity-consistency-isolation",
+              "type": "article"
+            },
+            {
+              "title": "ACID解释：原子性、一致性、隔离性及持久性",
+              "url": "https://www.youtube.com/watch?v=yaQ5YMWkxq4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "97791616-2fef-40f2-af9d-938f23ee830b",
+          "xid": "13ac824f-9143-4f24-9554-8a4b46418b6f"
+        },
+        {
+          "title": "BASE",
+          "description": "NoSQL数据库流行度的提升提供了灵活、有弹性的数据操作能力，因此产生了新的数据库模型，体现了这些特性。
+
+BASE首字母缩写比ACID（酸性测试）稍显复杂，但其背后的词汇却暗示了BASE模型与其他模型的不同之处，BASE分别代表：\n\n*   **B**asically **A**vailable（基本可用）\n*   **S**oft state（软状态）\n*   **E**ventual consistency（最终一致性）\n\n",
+          "links": [],
+          "children": [],
+          "id": "bc1b1d5f-4efe-4461-aed9-c235d6828c8d",
+          "xid": "f760cfe0-bfd5-48cd-8239-6cf105d76fd4"
+        },
+        {
+          "title": "CAP 定理",
+          "description": "CAP 是一致性（Consistency）、可用性（Availability）和分区容错性（Partition Tolerance）的首字母缩略词。
+
+根据 CAP 定理，任何分布式系统在任意时间只能保证上述三个属性中的两个。
+
+你不能同时保证这三个属性。
+
+",
+          "links": [
+            {
+              "title": "什么是 CAP 定理？",
+              "url": "https://www.bmc.com/blogs/cap-theorem/",
+              "type": "article"
+            },
+            {
+              "title": "CAP 定理 - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/CAP_theorem",
+              "type": "article"
+            },
+            {
+              "title": "CAP 定理的图解证明",
+              "url": "https://mwhittaker.github.io/blog/an_illustrated_proof_of_the_cap_theorem/",
+              "type": "article"
+            },
+            {
+              "title": "CAP 定理及其在 NoSQL 数据库中的应用",
+              "url": "https://www.ibm.com/uk-en/cloud/learn/cap-theorem",
+              "type": "article"
+            },
+            {
+              "title": "什么是 CAP 定理？",
+              "url": "https://www.youtube.com/watch?v=_RbsFXWRZ10",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "394316e2-5a32-426d-b960-33d038771974",
+          "xid": "855d62b9-8164-4672-823a-25376e515d7a"
+        },
+        {
+          "title": "PACELC定理",
+          "description": "PACELC定理是CAP定理的一个扩展。
+
+CAP定理无法解答当系统没有分区问题时，分布式系统的逻辑组合是什么。
+
+为了解决这一问题，在保持一致性（Consistency）、可用性（Availability）和分区容忍性（Partition Tolerance）的基础上，PACELC还引入了延迟（Latency）作为分布式系统的一个期望特性。
+
+PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability）、一致性（Consistency）否则（Else）延迟（Latency）、一致性（Consistency）。
+
+\n\n",
+          "links": [
+            {
+              "title": "PACELC定理",
+              "url": "https://www.scylladb.com/glossary/pacelc-theorem/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "bab3d795-644a-4d7a-9af9-28fc3cd30d3d",
+          "xid": "38009de9-f9ef-44a1-a016-6be996c07c72"
+        },
+        {
+          "title": "索引",
+          "description": "索引是一种数据结构，你可以构建并分配在现有表上，它基本上会查看你的表并尝试进行分析和总结，以便它可以创建快捷方式。
+
+\n\n",
+          "links": [
+            {
+              "title": "数据库索引详解",
+              "url": "https://www.youtube.com/watch?v=-qNSXK7s7_w",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6d766117-0217-4d1f-95af-97eb5debdbb3",
+          "xid": "5e690e0b-44d9-4601-b51c-27987e33fd0b"
+        },
+        {
+          "title": "视图",
+          "description": "SQL中的视图类似于虚拟表。
+
+视图也像数据库中的实际表一样具有行和列。
+
+我们可以通过选择数据库中存在的一个或多个表中的字段来创建视图。
+
+视图可以包括表中的所有行，也可以根据特定条件包含特定的行。
+
+",
+          "links": [
+            {
+              "title": "数据库视图",
+              "url": "https://www.ibm.com/docs/en/eamfoc/7.6.0?topic=structure-views",
+              "type": "article"
+            },
+            {
+              "title": "SQL视图 - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/View_(SQL)",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cdea07a9-1d75-40bb-ae79-60c90aa1b224",
+          "xid": "86f101d1-1da1-4c39-84d7-43513071b97d"
+        },
+        {
+          "title": "事务",
+          "description": "简而言之，数据库事务是一系列在数据库上执行的操作，并作为一个单独的逻辑工作单元执行——要么全部发生，要么全不发生。
+
+换句话说，不存在只有部分操作被执行且结果被保存的情况。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是事务(Transactions)？",
+              "url": "https://fauna.com/blog/database-transaction",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "25d462a6-1e42-4d0e-9c6a-373f1411679f",
+          "xid": "0992eacd-fac7-41d6-855c-f82e370484eb"
+        },
+        {
+          "title": "存储过程(Stored Procedures)",
+          "description": "存储过程(Stored Procedures)用于对数据库执行一个或多个数据操作语言(DML)操作。
+
+它无非是一组接受某些参数输入的SQL语句，执行某些任务，并且可能返回一个值，也可能不返回。
+
+\n\n",
+          "links": [
+            {
+              "title": "SQL 存储过程(Stored Procedures)",
+              "url": "https://www.programiz.com/sql/stored-procedures",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2536c059-a262-46a8-aef4-9cb7360807d6",
+          "xid": "5ae937bc-a56d-4538-ba8b-d9e322e4bfc5"
+        },
+        {
+          "title": "数据库联合体",
+          "description": "数据库联合体（或功能划分）按照功能分割数据库。
+
+这种联合体架构使多个独立的物理数据库对最终用户而言表现为一个逻辑数据库。
+
+\n\n",
+          "links": [
+            {
+              "title": "数据库联合体",
+              "url": "https://dev.to/karanpratapsingh/system-design-the-complete-course-10fo#database-federation",
+              "type": "article"
+            },
+            {
+              "title": "查看关于数据库的热门文章",
+              "url": "https://app.daily.dev/tags/database?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0954b26d-5f69-46da-9f59-4aa718e47a11",
+          "xid": "e028fe16-a2a4-4249-b718-9247b9fb02a9"
+        },
+        {
+          "title": "复制(Replication)",
+          "description": "复制是一个涉及共享信息的过程，目的是确保诸如多个数据库等冗余资源之间的一致性，以提高可靠性、容错性或可访问性。
+
+",
+          "links": [
+            {
+              "title": "数据库复制(Database Replication)",
+              "url": "https://dev.to/karanpratapsingh/system-design-the-complete-course-10fo#database-replication",
+              "type": "article"
+            },
+            {
+              "title": "复制(Replication) (计算)",
+              "url": "https://en.wikipedia.org/wiki/Replication_(computing)",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "286dae0d-54c4-42f6-83ff-9ce09505896d",
+          "xid": "488db157-8ea5-4687-b8cc-39904f9e768f"
+        },
+        {
+          "title": "分片（Sharding）",
+          "description": "数据库分片（sharding）是一种将数据分布到多台机器上的方法。
+
+这是一种水平扩展（horizontal scaling）技术，与垂直扩展（vertical scaling）相对，后者是通过为单台机器增加更多计算资源来实现扩展。
+
+分片（sharding）是扩展数据库的一种常见方式。
+
+\n\n",
+          "links": [
+            {
+              "title": "分片（Sharding）",
+              "url": "https://dev.to/karanpratapsingh/system-design-the-complete-course-10fo#sharding",
+              "type": "article"
+            },
+            {
+              "title": "探索后端开发的相关顶级文章",
+              "url": "https://app.daily.dev/tags/backend?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "分片（Sharding）与数据库分区（Partitioning） | 系统设计基础",
+              "url": "https://www.youtube.com/watch?v=RynPj8C0BXA",
+              "type": "video"
+            },
+            {
+              "title": "数据库分片（Database Sharding）- 观看",
+              "url": "https://www.youtube.com/watch?v=hdxdhCpgYo8",
+              "type": "video"
+            },
+            {
+              "title": "五分钟了解数据库分片（Database Sharding）",
+              "url": "https://www.youtube.com/watch?v=kSH4bt8ypOQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9d37a032-af1c-4611-958d-cd8da65a7610",
+          "xid": "88f42c1d-a742-4111-8f88-6f092c87683b"
+        }
+      ],
+      "id": "26751fa1-d755-480e-8eb7-4957c45735b2",
+      "xid": "9e154676-b2a4-4b53-a8e6-b84d79f14b77"
+    },
+    {
+      "title": "网络技术",
+      "description": "网络技术是指为了数据共享的目的，将两个或更多计算设备连接在一起的过程。
+
+在一个数据网络中，共享的数据可以简单到一台打印机，也可以复杂到一个全球金融交易。
+
+\n\n如果你具有网络技术经验，或者希望成为可靠工程师或运营工程师，你可能会遇到与这些主题相关的问题。
+
+不过即使不是，这也是一种很好的知识。
+
+\n\n",
+      "links": [
+        {
+          "title": "可汗学院 - 网络技术",
+          "url": "https://www.khanacademy.org/computing/code-org/computers-and-the-internet",
+          "type": "article"
+        },
+        {
+          "title": "探索关于网络技术的热门帖子",
+          "url": "https://app.daily.dev/tags/networking?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "计算机网络课程 - 网络工程(Network Engineering)",
+          "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
+          "type": "video"
+        },
+        {
+          "title": "网络技术视频系列（21个视频）",
+          "url": "https://www.youtube.com/playlist?list=PLEbnTDJUr_IegfoqO4iPnPYQui46QqT0j",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "OSI模型",
+          "description": "OSI模型和TCP/IP模型用于帮助开发人员设计其系统以实现互操作性。
+
+OSI模型有7层，而TCP/IP模型只有4层，是OSI模型的简化形式。
+
+这对于你正在设计一个需要与其他系统通信的系统时非常重要。
+
+\n\n",
+          "links": [
+            {
+              "title": "Cloudflare - OSI模型是什么",
+              "url": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/",
+              "type": "article"
+            },
+            {
+              "title": "TCP/IP和OSI模型解释！",
+              "url": "https://www.youtube.com/watch?v=e5DEVa9eSN0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "cfe154bf-c60e-48cb-9c00-c410ac345cc2",
+          "xid": "8c618aef-0704-4d86-ad04-e63aa772415f"
+        },
+        {
+          "title": "TCP/IP模型",
+          "description": "OSI模型和TCP/IP模型用于帮助开发者设计可互操作的系统。
+
+OSI模型有7层，而TCP/IP模型则以一种更加简化的形式概括了OSI模型，仅包含4层。
+
+如果你正在设计一个需要与其他系统相互通信的系统，这一点是十分重要的。
+
+\n\n",
+          "links": [
+            {
+              "title": "Cloudflare - 什么是OSI模型",
+              "url": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/",
+              "type": "article"
+            },
+            {
+              "title": "解释TCP/IP和OSI模型",
+              "url": "https://www.youtube.com/watch?v=e5DEVa9eSN0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "198ac530-7431-4145-b735-fd4614b13267",
+          "xid": "659596f6-cb19-4fe4-83fa-b6cced02c312"
+        },
+        {
+          "title": "DNS",
+          "description": "域名系统（Domain Name System，DNS）是互联网上的电话簿。
+
+人类通过域名在网上访问信息，例如 [nytimes.com](http://nytimes.com) 或 [espn.com](http://espn.com)。
+
+Web浏览器通过互联网协议（Internet Protocol，IP）地址进行交互。
+
+DNS将域名翻译成IP地址，这样浏览器就可以加载Internet资源。
+
+\n\n",
+          "links": [
+            {
+              "title": "什么是DNS？",
+              "url": "https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/",
+              "type": "article"
+            },
+            {
+              "title": "DNS如何工作（漫画）",
+              "url": "https://howdns.works/",
+              "type": "article"
+            },
+            {
+              "title": "关于DNS的热门文章",
+              "url": "https://app.daily.dev/tags/dns?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "DNS及其工作原理？",
+              "url": "https://www.youtube.com/watch?v=Wj0od2ag5sk",
+              "type": "video"
+            },
+            {
+              "title": "DNS记录",
+              "url": "https://www.youtube.com/watch?v=7lxgpKh_fRY",
+              "type": "video"
+            },
+            {
+              "title": "完整的DNS迷你系列",
+              "url": "https://www.youtube.com/watch?v=zEmUuNFBgN8&list=PLTk5ZYSbd9MhMmOiPhfRJNW7bhxHo4q-K",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4a038bc3-2faf-45db-9f9f-60d2437d1594",
+          "xid": "51c46fa3-aa8d-415c-99da-094491b9cbb7"
+        },
+        {
+          "title": "HTTP (HyperText Transfer Protocol)",
+          "description": "HTTP 是基于 `TCP/IP (传输控制协议/互联网协议)` 的应用层通信协议，它标准化了客户端与服务器之间的通信方式。
+
+它定义了内容如何被请求及传输到互联网上。
+
+\n\n",
+          "links": [
+            {
+              "title": "关于 HTTP 需要知道的一切",
+              "url": "https://cs.fyi/guide/http-in-depth",
+              "type": "article"
+            },
+            {
+              "title": "HTTP 是什么？",
+              "url": "https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/",
+              "type": "article"
+            },
+            {
+              "title": "HTTP 概览",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+              "type": "article"
+            },
+            {
+              "title": "HTTP/3 从 A 到 Z：核心概念",
+              "url": "https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/",
+              "type": "article"
+            },
+            {
+              "title": "HTTP/1 到 HTTP/2 到 HTTP/3",
+              "url": "https://www.youtube.com/watch?v=a-sBfyiXysI",
+              "type": "video"
+            },
+            {
+              "title": "HTTP 快速入门及探索",
+              "url": "https://www.youtube.com/watch?v=iYM2zFP3Zn0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0d954967-a4de-4720-af48-1777b1a377a5",
+          "xid": "2a3ef45c-1c3d-4f34-93c7-902b3ae0169d"
+        },
+        {
+          "title": "TLS (传输层安全协议) & HTTPS",
+          "description": "TLS (传输层安全协议) 是一种在两个通信应用程序之间提供隐私和数据完整性的加密协议。
+
+它广泛用于安全传输HTTP，但它可以与任何协议一起使用。
+
+TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
+
+",
+          "links": [
+            {
+              "title": "SSL (安全套接层协议) 和 HTTPS",
+              "url": "https://www.youtube.com/watch?v=S2iBR2ZlZf0",
+              "type": "video"
+            },
+            {
+              "title": "SSL/TLS - Cristina Formaini",
+              "url": "https://www.youtube.com/watch?v=Rp3iZUvXWlM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "77d4c8b1-227a-48e4-807b-8f28d5717c9e",
+          "xid": "a5dc7396-af47-4321-bbd2-6ef5fba283bc"
+        },
+        {
+          "title": "套接字(Sockets)",
+          "description": "套接字是一个用于网络通信的接口。
+
+它是一种程序间通过网络互相通信的方式。
+
+客户端可以通过它向服务器发送请求，服务器也可以通过它向客户端发送响应。
+
+\n\n",
+          "links": [
+            {
+              "title": "WebSockets的新手指南",
+              "url": "https://www.youtube.com/watch?v=8ARodQ4Wlf4",
+              "type": "video"
+            },
+            {
+              "title": "100秒内了解WebSockets及更多内容，使用Socket.io",
+              "url": "https://www.youtube.com/watch?v=1BfCnjr_Vjg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "309394af-9bac-4eff-b64c-3bea1f1c8071",
+          "xid": "9c4a9a89-0a30-4fad-8a71-7faa2839aa9b"
+        }
+      ],
+      "id": "2d198f02-0e5b-421c-8412-ab3428c1d2f5",
+      "xid": "8e237e48-3e8b-492f-ba3a-751dce1d62d4"
+    },
+    {
+      "title": "安全性",
+      "description": "Web安全性是指开发人员为防止可能影响业务的威胁而采取的保护Web应用程序的防护措施。
+
+\n\n",
+      "links": [
+        {
+          "title": "OWASP Web应用程序安全测试清单",
+          "url": "https://github.com/0xRadi/OWASP-Web-Checklist",
+          "type": "opensource"
+        },
+        {
+          "title": "为什么HTTPS很重要",
+          "url": "https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https",
+          "type": "article"
+        },
+        {
+          "title": "维基百科 - OWASP",
+          "url": "https://en.wikipedia.org/wiki/OWASP",
+          "type": "article"
+        },
+        {
+          "title": "OWASP十大安全风险",
+          "url": "https://sucuri.net/guides/owasp-top-10-security-vulnerabilities-2021/",
+          "type": "article"
+        },
+        {
+          "title": "OWASP知识卡片",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/AJAX_Security_Cheat_Sheet.html",
+          "type": "article"
+        },
+        {
+          "title": "内容安全策略 (CSP)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
+          "type": "article"
+        },
+        {
+          "title": "探索有关安全性的顶级文章",
+          "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "麻省理工学院6.858计算机系统安全性, 2014秋季",
+          "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "公钥密码学（Public Key Cryptography）",
+          "description": "公钥密码学，或非对称密码学，是使用成对相关密钥的密码系统领域。
+
+每对密钥由一个公钥和对应的私钥组成。
+
+密钥对是基于被称为单向函数（one-way functions）的数学问题的密码算法生成的。
+
+\n\n",
+          "links": [
+            {
+              "title": "公钥密码学（Public-key cryptography） - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/Public-key_cryptography",
+              "type": "article"
+            },
+            {
+              "title": "探索关于密码学的热门帖子",
+              "url": "https://app.daily.dev/tags/cryptography?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "公钥密码学（Public Key Cryptography） - Computerphile",
+              "url": "https://www.youtube.com/watch?v=GSIDS_lvRv4",
+              "type": "video"
+            },
+            {
+              "title": "公钥密码学：RSA加密算法",
+              "url": "https://www.youtube.com/watch?v=wXB-V_Keiu8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "bcca629b-e1fd-456f-a338-7fd8c23d9203",
+          "xid": "e281876a-6287-46f8-bd46-0222d9fe3550"
+        },
+        {
+          "title": "哈希/加密/编码",
+          "description": "哈希是一种单向函数，它接收一个输入并产生一个固定长度的输出。
+
+该输出称为哈希（Hash）。
+
+哈希是输入的唯一表示。
+
+哈希是确定性的，这意味着相同的输入总是产生相同的哈希。
+
+哈希是不可逆的，这意味着无法从哈希回溯到原始输入。
+
+哈希不是冲突抵抗的，这意味着可能找到两个不同的输入生成相同的哈希。
+
+\n\n加密是一种双向函数，它接收一个输入并产生一个输出。
+
+该输出称为密文（Ciphertext）。
+
+密文是输入的唯一表示。
+
+密文是确定性的，这意味着相同的输入总是产生相同的密文。
+
+密文是可逆的，这意味着可以从密文回溯到原始输入。
+
+密文是冲突抵抗的，这意味着无法找到两个不同的输入生成相同的密文。
+
+\n\n编码是一种双向函数，它接收一个输入并产生一个输出。
+
+该输出称为编码文本（Encoded Text）。
+
+编码文本是输入的唯一表示。
+
+编码文本是确定性的，这意味着相同的输入总是产生相同的编码文本。
+
+编码文本是可逆的，这意味着可以从编码文本回溯到原始输入。
+
+编码文本是冲突抵抗的，这意味着无法找到两个不同的输入生成相同的编码文本。
+
+\n\n",
+          "links": [
+            {
+              "title": "探索有关加密的热门帖子",
+              "url": "https://app.daily.dev/tags/encryption?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "编码、加密和哈希--有何不同？",
+              "url": "https://www.youtube.com/watch?v=-bAnBzvMLig",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "54b19d0b-42b5-41e7-928e-289a9c059082",
+          "xid": "ca854ba2-7b2a-4175-b84e-6d4ff3998ff1"
+        },
+        {
+          "title": "哈希算法(Hashing Algorithms)",
+          "description": "哈希算法用于为给定输入生成唯一值。
+
+这个值称为哈希(Hash)。
+
+哈希算法用于验证数据的完整性、存储密码，以及为数据生成唯一标识符。
+
+\n\n",
+          "links": [
+            {
+              "title": "浏览关于算法(Algorithms)的热门文章",
+              "url": "https://app.daily.dev/tags/algorithms?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "哈希算法与安全 - Computerphile",
+              "url": "https://www.youtube.com/watch?v=b4b8ktEV4Bg",
+              "type": "video"
+            },
+            {
+              "title": "密码学中的顶级哈希算法 | 解释MD5和SHA-256哈希算法 | Simplilearn",
+              "url": "https://www.youtube.com/watch?v=Plp4F3ZfC7A",
+              "type": "video"
+            },
+            {
+              "title": "SHA：安全哈希算法(Secure Hashing Algorithm) - Computerphile",
+              "url": "https://www.youtube.com/watch?v=DMtFhACPnTY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f07e4819-5f45-4361-b59d-c3d27a5f513c",
+          "xid": "eb219cb3-5036-444f-9ac6-1fdd6a949731"
+        },
+        {
+          "title": "OWASP十大项目",
+          "description": "OWASP（开放网络应用安全项目）是一个在线社区，它生产关于网络应用安全领域的可自由访问的文章、方法、文档、工具和技术。
+
+\n\n",
+          "links": [
+            {
+              "title": "OWASP网络安全测试检查表",
+              "url": "https://github.com/0xRadi/OWASP-Web-Checklist",
+              "type": "opensource"
+            },
+            {
+              "title": "Wikipedia - OWASP",
+              "url": "https://en.wikipedia.org/wiki/OWASP",
+              "type": "article"
+            },
+            {
+              "title": "OWASP十大安全风险",
+              "url": "https://sucuri.net/guides/owasp-top-10-security-vulnerabilities-2021/",
+              "type": "article"
+            },
+            {
+              "title": "OWASP速查表",
+              "url": "https://cheatsheetseries.owasp.org/cheatsheets/AJAX_Security_Cheat_Sheet.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5bc192bd-89ff-4918-b850-b271cf932809",
+          "xid": "4d46496a-6538-4703-bfed-e2c572625ce0"
+        }
+      ],
+      "id": "d6b01139-b0e7-4785-b0dd-752846dcbb9e",
+      "xid": "97eeecd1-b2ec-4bee-a328-e286959b83d3"
+    },
+    {
+      "title": "计算机是如何工作的",
+      "description": "计算机无处不在。
+
+它们在我们的手机中、汽车中、家中，甚至我们的口袋里。
+
+但是它们究竟是如何工作的呢？它们是如何接收信息并输出信息的？\n\n",
+      "links": [
+        {
+          "title": "CPU如何执行程序",
+          "url": "https://www.youtube.com/watch?v=XM4lGflQFvA",
+          "type": "video"
+        },
+        {
+          "title": "计算机如何进行计算 - 算术逻辑单元（ALU）",
+          "url": "https://youtu.be/1I5ZMmrOfnA",
+          "type": "video"
+        },
+        {
+          "title": "寄存器和RAM",
+          "url": "https://youtu.be/fpnE6UAfbtU",
+          "type": "video"
+        },
+        {
+          "title": "中央处理器（CPU）",
+          "url": "https://youtu.be/FZGugFqdr60",
+          "type": "video"
+        },
+        {
+          "title": "指令和程序",
+          "url": "https://youtu.be/zltgXvg6r3k",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "CPU如何执行程序",
+          "description": "",
+          "links": [
+            {
+              "title": "浏览关于计算的热门文章",
+              "url": "https://app.daily.dev/tags/computing?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "CPU如何执行一个程序",
+              "url": "https://www.youtube.com/watch?v=XM4lGflQFvA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "3dacdca3-337e-420e-8e03-8c893b9f4461",
+          "xid": "01664ddc-010e-4ef7-ae19-8c4a4bc97fab"
+        },
+        {
+          "title": "计算机如何计算",
+          "description": "计算机使用二进制系统进行计算，所有数据都表示为0和1。
+
+这些二进制状态对应于晶体管的ON/OFF位置，晶体管是逻辑门（AND，OR，NOT）的构成部分。
+
+数字、字符和指令被分解成二进制序列（位），并组合成字节（8位）。
+
+加法等算术运算通过逻辑门组合二进制值来完成。
+
+中央处理器（CPU）通过遵循取指-译码-执行周期执行这些计算。
+
+复杂的计算，例如处理小数，使用浮点数表示法进行。
+
+用高级语言编写的程序被编译成机器语言供CPU执行。
+
+",
+          "links": [
+            {
+              "title": "计算机如何计算 - 算术逻辑单元（ALU）",
+              "url": "https://youtu.be/1I5ZMmrOfnA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "fe28aaa4-1fdb-4bdc-af69-44d8c16d8250",
+          "xid": "c37e1086-e032-4486-bf82-ddfc7a112021"
+        },
+        {
+          "title": "寄存器和RAM",
+          "description": "**_寄存器（Registers）_** 是直接构建在处理器内部的最小数据保存单元。
+
+寄存器是处理器可以直接访问的内存位置。
+
+寄存器持有当前被CPU访问的指令或操作数。
+
+\n\n寄存器是高速可访问的存储元素。
+
+处理器在单个CPU时钟周期内即可访问寄存器。
+
+处理器可以以超过一个操作每CPU时钟周期的速度解码指令并操作寄存器内容。
+
+\n\n**_内存（Memory）_** 是存储计算机程序、指令和数据的硬件设备。
+
+内部的处理器内存被称为主内存（RAM），外部的处理器内存称为辅助存储（Hard Drive）。
+
+主内存或RAM是一种易失性内存，意味着当系统电源开启时主内存数据存在；系统关闭时，数据将消失。
+
+主内存包含了CPU当前执行的程序所需的数据。
+
+如果处理器所需的数据不在主内存中，则数据会从辅助存储传输到主内存，再由处理器获取。
+
+\n\n",
+          "links": [
+            {
+              "title": "寄存器和RAM",
+              "url": "https://youtu.be/fpnE6UAfbtU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "83ad4fdb-b0bb-401d-ae45-bc0e193b7b8e",
+          "xid": "34a924ba-8a53-49b1-8ff9-621701801161"
+        },
+        {
+          "title": "指令和程序",
+          "description": "",
+          "links": [
+            {
+              "title": "指令和程序",
+              "url": "https://youtu.be/zltgXvg6r3k",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6cab9cb3-f852-4a36-9002-e407b2823de8",
+          "xid": "a710c156-e983-4599-bf59-3caab1e7510f"
+        },
+        {
+          "title": "CPU 缓存(CPU Cache)",
+          "description": "",
+          "links": [
+            {
+              "title": "探索有关计算的顶级帖子",
+              "url": "https://app.daily.dev/tags/computing?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "MIT 6.004 L15：内存层次结构(The Memory Hierarchy)",
+              "url": "https://www.youtube.com/watch?v=vjYF_fAZI5E&list=PLrRW1w6CGAcXbMtDFj205vALOGmiRc82-&index=24",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.004 L16：缓存问题(Cache Issues)",
+              "url": "https://www.youtube.com/watch?v=ajgC3-pyGlk&index=25&list=PLrRW1w6CGAcXbMtDFj205vALOGmiRc82-",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9fa3b566-8b21-4c4e-901e-e18e61fa25da",
+          "xid": "e6c9dbdc-6270-40c1-b45d-3773942a8fe2"
+        }
+      ],
+      "id": "77e48784-39c7-4289-90cd-446087a6fe40",
+      "xid": "15cd9173-305d-4c6c-a46e-b82572f92498"
+    },
+    {
+      "title": "进程和线程",
+      "description": "进程（Process）和线程（Thread）是计算机程序的基本构建块。
+
+它们是程序中最小的执行单元。
+
+进程是正在执行的程序的实例。
+
+线程是进程中可以独立于其他代码执行的指令序列。
+
+\n\n",
+      "links": [
+        {
+          "title": "进程（Process）和线程（Thread）的区别是什么？",
+          "url": "https://www.quora.com/What-is-the-difference-between-a-process-and-a-thread",
+          "type": "article"
+        },
+        {
+          "title": "操作系统与系统编程",
+          "url": "https://archive.org/details/ucberkeley-webcast-PL-XXv-cvA_iBDyz-ba4yDskqMDY6A1w_c",
+          "type": "article"
+        },
+        {
+          "title": "25小时的操作系统课程 - freecodecamp",
+          "url": "https://youtu.be/yK1uBHPdp30?si=gGPdK7cM4KlP6Qq0",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "进程fork（Process Forking）",
+          "description": "进程fork是通过已存在的进程创建新进程的一种方法。
+
+新的进程是现有进程的一个副本。
+
+新进程被称为子进程（child process），而现有进程被称为父进程（parent process）。
+
+\n\n",
+          "links": [
+            {
+              "title": "理解用于创建新进程的fork()系统调用",
+              "url": "https://www.youtube.com/watch?v=PwxTbksJ2fo",
+              "type": "video"
+            },
+            {
+              "title": "fork()和exec()系统调用（System Calls）",
+              "url": "https://www.youtube.com/watch?v=IFEFVXvjiHY",
+              "type": "video"
+            },
+            {
+              "title": "C语言中的fork()函数",
+              "url": "https://www.youtube.com/watch?v=cex9XrZCU14",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "fa9196a5-1843-4c1b-8769-226161b626f0",
+          "xid": "2d6cd44a-7551-4917-a8c6-52fb11318793"
+        },
+        {
+          "title": "内存管理",
+          "description": "内存管理是分配和释放内存的过程。
+
+它是一个编程语言中非常重要的部分。
+
+\n\n",
+          "links": [
+            {
+              "title": "MIT 6.004 L15: 内存层次结构(The Memory Hierarchy)",
+              "url": "https://www.youtube.com/watch?v=vjYF_fAZI5E&list=PLrRW1w6CGAcXbMtDFj205vALOGmiRc82-&index=24",
+              "type": "video"
+            },
+            {
+              "title": "MIT 6.004 L16: 缓存问题(Cache Issues)",
+              "url": "https://www.youtube.com/watch?v=ajgC3-pyGlk&index=25&list=PLrRW1w6CGAcXbMtDFj205vALOGmiRc82-",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c441191a-3700-4628-b782-a3eaba159e48",
+          "xid": "a96624d9-c32f-4074-8a02-f91bc23631e8"
+        },
+        {
+          "title": "锁(Lock) / 互斥量(Mutex) / 信号量(Semaphore)",
+          "description": "锁(Lock)只允许一个线程进入锁定的部分，且该锁(Lock)不会与其他进程共享。
+
+\n\n互斥量(Mutex)与锁(Lock)相同，但它可以是系统范围内的（由多个进程共享）。
+
+\n\n信号量(Semaphore)与互斥量(Mutex)类似，但允许x数量的线程进入，例如，这种机制可以用来限制在同一时间运行的CPU、IO或内存密集型任务的数量。
+
+\n\n",
+          "links": [
+            {
+              "title": "锁(Lock)、互斥量(Mutex)和信号量(Semaphore)之间的区别是什么？",
+              "url": "https://stackoverflow.com/questions/2332765/what-is-the-difference-between-lock-mutex-and-semaphore",
+              "type": "article"
+            },
+            {
+              "title": "什么是信号量(Semaphore)",
+              "url": "https://stackoverflow.com/questions/34519/what-is-a-semaphore/40238#40238",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4872125a-09fe-467d-a973-07aa89a918cd",
+          "xid": "a698ef94-3011-48a6-a631-a9154c1ec267"
+        },
+        {
+          "title": "多核中的并发性",
+          "description": "",
+          "links": [
+            {
+              "title": "多核与并发编程之间的区别是什么？",
+              "url": "https://stackoverflow.com/questions/5372861/what-is-the-difference-between-multicore-and-concurrent-programming",
+              "type": "article"
+            },
+            {
+              "title": "多核系统中的并发性",
+              "url": "https://cs.stackexchange.com/questions/140793/concurrency-in-multiple-core",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a1b81413-e956-480b-9b15-7853de5e93be",
+          "xid": "c9816013-8334-4948-8dce-cdcb5fe6c828"
+        },
+        {
+          "title": "调度算法",
+          "description": "CPU 调度是从就绪队列中选择一个进程，并向其分配 CPU 的过程。
+
+进程的分配基于特定的调度算法。
+
+调度算法的选择取决于系统的类型以及进程的需求。
+
+\n\n以下是一些常用的调度算法列表：\n\n*   **先来先服务(First Come First Serve, FCFS)：** 第一个到达的进程优先获得 CPU。
+
+这是一种非抢占式算法。
+
+\n*   **最短作业先执行(Shortest Job First, SJF)：** 执行时间最短的进程优先获得 CPU。
+
+这是一种非抢占式算法。
+
+\n*   **最短剩余时间优先(Shortest Remaining Time First, SRTF)：** 剩余执行时间最短的进程优先获得 CPU。
+
+这是一种抢占式算法。
+
+\n*   **时间片轮转(Round Robin, RR)：** 进程按照固定的时间片分配 CPU。
+
+时间片通常为 10 毫秒。
+
+这是一种抢占式算法。
+
+\n*   **优先级调度(Priority Scheduling)：** 优先级最高的进程优先获得 CPU。
+
+这是一种抢占式算法。
+
+\n*   **多级队列调度(Multi-level Queue Scheduling)：** 进程根据优先级被分配到不同的队列中。
+
+优先级最高的进程优先获得 CPU。
+
+这是一种抢占式算法。
+
+\n*   **多级反馈队列调度(Multi-level Feedback Queue Scheduling)：** 进程根据优先级被分配到不同的队列中。
+
+优先级最高的进程优先获得 CPU。
+
+如果一个进程被抢占，它将被移到下一个队列中。
+
+这是一种抢占式算法。
+
+\n*   **最高响应比优先(Highest Response Ratio Next, HRRN)：** CPU 会分配给响应比最高的下一个进程，而不是执行时间短的进程。
+
+这是一种非抢占式算法。
+
+\n*   **彩票调度(Lottery Scheduling)：** 进程的 CPU 分配基于一种彩票系统。
+
+这是一种抢占式算法。
+
+\n\n点击以下资源链接以获取更多详细信息 ：",
+          "links": [
+            {
+              "title": "操作系统中的CPU调度 - geeksforgeeks",
+              "url": "https://www.geeksforgeeks.org/cpu-scheduling-in-operating-systems/",
+              "type": "article"
+            },
+            {
+              "title": "操作系统的彩票调度-geeksforgeeks",
+              "url": "https://www.geeksforgeeks.org/lottery-process-scheduling-in-operating-system/",
+              "type": "article"
+            },
+            {
+              "title": "相同到达时间下的时间片轮转调度示例-geeksforgeeks",
+              "url": "https://www.geeksforgeeks.org/program-for-round-robin-scheduling-for-the-same-arrival-time/",
+              "type": "article"
+            },
+            {
+              "title": "CPU调度简介",
+              "url": "https://youtu.be/EWkQl0n0w5M?si=Lb-PxN_t-rDfn4JL",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "3f33ea88-451c-426d-92fe-8b32b279c0b1",
+          "xid": "b8c1b865-671e-4365-a6bc-ceb61462dc17"
+        },
+        {
+          "title": "CPU中断(CPU Interrupts)",
+          "description": "CPU中断(CPU Interrupts)是CPU与计算机其他部分通信的一种方式。
+
+它是一种CPU告知计算机其他部分需要执行某些操作的方式。
+
+例如，如果CPU在运行一个程序，它需要从键盘读取数据，则会向键盘发送一个中断，告知键盘将数据发送给CPU。
+
+CPU随后会等待键盘发送数据，然后继续运行程序。
+
+",
+          "links": [
+            {
+              "title": "探索关于计算的热门文章",
+              "url": "https://app.daily.dev/tags/computing?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "关于中断的视频",
+              "url": "https://youtu.be/iKlAWIKEyuw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "72315da9-c5b6-4908-9175-a71809567e92",
+          "xid": "5e7e8a78-7f84-41cd-bc35-eba3fc6bb384"
+        },
+        {
+          "title": "进程 vs 线程",
+          "description": "进程(processes)和线程(threads)是计算机程序的基本构建模块。
+
+它们是程序中最小的执行单位。
+
+进程(process)是正在执行的程序的实例。
+
+线程(thread)是进程中可以独立于其他代码执行的指令序列。
+
+\n\n",
+          "links": [
+            {
+              "title": "进程(process)和线程(thread)有什么区别？",
+              "url": "https://www.quora.com/What-is-the-difference-between-a-process-and-a-thread",
+              "type": "article"
+            },
+            {
+              "title": "操作系统与系统编程",
+              "url": "https://archive.org/details/ucberkeley-webcast-PL-XXv-cvA_iBDyz-ba4yDskqMDY6A1w_c",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5f424009-b5b1-451e-b973-b905a12d1796",
+          "xid": "8973347f-758e-4ac8-97ce-8a19a9566858"
+        }
+      ],
+      "id": "b60bf33d-0677-4a38-8df1-8910c3c237be",
+      "xid": "e98cacf6-66c7-4db0-84a3-f534cec24ac5"
+    },
+    {
+      "title": "K-D树",
+      "description": "K-D树是一种在高维空间中快速查找最近邻的数据结构。
+
+它们是对二叉搜索树的推广，并应用于包括计算机视觉和计算几何在内的各种应用中。
+
+\n\n",
+      "links": [
+        {
+          "title": "K-D树算法",
+          "url": "https://www.youtube.com/watch?v=Y4ZgLlDfKDg",
+          "type": "video"
+        },
+        {
+          "title": "K-D树 - Computerphile",
+          "url": "https://www.youtube.com/watch?v=BK5x7IUTIyU",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "f801ea5d-559c-44a7-9dbf-e694e41a7f83",
+      "xid": "6640917e-0f6c-4ebd-aed3-21e5d11c7ed6"
+    },
+    {
+      "title": "跳表",
+      "description": "跳表是一种数据结构，它允许您以O(log n)的时间复杂度在排序列表上执行操作。
+
+跳表是一种概率数据结构，这意味着某个操作花费特定时间的概率是一个固定值。
+
+就跳表而言，操作在O(log n)时间完成的概率为1。
+
+\n\n",
+      "links": [
+        {
+          "title": "跳表 - 维基百科",
+          "url": "https://en.wikipedia.org/wiki/Skip_list",
+          "type": "article"
+        },
+        {
+          "title": "随机化：跳表",
+          "url": "https://www.youtube.com/watch?v=2g9OSRKJuzM&index=10&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "8ea3cf96-5615-46e9-8ef4-15089b916bc0",
+      "xid": "30387a4b-686a-4537-bdbc-c19cfd6a2585"
+    }
+  ],
+  "id": "dfb13b91-1da8-4a2e-8e62-55244f9e4852",
+  "xid": "c49d8dfc-053a-4a09-a257-d57500ff0a57"
+}
