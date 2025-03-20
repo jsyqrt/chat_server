@@ -1,5 +1,5 @@
 {
-  "id": "848b9f1c-77a6-4290-b6b7-b66ca51db145",
+  "id": "65c506d5-081b-437a-aba4-c8065def022d",
   "title": "Software Architect",
   "description": "Step by step guide to becoming a Software Architect in 2025",
   "question_title": "",
@@ -9,13 +9,13 @@
       "title": "Understand the Basics",
       "xid": "4zicbh7Wg2lmKSRhb6E-L",
       "description": "Understand different concepts such as what is software architecture, software architect, different types of architects and so on.",
-      "id": "d89dabce-b979-43af-b3ba-72541d694f5e",
+      "id": "c1e5926a-83d8-4110-988d-eb16da3ed8c8",
       "children": [
         {
           "title": "What is Software Architecture",
           "xid": "EGG99VA-PEdWdVxNDLtG_",
           "description": "Describes how an application is built including its components, how they interact with each other, environment in which they operate and so on.\n\n",
-          "id": "5aea6198-e0a2-42e7-93be-3651bd314258",
+          "id": "90f74ca5-c6f3-4ccf-906b-3f581e75f875",
           "children": [],
           "links": [
             {
@@ -39,7 +39,7 @@
           "title": "What is a Software Architect",
           "xid": "eG38hT0rotYJ3G-t9df9R",
           "description": "An expert developer who design software solutions from the ground up, making high-level decisions about each stage of the process including technical standards, tools, design principles, platforms to be used, etc., leading a team of engineers to create the final product.\n\n",
-          "id": "97b47a2a-b5a1-4e32-97c8-87f1272c88de",
+          "id": "dc006f50-f9a6-4176-8fdc-7748c9c28b11",
           "children": [],
           "links": [
             {
@@ -53,13 +53,13 @@
           "title": "Levels of Architecture",
           "xid": "2sR4KULvAUUoOtopvsEBs",
           "description": "Architecture can be done on several \u201clevels\u201d of abstractions. The level influences the importance of necessary skills. As there are many categorizations possible my favorite segmentation includes these 3 levels:\n\n*   **Application Level:** The lowest level of architecture. Focus on one single application. Very detailed, low level design. Communication is usually within one development team.\n*   **Solution Level:** The mid-level of architecture. Focus on one or more applications which fulfill a business need (business solution). Some high, but mainly low-level design. Communication is between multiple development teams.\n*   **Enterprise Level:** The highest level of architecture. Focus on multiple solutions. High level, abstract design, which needs to be detailed out by solution or application architects. Communication is across the organization.\n\n",
-          "id": "4aef3a3d-94d6-477e-91b4-03a48480619d",
+          "id": "ff9158c2-dcf9-4121-8b20-280b3c010416",
           "children": [
             {
               "title": "Solution Architecture",
               "xid": "uGs-9xE3DMJxKhenltbFK",
               "description": "The mid-level of architecture. Focus on one or more applications which fulfill a business need (business solution). Some high, but mainly low-level design. Communication is between multiple development teams.\n\n",
-              "id": "fab76cac-ffc9-4121-960c-ceaebe5dd5da",
+              "id": "f5f87505-a74e-4123-9d18-97adff1f76bf",
               "children": [],
               "links": [
                 {
@@ -73,7 +73,7 @@
               "title": "Application Architecture",
               "xid": "Lqe47l4j-C4OwkbkwPYry",
               "description": "The lowest level of architecture. Focus on one single application. Very detailed, low level design. Communication is usually within one development team.\n\n",
-              "id": "88a17896-89d2-43ea-9c4c-2b04189a460e",
+              "id": "957f0409-330e-4394-bcab-248f1524bb1b",
               "children": [],
               "links": [
                 {
@@ -87,7 +87,7 @@
               "title": "Enterprise Architecture",
               "xid": "vlW07sc-FQnxPMjDMn8_F",
               "description": "The highest level of architecture. Focus on multiple solutions. High level, abstract design, which needs to be detailed out by solution or application architects. Communication is across the organization.\n\n",
-              "id": "c1a9544a-3803-4d3a-ba45-2c6d674ba20c",
+              "id": "f777ac92-13d3-4f56-99d1-cebf624ff28d",
               "children": [],
               "links": [
                 {
@@ -123,7 +123,7 @@
       "title": "Responsibilities",
       "xid": "rUxbG2S2nJuA1YVY6sjiX",
       "description": "To understand the necessary skills an architect needs, we first need to understand typical activities. The following list contains from my perspective the most important activities:\n\n*   Define and decide development technology and platform\n*   Define development standards, e.g., coding standards, tools, review processes, test approach, etc.\n*   Support identifying and understanding business requirements\n*   Design systems and take decisions based on requirements\n*   Document and communicate architectural definitions, design and decisions\n*   Check and review architecture and code, e.g., check if defined patterns and coding standards are implemented properly\n*   Collaborate with other architects and stakeholders\n*   Coach and consult developers\n*   Make sure that as implementation takes place, the architecture is being adhered to\n*   Play a key part in reviewing code\n*   Detail out and refine higher level design into lower level design\n\n",
-      "id": "0de9c353-b513-4801-9a07-a14ecd22016e",
+      "id": "5ad7d36f-8746-4aea-8e35-19b0a60df9ad",
       "children": [],
       "links": [
         {
@@ -137,13 +137,13 @@
       "title": "Important Skills to Learn",
       "xid": "lBtlDFPEQvQ_xtLtehU0S",
       "description": "To support the laid-out activities specific skills are required. From my experience, read books and discussions we can boil this down to these ten skills every software architect should have:\n\n*   Design\n*   Decide\n*   Simplify\n*   Code\n*   Document\n*   Communicate\n*   Estimate\n*   Balance\n*   Consult\n*   Market\n\n",
-      "id": "dc25769d-bb69-48f9-a99f-849d5ee896e9",
+      "id": "fd16820f-311d-4624-a9c3-d6e84850d6b1",
       "children": [
         {
           "title": "Design & Architecture",
           "xid": "fBd2m8tMJmhuNSaakrpg4",
           "description": "Good design in software architecture blends theoretical knowledge with practical experience. Theoretically, architects should master fundamental design patterns, such as those detailed in _\"Design Patterns: Elements of Reusable Object-Oriented Software\"_, which remain foundational for modern architecture. Advanced knowledge of patterns and anti-patterns, like those in _\"Enterprise Integration Patterns\"_, extends this understanding. Architects must also focus on quality measures, ensuring designs meet non-functional requirements like scalability, security, and adaptability.\n\nPractically, architects improve by experimenting with various technology stacks, gaining insights into their strengths and limitations. Exploring frameworks like Angular reveals real-world pattern applications, such as Observables, and fosters deeper understanding through hands-on coding. Attending user groups and engaging in communities, like those on Meetup, broadens perspectives and encourages curiosity, enabling architects to stay updated and continuously refine their craft.\n\n",
-          "id": "d39bcd77-833d-45a0-ba77-4d9c09ed4c6d",
+          "id": "863f75fa-3845-4172-a7b5-74415775d0d3",
           "children": [],
           "links": [
             {
@@ -162,7 +162,7 @@
           "title": "Decision Making",
           "xid": "MSDo0nPk_ghRYkZS4MAQ_",
           "description": "Effective decision-making is crucial for architects to guide projects and organizations in the right direction. Focus on what\u2019s important by emphasizing **conceptual integrity** (sticking to consistent decisions for simplicity and maintainability) and **uniformity** (ensuring standards like naming conventions are applied consistently). Prioritize critical decisions early to avoid costly workarounds or project delays, using tools like the Weighted Shortest Job First (WSJF) model for prioritization. Stay within your scope of competence to maintain credibility, collaborate with peers, and clarify responsibilities within the architectural hierarchy.\n\nWhen making decisions, evaluate multiple options to ensure thorough analysis and foster stakeholder confidence. Comparing options based on measurable criteria, such as cost or feasibility, leads to better, fact-driven decisions. This process not only supports sustainable outcomes but also prepares you with strong arguments during discussions, ensuring alignment across teams and stakeholders.\n\n",
-          "id": "f7f0037d-1a19-477d-b127-1eb45fae4d55",
+          "id": "4db7de7e-6592-4ed9-8c14-9cba282dff40",
           "children": [],
           "links": [
             {
@@ -176,7 +176,7 @@
           "title": "Simplifying Things",
           "xid": "lrtgF1RTaS4TCKww0aY6C",
           "description": "Simplifying solutions is critical for effective problem-solving, aligning with Occam\u2019s Razor, which favors simplicity by reducing unnecessary assumptions. To achieve this, \u201cshake\u201d your solution by analyzing it from different perspectives and questioning its assumptions. After complex discussions, take a step back to review the big picture and refactor if needed, giving your brain time to process ideas. Apply the _divide and conquer_ method to break problems into smaller parts and validate their integration afterward. Finally, remember that refactoring is a valuable process to improve overly complex solutions, provided there\u2019s adequate test coverage and stakeholder support.\n\n",
-          "id": "56160094-45d7-4800-899d-b14bd4b1c859",
+          "id": "5f1dc267-e881-4cc4-af6d-6e9a52e94a91",
           "children": [],
           "links": [
             {
@@ -190,7 +190,7 @@
           "title": "How to Code",
           "xid": "77KvWCA1oHSGgDKBTwjv7",
           "description": "Even as an Enterprise Architect, staying connected to coding practices is essential to understand developers\u2019 challenges and earn their trust. Maintaining a **side project** allows you to explore new technologies, tools, and methodologies hands-on, building practical experience beyond theoretical knowledge. This helps in forming informed decisions and keeping pace with evolving trends in development.\n\nTo prioritize what to explore, structured resources like ThoughtWorks\u2019 Technology Radar can guide you. It categorizes technologies into **Adopt**, **Trial**, **Assess**, and **Hold**, helping architects focus on impactful and enterprise-ready innovations. Staying informed and involved ensures better collaboration and alignment with developers.\n\n",
-          "id": "26f6dd28-f2bc-44b8-9a37-75877f190950",
+          "id": "0e77ec37-e387-4b01-9ebb-49d6432c882b",
           "children": [],
           "links": [
             {
@@ -209,7 +209,7 @@
           "title": "Documentation",
           "xid": "5D-kbQ520k1D3fCtD01T7",
           "description": "Architectural documentation is sometimes more and sometimes less important. Important documents are for example architectural decisions or code guidelines. Initial documentation is often required before coding starts and need to be refined continuously. Other documentation can be automatically generated as code can also be documentation, e.g. UML class diagrams.\n\n",
-          "id": "03e55c0e-48cc-4a8f-a348-84a7dcdf0592",
+          "id": "da240e9e-be22-43cf-9304-f4c0758b6cab",
           "children": [],
           "links": [
             {
@@ -228,7 +228,7 @@
           "title": "Communication",
           "xid": "Ac49sOlQKblYK4FZuFHDR",
           "description": "From my observations this is one of the most underestimated skill. If you are brilliant in design but cannot communicate your ideas, your thoughts are likely to have less impact or even fail to succeed.\n\nCommunication is a critical yet often underestimated skill, especially for architects. It involves clearly conveying ideas, structuring discussions effectively, and driving meetings. Tools like \u201cUZMO\u200a\u2014\u200aThinking With Your Pen\u201d can enhance visual communication skills. Public speaking, whether to small or large groups, requires practice and stepping out of one\u2019s comfort zone. Tailoring communication to the audience is essential\u2014developers focus on details, while managers prioritize cost and outcomes. Regular, transparent communication ensures alignment across all levels, making the rationale behind decisions clear. Always being prepared with key slides and answers can boost confidence and efficiency during interactions.\n\n",
-          "id": "3bc38e41-59ea-443e-99ee-990114f776bf",
+          "id": "94cfc222-38a6-4bad-aa02-73817e3cdeba",
           "children": [],
           "links": [
             {
@@ -242,7 +242,7 @@
           "title": "Estimate and Evaluate",
           "xid": "m0ZYdqPFDoHOPo18wKyvV",
           "description": "Estimation and evaluation are critical skills for architects and lead developers. Architects must understand basic project management principles to provide estimates for timelines, resources, and costs, considering all project phases like requirements, testing, and debugging. Using past data or models like COCOMO helps refine estimates. For agile projects, resources like _\"Agile Estimating and Planning\"_ by Mike Cohn can offer valuable guidance.\n\nEvaluating \"unknown\" architectures involves assessing their suitability for current and future contexts through prepared questions. These should cover design practices (e.g., patterns and structure), development practices (e.g., code guidelines and deployment), quality assurance (e.g., test automation and peer reviews), and security measures (e.g., built-in security and penetration tests). This structured approach ensures informed decisions and promotes robust, maintainable solutions.\n\n",
-          "id": "e21e4be1-5a83-4ed1-88f5-25890008ddda",
+          "id": "cfaea4ee-3106-4c7d-a0c5-86a4e32160d8",
           "children": [],
           "links": [
             {
@@ -261,7 +261,7 @@
           "title": "Balance",
           "xid": "otHQ6ye1xgkI1qb4tEHVF",
           "description": "Achieving balance in architecture requires managing trade-offs between quality, cost, and development speed, avoiding over-engineering while aligning functional and non-functional requirements. Architects must navigate conflicting goals, like balancing short-term simplicity with long-term vision, ensuring solutions fit future needs while involving developers, businesses, and managers in understanding the financial and strategic impact. Additionally, architects often mediate between diverse groups, resolving conflicts and aligning strategies through effective communication, such as the \u201cFour-Ears Model\u201d by Schulze von Thun, which aids in fostering collaboration and achieving balanced, strategic outcomes.\n\n",
-          "id": "d3e13ff1-a185-40dd-b07e-151435cb8493",
+          "id": "3b786c0b-2d49-4cdb-9c57-4275784618e8",
           "children": [],
           "links": [
             {
@@ -275,7 +275,7 @@
           "title": "Consult & Coach",
           "xid": "LSWlk9A3b6hco9Il_elao",
           "description": "Proactive consulting and coaching are essential to prevent architectural issues from escalating. Architects must anticipate future needs and prepare the organization by setting a clear vision of mid- and long-term goals, often using maturity models to provide structure and measure progress against SMART criteria. Building a **Community of Practice (CoP)** fosters collaboration, standardization, and knowledge sharing among professionals with shared interests, such as developers and architects, enhancing individual and organizational growth. Open-door sessions, held regularly without a strict agenda, encourage open communication, resolve minor issues promptly, and address complex topics through follow-ups, reducing misconceptions and ambiguity.\n\n",
-          "id": "33202479-ae5c-41eb-9402-0b358fd2f811",
+          "id": "d357e957-8794-4138-a398-f982a4a09c4d",
           "children": [],
           "links": [
             {
@@ -289,7 +289,7 @@
           "title": "Marketing Skills",
           "xid": "YW6j3Sg511dXToTcwSnOS",
           "description": "Marketing skills are essential for promoting your ideas effectively, especially when others may not immediately embrace them. To convince others, it's crucial to motivate them by demonstrating the value and benefits of your ideas in an easily digestible format, such as through prototypes or videos. Persistence is key; if you're convinced of your idea\u2019s worth, you need to fight for it, even if it's met with resistance. Establishing allies who support your ideas can also make it easier to gain traction, so start building a network. Repeating your message regularly can help, but be cautious not to overdo it, as credibility is essential for long-term success.\n\n",
-          "id": "e8484804-74d4-4c74-aad1-ee74c96e4521",
+          "id": "e18e983a-ddf1-477d-aa50-2a014ef41871",
           "children": [],
           "links": [
             {
@@ -312,7 +312,7 @@
       "title": "Technical Skills",
       "xid": "hFx3mLqh5omNxqI9lfaAQ",
       "description": "*   Experience in software development\n*   Experience in project management\n*   Knowledge of one or more programming languages, such as Java, Python, JavaScript, Ruby, Rust, and C\n*   Knowledge of different development platforms\n*   Understanding of web applications, cybersecurity, and open source technologies\n*   Proficiency in analyzing code for issues and errors\n*   Experience in database platforms\n*   Experience with Operations and DevOps Skills",
-      "id": "4aa7c19b-90b7-40b0-b577-db246f621081",
+      "id": "9cb2ce82-0867-4a94-8427-770b375d8c91",
       "children": [],
       "links": []
     },
@@ -320,13 +320,13 @@
       "title": "Programming Languages",
       "xid": "uoDtVFThaV6OMK2wXGfP5",
       "description": "A programming language is a system of notation for writing computer programs. Programming languages are described in terms of their syntax and semantics, usually defined by a formal language. Languages usually provide features such as a type system, variables, and mechanisms for error handling.\n\n",
-      "id": "7be3e215-f781-409a-9585-a4f795d56aea",
+      "id": "1d52fdc8-be91-4247-a91c-5cdd214078ec",
       "children": [
         {
           "title": ".NET Framework Based",
           "xid": "D1IXOBUrrXf5bXhVu9cmI",
           "description": ".NET is an open-source platform with tools and libraries for building web, mobile, desktop, games, IoT, cloud, and microservices.\n\nOfficially supported languages in .NET: C#, F#, Visual Basic.\n\n",
-          "id": "09aaab53-d6e3-4779-9572-952ce43ff40e",
+          "id": "1149a236-8bf1-4e53-b650-e63962ae574c",
           "children": [],
           "links": [
             {
@@ -370,7 +370,7 @@
           "title": "JavaScript / TypeScript",
           "xid": "bhP5gMpRVebSFpCeHVXBj",
           "description": "JavaScript allows you to add interactivity to your pages. Common examples that you may have seen on the websites are sliders, click interactions, popups and so on. Apart from being used on the frontend in browsers, there is Node.js which is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.\n\n",
-          "id": "93dff58c-769a-4735-a3ba-882cf65c8548",
+          "id": "a3981214-9cb9-4c93-9938-f1ddff02fb0e",
           "children": [],
           "links": [
             {
@@ -429,7 +429,7 @@
           "title": "Python",
           "xid": "j2Ph2QcKwmKlbaMHz1l_i",
           "description": "Python is a multi-paradigm language. Being an interpreted language, code is executed as soon as it is written and the Python syntax allows for writing code in functional, procedural or object-oriented programmatic ways. Python is frequently recommended as the first language new coders should learn, because of its focus on readability, consistency, and ease of use. This comes with some downsides, as the language is not especially performant in most production tasks.\n\n",
-          "id": "7d6664f9-bcb7-4420-a87d-a2ddac85ab5f",
+          "id": "e55bf8f2-fd1d-4683-8f60-7fce394e13e8",
           "children": [],
           "links": [
             {
@@ -473,7 +473,7 @@
           "title": "Ruby",
           "xid": "U_Hmzfjjs1jVtu2CZ0TlG",
           "description": "Ruby is a high-level, interpreted programming language that blends Perl, Smalltalk, Eiffel, Ada, and Lisp. Ruby focuses on simplicity and productivity along with a syntax that reads and writes naturally. Ruby supports procedural, object-oriented and functional programming and is dynamically typed.\n\n",
-          "id": "158d9add-94cc-4f81-9a17-c399a6680f38",
+          "id": "fcba059a-ba35-4a6a-80d3-209499b192ea",
           "children": [],
           "links": [
             {
@@ -497,7 +497,7 @@
           "title": "Go",
           "xid": "nKlM9k4qAh4wBFXqM-2kC",
           "description": "Go is an open source programming language supported by Google. Go can be used to write cloud services, CLI tools, used for API development, and much more.\n\n",
-          "id": "6a490997-010b-4a1d-b1a0-eaa6992942dd",
+          "id": "1761b145-b880-458e-888a-637184aca0a5",
           "children": [],
           "links": [
             {
@@ -536,7 +536,7 @@
           "title": "Java / Kotlin / Scala",
           "xid": "a5DB_hsD4bAf8BtHNFNPo",
           "description": "*   **Java**: Java is a widely-used, object-oriented programming language known for its platform independence, reliability, and scalability. It\u2019s commonly used for building large-scale enterprise applications, Android development, and web services. Java\u2019s extensive libraries, frameworks, and strong community support make it a popular choice for developers.\n    \n*   **Scala**: Scala is a statically-typed programming language that combines object-oriented and functional programming paradigms. It runs on the Java Virtual Machine (JVM) and is known for its concise syntax, expressive power, and compatibility with Java. Scala is often used in data engineering, backend services, and applications requiring high concurrency.\n    \n*   **Kotlin**: Kotlin is a modern, statically-typed programming language designed to be fully interoperable with Java while offering more concise and expressive syntax. It is particularly popular for Android development due to its simplicity and safety features, such as null safety, and is gaining traction in backend development as well.\n    \n\n",
-          "id": "ffaf658f-db19-4a6d-a6a6-e53164d069d2",
+          "id": "5cd8acbb-6fda-45d0-af34-e22be3f105ae",
           "children": [],
           "links": [
             {
@@ -589,13 +589,13 @@
       "title": "Patterns & Design Principles",
       "xid": "_U0VoTkqM1d6NR13p5azS",
       "description": "In the realm of software architecture, patterns and design principles are foundational tools that enable architects to create robust, scalable, and maintainable systems. They offer proven solutions to common problems and guide decision-making throughout the software development lifecycle. Understanding these concepts is essential for anyone following a software architect roadmap, as they bridge the gap between high-level architecture and practical implementation.",
-      "id": "46d5f3d8-dcb6-4f4c-9025-708b664bc5f6",
+      "id": "7aff9c2d-d353-41c9-9c97-cb0643634514",
       "children": [
         {
           "title": "MVC, MVP, MVVM",
           "xid": "jj5otph6mEYiR-oU5WVtT",
           "description": "Model-view-controller, or MVC, is a pattern used to separate user-interface, data and application logic. It does this by separating an application into three parts: Model, View, and Controller. The model holds the data, the view encompasses the user-interface, and the controller acts as a mediator between the two.\n\nModel-view-presenter, or MVP, was designed to ease automated unit testing and improve the separation of concerns in presentation logic. MVP is a variant of the MVC pattern, though differs in that it divides the application into the user-interface (view), data (model) and presentation logic (presenter). While the model and the view represent stay the same as in the model-view-controller pattern, the presenter differs from the controller in that it manipulates the model and updates the view.\n\nAnother variant of the MVC is the model-view-viewmodel pattern. The Model-view-viewmodel, or MVVM, separates the application into three core components: Model, View, and View Model. While the view and model represent all that they did in their parent pattern, the view model acts as a link between the model and view, retrieves data from the model and exposes it to the view through two-way data binding and can manipulate the model's data.\n\n",
-          "id": "5daa269d-4870-47d2-b76c-acf4d8cfdfb8",
+          "id": "c05472cd-a0e2-43a3-9ada-308303463258",
           "children": [],
           "links": [
             {
@@ -614,7 +614,7 @@
           "title": "CQRS, Eventual Consistency",
           "xid": "RsnN5bt8OhSMjSFmVgw-X",
           "description": "CQRS (Segregation of Responsibility for Command Queries) is an architecture pattern that comes with the idea of separating read and write operations into two distinct logical processes.\n\n",
-          "id": "7ed716b3-691b-484e-86f4-c762a2bc3017",
+          "id": "38147fdd-aca5-42f4-904d-763d4970e58b",
           "children": [],
           "links": [
             {
@@ -633,7 +633,7 @@
           "title": "OOP",
           "xid": "AMDLJ_Bup-AY1chl_taV3",
           "description": "Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic. An object can be defined as a data field that has unique attributes and behavior.\n\n",
-          "id": "3807af1a-c4d8-4466-bbde-ef438e9e21fc",
+          "id": "aab927d7-2484-4468-aecb-4b4f07f9559b",
           "children": [],
           "links": [
             {
@@ -667,7 +667,7 @@
           "title": "Actors",
           "xid": "AoWO2BIKG5X4JWir6kh5r",
           "description": "Actor Model is a model that represents actors as the basic unit of a system, they can only communicate through messages and have their own private state, and they can also manage other actors, resulting in an encapsulated and fault-tolerant system.\n\n",
-          "id": "3657f883-badd-4ba4-bf28-ca0d1d99aa34",
+          "id": "d933604d-2857-4e91-94dd-a5b55e4165a3",
           "children": [],
           "links": [
             {
@@ -686,7 +686,7 @@
           "title": "ACID, CAP Theorem",
           "xid": "bbKEEk7dvfFZBBJaIjm0j",
           "description": "ACID (Atomicity, Consistency, Isolation, Durability) and CAP (Consistency, Availability, Partition Tolerance) are essential concepts in distributed systems. They are often used to explain the trade-offs between consistency and availability.\n\nCAP is an acronym for Consistency, Availability, and Partition Tolerance. According to the CAP theorem, any distributed system can only guarantee two of the three properties at any time. You can't guarantee all three properties at once.\n\nACID is an acronym that stands for Atomicity, Consistency, Isolation, Durability. ACID is a set of properties of database transactions intended to guarantee validity even in the event of errors, power failures, etc.\n\n",
-          "id": "7b168195-4769-472b-96d4-17d3b9a57a42",
+          "id": "40487bfd-a4b8-4df7-b2a9-e609f87a44a3",
           "children": [],
           "links": [
             {
@@ -725,7 +725,7 @@
           "title": "SOLID",
           "xid": "QNG-KP01WQnq8o1-In1-n",
           "description": "SOLID is a set of principles applied to object-oriented design (OOD) to create maintainable, understandable, and flexible code, while avoiding code smells and defects. The principles are:\n\n*   Single Responsibility\n*   Open/Closed\n*   Liskov Substitution\n*   Interface Segregation\n*   Dependency Inversion\n\n",
-          "id": "5bd45a77-8aba-4d55-acec-710c0dffd7f4",
+          "id": "9a0c891e-5f5c-4d07-a733-1d06dd53b30b",
           "children": [],
           "links": [
             {
@@ -744,7 +744,7 @@
           "title": "TDD",
           "xid": "DnP66pjK3b8tCtYr05n2G",
           "description": "Test driven development (TDD) is the process of writing tests for software's requirements which will fail until the software is developed to meet those requirements. Once those tests pass, then the cycle repeats to refactor code or develop another feature/requirement. In theory, this ensures that software is written to meet requirements in the simplest form, and avoids code defects.\n\n",
-          "id": "38b9d467-2519-4470-8ce0-2499575f6d00",
+          "id": "b6550c15-bca8-431a-81c5-4a1af8910282",
           "children": [],
           "links": [
             {
@@ -773,7 +773,7 @@
           "title": "DDD",
           "xid": "IIelzs8XYMPnXabFKRI51",
           "description": "Domain-driven design (DDD) is a software design approach focusing on modeling software to match a domain according to input from that domain's experts.\n\nIn terms of object-oriented programming, it means that the structure and language of software code (class names, class methods, class variables) should match the business domain. For example, if a software processes loan applications, it might have classes like LoanApplication and Customer, and methods such as AcceptOffer and Withdraw.\n\nDDD connects the implementation to an evolving model and it is predicated on the following goals:\n\n*   Placing the project's primary focus on the core domain and domain logic;\n*   Basing complex designs on a model of the domain;\n*   Initiating a creative collaboration between technical and domain experts to iteratively refine a conceptual model that addresses particular domain problems.\n\n",
-          "id": "be731222-1bf2-4486-ac15-20a3d97781a3",
+          "id": "070bb376-fcee-4c8a-a656-2a361e59445a",
           "children": [],
           "links": [
             {
@@ -800,13 +800,13 @@
       "title": "Tools",
       "xid": "SuMhTyaBS9vwASxAt39DH",
       "description": "Architect tools are software tools that help architects to design, document, and manage software architectures. These tools can be used to create architecture diagrams, generate code, and automate the software development process.\n\n",
-      "id": "f0291389-e0c2-456a-8719-e880b8ca75bd",
+      "id": "6fd749c0-d063-4fe6-9555-e1495d0bbc2d",
       "children": [
         {
           "title": "Git",
           "xid": "ZEzYb-i55hBe9kK3bla94",
           "description": "Git is a distributed version control system designed to handle projects of any size with speed and efficiency. Created by Linus Torvalds in 2005, Git tracks changes in source code during software development, allowing multiple developers to work together on non-linear development. It provides strong support for branching, merging, and distributed development workflows. Git maintains a complete history of all changes, enabling easy rollbacks and comparisons between versions. Its distributed nature means each developer has a full copy of the repository, allowing for offline work and backup. Git's speed, flexibility, and robust branching and merging capabilities have made it the most widely used version control system in software development, particularly for open-source projects.\n\n",
-          "id": "ee0e6aa5-cc36-4b32-85c4-9e173d372f08",
+          "id": "04fba615-e86b-49bf-a658-70c89fe957d4",
           "children": [],
           "links": [
             {
@@ -840,7 +840,7 @@
           "title": "Slack",
           "xid": "CYnUg_okOcRrD7fSllxLW",
           "description": "Slack is a messaging app for business that connects people to the information that they need. By bringing people together to work as one unified team, Slack transforms the way that organisations communicate.\n\n",
-          "id": "9fa9b3dd-eb6e-45cd-b330-700017105635",
+          "id": "8cad06db-24ab-470c-b8c4-501854ca713d",
           "children": [],
           "links": [
             {
@@ -869,7 +869,7 @@
           "title": "Trello",
           "xid": "a6joS9WXg-rbw29_KfBd9",
           "description": "Trello is the visual tool that empowers your team to manage any type of project, workflow, or task tracking.\n\n",
-          "id": "f150a377-01d7-408f-87b4-c2f75fc9606e",
+          "id": "47a2e457-0c23-4e17-a556-252beadbbe6c",
           "children": [],
           "links": [
             {
@@ -893,7 +893,7 @@
           "title": "Atlassian Tools",
           "xid": "3bpd0iZTd3G-H8A7yrExY",
           "description": "Atlassian tools offer a suite of solutions designed to streamline collaboration, project management, and incident handling for various teams. Jira serves as the core workflow engine, allowing organizations to track tasks through customizable workflows with granular permissions. Specialized tools like Jira Service Desk cater to help desk teams for managing incoming requests, while Jira Core enables business teams to organize and execute task-oriented projects across departments like marketing, HR, and operations. For enhanced collaboration, Confluence acts as a knowledge-sharing wiki, allowing teams to create, share, and audit content changes seamlessly. Bitbucket provides Git repository management for enterprise teams, fostering efficient collaboration on codebases.\n\nOther tools cater to more specific needs. **Statuspage** focuses on communication during outages or maintenance, keeping users informed from investigation to resolution. **Opsgenie** ensures smooth incident management for always-on services, helping dev and ops teams stay in control of alerts. **Advanced Roadmaps** for Jira assists multiple teams in capacity planning and dependency tracking, while **Jira Align** supports enterprise-level agile planning to align strategy with execution and drive digital transformation. Together, these tools empower teams to improve efficiency, transparency, and adaptability across various workflows.\n\n",
-          "id": "dfebcd5e-252b-4731-bd9e-983b6ac3555b",
+          "id": "65eeee72-2306-4538-80f4-841482183f79",
           "children": [],
           "links": [
             {
@@ -956,13 +956,13 @@
       "title": "Architecture",
       "xid": "OaLmlfkZid7hKqJ9G8oNV",
       "description": "Architecture refers to the approach of designing and implementing software architecture with a focus on the tools and technologies that will be used during the development process. This perspective emphasizes that the selection of tools can significantly influence architectural decisions and the overall design of the system.",
-      "id": "2db627f1-059f-41c1-989c-8fed6ccf2711",
+      "id": "567d11e5-9f09-4594-acfd-a175ef3fc92d",
       "children": [
         {
           "title": "Serverless",
           "xid": "FAXKxl3fWUFShYmoCsInZ",
           "description": "Serverless architecture (also known as serverless computing or function as a service, FaaS) is a software design pattern where applications are hosted by a third-party service, eliminating the need for server software and hardware management by the developer. Applications are broken up into individual functions that can be invoked and scaled individually.\n\n",
-          "id": "e99bebee-b45c-4651-a568-a47a1e2e6c23",
+          "id": "11e7b4f7-a3b0-42f3-8c7f-9c822e64fbc7",
           "children": [],
           "links": [
             {
@@ -986,7 +986,7 @@
           "title": "Client / Server",
           "xid": "mka_DwiboH5sGFhXhk6ez",
           "description": "Client-server architecture is a computing model that separates tasks or workloads between service providers (servers) and service requesters (clients). This architecture is widely used in networked applications, including web applications, where clients interact with servers to access resources, services, and data.\n\n",
-          "id": "5e61c089-940f-4fee-ba8a-20e11b8f0a34",
+          "id": "9b470c76-f436-48c0-93d6-e8f928dd5830",
           "children": [],
           "links": [
             {
@@ -1005,7 +1005,7 @@
           "title": "Layered",
           "xid": "05hLO2_A8Tr6cLJGFRhOh",
           "description": "Layered architecture is a software design pattern where an application is divided into distinct layers, each with a specific responsibility, such as presentation, business logic, and data access. This approach promotes modularity, easier maintenance, testing, and component reusability. The most common implementation is the three-tier architecture, which separates concerns between the user interface, business rules, and data handling. However, it can introduce complexity, performance issues, tight coupling, and overhead if not carefully implemented. Despite these challenges, layered architecture is widely used in scalable and maintainable systems, particularly in enterprise applications.\n\n",
-          "id": "4e4ebf3f-06d3-416b-9bd3-a1c9abf99dd9",
+          "id": "54d9c48d-2dbf-4c6d-aa36-bf4aa04d6d65",
           "children": [],
           "links": [
             {
@@ -1019,7 +1019,7 @@
           "title": "Distributed Systems",
           "xid": "j7OP6RD_IAU6HsyiGaynx",
           "description": "Distributed systems are a type of computing architecture where components located on networked computers communicate and coordinate their actions by passing messages. These systems are designed to work together to achieve a common goal, often providing services or processing data in a collaborative manner.\n\n",
-          "id": "4d4e4164-0555-4e7f-80b9-19bee30bd653",
+          "id": "af0807c7-5a7b-4be9-ae4d-0345abb02db3",
           "children": [],
           "links": [
             {
@@ -1043,7 +1043,7 @@
           "title": "Service Oriented",
           "xid": "6uvmMgvOwGyuLC5TOhjFu",
           "description": "Service-oriented architecture (SOA) is an enterprise-wide approach to software development of application components that takes advantage of reusable software components, or services.\n\nSOA provides four different service types:\n\n1.  Functional services (i.e., business services), which are critical for business applications.\n2.  Enterprise services, which serve to implement functionality.\n3.  Application services, which are used to develop and deploy apps.\n4.  Infrastructure services, which are instrumental for backend processes like security and authentication.\n\n",
-          "id": "9915da0f-e4d1-416c-abc9-3251b49e57d5",
+          "id": "70afa2d9-f64f-4b35-bd49-c2ce8b1bab29",
           "children": [],
           "links": [
             {
@@ -1060,13 +1060,13 @@
       "title": "Security",
       "xid": "IzFTn5-tQuF_Z0cG_w6CW",
       "description": "Security is a broad field that encompasses various measures and practices designed to protect information, systems, and networks from unauthorized access, damage, or theft. It is essential in safeguarding sensitive data and maintaining the integrity and availability of resources.\n\n",
-      "id": "c284f60f-072f-4a99-865e-bb11f5f21d90",
+      "id": "d183d3a2-f3b5-4353-ae6b-febaa8ba8ebd",
       "children": [
         {
           "title": "Hashing Algorithms",
           "xid": "7tBAD0ox9hTK4D483GTRo",
           "description": "Hashing algorithms are used to generate a unique value for a given input. This value is called a hash. Hashing algorithms are used to verify the integrity of data, to store passwords, and to generate unique identifiers for data.\n\n",
-          "id": "c7f87191-120e-4b91-97d6-b41c60644937",
+          "id": "9d3ef48a-0737-4368-87bf-9a72e832f884",
           "children": [],
           "links": [
             {
@@ -1100,7 +1100,7 @@
           "title": "PKI",
           "xid": "OpL2EqvHbUmFgnpuhtZPr",
           "description": "A public key infrastructure (PKI) is a set of roles, policies, hardware, software, and procedures to create, manage, distribute, use, store and revoke digital certificates and public-key encryption. The purpose of a PKI is to facilitate the secure electronic transfer of information for a range of network activities such as e-commerce, internet banking, and confidential email. It is required for activities where simple passwords are an inadequate authentication method, and the more rigorous proof is required to confirm the identity of the parties involved in the communication and to validate the information being transferred.\n\n",
-          "id": "55e6ce0d-29fb-4ec7-b3e1-745e3b4c6914",
+          "id": "23846586-6509-47e4-9755-8272ea561b2d",
           "children": [],
           "links": [
             {
@@ -1119,7 +1119,7 @@
           "title": "OWASP",
           "xid": "KhqUK-7jdClu9M2Pq7x--",
           "description": "OWASP or Open Web Application Security Project is an online community that produces freely-available articles, methodologies, documentation, tools, and technologies in the field of web application security.\n\n",
-          "id": "1ad335be-631a-406c-9307-b5d2677e2e21",
+          "id": "5fe96714-e9f3-409a-a785-d6c0a50d707a",
           "children": [],
           "links": [
             {
@@ -1148,7 +1148,7 @@
           "title": "Auth Strategies",
           "xid": "KiwFXB6yd0go30zAFMTJt",
           "description": "Authentication strategies are essential for ensuring secure access to applications and systems. They define how users are verified before being granted access to resources. Here are some common authentication strategies:\n\nPassword-Based Authentication\n\nMulti-Factor Authentication (MFA)\n\nOAuth and OpenID Connect\n\nToken-Based Authentication:\n\nBiometric Authentication\n\nCertificate-Based Authentication\n\n",
-          "id": "38844385-4baa-4687-bd03-567dea9d1c4b",
+          "id": "4afa1f2b-885c-4875-9ca9-d43366e65a9c",
           "children": [],
           "links": [
             {
@@ -1206,13 +1206,13 @@
       "title": "Working with Data",
       "xid": "YCJYRA3b-YSm8vKmGUFk5",
       "description": "Working with databases involves storing, managing, and retrieving data efficiently to support applications and business processes. Databases can be relational, like MySQL and PostgreSQL, which use structured tables and SQL for querying, or non-relational (NoSQL), like MongoDB and Cassandra, which handle unstructured or semi-structured data. Effective database management requires designing normalized schemas for relational databases, ensuring data integrity, and optimizing queries for performance. For NoSQL databases, it's important to choose the right type (e.g., document, key-value, columnar) based on application needs. Additionally, managing transactions, indexing, backups, and security are crucial for maintaining reliable and scalable database systems.\n\n",
-      "id": "ffef0063-de79-4def-9210-27d27e300283",
+      "id": "af00c7c3-0623-4aa1-9cea-fea9fe2ffb65",
       "children": [
         {
           "title": "Hadoop, Spark, MapReduce",
           "xid": "92GG4IRZ3FijumC94aL-T",
           "description": "Spark is a data processing framework that can quickly perform processing tasks on very large data sets, and can also distribute data processing tasks across multiple computers, either on its own or in tandem with other distributed computing tools.\n\nHadoop MapReduce is a software framework for easily writing applications which process vast amounts of data (multi-terabyte data-sets) in-parallel on large clusters (thousands of nodes) of commodity hardware in a reliable, fault-tolerant manner.\n\n",
-          "id": "ef322c49-8376-4876-bb00-d7be13fe3a0e",
+          "id": "1010ece2-8a96-4c05-9f82-8834062e6949",
           "children": [],
           "links": [
             {
@@ -1241,7 +1241,7 @@
           "title": "ETL, Datawarehouses",
           "xid": "JUFE4OQhnXOt1J_MG-Sjf",
           "description": "ETL (Extract, Transform, Load) is a key process in data warehousing, enabling the integration of data from multiple sources into a centralized database. The process begins by **extracting** data from original sources, followed by **transforming** it to ensure quality, deduplication, and combination, and finally **loading** it into the target database. ETL tools streamline this process, allowing companies to consolidate diverse data types and ensure seamless integration for effective data analysis and decision-making.\n\n",
-          "id": "7cb1ec4f-abf6-4b51-83d6-4b64ad82a34e",
+          "id": "e749fc3c-437a-450b-b56a-8388b0c5f413",
           "children": [],
           "links": [
             {
@@ -1265,7 +1265,7 @@
           "title": "SQL Databases",
           "xid": "n5AcBt_u8qtTe3PP9svPZ",
           "description": "SQL stands for Structured Query Language. It's used for relational databases. A SQL database is a collection of tables that stores a specific set of structured data. Examples of SQL Databases includes MariaDB, MySQL and PostgreSQL.\n\n",
-          "id": "69faa94a-0abb-4e12-ab6d-e08e1c770386",
+          "id": "20a69fed-f70e-447c-a381-b2a4b1a239da",
           "children": [],
           "links": [
             {
@@ -1294,7 +1294,7 @@
           "title": "NoSQL Databases",
           "xid": "57liQPaPyVpE-mdLnsbi0",
           "description": "NoSQL databases (aka \"not only SQL\") are non-tabular databases and store data differently than relational tables. NoSQL databases come in a variety of types based on their data model. The main types are document, key-value, wide-column, and graph. They provide flexible schemas and scale easily with large amounts of data and high user loads.\n\nTypes of NoSQL databases\n\n*   Document databases Ex. MongoDB\n*   Key-value databases Ex. Redis\n*   Wide-column databases Ex. Cassandra\n*   Graph databases Ex. Neo4J\n\n",
-          "id": "1538f7be-05d4-4a13-9813-7318a530cf60",
+          "id": "3a7af5bb-5583-41d5-a037-46d18470f473",
           "children": [],
           "links": [
             {
@@ -1318,13 +1318,13 @@
           "title": "analytics",
           "xid": "",
           "description": "analytics",
-          "id": "f69b7c3c-c2af-417d-a205-a3059f9e06b6",
+          "id": "ee74a079-69a4-4a39-8717-8addf1891e7a",
           "children": [
             {
               "title": "Apache Spark",
               "xid": "a0baFv7hVWZGvS5VLh5ig",
               "description": "Apache Spark is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters.\n\n",
-              "id": "2823418d-8803-40ad-b81f-191deffb5963",
+              "id": "301108ae-687f-4768-a015-8d058dae2c4d",
               "children": [],
               "links": [
                 {
@@ -1343,7 +1343,7 @@
               "title": "Hadoop",
               "xid": "I_VjjmMK52_tS8qjQUspN",
               "description": "The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.\n\n",
-              "id": "934ba2c4-0b35-4df9-82ed-c809de412573",
+              "id": "ba4ffcca-0c09-4a39-8118-0e8e7f24f4e0",
               "children": [],
               "links": [
                 {
@@ -1367,7 +1367,7 @@
               "title": "Datawarehouse Principles",
               "xid": "B5YtP8C1A0jB3MOdg0c_q",
               "description": "It is based on the assumption that every system should take care of a concern in a way that such concern should be encapsulated by the system itself.\n\n",
-              "id": "d8c2b211-a051-454f-a389-ac1a980f520b",
+              "id": "1dcd728c-18ee-4f85-8cfe-e57beae84d30",
               "children": [],
               "links": [
                 {
@@ -1393,13 +1393,13 @@
       "title": "APIs & Integrations",
       "xid": "Ocn7-ctpnl71ZCZ_uV-uD",
       "description": "APIs (Application Programming Interfaces) are essential for enabling communication between different software applications, allowing them to share data and functionality seamlessly. They serve as the bridge that connects disparate systems, making it possible for applications to interact without needing to know the internal workings of one another. Integration, on the other hand, refers to the process of connecting these systems to work together effectively, often utilizing APIs to facilitate data exchange and process automation. By leveraging APIs in integrations, organizations can enhance operational efficiency, reduce data silos, and improve user experiences through seamless data flow between applications.\n\n",
-      "id": "43f31328-54eb-401e-b0d0-b8dbb0080036",
+      "id": "b730d098-0b55-4c8e-b13f-cafdaeb5128f",
       "children": [
         {
           "title": "gRPC",
           "xid": "priDGksAvJ05YzakkTFtM",
           "description": "gRPC is a platform agnostic serialization protocol that is used to communicate between services. Designed by Google in 2015, it is a modern alternative to REST APIs. It is a binary protocol that uses HTTP/2 as a transport layer. It is a high performance, open source, general-purpose RPC framework that puts mobile and HTTP/2 first.\n\nIt's main use case is for communication between two different languages within the same application. You can use Python to communicate with Go, or Java to communicate with C#. gRPC uses the protocol buffer language to define the structure of the data that is\n\n",
-          "id": "7883e223-63f5-41e4-923c-5b85829fbd40",
+          "id": "36eee7ff-de1e-4f6a-9faa-08e9a9d987be",
           "children": [],
           "links": [
             {
@@ -1433,7 +1433,7 @@
           "title": "ESB, SOAP",
           "xid": "fELnBA0eOoE-d9rSmDJ8l",
           "description": "ESB (Enterprise Service Bus) and SOAP (Simple Object Access Protocol) are two technologies that enable communication between different systems. ESB is a software architecture that allows for the integration of various systems, such as databases, web services, and mobile applications. SOAP is a messaging protocol that enables the exchange of structured data between systems over the internet.\n\n",
-          "id": "29815aa0-5382-4072-a9a2-a703ad912a35",
+          "id": "0fb2a1b2-b904-437d-bebc-84e0f27e50f3",
           "children": [],
           "links": [
             {
@@ -1457,7 +1457,7 @@
           "title": "GraphQL",
           "xid": "Sp3FdPT4F9YnTGvlE_vyq",
           "description": "GraphQL is a query language and runtime for APIs, developed by Facebook. GraphQL's flexibility and efficiency make it popular for building complex applications, especially those with diverse client requirements. It's particularly useful for mobile applications where bandwidth efficiency is crucial. While it requires a paradigm shift from REST, many developers and organizations find GraphQL's benefits outweigh the learning curve, especially for large-scale or rapidly evolving APIs.\n\n",
-          "id": "0a9101ff-27cc-4e41-a14e-7f02add7583b",
+          "id": "cc99be7d-f64e-4426-a3b6-178014a76887",
           "children": [],
           "links": [
             {
@@ -1496,7 +1496,7 @@
           "title": "REST",
           "xid": "Ss43xwK1ydEToj6XmmCt7",
           "description": "REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other.\n\n",
-          "id": "65a7b086-1dee-40b2-8594-032a5f7e8b46",
+          "id": "77d261bb-7f13-48d3-99ad-da1504827355",
           "children": [],
           "links": [
             {
@@ -1525,7 +1525,7 @@
           "title": "BPM, BPEL",
           "xid": "DwNda95-fE7LWnDA6u1LU",
           "description": "BPM: Business Process Management\n--------------------------------\n\nMedium or large enterprises needs robust processes to streamline their business needs by reducing the cost incurred per process and diminishing the turn around time for each activity. To achieve the above, there are various BPM tools like PEGA, IBM BPM, Appian, etc. Basically these tools automate the processes through a robust process modelling and implementation.\n\nBPMN: Business Process Management Notations\n-------------------------------------------\n\nIts is a standard for representing business processes graphically. While modelling the process, the notations used are complied with BPMN (there are other like EPC, etc.). So BPMN is a standard notation that BPM consultants follow to model the business process. BPMN has versions and now BPMN 2.0 is the standard one.\n\nBPEL : Business Process Execution Language\n------------------------------------------\n\nProgrammers use BPEL to define how a business process that involves web services will be executed. BPEL messages are typically used to invoke remote services, orchestrate process execution and manage events and exceptions. BPEL is often associated with Business Process Management Notation. In many organizations, analysts use BPMN to visualize business processes and developers transform the visualizations to BPEL for execution.\n\n",
-          "id": "519a55b7-6c91-4148-a57b-681eb5cfd7e5",
+          "id": "2f612a81-97b6-43c6-9154-ed292ba78d2a",
           "children": [],
           "links": [
             {
@@ -1549,7 +1549,7 @@
           "title": "Messaging Queues",
           "xid": "4NVdEbmpQVHpBc7582S6E",
           "description": "Message queuing makes it possible for applications to communicate asynchronously, by sending messages to each other via a queue. A message queue provides temporary storage between the sender and the receiver so that the sender can keep operating without interruption when the destination program is busy or not connected.\n\n",
-          "id": "0f51b621-2220-434b-9c89-24090d03d2bc",
+          "id": "10ca3e59-55bc-44e3-a68e-bed4fdd22431",
           "children": [],
           "links": [
             {
@@ -1587,13 +1587,13 @@
       "title": "Web, Mobile",
       "xid": "j9Y2YbBKi3clO_sZ2L_hQ",
       "description": "Web apps and mobile apps are two distinct types of software applications designed to run on different platforms. Web apps are accessed through web browsers and run on various devices using internet connectivity. They are platform-independent, making them easy to update and maintain, but often require an active internet connection. Mobile apps, on the other hand, are specifically developed for mobile operating systems like Android and iOS, providing enhanced performance, offline functionality, and seamless access to device features such as GPS, cameras, and sensors. While web apps prioritize accessibility and cost-effectiveness, mobile apps focus on delivering a tailored and optimized user experience.\n\n",
-      "id": "1be9aa53-498a-460b-be73-9b183041f7aa",
+      "id": "fddeafbe-49be-4616-b043-5cc1e50cf552",
       "children": [
         {
           "title": "Reactive Programming",
           "xid": "C0g_kQFlte5siHMHwlHQb",
           "description": "Reactive programming describes a design paradigm that relies on asynchronous programming logic to handle real-time updates to otherwise static content. It provides an efficient means -- the use of automated data streams -- to handle data updates to content whenever a user makes an inquiry.\n\n",
-          "id": "4df2ba52-f70f-4a44-8864-1e29de7dc345",
+          "id": "773967cf-6443-4e5e-9467-c592a488d448",
           "children": [],
           "links": [
             {
@@ -1607,7 +1607,7 @@
           "title": "React, Vue, Angular",
           "xid": "mCiYCbKIOVU34qil_q7Hg",
           "description": "React is the most popular front-end JavaScript library for building user interfaces. React can also render on the server using Node and power mobile apps using React Native.\n\nVue.js is a progressive JavaScript framework designed for building user interfaces and single-page applications.\n\nAngular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google.\n\n",
-          "id": "89183fa8-ecba-45fd-95b6-c67149908acb",
+          "id": "658dd6f8-e3af-49aa-971d-73ddcb1fd100",
           "children": [],
           "links": [
             {
@@ -1666,7 +1666,7 @@
           "title": "SPA, SSR, SSG",
           "xid": "ulwgDCQi_BYx5lmll7pzU",
           "description": "*   **SPA**: A single page application loads only a single web document from the server and then updates the content of that document on demand via `Javascript APIs` without reloading the entire document. React, Vue, Angular are the top frameworks used to create single page applications.\n*   **SSR**: This technique uses a server like `Node.js` to fully render the web document upon the receival of a request and then send it back to the client. This way the user get an interactive document with all the necessary information without having to wait for any JavaScript or CSS files to load.\n*   **SSG**: Static site generation renders the web document in the server(like SSR), however the page is rendered at **build time**. So, instead of rendering the page on the server upon the receival of a request, the page is already rendered in the server, waiting to be served to the client.\n\n",
-          "id": "674df82f-d0fa-4b3d-ad9e-f2e0c1696af3",
+          "id": "7ada5d40-603f-446b-9726-8fa73a46de2b",
           "children": [],
           "links": [
             {
@@ -1690,7 +1690,7 @@
           "title": "Microfrontends",
           "xid": "vpko5Kyf6BZ5MHpxXOKaf",
           "description": "Microfrontends is an architectural style where independently deliverable frontend applications built by different teams using different technologies are composed into a greater whole. Simply, a Micro-Frontend is a portion of a webpage (not the entire page). There is a \u201cHost\u201d or a \u201cContainer\u201d page in the Micro-Frontend Architecture page that can host one or more Micro-Frontends.\n\n",
-          "id": "3a05aa2e-6c23-4022-b502-fd6a7cf91f86",
+          "id": "816445f2-4d27-4396-9d23-485134be7c70",
           "children": [],
           "links": [
             {
@@ -1714,7 +1714,7 @@
           "title": "W3C and WHATWG",
           "xid": "s0RvufK2PLMXtlsn2KAUN",
           "description": "World Wide Web Consortium (W3C) standards define the best practices for web development to enable developers to build rich interactive experiences that are available on any device. Theses standards range from recommended web technologies such as HTML, CSS, XML to the generally accepted principles of web architecture, semantics and services.\n\nWeb Hypertext Application Technology Working Group (WHATWG) is another set of web standards that came into existence after W3C announced that it was going to be focusing on XHTML over HTML.\n\n",
-          "id": "7f70ba17-3227-4920-864f-fdfa7c6cd97e",
+          "id": "d8f191bf-5790-4d79-b283-70321b70436f",
           "children": [],
           "links": [
             {
@@ -1742,13 +1742,13 @@
       "title": "Frameworks",
       "xid": "hjlkxYZS7Zf9En3IUS-Wm",
       "description": "Architect frameworks are tools that provide a structured approach to software architecture. They help architects organize their work, manage dependencies, and ensure consistency across projects. Some popular frameworks include:\n\n",
-      "id": "a19a60cb-beee-4dad-913c-79212159c3a0",
+      "id": "c43ac9cc-98e3-4949-a5ca-088d513a8c0d",
       "children": [
         {
           "title": "BABOK",
           "xid": "LQlzVxUxM3haWRwbhYHKY",
           "description": "The guide to the Business Analysis Body of Knowledge (BABOK Guide) is a book from the International Institute of Business Analysis (IIBA) that provides business analysts (BAs) with strategies for using data to improve an organization's workflow processes, technology, products and services.\n\n",
-          "id": "0cfddb04-8490-4e8d-a881-d8f0c22c7680",
+          "id": "6a0cb4c0-5560-4c9d-8d84-96b8735012f6",
           "children": [],
           "links": [
             {
@@ -1767,7 +1767,7 @@
           "title": "IAF",
           "xid": "wFu9VO48EYbIQrsM8YUCj",
           "description": "The Integrated Architecture Framework (IAF) is an enterprise architecture framework that covers business, information, information system and technology infrastructure.\n\n",
-          "id": "70c0c879-29b2-47cf-b482-c9eac2b7cf0e",
+          "id": "432d896a-49ec-47c1-8bcb-a0b610ac97c1",
           "children": [],
           "links": [
             {
@@ -1786,7 +1786,7 @@
           "title": "UML",
           "xid": "8FTKnAKNL9LnZBrw9YXqK",
           "description": "The Unified Modeling Language, or UML, is a modeling language that is intended to provide a standard way to visualize and describe the design of a system.\n\n",
-          "id": "27d446af-baf5-49c7-a4ba-2a68466fb067",
+          "id": "af3f6990-636f-4adc-aaaa-65f94a5ccc22",
           "children": [],
           "links": [
             {
@@ -1815,7 +1815,7 @@
           "title": "TOGAF",
           "xid": "5TDTU22Fla2mRr6JeOcaY",
           "description": "The TOGAF content framework provides a detailed model of architectural work products, including deliverables, artifacts within deliverables, and the architectural building blocks that artifacts represent.\n\n",
-          "id": "d22d9171-f830-400a-ace3-694e46948fc8",
+          "id": "9b08e5d3-cb87-4e35-a7cd-3fc1591fe324",
           "children": [],
           "links": [
             {
@@ -1848,19 +1848,19 @@
       "title": "Management",
       "xid": "UyIwiIiKaa6LTQaqzbCam",
       "description": "Management in software architects encompasses various responsibilities and practices that ensure the successful design, development, and implementation of software systems. Software architects play a critical role in bridging the gap between business requirements and technical implementation.\n\n",
-      "id": "246839c6-4737-4c31-87b6-d867a44f8213",
+      "id": "f58653c0-9b00-4905-8902-006ee73ad72a",
       "children": [
         {
           "title": "certifications",
           "xid": "",
           "description": "certifications",
-          "id": "bea4532e-a552-41b2-a362-4196f904b836",
+          "id": "803e2277-e4ed-4b6a-8c32-04b94a7d9b7c",
           "children": [
             {
               "title": "PMI",
               "xid": "hRug9yJKYacB9X_2cUalR",
               "description": "The PMI certification (Project Management Institute) is an internationally recognized credential in project management. The most well-known is the PMP\u00ae (Project Management Professional), which validates the skills and knowledge of professionals to manage projects effectively by applying best practices and standards defined in the PMBOK\u00ae (Project Management Body of Knowledge) guide.\n\n",
-              "id": "144b0ce4-cf9d-4bde-ac3f-755d475be15e",
+              "id": "03d6e1b6-e532-43f1-8b3a-61f8739d894b",
               "children": [],
               "links": [
                 {
@@ -1877,13 +1877,13 @@
           "title": "agile-scrum",
           "xid": "",
           "description": "agile-scrum",
-          "id": "7ce6edf5-5b57-4348-b0a6-6ef1ecd1a0b6",
+          "id": "fafc3b5b-decb-48e2-adc0-63fc92bd46bc",
           "children": [
             {
               "title": "LeSS",
               "xid": "qwpsGRFgzAYstM7bJA2ZJ",
               "description": "**LeSS** (Large-Scale-Scrum) is an agile framework designed to scale Scrum across multiple teams working on a single product. It adheres to Scrum's principles, emphasizing simplicity and continuous improvement. LeSS encourages coordination between teams by using a single backlog and a common Product Owner. Each team is responsible for parts of the product, but they collaborate in its joint development, with frequent feedback loops to adjust project direction. Its goal is to minimize bureaucracy and maximize value delivery in an agile and efficient way.\n\n",
-              "id": "59b3ac7e-382b-49c3-87e8-6955c066440b",
+              "id": "c8ce9590-3cb7-4254-9c3d-544e98f17339",
               "children": [],
               "links": [
                 {
@@ -1902,7 +1902,7 @@
               "title": "SaFE",
               "xid": "Bg7ru1q1j6pNB43HGxnHT",
               "description": "**SAFe** is an agile framework designed to scale agile practices in large and complex organizations. Unlike LeSS, SAFe is more structured and provides a formal approach to coordinating multiple teams, programs, and portfolios. It incorporates elements of `Lean`, `DevOps`, and `agile principles`, and defines additional roles, ceremonies, and artifacts to align teams' goals with the business strategy. SAFe enables **large-scale planning**, **continuous delivery**, and **improvement of organizational efficiency**, offering a comprehensive framework for agile transformation at the corporate level.\n\n",
-              "id": "4f919968-7e8a-44cc-a437-299eff488f4c",
+              "id": "70a8934d-0b5e-4c3c-b7f2-4f12791fef0f",
               "children": [],
               "links": [
                 {
@@ -1933,13 +1933,13 @@
       "title": "Networks",
       "xid": "cBWJ6Duw99tSKr7U6OW3A",
       "description": "A computer network is a set of computers sharing resources located on or provided by network nodes. Computers use common communication protocols over digital interconnections to communicate with each other. These interconnections are made up of telecommunication network technologies based on physically wired, optical, and wireless radio-frequency methods that may be arranged in a variety of network topologies.\n\n",
-      "id": "176a5848-fc2c-4df3-ac0e-b6b9b7220a91",
+      "id": "d83f4d69-7d99-4a16-9613-1ff0393b5f53",
       "children": [
         {
           "title": "OSI",
           "xid": "Mt5W1IvuHevNXVRlh7z26",
           "description": "The OSI and TCP/IP model is used to help the developer to design their system for interoperability. The OSI model has 7 layers while the TCP/IP model has a more summarized form of the OSI model only consisting 4 layers. This is important if you're are trying to design a system to communicate with other systems.\n\n",
-          "id": "4844ba8b-eb81-4159-a918-baf73b1905eb",
+          "id": "a27bf6d3-5f01-418e-93dd-fd8960117ac8",
           "children": [],
           "links": [
             {
@@ -1953,7 +1953,7 @@
           "title": "HTTP, HTTPS",
           "xid": "Nq6o6Ty8VyNRsvg-UWp7D",
           "description": "HTTP is the `TCP/IP` based application layer communication protocol which standardizes how the client and server communicate with each other. It defines how the content is requested and transmitted across the internet.\n\nHTTPS (Hypertext Transfer Protocol Secure) is the secure version of HTTP, which is the primary protocol used to send data between a web browser and a website.\n\n`HTTPS = HTTP + SSL/TLS`\n\n",
-          "id": "fadec80f-a59c-4ad2-93b3-141b0432905b",
+          "id": "88fe0dc0-e7c8-4c8d-b71f-f46d908fec8f",
           "children": [],
           "links": [
             {
@@ -2002,7 +2002,7 @@
           "title": "Proxies",
           "xid": "6_EOmU5GYGDGzmNoLY8cB",
           "description": "In computer networking, a proxy server is a server application that acts as an intermediary between a client requesting a resource and the server providing that resource.\n\n",
-          "id": "c0fbc423-99e2-4a65-9c46-33fcd111ca62",
+          "id": "7e58e05e-3fb2-4522-90fb-e7dafbe14059",
           "children": [],
           "links": [
             {
@@ -2016,7 +2016,7 @@
           "title": "Firewalls",
           "xid": "Hqk_GGsFi14SI5fgPSoGV",
           "description": "A Firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization's previously established security policies. Firewalls usually sit between a trusted network and an untrusted network; oftentimes the untrusted network is the Internet. For example, office networks often use a firewall to protect their network from online threats.\n\n",
-          "id": "c2e606df-4166-4b3b-bcc2-e189cc556d44",
+          "id": "08b3c327-f229-4136-bc74-c38558ebd8fa",
           "children": [],
           "links": [
             {
@@ -2054,13 +2054,13 @@
       "title": "Operations Knowledge",
       "xid": "EdJhuNhMSWjeVxGW-RZtL",
       "description": "Operational knowledge refers to the understanding and insights that software architects need to effectively design, implement, and manage software systems throughout their lifecycle. This knowledge encompasses various aspects of software development, deployment, and maintenance, and it is crucial for ensuring that systems operate efficiently, reliably, and securely.",
-      "id": "bd4d8c9f-cfca-4d39-9ea1-6ff5b3914d41",
+      "id": "790c7739-c5a4-4d76-8fb5-218d6b699fd8",
       "children": [
         {
           "title": "Infrastructure as Code",
           "xid": "igf9yp1lRdAlN5gyQ8HHC",
           "description": "Sometimes referred to as IaC, this section refers to the techniques and tools used to define infrastructure, typically in a markup language like YAML or JSON. Infrastructure as code allows DevOps Engineers to use the same workflows used by software developers to version, roll back, and otherwise manage changes.\n\nThe term Infrastructure as Code encompasses everything from bootstrapping to configuration to orchestration, and it is considered a best practice in the industry to manage all infrastructure as code. This technique precipitated the explosion in system complexity seen in modern DevOps organizations.\n\n",
-          "id": "cf608536-b319-4cda-9854-e41cee4e1c8c",
+          "id": "0682ad6b-a8da-4d2c-8d64-fb5f7d83b5ad",
           "children": [],
           "links": [
             {
@@ -2099,7 +2099,7 @@
           "title": "Cloud Providers",
           "xid": "C0rKd5Rr27Z1_GleoEZxF",
           "description": "Cloud providers provide a layer of APIs to abstract infrastructure and provision it based on security and billing boundaries. The cloud runs on servers in data centers, but the abstractions cleverly give the appearance of interacting with a single \u201cplatform\u201d or large application. The ability to quickly provision, configure, and secure resources with cloud providers has been key to both the tremendous success and complexity of modern DevOps.\n\n",
-          "id": "a6bfae64-26ec-4bdd-83d6-9abed3e3d46c",
+          "id": "5860dcc2-7b8a-4603-99ef-6fdbef095a66",
           "children": [],
           "links": [
             {
@@ -2123,7 +2123,7 @@
           "title": "Serverless Concepts",
           "xid": "WoXoVwkSqXTP5U8HtyJOL",
           "description": "Serverless is a cloud-native development model that allows developers to build and run applications without having to manage servers. There are still servers in serverless, but they are abstracted away from app development. A cloud provider handles the routine work of provisioning, maintaining, and scaling the server infrastructure. Developers can simply package their code in containers for deployment.\n\n",
-          "id": "113f4391-3659-4af7-a0fc-b0cf64971d25",
+          "id": "d2e800d7-497c-44e1-bc91-7304e8280591",
           "children": [],
           "links": [
             {
@@ -2152,7 +2152,7 @@
           "title": "Linux / Unix",
           "xid": "XnvlRrOhdoMsiGwGEhBro",
           "description": "Knowledge of UNIX is a must for almost all kind of development as most of the codes that you write is most likely going to be finally deployed on a UNIX/Linux machine. Linux has been the backbone of the free and open source software movement, providing a simple and elegant operating system for almost all your needs.\n\n",
-          "id": "2d65f21c-310e-45b2-bcbb-4b5bbe11b620",
+          "id": "592ad7fe-c254-4acf-b19b-e91df7ccbc4d",
           "children": [],
           "links": [
             {
@@ -2191,7 +2191,7 @@
           "title": "Service Mesh",
           "xid": "OErbfM-H3laFm47GCHNPI",
           "description": "A Service Mesh is a dedicated infrastructure layer for handling service-to-service communication. It\u2019s responsible for the reliable delivery of requests through the complex topology of services that comprise a modern, cloud native application. In layman's terms, it's a tool which helps you to control how different services communicate with each other.\n\n",
-          "id": "cf6e0160-090f-416c-ad17-05fbbbed467b",
+          "id": "bda83c30-7c6f-4092-8a71-9c013adf97a0",
           "children": [],
           "links": [
             {
@@ -2220,7 +2220,7 @@
           "title": "CI / CD",
           "xid": "isavRe4ANVn77ZX6gNSLH",
           "description": "CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development. The main concepts attributed to CI/CD are continuous integration, continuous delivery, and continuous deployment. CI/CD is a solution to the problems integrating new code can cause for development and operations teams (AKA \"integration hell\").\n\n",
-          "id": "e45ba7a5-d5a8-45e6-a55c-23ef4b2d6a1f",
+          "id": "72cc286c-03d4-4766-923e-4a68a3f89b58",
           "children": [],
           "links": [
             {
@@ -2249,7 +2249,7 @@
           "title": "Containers",
           "xid": "l3oeo65FyV5HHvw5n_1wa",
           "description": "Containers are a construct in which cgroups, namespaces, and chroot are used to fully encapsulate and isolate a process. This encapsulated process, called a container image, shares the kernel of the host with other containers, allowing containers to be significantly smaller and faster than virtual machines. These images are designed for portability, allowing for full local testing of a static image, and easy deployment to a container management platform.\n\n",
-          "id": "e4826bfd-88c2-4844-bab9-d590184f733f",
+          "id": "beea4485-6520-4db4-892c-6eb886b35b12",
           "children": [],
           "links": [
             {
@@ -2298,7 +2298,7 @@
           "title": "Cloud Design Patterns",
           "xid": "CxceVdaNCyKDhs0huDtcL",
           "description": "These design patterns are useful for building reliable, scalable, secure applications in the cloud. The cloud design patterns where each pattern describes the problem that the pattern addresses, considerations for applying the pattern, and an example based on Microsoft Azure. Most patterns include code samples or snippets that show how to implement the pattern on Azure. However, most patterns are relevant to any distributed system, whether hosted on Azure or other cloud platforms.\n\n",
-          "id": "60499571-8120-4cfd-9313-eb940c72e0a5",
+          "id": "77bf1d41-de53-4cb5-abda-f2e3acc1c8bf",
           "children": [],
           "links": [
             {
@@ -2320,13 +2320,13 @@
       "title": "Enterprise Software",
       "xid": "8yALyPVUZPtd7LX3GrO1e",
       "description": "Enterprise software refers to software applications that are designed to meet the needs of large organizations or enterprises. These applications are typically complex, scalable, and capable of integrating with other systems to support a wide range of business functions. Enterprise software is used to improve efficiency, streamline processes, and enhance productivity across various departments within an organization.\n\n",
-      "id": "b762b4f1-46d3-40c7-a0eb-90736e61d3ab",
+      "id": "0c00bc65-7bcb-4ad1-8296-1431c18aa70b",
       "children": [
         {
           "title": "MS Dynamics",
           "xid": "gdtI0H_PzzTj_aFQn_NeA",
           "description": "Microsoft Dynamics 365 is a combination of both Enterprise Resource Planning (ERP) software and Customer Relationship Management (CRM) software.\n\n",
-          "id": "e157bd62-8106-41e5-a81f-5a8063fecb8a",
+          "id": "f3605390-7cbc-4b53-8d32-e537817e8aea",
           "children": [],
           "links": [
             {
@@ -2345,7 +2345,7 @@
           "title": "SAP ERP, HANA, Business Objects",
           "xid": "TxWAznp1tUtZ1MvThf9M1",
           "description": "SAP (Systems, Applications, and Products in Data Processing) is a leading enterprise resource planning (ERP) software provider that helps organizations manage their business operations and customer relations effectively. SAP ERP integrates various business processes, such as finance, sales, procurement, and human resources, into a unified system, enabling real-time data access and improved decision-making. SAP HANA (High-Performance Analytic Appliance) is an in-memory database and application development platform that allows businesses to process large volumes of data quickly and efficiently, supporting advanced analytics and real-time reporting. BusinessObjects, part of the SAP Business Intelligence suite, provides powerful tools for data visualization, reporting, and analysis, enabling users to transform raw data into actionable insights. Together, these solutions empower organizations to streamline operations, enhance productivity, and drive strategic decision-making through data-driven insights.\n\n",
-          "id": "11f650c9-3dc8-4b06-9185-a69536b31444",
+          "id": "c3a08832-d8e5-494e-a311-dffde157cc88",
           "children": [],
           "links": [
             {
@@ -2359,7 +2359,7 @@
           "title": "EMC DMS",
           "xid": "YfYviOXqGVp9C6DuhqBrn",
           "description": "EMC (Enterprise Metadata Catalog) and DMS (Document Management System) are two distinct concepts in the realm of data management and information systems. Below is an overview of each:\n\nAn Enterprise Metadata Catalog (EMC) is a centralized repository that stores metadata about data assets within an organization. This metadata provides context, meaning, and structure to the data, enabling better data management and utilization.\n\nA Document Management System (DMS) is a software solution that helps organizations capture, store, manage, and track electronic documents and images of paper-based information. DMS solutions are essential for organizing and securing documents in a digital format.\n\n",
-          "id": "95b49e78-789e-4361-802a-9ed3316886df",
+          "id": "ffc9b9b4-c79f-4003-a073-664d92ce7dd4",
           "children": [],
           "links": [
             {
@@ -2378,7 +2378,7 @@
           "title": "IBM BPM",
           "xid": "5EVecZmvor09LjD7WR_Y9",
           "description": "IBM BPM is a comprehensive business process management platform. It provides a robust set of tools to author, test, and deploy business processes, as well as full visibility and insight to managing those business processes.\n\n",
-          "id": "779a2f32-c6ba-4db2-b28a-cc7636afd680",
+          "id": "09482404-d7bd-4dc2-bb1e-800195ecf1b0",
           "children": [],
           "links": [
             {
@@ -2402,7 +2402,7 @@
           "title": "Salesforce",
           "xid": "mOXyzdNn8W-9R99ffcnor",
           "description": "Salesforce is a cloud platform helping companies to manage relationships with their customers\n\n",
-          "id": "e0042c3a-88d7-40d6-926c-ae060d32372e",
+          "id": "ef2f2e7e-fa6b-40cc-9cbc-8dcde095097a",
           "children": [],
           "links": [
             {
@@ -2431,5 +2431,6 @@
         }
       ]
     }
-  ]
+  ],
+  "links": []
 }

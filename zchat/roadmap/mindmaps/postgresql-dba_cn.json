@@ -1,0 +1,3668 @@
+{
+  "title": "PostgreSQL数据库管理员（DBA）",
+  "description": "逐步指南：成为2025年现代PostgreSQL数据库管理员之路",
+  "links": [],
+  "children": [
+    {
+      "title": "简介",
+      "description": "PostgreSQL 是一个功能强大的开源对象-关系型数据库管理系统（Object-Relational Database Management System，ORDBMS），以可靠性、可扩展性和符合SQL标准而闻名。\n\n其开发始于20世纪80年代由加州大学伯克利分校开发，目前已成为全球最受欢迎的开源数据库之一。\n\n",
+      "links": [
+        {
+          "title": "PostgreSQL 官方网站",
+          "url": "https://www.postgresql.org/",
+          "type": "article"
+        },
+        {
+          "title": "PostgreSQL 文档中心",
+          "url": "https://www.postgresql.org/docs/",
+          "type": "article"
+        },
+        {
+          "title": "从POSTGRES（最初代号）到PostgreSQL的演进历程",
+          "url": "https://www.postgresql.org/docs/current/history.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "什么是关系型数据库（Relational Databases）？",
+          "description": "关系型数据库（Relational Databases）是一种数据库管理系统（DBMS，Database Management System），以结构化格式存储和组织数据，这种格式称为表（tables）。\n\n这些表由行（rows，即记录（records）或元组（tuples））和列（columns，即属性（attributes）或字段（fields））组成。\n\n术语“关系型（relational）”这一名称源于这些表可以通过键（keys）和关系（relationships）相互关联。\n\n",
+          "links": [
+            {
+              "title": "数据库与SQL",
+              "url": "https://www.edx.org/course/databases-5-sql",
+              "type": "course"
+            },
+            {
+              "title": "关系型数据库",
+              "url": "https://www.ibm.com/cloud/learn/relational-databases",
+              "type": "article"
+            },
+            {
+              "title": "关系型数据库入门",
+              "url": "https://www.udacity.com/course/intro-to-intro-to-relational-databases",
+              "type": "article"
+            },
+            {
+              "title": "关系型数据库：概念与历史",
+              "url": "https://www.ibm.com/topics/intro-databases",
+              "type": "article"
+            },
+            {
+              "title": "探索关于关系型数据库的文章",
+              "url": "https://app.daily.dev/tags/relational-databases?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ee06b7ce-2f0a-47cf-94c2-61a4f625e833",
+          "xid": "133adf78-59cf-482b-ae19-c444ce69d25f"
+        },
+        {
+          "title": "关系型数据库管理系统的优点和局限性（RDBMS）",
+          "description": "关系型数据库管理系统（RDBMS）提供了多个优势，包括通过符合ACID（原子性、一致性、隔离性、持久性）特性确保的强数据完整性、基于SQL的强大查询能力，以及通过外键和连接对数据关系的强有力支持。\n\n它们在垂直扩展方面表现出高度可扩展性，并能可靠处理复杂事务。\n\n但RDBMS也存在局限性，例如横向扩展困难，这可能限制其在高度分布式系统中的性能表现。\n\n其模式变更相对刚性，修改现有结构通常需要较大的维护成本，且可能无法高效处理非结构化数据或像某些NoSQL解决方案中常见的大规模、高吞吐量数据环境。\n\n",
+          "links": [
+            {
+              "title": "关系型数据库管理系统的15个优缺点（RDBMS）",
+              "url": "https://trainings.internshala.com/blog/advantages-and-disadvantages-of-rdbms/",
+              "type": "article"
+            },
+            {
+              "title": "必须了解的关系型数据库管理系统（RDBMS）的11个优缺点",
+              "url": "https://webandcrafts.com/blog/advantages-disadvantages-rdbms",
+              "type": "article"
+            },
+            {
+              "title": "关系型数据库的局限性",
+              "url": "https://www.youtube.com/watch?v=t62DXEfIFy4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "cacd4a32-b949-47e0-a3d4-75dffc9e7259",
+          "xid": "19a165f3-fa4f-4d64-a77f-a8523ce8495e"
+        },
+        {
+          "title": "PostgreSQL与其他关系型数据库管理系统（RDBMS）对比",
+          "description": "得益于开源特性（open-source）、高级功能（advanced features）和卓越的性能，PostgreSQL在众多关系型数据库管理系统（RDBMS）中独树一帜。\n\n与Oracle或Microsoft SQL Server等专有系统不同，PostgreSQL可免费使用且高度可扩展（extensible），允许用户添加自定义函数（custom functions）、数据类型（data types）和运算符（operators）。\n\n它支持多种索引技术，并提供高级功能，包括全文搜索（full-text search）、JSON支持（JSON support）以及通过PostGIS实现的地理信息系统（GIS）功能。\n\n此外，PostgreSQL对SQL标准（SQL standards）的高度遵循性保障了兼容性及迁移的便捷性。\n\n虽然像MySQL等系统在读取密集型环境因速度优势而广受欢迎，但PostgreSQL在功能完整性与对ACID属性（ACID properties）的遵循性方面表现更优，因此成为复杂事务型应用的灵活选择。\n\n",
+          "links": [
+            {
+              "title": "PostgreSQL与MySQL的关键差异：哪些更适合自己用例？",
+              "url": "https://www.integrate.io/blog/postgresql-vs-mysql-which-one-is-better-for-your-use-case/",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL和MySQL之间的区别是什么？",
+              "url": "https://aws.amazon.com/compare/the-difference-between-mysql-vs-postgresql/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "30dea1c0-62c8-4264-9ae5-809e32aa9733",
+          "xid": "9da6f2ea-91f3-48f5-a55b-10f0bd10a290"
+        },
+        {
+          "title": "PostgreSQL（PostgreSQL）与 NoSQL 数据库（NoSQL）",
+          "description": "PostgreSQL是一款功能强大的开源关系型数据库系统，擅长处理复杂查询、确保数据完整性并支持ACID（ACID）事务，使其成为需要复杂数据关系和强一致性保障的理想选择。\n\n它提供先进功能，如半结构化数据支持的JSON（JSON）语法、全文检索和丰富的索引机制。\n\n相较而言，如MongoDB或Cassandra等NoSQL数据库更注重可扩展性和灵活性，其无模式设计（schema-less design）使其更适合管理非结构化或半结构化数据及高吞吐量工作负载。\n\n这类数据库常用于需要快速开发、水平扩展和高可用性的场景，但通常以牺牲比PostgreSQL更弱的一致性保障为代价。\n\n",
+          "links": [
+            {
+              "title": "MongoDB与PostgreSQL（PostgreSQL）之间的区别是什么？",
+              "url": "https://aws.amazon.com/compare/the-difference-between-mongodb-and-postgresql/",
+              "type": "article"
+            },
+            {
+              "title": "MongoDB vs PostgreSQL：15个关键差异（Critical Differences）",
+              "url": "https://kinsta.com/blog/mongodb-vs-postgresql/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4ea10801-e3ce-42f4-a3a5-0e035c499c46",
+          "xid": "a9c2dc92-d3b4-4965-a606-3b01b42217fb"
+        }
+      ],
+      "id": "edfa413f-e6c2-427b-af9a-1d4b31bfd4d4",
+      "xid": "a504f4bf-edd7-4a6c-a793-5ba73222ba00"
+    },
+    {
+      "title": "基础RDBMS概念",
+      "description": "关系型数据库管理系统（RDBMS）是一种数据库管理系统，它通过表格存储和组织数据，从而使数据操作、查询和管理变得更加容易。\n\n它们遵循E.F. Codd在1970年定义的关系模型，这意味着数据以带有行和列的表格形式呈现。\n\n",
+      "links": [
+        {
+          "title": "理解关系型数据库管理系统",
+          "url": "https://www.essentialsql.com/understanding-relational-databases-a-beginners-guide/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "对象模型",
+          "description": "PostgreSQL是一个对象关系型数据库管理系统（ORDBMS）。\n\n这意味着它结合了关系型数据库（RDBMS）和面向对象数据库（OODBMS）的特性。\n\nPostgreSQL的[对象模型](object model)提供了用户定义的数据类型（user-defined data types）、继承（inheritance）和多态（polymorphism）等功能，使其功能超越了传统的基于SQL的关系型数据库（RDBMS）。\n\n",
+          "links": [
+            {
+              "title": "对象模型",
+              "url": "https://www.postgresql.org/docs/current/tutorial-concepts.html",
+              "type": "article"
+            },
+            {
+              "title": "理解PostgreSQL：对象-关系型数据库的力量",
+              "url": "https://medium.com/@asadbukhari886/understanding-of-postgresql-the-power-of-an-object-relational-database-b6ae349c3f40",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL服务器和数据库对象",
+              "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-server-and-database-objects/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "数据库",
+              "description": "在PostgreSQL中，数据库（database）是一个具有名称的集合，包含表（tables）、索引（indexes）、视图（views）、存储过程（stored procedures）和其他数据库对象（database objects）。\n\n每个PostgreSQL服务器（PostgreSQL server）可以管理多个数据库（databases），从而实现为不同的应用程序、项目或用户分离和组织数据集（data sets）。\n\n",
+              "links": [
+                {
+                  "title": "管理数据库（Managing Databases）",
+                  "url": "https://www.postgresql.org/docs/8.1/managing-databases.html",
+                  "type": "article"
+                },
+                {
+                  "title": "管理数据库（Managing a Database）",
+                  "url": "https://www.postgresql.org/docs/7.1/start-manage-db.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "04bfbf3c-77ff-41cc-a66b-050394589165",
+              "xid": "17eb2985-c447-49b5-aa39-e7579f04e307"
+            },
+            {
+              "title": "表（Tables）",
+              "description": "表（Table）是PostgreSQL中的主要数据存储对象之一。\n\n简单来说，表是由行或记录组成的集合，并按列（columns）组织。\n\n每个列（column）都有一个唯一名称，并包含特定数据类型（data type）的值。\n\n",
+              "links": [
+                {
+                  "title": "表基础（Table Basics）",
+                  "url": "https://www.postgresql.org/docs/current/ddl-basics.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a74aef82-5ae0-4b78-91a6-3ac7edfacb0b",
+              "xid": "d4865506-6711-49fd-9c30-08140a501707"
+            },
+            {
+              "title": "模式（Schemas）",
+              "description": "模式（Schemas）是PostgreSQL对象模型的重要组成部分，有助于为数据库对象提供结构、组织和命名空间。\n\n模式是组织在特定命名空间内的数据库对象的集合，例如表、视图、索引和函数。\n\n",
+              "links": [
+                {
+                  "title": "模式",
+                  "url": "https://www.postgresql.org/docs/current/ddl-schemas.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL 中的模式",
+                  "url": "https://hasura.io/learn/database/postgresql/core-concepts/1-postgresql-schema/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "3fd7ef1e-7e4d-495d-9f9b-1048d2f7670a",
+              "xid": "90582dce-3fef-438d-8b37-e5e48a57e9ff"
+            },
+            {
+              "title": "行（Rows）",
+              "description": "在PostgreSQL中，一个行代表表中具有特定字段集的单个且唯一标识的记录。\n\n表中每一行由一个或多个列（column）组成，其中每个列可以存储特定类型的数据（例如整数、字符、日期等）。\n\n表的结构决定了其行的模式（schema），表中的每一行都必须遵循此模式（schema）。\n\n",
+              "links": [
+                {
+                  "title": "概念（Concepts）",
+                  "url": "https://www.postgresql.org/docs/7.1/query-concepts.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL - 行（Rows）",
+                  "url": "https://www.postgresql.org/docs/current/functions-comparisons.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "fbc4c867-cc03-4feb-a7fc-3d0db6202c03",
+              "xid": "992726e0-d622-4cde-8ee0-1e055437bef0"
+            },
+            {
+              "title": "列（Columns）",
+              "description": "列（Columns）是PostgreSQL对象模型（object model）的基本组成部分。\n\n它们用于在表中存储实际数据，并定义数据类型（data type）、约束（constraints）和其他属性（properties）等特性。\n\n",
+              "links": [
+                {
+                  "title": "列（Columns）文档",
+                  "url": "https://www.postgresql.org/docs/current/infoschema-columns.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL添加列（ADD COLUMN）指南",
+                  "url": "https://www.w3schools.com/postgresql/postgresql_add_column.php",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f53dd9e8-0289-42a9-bcfd-acde18277344",
+              "xid": "5f53a4c6-ed56-423f-beeb-0b04d64c0ebd"
+            },
+            {
+              "title": "数据类型（Data Types）",
+              "description": "PostgreSQL 提供了丰富多样的数据类型集合，能够满足各类应用需求并保障数据完整性和性能。\n\n这些类型包括标准数字类型（Standard Numeric Types）如整数（integers）、浮点数（floating-point numbers）以及序列类型（Serial Types）用于自动递增字段。\n\n可变长度字符串（VARCHAR）和文本（TEXT）类型可处理不同长度的文本，而日期（DATE）、时间（TIME）和时间戳（TIMESTAMP）类型支持多种时间相关需求。\n\nPostgreSQL 还支持完整的布尔类型（BOOLEAN）、枚举类型（ENUM）和合成类型（Composite Types），能够构建更复杂的结构。\n\n此外，它在处理半结构化数据时表现卓越，通过 JSON 和 JSONB 数据类型实现实效的数据存储和查询。\n\n PostgreSQL 通过数组类型（Array Types）、几何数据类型（Geometric Data Types）以及 PostGIS 地理空间扩展功能，进一步凸显了其灵活性，使其成为广泛数据管理需求的强大工具。\n\n",
+              "links": [
+                {
+                  "title": "数据类型（Data Types）",
+                  "url": "https://www.postgresql.org/docs/current/datatype.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL 数据类型入门（Introduction to PostgreSQL DataTypes）",
+                  "url": "https://www.prisma.io/dataguide/postgresql/introduction-to-data-types",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL® 数据类型：与 SQL、JDBC 和 Java 数据类型的对应关系（PostgreSQL® Data Types: Mappings to SQL, JDBC, and Java Data Types）",
+                  "url": "https://www.instaclustr.com/blog/postgresql-data-types-mappings-to-sql-jdbc-and-java-data-types/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7b358442-f169-432b-9455-eaf726d50abc",
+              "xid": "9cd9e8d8-4c0b-49b4-97ce-dc2d073d1adc"
+            },
+            {
+              "title": "查询（Queries）",
+              "description": "查询（Queries）是与PostgreSQL数据库交互以及检索或操作其表中存储数据的主要方式。\n\n在此部分中，我们将涵盖PostgreSQL查询的基础知识，从基础的`SELECT`语句（SELECT statements）到更高级的技术，如连接（joins）、子查询（subqueries）和聚合函数（aggregate functions）。\n\n",
+              "links": [
+                {
+                  "title": "查询表（Querying a Table）",
+                  "url": "https://www.postgresql.org/docs/current/tutorial-select.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7c5be054-1f82-421b-8a91-bc15ca60c8a2",
+              "xid": "1e41368b-bf38-450b-8eb8-593e63e3b3e2"
+            }
+          ],
+          "id": "b66295e4-618f-48a6-813e-cb73551093e1",
+          "xid": "85ee0741-bad7-43c6-9983-481652d65df8"
+        },
+        {
+          "title": "关系模型（Relational Model）",
+          "description": "关系模型（Relational Model）是一种通过表格（也称为「关系（relations）」）组织和结构化数据的方法。\n\n它由埃德加·F·科德（Edgar F. Codd）于1970年首次提出，后来成为大多数数据库管理系统（Database Management Systems，DBMS）的基础，其中包括 PostgreSQL。\n\n该模型将数据组织成包含行和列的表格，其中每一行代表一条记录，每一列代表该记录的属性或字段。\n\n",
+          "links": [
+            {
+              "title": "什么是关系模型？",
+              "url": "https://www.postgresql.org/docs/7.1/relmodel-oper.html",
+              "type": "article"
+            },
+            {
+              "title": "关系模型",
+              "url": "https://www.geeksforgeeks.org/relational-model-in-dbms/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "域（Domains）",
+              "description": "PostgreSQL中的域（Domains）本质上是由`CREATE DOMAIN`命令创建的用户定义数据类型（user-defined data types）。\n\n这些自定义数据类型允许您通过定义特定属性或字段的有效值集合，在表的列中应用约束（constraints）和验证规则（validation rules）。\n\n这确保了关系型数据库中的数据一致性与完整性。\n\n要创建自定义域（domain），您需要定义域名称、指定其基础数据类型（base data type），并设置要应用的约束（constraints）或默认值（default value）。\n\nPostgreSQL的域是确保关系型数据库中数据完整性和一致性的有效方法。\n\n它们允许您基于现有数据类型构建带有额外约束（constraints）、默认值（default values）和验证规则（validation rules）的自定义数据类型（custom data types）。\n\n通过使用域（domains），您可以简化数据库模式的设计，并确保数据符合企业规则或业务需求。\n\n",
+              "links": [
+                {
+                  "title": "创建域（CREATE DOMAIN）",
+                  "url": "https://www.postgresql.org/docs/current/sql-createdomain.html",
+                  "type": "article"
+                },
+                {
+                  "title": "域类型（Domain Types）",
+                  "url": "https://www.postgresql.org/docs/current/domains.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "15c32d72-9bc7-4153-b2e1-88a03479d3f8",
+              "xid": "4edf7609-181b-4342-9b15-e341bd37b55f"
+            },
+            {
+              "title": "元组（tuple）",
+              "description": "在关系模型中，**元组（tuple）** 是一个基本概念，表示表中的一条记录或行（row）。\n\n在 PostgreSQL 中，一个元组由一组属性（attribute）值组成，每个值对应表中特定的列（column）或字段。\n\n元组是属性值的有序集合，每个值对应表中的特定属性或列。\n\n这些值可以是不同数据类型，例如整数、字符串或日期，具体取决于表的模式（schema）。\n\n例如，在一个包含 `id`、`name` 和 `email` 列的 `users` 表中，一个示例元组可能为 `(1, 'John Smith', 'john.smith@example.com')`，其中每个值对应其对应的列。\n\nPostgreSQL 提供了多种可用于元组的操作。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL 如何冻结元组（freeze tuples）",
+                  "url": "https://medium.com/@hnasr/how-postgres-freezes-tuples-4a9931261fc",
+                  "type": "article"
+                },
+                {
+                  "title": "元组（tuple）与行（row）之间有何区别？",
+                  "url": "https://stackoverflow.com/questions/19799282/whats-the-difference-between-a-tuple-and-a-row-in-postgres",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "fd90f1a5-536a-4d93-a729-ba296e925a32",
+              "xid": "d6224854-628a-4780-b55d-509bd51fe3d1"
+            },
+            {
+              "title": "属性",
+              "description": "关系模型（relational model）中的属性是表的列，代表表所描述实体的属性或特征。\n\n每个属性都有一个域（domain），定义它可以取的值，如整数、文本或日期。\n\n属性在定义关系（表）模式的结构中起关键作用，并用于存储和操作数据。\n\n它们是维护数据完整性、强制约束以及支持构成SQL查询（SQL queries）基础的关联操作的根本。\n\n",
+              "links": [
+                {
+                  "title": "什么是关系模型？",
+                  "url": "https://www.guru99.com/relational-data-model-dbms.html",
+                  "type": "article"
+                },
+                {
+                  "title": "DBMS中的关系模型",
+                  "url": "https://www.scaler.com/topics/dbms/relational-model-in-dbms/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "25d134bf-e559-4735-a77e-35a32f5c0285",
+              "xid": "8c50e7fd-0946-436d-8797-0baebe24d16b"
+            },
+            {
+              "title": "关系（relation）",
+              "description": "在关系模型（relational model）中，关系本质是一个由行和列组成的表格，其中每行代表一个唯一记录（或元组（tuple）），每列代表数据的属性。\n\n关系的结构由其模式（schema）定义，模式指定了关系的名称及其属性的名称和数据类型。\n\n关系受完整性约束的管控，例如域约束（domain constraints）、键约束（key constraints）和参照完整性约束（referential integrity constraints），以确保数据的准确性和一致性。\n\n可以通过选择（selection）、投影（projection）、连接（join）等操作高效地检索和操作关系中的数据。\n\n",
+              "links": [
+                {
+                  "title": "域约束（domain constraints）",
+                  "url": "https://www.postgresql.org/docs/current/infoschema-domain-constraints.html",
+                  "type": "article"
+                },
+                {
+                  "title": "关联（relationships）",
+                  "url": "https://hasura.io/learn/database/postgresql/core-concepts/6-postgresql-relationships/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8b079f6b-1a23-43c9-946a-870422ba8123",
+              "xid": "e53823a7-f9c1-4c6c-a777-385f28917fe0"
+            },
+            {
+              "title": "约束（Constraints）",
+              "description": "约束（Constraints）是关系模型的重要组成部分，它们定义数据库中数据必须遵循的规则，确保数据的一致性、准确性和可靠性。\n\n**主键（Primary Key）** - 主键约束（Primary Key constraint）是一列或多列的组合，用于唯一标识表中的每一行。\n\n每个表只能有一个主键，且其值在每一行中必须唯一且不能为空。\n\n**外键（Foreign Key）** - 外键约束（Foreign Key constraint）确保表中的一列或若干列的值对应其他表中的现有行。\n\n它有助于保持表之间的参照完整性。\n\n**唯一（Unique）** - 唯一约束（Unique constraint）保证某列或若干列的值在表中所有行中是唯一的，防止在指定列中重复出现相同的数据。\n\n**检查（Check）** - 检查约束（Check constraint）验证输入到某一列的值是否符合特定条件，通过限制列中的输入值来维护数据完整性。\n\n**非空（Not Null）** - 非空约束（Not Null）强制要求某一列不能包含空值，确保在插入或更新数据时必须提供该列的值。\n\n**排除（Exclusion）** - 排除约束（Exclusion constraint）是一种更高级的约束，允许您指定当比较表中的多行时不应存在的条件。\n\n它通过防止数据冲突来维护数据完整性。\n\n",
+              "links": [
+                {
+                  "title": "约束（Constraints）",
+                  "url": "https://www.postgresql.org/docs/current/ddl-constraints.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL - 约束（Constraints）",
+                  "url": "https://www.tutorialspoint.com/postgresql/postgresql_constraints.htm",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6423bfa8-63bb-41c0-aa70-70daf4a17dac",
+              "xid": "ffea11a0-cbc9-44de-ac8f-408c1e251e5c"
+            },
+            {
+              "title": "空值（NULL）",
+              "description": "在PostgreSQL使用的关系模型中，空值（Null）表示数据库中缺失或未知的信息。\n\n与零、空字符串或其他默认值不同，空值表示值的缺失，在操作和查询中会以独特方式处理。\n\n例如，任何涉及空值的算术运算结果均为空值；使用标准运算符与空值比较时，返回「未知」而非「真」或「假」。\n\nPostgreSQL提供了特定函数和构造来处理空值，例如 `IS NULL`、`IS NOT NULL` 和 `COALESCE` 函数（COALESCE），其会返回参数中的首个非空值。\n\n正确理解和处理空值是确保关系型数据库数据准确检索和完整性的关键。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL - 空值（NULL）",
+                  "url": "https://www.postgresql.org/docs/current/datatype-numeric.html#DATATYPE-NULL",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL - 空值（NULL）的用法",
+                  "url": "https://www.relationaldbdesign.com/database-analysis/module2/relational-database-null-values.php",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "591a256f-285e-40d7-8309-034fb9beb23b",
+              "xid": "2fa73d2c-893f-4b07-8500-a747154f9f73"
+            }
+          ],
+          "id": "e628fcde-ca6a-4fd2-8d4a-c6134aafd9df",
+          "xid": "67a91e15-1b46-4c42-8f00-a0c65778dd11"
+        },
+        {
+          "title": "高级数据库概念（High Level Database Concepts）",
+          "description": "高级数据库概念涵盖支撑数据库系统设计、实现和管理的核心原则（fundamental principles）。\n\n这些概念构成了有效数据库管理（database management）的基础，能够设计出健壮（robust）、高效（efficient）且可扩展（scalable）的系统。\n\n",
+          "links": [
+            {
+              "title": "揭秘PostgreSQL：10个关键概念（concepts）和文件（files）详解",
+              "url": "https://medium.com/@RohitAjaygupta/demystifying-postgresql-10-crucial-concepts-and-files-explained-with-practical-examples-a5a70cd2b848",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "ACID（原子性、一致性、隔离性和持久性）",
+              "description": "ACID是关系型数据库系统需要满足的四项特性（原子性（atomicity）、一致性（consistency）、隔离性（isolation）和持久性（durability）），确保能够可靠地执行事务。\n\n它是这四个特性（原子性、一致性、隔离性、持久性）的首字母缩写",
+              "links": [
+                {
+                  "title": "什么是ACID兼容数据库（ACID compliant database）？",
+                  "url": "https://retool.com/blog/whats-an-acid-compliant-database/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是ACID合规性（Compliance）？原子性、一致性与隔离性",
+                  "url": "https://fauna.com/blog/what-is-acid-compliance-atomicity-consistency-isolation",
+                  "type": "article"
+                },
+                {
+                  "title": "ACID详解：原子性（Atomic）、一致性（Consistent）、隔离性（Isolated）与持久性（Durable）",
+                  "url": "https://www.youtube.com/watch?v=yaQ5YMWkxq4",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "407d2ecc-55e9-4957-8b1f-21ec43b0e7bf",
+              "xid": "62d8debc-fa83-41ce-9b7c-5225474688a5"
+            },
+            {
+              "title": "MVCC（多版本并发控制）",
+              "description": "多版本并发控制（Multi-Version Concurrency Control，MVCC）是一种由PostgreSQL使用的技术，允许多个事务在不冲突或延迟的情况下并发访问相同的数据。\n\n它确保每个事务都能获得数据库的一致性快照，并可以在其自身的数据版本上操作。\n\n",
+              "links": [
+                {
+                  "title": "MVCC简介",
+                  "url": "https://www.postgresql.org/docs/current/mvcc-intro.html",
+                  "type": "article"
+                },
+                {
+                  "title": "多版本并发控制 - 维基百科",
+                  "url": "https://en.wikipedia.org/wiki/Multiversion_concurrency_control",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是MVVC？",
+                  "url": "https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/What-is-MVCC-How-does-Multiversion-Concurrencty-Control-work",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "caceaad3-11e3-4ca2-89c4-c22f1143e529",
+              "xid": "9abac468-f302-479a-a29e-cb6b89215044"
+            },
+            {
+              "title": "事务（Transactions）",
+              "description": "事务（Transactions）是数据库管理系统中的一个基本概念，允许在单个事务上下文中执行多条语句。\n\n在PostgreSQL中，事务提供了ACID（Atomicity、Consistency、Isolation和Durability）特性，确保数据即使在并发访问或系统崩溃时也能保持一致性。\n\n通过利用事务控制（transaction control）、保存点（savepoints）、并发控制（concurrency control）以及锁定（locking）功能，您可构建与PostgreSQL无缝协作的强健且可靠的[应用程序]。\n\n这些功能可确保操作可靠性和数据一致性。\n\n",
+              "links": [
+                {
+                  "title": "事务（Transactions）",
+                  "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+                  "type": "article"
+                },
+                {
+                  "title": "如何实现事务",
+                  "url": "https://www.youtube.com/watch?v=DvJq4L41ru0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "31af7c3d-2ee3-49be-b608-794be2a11004",
+              "xid": "8b2eb21a-0ebd-4dde-b79b-9919d2b5feb2"
+            },
+            {
+              "title": "预写日志（Write-ahead Log）",
+              "description": "预写日志（Write Ahead Log，简称WAL）是PostgreSQL数据一致性策略中的关键组成部分。\n\nWAL会在数据修改被实际写入数据文件前，将这些更改按顺序记录在日志中。\n\n在发生崩溃时，PostgreSQL可以通过WAL将数据库恢复到一致状态，同时不会丢失任何关键数据。\n\n这为数据库提供了持久性（durability）和崩溃恢复能力。\n\n",
+              "links": [
+                {
+                  "title": "预写日志（Write Ahead Logging）",
+                  "url": "https://www.postgresql.org/docs/current/wal-intro.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL WAL入门实践指南：轻松掌握数据持久化技术",
+                  "url": "https://hevodata.com/learn/working-with-postgres-wal/",
+                  "type": "article"
+                },
+                {
+                  "title": "预写日志（Write Ahead Logging）",
+                  "url": "https://www.youtube.com/watch?v=yV_Zp0Mi3xs",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "8468efe1-4b76-4840-beb5-1071a88f7461",
+              "xid": "dfab378a-a21f-45cd-a3f3-e1f4145d2813"
+            },
+            {
+              "title": "查询处理",
+              "description": "查询处理是数据库系统的重要组成部分，负责通过结构化查询语言（SQL）查询来管理数据检索和修改。\n\n高效的查询处理对于确保数据库的最优性能至关重要。\n\n",
+              "links": [
+                {
+                  "title": "了解PostgreSQL查询处理 - Microsoft",
+                  "url": "https://learn.microsoft.com/en-us/training/modules/understand-postgresql-query-process/",
+                  "type": "course"
+                },
+                {
+                  "title": "PostgreSQL中的查询处理",
+                  "url": "https://medium.com/agedb/query-processing-in-postgresql-1309fa93f69f",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4bd2421a-c2e2-4408-a1b2-92e8391f7e43",
+              "xid": "365c6b8d-1686-43f7-b985-3147b6d3cfb3"
+            }
+          ],
+          "id": "a7676b64-8000-422d-a29e-9da293c01679",
+          "xid": "2a7cee6b-56bd-4c05-aa78-fc100dcaeb04"
+        }
+      ],
+      "id": "f34803ec-9de1-43c6-995b-4d51938d4c75",
+      "xid": "bd272812-0541-495e-a8b1-09056a64b7c9"
+    },
+    {
+      "title": "安装与配置",
+      "description": "要安装和配置PostgreSQL，请根据您的操作系统（Windows、macOS或Linux），从官方PostgreSQL网站（https://www.postgresql.org/download/）下载安装程序。\n\n对于Windows系统，运行安装向导并按照指引配置组件、设置超级用户（postgres）的密码，并选择安装目录和端口（默认为5432）。\n\n在macOS环境下，推荐使用Homebrew进行安装；只需在终端中执行brew install postgresql命令，随后通过brew services start postgresql初始化数据库。\n\n对于Linux系统，可通过包管理器（Debian/Ubuntu使用APT，CentOS/RHEL使用YUM）安装PostgreSQL，随后初始化数据库并启动服务。\n\n安装完成后，您可以使用psql命令行工具（psql）访问PostgreSQL，并通过其创建数据库及有效管理数据。\n\n",
+      "links": [
+        {
+          "title": "安装PostgreSQL",
+          "url": "https://www.postgresql.org/download/",
+          "type": "article"
+        },
+        {
+          "title": "PostgreSQL - 安装指南",
+          "url": "https://www.postgresql.org/docs/current/tutorial-install.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "使用 psql（psql） 连接",
+          "description": "psql（psql） 是一个交互式命令行工具，可让您与 PostgreSQL 数据库服务器进行交互。\n\n通过 psql，您可以在数据库上执行多种 SQL 操作。\n\n",
+          "links": [
+            {
+              "title": "psql（psql）",
+              "url": "https://www.postgresql.org/docs/current/app-psql.html#:~:text=psql%20is%20a%20terminal%2Dbased,and%20see%20the%20query%20results.",
+              "type": "article"
+            },
+            {
+              "title": "psql 使用指南（psql guide）",
+              "url": "https://www.postgresguide.com/utilities/psql/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "67e579b7-6498-4ad4-8c38-91e7ad8b037b",
+          "xid": "e395eb09-fd28-4eae-a95c-5d1417fee565"
+        },
+        {
+          "title": "在云（Cloud）中部署",
+          "description": "在本节中，我们将讨论在云中部署PostgreSQL。\n\n将PostgreSQL数据库部署到云中可带来显著优势，例如可扩展性（Scalability）、灵活性（Flexibility）、高可用性（High Availability）和成本降低（Cost Reduction）。\n\n多家云服务商提供了PostgreSQL作为服务（as a service），这意味着您无需担忧底层基础设施、备份和安全措施，即可快速搭建和管理数据库。\n\n",
+          "links": [
+            {
+              "title": "托管（Host）PostgreSQL数据库的5种方式",
+              "url": "https://www.prisma.io/dataguide/postgresql/5-ways-to-host-postgresql",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL在Kubernetes上的部署（Postgres On Kubernetes）",
+              "url": "https://cloudnative-pg.io/",
+              "type": "article"
+            },
+            {
+              "title": "探索与云（Cloud）相关的热门帖子",
+              "url": "https://app.daily.dev/tags/cloud?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9e07554a-cc90-48a1-8598-c763569017f9",
+          "xid": "63616173-4ffc-4da9-bfa0-fe69816e4209"
+        },
+        {
+          "title": "使用 Docker（Docker）",
+          "description": "Docker 是一个简化应用程序安装和管理的出色工具，其中包括 PostgreSQL（PostgreSQL）。\n\n通过使用 Docker，您可以有效隔离 PostgreSQL 与系统，避免与其他安装或配置产生潜在冲突。\n\n",
+          "links": [
+            {
+              "title": "PostgreSQL（PostgreSQL）的官方 Docker 镜像",
+              "url": "https://hub.docker.com/_/postgres",
+              "type": "article"
+            },
+            {
+              "title": "如何使用 PostgreSQL（PostgreSQL）的官方 Docker 镜像",
+              "url": "https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/",
+              "type": "article"
+            },
+            {
+              "title": "如何使用 Docker 设置 PostgreSQL（PostgreSQL）数据库",
+              "url": "https://www.youtube.com/watch?v=RdPYA-wDhTA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1c423011-8ee1-4107-bb88-11243502e6ed",
+          "xid": "2098eb85-7180-4bad-b67c-74c05b373a16"
+        },
+        {
+          "title": "包管理器（Package Managers）",
+          "description": "包管理器是帮助您在系统上安装、更新及管理软件包的重要工具。\n\n它们追踪依赖项（dependencies），处理配置文件（configuration files），并确保安装过程（installation process）对终端用户（end-user）是无缝的。\n\n",
+          "links": [
+            {
+              "title": "使用高级包工具（APT）安装PostgreSQL",
+              "url": "https://www.postgresql.org/download/linux/ubuntu/",
+              "type": "article"
+            },
+            {
+              "title": "使用黄狗更新工具（YUM）和Dandified YUM（DNF）安装PostgreSQL",
+              "url": "https://www.postgresql.org/download/linux/redhat/",
+              "type": "article"
+            },
+            {
+              "title": "通过Homebrew（Homebrew）安装PostgreSQL",
+              "url": "https://wiki.postgresql.org/wiki/Homebrew",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9b478318-6c59-4b4d-abe0-9149b06a04b0",
+          "xid": "650ceb58-58a1-4447-9e39-1302b19a3674"
+        },
+        {
+          "title": "使用 `Systemd（systemd）`",
+          "description": "使用 Systemd（systemd） 管理 PostgreSQL 涉及利用系统和服务管理器（systemd）来控制 PostgreSQL 服务。\n\n这使您能够与启动过程自动启动、停止和管理 PostgreSQL 服务。\n\n",
+          "links": [
+            {
+              "title": "什么是Systemd？",
+              "url": "https://www.digitalocean.com/community/tutorials/what-is-systemd",
+              "type": "article"
+            },
+            {
+              "title": "Systemd PostgreSQL启动脚本",
+              "url": "https://unix.stackexchange.com/questions/220362/systemd-postgresql-start-script",
+              "type": "article"
+            },
+            {
+              "title": "Linux中的Systemd",
+              "url": "https://www.youtube.com/watch?v=N1vgvhiyq0E",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4772069a-b637-4923-85f6-31d969c95e34",
+          "xid": "96d0ee7c-9769-47d9-99e4-0304acdb3764"
+        },
+        {
+          "title": "使用 `pg_ctl（pg_ctl）`",
+          "description": "`pg_ctl（pg_ctl）` 是一个命令行实用工具，可用于管理 PostgreSQL 数据库服务器。\n\n通过 `pg_ctl`，您可以启动、停止和重新启动 PostgreSQL 服务，以及其他任务。\n\n",
+          "links": [
+            {
+              "title": "pg_ctl（pg_ctl）",
+              "url": "https://www.postgresql.org/docs/current/app-pg-ctl.html",
+              "type": "article"
+            },
+            {
+              "title": "pg_ctl（pg_ctl）技巧与诀窍",
+              "url": "https://pgdash.io/blog/pgctl-tips-tricks.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b32e64d3-7f0f-4250-b89e-a4101741b17a",
+          "xid": "b9d7cb10-c5ae-494d-8b14-e2db2af6c8dc"
+        },
+        {
+          "title": "使用 `pg_ctlcluster（pg_ctlcluster）`",
+          "description": "`pg_ctlcluster（pg_ctlcluster）` 是 PostgreSQL 提供的用于管理和控制数据库集群（database clusters）的命令行工具，对在同一系统上运行多个 PostgreSQL 集群（cluster）的用户尤其有用。\n\n",
+          "links": [
+            {
+              "title": "pg_ctlcluster（pg_ctlcluster）",
+              "url": "https://manpages.ubuntu.com/manpages/focal/man1/pg_ctlcluster.1.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "44c12694-dca3-4837-a0ed-2e999fe7da10",
+          "xid": "c19ff1c1-362a-4a6c-aa1d-bce65e267148"
+        }
+      ],
+      "id": "c64aca47-d52e-4d01-a354-8897cc7917ea",
+      "xid": "da6055d3-adb0-47f5-9809-630fd36ebacd"
+    },
+    {
+      "title": "学习SQL",
+      "description": "SQL是结构化查询语言（Structured Query Language）的缩写。\n\n它是一种标准化的编程语言，用于管理并与关系型数据库管理系统（RDBMS）进行交互。\n\n通过编写特定查询，SQL允许你创建、读取、编辑和删除存储在数据库表中的数据。\n\n",
+      "links": [
+        {
+          "title": "访问专用的SQL学习路径",
+          "url": "https://roadmap.sh/sql",
+          "type": "article"
+        },
+        {
+          "title": "SQL教程 - 初学者必备的SQL知识",
+          "url": "https://www.sqltutorial.org/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "数据定义语言查询（DDL-queries）",
+          "description": "数据定义语言查询（DDL-queries）",
+          "links": [],
+          "children": [
+            {
+              "title": "针对模式（Schemas）",
+              "description": "模式（schema）是一个PostgreSQL数据库中的数据库对象的逻辑集合。\n\n它作为一个命名空间，允许您将数据库对象分组并与其他模式的数据库对象隔离。\n\n模式的主要目的是优化数据库结构的组织，使其更易于管理和维护。\n\n默认情况下，每个PostgreSQL数据库都有一个`public`模式，这是未指定模式时查询表或其他数据库对象的默认搜索路径（search path）。\n\n",
+              "links": [
+                {
+                  "title": "模式（Schemas）",
+                  "url": "https://www.postgresql.org/docs/current/ddl-schemas.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL模式（Schema）",
+                  "url": "https://hasura.io/learn/database/postgresql/core-concepts/1-postgresql-schema/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "9ae0bb6e-747a-4b5c-83b1-2bbca2a9c698",
+              "xid": "69493a01-a139-4969-bce5-8132f3fdcda7"
+            },
+            {
+              "title": "专用于表",
+              "description": "PostgreSQL中创建和管理表的主要的数据定义语言（DDL）语句包括`创建表（CREATE TABLE）`、`修改表（ALTER TABLE）`和`删除表（DROP TABLE）`。\n\n这些DDL命令允许您创建、修改和删除表及其结构，为PostgreSQL数据库模式管理提供了强大的框架。\n\n",
+              "links": [
+                {
+                  "title": "创建表",
+                  "url": "https://www.postgresql.org/docs/current/sql-createtable.html",
+                  "type": "article"
+                },
+                {
+                  "title": "删除表",
+                  "url": "https://www.postgresql.org/docs/current/sql-droptable.html",
+                  "type": "article"
+                },
+                {
+                  "title": "修改表",
+                  "url": "https://www.postgresql.org/docs/current/sql-alterable.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "49980919-07d9-474c-b776-9ca4eeb91e69",
+              "xid": "c19c30e2-844c-49a1-903c-7ef0f34d9df3"
+            },
+            {
+              "title": "数据类型",
+              "description": "PostgreSQL 提供了全面的[数据类型](英文), 数据类型)以满足多样的数据需求，包括：用于自增字段的**数字类型**，如整数（INTEGER）、浮点数（FLOAT）和序列（SERIAL）；用于可变长度文本的**字符类型**，例如可变长度字符（VARCHAR）和文本（TEXT）；以及用于处理日期和时间的**时间类型**，如日期（DATE）、时间（TIME）和时间戳（TIMESTAMP）。\n\n此外，PostgreSQL 还支持布尔（BOOLEAN）用于真/假值、枚举（ENUM）用于列举类型，以及用于复杂结构的复合类型（composite type）。\n\n其在存储和查询半结构化数据时表现出色，支持 JSON（JSON）和 JSONB（JSONB）；可通过单个字段存储多个值的数组（ARRAY）；以及处理空间数据的几何类型（geometric type）。\n\n这些数据类型为各种应用程序提供了灵活的解决方案和强大的数据管理能力。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL® 数据类型：与 SQL、JDBC 和 Java 数据类型的映射",
+                  "url": "https://www.instaclustr.com/blog/postgresql-data-types-mappings-to-sql-jdbc-and-java-data-types/",
+                  "type": "article"
+                },
+                {
+                  "title": "数据类型",
+                  "url": "https://www.postgresql.org/docs/current/datatype.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ff2b726f-2c25-42ed-acb0-abcb89d64502",
+              "xid": "7c8a7e45-e25a-4739-b875-02369384ada0"
+            }
+          ],
+          "id": "977bcc25-45e0-42fa-89eb-4547fbc52f35",
+          "xid": "f032bb4e-6f78-4e85-8a49-48697ab09071"
+        },
+        {
+          "title": "数据操纵语言（DML）查询",
+          "description": "数据操纵语言（DML）查询",
+          "links": [],
+          "children": [
+            {
+              "title": "查询数据",
+              "description": "在PostgreSQL中，使用数据操作语言（Data Manipulation Language，DML）查询数据涉及通过SQL语句获取及操作数据库中的数据。\n\n用于查询和修改数据的DML主要语句为`SELECT`（SELECT）、`INSERT`（INSERT）、`UPDATE`（UPDATE）和`DELETE`（DELETE）。\n\n",
+              "links": [
+                {
+                  "title": "查询（SELECT）",
+                  "url": "https://www.postgresql.org/docs/current/sql-select.html",
+                  "type": "article"
+                },
+                {
+                  "title": "插入（INSERT）",
+                  "url": "https://www.postgresql.org/docs/current/sql-insert.html",
+                  "type": "article"
+                },
+                {
+                  "title": "更新（UPDATE）",
+                  "url": "https://www.postgresql.org/docs/current/sql-update.html",
+                  "type": "article"
+                },
+                {
+                  "title": "删除（DELETE）",
+                  "url": "https://www.postgresql.org/docs/current/sql-delete.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c43b1694-f0f5-4c19-87d4-b4bc65452844",
+              "xid": "4aff50e7-be86-4eb1-9759-d61e65d0e173"
+            },
+            {
+              "title": "数据筛选",
+              "description": "数据筛选（filtering）是数据库管理系统（database management system）中的核心功能（essential feature），PostgreSQL也不例外。\n\n当提及数据筛选时，指的是从满足特定条件或标准的数据子集中选取数据。\n\n在PostgreSQL中，我们通过 **WHERE** 子句（WHERE）根据特定条件筛选查询（query）中的数据。\n\n",
+              "links": [
+                {
+                  "title": "在PostgreSQL中筛选查询结果的方法",
+                  "url": "https://www.prisma.io/dataguide/postgresql/reading-and-querying-data/filtering-data",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL中FILTER（FILTER）的用法指南",
+                  "url": "https://www.crunchydata.com/blog/using-postgres-filter",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL - WHERE子句（WHERE）详解",
+                  "url": "https://www.w3schools.com/postgresql/postgresql_where.php",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "926d7d69-6000-444e-a106-2652daedf186",
+              "xid": "2411b755-c04a-435f-a6e3-7cc50d7a477e"
+            },
+            {
+              "title": "修改数据",
+              "description": "在PostgreSQL中修改数据是数据库操作中的一项关键技能。\n\n用于修改数据的主要数据操作语言（DML）查询语句是INSERT（INSERT）、UPDATE（UPDATE）和DELETE（DELETE）。\n\n",
+              "links": [
+                {
+                  "title": "插入（INSERT）",
+                  "url": "https://www.postgresql.org/docs/current/sql-insert.html",
+                  "type": "article"
+                },
+                {
+                  "title": "更新（UPDATE）",
+                  "url": "https://www.postgresql.org/docs/current/sql-update.html",
+                  "type": "article"
+                },
+                {
+                  "title": "删除（DELETE）",
+                  "url": "https://www.postgresql.org/docs/current/sql-delete.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "19583fd6-f499-46ff-aca3-47e08805703d",
+              "xid": "53845a13-22dd-4181-a834-90da38d813ba"
+            },
+            {
+              "title": "连接表",
+              "description": "连接表是数据库领域的一项基本操作。\n\n它允许你根据共同的列将多个表中的信息结合起来。\n\nPostgreSQL 提供了多种类型的连接，例如内连接（Inner Join）、左连接（Left Join）、右连接（Right Join）和完全外部连接（Full Outer Join）。\n\n",
+              "links": [
+                {
+                  "title": "表之间的连接",
+                  "url": "https://www.postgresql.org/docs/current/tutorial-join.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL - 连接",
+                  "url": "https://www.w3schools.com/postgresql/postgresql_joins.php",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "35dd0607-38fc-4763-8071-d8038943d3fa",
+              "xid": "c82e3451-d8bd-4179-85dd-ef698504f9ef"
+            }
+          ],
+          "id": "956e9416-95e8-43ff-bd4b-56b7ea01f183",
+          "xid": "7e98018c-db5b-40ae-9b8a-a6a75b81d269"
+        },
+        {
+          "title": "使用复制命令 (COPY) 进行导入/导出",
+          "description": "在 PostgreSQL 中，导入和导出数据最快、最有效的方式之一是使用 **复制命令 (COPY)**。\n\n该命令允许您从文件导入数据，或从表或查询结果导出数据到文件。\n\n如果没有权限使用复制命令，可以考虑在 psql 客户端（psql client）中改用 `\\copy` 命令（\\copy），其工作方式类似，但以当前用户权限运行，而不是通过 PostgreSQL 服务端。\n\n",
+          "links": [
+            {
+              "title": "复制命令 (COPY)",
+              "url": "https://www.postgresql.org/docs/current/sql-copy.html",
+              "type": "article"
+            },
+            {
+              "title": "在 PostgreSQL 中在表之间复制数据",
+              "url": "https://www.atlassian.com/data/sql/copying-data-between-tables",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "69d80897-435c-4823-95f6-a9df202ed259",
+          "xid": "98ebd7aa-7452-489c-959a-4f0e32da3eb0"
+        },
+        {
+          "title": "高级主题（Advanced Topics）",
+          "description": "高级主题（Advanced Topics）",
+          "links": [],
+          "children": [
+            {
+              "title": "事务（Transactions）",
+              "description": "事务是数据库管理系统中的核心概念（Transactions），允许在单一事务上下文中执行多个语句。\n\n在PostgreSQL中，事务提供了ACID（Atomicity, Consistency, Isolation, and Durability）特性：原子性、一致性、隔离性和持久性。\n\n这些特性可确保数据即使在并发访问或系统崩溃时仍保持一致性。\n\n通过运用事务控制（transaction control）、保存点（savepoints）、并发控制（concurrency control）及锁定（locking），您可构建与PostgreSQL无缝协作的健壮可靠应用程序。\n\n",
+              "links": [
+                {
+                  "title": "事务（Transactions）",
+                  "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+                  "type": "article"
+                },
+                {
+                  "title": "如何实现事务（transactions）",
+                  "url": "https://www.youtube.com/watch?v=DvJq4L41ru0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "8bcd82ae-ecd7-47b9-b6d7-9c0f54e3b09a",
+              "xid": "bb6f05fd-7736-4ad6-b4b2-55f6f44fc52b"
+            },
+            {
+              "title": "公共表表达式（CTE）",
+              "description": "公共表表达式（CTE，Common Table Expression）是一个可以被引用在`SELECT`、`INSERT`、`UPDATE`或`DELETE`语句中的命名临时结果集。\n\nCTEs在处理复杂查询时特别有用，因为它们允许将查询分解成更小、更易读的模块。\n\n递归CTE（Recursive CTE）在处理层级数据或树形结构数据时也很有帮助。\n\n\n",
+              "links": [
+                {
+                  "title": "公共表表达式",
+                  "url": "https://www.postgresql.org/docs/current/queries-with.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL中的CTE",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-cte/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f26f834e-53b2-4f85-b953-3ecca5247423",
+              "xid": "2e631969-ee81-41f2-a138-efa018443ff4"
+            },
+            {
+              "title": "子查询（Subqueries）",
+              "description": "子查询（subquery）是一个嵌套在另一个查询中的查询，通常称为外部查询（outer query）。\n\n子查询是用于从多张表中检索信息、执行复杂计算或根据其他查询的结果应用过滤条件的宝贵工具。\n\n它们可以出现在SQL语句的各个部分，例如`SELECT`、`FROM`、`WHERE`和`HAVING`子句（clauses）中。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL子查询（Subquery）",
+                  "url": "https://www.postgresql.org/docs/current/functions-subquery.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL子查询（Subquery）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-subquery/",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL子查询（Subqueries）",
+                  "url": "https://www.w3resource.com/PostgreSQL/postgresql-subqueries.php",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1860d553-df0c-4043-8eda-16aa3bf1bb6c",
+              "xid": "6d7b8b7f-a3ca-42da-83c9-fb1736d2634e"
+            },
+            {
+              "title": "侧接关联（Lateral Join）",
+              "description": "侧接关联（Lateral Join）允许你引用查询中前面表格的列，从而使执行涉及相关子查询（correlated subqueries）和以更简洁有效的方式对表格应用函数等复杂操作成为可能。\n\n在 PostgreSQL 中，LATERAL 关键字需要与查询的 FROM 子句中的子查询结合使用。\n\n通过允许子查询引用前面表格中的列，它帮助编写更简洁且功能强大的查询。\n\n请注意，LATERAL 关键字在 PostgreSQL 的表表达式语法中是一个重要组成部分。\n\n",
+              "links": [
+                {
+                  "title": "LATERAL子查询（LATERAL Subqueries）",
+                  "url": "https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-LATERAL",
+                  "type": "article"
+                },
+                {
+                  "title": "在PostgreSQL中使用侧接关联的方法（How to use lateral join in PostgreSQL）",
+                  "url": "https://popsql.com/learn-sql/postgresql/how-to-use-lateral-joins-in-postgresql",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1abd22ee-f6e9-49d3-a62c-538a49113562",
+              "xid": "6aef6d67-7633-4845-a17f-206f5b3fbf7f"
+            },
+            {
+              "title": "分组（Grouping）",
+              "description": "分组（Grouping）是SQL中一种强大的技术，允许你根据一列或多列的共同值来组织和汇总数据。\n\n`分组子句（GROUP BY）`用于创建分组，`HAVING子句（HAVING）`用于根据特定条件过滤分组。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL的分组子句（GROUP BY子句）",
+                  "url": "https://www.postgresql.org/docs/current/sql-select.html#SQL-GROUPBY",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL分组（GROUP BY）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-group-by/",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL - 分组（GROUP BY）",
+                  "url": "https://www.tutorialspoint.com/postgresql/postgresql_group_by.htm",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL的HAVING条件（HAVING）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-having/",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL分组教程（GROUP BY）",
+                  "url": "https://www.youtube.com/watch?v=SI-bPx4jaGc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "bdaa7eff-609e-428a-9ac3-995e12dfbedf",
+              "xid": "963d671a-d758-42fc-b701-e01824761d34"
+            },
+            {
+              "title": "集合运算（Set Operations）",
+              "description": "当需要对整个数据集执行操作（如合并或比较）时，集合运算是很有用的。\n\n集合运算包括并集（UNION）、交集（INTERSECT）和差集（EXCEPT），这些工具在查询复杂数据集时可能非常重要。\n\n",
+              "links": [
+                {
+                  "title": "合并查询",
+                  "url": "https://www.postgresql.org/docs/current/queries-union.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL的并集操作符（UNION Operator）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-union/",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL的交集操作符（INTERSECT Operator）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-intersect/",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL的差集操作符（EXCEPT Operator）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-except/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2a8b00e3-b3b8-4078-b68c-9bde3c381a91",
+              "xid": "6b57a3ec-e7ad-42e3-8937-2964f1002352"
+            }
+          ],
+          "id": "3592f390-907d-4461-a772-d62821f8bd77",
+          "xid": "67e1b233-bb2c-4258-9063-f515349c9bc8"
+        }
+      ],
+      "id": "9f43ceca-e98b-4dac-8db1-6efe278436d9",
+      "xid": "52df58ab-f771-4d36-b11a-6b36da022c1a"
+    },
+    {
+      "title": "配置（Configuring）",
+      "description": "配置PostgreSQL（Configuring）涉及修改多个关键配置文件（configuration files）以优化性能（performance）、安全（security）及 功能（functionality）。\n\n主要的配置文件包括 postgresql.conf（postgresql.conf）、pg_hba.conf（pg_hba.conf）和 pg_ident.conf（pg_ident.conf），通常位于PostgreSQL目录（PostgreSQL directory）的数据目录（data directory）。\n\n通过合理配置这些文件，可以适配PostgreSQL以满足具体需求与环境。\n\n",
+      "links": [
+        {
+          "title": "PostgreSQL配置（Configuring）PostgreSQL",
+          "url": "https://www.postgresql.org/docs/current/runtime-config.html",
+          "type": "article"
+        },
+        {
+          "title": "安装与PostgreSQL配置（Configure）",
+          "url": "https://ubuntu.com/server/docs/install-and-configure-postgresql",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "日志记录（Logging）与统计（Statistics）报告",
+          "description": "在使用 PostgreSQL 时，分析查询（query）和整个系统的性能（performance）通常很有用。\n\n这可以帮助您优化数据库并发现潜在的瓶颈（bottlenecks）。\n\n实现此目标的一种方法是通过生成日志统计（logging statistics）。\n\nPostgreSQL 提供了配置设置（configuration settings），可以生成查询（query）和系统性能（system performance）相关的必要日志统计。\n\n",
+          "links": [
+            {
+              "title": "错误报告（Reporting）与日志记录（Logging）",
+              "url": "https://www.postgresql.org/docs/current/runtime-config-logging.html",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL 日志记录（Logging）：你需要知道的一切",
+              "url": "https://betterstack.com/community/guides/logging/how-to-start-logging-with-postgresql/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "677538c2-2942-4986-8c1e-ab4d2cf4c407",
+          "xid": "0245b74f-059f-43aa-a628-b4a178d059ce"
+        },
+        {
+          "title": "添加额外扩展（Extensions）",
+          "description": "PostgreSQL提供了多种扩展（extensions）来增强其功能和功能。\n\n这些扩展是可选的软件包，可加载到您的PostgreSQL数据库中以提供附加功能，例如新的数据类型或函数。\n\n使用扩展是为PostgreSQL数据库添加新功能并根据需求定制数据库功能的强大方式。\n\n",
+          "links": [
+            {
+              "title": "PostgreSQL扩展（Extensions）",
+              "url": "https://www.postgresql.org/download/products/6-postgresql-extensions/",
+              "type": "article"
+            },
+            {
+              "title": "创建扩展（Create Extension）",
+              "url": "https://www.postgresql.org/docs/current/sql-createextension.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "158688d8-29f7-4fca-91b0-0e6518091421",
+          "xid": "3156785f-3b21-4c5c-a9c3-8e49ade0bf46"
+        },
+        {
+          "title": "资源使用",
+          "description": "为优化 PostgreSQL 的资源使用，需通过调整 `postgresql.conf` 文件中的设置来平衡内存、CPU 和磁盘使用。\n\n关键参数包括 `共享缓冲区（shared_buffers）`，通常设置为总内存的25-40%以优化缓存；`工作内存（work_mem）`，应根据并发查询的复杂性和数量进行调整，通常每个连接从1-2MB 开始；`维护工作内存（maintenance_work_mem）`，设置得更高（例如64MB）可加快维护任务；`有效缓存大小（effective_cache_size）`，通常设置为总内存的50-75%，以向查询规划器告知可用缓存；以及 `最大连接数（max_connections）`，需根据可用资源谨慎设置，以避免内存超额承诺。\n\n此外，需对 `自动清理（autovacuum）` 的设置进行微调，以确保定期清理不会过载系统。\n\n调整这些参数可帮助 PostgreSQL 更高效地利用硬件资源，从而提升性能和稳定性。\n\n",
+          "links": [
+            {
+              "title": "资源消耗文档指南",
+              "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#RUNTIME-CONFIG-RESOURCE-MEMORY",
+              "type": "article"
+            },
+            {
+              "title": "有效缓存大小（effective_cache_size）",
+              "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/tuning-postgresql-parameters/effective-cache-size.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e7ce4dcc-8715-4a44-8761-ff0ffac890db",
+          "xid": "7fd9c4de-7035-4678-b3e1-aa565816a749"
+        },
+        {
+          "title": "预写日志（Write-ahead Log）",
+          "description": "预写日志（Write Ahead Log，简称WAL）是PostgreSQL数据一致性策略的重要组成部分。\n\n该日志在数据真实写入数据文件前，会以顺序日志的形式记录所有数据库变更内容。\n\n若出现系统崩溃，PostgreSQL可利用预写日志将数据库恢复至一致性状态，同时避免关键数据丢失。\n\n这一机制为数据库提供了持续性（durability）和崩溃恢复（crash recovery）能力。\n\n\n",
+          "links": [
+            {
+              "title": "预写日志记录（Write Ahead Logging）",
+              "url": "https://www.postgresql.org/docs/current/wal-intro.html",
+              "type": "article"
+            },
+            {
+              "title": "轻松掌握PostgreSQL预写日志（WAL）入门指南101",
+              "url": "https://hevodata.com/learn/working-with-postgres-wal/",
+              "type": "article"
+            },
+            {
+              "title": "预写日志记录（Write Ahead Logging）",
+              "url": "https://www.youtube.com/watch?v=yV_Zp0Mi3xs",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "72dd7b8d-1cb1-481a-afde-10d9e6787029",
+          "xid": "0c77b047-d84e-4cf0-bec5-7fd8ef9ef04b"
+        },
+        {
+          "title": "真空处理（Vacuum）",
+          "description": "在PostgreSQL维护任务中，真空处理（Vacuuming）是一个核心组成部分。\n\n通过回收存储空间、优化性能、以及保持数据库的精简，真空处理能够维护PostgreSQL系统的健康。\n\n在PostgreSQL的常规操作中，数据库元组（tuple，即行）的会被更新、删除或添加。\n\n这些操作可能导致空间碎片化（fragmentation）、存储空间浪费以及性能下降。\n\n真空处理的作用包括：\n\n* 回收死元组（dead rows）占用的存储空间。\n\n\n* 更新查询规划器（query planner）的统计信息。\n\n\n* 释放未使用的空间给操作系统.\n* 维护索引关系中的可见性映射（visibility map）。\n\n\n",
+          "links": [
+            {
+              "title": "VACUUM 命令",
+              "url": "https://www.postgresql.org/docs/current/sql-vacuum.html",
+              "type": "article"
+            },
+            {
+              "title": "常规真空处理（Vacuuming）",
+              "url": "https://www.postgresql.org/docs/current/routine-vacuuming.html",
+              "type": "article"
+            },
+            {
+              "title": "使用PostgreSQL Vacuum命令优化数据库性能与释放存储空间",
+              "url": "https://www.percona.com/blog/postgresql-vacuuming-to-optimize-database-performanc-and-reclaim-space/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3e847ae3-8a9d-4fb8-aeaf-69cbfc35904c",
+          "xid": "26436388-7dc6-472b-9053-4b21aca816cf"
+        },
+        {
+          "title": "复制(Replication)",
+          "description": "复制（Replication）简单来说是将数据从一个数据库服务器复制到另一个服务器的过程。\n\n它有助于维护冗余性并提升数据库的性能。\n\n复制确保您的数据库保持高可用性、容错和可扩展性。\n\n",
+          "links": [
+            {
+              "title": "复制(Replication)",
+              "url": "https://www.postgresql.org/docs/current/runtime-config-replication.html",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL复制",
+              "url": "https://kinsta.com/blog/postgresql-replication/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6aae0581-ce48-47c1-ba70-613405053594",
+          "xid": "a41985c7-5dcd-49a3-b001-47f2f5cb48c4"
+        },
+        {
+          "title": "查询规划器（Query Planner）",
+          "description": "PostgreSQL查询规划器（PostgreSQL query planner）是系统中负责优化SQL查询执行的核心组件。\n\n它基于现有数据、查询结构以及当前PostgreSQL配置设置（configuration settings），找到最优的表联接（join）方式、确定子查询关系（subquery relationships）的建立方式，以及操作顺序的判定。\n\n",
+          "links": [
+            {
+              "title": "规划器/优化器（Planner/Optimizer）",
+              "url": "https://www.postgresql.org/docs/current/planner-optimizer.html",
+              "type": "article"
+            },
+            {
+              "title": "查询规划（Query Planning）",
+              "url": "https://www.postgresql.org/docs/current/runtime-config-query.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c00a9cee-d136-47d7-8aa6-b6aeb43626cc",
+          "xid": "f0a943fc-8d42-47a4-8c5a-3bab3613a963"
+        },
+        {
+          "title": "检查点（Checkpoints）/后台写入器（Background Writer）",
+          "description": "在PostgreSQL中，检查点（checkpoints）和后台写入器（background writer）对于维护数据完整性和优化性能至关重要。\n\n检查点会周期性地将共享缓冲区（shared buffers）中所有已修改的数据（脏页，dirty pages）写入磁盘，确保数据库崩溃后能够恢复到一致状态。\n\n这一过程由`checkpoint_timeout`、`checkpoint_completion_target`和`max_wal_size`等参数控制，平衡写入性能与恢复时间。\n\n后台写入器（background writer）持续在后台将脏页刷新到磁盘，平滑I/O负载并减少检查点期间的工作量。\n\n这有助于维持稳定的性能并避免磁盘活动骤增。\n\n合理配置这些机制对实现高效的磁盘I/O管理及数据库整体稳定性至关重要。\n\n",
+          "links": [
+            {
+              "title": "检查点（Checkpoints）",
+              "url": "https://www.postgresql.org/docs/current/sql-checkpoint.html",
+              "type": "article"
+            },
+            {
+              "title": "什么是检查点（checkpoint）？",
+              "url": "https://www.cybertec-postgresql.com/en/postgresql-what-is-a-checkpoint/",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL中的后台写入器（background writer）与检查点（checkpoint）有何区别？",
+              "url": "https://stackoverflow.com/questions/71534378/what-are-the-difference-between-background-writer-and-checkpoint-in-postgresql",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "fe0281a5-08a0-46e9-b30c-0bc826d7cbfa",
+          "xid": "49b671e2-ad8b-405f-a861-56720bde26aa"
+        }
+      ],
+      "id": "314d6463-d07c-4c8e-857d-179fb2151445",
+      "xid": "d392eaff-a4d9-4a21-9b08-fbc959853395"
+    },
+    {
+      "title": "安全性（Security）",
+      "description": "确保 PostgreSQL 数据库的安全性需要多层保护措施，以保护数据并确保仅通过授权访问（Authorized Access）。\n\n",
+      "links": [
+        {
+          "title": "PostgreSQL 数据库安全（Database Security）的最佳实践（Best Practices）",
+          "url": "https://www.percona.com/blog/postgresql-database-security-best-practices/",
+          "type": "article"
+        },
+        {
+          "title": "安全性（Security） - Azure 的 PostgreSQL 数据库",
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-security",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "对象权限（Object Privileges）",
+          "description": "在PostgreSQL中，对象权限（object privileges）是授予不同用户角色（user roles）访问或修改数据库对象（database objects）如表、视图、序列和函数的权限。\n\n确保适当的对象权限（object privileges）是维护安全且高效运行的数据库的关键。\n\n",
+          "links": [
+            {
+              "title": "PostgreSQL用户角色和权限详解（PostgreSQL Roles and Privileges Explained）",
+              "url": "https://www.aviator.co/blog/postgresql-roles-and-privileges-explained/",
+              "type": "article"
+            },
+            {
+              "title": "什么是对象权限？（What are Object Privileges?）",
+              "url": "https://www.prisma.io/dataguide/postgresql/authentication-and-authorization/managing-privileges#what-are-postgresql-object-privileges",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "默认权限（Default Privileges）",
+              "description": "PostgreSQL 允许您为各类数据库对象定义对象权限（object privileges）。\n\n这些权限决定了用户是否能够访问并操作表、视图、序列或函数等对象。\n\n在本节中，我们将重点讲解 PostgreSQL 中的默认权限（default privileges）。\n\n",
+              "links": [
+                {
+                  "title": "ALTER DEFAULT PRIVILEGES（ALTER DEFAULT PRIVILEGES）",
+                  "url": "https://www.postgresql.org/docs/current/sql-alterdefaultprivileges.html",
+                  "type": "article"
+                },
+                {
+                  "title": "权限（Privileges）",
+                  "url": "https://www.postgresql.org/docs/current/ddl-priv.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4377890e-0f75-4439-92a2-abf97ecf2447",
+              "xid": "81ce706a-a563-41b6-a4af-7003bf930d38"
+            },
+            {
+              "title": "授权 / 撤销权限",
+              "description": "数据库管理中最重要的方面之一是为用户提供适当的访问权限。\n\n在 PostgreSQL 中，这可以通过 `GRANT` (授予权限) 和 `REVOKE` (撤销权限) 命令实现，这些命令允许您管理数据库对象（如表、序列、函数和架构）的权限。\n\n",
+              "links": [
+                {
+                  "title": "GRANT命令",
+                  "url": "https://www.postgresql.org/docs/current/sql-grant.html",
+                  "type": "article"
+                },
+                {
+                  "title": "REVOKE命令",
+                  "url": "https://www.postgresql.org/docs/current/sql-revoke.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL GRANT 语句指南",
+                  "url": "https://www.postgresqltutorial.com/postgresql-administration/postgresql-grant/",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL REVOKE 语句指南",
+                  "url": "https://www.postgresqltutorial.com/postgresql-administration/postgresql-revoke/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "50dc6959-9281-4b2a-bd85-a63da271c992",
+              "xid": "5921aae2-54cd-45a4-b27b-09f23417e7d4"
+            }
+          ],
+          "id": "6363736a-506a-4dc9-bc7b-89db37a63a77",
+          "xid": "d133a7bb-aaab-4654-ac49-a7529ca44d79"
+        },
+        {
+          "title": "认证模型（Authentication Models）",
+          "description": "PostgreSQL支持多种认证模型来控制访问权限，包括信任（trust，适用于安全环境且无需密码）、基于口令（password-based，使用MD5和SCRAM-SHA-256加密散列密码）、GSSAPI（GSSAPI）和SSPI（SSPI）（基于Kerberos的单点登录）、LDAP（LDAP，集中式用户管理）、基于证书（certificate-based，通过SSL证书实施强认证）、PAM（PAM，利用操作系统管理的认证机制）、Ident（Ident，验证操作系统用户名），以及RADIUS（RADIUS，通过RADIUS服务器实现集中认证）。\n\n这些方法在`pg_hba.conf`文件中进行配置，可为不同数据库、用户和客户端地址组合指定相应的认证方式，从而实现灵活且安全的访问管控。\n\n",
+          "links": [
+            {
+              "title": "认证方法（Authentication Methods）",
+              "url": "https://www.postgresql.org/docs/current/auth-methods.html",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL中的授权与认证入门（An Introduction to Authorization and Authentication in PostgreSQL）",
+              "url": "https://www.prisma.io/dataguide/postgresql/authentication-and-authorization/intro-to-authn-and-authz",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "470c09de-4ffa-4c27-bd61-483ba026d81d",
+          "xid": "4ec4624f-fc94-4dd1-8dd7-d142c15145bc"
+        },
+        {
+          "title": "角色",
+          "description": "在 PostgreSQL 中，角色（role）是管理数据库访问权限的实体，结合了用户和组的功能。\n\n角色可以拥有数据库对象并具备相应权限，例如创建数据库或表的能力。\n\n角色可配置为具有登录能力的登录角色（login role），或专用于权限管理的组角色（group role）。\n\n角色可以继承其他角色的权限，从而简化复杂权限层级的管理。\n\n关键角色属性包括 `超级用户（SUPERUSER）`（完全访问权限）、`创建数据库（CREATEDB）`（可创建数据库）、`创建角色（CREATEROLE）`（可创建和管理其他角色）以及 `复制（REPLICATION）`（与复制相关的权限）。\n\n角色通过 `CREATE ROLE`、`ALTER ROLE` 和 `DROP ROLE` 等 SQL 命令进行创建和管理。\n\n",
+          "links": [
+            {
+              "title": "数据库角色",
+              "url": "https://www.postgresql.org/docs/current/user-manag.html",
+              "type": "article"
+            },
+            {
+              "title": "预定义角色",
+              "url": "https://www.postgresql.org/docs/current/predefined-roles.html",
+              "type": "article"
+            },
+            {
+              "title": "仅限阅览：PostgreSQL中的角色、权限与安全性",
+              "url": "https://www.youtube.com/watch?v=mtPM3iZFE04",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2e52c164-8f47-4e8e-b18d-1c2115388daa",
+          "xid": "17bd80e0-7478-4356-a0ca-1aa68ff04db4"
+        },
+        {
+          "title": "pg_hba.conf",
+          "description": "在保护您的PostgreSQL数据库时，配置最重要的组件之一就是`pg_hba.conf`（PostgreSQL Host-Based Authentication Configuration的缩写）文件。\n\n该文件是PostgreSQL的主机基础认证（HBA）系统的一部分，负责控制客户端如何对数据库进行身份验证和连接。\n\n",
+          "links": [
+            {
+              "title": "pg_hba.conf 文件",
+              "url": "https://www.postgresql.org/docs/current/auth-pg-hba-conf.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6898169f-b30e-4c25-b702-bd4156009446",
+          "xid": "402d088b-5784-450a-80f5-6ada3ae661fa"
+        },
+        {
+          "title": "SSL (SSL) 设置",
+          "description": "确保通信通道的安全是保护PostgreSQL数据库免受各种攻击的关键措施。\n\n一种实现此安全的方法是使用SSL（Secure Socket Layer）连接。\n\n通过启用和配置SSL，您为PostgreSQL数据库添加了额外的安全层，确保客户端和服务器之间传输的数据经过加密和保护。\n\n",
+          "links": [
+            {
+              "title": "SSL支持（SSL Support）",
+              "url": "https://www.postgresql.org/docs/current/libpq-ssl.html",
+              "type": "article"
+            },
+            {
+              "title": "如何在PostgreSQL上配置SSL",
+              "url": "https://www.cherryservers.com/blog/how-to-configure-ssl-on-postgresql",
+              "type": "article"
+            },
+            {
+              "title": "如何正确使用PostgreSQL中的SSL",
+              "url": "https://www.youtube.com/watch?v=Y1lsbF9NWW0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "dbcc065d-3e6e-42bc-9be1-795f0405fe1c",
+          "xid": "eb702425-4cce-41c4-847e-63b22f939aaf"
+        },
+        {
+          "title": "高级主题",
+          "description": "除了基础的PostgreSQL安全概念（如用户身份验证、权限管理和加密）之外，还有一些需要了解的高级主题，以增强您PostgreSQL数据库的安全性。\n\n",
+          "links": [
+            {
+              "title": "PostgreSQL安全的最佳实践",
+              "url": "https://www.timescale.com/learn/postgres-security-best-practices",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL - 加密与监控",
+              "url": "https://www.enterprisedb.com/postgresql-best-practices-encryption-monitoring",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "行级安全（Row-Level Security）",
+              "description": "行级安全（Row-Level Security）是PostgreSQL 9.5引入的功能，可以根据用户的权限控制对表中行的访问。\n\n这种数据访问的细粒度控制为保护敏感信息免受未经授权访问提供了额外的安全层。\n\n",
+              "links": [
+                {
+                  "title": "行级安全策略（Row Security Policies）",
+                  "url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html",
+                  "type": "article"
+                },
+                {
+                  "title": "如何在PostgreSQL中设置行级安全（RLS）",
+                  "url": "https://www.youtube.com/watch?v=j53NoW9cPtY",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "a39e6389-7fc1-4fdc-8be0-eba6e8ce152f",
+              "xid": "4101d1ba-584e-413e-9640-0e2b512e12af"
+            },
+            {
+              "title": "SELinux",
+              "description": "SELinux（Security-Enhanced Linux，安全增强型Linux）是一种Linux内核安全模块（Linux kernel security module），能够为您的系统提供增强的访问控制(access control)和安全策略（security policies）。\n\n其通过强制执行严格的安全策略，防止进程访问不应拥有的资源，从而保护系统免受未经授权的访问（unauthorized access）和数据泄露（data leaks）。\n\n这一工具对数据库管理员（database administrators）而言至关重要，可帮助保障PostgreSQL实例的运行安全。\n\n",
+              "links": [
+                {
+                  "title": "什么是SELinux？",
+                  "url": "https://www.redhat.com/en/topics/linux/what-is-selinux",
+                  "type": "article"
+                },
+                {
+                  "title": "SELinux简介",
+                  "url": "https://github.blog/developer-skills/programming-languages-and-frameworks/introduction-to-selinux/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "10318175-bc35-4ecf-b7ab-77aa81ea479a",
+              "xid": "a6b1b4b1-3be2-4398-8f61-b524c823b97e"
+            }
+          ],
+          "id": "db6796a7-02ec-4c01-b11b-199a4e0967ce",
+          "xid": "675922b3-d623-4e24-a800-f85f2d3803e1"
+        }
+      ],
+      "id": "ac3aa96c-6806-44bb-9789-c941521e2da3",
+      "xid": "38fd9cfa-b6c7-42f0-b3a0-797760e5d029"
+    },
+    {
+      "title": "基础设施技能",
+      "description": "PostgreSQL 是一个先进、企业级的开源关系型数据库系统（relational database system），具备卓越的性能（performance）和可靠性（reliability）。\n\n作为使用 PostgreSQL 的数据库管理员（database administrator，DBA）或开发人员（developer），必须具备对所需基础设施技能（infrastructure skills）的深刻理解，以有效管理并维护 PostgreSQL 环境。\n\n掌握这些 PostgreSQL 基础设施技能将极大提升你在职业发展中的竞争力，无论是作为开发人员还是 DBA，都能帮助你有效管理 PostgreSQL 环境。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "复制（replication）",
+          "description": "复制（replication）",
+          "links": [],
+          "children": [
+            {
+              "title": "逻辑复制（Logical Replication）",
+              "description": "PostgreSQL的逻辑复制（Logical Replication）允许在数据库间选择性地复制数据，为跨不同系统同步数据提供了灵活性。\n\n与会复制（Physical Replication）不同，该技术不复制整个数据库或集群，而是以更细粒度的方式工作，支持单独表或特定数据子集的数据复制。\n\n这一机制通过复制槽（replication slots）以及发布/订阅（publications/subscriptions）机制实现。\n\n发布（publication）定义了需要复制的数据变更（包括插入（INSERT）、更新（UPDATE）、删除（DELETE）事件），而订阅（subscription）则负责将这些变更从发布方数据库同步到订阅方数据库。\n\n逻辑复制适用于多种使用场景，例如实时数据仓库、数据库迁移及多主复制（multi-master replication），其中不同节点可同时处理读写操作。\n\n其配置涉及在源数据库创建发布，在目标数据库设置订阅，通过异步方式持续传输数据，同时对性能影响最小化。\n\n",
+              "links": [
+                {
+                  "title": "逻辑复制（Logical Replication）官方文档",
+                  "url": "https://www.postgresql.org/docs/current/logical-replication.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL逻辑复制深度解析",
+                  "url": "https://www.enterprisedb.com/postgres-tutorials/logical-replication-postgresql-explained",
+                  "type": "article"
+                },
+                {
+                  "title": "如何针对特定表基于pg_dump启动PostgreSQL逻辑复制",
+                  "url": "https://www.percona.com/blog/how-to-start-logical-replication-in-postgresql-for-specific-tables-based-on-a-pg_dump/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a9ecd3f8-80fb-4b9a-8e21-ed7e6136f859",
+              "xid": "cabf871b-6ba0-4823-9b69-1d0424623acb"
+            },
+            {
+              "title": "流复制（Streaming Replication）",
+              "description": "流复制（Streaming Replication）是PostgreSQL中的一个强大功能，可在多台服务器之间高效实现实时数据复制。\n\n它属于异步复制（asynchronous replication）的一种，这意味着复制过程会持续在后台运行，无需等待事务提交。\n\n流复制的核心目标在于确保高可用性（high availability）和故障容错（fault tolerance），同时支持读密集型工作负载（read-heavy workloads）的负载均衡（load balancing）。\n\n在PostgreSQL的上下文中，流复制涉及一台主服务器（primary server）和一台或多台备用服务器（standby server）。\n\n主服务器处理写操作，然后将变更（即预写日志（Write-Ahead Logs，WAL））流传输到备用服务器，备用服务器则将其应用于本地数据库副本。\n\n这种复制是单向的（unidirectional）——数据仅从主服务器流向备用服务器。\n\n",
+              "links": [
+                {
+                  "title": "流复制（Streaming Replication）",
+                  "url": "https://wiki.postgresql.org/wiki/Streaming_Replication",
+                  "type": "article"
+                },
+                {
+                  "title": "CentOS上的PostgreSQL流复制（Streaming Replication）",
+                  "url": "https://www.youtube.com/watch?v=nnnAmq34STc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "3217e057-8547-4d31-9f3c-789ea39c5224",
+              "xid": "284942e6-b4cd-4116-ac5c-e72cb7d91fa7"
+            }
+          ],
+          "id": "f6bf43c2-4205-4908-ab93-7cabb44a1628",
+          "xid": "0ee6ad54-dac5-4e1e-abff-3c32a502ce69"
+        },
+        {
+          "title": "connection-pooling",
+          "description": "connection-pooling",
+          "links": [],
+          "children": [
+            {
+              "title": "PgBouncer",
+              "description": "PgBouncer是PostgreSQL的一个轻量级连接池（connection pooler），旨在减少创建新数据库连接时产生的额外开销。\n\n它位于客户端与PostgreSQL服务器之间，通过维护可复用的活跃连接池，提升性能与资源利用率。\n\nPgBouncer支持多种连接池模式，包括会话模式（session pooling）、事务模式（transaction pooling）和语句模式（statement pooling），以满足不同使用场景和工作负载需求。\n\n它具有高度可配置性，支持对连接限制、身份验证方法及其他参数进行精细调整，从而优化数据库访问与性能。\n\n",
+              "links": [
+                {
+                  "title": "PgBouncer的GitHub项目",
+                  "url": "https://github.com/pgbouncer/pgbouncer",
+                  "type": "opensource"
+                },
+                {
+                  "title": "PgBouncer官方网站",
+                  "url": "https://www.pgbouncer.org/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1cf92228-fcf9-4ffd-8d6b-33a66020740d",
+              "xid": "228a2d5b-8d10-4409-b7f7-c6714d93560c"
+            },
+            {
+              "title": "PgBouncer 替代工具",
+              "description": "**Pgpool-II**、**HAProxy** 和 **Odyssey** 是增强 PostgreSQL 性能和可用性的重要工具。\n\n**Pgpool-II** 是一款功能强大的 **PostgreSQL 连接池器（connection pooler）**，提供 **负载均衡（load balancing）**、复制和连接限制功能以优化性能。\n\n**HAProxy** 是 PostgreSQL 的 **负载均衡器（load balancer）**，可将连接分发到多个服务器，其特性包含健康检查（health checks）和 **SSL/TLS 支持（SSL/TLS support）**，用于实现安全、高可用（high-availability setups）的配置。\n\n**Odyssey** 是多线程（multithreaded）连接池器，由 Yandex 开发，擅长高性能部署，提供 **高级路由（advanced routing）** 和 **透明 SSL（transparent SSL）**，并针对大规模系统（large-scale systems）进行负载均衡的优化。\n\n",
+              "links": [
+                {
+                  "title": "Yandex 开发的 Odyssey",
+                  "url": "https://github.com/yandex/odyssey",
+                  "type": "opensource"
+                },
+                {
+                  "title": "HAProxy 官方网站",
+                  "url": "http://www.haproxy.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "PGPool 官方网站",
+                  "url": "https://www.pgpool.net/mediawiki/index.php/Main_Page",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "81580594-8ef4-4318-8fdf-a0b1db697fa1",
+              "xid": "c4b62d4f-ffaa-435c-b1a0-9cf66f417644"
+            }
+          ],
+          "id": "4e79e038-c3a1-4ae8-a8fd-400b1198855a",
+          "xid": "110db092-2508-4628-b8b8-480f539c7a8d"
+        },
+        {
+          "title": "备份与恢复工具 (backup-recovery-tools)",
+          "description": "备份与恢复工具 (backup-recovery-tools)",
+          "links": [],
+          "children": [
+            {
+              "title": "巴曼（Barman）",
+              "description": "巴曼（Barman，Backup and Recovery Manager）是一款专为管理PostgreSQL备份与灾难恢复设计的稳健工具。\n\n它支持多种备份类型，包括完全备份和增量备份，并提供远程备份、备份保留策略和压缩功能以优化存储。\n\n巴曼还支持时间点恢复（Point-in-time recovery，PITR）功能，并与PostgreSQL的WAL归档集成，确保数据完整性。\n\n借助其全面的监控和报告功能，巴曼帮助数据库管理员自动化和简化备份流程，确保在数据丢失或损坏时提供可靠高效的恢复选项。\n\n",
+              "links": [
+                {
+                  "title": "EnterpriseDB/巴曼",
+                  "url": "https://github.com/EnterpriseDB/barman",
+                  "type": "opensource"
+                },
+                {
+                  "title": "pgBarman官网",
+                  "url": "https://www.pgbarman.org/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e567ac61-d366-4cdb-b89a-8d7cf242fae0",
+              "xid": "f909b6f4-5304-4cc3-9d92-2c4c58165026"
+            },
+            {
+              "title": "WAL-G",
+              "description": "WAL-G 是一款面向 PostgreSQL 和 MySQL/MariaDB 的开源归档与恢复工具，专为管理**预写日志（Write-Ahead Logs，WAL）**并执行持续归档而设计。\n\n它扩展了传统的 `pg_basebackup` 功能，支持**差异备份（delta backups）**、压缩和加密等特性。\n\nWAL-G 专为云存储优化，可无缝对接 Amazon S3、Google Cloud Storage 和 Azure Blob Storage 等服务。\n\n通过**数据去重（Deduplication）**和**增量备份（incremental backups）**能力，能高效利用备份存储空间。\n\n此外，WAL-G 提供**点时间恢复（Point-in-Time Recovery，PITR）**，允许数据库恢复至任意指定时间点，从而提升灾备流程的效率。\n\n",
+              "links": [
+                {
+                  "title": "WAL-G 的 GitHub 项目仓库",
+                  "url": "https://github.com/wal-g/wal-g",
+                  "type": "opensource"
+                },
+                {
+                  "title": "使用 WAL-G 实现 PostgreSQL 持续备份",
+                  "url": "https://supabase.com/blog/continuous-postgresql-backup-walg",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "42eaac87-3b38-4357-b6db-62b9b4f5d9c2",
+              "xid": "bbce6863-fb39-4e99-9a59-f4a40c4ce389"
+            },
+            {
+              "title": "pgBackRest（pgbackrest）",
+              "description": "pgBackRest（pgbackrest）是面向PostgreSQL的高效可靠备份与恢复方案，专为高性能和高可用性设计。\n\n支持全量、差异和增量备份，通过并行处理、备份验证及压缩技术优化存储与传输效率。\n\n支持基于时间点恢复（PITR）、加密和远程操作功能。\n\n其灵活的配置和详细文档可适配多种PostgreSQL部署场景，提供高效的数据库保护与灾难恢复能力。\n\n",
+              "links": [
+                {
+                  "title": "pgBackRest GitHub项目仓库",
+                  "url": "https://github.com/pgbackrest/pgbackrest",
+                  "type": "opensource"
+                },
+                {
+                  "title": "pgBackRest官方文档",
+                  "url": "https://pgbackrest.org",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "39211f76-f529-4a57-a418-afd13e61f598",
+              "xid": "0512d0cf-a59f-42f2-9529-52f39fbc9324"
+            },
+            {
+              "title": "pg_probackup",
+              "description": "pg_probackup 是PostgreSQL的备份和恢复管理工具（backup and recovery manager），旨在处理PostgreSQL集群的定期备份（periodic backups）。\n\n它支持增量备份（incremental backups）、合并策略（merge strategies）以避免频繁的全量备份（frequent full backups），并结合验证（validation）和并行化（parallelization）以提高效率。\n\n此外，它还提供如从热备服务器（standby servers）备份、远程操作（remote operations）和压缩（compression）等功能。\n\n支持PostgreSQL 11到16版本，支持备份和WAL归档（WAL archives）的全面管理，确保数据完整性和高效的恢复流程（recovery processes）。\n\n",
+              "links": [
+                {
+                  "title": "PostgresPro/pg_probackup 项目",
+                  "url": "https://github.com/postgrespro/pg_probackup",
+                  "type": "opensource"
+                },
+                {
+                  "title": "PostgresPro 官网",
+                  "url": "https://postgrespro.com/products/extensions/pg_probackup",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e934c4b6-11b0-495b-975d-9090d42828db",
+              "xid": "767e865e-e4b9-4e58-9984-0094be37db93"
+            },
+            {
+              "title": "pg_dump（pg_dump）",
+              "description": "`pg_dump（pg_dump）` 是一个用于通过导出数据和架构（schema）来备份PostgreSQL数据库的实用工具（utility）。\n\n与 `pg_basebackup（pg_basebackup）` 对比，后者对整个集群执行物理备份（physical backup），而 `pg_dump` 会为单个数据库生成逻辑备份（logical backup）。\n\n它可以以多种格式输出数据，如纯SQL（plain SQL）、自定义（custom）、目录（directory）和tar格式（tar），从而提供灵活的还原选项。\n\n`pg_dump` 可用于选择性备份（selectively backup）特定表（tables）、架构（schemas）或数据，适用于数据库迁移或创建开发副本等任务。\n\n该实用工具通过数据库内置机制捕获备份时的数据快照，确保备份的一致性。\n\n",
+              "links": [
+                {
+                  "title": "pg_dump官方文档",
+                  "url": "https://www.postgresql.org/docs/current/app-pgdump.html",
+                  "type": "article"
+                },
+                {
+                  "title": "VMware的pg_dump指南",
+                  "url": "https://docs.vmware.com/en/VMware-Greenplum/5/greenplum-database/utility_guide-client_utilities-pg_dump.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7c475958-f647-407d-8b5b-7962bcd421c5",
+              "xid": "b5f7f887-1309-4c6d-af24-c5d8cd4c403c"
+            },
+            {
+              "title": "pg_dumpall（pg_dumpall）",
+              "description": "pg_dumpall（pg_dumpall）是一个用于备份PostgreSQL集群中所有数据库的实用工具，包括集群范围内的数据，如角色（roles）和表空间（tablespaces）。\n\n它会生成一个包含重建集群数据库及其内容及全局对象（global objects）的命令的纯文本SQL脚本文件。\n\n此工具对于需要同时保存数据库数据和集群范围设置的完整备份场景十分有用。\n\n与针对单个数据库的pg_dump（pg_dump）不同，pg_dumpall确保可以从备份恢复整个PostgreSQL集群，使其在完全灾难恢复场景中不可或缺。\n\n",
+              "links": [
+                {
+                  "title": "pg_dumpall实用工具文档",
+                  "url": "https://www.postgresql.org/docs/current/app-pg-dumpall.html",
+                  "type": "article"
+                },
+                {
+                  "title": "pg_dump与pg_dumpall的对比",
+                  "url": "https://www.postgresqltutorial.com/postgresql-administration/postgresql-backup-database/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7011fa31-b1a8-481a-8b74-37da17f07d1f",
+              "xid": "899994c3-af49-448a-8c3e-08abfa086732"
+            },
+            {
+              "title": "pg_restore",
+              "description": "`pg_restore` 是一种用于还原 PostgreSQL 数据库备份的实用工具（utility），特别针对于由 `pg_dump` 创建的非纯文本格式（non-plain-text）的备份数据（如自定义格式（custom）、目录格式（directory）或 Tar 格式（tar））。\n\n它支持选择性地恢复数据库对象，例如表、模式（schema）、索引（index）等，以灵活还原数据库的特定部分。\n\n此外，该工具可调整数据加载操作（data load）顺序，实现数据加载后的索引和约束（constraint）的创建，并支持并行化（parallelize）还原过程，加快恢复速度。\n\n此工具通过优化逻辑备份（logical backups）的还原流程，实现高效且可定制（customizable）的还原操作。\n\n",
+              "links": [
+                {
+                  "title": "pg_restore工具指南",
+                  "url": "https://www.postgresql.org/docs/current/app-pgrestore.html",
+                  "type": "article"
+                },
+                {
+                  "title": "pg_restore使用指南",
+                  "url": "https://www.timescale.com/learn/a-guide-to-pg_restore-and-pg_restore-example",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "eca5400b-2f85-43ec-a98b-c2d59d16d3ef",
+              "xid": "6ca90223-9018-4ea2-acdd-e50f9f623779"
+            },
+            {
+              "title": "pg_basebackup（pg_basebackup）",
+              "description": "`pg_basebackup` 是一个用于创建PostgreSQL数据库集群物理备份（physical backup）的实用工具（utility）。\n\n它通过在不影响写入操作（write operations）的情况下复制数据文件，生成整个数据库集群的一致备份（consistent backup）。\n\npg_basebackup 常用于搭建流复制（streaming replication）或灾难恢复（disaster recovery），支持并行模式（parallel mode）加速备份过程，并可将备份输出为tar格式（tar format）或纯目录（plain directory）。\n\n该工具能最大限度减少备份过程中对数据库操作的影响。\n\n",
+              "links": [
+                {
+                  "title": "pg_basebackup（pg_basebackup）",
+                  "url": "https://www.postgresql.org/docs/current/app-pgbasebackup.html",
+                  "type": "article"
+                },
+                {
+                  "title": "了解pg_basebackup的新选项",
+                  "url": "https://www.postgresql.fastware.com/blog/understanding-the-new-pg_basebackup-options",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "884bd257-b79c-4260-ad35-f3b08b622d19",
+              "xid": "7a3f51c6-72bf-4aaf-9a62-a8a414499241"
+            },
+            {
+              "title": "备份验证流程（Backup Validation Procedures）",
+              "description": "仅执行备份是不够的，您还必须确保备份的有效性和可恢复性。\n\n在危机情况下，损坏或不完整的备份可能导致数据丢失或系统停机。\n\n因此，遵循最佳实践并定期验证PostgreSQL备份至关重要。\n\n关键验证流程\n--------------------\n\n以下是您必须遵循的关键备份验证步骤：\n\n*   **还原测试（Restore Test）**：定期使用备份文件进行还原测试，确保其能成功恢复PostgreSQL数据库。\n\n此过程可通过脚本和计划任务实现自动化。\n\n*   **校验和验证（Checksum Verification）**：在备份过程中使用校验和来验证备份数据的完整性。\n\n校验和可用于检测由数据损坏或篡改引起的错误。\n\nPostgreSQL提供了可在数据库级别启用的内置校验和支持。\n\n*   **文件级验证（File-Level Validation）**：将备份中的文件与PostgreSQL数据库源文件进行比对，确保备份包含所有必要文件且内容与原始数据一致。\n\n*   **备份日志监控（Backup Logs Monitoring）**：监控并分析PostgreSQL备份过程中生成的日志，重点关注任何警告、错误或异常消息。\n\n需调查并解决这些问题以维持备份完整性。\n\n*   **自动化测试（Automated Testing）**：设置自动化测试以模拟灾难恢复场景，验证备份是否能完整恢复数据库。\n\n这不仅能验证备份的有效性，还可测试整体恢复计划的可靠性。\n\n\n后验证操作\n-----------------\n\n完成备份验证后，必须记录结果并解决验证过程中发现的问题。\n\n这可能包括优化备份和恢复策略、修复错误或更新相关脚本和工具。\n\n",
+              "links": [
+                {
+                  "title": "备份验证工具（pg_verifybackup）",
+                  "url": "https://www.postgresql.org/docs/current/app-pgverifybackup.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL备份和还原验证（PostgreSQL Backup and Restore Validation）",
+                  "url": "https://portal.nutanix.com/page/documents/solutions/details?targetId=NVD-2155-Nutanix-Databases:postgresql-backup-and-restore-validation.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "02ccea91-7563-41f5-b52c-2f3b9cfe0ad3",
+              "xid": "48b2c300-4a32-457a-bb31-30b69c127876"
+            }
+          ],
+          "id": "44f876af-54dd-4f00-9609-b9422f977cfa",
+          "xid": "ff830afc-a277-4612-83a6-b2529e9a3b47"
+        },
+        {
+          "title": "升级流程（upgrade-procedures）",
+          "description": "升级流程（upgrade-procedures）",
+          "links": [],
+          "children": [
+            {
+              "title": "使用 `pg_upgrade` 工具（pg_upgrade）",
+              "description": "pg_upgrade 是 PostgreSQL 的一个实用工具（utility），用于将 PostgreSQL 数据库集群（database cluster）原地升级至新主版本。\n\n它允许用户无需转储和恢复数据库即可进行升级，显著缩短停机时间。\n\n以下是使用 pg_upgrade 的关键步骤：\n\n1. **准备阶段（Preparation）**: 升级前需确保已安装旧版和新版的 PostgreSQL。\n\n备份现有集群并保证无活跃连接。\n\n\n    \n2. **初始化新集群（Initialize the New Cluster）**: 使用初始化工具 initdb（initdb）创建目标版本的新集群。\n\n\n    \n3. **执行 pg_upgrade**: 运行带有旧版和新版集群的数据目录设置的 pg_upgrade 命令，并指定旧版和新版的 pg_ctl 工具（pg_ctl）路径。\n\n\n    \n4. **分析与优化（Analyze and Optimize）**: 升级后运行由 pg_upgrade 生成的 analyze_new_cluster.sh 脚本（analyze_new_cluster.sh）更新优化器统计信息。\n\n此步骤对性能至关重要。\n\n\n    \n5. **完成（Finalize）**: 若无异常，启动新集群并删除旧集群释放空间。\n\n\n    \n",
+              "links": [
+                {
+                  "title": "pg_upgrade 工具（pg_upgrade）",
+                  "url": "https://www.postgresql.org/docs/current/pgupgrade.html",
+                  "type": "article"
+                },
+                {
+                  "title": "使用 pg_upgrade 分析 Postgres 升级（Examining Postgres Upgrades with pg_upgrade）",
+                  "url": "https://www.crunchydata.com/blog/examining.../pg_upgrade",
+                  "type": "article"
+                },
+                {
+                  "title": "用 pg_upgrade 工具（pg_upgrade） 升级 PostgreSQL",
+                  "url": "https://www.youtube.com/watch?v=DXHEk4fohcI",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "617a933f-90ae-47e2-a321-dac48770df1b",
+              "xid": "8ddb5607-1c6c-4014-b8a3-d86fc3fcbcf5"
+            },
+            {
+              "title": "使用逻辑复制（Logical Replication）",
+              "description": "逻辑复制（Logical Replication）是一种异步功能，允许将数据修改从源系统（发布者 publisher）传输到目标系统（订阅者 subscriber），适用于不同版本的PostgreSQL数据库。\n\n它提供了更精确的复制数据控制，并在系统升级期间非常有用。\n\n**逻辑复制的优势**\n\n*   支持仅复制特定表，而非整个数据库。\n\n\n*   可通过发布者与订阅者之间的转换层（transformation layer）构建不同数据库架构的副本。\n\n\n*   支持在不停止服务的情况下进行版本升级，避免数据库停机时间。\n\n\n",
+              "links": [
+                {
+                  "title": "逻辑复制（Logical Replication）",
+                  "url": "https://www.postgresql.org/docs/current/logical-replication.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL逻辑复制指南（Logical Replication Guide）",
+                  "url": "https://www.youtube.com/watch?v=OvSzLjkMmQo",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "96d6fa03-33c4-4c41-9eba-bf75dc977c43",
+              "xid": "e6bdd2cf-5370-48f0-80a9-9324e236bc81"
+            }
+          ],
+          "id": "1e0014f8-b7e2-4baf-b706-67c345bbfaf8",
+          "xid": "24a127fd-d398-4034-b86f-dcf17460d5ec"
+        },
+        {
+          "title": "监控（monitoring）",
+          "description": "监控（monitoring）",
+          "links": [],
+          "children": [
+            {
+              "title": "Prometheus",
+              "description": "Prometheus 是一个专为可靠性和可扩展性设计的开源系统监控和警报工具包（toolkit）。\n\n最初由 SoundCloud 开发，现已成为云原生计算基金会（Cloud Native Computing Foundation）的项目。\n\nPrometheus 会以预设时间间隔从配置的目标收集指标数据（metrics），评估规则表达式，展示结果，并能在满足特定条件时触发警报。\n\n其核心特性包括名为 PromQL（Prometheus Query Language）的强大查询语言（query language）、基于时间序列数据（time-series data）构建的多维数据模型（multi-dimensional data model，以指标名称和键值对标识），以及高效的数据存储系统。\n\nPrometheus 高度适应性强，支持服务发现机制（service discovery）和静态配置，因此成为监控动态云环境和微服务架构（Microservices Architecture）的可靠方案。\n\n",
+              "links": [
+                {
+                  "title": "Prometheus 官网",
+                  "url": "https://prometheus.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "Prometheus 监控指南",
+                  "url": "https://www.tigera.io/learn/guides/prometheus-monitoring/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6489ff79-b142-4b1f-a378-3f10cb2bd566",
+              "xid": "6888c486-9e2f-4829-8e43-fe84b6fa01c1"
+            },
+            {
+              "title": "Zabbix",
+              "description": "Zabbix是一种开源的监控软件（open-source monitoring software），用于网络、服务器、虚拟机和云计算服务。\n\n它提供了对各种IT基础架构组件（IT infrastructure components）收集的指标的实时监控（real-time monitoring）、告警（alerting）和可视化（visualization）。\n\nZabbix支持多种数据收集方法（data collection methods），包括简单网络管理协议(SNMP)、智能平台管理接口(IPMI)、Java管理扩展(JMX)和自定义脚本（custom scripts），使其适用于不同环境(different environments）。\n\n它提供了一个基于Web的界面（web-based interface）用于配置和监控（configuration and monitoring），允许用户设置阈值（thresholds）、生成告警，并创建详细的性能报告（performance reports）和仪表盘（dashboards）。\n\nZabbix还支持分布式监控（distributed monitoring）、自动发现（auto-discovery）和扩展能力（scaling capabilities），使其适用于从小型到大规模的部署（deployments）。\n\n它因其健壮性（robustness）、灵活性和全面的监控能力（comprehensive monitoring capabilities）而广受欢迎。\n\n",
+              "links": [
+                {
+                  "title": "Zabbix项目仓库（GitHub）",
+                  "url": "https://github.com/zabbix/zabbix",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Zabbix官网",
+                  "url": "https://www.zabbix.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "使用Zabbix监控家庭网络（home network）",
+                  "url": "https://jswheeler.medium-com的/使用-Zabbix-监控家庭网络的指南",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "bb3f53ea-57bc-4ae4-ac96-584100c7cb3f",
+              "xid": "909b9cac-334f-40ee-b66c-37f9c1a466ce"
+            },
+            {
+              "title": "check_pgactivity",
+              "description": "`check_pgactivity` 是一个 PostgreSQL 监控工具（PostgreSQL monitoring tool），可为 PostgreSQL 数据库（PostgreSQL databases）提供详细的健康状态和性能统计数据（detailed health and performance statistics）。\n\n该工具专为与 Nagios 监控框架（Nagios monitoring framework） 搐配使用而设计，可检测 PostgreSQL 活动的多个方面，包括连接状态（connection status）、复制状态（replication status）、锁活动（lock activity）和查询性能（query performance）。\n\n通过收集并展示关键指标（key metrics），`check_pgactivity` 帮助数据库管理员（database administrators）检测并解决性能问题（performance issues），确保数据库高效可靠的运行。\n\n该工具支持自定义阈值和警报（custom thresholds and alerting），使其成为一种灵活的解决方案（flexible solution），可用于主动式数据库监控（proactive database monitoring）。\n\n",
+              "links": [
+                {
+                  "title": "OPMDG 的 check_pgactivity 项目",
+                  "url": "https://github.com/OPMDG/check_pgactivity",
+                  "type": "opensource"
+                }
+              ],
+              "children": [],
+              "id": "c30908a8-df94-4f4f-89ae-166c1e74f658",
+              "xid": "e4fd9ec4-a133-454f-8230-bf5fe454b7bd"
+            },
+            {
+              "title": "temBoard",
+              "description": "temBoard是由Dalibo公司开发的一款用于PostgreSQL数据库的开源监控和管理工具（open-source monitoring and management tool），其基于Web的界面可帮助数据库管理员（DBAs）高效地管理和监控（manage and monitor）多个PostgreSQL实例。\n\ntemBoard的主要功能包括：\n\n1. 实时监控（Real-Time Monitoring）：提供针对CPU利用率（CPU usage）、内存使用（memory usage）、磁盘I/O（disk I/O）和查询性能（query performance）等数据库性能指标的实时洞察（real-time insights），帮助DBAs快速识别并解决潜在问题（identify and address potential issues）。\n\n \n2. 基于代理的架构（Agent Based Architecture）：通过在每个PostgreSQL实例安装轻量级代理（agent）收集数据并执行管理操作（management tasks）。\n\n此架构设计旨在将监控对数据库性能的影响降至最小（minimal performance impact）。\n\n \n3. 警报与通知（Alerting and Notifications）：可通过配置（configurable）的警报功能让管理员实时获得关键数据库事件（critical database events）及性能问题的更新，从而实现主动管理（proactive management）和缩短响应时间（response times）。\n\n \n4. 性能分析（Performance Analysis）：提供查询统计（query statistics）和历史性能数据（historical performance data）等分析工具，支持趋势分析（trends）、瓶颈识别（bottleneck identification）及性能优化（optimize）。\n\n \n5. 用户管理和安全性（User Management and Security）：提供用户身份验证（user authentication）和基于角色的访问控制（role-based access control），确保PostgreSQL实例的安全管理（secure management）。\n\n系统会记录操作日志（audit log）以便追踪活动（track user activities）。\n\n \n6. 插件系统（Plugin System）：通过插件（plugins）实现扩展性（extensible），可自定义（customization）或扩展（ addition）新功能（new features）。\n\n \n\n",
+              "links": [
+                {
+                  "title": "Dalibo团队的 temBoard项目（dalibo/temboard）",
+                  "url": "https://github.com/dalibo/temboard",
+                  "type": "opensource"
+                },
+                {
+                  "title": "temBoard文档（temBoard Documentation）",
+                  "url": "https://temboard.readthedocs.io/en/v8/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "555ae178-eec2-49cc-9fc6-d06a7e6b5abe",
+              "xid": "cff0badd-4aee-4bb1-9995-3b5bf9e976b1"
+            },
+            {
+              "title": "PGBackRest 检查",
+              "description": "监控 PGBackRest（pgBackRest） 可确保您的 PostgreSQL 备份保持一致、及时且无潜在问题。\n\n通过定期检查备份，您可以维护 PostgreSQL 数据库的可靠且高效的备份-恢复流程。\n\nPGBackRest 提供了一个内置命令名为“检查（check）”的，它执行多种验证来确保存储库和配置设置的有效性。\n\n该命令的执行方式如下：\n\n    pgbackrest --stanza=<分段名称（stanza> 检查\n    \n\n<分段名称（stanza_name>需替换为要验证的分段（stanza）的名称。\n\n",
+              "links": [
+                {
+                  "title": "PGBackRest 官网",
+                  "url": "https://pgbackrest.org/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a35592f0-5956-450d-a4b5-10f8e041beb8",
+              "xid": "e7787b56-8023-495e-835f-66cb19e2bf04"
+            }
+          ],
+          "id": "245b5170-8f6d-4bcc-b627-bee44de736da",
+          "xid": "0e0d2248-430c-44ac-a43b-a98d08d53ba8"
+        },
+        {
+          "title": "资源使用 / 配置 / 容量规划",
+          "description": "容量规划（Capacity Planning）和资源管理对从事PostgreSQL工作的专业人员至关重要。\n\n精心设计的基础设施需在服务器、I/O和存储系统之间平衡资源使用（Resource Usage），从而保持数据库的稳定运行。\n\n在此上下文中，资源使用指计算资源的消耗，例如中央处理器（CPU）、内存（Memory）、存储和网络资源。\n\n规划配置（Provisioning）和容量能帮助管理员高效运作PostgreSQL的可扩展基础设施。\n\n资源使用（Resource Usage）\n--------------\n\n在监控PostgreSQL数据库的性能时，需关注以下关键指标：中央处理器（CPU）、内存（Memory）、磁盘I/O，以及网络资源的使用情况。\n\n*   **中央处理器（CPU）**：高CPU使用率可能表明查询的执行时间超出预期，导致系统资源消耗增加。\n\n需监控CPU使用率并优化查询及索引以避免性能瓶颈。\n\n\n*   **内存（Memory）**：良好管理的内存系统可显著加快数据库操作。\n\n需监控内存利用率，因低效使用可能导致查询响应变慢和性能下降。\n\n\n*   **磁盘I/O（Disk I/O）**：监控磁盘读写性能以避免瓶颈并保持数据库高效运作。\n\n频繁的写入操作、繁重任务或低速存储可能影响PostgreSQL的事务处理能力。\n\n\n*   **网络（Network）**：网络问题可能导致响应延迟或连接不稳定。\n\n监控网络流量可帮助发现与数据库、客户端连接或复制相关的潜在问题。\n\n配置（Provisioning）\n------------\n\n合理的资源配置对确保系统能处理负载且保持成本效益至关重要。\n\n在管理PostgreSQL时，需关注以下核心方面：\n\n*   **实例规格（Instance Size）**：资源分配需确定PostgreSQL服务器的适当实例规格（Instance Size）。\n\n根据数据库应用程序的预期负载选择CPU、内存、存储的均衡配置。\n\n\n*   **扩展（Scaling）**：计划横向扩缩（通过增加节点）或纵向扩缩（增加资源）以支持基础设施性能随需求增长。\n\n这能帮助适应负载波动、新应用或使用模式的改变。\n\n\n*   **高可用性（High Availability）**：配置多实例以构建高可用性（High Availability）架构，以抵御硬件故障并降低停机时间。\n\n此外，PostgreSQL的复制（Replication）功能可确保跨节点的数据持久性与一致性。\n\n容量规划（Capacity Planning）\n-----------------\n\n容量规划是一个动态过程，需根据业务假设和实际使用模式预测基础设施需求。\n\n在规划PostgreSQL架构时，需考虑以下因素：\n\n*   **负载（Workload）**：明确PostgreSQL数据库的预期负载以确定数据库规模、索引和缓存需求。\n\n\n*   **数据存储**：需通过常规维护、监控和预先制定的存储扩容计划预测数据量增长。\n\n\n*   **性能指标**：建立关键绩效指标（KPIs）来衡量性能、检测潜在问题并采取措施以减少服务降级。\n\n\n*   **测试**：模拟测试场景并执行压力测试以识别瓶颈和不一致项，从而调整基础设施参数。\n\n\n",
+          "links": [
+            {
+              "title": "资源消耗（Resource Consumption）",
+              "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html",
+              "type": "article"
+            },
+            {
+              "title": "托管PostgreSQL数据库的5种方式",
+              "url": "https://www.prisma.io/dataguide/postgresql/5-ways-to host-postgresql",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e259c4b3-aa5b-4764-907d-283e7db47701",
+          "xid": "b5e23604-a44b-4192-aeb2-d65b853d21ff"
+        },
+        {
+          "title": "集群管理（cluster-management）",
+          "description": "集群管理（cluster-management）",
+          "links": [],
+          "children": [
+            {
+              "title": "Patroni",
+              "description": "Patroni 是一个开源（open-source）工具，用于自动部署、管理和 PostgreSQL 集群的故障转移（failover），确保高可用性（high availability）。\n\n它利用 Etcd、Consul 或 ZooKeeper 等分布式配置存储来维护集群状态并管理领导选举（leader election）。\n\nPatroni 持续监控 PostgreSQL 实例的运行状况，如果主节点（primary）发生故障，会自动将一个副本（replica）提升为主节点，从而最大限度地缩短停机时间。\n\n它通过内置的复制、故障转移和恢复机制简化了对 PostgreSQL 高可用性的管理，使其成为生产环境中维护 PostgreSQL 集群的强大解决方案。\n\n",
+              "links": [
+                {
+                  "title": "Zalando/Patroni 存储库",
+                  "url": "https://github.com/zalando/patroni",
+                  "type": "opensource"
+                }
+              ],
+              "children": [],
+              "id": "075d5c4c-0fe9-4ab6-a08b-73da3fe8c3f9",
+              "xid": "7259e84f-2aab-4942-94da-77f62697c782"
+            },
+            {
+              "title": "Patroni 的替代方案",
+              "description": "虽然 Patroni 是管理 PostgreSQL 集群的流行选择，但还有一些其他工具和框架可以作为 Patroni 的替代方案。\n\n每个工具都具备独特的功能和优势，某些可能更贴合您的特定需求或应用场景。\n\n以下是 PostgreSQL 集群管理的 Patroni 替代方案：\n\n- **Stolon** 是由 Sorint.lab 推出的云原生管理工具，旨在提供高可用性（High Availability）和无缝扩展能力。\n\n\n- **Pgpool-II**（由 Pgpool 全球开发组维护）专注于负载均衡（Load Balancing）、连接池（Connection Pooling）和高可用性（HA）。\n\n\n- **Repmgr** 由 2ndQuadrant 开发，简化了复制（Replication）和集群管理流程。\n\n\n- **PostgreSQL 自动故障转移 (PAF)** 是 Dalibo 的作品，基于 Pacemaker 和 Corosync 提供轻量级的故障转移管理方案。\n\n这些工具为 PostgreSQL 集群管理提供了多样化的解决方案。\n\n",
+              "links": [
+                {
+                  "title": "dalibo/PAF",
+                  "url": "https://github.com/dalibo/PAF",
+                  "type": "opensource"
+                },
+                {
+                  "title": "sorintlab/stolen",
+                  "url": "https://github.com/sorintlab/stolon",
+                  "type": "article"
+                },
+                {
+                  "title": "RepMgr",
+                  "url": "https://repmgr.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "pgPool",
+                  "url": "https://www.pgpool.net/mediawiki/index.php/Main_Page",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2ab9bab3-5483-4829-89f9-8a85b4da3288",
+              "xid": "a46875af-0d8e-43cd-8441-2d85bf841e66"
+            }
+          ],
+          "id": "e96d4ddd-7f35-408e-b29f-0f0442467618",
+          "xid": "d71a8694-075a-4d7d-8df5-ca13332ba4d8"
+        },
+        {
+          "title": "负载均衡（load-balancing）",
+          "description": "负载均衡（load-balancing）",
+          "links": [],
+          "children": [
+            {
+              "title": "高可用性代理（HAProxy）",
+              "description": "高可用性代理（HAProxy，全称High Availability Proxy）是一款流行的开源软件，用于为TCP和基于HTTP的应用程序提供高可用性（high availability）、负载均衡（load balancing）和代理（proxying）功能。\n\n它被广泛用于提升Web应用、数据库及其他服务的性能、安全性和可靠性。\n\n在PostgreSQL的负载均衡中，HAProxy因灵活性和高效性能而成为常见选择。\n\n通过将数据库连接分布至多个PostgreSQL集群实例，HAProxy可协助提升性能、高可用性和容错（fault tolerance）能力。\n\n",
+              "links": [
+                {
+                  "title": "HAProxy官网",
+                  "url": "https://www.haproxy.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "HAProxy和负载均衡概念入门",
+                  "url": "https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "fd78b0d1-7715-4b45-a918-add4053ef3f3",
+              "xid": "86de769b-dc29-4c6f-9299-c0faa873920a"
+            },
+            {
+              "title": "KeepAlived（Keepalived）",
+              "description": "KeepAlived（Keepalived）是一款强大且广泛应用的开源解决方案，用于负载均衡（load balancing）和高可用性（high availability）。\n\n它可在服务器崩溃或网络连接故障等情形下，维持系统的稳定运行环境。\n\nKeepAlived通过利用Linux虚拟服务器（Linux Virtual Server, LVS）模块和虚拟路由器冗余协议（Virtual Router Redundancy Protocol, VRRP），实现稳定运作。\n\n对于PostgreSQL数据库系统（PostgreSQL database systems），KeepAlived可通过故障容忍（fault tolerance）和负载均衡功能增强基础设施可靠性。\n\n只需简单配置，即可将只读查询分发到多个复制的PostgreSQL服务器，或分散事务处理到不同节点，从而构建高效率与弹性的系统。\n\n",
+              "links": [
+                {
+                  "title": "KeepAlived开源项目GitHub主页",
+                  "url": "https://github.com/acassen/keepalived",
+                  "type": "opensource"
+                },
+                {
+                  "title": "KeepAlived官方文档页面",
+                  "url": "https://www.keepalived.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "自托管服务的高可用性方案：KeepAlived实战",
+                  "url": "https://www.virtualizationhowto.com/2023/09/keepalived-high-availability-for-self-hosted-services/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f9111b5f-466c-43fb-bbd9-fccc4f120901",
+              "xid": "e97f98bb-1271-42d9-8492-7be1db5762ae"
+            },
+            {
+              "title": "Consul",
+              "description": "Consul 是由 HashiCorp 开发的分布式（distributed）、高可用（highly-available）且支持多数据中心（multi-datacenter aware）的服务发现（service discovery）与配置工具，可用于在 PostgreSQL 集群中实现负载均衡（load balancing），将客户端连接和查询均匀分配到多个后端节点上。\n\nConsul 采用共识协议（consensus protocol）进行领导者选举（leader election），确保同一时间只有一个服务器作为领导者。\n\n该领导者在检测到故障或关闭时自动接管，以实现系统的容错能力。\n\n它还提供多种服务，包括服务发现、健康检查（health checking）、键值存储（key-value storage）和 DNS 服务（DNS services）。\n\n",
+              "links": [
+                {
+                  "title": "HashiCorp/Consul",
+                  "url": "https://github.com/hashicorp/consul",
+                  "type": "opensource"
+                },
+                {
+                  "title": "HashiCorp 的 Consul",
+                  "url": "https://www.consul.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是 Consul？",
+                  "url": "https://developer.hashicorp.com/consul/docs/intro",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "9551c515-3dbf-4d52-9860-c73847e9a842",
+              "xid": "a1d24763-fb50-4f12-b7e7-0b3614b7319a"
+            },
+            {
+              "title": "etcd",
+              "description": "etcd 是一种分布式键值存储（distributed key-value store），可在集群化环境中高效且可靠地存储关键数据。\n\n它现已成为分布式系统中存储配置数据和实现服务发现的核心组件。\n\n通过与连接池管理器（connection poolers）如 PgBouncer 或 HAProxy 结合使用，etcd 可提升 PostgreSQL 负载均衡的效果。\n\n将活跃 PostgreSQL 服务器的 IP 地址和端口作为键存储在系统中后，连接池管理器可定期获取此信息，将客户端连接路由至正确服务器。\n\n此外，对存储执行的事务性操作（transactional operations）可简化在负载均衡配置中添加或移除节点的过程，同时维护数据一致性。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL 高可用性与 etcd",
+                  "url": "https://github.com/patroni/patroni",
+                  "type": "opensource"
+                },
+                {
+                  "title": "etcd 与 PostgreSQL 对比",
+                  "url": "https://api7.ai/blog/etcd-vs-postgresql",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL 高可用性指南",
+                  "url": "https://www.youtube.com/watch?v=J0ErkLo2b1E",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "54970a4c-8127-4552-ad9d-dfcfb639e20e",
+              "xid": "65c9c48e-19ed-46cb-b9b3-b8104c910fa4"
+            }
+          ],
+          "id": "e1a39f9b-b2f5-459f-8dd3-d621275b31fc",
+          "xid": "4b96f7ed-a450-4a4d-b9d3-020d7099eba1"
+        },
+        {
+          "title": "Kubernetes部署（kubernetes-deployment）",
+          "description": "Kubernetes部署（kubernetes-deployment）",
+          "links": [],
+          "children": [
+            {
+              "title": "简单有状态配置",
+              "description": "以下是在 Kubernetes 上部署简单有状态 `PostgreSQL` 所涉及的关键组件和步骤：\n\n* **创建存储类（StorageClass）**: 在 Kubernetes 中定义 StorageClass 资源，指定存储类型及访问模式（读写模式、只读模式等）。\n\n* **创建持久卷申领（PersistentVolumeClaim，缩写 PVC）**: 定义 PersistentVolumeClaim（PVC），向存储类申领所要的 `PostgreSQL` 数据库存储空间。\n\n* **创建配置映射（ConfigMap）**: 使用配置映射（ConfigMap）存储数据库配置参数（例如用户名、密码等），与应用程序代码分离。\n\n* **创建密钥（Secret）**: 将敏感数据（如数据库密码）安全地存储到 `Secret` 对象中。\n\n该 `Secret` 将作为卷挂载到 Pod 中，同时设置环境变量。\n\n* **创建有状态集（StatefulSet）**: 定义 StatefulSet 资源负责管理 `PostgreSQL` Pod 的部署。\n\n需指定容器镜像、端口、卷（PVC 和 ConfigMap）及启动脚本。\n\nStatefulSet 确保每个 Pod 拥有唯一标识符，并保证 Pod 创建和删除的顺序。\n\n\n",
+              "links": [
+                {
+                  "title": "如何在 Kubernetes 集群部署 PostgreSQL",
+                  "url": "https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster",
+                  "type": "article"
+                },
+                {
+                  "title": "在 Kubernetes 上部署 PostgreSQL",
+                  "url": "https://refine.dev/blog/postgres-on-kubernetes/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d06aae54-9f55-4c49-8fd7-c581beeef2a3",
+              "xid": "414d3a53-7d47-4776-a9df-1bab3efdb8a5"
+            },
+            {
+              "title": "Helm",
+              "description": "Helm 是 Kubernetes 的一个流行包管理器（Package Manager），允许您在 Kubernetes 集群上轻松部署、管理和升级应用程序。\n\n在 Kubernetes 领域中，Helm 的作用类似于 Linux 生态系统中的软件包管理工具 \"apt\" 或 \"yum\"。\n\nHelm 通过提供名为 \"图表（charts）\" 的即用型包简化了安装流程。\n\nHelm 图表是一组 YAML 文件、模板（templates）和清单（manifests），用于描述应用程序所需的资源和配置。\n\n",
+              "links": [
+                {
+                  "title": "helm/helm",
+                  "url": "https://github.com/helm/helm",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Helm 官网",
+                  "url": "https://helm.sh/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "3b2be084-be51-4695-967a-a36237469bcc",
+              "xid": "1556611a-f51d-4682-873a-c870be15877f"
+            },
+            {
+              "title": "操作符（Operators）",
+              "description": "在 Kubernetes 中，操作符（Operators）是软件扩展，它们通过自定义资源（Custom Resources）来管理和操作应用程序及其组件。\n\n操作符封装了运维知识，并实现了部署、备份和伸缩等复杂操作的自动化。\n\n通过自定义资源定义（CRDs）和自定义控制器，操作符会持续监控应用程序的状态，并将其与期望状态进行统一，从而确保系统具备自我修复和弹性能力。\n\n用于构建操作符的常见框架包括操作符SDK（Operator SDK）、Kubebuilder 和 Metacontroller，这些框架简化了开发过程，并提升了 Kubernetes 管理有状态应用和复杂应用的效率。\n\n",
+              "links": [
+                {
+                  "title": "访问专属的 Kubernetes 路线图",
+                  "url": "https://roadmap.sh/kubernetes",
+                  "type": "article"
+                },
+                {
+                  "title": "Kubernetes",
+                  "url": "https://kubernetes.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "Kubernetes 操作符（Operators）",
+                  "url": "https://kubernetes.io/docs/concepts/extend-kubernetes/operator/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "0c886f90-20b8-4e52-81b1-7d5c552ffb89",
+              "xid": "a2e7014e-48db-4676-8fad-fc3fc5bc47fd"
+            }
+          ],
+          "id": "59e50f8b-9fad-446d-b77d-e518417195c4",
+          "xid": "06e8b167-bc69-4b6b-bfa9-32f5654f5366"
+        },
+        {
+          "title": "匿名化（anonymization）",
+          "description": "匿名化（anonymization）",
+          "links": [],
+          "children": [
+            {
+              "title": "PostgreSQL匿名化扩展（PostgreSQL Anonymizer）",
+              "description": "PostgreSQL匿名化扩展（PostgreSQL Anonymizer）是一个专门设计用于在PostgreSQL数据库中屏蔽或匿名化敏感数据的扩展。\n\n它提供了多种匿名化技术（anonymization techniques），包括随机化（randomization）、泛化（generalization）和假名化（pseudonymization），以符合适用GDPR（通用数据保护条例）等数据隐私法规来保护个人和敏感信息。\n\n此扩展可以配置为对特定列或数据集应用这些技术，确保匿名化后的数据在开发、测试或分析中保持有效，同时不会泄露实际敏感信息。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL匿名化扩展GitHub仓库（dalibo）",
+                  "url": "https://github.com/dalibo/postgresql_anonymizer",
+                  "type": "opensource"
+                },
+                {
+                  "title": "PostgreSQL匿名化扩展文档",
+                  "url": "https://postgresql-anonymizer.readthedocs.io/en/stable/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "858816b4-e57a-4f7f-a410-85a4063705ef",
+              "xid": "2eb9a732-f354-466d-9015-21ad391f79c9"
+            }
+          ],
+          "id": "5095e2c1-6bef-4010-85dd-ff11618b1f1e",
+          "xid": "e6e16d00-07a7-4eff-ac57-2ffcbe29b8cb"
+        }
+      ],
+      "id": "a6487a05-2fbf-44ad-9050-f722488416cf",
+      "xid": "8a82020d-45b1-41f4-a114-9ef4f365e32b"
+    },
+    {
+      "title": "学习自动化",
+      "description": "在使用PostgreSQL（PostgreSQL）时，通过自动化（Automation）重复和耗时的任务可以显著提升数据库操作的效率和可靠性。\n\n",
+      "links": [
+        {
+          "title": "PostgreSQL - 自动化（Automation）",
+          "url": "https://www.postgresql.org/docs/current/maintenance.html",
+          "type": "article"
+        },
+        {
+          "title": "使用自动化任务（Automation Tasks）进行Azure PostgreSQL服务器的自动缩放（Autoscaling）",
+          "url": "https://techcommunity.microsoft.com/blog/adforpostgresql/autoscaling-azure-postgresql-server-with-automation-tasks/3911718",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Shell脚本（Shell Scripts）",
+          "description": "Shell脚本是一类功能强大的工具，用于自动化重复性任务并执行复杂操作。\n\n它们本质上是包含一系列由shell（如Bash或Zsh）执行的命令的文本文件（text files）。\n\n通过结合`cron`等工具使用Shell脚本，您可以高效地实现与PostgreSQL相关的任务自动化，并优化数据库管理流程。\n\n",
+          "links": [
+            {
+              "title": "Shell脚本速查表（Shell Script Cheatsheet）",
+              "url": "https://cheatsheets.zip/bash",
+              "type": "article"
+            },
+            {
+              "title": "Shell脚本教程（Shell Scripting Tutorial）",
+              "url": "https://www.tutorialspoint.com/unix/shell_scripting.htm",
+              "type": "article"
+            },
+            {
+              "title": "初学者Shell脚本指南（Shell Scripting for Beginners）",
+              "url": "https://www.youtube.com/watch?v=cQepf9fY6cE&list=PLS1QulWo1RIYmaxcEqw5JhK3b-6rgdWO_",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "40069c9b-33d5-46ce-9a71-d7544b27f8db",
+          "xid": "4ee4b633-561d-4512-9ff9-0599990d96b2"
+        },
+        {
+          "title": "任意编程语言",
+          "description": "PostgreSQL支持多种编程语言，以实现服务器端脚本（server-side scripting）、开发自定义函数（custom functions）、触发器（triggers）和存储过程（stored procedures）。\n\n选择语言时，需考虑任务复杂度、数据库连接需求，以及学习新语言与利用现有技能之间的权衡。\n\n",
+          "links": [
+            {
+              "title": "过程性语言（Procedural Languages）",
+              "url": "https://www.postgresql.org/docs/current/external-pl.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "11a63d73-b35c-4f3d-8ceb-45d7a390aa7d",
+          "xid": "8ab51f02-fa3e-4b25-952b-8696e7e47002"
+        },
+        {
+          "title": "Terraform（HashiCorp Terraform）",
+          "description": "Terraform（HashiCorp Terraform）",
+          "links": [],
+          "children": [],
+          "id": "450befe9-414d-409b-b563-c944cf065baa",
+          "xid": "90ae64f7-8512-4d8a-9baa-194d8652183f"
+        },
+        {
+          "title": "configuration-management",
+          "description": "configuration-management",
+          "links": [],
+          "children": [
+            {
+              "title": "Ansible",
+              "description": "Ansible是一个广泛使用的开源配置管理(configuration management)与部署工具(provisioning)，能够帮助自动化管理服务器、数据库和应用程序的任务。\n\n它使用称为YAML(YAML)的简单易读语言编写自动化脚本，即剧本(playbooks）。\n\n通过Ansible剧本（playbooks）和PostgreSQL模块（PostgreSQL modules），可以自动化重复任务，确保配置一致性并减少人为错误。\n\n",
+              "links": [
+                {
+                  "title": "Ansible项目仓库(ansible/ansible)",
+                  "url": "https://github.com/ansible/ansible",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Ansible官网",
+                  "url": "https://www.ansible.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "Ansible入门教程：终极剧本与示例（Playbook & Examples）",
+                  "url": "https://spacellift.io/blog/ansible-tutorial",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "04bf3d9d-52f2-43f4-92d6-40a3ab545c02",
+              "xid": "f828abe0-9185-42fd-ad66-e39a4eec3a9c"
+            },
+            {
+              "title": "Salt",
+              "description": "Salt（SaltStack）是一个开源的配置管理、远程执行和自动化工具，可帮助您管理、自动化和编排您的PostgreSQL基础设施。\n\nSalt是管理PostgreSQL基础设施的绝佳选择，它提供了一个强大、灵活且可扩展的解决方案，可帮助您无缝维护一致性和自动化常见任务。\n\n",
+              "links": [
+                {
+                  "title": "saltstack/salt",
+                  "url": "https://github.com/saltstack/salt",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Saltstack官网",
+                  "url": "https://saltproject.io/index.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d34c5b81-d3fa-43b5-bde8-9a409a22b85e",
+              "xid": "c103533a-714b-4615-84b8-98058cd0d1d1"
+            },
+            {
+              "title": "Chef",
+              "description": "Chef 是一个强大且广泛使用的配置管理工具（configuration management tool），提供了一种简单而可定制的方式来管理您的基础设施，包括 PostgreSQL 的安装。\n\nChef 是一个用 Ruby 编写的并开源的自动化平台，通过创建可复用和可编程的代码（称为「食谱集（cookbooks）」和「食谱（recipes）」）来定义系统的期望状态（desired state），从而帮助用户管理基础设施。\n\n它采用客户端-服务器模型（client-server model），利用这些食谱集确保基础设施始终处于期望状态。\n\n",
+              "links": [
+                {
+                  "title": "Chef 的 GitHub 开源项目仓库",
+                  "url": "https://github.com/chef/chef",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Chef 官方网站",
+                  "url": "https://www.chef.io/products/chef-infra",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "38ff8c89-e851-4327-86ee-b6f28c5d12d2",
+              "xid": "c94adbe9-be42-497d-b31f-ca54f960c170"
+            },
+            {
+              "title": "Puppet（Puppet）",
+              "description": "Puppet 是一个开源的软件配置管理工具（software configuration management tool），它允许系统管理员（system administrators）自动化配置（provisioning）、设置（configuration）和管理服务器基础设施。\n\n它有助于减少人为错误（human errors），确保多个系统之间的一致性（consistency），并简化管理 PostgreSQL 安装（installations）的过程。\n\n",
+              "links": [
+                {
+                  "title": "Puppet 文档（Puppet Documentation）",
+                  "url": "https://puppet.com/docs/puppet/latest/index.html",
+                  "type": "article"
+                },
+                {
+                  "title": "Puppet PostgreSQL 模块文档（Puppet PostgreSQL Module Documentation）",
+                  "url": "https://forge.puppet.com/modules/puppetlabs/postgresql/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "85d4b80c-7ad8-4a77-b8b5-f7cdde2b9e05",
+              "xid": "d3d4e2bf-4afa-4899-ac5b-8121a35e5097"
+            }
+          ],
+          "id": "ea0cd8f2-7d55-40a4-b9b5-2b44f3a0570a",
+          "xid": "7f04c948-28b4-4bc2-b865-70d6bc8ae06d"
+        }
+      ],
+      "id": "2cc0865f-108a-4fa6-86db-882744de7ca2",
+      "xid": "0b5ddaa3-e037-4c14-8686-de7d00f5b5fb"
+    },
+    {
+      "title": "应用技能（application-skills）",
+      "description": "应用技能",
+      "links": [],
+      "children": [
+        {
+          "title": "迁移（migrations）",
+          "description": "迁移（migrations）",
+          "links": [],
+          "children": [
+            {
+              "title": "实用模式与反模式（Patterns / Antipatterns）",
+              "description": "PostgreSQL 迁移的实用模式包括使用版本控制工具（如 Liquibase（Liquibase）或 Flyway（Flyway）管理架构变更），通过渐进更新（incremental updates）降低风险，过渡期间保持后向兼容性（backward compatibility），并采用滚动更新等零停机技术（zero-downtime techniques）。\n\n数据迁移脚本需在预发布环境中充分测试以确保准确性。\n\n事务性 DDL（DDL）语句的使用可保障原子性变更，同时通过监控和预置回滚计划（rollback plans）可快速解决突发问题。\n\n这些策略确保了平稳可靠的迁移过程，最大程度减少对应用程序的影响。\n\n",
+              "links": [
+                {
+                  "title": "Liquibase 官网",
+                  "url": "https://www.liquibase.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "Flyway 官网",
+                  "url": "https://flywaydb.org/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a87a9e7e-57aa-4fa5-b6cc-d1f55e807491",
+              "xid": "d9ddb846-6c15-44b1-bc81-3e46ebde76de"
+            },
+            {
+              "title": "迁移工具（Migrations）",
+              "description": "迁移（Migrations）在数据库应用程序的生命周期中至关重要。\n\n随着应用程序的演变，对数据库架构（schema）的修改，有时甚至是数据本身的变更便变得必要。\n\n",
+              "links": [
+                {
+                  "title": "Liquibase 官网（Liquibase Website）",
+                  "url": "https://www.liquibase.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "Sqitch 官网（Sqitch Website）",
+                  "url": "https://sqitch.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Bytebase 官网（Bytebase Website）",
+                  "url": "https://www.bytebase.com/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5c19a926-2ea7-468b-a70b-747bded6b808",
+              "xid": "b0d2ad7e-c5d4-48dd-a092-fb8b125fec9c"
+            }
+          ],
+          "id": "c822b1ff-81f9-4628-b09d-dea753105595",
+          "xid": "c3e4020f-2cfd-4e25-8f7a-e30ba94c4b94"
+        },
+        {
+          "title": "批量加载/处理数据",
+          "description": "批量加载处理数据涉及将外部文件中的大量数据传输到PostgreSQL数据库中。\n\n这是将海量数据快速插入表中的一种高效方法，适用于初始数据填充（initial data population）或数据迁移任务。\n\n结合使用`COPY`（COPY）命令或`pg_bulkload`（pg_bulkload）工具，并遵循最佳实践，可以帮助您迅速且安全地加载大型数据集。\n\n",
+          "links": [
+            {
+              "title": "填充数据库",
+              "url": "https://www.postgresql.org/docs/current/populate.html",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL批量数据加载的7个最佳实践提示",
+              "url": "https://www.enterprisedb.com/blog/7-best-practice-tips-postgresql-bulk-data-loading",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4a08c0f6-5085-4a2b-b07e-b1cf12c9af0e",
+          "xid": "490394c4-dbf7-4c27-9df3-d056ccc2d734"
+        },
+        {
+          "title": "数据分区（Data Partitioning）",
+          "description": "数据分区（Data Partitioning）是一种技术，它将大型表分割为更小、更易管理的片段，称为分区（partition）。\n\n每个分区（partition）是一个存储数据子集的小表，通常基于特定的划分标准，如范围（ranges）、列表（lists）或散列（hashes）等。\n\n分区可以提升查询性能、简化数据维护任务，并优化资源利用率。\n\n",
+          "links": [
+            {
+              "title": "表分区（Table Partitioning）",
+              "url": "https://www.postgresql.org/docs/current/ddl-partitioning.html",
+              "type": "article"
+            },
+            {
+              "title": "如何通过表分区（Table Partitioning）扩展PostgreSQL",
+              "url": "https://www.enterprisedb.com/postgres-tutorials/how-use-table-partitioning-scale-postgresql",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "07920ed3-daf5-4f7e-88ea-d286cde9a27c",
+          "xid": "261f3e31-59d0-4842-96d0-0cc4eb6eb505"
+        },
+        {
+          "title": "分片模式（Sharding Patterns）",
+          "description": "分片（Sharding）是一种将大型数据集分散到多个数据库实例或服务器的技术，这些实例或服务器称为分片（shard）。\n\n每个分片（shard）是一个独立且自包含的单元，存储整体数据的一部分，且可分布在不同地理位置或基础设施中。\n\n",
+          "links": [
+            {
+              "title": "使用PostgreSQL探索有效的分片策略",
+              "url": "https://medium.com/@gustavo.vallerp26/exploring-effective-sharding-strategies-with-postgresql-for-scalable-data-management-2c9ae7ef1759",
+              "type": "article"
+            },
+            {
+              "title": "掌握PostgreSQL扩展：分片与分区（Partitioning）的历程",
+              "url": "https://doronsegal.medium.com/scaling-postgres-dfd9c5e175e6",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5ddbb054-03e8-4d17-9bb9-6b03864965c5",
+          "xid": "69de5146-8f16-4489-8921-4d0e2116b053"
+        },
+        {
+          "title": "规范化 / 范式（Normalization / Normal Forms）",
+          "description": "在PostgreSQL中，数据规范化（Normalization）通过一系列范式（Normal Forms）对表进行组织，从而最小化冗余并确保数据完整性：第一范式（1NF）确保每列仅包含原子值，且所有记录唯一；第二范式（2NF）要求所有非主键属性完全依赖于主键；第三范式（3NF）消除传递依赖，使所有非主键属性仅直接依赖主键；Boyce-Codd 范式（BCNF）进一步确保所有决定因子均为候选键；第四范式（4NF）消除多值依赖；第五范式（5NF）处理连接依赖，确保分解表时数据完整性无损。\n\n这些范式共同构建了一个高效、一致且可靠的数据库模式设计框架。\n\n",
+          "links": [
+            {
+              "title": "PostgreSQL数据规范化指南",
+              "url": "https://www.cybertec-postgresql.com/en/data-normalization-in-postgresql/",
+              "type": "article"
+            },
+            {
+              "title": "第一范式",
+              "url": "https://www.youtube.com/watch?v=PCdZGzaxwXk",
+              "type": "video"
+            },
+            {
+              "title": "第二范式",
+              "url": "https://www.youtube.com/watch?v=_NHkY6Yvh64",
+              "type": "video"
+            },
+            {
+              "title": "第三范式",
+              "url": "https://www.youtube.com/watch?v=IN2m7VtYbEU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8e89d1ca-23dd-4218-bcaa-c1c6fd2608e5",
+          "xid": "f1365df2-50be-443a-998b-4bd41341b19e"
+        },
+        {
+          "title": "队列（queues）",
+          "description": "队列（queues）",
+          "question_title": "",
+          "question_description": "",
+          "links": [],
+          "children": [
+            {
+              "title": "模式与反模式（Patterns / Antipatterns）",
+              "description": "在PostgreSQL中实现队列的实用模式（patterns）包括使用专用表存储队列项、通过FOR UPDATE SKIP LOCKED子句（FOR UPDATE SKIP LOCKED）安全无冲突地取消队列项，以及通过表分区（partitioning）高效管理大量数据。\n\n采用批处理（batch processing）可以在单个事务中处理多个队列项以提升性能。\n\n需要避免的反模式包括使用高频轮询（high-frequency polling）可能引发的数据库负载过载，以及因未正确处理并发性导致的数据竞争（data races）和死锁（deadlocks）。\n\n此外，直接在队列表中存储大型负载（payloads）会导致性能下降，应改用存储负载引用。\n\n遵循这些模式并规避反模式，即可在PostgreSQL上构建高效可靠的队列系统。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL作为队列（Postgres as Queue）",
+                  "url": "https://leontrolski.github.io/postgres-as-queue.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL能否替代您的消息队列？（Can PostgreSQL Replace Your Messaging Queue?）",
+                  "url": "https://www.youtube.com/watch?v=IDb2rKhzzt8",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "431aaa1a-0eaa-4a0d-8cba-eb984b7558dc",
+              "xid": "9eb75122-1bed-4f5e-88f0-76e36960a0e6"
+            },
+            {
+              "title": "PgQ",
+              "description": "Skytools工具集（Skytools）是由Skype开发的一套工具，用于辅助使用PostgreSQL数据库。\n\nSkytools的关键组件之一是PGQ（PGQ），这是一个基于PostgreSQL的队列系统，可提供高效且可靠的数据处理。\n\n",
+              "links": [
+                {
+                  "title": "PgQ — 通用的PostgreSQL队列",
+                  "url": "https://github.com/pgq",
+                  "type": "opensource"
+                }
+              ],
+              "children": [],
+              "id": "7bcdc4f3-3854-4263-9f26-5dacb44aa513",
+              "xid": "51883837-e44a-4cbf-9718-4b779aab6b07"
+            }
+          ],
+          "id": "6c69b77b-2b9e-4bcb-a300-8e5b036ad131",
+          "xid": "8a934ed2-2b5a-448f-9f7f-f8102dcee3c4"
+        }
+      ],
+      "id": "3ffbccbf-f281-4796-8051-dec890f8157f",
+      "xid": "b4e76b42-19b5-402b-8bcf-e13727cfcde4"
+    },
+    {
+      "title": "高级主题（advanced-topics）",
+      "description": "高级主题（advanced-topics）",
+      "links": [],
+      "children": [
+        {
+          "title": "底层实现机制（low-level internals）",
+          "description": "底层实现机制（low-level internals）",
+          "links": [],
+          "children": [
+            {
+              "title": "进程与内存架构（Processes & Memory Architecture）",
+              "description": "PostgreSQL的进程内存架构（Process Memory Architecture）旨在高效管理资源并保障性能，包含多个关键组件：\n\n*   共享内存（Shared Memory）：用于存储所有服务器进程需访问的数据，例如共享缓存池（shared_buffers），它缓存频繁访问的数据页；还有预写式日志（Write-Ahead Log, WAL）的缓冲区（wal_buffers），其在数据写入磁盘前临时存储事务日志数据。\n\n\n*   本地内存（Local Memory）：每个PostgreSQL后端进程（每个连接一个）有自己的本地内存以处理查询执行。\n\n关键组件包括用于排序操作和哈希表的工作内存（work_mem），以及用于真空调查（vacuuming）和索引创建等维护任务的维护工作内存（maintenance_work_mem）。\n\n\n*   进程特定内存（Process-specific Memory）：每个进程根据需求动态分配内存，用于查询解析（parsing）、规划（planning）及执行（execution）任务。\n\n进程内的内存上下文（memory contexts）确保内存高效使用及清理。\n\n\n*   临时文件（Temporary Files）：对于超出可用内存的操作（例如大型排序或哈希连接），PostgreSQL会将数据写入磁盘上的临时文件（Temporary Files）。\n\n\n",
+              "links": [
+                {
+                  "title": "理解PostgreSQL的共享内存（Shared Memory）",
+                  "url": "https://stackoverflow.com/questions/32930787/understanding-postgresql-shared-memory",
+                  "type": "article"
+                },
+                {
+                  "title": "理解PostgreSQL的进程与内存架构（Process and Memory Architecture）",
+                  "url": "https://dev.to/titoausten/understanding-the-process-and-memory-architecture-of-postgresql-5hhp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "357f7aaf-4e02-4c57-a592-0262d228dc20",
+              "xid": "a297fba5-6b14-4c8b-ba39-622e54d9ec7a"
+            },
+            {
+              "title": "真空处理（Vacuum Processing）",
+              "description": "真空处理（Vacuum Processing）是维护PostgreSQL数据库性能与稳定性的重要环节。\n\nPostgreSQL采用一种称为多版本并发控制（Multi-Version Concurrency Control，简称MVCC）的存储技术，允许多个事务同时访问数据库对象的不同版本。\n\n更新或删除某一行时，该操作会生成多行废弃数据（dead row）。\n\n真空处理能清理这些废弃数据、回收存储空间，从而避免数据库膨胀和效率下降。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL 真空（VACUUM）指南和最佳实践",
+                  "url": "https://www.enterprisedb.com/blog/postgresql-vacuum-and-analyze-best-practice-tips",
+                  "type": "article"
+                },
+                {
+                  "title": "如何显式运行真空（VACUUM）与分析（ANALYZE）？",
+                  "url": "https://medium.com/@dmitry.romanoff/postgresql-how-to-run-vacuum-analyze-explicitly-5879ec39da47",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2a8fa3ef-5485-46f7-8c7c-86cc4ff0b2ef",
+              "xid": "bd38770f-b63f-4198-b09a-973e05cb187c"
+            },
+            {
+              "title": "缓冲管理（Buffer Management）",
+              "description": "PostgreSQL 使用缓冲池（buffer pool）来高效地在内存中缓存频繁访问的数据页（data pages）。\n\n缓冲池是一个固定大小的共享内存区域（shared memory area），其中存储的数据库块（database blocks）在被服务器使用、修改或读取时保持其状态。\n\n缓冲管理（buffer management）是高效处理这些数据页面以优化性能的过程。\n\n",
+              "links": [
+                {
+                  "title": "缓冲管理器（Buffer Manager）",
+                  "url": "https://dev.to/vkt1271/summary-of-chapter-8-buffer-manager-from-the-book-the-internals-of-postgresql-part-2-4f6o",
+                  "type": "article"
+                },
+                {
+                  "title": "pg_buffercache（pg_buffercache）",
+                  "url": "https://www.postgresql.org/docs/current/pgbuffercache.html",
+                  "type": "article"
+                },
+                {
+                  "title": "预写日志（Write Ahead Logging）",
+                  "url": "https://www.postgresql.org/docs/current/wal-intro.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "07c265e7-10e2-4bab-b104-fc9ae1f1de54",
+              "xid": "5c58cf6a-bc4e-413b-92eb-9d211b5515c7"
+            },
+            {
+              "title": "锁管理",
+              "description": "PostgreSQL 的锁管理机制通过轻量级系统实现，允许以特定模式锁定数据库对象（如表、行和事务），其主要目的是通过防止对同一数据或资源的并发访问冲突来保障操作安全。\n\n不同锁模式具备不同的兼容性规则，决定了哪些操作可以或禁止对锁定对象进行。\n\n现有的主要锁模式包括「访问共享锁（AccessShareLock）」「行排它锁（RowExclusiveLock）」「共享更新排它锁（ShareUpdateExclusiveLock）」等，每种模式均规定了与其他锁类型的兼容性规则。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL 锁管理配置",
+                  "url": "https://www.postgresql.org/docs/current/runtime-config-locks.html",
+                  "type": "article"
+                },
+                {
+                  "title": "理解PostgreSQL锁和管理并发事务",
+                  "url": "https://medium.com/@sonishubham65/understanding-postgres-locks-and-managing-concurrent-transactions-1ededce53d59",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ac1e5032-072c-4af6-8013-4505bd6fc718",
+              "xid": "dc1b9b24-4a7b-454d-a5f9-637561d62d6c"
+            },
+            {
+              "title": "物理存储与文件布局",
+              "description": "PostgreSQL的物理存储和文件布局通过数据目录中的结构化组织优化数据管理和性能，其中包括：`base`子目录用于存储单个数据库的数据、`global`子目录用于存储集群范围的全局表、`pg_wal`子目录用于存储预写日志（Write-Ahead Logs）以确保数据持久性，以及`pg_tblspc`子目录用于管理表空间（tablespaces）以实现灵活的存储配置。\n\n关键配置文件如`postgresql.conf`、`pg_hba.conf`和`pg_ident.conf`也位于此目录中。\n\n此布局设计可高效处理数据操作、恢复和维护，保障数据库的稳定运行。\n\n",
+              "links": [
+                {
+                  "title": "$PGDATA在PostgreSQL中是什么？",
+                  "url": "https://stackoverflow.com/questions/26851709/what-is-pgdata-in-postgresql",
+                  "type": "article"
+                },
+                {
+                  "title": "Toast（TOAST）",
+                  "url": "https://www.postgresql.org/docs/current/storage-toast.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8344fefa-3704-4ed6-83cb-e502f3fd8d76",
+              "xid": "fbc3fd3f-bda5-4bc3-8478-6e785eec59a1"
+            },
+            {
+              "title": "系统目录（System Catalog）",
+              "description": "PostgreSQL系统目录（System Catalog）是一组存储数据库对象（database objects）元数据（metadata）的表和视图，为数据库管理和查询提供了关键信息。\n\n关键系统目录表包括 `pg_database`（存储数据库信息的表，信息原文：information about databases）、`pg_tables`（表详细信息存储表，信息原文：details of tables）、`pg_indexes`（索引信息表，信息原文：index information）、`pg_class`（存储表、索引和序列通用信息的表，信息原文：general information about tables, indexes, and sequences）、`pg_attribute`（表列详情存储，信息原文：column details for each table）、`pg_roles`（用户和角色信息表，信息原文：user and role information）。\n\n这些目录使得数据库引擎和用户能够高效管理架构、安全性和查询优化，确保数据库操作和维护的有效性。\n\n",
+              "links": [
+                {
+                  "title": "系统目录（System Catalogs）",
+                  "url": "https://www.postgresql.org/docs/current/catalogs.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL系统目录探索（Exploring the PostgreSQL System Catalogs）",
+                  "url": "https://www.openlogic.com/blog/postgresql-system-catalog-overview",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "28b38156-7494-48d4-b66b-cc4b2b6c8a1f",
+              "xid": "c1c26dfe-2571-47b4-a676-79e032e23ebe"
+            }
+          ],
+          "id": "4dc8cb37-8cb9-45a6-ac28-cd1fb2825e10",
+          "xid": "28098fb2-3796-458c-b47e-34f63bfd9785"
+        },
+        {
+          "title": "细粒度调优（fine-grained-tuning）",
+          "description": "细粒度调优（fine-grained-tuning）",
+          "links": [],
+          "children": [
+            {
+              "title": "用户级与数据库级设置",
+              "description": "在 PostgreSQL 中，用户级与数据库级设置允许管理员为特定用户或数据库自定义配置，提升性能和管理效率。\n\n这些设置通过 `ALTER ROLE（ALTER ROLE）` 和 `ALTER DATABASE（ALTER DATABASE）` 命令进行管理。\n\n这些命令将配置存储在系统目录中，并在用户连接到数据库或访问数据库时应用。\n\n常用的自定义参数包括 `search_path（search_path）`、`work_mem（work_mem）` 和 `maintenance_work_mem（maintenance_work_mem）`，可针对具体需求精细化调整查询性能和资源使用。\n\n",
+              "links": [
+                {
+                  "title": "修改角色（ALTER ROLE）",
+                  "url": "https://www.postgresql.org/docs/current/sql-alterrole.html",
+                  "type": "article"
+                },
+                {
+                  "title": "修改数据库（ALTER DATABASE）",
+                  "url": "https://www.postgresql.org/docs/current/sql-alterdatabase.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8dbbc3d8-0e33-44bb-b5d5-fa7f2946dd7e",
+              "xid": "d9a188be-dad8-4d41-81c4-5f0d0de6b3ad"
+            },
+            {
+              "title": "存储参数（Storage Parameters）",
+              "description": "存储参数（Storage Parameters）通过允许为特定表或索引配置内存使用（memory usage）、存储行为（storage behavior）和缓冲区管理（buffer management）相关设置来优化数据库性能。\n\nPostgreSQL提供了多个配置选项（configuration options），以便根据每个表或索引调整存储和I/O的行为。\n\n这些选项通过 `ALTER TABLE` 或 `ALTER INDEX` 命令设置，并会影响数据库的整体性能。\n\n",
+              "links": [
+                {
+                  "title": "ALTER INDEX命令（ALTER INDEX）",
+                  "url": "https://www.postgresql.org/docs/current/sql-alterindex.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL存储参数（PostgreSQL Storage Parameters）",
+                  "url": "https://pgpedia.info/s/storage-parameters.html",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL的ALTER TABLE语句（SQL ALTER TABLE）",
+                  "url": "https://www.w3schools.com/sql/sql_alter.asp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c4a15871-ed2e-4e60-b021-4953e44fe091",
+              "xid": "04a12997-91b0-4e29-9e40-5f05be49f05f"
+            },
+            {
+              "title": "在线事务处理（OLTP）",
+              "description": "在PostgreSQL中，在线事务处理（Online Transaction Processing, OLTP）指一类用于管理面向事务的应用程序的系统，通常用于数据库系统中的数据录入和检索事务。\n\nOLTP系统的特点是以大量短时在线事务（INSERT、UPDATE、DELETE操作）为主，强调速度、效率以及在多用户访问环境中维护数据完整性的能力。\n\nPostgreSQL通过ACID一致性（原子性、一致性、隔离性、持久性）、多版本并发控制（Multi-Version Concurrency Control, MVCC）以实现高并发支持、高效索引机制以及强大的事务管理功能，从而支持OLTP工作负载。\n\n这些特性确保了PostgreSQL能够可靠、快速且一致地处理高吞吐量、高频次的事务，这对于OLTP应用场景至关重要。\n\n",
+              "links": [
+                {
+                  "title": "什么是在线事务处理（OLTP）？",
+                  "url": "https://www.oracle.com/uk/database/what-is-oltp/",
+                  "type": "article"
+                },
+                {
+                  "title": "在线事务处理（OLTP）与联机分析处理（OLAP）对比",
+                  "url": "https://www.youtube.com/watch?v=iw-5kFzIdgY",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "0fd4a676-fe9e-42a9-ad7f-7bd67d8c9f17",
+              "xid": "0760909b-5228-4dab-ba46-dd878bd67c3d"
+            }
+          ],
+          "id": "1f7d08d6-689b-4feb-bd53-19fa6dff2bce",
+          "xid": "5d81198b-c1f7-4e60-abd3-6ead1f6d4806"
+        },
+        {
+          "title": "高级SQL（advanced-sql）",
+          "description": "高级SQL（advanced-sql）",
+          "links": [],
+          "children": [
+            {
+              "title": "PL/pgSQL",
+              "description": "PL/pgSQL是PostgreSQL数据库系统的过程化语言（procedural language），允许你通过条件语句（conditionals）、循环（loops）和其他控制结构（control structures）来创建存储过程（stored procedures）和函数（functions），类似于传统编程语言（traditional programming language）。\n\n使用PL/pgSQL，你可以在服务端执行复杂操作，减少服务器与客户端之间的数据传输需求。\n\n这能显著提升性能，并允许你在数据库内部对逻辑进行封装和模块化操作。\n\n",
+              "links": [
+                {
+                  "title": "PL/pgSQL — SQL 过程化语言",
+                  "url": "https://www.postgresql.org/docs/current/plpgsql.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL的PL/pgSQL",
+                  "url": "https://www.postgresqltutorial.com/postgresql-plpgsql/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c8b93d39-3a61-49ad-9668-123137fe1737",
+              "xid": "fd583000-653f-4873-8d3a-88c9a9da184d"
+            },
+            {
+              "title": "过程与函数（Procedures and Functions）",
+              "description": "在PostgreSQL中，函数（Functions）和过程（Procedures）将可重用的逻辑封装在数据库内，以提升性能并保持组织结构。\n\n函数返回一个值或表，接受输入参数，可用于SQL查询，并通过`CREATE FUNCTION`定义。\n\n过程（Procedures）自PostgreSQL 11引入，不返回值，但可以执行操作并包含事务控制命令（如`COMMIT`和`ROLLBACK`），通过`CREATE PROCEDURE`定义并使用`CALL`语句调用。\n\n关键差异包括：函数必须返回值并支持在SQL查询中集成，而过程侧重于执行操作和管理事务。\n\n",
+              "links": [
+                {
+                  "title": "创建过程（CREATE PROCEDURE）",
+                  "url": "https://www.postgresql.org/docs/current/sql-createprocedure.html",
+                  "type": "article"
+                },
+                {
+                  "title": "创建函数（CREATE FUNCTION）",
+                  "url": "https://www.postgresql.org/docs/current/sql-createfunction.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL 创建过程（CREATE PROCEDURE）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-plpgsql/postgresql-create-procedure/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "123abe45-9e73-4304-8d26-49e793ce0621",
+              "xid": "954721f9-ab2e-4596-8621-02847b57f07e"
+            },
+            {
+              "title": "触发器（Triggers）",
+              "description": "触发器是特殊的用户定义函数，当指定表或视图发生事件（如插入（INSERT）、更新（UPDATE）、删除（DELETE）或截断（TRUNCATE））时会被自动调用。\n\n它们允许在数据库数据被修改时执行额外操作，从而帮助维护数据的完整性和一致性。\n\n",
+              "links": [
+                {
+                  "title": "触发器（Triggers）",
+                  "url": "https://www.postgresql.org/docs/8.1/triggers.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL触发器（Triggers）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-triggers/",
+                  "type": "article"
+                },
+                {
+                  "title": "了解PostgreSQL触发器（Triggers）",
+                  "url": "https://hevodata.com/learn/postgresql-triggers/",
+                  "type": "article"
+                },
+                {
+                  "title": "使用PostgreSQL触发器（Triggers）通过Supabase自动化流程",
+                  "url": "https://www.youtube.com/watch?v=0N6M5BBe9AE",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "e121d1c1-50af-4b04-babe-84bd5e880d4a",
+              "xid": "4552c056-6ab5-4d24-8ca5-ee45ee1bb377"
+            },
+            {
+              "title": "递归CTE（Recursive CTE）",
+              "description": "递归CTE（Recursive CTE）是SQL中一个强大的特性，允许构建复杂的层级查询，检索存储在层级结构中的数据，甚至执行图遍历。\n\n简单来说，递归CTE是一种在自身定义中引用自身的公共表表达式（Common Table Expression，CTE），它通过循环遍历数据直至满足终止条件（termination condition）。\n\n需注意，递归CTE可能较为复杂，务必确保设置适当的终止条件（termination condition）以避免无限递归。\n\n同时使用`UNION ALL`或`UNION`时需特别谨慎，因为它们可能影响查询结果及性能。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL - 递归查询（Recursive Query）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-recursive-query/",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL递归查询详解（Explained）",
+                  "url": "https://elvisciotti.medium.com/postgresql-recursive-query-the-simplest-example-explained-f9b85e0a371b",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1d4a8041-882a-474b-b3c6-0e4915db1ab6",
+              "xid": "8888d810-b4fe-44f2-a2d8-abe643c95888"
+            },
+            {
+              "title": "聚合函数与窗口函数 (Aggregate and Window Functions)",
+              "description": "PostgreSQL中的聚合函数 (Aggregate functions) 对一组行执行计算并返回单个值，例如 `SUM()`、`AVG()`、`COUNT()`、`MAX()` 和 `MIN()`。\n\n另一方面，窗口函数 (Window functions) 在保持行结构的同时，基于当前行的相关表行集合计算值。\n\n常见的窗口函数包括 `ROW_NUMBER()`、`RANK()`、`DENSE_RANK()`、`NTILE()`、`LAG()` 和 `LEAD()`。\n\n这些函数是数据分析的关键工具，通过有效汇总和比较数据，能够生成复杂的查询并提供业务洞察。\n\n",
+              "links": [
+                {
+                  "title": "使用PostgreSQL窗口函数进行数据处理",
+                  "url": "https://www.timescale.com/learn/postgresql-window-functions",
+                  "type": "article"
+                },
+                {
+                  "title": "为什么要以及如何使用窗口函数在PostgreSQL中聚合数据？",
+                  "url": "https://coderpad.io/blog/development/window-functions-aggregate-data-postgres/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c1d647b7-41e0-4054-9e54-192f40acdf14",
+              "xid": "82136687-e4b1-4488-90c1-61743c1f154f"
+            }
+          ],
+          "id": "accddd87-2d48-47b6-9ace-50f353a971bf",
+          "xid": "df296bca-3145-485e-af0b-8a7fc08bbe63"
+        }
+      ],
+      "id": "41e9496a-ad67-4504-9a26-168b336a28c8",
+      "xid": "2c8f02c2-e59d-460b-924e-fe78a1c68016"
+    },
+    {
+      "title": "故障排除技术 (troubleshooting techniques)",
+      "description": "故障排除技术 (troubleshooting techniques)",
+      "links": [],
+      "children": [
+        {
+          "title": "日志分析（log-analysis）",
+          "description": "日志分析（log-analysis）",
+          "links": [],
+          "children": [
+            {
+              "title": "pgBadger（pgBadger）",
+              "description": "pgBadger（pgBadger）是一个快速、高效的PostgreSQL（PostgreSQL）日志分析器和报告生成器。\n\n它解析PostgreSQL日志文件生成详细报告，涵盖数据库性能、查询统计、连接信息等内容。\n\n该工具支持多种日志格式，可洞察慢查询、索引使用及数据库整体活动情况。\n\n其报告通常以HTML格式呈现，包含可视化图表便于直观解读。\n\n对于依据日志数据优化性能及排查问题的数据库管理员，pgBadger是重要的分析工具。\n\n",
+              "links": [
+                {
+                  "title": "GitHub开源项目：darold/pgbadger",
+                  "url": "https://github.com/darold/pgbadger",
+                  "type": "opensource"
+                },
+                {
+                  "title": "PGBadger实践指南：PostgreSQL日志分析轻松上手",
+                  "url": "https://dev.to/full_stack_adi/pgbadger-postgresql-log-analysis-made-easy-54ki",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f1e40975-50f1-41e4-aabc-2ef212aa8e02",
+              "xid": "9db01bc3-7104-47e4-a173-2878dda9eb8c"
+            },
+            {
+              "title": "pgCluu",
+              "description": "pgCluu是一个强大且易于使用的PostgreSQL（PostgreSQL）性能监控和调优工具。\n\n作为开源程序，它收集统计信息，并提供多种指标以分析PostgreSQL数据库，帮助您发现性能瓶颈并优化集群的性能。\n\n除了PostgreSQL特定的设置外，您还可以调整其他选项，例如RRDtool（RRDtool）的数据文件格式（JPG或SVG）、图表的时间范围等。\n\n",
+              "links": [
+                {
+                  "title": "darold/pgcluu",
+                  "url": "https://github.com/darold/pgcluu",
+                  "type": "opensource"
+                },
+                {
+                  "title": "pgCluu官网",
+                  "url": "https://pgcluu.darold.net/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "50e96888-5b68-4782-ac4a-2d91c631add6",
+              "xid": "56c47ddd-5a01-4df4-8b64-e5e55ddf61c9"
+            },
+            {
+              "title": "Awk（Awk）",
+              "description": "Awk（Awk）是一个功能强大的文本处理工具，广泛用于各种数据处理（data manipulation）、日志分析（log analysis）和文本报告任务（text reporting tasks）。\n\n它特别适用于处理结构化文本数据（structured text data），例如列格式数据。\n\nAwk（Awk）能够轻松提取特定字段（fields）或对其执行计算，使其成为日志分析的理想选择。\n\n",
+              "links": [
+                {
+                  "title": "Awk（Awk）",
+                  "url": "https://www.grymoire.com/Unix/Awk.html",
+                  "type": "article"
+                },
+                {
+                  "title": "Linux/Unix中的Awk命令（Awk Command）",
+                  "url": "https://www.digitalocean.com/community/tutorials/awk-command-linux-unix",
+                  "type": "article"
+                },
+                {
+                  "title": "教程 - 300秒掌握AWK（Tutorial - AWK in 300 Seconds）",
+                  "url": "https://www.youtube.com/watch?v=15DvGiWVNj0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "e57a7875-12f7-43b8-8f2e-48cc05828d6e",
+              "xid": "479f4f52-24d9-4810-9ad1-a3aaa0033090"
+            },
+            {
+              "title": "grep（grep）",
+              "description": "grep（grep）是一种强大的命令行工具（command-line tool），可用于在纯文本数据集中搜索特定的图案（patterns）。\n\n它最初由Unix（Unix）操作系统开发，现已移植到几乎每个平台上。\n\n在分析PostgreSQL日志（PostgreSQL logs）时，使用grep命令（grep command）可快速定位特定条目或消息，使其成为一项极有用资源。\n\n",
+              "links": [
+                {
+                  "title": "Linux/Unix中的grep命令（grep command in Linux/Unix）",
+                  "url": "https://www.digitalocean.com/community/tutorials/grep-command-in-linux-unix",
+                  "type": "article"
+                },
+                {
+                  "title": "grep命令使用指南（Use the Grep Command）",
+                  "url": "https://docs.rackspace.com/docs/use-the-linux-grep-command",
+                  "type": "article"
+                },
+                {
+                  "title": "grep实战教程（Tutorial - grep: A Practical Guide）",
+                  "url": "https://www.youtube.com/watch?v=crFZOrqlqao",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "a86a2953-60d7-47fd-a9f7-c4bc5b9b8f28",
+              "xid": "3b0e165b-3f24-471b-acf0-91092521b456"
+            },
+            {
+              "title": "流编辑器（sed）",
+              "description": "流编辑器（sed）是Unix系统（包括Linux操作系统）中一个强大的命令行工具，用于文本处理和操作。\n\n它通过文本流进行操作（从文件、标准输入或另一个命令的管道中读取数据），并应用一系列被称为“脚本（scripts）”的编辑指令，将输入文本转换为所需的输出格式。\n\n",
+              "links": [
+                {
+                  "title": "流编辑器（stream editor）",
+                  "url": "https://www.gnu.org/software/sed/manual/sed.html",
+                  "type": "article"
+                },
+                {
+                  "title": "如何在Linux中使用sed命令",
+                  "url": "https://www.howtogeek.com/666395/how-to-use-the-sed-command-on-linux/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "60dc90fe-a385-4b46-985a-b37ce2de1315",
+              "xid": "12f841d1-4b9d-4899-bc5b-80cc14cf0ed3"
+            }
+          ],
+          "id": "5d3c6fce-b85b-43f7-8b5c-5674f58d926f",
+          "xid": "6aa079e7-9a13-4fa1-a9e2-e24057ece26f"
+        },
+        {
+          "title": "性能分析工具（profiling-tools）",
+          "description": "性能分析工具（profiling-tools）",
+          "links": [],
+          "children": [
+            {
+              "title": "GDB（GNU调试器）",
+              "description": "GDB（GNU调试器，GNU Debugger）是一个功能强大的调试工具，能够检查和修改使用C、C++和Fortran等编程语言编写的程序的功能。\n\nGDB还可与PostgreSQL配合使用，用于调查后台进程并识别可能在应用程序层面无法察觉的问题。\n\n",
+              "links": [
+                {
+                  "title": "GDB（GNU调试器）",
+                  "url": "https://sourceware.org/gdb/",
+                  "type": "article"
+                },
+                {
+                  "title": "了解如何使用GDB进行调试",
+                  "url": "https://opensource.com/article/21/3/debug-code-gdb",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d921264a-f3dd-486e-b5a3-a7a464afe451",
+              "xid": "718205b1-4c4f-43e6-9bf6-937bf31d69ef"
+            },
+            {
+              "title": "strace",
+              "description": "strace 是一种强大的命令行工具（command-line tool），用于诊断和调试 Linux 系统上的程序。\n\n它允许您跟踪正在分析的进程的系统调用（system calls），从而可以观察其与操作系统的交互。\n\n",
+              "links": [
+                {
+                  "title": "strace 手册页（man page）",
+                  "url": "https://man7.org/linux/man-pages/man1/strace.1.html",
+                  "type": "article"
+                },
+                {
+                  "title": "通过 strace 理解系统调用（system calls）",
+                  "url": "https://opensource.com/article/19/10/strace",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1270de94-306d-4881-b19d-49cb03c89b83",
+              "xid": "ac06b547-af0b-4286-a7b2-c7e71e59b1a5"
+            },
+            {
+              "title": "扩展伯克利数据包过滤器（eBPF）",
+              "description": "eBPF是一种强大的Linux内核技术，用于追踪和分析进程、文件系统、网络连接等各类系统组件。\n\n由于其能够在运行时为开发人员和系统管理员提供对系统行为、性能及资源使用情况的深度洞察，该技术已成为开发者和管理员的重要工具。\n\n在对PostgreSQL进行性能分析时，eBPF可提供关于查询执行、系统调用和资源消耗模式的详细信息。\n\n",
+              "links": [
+                {
+                  "title": "eBPF是什么？（扩展伯克利数据包过滤器）",
+                  "url": "https://www.kentik.com/kentipedia/what-is-ebpf-extended-berkeley-packet-filter/",
+                  "type": "article"
+                },
+                {
+                  "title": "扩展伯克利数据包过滤器（eBPF）是什么？",
+                  "url": "https://www.sentinelone.com/cybersecurity-101/what-is-extended-berkeley-packet-filter-ebpf/",
+                  "type": "article"
+                },
+                {
+                  "title": "eBPF简介",
+                  "url": "https://www.youtube.com/watch?v=qXFi-G_7IuU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "5a82c651-b834-4ad0-8578-001eb05a96fa",
+              "xid": "973dbfb0-22af-4f9e-a593-e0778e11757b"
+            },
+            {
+              "title": "性能工具（perf-tools）",
+              "description": "性能工具集（perf-tools）是Linux内核（Linux kernel）附带的一套性能分析工具（performance analysis tools）。\n\n它允许你在系统中监控各类与性能相关的事件（performance-related events），例如CPU周期（CPU cycles）、已执行的指令（instructions executed）、缓存未命中（cache misses）及其他硬件相关指标（hardware-related metrics）。\n\n这些工具可以帮助你诊断PostgreSQL实例中的瓶颈和性能问题，并可用于识别优化方向。\n\n",
+              "links": [
+                {
+                  "title": "使用Linux perf工具（perf tool）进行性能分析",
+                  "url": "https://mariadb.com/kb/en/profiling-with-linux-perf-tool/",
+                  "type": "article"
+                },
+                {
+                  "title": "perf：使用性能计数器（performance counters）进行Linux性能分析",
+                  "url": "https://perf.wiki.kernel.org/index.php/Main_Page",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "07159e6d-7724-45c8-bb33-dbcea6edc8ca",
+              "xid": "7ee7d6e1-4847-49d2-a073-ff832888ce1b"
+            },
+            {
+              "title": "核心转储（Core Dumps）",
+              "description": "核心转储（Core Dump）是一种文件，其中包含运行中的进程的内存映像及其进程状态。\n\n当程序崩溃或遇到不可恢复的错误时，通常会生成核心转储（Core Dump），允许开发人员分析程序崩溃时的状态。\n\n在PostgreSQL的上下文中，核心转储（Core Dump）有助于诊断和修复数据库系统的问题。\n\n",
+              "links": [
+                {
+                  "title": "核心转储（Core Dump）",
+                  "url": "https://wiki.archlinux.org/title/Core_dump",
+                  "type": "article"
+                },
+                {
+                  "title": "启用核心转储（Enabling Core Dumps）",
+                  "url": "https://wiki.postgresql.org/wiki/Getting_a_stack_trace_of_a_running_PostgreSQL_backend_on_Linux/BSD#Enabling_core_dumps",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f83c74bf-1e12-4231-b8be-8b9a8305bcec",
+              "xid": "dde9ebbb-52ca-408e-b04a-99f77fabea20"
+            }
+          ],
+          "id": "46bda6f9-67b2-4f04-9a19-cd79805d2590",
+          "xid": "32f070e7-6310-4911-a33c-d0963a6d3980"
+        },
+        {
+          "title": "操作系统工具（operating-system-tools）",
+          "description": "操作系统工具",
+          "links": [],
+          "children": [
+            {
+              "title": "top命令 (top)",
+              "description": "`top命令 (top)` 是大多数 Unix 系统（如 Linux、macOS 和 BSD）出厂预装的命令行工具 (command-line utility)。\n\n它能够动态实时 (dynamic, real-time) 展示系统运行的进程 (process)，并显示进程 ID (process ID)、用户、CPU 使用率 (CPU usage)、内存占用 (memory usage) 等关键信息。\n\n",
+              "links": [
+                {
+                  "title": "如何在 Linux 中使用 top 命令",
+                  "url": "https://phoenixnap.com/kb/top-command-in-linux",
+                  "type": "article"
+                },
+                {
+                  "title": "top命令手册页 (man page)",
+                  "url": "https://man7.org/linux/man-pages/man1/top.1.html",
+                  "type": "article"
+                },
+                {
+                  "title": "破解 Linux 中的 top 命令",
+                  "url": "https://www.youtube.com/watch?v=WsR11EGF9PA",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "c070da13-b076-457e-9106-1bd5c47ffb66",
+              "xid": "2bd35e7e-2211-45b5-b238-5b898a9318b3"
+            },
+            {
+              "title": "sysstat",
+              "description": "sysstat（sysstat）是一个用于 Linux 的性能监控工具包（performance monitoring tools）。\n\n它收集各种系统统计信息，例如 CPU 使用率（CPU usage）、内存使用率（memory usage）、磁盘活动（disk activity）、网络流量（network traffic）等。\n\n系统管理员可以使用这些工具来监控服务器性能并识别潜在的瓶颈（bottlenecks）和改进区域。\n\n",
+              "links": [
+                {
+                  "title": "sysstat项目仓库",
+                  "url": "https://github.com/sysstat/sysstat",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Sysstat——适用于 Linux 的一站式系统性能及使用活动监控工具",
+                  "url": "https://www.tecmint.com/install-sysstat-in-linux/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f81114f4-40e8-4b8a-80f7-1fbf17f5c323",
+              "xid": "3bdf4583-c6b0-4fe6-bdb5-1b3a04df5b15"
+            },
+            {
+              "title": "iotop（iotop）",
+              "description": "`iotop` 是一个不可或缺的命令行工具，能够实时展示系统中运行进程的输入/输出（I/O）活动。\n\n该工具在监控和管理 PostgreSQL 数据库性能时特别有用，它帮助系统管理员或数据库开发者识别高 I/O 的进程，从而发现潜在的性能瓶颈或服务器优化机会。\n\n",
+              "links": [
+                {
+                  "title": "Linux iotop 监控导致硬盘负载的进程与负载增长原因",
+                  "url": "https://www.cyberciti.biz/hardware/linux-iotop-simple-top-like-io-monitor/",
+                  "type": "article"
+                },
+                {
+                  "title": "iotop 使用手册（man page）",
+                  "url": "https://linux.die.net/man/1/iotop",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "bfc99e37-d764-4975-adce-19cf9251d376",
+              "xid": "b42db724-827a-42ca-9830-b30f76ee7f65"
+            }
+          ],
+          "id": "29728352-0de3-41f4-a2b3-5745e48f4c84",
+          "xid": "af4c3a50-c659-4f42-a435-a33eeb00f206"
+        },
+        {
+          "title": "系统视图(system-views)",
+          "description": "系统视图",
+          "links": [],
+          "children": [
+            {
+              "title": "pg_stat_activity（pg_stat_activity）",
+              "description": "「pg_stat_activity（pg_stat_activity）」是 PostgresSQL 的一个关键系统视图，提供当前数据库连接及正在执行的查询的实时信息。\n\n此视图在排查性能问题、识别长时间运行或空闲事务、以及维护数据库整体健康状态时十分有用，通过此视图可实时监控、诊断并采取相应措施，以保持数据库的强健且高性能运行。\n\n",
+              "links": [
+                {
+                  "title": "pg_state_activity（pg_state_activity）",
+                  "url": "https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW",
+                  "type": "article"
+                },
+                {
+                  "title": "理解 pg_stat_activity（pg_stat_activity）",
+                  "url": "https://www.depesz.com/2022/07/05/understanding-pg_stat_activity/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "99e44d38-e09e-44d9-9abe-1519f289352e",
+              "xid": "886ec2de-2c9f-4241-8cca-83dd2cb2f662"
+            },
+            {
+              "title": "pg_stat_statements（pg_stat_statements）",
+              "description": "**pg_stat_statements（pg_stat_statements）** 是PostgreSQL的一个系统视图（system view），提供了SQL查询执行的详细统计信息。\n\n这对于开发者和数据库管理员来说是特别有用的，可用于识别性能瓶颈、优化查询性能及排查问题。\n\n该视图可直接查询，或通过各类管理工具访问。\n\n要使用pg_stat_statements，您需要通过以下方式启用`pg_stat_statements`扩展：在`postgresql.conf`配置文件中添加相关行。\n\n",
+              "links": [
+                {
+                  "title": "pg_stat_statements（pg_stat_statements）",
+                  "url": "https://www.postgresql.org/docs/current/pgstatstatements.html",
+                  "type": "article"
+                },
+                {
+                  "title": "使用 pg_stat_statements（pg_stat_statements） 进行查询优化",
+                  "url": "https://www.timescale.com/blog/using-pg-stat-statements-to-optimize-queries/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "86106323-92a6-4346-a179-aecde7f3196b",
+              "xid": "ba02b163-4230-4aa4-b00a-435f016e3819"
+            }
+          ],
+          "id": "72e80941-fb05-423e-b3ab-28e24f4f1dac",
+          "xid": "1c3e82b5-f38b-442c-8d32-ec423801ac9a"
+        },
+        {
+          "title": "tools",
+          "description": "tools",
+          "links": [],
+          "children": [
+            {
+              "title": "pgcenter",
+              "description": "`pgcenter（pgcenter）` 是一个专为 PostgreSQL 数据库提供实时监控和管理的命令行工具。\n\n它提供了一个便捷接口，用于跟踪数据库性能的各方面，允许用户快速识别瓶颈（bottlenecks）、慢查询（slow queries）和其他潜在问题。\n\n借助其丰富功能和用户友好界面，`pgcenter` 成为任何使用 PostgreSQL 数据库用户的工具箱中不可或缺的工具。\n\n",
+              "links": [
+                {
+                  "title": "Lesovsky 的 pgcenter 项目",
+                  "url": "https://github.com/lesovsky/pgcenter",
+                  "type": "opensource"
+                }
+              ],
+              "children": [],
+              "id": "430ba414-abee-4206-a1f0-2df7cd106b5f",
+              "xid": "26c87c40-14b1-47d9-8cd5-39f1f40bb598"
+            }
+          ],
+          "id": "71ddc0fe-875a-4d06-aa29-c8a671359344",
+          "xid": "ecc9b51a-fc1d-492a-9531-92709e32a882"
+        },
+        {
+          "title": "查询分析（query-analysis）",
+          "description": "查询分析（query-analysis）",
+          "links": [],
+          "children": [
+            {
+              "title": "EXPLAIN（命令）",
+              "description": "在使用数据库时，理解查询的性能与效率至关重要。\n\n在PostgreSQL中，`EXPLAIN`（EXPLAIN命令）通过提供查询执行计划（query execution plan）的洞察，帮助分析和优化查询。\n\n该命令可帮助识别瓶颈、低效的表扫描（table scans）、不恰当的索引（indexing）以及影响查询性能的其他问题。\n\n`EXPLAIN` 在不执行查询的情况下生成查询执行计划。\n\n它显示执行计划树（plan tree）中的节点、执行顺序，以及每个操作的预估成本（estimated cost）。\n\n",
+              "links": [
+                {
+                  "title": "使用EXPLAIN（命令）",
+                  "url": "https://www.postgresql.org/docs/current/using-explain.html",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL中的EXPLAIN（命令）",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-explain/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "b94c8097-c857-4129-96b3-deb387ba3a61",
+              "xid": "8f551b86-5045-4eb8-8f92-4a43dd895bc2"
+            },
+            {
+              "title": "Depesz",
+              "description": "Depesz 是一款用于 PostgreSQL 的流行在线查询分析工具，以工具的创建者 Hubert \"depesz\" Lubaczewski 的名字命名。\n\n它帮助用户理解和分析 `EXPLAIN ANALYZE`（EXPLAIN ANALYZE） 命令的输出，该命令是 PostgreSQL 中用于分析和优化查询的强大功能。\n\nDepesz 常被用于简化查询分析流程，因为它提供了关于 SQL 查询性能的宝贵见解，并有助于调整查询以提升效率。\n\n",
+              "links": [
+                {
+                  "title": "Depesz 官网",
+                  "url": "https://www.depesz.com/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "dbf63416-57f4-471c-9f34-cbb340bb2f21",
+              "xid": "eb448985-a32a-4a99-81e3-eea1b3902e23"
+            },
+            {
+              "title": "PEV2",
+              "description": "`pev2`（PostgreSQL解释可视化器v2，Postgres Explain Visualizer v2）是一款开源工具，旨在让使用 PostgreSQL 的查询分析更加简便易懂。\n\n通过直观展示 `EXPLAIN ANALYZE` 命令（EXPLAIN ANALYZE）的输出，`pev2` 将查询计划和执行指标以可读的结构呈现，从而简化查询优化。\n\n",
+              "links": [
+                {
+                  "title": "PEV2项目主页",
+                  "url": "https://github.com/dalibo/pev2",
+                  "type": "opensource"
+                }
+              ],
+              "children": [],
+              "id": "60d5b978-8f81-4ade-980a-10542f4e5fd7",
+              "xid": "755e2f64-91f1-477f-a6d8-af880d58f27c"
+            },
+            {
+              "title": "张量器",
+              "description": "张量查询语言（Tensor Query Language，TQL）是一种专用于存储为张量（tensor）的数据集查询与管理的类SQL语言，主要在Deep Lake平台中使用。\n\nTQL扩展传统SQL的功能，支持多维数组操作，在数据科学和机器学习工作流中特别实用。\n\n核心特性包括数组算术运算、用户定义函数，以及与PyTorch和TensorFlow等深度学习框架的集成，可在这些环境中直接进行高效数据操作与分析。\n\nTQL允许用户对数据集进行复杂查询，包含嵌入式搜索、数组切片和自定义数值计算等操作。\n\n这种灵活性支持从基础数据检索到机器学习模型训练所需的复杂数据预处理等广泛用途。\n\n该语言还与版本控制系统集成，让用户能无缝管理并查询数据集的多个版本。\n\n",
+              "links": [
+                {
+                  "title": "张量查询语言（Tensor Query Language）文档",
+                  "url": "https://docs.activeloop.ai/examples/tql",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "aac33db7-9373-4b46-bf20-83aba2cedf1b",
+              "xid": "83bd2a48-102a-4e32-ba02-e42437bf5fd3"
+            },
+            {
+              "title": "explain.dalibo.com（explain.dalibo.com）",
+              "description": "[explain.dalibo.com（explain.dalibo.com）](http://explain.dalibo.com) 是一个允许你分析查询执行计划（execution plan）的免费服务。\n\n它基于 [explain.depesz.com（explain.depesz.com）](http://explain.depesz.com) 服务。\n\n",
+              "links": [
+                {
+                  "title": "explain.dalibo.com（explain.dalibo.com）",
+                  "url": "https://explain.dalibo.com/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a38038a8-1740-4cf4-b4ca-7fb4f0a1cdac",
+              "xid": "e0f0c9d9-ef9b-41f0-bb6c-ec69d7f7e26c"
+            }
+          ],
+          "id": "b663248c-5eff-4d5e-a087-6233ccdf260e",
+          "xid": "4473fdc4-e9f7-4dc6-b217-1f678d48f7f8"
+        },
+        {
+          "title": "故障排除方法(troubleshooting-methods)",
+          "description": "故障排除方法",
+          "links": [],
+          "children": [
+            {
+              "title": "USE",
+              "description": "利用率、饱和度和错误（USE）方法是一种分析系统性能的分析方法论。\n\n它指导构建检查清单，针对服务器分析时，可以快速识别资源瓶颈或错误。\n\n该方法通过先提出问题并寻找答案的方式开始，而非从已知指标（部分答案）出发倒推分析。\n\n",
+              "links": [
+                {
+                  "title": "USE方法",
+                  "url": "https://www.brendangregg.com/usemethod.html",
+                  "type": "article"
+                },
+                {
+                  "title": "优化监控的USE方法",
+                  "url": "https://www.infoworld.com/article/2270621/making-the-use-method-of-monitoring-useful.html",
+                  "type": "article"
+                },
+                {
+                  "title": "采用监控框架——RED和USE",
+                  "url": "https://lantern.splunk.com/Observability/Product_Tips/Observability_Cloud/Adopting_monitoring_frameworks_-_RED_and_USE",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d8d0db8d-6849-41a5-beef-af6b5540a4f4",
+              "xid": "23acda14-7ff1-4560-88fe-14e03e795485"
+            },
+            {
+              "title": "RED（RED）",
+              "description": "RED的首字母缩写代表速率（Rate）、错误数（Errors）和持续时间（Duration）。\n\n这些是按请求范围衡量的指标，与基于资源范围的USE方法不同。\n\n在持续时间（Duration）的定义中，特指分布情况，而非平均值。\n\n速率（Rate）指每秒的请求数。\n\n错误数（Errors）指失败的请求数。\n\n持续时间（Duration）指请求持续时间的分布情况。\n\nRED方法是一种分析系统性能的系统方法论。\n\n它引导构建检查清单，可在服务器分析中快速定位资源瓶颈或错误。\n\n这种方法首先通过提问引导分析，而非以既定指标（部分答案）为起点并逆向追溯。\n\n",
+              "links": [
+                {
+                  "title": "RED方法：监控微服务的新方法",
+                  "url": "https://thenewstack.io/monitoring-microservices-red-method",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL、RED方法和Golden Signals（黄金信号）入门指南",
+                  "url": "https://dataegret.com/2020/10/postgresql-red-golden-signals-getting-started/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "68abf67e-3f83-40cc-a697-33daf6541dbf",
+              "xid": "bbf29426-964d-4247-86f7-2f632c1f21c2"
+            },
+            {
+              "title": "黄金指标（Golden Signals）",
+              "description": "黄金指标（Golden Signals）是一组用于监控应用程序性能和健康状态的指标，尤其适用于分布式系统。\n\n这些指标源自 Google 的站点可靠性工程（Site Reliability Engineering，SRE）实践，并可轻松应用于 PostgreSQL 故障诊断方法。\n\n通过监控这四个核心指标——延迟（latency）、流量（traffic）、错误（errors）和饱和度（saturation）——您可以全面了解 PostgreSQL 数据库的整体性能和健康状况，并快速定位潜在问题。\n\n",
+              "links": [
+                {
+                  "title": "四大黄金指标（Four Golden Signals）",
+                  "url": "https://sre.google/sre-book/monitoring-distributed-systems/#xref_monitoring_golden-signals",
+                  "type": "article"
+                },
+                {
+                  "title": "SRE黄金指标四要素（它们是什么及为何重要）",
+                  "url": "https://www.blameless.com/blog/4-sre-golden-signals-what-they-are-and-why-they-matter",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5065834b-d950-46c3-95fb-76d23f654da7",
+              "xid": "8cd3b42e-2094-447c-9ad2-b790d5161c67"
+            }
+          ],
+          "id": "5643c71e-9411-4d7c-a112-2532ea1b9a92",
+          "xid": "65f7d8e4-6518-4e99-83f1-0309129a7ecd"
+        }
+      ],
+      "id": "797af445-c7ab-4d35-a7c7-c1cb8dd53fb3",
+      "xid": "ce73d515-7e3b-4111-a9b9-9692c2133634"
+    },
+    {
+      "title": "SQL优化技术（sql-optimization-techniques）",
+      "description": "SQL优化技术（sql-optimization-techniques）",
+      "links": [],
+      "children": [
+        {
+          "title": "SQL查询模式 / 反模式（anti-patterns）",
+          "description": "在PostgreSQL中，数据库模式查询模式（schema query patterns）通过以下方式优化数据检索和操作：在常被查询的列上添加索引以加快SELECT查询速度，通过带索引的外键（indexed foreign keys）和适当的连接类型（join types）优化连接操作，利用表分区（table partitioning）限制数据扫描范围。\n\n公共表表达式（Common Table Expressions, CTEs）分解复杂查询并提升可读性和可维护性，窗口函数（window functions）支持在查询中进行高级分析。\n\n查询缓存减少访问时间，预处理语句（prepared statements）降低执行开销，物化视图（materialized views）预先计算并存储复杂查询结果以加速访问。\n\n这些模式共同提升了PostgreSQL查询的效率、性能和可靠性。\n\n",
+          "links": [
+            {
+              "title": "PostgreSQL - 查询模式（Query Patterns）",
+              "url": "https://www.postgresql.org/docs/current/functions-matching.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6b5fd6f7-7fcb-459a-8922-ac1d030473be",
+          "xid": "1344cab5-edea-45c9-9e78-a5b318c74f1d"
+        },
+        {
+          "title": "架构设计模式与反模式（Schema Design Patterns / Anti-patterns）",
+          "description": "PostgreSQL的架构设计模式（Schema design patterns）通过使用规范化（normalization）减少冗余并维护数据完整性，同时反规范化（denormalization）可提升读取密集型应用程序的读取性能。\n\n通过运用星型模式（star schema）和雪花模式（snowflake schema）可优化数据仓库中的查询性能，前者以中央事实表为核心，后者则通过规范化维度表进行扩展。\n\n基于特定条件对表进行分区（partitioning）可提升查询性能和维护效率，而战略性使用索引（indexes）则可加速数据检索。\n\n外键（foreign keys）和约束（constraints）能确保数据完整性，物化视图（materialized views）预先计算复杂查询可快速获取汇总数据，这些方法共同确保了优化且健壮的数据库设计。\n\n",
+          "links": [
+            {
+              "title": "如何设计您的PostgreSQL数据库：两种架构（schema）示例",
+              "url": "https://www.timescale.com/learn/how-to-design-postgresql-database-two-schema-examples",
+              "type": "article"
+            },
+            {
+              "title": "什么是星型模式（STAR schema）｜星型模式与雪花模式（Snowflake Schema）对比",
+              "url": "https://www.youtube.com/watch?v=hQvCOBv_-LE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5441d7ab-e5be-4b89-83d0-a6dde4699af7",
+          "xid": "7220a990-98e4-4722-a8f9-55ddde8a9c59"
+        },
+        {
+          "title": "索引及其使用案例（Indexes and their Usecases）",
+          "description": "PostgreSQL中的索引（Indexes）通过允许更快的数据检索提升查询性能。\n\n常见应用场景包括：\n\n* 主键和唯一键（Primary and Unique Keys）：基于唯一标识符快速访问行。\n\n\n* 外键（Foreign Keys）：加速不同表间连接操作。\n\n\n* 搜索查询（Search Queries）：通过全⽂搜索索引（full-text search indexes）优化文本字段的搜索。\n\n\n* 范围查询（Range Queries）：提升日期、时间和数值字段中范围筛选的查询效率。\n\n\n* 部分索引（Partial Indexes）：为数据子集创建索引，适合有特殊条件的常查询列。\n\n\n* 表达式索引（Expression Indexes）：对表达式或函数创建索引，优化复杂计算查询.\n* 复合索引（Composite Indexes）：通过同时索引多个字段优化多列联合查询.\n* GIN和GiST索引（GIN和GiST Indexes）：提升数组、JSONB与几何数据的性能。\n\n",
+          "links": [],
+          "children": [
+            {
+              "title": "B-树（B-Tree）",
+              "description": "B-树（B-Tree）是PostgreSQL的默认索引类型，其设计旨在高效处理各种查询。\n\nB-树是一种数据结构，它能够在有序数据中快速进行搜索、插入和删除操作。\n\nB-树索引在PostgreSQL中是最常用的索引类型——灵活、高效，并且适用于多种类型的查询。\n\n",
+              "links": [
+                {
+                  "title": "B-树",
+                  "url": "https://www.postgresql.org/docs/current/indexes-types.html#INDEXES-TYPES-BTREE",
+                  "type": "article"
+                },
+                {
+                  "title": "B-树索引",
+                  "url": "https://www.youtube.com/watch?v=NI9wYuVIYcA&t=109s",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "9815a4a8-5366-4846-bd70-17e6657bbef6",
+              "xid": "8b11b3d5-bf99-41f0-a736-6416742ebbbc"
+            },
+            {
+              "title": "哈希",
+              "description": "哈希索引（Hash Index）是一种使用哈希函数（hash function）将每一行的键值映射为固定长度的哈希键（hashed key）的数据库索引。\n\n使用哈希索引的目的是通过将键值转换为更紧凑且易于搜索的格式（如哈希键），从而加速搜索操作。\n\n",
+              "links": [
+                {
+                  "title": "哈希（Hash）",
+                  "url": "https://www.postgresql.org/docs/current/indexes-types.html#INDEXES-TYPES-HASH",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL 中哈希索引的重新引入（Re-Introducing Hash Indexes in PostgreSQL）",
+                  "url": "https://hakibenita.com/postgresql-hash-index",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "125766f0-e473-4edd-b973-64686285617c",
+              "xid": "501c0f25-160e-4b1b-b668-e98a10a9598b"
+            },
+            {
+              "title": "通用搜索树（GiST）",
+              "description": "通用搜索树（GiST）是PostgreSQL中的一种强大且灵活的索引类型（Index Type），作为实现不同索引策略（Indexing Strategies）的基础框架。\n\nGiST为构建自定义索引提供了通用的基础设施（Infrastructure），扩展了PostgreSQL的核心功能（Core Capabilities）。\n\n该索引框架增强了PostgreSQL的内置能力，可以创建与具体需求匹配的自定义索引策略。\n\n",
+              "links": [
+                {
+                  "title": "GiST索引（GIST Indexes）",
+                  "url": "https://www.postgresql.org/docs/8.1/gist.html",
+                  "type": "article"
+                },
+                {
+                  "title": "数据库系统的通用搜索树（Generalized Search Trees for Database Systems）",
+                  "url": "https://www.vldb.org/conf/1995/P562.PDF",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "81601827-3db2-483c-939e-456fac57d70a",
+              "xid": "82523f9a-3864-474e-97a9-7954733330a4"
+            },
+            {
+              "title": "空间分解泛型搜索树（SP-GiST）",
+              "description": "空间泛型搜索树（Spatial Generalized Search Tree，简称SP-GiST）是PostgreSQL中的一种先进索引结构，专门设计用于高效管理空间数据和多维数据。\n\n与传统平衡树（如通用搜索树GiST）不同，SP-GiST支持空间分解树，例如四元树（quad-trees）和k-d树（kd-trees），这些树结构特别适用于能够将数据空间划分为非重叠区域的空间数据场景。\n\n对于需要处理复杂空间查询且为大规模数据集提供高效索引机制的应用，SP-GiST是理想选择。\n\n其原理是通过将数据空间细分为更小的可管理分区，从而优化搜索操作并提升查询性能。\n\n这种结构在地理信息系统（GIS，Geographic Information System）、空间数据库以及高维数据应用中具有显著优势。\n\n",
+              "links": [
+                {
+                  "title": "PostgreSQL空间分解泛型搜索树（SP-GiST）",
+                  "url": "https://www.slingacademy.com/article/postgresql-sp-gist-space-partitioned-generalized-search-tree/",
+                  "type": "article"
+                },
+                {
+                  "title": "（种类繁多的）PostGIS空间索引",
+                  "url": "https://www.crunchydata.com/blog/the-many-spatial-indexes-of-postgis",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ec641b0a-9290-4cf2-84e0-78b4611773d3",
+              "xid": "0cc42c6e-e231-4c60-a42e-862701c186b8"
+            },
+            {
+              "title": "通用倒排索引（GIN）",
+              "description": "通用倒排索引（GIN）是PostgreSQL中一种强大的索引方法，可用于数组、文本搜索等复杂数据类型。\n\n它为非传统数据类型提供了更好的搜索能力，同时支持高效且灵活的查询。\n\n",
+              "links": [
+                {
+                  "title": "GIN简介",
+                  "url": "https://www.postgresql.org/docs/current/gin-intro.html",
+                  "type": "article"
+                },
+                {
+                  "title": "通用倒排索引指南",
+                  "url": "https://www.cockroachlabs.com/docs/stable/inverted-indexes",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "778f2e23-982e-44a6-9497-438a0d505eca",
+              "xid": "4c12afa0-fdfe-4cbf-9b25-a085a82ef28a"
+            },
+            {
+              "title": "块范围索引（BRIN）",
+              "description": "块范围索引（BRIN）是PostgreSQL 9.5引入的索引技术，其缩写代表“Block Range INdex”。\n\n这种索引策略最适合用于存储已排序数据的大型表。\n\n它通过存储表中页码范围的元数据来工作，从而在搜索符合特定条件的行时能快速过滤数据。\n\n虽然不适用于所有表和查询，但若使用得当，可显著提升性能。\n\n在使用大型且包含排序或自然有序数据的表时，建议考虑使用块范围索引（BRIN index）。\n\n",
+              "links": [
+                {
+                  "title": "块范围索引（BRIN Indexes）",
+                  "url": "https://www.postgresql.org/docs/17/brin.html",
+                  "type": "article"
+                },
+                {
+                  "title": "块范围索引（Block Range INdexes）",
+                  "url": "https://en.wikipedia.org/wiki/Block_Range_Index",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "49cbba5c-384b-4c6b-8743-1ac353b17913",
+              "xid": "3ad87d4c-ecb0-4736-838f-9e11246421fa"
+            }
+          ],
+          "id": "07bdcc3e-4ff1-4bb3-9e1c-175cb2b1607b",
+          "xid": "172b348c-f89f-4e77-84ca-fdaffa322caa"
+        }
+      ],
+      "id": "42809a06-a208-47dc-b09e-9b09f3df0bdd",
+      "xid": "74a17994-2e6d-415a-9b32-03136386c9f0"
+    },
+    {
+      "title": "参与开发",
+      "description": "PostgreSQL 是由大型活跃社区开发的开源数据库系统。\n\n通过参与开发过程，您可以助力其发展、提升技能以及与全球开发者协作。\n\n本节将介绍如何参与 PostgreSQL 开发社区的方式。\n\n加入邮件列表和在线论坛\n-----------------------------------------------------------------------------------\n\n加入各种 PostgreSQL 邮件列表，例如一般讨论列表（_pgsql-general_）、开发列表（_pgsql-hackers_）或其他专业列表，以获取项目进展的相关讨论。\n\n您还可以参与 Stack Overflow 或 Reddit 等 PostgreSQL 相关论坛，与其他开发者互动、提问或提供帮助。\n\n报告错误和测试新功能\n-----------------------------------------------------------------------------------\n\n报告错误或测试新功能能显著提升 PostgreSQL 的稳定性和质量。\n\n提交错误报告前，请先通过官方错误跟踪系统查询问题是否已被解决。\n\n此外，您可以测试其他开发者的代码补丁（patch），或为新功能编写测试用例。\n\n贡献代码\n-----------------------------------------------------------------------------------\n\n代码贡献可包括修复小错误、优化现有功能或新增功能模块。\n\n若要参与 PostgreSQL 源代码的开发，需熟悉 [PostgreSQL 编码标准（coding standards）](https://www.postgresql.org/docs/current/source.html)，并通过 PostgreSQL 邮件列表提交补丁。\n\n提交前请仔细阅读 [提交补丁指南（submitting a patch）](https://wiki.postgresql.org/wiki/Submitting_a_Patch)，确保贡献内容能顺利获批。\n\n完善文档与翻译\n-----------------------------------------------------------------------------------\n\n优化并扩展 PostgreSQL 官方文档对于为用户提供准确、及时的信息至关重要。\n\n若您具备某领域的专业知识，可协助更新文档。\n\n此外，将文档或界面信息翻译为其他语言也能扩大社区影响，为非英语使用者提供支持。\n\n支持社区与互相帮助\n-----------------------------------------------------------------------------------\n\n通过协助社区成员，您不仅能推动 PostgreSQL 的整体发展，也能深化自己的知识和技术储备。\n\n参与在线讨论、回答提问、举办培训或研讨会、分享经验都是有效途径。\n\n推广 PostgreSQL\n-----------------------------------------------------------------------------------\n\n在组织或社交圈中推广 PostgreSQL 可提升其采用率与影响力。\n\n通过分享成功案例、发表演讲、撰写博文或制作教程，鼓励更多人将 PostgreSQL 作为数据库解决方案的首选。\n\n请记住：PostgreSQL 社区的成长离不开每位成员的积极参与与贡献。\n\n无论是微小的修正还是大规模的优化，您的每一份贡献都将进一步完善这一强大的数据库系统。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "邮件列表（Mailing Lists）",
+          "description": "邮件列表（Mailing Lists）是 PostgreSQL 开发社区的核心组成部分。\n\n它们为协作、讨论及问题解决提供了平台。\n\n通过参与这些邮件列表，您可以贡献于 PostgreSQL 的开发、与他人分享知识，并获取有关最新更新、改进及会议的动态信息。\n\nPostgreSQL 开发社区提供了多种邮件列表，用于讨论、公告和贡献。\n\n关键列表包括：\n- **pgsql-hackers**（核心开发与功能讨论）、\n- **pgsql-announce**（官方公告发布）、\n- **pgsql-general**（常规使用与管理咨询）、\n- **pgsql-novice**（新手咨询支持）、\n- **pgsql-docs**（文档相关贡献）。\n\n此外还提供了地区性和语言特定的列表。\n\n参与建议：选择兴趣匹配的邮件列表订阅、自我介绍、查阅存档邮件以了解背景，再参与讨论。\n\n使用指南请遵循《邮件列表礼仪规范（Mailing List Etiquette）》。\n\n",
+          "links": [
+            {
+              "title": "邮件列表礼仪规范（Mailing List Etiquette）",
+              "url": "https://www.postgresql.org/community/lists/etiquette/",
+              "type": "article"
+            },
+            {
+              "title": "pgsql-hackers 订阅（pgsql-hackers Subscription）",
+              "url": "https://www.postgresql.org/list/pgsql-hackers/",
+              "type": "article"
+            },
+            {
+              "title": "pgsql-announce 订阅（pgsql-announce Subscription）",
+              "url": "https://www.postgresql.org/list/pgsql-announce/",
+              "type": "article"
+            },
+            {
+              "title": "pgsql-general 订阅（pgsql-general Subscription）",
+              "url": "https://www.postgresql.org/list/pgsql-general/",
+              "type": "article"
+            },
+            {
+              "title": "pgsql-novice 订阅（pgsql-novice Subscription）",
+              "url": "https://www.postgresql.org/list/pgsql-novice/",
+              "type": "article"
+            },
+            {
+              "title": "pgsql-docs 订阅（pgsql-docs Subscription）",
+              "url": "https://www.postgresql.org/list/pgsql-docs/",
+              "type": "article"
+            },
+            {
+              "title": "PostgreSQL 邮件列表页面（PostgreSQL Mailing Lists page）",
+              "url": "https://www.postgresql.org/list/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9f9aa791-c6c9-435a-b6f9-69deaf63d700",
+          "xid": "89d4a3f9-46a2-41d1-a632-a15f8eb06ed2"
+        },
+        {
+          "title": "评审补丁（Reviewing Patches）",
+          "description": "评审补丁（Reviewing patches）是PostgreSQL的一个至关重要（vital contribution）的贡献，它通过质量控制（quality control）、维护（maintaining）项目标准、以及帮助新贡献者理解系统内部（internals），来保障数据库的核心可靠性。\n\n评审者（reviewers）通过识别缺陷（bugs）、优化性能（performance）、确保文档（documentation）完整性和测试覆盖率（test coverage），维持PostgreSQL的稳定性和可靠性（reliability and stability）。\n\n如需参与，请订阅 **pgsql-hackers邮件列表（pgsql-hackers mailing list）**，浏览 **commitfest日程（commitfest schedule）** 中的补丁（patches），并从正确性（correctness）、性能（performance）和代码质量（code quality）等方面提供建设性反馈（feedback）。\n\n这种协作流程是支持PostgreSQL社区的卓有成效方式（impactful way）。\n\n",
+          "links": [
+            {
+              "title": "pgsql-hackers邮件列表（pgsql-hackers Mailing List）",
+              "url": "https://www.postgresql.org/list/pgsql-hackers/",
+              "type": "article"
+            },
+            {
+              "title": "Commitfest日程（Commitfest Schedule）",
+              "url": "https://commitfest.postgresql.org/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "368d84e6-a65e-4267-9698-7c0ece1bb688",
+          "xid": "1fe62620-cfda-46fe-a26e-5b4f6607592d"
+        },
+        {
+          "title": "编写补丁（Writing Patches）",
+          "description": "如果您是有经验的开发者或愿意学习的人，可为PostgreSQL贡献补丁（patches）。\n\n补丁（patches）对于修复缺陷（bugs）、优化性能或实现新功能至关重要。\n\n以下是编写PostgreSQL补丁的指南：\n\n### 步骤1：查找问题或功能需求\n在编写补丁（patches）前，需确定PostgreSQL中存在的缺陷（bugs）或需实现的功能。\n\n可访问[PostgreSQL Bug跟踪器（Bug Tracker）](https://www.postgresql.org/support/submitbug/)和[PostgreSQL邮件列表（mailing lists）](https://www.postgresql.org/list/)查看现有问题或提交新需求。\n\n### 步骤2：熟悉源代码\n编写补丁（patches）前需深刻理解PostgreSQL源代码。\n\n代码可从[官方站点](https://www.postgresql.org/developer/sourcecode/)获取，按模块（modules）组织。\n\n需了解编码规范（coding conventions）、代码风格以及补丁（patches）适用的模块（modules）。\n\n### 步骤3：搭建开发环境\n需安装Git、GCC、Bison等工具。\n\n请参阅[PostgreSQL开发环境设置指南（Developer Setup Guide）](https://wiki.postgresql.org/wiki/Developer_Setup)配置环境。\n\n### 步骤4：编写补丁（patches）\n补丁必须符合[PostgreSQL编码规范（Coding Conventions）](https://www.postgresql.org/docs/current/source-format.html)，包括正确的缩进、格式化及代码组织。\n\n需添加清晰的注释说明补丁（patches）目的。\n\n### 步骤5：测试补丁（patches）\n提交前需彻底测试，确保其正确性且不会引发新问题。\n\n需运行PostgreSQL回归测试套件（regression test suite）及与补丁（patches）相关的特定测试。\n\n### 步骤6：创建提交（commit）与生成补丁文件\n测试完成后，用清晰的提交信息（commit message）创建Git提交，并通过`git-format-patch`生成补丁文件（patch file）。\n\n### 步骤7：提交补丁（patches）\n通过[PostgreSQL邮件列表（mailing lists）](https://www.postgresql.org/list/)提交补丁以供评审。\n\n可能需要根据反馈修改并重新提交。\n\n请记住，为PostgreSQL等开源项目贡献是一个协作过程！\n\n遵循上述步骤，您将能通过编写补丁（patches）为PostgreSQL项目贡献力量。\n\n开发愉快！",
+          "links": [],
+          "children": [],
+          "id": "2bd40484-cd15-4fd2-bd1c-c56653f22786",
+          "xid": "515cb213-14f9-4081-8940-eb335e9ee6d6"
+        }
+      ],
+      "id": "f4e83f92-e7a0-444b-8e59-cf75a9bf0fac",
+      "xid": "6943dff7-675b-4b2d-a92b-fce9cb8aa0e9"
+    }
+  ],
+  "id": "2527bfc3-abb2-42f7-9774-bdd15ed2a228",
+  "xid": "540b29e4-370a-4db1-b728-3261c2aad003"
+}

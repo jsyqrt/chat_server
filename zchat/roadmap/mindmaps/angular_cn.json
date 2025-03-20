@@ -1,0 +1,1203 @@
+{
+  "title": "Angular开发者",
+  "description": "关于Angular和其生态系统在2025年所需要掌握的一切。\n\n",
+  "links": [],
+  "children": [
+    {
+      "title": "RxJS基础",
+      "description": "JavaScript的响应式扩展，或称为RxJS，是一个用于实现响应式编程的库，可以帮助处理异步实现、回调及基于事件的程序。\n\n响应式编程范式可以通过使用响应式库在许多不同的语言中实现。\n\n这些库是下载的API，提供用于观察者和操作符等响应式工具的功能。\n\n它可以在您的浏览器中使用，也可以与Node.js一起使用。\n\n",
+      "links": [
+        {
+          "title": "RxJS文档",
+          "url": "https://rxjs.dev/guide/overview",
+          "type": "article"
+        },
+        {
+          "title": "学习RxJS",
+          "url": "https://www.learnrxjs.io/",
+          "type": "article"
+        },
+        {
+          "title": "初学者的RxJs和观察者介绍：一份友好的入门教程",
+          "url": "https://blog.angular-university.io/functional-reactive-programming-for-angular-2-developers-rxjs-and-observables/",
+          "type": "article"
+        },
+        {
+          "title": "初学者RxJS教程：深入了解RxJS速成课程！",
+          "url": "https://www.youtube.com/watch?v=yJdh1_FbtjU",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "可观察模式（Observable Pattern）",
+          "description": "可观察模式（Observer Pattern）是一种软件设计模式，在该模式中，一个对象（即被观察者（Subject））维护着一个其依赖者的列表，称之为观察者（Observers），并在其状态发生变化时自动通知他们，通常通过调用他们的一个方法来实现通知。\n\nAngular使用了观察者模式，这意味着可观察对象（Observable objects）被注册，其他对象通过观察它们来观察这些可观察对象（在Angular中是使用subscribe方法），并在可观察对象被某种方式作用时采取行动。\n\n",
+          "links": [
+            {
+              "title": "Angular 和 可观察对象（Observable）",
+              "url": "https://medium.com/fuzzycloud/angular-and-observable-4bf890b2a282",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "aa4fa5ee-31d0-4069-b4d2-08b877a33cf7",
+          "xid": "5e1c1427-4f98-4bf0-a4cc-624a4bd918ff"
+        },
+        {
+          "title": "可观察对象生命周期",
+          "description": "一个可观察对象是一个作为数据流封装器的函数。\n\n它们支持在应用内传递消息。\n\n一个可观察对象在有观察者订阅之前是无用的。\n\n一个观察者是消费可观察对象所发出数据的对象。\n\n只要可观察对象未完成或观察者未取消订阅，观察者就会不断接收来自可观察对象的数据值。\n\n否则，观察者可以持续不断地异步接收来自可观察对象的数据值。\n\n因此我们可以执行各种操作，比如更新用户界面，或传递JSON响应。\n\n可观察对象的生命周期有4个阶段。\n\n*   创建\n*   订阅\n*   执行\n*   销毁\n\n",
+          "links": [
+            {
+              "title": "理解可观察对象生命周期",
+              "url": "https://medium.com/analytics-vidhya/understanding-rxjs-observables-ad5b34d9607f",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "53fc1a86-996e-456e-8199-5ff588dee410",
+          "xid": "2ce3e0ab-c60e-4923-a0a0-6b6c72ba25a7"
+        },
+        {
+          "title": "RxJS 对比 Promises",
+          "description": "简而言之，Promise 和 Observable 之间的主要区别如下：\n\n*   Promise 是 厌恶延迟（eager），而 Observable 是 懒惰（lazy），\n*   Promise 总是异步的，而 Observable 可以是异步的，也可以是同步的，\n*   Promise 可以提供单一值，而 Observable 是一个值流（从 0 到多个值），可以通过 RxJS 操作符对 Observable 进行处理，得到一个新的定制流。\n\n",
+          "links": [
+            {
+              "title": "为什么选择 RxJS？RxJS 对比 Promises",
+              "url": "https://javascript.plainenglish.io/why-rxjs-rxjs-vs-promises-b28962771d68",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 RxJS 的热门帖子",
+              "url": "https://app.daily.dev/tags/rxjs?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4de6fb78-300d-48b3-8c5f-0eebc5b63705",
+          "xid": "22b70ea0-79a5-4ec6-8e50-7b5c60d98a07"
+        },
+        {
+          "title": "操作符",
+          "description": "虽然 可观察对象 (Observable) 是 RxJS 的基础，但其操作符（Operator）使其变得特别有用。\n\n操作符是能够将复杂的异步代码以声明式方式轻松组合的关键组件。\n\n操作符是函数。\n\n操作符主要有两类：\n\n**可管道操作符**是可以通过语法 `observableInstance.pipe(operator())` 管道连接到 可观察对象 (Observable) 的那一类。\n\n它们包括 filter(...) 和 mergeMap(...)。\n\n调用这些操作符不会改变现有的 可观察对象 (Observable) 实例，而是返回一个新的可观察对象，其订阅逻辑基于第一个 可观察对象 (Observable)。\n\n一个可管道操作符本质上是一个纯函数，它接收一个 可观察对象 (Observable) 作为输入，并生成另一个 可观察对象 (Observable) 作为输出。\n\n订阅输出的 可观察对象 (Observable) 也会订阅输入的 可观察对象 (Observable)。\n\n**创建操作符**是另一种类型的操作符，可以作为独立函数调用来创建新的 可观察对象 (Observable)。\n\n例如，`of(1, 2, 3)` 创建一个 可观察对象，该 可观察对象 会依次发出1、2、3。\n\n创建操作符将在后面的章节中更详细地讨论。\n\n管道连接\n------\n\n可管道操作符是函数，所以它们可以像普通函数一样使用：op()(obs) ——但在实践中，经常会有很多这样的操作符组合在一起，变得阅读起来迅速变得困难：op4()(op3()(op2()(op1()(obs)))))。\n\n因此， 可观察对象 (Observable) 提供了一个名为 .pipe() 的方法，实现相同的目的，但更加易于阅读:\n\n     obs.pipe(op1(), op2(), op3(), op4());\n    \n\n创建操作符\n------------------\n\n**什么是创建操作符？** 与可管道操作符不同，创建操作符是用于根据某些常用预定义行为或通过结合其他 可观察对象 (Observable) 来创建 可观察对象 (Observable) 的函数。\n\n创建操作符的一个典型例子是 interval 函数。\n\n它把一个数字（不是 可观察对象 (Observable)）作为输入参数，并产生一个 可观察对象 (Observable) 作为输出:\n\n    import { interval } from 'rxjs';\n    \n    const observable = interval(1000 /* 毫秒数 */);\n    \n\n",
+          "links": [
+            {
+              "title": "创建操作符列表",
+              "url": "https://rxjs.dev/guide/operators#creation-operators-list",
+              "type": "article"
+            },
+            {
+              "title": "完整的 RxJS 操作符文档",
+              "url": "https://rxjs.dev/guide/operators",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "过滤",
+              "description": "RxJS 提供了各种过滤操作符（filtering operators），用于过滤和转换流中的数据。\n\n你可以将这些操作符与其他 RxJS 操作符结合使用，创建强大且高效的数据显示处理管线。\n\n",
+              "links": [
+                {
+                  "title": "了解 RxJS 操作符",
+                  "url": "https://rxjs.dev/api/operators",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5c4d77d5-6547-417d-b873-9fb497633c71",
+              "xid": "f0721ff9-1b4b-4098-b807-ce44ccd394d7"
+            },
+            {
+              "title": "速率限制",
+              "description": "在RxJS中，**速率限制(Rate Limiting)**是指限制可从可观察对象(Observable)发出的数据或事件的速率的做法。\n\n当数据的传入速率高于处理速率，或者对向服务器发送的请求数量有限制时，这会非常有用。\n\nRxJS提供了一些可用于速率限制的操作符(operators)，例如throttleTime和sampleTime。\n\n这些操作符(operators)可用于限制来自可观察对象(Observable)的发射率，通过丢弃过于频繁的发射。\n\n另一个操作符是auditTime，它在周期性的时间窗口期间发射源可观察对象(Observable)的最后一个值。\n\n",
+              "links": [
+                {
+                  "title": "throttleTime",
+                  "url": "https://rxjs.dev/api/operators/throttleTime",
+                  "type": "article"
+                },
+                {
+                  "title": "sampleTime",
+                  "url": "https://rxjs.dev/api/operators/sampleTime",
+                  "type": "article"
+                },
+                {
+                  "title": "auditTime",
+                  "url": "https://rxjs.dev/api/operators/auditTime",
+                  "type": "article"
+                },
+                {
+                  "title": "关于RxJS的博客和教程",
+                  "url": "https://blog.angular-university.io/functional-reactive-programming-for-angular-2-developers-rxjs-and-observables/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e17f4897-d489-478e-a5b8-802aa5def28a",
+              "xid": "b73193cc-7b1f-4bfe-9ef6-2ae69d809c94"
+            },
+            {
+              "title": "变换",
+              "description": "在 RxJS 中，\"变换\"（Transformation）指的是对 Observable 发出的数据进行修改或操作的过程。\n\nRxJS 提供了一种数量的方法用于变换 Observable 发出的数据，包括但不限于:\n\n*   **map**: 对 Observable 发出的每个项目应用一个函数，并发出经过计算后的值。\n\n\n*   **mergeMap**: 对 Observable 发出的每个项目应用一个函数，然后将产生的多个 Observable 合并为一个 Observable。\n\n\n*   **switchMap**: 对 Observable 发出的每个项目应用一个函数，然后切换到最近产生的 Observable。\n\n\n*   **concatMap**: 对 Observable 发出的每个项目应用一个函数，然后将产生的多个 Observable 串联成一个 Observable。\n\n\n*   **exhaustMap**: 对 Observable 发出的每个项目应用一个函数，但是忽略在当前 Observable 完成之前的所有后续发出。\n\n上述方法只是一些用于变换 Observable 发出的数据的例子。\n\n每个方法都有其特定的使用情况，最佳方法的选择取决于应用程序的具体需求。\n\n",
+              "links": [
+                {
+                  "title": "RxJs 文档 - 操作符",
+                  "url": "https://rxjs.dev/api/operators",
+                  "type": "article"
+                },
+                {
+                  "title": "map",
+                  "url": "https://rxjs.dev/api/operators/map",
+                  "type": "article"
+                },
+                {
+                  "title": "mergeMap",
+                  "url": "https://rxjs.dev/api/operators/mergeMap",
+                  "type": "article"
+                },
+                {
+                  "title": "switchMap",
+                  "url": "https://rxjs.dev/api/operators/switchMap",
+                  "type": "article"
+                },
+                {
+                  "title": "concatMap",
+                  "url": "https://rxjs.dev/api/operators/concatMap",
+                  "type": "article"
+                },
+                {
+                  "title": "exhaustMap",
+                  "url": "https://rxjs.dev/api/operators/exhaustMap",
+                  "type": "article"
+                },
+                {
+                  "title": "switchMap vs mergeMap vs concatMap vs exhaustMap 实践指南",
+                  "url": "https://youtu.be/40pC5wHowWw",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "f9e891f6-a1aa-42a6-a0ae-20cd18b8e5ed",
+              "xid": "ec193351-5ac4-4417-b196-2036b76518ed"
+            },
+            {
+              "title": "组合运算符",
+              "description": "RxJS中的组合运算符用于将多个可观察对象组合成一个单一的可观察对象。\n\n组合运算符的类型包括：\n\n*   Merge（合并）：合并多个可观察对象到一个单一的可观察对象，该可观察对象按序列顺序发出每个源可观察对象的项目。\n\n*   Concat（串联）：串联多个可观察对象到一个单一的可观察对象，该可观察对象按顺序逐个发出每个源可观察对象的项目。\n\n*   Zip（压缩）：将多个可观察对象的项目组合成一个单一的可观察对象，通过在对应的索引处组合每个可观察对象的项目。\n\n*   CombineLatest（合并最新值）：将来自多个可观察对象的最新值组合成一个单一的可观察对象，每当任一源可观察对象发出一个项目时，便发出一个项目。\n\n*   WithLatestFrom（与最新值结合）：将其中一个可观察对象的最新值与多个其他可观察对象的最新值结合。\n\n*   ForkJoin（合并叉）：将来自多个可观察对象的项目组合成一个单一的可观察对象，只有在所有源可观察对象均发出一个项目后，才发出一个项目。\n\n更多文档可以在官方RxJS文档中找到：\n\n*   Merge: [https://rxjs.dev/api/operators/merge](https://rxjs.dev/api/operators/merge)\n\n*   Concat: [https://rxjs.dev/api/operators/concat](https://rxjs.dev/api/operators/concat)\n\n*   Zip: [https://rxjs.dev/api/operators/zip](https://rxjs.dev/api/operators/zip)\n\n*   CombineLatest: [https://rxjs.dev/api/operators/combineLatest](https://rxjs.dev/api/operators/combineLatest)\n\n*   WithLatestFrom: [https://rxjs.dev/api/operators/withLatestFrom](https://rxjs.dev/api/operators/withLatestFrom)\n\n*   ForkJoin: [https://rxjs.dev/api/index/function/forkJoin](https://rxjs.dev/api/index/function/forkJoin)",
+              "links": [],
+              "children": [],
+              "id": "578b786a-b12c-482e-9c33-1f45575d3f9e",
+              "xid": "2fd52d8e-73c8-47e4-a057-aa080d1a93fe"
+            }
+          ],
+          "id": "96062e33-5af1-43a6-b636-596e395829f8",
+          "xid": "eade8775-28d8-4e31-bdb8-fa0f289fb5e2"
+        }
+      ],
+      "id": "aaacea62-461e-4276-95c0-3868a1854037",
+      "xid": "82bba7e7-d852-4b52-9314-a058edaca113"
+    },
+    {
+      "title": "Angular基础(angular-basics)",
+      "description": "Angular基础(angular-basics)",
+      "links": [],
+      "children": [
+        {
+          "title": "组件",
+          "description": "组件是Angular应用程序的主要构建块。\n\n每个组件包括以下内容：\n\n* 一个HTML模板，声明页面上呈现的内容\n* 一个TypeScript类，定义行为\n* 一个CSS选择器，定义组件在模板中的使用方式\n* 可选的，应用于模板的CSS样式\n\n",
+          "links": [
+            {
+              "title": "组件的结构",
+              "url": "https://angular.dev/guide/components",
+              "type": "article"
+            },
+            {
+              "title": "在Angular中使用组件进行组合",
+              "url": "https://angular.dev/essentials/components",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Angular的顶级文章",
+              "url": "https://app.daily.dev/tags/angular?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Angular中的独立组件",
+              "url": "https://www.youtube.com/watch?v=x5PZwb4XurU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "933d619c-0bca-4763-80b3-9f7d53485c57",
+          "xid": "20a1c022-047e-406c-9647-529c79b22d32"
+        },
+        {
+          "title": "模板",
+          "description": "模板是HTML的一种形式，它指示Angular转向另一个组件。\n\n为了创建多个Angular功能，会在模板中使用特殊的语法。\n\n",
+          "links": [
+            {
+              "title": "模板语法",
+              "url": "https://angular.dev/guide/templates",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Angular的热门文章",
+              "url": "https://app.daily.dev/tags/angular?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d611e4f3-8955-46cf-b993-2d9dd1598464",
+          "xid": "4b4d9d41-111b-42c9-affd-ab2f24ac1387"
+        },
+        {
+          "title": "模块",
+          "description": "在 Angular 中，模块(Module)充当一个容器，我们可以在其中将与应用程序相关的组件(Component)、指令(Directive)、管道(Pipe)和服务(Service)进行分组。\n\n",
+          "links": [
+            {
+              "title": "导入和使用组件",
+              "url": "https://angular.dev/guide/components/importing",
+              "type": "article"
+            },
+            {
+              "title": "模块简介",
+              "url": "https://angular.dev/guide/ngmodules",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Angular 的热门文章",
+              "url": "https://app.daily.dev/tags/angular?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "59f56436-b762-4e31-94e8-c2d1dda5b7b2",
+          "xid": "2618553f-c820-41a2-94b9-a6626b0fcccb"
+        },
+        {
+          "title": "依赖注入 (Dependency Injection)",
+          "description": "依赖注入 (Dependency Injection) 是 Angular 中的基本概念之一。\n\nDI 与 Angular 框架紧密关联，允许具有 Angular 装饰器（如组件 (Components)、指令 (Directives)、管道 (Pipes) 和可注入服务 (Injectables)）的类配置其所需的依赖项。\n\n",
+          "links": [
+            {
+              "title": "理解依赖注入 (Dependency Injection)",
+              "url": "https://angular.dev/guide/di/dependency-injection",
+              "type": "article"
+            },
+            {
+              "title": "依赖注入 (DI) 实战",
+              "url": "https://angular.dev/guide/di/di-in-action",
+              "type": "article"
+            },
+            {
+              "title": "探索关于依赖注入 (Dependency Injection) 的热门文章",
+              "url": "https://app.daily.dev/tags/dependency-injection?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3e0a17c8-8e48-4dc3-92c7-e67c8097bc2a",
+          "xid": "2c470ea9-93af-42e2-8de7-ed917cc5ee62"
+        },
+        {
+          "title": "服务与远程数据",
+          "description": "服务允许你在Angular项目中定义可被多个其他组件访问和重用的代码或功能。\n\n此外，它还帮助你抽象化托管在独立模块中的逻辑和数据，并在其他组件间共享。\n\n",
+          "links": [
+            {
+              "title": "创建可注入服务",
+              "url": "https://angular.dev/guide/di/creating-injectable-service",
+              "type": "article"
+            },
+            {
+              "title": "什么是Angular服务？",
+              "url": "https://www.javatpoint.com/what-is-an-angular-service",
+              "type": "article"
+            },
+            {
+              "title": "用于API请求的服务",
+              "url": "https://www.knowledgehut.com/blog/web-development/make-api-calls-angular",
+              "type": "article"
+            },
+            {
+              "title": "服务教程及示例",
+              "url": "https://www.positronx.io/angular-service-tutorial-with-example/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "99d9213c-8199-4e38-8f71-a6eb11f5322c",
+          "xid": "6fe28aa0-6e67-42f8-8fd5-00c458521a9e"
+        },
+        {
+          "title": "路由",
+          "description": "路由（Routing）功能使用户能够在Angular中创建带有多个视图的单页应用程序（single-page application），并可以在这多个视图之间进行导航。\n\n",
+          "links": [
+            {
+              "title": "Angular 路由",
+              "url": "https://angular.dev/guide/routing",
+              "type": "article"
+            },
+            {
+              "title": "常见的路由任务",
+              "url": "https://angular.dev/guide/routing/common-router-tasks",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3fdb1269-48db-4eaa-acd2-f7e8f320554e",
+          "xid": "d31394f0-c49d-4f48-9d61-225d632fa608"
+        }
+      ],
+      "id": "e6a8f07f-f5c1-4d2a-b817-2d79eec6709f",
+      "xid": "e07c7863-5507-4c18-8111-c75a02f8379b"
+    },
+    {
+      "title": "表单",
+      "description": "表单(Form)被广泛应用于许多应用中以处理用户输入。\n\n这可以让用户从输入敏感信息到执行多种数据录入任务。\n\nAngular提供了两种通过表单处理用户输入的方法：响应式(reactive)和模板驱动(template-driven)表单。\n\n",
+      "links": [
+        {
+          "title": "Angular中的表单",
+          "url": "https://angular.dev/guide/forms",
+          "type": "article"
+        },
+        {
+          "title": "Angular表单教程",
+          "url": "https://www.youtube.com/watch?v=-bGgjgx3fGs",
+          "type": "video"
+        },
+        {
+          "title": "在Angular应用中构建表单",
+          "url": "https://www.youtube.com/watch?v=hAaoPOx_oIw",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "响应式表单",
+          "description": "Angular 中的响应式表单用于处理来自用户的输入。\n\n我们可以使用诸如 FormGroup 和 FormControl 类来定义控制。\n\n",
+          "links": [
+            {
+              "title": "响应式表单 - Angular",
+              "url": "https://angular.dev/guide/forms/reactive-forms",
+              "type": "article"
+            },
+            {
+              "title": "Angular 响应式表单",
+              "url": "https://www.javatpoint.com/angular-reactive-forms",
+              "type": "article"
+            },
+            {
+              "title": "如何在 Angular 中使用响应式表单",
+              "url": "https://www.digitalocean.com/community/tutorials/angular-reactive-forms-introduction",
+              "type": "article"
+            },
+            {
+              "title": "探索编程通用话题的热门文章",
+              "url": "https://app.daily.dev/tags/general-programming?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Angular 中的响应式表单",
+              "url": "https://www.youtube.com/watch?v=8k4ctDmVn7w",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a0c0ba81-c35d-4f34-bd3b-7fa9296ead04",
+          "xid": "d7e021ef-f2ea-45a1-a3f6-05805cc56cb9"
+        },
+        {
+          "title": "模板驱动表单",
+          "description": "模板驱动表单是我们在Angular中可以构建的最简单的表单。\n\n主要用于创建简单的表单应用程序。\n\n它使用双向数据绑定（ngModel）来创建和处理表单组件。\n\n",
+          "links": [
+            {
+              "title": "构建模板驱动表单",
+              "url": "https://angular.dev/guide/forms/template-driven-forms",
+              "type": "article"
+            },
+            {
+              "title": "模板驱动表单",
+              "url": "https://codecraft.tv/courses/angular/forms/template-driven/",
+              "type": "article"
+            },
+            {
+              "title": "模板驱动表单",
+              "url": "https://www.youtube.com/watch?v=whr14XxB8-M",
+              "type": "video"
+            },
+            {
+              "title": "模板驱动表单验证",
+              "url": "https://www.youtube.com/watch?v=cVd4ZCIXprs",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "530a5478-6e48-4da9-a46c-ef211f3e2f03",
+          "xid": "120d58ab-b2a4-4438-a2d6-1fc4b9815244"
+        }
+      ],
+      "id": "0bf31b4f-6adb-480d-8538-9ba25e4d4be7",
+      "xid": "3185b1e6-7307-4197-8ce3-7583e1df0dac"
+    },
+    {
+      "title": "渲染主题",
+      "description": "渲染主题",
+      "links": [],
+      "children": [
+        {
+          "title": "指令",
+          "description": "SK指令（Directives）是用于在Angular应用程序中的元素上添加额外行为的类。\n\n使用Angular的内置指令来管理表单、列表、样式以及用户所看到的内容。\n\n`NgClass` 添加和移除一组CSS类。\n\n | `NgStyle` 添加和移除一组HTML样式。\n\n | `NgModel` 向HTML表单元素添加双向数据绑定。\n\n",
+          "links": [
+            {
+              "title": "内置指令",
+              "url": "https://angular.dev/guide/directives/",
+              "type": "article"
+            },
+            {
+              "title": "内置指令类型",
+              "url": "https://thinkster.io/tutorials/angular-2-directives",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8af6e27d-1c2b-4f11-906f-9b4aa03fd312",
+          "xid": "b617d905-f176-4c9c-a796-36cea3609a63"
+        },
+        {
+          "title": "管道",
+          "description": "使用管道将字符串、货币金额、日期和其他数据转换为显示形式。\n\n管道是模板表达式中使用的一种简单函数，接受一个输入值并返回一个转换后的值。\n\n管道很有用，因为可以在整个应用中使用它们。\n\n一些常见的管道有\n\n`日期管道（DatePipe）` | `大写转换管道（UpperCasePipe）` | `小写转换管道（LowerCasePipe）` | `货币管道（CurrencyPipe）` | `数字管道（DecimalPipe）` | `百分比管道（PercentPipe）`\n\n",
+          "links": [
+            {
+              "title": "理解管道",
+              "url": "https://angular.dev/tutorials/learn-angular/22-pipes",
+              "type": "article"
+            },
+            {
+              "title": "内置管道 - 示例",
+              "url": "https://codecraft.tv/courses/angular/pipes/built-in-pipes/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a84dec96-2deb-45f8-a43c-7beb690ce1e7",
+          "xid": "932d5765-3cb7-452b-a367-ea42d9bca7bb"
+        },
+        {
+          "title": "变更检测",
+          "description": "变更检测是Angular检查应用程序状态是否发生变化并确定是否需要更新DOM的过程。\n\n总的来说，Angular从上至下遍历各个组件，寻找变化。\n\nAngular会定期运行其变更检测机制，以确保数据模型中的更改反映到应用程序的视图中。\n\n变更检测可以手动触发，也可以通过异步事件触发。\n\n",
+          "links": [
+            {
+              "title": "运行时性能优化",
+              "url": "https://angular.dev/best-practices/runtime-performance",
+              "type": "article"
+            },
+            {
+              "title": "ChangeDetectionStrategy",
+              "url": "https://angular.dev/guide/components/advanced-configuration#changedetectionstrategy",
+              "type": "article"
+            },
+            {
+              "title": "4 运行时性能优化（变更检测）",
+              "url": "https://www.youtube.com/watch?v=f8sA-i6gkGQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1aee3807-f586-4da3-91ef-2f82fcb0ce29",
+          "xid": "2e95f981-c36d-443d-a65c-5033680d7e3f"
+        }
+      ],
+      "id": "eaf28e4d-45dc-467a-a597-a92da0b5c0f9",
+      "xid": "a08da04d-8653-446f-8086-8343ed88ac14"
+    },
+    {
+      "title": "路由",
+      "description": "路由",
+      "links": [],
+      "children": [
+        {
+          "title": "配置",
+          "description": "在Angular应用中配置路由涉及在数组中定义路由映射，并将这些路由提供给Angular路由器。\n\n### 示例路由：\n\n    const appRoutes: Routes = [\n      { path: 'custom-path', component: CustomComponet },\n      { path: 'custom-path/:id', component: CustomDetailComponet, data: { title: 'Details component' } },\n      { path: '', redirectTo: '/heroes', pathMatch: 'full'},\n      { path: '**', component: PageNotFoundComponent }\n    ];\n    \n\n*   `'custom-path'`: 定义新的URL路由。\n\n\n*   `'custom-path/:id'` 定义 **id参数**。\n\n\n*   `''` (空路径): 实例化组件而不需要定义新的URL路由。\n\n\n*   `'**'`: 对于未定义的路径。\n\n\n*   第二个路由中的`data`属性是存储与特定路由相关联的任意数据的地方。\n\n",
+          "links": [
+            {
+              "title": "路由器参考 - 配置",
+              "url": "https://angular.dev/guide/routing/router-reference#configuration",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "517b4791-da12-4a18-9250-d254a1aedea2",
+          "xid": "1e42eec8-2ce7-464e-b528-dcf5e275a353"
+        },
+        {
+          "title": "懒加载(Lazy Loading)",
+          "description": "懒加载(Lazy Loading)是Angular中的一个技术，允许在特定路由被激活时异步加载JavaScript组件。\n\n通过将应用程序拆分为多个块，它提高了应用的加载速度。\n\n当用户浏览应用程序时，只有在需要时才会加载这些块。\n\n",
+          "links": [
+            {
+              "title": "懒加载特性模块(Lazy-loading feature modules)",
+              "url": "https://angular.dev/guide/ngmodules/lazy-loading",
+              "type": "article"
+            },
+            {
+              "title": "Angular教程 - 懒加载(Angular Tutorial - Lazy Loading)",
+              "url": "https://www.youtube.com/watch?v=JjIQq9lh-Bw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5daed8d7-9eec-4b4c-8762-63c48616f9d0",
+          "xid": "7e982d70-7986-4d8c-af8a-975e1bb7bce8"
+        },
+        {
+          "title": "路由器出口(Router Outlets)",
+          "description": "路由器出口(router-outlet)是@angular/router包提供的一个指令，用于指定组件在模板中的插入位置。\n\n由于路由器出口的存在，你的应用可以有多个视图/页面，而应用程序模板就像是应用的一个外壳。\n\n任何添加到外壳中的元素将在每个视图中渲染，只有标记为路由器出口的部分会在不同的视图间有所变化。\n\n",
+          "links": [
+            {
+              "title": "路由器参考 - 路由器出口(Router reference - Router outlet)",
+              "url": "https://angular.dev/guide/routing/router-reference#router-outlet",
+              "type": "article"
+            },
+            {
+              "title": "路由器出口 - API(Router outlet - API)",
+              "url": "https://angular.dev/api/router/RouterOutlet",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b3ad7ca2-49f1-4aa3-8460-8bedceef6a88",
+          "xid": "2415c2df-0d50-4e80-8b6a-a27330a966b0"
+        },
+        {
+          "title": "路由器链接",
+          "description": "在Angular中，当将`routerLink`应用到模板中的一个元素时，该元素就会变成一个链接，启动向某个路由的导航。\n\n导航会在页面上的一个或多个`<router-outlet>`位置打开一个或多个路由组件。\n\n",
+          "links": [
+            {
+              "title": "路由器引用 - 路由器链接",
+              "url": "https://angular.dev/guide/routing/router-reference#router-links",
+              "type": "article"
+            },
+            {
+              "title": "路由器链接 - API",
+              "url": "https://angular.dev/api/router/RouterLink",
+              "type": "article"
+            },
+            {
+              "title": "Angular 路由器：使用RouterLink、Navigate或NavigateByUrl导航",
+              "url": "https://www.digitalocean.com/community/tutorials/angular-navigation-routerlink-navigate-navigatebyurl",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e342abf0-175d-426f-88e5-c6a3ebef683b",
+          "xid": "5dfd223f-0342-4a2b-ba31-92b37eaf48e1"
+        },
+        {
+          "title": "路由器事件",
+          "description": "当Angular路由从一个路由导航到另一个路由时，它会触发事件。\n\n它会触发多个事件，如`NavigationStart`（导航开始），`NavigationEnd`（导航结束），`NavigationCancel`（导航取消），`NavigationError`（导航错误），`ResolveStart`（解析开始）等。\n\n你可以监听这些事件，从而发现路线状态的变化。\n\n一些有用的时间包括路由变化开始（NavigationStart）和路由变化结束（NavigationEnd）。\n\n",
+          "links": [
+            {
+              "title": "路由器参考 - 路由器事件",
+              "url": "https://angular.dev/guide/routing/router-reference#router-events",
+              "type": "article"
+            },
+            {
+              "title": "路由器事件 - API",
+              "url": "https://angular.dev/api/router/RouterEvent",
+              "type": "article"
+            },
+            {
+              "title": "Angular中的路由器事件",
+              "url": "https://medium.com/@gurunadhpukkalla/router-events-in-angular-3112a3968660",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "92b9b036-6126-4bc5-a822-bfebb691eb38",
+          "xid": "2721e997-4551-46b4-bec5-df5dbcdf681d"
+        },
+        {
+          "title": "路由守卫",
+          "description": "使用路由守卫（route guards）来阻止未授权的用户访问应用程序中的某些部分。\n\nAngular路由守卫（route guards）是由Angular提供的接口，当实施这些接口时，我们可以根据接口实现中提供的条件来控制路由的可访问性。\n\n一些类型的Angular守卫有`CanActivate`（是否可以激活），`CanActivateChild`（是否可以激活子路由），`CanDeactivate`（是否可以去激活），`CanMatch`（是否匹配）和`Resolve`（解析）。\n\n",
+          "links": [
+            {
+              "title": "防止未授权访问",
+              "url": "https://angular.dev/guide/routing/common-router-tasks#preventing-unauthorized-access",
+              "type": "article"
+            },
+            {
+              "title": "解析（Resolve）",
+              "url": "https://angular.dev/api/router/Resolve",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9776fb0d-fea0-4dad-87a3-4eba58b282af",
+          "xid": "c4806982-eb1e-4b96-9cd9-2f0cb2336f93"
+        }
+      ],
+      "id": "fa92f6aa-bc07-4313-81b4-50d46d70065b",
+      "xid": "9c1fbb02-e19a-42f0-a30d-d5d85a7e4410"
+    },
+    {
+      "title": "状态管理",
+      "description": "应用程序状态管理是保持对应用程序输入知识的维护过程，这些输入由多个相关数据流组成一起形成一个完整的商业交易——或者说是会话——以便在任何给定时刻理解应用程序的状态。\n\n在计算机科学中，输入是用户向程序提供的信息，状态是指根据存储的输入反映的应用程序的条件——存储为变量或常量。\n\n状态也可以描述为形成完整会话的保存信息的集合。\n\n",
+      "links": [
+        {
+          "title": "什么是状态管理（State Management）?",
+          "url": "https://www.techtarget.com/searchapparchitecture/definition/state-management",
+          "type": "article"
+        },
+        {
+          "title": "使用NgRx实现简单的Angular状态管理（State Management）",
+          "url": "https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/",
+          "type": "article"
+        },
+        {
+          "title": "使用NgRx实现Angular状态管理（State Management）",
+          "url": "https://www.syncfusion.com/blogs/post/angular-state-management-with-ngrx.aspx",
+          "type": "article"
+        },
+        {
+          "title": "Angular中状态管理（State Management）和外观模式",
+          "url": "https://thefullstack.engineer/full-stack-development-series-part-10-state-management-and-the-facade-pattern-in-angular",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "NGXS",
+          "description": "Ngxs是一种用于Angular框架的状态管理模式。\n\n它充当我们应用程序的单一真实数据源。\n\nNgxs非常简单并且易于实现。\n\n它可以减少大量样板代码。\n\n它是Ngrx的替代方案。\n\n在Ngrx中，我们需要创建状态(state)、动作(action)、Reducer和效果(effect)，但在Ngxs中，我们只需创建状态(state)和动作(action)。\n\n就像Ngrx一样，Ngxs也是异步的，当我们派遣任何动作(action)时，我们可以得到响应。\n\n",
+          "links": [
+            {
+              "title": "什么是NGXS？ - Ngxs.io",
+              "url": "https://www.ngxs.io/",
+              "type": "article"
+            },
+            {
+              "title": "关于NGXS的详情 - Medium",
+              "url": "https://medium.com/@knoldus/introduction-to-ngxs-state-management-pattern-library-for-angular-ec76f681ceba",
+              "type": "article"
+            },
+            {
+              "title": "NGXS的实践",
+              "url": "https://www.youtube.com/watch?v=SGj11j4hxmg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "797b3f42-95eb-4afb-b907-d4ff77505ad2",
+          "xid": "dd9169ef-007c-4bfb-8cc1-563bb527c94c"
+        },
+        {
+          "title": "NgRx",
+          "description": "NgRx 是一个用于在 Angular 中构建响应式应用程序的框架。\n\nNgRx 通过强制实现数据单向流动并提供工具（如 NgRx Store、NgRx Effects、NgRx Router Store、NgRx Signals、NgRx Entity 和 NgRx Operators）来简化应用程序状态的管理。\n\n",
+          "links": [
+            {
+              "title": "什么是 NgRx?",
+              "url": "https://ngrx.io/docs",
+              "type": "article"
+            },
+            {
+              "title": "Angular NgRx Store 和 Effects 入门",
+              "url": "https://blog.angular-university.io/angular-ngrx-store-and-effects-crash-course/",
+              "type": "article"
+            },
+            {
+              "title": "使用 NgRx 进行 Angular 状态管理",
+              "url": "https://www.youtube.com/watch?v=a3_GW3RBqn0",
+              "type": "video"
+            },
+            {
+              "title": "Angular NgRx Signal Store 入门课程（针对 NgRx 初学者）",
+              "url": "https://www.youtube.com/watch?v=HqxY0JPlh54",
+              "type": "video"
+            },
+            {
+              "title": "NgRx 最佳实践",
+              "url": "https://youtu.be/yYiO-kjmLAc?si=7J_JkOdbyocfb5m_",
+              "type": "video"
+            },
+            {
+              "title": "使用 NgRx 的 Angular 课程 - 从零开始构建 Angular 项目",
+              "url": "https://www.youtube.com/watch?v=vcfZ0EQpYTA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9e8e1c89-52c6-46e5-a2cd-11f07f3f5a14",
+          "xid": "7ae773d9-c1bd-4b6f-a4f0-1686b3102dd6"
+        }
+      ],
+      "id": "11a16fe1-c719-4ff6-8b46-4c4def0e5b84",
+      "xid": "6b8c4f29-1d96-42a4-bd8b-bc526eed224e"
+    },
+    {
+      "title": "区域(Areas)",
+      "description": "Zone.js 是 Angular 使用的一种信号机制，用于检测应用程序状态可能发生变化的时机。\n\n它捕获如 setTimeout、网络请求和事件监听器之类的异步操作。\n\nAngular 根据 Zone.js 提供的信号来安排更改检测。\n\n",
+      "links": [
+        {
+          "title": "解决区域污染(Zone pollution)",
+          "url": "https://angular.dev/best-practices/zone-pollution",
+          "type": "article"
+        },
+        {
+          "title": "没有 ZoneJS 的 Angular(Zoneless)",
+          "url": "https://angular.dev/guide/experimental/zoneless",
+          "type": "article"
+        },
+        {
+          "title": "NgZone - API",
+          "url": "https://angular.dev/api/core/NgZone",
+          "type": "article"
+        },
+        {
+          "title": "什么是 \"Zone.js\"，它是否让您的应用变慢？",
+          "url": "https://www.youtube.com/watch?v=lmrf_gPIOZU",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "7be94d96-07a4-4e4a-b9d7-81fb3bdac770",
+      "xid": "a984dbd0-defa-4e17-95e4-56ca495fdff9"
+    },
+    {
+      "title": "创建自定义X(Creating a Custom X)",
+      "description": "创建自定义X(Creating a Custom X)",
+      "links": [],
+      "children": [
+        {
+          "title": "自定义指令",
+          "description": "指令是Angular编译器找到它们时就会执行的函数。\n\nAngular指令通过附加自定义行为到DOM中，增强了HTML元素的功能。\n\n从核心概念出发，Angular指令可以分为三类：属性指令（Attribute Directives）、结构指令（Structural Directives）和组件指令（Component Directives）。\n\n",
+          "links": [
+            {
+              "title": "适用于初学者的创建自定义指令视频",
+              "url": "https://www.youtube.com/watch?v=AoN56g6UAsE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c29d45b0-a55e-438b-a2a2-1ca688b31f32",
+          "xid": "a5332056-246c-4298-943a-376a427cce3b"
+        },
+        {
+          "title": "自定义管道",
+          "description": "用于在显示时转换字符串、货币金额、日期和其他数据的管道。\n\n管道是模板表达式中的简单函数，接受输入值并返回转换后的值。\n\n管道很有帮助，因为可以在整个应用程序中使用它们，而只需声明一次。\n\n例如，可以使用管道将日期显示为1988年4月15日，而不是原始字符串格式。\n\n",
+          "links": [
+            {
+              "title": "创建自定义管道以实现新转换",
+              "url": "https://angular.dev/guide/pipes/transform-data",
+              "type": "article"
+            },
+            {
+              "title": "面向初学者的创建自定义管道视频",
+              "url": "https://www.youtube.com/watch?v=P2587FN4Y0w",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "03ff8e7e-ac11-4137-99c2-fb590a6ff91f",
+          "xid": "e3fca968-269b-46a4-8424-2842de0fe836"
+        },
+        {
+          "title": "库（Libraries）",
+          "description": "使用Angular CLI和npm包管理器构建和发布您的库作为npm包。\n\n",
+          "links": [
+            {
+              "title": "Angular官方网站（Angular Website）",
+              "url": "https://angular.dev/tools/libraries/creating-libraries",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d32c5620-6890-42df-ab63-4cf5040c779a",
+          "xid": "6b3a18bd-ee8f-4618-97ca-321a0a5b76d3"
+        }
+      ],
+      "id": "73923097-545d-4611-a028-c863c21c1e41",
+      "xid": "82064b02-768a-4565-91c4-0f66b16518ff"
+    },
+    {
+      "title": "测试",
+      "description": "在任何软件开发过程中，测试应用扮演着至关重要的角色。\n\n如果未发现和解决的错误和崩溃会影响整个开发公司，还会损害客户。\n\n但是，Angular的架构自带内置的可测试性功能。\n\n一旦你使用Angular CLI创建了一个新项目，就有两个基本的测试工具被安装：Jasmine和Karma。\n\nJasmine是一个测试库，它将单独的测试组织成规格（specifications，或简称为specs）和套件（suites）。\n\n而Karma是一个测试运行器，它允许不同的浏览器执行Jasmine规定的测试，并最终返回测试结果。\n\n你也可以使用其他测试库和测试运行器来对Angular应用程序进行单元测试。\n\n每个库和运行器都有其独特的安装流程、配置和语法。\n\n",
+      "links": [
+        {
+          "title": "Angular 官方文档 - 测试",
+          "url": "https://angular.dev/guide/testing",
+          "type": "article"
+        },
+        {
+          "title": "Jasmine 官方文档",
+          "url": "https://jasmine.github.io/",
+          "type": "article"
+        },
+        {
+          "title": "Karma 官方文档",
+          "url": "https://karma-runner.github.io/latest/index.html",
+          "type": "article"
+        },
+        {
+          "title": "测试Angular - 打造稳健的Angular应用程序指南",
+          "url": "https://testing-angular.com/",
+          "type": "article"
+        },
+        {
+          "title": "介绍 | Angular 单元测试轻松入门：全面教程",
+          "url": "https://www.youtube.com/watch?v=emnwsVy8wRs",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "测试管道(Pipes)",
+          "description": "Angular 管道(Pipe)是从组件模板调用的一个特殊函数。\n\n它的目的是转换一个值：你将一个值传递给管道(Pipe)，管道计算新的值并返回它。\n\n",
+          "links": [
+            {
+              "title": "测试管道(Pipes)",
+              "url": "https://angular.dev/guide/testing/pipes",
+              "type": "article"
+            },
+            {
+              "title": "测试管道(Pipes)示例",
+              "url": "https://testing-angular.com/testing-pipes/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于测试的文章",
+              "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "188d6c52-281d-4ead-a414-ee685bfc54c5",
+          "xid": "e2d4349c-6092-4f09-984a-aca1f1bfc3df"
+        },
+        {
+          "title": "具有依赖项的服务",
+          "description": "当您向服务添加依赖项时，还必须在测试中包含它。\n\n 对于隔离测试，将可注入依赖项类的实例传递给服务的构造函数。\n\n 使用`inject`函数会增加复杂性。\n\n 注入实际服务通常不可行，因为依赖的服务可能难以创建和控制。\n\n相反，可以模拟依赖项，使用虚拟值，或对相关服务方法创建间谍。\n\n 使用TestBed测试工具，您可以令Angular的依赖注入处理服务创建并管理构造函数参数的顺序。\n\n",
+          "links": [
+            {
+              "title": "Angular官网",
+              "url": "https://angular.dev/guide/testing/services",
+              "type": "article"
+            },
+            {
+              "title": "Testing-Angular.com",
+              "url": "https://testing-angular.com/testing-services/",
+              "type": "article"
+            },
+            {
+              "title": "测试具有通过依赖注入注入的另一个服务的服务",
+              "url": "https://www.youtube.com/watch?v=ACb8wqwgOV4",
+              "type": "video"
+            },
+            {
+              "title": "通过使用Jasmine Spy测试具有HttpClient作为依赖项的服务",
+              "url": "https://www.youtube.com/watch?v=15othucRXcI",
+              "type": "video"
+            },
+            {
+              "title": "使用inject()函数进行Angular单元测试",
+              "url": "https://www.youtube.com/watch?v=Tvsa4OMUGXs",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f6b8f4d1-3fef-4e2a-8f76-fc5bc273515e",
+          "xid": "df567f27-b279-4222-9bb8-eb237cdac489"
+        },
+        {
+          "title": "组件绑定(Component Bindings)",
+          "description": "Angular 在每个 JavaScript 事件周期中处理所有数据绑定一次，从应用程序组件树的根开始，贯穿所有子组件。\n\n数据绑定在模板和其组件之间的通信中扮演重要角色，同时在父组件和子组件之间的通信中也起到重要作用。\n\n",
+          "links": [
+            {
+              "title": "Angular 官方网站(Angular Website)",
+              "url": "https://angular.dev/guide/components",
+              "type": "article"
+            },
+            {
+              "title": "探索关于测试的热门文章(Explore top posts about Testing)",
+              "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "202de4c1-801d-467e-8835-40fd4735625f",
+          "xid": "9b96d541-8828-49e4-b37f-c57589b85c0a"
+        },
+        {
+          "title": "测试指令",
+          "description": "指令（Directives）是用于向模板中的元素添加新行为或修改现有行为的类。\n\n基本上，指令用于操作DOM，例如添加/删除DOM中的元素或改变DOM元素的外观。\n\n",
+          "links": [
+            {
+              "title": "Angular 官网",
+              "url": "https://angular.dev/guide/testing/attribute-directives",
+              "type": "article"
+            },
+            {
+              "title": "tesing-angular 官网",
+              "url": "https://testing-angular.com/testing-directives/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于测试的顶级文章",
+              "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e05c45d2-9620-41dd-aa8e-5d61958010c9",
+          "xid": "d7ff1b4f-c554-4383-b25f-a73c4037487c"
+        },
+        {
+          "title": "组件模板",
+          "description": "通过组件模板(component template)，您可以保存并重用组件流程和属性，并从中创建组件；基于模板的组件将继承模板的属性和流程。\n\n",
+          "links": [
+            {
+              "title": "组件测试场景",
+              "url": "https://angular.dev/guide/testing/components-scenarios",
+              "type": "article"
+            },
+            {
+              "title": "探索关于测试的顶级文章",
+              "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b833f252-6baf-49d4-bf6c-2b320751b641",
+          "xid": "4ff55ed0-5d40-4681-81c2-4dfc714e18d6"
+        }
+      ],
+      "id": "1c587e15-feac-4123-896c-a4856a5b612c",
+      "xid": "09758495-5ed4-4d33-b8f0-4bfa3232dc4c"
+    },
+    {
+      "title": "静态站点生成器",
+      "description": "SSG（Static Site Generator）在构建和提供HTML页面的过程中生成整个HTML网站。\n\n这种方法有助于在客户端先生成HTML网站，然后再提供到服务器端。\n\n因此，每当用户请求HTML页面时，该HTML页面将进行渲染，随后Angular应用程序也将进行渲染。\n\n只有当您的网站是静态的或者其内容不会频繁更改时，才能使用SSG。\n\n",
+      "links": [
+        {
+          "title": "Angular Air 与 Alyssa Nicoll - 服务器端渲染（SSR）、静态站点生成（SSG）、中间件服务器端渲染（ISR）及即时静态生成（SOS）",
+          "url": "https://www.youtube.com/watch?v=b0pUU7RJbBQ",
+          "type": "podcast"
+        },
+        {
+          "title": "Angular 官方文档 - 预渲染（SSG）",
+          "url": "https://angular.dev/guide/prerendering",
+          "type": "article"
+        },
+        {
+          "title": "Angular 16 预渲染静态页面 - 静态站点生成 SSG",
+          "url": "https://www.youtube.com/watch?v=vmOWJvm3apA",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "414c5735-6a95-4ef2-9923-b878f9975096",
+      "xid": "0c7e51d2-a8b0-4183-9a63-30eb3a5cab15"
+    },
+    {
+      "title": "服务器端渲染（Server-side rendering，SSR）",
+      "description": "一个普通的Angular应用程序在浏览器中执行，根据用户的操作在DOM中呈现页面。\n\nAngular Universal则在服务器上执行，生成静态应用程序页面，这些页面在之后会在客户端初始化。\n\n这意味着应用程序一般渲染得更快，用户有机会在应用程序完全互动之前查看到应用程序的布局。\n\n",
+      "links": [
+        {
+          "title": "服务器端渲染",
+          "url": "https://angular.dev/guide/ssr",
+          "type": "article"
+        },
+        {
+          "title": "网络上的渲染",
+          "url": "https://web.dev/rendering-on-the-web/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Angular的热门文章",
+          "url": "https://app.daily.dev/tags/angular?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "ba630050-f1d8-4e5b-8fc1-ecfdb4859d63",
+      "xid": "cc483394-7fac-40e0-b68f-26e40f0ed0a0"
+    },
+    {
+      "title": "组件生命周期",
+      "description": "组件实例的生命周期从Angular实例化组件类并渲染组件视图及其子视图时开始。\n\n生命周期继续进行变化检测，即Angular检查数据绑定属性何时发生变化，并根据需要更新视图和组件实例。\n\n当Angular销毁组件实例并从DOM中移除其渲染的模板时，生命周期结束。\n\n指令的生命周期也与此类似，因为Angular会在执行过程中创建、更新和销毁实例。\n\n您的应用程序可以使用生命周期钩子方法来切入组件或指令生命周期中的关键事件，以初始化新实例，在需要时启动变更检测，在变更检测期间响应更新，并在删除实例之前进行清理。\n\nAngular的生命周期钩子包括：\n\n`OnChanges` , `OnInit` , `DoCheck` , `OnDestroy` , `AfterContentInit` , `AfterContentChecked` , `AfterViewInit` , `AfterViewChecked`\n\n",
+      "links": [
+        {
+          "title": "组件生命周期",
+          "url": "https://angular.dev/guide/components/lifecycle",
+          "type": "article"
+        },
+        {
+          "title": "Angular的生命周期钩子 - 博客",
+          "url": "https://blog.logrocket.com/angular-lifecycle-hooks/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于React Hooks的热门文章",
+          "url": "https://app.daily.dev/tags/react-hooks?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "871776c5-bae6-48fe-8adc-eff930b56d15",
+      "xid": "4be5cae3-60ce-424a-ad86-071f476cfd4f"
+    },
+    {
+      "title": "Angular CLI (Angular命令行界面)",
+      "description": "Angular CLI 是一个命令行界面工具，用于通过命令行直接初始化、开发、搭建和维护 Angular 应用程序。\n\n我们可以使用以下命令安装最新版本的 Angular CLI\n\n`npm install -g @angular/cli`\n\n",
+      "links": [
+        {
+          "title": "CLI Reference (CLI参考)",
+          "url": "https://angular.dev/cli",
+          "type": "article"
+        },
+        {
+          "title": "Angular CLI (Angular命令行界面)",
+          "url": "https://angular.dev/tools/cli",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Angular的热门文章",
+          "url": "https://app.daily.dev/tags/angular?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Angular CLI - setup (Angular命令行界面 - 安装)",
+          "url": "https://www.youtube.com/watch?v=mZnzX3J5XKI",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "架构图模板(Schematics)",
+          "description": "架构图模板(Schematics)是一种基于模板的代码生成器，支持复杂的逻辑。\n\n它是一套用于通过生成或修改代码来转换软件项目的指令。\n\n",
+          "links": [
+            {
+              "title": "使用架构图模板(Schematics)生成代码",
+              "url": "https://angular.dev/tools/cli/schematics",
+              "type": "article"
+            },
+            {
+              "title": "Angular 博客",
+              "url": "https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2?gi=ad9571373944",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a5b215a9-38f3-4640-9673-59ebcf600d73",
+          "xid": "73a0782a-1d2c-4162-8004-3c87fb3cb466"
+        }
+      ],
+      "id": "071ebee6-dfcc-4e17-9e02-f90628f7e1df",
+      "xid": "4cc42085-3588-4db9-9d12-6232b11b8801"
+    },
+    {
+      "title": "模板",
+      "description": "模板",
+      "links": [],
+      "children": [
+        {
+          "title": "模板语句",
+          "description": "模板语句（Template Statements）是可以用在HTML中响应用户事件的方法或属性。\n\n通过模板语句，应用程序可以通过诸如显示动态内容或提交表单等操作来与用户互动。\n\n将事件用`()`括起来，从而导致Angular将赋值号右侧的表达式作为多个使用分号`;`连接在一起的模板语句进行求值。\n\n",
+          "links": [
+            {
+              "title": "Angular 官方网站",
+              "url": "https://angular.dev/guide/templates/template-statements",
+              "type": "article"
+            },
+            {
+              "title": "理解模板语句",
+              "url": "https://angular.dev/guide/templates/template-statements#",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6dd3acf8-46e4-42ee-b7f2-aac4ba76da27",
+          "xid": "36bf5dd5-4360-408d-abe3-b2ded716a146"
+        },
+        {
+          "title": "理解绑定",
+          "description": "在Angular模板中，绑定在视图和模型之间建立实时连接，并使两者保持同步。\n\n*   **属性绑定（property binding）**：帮助你为HTML元素或指令的属性设置值。\n\n\n*   **属性（attributes）**：帮助你直接为HTML元素的属性设置值。\n\n\n*   **事件绑定（event binding）**：允许你监听并响应用户的操作，如按键、鼠标移动、点击和触摸等。\n\n\n*   **数据绑定（data binding）**：它是属性绑定和事件绑定的组合，帮助你实现组件间的资源共享。\n\n",
+          "links": [
+            {
+              "title": "Angular 官方网站",
+              "url": "https://angular.dev/guide/templates/binding",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "19a9346d-cdd2-441b-aa2e-61d4af403e70",
+          "xid": "5098bdce-7191-4fbc-b800-b3beceba32f6"
+        },
+        {
+          "title": "插值(Interpolation)",
+          "description": "插值是指将表达式嵌入标记文本中。\n\n默认情况下，插值使用双大括号 {{ 和 }} 作为定界符。\n\nAngular 使用相应的组件属性的字符串值替换 currentCustomer。\n\n",
+          "links": [
+            {
+              "title": "Angular 官方网站",
+              "url": "https://angular.dev/guide/templates/interpolation",
+              "type": "article"
+            },
+            {
+              "title": "使用插值显示值",
+              "url": "https://angular.dev/guide/templates/interpolation",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "929081ba-b72b-436f-bedc-dd32e9803135",
+          "xid": "35c93777-8e79-49b3-a6c9-04d6824da550"
+        },
+        {
+          "title": "属性绑定(Property Binding)",
+          "description": "属性绑定帮助你为HTML元素或指令的属性设置值。\n\n要绑定到元素的属性，将其包含在方括号 `[]` 中，这将导致Angular将赋值操作的右侧作为动态表达式进行求值。\n\n",
+          "links": [
+            {
+              "title": "Angular 官方网站(Official Website)",
+              "url": "https://angular.dev/guide/templates/property-binding",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "afed0f57-f2d4-444c-ad18-d89c2cbe8171",
+          "xid": "81c1cfb3-b659-45a1-bfae-55f862adcf8d"
+        },
+        {
+          "title": "模板引用变量",
+          "description": "模板引用变量帮助你在模板的另一部分使用来自模板一部分的数据。\n\n模板变量可以引用模板、组件或指令内的DOM元素。\n\n在模板中，使用井号 `#` 来声明一个模板引用变量。\n\n",
+          "links": [
+            {
+              "title": "Angular 官方网站",
+              "url": "https://angular.dev/guide/templates/reference-variables",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9a334b12-aa0a-4234-a987-5e12f9403ec2",
+          "xid": "eb572893-bca3-4d52-9cfd-d041c54550b1"
+        },
+        {
+          "title": "@Input & @Output",
+          "description": "`@Input()`和`@Output()`为子组件与父组件之间的通信提供了一种方式。\n\n`@Input()`允许父组件更新子组件中的数据。\n\n相反，`@Output()`允许子组件将数据发送给父组件。\n\n",
+          "links": [
+            {
+              "title": "Angular 官方网站 - inputs",
+              "url": "https://angular.dev/guide/components/inputs",
+              "type": "article"
+            },
+            {
+              "title": "Angular 官方网站 - outputs",
+              "url": "https://angular.dev/guide/components/outputs",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5f9f507e-3288-4ecc-9438-4ab1943126bb",
+          "xid": "f598bb40-fb41-4d61-b094-684b7baee855"
+        }
+      ],
+      "id": "e99ccf06-8ae7-4445-a393-de1963053f60",
+      "xid": "98dd6baf-b8a5-4dcc-8496-f48623eed1c2"
+    }
+  ],
+  "id": "b8886d1e-b1da-4eeb-80db-5164fb1c8f4a",
+  "xid": "3826f817-e057-4829-b78d-b32b34b78958"
+}

@@ -1,5 +1,5 @@
 {
-  "id": "aefa7182-241a-4b55-9900-1b17abea62e9",
+  "id": "80bc39ea-6823-4ec7-90f2-b4098379c743",
   "title": "Python Developer",
   "description": "Step by step guide to becoming a Python developer in 2025",
   "question_title": "",
@@ -9,13 +9,13 @@
       "title": "Learn the Basics",
       "xid": "JDDG4KfhtIlw1rkNCzUli",
       "description": "Python is a high-level, interpreted, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically-typed and garbage-collected.\n\n",
-      "id": "aa748973-5dbb-4ce7-ab7d-214e06c0a8ad",
+      "id": "c31fd828-c431-498d-b0fe-a5990b8b1463",
       "children": [
         {
           "title": "Basic Syntax",
           "xid": "6xRncUs3_vxVbDur567QA",
           "description": "Setup the environment for python and get started with the basics.\n\n",
-          "id": "ee26684f-771b-4534-8584-b618693a6431",
+          "id": "bf975ace-8613-488d-a5d9-0f6bb0085ea6",
           "children": [],
           "links": [
             {
@@ -44,7 +44,7 @@
           "title": "Variables and Data Types",
           "xid": "dEFLBGpiH6nbSMeR7ecaT",
           "description": "Variables are used to store information to be referenced and manipulated in a computer program. They also provide a way of labeling data with a descriptive name, so our programs can be understood more clearly by the reader and ourselves. It is helpful to think of variables as containers that hold information. Their sole purpose is to label and store data in memory. This data can then be used throughout your program.\n\n",
-          "id": "96fba7bc-7cf8-4ec2-b829-0c758e0b2ec8",
+          "id": "75b500d7-1c24-4d99-8563-b15e7f4f8a69",
           "children": [],
           "links": [
             {
@@ -78,7 +78,7 @@
           "title": "Conditionals",
           "xid": "NP1kjSk0ujU0Gx-ajNHlR",
           "description": "Conditional Statements in Python perform different actions depending on whether a specific condition evaluates to true or false. Conditional Statements are handled by _if-elif-else_ statements and MATCH-CASE statements in Python.\n\n",
-          "id": "6cf2dfee-7344-45b2-9fd1-3864eadeda8c",
+          "id": "1eee5f7d-c48f-4197-8026-27a33afcbbba",
           "children": [],
           "links": [
             {
@@ -102,7 +102,7 @@
           "title": "Type Casting",
           "xid": "R9DQNc0AyAQ2HLpP4HOk6",
           "description": "The process of converting the value of one data type (integer, string, float, etc.) to another data type is called type conversion. Python has two types of type conversion: Implicit and Explicit.\n\n",
-          "id": "14fc95a2-c09b-404f-bcd5-43befbed0a72",
+          "id": "6c357ed2-f1b5-45eb-af62-c21fc28d92f3",
           "children": [],
           "links": [
             {
@@ -116,7 +116,7 @@
           "title": "Functions, Builtin Functions",
           "xid": "-DJgS6l2qngfwurExlmmT",
           "description": "In programming, a function is a reusable block of code that executes a certain functionality when it is called. Functions are integral parts of every programming language because they help make your code more modular and reusable. In Python, we define a function with the `def` keyword, then write the function identifier (name) followed by parentheses and a colon.\n\nExample\n-------\n\n    def greet(name):\n        print(f\"Hello, {name}!\")\n    \n    greet(\"Roadmap.sh\")     \n    \n\n",
-          "id": "7e168e8f-bdc5-4dec-a1b9-ecd001b3b5a5",
+          "id": "b74a9b98-984e-40e2-91fe-123455990ec4",
           "children": [],
           "links": [
             {
@@ -140,7 +140,7 @@
           "title": "Lists",
           "xid": "UT_SR7G-LYtzqooWrEtF1",
           "description": "**Lists:** A list is just like dynamic sized arrays, declared in other languages (vector in C++ and ArrayList in Java). Lists need not be homogeneous always which makes it the most powerful tool in Python.\n\n**Tuple:** A Tuple is a collection of Python objects separated by commas. In some ways, a tuple is similar to a list in terms of indexing, nested objects, and repetition but a tuple is immutable, unlike lists that are mutable.\n\n**Set:** A Set is an unordered collection data type that is iterable, mutable, and has no duplicate elements. Python\u2019s set class represents the mathematical notion of a set.\n\n**Dictionary:** In python, Dictionary is an ordered (since Py 3.7) \\[unordered (Py 3.6 & prior)\\] collection of data values, used to store data values like a map, which, unlike other Data Types that hold only a single value as an element, Dictionary holds key:value pair. Key-value is provided in the dictionary to make it more optimized.\n\n",
-          "id": "72b58515-8ed4-4a71-9efc-b01002539d10",
+          "id": "90c3e0f1-34c0-40aa-bdf2-79d096ec6eac",
           "children": [],
           "links": [
             {
@@ -208,13 +208,13 @@
       "title": "Data Structures & Algorithms",
       "xid": "VJSIbYJcy2MC6MOFBrqXi",
       "description": "A data structure is a named location that can be used to store and organize data. And, an algorithm is a collection of steps to solve a particular problem. Learning data structures and algorithms allow us to write efficient and optimized computer programs.\n\n",
-      "id": "c4f5b9d6-20b4-470c-b1aa-2ecedce01ffd",
+      "id": "c9b99c6e-6cec-4511-8eaa-1041f5e2e5e9",
       "children": [
         {
           "title": "Arrays and Linked Lists",
           "xid": "kIuns7FOwapwtFLKo1phQ",
           "description": "Arrays store elements in contiguous memory locations, resulting in easily calculable addresses for the elements stored and this allows faster access to an element at a specific index. Linked lists are less rigid in their storage structure and elements are usually not stored in contiguous locations, hence they need to be stored with additional tags giving a reference to the next element. This difference in the data storage scheme decides which data structure would be more suitable for a given situation.\n\n",
-          "id": "56f26b4a-97ce-4a38-a678-729ccd2a5664",
+          "id": "da5b7978-37f9-476b-9d1e-1f5f9a4c3e5b",
           "children": [],
           "links": [
             {
@@ -243,7 +243,7 @@
           "title": "Heaps, Stacks and Queues",
           "xid": "rSfg5M65LyZldhrdWOr90",
           "description": "**Stacks:** Operations are performed LIFO (last in, first out), which means that the last element added will be the first one removed. A stack can be implemented using an array or a linked list. If the stack runs out of memory, it\u2019s called a stack overflow.\n\n**Queue:** Operations are performed FIFO (first in, first out), which means that the first element added will be the first one removed. A queue can be implemented using an array.\n\n**Heap:** A tree-based data structure in which the value of a parent node is ordered in a certain way with respect to the value of its child node(s). A heap can be either a min heap (the value of a parent node is less than or equal to the value of its children) or a max heap (the value of a parent node is greater than or equal to the value of its children).\n\n",
-          "id": "158c290d-2120-47c2-b10c-8382f3a4e5e8",
+          "id": "1988de40-8b96-48c4-91b1-a9ec7f88ab4f",
           "children": [],
           "links": [
             {
@@ -282,7 +282,7 @@
           "title": "Hash Tables",
           "xid": "0-m8jVuDKE8hX1QorKGTM",
           "description": "Hash Table, Map, HashMap, Dictionary or Associative are all the names of the same data structure. It is a data structure that implements a set abstract data type, a structure that can map keys to values.\n\n",
-          "id": "58bdd5fe-b2d8-4875-a73c-4793519f95ff",
+          "id": "3b40e89f-9274-4189-aecf-d25b0c3ab19f",
           "children": [],
           "links": [
             {
@@ -306,7 +306,7 @@
           "title": "Binary Search Tree",
           "xid": "7NZlydjm4432vLY1InBS7",
           "description": "A binary search tree, also called an ordered or sorted binary tree, is a rooted binary tree data structure with the key of each internal node being greater than all the keys in the respective node's left subtree and less than the ones in its right subtree\n\n",
-          "id": "6855d93d-5934-4313-a763-b31398d368bf",
+          "id": "38cf9c88-5027-46b9-b2db-605d21d33f49",
           "children": [],
           "links": [
             {
@@ -330,7 +330,7 @@
           "title": "Recursion",
           "xid": "94KnPMQdNTOwQkUv37tAk",
           "description": "Recursion is a method of solving a computational problem where the solution depends on solutions to smaller instances of the same problem. Recursion solves such recursive problems by using functions that call themselves from within their own code.\n\n",
-          "id": "61103fd6-390e-4aec-b80a-ee1408bbd966",
+          "id": "f702f3fc-1147-4315-aa95-a869d3bf50d5",
           "children": [],
           "links": [
             {
@@ -349,7 +349,7 @@
           "title": "Sorting Algorithms",
           "xid": "YNptpfK9qv2ovmkUXLkJT",
           "description": "Sorting refers to arranging data in a particular format. Sorting algorithm specifies the way to arrange data in a particular order. Most common orders are in numerical or lexicographical order. The importance of sorting lies in the fact that data searching can be optimized to a very high level, if data is stored in a sorted manner.\n\n",
-          "id": "1c8bf41d-32fc-4185-a5c1-0f13094cdcc7",
+          "id": "8ef1e0ff-e83f-41c5-9f15-606c6a491250",
           "children": [],
           "links": [
             {
@@ -397,19 +397,19 @@
       "title": "python-advanced-topics",
       "xid": "",
       "description": "python-advanced-topics",
-      "id": "4ba0d1a0-5fc5-4940-91b5-b7c2b6c27a91",
+      "id": "003b2b3b-a736-4273-befa-f82b5fd0095f",
       "children": [
         {
           "title": "Modules",
           "xid": "274uk28wzxn6EKWQzLpHs",
           "description": "Modules refer to a file containing Python statements and definitions. A file containing Python code, for example: `example.py`, is called a module, and its module name would be example. We use modules to break down large programs into small manageable and organized files. Furthermore, modules provide reusability of code.\n\n",
-          "id": "73c9da4d-22bf-44c4-96d2-05e744520919",
+          "id": "6d01a36e-bb05-432a-8442-336f0d176f42",
           "children": [
             {
               "title": "Builtin",
               "xid": "08XifLQ20c4FKI_4AWNBQ",
               "description": "Python has a rich standard library of built-in modules that provide a wide range of functionality. Some of the most commonly used built-in modules include: sys, os, math, datetime, random, re, itertools, etc.\n\n",
-              "id": "7ca7e0d5-132c-4b7c-936a-711973b35ae8",
+              "id": "195c60f3-6b7c-4502-be4c-43364e903f50",
               "children": [],
               "links": [
                 {
@@ -433,7 +433,7 @@
               "title": "Custom",
               "xid": "l7k0qTYe42wYBTlT2-1cy",
               "description": "Modules refer to a file containing Python statements and definitions. A file containing Python code, for example: `example.py`, is called a module, and its module name would be example. We use modules to break down large programs into small manageable and organized files. Furthermore, modules provide reusability of code.\n\n",
-              "id": "cda533fc-7347-4af5-bcd9-bcc396aa9192",
+              "id": "c60c8db5-8c12-45f0-99dc-1084bc518f52",
               "children": [],
               "links": [
                 {
@@ -471,13 +471,13 @@
           "title": "Object Oriented Programming",
           "xid": "P_Di-XPSDITmU3xKQew8G",
           "description": "In Python, object-oriented Programming (OOPs) is a programming paradigm that uses objects and classes in programming. It aims to implement real-world entities like inheritance, polymorphism, encapsulation, etc., in programming. The main concept of OOPs is to bind the data and the functions that work on that together as a single unit so that no other part of the code can access this data.\n\n",
-          "id": "8f07ed64-3112-44b5-9263-11384c6e783e",
+          "id": "6d016984-ac62-4f1c-bd8f-86a63f5f0cfa",
           "children": [
             {
               "title": "Classes",
               "xid": "AqwzR8dZKLQIoj_6KKZ3t",
               "description": "A class is a user-defined blueprint or prototype from which objects are created. Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by their class) for modifying their state.\n\n",
-              "id": "8f3d10eb-4bd6-4dbd-8e32-92daca0ba0ce",
+              "id": "e5c0f6ab-3ec4-4072-9346-0e431ba81f42",
               "children": [],
               "links": [
                 {
@@ -501,7 +501,7 @@
               "title": "Inheritance",
               "xid": "S0FLE70szSVUPI0CDEQK7",
               "description": "Inheritance is a fundamental concept in object-oriented programming (OOP) that allows one class to inherit the properties and behavior of another class.\n\n",
-              "id": "71160732-36ba-4a2a-a816-e87cd7a73560",
+              "id": "0d89be1f-b3ab-4e35-a6d4-91cffe9bc973",
               "children": [],
               "links": [
                 {
@@ -520,7 +520,7 @@
               "title": "Methods, Dunder",
               "xid": "zAS4YiEJ6VPsyABrkIG8i",
               "description": "A method in python is somewhat similar to a function, except it is associated with object/classes. Methods in python are very similar to functions except for two major differences.\n\n*   The method is implicitly used for an object for which it is called.\n*   The method is accessible to data that is contained within the class.\n\nDunder or magic methods in Python are the methods that have two prefix and suffix underscores in the method name. Dunder here means \u201cDouble Under (Underscores)\u201d. These are commonly used for operator overloading. Few examples for magic methods are: **`__init__`**, **`__add__`**, **`__len__`**, **`__repr__`** etc.\n\n",
-              "id": "cfd21684-245d-448a-ba81-7cd4931f31b8",
+              "id": "33049001-623a-43ec-a929-e61985527283",
               "children": [],
               "links": [
                 {
@@ -563,7 +563,7 @@
           "title": "Regular Expressions",
           "xid": "7t6mJBsaFMWPi7o9fbhhq",
           "description": "A regular expression is a sequence of characters that specifies a search pattern in text. Usually such patterns are used by string-searching algorithms for \"find\" or \"find and replace\" operations on strings, or for input validation.\n\n",
-          "id": "0bd80d64-cf7c-4ce5-9fb9-651e39885178",
+          "id": "3307b69b-aa92-4069-8bdb-9c20ad6778e8",
           "children": [],
           "links": [
             {
@@ -587,7 +587,7 @@
           "title": "Decorators",
           "xid": "pIluLJkySqn_gI_GykV6G",
           "description": "Decorator is a design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure. Decorators are usually called before the definition of a function you want to decorate.\n\n",
-          "id": "6066b25a-54b8-4126-9e88-aa05a71b88e6",
+          "id": "6da3e153-45d1-46ed-8389-91db7948c454",
           "children": [],
           "links": [
             {
@@ -616,7 +616,7 @@
           "title": "Lambdas",
           "xid": "aWHgAk959DPUZL46CeRiI",
           "description": "Python Lambda Functions are anonymous function means that the function is without a name. As we already know that the def keyword is used to define a normal function in Python. Similarly, the lambda keyword is used to define an anonymous function in Python.\n\n",
-          "id": "fe10ed7e-497c-4afd-96b5-5a5d6248d8f8",
+          "id": "9eccad1f-164e-4df8-aeee-92aa446d6f3a",
           "children": [],
           "links": [
             {
@@ -640,7 +640,7 @@
           "title": "Iterators",
           "xid": "aB1LSQjDEQb_BxueOcnxU",
           "description": "An iterator is an object that contains a countable number of values. An iterator is an object that can be iterated upon, meaning that you can traverse through all the values. Technically, in Python, an iterator is an object which implements the iterator protocol, which consist of the methods **iter**() and **next**() .\n\n",
-          "id": "94a86429-92d8-4473-8f61-85882d328a0c",
+          "id": "404c69cc-a427-4fd8-8f2d-3a011a961e06",
           "children": [],
           "links": [
             {
@@ -664,7 +664,7 @@
           "title": "List Comprehensions",
           "xid": "4gtmtYWYRWqwLdZRL0XMg",
           "description": "List comprehensions are a concise way to create a list using a single line of code in Python. They are a powerful tool for creating and manipulating lists, and they can be used to simplify and shorten code.\n\n",
-          "id": "66d14dd9-3a13-4e39-8aa5-c6031c90b441",
+          "id": "571d4868-d441-4418-a606-f893db1c7820",
           "children": [],
           "links": [
             {
@@ -693,7 +693,7 @@
           "title": "Generator Expressions",
           "xid": "jnLIVRrWxcX3yq3Op91Vr",
           "description": "Generator expressions are a concise way to create a generator using a single line of code in Python. They are similar to list comprehensions, but instead of creating a list, they create a generator object that produces the values on-demand, as they are needed. Generator expressions are a useful tool for efficiently producing large sequence of values, as they allow you to create the generator without creating the entire sequence in memory at once. This tends to use less memory, especially for large sequences.\n\n",
-          "id": "c4e84e9d-f138-4e25-a2bf-06c0ecd0bf09",
+          "id": "a65be953-4683-46f0-85f6-53071611a3ad",
           "children": [],
           "links": [
             {
@@ -712,7 +712,7 @@
           "title": "Paradigms",
           "xid": "4GU5HNi3W8yFkImVY9ZpW",
           "description": "Python is a multi-paradigm programming language, which means that it supports several programming paradigms. Some of the main paradigms supported by Python are:\n\n*   Imperative programming: This paradigm focuses on telling the computer what to do, step by step. Python supports imperative programming with features such as variables, loops, and control structures.\n*   Object-oriented programming (OOP): This paradigm is based on the idea of objects and their interactions. Python supports OOP with features such as classes, inheritance, and polymorphism.\n*   Functional programming: This paradigm is based on the idea of functions as first-class citizens, and it emphasizes the use of pure functions and immutable data. Python supports functional programming with features such as higher-order functions, lambda expressions, and generators.\n*   Aspect-oriented programming: This paradigm is based on the idea of separating cross-cutting concerns from the main functionality of a program. Python does not have built-in support for aspect-oriented programming, but it can be achieved using libraries or language extensions.\n\n",
-          "id": "5836c60c-12d3-45d3-a0d0-3d690f99a5fc",
+          "id": "dbd07347-fe25-4ebd-a0c2-e8c8ba1192a7",
           "children": [],
           "links": [
             {
@@ -734,13 +734,13 @@
       "title": "Package Managers",
       "xid": "qeCMw-sJ2FR4UxvU9DDzv",
       "description": "Package managers allow you to manage the dependencies (external code written by you or someone else) that your project needs to work correctly.\n\n`PyPI` and `Pip` are the most common contenders but there are some other options available as well.\n\n",
-      "id": "d65c33db-a816-430e-b3ea-1b5ffdc211bc",
+      "id": "7c5bdfcf-01a3-4b1c-80ce-503f71be5476",
       "children": [
         {
           "title": "PyPI",
           "xid": "1dfOTOGsOk5XE3bnZs8Ht",
           "description": "PyPI, typically pronounced pie-pee-eye, is a repository containing several hundred thousand packages. These range from trivial Hello, World implementations to advanced deep learning libraries.\n\n",
-          "id": "7728b781-cb60-4d30-88fe-8e4276fd4bd1",
+          "id": "ce94c43a-2a9c-42ff-97e8-4ee7a9f1f5c3",
           "children": [],
           "links": [
             {
@@ -769,7 +769,7 @@
           "title": "Pip",
           "xid": "iVhQnp6hpgVZDNJ0XoVra",
           "description": "The standard package manager for Python is pip. It allows you to install and manage packages that aren\u2019t part of the Python standard library.\n\n",
-          "id": "fef2fedd-4444-41aa-8713-d4a76485ae38",
+          "id": "326ab2a1-d7a2-4449-98cf-9c0c1f1b11e3",
           "children": [],
           "links": [
             {
@@ -798,7 +798,7 @@
           "title": "Conda",
           "xid": "uh67D1u-Iv5cZamRgFEJg",
           "description": "Conda is an open source package management system and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs and updates packages and their dependencies. Conda easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.\n\n",
-          "id": "9eba7fa0-db9a-4956-8037-7746da2756aa",
+          "id": "3df932bd-349a-487a-a51b-440ce6dbffff",
           "children": [],
           "links": [
             {
@@ -812,7 +812,7 @@
           "title": "Poetry",
           "xid": "uXd2B01GVBEQNXQE8RATT",
           "description": "Poetry is a dependency management and packaging tool for Python that runs on Windows, macOS, and Linux. Poetry efficiently installs, manages, and updates packages and their dependencies. Poetry seamlessly creates, saves, loads, and switches between project environments on your local computer. It is designed specifically for Python projects, providing a streamlined workflow for managing dependencies, virtual environments, and building packages.\n\nPoetry as a package manager helps you find and install packages. If you need a specific version of a package or a different version of Python, Poetry handles both dependency management and virtual environments effortlessly. With just a few commands, you can set up a completely isolated environment to run a different version of Python or package configuration, while maintaining your usual development environment. Poetry\u2019s lock file ensures consistent installs across different environments, enhancing reproducibility and stability of your projects.\n\n",
-          "id": "8627a3d7-cd31-4929-946b-901dca3720ef",
+          "id": "4231e6b9-ffb1-4c5f-ac22-6cd931f1b297",
           "children": [],
           "links": [
             {
@@ -840,19 +840,19 @@
       "title": "Learn a Framework",
       "xid": "0-ShORjGnQlAdcwjtxdEB",
       "description": "Frameworks automate the common implementation of common solutions which gives the flexibility to the users to focus on the application logic instead of the basic routine processes. Frameworks make the life of web developers easier by giving them a structure for app development. They provide common patterns in a web application that are fast, reliable and easily maintainable.\n\n",
-      "id": "87fd22ee-fe75-477e-a5ee-ed698d0cbddd",
+      "id": "6b6828fb-1f78-4a19-961b-74b6f6a34849",
       "children": [
         {
           "title": "synchronous",
           "xid": "",
           "description": "synchronous",
-          "id": "f593c60e-4d31-439a-a359-aade86835849",
+          "id": "5c8ad295-8498-453a-a90c-c68e2d86661e",
           "children": [
             {
               "title": "Pyramid",
               "xid": "DHtskqATeAVKgaazdhXKD",
               "description": "Pyramid is a general, open source, web application development framework built in python. It allows python developer to create web applications with ease. Pyramid is backed by the enterprise knowledge Management System KARL (a George Soros project).\n\n",
-              "id": "d63e9b07-a592-4359-b17f-ab6a098175ef",
+              "id": "dc241b43-da52-479c-a8da-e976bae6a77d",
               "children": [],
               "links": [
                 {
@@ -876,7 +876,7 @@
               "title": "Django",
               "xid": "x1V8GjdjANTnhP6YXMbgC",
               "description": "Django is a free and open-source, Python-based web framework that follows the model\u2013template\u2013views architectural pattern. It is maintained by the Django Software Foundation, an independent organization established in the US as a 501 non-profit\n\n",
-              "id": "ac6893f0-359e-4c32-b285-2d9242af5618",
+              "id": "31eb65a8-c134-4a14-913a-02d9ed607543",
               "children": [],
               "links": [
                 {
@@ -910,7 +910,7 @@
               "title": "Flask",
               "xid": "HKsGyRzntjh1UbRZSWh_4",
               "description": "Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. Instead, it provides flexibility by requiring you to choose and integrate the best libraries for your project's needs.\n\n",
-              "id": "946d4692-f004-4b84-844d-1f02c80e79d6",
+              "id": "70a0ce15-54d0-4718-8636-85785be7a342",
               "children": [],
               "links": [
                 {
@@ -937,7 +937,7 @@
           "title": "Fast API",
           "xid": "XeQSmvAsGSTi8dd7QVHxn",
           "description": "FastAPI is a Web framework for developing RESTful APIs in Python. FastAPI is based on Pydantic and type hints to validate, serialize, and deserialize data and automatically auto-generate OpenAPI documents.",
-          "id": "f1cf09d0-f910-4e01-be9d-c32dfdd3631f",
+          "id": "4d023bbc-1d1f-40fa-8640-9645db1fd5c9",
           "children": [],
           "links": [
             {
@@ -961,13 +961,13 @@
           "title": "asynchronous",
           "xid": "",
           "description": "asynchronous",
-          "id": "1a117fa8-4466-477f-a05d-3c92bf5f884b",
+          "id": "1b3e514a-2513-42c5-a9f7-f7124337940e",
           "children": [
             {
               "title": "gevent",
               "xid": "InUJIGmTnf0X4cSoLuCEQ",
               "description": "gevent is a Python library that provides a high-level interface to the event loop. It is based on non-blocking IO (libevent/libev) and lightweight greenlets. Non-blocking IO means requests waiting for network IO won't block other requests; greenlets mean we can continue to write code in synchronous style.\n\n",
-              "id": "d2aa9e84-4ee2-4f8c-b644-b00862f6466b",
+              "id": "155a9f1c-4a6d-4d4e-b90d-0dda1a8c440b",
               "children": [],
               "links": [
                 {
@@ -991,7 +991,7 @@
               "title": "aiohttp",
               "xid": "IBVAvFtN4mnIPbIuyUvEb",
               "description": "aiohttp is a Python 3.5+ library that provides a simple and powerful asynchronous HTTP client and server implementation.\n\n",
-              "id": "de806a3e-514a-4b24-85b8-5436a247f5d5",
+              "id": "1b9caf9e-25f7-4235-ac02-ec88a3108aa8",
               "children": [],
               "links": [
                 {
@@ -1015,7 +1015,7 @@
               "title": "Tornado",
               "xid": "zey2C6BdzsHJAlb_K3qrP",
               "description": "Tornado is a scalable, non-blocking web server and web application framework written in Python. It was developed for use by FriendFeed; the company was acquired by Facebook in 2009 and Tornado was open-sourced soon after.\n\n",
-              "id": "ede69d02-eb34-47fe-b35c-bfb44788e6db",
+              "id": "e9c628bf-63dd-4d9d-8d62-4e9471568877",
               "children": [],
               "links": [
                 {
@@ -1039,7 +1039,7 @@
               "title": "Sanic",
               "xid": "9RGpqsj9jHz0_-r7EvRcw",
               "description": "Sanic is a Python 3.7+ web server and web framework that's written to go fast. It allows the usage of the async/await syntax added in Python 3.5, which makes your code non-blocking and speedy.\n\n",
-              "id": "b6ff4299-f3fe-4979-bde8-a4570bfb78f1",
+              "id": "f7461ed4-147d-43ae-a400-1548036fa4da",
               "children": [],
               "links": [
                 {
@@ -1070,13 +1070,13 @@
       "title": "python-testing",
       "xid": "",
       "description": "python-testing",
-      "id": "0f2495ee-8877-4ce3-ab5b-a203a6a83940",
+      "id": "4913aa0c-5fe6-4c5f-892a-543c4faaf930",
       "children": [
         {
           "title": "doctest",
           "xid": "aVclygxoA9ePU5IxaORSH",
           "description": "Python\u2019s standard library comes equipped with a test framework module called doctest. The doctest module programmatically searches Python code for pieces of text within comments that look like interactive Python sessions. Then, the module executes those sessions to confirm that the code referenced by a doctest runs as expected.\n\n",
-          "id": "15dce891-3d6f-4087-aef2-f85ac523467d",
+          "id": "434f5a04-12c9-4f22-9c70-4ca6ba59acbe",
           "children": [],
           "links": [
             {
@@ -1095,7 +1095,7 @@
           "title": "nose",
           "xid": "SSnzpijHLO5_l7DNEoMfx",
           "description": "Nose is another opensource testing framework that extends `unittest` to provide a more flexible testing framework. Note that Nose is no longer maintained and `pytest` is considered the replacement.\n\n",
-          "id": "75adb34a-cbd9-4c07-a2a1-ec4fddb4a336",
+          "id": "067e2047-4558-4210-a52e-fe87b60f21bd",
           "children": [],
           "links": [
             {
@@ -1114,7 +1114,7 @@
           "title": "pytest",
           "xid": "3FDwJpesfelEyJrNWtm0V",
           "description": "pytest is a mature full-featured Python testing tool that helps you write better programs.\n\n",
-          "id": "e5dced31-f1ef-4e58-a3fb-6591281268cb",
+          "id": "bc92cdfb-3a5c-4874-8379-239270b8e11c",
           "children": [],
           "links": [
             {
@@ -1143,7 +1143,7 @@
           "title": "unittest / pyUnit",
           "xid": "b4he_RO17C3ScNeUd6v2b",
           "description": "PyUnit is an easy way to create unit testing programs and UnitTests with Python. (Note that [docs.python.org](http://docs.python.org) uses the name \"unittest\", which is also the module name.)\n\n",
-          "id": "a316b8ed-1109-4104-89c0-a59febb605c5",
+          "id": "3a5231e2-2d82-4fb6-9971-ec6938399652",
           "children": [],
           "links": [
             {
@@ -1166,5 +1166,6 @@
       ],
       "links": []
     }
-  ]
+  ],
+  "links": []
 }

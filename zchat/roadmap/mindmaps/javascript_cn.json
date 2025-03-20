@@ -1,0 +1,2591 @@
+{
+  "title": "JavaScript 路线图",
+  "description": "2025年学习JavaScript的逐步指南",
+  "links": [],
+  "children": [
+    {
+      "title": "JavaScript入门",
+      "description": "JavaScript，通常缩写为JS，是一种编程语言，是世界级网络的核心技术之一，与HTML和CSS并列。\n\n它让我们能够向页面添加互动功能，如你可能在不同的网站上看到的滑块、警告框、点击互动、弹出窗口等——所有这些都是通过JavaScript构建的。\n\n除了用于浏览器环境，它还在其他非浏览器环境中使用，例如Node.js用于编写JavaScript的服务器端代码，Electron用于编写桌面应用程序，React Native用于移动应用程序等。\n\n",
+      "links": [
+        {
+          "title": "你还不了解JavaScript（书籍系列）",
+          "url": "https://github.com/getify/You-Dont-Know-JS",
+          "type": "opensource"
+        },
+        {
+          "title": "JavaScript MDN文档",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "type": "article"
+        },
+        {
+          "title": "W3Schools – JavaScript教程",
+          "url": "https://www.w3schools.com/js/",
+          "type": "article"
+        },
+        {
+          "title": "现代JavaScript教程",
+          "url": "https://javascript.info/",
+          "type": "article"
+        },
+        {
+          "title": "探索JS：程序员用的JavaScript书籍",
+          "url": "https://exploringjs.com/",
+          "type": "article"
+        },
+        {
+          "title": "简洁的JavaScript教科书",
+          "url": "https://eloquentjavascript.net/",
+          "type": "article"
+        },
+        {
+          "title": "探索最热门的JavaScript文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript入门速成课程",
+          "url": "https://youtu.be/hdI2bqOjy3c?t=2",
+          "type": "video"
+        },
+        {
+          "title": "用HTML、CSS和JS构建一个Netflix复制页面",
+          "url": "https://youtu.be/P7t13SGytRk?t=22",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "什么是JavaScript",
+          "description": "JavaScript，通常缩写为JS，是一种编程语言，与HTML和CSS一起构成了万维网的核心技术之一。\n\n它让我们能够为页面增加交互性，例如您可能在不同网站上看到的滑块、警告、点击互动、弹出窗口等 -- 所有这些都是使用JavaScript构建的。\n\n除了用于浏览器环境，JavaScript还被用于其他非浏览器环境，如Node.js用于编写服务器端的JavaScript代码，Electron用于编写桌面应用程序，React Native用于移动应用程序等等。\n\n",
+          "links": [
+            {
+              "title": "JavaScript MDN文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools – JavaScript教程",
+              "url": "https://www.w3schools.com/js/",
+              "type": "article"
+            },
+            {
+              "title": "现代JavaScript教程",
+              "url": "https://javascript.info/",
+              "type": "article"
+            },
+            {
+              "title": "附带测验和练习题的JavaScript综合课程 - CodeGuage",
+              "url": "https://www.codeguage.com/courses/js/",
+              "type": "article"
+            },
+            {
+              "title": "探索JS：面向程序员的JavaScript书籍",
+              "url": "https://exploringjs.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于JavaScript的热门文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript入门速成课程",
+              "url": "https://youtu.be/hdI2bqOjy3c?t=2",
+              "type": "video"
+            },
+            {
+              "title": "使用HTML、CSS和JS构建一个Netflix的落地页克隆",
+              "url": "https://youtu.be/P7t13SGytRk?t=22",
+              "type": "video"
+            },
+            {
+              "title": "JavaScript入门课程 - 对初学者的全面介绍",
+              "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f8e2a808-5759-4916-8872-44c6c9a30e9b",
+          "xid": "c1f70336-e852-4754-9466-a331c1c0162b"
+        },
+        {
+          "title": "JavaScript的历史",
+          "description": "JavaScript最初由NetScape（网景）的Brendan Eich创建，并于1995年在网景的新闻稿中首次公布。\n\n它有一个奇葩的命名历史；最初是由创造者命名为Mocha（摩卡），后来改名为LiveScript（实时脚本）。\n\n1996年左右，发布一年后，网景决定将其更名为JavaScript，希望能借助Java社区的热度（尽管JavaScript与Java没有任何关系），并发布了2.0版，其中包括官方支持的JavaScript。\n\n",
+          "links": [
+            {
+              "title": "JavaScript的简史",
+              "url": "https://roadmap.sh/guides/history-of-javascript",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript的奇葩历史",
+              "url": "https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb",
+              "type": "article"
+            },
+            {
+              "title": "探索关于JavaScript的热门文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "51555a7c-e0c4-4b46-abd6-22a2bc96dbcb",
+          "xid": "2fe5f9e3-8cc6-407a-a57a-3c2beff63564"
+        },
+        {
+          "title": "JavaScript 版本",
+          "description": "由 Brendan Eich（布伦丹·艾奇）发明的 JavaScript 在1997年获得 ECMA 标准（ECMAScript）的地位，并采用其正式名称 ECMAScript。\n\n该语言通过多个版本进行了演化，分别是 ES1、ES2、ES3、ES5 以及具有变革意义的 ES6。\n\n这些更新在改进和标准化 JavaScript 方面发挥着关键作用，使其在不断变化的 web 开发领域中得到广泛应用和高度重视。\n\n",
+          "links": [
+            {
+              "title": "JavaScript 版本：JavaScript 的演变历程",
+              "url": "https://www.educative.io/blog/javascript-versions-history",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 简史",
+              "url": "https://roadmap.sh/guides/history-of-javascript",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 版本",
+              "url": "https://www.w3schools.com/js/js_versions.asp",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 JavaScript 的热门文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "69b91e70-60fe-460e-a4b2-acc547bdc84d",
+          "xid": "b318128e-59cf-4d51-a609-799da8308ccd"
+        },
+        {
+          "title": "如何运行JavaScript",
+          "description": "JavaScript可以在浏览器中运行，通过使用`script`标签包含外部脚本文件、在HTML页面内使用`script`标签编写、在浏览器控制台（console）运行，或者也可以使用[REPL（Read-Eval-Print Loop）](https://www.digitalocean.com/community/tutorials/how-to-use-the-node-js-repl)。\n\n",
+          "links": [
+            {
+              "title": "如何将JavaScript添加到HTML中",
+              "url": "https://www.digitalocean.com/community/tutorials/how-to-add-javascript-to-html",
+              "type": "article"
+            },
+            {
+              "title": "如何编写你的第一个JavaScript程序",
+              "url": "https://www.digitalocean.com/community/tutorials/how-to-write-your-first-javascript-program",
+              "type": "article"
+            },
+            {
+              "title": "如何使用JavaScript开发者控制台",
+              "url": "https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-developer-console",
+              "type": "article"
+            },
+            {
+              "title": "探索关于JavaScript的热门文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "10686ddb-330f-4d37-b524-d2e0ba2391a3",
+          "xid": "82777211-5177-4e8f-bbc4-9ae4ab3e3c14"
+        }
+      ],
+      "id": "1da9ff55-6a02-4e5b-9cba-6f3484e8c6bc",
+      "xid": "29d17730-c95e-459d-985b-c227a6056ea0"
+    },
+    {
+      "title": "关于变量的全部",
+      "description": "大多数时候，JavaScript应用程序需要处理信息。\n\n为了在JavaScript代码库中存储和表示这些信息，我们使用变量。\n\n变量是一个用来存放值的容器。\n\n",
+      "links": [
+        {
+          "title": "JavaScript变量",
+          "url": "https://javascript.info/variables",
+          "type": "article"
+        },
+        {
+          "title": "存储所需的信息 —— 变量",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables",
+          "type": "article"
+        },
+        {
+          "title": "探索关于JavaScript的热门文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "提升（Hoisting）",
+          "description": "JavaScript 提升（Hoisting）指的是解释器在执行代码之前，似乎将函数、变量或类的声明移动到它们的作用域顶部的一个过程。\n\n",
+          "links": [
+            {
+              "title": "什么是提升 - MDN 文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Glossary/Hoisting",
+              "type": "article"
+            },
+            {
+              "title": "理解提升",
+              "url": "https://www.digitalocean.com/community/tutorials/understanding-hoisting-in-javascript",
+              "type": "article"
+            },
+            {
+              "title": "5分钟内学会JavaScript提升",
+              "url": "https://www.youtube.com/watch?v=EvfRXyKa_GI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "719a9c70-5f8f-4562-a5da-8c4a053d26a2",
+          "xid": "b28d2515-2e5e-463b-befd-837c94774e9c"
+        },
+        {
+          "title": "变量声明",
+          "description": "要在JavaScript中使用变量，我们首先需要创建它，即声明一个变量。\n\n声明变量时，我们使用`var`（var）、`let`（let）或`const`（const）这些关键字之一。\n\n",
+          "links": [
+            {
+              "title": "存储您需要的信息 — 变量",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript变量 - CodeGuage",
+              "url": "https://www.codeguage.com/courses/js/variables",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "var（变量声明）",
+              "description": "var语句声明一个函数作用域或全局作用域的变量，并可选地将其初始化为某个值。\n\n",
+              "links": [
+                {
+                  "title": "var关键字 - MDN",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript变量",
+                  "url": "https://javascript.info/variables",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript变量 - W3Schools",
+                  "url": "https://www.w3schools.com/js/js_variables.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "不使用Var、Let、Const声明变量会发生什么情况？",
+                  "url": "https://www.youtube.com/watch?v=6UAKBYpUC-Y",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "3f5ac3bf-f70e-4185-88f7-1d6aae2ddef2",
+              "xid": "8b11a990-fad2-4582-9928-52cc441221e2"
+            },
+            {
+              "title": "`let`声明",
+              "description": "`let`声明用于声明一个块级作用域的局部变量，可选地将其初始化为一个值。\n\n",
+              "links": [
+                {
+                  "title": "`let`关键字 - MDN 文档",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript变量",
+                  "url": "https://javascript.info/variables",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "11773503-7d29-4762-b720-e53ef41b3180",
+              "xid": "d8ede4d3-74a4-4ba0-9b10-52932fdb03c6"
+            },
+            {
+              "title": "const (常量)",
+              "description": "常量是块级作用域的，与使用`let`关键字声明的变量类似。\n\n常量的值不能通过重新赋值（即使用赋值运算符）来改变，也不能被重新声明（即通过变量声明）。\n\n然而，如果常量是对象或数组，其属性或项目可以被更新或移除。\n\n",
+              "links": [
+                {
+                  "title": "JavaScript 常量 - CodeGuage",
+                  "url": "https://www.codeguage.com/courses/js/constants",
+                  "type": "article"
+                },
+                {
+                  "title": "`const`关键字 - MDN 文档",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 变量",
+                  "url": "https://javascript.info/variables",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "69d81f16-1edf-4540-946d-3f5123b19049",
+              "xid": "2f4adc18-09bd-4826-9094-8eb7078282c6"
+            }
+          ],
+          "id": "7c55ddd1-f5eb-4699-8974-eaf69141ef39",
+          "xid": "a445c6e6-ed10-4442-9c64-2b7d44044827"
+        },
+        {
+          "title": "变量命名规则",
+          "description": "变量名称应能准确标识你的变量。\n\n当你创建良好的变量名称时，你的JavaScript代码会变得更易于理解和操作。\n\n正确地命名变量是非常重要的。\n\nJavaScript在命名变量时也有一些规则; 通过以下链接了解这些规则。\n\n",
+          "links": [
+            {
+              "title": "JavaScript变量命名技巧 - CodeGuage",
+              "url": "https://www.codeguage.com/courses/js/variables#Tips_for_naming_variables",
+              "type": "article"
+            },
+            {
+              "title": "理解JavaScript中的变量",
+              "url": "https://www.informit.com/articles/article.aspx?p=131025&seqNum=3",
+              "type": "article"
+            },
+            {
+              "title": "命名JavaScript变量",
+              "url": "https://www.dummies.com/article/technology/programming-web-design/javascript/naming-javascript-variables-142522/",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript命名约定",
+              "url": "https://www.robinwieruch.de/javascript-naming-conventions/",
+              "type": "article"
+            },
+            {
+              "title": "Google JavaScript编码规范",
+              "url": "https://google.github.io/styleguide/jsguide.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5680d2c5-56eb-40ec-a13c-f73204afb20e",
+          "xid": "72cb7ff9-c671-4ed0-9aa2-af9c4d3ef976"
+        },
+        {
+          "title": "变量作用域",
+          "description": "在JavaScript中，作用域（scope）是指变量的可见性，即声明后该变量的使用范围。\n\n变量的作用域依赖于声明该变量时使用的关键词。\n\n作用域有三种类型：全局作用域（Global Scope）、函数作用域（Function Scope）和块作用域（Block Scope）。\n\n在ES6（2015）以前，JavaScript中只有使用`var`关键词声明的全局作用域和函数作用域。\n\nES6引入了`let`和`const`，这使得JavaScript支持块作用域。\n\n全局作用域（Global Scope）: 在任何函数或大括号`{}`之外声明的变量具有全局作用域，可以从同一JavaScript代码内的任何位置访问。\n\n`var`、`let`和`const`都提供了这种作用域。\n\n函数作用域（Function Scope）: 在函数内部声明的变量只能在该函数内部使用。\n\n在该函数之外，它们是未定义的。\n\n`var`、`let`和`const`都提供了这种作用域。\n\n块作用域（Block Scope）: 块是任何被大括号`{}`限定的JavaScript代码部分。\n\n块内声明的变量不能从该块外访问。\n\n这种作用域仅由`let`和`const`关键词提供。\n\n如果你使用`var`关键词在一个块内声明变量，它将不具有块作用域。\n\n局部作用域（Local Scope）: 局部变量只在其函数内被识别，不同函数中可以使用相同名称的变量。\n\n局部变量是在函数启动时创建，在函数完成时被删除。\n\n`var`、`let`和`const`都提供了这种作用域。\n\n",
+          "links": [
+            {
+              "title": "JavaScript作用域",
+              "url": "https://www.w3schools.com/js/js_scope.asp",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript作用域",
+              "url": "https://wesbos.com/javascript/03-the-tricky-bits/scope",
+              "type": "article"
+            },
+            {
+              "title": "理解全局、局部、函数和块作用域",
+              "url": "https://www.youtube.com/watch?v=_E96W6ivHng",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "块",
+              "description": "本范围限制了在特定块内声明的变量不能由该块外部访问。\n\n通过let & const关键字可以将变量指定为块级作用域。\n\n为了访问特定块中的变量，我们需要为此创建一个对象。\n\n而使用var关键字声明的变量不具备块级作用域。\n\n",
+              "links": [
+                {
+                  "title": "JavaScript作用域",
+                  "url": "https://www.w3schools.com/js/js_scope.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript中的块级作用域",
+                  "url": "https://www.geeksforgeeks.org/javascript-es2015-block-scoping",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1c8f6bb0-2aba-4d93-992f-b74385c598f7",
+              "xid": "18930760-1792-468d-b518-8dbc5bbcf7b7"
+            },
+            {
+              "title": "函数",
+              "description": "当一个变量在函数内部声明时，它只能在该函数内部访问，不能在函数外部使用。\n\n",
+              "links": [
+                {
+                  "title": "JavaScript的作用域",
+                  "url": "https://www.w3schools.com/js/js_scope.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "JS中的函数作用域和块级作用域",
+                  "url": "https://medium.com/nerd-for-tech/function-scope-block-scope-in-js-d29c8e7cd216",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "09d81cca-d305-4bd5-b991-61bc71dd219e",
+              "xid": "5bbbdbd9-90b3-45e9-bbd5-4967ee583ae0"
+            },
+            {
+              "title": "全局",
+              "description": "在任何函数之外（全局）声明的变量具有全局作用域（Global Scope）。\n\n全局变量可以从JavaScript程序中的任何地方访问。\n\n使用`var`、`let`和`const`在块之外声明的变量在行为上非常相似。\n\n注意\n----\n\n如果你给一个未声明的变量赋值，例如`potato = true`，它将自动成为全局变量（GLOBAL variable）。\n\n",
+              "links": [
+                {
+                  "title": "JavaScript作用域",
+                  "url": "https://www.w3schools.com/js/js_scope.asp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2898b9ee-5709-4b9f-a663-cde63a3ebbc7",
+              "xid": "ece61dfc-1b2d-461b-9d84-245760eb4321"
+            }
+          ],
+          "id": "9d19ea14-7a59-41ff-b98c-e6fee4b672fd",
+          "xid": "2723f034-7678-44e9-80b8-ee81506aba47"
+        }
+      ],
+      "id": "2b871f36-4e40-484d-b419-6acbc32bec78",
+      "xid": "864f5aac-2444-4f2a-8c8d-f91d5148f8e4"
+    },
+    {
+      "title": "数据类型",
+      "description": "数据类型指JavaScript变量可容纳的数据类型。\n\nJavaScript中有七种原始数据类型（Number，BigInt，String，Boolean，Null，Undefined 和 Symbol）。\n\n对象是非原始类型。\n\n",
+      "links": [
+        {
+          "title": "JavaScript 数据类型 - CodeGuage",
+          "url": "https://www.codeguage.com/courses/js/data-types",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript 数据类型与数据结构",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript 数据类型",
+          "url": "https://www.w3schools.com/js/js_datatypes.asp",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript 数据类型",
+          "url": "https://javascript.info/types",
+          "type": "article"
+        },
+        {
+          "title": "探索关于JavaScript的热门文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "字符串",
+          "description": "字符串是一种原始类型（primitive type），用于存储字符序列。\n\n在JavaScript中，字符串可以使用单引号 `''`、双引号 `\"\"` 或反引号 ` `` `（模板字面量 template literals）来表示。\n\n所有类型的引号都可以用来包含一个字符串，但前提是开始和结束引号必须相同。\n\n",
+          "links": [
+            {
+              "title": "字符串(String)",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 字符串(Strings)",
+              "url": "https://javascript.info/string",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8b5512da-d11f-46b8-9c49-008f19446220",
+          "xid": "54e82722-c4f3-455c-8786-5a4082ffa5d2"
+        },
+        {
+          "title": "对象",
+          "description": "JavaScript 对象(JavaScript object)是一种数据结构，允许我们有键值对；因此我们可以有独特的键，每个键都映射到一个值，该值可以是任何 JavaScript 数据类型。\n\n将其与现实生活中的对象类比，例如一支笔就是一个对象，它有许多属性，如颜色、设计、制作材料等。\n\n同样，JavaScript 对象也可以有属性来定义其特征。\n\n",
+          "links": [
+            {
+              "title": "对象(Object)",
+              "url": "https://javascript.info/object",
+              "type": "article"
+            },
+            {
+              "title": "操作对象(Working with Objects)",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 对象定义(Javascript Object Definition)",
+              "url": "https://www.w3schools.com/js/js_object_definition.asp",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "原型继承(Prototypal Inheritance)",
+              "description": "原型继承(Prototypal Inheritance)是JavaScript中的一种特性，用于在对象中添加方法和属性。\n\n这是一种对象可以继承另一个对象的属性和方法的方式。\n\n传统上，为了获取并设置对象的原型，我们使用Object.getPrototypeOf和Object.setPrototypeOf方法。\n\n",
+              "links": [
+                {
+                  "title": "JavaScript MDN 文档",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain",
+                  "type": "article"
+                },
+                {
+                  "title": "原型继承(Prototype Inheritance)",
+                  "url": "https://javascript.info/prototype-inheritance",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "af7ef447-ed00-40ce-a4ef-ede5dd972170",
+              "xid": "0d6ad6cf-96a7-45ac-a6ec-003652c7c019"
+            },
+            {
+              "title": "对象原型（Object Prototype）",
+              "description": "JavaScript 是一种以原型模型（prototype model）为中心的面向对象（object-oriented）语言。\n\n在 JavaScript 中，每个对象（object）都可以从其原型（prototype）继承属性（properties），如果原型存在的话。\n\n原型（prototype）简单地说就是一个对象，其他对象可以从中继承属性（properties）。\n\n要使用 JavaScript 创建复杂程序，必须精通原型（prototype）的使用——它们构成了该语言面向对象编程（OOP）的核心。\n\n",
+              "links": [
+                {
+                  "title": "JavaScript 中的原型（Prototypes）——全面指南",
+                  "url": "https://www.codeguage.com/courses/js/objects-prototypes",
+                  "type": "article"
+                },
+                {
+                  "title": "原型（Prototypes）、继承（Inheritance）",
+                  "url": "https://javascript.info/prototypes",
+                  "type": "article"
+                },
+                {
+                  "title": "对象原型（Object prototypes） - MDN",
+                  "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 中的原型（Prototype）——对象原型（Object Prototype）",
+                  "url": "https://www.youtube.com/watch?v=583MGxjypgU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "51e920b9-7a27-4e01-9afb-68fa935bf0ae",
+              "xid": "528527a2-882a-4f27-ac21-d18503d1c094"
+            },
+            {
+              "title": "内置对象",
+              "description": "内置对象，或称为“全局对象”，是那些内置在语言规范中的对象。\n\nJavaScript语言中有大量的内置对象，所有这些对象都可以在全局作用域中直接访问。\n\n一些示例包括：\n\n*   `Number`\n*   `Math`\n*   `Date`\n*   `String`\n*   `Error`\n*   `Function`\n*   `Boolean`\n\n",
+              "links": [
+                {
+                  "title": "标准内置对象",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 内置对象",
+                  "url": "https://www.tutorialride.com/javascript/javascript-built-in-objects.htm",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f456f7a7-a604-4daf-a930-7821d66af304",
+              "xid": "c4fa7ba4-c3aa-4c07-a103-5eaa2f869d4b"
+            }
+          ],
+          "id": "711960d6-a545-4d3a-9e69-700b85d7809d",
+          "xid": "e58eaec6-927d-4dc7-836e-d822f091a0a1"
+        },
+        {
+          "title": "typeof运算符",
+          "description": "您可以使用typeof运算符来查找JavaScript变量的数据类型。\n\n它返回一个字符串，指示提供的操作数的值的类型。\n\n",
+          "links": [
+            {
+              "title": "typeof参考",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof",
+              "type": "article"
+            },
+            {
+              "title": "typeof实时示例",
+              "url": "https://www.w3schools.com/js/tryit.asp?filename=tryjs_typeof_all",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "caee895f-541c-42dc-b66e-1c15c9f014fc",
+          "xid": "d954eea6-d758-4123-861a-6a447362a179"
+        }
+      ],
+      "id": "69e61194-ad49-47fb-aabf-be37a317a0e2",
+      "xid": "2e36aabf-1add-42bc-a8c7-b312ea8c5444"
+    },
+    {
+      "title": "类型转换",
+      "description": "类型转换（或类型转换[Type Casting]）是指将数据从一种数据类型转换为另一种数据类型的过程。\n\n隐式转换发生在编译器（对于编译型语言）或运行时（对于像[JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript)这样的脚本语言）自动将数据类型进行转换时。\n\n源代码也可以显式地要求进行类型转换。\n\n",
+      "links": [
+        {
+          "title": "类型转换",
+          "url": "https://javascript.info/type-conversions",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript 类型转换",
+          "url": "https://www.w3schools.com/js/js_type_conversion.asp",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript 中的类型转换",
+          "url": "https://www.tutorialspoint.com/type-casting-in-javascript",
+          "type": "article"
+        },
+        {
+          "title": "探索关于JavaScript的热门文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "类型转换 vs 类型强制转换",
+          "description": "类型强制转换是从一种数据类型（如字符串到数字）自动或隐式地转换值为另一种数据类型。\n\n类型转换与类型强制转换相似，因为它们都将值从一种数据类型转换为另一种，但有一个关键的区别——类型强制转换是隐式进行的。\n\n相比之下，类型转换可以是隐式或显式。\n\n",
+          "links": [
+            {
+              "title": "类型转换 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion",
+              "type": "article"
+            },
+            {
+              "title": "类型强制转换 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion",
+              "type": "article"
+            },
+            {
+              "title": "类型转换和强制转换视频",
+              "url": "https://www.youtube.com/watch?v=jfQyMPzPTjY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4b84f57c-21bc-4152-9160-9658bc74bf96",
+          "xid": "719d7bcb-0557-49bf-b24e-be941181daa7"
+        },
+        {
+          "title": "显式类型转换",
+          "description": "类型转换意味着将数据从一种数据类型显式地转换为另一种数据类型。\n\n显式类型转换通常是为了使数据与其他变量兼容。\n\n类型转换方法的示例有`parseInt()`，`parseFloat()`，`toString()`。\n\n",
+          "links": [
+            {
+              "title": "类型转换",
+              "url": "https://www.c-sharpcorner.com/article/type-conversions-in-javascript/",
+              "type": "article"
+            },
+            {
+              "title": "类型转换",
+              "url": "https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion",
+              "type": "article"
+            },
+            {
+              "title": "什么是JavaScript中的类型转换",
+              "url": "https://www.tutorialspoint.com/explain-typecasting-in-javascript",
+              "type": "article"
+            },
+            {
+              "title": "数据类型转换",
+              "url": "https://youtu.be/VQLYiFqetZM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b3f1d7ad-10e7-4184-be51-8fb49f786cf3",
+          "xid": "5a97a298-f37a-456f-b44c-40847f1d2876"
+        },
+        {
+          "title": "隐式类型转换(Implicit Type Casting)",
+          "description": "当编译器或运行时自动转换数据类型时，就会发生隐式类型转换(Implicit type conversion)。\n\nJavaScript是一种弱类型语言，大多数时候运算符会自动将一个值转换为正确的类型(right type)。\n\n",
+          "links": [
+            {
+              "title": "W3Schools - JavaScript 教程(Tutorials)",
+              "url": "https://www.w3schools.com/js/js_type_conversion.asp",
+              "type": "article"
+            },
+            {
+              "title": "TutorialsPoint - JavaScript 教程(Tutorials)",
+              "url": "https://www.tutorialspoint.com/explain-typecasting-in-javascript",
+              "type": "article"
+            },
+            {
+              "title": "关于 JavaScript 隐式类型转换(Implicit Coercion)你需要知道的",
+              "url": "https://dev.to/promisetochi/what-you-need-to-know-about-javascripts-implicit-coercion-e23",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "aa258e18-9f07-4c11-8f57-f312a875ccb3",
+          "xid": "8cc3570e-aa35-4d40-b173-f88da7c4c626"
+        }
+      ],
+      "id": "28d368af-3a04-4280-b239-50108f210d8f",
+      "xid": "a0cf6862-a74c-4d1a-b160-431bfb97cb93"
+    },
+    {
+      "title": "数据结构",
+      "description": "数据结构是一种组织、管理和存储数据的格式，以便能够高效地访问和修改。\n\nJavaScript 有原始（内置）数据结构和非原始（非内置）数据结构。\n\n原始数据结构是编程语言自带的，可以直接使用（比如数组和对象）。\n\n非原始数据结构则不是默认提供的，如果要使用，需要自行编码实现。\n\n",
+      "links": [
+        {
+          "title": "探索关于JavaScript的顶级文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "栈数据结构简介",
+          "url": "https://youtu.be/4F-BnR2XwqU",
+          "type": "video"
+        },
+        {
+          "title": "队列数据结构简介",
+          "url": "https://youtu.be/GRA_3Ppl2ZI",
+          "type": "video"
+        },
+        {
+          "title": "递归入门：递归解决方案剖析",
+          "url": "https://youtu.be/yBWlPte6FhA",
+          "type": "video"
+        },
+        {
+          "title": "技术面试的二叉树算法 - 完整课程",
+          "url": "https://youtu.be/fAAZixBzIAI",
+          "type": "video"
+        },
+        {
+          "title": "技术面试的图算法 - 完整课程",
+          "url": "https://youtu.be/tWVWeAqZ0WU",
+          "type": "video"
+        },
+        {
+          "title": "动态规划 - 学习解决算法问题和编码挑战",
+          "url": "https://youtu.be/oBt53YbR9Kk",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "键控集合（Keyed Collections）",
+          "description": "键控集合是通过键而不是索引进行排序的数据集合。\n\n它们本质上是关联性的。\n\nMap（映射）和Set（集合）对象就是键控集合，并且可以按照插入顺序进行迭代。\n\n",
+          "links": [
+            {
+              "title": "键控集合（Keyed collections）",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections",
+              "type": "article"
+            },
+            {
+              "title": "ES6 键控集合 - Maps（映射）和Sets（集合）",
+              "url": "https://blog.logrocket.com/es6-keyed-collections-maps-and-sets/",
+              "type": "article"
+            },
+            {
+              "title": "创建键控集合（Creating keyed collection）",
+              "url": "https://youtu.be/4UqSqF4foy4",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "映射（Map）",
+              "description": "[映射（Map）](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)是一个按键存储数据项的集合，就像`Object`一样。\n\n但是主要区别在于`映射（Map）`允许使用任何类型的键。\n\n",
+              "links": [
+                {
+                  "title": "映射（Map）- 按键集合",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+                  "type": "article"
+                },
+                {
+                  "title": "映射（Map）数据类型",
+                  "url": "https://javascript.info/map-set#map",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "45b93077-70c8-456a-94e2-2a31e3443522",
+              "xid": "0bac3e2c-082a-4373-b185-bc7337cbd71f"
+            },
+            {
+              "title": "弱映射表 (Weak Map)",
+              "description": "[弱映射表 (WeakMap)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap) 是一种类似 Map 的键值对集合，其键必须是对象，并且当这些对象不再通过其他方式可访问时，它会自动移除这些键\n\n",
+              "links": [
+                {
+                  "title": "弱映射表 (WeakMap)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+                  "type": "article"
+                },
+                {
+                  "title": "弱映射表 (WeakMap) 和 弱集合 (WeakSet)",
+                  "url": "https://javascript.info/weakmap-weakset",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6c6d5c55-5b22-44ca-9d08-d88d92687819",
+              "xid": "45e0d626-0882-4e5a-9e20-18801226f724"
+            },
+            {
+              "title": "集合(Set)",
+              "description": "`Set` 对象允许您存储任何类型的唯一值，无论是原始值(primitive)还是对象引用。\n\n`Set` 中的值只能出现一次；它在这个集合中是唯一的。\n\n",
+              "links": [
+                {
+                  "title": "集合(Set) - JavaScript",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+                  "type": "article"
+                },
+                {
+                  "title": "集合(Set) - ExploringJS",
+                  "url": "https://exploringjs.com/impatient-js/ch_sets.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6e5c33bf-8667-4751-8f28-6b58f907cbb9",
+              "xid": "061bae1c-d7cc-4319-aaed-7f42d2713386"
+            },
+            {
+              "title": "弱集合 (Weak Set)",
+              "description": "`弱集合 (WeakSet)` 对象是对象的集合。\n\n就像 `集合 (Set)` 一样，`弱集合 (WeakSet)` 中的每个对象仅出现一次；`弱集合 (WeakSet)` 中的所有对象都是唯一的。\n\n",
+              "links": [
+                {
+                  "title": "弱集合 (WeakSet)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+                  "type": "article"
+                },
+                {
+                  "title": "弱映射和弱集合 (WeakMap and WeakSet)",
+                  "url": "https://javascript.info/weakmap-weakset",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "18bb5170-cfed-42b5-9346-bed6cacd0dbd",
+              "xid": "962679aa-d38f-468c-9317-ac39413f5d72"
+            }
+          ],
+          "id": "da8a6c8b-f274-4c28-ad2d-5fdc2bc8fc13",
+          "xid": "383a58dc-5020-40cd-b91b-739b6ba713dd"
+        },
+        {
+          "title": "结构化数据（Structured Data）",
+          "description": "结构化数据（Structured Data）被搜索引擎，如Google，用于理解网页的内容，并收集有关网络和世界的一般信息。\n\n它也使用页面标记（in-page markup）编码在适用信息的页面中。\n\n",
+          "links": [
+            {
+              "title": "Google 开发者文档（Google Developers docs）",
+              "url": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "JavaScript对象表示法（JSON）",
+              "description": "JavaScript对象表示法（JSON）是一种基于JavaScript对象语法的结构化数据的标准文本格式。\n\n它常用于网络应用程序中的数据传输，例如将数据从服务器发送到客户端以便在网页上显示，或反之亦然。\n\n",
+              "links": [
+                {
+                  "title": "使用JavaScript对象表示法（JSON）",
+                  "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON",
+                  "type": "article"
+                },
+                {
+                  "title": "初学者的JavaScript对象表示法（JSON）教程",
+                  "url": "https://www.youtube.com/watch?v=iiADhChRriM",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "77ae7c77-0bc5-4481-95df-c64c4e6edf7a",
+              "xid": "ddc22ea2-27dd-4c54-9c1a-346826d734bb"
+            }
+          ],
+          "id": "0f25868c-3169-4aac-ace5-5319c9a6a144",
+          "xid": "f3cfd8cc-5630-420e-9eb6-75078512e670"
+        },
+        {
+          "title": "索引集合（Indexed Collections）",
+          "description": "索引集合（Indexed Collections）是指具有一系列数字索引的数据集，也就是说，这些集合中的数据是按照索引值进行排序的。\n\n在JavaScript中，数组（array）就是一个索引集合。\n\n数组是一系列按照数字索引进行排序的值的有序集合。\n\n",
+          "links": [
+            {
+              "title": "什么是索引集合（Indexed collections）？",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript中的索引集合（Indexed collections）",
+              "url": "https://www.tutorialspoint.com/indexed-collections-in-javascript",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript数组（Javascript Arrays）",
+              "url": "https://youtu.be/XYq9QpgAx8g",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "类型化数组(Typed Arrays)",
+              "description": "在JavaScript中，类型化数组是一种类似数组的二进制数据缓冲区。\n\n不存在名为类型化数组(TypedArray)的JavaScript属性或对象，但是可以使用属性和方法与类型化数组对象一起使用。\n\n",
+              "links": [
+                {
+                  "title": "JavaScript 类型化数组(Typed arrays)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 中类型化数组(Typed Arrays)的介绍",
+                  "url": "https://www.youtube.com/watch?v=UYkJaW3pmj0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "d3670002-481b-4188-9fa3-56ddab7467a5",
+              "xid": "6ef430d3-008f-4f5e-ba83-c4bef5d127a5"
+            },
+            {
+              "title": "数组",
+              "description": "数组是存储项目集合的对象，可以被分配给一个变量。\n\n它们具有能在数组上执行操作的方法。\n\n",
+              "links": [
+                {
+                  "title": "在JavaScript中操作数组",
+                  "url": "https://javascript.info/array",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 数组",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 数组",
+                  "url": "https://www.youtube.com/watch?v=oigfaZ5ApsM",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "4ca17705-0eff-4a16-8beb-e058e7d494d6",
+              "xid": "203d1865-5d14-4da9-9513-02010db1f685"
+            }
+          ],
+          "id": "73cc5a87-a1f8-4eb9-9cf4-114b9329f76e",
+          "xid": "f437cd67-5694-41b5-a77a-d437623d92db"
+        }
+      ],
+      "id": "80b22ab9-5bfa-42b3-9ae9-abfeec347296",
+      "xid": "2467341a-8a99-4f6c-a93a-c7b8d7cd3d69"
+    },
+    {
+      "title": "等值比较",
+      "description": "比较运算符（Comparison operators）在逻辑语句中用于确定变量或值之间的等值或差异。\n\n比较运算符可以在条件语句中用来比较值，并根据结果采取相应行动。\n\n",
+      "links": [
+        {
+          "title": "JavaScript 比较",
+          "url": "https://www.w3schools.com/js/js_comparisons.asp",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript 等值运算符",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#equality_operators",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 JavaScript 的热门文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "==",
+          "description": "在JavaScript中，`==` 运算符在比较之前会对操作数进行类型转换，而 `===` 运算符则会比较操作数的值和数据类型。\n\n`Object.is()` 方法用于判断两个值是否是同一个值：`Object.is(值1, 值2)`。\n\n`Object.is()` 并不等同于 `==` 运算符。\n\n`==` 运算符在测试相等性之前，会对两边进行各种强制类型转换（如果它们不是相同类型），因此会出现诸如 `\"\" == false` 为 `true` 的情况，但 `Object.is()` 不会对任何值进行强制类型转换。\n\n`Object.is()` 也不等同于 `===` 运算符。\n\n`Object.is()` 和 `===` 之间唯一的区别在于它们对带符号零和 `NaN` 值的处理方式。\n\n`===` 运算符（和 `==` 运算符）将数值 `-0` 和 `+0` 视为相等，但将 `NaN` 视为不等于彼此。\n\n",
+          "links": [
+            {
+              "title": "相等比较和同一性 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value_equality_using_object.is",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2ff31c8d-26de-4a54-8d71-2112126559d9",
+          "xid": "a0958515-1669-4f59-9278-05935e67a9a8"
+        },
+        {
+          "title": "等值算法(equality-algorithms)",
+          "description": "等值算法(equality-algorithms)",
+          "links": [],
+          "children": [
+            {
+              "title": "isLooselyEqual",
+              "description": "[isLooselyEqual](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality) 检查其两个操作数是否相等，返回一个 `Boolean` 结果。\n\n它尝试转换并比较不同类型的运算数。\n\n",
+              "links": [
+                {
+                  "title": "松散相等 (==) 运算符 (Loosely Equality (==) Operator)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality",
+                  "type": "article"
+                },
+                {
+                  "title": "比较 - javascript.info",
+                  "url": "https://javascript.info/comparison",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c588b5b3-ce73-4819-a2c4-5d2b45292e21",
+              "xid": "d17ce878-9fdb-43f9-adf3-5dc97a7dbc0a"
+            },
+            {
+              "title": "isStrictlyEqual（严格相等）",
+              "description": "[isStrictlyEqual（严格相等）](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality) 检查其两个操作数是否相等，返回一个 `Boolean` 结果。\n\n它总是认为不同类型的操作数是不同的。\n\n",
+              "links": [
+                {
+                  "title": "严格相等 (===) 运算符",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality",
+                  "type": "article"
+                },
+                {
+                  "title": "比较 - javascript.info",
+                  "url": "https://javascript.info/comparison",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "99343d20-c2f0-4209-90e9-302f02ac4c1b",
+              "xid": "8bb99d66-aab6-4eb5-974f-96750d9659a6"
+            },
+            {
+              "title": "SameValueZero(SameValueZero)",
+              "description": "[SameValueZero(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality)] 等值比较确定两个值在所有上下文中是否功能上完全一致，该比较中 +0 和 -0 也被视为相等。\n\n",
+              "links": [
+                {
+                  "title": "SameValueZero(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality) 等值比较",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "36498618-0a15-4d20-b178-a9083df5887a",
+              "xid": "db358b33-025c-48bb-af07-0e88e2c17668"
+            }
+          ],
+          "id": "0a2cd19c-5356-45d1-8252-cfd3754038ea",
+          "xid": "309e472f-8bb3-47d1-94a1-2f2cc473d241"
+        }
+      ],
+      "id": "9ab4263e-c5b6-4eb4-9bd4-9a38dc91066f",
+      "xid": "040a12c7-017e-4465-8406-09ba4cc7527f"
+    },
+    {
+      "title": "循环和迭代",
+      "description": "循环提供了一种快速简便的方式来重复执行某项操作。\n\n你可以将循环想象成一种计算机化的游戏，你告诉某人朝一个方向走X步，然后朝另一个方向走Y步。\n\n例如，\"向东走五步\"这个想法可以用以下循环来表示:\n\n    for (let step = 0; step < 5; step++) {\n      // 运行5次，step的值从0到4。\n\n\n      console.log('向东走一步');\n    }\n    \n\n",
+      "links": [
+        {
+          "title": "循环和迭代",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration",
+          "type": "article"
+        },
+        {
+          "title": "发现关于JavaScript的热门文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "for循环",
+          "description": "`for`循环（for loop）是包括JavaScript在内的许多编程语言中的一个标准控制流结构。\n\n它通常用于遍历给定的序列或迭代已知次数，并在每次迭代时执行一段代码。\n\n",
+          "links": [
+            {
+              "title": "JavaScript for循环 - CodeGuage",
+              "url": "https://www.codeguage.com/courses/js/loops-for-loop",
+              "type": "article"
+            },
+            {
+              "title": "for循环 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d1403908-69bf-47b4-8f6d-a6f3bfade0d3",
+          "xid": "f3531420-5ad2-47cd-a0a2-d5743ca6b561"
+        },
+        {
+          "title": "do...while（do...while语句）",
+          "description": "`do...while` 语句创建一个循环，该循环在指定条件评估为 `false` 之前一直执行指定的语句。\n\n条件在执行该语句之后进行评估，确保指定的语句至少执行一次。\n\n",
+          "links": [
+            {
+              "title": "do...while - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript do...while 循环 - W3Schools",
+              "url": "https://www.w3schools.com/jsref/jsref_dowhile.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a4e20cb8-a9df-45af-a480-2a92c1041932",
+          "xid": "aeb98935-036d-494f-9c4f-d7daf058c13c"
+        },
+        {
+          "title": "while循环",
+          "description": "`while` 语句创建一个循环，只要测试条件评估为 `true`（true），就会执行指定的语句。\n\n条件在执行语句之前进行评估。\n\n",
+          "links": [
+            {
+              "title": "While 语句 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while",
+              "type": "article"
+            },
+            {
+              "title": "while 循环 - CodeGuage",
+              "url": "https://www.codeguage.com/courses/js/loops-while-loop",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cefc460e-86b2-4020-94c8-0a7502ca69b7",
+          "xid": "7a30b1fb-20f6-49e4-b5b8-620d10695291"
+        },
+        {
+          "title": "for...in 循环",
+          "description": "for...in 语句遍历对象中所有可枚举的属性，这些属性由字符串键（忽略由 Symbols 键的那些）组成，包括继承的可枚举属性。\n\n",
+          "links": [
+            {
+              "title": "for...in 语句 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in",
+              "type": "article"
+            },
+            {
+              "title": "for..in 循环示例",
+              "url": "https://javascript.info/object#forin",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d5e5dcc2-3b74-4f41-a5b6-804efad2eb23",
+          "xid": "8d33d6dc-9b38-48df-b2c4-3ca6d9076830"
+        },
+        {
+          "title": "for...of 循环",
+          "description": "for...of 语句执行一个循环，该循环基于可迭代对象生成的值序列操作。\n\n可迭代对象包括内置类型实例（如 Array、String、TypedArray、Map、Set、NodeList（以及其他 DOM 集合）和 arguments 对象），由生成器函数产生的生成器，以及用户定义的可迭代对象。\n\n",
+          "links": [
+            {
+              "title": "for...of 语句 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "65314149-5813-43a2-bc5e-a91cc00eb296",
+          "xid": "90c70805-1eaf-42e5-a597-ea44501204eb"
+        },
+        {
+          "title": "break / continue",
+          "description": "`break` 语句（break statement），如果没有标签引用，只能用于跳出循环或 switch 代码块。\n\n`continue` 语句（continue statement），无论是否有标签引用，只能用于跳过一个循环迭代。\n\n",
+          "links": [
+            {
+              "title": "JavaScript MDN 文档 - continue 语句",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript MDN 文档 - break 语句",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools – JavaScript 教程",
+              "url": "https://www.w3schools.com/js/js_break.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "80351bbc-8d84-4a9a-a6bf-3c7a5ebcdd54",
+          "xid": "f0a24cc1-e2ec-4f87-9d97-c68988f1bc3a"
+        }
+      ],
+      "id": "6bc45eed-7455-49aa-b247-fec5d584df3c",
+      "xid": "0903ed54-20c8-4cbc-823c-9c769807aee1"
+    },
+    {
+      "title": "控制流",
+      "description": "在JavaScript中，`控制流(Control flow)`是指计算机从上到下运行代码的方法。\n\n它从第一行开始，结束于最后一行，除非遇到任何改变程序控制流的语句，例如循环、条件语句等。\n\n我们可以通过以下控制结构来控制程序的流程：\n\n*   顺序结构（默认模式）\n*   条件语句\n*   异常处理\n*   循环和迭代\n\n",
+      "links": [
+        {
+          "title": "控制流 - MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Control_flow",
+          "type": "article"
+        },
+        {
+          "title": "探索关于JavaScript的热门文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "条件语句",
+          "description": "编写代码时，您经常希望根据不同的决策执行不同的操作。\n\n您可以在代码中使用条件语句来实现这一点。\n\n在JavaScript中，我们有三种条件语句：`if`（if），`if...else`（if...else）和`switch`（switch）。\n\n",
+          "links": [
+            {
+              "title": "在代码中进行决策 — 条件语句",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals",
+              "type": "article"
+            },
+            {
+              "title": "条件分支：if, ?",
+              "url": "https://javascript.info/ifelse",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "if...else",
+              "description": "`if` 语句会在指定条件为 `truthy`（真值）时执行一个语句。\n\n如果条件为 `falsy`（假值），则将在可选的 `else` 子句中执行另一个语句。\n\n示例\n-------\n\n    if (condition) {\n      statement1;\n    } else {\n      statement2;\n    }\n    \n\n",
+              "links": [
+                {
+                  "title": "if...else - MDN 文档",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else",
+                  "type": "article"
+                },
+                {
+                  "title": "条件分支：if, ? - javascript.info",
+                  "url": "https://javascript.info/ifelse",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c6c89c97-54ea-42f9-becc-0ad531fc0bee",
+              "xid": "1c9803f0-4980-4052-a596-37ec6611dc3d"
+            },
+            {
+              "title": "Switch（开关语句）",
+              "description": "`switch` 语句评估一个表达式，将表达式的值与一系列的 `case（情况）` 子句进行匹配，并执行第一个匹配值的 `case` 子句后的语句，直到遇到 `break（中断）` 语句。\n\n如果没有任何 `case` 子句匹配表达式的值，`default（默认）` 子句将被执行。\n\n示例\n-------\n\n    switch (expression) {\n      case value1:\n        //当表达式的结果与 value1 匹配时执行的语句\n        break;\n      case value2:\n        //当表达式的结果与 value2 匹配时执行的语句\n        break;\n      ...\n      case valueN:\n        //当表达式的结果与 valueN 匹配时执行的语句\n        break;\n      default:\n        //当没有值与表达式的值匹配时执行的语句\n        break;\n    }\n    \n\n",
+              "links": [
+                {
+                  "title": "switch - MDN",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch",
+                  "type": "article"
+                },
+                {
+                  "title": "开关语句: 为什么、是什么和怎么做 - CodeGuage",
+                  "url": "https://www.codeguage.com/courses/js/conditions-switch",
+                  "type": "article"
+                },
+                {
+                  "title": "开关语句 - javascript.info",
+                  "url": "https://javascript.info/switch",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d83507e4-35f0-4238-a25f-1226baa609b1",
+              "xid": "d25d35a5-a0da-4bed-a16c-bf95c7a2a255"
+            }
+          ],
+          "id": "5091f3c2-4e4c-4f1a-8a5f-cc50682ac440",
+          "xid": "de55f4a4-ac0a-4201-bec2-152e6120d431"
+        },
+        {
+          "title": "异常处理",
+          "description": "在JavaScript中，所有异常都是简单的对象。\n\n虽然大多数异常都是全局Error类（Error）的实现，但任何对象都可以被抛出。\n\n基于此，抛出异常有两种方式：直接通过Error对象抛出，以及通过自定义对象抛出。\n\n(摘自Rollbar)\n\n",
+          "links": [
+            {
+              "title": "在JavaScript中抛出异常",
+              "url": "https://rollbar.com/guides/javascript/how-to-throw-exceptions-in-javascript",
+              "type": "article"
+            },
+            {
+              "title": "try, catch, finally, throw(视频)",
+              "url": "https://youtu.be/cFTFtuEQ-10",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "throw 语句 (throw statement)",
+              "description": "throw 语句 (throw statement) 抛出一个用户定义的异常。\n\n当前函数的执行将停止（throw 之后的语句不会被执行），并且控制权将传递给调用栈中的第一个 catch 块 (catch block)。\n\n如果在调用函数中不存在 catch 块，则程序将终止。\n\n(摘自 MDN)\n\n",
+              "links": [
+                {
+                  "title": "throw 语句 (throw statement) - w3schools",
+                  "url": "https://www.w3schools.com/jsref/jsref_throw.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript MDN 文档",
+                  "url": "https://developer.mozilla.org/en-us/docs/web/javascript/reference/statements/throw",
+                  "type": "article"
+                },
+                {
+                  "title": "错误处理",
+                  "url": "https://javascript.info/error-handling",
+                  "type": "article"
+                },
+                {
+                  "title": "\"throw\" 操作符",
+                  "url": "https://javascript.info/try-catch#throw-operator",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ad56cbfd-181f-480b-a2f5-061dee08be11",
+              "xid": "7403d4ac-55bc-4570-a7b8-a98e51f2e8b4"
+            },
+            {
+              "title": "try/catch/finally",
+              "description": "这些是处理JavaScript代码中错误的方法。\n\n在try代码块内包含要运行的代码，在catch代码块内处理错误，在finally代码块内包含在前一个代码块执行后的运行代码，无论执行结果如何都会运行。\n\n",
+              "links": [
+                {
+                  "title": "JavaScript 错误（JavaScript Errors）",
+                  "url": "https://www.w3schools.com/js/js_errors.asp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8e521391-5b4c-42ac-96a4-a05ab2333f16",
+              "xid": "55bc9ca7-7e12-477b-9e9a-0af119e60977"
+            },
+            {
+              "title": "错误对象",
+              "description": "当运行时发生错误时，会创建一个新的 `Error` (Error)对象并抛出。\n\n通过此 `Error` 对象，我们可以确定错误类型，并根据其类型进行处理。\n\n错误类型\n---------\n\n除了错误构造函数，JavaScript 还有其他核心 Error 构造函数，例如\n\n*   AggregateError - 同时抛出的一组错误 (AggregateError)。\n\n\n*   EvalError - 在 JavaScript 表达式求值期间发生的错误 (EvalError)。\n\n\n*   InternalError - JavaScript 发生的内部错误 (InternalError)，通常表示引擎中存在一个 bug。\n\n\n*   RangeError - 给定操作的价值超出了允许的范围 (RangeError)。\n\n\n*   ReferenceError - 在引用一个变量或对象之前未被声明或不存在 (ReferenceError)。\n\n\n*   SyntaxError - 代码中存在错误的语法，使其无法被解析 (SyntaxError)。\n\n示例\n-----\n\n    try {\n      willGiveErrorSometime();\n    } catch (error) {\n      if (error instanceof RangeError) {\n        rangeErrorHandler(error);\n      } else if (error instanceof ReferenceError) {\n        referenceErrorHandle(error);\n      } else {\n        errorHandler(error);\n      }\n    }\n    \n\n",
+              "links": [
+                {
+                  "title": "错误对象 - MDN",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+                  "type": "article"
+                },
+                {
+                  "title": "控制流与错误处理 - MDN",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
+                  "type": "article"
+                },
+                {
+                  "title": "一组错误 (AggregateError)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError",
+                  "type": "article"
+                },
+                {
+                  "title": "表达式求值错误 (EvalError)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+                  "type": "article"
+                },
+                {
+                  "title": "内部错误 (InternalError)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+                  "type": "article"
+                },
+                {
+                  "title": "范围错误 (RangeError)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+                  "type": "article"
+                },
+                {
+                  "title": "引用错误 (ReferenceError)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+                  "type": "article"
+                },
+                {
+                  "title": "语法错误 (SyntaxError)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "14e03989-43d3-4dd6-8ee9-cee75d1dc2ee",
+              "xid": "300cfd0c-d7a1-4a14-99e8-dd659f871fac"
+            }
+          ],
+          "id": "d46a9b05-0792-4307-958d-8da169e01e39",
+          "xid": "adae06ec-adbd-4511-9d7a-7bac4173b478"
+        }
+      ],
+      "id": "1f8a3484-7b23-456c-ae91-b49aee900265",
+      "xid": "dc132f1a-7b97-40a5-b3ba-2355c9145782"
+    },
+    {
+      "title": "表达式与运算符",
+      "description": "从高层次来看，表达式是解析为值的有效代码单元。\n\n表达式主要有两类：具有副作用（如赋值）的表达式和纯粹进行求值的表达式。\n\n表达式`x = 7`是第一种类型的例子。\n\n此表达式使用赋值运算符（`=`）将值7赋给变量x。\n\n该表达式自身计算得到7。\n\n表达式`3 + 4`是第二种类型的例子。\n\n此表达式使用加法运算符（`+`）将3和4相加得到7。\n\n然而，如果不作为某种更复杂结构的一部分使用（例如，变量声明`const z = 3 + 4`），其结果将被立即丢弃 —— 这通常是程序员的错误，因为该评估不产生任何实际效果。\n\n以上示例也表明，所有复杂的表达式都是由运算符连接的，如`=`和`+`。\n\n",
+      "links": [
+        {
+          "title": "表达式和运算符",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators",
+          "type": "article"
+        },
+        {
+          "title": "探索顶级JavaScript文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "赋值运算符（Assignment Operators）",
+          "description": "赋值运算符（Assignment Operator）将其右侧操作数的值赋给左侧操作数。\n\n简单的赋值运算符是等号（`=`），它将右侧操作数的值赋给左侧操作数。\n\n也就是说，表达式 `x = f()` 将函数 `f()` 的返回值赋给变量 `x`。\n\n",
+          "links": [
+            {
+              "title": "赋值运算符（Assignment Operators）",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators",
+              "type": "article"
+            },
+            {
+              "title": "基本运算符（Basic Operators）",
+              "url": "https://javascript.info/operators#assignment",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c9b12cd6-1adc-4fb9-8a16-f2f33c72056f",
+          "xid": "c36e741e-5640-48a4-9ca8-31b77a7c7c7e"
+        },
+        {
+          "title": "比较运算符",
+          "description": "比较运算符是比较值并返回true或false的运算符。\n\n这些运算符包括：`>`, `<`, `>=`, `<=`, `==`, `===`, `!=` 和 `!==`\n\n",
+          "links": [
+            {
+              "title": "W3Schools - JavaScript 教程",
+              "url": "https://www.w3schools.com/js/js_comparisons.asp",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript MDN 文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#comparison_operators",
+              "type": "article"
+            },
+            {
+              "title": "比较运算符",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#comparison_operators",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "de8e28bb-9da6-4142-9a78-4e37f7f742b0",
+          "xid": "a0dbb811-ad7b-44cc-abf3-b859cf6b0ada"
+        },
+        {
+          "title": "算术运算符",
+          "description": "算术运算符执行加法、减法、乘法、除法、乘方和余数运算。\n\nJavaScript中的算术运算符如下所示：\n\n*   `+`（加法）\n*   `-`（减法）\n*   `*`（乘法）\n*   `**`（乘方）\n*   `/`（除法）\n*   `%`（模，即余数）\n*   `++`（自增）\n*   `--`（自减）\n\n",
+          "links": [
+            {
+              "title": "算术运算符 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#arithmetic_operators",
+              "type": "article"
+            },
+            {
+              "title": "算术运算符 - JavaScript.info",
+              "url": "https://javascript.info/operators#maths",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 算术运算符",
+              "url": "https://www.w3schools.com/js/js_arithmetic.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c82b3584-2e26-46d8-89ad-d2c919d2b011",
+          "xid": "52ee731a-1e3f-4c97-b870-d4047ba2650e"
+        },
+        {
+          "title": "位运算符",
+          "description": "位运算符将参数视为32位（0和1）并作用于其二进制表示的层面。\n\n例如，十进制数`9`具有二进制表示`1001`。\n\n位运算符在这样的二进制表示上执行操作，但返回标准的JavaScript数值型值。\n\nJavaScript中的位运算符如下：\n\n*   `&` （AND）\n*   `|` （OR）\n*   `^` （XOR）\n*   `~` （NOT）\n*   `<<` （左移LEFT SHIFT）\n*   `>>` （右移RIGHT SHIFT）\n*   `>>>` （零填充右移ZERO-FILL RIGHT SHIFT）\n\n",
+          "links": [
+            {
+              "title": "位运算符 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#bitwise_operators",
+              "type": "article"
+            },
+            {
+              "title": "位运算符 - JavaScript.info",
+              "url": "https://javascript.info/operators#bitwise-operators",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2ae85845-7eef-4605-a685-e0d9fca9b726",
+          "xid": "7d1bcd76-c66d-46c6-834d-70d36d6a1b48"
+        },
+        {
+          "title": "逻辑运算符",
+          "description": "JavaScript中有四个逻辑运算符：`||` （OR），`&&` （AND），`!` （NOT），`??` （Nullish Coalescing）。\n\n",
+          "links": [
+            {
+              "title": "逻辑运算符 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#binary_logical_operators",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "315cb8d0-3a34-4444-8da6-0aa2fa55ebbe",
+          "xid": "e03d61f0-0a76-4986-a924-558cb2963e25"
+        },
+        {
+          "title": "BigInt 操作符（BigInt Operators）",
+          "description": "大多数可以与 `Number` 数据类型一起使用的操作符也可以与 `BigInt` 值一起使用（例如算术、比较等）。\n\n但是，无符号右移 `>>>` 操作符是一个特例，不被支持。\n\n同样，某些操作符的行为可能会有一些细微的差别（例如，使用 `BigInt` 进行除法运算会朝零取整）。\n\n",
+          "links": [
+            {
+              "title": "BigInt 操作符（BigInt Operators）",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#bigint_operators",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "486e0d3f-0d81-4819-a8c5-69a0637318dc",
+          "xid": "7b7ff018-f5a2-46bf-8c3c-5225c0b9b2c3"
+        },
+        {
+          "title": "字符串操作符",
+          "description": "除了可用于字符串值的比较操作符，连接操作符 (`+`) 可以将两个字符串值连接在一起，返回一个新的字符串，该字符串是两个操作数字符串的组合。\n\n简写赋值操作符 `+=` 也可以用于连接字符串。\n\n",
+          "links": [
+            {
+              "title": "JavaScript MDN 教程",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#string_operators",
+              "type": "article"
+            },
+            {
+              "title": "字符串连接 - JavaScript.info",
+              "url": "https://javascript.info/operators#string-concatenation-with-binary",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "07cc547a-24af-41e8-b310-c823c3760aa0",
+          "xid": "bfd7d7b8-a745-4183-a7f4-ceda159e5ba1"
+        },
+        {
+          "title": "条件运算符",
+          "description": "条件运算符（Conditional operator）也称为三元运算符（Ternary operator），是JavaScript中唯一一个接受三个操作数的运算符。\n\n基于一个条件，该运算符可以有两个值之一。\n\n语法：\n\n`条件 ? 真值 : 假值`\n\n",
+          "links": [
+            {
+              "title": "JavaScript MDN 文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#conditional_operator",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools - JavaScript 教程",
+              "url": "https://www.w3schools.com/js/js_comparisons.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6041116d-2a65-4b05-91c3-54578841ce16",
+          "xid": "d3763c42-6ff9-4b63-8611-01b8cde59e0a"
+        },
+        {
+          "title": "逗号运算符",
+          "description": "逗号运算符（`,`）会从左至右计算其每个操作数，并返回最后一个操作数的值。\n\n这使您可以创建一个复合表达式，其中会求解多个表达式，并且复合表达式的最终值为成员表达式的最右侧表达式的值。\n\n这通常用于为 `for` 循环提供多个参数。\n\n",
+          "links": [
+            {
+              "title": "逗号运算符",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a3bf1c14-8dd8-4ef9-8e3c-ad07376f4f0b",
+          "xid": "4611b319-031a-458a-90b3-74d5b179d35f"
+        },
+        {
+          "title": "一元运算符",
+          "description": "JavaScript 一元运算符 (Unary Operators) 是一种特殊类型的运算符，它们只对一个操作数 (operand) 进行操作并执行所有类型的操作。\n\n这些运算符包括一元加号 (unary plus)、一元减号 (unary minus)、前缀递增 (prefix increments)、后缀递增 (postfix increments)、前缀递减 (prefix decrements) 和后缀递减 (postfix decrements)。\n\n",
+          "links": [
+            {
+              "title": "JavaScript 中的一元运算符",
+              "url": "https://www.educba.com/unary-operators-in-javascript/",
+              "type": "article"
+            },
+            {
+              "title": "一元运算符 - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#unary_operators",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "205e7fa4-91f9-474d-8a90-683a198891a5",
+          "xid": "e63daf81-3f2b-4321-b0d1-20e21a5f79d6"
+        },
+        {
+          "title": "关系运算符 (relational-operators)",
+          "description": "关系运算符 (relational-operators)",
+          "links": [],
+          "children": [],
+          "id": "e13d98ff-c083-4cc5-8736-12d91b872754",
+          "xid": "189fcae3-d13e-454e-a036-346ec662dce5"
+        }
+      ],
+      "id": "631600b8-fad8-4f5d-9e5c-bfc082a4b4e2",
+      "xid": "ef1b25b0-59ab-4583-b44a-9053735ad5cb"
+    },
+    {
+      "title": "函数",
+      "description": "函数的存在是为了可以复用代码。\n\n它们是一段代码，在被调用时执行。\n\n每个函数通常都写来执行特定任务，例如，加法函数用于求两个或多个数字的和。\n\n在代码中的任何需要求和的地方，都可以根据需要多次调用加法函数。\n\n",
+      "links": [
+        {
+          "title": "函数 - MDN 文档",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript 函数详解 - CodeGuage",
+          "url": "https://www.codeguage.com/courses/js/functions-basics",
+          "type": "article"
+        },
+        {
+          "title": "关于 JavaScript 的热门文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "函数参数",
+          "description": "参数是指在函数定义中声明的变量名称。\n\n有两种特殊的语法形式：默认参数（default parameters）和剩余参数（rest parameters）。\n\n",
+          "links": [
+            {
+              "title": "函数参数",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#function_parameters",
+              "type": "article"
+            },
+            {
+              "title": "使用剩余参数实现函数的无限参数",
+              "url": "https://www.amitmerchant.com/unlimited-function-parameters-with-using-rest-in-java-script/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "默认参数",
+              "description": "默认函数参数允许在未传递值或传递了`undefined`时，用默认值初始化命名参数。\n\n",
+              "links": [
+                {
+                  "title": "默认参数 - MDN文档",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "3615175c-3e69-4662-ac39-004d5685bc8b",
+              "xid": "fd665aad-7b91-4629-9633-f072cf76d528"
+            },
+            {
+              "title": "休息",
+              "description": "剩余参数语法允许函数接受不确定数量的参数，并将这些参数作为数组进行传递，这为在JavaScript中表示[可变参数函数](variadic functions)提供了一种方式。\n\n",
+              "links": [
+                {
+                  "title": "剩余参数 - MDN文档",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于REST API的热门帖子",
+                  "url": "https://app.daily.dev/tags/rest-api?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "9633fb18-907c-472d-899b-aa5905720ae1",
+              "xid": "5d5a4527-18c4-4e82-9503-05f8a17c85ac"
+            }
+          ],
+          "id": "8ca60042-55fa-4fe5-a1d8-bf97572e69b1",
+          "xid": "122d835c-589c-403e-bddd-107c112fcfb1"
+        },
+        {
+          "title": "箭头函数(Arrow Functions)",
+          "description": "箭头函数(Arrow Function)是使用' =>'操作符创建函数的一种新的、语法更简洁的方法。\n\n示例\n-------\n\n    const sayHello = () => {\n        console.log(`Hello from Arrow Function !`);\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "MDN - 箭头函数表达式(Arrow Function Expressions)",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 箭头函数(Arrow Function)",
+              "url": "https://www.w3schools.com/js/js_arrow_function.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "10fea0e4-7296-4be3-807a-d7c13cca923a",
+          "xid": "1b427c4f-1857-433b-bb5b-a5fdfe10e325"
+        },
+        {
+          "title": "立即调用函数表达式(IIFEs)",
+          "description": "立即调用函数表达式是一种在创建后立即执行的函数。\n\n示例\n-------\n\n    // 一个异步 IIFE\n    ( async() => {\n        \n        const x = 1;\n        const y = 9;\n    \n        console.log(`Hello, The Answer is ${x+y}`);\n    \n    })();\n    \n\n",
+          "links": [
+            {
+              "title": "IIFE — MDN 文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Glossary/IIFE",
+              "type": "article"
+            },
+            {
+              "title": "用英语解释的 JavaScript - IIFE",
+              "url": "https://javascript.plainenglish.io/https-medium-com-javascript-in-plain-english-stop-feeling-iffy-about-using-an-iife-7b0292aba174",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "521d9d96-6cb6-46d7-9175-5d64b0293f08",
+          "xid": "2dbe197a-7d41-41c8-9d62-4b9e498bfb79"
+        },
+        {
+          "title": "arguments对象(Arguments object)",
+          "description": "arguments对象(Arguments object)是一个类数组对象，可在一个函数内部访问，它包含了传递给该函数的参数值。\n\n该对象在所有非箭头函数内部都可用。\n\n可以通过该函数的arguments对象来引用函数内部的参数。\n\narguments对象的条目对应于函数被调用时每个传入的参数，第一个条目的索引为0。\n\n但在现代代码中，应当优先使用剩余参数语法。\n\n",
+          "links": [
+            {
+              "title": "arguments对象 - MDN文档(The arguments object - MDN Docs)",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "963e810e-db2d-466b-9875-26f505387aed",
+          "xid": "2e30a392-93d2-442b-b935-50d2eade5521"
+        },
+        {
+          "title": "作用域与函数调用栈",
+          "description": "作用域\n-----\n\n一种空间或环境，在其中可以访问或使用特定的变量或函数。\n\n这种变量或函数的可访问性取决于它的定义位置。\n\nJavaScript 有以下几种作用域类型：\n\n*   **全局作用域（Global scope）**: 脚本模式下所有代码的默认作用域。\n\n\n*   **模块作用域（Module scope）**: 模块模式下代码的作用域。\n\n\n*   **函数作用域（Function scope）**: 通过函数创建的作用域。\n\n\n*   **块级作用域（Block scope）**: 通过一对大括号（一个块）创建的作用域。\n\n函数调用栈（Call stack）\n---------------------------\n\n函数调用栈是解释器如何跟踪其在调用多个函数的脚本中的位置，例如目前执行的是哪个函数以及该函数中正在调用的哪些函数。\n\n",
+          "links": [
+            {
+              "title": "函数调用栈（Call stack） - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Glossary/Call_stack",
+              "type": "article"
+            },
+            {
+              "title": "作用域类型（Scope） - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Glossary/Scope",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "递归",
+              "description": "递归（Recursion）是函数中一个强大而优美的概念，指的是函数调用自身的过程。\n\n这样的函数被称为**递归函数（recursive function）**。\n\n随着递归的发生，递归函数的底层代码会一次又一次地重复执行，直到满足一个终止条件，即**基本情况（base case）**。\n\n随着你深入算法的世界，你会在很多很多的场合遇到递归。\n\n",
+              "links": [
+                {
+                  "title": "递归与栈",
+                  "url": "https://javascript.info/recursion",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 函数递归 - CodeGuage",
+                  "url": "https://www.codeguage.com/courses/js/functions-recursions",
+                  "type": "article"
+                },
+                {
+                  "title": "递归 - MDN",
+                  "url": "https://developer.mozilla.org/en-US/docs/Glossary/Recursion",
+                  "type": "article"
+                },
+                {
+                  "title": "浏览关于递归的热门帖子",
+                  "url": "https://app.daily.dev/tags/recursion?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1ad56379-0c38-4e7f-9677-e00f508d1f28",
+              "xid": "eb0597ef-e524-4977-ad8f-52ec260b797a"
+            },
+            {
+              "title": "词法作用域（Lexical Scoping）",
+              "description": "在对 JavaScript 中的闭包形成直观理解之前，首先需要掌握“词法环境（lexical environment）”这一术语。\n\n简单来说，一个函数 `f` 的词法环境就是该函数定义在源代码中所处的环境。\n\n",
+              "links": [
+                {
+                  "title": "什么是词法环境? - JavaScript - CodeGuage",
+                  "url": "https://www.codeguage.com/courses/js/functions-closures#What_is_a_lexical_environment",
+                  "type": "article"
+                },
+                {
+                  "title": "词法作用域 - JavaScript - MDN",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#lexical_scoping",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "dd19b882-f6b5-43e2-9726-49252bc43e73",
+              "xid": "66ac2b8c-270c-4ba8-9914-d09504eb811d"
+            },
+            {
+              "title": "闭包(Closures)",
+              "description": "函数闭包是JavaScript中最强大同时也是最令人困惑的概念之一，但实际上这些概念是相当简单的。\n\n闭包指的是一个函数及其词法环境(Lexical Environment)。\n\n本质上，它使我们能够从另一个函数`B`返回一个函数`A`，即使`B`已经执行完毕，函数`A`仍可以记住在`B`中定义的局部变量。\n\n闭包的概念几乎出现在每个JavaScript程序中，因此，对于JavaScript开发者而言，彻底掌握此概念至关重要。\n\n",
+              "links": [
+                {
+                  "title": "JavaScript闭包闭包(Closures) - 最简单的解释",
+                  "url": "https://www.codeguage.com/courses/js/functions-closures",
+                  "type": "article"
+                },
+                {
+                  "title": "3分钟内解释JavaScript闭包(Closures)",
+                  "url": "https://medium.com/learning-new-stuff/javascript-closures-explained-in-3-minutes-5aae8dce2014",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7243a7fc-a3a5-478f-a999-6c9d5a15d48c",
+              "xid": "92a427c2-4f47-482c-acad-b14c49d70b2f"
+            }
+          ],
+          "id": "b42e67cb-1305-4dca-b3c2-11338341c6aa",
+          "xid": "1dc06f04-c07e-4adb-a057-ce1beed724d3"
+        },
+        {
+          "title": "内置函数",
+          "description": "*   在JavaScript中，**方法** 是包含**函数定义** 的属性。\n\n换句话说，当存储在对象上的数据是一个函数时，我们就称其为方法。\n\n\n*   要区分属性和方法，我们可以这样考虑：**属性是对象所拥有的，而方法是对象所执行的操作。\n\n**\n*   由于JavaScript方法是可以在对象上执行的操作，所以我们首先需要有对象作为起点。\n\nJavaScript中内置了几个可以使用的对象。\n\n",
+          "links": [
+            {
+              "title": "JavaScript 内置函数",
+              "url": "https://www.tutorialspoint.com/javascript/javascript_builtin_functions.htm",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 中的内置方法",
+              "url": "https://dev.to/elpepebenitez/built-in-methods-in-javascript-4bll",
+              "type": "article"
+            },
+            {
+              "title": "内置函数：",
+              "url": "https://www.tutorialride.com/javascript/javascript-built-in-functions.htm",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "10fa5c4f-7042-4179-a41a-867def9e7e36",
+          "xid": "014b013c-9a84-40e0-a090-e2034154d68f"
+        }
+      ],
+      "id": "07c90a00-6207-4514-bfb0-d1259d4e07e6",
+      "xid": "3441b566-23f1-4728-ba68-f94db91d5bd1"
+    },
+    {
+      "title": "严格模式(Strict Mode)",
+      "description": "JavaScript的严格模式是一种选择使用受限版本JavaScript的方式，从而隐式地退出\"宽松模式(Sloppy Mode)\"。\n\n严格模式不仅仅是子集，它在语义上与常规代码有意不同。\n\n不支持严格模式的浏览器可能会以不同于支持严格模式的浏览器的行为执行严格模式代码，因此不要在没有特征测试严格模式相关方面的支持的情况下依赖严格模式。\n\n严格模式代码和非严格模式代码可以共存，从而允许脚本逐步采用严格模式。\n\n严格模式对正常的JavaScript语义进行了几个更改：\n\n* 消除一些JavaScript的静默错误，将其转变为抛出错误。\n\n\n* 修复一些使JavaScript引擎难以进行优化的错误：严格模式代码有时可以比非严格模式的代码执行得更快。\n\n\n* 禁用一些可能在ECMAScript未来版本中被定义的语法。\n\n\n",
+      "links": [
+        {
+          "title": "严格模式(Strict mode)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript中的严格模式(Strict mode)",
+          "url": "https://javascript.info/strict-mode",
+          "type": "article"
+        },
+        {
+          "title": "探索关于JavaScript的顶级文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "a5fd1bb7-cb3e-490a-9939-5a536c299eeb",
+      "xid": "83c70e50-d552-4704-9b59-e0280f792351"
+    },
+    {
+      "title": "使用 (this) 关键字",
+      "description": "在 JavaScript 中，`this` 关键字与其他语言相比稍有不同。\n\n它指的是一个对象，但它取决于它被调用的方式或位置。\n\n它在严格模式（strict mode）和非严格模式之间也有所不同。\n\n*   在对象方法中，`this` 指的是该对象\n*   单独使用时，`this` 指的是全局对象\n*   在函数中，`this` 指的是全局对象\n*   在函数中，如果在严格模式下，`this` 未定义\n*   在事件中，`this` 指的是接收该事件的元素\n*   `call()`、`apply()` 和 `bind()` 等方法可以将 `this` 指向任何对象\n\n",
+      "links": [
+        {
+          "title": "JavaScript 中的 this 关键字",
+          "url": "https://www.w3schools.com/js/js_this.asp",
+          "type": "article"
+        },
+        {
+          "title": "this 关键字",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 JavaScript 的热门文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "函数借用(Function Borrowing)",
+          "description": "函数借用(Function Borrowing)使我们能够在一个对象上使用另一个对象的方法，而无需复制该方法并在两个不同的地方维护。\n\n这是通过使用 `.call()`、`.apply()` 或 `.bind()` 实现的，它们都用于明确设置要借用的方法的 this。\n\n",
+          "links": [
+            {
+              "title": "函数借用(Function Borrowing)",
+              "url": "https://medium.com/@ensallee/function-borrowing-in-javascript-4bd671e9d7b4",
+              "type": "article"
+            },
+            {
+              "title": "在什么情况下我会使用函数借用(Function Borrowing)",
+              "url": "https://stackoverflow.com/questions/69892281/when-would-i-use-function-borrowing",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d5e71656-2845-4835-8b6c-adacac8032c8",
+          "xid": "639f86a9-fa33-47b0-972f-1f26f9b596bf"
+        },
+        {
+          "title": "显式绑定（Explicit Binding）",
+          "description": "显式绑定（Explicit Binding）是指当你使用 `call` 或 `apply` 方法来明确设置函数中的 `this` 值。\n\n显式绑定（Explicit Binding）可以通过 `call()`、`apply()` 和 `bind()` 进行应用。\n\n",
+          "links": [
+            {
+              "title": "显式绑定（Explicit Binding）",
+              "url": "https://medium.com/swlh/javascript-this-ac28f8e0f65d",
+              "type": "article"
+            },
+            {
+              "title": "this 关键字的显式绑定（Explicit Binding）规则",
+              "url": "https://medium.com/@msinha2801/explicit-binding-rule-for-this-keyword-in-js-712405b0a11",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "dd5f9e33-7c50-47fe-bf8c-8fcf5b9a1339",
+          "xid": "83008331-2398-4417-a5ce-c28bf975a787"
+        },
+        {
+          "title": "在方法中",
+          "description": "方法是对象的属性，它们是函数。\n\n在方法内部，this 的值等于调用该方法的对象。\n\n简单来说，this 的值就是“点”之前的对象，也就是用来调用该方法的对象。\n\n",
+          "links": [
+            {
+              "title": "方法中的 this",
+              "url": "https://javascript.info/object-methods#this-in-methods",
+              "type": "article"
+            },
+            {
+              "title": "关于 this 关键字的简明清晰的文章",
+              "url": "https://www.w3schools.com/js/js_this.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e76a007e-a235-447f-a6cb-aa869e279dae",
+          "xid": "89a3cbc0-253b-466f-ba33-e52314efa643"
+        },
+        {
+          "title": "在函数中",
+          "description": "关键字`this`在函数中使用时，指的是全局对象。\n\n_注意：在浏览器窗口中，全局对象是`window`对象_。\n\n",
+          "links": [
+            {
+              "title": "函数中的this",
+              "url": "https://www.w3schools.com/js/js_this.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "600c5c19-974f-4933-90cf-70f8d3c97422",
+          "xid": "e80e1eb7-679b-49af-bb9d-77e6aa976b3b"
+        },
+        {
+          "title": "单独使用",
+          "description": "关键字`this`在单独使用时，指的是全局对象。\n\n_注意：在浏览器窗口中，全局对象是`window`对象。\n\n_\n\n",
+          "links": [
+            {
+              "title": "单独使用的this",
+              "url": "https://www.w3schools.com/js/js_this.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "78fc9ad5-057e-4a89-bea8-cac9ac7c396a",
+          "xid": "25e08e27-990b-4015-be41-5ae849ae1c54"
+        },
+        {
+          "title": "在事件处理程序中",
+          "description": "当在事件处理程序中使用关键字`this`时，它指的是接收事件的元素。\n\n",
+          "links": [
+            {
+              "title": "事件处理程序中的this",
+              "url": "https://www.w3schools.com/js/js_this.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6ba7eb82-8b90-47bb-89b8-71cde0c5143c",
+          "xid": "81927bb3-e1f0-4b89-a272-bf6425de21da"
+        },
+        {
+          "title": "在箭头函数中",
+          "description": "关键词`this`在箭头函数中用于引用父对象。\n\n",
+          "links": [
+            {
+              "title": "this关键词和箭头函数",
+              "url": "https://stackoverflow.com/questions/66518020/javascript-this-keyword-and-arrow-function",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3eeab6bc-9a98-4ef7-9fc5-2db13c6d3686",
+          "xid": "20913ff8-c178-4ee3-ad9c-83435e12603c"
+        }
+      ],
+      "id": "3d667053-2d7b-4839-a788-240c8d6e450c",
+      "xid": "b8bad460-f465-40c6-b2d6-0bdf27b4412f"
+    },
+    {
+      "title": "异步JavaScript (Asynchronous JavaScript)",
+      "description": "异步编程 (Asynchronous programming) 是一种技术，它可以让您的程序启动一个可能耗时很长的任务，同时仍能对其他事件做出响应，而不是必须等待该任务完成。\n\n一旦任务完成，您的程序会得到结果。\n\n浏览器提供的许多函数，特别是最有趣的那些，可能需要很长的运行时间，因此它们是异步的 (asynchronous)。\n\n例如：\n\n*   使用 `fetch()` 进行 HTTP 请求\n*   使用 `getUserMedia()` 访问用户的摄像头或麦克风\n*   使用 `showOpenFilePicker()` 请求用户选择文件\n\n因此，即使您可能不经常需要实现自己的异步函数 (asynchronous functions)，也很可能需要正确使用它们。\n\n",
+      "links": [
+        {
+          "title": "异步JavaScript (Asynchronous JavaScript) - MDN",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing",
+          "type": "article"
+        },
+        {
+          "title": "探索关于JavaScript的优质文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "什么是事件循环和异步JavaScript (Asynchronous JavaScript) - JSConf",
+          "url": "https://youtu.be/8aGhZQkoFbQ",
+          "type": "video"
+        },
+        {
+          "title": "异步JavaScript (Asynchronous JavaScript) - JavaScript可视化",
+          "url": "https://youtu.be/eiC58R16hb8",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "事件循环（Event Loop）",
+          "description": "事件循环（Event Loop）是理解Node.js最重要的方面之一。\n\n为什么它如此重要？因为它解释了Node.js如何能够实现异步（asynchronous）和非阻塞I/O（non-blocking I/O），这说明了是Node.js的“杀手特性”（killer feature），也就是让Node.js如此成功的原因。\n\n",
+          "links": [
+            {
+              "title": "Node.js 事件循环（Event Loop）",
+              "url": "https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 可视化：事件循环（Event Loop）",
+              "url": "https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif",
+              "type": "article"
+            },
+            {
+              "title": "事件循环（Event Loop）到底是什么？",
+              "url": "https://www.youtube.com/watch?v=8aGhZQkoFbQ",
+              "type": "video"
+            },
+            {
+              "title": "在循环中：JS conf 2018",
+              "url": "https://www.youtube.com/watch?v=cCOL7MC4Pl0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f826c9a1-2888-4adc-a1a3-0c73d5f47cbc",
+          "xid": "feacb472-119f-4989-b38c-d7cad762d4d4"
+        },
+        {
+          "title": "setTimeout",
+          "description": "setTimeout 在指定的时间间隔结束后运行一个函数。\n\n时间以毫秒为单位。\n\n",
+          "links": [
+            {
+              "title": "JavaScript MDN 文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/setTimeout",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools – JavaScript - setTimeout",
+              "url": "https://www.w3schools.com/jsref/met_win_settimeout.asp",
+              "type": "article"
+            },
+            {
+              "title": "setInterval 和 setTimeout：定时事件",
+              "url": "https://www.youtube.com/watch?v=kOcFZV3c75I",
+              "type": "video"
+            },
+            {
+              "title": "在6分钟内学习 JavaScript 的 setTimeout()",
+              "url": "https://www.youtube.com/watch?v=shWr5DNVeCI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5d79090a-6dd6-4009-9cf9-1eff8dd9639b",
+          "xid": "39e46ae1-2678-4cfd-96da-89e7e3572a0e"
+        },
+        {
+          "title": "setInterval（setInterval）",
+          "description": "`setInterval()` 方法帮助我们以固定的时间延迟重复执行函数。\n\n它返回一个唯一的 interval ID（间隔ID），稍后可以使用 `clearInterval()` 方法停止进一步重复执行该函数。\n\n`setInterval()` 与 `setTimeout` 类似，但有一点不同。\n\n它不会只运行回调函数一次，而是以您指定的特定时间间隔（以毫秒为单位）永远运行它：\n\n",
+          "links": [
+            {
+              "title": "定时任务：setTimeout 和 setInterval",
+              "url": "https://javascript.info/settimeout-setinterval",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2bf5a019-8346-4a3d-9ef6-af73cd2ab2d9",
+          "xid": "143b3095-387b-4c8b-b48b-c4bec00d60cf"
+        },
+        {
+          "title": "回调函数(Callbacks)",
+          "description": "回调函数是一种作为参数传递给另一个函数的函数，然后在外部函数内部被调用来完成某种例行程序或操作。\n\n",
+          "links": [
+            {
+              "title": "JavaScript中的回调函数(Callbacks in JavaScript)",
+              "url": "https://javascript.info/callbacks",
+              "type": "article"
+            },
+            {
+              "title": "回调函数(Callback Functions)",
+              "url": "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function",
+              "type": "article"
+            },
+            {
+              "title": "W3School回调函数(CallBack Function)",
+              "url": "https://www.w3schools.com/js/js_callback.asp",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "回调地狱 (Callback Hell)",
+              "description": "回调地狱 (Callback Hell) 是指当我们试图以从上到下的方式编写异步JavaScript代码时，代码呈现出金字塔形状，并且结尾处带有许多 **})** 的情况。\n\n",
+              "links": [
+                {
+                  "title": "回调中的回调 -  doom的金字塔 (Callbacks in Callbacks - Pyramid of Doom)",
+                  "url": "https://javascript.info/callbacks#pyramid-of-doom",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "9d9802c0-1b1a-4611-9e74-c6dd3a210605",
+              "xid": "2619a412-972a-4ded-8705-c4c5c4169278"
+            }
+          ],
+          "id": "e88683fa-7d1f-45b4-a792-3450a0bd4532",
+          "xid": "bb4071bb-0eb7-4406-b338-20ce96bed3d9"
+        },
+        {
+          "title": "承诺对象(Promises)",
+          "description": "在JavaScript中，承诺对象是比旧的和易于出错的回掉方法更好的处理异步代码的方式。\n\n承诺对象是随着ECMAScript 6引进到JavaScript中的。\n\n使用承诺对象，我们可以利用严格的错误处理来管理极其复杂的异步代码，以几乎同步的风格编写代码，让我们避免所谓的回掉地狱。\n\n",
+          "links": [
+            {
+              "title": "承诺对象的详细入门( A Detailed Introduction to Promises)",
+              "url": "https://www.codeguage.com/courses/advanced-js/promises-introduction",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript承诺对象 - 基础(Javascript Promises - Basics)",
+              "url": "https://www.codeguage.com/courses/advanced-js/promises-basics",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript承诺对象 - 链式调用(Javascript Promises - Chaining)",
+              "url": "https://www.codeguage.com/courses/advanced-js/promises-chaining",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript承诺对象 - 错误处理(Javascript Promises - Error Handling)",
+              "url": "https://www.codeguage.com/courses/advanced-js/promises-error-handling",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript承诺对象 - 可视化(Javascript Promises - Visualized)",
+              "url": "https://youtu.be/Xs1EMmBLpn4",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "async/await（异步/等待）",
+              "description": "`async/await` 是一种特殊的语法，用于更舒适地操作 Promise（承诺）。\n\n我们使用 `async` 关键字来声明一个异步函数，该函数返回一个 Promise，而 `await` 关键字使函数等待一个 Promise 的解析。\n\n",
+              "links": [
+                {
+                  "title": "Async/await（异步/等待）",
+                  "url": "https://javascript.info/async-await",
+                  "type": "article"
+                },
+                {
+                  "title": "async function（异步函数）",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript Promises - Chaining（JavaScript Promise - 链式调用）",
+                  "url": "https://www.codeguage.com/courses/advanced-js/promises-chaining",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "0ded5c6e-30aa-4cfe-b1b9-a1cc13295cf2",
+              "xid": "cb63f613-ddc3-4def-b2e7-a8220439c5b5"
+            }
+          ],
+          "id": "81b382e9-2ca0-48c4-8c1d-383fead3fadc",
+          "xid": "af21cdba-986b-44c9-9f3f-fc83b53f77f4"
+        }
+      ],
+      "id": "83f78bd4-3098-48e0-9733-44315855a08d",
+      "xid": "49e2bace-b22a-4985-853d-a9a2eeff5fa0"
+    },
+    {
+      "title": "使用API",
+      "description": "在使用远程API时，需要一种与这些API交互的方式。\n\n现代JavaScript提供了两种原生的发送HTTP请求到远程服务器的方法，分别是`XMLHttpRequest`（XMLHttpRequest）和`Fetch`（Fetch）。\n\n",
+      "links": [
+        {
+          "title": "从服务器获取数据",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data",
+          "type": "article"
+        },
+        {
+          "title": "XMLHttpRequest",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest",
+          "type": "article"
+        },
+        {
+          "title": "Fetch API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API",
+          "type": "article"
+        },
+        {
+          "title": "Fetch API比XMLHTTPRequest更好吗？",
+          "url": "https://medium.com/beginners-guide-to-mobile-web-development/the-fetch-api-2c962591f5c",
+          "type": "article"
+        },
+        {
+          "title": "AJAX大战：XMLHttpRequest与Fetch API",
+          "url": "https://blog.openreplay.com/ajax-battle-xmlhttprequest-vs-fetch/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "XMLHttpRequest (XHR)",
+          "description": "`XMLHttpRequest` (XHR) 是内置的浏览器对象，可用于与服务器交互。\n\nXHR 允许在不重新加载网页的情况下更新数据。\n\n尽管其名称中包含 XML，但 XHR 不仅用于获取 XML 格式的数据，还可以用于处理任何类型的数据，比如 JSON、文件等。\n\n",
+          "links": [
+            {
+              "title": "使用 XMLHttpRequest",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest",
+              "type": "article"
+            },
+            {
+              "title": "网络请求 - XMLHttpRequest",
+              "url": "https://javascript.info/xmlhttprequest",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools",
+              "url": "https://www.w3schools.com/xml/xml_http.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "06b6d55e-83f7-4b2b-8ca8-4c7c5354c96b",
+          "xid": "2102aef1-3770-44d7-a5e8-8b0f5aa2ac81"
+        },
+        {
+          "title": "Fetch（请求）",
+          "description": "在JavaScript中，`fetch()` 方法用于向服务器请求并加载网页上的信息。\n\n此请求可以是返回JSON或XML格式数据的任何API。\n\n此方法返回一个Promise（承诺）。\n\n",
+          "links": [
+            {
+              "title": "Fetch MDN 文档",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+              "type": "article"
+            },
+            {
+              "title": "Fetch W3school 文档",
+              "url": "https://www.w3schools.com/jsref/api_fetch.asp",
+              "type": "article"
+            },
+            {
+              "title": "网络请求 - Fetch",
+              "url": "https://javascript.info/fetch",
+              "type": "article"
+            },
+            {
+              "title": "在JavaScript中手动中止fetch请求",
+              "url": "https://www.amitmerchant.com/abort-fetch-request-manually-in-javascript/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6917607e-7144-4a3c-a8e6-d8d4b486ae11",
+          "xid": "bfa5fb02-0f85-4b60-b352-ec8571adf118"
+        }
+      ],
+      "id": "7529a6a6-a613-4b27-b5bd-7c3070db35e6",
+      "xid": "df27d969-3b61-46a6-9561-5676960a28f2"
+    },
+    {
+      "title": "迭代器和生成器",
+      "description": "迭代器（Iterator）和生成器（Generator）是随着ECMAScript 6引入到JavaScript中的概念，它们与语言中的迭代操作有着极其紧密的关联。\n\n迭代器是遵从迭代器协议的对象，让我们可以通过多种方式轻松地遍历给定序列，比如使用`for...of`循环。\n\n另一方面，生成器则可以让我们利用函数和关键词`yield`轻松定义可迭代序列，这些序列同样也是迭代器。\n\n",
+      "links": [
+        {
+          "title": "迭代的基础知识 - 高级JavaScript",
+          "url": "https://www.codeguage.com/courses/advanced-js/iteration-introduction",
+          "type": "article"
+        },
+        {
+          "title": "关于迭代器的详细探讨 - 高级JavaScript",
+          "url": "https://www.codeguage.com/courses/advanced-js/iteration-iterators",
+          "type": "article"
+        },
+        {
+          "title": "生成器究竟是什么？ - 高级JavaScript",
+          "url": "https://www.codeguage.com/courses/advanced-js/iteration-generators",
+          "type": "article"
+        },
+        {
+          "title": "探索关于JavaScript的顶级文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "f3deb83c-f388-48a4-bbc8-78cd5336a214",
+      "xid": "e62daaef-0ae2-48ab-bd5b-4fb540358f1a"
+    },
+    {
+      "title": "类",
+      "description": "类是用于创建对象的模板。\n\n它们将数据与操作该数据的代码封装在一起。\n\nJavaScript中的类基于原型，但具有一些与ES5类类似语义不同的语法和语义。\n\n",
+      "links": [
+        {
+          "title": "JavaScript中的类",
+          "url": "https://javascript.info/classes",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript类",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes",
+          "type": "article"
+        },
+        {
+          "title": "探索有关JavaScript的顶级文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "ca2be823-3314-4edc-8b5e-b7a6cbbf93e6",
+      "xid": "b483abf2-35fd-4fc6-9a63-3defacb6cd1e"
+    },
+    {
+      "title": "JavaScript中的模块",
+      "description": "模块（Modules）封装各种代码，如函数和变量，并将其暴露给其他文件。\n\n通常，我们使用它将代码拆分成单独的文件以提高可维护性。\n\n它们是随着ECMAScript 6（ES6）引入JavaScript的。\n\n",
+      "links": [
+        {
+          "title": "模块介绍",
+          "url": "https://javascript.info/modules-intro",
+          "type": "article"
+        },
+        {
+          "title": "导出和导入",
+          "url": "https://javascript.info/import-export",
+          "type": "article"
+        },
+        {
+          "title": "动态导入",
+          "url": "https://javascript.info/modules-dynamic-imports",
+          "type": "article"
+        },
+        {
+          "title": "探索JavaScript的热门帖子",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "CommonJS（CommonJS）",
+          "description": "CommonJS模块是为Node.js打包JavaScript代码的原始方法。\n\nNode.js也支持浏览器和其他JavaScript运行时使用ESModules（ES模块）标准，但CJS在后端Node.js应用程序中仍然广泛使用。\n\n有时这些模块会使用.cjs扩展名编写。\n\n",
+          "links": [
+            {
+              "title": "CJS模块系统如何工作",
+              "url": "https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关Node.js的最佳文章",
+              "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "如何在CJS中导入和导出模块",
+              "url": "https://www.youtube.com/watch?v=XTND4rjATXA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b673ae1e-0cfd-4e0c-9d49-043c68266392",
+          "xid": "a540196d-f530-4ac9-ba42-62d79efbe4f9"
+        },
+        {
+          "title": "ESM（ES Modules）",
+          "description": "ESModules（ES Modules）是ES6（2015）引入的标准。\n\n其目的是标准化JS模块的工作方式，并在浏览器中实现这些特性。\n\n这一标准广泛应用于React等前端框架，也可在Node.js后端使用。\n\n有时这些模块会使用.mjs扩展名编写。\n\n",
+          "links": [
+            {
+              "title": "完整的ESM模块概述来自MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",
+              "type": "article"
+            },
+            {
+              "title": "完整的ESM模块概述来自js.info",
+              "url": "https://javascript.info/modules",
+              "type": "article"
+            },
+            {
+              "title": "Node.js的ESModules文档",
+              "url": "https://nodejs.org/api/esm.html",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript ES6 Modules简化",
+              "url": "https://www.youtube.com/watch?v=cRHQNNcYf6s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "56da5576-4932-4e34-bc95-1d8f01e51d94",
+          "xid": "17c57aa3-38e9-4f43-9374-ecff80884046"
+        }
+      ],
+      "id": "6feab336-4660-4b13-8d7d-42285a2dfc5a",
+      "xid": "2a4a98ec-4f97-4088-9359-f5b1a56468f5"
+    },
+    {
+      "title": "内存管理",
+      "description": "低级语言如C语言，具有手动内存管理原语，如`malloc()`和`free()`。\n\n相比之下，JavaScript在对象创建时会自动分配内存，并在它们不再使用时自动释放内存（垃圾回收）。\n\n这种自动性可能成为一个潜在的混淆来源：它可能给开发人员一种他们不需要关心内存管理的错误印象。\n\n",
+      "links": [
+        {
+          "title": "JavaScript垃圾回收",
+          "url": "https://javascript.info/garbage-collection",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript中的内存管理",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management",
+          "type": "article"
+        },
+        {
+          "title": "探索顶级JavaScript文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "内存生命周期",
+          "description": "无论使用哪种编程语言，内存生命周期基本都是相同的：\n\n* 分配所需的内存\n* 使用已分配的内存（读取、写入）\n* 当内存不再需要时释放已分配的内存\n\n第二部分在所有语言中都是显式的。\n\n第一部分和最后一部分在低级语言中是显式的，但在类似于JavaScript（JavaScript）的高级语言中大多是隐式的。\n\n\n",
+          "links": [
+            {
+              "title": "MDN文档 - 内存管理",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management",
+              "type": "article"
+            },
+            {
+              "title": "内存管理中的生命周期",
+              "url": "https://medium.com/swlh/the-lifecycle-of-memory-in-javascript-5b5bffc5ff4c",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e451cf74-123c-4ee7-ad97-16ac5b107360",
+          "xid": "5111f963-a745-4427-a111-1f67bc5083a7"
+        },
+        {
+          "title": "垃圾回收(Garbage Collection)",
+          "description": "JavaScript中的内存管理是自动且对我们透明的。\n\n我们创建原始值、对象、函数……所有这些都占用内存。\n\nJavaScript中内存管理的主要概念是可达性(reachability)。\n\n",
+          "links": [
+            {
+              "title": "JavaScript垃圾回收(Garbage Collection)",
+              "url": "https://javascript.info/garbage-collection",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript中的内存管理(Memory Management in JavaScript)",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "824d9687-e9c1-49fd-b306-bc1e7cfadb82",
+          "xid": "6819c75e-c8b8-4e97-814c-1968595de05c"
+        }
+      ],
+      "id": "bb9b377c-d049-4c39-ac89-b831c49729cb",
+      "xid": "078affd8-4e76-4f34-8c84-f686aaf1e148"
+    },
+    {
+      "title": "使用浏览器开发者工具",
+      "description": "这是一组内置在浏览器中的工具，旨在帮助前端开发人员诊断并解决其应用程序中的各种问题——例如JavaScript和逻辑错误、CSS样式问题，甚至是快速临时更改DOM。\n\n要进入开发者工具，右键点击并点击**检查**（或按 `ctrl+shift+c`/`cmd+opt+c`）进入 Elements 面板。\n\n在这里，您可以调试CSS和HTML问题。\n\n如果您想查看日志消息或与JavaScript进行交互，请从上方的标签进入**控制台**标签（或按 `ctrl+shift+j` 或 `F12` / `cmd+opt+j` 直接进入）。\n\nChrome 开发者工具中的另一个非常有用的功能是 Lighthouse（用于检查性能）。\n\n注意：这不是特定于Chrome的功能，大多数浏览器（基于Chromium或其他的）都会有自己基本相似的开发者工具。\n\n",
+      "links": [
+        {
+          "title": "官方文档",
+          "url": "https://developer.chrome.com/docs/devtools/",
+          "type": "article"
+        },
+        {
+          "title": "使用Chrome开发者工具调试JavaScript",
+          "url": "https://developer.chrome.com/docs/devtools/javascript/",
+          "type": "article"
+        },
+        {
+          "title": "探索有关JavaScript的热门文章",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "调试问题",
+          "description": "刚开始使用JavaScript开发时，你可能会在代码中加入很多`console.log()`语句，用于记录和检查调试时变量的值。\n\n这些语句的结果会显示在**控制台**（Console）面板中，同时还会附带一个到产生这些输出的代码行和文件的引用。\n\n然而，为了更快速、更复杂且更易于处理的调试（并且不需要用`console.log()`语句充斥你的代码库），断点（breakpoint）和源代码（sources）面板将会是你的得力助手。\n\n",
+          "links": [
+            {
+              "title": "在源代码面板中调试JavaScript",
+              "url": "https://developer.chrome.com/docs/devtools/javascript/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "22ac2843-ea2b-462d-9845-b600a512a75b",
+          "xid": "3c7c5c39-7b73-4c65-9191-32478f49ccb1"
+        },
+        {
+          "title": "调试内存泄漏(Debugging Memory Leaks)",
+          "description": "在JavaScript中，内存泄漏通常发生在堆分配的内存中，短生命周期对象被附加到长生命周期对象上，垃圾回收器(Garbage Collector)无法安全地释放内存，因为这些对象仍然在根集(全球对象)中有引用。\n\n",
+          "links": [
+            {
+              "title": "使用Chrome DevTools捕捉内存泄漏(Catching memory leaks with Chrome DevTools)",
+              "url": "https://medium.com/coding-blocks/catching-memory-leaks-with-chrome-devtools-57b03acb6bb9",
+              "type": "article"
+            },
+            {
+              "title": "有效的JavaScript调试(Effective Javascript Debugging)",
+              "url": "https://medium.com/swlh/effective-javascript-debugging-memory-leaks-75059b2436f6",
+              "type": "article"
+            },
+            {
+              "title": "调试JavaScript内存泄漏(Debugging JavaScript memory leaks)",
+              "url": "https://www.debugbear.com/blog/debugging-javascript-memory-leaks",
+              "type": "article"
+            },
+            {
+              "title": "在生产JavaScript应用程序中调试内存泄漏(Debugging Memory Leaks In Production JavaScript Applications)",
+              "url": "https://www.jackhoy.com/web-applications/2020/10/21/debugging-memory-leaks-in-nodejs.html",
+              "type": "article"
+            },
+            {
+              "title": "可视化JavaScript内存泄漏及如何修复它们(JavaScript Memory Leaks Visualized and How To Fix Them)",
+              "url": "https://youtu.be/IkoGmbNJolo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e982b550-3a61-465c-8e02-08d7445d9a36",
+          "xid": "b850d4b4-a519-44ce-aa90-103c15735023"
+        },
+        {
+          "title": "性能调试",
+          "description": "进入开发者工具并查看Lighthouse (灯塔)标签页。\n\n这实际上是一系列针对当前打开网站的性能、页面速度、可访问性等相关指标进行分析的测试。\n\n您可以点击**分析页面加载**按钮来运行测试（您可能希望在隐身标签页中进行操作，以避免您使用的扩展程序引起错误）。\n\n获取结果后，请花时间阅读（并点击访问每个测试结果旁提到的参考页面，以便了解更多详情！)\n\n",
+          "links": [
+            {
+              "title": "分析运行时性能",
+              "url": "https://developer.chrome.com/docs/devtools/performance",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "dc347e1d-0935-435f-9b8c-746186a83a44",
+          "xid": "a9dd2c07-81a9-4d4e-b3e3-8627ea4f10f4"
+        }
+      ],
+      "id": "2f0a3ba7-dca3-470e-b553-7be05d28922f",
+      "xid": "009f6735-9251-4ad2-b624-94d64132317e"
+    }
+  ],
+  "id": "3e7ce906-99c8-4a58-ae4a-c82b27761c28",
+  "xid": "7cf42b2a-f2e0-43d8-81ef-90d81010518e"
+}

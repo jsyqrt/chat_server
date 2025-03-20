@@ -207,6 +207,15 @@ class RoadmapOps:
 
     def reset_official_roadmaps(self)->bool:
         # backend_cn.json
+        # nodejs_cn.json
+        # devops_cn.json
+        # server-side-game-developer_cn.json
+        # frontend_cn.json
+        # computer-science_cn.json
+
+        # python_cn.json
+        # software-architect_cn.json
+        # data-analyst_cn.json
 
         # nodejs.json
         # devops.json
@@ -239,7 +248,7 @@ class RoadmapOps:
         items = [
             # nodejs.json
             {
-                "id": "nodejs.json",
+                "id": "nodejs_cn.json",
                 "icon": "⚡",
                 "title": "Node.js编程",
                 "subtitle": "软件开发",
@@ -252,7 +261,7 @@ class RoadmapOps:
             },
             # devops.json
             {
-                "id": "devops.json",
+                "id": "devops_cn.json",
                 "icon": "🔄",
                 "title": "DevOps工程师",
                 "subtitle": "软件开发",
@@ -265,7 +274,7 @@ class RoadmapOps:
             },
             # server-side-game-developer.json
             {
-                "id": "server-side-game-developer.json",
+                "id": "server-side-game-developer_cn.json",
                 "icon": "🎮",
                 "title": "服务器端游戏开发",
                 "subtitle": "游戏开发",
@@ -278,7 +287,7 @@ class RoadmapOps:
             },
             # frontend.json
             {
-                "id": "frontend.json",
+                "id": "frontend_cn.json",
                 "icon": "🖥️",
                 "title": "前端开发",
                 "subtitle": "软件开发",
@@ -291,7 +300,7 @@ class RoadmapOps:
             },
             # computer-science.json
             {
-                "id": "computer-science.json",
+                "id": "computer-science_cn.json",
                 "icon": "🧠",
                 "title": "计算机科学",
                 "subtitle": "基础知识",
@@ -304,7 +313,7 @@ class RoadmapOps:
             },
             # python.json
             {
-                "id": "python.json",
+                "id": "python_cn.json",
                 "icon": "🐍",
                 "title": "Python开发",
                 "subtitle": "软件开发",
@@ -317,7 +326,7 @@ class RoadmapOps:
             },
             # software-architect.json
             {
-                "id": "software-architect.json",
+                "id": "software-architect_cn.json",
                 "icon": "🏗️",
                 "title": "软件架构师",
                 "subtitle": "软件开发",
@@ -330,7 +339,7 @@ class RoadmapOps:
             },
             # data-analyst.json
             {
-                "id": "data-analyst.json",
+                "id": "data-analyst_cn.json",
                 "icon": "📊",
                 "title": "数据分析师",
                 "subtitle": "数据科学",
@@ -343,7 +352,7 @@ class RoadmapOps:
             },
             # typescript.json
             {
-                "id": "typescript.json",
+                "id": "typescript_cn.json",
                 "icon": "📘",
                 "title": "TypeScript编程",
                 "subtitle": "软件开发",
@@ -356,7 +365,7 @@ class RoadmapOps:
             },
             # mlops.json
             {
-                "id": "mlops.json",
+                "id": "mlops_cn.json",
                 "icon": "🤖",
                 "title": "MLOps工程师",
                 "subtitle": "机器学习",
@@ -369,7 +378,7 @@ class RoadmapOps:
             },
             # vue.json
             {
-                "id": "vue.json",
+                "id": "vue_cn.json",
                 "icon": "🟢",
                 "title": "Vue开发",
                 "subtitle": "前端开发",
@@ -380,22 +389,10 @@ class RoadmapOps:
                 "job_tag": "前端开发",
                 "skill_tag": "Vue",
             },
-            # aspnet-core.json
-            {
-                "id": "aspnet-core.json",
-                "icon": "🌐",
-                "title": "ASP.NET Core开发",
-                "subtitle": "后端开发",
-                "type": "official",
-                "kind": "skill",
-                "status": 2,
-                "industry_tag": "软件开发",
-                "job_tag": "后端开发",
-                "skill_tag": "ASP.NET Core",
-            },
+
             # postgresql-dba.json
             {
-                "id": "postgresql-dba.json",
+                "id": "postgresql-dba_cn.json",
                 "icon": "🐘",
                 "title": "PostgreSQL数据库管理",
                 "subtitle": "数据库",
@@ -408,7 +405,7 @@ class RoadmapOps:
             },
             # angular.json
             {
-                "id": "angular.json",
+                "id": "angular_cn.json",
                 "icon": "🔺",
                 "title": "Angular开发",
                 "subtitle": "前端开发",
@@ -421,7 +418,7 @@ class RoadmapOps:
             },
             # qa.json
             {
-                "id": "qa.json",
+                "id": "qa_cn.json",
                 "icon": "🔍",
                 "title": "QA测试工程师",
                 "subtitle": "软件测试",
@@ -445,22 +442,9 @@ class RoadmapOps:
                 "job_tag": "后端开发",
                 "skill_tag": "后端开发",
             },
-            # backend.json
-            {
-                "id": "backend.json",
-                "icon": "⚙️",
-                "title": "Backend Engineer",
-                "subtitle": "Software Development",
-                "type": "official",
-                "kind": "role",
-                "status": 2,
-                "industry_tag": "软件开发",
-                "job_tag": "后端开发",
-                "skill_tag": "后端开发",
-            },
             # cyber-security.json
             {
-                "id": "cyber-security.json",
+                "id": "cyber-security_cn.json",
                 "icon": "🔒",
                 "title": "网络安全",
                 "subtitle": "安全",
@@ -473,7 +457,7 @@ class RoadmapOps:
             },
             # blockchain.json
             {
-                "id": "blockchain.json",
+                "id": "blockchain_cn.json",
                 "icon": "⛓️",
                 "title": "区块链开发",
                 "subtitle": "软件开发",
@@ -486,7 +470,7 @@ class RoadmapOps:
             },
             # full-stack.json
             {
-                "id": "full-stack.json",
+                "id": "full-stack_cn.json",
                 "icon": "🧰",
                 "title": "全栈开发",
                 "subtitle": "软件开发",
@@ -499,7 +483,7 @@ class RoadmapOps:
             },
             # android.json
             {
-                "id": "android.json",
+                "id": "android_cn.json",
                 "icon": "📱",
                 "title": "Android开发",
                 "subtitle": "移动开发",
@@ -512,7 +496,7 @@ class RoadmapOps:
             },
             # system-design.json
             {
-                "id": "system-design.json",
+                "id": "system-design_cn.json",
                 "icon": "📐",
                 "title": "系统设计",
                 "subtitle": "软件架构",
@@ -525,7 +509,7 @@ class RoadmapOps:
             },
             # javascript.json
             {
-                "id": "javascript.json",
+                "id": "javascript_cn.json",
                 "icon": "💛",
                 "title": "JavaScript编程",
                 "subtitle": "前端开发",
@@ -538,7 +522,7 @@ class RoadmapOps:
             },
             # technical-writer.json
             {
-                "id": "technical-writer.json",
+                "id": "technical-writer_cn.json",
                 "icon": "📝",
                 "title": "技术文档写作",
                 "subtitle": "技术写作",
@@ -551,7 +535,7 @@ class RoadmapOps:
             },
             # game-developer.json
             {
-                "id": "game-developer.json",
+                "id": "game-developer_cn.json",
                 "icon": "🎲",
                 "title": "游戏开发",
                 "subtitle": "游戏开发",
@@ -564,7 +548,7 @@ class RoadmapOps:
             },
             # react.json
             {
-                "id": "react.json",
+                "id": "react_cn.json",
                 "icon": "⚛️",
                 "title": "React开发",
                 "subtitle": "前端开发",
@@ -577,7 +561,7 @@ class RoadmapOps:
             },
             # ux-design.json
             {
-                "id": "ux-design.json",
+                "id": "ux-design_cn.json",
                 "icon": "🎨",
                 "title": "UX设计",
                 "subtitle": "设计",
@@ -590,7 +574,7 @@ class RoadmapOps:
             },
             # sql.json
             {
-                "id": "sql.json",
+                "id": "sql_cn.json",
                 "icon": "🗃️",
                 "title": "SQL数据库",
                 "subtitle": "数据库",
@@ -602,6 +586,9 @@ class RoadmapOps:
                 "skill_tag": "SQL",
             },
         ]
+
+        self.session.query(Roadmap).filter_by(roadmap_type='official').delete()
+        self.session.commit()
 
         for item in items:
             with open(os.path.join(current_app.instance_path, item['id']), 'r') as f:
@@ -620,10 +607,6 @@ class RoadmapOps:
             job_tag = item['job_tag']
             skill_tag = item['skill_tag']
             created_by = 'official'
-
-            if self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first():
-                self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).delete()
-                self.session.commit()
 
             roadmap = Roadmap(
                 roadmap_id=roadmap_id,

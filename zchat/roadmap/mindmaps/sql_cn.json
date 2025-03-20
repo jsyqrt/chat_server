@@ -1,0 +1,2140 @@
+{
+  "title": "SQL 路线图",
+  "description": "2025年逐步学习SQL的指南",
+  "links": [],
+  "children": [
+    {
+      "title": "学习基础知识",
+      "description": "SQL，全称为结构化查询语言（Structured Query Language），是一种用于与数据库通信和管理的编程语言。\n\nSQL 是用于操作存储在关系数据库管理系统（RDBMS）中的数据的标准语言，或用于关系数据流管理系统（RDSMS）中的流处理。\n\n它最初是在 20 世纪 70 年代由 IBM 开发的。\n\nSQL 包含多个组件，每个组件在数据库通信中都有其独特的用途：\n\n*   **查询：** 这是允许你从数据库检索数据的组件。\n\n最常用的语句是 SELECT 语句。\n\n\n*   **数据定义语言（DDL）：** 它允许你创建、更改或删除数据库及其相关对象，如表、视图等。\n\n它包括 CREATE、ALTER、DROP 和 TRUNCATE 命令。\n\n\n*   **数据操作语言（DML）：** 它允许你在数据库对象中管理数据。\n\n这些命令包括 SELECT、INSERT、UPDATE 和 DELETE。\n\n\n*   **数据控制语言（DCL）：** 它包括 GRANT 和 REVOKE 命令，主要处理数据库系统的权利、权限和其他控制级别的管理任务。\n\nSQL 数据库有多种类型，如 Oracle 数据库、Microsoft SQL Server 和 MySQL。\n\n尽管它们有许多不同之处，但所有 SQL 数据库都使用相同的语言命令-SQL。\n\n通过以下资源了解更多关于 SQL 的知识：",
+      "links": [
+        {
+          "title": "SQL 教程 - Mode",
+          "url": "https://mode.com/sql-tutorial/",
+          "type": "article"
+        },
+        {
+          "title": "SQL 教程",
+          "url": "https://www.sqltutorial.org/",
+          "type": "article"
+        },
+        {
+          "title": "SQL 教程 - W3Schools",
+          "url": "https://www.w3schools.com/sql/default.asp",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "类型转换（Type Casting）",
+          "description": "将一种数据类型（整型、字符串、浮点型等）的值转换为另一种数据类型的过程称为类型转换（Type Conversion）。\n\nPython有两种类型的类型转换（Type Conversion）：隐式转换（Implicit）和显式转换（Explicit）。\n\n",
+          "links": [
+            {
+              "title": "类型转换和类型造型",
+              "url": "https://www.programiz.com/python-programming/type-conversion-and-casting",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f301d28c-d60a-4513-b7c9-222c64ecbe61",
+          "xid": "2768ae35-3374-4bb9-8721-55911f475014"
+        },
+        {
+          "title": "异常",
+          "description": "Python 中的异常是指在程序执行期间发生并中断程序指令正常流程的事件。\n\n当引发异常时，表示出现了错误。\n\nPython 提供了一种使用 try-except 块处理这些异常的方法，使开发人员能够优雅地管理错误，并确保程序可以继续运行或平滑退出。\n\n",
+          "links": [
+            {
+              "title": "异常文档",
+              "url": "https://docs.python.org/3/tutorial/errors.html#exceptions",
+              "type": "article"
+            },
+            {
+              "title": "Python 异常：简介",
+              "url": "https://realpython.com/python-exceptions/",
+              "type": "article"
+            },
+            {
+              "title": "错误和异常",
+              "url": "https://docs.python.org/3/tutorial/errors.html",
+              "type": "article"
+            },
+            {
+              "title": "Python 异常处理",
+              "url": "https://www.programiz.com/python-programming/exception-handling",
+              "type": "article"
+            },
+            {
+              "title": "Python 中的异常处理",
+              "url": "https://www.youtube.com/watch?v=V_NXT2-QIlE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "01d86ffb-f871-41f7-bfa5-0f5dca81da28",
+          "xid": "7f029669-2689-45bd-8929-1c34ba336165"
+        },
+        {
+          "title": "SQL 与 NoSQL 数据库",
+          "description": "SQL（关系型）和 NoSQL（非关系型）数据库代表了数据存储与检索的两种不同方式。\n\nSQL 数据库使用结构化的模式和表，通过联接操作强调数据完整性和复杂查询。\n\nNoSQL 数据库在数据结构上提供了更大的灵活性，通常为了可扩展性和性能而牺牲一部分一致性。\n\n在 SQL 与 NoSQL 之间进行选择取决于诸如数据结构、扩展性需求、一致性要求以及应用性质等多种因素。\n\n",
+          "links": [
+            {
+              "title": "了解 SQL 与 NoSQL 数据库",
+              "url": "https://www.mongodb.com/resources/basics/databases/nosql-explained/nosql-vs-sql",
+              "type": "article"
+            },
+            {
+              "title": "4分钟内了解 SQL 与 NoSQL 数据库",
+              "url": "https://www.youtube.com/watch?v=_Ss42Vb1SU4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "bb919293-65c2-417b-aae8-c76810787034",
+          "xid": "7c0cd16d-1d5a-4ce4-ba0c-0665e8477744"
+        }
+      ],
+      "id": "7010c1f4-e366-4087-b266-8393dd820b9a",
+      "xid": "62fcbf94-d4a9-4273-81fd-dd1c20002fc7"
+    },
+    {
+      "title": "学习基础知识",
+      "description": "Python 是一种高级的、解释型的、通用的编程语言 (programming language)。\n\n它的设计哲学强调代码可读性 (code readability)，使用显著的缩进 (significant indentation)。\n\nPython 是动态类型化的 (dynamically-typed) 并且带有垃圾回收 (garbage-collected) 功能。\n\n",
+      "links": [
+        {
+          "title": "Python 官网",
+          "url": "https://www.python.org/",
+          "type": "article"
+        },
+        {
+          "title": "Python - 维基百科",
+          "url": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+          "type": "article"
+        },
+        {
+          "title": "教程系列：如何用 Python 编码",
+          "url": "https://www.digitalocean.com/community/tutorials/how-to-write-your-first-python-3-program",
+          "type": "article"
+        },
+        {
+          "title": "Google 的 Python 课程",
+          "url": "https://developers.google.com/edu/python",
+          "type": "article"
+        },
+        {
+          "title": "W3Schools - Python 教程",
+          "url": "https://www.w3schools.com/python",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 Python 的最佳文章",
+          "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "学习 Python - 完整课程",
+          "url": "https://www.youtube.com/watch?v=4M87qBgpafk",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "SQL 关键字",
+          "description": "SQL 关键字是具有特殊含义的保留字，使用于 SQL 语句中。\n\n这些包括命令（如 `SELECT`（选择），`INSERT`（插入），`UPDATE`（更新）），子句（如 `WHERE`（.where），`GROUP BY`（分组），`HAVING`（有）），以及其他构成 SQL 查询结构的语法元素。\n\n理解和熟悉 SQL 关键字是编写正确且有效的数据库查询的基础。\n\n关键字通常是大小写不敏感的，但通常为了更好的可读性，惯例将其写为大写。\n\n",
+          "links": [
+            {
+              "title": "SQL 关键字参考",
+              "url": "https://www.w3schools.com/sql/sql_ref_keywords.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL 关键字、运算符和语句",
+              "url": "https://blog.hubspot.com/website/sql-keywords-operators-statements",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "84e1076c-4552-4a24-9ed2-4d2241122815",
+          "xid": "d66ee61f-f202-463b-8e54-32490a741437"
+        },
+        {
+          "title": "数据类型",
+          "description": "SQL数据类型定义可以存储在列中的值的种类，并决定数据如何被存储、处理和检索。\n\n常见的数据类型包括数值类型（`INTEGER`（整数），`DECIMAL`（十进制））、字符类型（`CHAR`（字符），`VARCHAR`（可变长度字符））、日期和时间类型（`DATE`（日期），`TIMESTAMP`（时间戳））、二进制类型（`BLOB`（大型二进制对象））以及布尔类型。\n\n每个数据库管理系统可能都有其特定的数据类型集合，会有一些细微的差别。\n\n为每一列选择适当的数据类型对于优化存储、确保数据完整性以及提高查询性能是至关重要的。\n\n",
+          "links": [
+            {
+              "title": "SQL数据类型",
+              "url": "https://www.digitalocean.com/community/tutorials/sql-data-types",
+              "type": "article"
+            },
+            {
+              "title": "MySQL 101 - 数据类型",
+              "url": "https://www.youtube.com/watch?v=vAiBa69YCnk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "da50ecbc-e6fc-448f-bf4b-38169099fa2b",
+          "xid": "19166b6e-c607-4686-829a-67e4080a9924"
+        },
+        {
+          "title": "运算符",
+          "description": "SQL运算符（Operators）是用于在数据库中的数据上执行操作的符号或关键字。\n\n它们对于构建用于筛选、比较和操作数据的查询至关重要。\n\n常见的运算符类型包括算术运算符（例如，`+`，`-`，`*`，`/`），用于执行数学计算；比较运算符（例如，`=`，`!=`，`<`，`>`），用于比较值；逻辑运算符（例如，`AND`，`OR`，`NOT`），用于在查询中组合多个条件；集合运算符（例如，`UNION`，`INTERSECT`，`EXCEPT`），用于组合多个查询的结果。\n\n这些运算符允许对数据检索和修改进行精确控制。\n\n",
+          "links": [
+            {
+              "title": "SQL运算符",
+              "url": "https://www.w3schools.com/sql/sql_operators.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL运算符：6种不同的类型",
+              "url": "https://www.dataquest.io/blog/sql-operators/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f82fba84-bf0d-43b2-b95b-262b7ceca3e8",
+          "xid": "f7df89a2-91c1-4025-9d0d-d9dabb46af19"
+        },
+        {
+          "title": "语句(statements)",
+          "description": "语句(statements)",
+          "links": [],
+          "children": [
+            {
+              "title": "SELECT",
+              "description": "SELECT 是 SQL 中最基础的命令之一，用于从一个或多个数据库表中检索数据。\n\n它允许指定要获取的列，应用过滤条件，对结果进行排序，并对数据执行各种操作。\n\nSELECT 语句非常灵活，支持连接（joins）、子查询（subqueries）、聚合（aggregations）等，对于关系数据库中的数据查询和分析至关重要。\n\n",
+              "links": [
+                {
+                  "title": "SQL_Select",
+                  "url": "https://www.w3schools.com/sql/sql_select.asp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "b40bef55-d411-4e3d-beec-51bd22ec83b5",
+              "xid": "02b65d98-7644-4b89-9b99-8a9166ce675d"
+            },
+            {
+              "title": "INSERT",
+              "description": "\"INSERT\" 语句用于向数据库中的表中添加新的数据行。\n\nINSERT 命令主要有两种形式：`INSERT INTO`，如果未指定列，则期望完整的列集；而 `INSERT INTO 表名 (列1, 列2, ...)` 只填充指定的列。\n\n",
+              "links": [
+                {
+                  "title": "SQL INSERT",
+                  "url": "https://www.w3schools.com/sql/sql_insert.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL INSERT 语句",
+                  "url": "https://www.youtube.com/watch?v=Yp1MKeIG-M4",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "a82248e9-d47e-4752-a6cc-f3fe900d49ff",
+              "xid": "b77199a2-e5e6-4a47-8000-34f74e81fbed"
+            },
+            {
+              "title": "UPDATE",
+              "description": "SQL中的UPDATE语句用于修改表中的现有记录。\n\n它允许您根据指定的条件更改一个或多个列的值。\n\n基本语法包括指定表名、要更新的列及其新值，以及可选的WHERE子句以筛选应受到影响的行。\n\nUPDATE可以与子查询、连接和CTEs（公共表表达式）结合使用，进行更复杂的数据修改。\n\n需要注意的是，尤其是在使用WHERE子句时，要谨慎使用UPDATE，以免意外更改数据。\n\n在事务数据库中，如果UPDATE操作是尚未提交的事务的一部分，则可以回滚这些操作。\n\n",
+              "links": [
+                {
+                  "title": "SQL UPDATE 语句",
+                  "url": "https://www.w3schools.com/sql/sql_update.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL中高效列更新的方法",
+                  "url": "https://www.atlassian.com/data/sql/how-to-update-a-column-based-on-a-filter-of-another-column",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "552afc7e-f21e-4625-b30a-963f9c2504a3",
+              "xid": "e98b10f8-2c51-40c4-bcff-852c51f3dc62"
+            },
+            {
+              "title": "DELETE",
+              "description": "DELETE 是一种 SQL 语句，用于从表中删除一个或多个行。\n\n它允许您使用 WHERE 子句指定要删除的行，如果未提供条件，则删除所有行。\n\nDELETE 是数据操作语言（Data Manipulation Language, DML）的一部分，用于数据维护，例如删除过时或不正确的信息，或者实现业务逻辑中需要删除数据的部分。\n\n在没有 WHERE 子句的情况下使用时，它会清空整个表，但保留其结构，这与 TRUNCATE 命令不同。\n\n",
+              "links": [
+                {
+                  "title": "DELETE",
+                  "url": "https://www.w3schools.com/sql/sql_delete.asp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "44b68b9a-1896-45a8-aa4f-3fcffe8f46af",
+              "xid": "d4cbe465-51d0-45fc-a52e-b86dee423c28"
+            }
+          ],
+          "id": "55b96bc2-16c6-4ce0-ba9c-4e76840144f8",
+          "xid": "f4205832-e05c-4cff-a04f-5f888e596444"
+        }
+      ],
+      "id": "60e33ced-0783-4f1a-865f-d677944f7be1",
+      "xid": "28fc691e-5feb-4bb8-97b9-a79520fa4f12"
+    },
+    {
+      "title": "数据定义语言（Data Definition Language，DDL）",
+      "description": "数据定义语言（Data Definition Language，DDL）是SQL的一个子集，用于定义和管理数据库对象的结构。\n\nDDL命令包括`CREATE`（创建）、`ALTER`（修改）、`DROP`（删除）和`TRUNCATE`（清空），这些命令用于创建、修改、删除和清空如表、索引、视图和架构等数据库结构。\n\n这些命令允许数据库管理员和开发人员定义数据库模式，设置表之间的关系，并管理数据库的总体结构。\n\nDDL语句通常会立即改变数据库结构，并可能影响现有数据。\n\n",
+      "links": [
+        {
+          "title": "数据定义语言（Data Definition Language，DDL）",
+          "url": "https://docs.getdbt.com/terms/ddl",
+          "type": "article"
+        },
+        {
+          "title": "关于数据定义语言的权威指南",
+          "url": "https://www.dbvis.com/thetable/sql-ddl-the-definitive-guide-on-data-definition-language/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "删除表",
+          "description": "`DROP TABLE` 语句是一个数据定义语言（DDL）操作，用于 **完全移除** 数据库中的表。\n\n此操作不仅会删除表结构，还会删除 **其中的所有数据**，从而彻底将表从数据库系统中移除。\n\n执行 `DROP TABLE` 语句时，它会消除表及其数据，以及任何相关联的索引、约束和触发器。\n\n与仅删除数据但保留表结构的 `TRUNCATE TABLE` 语句不同，`DROP TABLE` 会移除表相关的所有内容。\n\n",
+          "links": [
+            {
+              "title": "删除表",
+              "url": "https://www.w3schools.com/sql/sql_drop_table.asp",
+              "type": "article"
+            },
+            {
+              "title": "删除一个表",
+              "url": "https://www.coginiti.co/tutorials/beginner/drop-a-table/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e61b9ef6-a596-4774-b933-dd59730ba97c",
+          "xid": "ebab5375-3d91-4015-959f-3f01027579bf"
+        },
+        {
+          "title": "创建表",
+          "description": "`CREATE TABLE`（创建表）是一个SQL语句，用于在数据库中定义并创建一个新表。\n\n它指定了表名、列名、数据类型以及可选的约束，如主键(primary keys)、外键(foreign keys)和默认值(default values)。\n\n这个语句建立了表的结构，定义了数据将如何在表中存储和组织。\n\n`CREATE TABLE`是数据库管理中的一个基本命令，对于设置数据库的架构以及准备存储数据是必不可少的。\n\n",
+          "links": [
+            {
+              "title": "创建表",
+              "url": "https://www.tutorialspoint.com/sql/sql-create-table.htm",
+              "type": "article"
+            },
+            {
+              "title": "SQL 创建表",
+              "url": "https://www.programiz.com/sql/create-table",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9e84b330-ce07-4fc1-93a7-e1c8c83b2b8b",
+          "xid": "ee526747-f4c9-4d95-8c80-826df5aad124"
+        },
+        {
+          "title": "修改表 (Alter Table)",
+          "description": "SQL中的`ALTER TABLE`语句用于修改现有表的结构。\n\n这包括添加、删除或修改列，更改列的数据类型，设置默认值，以及添加或删除主键或外键。\n\n",
+          "links": [
+            {
+              "title": "修改表语句 (ALTER TABLE Statement)",
+              "url": "https://www.techonthenet.com/sql/tables/alter_table.php",
+              "type": "article"
+            },
+            {
+              "title": "修改表 - PostgreSQL (ALTER TABLE - PostgreSQL)",
+              "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-alter-table/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "69bec35d-ef98-40fb-9388-474dbf3ce68d",
+          "xid": "34e6a54b-5899-47aa-b067-dcb2133424d4"
+        },
+        {
+          "title": "截断表(Truncate Table)",
+          "description": "`TRUNCATE TABLE`语句是一个数据定义语言(DDL)操作，用于标记表的存储区以进行取消分配（清空以便重复使用）。\n\n这个操作通常会迅速移除表中的所有数据，一般会绕过旨在保护数据的完整性机制（如触发器）。\n\n它有效地消除了表中的所有记录，但不会删除表本身。\n\n与`DELETE`语句不同，`TRUNCATE TABLE`不会生成针对每一行的删除语句，因此不会产生日志记录或锁定等常规开销。\n\n",
+          "links": [
+            {
+              "title": "截断表(Truncate Table)",
+              "url": "https://www.tutorialspoint.com/sql/sql-truncate-table.htm",
+              "type": "article"
+            },
+            {
+              "title": "SQL教程 - 截断表(TRUNCATE TABLE)",
+              "url": "https://www.youtube.com/watch?v=zJidbjOQlJM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a8ddce1a-89d6-4739-af64-2ffb91170b7e",
+          "xid": "fee6bbb3-6a6c-4a70-a061-311c413f9bd4"
+        }
+      ],
+      "id": "ca420f28-a5d8-474b-9a7c-2e98af980804",
+      "xid": "fed5b419-e3ab-4cf1-87f9-1b96b70ca829"
+    },
+    {
+      "title": "数据操作语言（Data Manipulation Language，DML）",
+      "description": "数据操作语言（DML）是SQL中的一个子集，用于管理数据库对象内的数据。\n\n它包括诸如`SELECT`、`INSERT`、`UPDATE`和`DELETE`等命令，使用户能够检索、添加、修改和删除表中的数据。\n\nDML语句针对数据本身进行操作，而不是数据库结构，使用户能够与存储的信息进行交互。\n\n这些命令对于日常的数据库操作、数据分析和维护数据库系统中的数据准确性和相关性至关重要。\n\n",
+      "links": [
+        {
+          "title": "什么是DML？",
+          "url": "https://satoricyber.com/glossary/dml-data-manipulation-language",
+          "type": "article"
+        },
+        {
+          "title": "什么是DML？（Wiki）",
+          "url": "https://en.wikipedia.org/wiki/Data_manipulation_language",
+          "type": "article"
+        },
+        {
+          "title": "DML与数据管理系统的差异",
+          "url": "https://appmaster.io/blog/difference-between-ddl-and-dml",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "选择",
+          "description": "SELECT 是最基础的 SQL 命令之一，用于从数据库的一个或多个表中检索数据。\n\n它允许你指定要获取的列，应用过滤条件，对结果进行排序，并对数据执行各种操作。\n\nSELECT 语句功能强大，支持连接（joins）、子查询（subqueries）、聚合（aggregations）等功能，使其成为关系型数据库中数据查询和分析的必备工具。\n\n",
+          "links": [
+            {
+              "title": "SQL_Select",
+              "url": "https://www.w3schools.com/sql/sql_select.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cacbc9fb-5485-40b4-b82c-205942fe1e26",
+          "xid": "fe96575a-95bf-4eaa-8595-c8bb5ffd78f1"
+        },
+        {
+          "title": "FROM",
+          "description": "SQL中的`FROM`子句指定了应从中提取数据的表。\n\n它是`SELECT`语句以及`SELECT`变体（如`SELECT INTO`和`SELECT WHERE`）的重要组成部分。\n\n`FROM`也可用于连接表。\n\n通常，`FROM`后面跟着空格分隔的表单列表，这些表是SELECT操作要执行的地方。\n\n如果你需要从多个表中提取数据，每个表之间要用逗号分开。\n\n",
+          "links": [
+            {
+              "title": "SQL FROM 关键字 (Keyword)",
+              "url": "https://www.w3schools.com/sql/sql_ref_from.asp",
+              "type": "article"
+            },
+            {
+              "title": "如何编写基础SQL",
+              "url": "https://www.youtube.com/watch?v=YfTDBA45PHk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6523e4c2-1b62-43e7-a486-b673a748f416",
+          "xid": "d743bc13-8318-4787-a4d0-c4d78239ea97"
+        },
+        {
+          "title": "WHERE",
+          "description": "SQL 提供了 WHERE 子句（WHERE clause），它主要用于过滤记录。\n\n只有当 WHERE 子句中指定的条件满足时，才会从表中返回特定的值。\n\n你应该使用 WHERE 子句来过滤记录，只获取必要的记录。\n\nWHERE 子句不仅可以在 SELECT 语句（SELECT statement）中使用，还可以在 UPDATE 语句、DELETE 语句（UPDATE statement, DELETE statement）等中使用，我们将在后续章节中学习这些内容。\n\n",
+          "links": [
+            {
+              "title": "WHERE 子句",
+              "url": "https://www.w3schools.com/sql/sql_where.asp",
+              "type": "article"
+            },
+            {
+              "title": "如何在 SQL 中使用 WHERE 子句进行过滤",
+              "url": "https://www.youtube.com/watch?v=4Uv0o8IBqw0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "859ffa77-cd62-44af-9f61-1ec1710b8030",
+          "xid": "b6c3e156-09b9-4f22-96ab-db0a0b263d3d"
+        },
+        {
+          "title": "ORDER BY",
+          "description": "在SQL中，`ORDER BY` 子句用于根据一个或多个列对查询结果集进行排序。\n\n默认排序顺序为升序，但可以使用 `DESC` (descending) 关键字指定降序。\n\n该子句可以对数值、日期或文本值进行排序，并且可以通过在 `ORDER BY` 子句中列出多个列及各自的排序方向来进行多列排序。\n\n此子句对于将数据按有意义的顺序进行组织至关重要，例如按时间戳排序以首先显示最新的记录，或者按名称进行字母排序。\n\n",
+          "links": [
+            {
+              "title": "SQL ORDER BY 关键字",
+              "url": "https://www.w3schools.com/sql/sql_orderby.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL ORDER BY 排序子句",
+              "url": "https://www.youtube.com/watch?v=h_HHTNjAgS8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "651d68fd-ee28-47dc-a982-abf511a1ef07",
+          "xid": "435d12ca-ee88-4d63-bc0a-6e851dbc2937"
+        },
+        {
+          "title": "GROUP BY",
+          "description": "`GROUP BY` 是一个用在 `SELECT` 语句中的 SQL 子句，用于将相同的数据排列到组中。\n\n它通常与聚合函数（如 `COUNT`（计数），`SUM`（求和），`AVG`（平均值））配合使用，对每组行进行计算。\n\n`GROUP BY` 跨越多个记录收集数据，并根据一个或多个列对结果进行分组，使得可以以更高的粒度级别分析数据。\n\n此子句对于生成汇总报告、执行数据分析以及在关系数据库中创建有意义的数据聚合至关重要。\n\n",
+          "links": [
+            {
+              "title": "SQL GROUP BY",
+              "url": "https://www.programiz.com/sql/group-by",
+              "type": "article"
+            },
+            {
+              "title": "SQL中的高级聚合函数",
+              "url": "https://www.youtube.com/watch?v=nNrgRVIzeHg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "bd5bedcf-817a-4cb9-af15-9e706cb40849",
+          "xid": "1033b024-cfba-45f0-aa35-c1c1a28a8ed1"
+        },
+        {
+          "title": "HAVING",
+          "description": "`HAVING` 子句通常与 `GROUP BY` 子句结合使用，用于过滤 `GROUP BY` 生成的结果。\n\n它用于指定针对汇总函数（如 `SUM` (SUM)，`COUNT` (COUNT)，`AVG` (AVG)，`MAX` (MAX) 或 `MIN` (MIN)）的条件。\n\n需要注意的是，与 `WHERE` 子句对逐行记录施加条件不同，`HAVING` 子句对 `GROUP BY` 子句创建的组施加条件。\n\n此外需要注意，`HAVING` 应用于汇总后的组记录，而 `WHERE` 应用于单个记录。\n\n",
+          "links": [
+            {
+              "title": "SQL HAVING 子句",
+              "url": "https://www.programiz.com/sql/having",
+              "type": "article"
+            },
+            {
+              "title": "HAVING 子句",
+              "url": "https://www.youtube.com/watch?v=tYBOMw7Ob8E",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6b8a76d8-eba8-43e0-8cf1-e36e36ee26fb",
+          "xid": "0f72be17-9dc3-4586-891a-5cb1529552bb"
+        },
+        {
+          "title": "连接（JOINs）",
+          "description": "SQL `连接（JOINs）` 是用于根据两个或多个表之间的相关列组合行的子句。\n\n它们允许通过单一查询从多个表中检索数据，从而实现复杂的数据分析和报告。\n\n`连接（JOINs）` 的主要类型包括：\n\n*   `内连接（INNER JOIN）`（返回两个表中的匹配行）\n*   `左连接（LEFT JOIN）`（返回左表中的所有行以及右表中的匹配行）\n*   `右连接（RIGHT JOIN）`（与 `左连接（LEFT JOIN）` 相反）\n*   `全连接（FULL JOIN）`（当任一表中有匹配时返回所有行）\n\n`连接（JOINs）` 是关系数据库操作的基础，使跨相关数据集的数据集成和探索成为可能。\n\n",
+          "links": [
+            {
+              "title": "SQL 连接（JOINs）快捷方式表",
+              "url": "https://www.datacamp.com/cheat-sheet/sql-joins-cheat-sheet",
+              "type": "article"
+            },
+            {
+              "title": "SQL 连接（JOINs）入门教程",
+              "url": "https://www.youtube.com/watch?v=0OQJDd3QqQM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "12bb703e-daa6-4fbe-b988-38c1538b9823",
+          "xid": "55513b72-40f4-4b08-a4b6-0346ed1abafa"
+        },
+        {
+          "title": "插入(INSERT)",
+          "description": "「插入(INSERT)」语句用于向数据库中的表添加新的数据行。\n\nINSERT命令主要有两种形式：`INSERT INTO` 如果没有指定列名，就期望所有列都有值；`INSERT INTO 表名 (列1, 列2, ...)` 只有指定的列会被填充数据。\n\n",
+          "links": [
+            {
+              "title": "SQL 插入(SQL INSERT)",
+              "url": "https://www.w3schools.com/sql/sql_insert.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL 插入语句(SQL INSERT Statement)",
+              "url": "https://www.youtube.com/watch?v=Yp1MKeIG-M4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ba4d5b3e-bec0-48bb-8023-984091b84178",
+          "xid": "3786e7e8-ee4b-4679-b3e4-2cf9b7341a0c"
+        },
+        {
+          "title": "更新",
+          "description": "在SQL中，UPDATE语句用于修改表中的现有记录。\n\n它允许您根据指定的条件更改一个或多个列的值。\n\n基本语法包括指定表名，要更新的列及其新值，并可选地使用WHERE子句来筛选出要更改的行。\n\nUPDATE可以与子查询、连接和CTEs（公共表表达式）一起使用，以进行更复杂的数据修改。\n\n使用UPDATE时需谨慎，尤其是在使用WHERE子句时，以避免意外的数据更改。\n\n在事务数据库中，如果UPDATE操作属于尚未提交的事务，则可以将其撤销。\n\n",
+          "links": [
+            {
+              "title": "SQL UPDATE语句",
+              "url": "https://www.w3schools.com/sql/sql_update.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL中的高效列更新",
+              "url": "https://www.atlassian.com/data/sql/how-to-update-a-column-based-on-a-filter-of-another-column",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "82caf865-1151-44f4-a34e-fa95c793f50a",
+          "xid": "6807d8ec-4922-4353-af6a-fb873936e72f"
+        },
+        {
+          "title": "DELETE",
+          "description": "DELETE 是一个 SQL 语句，用于从表中删除一行或多行。\n\n它允许使用 WHERE 子句指定要删除的行，或者在没有提供条件的情况下删除所有行。\n\nDELETE 是数据操作语言 (DML) 的一部分，用于数据维护，如移除过时或不正确的信息，或执行需要删除数据的业务逻辑。\n\n如果没有使用 WHERE 子句，DELETE 会清空整个表，但保留其结构，这与 TRUNCATE 命令不同。\n\n",
+          "links": [
+            {
+              "title": "DELETE",
+              "url": "https://www.w3schools.com/sql/sql_delete.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "847eb5eb-114b-4c0e-b841-f674bc3852c9",
+          "xid": "df38f3f3-5509-4af4-bb94-bfc46c45cebb"
+        }
+      ],
+      "id": "5efe0e82-3180-4c57-b89b-786f392feff5",
+      "xid": "d0e70714-0b15-4fc4-92e7-44f5f9493306"
+    },
+    {
+      "title": "聚合查询",
+      "description": "SQL中的聚合查询用于对多行数据进行计算，返回单个汇总值或分组结果。\n\n这些查询通常涉及使用聚合函数，例如：\n\n    •\tCOUNT()：返回满足特定条件的行数。\n\n\n    •\tSUM()：计算数值列的总和。\n\n\n    •\tAVG()：计算数值列的平均值。\n\n\n    •\tMIN() 和 MAX()：分别查找列中的最小值和最大值。\n\n\n    •\tGROUP BY：用于根据指定列中的共同值对行进行分组，允许为每个组应用聚合函数。\n\n\n    •\tHAVING：基于指定条件过滤GROUP BY子句的结果，类似于WHERE子句，但应用于组。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "求和（SUM）",
+          "description": "求和（SUM）是SQL中的一个聚合函数，用于计算一组值的总和。\n\n它通常与数字列结合使用，并与GROUP BY子句一起使用，以便为数据中的不同类别或组计算总计。\n\n求和（SUM）对于财务计算、统计分析和从数据库表生成摘要报告至关重要。\n\n它忽略NULL值，并可以与其他聚合函数结合使用，以进行复杂的数据分析。\n\n",
+          "links": [
+            {
+              "title": "SQL求和（SUM）函数",
+              "url": "https://www.w3schools.com/sql/sql_sum.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL求和（SUM）",
+              "url": "https://www.studysmarter.co.uk/explanations/computer-science/databases/sql-sum/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1e343432-4f19-4e06-9690-a11926d2d90f",
+          "xid": "765a7037-4461-4e7d-b6e3-99ed94607df7"
+        },
+        {
+          "title": "COUNT（计数）",
+          "description": "`COUNT` 是一个SQL聚合函数，返回符合指定条件的行数。\n\n它可以用来计算表中的所有行、特定列中的非空值，或者与 `WHERE` 子句结合使用时满足某些条件的行数。\n\n`COUNT` 在数据分析、报告和性能优化查询中经常用于确定数据集的大小或特定值的频率。\n\n",
+          "links": [
+            {
+              "title": "COUNT（计数）",
+              "url": "https://www.w3schools.com/sql/sql_count.asp",
+              "type": "article"
+            },
+            {
+              "title": "COUNT SQL 函数（COUNT SQL Function）",
+              "url": "https://www.datacamp.com/tutorial/count-sql-function",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0fef2653-c5eb-4947-8735-98466919f073",
+          "xid": "f91b4c14-364b-4614-a7d7-1a09580a4ad5"
+        },
+        {
+          "title": "AVG（平均值）",
+          "description": "在SQL中，`AVG()` 是一个聚合函数，用于计算数值列的平均值。\n\n它返回列中所有值的总和除以值的数量。\n\n",
+          "links": [
+            {
+              "title": "AVG（平均值）",
+              "url": "https://www.sqlshack.com/sql-avg-function-introduction-and-examples/",
+              "type": "article"
+            },
+            {
+              "title": "SQL AVG（平均值）函数",
+              "url": "https://www.w3schools.com/sql/sql_avg.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "40002df3-9c2d-4e1e-9d40-5f6f3e41e9ae",
+          "xid": "0a9af9e2-747e-40bd-9f28-ef8f4f0e2c9e"
+        },
+        {
+          "title": "最小值函数（MIN）",
+          "description": "`最小值函数（MIN）` 是 SQL 中的一个聚合函数，返回一组值中的最低值。\n\n它支持数值型、日期型或字符串数据类型，并从指定列中选择最小值。\n\n通常与 `GROUP BY` 结合使用，`最小值函数（MIN）` 可以找到每个组内的最小值。\n\n此函数对于各种数据分析任务非常有用，例如确定数据集中的最低价格、最早日期或按字母顺序排列的第一个名称。\n\n",
+          "links": [
+            {
+              "title": "SQL 最大值 & 最小值（MAX & MIN）",
+              "url": "https://www.programiz.com/sql/min-and-max",
+              "type": "article"
+            },
+            {
+              "title": "计数、求和、平均、最小值、最大值（SQL）- 数据聚合（COUNT, SUM, AVG, MIN, MAX）",
+              "url": "https://www.youtube.com/watch?v=muwEdPsx534",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4c2e0526-b02f-4845-9230-aefa102e5f75",
+          "xid": "90bc153b-b254-4693-8d3d-f28c2566f7c0"
+        },
+        {
+          "title": "MAX (最大值函数)",
+          "description": "`MAX (最大值函数)` 是SQL中的一个聚合函数，用于返回一组值中的最大值。\n\n它可以与数字型、日期型或字符串型数据一起使用，从指定的列中选择最大值。\n\n`MAX (最大值函数)` 通常与 `GROUP BY` 一起使用，以寻找每个组内的最大值。\n\n此函数对于各种数据分析任务很有用，例如查找最高薪水、最近的日期或数据集中字母表最后的名字。\n\n",
+          "links": [
+            {
+              "title": "MAX (最大值函数)",
+              "url": "https://www.techonthenet.com/sql/max.php",
+              "type": "article"
+            },
+            {
+              "title": "基本聚合函数",
+              "url": "https://www.youtube.com/watch?v=jcoJuc5e3RE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "749c99b8-6fc3-4966-a000-b03ca57549f1",
+          "xid": "26af0ed5-5b99-4d6f-ad16-2ab55fb02d97"
+        },
+        {
+          "title": "GROUP BY",
+          "description": "`GROUP BY` 是一个在 `SELECT` 语句中使用的 SQL 子句，用于将相同的数据分组。\n\n它通常与聚合函数（如 `COUNT`（计数），`SUM`（求和），`AVG`（平均数））结合使用，在每一组行上执行计算。\n\n`GROUP BY` 跨多个记录收集数据，并根据一个或多个列对结果进行分组，从而允许以更高的颗粒度级别分析数据。\n\n此子句对于生成总结报告、执行数据分析和在关系数据库中创建有意义的数据聚合是基础性的。\n\n",
+          "links": [
+            {
+              "title": "SQL GROUP BY",
+              "url": "https://www.programiz.com/sql/group-by",
+              "type": "article"
+            },
+            {
+              "title": "SQL 中的高级聚合函数",
+              "url": "https://www.youtube.com/watch?v=nNrgRVIzeHg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "14eb0c6c-b2fa-44da-a1dd-d994ca13fbed",
+          "xid": "a72ee304-c2bb-41c0-836a-e4c5b68590c7"
+        },
+        {
+          "title": "HAVING（HAVING）",
+          "description": "`HAVING` 子句通常与 `GROUP BY` 子句结合使用，用于过滤 `GROUP BY` 的结果。\n\n它用于指定针对聚合函数（如 `SUM`（求和），`COUNT`（计数），`AVG`（平均值），`MAX`（最大值）或 `MIN`（最小值））的条件。\n\n需要注意的是，与 `WHERE` 子句用于对单个行引入条件不同，`HAVING` 子句对 `GROUP BY` 子句创建的组提供条件。\n\n另外请注意，`HAVING` 适用于汇总的组记录，而 `WHERE` 则适用于单独的记录。\n\n",
+          "links": [
+            {
+              "title": "SQL HAVING 子句（SQL HAVING Clause）",
+              "url": "https://www.programiz.com/sql/having",
+              "type": "article"
+            },
+            {
+              "title": "HAVING 子句（HAVING Clause）",
+              "url": "https://www.youtube.com/watch?v=tYBOMw7Ob8E",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "3107919c-412c-43b3-a2ac-86e974d7cb0d",
+          "xid": "906f9825-ce86-4fe3-8fac-f80918a90ee0"
+        }
+      ],
+      "id": "5f35da15-d922-47a0-b344-8581fd077c10",
+      "xid": "a903f02d-d62b-4fa2-833b-79e3be01170c"
+    },
+    {
+      "title": "数据约束（Data Constraints）",
+      "description": "SQL中的数据约束是对列或表应用的规则，用于强制数据完整性和一致性。\n\n它们包括主键（primary key）、外键（foreign key）、唯一（unique）、检查（check）和非空（not null）约束。\n\n这些约束定义了可以在数据库中插入、更新或删除的数据限制，确保数据满足特定的条件并保持表间的关系。\n\n通过实现数据约束，数据库设计者可以在数据库级别直接防止无效数据输入、保持引用完整性并强制执行业务规则。\n\n",
+      "links": [
+        {
+          "title": "数据约束（Data Constraints）",
+          "url": "https://www.w3schools.com/sql/sql_constraints.asp",
+          "type": "article"
+        },
+        {
+          "title": "SQL 约束（SQL Constraints）",
+          "url": "https://www.programiz.com/sql/constraints",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "主键 (Primary Key)",
+          "description": "在SQL中，主键是数据库表中每条记录的唯一标识符。\n\n它确保表中的每一行都可以唯一标识，意味着没有两行可以具有相同的主键值。\n\n主键由一个或多个列组成，必须包含唯一的值，并且不能包含任何`NULL`项。\n\n主键通过防止重复记录并确保可以精确定位和引用每个记录来强制实体完整性，通常通过其他表中的外键关系实现。\n\n使用主键是建立表之间关系和维护数据模型完整性的基础。\n\n",
+          "links": [
+            {
+              "title": "SQL 主键约束 (SQL PRIMARY KEY Constraint)",
+              "url": "https://www.w3schools.com/sql/sql_primarykey.ASP",
+              "type": "article"
+            },
+            {
+              "title": "SQL 主键 (SQL Primary Key)",
+              "url": "https://www.tutorialspoint.com/sql/sql-primary-key.htm",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9ca7aa3c-549d-47b7-8249-8a72b7ed6efd",
+          "xid": "2c1dcaf8-5dd6-4f0b-94bb-c1e041db20b5"
+        },
+        {
+          "title": "外键(Foreign Key)",
+          "description": "在SQL中，外键是表中的一个或一组列，它引用另一个表的主键(Primary Key)。\n\n外键建立两个表之间的链接，强制执行参照完整性并保持相关数据之间的关系。\n\n外键确保引用表中的值对应于被引用表中的有效值，防止孤立记录并维护表之间的数据一致性。\n\n它们对于实现关系数据库设计和支持连接多个表的复杂查询至关重要。\n\n",
+          "links": [
+            {
+              "title": "什么是外键(Foreign Key)？",
+              "url": "https://www.cockroachlabs.com/blog/what-is-a-foreign-key/",
+              "type": "article"
+            },
+            {
+              "title": "外键(Foreign Key)很简单（某种程度上）",
+              "url": "https://www.youtube.com/watch?v=rFssfx37UJw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8ed439f7-ea5e-4382-b10b-105427e853ed",
+          "xid": "16ffdaf7-a011-428d-a1bc-ed6da5114e65"
+        },
+        {
+          "title": "唯一性约束",
+          "description": "`UNIQUE`（唯一性约束）是SQL中用于确保列或列集合中的所有值都是唯一的约束。\n\n当应用于列或列组合时，它可以防止重复值被插入表中。\n\n该约束对于维护数据完整性至关重要，特别是在需要唯一性的字段，如电子邮件地址、用户名或产品代码中。\n\n`UNIQUE`约束可以在创建表时应用，也可以稍后添加，并且会自动在指定的列上创建索引以提高查询性能。\n\n与`PRIMARY KEY`约束不同，`UNIQUE`列可以包含`NULL`值（除非明确禁止），并且一个表可以有多个`UNIQUE`约束。\n\n",
+          "links": [
+            {
+              "title": "SQL UNIQUE约束",
+              "url": "https://www.w3schools.com/sql/sql_unique.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "06efcace-cac3-46e9-b137-717e53188f65",
+          "xid": "415f05bc-c208-4dde-9702-16952cd56289"
+        },
+        {
+          "title": "非空（NOT NULL）",
+          "description": "在SQL中，`非空`（NOT NULL）约束确保某列不能有空值（NULL）。\n\n因此，每一行/记录都必须包含该列的值。\n\n这是一种在插入或更新表中的记录时，强制某些字段成为必需字段的方法。\n\n例如，如果你正在设计一个包含员工数据的表，你可能希望确保员工的`id`和`name`总是被提供。\n\n这种情况下，你将使用`非空`（NOT NULL）约束。\n\n",
+          "links": [
+            {
+              "title": "SQL IS NULL 和 IS NOT NULL",
+              "url": "https://www.programiz.com/sql/is-null-not-null",
+              "type": "article"
+            },
+            {
+              "title": "非空约束（NOT NULL Constraint）",
+              "url": "https://www.youtube.com/watch?v=unzHhq82mKU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "bb847b47-fe47-494e-9078-2f68c44ec3cc",
+          "xid": "f06717f4-a9f6-4ee3-9b88-f9a6d63b2510"
+        },
+        {
+          "title": "CHECK",
+          "description": "在SQL中，`CHECK` 约束（CHECK constraint）用于通过指定每个表行中的条件来强制执行数据完整性。\n\n它允许你定义一个或多个列可以插入或更新的值的自定义规则或限制。\n\n`CHECK` 约束通过防止无效或不一致的数据被添加到数据库中，来帮助维持数据质量，确保只有符合指定标准的数据被接受。\n\n",
+          "links": [
+            {
+              "title": "SQL CHECK 约束",
+              "url": "https://www.w3schools.com/sql/sql_check.asp",
+              "type": "article"
+            },
+            {
+              "title": "CHECK 约束",
+              "url": "https://www.youtube.com/watch?v=EeG2boJCXbc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4d166041-7792-4669-bea3-6427851d726e",
+          "xid": "81cb6734-aec9-4aed-a351-c265cac4f526"
+        }
+      ],
+      "id": "a2370f5c-42c9-46b9-96d2-439a24d6a824",
+      "xid": "d38245cd-df58-4cf2-b474-2fbeebc7f7b1"
+    },
+    {
+      "title": "JOIN 查询",
+      "description": "SQL 中的 `JOIN` 查询基于两个或多个表之间的相关列来组合行。\n\n有许多类型的 JOIN，包括 INNER JOIN（返回匹配行）、`LEFT JOIN`（返回左表中的所有行和右表中的匹配行）、`RIGHT JOIN`（与 `LEFT JOIN` 相反）和 `FULL JOIN`（当任一表中有匹配行时返回所有行）。\n\n`JOIN` 是用于处理关系数据库的基础，它允许用户通过单一查询检索多个表中的数据，建立表之间的关系，并对相关数据集执行复杂的数据分析。\n\n",
+      "links": [
+        {
+          "title": "7 个带详细解释的 SQL JOIN 示例",
+          "url": "https://learnsql.com/blog/sql-join-examples-with-explanations/",
+          "type": "article"
+        },
+        {
+          "title": "理解 JOIN 很简单",
+          "url": "https://www.youtube.com/watch?v=G3lJAxg1cy8",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "INNER JOIN（内连接）",
+          "description": "在SQL中，`INNER JOIN`（内连接）是一种返回两个表中具有匹配值的记录的连接类型。\n\n此操作将第一个表中的每一行与第二个表中的每一行进行比较，以查找满足连接谓词的所有行对。\n\n关于`INNER JOIN`（内连接）应注意以下几点：\n\n*   它是SQL中的默认连接类型。\n\n如果您在查询中提到`JOIN`（连接）而没有指定类型，SQL会将其视为`INNER JOIN`（内连接）。\n\n\n*   它仅返回来自两个表的匹配行。\n\n\n*   如果没有匹配项，则返回为空的结果。\n\n",
+          "links": [
+            {
+              "title": "SQL INNER JOIN（内连接）",
+              "url": "https://www.w3schools.com/sql/sql_join_inner.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL INNER JOIN子句（内连接子句）",
+              "url": "https://www.programiz.com/sql/inner-join",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b2536db4-edd6-4b3d-a020-f359615895c5",
+          "xid": "9f295c7d-3d8b-4060-9749-e7688d27be2d"
+        },
+        {
+          "title": "LEFT JOIN（左连接）",
+          "description": "在SQL中，`LEFT JOIN`（左连接）返回左（第一）表中的所有行和右（第二）表中的匹配行。\n\n如果右表中没有匹配，将返回那些列的`NULL`值。\n\n当您想查看一个表中的所有记录时，无论其他表中是否有对应的条目，这种连接类型很有用。\n\n`LEFT JOIN`（左连接）常用于查找缺失的关系、创建包括所有主记录的报告或在处理数据时，其中在相关的表中并不总具有对应的匹配项。\n\n",
+          "links": [
+            {
+              "title": "SQL LEFT JOIN（左连接）",
+              "url": "https://www.w3schools.com/sql/sql_join_left.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL LEFT JOIN - SQL 教程（左连接）",
+              "url": "https://www.youtube.com/watch?v=giKwmtsz1U8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d4190254-1dce-4267-baaf-a11f7b48fecb",
+          "xid": "1f6552ad-3d40-4f58-9b9e-e12c725dfbc6"
+        },
+        {
+          "title": "右连接(RIGHT JOIN)",
+          "description": "`右连接(RIGHT JOIN)` 是SQL中外连接的一种类型，它返回右侧（第二个）表中的所有行和左侧（第一个）表中的匹配行。\n\n如果左侧表中没有匹配项，则返回左侧表列的`NULL`值。\n\n这种连接类型不如`左连接(LEFT JOIN)`常用，但在希望确保结果集包含第二个表中的所有记录时非常有用，无论这些记录在第一个表中是否有对应的匹配项。\n\n`右连接(RIGHT JOIN)`通常用于识别丢失的关系或将查找表中的所有可能值包括在内。\n\n",
+          "links": [
+            {
+              "title": "SQL 右连接(RIGHT JOIN)",
+              "url": "https://www.w3schools.com/sql/sql_join_right.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL 右连接(RIGHT JOIN)实例",
+              "url": "https://www.programiz.com/sql/right-join",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b2c56990-76a9-4412-aee3-31fd25a49bf4",
+          "xid": "10994e07-579d-465f-a508-cb5482d74b1f"
+        },
+        {
+          "title": "全外连接 (FULL OUTER JOIN)",
+          "description": "在SQL中，`全外连接` (`FULL OUTER JOIN`) 结合了`左外连接` (`LEFT OUTER JOIN`) 和`右外连接` (`RIGHT OUTER JOIN`) 的结果。\n\n它返回两个表中的所有行，在条件匹配的情况下匹配记录，并在两个表中包含未匹配的行，用`NULL`值代替缺失的数据。\n\n当需要查看两个表的所有数据时，无论是否存在匹配的行，这种连接类型非常有用，特别是用于识别缺失的关系或在两个表之间执行数据核对时。\n\n",
+          "links": [
+            {
+              "title": "全外连接 (FULL OUTER JOIN)",
+              "url": "https://www.w3schools.com/sql/sql_join_full.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL 全外连接 (FULL OUTER JOIN)",
+              "url": "https://www.youtube.com/watch?v=XpBkXo3DCEg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c766e569-aad5-438f-82b6-64a5938968f0",
+          "xid": "f3626810-cbc3-44b5-9126-a902aed7118c"
+        },
+        {
+          "title": "自连接 (Self Join)",
+          "description": "自连接 (`SELF JOIN`) 是一种标准的 SQL 操作，其中一张表与其自身连接。\n\n这听起来可能有些违反直觉，但在需要在表内执行比较操作的情况下非常有用。\n\n实质上，它是用来根据提供的条件，将与同一表中其他行匹配的行结合起来。\n\n需要注意的是，由于这是在同一张表上执行的连接操作，必须对该表使用别名以避免在连接操作期间发生混淆。\n\n",
+          "links": [
+            {
+              "title": "理解 SQL 中的自连接",
+              "url": "https://www.dbvis.com/thetable/understanding-self-joins-in-sql/",
+              "type": "article"
+            },
+            {
+              "title": "SQL 自连接",
+              "url": "https://www.w3schools.com/sql/sql_join_self.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f84a17be-32f9-4cf6-b7ba-00e77c053205",
+          "xid": "52d3432a-f029-494c-90b1-1abeb1450b73"
+        },
+        {
+          "title": "交叉连接(Cross Join)",
+          "description": "在SQL中，交叉连接用于将第一个表的每行与第二个表的每行组合。\n\n它也被称作两个表的笛卡尔积(Cartesian product)。\n\n执行交叉连接时最重要的一点是，它不需要任何条件来执行连接。\n\n交叉连接的问题在于，它返回两个表的笛卡尔积，这可能导致行数大幅增加及资源消耗过高。\n\n因此，只有在必要时才应明智使用交叉连接。\n\n",
+          "links": [
+            {
+              "title": "CROSS JOIN",
+              "url": "https://www.w3schools.com/mysql/mysql_join_cross.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL 交叉连接示例(SQL CROSS JOIN With Examples)",
+              "url": "https://www.sqlshack.com/sql-cross-join-with-examples/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c1fd7465-f3fb-48a8-8338-1369d9b8dc71",
+          "xid": "6c927d8c-b2d1-4b9f-89e1-7eb5982d0b66"
+        }
+      ],
+      "id": "a39597f8-d8d9-4aa6-b3c8-dd9764bb04b2",
+      "xid": "48626bbc-47ac-466e-8aa5-3cc5400be0ca"
+    },
+    {
+      "title": "子查询(Subqueries)",
+      "description": "子查询（Subqueries），也被称为嵌套查询（Nested queries）或内查询（Inner queries），是嵌入另一查询中的SQL查询。\n\n它们可以在SQL语句的各个部分中使用，如SELECT、FROM、WHERE和HAVING子句。\n\n子查询通过将复杂查询分解成更易于管理的部分，允许进行复杂的数据检索和操作。\n\n它们特别适用于创建动态条件、执行计算或比较结果集。\n\n",
+      "links": [
+        {
+          "title": "SQL 子查询(SQL Sub Queries)",
+          "url": "https://www.tutorialspoint.com/sql/sql-sub-queries.htm",
+          "type": "article"
+        },
+        {
+          "title": "高级SQL教程 | 子查询(Advanced SQL Tutorial | Subqueries)",
+          "url": "https://www.youtube.com/watch?v=m1KcNV-Zhmc",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "类型(types)",
+          "description": "类型(types)",
+          "links": [],
+          "children": [
+            {
+              "title": "标量(Scalar)",
+              "description": "标量值是一个单一数据项，与一组或多组值相对。\n\n标量子查询返回正好一列一行的数据，常用于`SELECT`语句中，`WHERE`子句或表达式的一部分。\n\nSQL中的标量函数基于输入参数返回一个单一值。\n\n理解标量概念对于编写高效的、精确的SQL查询至关重要。\n\n",
+              "links": [
+                {
+                  "title": "创建SQL标量函数",
+                  "url": "https://www.ibm.com/docs/en/db2/11.5?topic=functions-creating-sql-scalar",
+                  "type": "article"
+                },
+                {
+                  "title": "使用标量SQL提高性能",
+                  "url": "https://www.youtube.com/watch?v=v8X5FGzzc9A",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "9d35fb0a-56c5-40c4-9db2-17601e7e7705",
+              "xid": "4c93042d-d0b9-436e-9ad9-8b4579b97bfc"
+            },
+            {
+              "title": "列",
+              "description": "在SQL中，列用于对表中的数据进行分类。\n\n列作为存储特定类型数据（整数(ints)、字符串(str)、布尔(bool)等）的结构。\n\n表中的每一列都设计有类型，这会配置它可以存储的数据。\n\n使用正确的列类型和大小有助于维护数据完整性并优化性能。\n\n",
+              "links": [
+                {
+                  "title": "SQL列",
+                  "url": "https://www.w3schools.com/sql/sql_ref_column.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "PostgreSQL数据类型",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-data-types/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "997df2c7-4013-46d0-9ad1-623cc00608b5",
+              "xid": "f7df460c-b1fe-4da5-a7c3-92610acb5fd9"
+            },
+            {
+              "title": "行",
+              "description": "在SQL中，行（也称为记录或元组）表示表中一个单一的、隐式结构化的数据项。\n\n每一行包含一组与表的列相对应的相关数据元素。\n\n行是关系型数据库模型的基础，提供了有组织的数据存储和检索功能。\n\n操作如INSERT（插入）、UPDATE（更新）和DELETE（删除）通常在行级别进行。\n\n",
+              "links": [
+                {
+                  "title": "行 - 数据库",
+                  "url": "https://en.wikipedia.org/wiki/Row_(database)",
+                  "type": "article"
+                },
+                {
+                  "title": "数据库行：定义，示例",
+                  "url": "https://www.devx.com/terms/database-row/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1fb2ba5e-b8e2-4cae-9b3d-8e9701c57d79",
+              "xid": "0e6a6c41-81b9-4c59-bb3b-26771ab9da1f"
+            },
+            {
+              "title": "表格",
+              "description": "表格是关系型数据库中组织数据的基本结构。\n\n它由行（记录）和列（字段）组成，表示相关数据条目的集合。\n\n表格定义了数据的模式，包括数据类型和约束。\n\n它们是SQL数据库中存储和检索数据的主要对象，理解表格结构对于有效的数据库设计和查询至关重要。\n\n",
+              "links": [
+                {
+                  "title": "表格（数据库）",
+                  "url": "https://en.wikipedia.org/wiki/Table_(database)",
+                  "type": "article"
+                },
+                {
+                  "title": "表格简介",
+                  "url": "https://support.microsoft.com/en-gb/office/introduction-to-tables-78ff21ea-2f76-4fb0-8af6-c318d1ee0ea7",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4bdf44bc-3667-40ca-8c39-464cd31e97b5",
+              "xid": "47ec9be5-42fa-4990-9dd2-497cabccfae0"
+            }
+          ],
+          "id": "2a48d211-ed40-42b4-baeb-0e695560fb10",
+          "xid": "950ec808-0eb6-46f1-be3c-bd0dadffde3f"
+        },
+        {
+          "title": "嵌套子查询(Nested Subqueries)",
+          "description": "在SQL中，子查询是嵌套在主查询内部的查询。\n\n如果一个子查询嵌套在另一个子查询内，它被称为嵌套子查询。\n\n它们可以用于SELECT、INSERT、UPDATE或DELETE语句，或在另一个子查询内。\n\n嵌套子查询可能会快速变得复杂，但它们对于执行复杂的数据库任务是必不可少的。\n\n",
+          "links": [
+            {
+              "title": "嵌套子查询(Nested Subqueries)",
+              "url": "https://www.studysmarter.co.uk/explanations/computer-science/databases/nested-subqueries-in-sql/",
+              "type": "article"
+            },
+            {
+              "title": "MySQL 子查询(MySQL Subqueries)",
+              "url": "https://www.youtube.com/watch?v=i5acg3Hvu6g",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5ef2e315-a2b3-4e6a-b7d5-e6d602e47e99",
+          "xid": "e61d92cc-e15d-4c93-bc5e-860870e96208"
+        },
+        {
+          "title": "相关子查询(Correlated Subqueries)",
+          "description": "在SQL中，相关子查询是指在其`WHERE`子句中使用来自外部查询值的子查询。\n\n相关子查询会在外部查询处理的每一行中进行一次评估。\n\n这种子查询的存在是因为它依赖于外部查询，并且无法独立于外部查询执行，因为子查询在其`WHERE`子句中使用了外部查询的列。\n\n",
+          "links": [
+            {
+              "title": "相关子查询(Correlated Subqueries)",
+              "url": "https://dev.mysql.com/doc/refman/8.4/en/correlated-subqueries.html",
+              "type": "article"
+            },
+            {
+              "title": "子查询简介(Intro To Subqueries)",
+              "url": "https://www.youtube.com/watch?v=TUxadt94L0M",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "de1bc973-236e-4efd-9de5-a40a2146f5a9",
+          "xid": "aa3ce971-0478-4328-b31b-2fa903870888"
+        }
+      ],
+      "id": "4008f2c8-3a90-4d09-933f-7bf885c587a2",
+      "xid": "8ddfb0e5-3f0c-4b5c-8508-b134d166da02"
+    },
+    {
+      "title": "高级函数",
+      "description": "高级SQL函数允许在数据库内进行更加复杂的数据操作和分析，提供了用于复杂查询的强大工具。\n\n关键领域包括：\n\n*   **字符串函数（String Functions）**：使用诸如`CONCAT`、`SUBSTRING`和`REPLACE`等函数来组合、提取或修改字符串。\n\n\n*   **日期和时间（Date & Time）**：利用诸如`DATEADD`、`DATEDIFF`和`FORMAT`等函数管理时间数据，实现日期和时间的计算与格式化。\n\n\n*   **数值函数（Numeric Functions）**：使用诸如`ROUND`、`FLOOR`和`CEIL`等函数进行高级计算，为数值数据处理提供精度。\n\n\n*   **条件函数（Conditional）**：使用诸如`CASE`、`COALESCE`和`NULLIF`等函数在查询中实现逻辑，控制数据流程和处理条件场景。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "FLOOR（向下取整）",
+          "description": "SQL 中的 `FLOOR` 函数用于将特定的小数值或数值向下取整到最接近的整数。\n\n返回的数字将小于或等于作为参数提供的数字。\n\n需要注意的一点是，`FLOOR` 函数的参数必须是数值，并且总是返回一个整数。\n\n",
+          "links": [
+            {
+              "title": "FLOOR（向下取整）",
+              "url": "https://www.w3schools.com/sql/func_sqlserver_floor.asp",
+              "type": "article"
+            },
+            {
+              "title": "如何在SQL中进行取整",
+              "url": "https://www.youtube.com/watch?v=AUXw2JRwCFY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "3775da7d-ef06-447c-bf61-f5fca8a29399",
+          "xid": "164cba78-a9cc-4227-ae4d-b4235c442fb5"
+        },
+        {
+          "title": "ABS(绝对值函数)",
+          "description": "SQL中的`ABS()`函数返回给定数值表达式的绝对值，即它将任何负数转换为其正数等价物，而正数保持不变。\n\n当需要确保计算结果或数据库列中存储的值为非负时，此函数非常有用，例如在计算距离、差异或其他仅正数值有意义的指标时。\n\n例如，`SELECT ABS(-5)`将返回`5`。\n\n",
+          "links": [
+            {
+              "title": "如何在SQL中计算绝对值",
+              "url": "https://www.airops.com/sql-guide/how-to-compute-an-absolute-value-in-sql",
+              "type": "article"
+            },
+            {
+              "title": "ABS(绝对值函数)",
+              "url": "https://www.w3schools.com/sql/func_sqlserver_abs.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1be9aa6c-38fc-4a05-81ec-e6f17f12f301",
+          "xid": "93976233-ba3d-463c-9637-cf4bdf13b2e0"
+        },
+        {
+          "title": "MOD",
+          "description": "在SQL中，`MOD`函数计算一个数除以另一个数的余数。\n\n它接受两个参数：被除数和除数。\n\n`MOD`返回除法运算的余数，这对于各种数学运算非常有用，包括检查奇偶数、实现循环行为或均匀分布数据。\n\n语法和确切行为可能因不同的数据库系统而略有不同，有些系统使用`%`运算符而不是`MOD`关键字。\n\n",
+          "links": [
+            {
+              "title": "MOD",
+              "url": "https://www.w3schools.com/sql/func_mysql_mod.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL中的MOD函数",
+              "url": "https://www.youtube.com/watch?v=f1Rqf7CwjE0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "38408fa1-7e3c-4871-80e9-e45a6853b793",
+          "xid": "a0ecfb68-d3a5-43f2-9676-ac57191e5b10"
+        },
+        {
+          "title": "ROUND",
+          "description": "SQL中的`ROUND`函数用于将一个数值四舍五入到指定的小数位数。\n\n它接受两个参数：要四舍五入的数字和要四舍五入的小数位数。\n\n如果省略第二个参数，该函数将数字四舍五入到最接近的整数。\n\n对于第二个参数的正值，数字将四舍五入到指定的小数位；对于负值，它将四舍五入到最接近的十位、百位、千位等。\n\n`ROUND`函数在数据报告格式化或确保计算中精度一致时非常有用。\n\n",
+          "links": [
+            {
+              "title": "SQL ROUND",
+              "url": "https://www.w3schools.com/sql/func_sqlserver_round.asp",
+              "type": "article"
+            },
+            {
+              "title": "SQL的ROUND函数是什么以及它是如何工作的？",
+              "url": "https://www.datacamp.com/tutorial/mastering-sql-round",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "001079c2-dd10-412a-8b15-61b4c229729f",
+          "xid": "f0164970-25dd-4c00-adf2-db8a186fadd6"
+        },
+        {
+          "title": "CEILING（取整函数）",
+          "description": "在SQL中，`CEILING()` 函数返回不小于给定数值的最小整数。\n\n当需要将一个数向上舍入到最近的整数时，无论该数是否已经是整数或小数，此函数都很有用。\n\n例如，`CEILING(4.2)` 会返回 `5`，而 `CEILING(-4.7)` 会返回 `-4`。\n\n此函数常用于需要向上舍入的场景，比如当每页有固定容量时，计算显示一定数量项目所需的页数。\n\n",
+          "links": [
+            {
+              "title": "SQL中的CEILING函数",
+              "url": "https://www.javatpoint.com/ceiling-function-in-sql",
+              "type": "article"
+            },
+            {
+              "title": "SQL CEILING",
+              "url": "https://www.w3schools.com/sql/func_sqlserver_ceiling.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a41f442f-fc34-4f4c-8604-aecdb5c0b9d4",
+          "xid": "731418f1-c6b5-42f9-ab22-07605db4c7d4"
+        },
+        {
+          "title": "条件性（conditional）",
+          "description": "条件性（conditional）",
+          "links": [],
+          "children": [
+            {
+              "title": "情况判别(CASE)",
+              "description": "在SQL中，情况判别(CASE)语句用于在查询中创建条件逻辑，允许您基于特定条件执行不同的操作。\n\n它的工作方式类似于if-else语句，根据每个条件的结果返回不同的值。\n\n该语法通常涉及指定一个或多个WHEN条件，每个条件后跟相应的结果，并可选地包含一个ELSE子句，如果没有任何条件满足时用于提供默认结果。\n\n",
+              "links": [
+                {
+                  "title": "SQL情况表达式(CASE Expression)",
+                  "url": "https://www.w3schools.com/sql/sql_case.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL情况判别(CASE) - 中级SQL",
+                  "url": "https://mode.com/sql-tutorial/sql-case",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "85ec7db4-38cb-4c31-962f-6630aa51942a",
+              "xid": "f6f0a080-8dc3-441f-bef8-9f723be9bc55"
+            },
+            {
+              "title": "NULLIF",
+              "description": "`NULLIF` 是一个SQL函数，它比较两个表达式，如果它们相等则返回 NULL（NULL），否则返回第一个表达式。\n\n该函数特别适用于避免除以零错误，或在计算或比较中将特定值处理为 `NULL`。\n\n`NULLIF` 接受两个参数，并通常与聚合函数或 `CASE` 语句结合使用，以处理数据处理或报告中的特殊情况。\n\n",
+              "links": [
+                {
+                  "title": "NULLIF",
+                  "url": "https://www.w3schools.com/sql/func_sqlserver_nullif.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL 中的 NULLIF 是什么？",
+                  "url": "https://www.youtube.com/watch?v=Jaw53T__RRY",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "2edd6fde-310f-4f42-bcb3-8c45f328493b",
+              "xid": "cb63ba60-f27f-4d51-8768-d40e40ba5201"
+            },
+            {
+              "title": "COALESCE",
+              "description": "`COALESCE` 是一个 SQL 函数，返回一系列表达式中的第一个非空值。\n\n它通常用于处理空值或在查询中提供默认值。\n\n`COALESCE` 按顺序评估其参数，并返回第一个非空结果，使得它在数据清洗、报告生成和简化 SQL 语句中的复杂条件逻辑方面非常有用。\n\n",
+              "links": [
+                {
+                  "title": "如何在 SQL 中使用 COALESCE 函数",
+                  "url": "https://learnsql.com/blog/coalesce-function-sql/",
+                  "type": "article"
+                },
+                {
+                  "title": "COALESCE - PostgreSQL",
+                  "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-coalesce/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "126212fd-5780-486d-9a2b-5cba16443e20",
+              "xid": "0977c851-daf5-42c8-916a-856392ebd6a2"
+            }
+          ],
+          "id": "fd625c5c-5c78-4211-aa78-be63eea283c8",
+          "xid": "a95bf404-79fc-4e33-8a70-7d38083464fb"
+        },
+        {
+          "title": "字符串",
+          "description": "字符串",
+          "links": [],
+          "children": [
+            {
+              "title": "CONCAT（连接函数）",
+              "description": "`CONCAT` 是一个SQL函数，用于将两个或多个字符串组合成一个单一字符串。\n\n它接受多个输入字符串作为参数，并按提供的顺序返回这些输入字符串的连接结果的新字符串。\n\n`CONCAT` 常用于`SELECT`语句中，以合并多列的数据、创建自定义输出格式或生成动态SQL语句。\n\n",
+              "links": [
+                {
+                  "title": "SQL中CONCAT函数的概述",
+                  "url": "https://www.sqlshack.com/an-overview-of-the-concat-function-in-sql-with-examples/",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL Server中的CONCAT",
+                  "url": "https://www.w3schools.com/sql/func_sqlserver_concat.asp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6a8a8ee0-c423-4f6a-bbb0-bc48e60aeff7",
+              "xid": "58fd6e17-cace-4e4b-9467-bd6640addcb5"
+            },
+            {
+              "title": "长度（LENGTH）",
+              "description": "SQL中的`LENGTH`函数返回字符串中的字符数量。\n\n它用于测量文本数据的大小，这对数据验证、格式化或分析非常有用。\n\n在某些数据库系统中，对于多字节字符集，`LENGTH`可能以不同的方式计数字符。\n\n大多数SQL方言支持`LENGTH`，但某些方言可能使用替代名称，如SQL Server中的LEN或`CHAR_LENGTH`。\n\n此函数特别适用于强制执行字符限制、拆分字符串或识别字符串数据中的异常。\n\n",
+              "links": [
+                {
+                  "title": "如何在SQL中检查字符串的长度",
+                  "url": "https://learnsql.com/cookbook/how-to-check-the-length-of-a-string-in-sql/",
+                  "type": "article"
+                },
+                {
+                  "title": "MySQL Length函数",
+                  "url": "https://www.w3schools.com/sql/func_mysql_length.asp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d6e80406-774d-4567-afe2-9949b717f5f5",
+              "xid": "827f9150-f98c-4bb5-b107-536969d98209"
+            },
+            {
+              "title": "SUBSTRING（子字符串）",
+              "description": "SUBSTRING（子字符串）是SQL中的一个函数，用于提取字符串的一部分。\n\n该函数允许您指定要提取的子字符串的起始位置和长度。\n\n该函数在数据操作、解析和格式化任务中非常有用。\n\n尽管不同数据库系统中的确切语法可能略有不同，但核心功能保持一致，使其成为在数据库中处理字符串数据的多功能工具。\n\n",
+              "links": [
+                {
+                  "title": "SQL SUBSTRING（子字符串）",
+                  "url": "https://www.w3schools.com/sql/func_sqlserver_substring.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "高级SQL教程 | 字符串函数 + 使用案例",
+                  "url": "https://www.youtube.com/watch?v=GQj6_6V_jVA",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "492fa015-9618-4998-87b1-eb09eecc6bcc",
+              "xid": "e1fa7b74-0d81-4b84-ae77-c57876f9dfbb"
+            },
+            {
+              "title": "REPLACE",
+              "description": "在SQL中，`REPLACE`函数用于将字符串中的指定子字符串替换为新的子字符串。\n\n它接受三个参数：原始字符串、要被替换的子字符串，以及替换用的子字符串。\n\n如果指定的子字符串在原始字符串中被找到，`REPLACE`将返回所有旧子字符串已被新子字符串替换的修改后的字符串。\n\n如果子字符串未被找到，原始字符串将不变地被返回。\n\n此函数特别适用于数据清洗任务，例如纠正拼写错误、标准化格式或替换过时的数据。\n\n",
+              "links": [
+                {
+                  "title": "SQL REPLACE 函数",
+                  "url": "https://www.w3schools.com/sql/func_sqlserver_replace.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "如何使用SQL REPLACE函数",
+                  "url": "https://www.datacamp.com/tutorial/sql-replace",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "49ae097a-8b3d-4f30-af07-db918ad861b5",
+              "xid": "cfa90d12-e209-4a17-9bf3-642d36d17f43"
+            },
+            {
+              "title": "UPPER",
+              "description": "UPPER() 是SQL中的一个字符串函数，用于将指定字符串中的所有字符转换为大写。\n\n此函数特别适用于数据规范化、不区分大小写的比较或格式化输出。\n\nUPPER() 通常作用于字母字符，并且不改变非字母字符。\n\n它经常用于 SELECT 语句中以显示数据，用于 WHERE 子句中的不区分大小写的搜索，或在数据操作操作中。\n\n大多数SQL数据库还提供了互补的 LOWER() 函数用于转换为小写。\n\n在处理国际字符集时，需要注意 UPPER() 的潜在区域设置特定行为。\n\n",
+              "links": [
+                {
+                  "title": "SQL Server UPPER 函数",
+                  "url": "https://www.w3schools.com/sql/func_sqlserver_upper.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "如何在SQL中将字符串转换为大写",
+                  "url": "https://learnsql.com/cookbook/how-to-convert-a-string-to-uppercase-in-sql/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8bf24530-d90e-4c01-a209-e1d5ad580147",
+              "xid": "ce95e290-826c-4968-b718-26a5895800ed"
+            },
+            {
+              "title": "LOWER函数",
+              "description": "SQL中的`LOWER`函数将指定字符串中的所有字符转换为小写。\n\n它是字符串操作函数，接受一个参数（输入字符串），并返回具有所有字母字符转换为其小写等效字符的同一字符串。\n\n`LOWER`函数用于数据标准化、进行不区分大小写的比较或格式化输出。\n\n它不会影响字符串中的非字母字符或数字。\n\n`LOWER`函数通常用于数据清洗、搜索操作及确保不同系统之间的一致性数据表示。\n\n",
+              "links": [
+                {
+                  "title": "如何在SQL中将文本转换为小写",
+                  "url": "https://learnsql.com/cookbook/how-to-change-text-to-lowercase-in-sql/",
+                  "type": "article"
+                },
+                {
+                  "title": "LOWER函数",
+                  "url": "https://www.w3schools.com/sql/func_sqlserver_lower.asp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8fb392a3-5875-4d64-9c1e-eebd8d00484d",
+              "xid": "add7b2d0-a9a1-464a-8826-f4071bc36321"
+            }
+          ],
+          "id": "2a83d4ef-64c6-4508-a7fb-1d22c2b51b14",
+          "xid": "9e13a940-7323-4f72-becc-1a4423a1b7ef"
+        },
+        {
+          "title": "日期-时间",
+          "description": "日期-时间",
+          "links": [],
+          "children": [
+            {
+              "title": "日期（DATE）",
+              "description": "SQL中的日期（DATE）数据类型用于存储日历日期（通常格式为YYYY-MM-DD）。\n\n它表示一个具体的日期而没有任何时间信息。\n\n日期（DATE）字段通常用于存储出生日期、事件日期或其他任何仅需精确到日的数据。\n\nSQL提供了各种函数用于操作和格式化日期（DATE）值，包括日期运算、提取日期组成部分以及日期之间的比较。\n\n有效日期的具体范围可能因具体使用的数据库管理系统而异。\n\n",
+              "links": [
+                {
+                  "title": "SQL日期（DATE）",
+                  "url": "https://www.w3schools.com/sql/sql_dates.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "操作日期",
+                  "url": "https://www.youtube.com/watch?v=XyZ9HwXoR7o",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "5300542f-a452-4c1b-a8b8-377ee04c8617",
+              "xid": "c8e11360-16e4-4c89-90e1-6a6c27ab2cfe"
+            },
+            {
+              "title": "时间（TIME）",
+              "description": "在SQL中，时间（TIME）数据类型用于存储时间值，通常采用小时、分钟和秒的格式。\n\n它适用于记录一天中的具体时间而不包含日期信息。\n\nSQL提供了各种函数用于操作和比较时间（TIME）值，从而支持基于时间的计算和查询。\n\n时间（TIME）的确切范围和精度可能因不同的数据库管理系统而有所不同。\n\n",
+              "links": [],
+              "children": [],
+              "id": "ea8162a5-46c6-4833-81ca-7c29ed86ee9c",
+              "xid": "5e3d9fc7-ad7d-4702-8557-bcffc32563a4"
+            },
+            {
+              "title": "DATEPART",
+              "description": "`DATEPART` 是一个有用的 SQL 函数，允许你提取日期或时间字段的特定部分。\n\n你可以使用它来获取日期或时间表达式的年份（year）、季度（quarter）、月份（month）、一年中的天数（day of the year）、日（day）、周（week）、一周中的某一天（weekday）、小时（hour）、分钟（minute）、秒（second）或毫秒（millisecond）。\n\n",
+              "links": [
+                {
+                  "title": "DATEPART",
+                  "url": "https://www.w3schools.com/sql/func_sqlserver_datepart.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL DATEPART",
+                  "url": "https://hightouch.com/sql-dictionary/sql-datepart",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "3a2d1d53-90d3-497d-b82f-07dd66903075",
+              "xid": "f69b568e-1eac-4f92-b996-44145541e269"
+            },
+            {
+              "title": "DATEADD",
+              "description": "`DATEADD` 是一个SQL函数，用于向日期或日期时间值添加或减去指定的时间间隔。\n\n通常，它接受三个参数：间隔类型（例如，天、月、年）、要添加或减去的间隔数，以及要修改的日期。\n\n此函数对于日期计算非常有用，如找到未来的或过去的日期、计算持续时间或生成日期范围。\n\n该函数的确切语法和名称在不同的数据库管理系统中可能会略有不同（例如，SQL Server中的`DATEADD`，MySQL中的`DATE_ADD`）。\n\n",
+              "links": [
+                {
+                  "title": "DATEADD",
+                  "url": "https://www.mssqltips.com/sqlservertutorial/9380/sql-dateadd-function/",
+                  "type": "article"
+                },
+                {
+                  "title": "DATEADD 函数",
+                  "url": "https://www.youtube.com/watch?v=DYCWOzzOycU",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "4eb2117a-6c87-45e0-93c1-2e7cf66cb2fa",
+              "xid": "a45c96f6-5e07-448c-9398-c6e2b14120e2"
+            },
+            {
+              "title": "时间戳（TIMESTAMP）",
+              "description": "SQL中的`时间戳（TIMESTAMP）`是一种数据类型，允许存储日期和时间。\n\n它通常用于跟踪记录的更新和更改，提供事件发生的连续时间记录。\n\n根据不同的SQL平台，格式和存储大小可能会有所不同。\n\n例如，MySQL使用'YYYY-MM-DD HH:MI:SS'格式，而在PostgreSQL中，它同样存储为'YYYY-MM-DD HH:MI:SS'格式，但还可以存储微秒。\n\n",
+              "links": [
+                {
+                  "title": "MySQL时间戳（TIMESTAMP）函数",
+                  "url": "https://www.w3schools.com/mysql/func_mysql_timestamp.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL Server中的不同SQL时间戳（TIMESTAMP）函数",
+                  "url": "https://www.sqlshack.com/different-sql-timestamp-functions-in-sql-server/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "eb0cc2a2-d837-4580-ae50-5e45e5696381",
+              "xid": "c5b5ff14-f87a-4bbd-8aef-375e23feb26f"
+            }
+          ],
+          "id": "3073a07c-83e6-495e-9863-640b1495e743",
+          "xid": "919184b6-8cde-4971-9a04-2b20e70b473f"
+        }
+      ],
+      "id": "ebe4b4d8-a6c7-437b-8110-12b7435866f8",
+      "xid": "0844998a-5444-459c-92ca-133e2d216a5f"
+    },
+    {
+      "title": "视图(Views)",
+      "description": "SQL中的视图是基于SQL语句结果集的虚拟表。\n\n它们充当一个保存的查询，可以像处理表一样处理，提供几个优点：\n\n*   通过封装连接和子查询简化复杂查询\n*   通过限制对底层表的访问提供额外的安全层\n*   以更相关的方式向特定用户或应用程序呈现数据\n\n视图可以是简单的（基于单个表）或复杂的（涉及多个表、子查询或函数）。\n\n某些数据库支持可更新视图(Updatable Views)，允许通过视图对底层数据进行修改。\n\n在某些系统中，还可用的物化视图(Materialized Views)存储查询结果，以提高频繁访问数据的性能，但需额外的存储和维护开销。\n\n",
+      "links": [
+        {
+          "title": "SQL中的视图(Views in SQL)",
+          "url": "https://www.datacamp.com/tutorial/views-in-sql",
+          "type": "article"
+        },
+        {
+          "title": "SQL视图教程(SQL Views Tutorial)",
+          "url": "https://www.youtube.com/watch?v=cLSxasHg9WY",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "创建视图",
+          "description": "在SQL中创建视图涉及到使用`CREATE VIEW`语句来定义一个基于`SELECT`查询结果的虚拟表。\n\n视图本身不存储数据，但提供了一种以特定格式呈现一个或多个表中的数据的方法。\n\n视图可以简化复杂查询，通过限制对底层表的访问来增强数据安全性，并为频繁使用的数据组合提供一致的查询接口。\n\n视图可以像常规表一样进行查询，常用于封装业务逻辑或以更用户友好的方式呈现数据。\n\n",
+          "links": [
+            {
+              "title": "如何在SQL中创建视图",
+              "url": "https://www.sqlshack.com/how-to-create-a-view-in-sql-server/",
+              "type": "article"
+            },
+            {
+              "title": "4分钟速览SQL视图",
+              "url": "https://www.youtube.com/watch?v=vLLkNI-vkV8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "bb2e1931-79ac-44ff-a4cb-cee797ae7fd0",
+          "xid": "f1995827-8a07-443b-844f-829cce0e69ee"
+        },
+        {
+          "title": "修改视图(View)",
+          "description": "在SQL中，你可以通过两种方式来修改一个`视图(View)`：\n\n*   使用`CREATE`或`REPLACE VIEW`：该命令帮助你修改一个视图，但保留视图的名字不变。\n\n当你希望改变视图的定义但不改变其名字时，这是有益的。\n\n\n    \n*   使用`DROP VIEW`接着`CREATE VIEW`：在本方法中，你首先使用`DROP VIEW`命令删除`视图(View)`，然后使用`CREATE VIEW`命令新建同名的新视图。\n\n\n    \n\n",
+          "links": [
+            {
+              "title": "在SQL Server中修改视图(View)",
+              "url": "https://www.sqlshack.com/create-view-sql-modifying-views-in-sql-server/",
+              "type": "article"
+            },
+            {
+              "title": "4分钟了解SQL视图(View)",
+              "url": "https://www.youtube.com/watch?v=vLLkNI-vkV8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "343e7029-708f-4b3c-a029-1d80e5fe69bf",
+          "xid": "ff628c5f-f6b7-4377-b352-0c7b00a014fe"
+        },
+        {
+          "title": "删除视图",
+          "description": "在SQL中，删除视图涉及使用`DROP VIEW`（DROP VIEW）语句从数据库中移除现有视图。\n\n此操作会永久删除视图定义，但不会影响构建视图的基础表。\n\n删除视图通常在不再需要该视图、需要替换为其他定义或作为数据库维护的一部分时执行。\n\n需要注意的是，删除视图可能会影响依赖于该视图的其他数据库对象或应用程序，因此在执行此操作时应谨慎行事。\n\n",
+          "links": [
+            {
+              "title": "DROP VIEW",
+              "url": "https://study.com/academy/lesson/sql-drop-view-tutorial-overview.html",
+              "type": "article"
+            },
+            {
+              "title": "删除或删除视图",
+              "url": "https://www.tutorialspoint.com/sql/sql-drop-view.htm",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a981bea5-5a6a-4125-a9f8-a15f49151aef",
+          "xid": "73499618-234f-4996-9b77-153646c2a686"
+        }
+      ],
+      "id": "1516992b-40ed-4821-84a0-9e638ae880ff",
+      "xid": "8c55bec3-29c6-4b80-ac2f-ef6d13e6b388"
+    },
+    {
+      "title": "索引（Indexes）",
+      "description": "在SQL中，索引（Indexes）是数据库对象，它们可以提高数据检索操作的速度，这些操作用于数据库表中。\n\n它们的工作原理类似于书索引，提供了一种快速查找具有特定列值的行的机制。\n\n索引创建了一个独立的数据结构，使得数据库引擎能够定位数据而不必扫描整个表。\n\n虽然它们能够加速`SELECT`查询过程，但索引同样会降低`INSERT`、`UPDATE`以及`DELETE`操作的效率，因为索引结构必须随之更新。\n\n正确设计索引对于优化数据库性能至关重要，尤其是在处理大型表或需频繁查询的列时。\n\n",
+      "links": [
+        {
+          "title": "创建SQL索引语句（Create SQL Index Statement）",
+          "url": "https://www.w3schools.com/sql/sql_create_index.asp",
+          "type": "article"
+        },
+        {
+          "title": "SQL索引的最佳实践（SQL Indexing Best Practices）",
+          "url": "https://www.youtube.com/watch?v=BIlFTFrEFOI",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "管理索引",
+          "description": "在SQL中管理索引包括创建、修改和删除索引以优化数据库性能。\n\n该过程包括识别受益于索引的列（经常被查询或在JOIN条件中使用）、创建适当的索引类型（如单列索引、复合索引、唯一索引）和定期分析索引的使用和效果。\n\n数据库管理员必须在索引提供的改进查询性能和它们为数据修改操作引入的开销之间取得平衡。\n\n正确的索引管理还包括定期维护任务，如重建或重新组织索引，以保持它们的效率，因为数据随着时间的推移而发生变化。\n\n",
+          "links": [
+            {
+              "title": "SQL Server 索引",
+              "url": "https://www.sqlservercentral.com/articles/introduction-to-indexes",
+              "type": "article"
+            },
+            {
+              "title": "优化索引维护",
+              "url": "https://learn.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-ver16",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4c74005a-292c-43b8-b297-d9caeb23b47d",
+          "xid": "9c545243-7ac8-496e-9e31-aaae3bc0b910"
+        },
+        {
+          "title": "查询优化",
+          "description": "在SQL中进行查询优化包括改进查询以提高其执行速度并减少资源消耗。\n\n关键策略包括对在`WHERE`、`JOIN`和`ORDER BY`子句中使用的列进行索引，以加速数据检索；通过限制选择的列的数量和尽早过滤行来减少处理的数据量。\n\n使用适当的连接类型，并以最高效的方式排列连接尤为重要。\n\n避免低效模式如`SELECT`，用连接或公共表表达式（CTEs）替换子查询，并利用查询提示或执行计划分析都能提高性能。\n\n定期更新统计信息并确保查询结构能够利用数据库特定的优化，是保持最佳性能的关键实践。\n\n",
+          "links": [
+            {
+              "title": "优化SQL查询的12种方法",
+              "url": "https://www.developernation.net/blog/12-ways-to-optimize-sql-queries-in-database-management/",
+              "type": "article"
+            },
+            {
+              "title": "SQL查询优化",
+              "url": "https://www.youtube.com/watch?v=GA8SaXDLdsY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8ab1b429-9d38-4586-88d8-295de19198a2",
+          "xid": "94190e73-d723-4968-b2c7-4a686db098ab"
+        }
+      ],
+      "id": "ec8b980c-8913-4f80-964e-fc03d152557c",
+      "xid": "2a51f691-db73-4b7b-84d4-6ad6a9175528"
+    },
+    {
+      "title": "事务",
+      "description": "在SQL中，事务是将一个或多个数据库操作组合成一个单一的、原子单位的工作单元。\n\n它们通过遵循ACID属性确保数据完整性：原子性（全做或全不做），一致性（数据库保持有效状态），隔离性（事务之间不互相干扰）和持久性（已提交的更改是永久的）。\n\n事务对于维护复杂操作中的数据一致性以及处理对数据库的并发访问至关重要。\n\n",
+      "links": [
+        {
+          "title": "事务",
+          "url": "https://www.tutorialspoint.com/sql/sql-transactions.htm",
+          "type": "article"
+        },
+        {
+          "title": "数据库管理系统中ACID属性指南",
+          "url": "https://www.mongodb.com/resources/basics/databases/acid-transactions",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "ACID（Atomicity, Consistency, Isolation, Durability）",
+          "description": "ACID是指关系型数据库系统中的四个属性，有助于确保我们能够以可靠的方式执行事务。\n\nACID是四个属性的首字母缩略词：原子性（atomicity）、一致性（consistency）、隔离性（isolation）和持久性（durability）。\n\n",
+          "links": [
+            {
+              "title": "什么是符合ACID的数据库？",
+              "url": "https://retool.com/blog/whats-an-acid-compliant-database/",
+              "type": "article"
+            },
+            {
+              "title": "什么是ACID合规？：原子性、一致性、隔离性",
+              "url": "https://fauna.com/blog/what-is-acid-compliance-atomicity-consistency-isolation",
+              "type": "article"
+            },
+            {
+              "title": "ACID详解：原子性、一致性、隔离性与持久性",
+              "url": "https://www.youtube.com/watch?v=yaQ5YMWkxq4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0bf31767-3428-4d27-beef-c927041961ab",
+          "xid": "b8601fd3-4161-43d3-ae3a-b527da619b0b"
+        },
+        {
+          "title": "开始事务",
+          "description": "`BEGIN` 在 SQL 中用于启动一个事务，事务是一系列一个或多个作为单一单元执行的 SQL 操作。\n\n事务确保在其内部的所有操作都成功完成，然后才会将所做的更改提交到数据库。\n\n如果事务中的任何部分失败，可以使用 `ROLLBACK`（回滚）命令撤消在此事务期间所做的所有更改，以保持数据库的完整性。\n\n一旦所有操作都成功完成，就使用 `COMMIT`（提交）命令保存更改。\n\n事务对于维护数据一致性以及有效地处理错误至关重要。\n\n",
+          "links": [
+            {
+              "title": "BEGIN...END 语句",
+              "url": "https://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc00801.1510/html/iqrefso/BABFBJAB.htm",
+              "type": "article"
+            },
+            {
+              "title": "SQL 'BEGIN' & 'END' 语句",
+              "url": "https://reintech.io/blog/understanding-sql-begin-end-statements-guide",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "16f1940c-d3f4-4e55-a67f-265095df2323",
+          "xid": "c534171f-fb99-4266-9314-6273702a88d3"
+        },
+        {
+          "title": "提交事务（COMMIT）",
+          "description": "SQL的COMMIT命令用于将当前事务所做的所有修改保存到数据库。\n\nCOMMIT命令结束当前事务，并使事务中执行的所有更改永久化。\n\n这是一种结束事务并将更改保存到数据库的方法。\n\n执行SQL的COMMIT语句后，它不能被回滚，这意味着您无法撤销操作。\n\n当用户对事务中所做的更改满意时，就会使用COMMIT命令，并将这些更改永久保存到数据库中。\n\n",
+          "links": [
+            {
+              "title": "SQL提交事务（SQL COMMIT）和回滚（ROLLBACK）",
+              "url": "https://www.digitalocean.com/community/tutorials/sql-commit-sql-rollback",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e1f38574-bc89-4a16-8f50-2f045cf038b4",
+          "xid": "ee879b87-b232-4ebb-947b-cba0eb049e9a"
+        },
+        {
+          "title": "ROLLBACK",
+          "description": "`ROLLBACK` 是一个SQL命令，用于撤销尚未提交到数据库的事务。\n\n它会逆转当前事务中所做的所有更改，将数据库恢复到事务开始前的状态。\n\n此命令对于维护数据完整性至关重要，特别是在事务过程中发生错误或在数据库操作中实施条件逻辑时。\n\n`ROLLBACK` 是数据库事务的ACID（原子性、一致性、隔离性、持久性）属性的重要组成部分，确保事务中的所有更改要么全部应用，要么全部不应用，从而保持数据的一致性。\n\n",
+          "links": [
+            {
+              "title": "SQL中的COMMIT和ROLLBACK的区别",
+              "url": "https://byjus.com/gate/difference-between-commit-and-rollback-in-sql/",
+              "type": "article"
+            },
+            {
+              "title": "如何在SQL中撤销一个错误：Rollback 和 Commit",
+              "url": "https://www.youtube.com/watch?v=jomsdMLiIZM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6bc3d1b4-29a9-46a4-b4cc-368048b18902",
+          "xid": "b84a4f22-1da3-4022-a7fa-f03c1c77bbef"
+        },
+        {
+          "title": "保存点(SAVEPOINT)",
+          "description": "在SQL中，`保存点(SAVEPOINT)`是一个可以在事务中稍后引用的点。\n\n它通过创建中间点实现对事务的更细粒度的控制，这样可以在不破坏整个事务的情况下回滚到这些中间点。\n\n在需要在复杂事务中仅取消部分工作而不丢弃所有更改的情况下，这一点尤其有用。\n\n`保存点(SAVEPOINT)`增强了事务管理的灵活性。\n\n",
+          "links": [
+            {
+              "title": "SQL 保存点(SAVEPOINT)",
+              "url": "https://www.ibm.com/docs/pl/informix-servers/12.10?topic=statements-savepoint-statement",
+              "type": "article"
+            },
+            {
+              "title": "数据库管理系统 (DBMS) - 保存点(Save Point)",
+              "url": "https://www.youtube.com/watch?v=30ldSUkswGM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "262e7896-c1da-40e6-90dd-724bd31622e1",
+          "xid": "1c41d2cc-4e35-450f-ae67-611e4a0ee7df"
+        },
+        {
+          "title": "事务隔离级别",
+          "description": "SQL中的事务隔离级别定义了一个事务中的操作在多大程度上对其他并发事务可见。\n\n通常有四个标准级别：未提交读（Read Uncommitted）、已提交读（Read Committed）、可重复读（Repeatable Read）和可串行化（Serializable）。\n\n每个级别在数据一致性和并发性之间提供了不同的权衡。\n\n理解和正确设置隔离级别对于维护多用户数据库环境中的数据完整性并优化性能至关重要。\n\n",
+          "links": [
+            {
+              "title": "你想知道的关于SQL隔离级别的所有知识",
+              "url": "https://www.cockroachlabs.com/blog/sql-isolation-levels-explained/",
+              "type": "article"
+            },
+            {
+              "title": "SQL Server中的隔离级别",
+              "url": "https://www.sqlservercentral.com/articles/isolation-levels-in-sql-server",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9260c5af-6549-404e-9c44-6e190cb4d206",
+          "xid": "2bef2454-60ed-46d1-97da-14076d02c037"
+        }
+      ],
+      "id": "e71dbfbb-ba08-41a4-a858-194a139e5143",
+      "xid": "1ecb7e85-8e78-4cd0-ae12-ddd6f62331c6"
+    },
+    {
+      "title": "数据完整性与安全性",
+      "description": "SQL中的数据完整性和安全性涵盖了确保数据库内数据准确性、一致性和保护性的措施和技术。\n\n这包括实现约束（如主键(primary keys)和外键(foreign keys)）、使用事务来维护数据一致性、设置用户身份验证和授权、加密敏感数据以及定期备份数据库。\n\nSQL提供了各种工具和命令来执行数据完整性规则，控制数据访问，并防止未经授权的访问或数据损坏，确保存储信息的可靠性和保密性。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "数据完整性约束",
+          "description": "SQL约束用于指定表中数据的规则。\n\n它们确保表中数据的准确性和可靠性。\n\n如果约束与操作之间有任何违反，约束将中止该操作。\n\n约束分为两种类型：列级约束和表级约束。\n\n列级约束适用于单个列，而表级约束适用于整个表。\n\n每个约束都有其特定的目的和用法，有效地使用它们有助于保持数据的准确性和完整性。\n\n",
+          "links": [
+            {
+              "title": "SQL中的完整性约束：附带示例的指南",
+              "url": "https://www.datacamp.com/tutorial/integrity-constraints-sql",
+              "type": "article"
+            },
+            {
+              "title": "完整性约束",
+              "url": "https://dataheadhunters.com/academy/integrity-constraints-ensuring-accuracy-and-consistency-in-your-data/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "85442b7d-6a36-43e8-bed3-345f3eb74e2c",
+          "xid": "fdb06fbe-b849-43c3-8719-eaeaef44d117"
+        },
+        {
+          "title": "GRANT 和 REVOKE",
+          "description": "`GRANT` 和 `REVOKE` 是用于管理数据库中用户权限的SQL命令。\n\n`GRANT` 用于向用户或角色授予特定的权限（如 `SELECT`、`INSERT`、`UPDATE`、`DELETE`）以访问数据库对象，而 `REVOKE` 用于撤销这些权限。\n\n这些命令对于实现数据库安全、控制对敏感数据的访问以及确保用户拥有与其角色相匹配的适当权限至关重要。\n\n通过使用 `GRANT` 和 `REVOKE`，数据库管理员可以精细化访问控制，遵循数据库管理中的最小权限原则。\n\n",
+          "links": [
+            {
+              "title": "GRANT",
+              "url": "https://www.ibm.com/docs/en/qmf/12.2.0?topic=privileges-sql-grant-statement",
+              "type": "article"
+            },
+            {
+              "title": "REVOKE",
+              "url": "https://www.ibm.com/docs/en/qmf/12.2.0?topic=privileges-sql-revoke-statement",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "48aae19e-9bb5-4d90-b5fd-2fc55cceab86",
+          "xid": "1c21154a-c0a5-4734-b9f2-390f90b39d88"
+        },
+        {
+          "title": "数据库安全最佳实践",
+          "description": "数据库安全是确保敏感信息完整并且不被恶意或意外泄露的关键。\n\n以下是与SQL安全相关的最佳实践：\n\n1\\. 最小权限原则\n-----------------------------\n\n该原则指出用户应被授予完成其工作任务所需的最低级别的访问权限。\n\n对于大型系统，这可能需要大量的规划。\n\n2\\. 定期更新\n-------------------\n\n确保SQL Server保持最新的补丁和更新状态，以获得最新的安全更新。\n\n3\\. 复杂且安全的密码\n--------------------------------\n\n密码应设置为复杂且频繁更改。\n\n此外，配合使用`GRANT`和`REVOKE`，这是防御的第一线。\n\n4\\. 限制远程访问\n--------------------------\n\n如果不需要远程连接到SQL服务器，最好禁用它。\n\n5\\. 避免使用SQL服务器管理帐户\n----------------------------------------\n\n为了减少安全风险，你不应使用SQL服务器管理帐户进行常规数据库操作。\n\n6\\. 加密通信\n-------------------------\n\n为了防止数据嗅探，SQL Server与应用程序之间的所有通信应被加密。\n\n7\\. 数据库备份\n--------------------\n\n定期数据库备份对于数据完整性至关重要，尤其是在出现数据丢失的情况下。\n\n8\\. 监控和审计\n---------------------------\n\n定期监控和审计您的数据库操作，以便跟踪谁在您的数据库中执行了哪些操作。\n\n9\\. 定期漏洞扫描\n----------------------------------\n\n使用漏洞扫描器来评估您的SQL的安全态势。\n\n10\\. SQL注入\n------------------\n\n可以通过使用参数化查询或预编译语句来减少SQL注入。\n\n",
+          "links": [
+            {
+              "title": "什么是数据库安全？",
+              "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-database-security",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "fffb76e3-6bf9-445c-ba85-1743eded88b3",
+          "xid": "bdda5d0c-68ea-4581-99a4-86f9aef71139"
+        }
+      ],
+      "id": "8f50d98b-2378-494d-8102-17c2a9821cc6",
+      "xid": "c632b08b-4a44-4151-8539-818e2c0b44ac"
+    },
+    {
+      "title": "存储过程 & 函数",
+      "description": "存储过程和函数是预编译的数据库对象，它们封装了一组SQL语句和逻辑。\n\n存储过程可以执行复杂操作，通常用于数据操纵，而函数旨在计算并返回值。\n\n两者都能通过减少网络流量和允许可重用代码来提高性能。\n\n它们还通过在应用程序和数据库之间提供一层抽象来增强安全性。\n\n",
+      "links": [
+        {
+          "title": "存储过程 vs 函数",
+          "url": "https://www.shiksha.com/online-courses/articles/stored-procedure-vs-function-what-are-the-differences/",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "166d85aa-eabf-4ba4-bcb7-82a74695e0a9",
+      "xid": "77adee3c-0134-4ddc-a46a-32ed936f4eab"
+    },
+    {
+      "title": "性能优化",
+      "description": "在SQL中的性能优化涉及一套旨在提高数据库查询效率和整体系统性能的操作。\n\n关键策略包括对关键列进行索引以加快数据检索速度，通过简化或重构复杂的查询来优化查询结构，以及使用查询缓存等技术来减少冗余的数据库调用。\n\n其他实践还包括减少资源密集型操作（如 `JOINs` 和 `GROUP BY`）的使用，仅选择必要的列（应避免使用 `SELECT *`），并利用数据库特定的功能，如分区、查询提示和执行计划分析。\n\n定期监控和分析查询性能，以及通过更新统计信息和管理索引等常规任务来维护数据库健康，对于保持高性能也至关重要。\n\n",
+      "links": [
+        {
+          "title": "SQL查询性能调优",
+          "url": "https://mode.com/sql-tutorial/sql-performance-tuning",
+          "type": "article"
+        },
+        {
+          "title": "SQL性能调优",
+          "url": "https://stackify.com/performance-tuning-in-sql-server-find-slow-queries/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "查询优化(query-optimization)",
+          "description": "查询优化(query-optimization)",
+          "links": [],
+          "children": [
+            {
+              "title": "使用索引",
+              "description": "SQL中的索引是一种数据库对象，可以提高数据库表中数据检索操作的速度。\n\n索引的工作原理类似于书籍中的索引，使数据库引擎能够快速定位数据，而无需扫描整个表。\n\n正确使用索引可以显著提高查询性能，特别是在大型表中。\n\n然而，它们也存在权衡：虽然它们可以加快读取速度，但可能减慢写入操作（INSERT、UPDATE、DELETE）的速度，因为也需要更新索引。\n\n常见类型包括B树索引（大多数系统中的默认类型）、位图索引和全文索引。\n\n了解何时以及如何创建索引对于数据库优化至关重要。\n\n这涉及分析查询模式、理解数据分布以及平衡数据库上不同类型操作的需求。\n\n",
+              "links": [
+                {
+                  "title": "SQL中的索引是什么？",
+                  "url": "https://stackoverflow.com/questions/2955459/what-is-an-index-in-sql",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL索引 - 定义、示例和技巧",
+                  "url": "https://www.youtube.com/watch?v=NZgfYbAmge8",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "7d737e76-4c34-4bf5-be16-d54e19d13f87",
+              "xid": "8a05dcaf-943a-4d2d-950e-d398ba918bd7"
+            },
+            {
+              "title": "优化连接操作",
+              "description": "优化SQL中的连接操作涉及提高从多个表组合数据的查询性能的技巧。\n\n主要策略包括使用适当的连接类型（例如，`INNER JOIN`仅用于匹配行，`LEFT JOIN`用于一个表中的所有行），对连接条件中使用的列进行索引以加快查找速度，在连接之前通过`WHERE`子句过滤结果以减少处理的数据量。\n\n此外，减少连接的数量，避免在`SELECT`语句中选择不必要的列，并确保连接条件基于已索引和选择性高的列，可以显著提高查询效率。\n\n正确的连接顺序和使用数据库特定的优化提示对于性能调整也非常重要。\n\n",
+              "links": [
+                {
+                  "title": "如何优化包含多个连接的SQL查询",
+                  "url": "https://dezbor.com/blog/optimize-sql-query-with-multiple-joins",
+                  "type": "article"
+                },
+                {
+                  "title": "优化SQL查询的秘密",
+                  "url": "https://www.youtube.com/watch?v=BHwzDmr6d7s",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "413ea1e7-55c6-47fa-bffe-2d334a3885d5",
+              "xid": "e22413d2-07c5-43a5-a4fd-4ab0939c58f5"
+            },
+            {
+              "title": "减少子查询",
+              "description": "SQL中的递归查询（Recursive queries）允许在单个查询中迭代处理层次结构或树形结构的数据。\n\n它们由一个基数成员（锚定成员，anchor member）和一个递归成员组成，后者引用查询本身，从而能够探索父子关系、遍历图或生成序列数据。\n\n这个强大的特性特别适用于诸如查询组织层次结构、物料清单结构或导航数据中的复杂关系等任务，否则这些任务需要多个独立的查询或过程化代码。\n\n",
+              "links": [],
+              "children": [],
+              "id": "830abb96-2abf-428c-990c-51995cfca966",
+              "xid": "3a0b5e8e-2a90-4100-adf4-20ec3ae83b2c"
+            },
+            {
+              "title": "选择性投影",
+              "description": "在SQL中，选择性投影（Selective projection）是指从表或查询结果中仅选择特定的列（属性），而不是选择所有可用的列。\n\n这一技术对于优化查询性能和减少不必要的数据传输至关重要。\n\n通过使用明确命名列的SELECT语句而不是使用`SELECT *`，开发人员可以提高查询效率和清晰度，特别是在处理大型表或复杂连接时。\n\n",
+              "links": [],
+              "children": [],
+              "id": "166287cb-dd93-43a6-a71a-cee242b23dc0",
+              "xid": "90c153fc-bc87-420a-94da-02adc4efc9c6"
+            }
+          ],
+          "id": "07237eb6-5fbb-41a3-87f3-484a20b8b407",
+          "xid": "9ff9135d-fd84-4afc-b224-9adae4a69277"
+        },
+        {
+          "title": "查询分析技术",
+          "description": "SQL中的查询分析技术涉及检查和优化查询以提高性能和效率。\n\n关键技术包括使用`EXPLAIN`或`EXPLAIN PLAN`命令（EXPLAIN, EXPLAIN PLAN）来理解查询执行计划，这可以揭示数据库处理查询的方式，包括连接方法、索引使用和数据检索策略。\n\n分析`执行计划`（execution plans）有助于识别瓶颈，如全表扫描或低效连接。\n\n其他技术包括`查询剖析`（profiling queries）以测量执行时间、`检查索引`（examining indexes）以确保它们能有效支持查询操作，以及通过将复杂的查询分解为更简单、更高效的组成部分来`重构查询`（refactoring queries）。\n\n另外，监控`数据库性能指标`（database performance metrics）如CPU使用率、内存使用和磁盘I/O可以提供关于查询如何影响整个系统性能的见解。\n\n定期应用这些技术能够识别并解决性能问题，从而实现更快、更高效的数据库操作。\n\n",
+          "links": [
+            {
+              "title": "EXPLAIN",
+              "url": "https://docs.snowflake.com/en/sql-reference/sql/explain",
+              "type": "article"
+            },
+            {
+              "title": "EXPLAIN PLAN",
+              "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/EXPLAIN-PLAN.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2b379bf4-b537-41a1-a1e9-60e87808eb93",
+          "xid": "c11f51bb-cb06-4f19-bdbe-5c5038745615"
+        }
+      ],
+      "id": "a0cb9066-6884-4731-a1b9-cb7e059a8b19",
+      "xid": "19ac1253-9527-4a6f-a85b-08e4977224e0"
+    },
+    {
+      "title": "高级SQL",
+      "description": "高级SQL概念涵盖了超出基本查询和数据操作的一系列复杂技术和特征。\n\n这些内容包括复杂连接（complex joins）、子查询（subqueries）、窗口函数（window functions）、存储过程（stored procedures）、触发器（triggers）和高级索引策略（advanced indexing strategies）。\n\n通过掌握这些概念，数据库专业人士可以优化查询性能，实现复杂的业务逻辑，保证数据完整性，并执行高级数据分析，使他们能够在大规模的企业级应用程序中处理更为复杂的数据库管理和数据处理任务。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "递归查询",
+          "description": "SQL中的递归查询允许在查询内部反复执行查询，从而实现遍历层次结构或树形数据结构。\n\n这一强大的功能特别适用于处理嵌套关系，如组织层次结构、物料清单或网络拓扑结构。\n\n通过结合使用起始成员（初始查询）和递归成员（指向自身的部分），递归查询可以在多个级别的数据中进行迭代，获取用标准SQL结构难以或无法获得的信息。\n\n该技术简化了复杂查询，并在处理自引用数据时提高了性能。\n\n",
+          "links": [
+            {
+              "title": "SQL中的递归查询",
+              "url": "https://codedamn.com/news/sql/recursive-queries-in-sql",
+              "type": "article"
+            },
+            {
+              "title": "视觉解释的递归SQL表达式",
+              "url": "https://builtin.com/data-science/recursive-sql",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "61502be1-e64e-4eaa-8631-9a182da6cb79",
+          "xid": "71e53054-ec45-4d2e-ab2c-d272884d7277"
+        },
+        {
+          "title": "Pivot（旋转）/ Unpivot（反旋转）操作",
+          "description": "SQL中的Pivot（旋转）和Unpivot（反旋转）操作用于转换和重组数据，使其以不同的格式更易于分析。\n\n`PIVOT`操作将行转换为列，能够让数据进行汇总并以更易读的、类似表格的格式呈现。\n\n例如，它可以将按月份分类的销售额数据转换为按月份作为单独列的形式。\n\n相反，`UNPIVOT`操作执行相反的操作——将列转回行为，这对于之前被旋转的数据进行规范化或为某些类型的分析准备数据时非常有用。\n\n这些操作在报告和数据可视化场景中特别有用，这些场景需要从同一数据集的不同视角查看。\n\n",
+          "links": [
+            {
+              "title": "SQL PIVOT",
+              "url": "https://builtin.com/articles/sql-pivot",
+              "type": "article"
+            },
+            {
+              "title": "SQL UNPIVOT",
+              "url": "https://duckdb.org/docs/sql/statements/unpivot.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "40ab2596-8f35-4568-90c6-17f97f9c26ce",
+          "xid": "e545cd3d-a164-49b8-adc4-55a7d82d0a89"
+        },
+        {
+          "title": "窗口函数",
+          "description": "SQL 窗口函数（Window Functions）使您能够在与当前行相关的行集上执行计算。\n\n这组行被称为'窗口'（window），因此这些函数被称为'窗口函数'（Window Functions）。\n\n之所以这样命名，是因为它们在与当前行相关的行集上执行计算，有点像一个滑动窗口（sliding window）。\n\n",
+          "links": [
+            {
+              "title": "SQL 窗口函数",
+              "url": "https://mode.com/sql-tutorial/sql-window-functions",
+              "type": "article"
+            },
+            {
+              "title": "10分钟内掌握SQL窗口函数",
+              "url": "https://www.youtube.com/watch?v=y1KCM8vbYe4",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "排名",
+              "description": "在SQL中，`RANK`函数是一个窗口函数，它根据`ORDER BY`子句指定的顺序，为结果集分区中的每一行分配一个排名。\n\n与`ROW_NUMBER`函数不同，`RANK`函数允许出现并列情况——排序列中具有相同值的行会得到同样的排名，接下来的排名会相应地跳过。\n\n例如，如果有两行共享同一个第1名，那么下一个排名将会是3。\n\n这个函数适用于需要在分组内识别相对位置的场景，如按每个部门的工资对员工进行排名。\n\n",
+              "links": [
+                {
+                  "title": "SQL RANK函数概述",
+                  "url": "https://www.sqlshack.com/overview-of-sql-rank-functions/",
+                  "type": "article"
+                },
+                {
+                  "title": "RANK, DENSE_RANK, ROW_NUMBER SQL分析函数详解",
+                  "url": "https://www.youtube.com/watch?v=xMWEVFC4FOk",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "9e5f2cdc-cc2d-4975-b6a6-8c16b009b458",
+              "xid": "5441902f-1809-436f-be14-2a10f7be7524"
+            },
+            {
+              "title": "稠密排名（dense_rank）",
+              "description": "`稠密排名（DENSE_RANK）` 是 SQL 中的一个窗口函数，它为窗口分区内的每一行分配一个排名，且排名数字之间没有间隔。\n\n不同于 `RANK` 函数，`稠密排名（DENSE_RANK）` 不会跳过任何排名（顺序中的位置）。\n\n例如，如果你有第 1 名、第 2 名和第 2 名，使用 `DENSE_RANK` 时下一个排名会是第 3 名，而使用 `RANK` 函数时会是第 4 名。\n\n`稠密排名（DENSE_RANK）` 函数在一组称为窗口的行上操作，并且在该窗口内比较各个值。\n\n",
+              "links": [
+                {
+                  "title": "SQL 稠密排名（DENSE_RANK）",
+                  "url": "https://www.sqltutorial.org/sql-window-functions/sql-dense_rank/",
+                  "type": "article"
+                },
+                {
+                  "title": "分解稠密排名（DENSE_RANK）",
+                  "url": "https://www.kdnuggets.com/breaking-down-denserank-a-step-by-step-guide-for-sql-enthusiasts",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "be726d68-9de1-47e4-9035-8c318f7a21e2",
+              "xid": "bf565e10-71e3-40a7-b56e-3d10d8fc83f0"
+            },
+            {
+              "title": "LEAD",
+              "description": "`LEAD` 是SQL中的一个窗口函数，它允许访问在分区内的当前行之后指定偏移量的行。\n\n它是 `LAG` 函数的对应物，让你能够向前查看数据集而不是向后查看。\n\n`LEAD` 适用于将当前值与未来的值进行比较、计算前瞻指标或分析顺序数据中的趋势。\n\n与 `LAG` 类似，它接受要偏移的列、向前查看的行数（默认为1）以及超出分区边界时的可选默认值作为参数。\n\n",
+              "links": [
+                {
+                  "title": "SQL LEAD",
+                  "url": "https://www.codecademy.com/resources/docs/sql/window-functions/lead",
+                  "type": "article"
+                },
+                {
+                  "title": "SQL 中的 LAG 和 LEAD 窗口函数",
+                  "url": "https://www.youtube.com/watch?v=nHEEyX_yDvo",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "e8c6b9d0-0b85-4a48-95b2-5431baf61a69",
+              "xid": "a14ac3a6-e4e2-486b-bf38-2d5764f209a7"
+            },
+            {
+              "title": "滞后（LAG）",
+              "description": "`滞后（LAG）`是SQL中的一个窗口函数，它提供了访问当前行之前指定偏移量的行的权限。\n\n通过它，您可以直接比较当前行的值与前面行的值，而无需使用自连接（self-joins）。\n\n滞后（LAG）函数在计算逐行差额、识别趋势或在时间序列分析中比较连续数据点时特别有用。\n\n该函数接受要偏移的列、偏移行数（默认值为1）和一个可选的默认值，当偏移超出分区边界时返回此默认值。\n\n",
+              "links": [
+                {
+                  "title": "理解SQL中的滞后（LAG）函数",
+                  "url": "https://www.datacamp.com/tutorial/sql-lag",
+                  "type": "article"
+                },
+                {
+                  "title": "滞后（LAG）和前瞻（LEAD）函数",
+                  "url": "https://www.youtube.com/watch?v=j2u52RQ0qlw",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "a9f26463-b8f2-4467-a215-25eb5c0c5972",
+              "xid": "0cad321e-94ae-43d9-8535-7342e63e4dde"
+            },
+            {
+              "title": "ROW_NUMBER()函数",
+              "description": "ROW_NUMBER() 是一个SQL窗口函数，它为结果集分区内的每一行分配一个唯一的连续整数。\n\n它有助于创建行标识符、实现分页，或在一个组中找出第n高的/低的值。\n\n每个分区的编号从1开始，并且连续递增，这使得数据的分析和操作任务更加灵活。\n\n",
+              "links": [
+                {
+                  "title": "SQL ROW_NUMBER",
+                  "url": "https://www.sqltutorial.org/sql-window-functions/sql-row_number/",
+                  "type": "article"
+                },
+                {
+                  "title": "如何在SQL中使用ROW_NUMBER OVER()对数据进行排名",
+                  "url": "https://learnsql.com/blog/row-number-over-in-sql/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "40ca10ab-82e9-4671-91f6-8c65d7d89c35",
+              "xid": "1d936792-f4d5-4c63-945d-1ef4096beb13"
+            }
+          ],
+          "id": "d2996a2a-315e-4176-b1b6-9d4987c9982e",
+          "xid": "e183f00f-5ad3-44e3-8a94-acea26074c17"
+        },
+        {
+          "title": "公共表表达式",
+          "description": "公共表表达式（Common Table Expressions，CTEs）是SQL中定义的临时结果集，其作用范围限于一个`SELECT`、`INSERT`、`UPDATE`、`DELETE`或`MERGE`语句内。\n\n使用`WITH`子句定义，CTEs类似于虚拟表，可以在查询中多次引用。\n\n它们能够提高查询的可读性，通过将复杂查询分解为若干易于管理的部分，简化了复杂查询，并支持递归查询。\n\nCTEs对于处理层次或图状的数据结构特别有用，同时在某些数据库系统中还能提升查询性能。\n\n",
+          "links": [
+            {
+              "title": "公共表表达式（CTEs）",
+              "url": "https://hightouch.com/sql-dictionary/sql-common-table-expression-cte",
+              "type": "article"
+            },
+            {
+              "title": "什么是公共表表达式？",
+              "url": "https://learnsql.com/blog/what-is-common-table-expression/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a207a1e3-f148-4f15-9353-fefa7d3f03ac",
+          "xid": "6957a476-442b-45ba-9836-746eca511256"
+        },
+        {
+          "title": "动态SQL (Dynamic SQL)",
+          "description": "动态SQL (Dynamic SQL) 是一种编程方法，它允许您在运行时动态构建SQL语句。\n\n它允许您创建更具灵活性和适应性的应用程序，因为您可以即时操纵SQL语句，以响应输入或变化的条件。\n\n考虑一个应用程序，用户可以从一系列选项中选择多个搜索条件。\n\n您可能无法知道用户将选择多少条件，或者直到运行时才知道这些条件是什么。\n\n使用静态SQL (Static SQL)，您需要在WHERE子句中包含大量潜在的搜索条件。\n\n使用动态SQL (Dynamic SQL)，您可以根据用户的实际选择构建搜索字符串。\n\n请注意，尽管动态SQL (Dynamic SQL) 提供了更大的灵活性，但同时也带来了如SQL注入等潜在安全风险，应谨慎使用。\n\n在构建动态查询时始终验证和清理输入。\n\n",
+          "links": [
+            {
+              "title": "SQL Server中的动态SQL (Dynamic SQL in SQL Server)",
+              "url": "https://www.sqlshack.com/dynamic-sql-in-sql-server/",
+              "type": "article"
+            },
+            {
+              "title": "动态SQL (Dynamic SQL)",
+              "url": "https://www.youtube.com/watch?v=01LZMCotcpY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2a64531a-f8c5-4348-be40-0ed32de4ef6c",
+          "xid": "98b0cb3c-57de-4722-8b95-51780362f957"
+        }
+      ],
+      "id": "111c165a-f1b1-4601-ac2b-de8e1642c5e0",
+      "xid": "a29fa5e9-ddb4-4db1-a4b2-5846eb1c0c7b"
+    }
+  ],
+  "id": "aabce5ec-1185-49b5-a913-500c3f9d151c",
+  "xid": "48ca72a6-a48b-49bb-bd02-44c73dfbe48f"
+}

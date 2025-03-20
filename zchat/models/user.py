@@ -14,7 +14,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     phone_number = db.Column(db.String, nullable=False, default='13800001111')
 
-    avatar_name = db.Column(db.String, nullable=False, default='default.jpg')
+    avatar_name = db.Column(db.String, nullable=False, default='/static/images/default.jpg')
     nickname = db.Column(db.String, nullable=False, default='专家785') # TODO use random name
     signature_text = db.Column(db.String, nullable=False, default='Hello World!')
 

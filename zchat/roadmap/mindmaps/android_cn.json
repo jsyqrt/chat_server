@@ -1,0 +1,1888 @@
+{
+  "title": "安卓开发",
+  "description": "安卓开发是使用安卓操作系统开发应用程序的过程。安卓操作系统是Google开发的移动操作系统，广泛用于智能手机和平板电脑。安卓开发涉及使用Java或Kotlin等编程语言创建应用程序，这些应用程序可以在安卓设备上运行。安卓开发还包括使用安卓的开发工具和框架，如Android Studio，以及使用安卓的API和库。安卓开发的目标是创建功能强大、用户友好的应用程序，这些应用程序可以在安卓设备上运行，并满足用户的需求。",
+  "links": [],
+  "children": [
+    {
+      "title": "选择一种编程语言",
+      "description": "在开发Android应用时，一个至关重要的步骤就是选择所使用的编程语言。\n\n你可以从多种语言中进行选择，但最流行的三种是Java(Java)、Kotlin(Kotlin)和C++(C++)。\n\nJava是最初用于Android开发的语言，广泛使用，因此对于初学者来说，由于丰富的资源和开发者社区支持，它是一个很好的选择。\n\nKotlin是Google和Android Studio完全支持的一种较新选项，并且它解决了Java的一些缺点，因此对于许多开发人员来说，它成为了较为流行的选择。\n\n",
+      "links": [
+        {
+          "title": "选择一种编程语言",
+          "url": "https://developer.android.com/studio/write/java8-support",
+          "type": "article"
+        },
+        {
+          "title": "Kotlin vs Java",
+          "url": "https://developer.android.com/kotlin",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Kotlin",
+          "description": "`Kotlin` 是一种跨平台的、静态类型化的通用编程语言，它具有类型推断功能。\n\n由 JetBrains（全球领先的专业IDE制造商）开发的 Kotlin 语法更简洁、更有表现力。\n\n这允许编写更可读和可维护的代码。\n\n它与 Java 完全互操作，并且没有任何限制。\n\nKotlin 可以几乎在任何今天的 Java 被使用的场合使用，包括服务端开发、Android 应用等。\n\n Kotlin 在许多方面都引入了对程序员的改进，使其成为许多开发者的首选。\n\n通过其简洁的代码库和对现代编程概念的支持——无疑将是 Android 应用开发的未来。\n\n",
+          "links": [
+            {
+              "title": "Kotlin",
+              "url": "https://kotlinlang.org/",
+              "type": "article"
+            },
+            {
+              "title": "Kotlin 文档",
+              "url": "https://kotlinlang.org/docs/home.html",
+              "type": "article"
+            },
+            {
+              "title": "在 w3schools 学习 Kotlin",
+              "url": "https://www.w3schools.com/kotlin/",
+              "type": "article"
+            },
+            {
+              "title": "为初学者免费学习 Kotlin 编程 - Free Code Camp",
+              "url": "https://youtu.be/EExSSotojVI?si=4VPW8ZHa2UMX0HH1",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d5dd2636-a5ea-4b1c-86c6-d787fe836d19",
+          "xid": "2725aa6f-8f2f-4f97-97cb-0bceb22d453e"
+        },
+        {
+          "title": "Java",
+          "description": "Java 是一种广泛使用的编程语言，因其稳健性和易用性而被用于Android开发。\n\nJava的面向对象结构（object-oriented structure）使开发人员能够创建模块化的程序和可重复使用的代码。\n\n该语言的设计理念是“一次编写，处处运行”(\"write once, run anywhere\", WORA)，这意味着编译好的Java代码可以在所有平台上运行而无需重新编译。\n\nAndroid的API和核心库主要是用Java编写的，因此掌握Java对于创建多样且强大的Android应用程序来说至关重要。\n\n",
+          "links": [
+            {
+              "title": "Java 学习路线",
+              "url": "https://roadmap.sh/java",
+              "type": "article"
+            },
+            {
+              "title": "Java",
+              "url": "https://www.oracle.com/java/technologies/javase-jdk11-downloads.html",
+              "type": "article"
+            },
+            {
+              "title": "Java 文档",
+              "url": "https://docs.oracle.com/en/java/javase/11/docs/api/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a43138e6-0e89-4e88-90ab-72b608270529",
+          "xid": "a09b09d0-2c3a-4412-a121-5e21e01421a2"
+        }
+      ],
+      "id": "19920294-9150-48fb-a46a-517f5b9b5bdf",
+      "xid": "02ba1cfb-51d4-44c8-94e4-96fcea556af9"
+    },
+    {
+      "title": "学习基础知识",
+      "description": "版本控制系统（Version Control System，VCS）是一种帮助开发人员管理代码随时间变化的工具。\n\n它允许多个项目的版本同时存在，使得与他人协作并维护所有修改的记录变得更加容易。\n\n",
+      "links": [
+        {
+          "title": "什么是版本控制？",
+          "url": "https://www.atlassian.com/git/tutorials/what-is-version-control",
+          "type": "article"
+        },
+        {
+          "title": "什么是Git？- Git的完整指南",
+          "url": "https://www.datacamp.com/blog/all-about-git",
+          "type": "article"
+        },
+        {
+          "title": "版本控制（Git）- 计算机科学教育中缺失的一学期",
+          "url": "https://missing.csail.mit.edu/2020/version-control/",
+          "type": "article"
+        },
+        {
+          "title": "图形用户界面客户端",
+          "url": "https://git-scm.com/downloads/guis",
+          "type": "article"
+        },
+        {
+          "title": "开始使用 - 安装Git",
+          "url": "https://git-scm.com/book/en/v2/Getting-Started-Installing-Git",
+          "type": "article"
+        },
+        {
+          "title": "在GitHub上创建账户",
+          "url": "https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github",
+          "type": "article"
+        },
+        {
+          "title": "什么是Git？ 两分钟内解释清楚！",
+          "url": "https://www.youtube.com/watch?v=2ReR1YJrNOM",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "开发集成开发环境(Development IDE)",
+          "description": "开发集成开发环境是指在Android应用开发中至关重要的集成开发环境(Integrated Development Environment)。\n\n对于Android，主要的IDE是**Android Studio**。\n\n这个由Google官方提供的IDE包含了构建Android应用所需的一切，如代码编辑器、代码分析工具、所有Android支持的操作系统版本和硬件配置的模拟器，等等。\n\n其他流行的IDE包括带有Android开发工具插件的**Eclipse**、**NetBeans** 和 **IntelliJ IDEA**。\n\n每个IDE都有其自己的一套专门功能，但所有这些IDE都是为了提供Android开发所需的工具和服务而设计的。\n\n选择IDE通常取决于开发者或开发团队的具体需求和偏好。\n\n",
+          "links": [
+            {
+              "title": "Android Studio",
+              "url": "https://developer.android.com/studio",
+              "type": "article"
+            },
+            {
+              "title": "Android Studio 文档(Android Studio Documentation)",
+              "url": "https://developer.android.com/studio/intro",
+              "type": "article"
+            },
+            {
+              "title": "Android Studio 插件(Android Studio Plugins)",
+              "url": "https://developer.android.com/studio/intro/studio-plugins",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cc25d2d4-04e6-4f9e-8837-2a576275c84f",
+          "xid": "f2a4e3bb-0ac6-4af0-b55d-4e1dca7fe6d7"
+        },
+        {
+          "title": "Kotlin基础",
+          "description": "Kotlin是一款简洁的、多平台的、有趣的编程语言（developed by JetBrains）。\n\n学习如何使用Kotlin进行Android、服务器端和跨平台开发，探索其特性、新闻和社区。\n\nKotlin是一款静态类型编程语言（statically-typed programming language），运行于Java虚拟机（JVM）上，可用于开发各种类型的Android应用。\n\n它是Google首选的Android应用开发语言（preferred language）。\n\n",
+          "links": [
+            {
+              "title": "Kotlin",
+              "url": "https://kotlinlang.org/",
+              "type": "article"
+            },
+            {
+              "title": "Kotlin文档",
+              "url": "https://kotlinlang.org/docs/getting-started.html",
+              "type": "article"
+            },
+            {
+              "title": "Kotlin入门教程",
+              "url": "https://www.w3schools.com/kotlin/index.php",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b04c9295-cdd0-427f-859b-74893462bc6c",
+          "xid": "e5398f40-f43b-4797-b9b7-2b557e068279"
+        },
+        {
+          "title": "面向对象编程基础",
+          "description": "理解`面向对象编程的基础 (Basics of Object-Oriented Programming, OOP)`至关重要。\n\n面向对象编程是一种编程范式，使用\"对象\"——包含数据和对数据进行操作的函数的实体。\n\n关键概念包括`类 (Class)`，它是创建对象的蓝图；`对象 (Object)`，即类的实例；`继承 (Inheritance)`，一个类获得另一个类属性的方式；`多态 (Polymorphism)`，一个对象可以呈现多种形式的能力；`抽象 (Abstraction)`，仅展示必要的细节并隐藏实施细节给用户；以及`封装 (Encapsulation)`，将数据和处理数据的方法封装在单一单元中的概念。\n\n",
+          "links": [
+            {
+              "title": "面向对象编程 - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/Object-oriented_programming",
+              "type": "article"
+            },
+            {
+              "title": "Kotlin中的面向对象编程",
+              "url": "https://developer.android.com/codelabs/basic-android-kotlin-compose-classes-and-objects",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8bb3e086-4493-4ed7-9604-2d3fd5d0d1ef",
+          "xid": "772258d4-98a2-4e78-9d65-7f257103ead8"
+        },
+        {
+          "title": "数据结构和算法",
+          "description": "**数据结构（Data Structures）** 主要用于有效地收集、组织和对存储的数据执行操作。\n\n它们对于设计高级Android应用至关重要。\n\n示例包括数组（Array）、链表（Linked List）、栈（Stack）、队列（Queue）、哈希映射（Hash Map）和树（Tree）。\n\n**算法（Algorithms）** 是执行特定任务的一系列指令或规则。\n\n在Android中，算法可用于数据搜索、排序或执行复杂的业务逻辑。\n\n一些常用的算法包括二分搜索（Binary Search）、冒泡排序（Bubble Sort）、选择排序（Selection Sort）等。\n\n对数据结构和算法的深刻理解对于优化Android应用的性能和内存消耗至关重要。\n\n",
+          "links": [
+            {
+              "title": "Android中的数据结构和算法",
+              "url": "https://medium.com/@pranamsharma.1997/importance-of-data-structure-and-algorithms-in-android-app-development-75eed9f73909",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8734cca2-02fd-4d71-a9d0-d25aeca4aecd",
+          "xid": "1217b522-4feb-4783-a8c4-129248784021"
+        },
+        {
+          "title": "什么是Gradle，以及如何使用它？",
+          "description": "Gradle是一种用于Android开发的强大构建系统，它允许您定义项目和依赖项，并区分不同的构建类型和变种（flavors）。\n\nGradle使用领域特定语言（DSL）给开发人员几乎完全控制构建过程的权限。\n\n当您在Android Studio中触发构建时，Gradle则是背后工作的工具，负责编译和打包您的应用。\n\nGradle会查看您在build.gradle文件中声明的依赖项，并据此生成构建脚本。\n\n在Android开发中使用Gradle需要持续编辑build.gradle文件来管理应用依赖项、构建变种、签名配置以及构建应用相关的其他重要方面。\n\n",
+          "links": [
+            {
+              "title": "Gradle构建工具",
+              "url": "https://gradle.org/",
+              "type": "article"
+            },
+            {
+              "title": "Gradle文档",
+              "url": "https://docs.gradle.org/current/userguide/getting_started_eng.html",
+              "type": "article"
+            },
+            {
+              "title": "开始使用Gradle - PDF",
+              "url": "https://assets.gradlehero.com/get-going-with-gradle/get-going-with-gradle-book.pdf",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Gradle的热门文章",
+              "url": "https://app.daily.dev/tags/gradle?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Gradle入门课程 - 55分钟",
+              "url": "https://www.youtube.com/watch?v=R6Z-Sxb837I",
+              "type": "video"
+            },
+            {
+              "title": "面向完全初学者的Gradle介绍 - 25分钟",
+              "url": "https://youtu.be/-dtcEMLNmn0?si=NuIP-3wNpUrxfTxA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "500d33c9-4513-4316-ab4c-95896dc8eb8a",
+          "xid": "424d5c9f-003b-459b-a6a0-d384eed637ca"
+        },
+        {
+          "title": "创建一个基本的Hello World应用程序",
+          "description": "“Hello World”应用程序是一个简单的项目，当你刚开始进行Android开发时可以构建这样一个项目。\n\n对于初学者来说，这通常是他们在新系统中学习构建的第一个程序。\n\n它通常被认为是最简单的程序形式，向用户显示一条消息—“Hello, World!”。\n\n在Android中，这涉及从Android Studio创建一个新项目并设置主活动。\n\n主活动文件主要用Java或Kotlin编写，你可以在其中编写显示消息的代码，同时布局设计视图可以创建在XML文件中。\n\n访问以下资源以了解更多信息：",
+          "links": [
+            {
+              "title": "创建你的第一个Android应用程序",
+              "url": "https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f5a5d08a-ad22-4536-a0c6-b31b4dcfc675",
+          "xid": "11550b6d-ca43-4eed-afac-7f068750d185"
+        }
+      ],
+      "id": "6574b121-0586-4d62-a3c7-8824e82c76ee",
+      "xid": "75234a27-ada5-4f37-9ec9-bf5439eb0173"
+    },
+    {
+      "title": "版本控制",
+      "description": "_版本控制（Version Control）_是一种记录文件或一组文件随时间变化的系统，以便以后可以回顾特定版本。\n\n作为软件开发必不可少的工具，它帮助跟踪变更、增强协作并管理项目的不同版本。\n\n常用的版本控制系统有两种类型：集中式版本控制系统（Centralized Version Control System，CVCS）和分布式版本控制系统（Distributed Version Control System，DVCS）。\n\nCVCS使用中央服务器存储项目的各个版本，用户从该服务器获取快照。\n\n示例包括SVN（Subversion）和Perforce。\n\n另一方面，DVCS允许多个开发人员同时在一个项目上工作。\n\n每个用户都有所有版本工作的完整备份。\n\n示例包括Git和Mercurial（水银）。\n\n",
+      "links": [
+        {
+          "title": "版本控制系统",
+          "url": "https://en.wikipedia.org/wiki/Version_control",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Git",
+          "description": "`Git` 是一种由 **Linus Torvalds**（林纳斯·托瓦兹）创建的高效且灵活的分布式版本控制系统。\n\n它允许多名开发者同时在一个项目上工作，提供了非线性开发工具，并且能够跟踪任何文件集中的更改。\n\n与 SVN 不同，Git 具有完整的本地库，并具有版本跟踪功能，支持离线操作。\n\n它确保数据完整性，并通过分支和合并等功能提供对非线性开发的强有力支持。\n\n",
+          "links": [
+            {
+              "title": "Git 和 Github 路线图",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "Git",
+              "url": "https://git-scm.com/",
+              "type": "article"
+            },
+            {
+              "title": "Git 文档",
+              "url": "https://git-scm.com/docs",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "fa31c1c7-1d4c-48d3-a4bb-692bab2a14ec",
+          "xid": "563d01a7-76d8-4a2e-96bb-95ea0d715d70"
+        },
+        {
+          "title": "GitLab",
+          "description": "`GitLab` 是一个基于web的DevOps生命周期工具，提供Git仓库管理功能，以及持续集成和部署管道特性，并使用开源许可证，由GitLab Inc.开发。\n\n用户可以管理和创建自己的软件项目和仓库，并与其他成员协作这些项目。\n\n`GitLab`还允许用户查看项目分析数据和打开的问题。\n\n它与GitHub和Bitbucket等其他版本控制工具并列，但带有自己独特的一组附加功能。\n\n在Android开发中，由于其能够自动执行应用程序测试和部署的持续集成和部署系统，`GitLab`尤其有用。\n\n",
+          "links": [
+            {
+              "title": "GitLab",
+              "url": "https://about.gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "GitLab 文档",
+              "url": "https://docs.gitlab.com/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4dd17726-4900-4fa3-9ffe-f168cedce2b1",
+          "xid": "9c65cca0-d355-4e65-8968-d86e0533a45e"
+        },
+        {
+          "title": "Bitbucket (代码托管服务)",
+          "description": "Bitbucket 是由 Atlassian 拥有的一款基于 Web 的代码托管服务。\n\nBitbucket 采用 Mercurial 或 Git (版本控制系统) 进行代码管理和维护。\n\n此平台主要用于代码及代码审查。\n\nBitbucket 提供商业计划和免费帐户。\n\n自2010年9月起，它提供免费帐户，附带有无限的私有仓库（免费帐户情况下每个仓库最多可有五个用户）。\n\n最初，它仅支持 Mercurial。\n\nBitbucket 与其他 Atlassian 软件（如 JIRA、HipChat、Confluence 和 Bamboo）集成。\n\n",
+          "links": [
+            {
+              "title": "Bitbucket (代码托管服务)",
+              "url": "https://bitbucket.org/",
+              "type": "article"
+            },
+            {
+              "title": "开发人员使用的 Bitbucket",
+              "url": "https://www.atlassian.com/software/bitbucket",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b5903411-8c2c-4075-b9b6-004316b51d2e",
+          "xid": "a4913c6c-103d-4709-b807-a58f02bcce63"
+        },
+        {
+          "title": "GitHub",
+          "description": "**GitHub** 是一个基于云的软件版本控制托管服务，使用 Git 来管理。\n\n它提供了一个平台，使得多名开发者可以同时在同一项目上进行协作。\n\n通过 GitHub，代码可以公开存储，允许与其它开发者合作，也可以为个人项目私密存储。\n\nGitHub 的主要功能包括代码共享、任务管理和版本控制等。\n\n此外，GitHub 还提供诸如 bug 跟踪、功能请求和任务管理等针对项目的功能。\n\n",
+          "links": [
+            {
+              "title": "Git 和 GitHub 路线图",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "GitHub",
+              "url": "https://github.com/",
+              "type": "article"
+            },
+            {
+              "title": "GitHub 文档",
+              "url": "https://docs.github.com/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "bf1d5694-924a-4331-adcf-7f9c712152eb",
+          "xid": "c1596020-54e9-48c9-bfff-8ad8ea61b609"
+        }
+      ],
+      "id": "211c9a2d-cfa3-4605-bdcc-030be2b48905",
+      "xid": "5044125f-cc5d-4958-864e-12255a5ad936"
+    },
+    {
+      "title": "应用程序组件",
+      "description": "Android应用程序主要由五种不同类型的组件构成：\n\n1.  **活动(Activity)**：这些是用户可以与其交互的独立屏幕。\n\n任何用户界面操作，例如点击按钮或滑动屏幕，通常都会在一个活动内进行。\n\n\n    \n2.  **服务(Service)**：与活动不同，服务在后台运行且不具有用户界面。\n\n它们用于重复或长时间操作，例如播放音乐或从服务器抓取数据流。\n\n\n    \n3.  **广播接收器(Broadcast Receiver)**：这些是事件监听器。\n\nAndroid操作系统使用它们回应系统范围内的事件。\n\n\n    \n4.  **内容提供者(Content Provider)**：它们管理应用数据并与其他安装在设备上的应用共享数据。\n\n出于安全考虑，数据通常不跨应用共享。\n\n\n    \n5.  **意图(Intent)**：它们作为消息或命令传递给Android系统。\n\n它们用于通知Android系统发生特定事件。\n\n\n    \n\n",
+      "links": [
+        {
+          "title": "应用基础",
+          "url": "https://developer.android.com/guide/components/fundamentals",
+          "type": "article"
+        },
+        {
+          "title": "Android 应用组件",
+          "url": "https://medium.com/android-hunger/android-app-components-activities-fragments-and-intents-ed7373455555",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Activity（活动）",
+          "description": "`Activity（活动）`在Android中是一个关键组件，它代表着一个带有用户界面的单一屏幕。\n\n它就像桌面应用中的一个窗口。\n\nAndroid应用通常由一个或多个活动组成，每个活动都具有自己的界面，允许用户进行交互。\n\n当一个应用程序启动时，会创建一个`Activity（活动）`实例，开始该应用程序的生命周期。\n\n每个活动都有自己的生命周期（创建、启动、恢复、暂停、停止、销毁），用于维护用户的进度状态，并且Android会自动管理这些状态。\n\n活动还可以有`Intent（意图）`，这使它们能够与其他组件进行交互，例如启动另一个活动或从该活动获取结果。\n\n",
+          "links": [
+            {
+              "title": "Android Activity（Android活动）",
+              "url": "https://developer.android.com/reference/android/app/Activity",
+              "type": "article"
+            },
+            {
+              "title": "精通Android活动",
+              "url": "https://medium.com/deuk/mastering-the-android-activity-lifecycle-best-practices-1d10f15d060a",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Activity 生命周期",
+              "description": "在 Android 中，**Activity 生命周期 (Activity Lifecycle)** 表示 Activity 从创建到销毁过程中所经历的一系列状态或事件。\n\n主要的状态或事件有 `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, `onDestroy()` 和 `onRestart()`. 当 Activity 第一次创建时会调用 `onCreate()` 方法，当 Activity 对用户可见时调用 `onStart()` 方法。\n\n当用户开始与应用交互时，会执行 `onResume()` 方法。\n\n当应用不再位于前台或对用户不可见时，会调用 `onPause()` 和 `onStop()` 方法。\n\n当 Activity 完全从内存中移除时，会调用 `onDestroy()` 方法。\n\n系统停止 Activity 并准备再次启动它时，会调用 `onRestart()` 方法。\n\n正确处理这些状态可以确保资源的有效利用和流畅的用户体验。\n\n",
+              "links": [
+                {
+                  "title": "Activity 生命周期",
+                  "url": "https://developer.android.com/guide/components/activities/activity-lifecycle",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d7065983-7a7e-4bb1-8c8e-e5bd20ab7637",
+              "xid": "9fff2c0f-6fab-4a70-a3a4-b2ef99bb64c2"
+            },
+            {
+              "title": "状态变更",
+              "description": "“Activity”是一个关键组件，它表示一个带有用户界面的单屏。\n\n一个或多个处于活动状态的Activity构成一个Application。\n\n这些Activity在其生命周期中可以经历不同的状态，这通常由于用户交互或系统中断引起。\n\nActivity的主要状态包括`Created`（已创建）, `Started`（已启动）, `Resumed`（已恢复）, `Paused`（已暂停）, `Stopped`（已停止）, `Restarted`（重新启动）和`Destroyed`（已被销毁）。\n\n当Activity实例正在创建时，其状态为\"Created\"（已创建）；当Activity可见时，其状态为\"Started\"（已启动）；当Activity正在与用户交互时，其状态为\"Resumed\"（已恢复）。\n\n当Activity失去焦点但仍部分可见时，其状态为\"Paused\"（已暂停）；不可见时的状态为\"Stopped\"（已停止）；即将启动时的状态为\"Restarted\"（重新启动）；当Activity结束或系统临时销毁它时，其状态为\"Destroyed\"（已被销毁）。\n\n",
+              "links": [
+                {
+                  "title": "Activity生命周期",
+                  "url": "https://developer.android.com/guide/components/activities/activity-lifecycle",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5fe92175-b3ca-497b-8271-dff2c55cb38b",
+              "xid": "5712da30-021f-4608-aa0a-7e0eeb5c7857"
+            },
+            {
+              "title": "任务与返回栈",
+              "description": "在Android中，**任务返回栈（tasks backstack）**是指Android管理并以堆栈结构排列任务的方式。\n\n每个任务都有一个活动的堆栈，这被称为任务的返回堆栈。\n\n活动是按它们打开的顺序放置的。\n\n当启动一个新的活动时，它会被放置在堆栈的顶部并成为正在运行的活动，而之前的活动会被暂停并放入返回堆栈中。\n\n当你按下返回按钮时，当前的活动会被销毁，返回堆栈顶部的活动再次变得活跃。\n\nAndroid使用这个返回栈的概念定义如何导航任务和活动之间。\n\n",
+              "links": [
+                {
+                  "title": "任务和返回栈",
+                  "url": "https://developer.android.com/guide/components/activities/tasks-and-back-stack",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "494738d3-fd2d-4032-9f95-af8e2680bfb8",
+              "xid": "0ea61e10-8da1-49de-ace1-37891b82862d"
+            }
+          ],
+          "id": "84baa57b-94a6-4448-b1db-e5e9defde717",
+          "xid": "c914f59b-8faa-419d-9432-6cb48058d5f4"
+        },
+        {
+          "title": "服务",
+          "description": "**服务**: 在Android中，**服务**（Service）是一种应用程序组件，可以在后台执行操作，而无需用户界面。\n\n它可以由应用程序的其他组件（如一个Activity）启动，并且即使用户切换到另一个应用程序，它也能继续在后台运行。\n\nAndroid中有两种类型的服务，即**已启动服务**（Started Service）和**绑定服务**（Bound Service）。\n\n**已启动服务**（Started Service）用于执行某个单一的操作，如下载大型文件。\n\n另一方面，**绑定服务**（Bound Service）提供了一个客户端-服务器的接口，允许组件与服务交互，发送请求，接收结果，甚至执行进程间通信（IPC）。\n\n",
+          "links": [
+            {
+              "title": "服务",
+              "url": "https://developer.android.com/guide/components/services",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "34bb2e4e-6f3d-4ab4-8cb3-d666bf66c879",
+          "xid": "45db3dd7-5715-4106-9057-9f9b1ffe2035"
+        },
+        {
+          "title": "内容提供者（Content Provider）",
+          "description": "内容提供者（Content Provider）是Android中一个关键组件，允许应用程序在保持数据安全的情况下与其他应用程序共享数据。\n\n它们在数据库和应用程序之间充当一层，以增强数据安全性。\n\n内容提供者通过处理数据事务、实施数据安全以及在应用程序之间保持数据隔离来管理对结构化数据集的访问。\n\n虽然底层存储方法（如SQLite数据库、Web或任何其他方法）保持隐藏，但它们提供了一种抽象接口，用于访问数据。\n\n这种机制有助于以结构化的方式从非关系数据源中检索数据。\n\n内容提供者主要在需要在多个应用程序之间共享数据而不是仅在一个应用程序内部时使用。\n\n",
+          "links": [
+            {
+              "title": "内容提供者（Content Provider）",
+              "url": "https://developer.android.com/guide/topics/providers/content-providers",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "54cc4a78-f466-40dc-a948-2a57ae49ad1d",
+          "xid": "a45138a9-e8a8-4f16-9bdd-1782424dfd86"
+        },
+        {
+          "title": "广播接收器 (Broadcast Receiver)",
+          "description": "**广播接收器 (Broadcast Receivers)** 是 Android 中的组件，用于响应系统范围的广播通知。\n\n它们可以注册以响应特定类型的广播，或者实现用户定义的广播。\n\n虽然您可以从您的应用程序发起广播，但它们通常用于接收系统通知或与其他应用程序进行通信。\n\n然而，请记住，它们不能显示用户界面，但可以在必要时启动具有用户界面的活动 (activity)。\n\n`BroadcastReceiver` 类必须覆盖 `onReceive()` 方法，其中每个消息作为 `Intent` 对象参数接收。\n\n",
+          "links": [
+            {
+              "title": "广播接收器 (Broadcast Receiver)",
+              "url": "https://developer.android.com/reference/android/content/BroadcastReceiver",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "674b3507-5e8f-42c3-8345-674dbd84eee7",
+          "xid": "563b8de1-6a6c-48c8-b960-0d9a23d73088"
+        },
+        {
+          "title": "意图(Intent)",
+          "description": "意图(Intent)是Android中的一个软件机制，用于组件（如活动活动、内容提供者内容提供者和服服务）之间的晚期运行时绑定。\n\n 它本质上是一个被动的数据结构，包含一种操作的抽象描述，该操作被请求由Android系统执行。\n\n",
+          "links": [
+            {
+              "title": "意图(Intent)",
+              "url": "https://developer.android.com/reference/android/content/Intent",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "隐式Intent（Implicit Intents）",
+              "description": "与显式Intent（Explicit Intents）不同，**隐式Intent（Implicit Intents）**不会明确指定目标组件。\n\n相反，它们允许系统根据Intent描述找到一个合适的组件来处理请求。\n\n系统将通过对比设备上所有已安装应用的`AndroidManifest.xml`中的`<intent-filter>`部分来找到可以处理此隐式Intent的Activity。\n\n",
+              "links": [
+                {
+                  "title": "隐式Intent（Implicit Intents）",
+                  "url": "https://developer.android.com/guide/components/intents-filters#implicit",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "050cac5d-ee3a-442f-9ecb-d70800a9abf0",
+              "xid": "a446e1b1-5d8d-4bc2-9150-5aabc71e432c"
+            },
+            {
+              "title": "显式意图（Explicit Intents）",
+              "description": "**显式意图（Explicit Intents）** 主要用于应用程序自身的边界内。\n\n在显式意图中，你需要指定需要响应意图的组件。\n\n因此，目标组件必须通过调用诸如 `setComponent(ComponentName)`, `setClass(Context, Class)`, 或 `setClassName(String, String)` 等方法来指定。\n\n这意味着显式意图通常用于启动活动、广播消息、启动应用程序内的服务。\n\n显式意图不是由系统解析的，而是传递给意图中标识的组件。\n\n",
+              "links": [
+                {
+                  "title": "显式意图（Explicit Intents）",
+                  "url": "https://developer.android.com/guide/components/intents-filters#explicit",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "15cd2cb7-64b0-4fb7-8b10-6fbf074f852f",
+              "xid": "7be7debf-15fb-45f8-971b-6ec54be4d5c4"
+            },
+            {
+              "title": "意图过滤器（Intent Filters）",
+              "description": "在Android系统中，`意图过滤器（Intent Filters）`是您声明活动、服务和广播接收者功能的重要组件。\n\n意图过滤器是您应用清单文件中`<intent-filter>` XML元素中定义的表达式。\n\nAndroid系统使用这些过滤器来确定传入意图的适当组件，这些意图可以是显式或隐式的。\n\n您的应用程序对于传入意图的响应能力取决于您定义的过滤器。\n\n这些过滤器由您活动或服务能够执行的`action`、`category`和`data`条件集组成。\n\n如果传入的`Intent（意图）`与定义的`Intent Filters（意图过滤器）`匹配，Android系统将允许该`Intent（意图）`传递到您的组件（活动、服务或广播接收者）。\n\n",
+              "links": [
+                {
+                  "title": "意图过滤器（Intent Filters）",
+                  "url": "https://developer.android.com/guide/components/intents-filters",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "9513a4ac-c481-49ca-843b-4503dac508e7",
+              "xid": "33080327-b0ec-484d-b006-2e655fccf8ae"
+            }
+          ],
+          "id": "5efdd1e6-ff07-4729-9def-ead60885f2b2",
+          "xid": "3a624de3-427a-43be-9a5d-b3751823b366"
+        }
+      ],
+      "id": "1c2aeca6-aedf-4533-a557-c39a08a451bc",
+      "xid": "09adbdee-170f-4685-a6e2-456ac0f40592"
+    },
+    {
+      "title": "界面与导航",
+      "description": "在Android开发中，“界面”和“导航”这两个概念至关重要。\n\n“界面”通常指的是用户交互的图形用户界面（GUI）。\n\n这包括按钮、文本框、图像视图、滚动视图等UI元素，用户通过这些元素来执行特定任务。\n\n在Android中，XML和Material设计等工具用于界面设计。\n\n",
+      "links": [
+        {
+          "title": "Android开发者：界面",
+          "url": "https://developer.android.com/guide/topics/ui/declaring-layout.html",
+          "type": "article"
+        },
+        {
+          "title": "Android开发者：导航",
+          "url": "https://developer.android.com/guide/navigation",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "布局(layouts)",
+          "description": "布局(layouts)",
+          "links": [],
+          "children": [
+            {
+              "title": "帧布局",
+              "description": "**帧布局（FrameLayout）**是Android中一个简单的ViewGroup子类，旨在容纳单个子视图或堆叠重叠的子视图。\n\n默认情况下，它将每个子视图定位在左上角，并允许它们相互重叠，这使得它在需要将视图层叠在彼此之上时非常有用。\n\n",
+              "links": [
+                {
+                  "title": "Android开发者文档：帧布局（Frame Layout）",
+                  "url": "https://developer.android.com/reference/android/widget/FrameLayout",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "28ee3f77-55c9-4382-8e02-05f7a5659112",
+              "xid": "9253f4e4-4556-4188-9f44-d1bab813e145"
+            },
+            {
+              "title": "线性布局",
+              "description": "**线性布局(LinearLayout)** 是一个视图组，它将所有子视图在一个单一方向上对齐，可以是垂直或水平。\n\n你可以使用 `android:orientation` 属性来指定布局方向。\n\n**线性布局(LinearLayout)** 在早期的 Android 开发中经常被使用，但随着 ConstraintLayout 的引入，在现代应用程序中它的使用频率有所下降。\n\n",
+              "links": [
+                {
+                  "title": "线性布局",
+                  "url": "https://developer.android.com/develop/ui/views/layout/linear",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ee6447cc-99e6-4b6c-b37e-e6f3ecf1326a",
+              "xid": "f2396c33-c76c-44aa-a0a2-857d755df509"
+            },
+            {
+              "title": "相对布局",
+              "description": "在Android中，**相对布局（RelativeLayout）**是一种`ViewGroup`，它允许您根据彼此或是相对于父布局来定位子视图。\n\n在相对布局中，您可以基于特定规则相对于彼此来排列子视图，这使得它非常适合创建复杂的用户界面设计。\n\n相对布局（RelativeLayout）在早期的Android开发中很常用，但随着`ConstraintLayout`的引入，它在现代应用程序中使用得较少。\n\n",
+              "links": [
+                {
+                  "title": "相对布局",
+                  "url": "https://developer.android.com/develop/ui/views/layout/relative",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f1aa41cf-efca-4b30-ad86-91b4abe99243",
+              "xid": "968df928-b317-4bf2-a40b-7c7161d3c61e"
+            },
+            {
+              "title": "约束布局（Constraint）",
+              "description": "允许你使用扁平化的视图层次结构（即没有嵌套视图组）创建大型复杂布局。\n\n它类似于 `RelativeLayout`，因为所有视图都根据同级视图和父布局之间的关系进行布局，但它比 RelativeLayout 更灵活且易于使用。\n\n它可在 XML 和 Jetpack Compose 中使用。\n\n",
+              "links": [
+                {
+                  "title": "Android: XML 中的约束布局（ConstraintLayout）",
+                  "url": "https://developer.android.com/develop/ui/views/layout/constraint-layout",
+                  "type": "article"
+                },
+                {
+                  "title": "Android: Compose 中的约束布局（ConstraintLayout）",
+                  "url": "https://developer.android.com/develop/ui/compose/layouts/constraintlayout",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7062379a-8dfa-431e-90d0-56831c341111",
+              "xid": "fb07f2de-bf58-436f-979c-b82f23053766"
+            },
+            {
+              "title": "RecyclerView",
+              "description": "RecyclerView 是 Android 开发中使用最广泛且功能强大的列表管理工具之一。\n\n它使得高效地展示大量的数据变得简单。\n\n你可以提供数据，并定义每个项目的外观，而 RecyclerView 库会在需要时动态地创建这些元素。\n\n正如其名，RecyclerView 会回收这些单独的元素。\n\n当一个项目滚动出屏幕时，RecyclerView 不会销毁它的视图（View），而是会复用该视图来显示新滚入屏幕的项目。\n\n这提高了性能和应用的响应速度，并减少了电力消耗。\n\n",
+              "links": [
+                {
+                  "title": "使用 RecyclerView 创建动态列表",
+                  "url": "https://developer.android.com/develop/ui/views/layout/recyclerview",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "262f1277-57d7-458c-8d3f-2305448e1b9e",
+              "xid": "6c2da513-fc3b-426d-8b60-53e7b3321ac2"
+            }
+          ],
+          "id": "58066a2c-20d8-457c-93d9-b7ac5ab92472",
+          "xid": "4e30bbea-a306-4b0e-98c0-ca14f283030b"
+        },
+        {
+          "title": "组合式快架（Jetpack Compose）",
+          "description": "组合式快架（Jetpack Compose）是用于构建原生Android用户界面的现代工具包。\n\n它通过较少的代码、强大的工具和直观的Kotlin API简化和加速了Android的UI开发。\n\n组合式快架（Jetpack Compose）提供了一种声明式的UI设计方法，你可以简单地描述你的UI在应用状态的任意时刻应呈现的外观，而Compose会负责更新视图层次结构，从而使得UI开发更为高效。\n\n它还能很好地与现有Android应用集成，让你可以根据自己的节奏采纳其益处。\n\n",
+          "links": [
+            {
+              "title": "组合式快架（Jetpack Compose）",
+              "url": "https://developer.android.com/jetpack/compose",
+              "type": "article"
+            },
+            {
+              "title": "组合式快架速成课（Jetpack Compose Crash Course）",
+              "url": "https://www.youtube.com/watch?v=6_wK_Ud8--0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "595750f8-7002-448d-84ab-1bf98acaf94f",
+          "xid": "f01582de-a8f2-4625-aee5-95f90f1e4f10"
+        },
+        {
+          "title": "应用快捷方式",
+          "description": "应用程序快捷方式在Android中被设计为从设备主屏幕快速并方便地进入应用程序内的特定操作或功能。\n\n要使用它们，长按应用的图标，会出现一个弹出菜单，显示可用的快捷方式。\n\n根据应用程序的不同，您可能会发送消息、预定、导航回家或执行其他特定任务，而无需首先打开应用程序并导航到所需功能。\n\n这些快捷方式还可以单独移动并放置在主屏幕以实现更快的访问。\n\n",
+          "links": [
+            {
+              "title": "应用快捷方式",
+              "url": "https://developer.android.com/guide/topics/ui/shortcuts",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "989d61cc-b5a5-46fe-8115-ee669d7d7a8f",
+          "xid": "40586a9e-20f6-43dd-b827-22ada45c9ed5"
+        },
+        {
+          "title": "导航组件 (Navigation Components)",
+          "description": "**导航组件 (Navigation Components)** 是 Android Jetpack 的一部分，旨在简化您在 Android 应用中实现导航的过程。\n\n这些组件帮助您遵循最佳实践，处理深度链接，并在整个深度和条件导航中提供一致的用户体验。\n\n它们还自动处理许多常见任务，例如在许多不同类型的设备上正确处理向上和返回操作。\n\n导航组件由三个关键部分组成，分别是导航图 (Navigation graph)、导航主机 (NavHost) 和导航控制器 (NavController)。\n\n",
+          "links": [
+            {
+              "title": "导航组件 (Navigation Components)",
+              "url": "https://developer.android.com/guide/navigation",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "89348dee-c375-4037-96db-a6d742ea487f",
+          "xid": "f5c883b2-52ed-4e18-b180-2c2711b643cc"
+        },
+        {
+          "title": "元素(elements)",
+          "description": "元素(elements)",
+          "links": [],
+          "children": [
+            {
+              "title": "TextView(文本视图)",
+              "description": "TextView是一个常见于每个Android应用程序的部件。\n\n这个部件用于在Android应用程序中显示简单的文本。\n\n",
+              "links": [
+                {
+                  "title": "TextView(文本视图)",
+                  "url": "https://developer.android.com/reference/android/widget/TextView",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "af3de991-cde4-40d5-8cbe-bcc3b91461f7",
+              "xid": "ef32c6d5-bab9-4cbb-b850-a45abb5871ea"
+            },
+            {
+              "title": "片段",
+              "description": "一个 `Fragment` 代表应用用户界面（UI）的可重用部分。\n\n一个片段定义并管理其自身的布局，具有自身的生命周期，并可以处理自身的输入事件。\n\n片段不能独立存在。\n\n它们必须被一个活动（activity）或其他片段所托管。\n\n片段的视图层次结构成为或附加到宿主（host）的视图层次结构中。\n\n",
+              "links": [
+                {
+                  "title": "Android 开发者：片段",
+                  "url": "https://developer.android.com/guide/fragments",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6ebf4cb1-bf7d-4f03-a5b4-0b30538be3db",
+              "xid": "b9a55cf1-1381-4361-9bdb-24c0cf764d4d"
+            },
+            {
+              "title": "EditText（EditText）",
+              "description": "`EditText` 是 Android Studio 中一个基础的用户界面元素，用于使用户能够在一个应用程序中输入和编辑文本。\n\n它是 `TextView` 的子类，提供了额外的功能来处理用户输入。\n\n",
+              "links": [
+                {
+                  "title": "Android开发者：EditText",
+                  "url": "https://developer.android.com/reference/android/widget/EditText",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e4423f27-43b8-4f40-ab77-5392dada8965",
+              "xid": "4e540702-ebab-46bf-a200-252ec9530559"
+            },
+            {
+              "title": "对话框",
+              "description": "一个`DialogFragment`是一个特别的片段子类，用于创建和托管对话框。\n\n尽管你不需要在片段内托管你的**对话框**，但是这样做可以让`FragmentManager`管理对话框的状态，并在配置更改时自动恢复对话框。\n\n",
+              "links": [
+                {
+                  "title": "Android 开发者：对话框",
+                  "url": "https://developer.android.com/guide/fragments/dialogs",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "96e438a7-0fe9-4e97-8134-893c5d348283",
+              "xid": "2310e3e5-235d-464d-9021-c3bffa86a6fd"
+            },
+            {
+              "title": "按钮",
+              "description": "一个`按钮`由文本或图标，或两者组成，以传达用户点击它时会发生什么动作。\n\n按钮是一种UI组件，允许用户通过点击它们与应用程序进行交互。\n\n按钮通常由文本、图标或两者的组合组成，并传达用户点击它时会发生什么动作。\n\n",
+              "links": [
+                {
+                  "title": "Android 开发者：按钮",
+                  "url": "https://developer.android.com/develop/ui/views/components/button",
+                  "type": "article"
+                },
+                {
+                  "title": "创建一个按钮 - Android",
+                  "url": "https://developer.android.com/quick-guides/content/create-button",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "91bd5e80-3b95-4888-96a2-3bfecac1d307",
+              "xid": "40c2755e-e597-4c7b-9eae-a8af330fa2f0"
+            },
+            {
+              "title": "吐司[Toast]",
+              "description": "吐司[toast]提供有关操作的简单反馈，以一个小弹出窗口的形式展示。\n\n弹出窗口仅显示消息所需的大小，当前活动保持可见和可交互。\n\n吐司会在超时后自动消失。\n\n",
+              "links": [
+                {
+                  "title": "吐司[Toast]",
+                  "url": "https://developer.android.com/guide/topics/ui/notifiers/toasts",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "52fdb75d-6aab-43ce-a545-7808db7dc455",
+              "xid": "520b2620-b373-4723-8f4c-373ee2d8a55a"
+            },
+            {
+              "title": "底部抽屉",
+              "description": "`底部抽屉(Bottom sheets)` 是包含补充内容的表面，它们锚定在屏幕底部。\n\n存在若干属性可以用于调整标准和模式底部抽屉的行为。\n\n行为属性可以通过在XML中设置子视图的`app:layout_behavior`或通过编程方式应用于标准底部抽屉。\n\n",
+              "links": [
+                {
+                  "title": "Android开发者：底部抽屉",
+                  "url": "https://developer.android.com/reference/com/google/android/material/bottomsheet/BottomSheetDialog",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "eb3f8491-7ec3-4c30-9d9a-c5326611d93c",
+              "xid": "98d31df9-6ee3-40d6-a37d-1d69f3d9e0cc"
+            },
+            {
+              "title": "图像视图（ImageView）",
+              "description": "显示图像资源，例如位图（Bitmap）或可绘制资源（Drawable）。\n\n图像视图（ImageView）还常用于给图像添加色调以及处理图像缩放。\n\n",
+              "links": [
+                {
+                  "title": "Android 开发者文档：图像视图（ImageView）",
+                  "url": "https://developer.android.com/reference/android/widget/ImageView",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "42397388-0f1e-4681-b98a-259b49243bc0",
+              "xid": "d1e0f1b9-a96d-4606-9e00-743be7757a6b"
+            },
+            {
+              "title": "抽屉式导航（Drawer）",
+              "description": "在Android中，**抽屉式导航（Navigation Drawer）** 是一个从左侧滑出的菜单，简化了在重要应用链接间导航的过程。\n\n它可以通过滑动或通过 `ActionBar` 中的图标打开。\n\n它是一个覆盖面板，取代了专用于显示选项的屏幕。\n\n",
+              "links": [
+                {
+                  "title": "Android开发者：抽屉布局（DrawerLayout）",
+                  "url": "https://developer.android.com/reference/androidx/drawerlayout/widget/DrawerLayout",
+                  "type": "article"
+                },
+                {
+                  "title": "抽屉导航教程",
+                  "url": "https://www.digitalocean.com/community/tutorials/android-navigation-drawer-example-tutorial",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "0f3aa185-08fd-47c8-b207-9fbf43b36be2",
+              "xid": "515417dd-79b3-4949-819d-1e70217aab10"
+            },
+            {
+              "title": "列表视图（ListView）",
+              "description": "显示一个垂直滚动的视图集合，其中每个视图均位于列表中前一个视图的正下方。\n\n对于更现代、灵活和高性能的列表显示方式，请使用 `RecyclerView`。\n\n",
+              "links": [
+                {
+                  "title": "列表视图（ListView）",
+                  "url": "https://developer.android.com/reference/android/widget/ListView",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7bbb02ef-0d78-4908-94da-bd086ae08eea",
+              "xid": "9370f27e-1b93-4a9d-b84b-e15b2d387476"
+            },
+            {
+              "title": "标签页(Tabs)",
+              "description": "标签页(Tabs)在Android Studio中是一种UI组件，用于将内容组织成多个部分，允许用户通过选择相应的标签页进行导航。\n\n该组件通常在需要在一个屏幕上展示不同类型的内容时使用，比如不同的类别(Category)、设置(Settings)或应用(App)内的页面(Page)。\n\n",
+              "links": [
+                {
+                  "title": "Material标签页(Material Tabs)",
+                  "url": "https://developer.android.com/reference/com/google/android/material/tabs/package-summary",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4491a2ba-02c0-4653-bf43-09088231840c",
+              "xid": "277d7783-a9d5-47a7-83f3-9fe921236a62"
+            },
+            {
+              "title": "动画(Animations)",
+              "description": "`动画(Animations)` 可以添加视觉提示，通知用户您的应用中的操作情况。\n\n它们在用户界面状态更改时特别有用，例如加载新内容或新的操作变得可用时。\n\n动画还能为应用增加精致感，从而提升整体质量感受。\n\n",
+              "links": [
+                {
+                  "title": "Google 开发者：动画(Animations)",
+                  "url": "https://developer.android.com/develop/ui/views/animations/overview",
+                  "type": "article"
+                },
+                {
+                  "title": "Google 开发者：动画(Animations)",
+                  "url": "https://www.youtube.com/watch?v=N_x7SV3I3P0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "86e823dd-3933-4490-b6f9-ac87526781c8",
+              "xid": "0e80019f-fcee-4958-80e4-b35be8c0f0eb"
+            }
+          ],
+          "id": "bec407f6-9680-4326-811c-e140e5fe9e57",
+          "xid": "e812c858-b02d-43a0-a828-bee2ea9cde4b"
+        }
+      ],
+      "id": "111640c4-f4d9-4632-88bd-ab259d231f69",
+      "xid": "872f6226-c628-4993-8183-ef95c25abe9d"
+    },
+    {
+      "title": "设计与架构",
+      "description": "**设计架构**指的是以提高代码的可读性、可维护性和可测试性的方式来构建代码。\n\n有几种架构设计方式，比如模型-视图-控制器 (Model-View-Controller, MVC) 和模型-视图-意图 (Model-View-Intent, MVI)。\n\n每种方式都定义了数据层、逻辑层和用户界面层之间的交互。\n\nGoogle 推荐的架构模式是 Android 架构组件，它遵循 MVVM 模式的原理。\n\n需要注意的是，架构并不是一种一成不变的结构适用于所有解决方案。\n\n相反，它只是一个指南，在必要时可以进行调整。\n\n",
+      "links": [
+        {
+          "title": "Android 架构组件",
+          "url": "https://developer.android.com/topic/libraries/architecture",
+          "type": "article"
+        },
+        {
+          "title": "模型-视图-控制器 (Model-View-Controller, MVC)",
+          "url": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller",
+          "type": "article"
+        },
+        {
+          "title": "模型-视图-展示器 (Model-View-Presenter, MVP)",
+          "url": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter",
+          "type": "article"
+        },
+        {
+          "title": "模型-视图-视图模型 (Model-View-ViewModel, MVVM)",
+          "url": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel",
+          "type": "article"
+        },
+        {
+          "title": "模型-视图-意图 (Model-View-Intent, MVI)",
+          "url": "https://www.raywenderlich.com/817602-mvi-architecture-for-android-tutorial-getting-started",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "架构模式(architectural-patterns)",
+          "description": "架构模式(architectural-patterns)",
+          "links": [],
+          "children": [
+            {
+              "title": "MVI（Model-View-Intent）",
+              "description": "MVI（Model-View-Intent）模式是一种反应式架构模式，类似于**MVVM**（Model-View-ViewModel）和**MVP**（Model-View-Presenter），专注于不可变性和单向循环状态处理。\n\n数据流是单向的：意图通过`ViewModel`更新模型（Model）的状态，然后视图（View）对新状态作出反应。\n\n这确保了逻辑与界面之间的清晰且可预测的循环。\n\n*   Model（模型）：代表UI状态。\n\n它是不可变的，并包含表示屏幕所需的所有信息。\n\n\n*   View（视图）：显示UI状态并接收用户的意图。\n\n\n*   Intent（意图）：用户的意图触发状态更新，由`ViewModel`管理。\n\n",
+              "links": [
+                {
+                  "title": "使用Kotlin的MVI",
+                  "url": "https://proandroiddev.com/mvi-architecture-with-kotlin-flows-and-channels-d36820b2028d",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "fbb90c7e-4820-4430-b2ba-b9b46dc74d90",
+              "xid": "84d2c845-b224-471b-bbbd-9e83f4e514c7"
+            },
+            {
+              "title": "MVVM (Model-View-ViewModel)",
+              "description": "`Model-View-ViewModel` (MVVM) 模式是一种常用于用户界面开发的软件架构模式。\n\n它设计用于分离应用程序的关注点，使代码更加模块化、易于测试和维护。\n\n组件:\n\n*   `Model`: 指的要么是表示实际内容状态的领域模型（面向对象的方法），要么是表示内容的数据访问层。\n\n\n*   `View`: 视图是用户屏幕上看到的内容的结构、布局和外观。\n\n\n*   `View model`: 视图模型是视图的抽象，公开属性和命令。\n\n视图模型描述了模型中数据的状态。\n\n",
+              "links": [
+                {
+                  "title": "Android 开发者: 视图模型",
+                  "url": "https://developer.android.com/topic/libraries/architecture/viewmodel",
+                  "type": "article"
+                },
+                {
+                  "title": "Wikipedia",
+                  "url": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "956dc3a9-b046-4fd9-b056-1477a28288ff",
+              "xid": "2f61995c-f738-4906-9228-4f28fabb6aae"
+            },
+            {
+              "title": "MVP (Model View Presenter)",
+              "description": "MVP `Model 视图呈现器`模式是著名的MVC `Model 视图控制器`模式的衍生模式，是组织Android应用程序展示层的最流行模式之一。\n\nMVP 分为三个组件：\n\n*   `Model`: 负责管理输入应用程序的数据。\n\n它通常是处理业务逻辑和数据操作的Interactor或用例。\n\n\n*   `View`: 负责更新应用程序的图形部分。\n\n它充当被动视图，仅接收数据并请求执行操作。\n\n\n*   `Presenter`: 处理视图请求的所有图形界面相关逻辑。\n\n它为视图提供需要显示在屏幕上的数据。\n\n",
+              "links": [
+                {
+                  "title": "Model 视图呈现器 (Model View Presenter)",
+                  "url": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "717a3e5c-b045-45d2-93ee-12a1af16cf0a",
+              "xid": "a9766531-a9b7-4f0b-8bb1-11f5e5b98155"
+            },
+            {
+              "title": "MVC (Model View Controller)",
+              "description": "MVC 或 `Model View Controller` 是一种常用的软件设计模式，用于开发用户界面，它将相关的程序逻辑分为三个相互连接的组件。\n\n组件：\n-----------\n\n*   `Model (模型)`: 信息的内部表示形式。\n\n这通常是交互器或用例。\n\n\n*   `View (视图)`: 向用户呈现信息并从用户处接受信息的界面。\n\n\n*   `Controller (控制器)`: 控制器包含逻辑，根据应用程序用户的输入更新模型和/或视图。\n\n",
+              "links": [
+                {
+                  "title": "MVC (Model View Controller)",
+                  "url": "https://developer.mozilla.org/en-US/docs/Glossary/MVC",
+                  "type": "article"
+                },
+                {
+                  "title": "Model View Controller",
+                  "url": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a60fb08d-1ffe-40fc-946d-3ef61cf2784d",
+              "xid": "6a8f803b-6463-405d-96d4-0afe88988dee"
+            }
+          ],
+          "id": "a62c63b5-5427-4012-86fd-dd26b97ec591",
+          "xid": "a2d6a2b1-adc4-465f-b58e-9458b8937c2a"
+        },
+        {
+          "title": "仓库模式（Repository Pattern）",
+          "description": "`仓库模式（Repository Pattern）` 将数据源与应用的其余部分分离开来。\n\n它作为不同数据源之间的中介，例如持久化模型、网络服务或缓存。\n\n这种方式不再需要在 ViewModel 中散布网络和数据库调用，而是将这些调用封装在一个仓库类里。\n\n这种分离使代码变得整洁、易于阅读和测试。\n\n它为数据访问提供了简单的 API，应用的其余部分不需要知道数据来自何处，只需要询问仓库即可。\n\n",
+          "links": [
+            {
+              "title": "仓库模式（Repository Pattern）",
+              "url": "https://en.wikipedia.org/wiki/Repository_pattern",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2b5e707b-b646-441a-992b-9504a459a3fd",
+          "xid": "4e465131-5149-4a55-b4f4-d37682cecb5d"
+        },
+        {
+          "title": "Builder（构建者模式）",
+          "description": "在Android中，**Builder（构建者模式）** 用于逐步构建复杂的对象。\n\n它将对象的构造过程与其表示形式分离开来。\n\n该模式涉及一个`Builder（构建者）`类，用于构造`Product（产品）`类。\n\n`Builder（构建者）`类通常为可能用于构建产品对象的每个部分提供一个方法。\n\n它还提供一个返回最终产品的的方法。\n\n当您可能有多种方式创建对象或当对象的构造函数需要大量的参数时，Builder（构建者模式）是有用的。\n\n",
+          "links": [
+            {
+              "title": "Builder（构建者模式）",
+              "url": "https://developer.android.com/kotlin/style-guide#builder-pattern",
+              "type": "article"
+            },
+            {
+              "title": "Android Builder（构建者）模式",
+              "url": "https://medium.com/kayvan-kaseb/builder-design-pattern-in-android-a38dccb75485",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8a51b87b-2311-49de-839f-a5d2f113c07d",
+          "xid": "ba0f0fb0-b9d6-41fa-8a4f-aa079b1dddf5"
+        },
+        {
+          "title": "观察者模式 (Observer Pattern)",
+          "description": "观察者模式 (Observer Pattern) 是一种软件设计模式，在这种模式下，一个对象（称为主题）会维护一个观察者列表，并在状态发生变化时自动通知它们。\n\n这通常通过调用它们的方法来实现。\n\n观察者模式主要用来实现分布式事件处理系统，并被认为是一种良好的实践，它可以使设计更加健壮、灵活和可扩展。\n\n要被观察的主题会触发事件，而观察者会对它们所监听的改变或事件做出反应。\n\n在 Android 中，诸如 `LiveData`、`RxJava`、`Flow` 和其他响应流（reactive streams）的可观测库允许实现观察者模式。\n\n",
+          "links": [
+            {
+              "title": "观察者模式 (Observer Pattern)",
+              "url": "https://en.wikipedia.org/wiki/Observer_pattern",
+              "type": "article"
+            },
+            {
+              "title": "观察者模式 (Observer Pattern)",
+              "url": "https://refactoring.guru/design-patterns/observer",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Flow（流）",
+              "description": "`Flow（流）`在Android开发中是Kotlin协程库的一部分。\n\n它是一种可以顺序发出多个值的类型，非常适合处理任何数据流或不是瞬时发生的事件流。\n\n类似于可观察对象（Observables），`Flow（流）`也是基于观察者模式，意味着它可以发出值，这些值的发出可以被观察并作出反应。\n\n然而，`Flow（流）`具有内置的背压处理能力，并且能够以序列的方式转换、过滤或组合这些流。\n\n再加上协程（Coroutines），`Flow（流）`鼓励一个更可预测且简化的并发设计，避免了回调地狱问题。\n\n",
+              "links": [
+                {
+                  "title": "Flow（流）",
+                  "url": "https://kotlinlang.org/docs/flow.html",
+                  "type": "article"
+                },
+                {
+                  "title": "Flow（流）: 协程",
+                  "url": "https://kotlinlang.org/docs/flow-coroutines.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "0eb719a8-c7b6-4840-acdc-490f6047f48e",
+              "xid": "c8fde793-c73d-4316-86c2-77e4ba391044"
+            },
+            {
+              "title": "响应式扩展（RxJava）",
+              "description": "响应式扩展（RxJava）是一个针对JVM的应用库，它允许开发人员编写异步、基于事件的程序。\n\n它是根据响应式编程（reactive programming）原则开发的，并且支持多线程操作。\n\n你可以从几乎所有的东西创建数据流——变量、数据结构、输入等，然后利用函数式编程方法处理这些流中的数据。\n\n",
+              "links": [
+                {
+                  "title": "GitHub上的响应式扩展（RxJava）",
+                  "url": "https://github.com/ReactiveX/RxJava",
+                  "type": "opensource"
+                }
+              ],
+              "children": [],
+              "id": "5133de89-6c6a-4525-a179-711a1aab7d51",
+              "xid": "06f60235-974b-49d7-8a79-28ac4e7da77f"
+            },
+            {
+              "title": "RxKotlin",
+              "description": "`RxKotlin` 是一个轻量级库，它为 `RxJava` 添加了方便的扩展函数。\n\n它允许开发人员以更符合 Kotlin 语法习惯的方式使用 `RxJava`，从而使代码更具可读性和可理解性。\n\n虽然 `RxJava` 是 Reactive Extensions 的 Java 实现，但 `RxKotlin` 实质上是一个包含扩展函数和其他构造的封装，以充分利用 Kotlin 的功能，如其语法简洁性和易用性。\n\n",
+              "links": [
+                {
+                  "title": "RxKotlin",
+                  "url": "https://github.com/ReactiveX/RxKotlin",
+                  "type": "opensource"
+                }
+              ],
+              "children": [],
+              "id": "530d5bf0-0a49-4164-abf8-176698e9d359",
+              "xid": "8b41dcaf-f613-47a6-9f0e-afd351361115"
+            },
+            {
+              "title": "LiveData",
+              "description": "`LiveData` 是一个可观察的数据持有类，在给定生命周期范围内可以被观察。\n\n这意味着一个 `Observer` 可以与一个 `LifecycleOwner` 成对添加，并且只有当关联的 `LifecycleOwner` 处于活动状态时，该观察者才会被通知到 `LiveData` 对象的修改。\n\n`LiveData` 尊重应用程序组件（如活动、片段或服务）的生命周期状态，并且仅更新处于活跃生命周期状态的应用程序组件观察者。\n\n此外，当关联的 `LifecycleOwner` 进入 `Destroyed` 状态时，`LiveData` 会自动移除观察者。\n\n`LiveData` 与 `LifecycleOwner` 的组合帮助您管理适当的和高效的更新，因为 `LiveData` 考虑了您应用程序组件的生命周期状态。\n\n",
+              "links": [
+                {
+                  "title": "LiveData",
+                  "url": "https://developer.android.com/topic/libraries/architecture/livedata",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "70253aba-8ab4-42d4-9a62-affd6dab1d55",
+              "xid": "412a72a4-e5cf-4989-bc5b-cb356c2148a5"
+            }
+          ],
+          "id": "66b9dd85-2e9a-4a66-82b9-a1b550ff1d0a",
+          "xid": "92467c28-3c0a-4cf6-9627-5a961def9773"
+        },
+        {
+          "title": "依赖注入 (Dependency Injection)",
+          "description": "依赖注入 (`Dependency Injection`) 是一种技术，其中对象不需要自行创建其依赖项，而是依赖项在运行时被提供（或注入）。\n\n这项技术在 Android 开发中非常有益。\n\n它有助于创建松耦合（loosely coupled）和易于测试的代码。\n\n例如，应用程序所需的 `Retrofit` 实例可以在其他地方创建，使用 `Dagger`、`Koin` 或 `Hilt` 等库根据要求进行注入。\n\n`ViewModel` 实例也可以被注入，而不是在所需的类中直接创建。\n\n通过依赖注入，插件确保代码变得更容易修改、理解和维护，从而提高代码质量。\n\n",
+          "links": [
+            {
+              "title": "依赖注入 (Dependency Injection)",
+              "url": "https://developer.android.com/training/dependency-injection",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": " Dagger (Dagger)",
+              "description": "Dagger 是一个完全静态的编译时依赖注入框架（Dependency Injection），支持 Java 和 Android。\n\n它是 Square 早期版本的一种改进，专注于简洁性和速度。\n\nDagger 的主要关注点在于编译时依赖分析，代码简洁性和清晰度。\n\n它使用注解（annotations）来定义依赖关系，因此有助于代码的易读性和理解。\n\nDagger 还消除了使用反射（reflection）来注入依赖的需求，从而提升了性能。\n\n它提供了自定义作用域（custom scopes）来控制实例的生命周期，并确保某些作用域在整个生命周期内依赖关系为单例（Singleton）。\n\n",
+              "links": [
+                {
+                  "title": "Dagger",
+                  "url": "https://dagger.dev/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5b4955e5-3e67-4dab-af20-fab0be22482a",
+              "xid": "8f8e24e8-96a8-45b9-8d24-57ab01116b3f"
+            },
+            {
+              "title": "Hilt（依赖注入库）",
+              "description": "Hilt 是一个用于 Android 的依赖注入库，它减少了在项目中手动设置依赖注入时通常需要编写的样板代码。\n\nHilt 基于 Dagger 库，但它简化了实现过程，并使 Dagger 在 Android 应用程序中的使用更加顺畅。\n\n要设置 Hilt，必须标注你的 Android 类，Hilt 将会自动生成并提供所需的依赖项。\n\n",
+              "links": [
+                {
+                  "title": "Hilt（依赖注入库）",
+                  "url": "https://developer.android.com/training/dependency-injection/hilt-android",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2c2eebf3-2a05-439a-92e3-53ab0b5ee6b6",
+              "xid": "c51a10fa-fc11-4d96-9976-7bbe3ebc99ba"
+            },
+            {
+              "title": "Koin",
+              "description": "Koin 是专为 Kotlin 开发者设计的一种轻量级的依赖注入框架（dependency injection framework）。\n\n它仅使用功能性解析（functional resolution）- 不需要代理（proxy）、不需要代码生成（code generation）、不需要反射（reflection），并通过利用 Kotlin 语言特性提供了简洁性。\n\n尽管 Koin 并不特定于 Android 平台，但它提供了特定的扩展（extensions），使得与您的 Android 应用程序的高效集成成为可能，包括 Android 架构组件（Android Architecture Components）和 Kotlin 协程（Kotlin Coroutines）等。\n\n",
+              "links": [
+                {
+                  "title": "Koin",
+                  "url": "https://insert-koin.io",
+                  "type": "article"
+                },
+                {
+                  "title": "Android 架构组件",
+                  "url": "https://developer.android.com/topic/libraries/architecture/index.html",
+                  "type": "article"
+                },
+                {
+                  "title": "@officialKotlin 协程",
+                  "url": "https://kotlinlang.org/docs/reference/coroutines-overview.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f9b17546-1c0c-403d-8ad6-b00c6b56741b",
+              "xid": "f0903a71-cbf6-4b56-ba14-33798155a96c"
+            },
+            {
+              "title": "Kodein",
+              "description": "`Kodein` 是推荐用于Android开发的依赖注入框架之一。\n\n这是一个开源的Kotlin库，通过允许开发人员将各种类型的依赖（如单例、工厂或提供者绑定）绑定到容器或 `Kodein` 模块来简化依赖注入过程。\n\n它促进了在使用的地方声明依赖，而不是提前声明。\n\n它遵循“在使用时定义”的原则，这使得代码易于使用、易于调试，并非常符合Kotlin的idiomatic（惯用法）。\n\n值得注意的是，`Kodein` 与Android的生命周期紧密合作，并且提供了与Android架构组件等流行库的简单集成，从而利用这些库的功能。\n\n",
+              "links": [
+                {
+                  "title": "Kodein",
+                  "url": "https://insert-kodein.io/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d40c8ff9-3980-4b62-ba70-718af4d45cea",
+              "xid": "089241b4-31e8-430d-b01f-0487d7dfb9ed"
+            }
+          ],
+          "id": "95e43cd9-a6ce-494d-ad59-61640498468b",
+          "xid": "1a7e4919-5742-4b0f-b74d-4e3a97c39457"
+        },
+        {
+          "title": "工厂模式 (Factory Pattern)",
+          "description": "**工厂模式 (Factory Pattern)** 是创建型设计模式的一部分。\n\n此模式为创建对象提供了一个接口，但允许子类更改要创建的对象类型。\n\n它在客户端代码和具体对象之间引入了一个抽象层。\n\n通常，这是通过使用工厂方法来创建对象而不是使用构造函数来实现的。\n\n通常，类的实例由一个名为 `工厂方法 (factory method)` 的方法创建，该方法是在接口中指定并在实现类中实现，或在基类中实现并可选择在派生类中覆盖。\n\n当我们希望用户能够从几个共享一个共同超级类的类之一实例化一个类时，使用工厂方法。\n\n下面是一个工厂模式的基本示例：\n\n    public abstract class 动物 (Animal) {\n        public abstract String makeSound();\n    }\n    \n    public class 狗 (Dog) extends 动物 (Animal) {\n        @override\n        public String makeSound() {\n            return \"Woof\";\n        }\n    }\n    \n    public class 猫 (Cat) extends 动物 (Animal) {\n        @override\n        public String makeSound() {\n            return \"Meow\";\n        }\n    }\n    \n    public class 动物工厂 (AnimalFactory) {\n        public 动物 (Animal) createAnimal(String type) {\n            if (\"Dog\".equals(type)) {\n                return new 狗 (Dog)();\n            } else if (\"Cat\".equals(type)) {\n                return new 猫 (Cat)();\n            }\n            return null;\n        }\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "Android: 工厂模式 (Factory Pattern)",
+              "url": "https://developer.android.com/guide/components/intents-filters#factory",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9ae19e69-a720-4ff7-9c5a-72fc69993bfc",
+          "xid": "b7e8e206-cc55-4102-9020-b12e5846029f"
+        }
+      ],
+      "id": "fb768fa0-a79f-4fda-8d49-aa59cd9d52ce",
+      "xid": "d5a43a9d-e5df-4da0-bb03-4126eba27104"
+    },
+    {
+      "title": "存储",
+      "description": "在Android设备上，存储指的是应用(app)、照片、视频和音乐等数据保存的位置。\n\n它可以分为两种类型：内部存储和外部存储。\n\n内部存储用于保存直接与您的应用关联的数据。\n\n默认情况下，这些数据是私有的(private)，其他应用无法访问。\n\n另一方面，外部存储是一个共享空间，所有应用(application)都可以在这里读取和写入数据。\n\n外部存储可以进一步细分为公共和私有目录。\n\n公共目录在所有应用间共享，而私有目录是特定于您的应用的，但如果有适当的权限，其他应用也可以访问这些目录。\n\n",
+      "links": [
+        {
+          "title": "存储",
+          "url": "https://developer.android.com/guide/topics/data/data-storage",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "共享偏好设置 (Shared Preferences)",
+          "description": "在Android中，共享偏好设置 (Shared Preferences) 用于以键值对的形式存储数据。\n\n它类似于一个小型数据库，在这里您可以保存诸如设置或应用程序状态等这样的小数据片段。\n\n当数据被保存至共享偏好设置 (Shared Preferences) 中时，这些数据即使在应用程序被关闭或删除的情况下依然可以跨用户会话进行持久存储。\n\n存储在共享偏好设置 (Shared Preferences) 中的数据通常不适用于大量的数据。\n\n为了执行诸如保存、检索或编辑共享偏好设置 (Shared Preferences) 中的数据等操作，你需要使用 `SharedPreferences.Editor` (SharedPreferences编辑器) 的一个实例。\n\n",
+          "links": [
+            {
+              "title": "共享偏好设置文档 (Shared Preferences Documentation)",
+              "url": "https://developer.android.com/training/data-storage/shared-preferences",
+              "type": "article"
+            },
+            {
+              "title": "Android中的共享偏好设置 (SharedPreferences in Android)",
+              "url": "https://www.youtube.com/watch?v=rJ3uwqko9Ew",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8a0629d6-cd57-4c9e-b255-272ace29d86b",
+          "xid": "3396824d-9910-4e5e-9bd8-b6c517d2d3b6"
+        },
+        {
+          "title": "数据存储库 (DataStore)",
+          "description": "`数据存储库 (DataStore)` 是由 Android 提供的一种新的改进的数据存储解决方案，旨在取代 `SharedPreferences`。\n\n重要的是要理解它有两种不同的实现方式：`首选项数据存储库 (Preferences DataStore)` 和 `协议数据存储库 (Proto DataStore)`。\n\n`首选项数据存储库 (Preferences DataStore)` 使用类似 `SharedPreferences` 的键值对，但它更加健壮，并且更有效地处理运行时异常。\n\n而 `协议数据存储库 (Proto DataStore)` 使用自定义数据类型来提供类型安全性。\n\n它允许你利用 Protocol Buffers（一种语言无关、平台无关的机制，用于序列化结构化数据）作为数据存储格式的强大功能。\n\n在 `数据存储库 (DataStore)` 中操作数据是事务性的，这意味着如果在操作过程中发生错误，所有更改都会回滚，使数据保持一致的状态。\n\n",
+          "links": [
+            {
+              "title": "文档",
+              "url": "https://developer.android.com/topic/libraries/architecture/datastore",
+              "type": "article"
+            },
+            {
+              "title": "数据存储库入门",
+              "url": "https://www.youtube.com/watch?v=9ws-cJzlJkU&list=PLWz5rJ2EKKc8to3Ere-ePuco69yBUmQ9C",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "24f2859b-6965-4a72-8d34-0b5cd03a6242",
+          "xid": "ec45aa9d-9511-4c93-9399-549e6e6f5ee2"
+        },
+        {
+          "title": "Room 数据库",
+          "description": "\"Room\" 是 Google 推出的一个持久层库，它提供了针对 SQLite 的抽象层，以帮助在充分利用 SQLite 功能的同时实现健壮的数据库访问。\n\nRoom 支持在编译时检查的 SQL 字符串中创建数据库和定义查询。\n\n这些数据库属于由你创建的数据类，代表应用程序的数据。\n\nRoom 由三个主要组件组成：**数据库 (Database)**，用于保存应用程序数据表的容器；**实体 (Entity)**，表示数据库中的表；以及 **数据访问对象 (DAO)**，包含与数据库进行交互的 SQL 查询方法。\n\n",
+          "links": [
+            {
+              "title": "Room 数据库",
+              "url": "https://developer.android.com/training/data-storage/room",
+              "type": "article"
+            },
+            {
+              "title": "Android 中 Room 的全面新手指南",
+              "url": "https://www.youtube.com/watch?v=bOd3wO0uFr8&t=10s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d468e9bc-7fe2-4558-977c-da4db27d245a",
+          "xid": "17f61c99-038d-4c30-b90d-3acdc10a5261"
+        },
+        {
+          "title": "文件系统",
+          "description": "Android 操作系统使用一种特定的文件系统 (File System) 结构来存储和管理文件。\n\n它主要基于 Linux 文件系统 (File System)，带有部分特定的 Android 特性。\n\n文件系统 (File System) 包含一些用于特定用途的关键目录。\n\n例如，`/system` 目录存放系统应用和固件，而 `/data` 目录包含用户数据、设置和已安装的应用程序，`/sdcard` 通常代表用于额外存储的内部或外部 SD 卡。\n\n值得一提的还有 `/proc`、`/dev` 和 `/sys` 目录，这些是虚拟文件系统 (virtual file systems)，存放重要的系统文件。\n\n作为一个 Android 开发者，了解这些目录有助于您更有效地与 Android 文件系统 (File System) 进行交互。\n\n需要注意的是，访问这些目录中的部分目录可能会受到系统权限的限制。\n\n",
+          "links": [
+            {
+              "title": "Android 文件系统",
+              "url": "https://developer.android.com/training/data-storage/",
+              "type": "article"
+            },
+            {
+              "title": "Android 文件系统",
+              "url": "https://www.androidauthority.com/android-file-system-1010817/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "dddb57e6-9358-4849-ab12-25b60c055411",
+          "xid": "21234e80-78a2-4094-90bb-89f85bb6701e"
+        }
+      ],
+      "id": "715b0300-139e-4735-99c5-8c1d17691107",
+      "xid": "ce9e0cf3-9ce6-4e72-8adb-82ed26ee547f"
+    },
+    {
+      "title": "网络",
+      "description": "在Android中，`网络 (Network)`组件提供了关键的功能，使用户之间、用户与远程服务器之间以及用户与云服务之间的通信和互动成为可能。\n\nAndroid提供了多种API和服务来与网络进行交互。\n\n主要的API包括`连接管理器 (ConnectivityManager)`、`Wi-Fi管理器 (WifiManager)`、`电话管理器 (TelephonyManager)`和`蓝牙管理器 (BluetoothManager)`等。\n\n例如，连接管理器可以告诉您网络连接状态的变化。\n\n",
+      "links": [
+        {
+          "title": "网络",
+          "url": "https://developer.android.com/guide/topics/connectivity",
+          "type": "article"
+        },
+        {
+          "title": "连接管理器",
+          "url": "https://developer.android.com/reference/android/net/ConnectivityManager",
+          "type": "article"
+        },
+        {
+          "title": "Wi-Fi管理器",
+          "url": "https://developer.android.com/reference/android/net/wifi/WifiManager",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "复古",
+          "description": "Retrofit 是一个适用于 Android 的类型安全 HTTP 客户端。\n\n它的设计目的是将您的应用程序与 API 或后端网络服务连接起来。\n\n Retrofit 使用注解来编码关于 API 操作和请求的详细信息，如 HTTP 方法（`GET`，`POST`，`PUT`，`DELETE`，`HEAD`）和查询参数。\n\n与其它类似库相比，**Retrofit** 的主要优势在于其简单性和直观性，并且它能够高效地处理所有网络调用。\n\n",
+          "links": [
+            {
+              "title": "Retrofit 文档",
+              "url": "https://square.github.io/retrofit/",
+              "type": "article"
+            },
+            {
+              "title": "在 Android Studio 中使用 Retrofit",
+              "url": "https://www.youtube.com/watch?v=KJSBsRKqNwU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "828a5299-eed1-4802-830d-9b7f10af2a64",
+          "xid": "a10cbce8-7bb4-4c4f-9cbf-0105893709d8"
+        },
+        {
+          "title": "OkHttp",
+          "description": "`OkHttp` 是一个非常高效的 HTTP 客户端，可以在使用 Java 的 Android 应用或其他平台上启用多种高级功能。\n\nOkHttp 由 Square 开发，旨在实现高效率和高容量，简化了许多网络任务，包括连接池、响应缓存和请求重试。\n\nOkHttp 可以无缝恢复网络问题，最大限度地减少数据丢失。\n\n通过使用现代 TLS 加密（TLS）、可扩展的请求和响应模型以及易于使用和集成的流畅 API，该库确保了更少的错误和更高的服务质量。\n\n",
+          "links": [
+            {
+              "title": "OkHttp 在 GitHub",
+              "url": "https://github.com/square/okhttp",
+              "type": "opensource"
+            },
+            {
+              "title": "OkHttp",
+              "url": "https://square.github.io/okhttp/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ba2867d9-c510-4ac9-a469-ae42842fc3ed",
+          "xid": "e78d8616-38a8-405d-8e2a-0fcd97aa1c7a"
+        },
+        {
+          "title": "Apollo-Android",
+          "description": "**Apollo Android** 是一款由 Apollo 社区开发者开发的，专门用于在 Android 上使用 GraphQL 的工具集。\n\n该工具集完全使用 Kotlin 编写，并被设计为与任何 Android 应用程序无缝集成，使得跨网络抓取数据和处理客户端数据变得轻松。\n\nApollo Android 执行您的查询和变更操作，并返回生成的 Kotlin 类型结果。\n\n它还对您的数据进行规范化处理，并缓存结果以进一步提高速度。\n\n它在 Android 和 Kotlin/JVM 后端环境中运行。\n\n它以协程优先为原则，使得处理并发变得简单有效。\n\n要使用 Apollo Android，您需要设置插件，指向您的 GraphQL 模式，并编写 GraphQL 查询。\n\n",
+          "links": [
+            {
+              "title": "apollographql/apollo-kotlin - GraphQL for Android",
+              "url": "https://github.com/apollographql/apollo-kotlin",
+              "type": "opensource"
+            },
+            {
+              "title": "Apollo Android",
+              "url": "https://www.apollographql.com/docs/kotlin/v2/",
+              "type": "article"
+            },
+            {
+              "title": "Apollo 文档",
+              "url": "https://www.apollographql.com/docs/kotlin/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1d608b4c-faf7-43bb-a4ae-68dc714edb6f",
+          "xid": "268b0432-4f03-4df4-944e-d52e673ccb3b"
+        }
+      ],
+      "id": "55c7f9ed-f4a3-48d5-b441-2e68fca97ae9",
+      "xid": "97ce9b64-c7de-4b39-8df6-1e2fa1595451"
+    },
+    {
+      "title": "异步操作(Asynchronism)",
+      "description": "异步操作(Asynchronism)在Android中是一种定义独立于主操作运行而不遵循程序线性流程的操作的做法。\n\nAndroid系统使用线程(thread)来处理异步操作(asynchronous processes)。\n\n这些线程独立工作，确保复杂的或耗时的操作不会影响用户界面或其他应用的重要部分。\n\nAndroid提供了多种执行异步任务(asynchronous tasks)的工具，例如`Handler`、`ThreadPoolExecutor`、`IntentService`、`AsyncTask`和`Loader`等。\n\n这些工具提供了在不同线程上执行任务并把结果返回给主线程的方式。\n\n",
+      "links": [
+        {
+          "title": "异步任务(Asynchronous Tasks)",
+          "url": "https://developer.android.com/guide/background",
+          "type": "article"
+        },
+        {
+          "title": "异步任务执行(Asynchronous Task Execution)",
+          "url": "https://medium.com/@cpvasani48/asynchronous-task-execution-in-android-a-guide-with-example-44732744f3b8",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "协程（Coroutines）",
+          "description": "协程（Coroutines）是指在Android上可用的一种并发设计模式，可以用来简化异步执行的代码。\n\n协程（Coroutines）提供了一种以自然、顺序的方式编写异步非阻塞代码的方法。\n\n协程（Coroutines）的基本构建块是暂停（suspend）函数，它们只是可以稍后暂停和恢复执行的函数。\n\n它们是编写非阻塞异步代码的关键，并代表单个异步计算单元。\n\n协程（Coroutines）的这一特性使它们适用于管理可能会阻塞主线程从而使应用程序失去响应的长期任务。\n\n",
+          "links": [
+            {
+              "title": "协程（Coroutines）",
+              "url": "https://kotlinlang.org/docs/coroutines-overview.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8b6dd455-bfc2-4048-be51-bda0a7ed471f",
+          "xid": "8c3491c8-72fb-4d9a-967c-382e1aaa5292"
+        },
+        {
+          "title": "线程",
+          "description": "在Android中，`线程（Thread）` 是一个并发执行单元。\n\n它有自己独立的调用栈，但可以与同一进程中的其他线程共享状态，即它们可以共享同一内存区域。\n\n它们主要用于在Android中执行后台操作。\n\n需要注意的一个重要方面是，Android的UI操作不是线程安全的，这意味着它们必须在UI线程上执行。\n\n对`线程（Thread）` 的操作通常通过`处理器（Handler）`、`循环器（Looper）`和`消息队列（MessageQueue）`类来管理。\n\nAndroid还提供了诸如`异步任务（AsyncTask）`和`加载器（Loader）`等高级构造来进行与UI相关的线程管理。\n\n",
+          "links": [
+            {
+              "title": "线程",
+              "url": "https://developer.android.com/guide/components/processes-and-threads",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "51960fe4-1346-4e58-8687-0e0813157432",
+          "xid": "80cbe4ce-b9a6-4e8e-80f0-98baebe007dc"
+        },
+        {
+          "title": "RxJava",
+          "description": "RxJava（JVM上的响应式扩展）是一个强大的库，用于使用可观察序列在Java中组合异步和基于事件的程序。\n\n如果您是一个Android开发人员，您可能会熟悉使用回调和异步任务来在后台执行长期运行的操作。\n\n然而，处理多个异步任务和嵌套回调会产生难以阅读和维护的代码。\n\n为了解决这种复杂性，RxJava 提供了工具和方法，以干净且声明性的方式创建、转换和链接可观察序列。\n\n",
+          "links": [
+            {
+              "title": "GitHub上的RxJava",
+              "url": "https://github.com/ReactiveX/RxJava",
+              "type": "opensource"
+            }
+          ],
+          "children": [],
+          "id": "cf4d5da6-de0d-4ac9-bb7a-22ae6a931e33",
+          "xid": "50ba583f-a802-451b-9ab7-61524d62b8ac"
+        },
+        {
+          "title": "RxKotlin",
+          "description": "`RxKotlin` 是一种轻量级的语言扩展（language extension），用于Android开发中的Java，它允许使用Kotlin结合Reactivex构建Android应用程序。\n\n`RxKotlin` 将响应式编程范式（reactive programming paradigm）的力量引入Kotlin，扩展了其处理异步数据流的能力。\n\n它允许你表达静态（例如，已知的）或动态（例如，未来的未知的）数据流，并轻松地对它们执行各种操作。\n\n`RxKotlin` 的关键概念包括 Observables（可观察对象）、 Observers（观察者）和 Schedulers（调度器）。\n\nObservables 表示数据流，Observers 与数据流交互，Schedulers 决定操作发生的线程。\n\n`RxKotlin` 帮助管理后台任务，处理异步数据流，以及实现复杂的用户界面等。\n\n",
+          "links": [
+            {
+              "title": "ReactiveX/RxKotlin - RxKotlin在GitHub",
+              "url": "https://github.com/ReactiveX/RxKotlin",
+              "type": "opensource"
+            }
+          ],
+          "children": [],
+          "id": "140db409-2e1a-43c9-bd26-11a4937a0bd3",
+          "xid": "a338ac4c-005c-46c8-a4c7-a4551a6241e9"
+        },
+        {
+          "title": "WorkManager",
+          "description": "`WorkManager` 是谷歌推出的用于以可预测和可靠的方式执行任务的Android库。\n\n它专为需要保证执行的任务设计，即使应用已被关闭或设备重启。\n\n`WorkManager` 兼容到API 14，并在API 23及以上使用JobScheduler，而在API 14及以上使用BroadcastReceiver和AlarmManager的组合。\n\n不论设备的API级别如何，WorkManager都可以在所有Android设备上工作。\n\nWorkManager支持三种类型的任务 - OneTimeWorkRequest（一次性工作任务）, PeriodicWorkRequest（周期性工作任务） 和 DelayedWorkRequest（延迟工作任务）。\n\n",
+          "links": [
+            {
+              "title": "WorkManager",
+              "url": "https://developer.android.com/topic/libraries/architecture/workmanager",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1fbe4148-01aa-4f69-a5db-922f0aada003",
+          "xid": "8cd766b2-5f1f-41f2-bf8e-a492d62f95bb"
+        }
+      ],
+      "id": "262500d0-02ca-43ba-b284-20a5d39e6486",
+      "xid": "11f3f90d-cb8d-4d6b-b133-f21d68b96a5f"
+    },
+    {
+      "title": "通用服务",
+      "description": "通用服务是由Android系统提供的功能性单元或组件，供开发人员使用。\n\n这些服务包括地理位置服务（Location Services，用于确定设备的地理位置）、通知服务（Notification Services，负责用户通知的显示和管理）和传感器服务（Sensor Services，与硬件传感器进行交互）。\n\n其他常见的服务包括网络和连接服务、账户管理器和数据存储服务等。\n\n它们通过在幕后处理复杂的功能，简化开发过程，使开发人员能够专注于应用程序的特定需求。\n\n",
+      "links": [
+        {
+          "title": "通用服务",
+          "url": "https://developer.android.com/guide/components/services",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Firebase",
+          "description": "Firebase",
+          "links": [],
+          "children": [
+            {
+              "title": "身份验证",
+              "description": "Firebase 身份验证（Authentication）在 Android 中提供了后端服务、易于使用的 SDK 和现成的 UI 库，用于将用户验证到您的应用。\n\n它支持使用密码以及 Google、Facebook 和 Twitter 等热门联合身份提供商（federated identity providers）进行身份验证。\n\n此外，Firebase 还便利了登录、注册和重置密码等功能的集成。\n\n除此之外，它还可以用来通过实施基于角色的数据访问权限来保护您的数据库，并提供基于用户独特身份的个性化体验。\n\nFirebase 身份验证提供了两种认证方法。\n\n这些方法是使用 Firebase 身份验证提供的 `email/password` 登录或使用像 Google 或 Facebook 这样的 `federated identity provider`。\n\n它还包括通过创建自定义令牌或验证 ID 令牌来实现令牌认证。\n\n除了这些功能，Firebase 身份验证与 Firebase 的客户端 SDK 结合使用，适用于实际应用，并且对于您的一些用户的长时间运行的服务器进程也有效。\n\nFirebase 身份验证提供了超越身份验证的全套功能，使您的生活更轻松，这些功能包括适用于 Cloud Storage 和 Cloud Firestore 的 Security Rules（安全规则）、Firebase 动态链接（Dynamic Links）和 Firebase 邀请（Invites）。\n\n",
+              "links": [
+                {
+                  "title": "Firebase 身份验证",
+                  "url": "https://firebase.google.com/docs/auth",
+                  "type": "article"
+                },
+                {
+                  "title": "Firebase 身份验证：Android",
+                  "url": "https://firebase.google.com/docs/auth/android/start",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a54ca812-af4c-4aef-9662-c452d7b2017b",
+              "xid": "de62bb45-f068-49aa-a128-3f3830f35b8e"
+            },
+            {
+              "title": "Crashlytics(崩溃分析工具)",
+              "description": "`Crashlytics(崩溃分析工具)` 是一种轻量级、实时的崩溃报告工具，它帮助您跟踪、优先处理并解决破坏应用程序质量的稳定性问题。\n\n它提供关于崩溃的快速且精确的信息，并帮助您深入了解应用程序性能，使您可以精确定位应用崩溃的具体代码行。\n\nCrashlytics(崩溃分析工具) 提供一系列全面的功能，如崩溃分析、问题聚合和跟踪导致崩溃的用户活动。\n\n此工具现为 Google 的 `Firebase(ファイヤーベース)` 平台的一部分，也可以独立使用。\n\n",
+              "links": [
+                {
+                  "title": "Crashlytics(崩溃分析工具) 文档",
+                  "url": "https://firebase.google.com/docs/crashlytics/get-started?platform=android",
+                  "type": "article"
+                },
+                {
+                  "title": "Firebase(ファイヤーベース): Crashlytics(崩溃分析工具)",
+                  "url": "https://www.youtube.com/watch?v=LhjTAkifr6g",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "264ac9e1-820e-4cfe-bea8-2e3a61e6679d",
+              "xid": "b3bfbced-b48f-47f9-9e81-a5163b8538cd"
+            },
+            {
+              "title": "远程配置",
+              "description": "Firebase 远程配置（Remote Config）是由 Firebase 提供的一项云服务。\n\n它允许您在无需发布新应用版本的情况下更改应用的行为和外观。\n\n通过使用 Firebase 远程配置（Remote Config），您可以针对不同的用户群体定制应用，通过外部修改参数来管理应用的核心方面，并执行 A/B 测试以改进应用。\n\n通过使用控制应用行为和外观的默认值，它可以高效地工作。\n\n当您的应用需要配置信息时，它会向 Firebase 远程配置（Remote Config）服务器发出请求。\n\n如果服务器上有更新的值，这些值将替换默认值，从而根据您的需要修改应用的行为或外观。\n\n",
+              "links": [
+                {
+                  "title": "远程配置",
+                  "url": "https://firebase.google.com/docs/remote-config/get-started?platform=android",
+                  "type": "article"
+                },
+                {
+                  "title": "使用远程配置入门",
+                  "url": "https://www.youtube.com/watch?v=pcnnbjAAIkI",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "7eee6ed9-f1af-409e-a158-11857dbb998d",
+              "xid": "a5b4aa4d-65ed-4daa-810b-062abf7b143f"
+            },
+            {
+              "title": "云消息传递",
+              "description": "Firebase 云消息传递（FCM）是一个强大且省电的消息服务，它使您能够可靠且安全地向您的 Android 应用程序发送消息。\n\n它支持发送两类消息：“通知消息”和“数据消息”。\n\n通知消息主要用于向用户发出通知，仅在应用程序处于前台时才会被传递。\n\n另一方面，在应用处于后台或被关闭的情况下，数据消息也可以被处理，可以用来发送自定义的键值对。\n\nFCM 还支持各种附加功能，如主题消息传递，用于向订阅了同一主题的多个设备发送消息；设备组消息传递，用于向一组用户设备发送消息；上下游消息传递，用于从客户端应用向 FCM 服务器发送消息。\n\n",
+              "links": [
+                {
+                  "title": "文档",
+                  "url": "https://firebase.google.com/docs/cloud-messaging/android/client",
+                  "type": "article"
+                },
+                {
+                  "title": "Firebase 云消息传递",
+                  "url": "https://www.youtube.com/watch?v=sioEY4tWmLI&list=PLl-K7zZEsYLkuHRCtHTpi6JYHka8oHLft",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "7dd556e3-3474-4f5b-bba1-241acfee9e48",
+              "xid": "32adf6f9-336c-4588-894e-a29ca55cde83"
+            },
+            {
+              "title": "Firestore",
+              "description": "Firestore（Firebase Firestore 或 Cloud Firestore），是Firebase和Google Cloud提供的一款适用于移动、Web和服务器开发的灵活且可扩展的数据库。\n\nFirestore具备诸如表达式查询、实时更新和自动多区域数据复制等功能。\n\n它旨在与其他Firebase和Google Cloud产品实现无缝集成。\n\n它提供基于云的NoSQL数据库，这意味着数据以文档集合的形式存储。\n\n每个文档又包含一组键值对。\n\nFirestore确保了持久性网络，因此数据能够实现实时同步，即使设备处于离线状态，也可以更容易地处理分布在不同客户端之间的数据同步问题。\n\n",
+              "links": [
+                {
+                  "title": "Firestore",
+                  "url": "https://firebase.google.com/docs/firestore",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e04ecc0c-89fa-46f3-bf5f-12a848ed017d",
+              "xid": "ff6750ef-7e47-4a3f-9662-bb7b5688c40f"
+            }
+          ],
+          "id": "29f1e5b8-be42-46ba-907e-6c1e5be28d77",
+          "xid": "4ae382d2-f820-4b0c-af35-7b04a55d320a"
+        },
+        {
+          "title": "Google Admob（Google 广告联盟）",
+          "description": "Google AdMob（Google 广告联盟）是一个为应用程序开发者设计的移动广告平台，它通过展示来自超过1百万Google广告客户的广告来帮助开发者实现应用变现。\n\nAdMob支持多种广告格式，如横幅广告、插屏广告、视频广告等多种格式。\n\n它提供了一个强大的中介系统，能够显示来自多个来源的广告，这些来源包括Google 移动广告SDK（Google Mobile Ads SDK）、第三方广告网络和内部广告活动。\n\n此外，AdMob还提供了分析工具，帮助你更好地了解用户并最大化广告收入。\n\n",
+          "links": [
+            {
+              "title": "Google AdMob（Google 广告联盟）",
+              "url": "https://admob.google.com/home/",
+              "type": "article"
+            },
+            {
+              "title": "Google AdMob Documentation（Google AdMob 文档）",
+              "url": "https://admob.google.com/home/get-started/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2b6bacfa-a9fa-4c19-abdd-50ea2d94ea2b",
+          "xid": "f71e285a-e51e-45c4-b010-97a2ca3027e5"
+        },
+        {
+          "title": "Google Play 服务",
+          "description": "_Google Play 服务_ 是由 Google 提供的专有后台服务和 API 套件，适用于 Android 设备。\n\n该服务由 Google 运行，提供核心功能，如 Google 服务的身份验证、联系人同步、访问最新的用户隐私设置以及更高品质、更低能耗的位置服务。\n\n它还加快离线搜索速度、提供更为沉浸的地图体验，并改善游戏体验。\n\nGoogle Play 服务在各种其他应用程序的操作中扮演着至关重要的角色，包括那些非 Google 开发的应用程序。\n\n此外，通过加快离线搜索速度、提供更详细的地图、增强游戏体验等，它提升了整体 Android 使用体验。\n\n",
+          "links": [
+            {
+              "title": "Google Play 服务",
+              "url": "https://developer.android.com/google/play-services",
+              "type": "article"
+            },
+            {
+              "title": "Google Play 服务文档",
+              "url": "https://developer.android.com/google/play-services/overview.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b9910e7c-9b0c-4d22-a17f-393eb8bd4fc7",
+          "xid": "c82c3695-5e7e-4f8d-b977-ed79c490c792"
+        },
+        {
+          "title": "谷歌地图",
+          "description": "谷歌地图是Android上一个至关重要的服务，提供强大的、用户友好的地图技术及本地企业信息。\n\n谷歌地图的功能包括街道地图、卫星图像、街道的360°全景视图（Street View），实时交通状况（Google Traffic）以及步行、驾车、骑车和飞行为目的的路线规划，或是公共交通。\n\n该服务的界面包括一个功能，可以叠加各种图层，如交通密度、公共交通线路和自行车道等。\n\n谷歌地图的Android版还提供了一个API，使开发者能够在他们的应用程序中接口并控制谷歌地图服务的某些方面。\n\n这种能力需遵循谷歌设定的使用限制和要求。\n\n",
+          "links": [
+            {
+              "title": "谷歌地图",
+              "url": "https://developers.google.com/maps/documentation/android-sdk/overview",
+              "type": "article"
+            },
+            {
+              "title": "谷歌地图文档",
+              "url": "https://developers.google.com/maps/documentation/android-sdk/intro",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "599daeb5-9777-439a-9ade-baf80bd7c343",
+          "xid": "e224320d-5719-4d2d-abdc-210c67b05c87"
+        }
+      ],
+      "id": "cfe4e448-2c48-465f-86fb-777f89c4374e",
+      "xid": "7e196ce1-53a3-46c7-83e6-1fe238c1cb68"
+    },
+    {
+      "title": "代码检查（Linting）",
+      "description": "在 Android 中，`代码检查（Linting）` 是一个工具，用于分析你的应用程序的源代码以识别潜在的错误、漏洞、风格错误和可疑构造。\n\n代码检查（Linting）这一术语源自一个用来检查 C 语言源代码的 Unix 工具。\n\n在 Android 中，它不仅检查可能的 Java 问题，还针对 XML 布局文件，并就其遇到的与可用性、性能和可访问性相关的问题发出警告。\n\n例如，它可能会审查你的 AndroidManifest.xml 文件草稿，查找元素重复或其他可能导致应用程序崩溃的异常。\n\n",
+      "links": [
+        {
+          "title": "代码检查（Linting）",
+          "url": "https://developer.android.com/studio/write/lint",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Ktlint",
+          "description": "`ktlint` 是一个静态代码分析工具。\n\n它强制执行高度一致的代码风格，并广泛遵循官方的Kotlin编程规范。\n\n`ktlint` 没有任何配置选项（出于设计目的）。\n\n唯一例外是关闭特定规则和指定缩进大小。\n\n`ktlint` 可以检查并自动修复代码。\n\n其主要目标是将统一的代码风格带给你的项目。\n\n它也可以在命令行工作，因此可以集成到你的持续集成管道中。\n\n它还有Ant、Gradle和Maven的工具包装器。\n\n只要你安装了Gradle或Maven，你可以在任何Android/Kotlin项目中使用Ktlint。\n\n",
+          "links": [
+            {
+              "title": "Ktlint: Kotlin的静态代码分析",
+              "url": "https://github.com/pinterest/ktlint",
+              "type": "opensource"
+            },
+            {
+              "title": "Ktlint",
+              "url": "https://ktlint.github.io/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7e6ccf13-ba70-410e-914a-5f6e9bdf5032",
+          "xid": "3c07276c-7f1a-461a-a48e-ec643427ee6f"
+        },
+        {
+          "title": "Detekt",
+          "description": "`Detekt` 是一种用于 Kotlin 编程语言的静态代码分析工具。\n\n它基于 Kotlin 编译器提供的抽象语法树运行，并可以在命令行或作为您的 Gradle 构建脚本中的任务运行。\n\nDetekt 提供复杂性报告，可用于识别过于复杂的代码并帮助简化它。\n\n它还检查多种潜在的错误和代码异味问题，包括格式化、命名约定、异常处理等方面的问题。\n\n此外，Detekt 具有高度可配置性，允许您启用、禁用或修改其检查行为以适应项目的需要。\n\n",
+          "links": [
+            {
+              "title": "Detekt: Kotlin 的静态代码分析",
+              "url": "https://github.com/detekt/detekt",
+              "type": "opensource"
+            },
+            {
+              "title": "Detekt",
+              "url": "https://detekt.dev/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9acc04ff-ae60-48e5-a000-03a212dc428a",
+          "xid": "71be5693-637a-4746-954f-6b01011b33a1"
+        }
+      ],
+      "id": "f549d75a-da56-49a3-803a-06b98219bf70",
+      "xid": "14353121-7af4-41eb-b3c7-4af1f5f64a1a"
+    },
+    {
+      "title": "调试",
+      "description": "调试是应用开发过程中的一个关键步骤。\n\n在Android开发中，它包括识别和修复代码中的错误或漏洞。\n\n您可以使用多种工具和方法来调试Android应用程序。\n\n例如，Android Studio，作为Android的主要集成开发环境（IDE），内置了一个调试工具，即Android调试桥（Android Debug Bridge, ADB）。\n\n这是一个命令行工具，允许您与设备通信并执行各种操作，例如安装和调试应用程序。\n\nAndroid Studio还支持逐步调试，您可以在代码中设置断点并检查这些断点处的应用程序状态。\n\n",
+      "links": [
+        {
+          "title": "调试",
+          "url": "https://developer.android.com/studio/debug",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Timber(木材)",
+          "description": "`Timber` 是一款从 Android 的 `Log` 类特别扩展的日志工具。\n\n它旨在简化日志记录流程，同时减少开发者需要编写的样板代码量。\n\n该工具由 Android 开发社区知名贡献者 Jake Wharton 设计并维护。\n\n在 Timber 中，每个日志消息都会被导向下一个可用的日志记录器，从而减少了手动分配日志标签的冗余。\n\nTimber 的简易之处在于它可以无须定义任何标签就能进行日志记录。\n\n最重要的是，默认情况下，Timber 只在调试构建中记录消息，避免了在生产应用程序中潜在的数据泄露。\n\n",
+          "links": [
+            {
+              "title": "Timber(木材) 在 GitHub",
+              "url": "https://github.com/JakeWharton/timber",
+              "type": "opensource"
+            }
+          ],
+          "children": [],
+          "id": "bd33b5a6-87db-476c-82b1-f97a8469a24a",
+          "xid": "1f5a4783-70bb-449f-8f53-13d97418a4cf"
+        },
+        {
+          "title": "内存泄漏黄雀(Memory Leak Canary)",
+          "description": "内存泄漏黄雀(Memory Leak Canary)是一个强大的开源内存泄漏检测库，适用于Android和Java。\n\n它可以集成到您的应用程序中，一旦您运行应用程序，内存泄漏黄雀(Memory Leak Canary)会立即开始监视内存泄漏，并在检测到内存泄漏时捕捉内存转储。\n\n经过调查后，它将提供完整的堆栈跟踪，帮助您准确地找到内存泄漏的位置。\n\n通过内存泄漏黄雀(Memory Leak Canary)的用户友好的界面，您可以直接在应用程序中分析内存泄漏。\n\n内存泄漏黄雀(Memory Leak Canary)的最新版本还包括其他改进，如在Activity、Fragment、View、ViewModel、LiveData等中的自动泄漏检测。\n\n",
+          "links": [
+            {
+              "title": "GitHub上的内存泄漏黄雀(Memory Leak Canary)",
+              "url": "https://github.com/square/leakcanary",
+              "type": "opensource"
+            },
+            {
+              "title": "内存泄漏黄雀(Memory Leak Canary)",
+              "url": "https://square.github.io/leakcanary/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "237106a4-3014-46d4-8b3a-bbe65148fa7e",
+          "xid": "ee55b6f6-c94f-495a-959f-7161bba5a7c0"
+        },
+        {
+          "title": "Chucker",
+          "description": "`Chucker` 是一个为 Android 应用开发的开源调试库。\n\n它设计为易于使用且方便开发人员。\n\n此库可以拦截并记录应用内的所有 HTTP 请求和响应，这有助于将这些信息以易理解和易读的格式进行可视化和共享。\n\n通过使用 Chucker 的独特功能，您可以直接检查进出应用的所有 HTTP 和 HTTPS 流量。\n\n此外，它还提供其他实用的功能，例如用户友好的界面，用于查看服务器的原始响应。\n\n它就像在您的调试工具中内置了一个网络检查器，使您能够更有效地解决网络相关问题。\n\n",
+          "links": [
+            {
+              "title": "ChuckerTeam/chucker - GitHub 上的 Chucker",
+              "url": "https://github.com/ChuckerTeam/chucker",
+              "type": "opensource"
+            },
+            {
+              "title": "使用 Chucker 检查网络流量",
+              "url": "https://medium.com/tech-takeaways/simple-android-network-traffic-inspection-with-chucker-and-seismic-1e6162c51f64",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "396b79e2-afa4-4feb-b695-90b4920511b6",
+          "xid": "b344cafb-eb2d-450e-98d8-ffd90cf72869"
+        },
+        {
+          "title": "Jetpack 性能基准测试 (Jetpack Benchmark)",
+          "description": "Jetpack 性能基准测试 (Jetpack Benchmark) 是 Android Jetpack 套件中的一个库，它允许开发人员快速准确地度量应用程序的性能。\n\n此库可以帮助测量 Android 应用中的代码的 CPU、内存和 I/O 性能。\n\n开发人员可以通过将代码包裹在 `BenchmarkRule.measureRepeated {}` 中来定义一些需要进行基准测试的具体代码路径。\n\n此外，它会自动处理预热、度量代码性能并将基准测试结果输出到 Android Studio 的 logcat 中。\n\n",
+          "links": [
+            {
+              "title": "Jetpack 性能基准测试 (Jetpack Benchmark)",
+              "url": "https://developer.android.com/studio/profile/benchmark",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "906d3683-1199-4649-a81c-27a6a3979ba7",
+          "xid": "0f17676b-b187-43c8-9261-8ec4b0dbbc06"
+        }
+      ],
+      "id": "dd9ece2b-47dd-4feb-bb06-fac57cc67efb",
+      "xid": "0c4f0121-b86e-4876-b1a1-3560b883710f"
+    },
+    {
+      "title": "测试",
+      "description": "**测试**是应用程序开发过程中的一个重要环节。\n\n它涉及到在将应用程序部署到Google Play商店之前验证应用程序的功能、性能、易用性和一致性。\n\n两种主要的测试方法包括：**单元测试(Unit testing)**和**仪器测试(Instrumentation Testing)**。\n\n顾名思义，单元测试是对每一部分或代码段单独进行测试。\n\n由于它不需要Android依赖项，所以运行速度快。\n\n仪器测试则需要Android依赖项，因此速度较慢。\n\n仪器测试主要测试用户界面，仿真用户操作，验证应用程序不同部分之间的导航。\n\nAndroid提供了内置的测试框架，如`JUnit`用于单元测试，`Espresso`用于仪器测试。\n\n",
+      "links": [
+        {
+          "title": "测试",
+          "url": "https://developer.android.com/training/testing",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "意式表达 (Espresso)",
+          "description": "意式表达 (Espresso) 是由 Android 提供的一个测试框架，用于为 Android 应用创建用户界面测试。\n\n它可以自动同步您的测试操作与您的应用程序的用户界面，确保只有在必要的用户界面活动完成时测试才会继续进行。\n\n在 Espresso 中，您可以编程模拟用户交互，如点击按钮、输入文本或滑动屏幕，然后检查用户界面的状态以确认其符合预期。\n\n意式表达 (Espresso) 测试可以在运行 Android 4.3 (API 级别 18) 或更高版本的设备上运行。\n\n",
+          "links": [
+            {
+              "title": "意式表达 (Espresso)",
+              "url": "https://developer.android.com/training/testing/espresso",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "64f10887-c296-499c-9b75-deace6deb918",
+          "xid": "88218982-a87f-4abd-a077-56adfd6c127d"
+        },
+        {
+          "title": "JUnit",
+          "description": "JUnit 是一个流行的 Java 编程测试框架。\n\n它构成了 Android 生态系统中许多其他测试库和工具的基础，因此对于任何 Android 开发者来说，熟悉它都非常重要。\n\n使用 JUnit 的基础包括使用诸如 `@Test`（@Test）之类的注解，表示单个测试用例的方法。\n\n其他有用的功能包括 `@Before`（@Before）和 `@After`（@After），允许明确定义设置和拆解过程。\n\nJUnit 中另一个强大的功能是创建参数化测试的能力，即可以多次运行相同的测试，每次使用不同的输入。\n\n",
+          "links": [
+            {
+              "title": "文档",
+              "url": "https://developer.android.com/training/testing/local-tests",
+              "type": "article"
+            },
+            {
+              "title": "用于 Android 的 JUnit",
+              "url": "https://www.youtube.com/watch?v=jE1vQGVHaQA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "26425308-7f55-40a0-9842-509de0885590",
+          "xid": "2cbdcc3f-185c-4242-b731-e778cba512c6"
+        }
+      ],
+      "id": "44c1b820-2542-4945-820a-117178bb5c2f",
+      "xid": "811a808a-d9af-4436-ab57-30e8a62ddeea"
+    },
+    {
+      "title": "分发(Distribution)",
+      "description": "在Android中，分发(Distribution)是指你可以用来将Android应用交付给用户的各种方法和渠道。\n\n你可以选择通过Google Play商店分发(Distribute)你的应用，这是Android操作系统的官方应用商店。\n\n这个平台可以让你的应用对世界各地多个国家的用户可用。\n\n此外，你还可以选择通过其他第三方应用商店，甚至你自己网站分发(Distribute)应用。\n\n另外，Google还提供了一系列的分发(Distribution)选项，如国家目标设定、设备目标设定和分阶段发布，这些可以根据你的分发(Distribution)策略进行定制。\n\n请记住，当你提交应用程序进行分发(Distribution)时，必须遵守相应应用商店的政策和内容指南。\n\n",
+      "links": [
+        {
+          "title": "Google Play开发者分发(Distribution)",
+          "url": "https://developer.android.com/distribute",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Firebase 分发(Firebase Distribution)",
+          "description": "Firebase 分发(Firebase Distribution)是Google Firebase套件中的一款开发工具，允许您与开发团队分享Android应用的预发布版本。\n\n它能够让您在应用正式发布前将应用二进制文件分发给多位测试者和团队以获取反馈。\n\nFirebase 分发同时支持Android和iOS应用，并且能够与Firebase Crashlytics等功能协同工作，有效地管理应用生命周期中的测试和调试方面。\n\n",
+          "links": [
+            {
+              "title": "Firebase 分发(Firebase Distribution)",
+              "url": "https://firebase.google.com/docs/app-distribution",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "856a0517-cd10-43cf-8f6e-ce7962f279c0",
+          "xid": "7fb3d972-df0d-4216-8e7f-3d4ccf92645e"
+        },
+        {
+          "title": "Google Play商店",
+          "description": "**Google Play Store（Google Play商店）**是Android应用程序和其他数字媒体内容的官方分发渠道。\n\n它是一个由Google开发和运营的全球在线软件商店。\n\n开发人员通过Play控制台将他们的应用程序提交给Google Play，在应用程序发布到Play商店之前，Google Play的自动化系统会扫描潜在的恶意代码和内容违规行为。\n\n用户可以在他们的Android设备上或通过网络浏览、下载并使用这些应用程序。\n\n购买、下载和用户反馈可以通过Google Play控制台进行追踪。\n\nAndroid设备的所有者还可以配置从商店安装的应用程序的自动更新。\n\n此平台支持多种语言和多种支付方式，使其易于访问并以客户为中心。\n\n",
+          "links": [
+            {
+              "title": "Google Play商店",
+              "url": "https://play.google.com/store",
+              "type": "article"
+            },
+            {
+              "title": "Google Play商店文档",
+              "url": "https://developer.android.com/distribute/googleplay",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4ed6eb9b-042d-44fb-bb2b-aeaa0f176a0f",
+          "xid": "7d784823-a776-41cc-ac53-a0f1374ba8ef"
+        },
+        {
+          "title": "已签名的APK",
+          "description": "已签名的APK是您为在Play Store或其他Android市场中分发而准备的应用程序版本。\n\n当您使用私钥对应用程序进行签名时，您作为应用程序开发者的身份得到了验证。\n\n这是Android系统的一项必要步骤，可确保只有来自原始开发者的APK更新才会被接受。\n\n如果应用程序未适当签名，Android系统将拒绝安装，从而保护用户免受潜在的安全风险。\n\n",
+          "links": [
+            {
+              "title": "为您的应用签名",
+              "url": "https://developer.android.com/studio/publish/app-signing",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "87fae5e4-8493-42c0-b1fe-ef4ecc9d15c1",
+          "xid": "83123222-1296-485b-bcd3-43c9175e87b1"
+        }
+      ],
+      "id": "7a630169-4da5-4c99-8b0e-2754b5624c28",
+      "xid": "92c24031-4211-445c-bdc4-02d73f30fae6"
+    }
+  ],
+  "id": "fbd319c8-9d5a-4538-8a71-6d1506db9037",
+  "xid": "74ca93e8-c6fa-4988-b9f2-1f22c8d6c70a"
+}

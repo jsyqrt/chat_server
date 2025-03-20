@@ -1,32 +1,16 @@
 {
   "title": "计算机科学",
-  "description": "适用于自学开发者的计算机科学课程，包含免费资源。
-
-",
+  "description": "适用于自学开发者的计算机科学课程，包含免费资源。\n\n",
   "links": [],
   "children": [
     {
-      "title": "条件渲染",
-      "description": "指令 `v-if` 用于条件性地渲染一个块。
-
-只有当指令的表达式返回一个 truthy (truthy) 值时，该块才会被渲染。
-
-\n\n",
-      "links": [
-        {
-          "title": "条件渲染",
-          "url": "https://vuejs.org/guide/essentials/conditional.html",
-          "type": "article"
-        }
-      ],
+      "title": "编程语言",
+      "description": "编程语言是计算机科学的基础。\n\n它们是计算机程序的构建块，允许开发者编写指令来控制计算机的行为。\n\n",
+      "links": [ ],
       "children": [
         {
           "title": "Python",
-          "description": "Python 是一种知名（well known）的编程语言，它既是强类型语言也是动态类型语言。
-
-作为一种解释型语言 (interpreted language)，代码一经编写即刻执行，并且 Python 语法允许以函数式、过程式或面向对象（object-oriented）的编程方式编写代码。
-
-\n\n",
+          "description": "Python 是一种知名（well known）的编程语言，它既是强类型语言也是动态类型语言。\n\n作为一种解释型语言 (interpreted language)，代码一经编写即刻执行，并且 Python 语法允许以函数式、过程式或面向对象（object-oriented）的编程方式编写代码。\n\n",
           "links": [
             {
               "title": "访问专用的 Python 学习路线图",
@@ -85,11 +69,7 @@
         },
         {
           "title": "Go",
-          "description": "Go 是一种由 Google 支持的开源编程语言。
-
-Go 可用于编写云计算服务、CLI工具、用于 API 开发，及更多功能。
-
-\n\n",
+          "description": "Go 是一种由 Google 支持的开源编程语言。\n\nGo 可用于编写云计算服务、CLI工具、用于 API 开发，及更多功能。\n\n",
           "links": [
             {
               "title": "访问专用 Go 路线图",
@@ -138,11 +118,7 @@ Go 可用于编写云计算服务、CLI工具、用于 API 开发，及更多功
         },
         {
           "title": "C#（C Sharp）",
-          "description": "C#（发音为'C sharp'）是由Microsoft开发的一种通用编程语言。
-
-它被用于执行不同的任务，可以用来创建Web应用程序、游戏、移动应用程序等。
-
-",
+          "description": "C#（发音为'C sharp'）是由Microsoft开发的一种通用编程语言。\n\n它被用于执行不同的任务，可以用来创建Web应用程序、游戏、移动应用程序等。\n\n",
           "links": [
             {
               "title": "C# 学习路径",
@@ -176,11 +152,7 @@ Go 可用于编写云计算服务、CLI工具、用于 API 开发，及更多功
         },
         {
           "title": "Rust",
-          "description": "Rust 是一种现代的系统编程语言，专注于安全性、速度和并发性。
-
-通过内存安全（memory safe）的方式实现这些目标，而无需使用垃圾回收（garbage collection）。
-
-\n\n",
+          "description": "Rust 是一种现代的系统编程语言，专注于安全性、速度和并发性。\n\n通过内存安全（memory safe）的方式实现这些目标，而无需使用垃圾回收（garbage collection）。\n\n",
           "links": [
             {
               "title": "编程语言Rust——在线图书",
@@ -214,15 +186,7 @@ Go 可用于编写云计算服务、CLI工具、用于 API 开发，及更多功
         },
         {
           "title": "C++",
-          "description": "C++（C++）是一种强大的通用编程语言。
-
-它可以用来开发操作系统、浏览器、游戏等。
-
-C++支持不同的编程方式，如过程化（procedural）、面向对象（object-oriented）、函数式（functional）等。
-
-这使得C++既强大又灵活。
-
-\n\n",
+          "description": "C++（C++）是一种强大的通用编程语言。\n\n它可以用来开发操作系统、浏览器、游戏等。\n\nC++支持不同的编程方式，如过程化（procedural）、面向对象（object-oriented）、函数式（functional）等。\n\n这使得C++既强大又灵活。\n\n",
           "links": [
             {
               "title": "学习C++",
@@ -266,13 +230,7 @@ C++支持不同的编程方式，如过程化（procedural）、面向对象（o
         },
         {
           "title": "C",
-          "description": "C 是一种通用的计算机编程语言（computer programming language）。
-
-它由 Dennis Ritchie 于 20 世纪 70 年代创建，并且至今仍被广泛使用（very widely used）和具有影响力（influential）。
-
-C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilities）。
-
-",
+          "description": "C 是一种通用的计算机编程语言（computer programming language）。\n\n它由 Dennis Ritchie 于 20 世纪 70 年代创建，并且至今仍被广泛使用（very widely used）和具有影响力（influential）。\n\nC 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilities）。\n\n",
           "links": [
             {
               "title": "学习 C 语言 - W3Schools",
@@ -311,11 +269,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "Java",
-          "description": "Java 是一种通用语言，主要用于基于互联网的应用程序。
-
-它由 James Gosling（詹姆斯·高斯林）在 1995 年于 Sun Microsystems（太阳微系统公司）创建，是后端开发人员最受欢迎的选择之一。
-
-\n\n",
+          "description": "Java 是一种通用语言，主要用于基于互联网的应用程序。\n\n它由 James Gosling（詹姆斯·高斯林）在 1995 年于 Sun Microsystems（太阳微系统公司）创建，是后端开发人员最受欢迎的选择之一。\n\n",
           "links": [
             {
               "title": "访问专用 Java 路线图",
@@ -353,11 +307,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
     },
     {
       "title": "数据结构",
-      "description": "正如其名，**数据结构**是将数据在**内存**中组织起来的一种方式，以便能够高效地使用。
-
-一些常见的数据结构包括数组、链表、栈、哈希表、队列、树、堆和图。
-
-\n\n",
+      "description": "正如其名，**数据结构**是将数据在**内存**中组织起来的一种方式，以便能够高效地使用。\n\n一些常见的数据结构包括数组、链表、栈、哈希表、队列、树、堆和图。\n\n",
       "links": [
         {
           "title": "由谷歌提供的数据结构和算法",
@@ -388,9 +338,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
       "children": [
         {
           "title": "数组",
-          "description": "数组将元素存储在连续的内存位置，使得存储元素的地址易于计算，这允许更快速访问特定索引处的元素。
-
-\n\n",
+          "description": "数组将元素存储在连续的内存位置，使得存储元素的地址易于计算，这允许更快速访问特定索引处的元素。\n\n",
           "links": [
             {
               "title": "数组数据结构 - Coursera",
@@ -434,13 +382,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "链表",
-          "description": "数组将元素存储在连续的内存位置，使得存储元素的地址容易计算，并且这可以使访问特定索引的元素更快。
-
-链表在存储结构上更灵活，通常不将元素存储在连续的位置，因此需要通过附加标签来存储，这些标签指向下一个元素。
-
-这种数据存储方案的差异决定了哪种数据结构在特定情况下更合适。
-
-\n\n",
+          "description": "数组将元素存储在连续的内存位置，使得存储元素的地址容易计算，并且这可以使访问特定索引的元素更快。\n\n链表在存储结构上更灵活，通常不将元素存储在连续的位置，因此需要通过附加标签来存储，这些标签指向下一个元素。\n\n这种数据存储方案的差异决定了哪种数据结构在特定情况下更合适。\n\n",
           "links": [
             {
               "title": "单向链表",
@@ -494,11 +436,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "栈",
-          "description": "栈是一种线性数据集合，其中元素按特定顺序插入和移除。
-
-栈被叫做一种LIFO（Last In First Out，后进先出）数据结构，即最后插入的元素是第一个被移除的。
-
-\n\n",
+          "description": "栈是一种线性数据集合，其中元素按特定顺序插入和移除。\n\n栈被叫做一种LIFO（Last In First Out，后进先出）数据结构，即最后插入的元素是第一个被移除的。\n\n",
           "links": [
             {
               "title": "栈数据结构",
@@ -522,11 +460,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "队列",
-          "description": "队列是一种线性数据结构，其中元素按特定顺序插入和移除。
-
-队列也称为FIFO（First In, First Out）数据结构，因为它遵循“先进先出”的原则，即最先插入的元素是最开始被移除的元素。
-
-",
+          "description": "队列是一种线性数据结构，其中元素按特定顺序插入和移除。\n\n队列也称为FIFO（First In, First Out）数据结构，因为它遵循“先进先出”的原则，即最先插入的元素是最开始被移除的元素。\n\n",
           "links": [
             {
               "title": "队列 - Coursera",
@@ -555,11 +489,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "哈希表(Hash Table)",
-          "description": "哈希表(Hash Table)，映射(Map)，哈希映射(HashMap)，字典(Dictionary)或关联数组(Associative Array)都是指同一种数据结构。
-
-这是最常用的数据结构之一。
-
-\n\n",
+          "description": "哈希表(Hash Table)，映射(Map)，哈希映射(HashMap)，字典(Dictionary)或关联数组(Associative Array)都是指同一种数据结构。\n\n这是最常用的数据结构之一。\n\n",
           "links": [
             {
               "title": "哈希表(Hash Table) | 数据结构图文教程",
@@ -613,9 +543,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "树",
-          "description": "树是非线性的、分层的数据结构，由一系列节点组成，每个节点存储一个值和对其他节点的引用列表（即“子节点”）。
-
-",
+          "description": "树是非线性的、分层的数据结构，由一系列节点组成，每个节点存储一个值和对其他节点的引用列表（即“子节点”）。\n\n",
           "links": [
             {
               "title": "树 | 图解数据结构",
@@ -626,9 +554,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
           "children": [
             {
               "title": "二叉树 (Binary Tree)",
-              "description": "二叉树 (Binary Tree) 是一种树形数据结构，每个节点最多有两个子节点，分别称为左子节点 (left child) 和右子节点 (right child)。
-
-\n\n",
+              "description": "二叉树 (Binary Tree) 是一种树形数据结构，每个节点最多有两个子节点，分别称为左子节点 (left child) 和右子节点 (right child)。\n\n",
               "links": [
                 {
                   "title": "关于二叉树 (Binary Tree) 的热门帖子",
@@ -652,9 +578,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "二叉搜索树",
-              "description": "二叉搜索树，也被称为有序（ordered）或排序（sorted）二叉树，是一种以每个内部节点的关键字大于其左子树中任何节点的关键字并且小于其右子树中任何节点的关键字为特性的根二叉树数据结构。
-
-\n\n",
+              "description": "二叉搜索树，也被称为有序（ordered）或排序（sorted）二叉树，是一种以每个内部节点的关键字大于其左子树中任何节点的关键字并且小于其右子树中任何节点的关键字为特性的根二叉树数据结构。\n\n",
               "links": [
                 {
                   "title": "二叉搜索树 - Coursera",
@@ -713,11 +637,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "完全二叉树",
-              "description": "完全二叉树是一种特殊的二叉树，其中每个父节点（internal node）都有两个或零个子节点。
-
-它也被称为正确二叉树（proper binary tree）。
-
-\n\n",
+              "description": "完全二叉树是一种特殊的二叉树，其中每个父节点（internal node）都有两个或零个子节点。\n\n它也被称为正确二叉树（proper binary tree）。\n\n",
               "links": [
                 {
                   "title": "完全二叉树",
@@ -731,9 +651,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "完全二叉树",
-              "description": "完全二叉树是一种特殊的二叉树，其中树的所有层级都是完全填充的，除了最底层的节点，它们也是尽可能地从左边开始填充。
-
-\n\n",
+              "description": "完全二叉树是一种特殊的二叉树，其中树的所有层级都是完全填充的，除了最底层的节点，它们也是尽可能地从左边开始填充。\n\n",
               "links": [
                 {
                   "title": "完全二叉树 - Programiz",
@@ -747,9 +665,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "平衡树 (Balanced Tree)",
-              "description": "平衡二叉树，也被称为高度平衡二叉树，定义为一个二叉树，其中任何节点的左子树和右子树的高度差不超过1。
-
-\n\n",
+              "description": "平衡二叉树，也被称为高度平衡二叉树，定义为一个二叉树，其中任何节点的左子树和右子树的高度差不超过1。\n\n",
               "links": [
                 {
                   "title": "平衡二叉树 (Balanced Binary Tree)",
@@ -763,9 +679,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "不平衡的树",
-              "description": "不平衡的二叉树（unbalanced binary tree）是指不是平衡的二叉树的那部分。
-
-\n\n",
+              "description": "不平衡的二叉树（unbalanced binary tree）是指不是平衡的二叉树的那部分。\n\n",
               "links": [
                 {
                   "title": "平衡二叉树",
@@ -783,11 +697,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "图",
-          "description": "数据结构中的图(Graph)是非线性数据结构，由有限个节点(或顶点)和连接它们的边组成。
-
-数据结构中的图用于解决表示为网络的各种实际问题，如电话网络，电路网络和社交网络等。
-
-",
+          "description": "数据结构中的图(Graph)是非线性数据结构，由有限个节点(或顶点)和连接它们的边组成。\n\n数据结构中的图用于解决表示为网络的各种实际问题，如电话网络，电路网络和社交网络等。\n\n",
           "links": [
             {
               "title": "图数据结构",
@@ -838,15 +748,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
           "children": [
             {
               "title": "有向图",
-              "description": "有向图是一种图，即由一组对象（称为顶点或节点）构成，这些对象通过边连接在一起。
-
-在有向图中，所有的边都由一个顶点指向另一个顶点。
-
-有向图有时也被称为有向图(digraph)或有向网络。
-
-相反地，如果边是双向的，这样的图称为无向图。
-
-\n\n",
+              "description": "有向图是一种图，即由一组对象（称为顶点或节点）构成，这些对象通过边连接在一起。\n\n在有向图中，所有的边都由一个顶点指向另一个顶点。\n\n有向图有时也被称为有向图(digraph)或有向网络。\n\n相反地，如果边是双向的，这样的图称为无向图。\n\n",
               "links": [
                 {
                   "title": "有向图",
@@ -860,13 +762,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "无向图",
-              "description": "无向图（Undirected Graph）是一种图，即一组对象（称为顶点或节点），其中所有的边都是双向的。
-
-无向图有时候也被称为无向网络（Undirected Network）。
-
-与之相对，边有方向的图被称为有向图（Directed Graph）。
-
-",
+              "description": "无向图（Undirected Graph）是一种图，即一组对象（称为顶点或节点），其中所有的边都是双向的。\n\n无向图有时候也被称为无向网络（Undirected Network）。\n\n与之相对，边有方向的图被称为有向图（Directed Graph）。\n\n",
               "links": [
                 {
                   "title": "无向图",
@@ -880,11 +776,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "生成树",
-              "description": "生成树是图G的一个子集，覆盖了所有顶点，并使用可能的最少数量的边。
-
-因此，生成树中没有回路，并且它是不可分离的。
-
-\n\n",
+              "description": "生成树是图G的一个子集，覆盖了所有顶点，并使用可能的最少数量的边。\n\n因此，生成树中没有回路，并且它是不可分离的。\n\n",
               "links": [
                 {
                   "title": "生成树",
@@ -913,25 +805,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "邻接表(Adjacency List)",
-              "description": "图可以被表示为邻接矩阵或邻接表。
-
-\n\n邻接矩阵是一个二维数组`V x V`，其中`V`表示图中顶点的数量。
-
-令二维数组为`adj[][]`，槽位`adj[i][j] = 1`表示存在从顶点`i`到顶点`j`的边。
-
-\n\n邻接表是一个向量数组。
-
-数组的大小等于顶点的数量。
-
-令数组为`array[]`。
-
-一个条目`array[i]`表示与第i个顶点相邻的顶点列表。
-
-这种表示方式也可以用来表示带权图。
-
-边的权重可以表示成成对列表。
-
-\n\n",
+              "description": "图可以被表示为邻接矩阵或邻接表。\n\n邻接矩阵是一个二维数组`V x V`，其中`V`表示图中顶点的数量。\n\n令二维数组为`adj[][]`，槽位`adj[i][j] = 1`表示存在从顶点`i`到顶点`j`的边。\n\n邻接表是一个向量数组。\n\n数组的大小等于顶点的数量。\n\n令数组为`array[]`。\n\n一个条目`array[i]`表示与第i个顶点相邻的顶点列表。\n\n这种表示方式也可以用来表示带权图。\n\n边的权重可以表示成成对列表。\n\n",
               "links": [
                 {
                   "title": "邻接矩阵 - 图的表示(Adjacency Matrix - Graph Representation)",
@@ -954,9 +828,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "堆",
-          "description": "堆（Heap）是一种基于树的数据结构，遵循完全二叉树的性质，可以是小顶堆（Min Heap）或大顶堆（Max Heap）。
-
-\n\n",
+          "description": "堆（Heap）是一种基于树的数据结构，遵循完全二叉树的性质，可以是小顶堆（Min Heap）或大顶堆（Max Heap）。\n\n",
           "links": [
             {
               "title": "优先队列 - 简介",
@@ -989,17 +861,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
     },
     {
       "title": "渐近记号(Asymptotic Notation)",
-      "description": "算法的效率取决于执行该算法所需的运行时间、存储空间和其他资源的数量。
-
-算法的效率是借助渐近记号(Asymptotic Notations)来衡量的。
-
-\n\n一个算法对于不同类型的输入可能不会表现出相同的性能。
-
-随着输入规模的增加，其性能将会发生变化。
-
-\n\n随着输入规模的顺序变化，算法性能变化的研究被称为渐近分析(Asymptotic Analysis)。
-
-\n\n",
+      "description": "算法的效率取决于执行该算法所需的运行时间、存储空间和其他资源的数量。\n\n算法的效率是借助渐近记号(Asymptotic Notations)来衡量的。\n\n一个算法对于不同类型的输入可能不会表现出相同的性能。\n\n随着输入规模的增加，其性能将会发生变化。\n\n随着输入规模的顺序变化，算法性能变化的研究被称为渐近分析(Asymptotic Analysis)。\n\n",
       "links": [
         {
           "title": "渐近分析：大O记号及其他(Asymptotic Analysis: Big-O Notation and More)",
@@ -1040,13 +902,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
       "children": [
         {
           "title": "大O符号",
-          "description": "大O符号（Big O notation）可以用来描述算法的运行时间随着输入规模的增长而如何扩大，忽略诸如编程语言和计算机速度这样的实现细节。
-
-更为具体地说，它表示函数的增长率的上界，该函数将算法的运行时间与输入规模联系起来。
-
-大O符号可以用来比较算法并决定哪个更好。
-
-\n\n",
+          "description": "大O符号（Big O notation）可以用来描述算法的运行时间随着输入规模的增长而如何扩大，忽略诸如编程语言和计算机速度这样的实现细节。\n\n更为具体地说，它表示函数的增长率的上界，该函数将算法的运行时间与输入规模联系起来。\n\n大O符号可以用来比较算法并决定哪个更好。\n\n",
           "links": [
             {
               "title": "moviesCS 61B Lecture 19: 渐近分析",
@@ -1080,13 +936,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "大Θ（Big-Theta）",
-          "description": "如果一个函数的Big O和Big Omega相同，那么它们就成为该函数的大Θ。
-
-大Θ用于描述一个函数的确切增长速率。
-
-它用符号Θ表示。
-
-\n\n",
+          "description": "如果一个函数的Big O和Big Omega相同，那么它们就成为该函数的大Θ。\n\n大Θ用于描述一个函数的确切增长速率。\n\n它用符号Θ表示。\n\n",
           "links": [
             {
               "title": "大O符号 | 精英数学与科学维基",
@@ -1110,11 +960,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
         },
         {
           "title": "大欧米咖（Big Omega）",
-          "description": "大欧米咖记号（Big Omega notation）与大O记号（Big O notation）相似。
-
-唯一的区别在于它表示函数增长速率的下界（lower bound）。
-
-\n\n",
+          "description": "大欧米咖记号（Big Omega notation）与大O记号（Big O notation）相似。\n\n唯一的区别在于它表示函数增长速率的下界（lower bound）。\n\n",
           "links": [
             {
               "title": "大O记号（Big O Notation） | 精英数学与科学维基",
@@ -1143,13 +989,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
           "children": [
             {
               "title": "常数时间算法",
-              "description": "常数时间算法是最简单和最高效的算法。
-
-这类算法总是以相同的时间运行，与输入的大小无关。
-
-这是算法运行的最佳情况，也是所有算法追求的目标。
-
-\n\n",
+              "description": "常数时间算法是最简单和最高效的算法。\n\n这类算法总是以相同的时间运行，与输入的大小无关。\n\n这是算法运行的最佳情况，也是所有算法追求的目标。\n\n",
               "links": [
                 {
                   "title": "时间复杂度 - 大O符号",
@@ -1168,11 +1008,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "对数型",
-              "description": "对数型复杂度算法是第二快的算法。
-
-它们比线性算法（Linear algorithms）快，但比常数算法（Constant algorithms）慢。
-
-\n\n",
+              "description": "对数型复杂度算法是第二快的算法。\n\n它们比线性算法（Linear algorithms）快，但比常数算法（Constant algorithms）慢。\n\n",
               "links": [
                 {
                   "title": "大O表示法——计算时间复杂度",
@@ -1191,15 +1027,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "线性",
-              "description": "线性算法是运行时间与输入大小成正比的算法。
-
-这意味着算法的运行时间将与输入大小线性增长。
-
-例如，如果输入大小为10，则当输入大小为1时，运行时间将是其10倍。
-
-如果输入大小为100，则当输入大小为1时，运行时间将是其100倍。
-
-\n\n",
+              "description": "线性算法是运行时间与输入大小成正比的算法。\n\n这意味着算法的运行时间将与输入大小线性增长。\n\n例如，如果输入大小为10，则当输入大小为1时，运行时间将是其10倍。\n\n如果输入大小为100，则当输入大小为1时，运行时间将是其100倍。\n\n",
               "links": [
                 {
                   "title": "大O符号——计算时间复杂度",
@@ -1218,11 +1046,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "多项式",
-              "description": "多项式算法是运行时间是对输入大小的多项式函数的算法。
-
-这意味着运行时间是一个形如`n^k`的函数，其中`k`是一个常数。
-
-例如，以下算法的运行时间是`n^2`:\n\n    def 多项式算法(n):\n        for i in range(n):\n            for j in range(n):\n                print(i, j)\n    \n\n",
+              "description": "多项式算法是运行时间是对输入大小的多项式函数的算法。\n\n这意味着运行时间是一个形如`n^k`的函数，其中`k`是一个常数。\n\n例如，以下算法的运行时间是`n^2`:\n\n    def 多项式算法(n):\n        for i in range(n):\n            for j in range(n):\n                print(i, j)\n    \n\n",
               "links": [
                 {
                   "title": "大O表示法—计算时间复杂度",
@@ -1241,15 +1065,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "指数",
-              "description": "指数算法是指以2^n的速率增长的算法。
-
-这意味着对于每个额外的输入，算法的运行时间将翻倍。
-
-下面的函数就是指数算法的一个例子：\n\n    def 指数(n):\n        if n == 0:\n            return 1\n        return 指数(n - 1) + 指数(n - 1)\n    \n\n如你所见，算法的运行时间呈指数级增长。
-
-对于每个额外的输入，算法的运行时间将翻倍。
-
-\n\n",
+              "description": "指数算法是指以2^n的速率增长的算法。\n\n这意味着对于每个额外的输入，算法的运行时间将翻倍。\n\n下面的函数就是指数算法的一个例子：\n\n    def 指数(n):\n        if n == 0:\n            return 1\n        return 指数(n - 1) + 指数(n - 1)\n    \n\n如你所见，算法的运行时间呈指数级增长。\n\n对于每个额外的输入，算法的运行时间将翻倍。\n\n",
               "links": [
                 {
                   "title": "大O符号 — 计算时间复杂度",
@@ -1268,13 +1084,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "阶乘",
-              "description": "阶乘复杂度（Factorial complexity）算法具有 `O(n!)` 的运行时间。
-
-这是算法最糟糕的情况。
-
-阶乘复杂度算法非常低效，应该被避免。
-
-\n\n    def generate_permutations(s):\n        # 基础情况：如果字符串长度为1，则返回一个包含该字符串的列表\n        if len(s) == 1:\n            return [s]\n    \n        # 初始化结果列表\n        permutations = []\n    \n        # 递归生成所有排列\n        for i in range(len(s)):\n            # 当前字符\n            current_char = s[i]\n            # 其余字符\n            remaining_chars = s[:i] + s[i+1:]\n            # 生成其余字符的所有排列\n            for perm in generate_permutations(remaining_chars):\n                # 将当前字符添加到每个生成排列的前面\n                permutations.append(current_char + perm)\n    \n        return permutations",
+              "description": "阶乘复杂度（Factorial complexity）算法具有 `O(n!)` 的运行时间。\n\n这是算法最糟糕的情况。\n\n阶乘复杂度算法非常低效，应该被避免。\n\n    def generate_permutations(s):\n        # 基础情况：如果字符串长度为1，则返回一个包含该字符串的列表\n        if len(s) == 1:\n            return [s]\n    \n        # 初始化结果列表\n        permutations = []\n    \n        # 递归生成所有排列\n        for i in range(len(s)):\n            # 当前字符\n            current_char = s[i]\n            # 其余字符\n            remaining_chars = s[:i] + s[i+1:]\n            # 生成其余字符的所有排列\n            for perm in generate_permutations(remaining_chars):\n                # 将当前字符添加到每个生成排列的前面\n                permutations.append(current_char + perm)\n    \n        return permutations",
               "links": [],
               "children": [],
               "id": "9e601abb-7076-44b5-89ff-39709b395764",
@@ -1290,11 +1100,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
     },
     {
       "title": "常见的算法",
-      "description": "这里列出了一些你应该知道的常见算法。
-
-你可以在计算机科学课程的[算法](https://www.khanacademy.org/computing/computer-science/algorithms)部分找到更多关于它们的信息。
-
-\n\n* 排序\n* 递归\n* 搜索\n* 缓存算法\n* 树算法\n* 图算法\n* 贪婪算法\n* 回溯\n* 子串搜索\n* 后缀数组\n* 动态规划",
+      "description": "这里列出了一些你应该知道的常见算法。\n\n你可以在计算机科学课程的[算法](https://www.khanacademy.org/computing/computer-science/algorithms)部分找到更多关于它们的信息。\n\n* 排序\n* 递归\n* 搜索\n* 缓存算法\n* 树算法\n* 图算法\n* 贪婪算法\n* 回溯\n* 子串搜索\n* 后缀数组\n* 动态规划",
       "links": [],
       "children": [
         {
@@ -1304,11 +1110,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
           "children": [
             {
               "title": "冒泡排序 (Bubble Sort)",
-              "description": "冒泡排序 (Bubble Sort) 是一种简单的排序算法，它通过多次遍历列表并与相邻元素进行比较来工作，如果元素顺序错误，则交换它们。
-
-这一遍历过程会重复进行，直到列表完全排序。
-
-\n\n",
+              "description": "冒泡排序 (Bubble Sort) 是一种简单的排序算法，它通过多次遍历列表并与相邻元素进行比较来工作，如果元素顺序错误，则交换它们。\n\n这一遍历过程会重复进行，直到列表完全排序。\n\n",
               "links": [
                 {
                   "title": "冒泡排序 (Bubble Sort)",
@@ -1332,9 +1134,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "选择排序",
-              "description": "选择排序是一种排序算法，它在列表中选择未排序的最小项目，并将其与索引0交换，然后找到下一个最小的项目并将其放置在索引1位置，依次类推。
-
-\n\n",
+              "description": "选择排序是一种排序算法，它在列表中选择未排序的最小项目，并将其与索引0交换，然后找到下一个最小的项目并将其放置在索引1位置，依次类推。\n\n",
               "links": [
                 {
                   "title": "选择排序",
@@ -1353,11 +1153,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "插入排序(Insertion Sort)",
-              "description": "插入排序是一个简单的排序算法，通过比较逐步构建最终排序的数组。
-
-它在大型列表中的效率远低于更先进的算法，如快速排序（quicksort）、堆排序（heapsort）或归并排序（merge sort）。
-
-\n\n",
+              "description": "插入排序是一个简单的排序算法，通过比较逐步构建最终排序的数组。\n\n它在大型列表中的效率远低于更先进的算法，如快速排序（quicksort）、堆排序（heapsort）或归并排序（merge sort）。\n\n",
               "links": [
                 {
                   "title": "插入排序算法(Insertion Sort Algorithm)",
@@ -1381,13 +1177,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "堆排序(Heap Sort)",
-              "description": "堆排序是一种基于比较的排序算法。
-
-它类似于选择排序，在这里我们首先找到最大元素并将最大元素放到列表的末尾。
-
-我们对剩余的元素重复同样的过程。
-
-\n\n",
+              "description": "堆排序是一种基于比较的排序算法。\n\n它类似于选择排序，在这里我们首先找到最大元素并将最大元素放到列表的末尾。\n\n我们对剩余的元素重复同样的过程。\n\n",
               "links": [
                 {
                   "title": "堆排序算法(Heap Sort Algorithm)",
@@ -1421,13 +1211,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "快速排序",
-              "description": "快速排序是一种分治算法（divide and conquer algorithm）。
-
-它选择一个元素作为基准（pivot），并以选择的基准为轴心重新排列给定数组。
-
-快速排序有许多不同的版本，它们选择基准的方式不同。
-
-\n\n",
+              "description": "快速排序是一种分治算法（divide and conquer algorithm）。\n\n它选择一个元素作为基准（pivot），并以选择的基准为轴心重新排列给定数组。\n\n快速排序有许多不同的版本，它们选择基准的方式不同。\n\n",
               "links": [
                 {
                   "title": "Python 中的快速排序实现",
@@ -1456,15 +1240,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "归并排序 (Merge Sort)",
-              "description": "归并排序是一种分治算法 (divide and conquer algorithm)。
-
-它将输入数组分成两半，分别对两半递归调用自己，然后将这两半已排序的部分合并。
-
-`merge()` 函数用于合并两个子数组。
-
-`merge(arr, l, m, r)` 是该过程的关键步骤，它假定 `arr[l..m]` 和 `arr[m+1..r]` 已排好序，然后将这二个有序子数组合并为一个。
-
-\n\n",
+              "description": "归并排序是一种分治算法 (divide and conquer algorithm)。\n\n它将输入数组分成两半，分别对两半递归调用自己，然后将这两半已排序的部分合并。\n\n`merge()` 函数用于合并两个子数组。\n\n`merge(arr, l, m, r)` 是该过程的关键步骤，它假定 `arr[l..m]` 和 `arr[m+1..r]` 已排好序，然后将这二个有序子数组合并为一个。\n\n",
               "links": [
                 {
                   "title": "归并排序算法 (Merge Sort Algorithm)",
@@ -1492,9 +1268,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
           "children": [
             {
               "title": "先序遍历(Pre-Order Traversal)",
-              "description": "先序遍历是一种树遍历算法，首先访问根节点，然后递归地遍历左子树，再遍历右子树。
-
-\n\n",
+              "description": "先序遍历是一种树遍历算法，首先访问根节点，然后递归地遍历左子树，再遍历右子树。\n\n",
               "links": [
                 {
                   "title": "树结构详解(Illustrated Data Structures)",
@@ -1513,13 +1287,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "中序遍历",
-              "description": "中序遍历是一种树遍历算法，该算法首先访问左子树，然后访问根节点，最后访问右子树。
-
-这是遍历二叉查找树最为常见的方式。
-
-它还被用于生成二叉查找树中节点的有序列表。
-
-\n\n",
+              "description": "中序遍历是一种树遍历算法，该算法首先访问左子树，然后访问根节点，最后访问右子树。\n\n这是遍历二叉查找树最为常见的方式。\n\n它还被用于生成二叉查找树中节点的有序列表。\n\n",
               "links": [
                 {
                   "title": "树 | 数据结构插图",
@@ -1533,11 +1301,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "后序遍历(Post Order Traversal)",
-              "description": "后序遍历(post-order traversal)是一种树遍历方法，该方法首先访问左子树，然后访问右子树，最后访问根节点(root node)。
-
-这与先序遍历(pre-order traversal)相反，先序遍历首先访问根节点，然后访问左子树，最后访问右子树。
-
-\n\n",
+              "description": "后序遍历(post-order traversal)是一种树遍历方法，该方法首先访问左子树，然后访问右子树，最后访问根节点(root node)。\n\n这与先序遍历(pre-order traversal)相反，先序遍历首先访问根节点，然后访问左子树，最后访问右子树。\n\n",
               "links": [
                 {
                   "title": "树的图解数据结构(Tree | Illustrated Data Structures)",
@@ -1551,9 +1315,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "广度优先搜索(Breadth First Search)",
-              "description": "广度优先搜索是一种图遍历算法，该算法从根节点开始，在移动到下一层节点之前，先探索所有当前深度的邻居节点。
-
-\n\n",
+              "description": "广度优先搜索是一种图遍历算法，该算法从根节点开始，在移动到下一层节点之前，先探索所有当前深度的邻居节点。\n\n",
               "links": [
                 {
                   "title": "Java中二叉树的广度优先搜索(Breadth-First Search, BFS) 和 深度优先搜索(Depth-First Search, DFS)",
@@ -1577,9 +1339,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "深度优先搜索 (Depth First Search)",
-              "description": "深度优先搜索 (Depth First Search) 是一种图遍历算法，从一个根节点开始，尽可能地沿着每个分支探索，然后再进行回溯。
-
-\n\n",
+              "description": "深度优先搜索 (Depth First Search) 是一种图遍历算法，从一个根节点开始，尽可能地沿着每个分支探索，然后再进行回溯。\n\n",
               "links": [
                 {
                   "title": "Java中二叉树的广度优先搜索 (BFS) 和深度优先搜索 (DFS)",
@@ -1612,11 +1372,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
           "children": [
             {
               "title": "广度优先搜索(Breadth First Search)",
-              "description": "广度优先搜索(Breadth first search)是一种遍历图的方法。
-
-它从根节点开始，先探索当前深度的所有邻接节点，然后再移动到下一层深度的节点。
-
-\n\n",
+              "description": "广度优先搜索(Breadth first search)是一种遍历图的方法。\n\n它从根节点开始，先探索当前深度的所有邻接节点，然后再移动到下一层深度的节点。\n\n",
               "links": [
                 {
                   "title": "图算法 II - 深度优先搜索(DFS)，广度优先搜索(BFS)，克鲁斯卡尔算法(Kruskal Algorithm)，并查集(Union Find)数据结构 - 第7讲",
@@ -1635,9 +1391,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "深度优先搜索（Depth First Search）",
-              "description": "深度优先搜索（depth first search）是一种图遍历算法，从根节点开始，沿着每个分支尽可能深入探索，然后再回溯。
-
-\n\n",
+              "description": "深度优先搜索（depth first search）是一种图遍历算法，从根节点开始，沿着每个分支尽可能深入探索，然后再回溯。\n\n",
               "links": [],
               "children": [],
               "id": "c3eb38b1-c086-49c0-9f77-70ee07c3babb",
@@ -1645,15 +1399,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "Bellman-Ford算法",
-              "description": "Bellman-Ford算法是一种图算法，用于从一个源顶点找到到图中所有其他顶点的最短路径。
-
-它是一种动态规划算法，采用自底向上的方法来寻找最短路径。
-
-它类似于Dijkstra算法（迪杰斯特拉算法），但它可以处理负权值。
-
-它也类似于Floyd-Warshall算法（弗洛伊德-瓦尔沙算法），但它可以处理负权值，并且比Floyd-Warshall算法更快。
-
-\n\n",
+              "description": "Bellman-Ford算法是一种图算法，用于从一个源顶点找到到图中所有其他顶点的最短路径。\n\n它是一种动态规划算法，采用自底向上的方法来寻找最短路径。\n\n它类似于Dijkstra算法（迪杰斯特拉算法），但它可以处理负权值。\n\n它也类似于Floyd-Warshall算法（弗洛伊德-瓦尔沙算法），但它可以处理负权值，并且比Floyd-Warshall算法更快。\n\n",
               "links": [
                 {
                   "title": "探索关于数据科学的热门文章",
@@ -1677,17 +1423,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "Dijkstra算法",
-              "description": "Dijkstra算法是一种图遍历算法，用于找到图中两个节点之间的最短路径。
-
-它是一种加权图算法（weighted graph algorithm），意味着图中的每条边都与一个权重相关联。
-
-该算法通过从起始节点开始找到到图中所有其他节点的最短路径来运行。
-
-它通过记录从起始节点到每个节点的距离，然后选择与起始节点距离最短的节点访问。
-
-随后更新每个节点从起始节点的距离，并重复这个过程直到访问完所有节点。
-
-\n\n",
+              "description": "Dijkstra算法是一种图遍历算法，用于找到图中两个节点之间的最短路径。\n\n它是一种加权图算法（weighted graph algorithm），意味着图中的每条边都与一个权重相关联。\n\n该算法通过从起始节点开始找到到图中所有其他节点的最短路径来运行。\n\n它通过记录从起始节点到每个节点的距离，然后选择与起始节点距离最短的节点访问。\n\n随后更新每个节点从起始节点的距离，并重复这个过程直到访问完所有节点。\n\n",
               "links": [
                 {
                   "title": "探索关于数据科学的顶级文章",
@@ -1711,13 +1447,7 @@ C 语言的设计干净地（cleanly）反映了目标 CPU 的能力（capabilit
             },
             {
               "title": "A* (A星)算法",
-              "description": "A* (A星)是一种图遍历算法，用于在一个图中找到两个节点之间的最短路径。
-
-它是Dijkstra (迪杰斯特拉)算法的改进版，通过引入启发式函数来找到最短路径。
-
-A* (A星)算法在路径规划和图遍历中被广泛使用。
-
-\n\n",
+              "description": "A* (A星)是一种图遍历算法，用于在一个图中找到两个节点之间的最短路径。\n\n它是Dijkstra (迪杰斯特拉)算法的改进版，通过引入启发式函数来找到最短路径。\n\nA* (A星)算法在路径规划和图遍历中被广泛使用。\n\n",
               "links": [
                 {
                   "title": "A* (A星)搜索算法 - 维基百科",
@@ -1750,11 +1480,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
           "children": [
             {
               "title": "Dijkstra算法",
-              "description": "Dijkstra算法是一种贪心算法，用于在一个图中找到两个节点之间的最短路径。
-
-这是一种非常常见的算法，广泛应用于计算机科学领域，例如GPS导航、网络路由和迷宫的最短路径查找。
-
-\n\n",
+              "description": "Dijkstra算法是一种贪心算法，用于在一个图中找到两个节点之间的最短路径。\n\n这是一种非常常见的算法，广泛应用于计算机科学领域，例如GPS导航、网络路由和迷宫的最短路径查找。\n\n",
               "links": [
                 {
                   "title": "关于数据科学的热门文章",
@@ -1783,13 +1509,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "哈夫曼编码(Huffman Coding)",
-              "description": "哈夫曼编码是一种无损数据压缩算法。
-
-其思想是为输入字符分配可变长度的编码，所分配编码的长度基于相应字符的频率。
-
-出现频率最高的字符获得最短的编码，而出现频率最低的字符获得最长的编码。
-
-\n\n",
+              "description": "哈夫曼编码是一种无损数据压缩算法。\n\n其思想是为输入字符分配可变长度的编码，所分配编码的长度基于相应字符的频率。\n\n出现频率最高的字符获得最短的编码，而出现频率最低的字符获得最长的编码。\n\n",
               "links": [
                 {
                   "title": "哈夫曼编码(Huffman Coding)",
@@ -1808,13 +1528,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "克鲁斯卡尔算法(Kruskal's Algorithm)",
-              "description": "克鲁斯卡尔算法(Kruskal's algorithm)是一种贪心算法(greedy algorithm)，用于在一个连接的加权图中找到一个最小生成树(minimum spanning tree)。
-
-该算法输入一个图，找到该图中形成树的边的子集，这个树包含每一个顶点，并且树中所有边的总权重最小。
-
-如果图不是连接的，那么它会找到一个最小生成森林(minimum spanning forest)，为每个连通分量找到一个最小生成树(minimum spanning tree)。
-
-",
+              "description": "克鲁斯卡尔算法(Kruskal's algorithm)是一种贪心算法(greedy algorithm)，用于在一个连接的加权图中找到一个最小生成树(minimum spanning tree)。\n\n该算法输入一个图，找到该图中形成树的边的子集，这个树包含每一个顶点，并且树中所有边的总权重最小。\n\n如果图不是连接的，那么它会找到一个最小生成森林(minimum spanning forest)，为每个连通分量找到一个最小生成树(minimum spanning tree)。\n\n",
               "links": [
                 {
                   "title": "探索关于数据科学的顶级帖子",
@@ -1838,11 +1552,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "Ford-Fulkerson算法（Ford-Fulkerson Algorithm）",
-              "description": "Ford-Fulkerson算法是一种贪心算法，用于在网络流中找到最大流。
-
-它也被称为Edmonds-Karp算法（Edmonds-Karp Algorithm）。
-
-\n\n",
+              "description": "Ford-Fulkerson算法是一种贪心算法，用于在网络流中找到最大流。\n\n它也被称为Edmonds-Karp算法（Edmonds-Karp Algorithm）。\n\n",
               "links": [
                 {
                   "title": "Ford-Fulkerson算法",
@@ -1866,13 +1576,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "普里姆算法(Prim's Algorithm)",
-              "description": "普里姆算法是一个贪心算法，用于找到加权无向图的最小生成树。
-
-最小生成树是一个连通加权无向图的边的子集，它连接所有顶点，没有形成任何环路，且具有可能的最小总边权重。
-
-加权无向图的最小生成树也被称为最小权重生成树或最小成本生成树。
-
-\n\n",
+              "description": "普里姆算法是一个贪心算法，用于找到加权无向图的最小生成树。\n\n最小生成树是一个连通加权无向图的边的子集，它连接所有顶点，没有形成任何环路，且具有可能的最小总边权重。\n\n加权无向图的最小生成树也被称为最小权重生成树或最小成本生成树。\n\n",
               "links": [
                 {
                   "title": "普里姆算法(Prims Algorithm)",
@@ -1905,13 +1609,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
           "children": [
             {
               "title": "寻找哈密顿路径",
-              "description": "哈密顿路径（Hamiltonian paths）是指在图中恰好访问每个节点一次的路径。
-
-它们是以著名数学家[Hamilton](https://en.wikipedia.org/wiki/William_Rowan_Hamilton)的名字命名的。
-
-哈密顿路径是[哈密顿环（Hamiltonian cycles）](https://en.wikipedia.org/wiki/Hamiltonian_cycle)的特例，后者是指在图中恰好访问每个节点一次的环路。
-
-\n\n",
+              "description": "哈密顿路径（Hamiltonian paths）是指在图中恰好访问每个节点一次的路径。\n\n它们是以著名数学家[Hamilton](https://en.wikipedia.org/wiki/William_Rowan_Hamilton)的名字命名的。\n\n哈密顿路径是[哈密顿环（Hamiltonian cycles）](https://en.wikipedia.org/wiki/Hamiltonian_cycle)的特例，后者是指在图中恰好访问每个节点一次的环路。\n\n",
               "links": [
                 {
                   "title": "哈密顿路径",
@@ -1935,13 +1633,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "解决N皇后问题",
-              "description": "N皇后问题（N Queen Problem）是计算机科学中的一个著名问题。
-
-该问题是在n x n的棋盘上放置n个皇后（queen），使得没有任何两个皇后在同一条横行、竖列或斜线上。
-
-问题的目标是找出所有可能的解决方案。
-
-\n\n",
+              "description": "N皇后问题（N Queen Problem）是计算机科学中的一个著名问题。\n\n该问题是在n x n的棋盘上放置n个皇后（queen），使得没有任何两个皇后在同一条横行、竖列或斜线上。\n\n问题的目标是找出所有可能的解决方案。\n\n",
               "links": [
                 {
                   "title": "使用回溯法在Java/C++中解决N皇后问题",
@@ -1960,25 +1652,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "迷宫求解问题",
-              "description": "迷宫求解问题（Maze Solving Problem）是计算机科学中的一个经典问题。
-
-这个问题要求我们找到从起点到终点的一条路径。
-
-迷宫用一个单元格组成的网格表示。
-
-每个单元格可以是墙壁或路径。
-
-路径单元格彼此相连。
-
-起点和终点也被给出。
-
-目标是从起点到终点找到一条路径。
-
-路径只能由路径单元格组成。
-
-路径不能穿过墙壁单元格。
-
-\n\n",
+              "description": "迷宫求解问题（Maze Solving Problem）是计算机科学中的一个经典问题。\n\n这个问题要求我们找到从起点到终点的一条路径。\n\n迷宫用一个单元格组成的网格表示。\n\n每个单元格可以是墙壁或路径。\n\n路径单元格彼此相连。\n\n起点和终点也被给出。\n\n目标是从起点到终点找到一条路径。\n\n路径只能由路径单元格组成。\n\n路径不能穿过墙壁单元格。\n\n",
               "links": [
                 {
                   "title": "迷宫求解算法",
@@ -2007,9 +1681,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "骑士周游问题",
-              "description": "骑士周游问题（Knight's Tour Problem）是一个问题，其中我们需要找到一种路径，使骑士能够访问棋盘上的所有单元格，并且不重复访问任何一个单元格。
-
-\n\n",
+              "description": "骑士周游问题（Knight's Tour Problem）是一个问题，其中我们需要找到一种路径，使骑士能够访问棋盘上的所有单元格，并且不重复访问任何一个单元格。\n\n",
               "links": [
                 {
                   "title": "骑士周游",
@@ -2037,13 +1709,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
         },
         {
           "title": "Rabin-Karp算法",
-          "description": "Rabin-Karp算法是一种字符串搜索算法，它使用哈希（hashing）方法在文本中找到一组模式字符串中的任何一个。
-
-对于平均长度为`n`的字符串，它在`O(n+m)`的时间内完成，需要`O(m)`的空间，其中`m`是模式的长度。
-
-该算法在生物信息学中常用于搜索DNA模式。
-
-\n\n",
+          "description": "Rabin-Karp算法是一种字符串搜索算法，它使用哈希（hashing）方法在文本中找到一组模式字符串中的任何一个。\n\n对于平均长度为`n`的字符串，它在`O(n+m)`的时间内完成，需要`O(m)`的空间，其中`m`是模式的长度。\n\n该算法在生物信息学中常用于搜索DNA模式。\n\n",
           "links": [
             {
               "title": "Rabin-Karp算法",
@@ -2087,11 +1753,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
           "children": [
             {
               "title": "尾递归(Tail Recursion)",
-              "description": "尾递归(Tail Recursion)是一种特殊的递归形式，在这种形式中，递归调用是函数中的最后一项。
-
-递归之后函数不再执行任何操作。
-
-\n\n",
+              "description": "尾递归(Tail Recursion)是一种特殊的递归形式，在这种形式中，递归调用是函数中的最后一项。\n\n递归之后函数不再执行任何操作。\n\n",
               "links": [
                 {
                   "title": "尾递归(Tail Recursion)",
@@ -2115,13 +1777,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "非尾递归（Non-Tail Recursion）",
-              "description": "尾递归是指函数可以直接返回递归调用的结果，没有剩余的待执行操作，也不需要保留调用栈帧。
-
-因此，尾递归可以被翻译为一种“附带参数的goto指令”，使栈使用量保持恒定。
-
-\n\n在“非尾递归（Non-tail Recursion）”中，递归调用之后仍有待执行的操作，调用栈帧不能被丢弃。
-
-\n\n",
+              "description": "尾递归是指函数可以直接返回递归调用的结果，没有剩余的待执行操作，也不需要保留调用栈帧。\n\n因此，尾递归可以被翻译为一种“附带参数的goto指令”，使栈使用量保持恒定。\n\n在“非尾递归（Non-tail Recursion）”中，递归调用之后仍有待执行的操作，调用栈帧不能被丢弃。\n\n",
               "links": [
                 {
                   "title": "什么是非尾递归（Non-tail recursion）",
@@ -2164,15 +1820,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
           "children": [
             {
               "title": "二分查找",
-              "description": "二分查找（binary search）是一种在有序数组中查找目标值位置的搜索算法。
-
-二分查找将目标值与数组的中间元素进行比较。
-
-如果它们不相等，则目标值不可能存在于数组中被排除的一半，然后在剩下的半部分继续进行搜索，再次取中间元素进行比较，重复这个过程直到找到目标值。
-
-如果搜索结束时剩余部分为空，则说明数组中不存在目标值。
-
-\n\n",
+              "description": "二分查找（binary search）是一种在有序数组中查找目标值位置的搜索算法。\n\n二分查找将目标值与数组的中间元素进行比较。\n\n如果它们不相等，则目标值不可能存在于数组中被排除的一半，然后在剩下的半部分继续进行搜索，再次取中间元素进行比较，重复这个过程直到找到目标值。\n\n如果搜索结束时剩余部分为空，则说明数组中不存在目标值。\n\n",
               "links": [
                 {
                   "title": "二分查找 - 可汗学院",
@@ -2206,11 +1854,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "线性搜索(Linear Search)",
-              "description": "线性搜索(Linear Search)是一种非常简单的算法，用于在一个数组中搜索某个值。
-
-它会依次检查数组中的每个元素，直到找到匹配项或者搜索完所有元素为止。
-
-\n\n",
+              "description": "线性搜索(Linear Search)是一种非常简单的算法，用于在一个数组中搜索某个值。\n\n它会依次检查数组中的每个元素，直到找到匹配项或者搜索完所有元素为止。\n\n",
               "links": [],
               "children": [],
               "id": "c3f362b3-f98d-4112-bc9a-1efba775476a",
@@ -2227,11 +1871,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
           "children": [
             {
               "title": "LRU 缓存（LRU Cache）",
-              "description": "LRU 缓存是一种首先淘汰最久未使用的项目的缓存算法。
-
-它是一种非常常见的缓存算法，被广泛应用于浏览器缓存、数据库缓存以及操作系统缓存中。
-
-\n\n",
+              "description": "LRU 缓存是一种首先淘汰最久未使用的项目的缓存算法。\n\n它是一种非常常见的缓存算法，被广泛应用于浏览器缓存、数据库缓存以及操作系统缓存中。\n\n",
               "links": [
                 {
                   "title": "LRU 缓存的魔力（100 Days of Google Dev）",
@@ -2255,13 +1895,7 @@ A* (A星)算法在路径规划和图遍历中被广泛使用。
             },
             {
               "title": "LFU 缓存 (LFU Cache)",
-              "description": "LFU 缓存 (LFU Cache) 是一种存储键值对的数据结构。
-
-它具有固定的大小，当达到上限时，会移除使用频率最低的键值对。
-
-LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用，例如网页缓存、数据库查询缓存以及图像缓存。
-
-\n\n",
+              "description": "LFU 缓存 (LFU Cache) 是一种存储键值对的数据结构。\n\n它具有固定的大小，当达到上限时，会移除使用频率最低的键值对。\n\nLFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用，例如网页缓存、数据库查询缓存以及图像缓存。\n\n",
               "links": [
                 {
                   "title": "1117. 数据结构 - LFU 缓存 (LFU Cache)",
@@ -2275,11 +1909,7 @@ LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用�
             },
             {
               "title": "MFU缓存",
-              "description": "MFU缓存是另一种缓存算法。
-
-区别在于，它不是删除最少使用的条目，而是删除最频繁使用的条目。
-
-\n\n",
+              "description": "MFU缓存是另一种缓存算法。\n\n区别在于，它不是删除最少使用的条目，而是删除最频繁使用的条目。\n\n",
               "links": [
                 {
                   "title": "比较MFU和LRU页面替换算法",
@@ -2306,11 +1936,7 @@ LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用�
     },
     {
       "title": "字符串搜索与操作",
-      "description": "字符串搜索与操作是计算机科学中一个非常重要的主题。
-
-它被广泛应用于各种不同应用中，比如在字符串中搜索或替换特定模式、单词或字符。
-
-\n\n",
+      "description": "字符串搜索与操作是计算机科学中一个非常重要的主题。\n\n它被广泛应用于各种不同应用中，比如在字符串中搜索或替换特定模式、单词或字符。\n\n",
       "links": [
         {
           "title": "字符串搜索算法",
@@ -2321,11 +1947,7 @@ LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用�
       "children": [
         {
           "title": "文本中的模式搜索",
-          "description": "在文本中搜索模式是在计算机科学中非常常见的任务。
-
-它被应用于拼写检查器、文本编辑器等许多应用程序中。
-
-\n\n",
+          "description": "在文本中搜索模式是在计算机科学中非常常见的任务。\n\n它被应用于拼写检查器、文本编辑器等许多应用程序中。\n\n",
           "links": [
             {
               "title": "文本中的模式搜索",
@@ -2339,11 +1961,7 @@ LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用�
         },
         {
           "title": "后缀数组（Suffix Arrays）",
-          "description": "后缀数组是一种数据结构，它允许我们快速地按字典顺序找到一个字符串的所有后缀。
-
-这在解决许多问题时非常有用，比如找出两个字符串之间的最长公共子串，或者找出一个字符串中的不同子串的数量。
-
-\n\n",
+          "description": "后缀数组是一种数据结构，它允许我们快速地按字典顺序找到一个字符串的所有后缀。\n\n这在解决许多问题时非常有用，比如找出两个字符串之间的最长公共子串，或者找出一个字符串中的不同子串的数量。\n\n",
           "links": [
             {
               "title": "后缀数组（Suffix Arrays） - Coursera",
@@ -2372,11 +1990,7 @@ LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用�
         },
         {
           "title": "子字符串搜索",
-          "description": "子字符串搜索是指在字符串中查找子字符串的问题。
-
-这是一个在计算机科学中非常常见的问题，有着多种解决方案算法。
-
-\n\n",
+          "description": "子字符串搜索是指在字符串中查找子字符串的问题。\n\n这是一个在计算机科学中非常常见的问题，有着多种解决方案算法。\n\n",
           "links": [
             {
               "title": "子字符串搜索简介",
@@ -2397,15 +2011,7 @@ LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用�
           "children": [
             {
               "title": "暴力搜索",
-              "description": "暴力搜索算法是一种简单的算法，通过比较字符串中的每个字符与模式中的第一个字符来查找模式。
-
-如果第一个字符匹配，则继续比较字符串中的下一个字符和模式中的下一个字符，依此类推。
-
-如果模式中的所有字符都匹配，则找到该模式。
-
-如果第一个字符不匹配，则算法将比较字符串中的第二个字符与模式中的第一个字符，依此类推。
-
-\n\n",
+              "description": "暴力搜索算法是一种简单的算法，通过比较字符串中的每个字符与模式中的第一个字符来查找模式。\n\n如果第一个字符匹配，则继续比较字符串中的下一个字符和模式中的下一个字符，依此类推。\n\n如果模式中的所有字符都匹配，则找到该模式。\n\n如果第一个字符不匹配，则算法将比较字符串中的第二个字符与模式中的第一个字符，依此类推。\n\n",
               "links": [
                 {
                   "title": "暴力子串搜索",
@@ -2429,23 +2035,7 @@ LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用�
             },
             {
               "title": "克努特-莫里斯-普拉特算法（Knuth-Morris Pratt）",
-              "description": "克努特-莫里斯-普拉特算法（Knuth-Morris Pratt）是一种字符串搜索算法，它使用一个预先计算的数组来在字符串中查找子串。
-
-这个数组被称为前缀函数（prefix function）。
-
-前缀函数是指最长的既是前缀又是后缀的子串。
-
-前缀函数用于跳过已经匹配的字符。
-
-算法如下：\n\n*   计算子串的前缀函数。
-
-\n*   同时遍历字符串和子串。
-
-\n*   如果字符匹配，则同时增加字符串和子串的索引。
-
-\n*   如果字符不匹配，则根据子串当前索引对应的前缀函数值增加字符串的索引。
-
-\n\n",
+              "description": "克努特-莫里斯-普拉特算法（Knuth-Morris Pratt）是一种字符串搜索算法，它使用一个预先计算的数组来在字符串中查找子串。\n\n这个数组被称为前缀函数（prefix function）。\n\n前缀函数是指最长的既是前缀又是后缀的子串。\n\n前缀函数用于跳过已经匹配的字符。\n\n算法如下：\n\n*   计算子串的前缀函数。\n\n\n*   同时遍历字符串和子串。\n\n\n*   如果字符匹配，则同时增加字符串和子串的索引。\n\n\n*   如果字符不匹配，则根据子串当前索引对应的前缀函数值增加字符串的索引。\n\n",
               "links": [
                 {
                   "title": "克努特-莫里斯-普拉特算法（Knuth-Morris Pratt）",
@@ -2469,13 +2059,7 @@ LFU 缓存是 LRU 缓存 (LRU Cache) 的一种变体，在多个应用中使用�
             },
             {
               "title": "Boyer-Moore算法",
-              "description": "Boyer-Moore算法是一种字符串搜索算法，用于在一个字符串中查找子字符串的索引。
-
-它是一种非常高效的算法，被应用于许多应用程序中。
-
-Boyer-Moore算法被用于文本编辑器、编译器和其他许多应用。
-
-\n\n",
+              "description": "Boyer-Moore算法是一种字符串搜索算法，用于在一个字符串中查找子字符串的索引。\n\n它是一种非常高效的算法，被应用于许多应用程序中。\n\nBoyer-Moore算法被用于文本编辑器、编译器和其他许多应用。\n\n",
               "links": [
                 {
                   "title": "Boyer-Moore算法",
@@ -2494,13 +2078,7 @@ Boyer-Moore算法被用于文本编辑器、编译器和其他许多应用。
             },
             {
               "title": "Robin-Karp算法",
-              "description": "Rabin-Karp算法是一种字符串搜索算法，它使用哈希（hashing）技术在一个文本中查找一组模式字符串中的任意一个。
-
-对于平均长度为 `n` 的字符串，它的时间复杂度为 `O(n+m)`，空间复杂度为 `O(m)`，其中 `m` 是模式串的长度。
-
-该算法在生物信息学中常用于搜索DNA模式。
-
-\n\n",
+              "description": "Rabin-Karp算法是一种字符串搜索算法，它使用哈希（hashing）技术在一个文本中查找一组模式字符串中的任意一个。\n\n对于平均长度为 `n` 的字符串，它的时间复杂度为 `O(n+m)`，空间复杂度为 `O(m)`，其中 `m` 是模式串的长度。\n\n该算法在生物信息学中常用于搜索DNA模式。\n\n",
               "links": [
                 {
                   "title": "Rabin-Karp算法",
@@ -2542,15 +2120,7 @@ Boyer-Moore算法被用于文本编辑器、编译器和其他许多应用。
     },
     {
       "title": "浮点数学",
-      "description": "浮点数（Floating Point Numbers）是指包含小数点的数字。
-
-它们被用来表示实数。
-
-例如，3.14就是一个浮点数。
-
-3不是一个浮点数，因为它不包含小数点。
-
-\n\n",
+      "description": "浮点数（Floating Point Numbers）是指包含小数点的数字。\n\n它们被用来表示实数。\n\n例如，3.14就是一个浮点数。\n\n3不是一个浮点数，因为它不包含小数点。\n\n",
       "links": [
         {
           "title": "浮点数的表示方法 - 1",
@@ -2569,13 +2139,7 @@ Boyer-Moore算法被用于文本编辑器、编译器和其他许多应用。
     },
     {
       "title": "字节序(Endianess)",
-      "description": "字节序(Endianness)是指字节在内存中存储的顺序。
-
-最常见的两种字节序类型是大端序和小端序。
-
-大端序(big endian)首先存储最高有效字节，而小端序(little endian)首先存储最低有效字节。
-
-\n\n",
+      "description": "字节序(Endianness)是指字节在内存中存储的顺序。\n\n最常见的两种字节序类型是大端序和小端序。\n\n大端序(big endian)首先存储最高有效字节，而小端序(little endian)首先存储最低有效字节。\n\n",
       "links": [
         {
           "title": "字节序(Endianness)",
@@ -2601,13 +2165,7 @@ Boyer-Moore算法被用于文本编辑器、编译器和其他许多应用。
       "children": [
         {
           "title": "大端序 (Big Endian)",
-          "description": "大端序是常见的端序类型。
-
-在这种类型中，最高有效字节存储在最低的内存地址中。
-
-这意味着最高有效字节首先被存储，而最低有效字节最后被存储。
-
-\n\n",
+          "description": "大端序是常见的端序类型。\n\n在这种类型中，最高有效字节存储在最低的内存地址中。\n\n这意味着最高有效字节首先被存储，而最低有效字节最后被存储。\n\n",
           "links": [
             {
               "title": "讲座22. 大端序和小端序 (Big Endian and Little Endian)",
@@ -2621,13 +2179,7 @@ Boyer-Moore算法被用于文本编辑器、编译器和其他许多应用。
         },
         {
           "title": "小端序 (Little Endian)",
-          "description": "小端序 (Little Endian) 是一种在内存中存储数据的方式。
-
-它是大端序 (Big Endian) 的相反概念。
-
-在小端序中，最低有效字节（least significant byte）最先被存储；而在大端序中，最高有效字节（most significant byte）最先被存储。
-
-\n\n",
+          "description": "小端序 (Little Endian) 是一种在内存中存储数据的方式。\n\n它是大端序 (Big Endian) 的相反概念。\n\n在小端序中，最低有效字节（least significant byte）最先被存储；而在大端序中，最高有效字节（most significant byte）最先被存储。\n\n",
           "links": [
             {
               "title": "大端序与小端序 (Big Endian vs Little Endian).mp4",
@@ -2650,23 +2202,7 @@ Boyer-Moore算法被用于文本编辑器、编译器和其他许多应用。
     },
     {
       "title": "字符编码",
-      "description": "字符编码是将字符表示为数字的一种方式。
-
-它们用于存储和传输文本。
-
-最常见的字符编码是ASCII，它是一种7位编码。
-
-这意味着每个字符由0到127之间的数字表示。
-
-ASCII字符集包含128个字符，包括字母、数字、标点符号和控制字符。
-
-ASCII字符集是Unicode字符集的子集，而Unicode是一种16位编码。
-
-Unicode是ASCII的超集，因此ASCII字符可以用Unicode表示。
-
-Unicode是网络上最常用的字符编码。
-
-\n\n",
+      "description": "字符编码是将字符表示为数字的一种方式。\n\n它们用于存储和传输文本。\n\n最常见的字符编码是ASCII，它是一种7位编码。\n\n这意味着每个字符由0到127之间的数字表示。\n\nASCII字符集包含128个字符，包括字母、数字、标点符号和控制字符。\n\nASCII字符集是Unicode字符集的子集，而Unicode是一种16位编码。\n\nUnicode是ASCII的超集，因此ASCII字符可以用Unicode表示。\n\nUnicode是网络上最常用的字符编码。\n\n",
       "links": [
         {
           "title": "必须了解的字符编码知识",
@@ -2682,15 +2218,7 @@ Unicode是网络上最常用的字符编码。
       "children": [
         {
           "title": "统一码（Unicode）",
-          "description": "统一码是一种字符编码标准。
-
-它包含了ASCII，这意味着ASCII是统一码的一个子集。
-
-统一码是16位编码，因此它可以编码2^16 = 65536个字符。
-
-这比ASCII所能编码的128个字符多得多。
-
-\n\n",
+          "description": "统一码是一种字符编码标准。\n\n它包含了ASCII，这意味着ASCII是统一码的一个子集。\n\n统一码是16位编码，因此它可以编码2^16 = 65536个字符。\n\n这比ASCII所能编码的128个字符多得多。\n\n",
           "links": [
             {
               "title": "统一码工作原理：每个开发人员需要了解的字符串知识与🦄",
@@ -2709,15 +2237,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "ASCII",
-          "description": "ASCII是一种用于电子通信的字符编码标准。
-
-它从电报码发展而来，使用7位来表示128个不同的字符。
-
-前32个字符是非打印的控制字符，用于控制打印机和打字机等设备。
-
-剩下的96个字符是可以打印的，包括英文字母、数字、标点符号和各种符号。
-
-\n\n",
+          "description": "ASCII是一种用于电子通信的字符编码标准。\n\n它从电报码发展而来，使用7位来表示128个不同的字符。\n\n前32个字符是非打印的控制字符，用于控制打印机和打字机等设备。\n\n剩下的96个字符是可以打印的，包括英文字母、数字、标点符号和各种符号。\n\n",
           "links": [
             {
               "title": "必须知道的字符编码知识",
@@ -2740,11 +2260,7 @@ Unicode是网络上最常用的字符编码。
     },
     {
       "title": "常见的UML图",
-      "description": "UML（统一建模语言）是一种可视化软件系统的标准方式。
-
-它是一种通用的、开发性的、在软件工程领域内的建模语言，旨在提供一种统一的方式来可视化系统的设计。
-
-\n\n",
+      "description": "UML（统一建模语言）是一种可视化软件系统的标准方式。\n\n它是一种通用的、开发性的、在软件工程领域内的建模语言，旨在提供一种统一的方式来可视化系统的设计。\n\n",
       "links": [
         {
           "title": "UML图完整课程（统一建模语言）",
@@ -2755,11 +2271,7 @@ Unicode是网络上最常用的字符编码。
       "children": [
         {
           "title": "类图",
-          "description": "类图用于建模系统的静态结构。
-
-它们用于展示类、类的属性、操作（或方法）以及对象之间的关系。
-
-\n\n",
+          "description": "类图用于建模系统的静态结构。\n\n它们用于展示类、类的属性、操作（或方法）以及对象之间的关系。\n\n",
           "links": [
             {
               "title": "UML 类图教程",
@@ -2778,23 +2290,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "用例图（Usecase Diagrams）",
-          "description": "用例图（Usecase diagrams）是一种用于描述系统中**角色（actors）**和**用例（usecases）**之间交互情况的图。
-
-\n\n角色（actor）是与系统进行交互的人或系统。
-
-角色通过一个内写角色名称的矩形来表示。
-
-\n\n用例（usecase）是系统执行的任务。
-
-用例通过一个内写用例名称的椭圆来表示。
-
-\n\n用例图（usecase diagram）展示系统的角色和用例。
-
-该图通过一个内部包含系统名称的矩形表示。
-
-角色用矩形表示，用例用椭圆表示。
-
-\n",
+          "description": "用例图（Usecase diagrams）是一种用于描述系统中**角色（actors）**和**用例（usecases）**之间交互情况的图。\n\n角色（actor）是与系统进行交互的人或系统。\n\n角色通过一个内写角色名称的矩形来表示。\n\n用例（usecase）是系统执行的任务。\n\n用例通过一个内写用例名称的椭圆来表示。\n\n用例图（usecase diagram）展示系统的角色和用例。\n\n该图通过一个内部包含系统名称的矩形表示。\n\n角色用矩形表示，用例用椭圆表示。\n\n\n",
           "links": [
             {
               "title": "UML用例图教程（UML Use Case Diagram Tutorial）",
@@ -2818,13 +2314,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "活动图(Activity Diagrams)",
-          "description": "活动图用于建模系统中的控制流。
-
-它们通常与用例图(Use Case Diagram)结合使用，来描述系统在每个用例下的行为。
-
-活动图还用于描述单个类的行为。
-
-\n\n",
+          "description": "活动图用于建模系统中的控制流。\n\n它们通常与用例图(Use Case Diagram)结合使用，来描述系统在每个用例下的行为。\n\n活动图还用于描述单个类的行为。\n\n",
           "links": [
             {
               "title": "UML活动图教程(UML Activity Diagram Tutorial)",
@@ -2843,13 +2333,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "状态机图(State Machine Diagrams)",
-          "description": "状态机图用于展示对象在给定时间可能处于的不同状态。
-
-该对象一次只能处于一种状态。
-
-状态机图类似于活动图(activity diagrams)，但它们更专注于对象状态的流转，而不是对象自身的流转。
-
-\n\n",
+          "description": "状态机图用于展示对象在给定时间可能处于的不同状态。\n\n该对象一次只能处于一种状态。\n\n状态机图类似于活动图(activity diagrams)，但它们更专注于对象状态的流转，而不是对象自身的流转。\n\n",
           "links": [
             {
               "title": "什么是状态机图(State Machine Diagram)?",
@@ -2873,9 +2357,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "序列图",
-          "description": "序列图是用来展示对象或系统之间如何随着时间相互交互的一种方式。
-
-\n\n",
+          "description": "序列图是用来展示对象或系统之间如何随着时间相互交互的一种方式。\n\n",
           "links": [
             {
               "title": "如何绘制UML序列图",
@@ -2898,11 +2380,7 @@ Unicode是网络上最常用的字符编码。
     },
     {
       "title": "设计模式",
-      "description": "设计模式是软件设计中解决常见问题的方法。
-
-它们是程序员在设计应用程序或系统时可以使用的成熟最佳实践。
-
-\n\n",
+      "description": "设计模式是软件设计中解决常见问题的方法。\n\n它们是程序员在设计应用程序或系统时可以使用的成熟最佳实践。\n\n",
       "links": [
         {
           "title": "设计模式对人类",
@@ -2928,11 +2406,7 @@ Unicode是网络上最常用的字符编码。
       "children": [
         {
           "title": "GoF 设计模式 (GoF Design Patterns)",
-          "description": "所谓的\"四人帮\"(Gang of Four, GoF)设计模式一共包含了23种设计模式，首次出现在《设计模式：可复用面向对象软件的基础》(\"Design Patterns: Elements of Reusable Object-Oriented Software\")一书中，该书由Erich Gamma、Richard Helm、Ralph Johnson和John Vlissides合著。
-
-这本书通常被称为“四人帮”(Gang of Four)一书。
-
-\n\n",
+          "description": "所谓的\"四人帮\"(Gang of Four, GoF)设计模式一共包含了23种设计模式，首次出现在《设计模式：可复用面向对象软件的基础》(\"Design Patterns: Elements of Reusable Object-Oriented Software\")一书中，该书由Erich Gamma、Richard Helm、Ralph Johnson和John Vlissides合著。\n\n这本书通常被称为“四人帮”(Gang of Four)一书。\n\n",
           "links": [
             {
               "title": "设计模式简明指南 (Design Patterns for Humans)",
@@ -2946,13 +2420,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "架构模式",
-          "description": "架构模式是一种高层设计模式，专注于系统的整体结构。
-
-它们与设计模式类似，但更关注系统的结构。
-
-它们用于解决许多软件系统常见的问题。
-
-\n\n",
+          "description": "架构模式是一种高层设计模式，专注于系统的整体结构。\n\n它们与设计模式类似，但更关注系统的结构。\n\n它们用于解决许多软件系统常见的问题。\n\n",
           "links": [
             {
               "title": "10 种常见的软件架构模式简介",
@@ -2971,11 +2439,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "依赖注入(Dependency Injection)",
-          "description": "依赖注入是一种软件设计模式，它使我们能够将类的依赖项与类本身解耦。
-
-这使得我们能够编写更灵活和可测试的代码。
-
-\n\n",
+          "description": "依赖注入是一种软件设计模式，它使我们能够将类的依赖项与类本身解耦。\n\n这使得我们能够编写更灵活和可测试的代码。\n\n",
           "links": [
             {
               "title": "依赖注入(Dependency Injection) - StackOverflow",
@@ -2999,13 +2463,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "空对象模式 (Null Object Pattern)",
-          "description": "空对象模式 (Null Object Pattern) 是一种设计模式，用于用对象表示空值。
-
-该模式通过提供一个默认的对象（该对象不做任何事情）来避免空引用异常。
-
-当数据不可用时，它提供了一种默认的行为方式。
-
-\n\n",
+          "description": "空对象模式 (Null Object Pattern) 是一种设计模式，用于用对象表示空值。\n\n该模式通过提供一个默认的对象（该对象不做任何事情）来避免空引用异常。\n\n当数据不可用时，它提供了一种默认的行为方式。\n\n",
           "links": [
             {
               "title": "设计模式 - 空对象模式 (Null Object Pattern)",
@@ -3019,13 +2477,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "类型对象模式 (Type Object Pattern)",
-          "description": "类型对象模式是一种创建型设计模式，它允许我们在不向客户端暴露对象创建逻辑的情况下创建类型的新对象。
-
-当我们需要创建某种类型的新对象，但我们直到运行时才知道需要创建哪种类型的对象时，我们可以使用这种模式。
-
-它类似于工厂模式，但与其返回已创建类型的对象，它返回的是一个已经创建好的类型的新对象。
-
-\n\n",
+          "description": "类型对象模式是一种创建型设计模式，它允许我们在不向客户端暴露对象创建逻辑的情况下创建类型的新对象。\n\n当我们需要创建某种类型的新对象，但我们直到运行时才知道需要创建哪种类型的对象时，我们可以使用这种模式。\n\n它类似于工厂模式，但与其返回已创建类型的对象，它返回的是一个已经创建好的类型的新对象。\n\n",
           "links": [
             {
               "title": "类型对象模式 (Type Object Pattern)",
@@ -3043,9 +2495,7 @@ Unicode是网络上最常用的字符编码。
     },
     {
       "title": "基础数学技能",
-      "description": "数学是计算机科学的一项基本技能。
-
-\n\n",
+      "description": "数学是计算机科学的一项基本技能。\n\n",
       "links": [
         {
           "title": "计算机科学70，001 - 2015年春季 - 离散数学和概率论",
@@ -3126,11 +2576,7 @@ Unicode是网络上最常用的字符编码。
       "children": [
         {
           "title": "概率论",
-          "description": "概率论是研究事件发生可能性的领域。
-
-这是衡量事件将要发生的确信度的尺度。
-
-\n\n",
+          "description": "概率论是研究事件发生可能性的领域。\n\n这是衡量事件将要发生的确信度的尺度。\n\n",
           "links": [
             {
               "title": "统计学相关热门文章",
@@ -3184,15 +2630,7 @@ Unicode是网络上最常用的字符编码。
         },
         {
           "title": "组合数学",
-          "description": "组合数学是研究计数的学问。
-
-它是一门数学分支，应用于解决计算机科学、统计学以及物理学等多个领域的难题。
-
-在计算机科学中，组合数学被用来解决计算给定问题可能结果的数量相关问题。
-
-例如，如果你有一个包含10个对象的集合，有多少种不同的方式可以排列它们？或者，如果你有一个包含10个对象的集合，有多少种不同的方式可以从其中选择3个对象？这些都是组合问题的例子。
-
-",
+          "description": "组合数学是研究计数的学问。\n\n它是一门数学分支，应用于解决计算机科学、统计学以及物理学等多个领域的难题。\n\n在计算机科学中，组合数学被用来解决计算给定问题可能结果的数量相关问题。\n\n例如，如果你有一个包含10个对象的集合，有多少种不同的方式可以排列它们？或者，如果你有一个包含10个对象的集合，有多少种不同的方式可以从其中选择3个对象？这些都是组合问题的例子。\n\n",
           "links": [
             {
               "title": "概率与组合学主题",
@@ -3225,15 +2663,7 @@ Unicode是网络上最常用的字符编码。
     },
     {
       "title": "复杂性类",
-      "description": "在计算机科学中，存在一些尚未找到解决方案的问题，将这些问题分为所谓复杂性类(complexity classes)。
-
-在复杂性理论(complexity theory)中，复杂性类是一个具有相关复杂性的问题集合。
-
-这些类别帮助科学家们根据解决这些问题及验证解决方案所需的时间和空间将问题进行分组。
-
-这是计算理论的一个分支，研究解决问题所需的资源。
-
-",
+      "description": "在计算机科学中，存在一些尚未找到解决方案的问题，将这些问题分为所谓复杂性类(complexity classes)。\n\n在复杂性理论(complexity theory)中，复杂性类是一个具有相关复杂性的问题集合。\n\n这些类别帮助科学家们根据解决这些问题及验证解决方案所需的时间和空间将问题进行分组。\n\n这是计算理论的一个分支，研究解决问题所需的资源。\n\n",
       "links": [
         {
           "title": "理解 P vs NP vs NP完全(NP-Complete) vs NP难(NP-Hard)",
@@ -3304,11 +2734,7 @@ Unicode是网络上最常用的字符编码。
       "children": [
         {
           "title": "P类",
-          "description": "P类中的P代表多项式时间（Polynomial Time）。
-
-P类是所有能够在确定性机器上以多项式时间解决的决策问题（答案为“是”或“否”的问题）的集合。
-
-\n\n",
+          "description": "P类中的P代表多项式时间（Polynomial Time）。\n\nP类是所有能够在确定性机器上以多项式时间解决的决策问题（答案为“是”或“否”的问题）的集合。\n\n",
           "links": [
             {
               "title": "理解P与NP与NP完全与NP难",
@@ -3382,11 +2808,7 @@ P类是所有能够在确定性机器上以多项式时间解决的决策问题�
         },
         {
           "title": "NP",
-          "description": "NP类中的NP代表非确定性多项式时间（Non-deterministic Polynomial Time）。
-
-它是可以通过非确定性机器在多项式时间内解决的决策问题的集合。
-
-\n\n",
+          "description": "NP类中的NP代表非确定性多项式时间（Non-deterministic Polynomial Time）。\n\n它是可以通过非确定性机器在多项式时间内解决的决策问题的集合。\n\n",
           "links": [
             {
               "title": "尝试理解P vs NP vs NP 完全 vs NP 难",
@@ -3460,9 +2882,7 @@ P类是所有能够在确定性机器上以多项式时间解决的决策问题�
         },
         {
           "title": "NP难（NP Hard）",
-          "description": "NP难问题至少与NP中最难的问题一样难解，其定义是NP中的每个问题都可以归约（reduce）到NP难问题。
-
-\n\n",
+          "description": "NP难问题至少与NP中最难的问题一样难解，其定义是NP中的每个问题都可以归约（reduce）到NP难问题。\n\n",
           "links": [
             {
               "title": "理解P与NP与NP完全问题与NP难问题",
@@ -3536,21 +2956,7 @@ P类是所有能够在确定性机器上以多项式时间解决的决策问题�
         },
         {
           "title": "P = NP",
-          "description": "P = NP 问题是计算机科学中最著名的问题之一。
-
-这个问题询问的是一个能在非确定性机器上（即问题属于非确定性多项式时间【NP】）以多项式时间解决的问题是否也能够在确定性机器上（即问题属于确定性多项式时间【P】）以多项式时间解决。
-
-\n\n如果你能找到一个NP完全问题的多项式时间解法，那么所有NP问题可以在多项式时间内解决。
-
-这表明P = NP。
-
-\n\n如果你证明对于任何一个NP完全问题，其只可以用指数时间解决，那么所有NP完全问题都只能用指数时间解决。
-
-这表明P ≠ NP。
-
-\n\n迄今为止，我们还不知道P 是否等于 NP。
-
-\n\n",
+          "description": "P = NP 问题是计算机科学中最著名的问题之一。\n\n这个问题询问的是一个能在非确定性机器上（即问题属于非确定性多项式时间【NP】）以多项式时间解决的问题是否也能够在确定性机器上（即问题属于确定性多项式时间【P】）以多项式时间解决。\n\n如果你能找到一个NP完全问题的多项式时间解法，那么所有NP问题可以在多项式时间内解决。\n\n这表明P = NP。\n\n如果你证明对于任何一个NP完全问题，其只可以用指数时间解决，那么所有NP完全问题都只能用指数时间解决。\n\n这表明P ≠ NP。\n\n迄今为止，我们还不知道P 是否等于 NP。\n\n",
           "links": [
             {
               "title": "什么是P=NP？为什么这是一个著名的问题？",
@@ -3564,11 +2970,7 @@ P类是所有能够在确定性机器上以多项式时间解决的决策问题�
         },
         {
           "title": "NP 完全（NP Complete）",
-          "description": "一个问题如果既是 NP [nondeterministic polynomial time] 问题又是 NP 困难（NP-hard）问题，那么它就是 NP 完全（NP-Complete）问题。
-
-NP 完全问题是 NP 难题中最难的那个类型。
-
-\n\n",
+          "description": "一个问题如果既是 NP [nondeterministic polynomial time] 问题又是 NP 困难（NP-hard）问题，那么它就是 NP 完全（NP-Complete）问题。\n\nNP 完全问题是 NP 难题中最难的那个类型。\n\n",
           "links": [
             {
               "title": "理解 P vs NP vs NP 完全（NP Complete） vs NP 困难（NP-hard）",
@@ -3644,13 +3046,7 @@ NP 完全问题是 NP 难题中最难的那个类型。
           "children": [
             {
               "title": "旅行商问题（Travelling Salesman Problem）",
-              "description": "旅行商问题（Travelling Salesman Problem, TSP）是计算机科学中的一个经典问题。
-
-这是一个NP完全问题，这意味着它是一个难以解决的问题。
-
-此外，它还用于测试算法的效率。
-
-\n\n",
+              "description": "旅行商问题（Travelling Salesman Problem, TSP）是计算机科学中的一个经典问题。\n\n这是一个NP完全问题，这意味着它是一个难以解决的问题。\n\n此外，它还用于测试算法的效率。\n\n",
               "links": [
                 {
                   "title": "什么是旅行商问题（Travelling Salesman Problem）?",
@@ -3674,11 +3070,7 @@ NP 完全问题是 NP 难题中最难的那个类型。
             },
             {
               "title": "背包问题",
-              "description": "背包问题在计算机科学中是一个经典问题。
-
-在这个问题中，我们得到一组每个都具有重量和价值的物品，我们需要确定哪些物品应该被包含在集合中，使得总重量小于或等于给定限制并且总价值尽可能大。
-
-",
+              "description": "背包问题在计算机科学中是一个经典问题。\n\n在这个问题中，我们得到一组每个都具有重量和价值的物品，我们需要确定哪些物品应该被包含在集合中，使得总重量小于或等于给定限制并且总价值尽可能大。\n\n",
               "links": [
                 {
                   "title": "如何用动态规划解决背包问题",
@@ -3697,9 +3089,7 @@ NP 完全问题是 NP 难题中最难的那个类型。
             },
             {
               "title": "最长路径问题",
-              "description": "最长路径问题要求我们在图中找到最长的路径。
-
-\n\n",
+              "description": "最长路径问题要求我们在图中找到最长的路径。\n\n",
               "links": [
                 {
                   "title": "有向无环图（DAG）上的最短/最长路径 | 图论",
@@ -3726,13 +3116,7 @@ NP 完全问题是 NP 难题中最难的那个类型。
     },
     {
       "title": "字典树(Tries)",
-      "description": "字典树(Tries)是一种用于存储字符串的数据结构。
-
-其思路是将字符串的字符存储在类似树的结构中，其中树的每个节点表示一个单独的字符。
-
-我们可以使用这种结构来存储字符串，以便能快速搜索具有共同前缀的字符串。
-
-\n\n",
+      "description": "字典树(Tries)是一种用于存储字符串的数据结构。\n\n其思路是将字符串的字符存储在类似树的结构中，其中树的每个节点表示一个单独的字符。\n\n我们可以使用这种结构来存储字符串，以便能快速搜索具有共同前缀的字符串。\n\n",
       "links": [
         {
           "title": "0. 字典树(Tries) - Coursera",
@@ -3786,13 +3170,7 @@ NP 完全问题是 NP 难题中最难的那个类型。
     },
     {
       "title": "平衡搜索树",
-      "description": "平衡搜索树是一种数据结构，它允许快速插入、删除和查找数据。
-
-它们是一种自我平衡的二叉搜索树（Self-balancing binary search tree），这意味着它们是具有二叉搜索树属性并且同时保持树平衡的二叉树。
-
-这意味着树总是保持近似平衡，从而实现数据的快速插入、删除和查找。
-
-\n\n",
+      "description": "平衡搜索树是一种数据结构，它允许快速插入、删除和查找数据。\n\n它们是一种自我平衡的二叉搜索树（Self-balancing binary search tree），这意味着它们是具有二叉搜索树属性并且同时保持树平衡的二叉树。\n\n这意味着树总是保持近似平衡，从而实现数据的快速插入、删除和查找。\n\n",
       "links": [
         {
           "title": "自我平衡二叉搜索树（Self-balancing binary search tree） - 维基百科",
@@ -3813,19 +3191,7 @@ NP 完全问题是 NP 难题中最难的那个类型。
       "children": [
         {
           "title": "AVL 树",
-          "description": "AVL 树是一种自平衡二叉搜索树。
-
-这些树是以它们的发明者 Adelson-Velskii 和 Landis 命名的。
-
-AVL 树是最受欢迎的自平衡二叉搜索树。
-
-\n\n在实际应用中：据我了解，这些树在实践中并不常用，但可以理解为什么它们会被使用：AVL 树是另一个支持 O(log n) 搜索、插入和删除的数据结构。
-
-它比红色-黑色树更严格地平衡，导致插入和删除速度较慢但检索速度更快。
-
-这使得它对于可能一次性构建并在不需重构的情况下加载的数据结构（例如语言字典或程序字典，如汇编器或解释器的指令码）具有吸引力。
-
-",
+          "description": "AVL 树是一种自平衡二叉搜索树。\n\n这些树是以它们的发明者 Adelson-Velskii 和 Landis 命名的。\n\nAVL 树是最受欢迎的自平衡二叉搜索树。\n\n在实际应用中：据我了解，这些树在实践中并不常用，但可以理解为什么它们会被使用：AVL 树是另一个支持 O(log n) 搜索、插入和删除的数据结构。\n\n它比红色-黑色树更严格地平衡，导致插入和删除速度较慢但检索速度更快。\n\n这使得它对于可能一次性构建并在不需重构的情况下加载的数据结构（例如语言字典或程序字典，如汇编器或解释器的指令码）具有吸引力。\n\n",
           "links": [
             {
               "title": "AVL 树",
@@ -3854,21 +3220,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "红黑树",
-          "description": "在计算机科学中，红黑树是一种自平衡二叉搜索树。
-
-每个节点存储一个额外的位，表示\"颜色\"，用于确保在插入和删除过程中树保持平衡。
-
-\n\n这些树是2-3树的一种变形（见下文）。
-
-\n\n在实际应用中：红黑树对其插入时间、删除时间和搜索时间提供了最坏情况下的性能保证。
-
-这不仅使它们在实时应用程序等对时间敏感的应用中很有价值，而且使它们成为其他提供最坏情况性能保证的数据结构中的重要组成部分。
-
-例如，计算几何中使用的许多数据结构基于红黑树，而在当前的Linux内核中使用的完全公平调度器使用红黑树。
-
-在Java的版本8中，集合HashMap已经被修改，将使用红黑树（Red-Black树）而不是链表（LinkedList）来存储具有较差哈希码的相同元素。
-
-\n\n",
+          "description": "在计算机科学中，红黑树是一种自平衡二叉搜索树。\n\n每个节点存储一个额外的位，表示\"颜色\"，用于确保在插入和删除过程中树保持平衡。\n\n这些树是2-3树的一种变形（见下文）。\n\n在实际应用中：红黑树对其插入时间、删除时间和搜索时间提供了最坏情况下的性能保证。\n\n这不仅使它们在实时应用程序等对时间敏感的应用中很有价值，而且使它们成为其他提供最坏情况性能保证的数据结构中的重要组成部分。\n\n例如，计算几何中使用的许多数据结构基于红黑树，而在当前的Linux内核中使用的完全公平调度器使用红黑树。\n\n在Java的版本8中，集合HashMap已经被修改，将使用红黑树（Red-Black树）而不是链表（LinkedList）来存储具有较差哈希码的相同元素。\n\n",
           "links": [
             {
               "title": "红黑树 - 维基百科",
@@ -3902,13 +3254,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "2-3搜索树",
-          "description": "在实际应用中：2-3搜索树（2-3 Search Trees）的插入速度较快，但搜索速度较慢（因为其高度相比AVL树更高）。
-
-\n\n2-3搜索树由于其实现中包含不同类型的节点，所以很少被使用。
-
-相比之下，人们更倾向于使用红黑树（Red Black Trees）。
-
-\n\n",
+          "description": "在实际应用中：2-3搜索树（2-3 Search Trees）的插入速度较快，但搜索速度较慢（因为其高度相比AVL树更高）。\n\n2-3搜索树由于其实现中包含不同类型的节点，所以很少被使用。\n\n相比之下，人们更倾向于使用红黑树（Red Black Trees）。\n\n",
           "links": [
             {
               "title": "2-3树的直观理解和定义",
@@ -3932,13 +3278,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "2-3-4树",
-          "description": "在实践中：对于每一个2-3-4树，都有与之相对应的红黑树（red–black trees），其中的数据元素保持相同的顺序。
-
-2-3-4树中的插入和删除操作也等同于红黑树中的颜色翻转（color-flipping）和旋转（rotations）。
-
-这使得2-3-4树成为理解红黑树逻辑的重要工具，这也是为什么许多入门算法书籍在介绍红黑树之前会首先介绍2-3-4树的原因，尽管2-3-4树在实际应用中并不常用。
-
-\n\n",
+          "description": "在实践中：对于每一个2-3-4树，都有与之相对应的红黑树（red–black trees），其中的数据元素保持相同的顺序。\n\n2-3-4树中的插入和删除操作也等同于红黑树中的颜色翻转（color-flipping）和旋转（rotations）。\n\n这使得2-3-4树成为理解红黑树逻辑的重要工具，这也是为什么许多入门算法书籍在介绍红黑树之前会首先介绍2-3-4树的原因，尽管2-3-4树在实际应用中并不常用。\n\n",
           "links": [
             {
               "title": "CS 61B 讲座26：平衡搜索树",
@@ -3976,17 +3316,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "B-树",
-          "description": "趣味知识：B的实际含义尚存争议，它可能代表波音公司(Boeing)、平衡树(Balanced)或费迪南德·拜尔(Friedrich Bayer, 共同发明人)。
-
-\n\n实际应用：B-树在数据库中被广泛应用。
-
-大多数现代文件系统使用B-树(或其变体)。
-
-除了在数据库中的应用，B-树还在文件系统中使用，以快速随机访问特定文件中的任意块。
-
-基本问题是如何将文件块i的地址转换为磁盘块(或者可能是柱面-磁头-扇区)的地址。
-
-\n\n",
+          "description": "趣味知识：B的实际含义尚存争议，它可能代表波音公司(Boeing)、平衡树(Balanced)或费迪南德·拜尔(Friedrich Bayer, 共同发明人)。\n\n实际应用：B-树在数据库中被广泛应用。\n\n大多数现代文件系统使用B-树(或其变体)。\n\n除了在数据库中的应用，B-树还在文件系统中使用，以快速随机访问特定文件中的任意块。\n\n基本问题是如何将文件块i的地址转换为磁盘块(或者可能是柱面-磁头-扇区)的地址。\n\n",
           "links": [
             {
               "title": "B-树 - 维基百科",
@@ -4034,11 +3364,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
     },
     {
       "title": "系统设计",
-      "description": "系统设计是定义系统架构、模块、接口和数据的过程，以满足指定的要求。
-
-这是一个非常广泛的课题，有许多方法可以处理它。
-
-\n\n",
+      "description": "系统设计是定义系统架构、模块、接口和数据的过程，以满足指定的要求。\n\n这是一个非常广泛的课题，有许多方法可以处理它。\n\n",
       "links": [
         {
           "title": "系统设计入门指南",
@@ -4074,15 +3400,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
       "children": [
         {
           "title": "水平扩展 vs 垂直扩展",
-          "description": "水平扩展是指向系统中添加更多的机器。
-
-这也可以被称为向外扩展（Horizontal Scaling）。
-
-垂直扩展是指向单个机器中添加更多的计算能力。
-
-这也可以被称为向上扩展（Vertical Scaling）。
-
-",
+          "description": "水平扩展是指向系统中添加更多的机器。\n\n这也可以被称为向外扩展（Horizontal Scaling）。\n\n垂直扩展是指向单个机器中添加更多的计算能力。\n\n这也可以被称为向上扩展（Vertical Scaling）。\n\n",
           "links": [
             {
               "title": "水平扩展 vs 垂直扩展",
@@ -4106,11 +3424,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "负载均衡",
-          "description": "负载均衡是将网络或应用流量分配到一组服务器的过程。
-
-负载均衡用于提高应用程序的响应性和可靠性，最大化吞吐量，最小化响应时间，并避免任何单个服务器过载。
-
-",
+          "description": "负载均衡是将网络或应用流量分配到一组服务器的过程。\n\n负载均衡用于提高应用程序的响应性和可靠性，最大化吞吐量，最小化响应时间，并避免任何单个服务器过载。\n\n",
           "links": [
             {
               "title": "负载均衡器入门",
@@ -4129,13 +3443,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "聚类(Clustering)",
-          "description": "从高层次来看，计算机群集是一种运行并行的两台或更多计算机或节点的组合，以达到共同的目标。
-
-这允许由大量独立的、可并行处理的任务组成的工作负载在群集中的各个节点之间进行分配。
-
-因此，这些任务能够利用每台计算机的结合内存和处理能力，从而提高整体性能。
-
-\n\n",
+          "description": "从高层次来看，计算机群集是一种运行并行的两台或更多计算机或节点的组合，以达到共同的目标。\n\n这允许由大量独立的、可并行处理的任务组成的工作负载在群集中的各个节点之间进行分配。\n\n因此，这些任务能够利用每台计算机的结合内存和处理能力，从而提高整体性能。\n\n",
           "links": [
             {
               "title": "系统设计：聚类(System Design: Clustering)",
@@ -4149,11 +3457,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "缓存(Caching)",
-          "description": "缓存(Caching)是将数据存储在临时存储中以加快未来请求的一种方式。
-
-它是计算机科学工具箱中最重要工具之一。
-
-\n\n",
+          "description": "缓存(Caching)是将数据存储在临时存储中以加快未来请求的一种方式。\n\n它是计算机科学工具箱中最重要工具之一。\n\n",
           "links": [
             {
               "title": "系统设计 - 缓存(Caching)",
@@ -4172,15 +3476,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "内容分发网络（CDN）",
-          "description": "CDN 是一组地理位置上分布的服务器网络。
-
-这些服务器相互连接并且连接到互联网。
-
-服务器用于向用户分发内容，并从距离用户最近的服务器向用户交付内容。
-
-这旨在减少延迟并提高内容分发的性能。
-
-\n\n",
+          "description": "CDN 是一组地理位置上分布的服务器网络。\n\n这些服务器相互连接并且连接到互联网。\n\n服务器用于向用户分发内容，并从距离用户最近的服务器向用户交付内容。\n\n这旨在减少延迟并提高内容分发的性能。\n\n",
           "links": [
             {
               "title": "内容分发网络 (CDN) - 系统设计",
@@ -4199,13 +3495,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "代理服务器 (Proxy)",
-          "description": "代理服务器 (Proxy server) 是位于客户端和后端服务器之间的硬件/软件中介。
-
-它接收客户端的请求并将其转发到原始服务器 (origin servers)。
-
-通常，代理服务器 (proxies) 用于过滤请求，记录请求，或者有时用于转换请求 (如添加/移除头信息，加密/解密，或压缩)。
-
-\n\n",
+          "description": "代理服务器 (Proxy server) 是位于客户端和后端服务器之间的硬件/软件中介。\n\n它接收客户端的请求并将其转发到原始服务器 (origin servers)。\n\n通常，代理服务器 (proxies) 用于过滤请求，记录请求，或者有时用于转换请求 (如添加/移除头信息，加密/解密，或压缩)。\n\n",
           "links": [
             {
               "title": "代理服务器 (Proxy) - 系统设计",
@@ -4224,9 +3514,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "CAP定理(CAP Theorem)",
-          "description": "CAP定理指出，一个分布式数据存储不能同时提供一致性(Consistency)、可用性(Availability)和分区容忍性(Partition Tolerance)中的全部三种特性，最多只能同时满足其中的两种。
-
-\n\n",
+          "description": "CAP定理指出，一个分布式数据存储不能同时提供一致性(Consistency)、可用性(Availability)和分区容忍性(Partition Tolerance)中的全部三种特性，最多只能同时满足其中的两种。\n\n",
           "links": [
             {
               "title": "CAP定理(CAP Theorem) - 维基百科",
@@ -4245,15 +3533,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "队列",
-          "description": "消息队列是解耦系统的一种常见方式。
-
-它们被用来将消息的生产者和消费者解耦。
-
-这使得生产者可以发送消息而不必等待消费者来处理它。
-
-它也使得消费者可以以自己的速度来处理消息。
-
-\n\n",
+          "description": "消息队列是解耦系统的一种常见方式。\n\n它们被用来将消息的生产者和消费者解耦。\n\n这使得生产者可以发送消息而不必等待消费者来处理它。\n\n它也使得消费者可以以自己的速度来处理消息。\n\n",
           "links": [
             {
               "title": "消息队列 - 系统设计",
@@ -4277,11 +3557,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "架构风格",
-          "description": "架构模式是系统的基本组织方式，定义了系统是如何构成的以及其组件如何交互。
-
-常见的架构模式有客户机-服务器（client-server）、对等（peer-to-peer）和分层（layered）等。
-
-\n\n",
+          "description": "架构模式是系统的基本组织方式，定义了系统是如何构成的以及其组件如何交互。\n\n常见的架构模式有客户机-服务器（client-server）、对等（peer-to-peer）和分层（layered）等。\n\n",
           "links": [
             {
               "title": "软件架构风格和模式列表",
@@ -4295,9 +3571,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "REST",
-          "description": "REST(代表ational State Transfer的缩写)是一种为网络上的计算机系统提供标准的架构风格，使系统之间更容易相互通信。
-
-\n\n",
+          "description": "REST(代表ational State Transfer的缩写)是一种为网络上的计算机系统提供标准的架构风格，使系统之间更容易相互通信。\n\n",
           "links": [
             {
               "title": "什么是REST API?",
@@ -4326,11 +3600,7 @@ AVL 树是最受欢迎的自平衡二叉搜索树。
         },
         {
           "title": "GraphQL",
-          "description": "GraphQL 是一种用于 APIs 的查询语言（query language）以及一种以现有数据来满足这些查询的运行时环境（runtime）。
-
-GraphQL 提供了对您 API 中的数据的完整且易于理解的描述，赋予客户端请求所需数据的能力而不获取多余的信息，使得随着时间的推移更容易地演变 API，并实现了强大的开发者工具。
-
-\n\n",
+          "description": "GraphQL 是一种用于 APIs 的查询语言（query language）以及一种以现有数据来满足这些查询的运行时环境（runtime）。\n\nGraphQL 提供了对您 API 中的数据的完整且易于理解的描述，赋予客户端请求所需数据的能力而不获取多余的信息，使得随着时间的推移更容易地演变 API，并实现了强大的开发者工具。\n\n",
           "links": [
             {
               "title": "Apollo GraphQL 教程",
@@ -4349,19 +3619,7 @@ GraphQL 提供了对您 API 中的数据的完整且易于理解的描述，赋�
         },
         {
           "title": "gRPC",
-          "description": "gRPC 是一种无平台依赖的序列化协议，用于服务之间的通信。
-
-由 Google 在 2015 年设计，它是 REST API 的一种现代替代方案。
-
-这是一种二进制协议，使用 HTTP/2 作为传输层。
-
-gRPC 是一个高性能、开源、通用的 RPC 框架，优先支持移动设备和 HTTP/2。
-
-\n\n其主要应用场景是在同一应用内不同语言的服务之间通信。
-
-您可以使用 Python 与 Go 通信，也可以使用 Java 与 C# 通信。
-
-\n\ngRPC 使用协议缓冲区（Protocol Buffer）语言来定义数据的结构，\n\n",
+          "description": "gRPC 是一种无平台依赖的序列化协议，用于服务之间的通信。\n\n由 Google 在 2015 年设计，它是 REST API 的一种现代替代方案。\n\n这是一种二进制协议，使用 HTTP/2 作为传输层。\n\ngRPC 是一个高性能、开源、通用的 RPC 框架，优先支持移动设备和 HTTP/2。\n\n其主要应用场景是在同一应用内不同语言的服务之间通信。\n\n您可以使用 Python 与 Go 通信，也可以使用 Java 与 C# 通信。\n\ngRPC 使用协议缓冲区（Protocol Buffer）语言来定义数据的结构，\n\n",
           "links": [
             {
               "title": "gRPC 官方网站",
@@ -4395,15 +3653,7 @@ gRPC 是一个高性能、开源、通用的 RPC 框架，优先支持移动设�
         },
         {
           "title": "云设计模式",
-          "description": "这些设计模式对于构建可靠的、可扩展的、安全的云应用程序非常有用。
-
-\n\n下面的链接包含云设计模式，每个模式都描述了该模式解决的问题，应用模式时的注意事项，以及基于Microsoft Azure的示例。
-
-大多数模式包括代码示例或代码片段，显示如何在Azure上实现该模式。
-
-然而，大多数模式对于任何分布式系统都是相关的，无论是在Azure上托管，还是在其他云平台上托管。
-
-\n\n",
+          "description": "这些设计模式对于构建可靠的、可扩展的、安全的云应用程序非常有用。\n\n下面的链接包含云设计模式，每个模式都描述了该模式解决的问题，应用模式时的注意事项，以及基于Microsoft Azure的示例。\n\n大多数模式包括代码示例或代码片段，显示如何在Azure上实现该模式。\n\n然而，大多数模式对于任何分布式系统都是相关的，无论是在Azure上托管，还是在其他云平台上托管。\n\n",
           "links": [
             {
               "title": "云设计模式",
@@ -4422,13 +3672,7 @@ gRPC 是一个高性能、开源、通用的 RPC 框架，优先支持移动设�
         },
         {
           "title": "长轮询（Long Polling）",
-          "description": "长轮询是一种用于在HTTP上实现服务器推送功能的技术。
-
-它是一种在服务器上开启请求并持续保持请求打开，直到事件发生时由服务器响应的方法。
-
-这与常规的HTTP请求不同，后者服务器会在当时可用任何数据时立即做出响应。
-
-",
+          "description": "长轮询是一种用于在HTTP上实现服务器推送功能的技术。\n\n它是一种在服务器上开启请求并持续保持请求打开，直到事件发生时由服务器响应的方法。\n\n这与常规的HTTP请求不同，后者服务器会在当时可用任何数据时立即做出响应。\n\n",
           "links": [
             {
               "title": "长轮询（Long Polling）",
@@ -4447,19 +3691,7 @@ gRPC 是一个高性能、开源、通用的 RPC 框架，优先支持移动设�
         },
         {
           "title": "短轮询(Short Polling)",
-          "description": "在短轮询(short polling)中，客户端向服务器请求信息。
-
-服务器处理请求，如果请求的数据可用，服务器将返回所需信息。
-
-然而，如果服务器没有可提供给客户端的数据，服务器会返回一个空响应。
-
-在两种情况下，服务器在返回响应后都会关闭连接。
-
-即使服务器发送空响应，客户端也会不断发出新的请求。
-
-这种机制会增加服务器的网络成本。
-
-\n\n",
+          "description": "在短轮询(short polling)中，客户端向服务器请求信息。\n\n服务器处理请求，如果请求的数据可用，服务器将返回所需信息。\n\n然而，如果服务器没有可提供给客户端的数据，服务器会返回一个空响应。\n\n在两种情况下，服务器在返回响应后都会关闭连接。\n\n即使服务器发送空响应，客户端也会不断发出新的请求。\n\n这种机制会增加服务器的网络成本。\n\n",
           "links": [
             {
               "title": "什么是长轮询(Long-Polling)、WebSocket、服务器发送事件(Server-Sent Events, SSE) 和 Comet？",
@@ -4473,15 +3705,7 @@ gRPC 是一个高性能、开源、通用的 RPC 框架，优先支持移动设�
         },
         {
           "title": "Web Sockets (Web套接字)",
-          "description": "Web套接字是在客户端和服务器之间的一种双向通信协议（bidirectional communication protocol）。
-
-它们用于实时应用，例如聊天（chat）、多人游戏（multiplayer games）和实时数据更新（live data updates）。
-
-Web套接字也用于在服务器和客户端之间建立连接。
-
-建立的这个连接可以用于两个方向的数据传输。
-
-",
+          "description": "Web套接字是在客户端和服务器之间的一种双向通信协议（bidirectional communication protocol）。\n\n它们用于实时应用，例如聊天（chat）、多人游戏（multiplayer games）和实时数据更新（live data updates）。\n\nWeb套接字也用于在服务器和客户端之间建立连接。\n\n建立的这个连接可以用于两个方向的数据传输。\n\n",
           "links": [],
           "children": [],
           "id": "62b96ff5-a8c2-4341-9d2e-9b121977553a",
@@ -4489,9 +3713,7 @@ Web套接字也用于在服务器和客户端之间建立连接。
         },
         {
           "title": "SSE（Server-Sent Events）",
-          "description": "服务器发送事件（Server-Sent Events）是一种服务器推送技术，使客户端可以通过HTTP连接从服务器接收自动更新，并描述了服务器如何在初始客户端连接建立后，主动向客户端发送数据传输。
-
-\n\n",
+          "description": "服务器发送事件（Server-Sent Events）是一种服务器推送技术，使客户端可以通过HTTP连接从服务器接收自动更新，并描述了服务器如何在初始客户端连接建立后，主动向客户端发送数据传输。\n\n",
           "links": [
             {
               "title": "什么是服务器发送事件（SSE）以及如何实现它？",
@@ -4519,11 +3741,7 @@ Web套接字也用于在服务器和客户端之间建立连接。
     },
     {
       "title": "数据库",
-      "description": "数据库是一个或多个相关组织的有用数据的集合，其结构化方式使数据成为组织的资产。
-
-数据库管理系统（Database Management System）是一种设计用于帮助及时维护和提取大量数据的软件。
-
-\n\n",
+      "description": "数据库是一个或多个相关组织的有用数据的集合，其结构化方式使数据成为组织的资产。\n\n数据库管理系统（Database Management System）是一种设计用于帮助及时维护和提取大量数据的软件。\n\n",
       "links": [
         {
           "title": "Oracle：什么是数据库？",
@@ -4549,23 +3767,7 @@ Web套接字也用于在服务器和客户端之间建立连接。
       "children": [
         {
           "title": "SQL与NoSQL数据库",
-          "description": "SQL代表结构化查询语言（Structured Query Language）。
-
-它用于关系型数据库。
-
-SQL数据库是一系列存储结构化数据表的集合。
-
-例如PostgreSQL、MySQL、MariaDB等。
-
-\n\nNoSQL代表不仅仅是SQL（Not Only SQL）。
-
-它用于非关系型数据库。
-
-NoSQL数据库是一系列存储非结构化数据的集合。
-
-例如MongoDB、CouchDB、Redis等。
-
-\n\n",
+          "description": "SQL代表结构化查询语言（Structured Query Language）。\n\n它用于关系型数据库。\n\nSQL数据库是一系列存储结构化数据表的集合。\n\n例如PostgreSQL、MySQL、MariaDB等。\n\nNoSQL代表不仅仅是SQL（Not Only SQL）。\n\n它用于非关系型数据库。\n\nNoSQL数据库是一系列存储非结构化数据的集合。\n\n例如MongoDB、CouchDB、Redis等。\n\n",
           "question_title": "",
           "question_description": "",
           "links": [
@@ -4596,23 +3798,7 @@ NoSQL数据库是一系列存储非结构化数据的集合。
         },
         {
           "title": "规范化 / 反规范化",
-          "description": "数据库规范化是一个用来组织数据库中的表和列的过程。
-
-其理念是表应该专注于一个特定的主题，并且只包含与该主题相关的列。
-
-这样可以限制数据库中的数据重复数量。
-
-这会使数据库更加灵活，消除由数据库修改带来的问题。
-
-\n\n反规范化是规范化的反向过程。
-
-它是指通过向数据库中添加冗余数据来提高读取性能的过程。
-
-这通过将重复数据添加到多个表中以避免代价较高的连接操作来实现。
-
-这是以增加存储空间和降低写入性能为代价的。
-
-\n",
+          "description": "数据库规范化是一个用来组织数据库中的表和列的过程。\n\n其理念是表应该专注于一个特定的主题，并且只包含与该主题相关的列。\n\n这样可以限制数据库中的数据重复数量。\n\n这会使数据库更加灵活，消除由数据库修改带来的问题。\n\n反规范化是规范化的反向过程。\n\n它是指通过向数据库中添加冗余数据来提高读取性能的过程。\n\n这通过将重复数据添加到多个表中以避免代价较高的连接操作来实现。\n\n这是以增加存储空间和降低写入性能为代价的。\n\n\n",
           "links": [
             {
               "title": "规范化 vs. 反规范化 | 事件和事件流",
@@ -4631,11 +3817,7 @@ NoSQL数据库是一系列存储非结构化数据的集合。
         },
         {
           "title": "实体-关系模型（Entity-Relationship Model）",
-          "description": "实体关系模型是描述数据库逻辑结构的高层数据模型。
-
-它是一种图形化表示实体及其相互之间关系的方式，通常用于建模数据库或信息系统中的数据组织结构。
-
-\n\n",
+          "description": "实体关系模型是描述数据库逻辑结构的高层数据模型。\n\n它是一种图形化表示实体及其相互之间关系的方式，通常用于建模数据库或信息系统中的数据组织结构。\n\n",
           "links": [
             {
               "title": "实体关系图（ERD）教程 - 第一部分",
@@ -4654,15 +3836,7 @@ NoSQL数据库是一系列存储非结构化数据的集合。
         },
         {
           "title": "DDL (Data Definition Language)",
-          "description": "DDL (Data Definition Language) 实际上是由SQL命令组成，可以用来定义数据库模式。
-
-它只是处理数据库模式的描述，并用于创建和修改数据库中的数据库对象的结构。
-
-DDL是一组SQL命令，用于创建、修改和删除数据库结构，但不涉及数据库中的数据。
-
-这些命令通常不是由一般用户使用的，用户应通过应用程序访问数据库。
-
-",
+          "description": "DDL (Data Definition Language) 实际上是由SQL命令组成，可以用来定义数据库模式。\n\n它只是处理数据库模式的描述，并用于创建和修改数据库中的数据库对象的结构。\n\nDDL是一组SQL命令，用于创建、修改和删除数据库结构，但不涉及数据库中的数据。\n\n这些命令通常不是由一般用户使用的，用户应通过应用程序访问数据库。\n\n",
           "links": [],
           "children": [],
           "id": "e7f52b39-28c7-491d-a415-3362a96500f5",
@@ -4670,13 +3844,7 @@ DDL是一组SQL命令，用于创建、修改和删除数据库结构，但不�
         },
         {
           "title": "DML（数据操纵语言）",
-          "description": "用于在数据库中操纵数据的SQL命令归属于DML（数据操纵语言），这包括大多数SQL语句。
-
-DCL（数据控制语言）是控制数据和数据库访问权限的SQL语句的组成部分。
-
-基本上，DCL语句与DML语句一起分类。
-
-\n\n",
+          "description": "用于在数据库中操纵数据的SQL命令归属于DML（数据操纵语言），这包括大多数SQL语句。\n\nDCL（数据控制语言）是控制数据和数据库访问权限的SQL语句的组成部分。\n\n基本上，DCL语句与DML语句一起分类。\n\n",
           "links": [
             {
               "title": "DML：数据操纵语言",
@@ -4695,19 +3863,7 @@ DCL（数据控制语言）是控制数据和数据库访问权限的SQL语句�
         },
         {
           "title": "数据查询语言 (DQL)",
-          "description": "数据查询语言（DQL）语句用于在架构对象内的数据上执行查询。
-
-DQL语句的目的是基于传入的查询获取某些架构关系。
-
-我们可以将DQL定义如下：它是SQL语句的一个组成部分，允许从数据库中获取数据，并对数据进行排序。
-
-它包括SELECT语句。
-
-此命令允许将数据从数据库中取出，以便对其进行操作。
-
-当针对表或多个表执行SELECT语句时，结果将编译成一个进一步的临时表，该临时表被显示或由程序（即前端）接收。
-
-\n\n",
+          "description": "数据查询语言（DQL）语句用于在架构对象内的数据上执行查询。\n\nDQL语句的目的是基于传入的查询获取某些架构关系。\n\n我们可以将DQL定义如下：它是SQL语句的一个组成部分，允许从数据库中获取数据，并对数据进行排序。\n\n它包括SELECT语句。\n\n此命令允许将数据从数据库中取出，以便对其进行操作。\n\n当针对表或多个表执行SELECT语句时，结果将编译成一个进一步的临时表，该临时表被显示或由程序（即前端）接收。\n\n",
           "links": [],
           "children": [],
           "id": "eb996977-eb9c-4f4b-8700-998ac44e2a2e",
@@ -4715,9 +3871,7 @@ DQL语句的目的是基于传入的查询获取某些架构关系。
         },
         {
           "title": "DCL",
-          "description": "DCL 包括 GRANT（授权）和 REVOKE（撤销）等命令，主要处理数据库系统的权限、许可和其他控制措施。
-
-\n\n",
+          "description": "DCL 包括 GRANT（授权）和 REVOKE（撤销）等命令，主要处理数据库系统的权限、许可和其他控制措施。\n\n",
           "links": [],
           "children": [],
           "id": "b4f68880-aa79-49b5-8635-8fb6d4e2920d",
@@ -4725,13 +3879,7 @@ DQL语句的目的是基于传入的查询获取某些架构关系。
         },
         {
           "title": "锁定",
-          "description": "锁定用于防止多个进程同时修改数据。
-
-这是很重要的，因为如果两个进程同时修改相同的数据，数据可能会被破坏。
-
-锁定用于防止这种情况发生。
-
-\n\n",
+          "description": "锁定用于防止多个进程同时修改数据。\n\n这是很重要的，因为如果两个进程同时修改相同的数据，数据可能会被破坏。\n\n锁定用于防止这种情况发生。\n\n",
           "links": [
             {
               "title": "数据库中的锁定和隔离机制",
@@ -4755,11 +3903,7 @@ DQL语句的目的是基于传入的查询获取某些架构关系。
         },
         {
           "title": "ACID模型",
-          "description": "ACID是任何数据库系统中的四个属性，有助于我们以可靠的方式执行事务。
-
-它是一个首字母缩略词，指的是四个属性的存在：原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）和持久性（Durability）。
-
-\n\n",
+          "description": "ACID是任何数据库系统中的四个属性，有助于我们以可靠的方式执行事务。\n\n它是一个首字母缩略词，指的是四个属性的存在：原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）和持久性（Durability）。\n\n",
           "links": [
             {
               "title": "什么是ACID兼容的数据库？",
@@ -4783,9 +3927,7 @@ DQL语句的目的是基于传入的查询获取某些架构关系。
         },
         {
           "title": "BASE",
-          "description": "NoSQL数据库流行度的提升提供了灵活、有弹性的数据操作能力，因此产生了新的数据库模型，体现了这些特性。
-
-BASE首字母缩写比ACID（酸性测试）稍显复杂，但其背后的词汇却暗示了BASE模型与其他模型的不同之处，BASE分别代表：\n\n*   **B**asically **A**vailable（基本可用）\n*   **S**oft state（软状态）\n*   **E**ventual consistency（最终一致性）\n\n",
+          "description": "NoSQL数据库流行度的提升提供了灵活、有弹性的数据操作能力，因此产生了新的数据库模型，体现了这些特性。\n\nBASE首字母缩写比ACID（酸性测试）稍显复杂，但其背后的词汇却暗示了BASE模型与其他模型的不同之处，BASE分别代表：\n\n*   **B**asically **A**vailable（基本可用）\n*   **S**oft state（软状态）\n*   **E**ventual consistency（最终一致性）\n\n",
           "links": [],
           "children": [],
           "id": "bc1b1d5f-4efe-4461-aed9-c235d6828c8d",
@@ -4793,13 +3935,7 @@ BASE首字母缩写比ACID（酸性测试）稍显复杂，但其背后的词汇
         },
         {
           "title": "CAP 定理",
-          "description": "CAP 是一致性（Consistency）、可用性（Availability）和分区容错性（Partition Tolerance）的首字母缩略词。
-
-根据 CAP 定理，任何分布式系统在任意时间只能保证上述三个属性中的两个。
-
-你不能同时保证这三个属性。
-
-",
+          "description": "CAP 是一致性（Consistency）、可用性（Availability）和分区容错性（Partition Tolerance）的首字母缩略词。\n\n根据 CAP 定理，任何分布式系统在任意时间只能保证上述三个属性中的两个。\n\n你不能同时保证这三个属性。\n\n",
           "links": [
             {
               "title": "什么是 CAP 定理？",
@@ -4833,15 +3969,7 @@ BASE首字母缩写比ACID（酸性测试）稍显复杂，但其背后的词汇
         },
         {
           "title": "PACELC定理",
-          "description": "PACELC定理是CAP定理的一个扩展。
-
-CAP定理无法解答当系统没有分区问题时，分布式系统的逻辑组合是什么。
-
-为了解决这一问题，在保持一致性（Consistency）、可用性（Availability）和分区容忍性（Partition Tolerance）的基础上，PACELC还引入了延迟（Latency）作为分布式系统的一个期望特性。
-
-PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability）、一致性（Consistency）否则（Else）延迟（Latency）、一致性（Consistency）。
-
-\n\n",
+          "description": "PACELC定理是CAP定理的一个扩展。\n\nCAP定理无法解答当系统没有分区问题时，分布式系统的逻辑组合是什么。\n\n为了解决这一问题，在保持一致性（Consistency）、可用性（Availability）和分区容忍性（Partition Tolerance）的基础上，PACELC还引入了延迟（Latency）作为分布式系统的一个期望特性。\n\nPACELC的缩写分别代表：分割（Partitioned）、可用性（Availability）、一致性（Consistency）否则（Else）延迟（Latency）、一致性（Consistency）。\n\n",
           "links": [
             {
               "title": "PACELC定理",
@@ -4855,9 +3983,7 @@ PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability
         },
         {
           "title": "索引",
-          "description": "索引是一种数据结构，你可以构建并分配在现有表上，它基本上会查看你的表并尝试进行分析和总结，以便它可以创建快捷方式。
-
-\n\n",
+          "description": "索引是一种数据结构，你可以构建并分配在现有表上，它基本上会查看你的表并尝试进行分析和总结，以便它可以创建快捷方式。\n\n",
           "links": [
             {
               "title": "数据库索引详解",
@@ -4871,15 +3997,7 @@ PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability
         },
         {
           "title": "视图",
-          "description": "SQL中的视图类似于虚拟表。
-
-视图也像数据库中的实际表一样具有行和列。
-
-我们可以通过选择数据库中存在的一个或多个表中的字段来创建视图。
-
-视图可以包括表中的所有行，也可以根据特定条件包含特定的行。
-
-",
+          "description": "SQL中的视图类似于虚拟表。\n\n视图也像数据库中的实际表一样具有行和列。\n\n我们可以通过选择数据库中存在的一个或多个表中的字段来创建视图。\n\n视图可以包括表中的所有行，也可以根据特定条件包含特定的行。\n\n",
           "links": [
             {
               "title": "数据库视图",
@@ -4898,11 +4016,7 @@ PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability
         },
         {
           "title": "事务",
-          "description": "简而言之，数据库事务是一系列在数据库上执行的操作，并作为一个单独的逻辑工作单元执行——要么全部发生，要么全不发生。
-
-换句话说，不存在只有部分操作被执行且结果被保存的情况。
-
-\n\n",
+          "description": "简而言之，数据库事务是一系列在数据库上执行的操作，并作为一个单独的逻辑工作单元执行——要么全部发生，要么全不发生。\n\n换句话说，不存在只有部分操作被执行且结果被保存的情况。\n\n",
           "links": [
             {
               "title": "什么是事务(Transactions)？",
@@ -4916,11 +4030,7 @@ PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability
         },
         {
           "title": "存储过程(Stored Procedures)",
-          "description": "存储过程(Stored Procedures)用于对数据库执行一个或多个数据操作语言(DML)操作。
-
-它无非是一组接受某些参数输入的SQL语句，执行某些任务，并且可能返回一个值，也可能不返回。
-
-\n\n",
+          "description": "存储过程(Stored Procedures)用于对数据库执行一个或多个数据操作语言(DML)操作。\n\n它无非是一组接受某些参数输入的SQL语句，执行某些任务，并且可能返回一个值，也可能不返回。\n\n",
           "links": [
             {
               "title": "SQL 存储过程(Stored Procedures)",
@@ -4934,11 +4044,7 @@ PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability
         },
         {
           "title": "数据库联合体",
-          "description": "数据库联合体（或功能划分）按照功能分割数据库。
-
-这种联合体架构使多个独立的物理数据库对最终用户而言表现为一个逻辑数据库。
-
-\n\n",
+          "description": "数据库联合体（或功能划分）按照功能分割数据库。\n\n这种联合体架构使多个独立的物理数据库对最终用户而言表现为一个逻辑数据库。\n\n",
           "links": [
             {
               "title": "数据库联合体",
@@ -4957,9 +4063,7 @@ PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability
         },
         {
           "title": "复制(Replication)",
-          "description": "复制是一个涉及共享信息的过程，目的是确保诸如多个数据库等冗余资源之间的一致性，以提高可靠性、容错性或可访问性。
-
-",
+          "description": "复制是一个涉及共享信息的过程，目的是确保诸如多个数据库等冗余资源之间的一致性，以提高可靠性、容错性或可访问性。\n\n",
           "links": [
             {
               "title": "数据库复制(Database Replication)",
@@ -4978,13 +4082,7 @@ PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability
         },
         {
           "title": "分片（Sharding）",
-          "description": "数据库分片（sharding）是一种将数据分布到多台机器上的方法。
-
-这是一种水平扩展（horizontal scaling）技术，与垂直扩展（vertical scaling）相对，后者是通过为单台机器增加更多计算资源来实现扩展。
-
-分片（sharding）是扩展数据库的一种常见方式。
-
-\n\n",
+          "description": "数据库分片（sharding）是一种将数据分布到多台机器上的方法。\n\n这是一种水平扩展（horizontal scaling）技术，与垂直扩展（vertical scaling）相对，后者是通过为单台机器增加更多计算资源来实现扩展。\n\n分片（sharding）是扩展数据库的一种常见方式。\n\n",
           "links": [
             {
               "title": "分片（Sharding）",
@@ -5022,15 +4120,7 @@ PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability
     },
     {
       "title": "网络技术",
-      "description": "网络技术是指为了数据共享的目的，将两个或更多计算设备连接在一起的过程。
-
-在一个数据网络中，共享的数据可以简单到一台打印机，也可以复杂到一个全球金融交易。
-
-\n\n如果你具有网络技术经验，或者希望成为可靠工程师或运营工程师，你可能会遇到与这些主题相关的问题。
-
-不过即使不是，这也是一种很好的知识。
-
-\n\n",
+      "description": "网络技术是指为了数据共享的目的，将两个或更多计算设备连接在一起的过程。\n\n在一个数据网络中，共享的数据可以简单到一台打印机，也可以复杂到一个全球金融交易。\n\n如果你具有网络技术经验，或者希望成为可靠工程师或运营工程师，你可能会遇到与这些主题相关的问题。\n\n不过即使不是，这也是一种很好的知识。\n\n",
       "links": [
         {
           "title": "可汗学院 - 网络技术",
@@ -5056,13 +4146,7 @@ PACELC的缩写分别代表：分割（Partitioned）、可用性（Availability
       "children": [
         {
           "title": "OSI模型",
-          "description": "OSI模型和TCP/IP模型用于帮助开发人员设计其系统以实现互操作性。
-
-OSI模型有7层，而TCP/IP模型只有4层，是OSI模型的简化形式。
-
-这对于你正在设计一个需要与其他系统通信的系统时非常重要。
-
-\n\n",
+          "description": "OSI模型和TCP/IP模型用于帮助开发人员设计其系统以实现互操作性。\n\nOSI模型有7层，而TCP/IP模型只有4层，是OSI模型的简化形式。\n\n这对于你正在设计一个需要与其他系统通信的系统时非常重要。\n\n",
           "links": [
             {
               "title": "Cloudflare - OSI模型是什么",
@@ -5081,13 +4165,7 @@ OSI模型有7层，而TCP/IP模型只有4层，是OSI模型的简化形式。
         },
         {
           "title": "TCP/IP模型",
-          "description": "OSI模型和TCP/IP模型用于帮助开发者设计可互操作的系统。
-
-OSI模型有7层，而TCP/IP模型则以一种更加简化的形式概括了OSI模型，仅包含4层。
-
-如果你正在设计一个需要与其他系统相互通信的系统，这一点是十分重要的。
-
-\n\n",
+          "description": "OSI模型和TCP/IP模型用于帮助开发者设计可互操作的系统。\n\nOSI模型有7层，而TCP/IP模型则以一种更加简化的形式概括了OSI模型，仅包含4层。\n\n如果你正在设计一个需要与其他系统相互通信的系统，这一点是十分重要的。\n\n",
           "links": [
             {
               "title": "Cloudflare - 什么是OSI模型",
@@ -5106,15 +4184,7 @@ OSI模型有7层，而TCP/IP模型则以一种更加简化的形式概括了OSI�
         },
         {
           "title": "DNS",
-          "description": "域名系统（Domain Name System，DNS）是互联网上的电话簿。
-
-人类通过域名在网上访问信息，例如 [nytimes.com](http://nytimes.com) 或 [espn.com](http://espn.com)。
-
-Web浏览器通过互联网协议（Internet Protocol，IP）地址进行交互。
-
-DNS将域名翻译成IP地址，这样浏览器就可以加载Internet资源。
-
-\n\n",
+          "description": "域名系统（Domain Name System，DNS）是互联网上的电话簿。\n\n人类通过域名在网上访问信息，例如 [nytimes.com](http://nytimes.com) 或 [espn.com](http://espn.com)。\n\nWeb浏览器通过互联网协议（Internet Protocol，IP）地址进行交互。\n\nDNS将域名翻译成IP地址，这样浏览器就可以加载Internet资源。\n\n",
           "links": [
             {
               "title": "什么是DNS？",
@@ -5153,11 +4223,7 @@ DNS将域名翻译成IP地址，这样浏览器就可以加载Internet资源。
         },
         {
           "title": "HTTP (HyperText Transfer Protocol)",
-          "description": "HTTP 是基于 `TCP/IP (传输控制协议/互联网协议)` 的应用层通信协议，它标准化了客户端与服务器之间的通信方式。
-
-它定义了内容如何被请求及传输到互联网上。
-
-\n\n",
+          "description": "HTTP 是基于 `TCP/IP (传输控制协议/互联网协议)` 的应用层通信协议，它标准化了客户端与服务器之间的通信方式。\n\n它定义了内容如何被请求及传输到互联网上。\n\n",
           "links": [
             {
               "title": "关于 HTTP 需要知道的一切",
@@ -5196,13 +4262,7 @@ DNS将域名翻译成IP地址，这样浏览器就可以加载Internet资源。
         },
         {
           "title": "TLS (传输层安全协议) & HTTPS",
-          "description": "TLS (传输层安全协议) 是一种在两个通信应用程序之间提供隐私和数据完整性的加密协议。
-
-它广泛用于安全传输HTTP，但它可以与任何协议一起使用。
-
-TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
-
-",
+          "description": "TLS (传输层安全协议) 是一种在两个通信应用程序之间提供隐私和数据完整性的加密协议。\n\n它广泛用于安全传输HTTP，但它可以与任何协议一起使用。\n\nTLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。\n\n",
           "links": [
             {
               "title": "SSL (安全套接层协议) 和 HTTPS",
@@ -5221,13 +4281,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "套接字(Sockets)",
-          "description": "套接字是一个用于网络通信的接口。
-
-它是一种程序间通过网络互相通信的方式。
-
-客户端可以通过它向服务器发送请求，服务器也可以通过它向客户端发送响应。
-
-\n\n",
+          "description": "套接字是一个用于网络通信的接口。\n\n它是一种程序间通过网络互相通信的方式。\n\n客户端可以通过它向服务器发送请求，服务器也可以通过它向客户端发送响应。\n\n",
           "links": [
             {
               "title": "WebSockets的新手指南",
@@ -5250,9 +4304,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
     },
     {
       "title": "安全性",
-      "description": "Web安全性是指开发人员为防止可能影响业务的威胁而采取的保护Web应用程序的防护措施。
-
-\n\n",
+      "description": "Web安全性是指开发人员为防止可能影响业务的威胁而采取的保护Web应用程序的防护措施。\n\n",
       "links": [
         {
           "title": "OWASP Web应用程序安全测试清单",
@@ -5298,13 +4350,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
       "children": [
         {
           "title": "公钥密码学（Public Key Cryptography）",
-          "description": "公钥密码学，或非对称密码学，是使用成对相关密钥的密码系统领域。
-
-每对密钥由一个公钥和对应的私钥组成。
-
-密钥对是基于被称为单向函数（one-way functions）的数学问题的密码算法生成的。
-
-\n\n",
+          "description": "公钥密码学，或非对称密码学，是使用成对相关密钥的密码系统领域。\n\n每对密钥由一个公钥和对应的私钥组成。\n\n密钥对是基于被称为单向函数（one-way functions）的数学问题的密码算法生成的。\n\n",
           "links": [
             {
               "title": "公钥密码学（Public-key cryptography） - 维基百科",
@@ -5333,43 +4379,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "哈希/加密/编码",
-          "description": "哈希是一种单向函数，它接收一个输入并产生一个固定长度的输出。
-
-该输出称为哈希（Hash）。
-
-哈希是输入的唯一表示。
-
-哈希是确定性的，这意味着相同的输入总是产生相同的哈希。
-
-哈希是不可逆的，这意味着无法从哈希回溯到原始输入。
-
-哈希不是冲突抵抗的，这意味着可能找到两个不同的输入生成相同的哈希。
-
-\n\n加密是一种双向函数，它接收一个输入并产生一个输出。
-
-该输出称为密文（Ciphertext）。
-
-密文是输入的唯一表示。
-
-密文是确定性的，这意味着相同的输入总是产生相同的密文。
-
-密文是可逆的，这意味着可以从密文回溯到原始输入。
-
-密文是冲突抵抗的，这意味着无法找到两个不同的输入生成相同的密文。
-
-\n\n编码是一种双向函数，它接收一个输入并产生一个输出。
-
-该输出称为编码文本（Encoded Text）。
-
-编码文本是输入的唯一表示。
-
-编码文本是确定性的，这意味着相同的输入总是产生相同的编码文本。
-
-编码文本是可逆的，这意味着可以从编码文本回溯到原始输入。
-
-编码文本是冲突抵抗的，这意味着无法找到两个不同的输入生成相同的编码文本。
-
-\n\n",
+          "description": "哈希是一种单向函数，它接收一个输入并产生一个固定长度的输出。\n\n该输出称为哈希（Hash）。\n\n哈希是输入的唯一表示。\n\n哈希是确定性的，这意味着相同的输入总是产生相同的哈希。\n\n哈希是不可逆的，这意味着无法从哈希回溯到原始输入。\n\n哈希不是冲突抵抗的，这意味着可能找到两个不同的输入生成相同的哈希。\n\n加密是一种双向函数，它接收一个输入并产生一个输出。\n\n该输出称为密文（Ciphertext）。\n\n密文是输入的唯一表示。\n\n密文是确定性的，这意味着相同的输入总是产生相同的密文。\n\n密文是可逆的，这意味着可以从密文回溯到原始输入。\n\n密文是冲突抵抗的，这意味着无法找到两个不同的输入生成相同的密文。\n\n编码是一种双向函数，它接收一个输入并产生一个输出。\n\n该输出称为编码文本（Encoded Text）。\n\n编码文本是输入的唯一表示。\n\n编码文本是确定性的，这意味着相同的输入总是产生相同的编码文本。\n\n编码文本是可逆的，这意味着可以从编码文本回溯到原始输入。\n\n编码文本是冲突抵抗的，这意味着无法找到两个不同的输入生成相同的编码文本。\n\n",
           "links": [
             {
               "title": "探索有关加密的热门帖子",
@@ -5388,13 +4398,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "哈希算法(Hashing Algorithms)",
-          "description": "哈希算法用于为给定输入生成唯一值。
-
-这个值称为哈希(Hash)。
-
-哈希算法用于验证数据的完整性、存储密码，以及为数据生成唯一标识符。
-
-\n\n",
+          "description": "哈希算法用于为给定输入生成唯一值。\n\n这个值称为哈希(Hash)。\n\n哈希算法用于验证数据的完整性、存储密码，以及为数据生成唯一标识符。\n\n",
           "links": [
             {
               "title": "浏览关于算法(Algorithms)的热门文章",
@@ -5423,9 +4427,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "OWASP十大项目",
-          "description": "OWASP（开放网络应用安全项目）是一个在线社区，它生产关于网络应用安全领域的可自由访问的文章、方法、文档、工具和技术。
-
-\n\n",
+          "description": "OWASP（开放网络应用安全项目）是一个在线社区，它生产关于网络应用安全领域的可自由访问的文章、方法、文档、工具和技术。\n\n",
           "links": [
             {
               "title": "OWASP网络安全测试检查表",
@@ -5458,11 +4460,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
     },
     {
       "title": "计算机是如何工作的",
-      "description": "计算机无处不在。
-
-它们在我们的手机中、汽车中、家中，甚至我们的口袋里。
-
-但是它们究竟是如何工作的呢？它们是如何接收信息并输出信息的？\n\n",
+      "description": "计算机无处不在。\n\n它们在我们的手机中、汽车中、家中，甚至我们的口袋里。\n\n但是它们究竟是如何工作的呢？它们是如何接收信息并输出信息的？\n\n",
       "links": [
         {
           "title": "CPU如何执行程序",
@@ -5512,21 +4510,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "计算机如何计算",
-          "description": "计算机使用二进制系统进行计算，所有数据都表示为0和1。
-
-这些二进制状态对应于晶体管的ON/OFF位置，晶体管是逻辑门（AND，OR，NOT）的构成部分。
-
-数字、字符和指令被分解成二进制序列（位），并组合成字节（8位）。
-
-加法等算术运算通过逻辑门组合二进制值来完成。
-
-中央处理器（CPU）通过遵循取指-译码-执行周期执行这些计算。
-
-复杂的计算，例如处理小数，使用浮点数表示法进行。
-
-用高级语言编写的程序被编译成机器语言供CPU执行。
-
-",
+          "description": "计算机使用二进制系统进行计算，所有数据都表示为0和1。\n\n这些二进制状态对应于晶体管的ON/OFF位置，晶体管是逻辑门（AND，OR，NOT）的构成部分。\n\n数字、字符和指令被分解成二进制序列（位），并组合成字节（8位）。\n\n加法等算术运算通过逻辑门组合二进制值来完成。\n\n中央处理器（CPU）通过遵循取指-译码-执行周期执行这些计算。\n\n复杂的计算，例如处理小数，使用浮点数表示法进行。\n\n用高级语言编写的程序被编译成机器语言供CPU执行。\n\n",
           "links": [
             {
               "title": "计算机如何计算 - 算术逻辑单元（ALU）",
@@ -5540,29 +4524,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "寄存器和RAM",
-          "description": "**_寄存器（Registers）_** 是直接构建在处理器内部的最小数据保存单元。
-
-寄存器是处理器可以直接访问的内存位置。
-
-寄存器持有当前被CPU访问的指令或操作数。
-
-\n\n寄存器是高速可访问的存储元素。
-
-处理器在单个CPU时钟周期内即可访问寄存器。
-
-处理器可以以超过一个操作每CPU时钟周期的速度解码指令并操作寄存器内容。
-
-\n\n**_内存（Memory）_** 是存储计算机程序、指令和数据的硬件设备。
-
-内部的处理器内存被称为主内存（RAM），外部的处理器内存称为辅助存储（Hard Drive）。
-
-主内存或RAM是一种易失性内存，意味着当系统电源开启时主内存数据存在；系统关闭时，数据将消失。
-
-主内存包含了CPU当前执行的程序所需的数据。
-
-如果处理器所需的数据不在主内存中，则数据会从辅助存储传输到主内存，再由处理器获取。
-
-\n\n",
+          "description": "**_寄存器（Registers）_** 是直接构建在处理器内部的最小数据保存单元。\n\n寄存器是处理器可以直接访问的内存位置。\n\n寄存器持有当前被CPU访问的指令或操作数。\n\n寄存器是高速可访问的存储元素。\n\n处理器在单个CPU时钟周期内即可访问寄存器。\n\n处理器可以以超过一个操作每CPU时钟周期的速度解码指令并操作寄存器内容。\n\n**_内存（Memory）_** 是存储计算机程序、指令和数据的硬件设备。\n\n内部的处理器内存被称为主内存（RAM），外部的处理器内存称为辅助存储（Hard Drive）。\n\n主内存或RAM是一种易失性内存，意味着当系统电源开启时主内存数据存在；系统关闭时，数据将消失。\n\n主内存包含了CPU当前执行的程序所需的数据。\n\n如果处理器所需的数据不在主内存中，则数据会从辅助存储传输到主内存，再由处理器获取。\n\n",
           "links": [
             {
               "title": "寄存器和RAM",
@@ -5618,15 +4580,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
     },
     {
       "title": "进程和线程",
-      "description": "进程（Process）和线程（Thread）是计算机程序的基本构建块。
-
-它们是程序中最小的执行单元。
-
-进程是正在执行的程序的实例。
-
-线程是进程中可以独立于其他代码执行的指令序列。
-
-\n\n",
+      "description": "进程（Process）和线程（Thread）是计算机程序的基本构建块。\n\n它们是程序中最小的执行单元。\n\n进程是正在执行的程序的实例。\n\n线程是进程中可以独立于其他代码执行的指令序列。\n\n",
       "links": [
         {
           "title": "进程（Process）和线程（Thread）的区别是什么？",
@@ -5647,13 +4601,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
       "children": [
         {
           "title": "进程fork（Process Forking）",
-          "description": "进程fork是通过已存在的进程创建新进程的一种方法。
-
-新的进程是现有进程的一个副本。
-
-新进程被称为子进程（child process），而现有进程被称为父进程（parent process）。
-
-\n\n",
+          "description": "进程fork是通过已存在的进程创建新进程的一种方法。\n\n新的进程是现有进程的一个副本。\n\n新进程被称为子进程（child process），而现有进程被称为父进程（parent process）。\n\n",
           "links": [
             {
               "title": "理解用于创建新进程的fork()系统调用",
@@ -5677,11 +4625,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "内存管理",
-          "description": "内存管理是分配和释放内存的过程。
-
-它是一个编程语言中非常重要的部分。
-
-\n\n",
+          "description": "内存管理是分配和释放内存的过程。\n\n它是一个编程语言中非常重要的部分。\n\n",
           "links": [
             {
               "title": "MIT 6.004 L15: 内存层次结构(The Memory Hierarchy)",
@@ -5700,13 +4644,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "锁(Lock) / 互斥量(Mutex) / 信号量(Semaphore)",
-          "description": "锁(Lock)只允许一个线程进入锁定的部分，且该锁(Lock)不会与其他进程共享。
-
-\n\n互斥量(Mutex)与锁(Lock)相同，但它可以是系统范围内的（由多个进程共享）。
-
-\n\n信号量(Semaphore)与互斥量(Mutex)类似，但允许x数量的线程进入，例如，这种机制可以用来限制在同一时间运行的CPU、IO或内存密集型任务的数量。
-
-\n\n",
+          "description": "锁(Lock)只允许一个线程进入锁定的部分，且该锁(Lock)不会与其他进程共享。\n\n互斥量(Mutex)与锁(Lock)相同，但它可以是系统范围内的（由多个进程共享）。\n\n信号量(Semaphore)与互斥量(Mutex)类似，但允许x数量的线程进入，例如，这种机制可以用来限制在同一时间运行的CPU、IO或内存密集型任务的数量。\n\n",
           "links": [
             {
               "title": "锁(Lock)、互斥量(Mutex)和信号量(Semaphore)之间的区别是什么？",
@@ -5744,57 +4682,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "调度算法",
-          "description": "CPU 调度是从就绪队列中选择一个进程，并向其分配 CPU 的过程。
-
-进程的分配基于特定的调度算法。
-
-调度算法的选择取决于系统的类型以及进程的需求。
-
-\n\n以下是一些常用的调度算法列表：\n\n*   **先来先服务(First Come First Serve, FCFS)：** 第一个到达的进程优先获得 CPU。
-
-这是一种非抢占式算法。
-
-\n*   **最短作业先执行(Shortest Job First, SJF)：** 执行时间最短的进程优先获得 CPU。
-
-这是一种非抢占式算法。
-
-\n*   **最短剩余时间优先(Shortest Remaining Time First, SRTF)：** 剩余执行时间最短的进程优先获得 CPU。
-
-这是一种抢占式算法。
-
-\n*   **时间片轮转(Round Robin, RR)：** 进程按照固定的时间片分配 CPU。
-
-时间片通常为 10 毫秒。
-
-这是一种抢占式算法。
-
-\n*   **优先级调度(Priority Scheduling)：** 优先级最高的进程优先获得 CPU。
-
-这是一种抢占式算法。
-
-\n*   **多级队列调度(Multi-level Queue Scheduling)：** 进程根据优先级被分配到不同的队列中。
-
-优先级最高的进程优先获得 CPU。
-
-这是一种抢占式算法。
-
-\n*   **多级反馈队列调度(Multi-level Feedback Queue Scheduling)：** 进程根据优先级被分配到不同的队列中。
-
-优先级最高的进程优先获得 CPU。
-
-如果一个进程被抢占，它将被移到下一个队列中。
-
-这是一种抢占式算法。
-
-\n*   **最高响应比优先(Highest Response Ratio Next, HRRN)：** CPU 会分配给响应比最高的下一个进程，而不是执行时间短的进程。
-
-这是一种非抢占式算法。
-
-\n*   **彩票调度(Lottery Scheduling)：** 进程的 CPU 分配基于一种彩票系统。
-
-这是一种抢占式算法。
-
-\n\n点击以下资源链接以获取更多详细信息 ：",
+          "description": "CPU 调度是从就绪队列中选择一个进程，并向其分配 CPU 的过程。\n\n进程的分配基于特定的调度算法。\n\n调度算法的选择取决于系统的类型以及进程的需求。\n\n以下是一些常用的调度算法列表：\n\n*   **先来先服务(First Come First Serve, FCFS)：** 第一个到达的进程优先获得 CPU。\n\n这是一种非抢占式算法。\n\n\n*   **最短作业先执行(Shortest Job First, SJF)：** 执行时间最短的进程优先获得 CPU。\n\n这是一种非抢占式算法。\n\n\n*   **最短剩余时间优先(Shortest Remaining Time First, SRTF)：** 剩余执行时间最短的进程优先获得 CPU。\n\n这是一种抢占式算法。\n\n\n*   **时间片轮转(Round Robin, RR)：** 进程按照固定的时间片分配 CPU。\n\n时间片通常为 10 毫秒。\n\n这是一种抢占式算法。\n\n\n*   **优先级调度(Priority Scheduling)：** 优先级最高的进程优先获得 CPU。\n\n这是一种抢占式算法。\n\n\n*   **多级队列调度(Multi-level Queue Scheduling)：** 进程根据优先级被分配到不同的队列中。\n\n优先级最高的进程优先获得 CPU。\n\n这是一种抢占式算法。\n\n\n*   **多级反馈队列调度(Multi-level Feedback Queue Scheduling)：** 进程根据优先级被分配到不同的队列中。\n\n优先级最高的进程优先获得 CPU。\n\n如果一个进程被抢占，它将被移到下一个队列中。\n\n这是一种抢占式算法。\n\n\n*   **最高响应比优先(Highest Response Ratio Next, HRRN)：** CPU 会分配给响应比最高的下一个进程，而不是执行时间短的进程。\n\n这是一种非抢占式算法。\n\n\n*   **彩票调度(Lottery Scheduling)：** 进程的 CPU 分配基于一种彩票系统。\n\n这是一种抢占式算法。\n\n点击以下资源链接以获取更多详细信息 ：",
           "links": [
             {
               "title": "操作系统中的CPU调度 - geeksforgeeks",
@@ -5823,15 +4711,7 @@ TLS通常与HTTPS结合使用，HTTPS即是TLS之上的HTTP。
         },
         {
           "title": "CPU中断(CPU Interrupts)",
-          "description": "CPU中断(CPU Interrupts)是CPU与计算机其他部分通信的一种方式。
-
-它是一种CPU告知计算机其他部分需要执行某些操作的方式。
-
-例如，如果CPU在运行一个程序，它需要从键盘读取数据，则会向键盘发送一个中断，告知键盘将数据发送给CPU。
-
-CPU随后会等待键盘发送数据，然后继续运行程序。
-
-",
+          "description": "CPU中断(CPU Interrupts)是CPU与计算机其他部分通信的一种方式。\n\n它是一种CPU告知计算机其他部分需要执行某些操作的方式。\n\n例如，如果CPU在运行一个程序，它需要从键盘读取数据，则会向键盘发送一个中断，告知键盘将数据发送给CPU。\n\nCPU随后会等待键盘发送数据，然后继续运行程序。\n\n",
           "links": [
             {
               "title": "探索关于计算的热门文章",
@@ -5850,15 +4730,7 @@ CPU随后会等待键盘发送数据，然后继续运行程序。
         },
         {
           "title": "进程 vs 线程",
-          "description": "进程(processes)和线程(threads)是计算机程序的基本构建模块。
-
-它们是程序中最小的执行单位。
-
-进程(process)是正在执行的程序的实例。
-
-线程(thread)是进程中可以独立于其他代码执行的指令序列。
-
-\n\n",
+          "description": "进程(processes)和线程(threads)是计算机程序的基本构建模块。\n\n它们是程序中最小的执行单位。\n\n进程(process)是正在执行的程序的实例。\n\n线程(thread)是进程中可以独立于其他代码执行的指令序列。\n\n",
           "links": [
             {
               "title": "进程(process)和线程(thread)有什么区别？",
@@ -5881,11 +4753,7 @@ CPU随后会等待键盘发送数据，然后继续运行程序。
     },
     {
       "title": "K-D树",
-      "description": "K-D树是一种在高维空间中快速查找最近邻的数据结构。
-
-它们是对二叉搜索树的推广，并应用于包括计算机视觉和计算几何在内的各种应用中。
-
-\n\n",
+      "description": "K-D树是一种在高维空间中快速查找最近邻的数据结构。\n\n它们是对二叉搜索树的推广，并应用于包括计算机视觉和计算几何在内的各种应用中。\n\n",
       "links": [
         {
           "title": "K-D树算法",
@@ -5904,13 +4772,7 @@ CPU随后会等待键盘发送数据，然后继续运行程序。
     },
     {
       "title": "跳表",
-      "description": "跳表是一种数据结构，它允许您以O(log n)的时间复杂度在排序列表上执行操作。
-
-跳表是一种概率数据结构，这意味着某个操作花费特定时间的概率是一个固定值。
-
-就跳表而言，操作在O(log n)时间完成的概率为1。
-
-\n\n",
+      "description": "跳表是一种数据结构，它允许您以O(log n)的时间复杂度在排序列表上执行操作。\n\n跳表是一种概率数据结构，这意味着某个操作花费特定时间的概率是一个固定值。\n\n就跳表而言，操作在O(log n)时间完成的概率为1。\n\n",
       "links": [
         {
           "title": "跳表 - 维基百科",

@@ -1,0 +1,2956 @@
+{
+  "title": "区块链开发人员(Blockchain Developer)",
+  "description": "逐步指南，教你如何在2025年成为一名区块链开发人员。\n\n",
+  "links": [],
+  "children": [
+    {
+      "title": "区块链基础知识",
+      "description": "区块链是一种去中心化的、分布式的，并且通常是公开的、数字账本系统，由称为“区块”(block)的记录所组成，用于在多台计算机上记录交易，从而使得任何被涉及的区块无法在事后被修改，除非随后的所有区块也被修改。\n\n",
+      "links": [
+        {
+          "title": "区块链介绍",
+          "url": "https://chain.link/education-hub/blockchain",
+          "type": "article"
+        },
+        {
+          "title": "区块链解释",
+          "url": "https://www.investopedia.com/terms/b/blockchain.asp",
+          "type": "article"
+        },
+        {
+          "title": "简明而略为提炼的区块链介绍",
+          "url": "https://markpetherbridge.co.uk/blog/an-elementary-and-slightly-distilled-introduction-to-blockchain/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于区块链的顶尖帖子",
+          "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "区块链是如何工作的？",
+          "url": "https://youtu.be/SSo_EIwHSd4",
+          "type": "video"
+        },
+        {
+          "title": "什么是区块链？| 区块链基础入门",
+          "url": "https://youtu.be/4ff9esY_4aU",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "区块链是什么",
+          "description": "区块链是一种分散的、分布式的，通常是公开的数字账本，它由称为区块（block）的记录组成，用于记录许多计算机上的交易，这样任何涉及的区块都无法在不改变所有后续区块的情况下被追溯篡改。\n\n",
+          "links": [
+            {
+              "title": "区块链详解",
+              "url": "https://www.investopedia.com/terms/b/blockchain.asp",
+              "type": "article"
+            },
+            {
+              "title": "什么是分散化（Decentralization）？",
+              "url": "https://aws.amazon.com/blockchain/decentralization-in-blockchain/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于区块链的热门文章",
+              "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "区块链是如何工作的？",
+              "url": "https://youtu.be/SSo_EIwHSd4",
+              "type": "video"
+            },
+            {
+              "title": "什么是区块链（Blockchain）？ | 区块链基础教程",
+              "url": "https://youtu.be/4ff9esY_4aU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0bf4059a-7985-448f-90e2-f370aebbc510",
+          "xid": "e4183a1a-0a00-47be-af5d-c294fe41c6ce"
+        },
+        {
+          "title": "去中心化（Decentralization）",
+          "description": "在区块链中，去中心化（Decentralization）指的是将控制和决策权从一个集中的实体（个人、组织或其组合）转移到分布式网络。\n\n去中心化网络旨在减少参与者之间必须相互信任的程度，并阻止其以损害网络功能的方式对彼此进行权威或控制。\n\n",
+          "links": [
+            {
+              "title": "区块链中的去中心化（Decentralization）",
+              "url": "https://www.investopedia.com/decentralized-finance-defi-5113835",
+              "type": "article"
+            },
+            {
+              "title": "去中心化（Decentralization）是什么？",
+              "url": "https://aws.amazon.com/blockchain/decentralization-in-blockchain/",
+              "type": "article"
+            },
+            {
+              "title": "区块链中的去中心化（Decentralization）是什么？",
+              "url": "https://www.blockchain-council.org/blockchain/what-is-decentralization-in-blockchain/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于去中心化（Decentralization）的顶级帖子",
+              "url": "https://app.daily.dev/tags/decentralization?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "具体来说，加密货币中的去中心化（Decentralization）是什么？",
+              "url": "https://youtu.be/5iesIki27zw?si=3tUygdRSAveuxGlr",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "7e33f9dd-4b6e-4591-97d5-192ea3beecec",
+          "xid": "a2e3d48f-bf83-4367-904d-bce416847360"
+        },
+        {
+          "title": "为什么这很重要？",
+          "description": "区块链的特性允许在其基础上构建无须信任的系统。\n\n用户不必依赖诸如银行这样集中化的人群来做出决策并使交易通过。\n\n由于系统是去中心化的，用户知道交易将永远不会因为非托管原因而被拒绝。\n\n这种去中心化使得之前不可能的应用场景成为可能，例如参数化保险、去中心化金融（Decentralized Finance, DeFi）和去中心化组织（Decentralized Autonomous Organizations, DAO）等。\n\n这让开发人员能够在无需经过行政审批、批准和一般繁琐程序的情况下构建能够立即提供价值的产品。\n\n",
+          "links": [
+            {
+              "title": "为什么是区块链？",
+              "url": "https://chain.link/education-hub/blockchain",
+              "type": "article"
+            },
+            {
+              "title": "什么是区块链，为什么它很重要？",
+              "url": "https://www.forbes.com/sites/theyec/2020/05/18/what-is-the-blockchain-and-why-does-it-matter/",
+              "type": "article"
+            },
+            {
+              "title": "Web3/加密货币：为什么呢？",
+              "url": "https://continuations.com/post/671863718643105792/web3crypto-why-bother",
+              "type": "article"
+            },
+            {
+              "title": "为什么区块链重要以及它为什么重要",
+              "url": "https://www.simplilearn.com/tutorials/blockchain-tutorial/why-is-blockchain-important",
+              "type": "article"
+            },
+            {
+              "title": "探索关于区块链的热门文章",
+              "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1eb4f4e7-7802-4509-b59b-677204b7a7d5",
+          "xid": "63cd4ae3-42db-4429-a544-e544ea5f1f3d"
+        },
+        {
+          "title": "区块链结构",
+          "description": "区块链之所以得名，是因为其背后的结构。\n\n区块链被组织成一系列的“区块(block)” ，它们被“链(chained)”在一起。\n\n要理解区块链的安全性，需要了解区块链是如何构建的。\n\n这就需要知道区块链中的区块和链是什么，以及为什么要这样设计。\n\n",
+          "links": [
+            {
+              "title": "区块链基础 | Coursera",
+              "url": "https://www.coursera.org/lecture/blockchain-basics/blockchain-structure-5rj9Z",
+              "type": "course"
+            },
+            {
+              "title": "区块链架构基础：组件、结构、优势及创建",
+              "url": "https://mlsdev.com/blog/156-how-to-build-your-own-blockchain-architecture",
+              "type": "article"
+            },
+            {
+              "title": "区块链架构101：组件、结构和优势",
+              "url": "https://komodoplatform.com/en/academy/blockchain-architecture-101/",
+              "type": "article"
+            },
+            {
+              "title": "区块链结构",
+              "url": "https://resources.infosecinstitute.com/topic/blockchain-structure/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于区块链的顶贴",
+              "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "30a75ecc-9282-4d02-b673-b168242dcc2f",
+          "xid": "e0aaa152-f023-4ced-9a2f-988478436929"
+        },
+        {
+          "title": "基础区块链操作",
+          "description": "在去中心化网络中，操作是由各个对等参与者及其计算节点负责的。\n\n这些操作针对每种类型的区块链都是特定的。\n\n",
+          "links": [
+            {
+              "title": "区块链基础 | Coursera",
+              "url": "https://www.coursera.org/lecture/blockchain-basics/basic-operations-OxILB",
+              "type": "course"
+            },
+            {
+              "title": "区块链基础：结构、操作和比特币区块链",
+              "url": "https://www.mlq.ai/blockchain-basics/",
+              "type": "article"
+            },
+            {
+              "title": "比特币区块链交易",
+              "url": "https://developer.bitcoin.org/reference/transactions.html",
+              "type": "article"
+            },
+            {
+              "title": "以太坊区块链交易",
+              "url": "https://ethereum.org/en/developers/docs/transactions/",
+              "type": "article"
+            },
+            {
+              "title": "探讨关于区块链的顶级帖子",
+              "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "比特币区块链实际上是如何运作的",
+              "url": "https://www.youtube.com/watch?v=bBC-nXj3Ng4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b32b1a43-187b-409f-84c4-8bdf24087af7",
+          "xid": "57a91094-eed8-46b0-ae5a-21cf3783b0b7"
+        },
+        {
+          "title": "应用与用途",
+          "description": "区块链技术的应用远远超出了加密货币和比特币的范畴。\n\n凭借其创造更高透明度和公平性的能力，同时为企业节省时间和资金，这项技术正在以各种方式影响多个行业，从合同执行到使政府运作更加高效。\n\n",
+          "links": [
+            {
+              "title": "各行业中的区块链用例与应用",
+              "url": "https://consensys.net/blockchain-use-cases/",
+              "type": "article"
+            },
+            {
+              "title": "区块链技术的十大实际应用",
+              "url": "https://www.blockchain-council.org/blockchain/top-10-real-world-applications-of-blockchain-technology/",
+              "type": "article"
+            },
+            {
+              "title": "以太坊区块链交易",
+              "url": "https://ethereum.org/en/developers/docs/transactions/",
+              "type": "article"
+            },
+            {
+              "title": "E34 区块链应用与颠覆现状的实际用例",
+              "url": "https://builtin.com/blockchain/blockchain-applications",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3fa0acfb-3de9-42ee-a0ab-3cc0ad7fee9e",
+          "xid": "5da31a11-0f47-45a9-92b0-d94963680688"
+        }
+      ],
+      "id": "f0028702-7cea-44a6-af4c-a95e730565d9",
+      "xid": "cc46a035-f34b-4716-9ab4-9f748b38fa73"
+    },
+    {
+      "title": "通用区块链知识",
+      "description": "区块链是一种去中心化的分布式账本技术（decentralized, distributed ledger technology），它跨越多台计算机记录交易，使得注册的交易无法被事后篡改。\n\n这项技术是比特币（Bitcoin）和以太坊（Ethereum）等加密货币的基础，但其应用范围远不止数字货币。\n\n",
+      "links": [
+        {
+          "title": "完全理解区块链技术的课程",
+          "url": "https://www.udemy.com/course/understanding-blockchain-technology/",
+          "type": "course"
+        },
+        {
+          "title": "什么是区块链？",
+          "url": "https://www.wired.com/story/guide-blockchain/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于区块链的顶级文章",
+          "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "区块链技术解析",
+          "url": "https://youtu.be/qOVAbKKSH10",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "密码学(Cryptography)",
+          "description": "密码学（Cryptography），或密码术（Cryptology），是在对抗行为存在的情况下，用于安全通信的技术实践和研究。\n\n密码学通过使用代码保护信息和通信，确保只有预期接收信息的人才能阅读和处理它。\n\n这涉及各种算法和协议，通过将明文转换成不可读格式来保护通信，使其对未经授权的人员不可理解。\n\n",
+          "links": [
+            {
+              "title": "密码学(Cryptography)",
+              "url": "https://en.wikipedia.org/wiki/Cryptography",
+              "type": "article"
+            },
+            {
+              "title": "什么是密码学(Cryptography)",
+              "url": "https://www.synopsys.com/glossary/what-is-cryptography.html",
+              "type": "article"
+            },
+            {
+              "title": "探索有关密码学(Cryptography)的顶级文章",
+              "url": "https://app.daily.dev/tags/cryptography?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "非对称加密 - 简单解释",
+              "url": "https://youtu.be/AQDCe585Lnc",
+              "type": "video"
+            },
+            {
+              "title": "什么是密码学(Cryptography)?",
+              "url": "https://www.youtube.com/watch?v=6_Cxj5WKpIw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "809596d5-8a9a-48f2-ac93-5e225dd366fd",
+          "xid": "f3dadc43-3310-4251-a14f-ccb5dc288349"
+        },
+        {
+          "title": "共识协议",
+          "description": "区块链中的共识是在区块链网络的节点之间就网络中的数据当前状态达成一致的程序。\n\n通过共识算法，区块链网络建立了可靠性和信任。\n\n",
+          "links": [
+            {
+              "title": "区块链中的共识机制：初学者指南",
+              "url": "https://crypto.com/university/consensus-mechanisms-explained",
+              "type": "article"
+            },
+            {
+              "title": "共识机制",
+              "url": "https://ethereum.org/en/developers/docs/consensus-mechanisms/",
+              "type": "article"
+            },
+            {
+              "title": "什么是共识机制？",
+              "url": "https://www.coindesk.com/learn/what-is-a-consensus-mechanism/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "60277e03-fb7a-4982-9225-3a13f19d18f7",
+          "xid": "9c97515a-b1d4-4292-b074-4414ae9b22b9"
+        },
+        {
+          "title": "区块链互操作性",
+          "description": "“区块链互操作性”是指不同的区块链网络能够相互交换和利用数据，并在各网络的区块链之间转移特定类型的数字资产的能力。\n\n",
+          "links": [
+            {
+              "title": "跨链互操作性：对区块链意味着什么",
+              "url": "https://www.gemini.com/cryptopedia/why-is-interoperability-important-for-blockchain",
+              "type": "article"
+            },
+            {
+              "title": "区块链互操作性：跨链技术为何重要？",
+              "url": "https://101blockchains.com/blockchain-interoperability/",
+              "type": "article"
+            },
+            {
+              "title": "区块链互操作性——跨链技术简介",
+              "url": "https://www.blockchain-council.org/blockchain/blockchain-interoperability/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于区块链的热门帖子",
+              "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2fb18ea4-6d7c-4d6c-ae04-068912f29d9b",
+          "xid": "28eb36bf-fefd-4352-81a5-60d9db8efaa9"
+        },
+        {
+          "title": "存储(storage)",
+          "description": "存储(storage)",
+          "links": [],
+          "children": [],
+          "id": "6dbe2072-b623-4a90-af7f-5b37b1606db6",
+          "xid": "8d861e18-f6e3-407b-9418-afd50f413ad7"
+        },
+        {
+          "title": "挖矿和激励模型",
+          "description": "挖矿是将交易详情添加到区块链的过程，例如发送者地址、散列值等。\n\n区块链包含了过去所有交易的历史记录，其存储方式确保不能被篡改。\n\n激励基本上是给予区块链矿工的奖励，以加速交易并在安全处理完整交易时做出正确的决策。\n\n",
+          "links": [
+            {
+              "title": "以太坊共识机制",
+              "url": "https://ethereum.org/en/developers/docs/consensus-mechanisms/",
+              "type": "article"
+            },
+            {
+              "title": "Solana质押奖励",
+              "url": "https://docs.solana.com/implemented-proposals/staking-rewards",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f93ffb21-b4e7-4c76-9837-2b93f620445f",
+          "xid": "fcba50ff-a123-4cae-a402-bc5f5bb04627"
+        },
+        {
+          "title": "去中心化与信任",
+          "description": "区块链、加密货币、智能合约和预言机（oracles）等新技术正在以更安全、透明和可访问的方式协调社交和经济活动。\n\n最重要的是，这些技术显示出加密保证（cryptographic guarantees）的力量，也就是我们常说的加密真相（cryptographic truth），以恢复用户在日常互动中的信任。\n\n",
+          "links": [
+            {
+              "title": "加密货币的本质",
+              "url": "https://blog.chain.link/what-crypto-is-really-about/",
+              "type": "article"
+            },
+            {
+              "title": "以太坊共识机制",
+              "url": "https://ethereum.org/en/developers/docs/consensus-mechanisms/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关去中心化的顶级文章",
+              "url": "https://app.daily.dev/tags/decentralization?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "加密真相的优越性",
+              "url": "https://youtu.be/AEtBPbmIRKQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9cb28f6f-a819-4686-a79e-7a056967bde7",
+          "xid": "7ac73d66-d7dd-4afe-adc7-c740ca2edc19"
+        },
+        {
+          "title": "区块链分叉（Blockchain Forking）",
+          "description": "每当社区对区块链的协议或基本规则集进行更改时，就会发生分叉（fork）。\n\n",
+          "links": [
+            {
+              "title": "区块链分叉（Blockchain Fork）",
+              "url": "https://en.wikipedia.org/wiki/Fork_(blockchain)",
+              "type": "article"
+            },
+            {
+              "title": "什么是分叉（fork）?",
+              "url": "https://www.coinbase.com/learn/crypto-basics/what-is-a-fork",
+              "type": "article"
+            },
+            {
+              "title": "什么是硬分叉（Hard Fork）?",
+              "url": "https://www.investopedia.com/terms/h/hard-fork.asp",
+              "type": "article"
+            },
+            {
+              "title": "探索有关区块链的热门文章",
+              "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2657e8f1-2400-43aa-ae89-ca94a90d4c14",
+          "xid": "1f0cbd64-5620-4a15-8870-da0ac2d85654"
+        },
+        {
+          "title": "加密货币",
+          "description": "加密货币（cryptocurrency）是一种通过区块链设计为交换媒介的数字货币，它不依赖任何中央权威（如政府或银行）来支持或维护。\n\n",
+          "links": [
+            {
+              "title": "什么是加密货币？",
+              "url": "https://www.investopedia.com/terms/c/cryptocurrency.asp",
+              "type": "article"
+            },
+            {
+              "title": "加密货币：它是如何工作的",
+              "url": "https://www.nerdwallet.com/article/investing/cryptocurrency",
+              "type": "article"
+            },
+            {
+              "title": "探索关于加密货币的顶级文章",
+              "url": "https://app.daily.dev/tags/crypto?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "加密货币实际是如何工作的",
+              "url": "https://youtu.be/rYQgy8QDEBI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e99939dd-a373-49ed-be03-ede443691764",
+          "xid": "4c643233-2eeb-47c9-b596-9a3df3b71218"
+        },
+        {
+          "title": "加密货币钱包",
+          "description": "加密货币钱包是一种应用程序，作为您加密货币的钱包使用。\n\n",
+          "links": [
+            {
+              "title": "什么是加密货币钱包？",
+              "url": "https://www.investopedia.com/terms/b/bitcoin-wallet.asp",
+              "type": "article"
+            },
+            {
+              "title": "什么是加密钱包？新手指南",
+              "url": "https://crypto.com/university/crypto-wallets",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d9d867c4-4990-40ae-b9db-544ab28970c3",
+          "xid": "c65a4118-d62b-4f24-857a-30b868dd9d30"
+        },
+        {
+          "title": "区块链",
+          "description": "区块链系统的设计差异很大，尤其是在用作验证网络数据这一基本任务的共识机制方面。\n\n",
+          "links": [
+            {
+              "title": "区块链类型：工作量证明（PoW）、权益证明（PoS）和私有链",
+              "url": "https://www.gemini.com/cryptopedia/blockchain-types-pow-pos-private",
+              "type": "article"
+            },
+            {
+              "title": "探索关于区块链的热门文章",
+              "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Solana",
+              "description": "Solana 是一个具有智能合约功能的公共区块链平台。\n\n其原生加密货币是 SOL。\n\n",
+              "links": [
+                {
+                  "title": "Solana 新手指南",
+                  "url": "https://solana.com/news/getting-started-with-solana-development",
+                  "type": "article"
+                },
+                {
+                  "title": "Solana 简介",
+                  "url": "https://docs.solana.com/introduction",
+                  "type": "article"
+                },
+                {
+                  "title": "Solana 白皮书",
+                  "url": "https://solana.com/solana-whitepaper.pdf",
+                  "type": "article"
+                },
+                {
+                  "title": "Solana 架构",
+                  "url": "https://docs.solana.com/cluster/overview",
+                  "type": "article"
+                },
+                {
+                  "title": "Solana 是什么？它是如何工作的？",
+                  "url": "https://cointelegraph.com/news/what-is-solana-and-how-does-it-work",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Solana 的顶级帖子",
+                  "url": "https://app.daily.dev/tags/solana?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2ba9ed91-8466-45c7-a92e-27e83e93beb3",
+              "xid": "39414e19-862c-4257-9419-bc2b5e17f11c"
+            },
+            {
+              "title": "TON",
+              "description": "TON 是由 Telegram 设计的一个完全去中心化的 layer-1（第1层）区块链，旨在为数十亿用户服务。\n\n 它具有超快速的交易、极低的费用、易于使用的应用程序，并且环保。\n\n",
+              "links": [
+                {
+                  "title": "开始在开放网络上构建",
+                  "url": "https://ton.org/dev",
+                  "type": "article"
+                },
+                {
+                  "title": "TON 介绍",
+                  "url": "https://ton.org/docs/learn/introduction",
+                  "type": "article"
+                },
+                {
+                  "title": "区块链分析",
+                  "url": "https://ton.org/analysis",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "597865c5-d4f4-47c4-a9e2-1ecca380d802",
+              "xid": "a6a1541e-bf38-4573-be20-edcf50d775f9"
+            },
+            {
+              "title": "基于EVM（EVM-Based）",
+              "description": "以太坊虚拟机（EVM，Ethereum Virtual Machine）是一个专门的软件虚拟堆栈，用于执行智能合约字节码，并被集成到每个以太坊节点中。\n\n简单来说，EVM是一个软件框架，它允许开发人员构建基于以太坊的去中心化应用（DApps，Decentralized Applications）。\n\n所有的以太坊账户和智能合约都存储在这个虚拟计算机上。\n\n许多区块链已经基于以太坊区块链进行了分叉，并在其上添加了功能，这些区块链被称为基于EVM（EVM-based）的区块链。\n\n",
+              "links": [
+                {
+                  "title": "EVM - 以太坊虚拟机",
+                  "url": "https://ethereum.org/en/developers/docs/evm/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是以太坊虚拟机？",
+                  "url": "https://astrodev.hashnode.dev/blockchain-ethereum-evm",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关EVM的顶级文章",
+                  "url": "https://app.daily.dev/tags/evm?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "理解以太坊虚拟机（EVM）：概念与架构",
+                  "url": "https://www.youtube.com/watch?v=kCswGz9naZg",
+                  "type": "video"
+                }
+              ],
+              "children": [
+                {
+                  "title": "以太坊",
+                  "description": "以太坊(Ethereum)是一个可支持智能合约(smart contracts)、去中心化应用(dapps)和其他去中心化金融(DeFi)项目的可编程区块链平台。\n\n以太坊的原生代币是以太币(Ether, ETH)，它被用来推动区块链上的操作。\n\n以太坊平台于2015年推出，现在是仅次于比特币(Bitcoin, BTC)的第二大加密货币形式。\n\n",
+                  "links": [
+                    {
+                      "title": "以太坊简介",
+                      "url": "https://ethereum.org/en/developers/docs/intro-to-ethereum/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "以太坊白皮书",
+                      "url": "https://ethereum.org/en/whitepaper/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "以太坊的温和介绍",
+                      "url": "https://bitsonblocks.net/2016/10/02/gentle-introduction-ethereum/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索有关以太坊的热门文章",
+                      "url": "https://app.daily.dev/tags/ethereum?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "c51bebcf-16cb-4163-afbc-613d2a66076f",
+                  "xid": "37f7ae6f-b510-4db9-8a79-a393d2ba40af"
+                },
+                {
+                  "title": "Polygon",
+                  "description": "Polygon（原名为Matic Network）是一种协议，它利用零知识证明技术（zero-knowledge technology）赋能用户创建和交换价值。\n\nPolygon提供了多种解决方案，包括Polygon zkEVM（零知识以太坊虚拟机），Polygon PoS（权益证明），Polygon CDK（客户端开发工具包）和Polygon ID（身份解决方案）。\n\n",
+                  "links": [
+                    {
+                      "title": "Polygon简介",
+                      "url": "https://wiki.polygon.technology/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Polygon zkEVM",
+                      "url": "https://polygon.technology/polygon-zkevm",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Polygon PoS",
+                      "url": "https://polygon.technology/polygon-pos",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Polygon CDK",
+                      "url": "https://polygon.technology/polygon-cdk",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Polygon ID",
+                      "url": "https://polygon.technology/polygon-id",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Polygon POL白皮书",
+                      "url": "https://polygon.technology/papers/pol-whitepaper",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "067ec73b-ea2b-4b87-854b-d98cb04c92f4",
+                  "xid": "3a5593cb-ded6-4bdc-93ac-de2b6bd60d1c"
+                },
+                {
+                  "title": "币安智能链",
+                  "description": "币安智能链（也被称为BNB Chain）是由币安发起的一个区块链项目，作为他们数字货币交易所的核心部分，该交易所是按数字货币日交易量计算的全球最大的交易所。\n\n",
+                  "links": [
+                    {
+                      "title": "BNB Chain",
+                      "url": "https://www.binance.com/en/blog/all/bnb-chain-blockchain-for-exchanging-the-world-304219301536473088",
+                      "type": "article"
+                    },
+                    {
+                      "title": "币安官网",
+                      "url": "https://www.binance.com/en",
+                      "type": "article"
+                    },
+                    {
+                      "title": "币安白皮书",
+                      "url": "https://www.exodus.com/assets/docs/binance-coin-whitepaper.pdf",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于加密货币的热门文章",
+                      "url": "https://app.daily.dev/tags/crypto?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "ca632a47-53b0-42be-939f-525dc3fe9cd3",
+                  "xid": "035b76fd-02f1-473e-8b6b-057f3f814fdb"
+                },
+                {
+                  "title": "Gnosis 链 (Gnosis Chain)",
+                  "description": "Gnosis 是基于以太坊 (Ethereum) 的区块链，它将共识模型改为权益证明 (PoS)，以解决以太坊主网 (Ethereum mainnet) 上的重大问题。\n\n虽然该平台解决了一些关于交易费用和速度的问题，但也意味着 Gnosis 链 (Gnosis chain) 在某种程度上依赖于以太坊链 (Ethereum chain)，从而其去中心化程度较低。\n\n",
+                  "links": [
+                    {
+                      "title": "Gnosis 链 (Gnosis Chain)",
+                      "url": "https://www.gnosischain.com/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Gnosis 文档 (Gnosis Docs)",
+                      "url": "https://www.docs.gnosischain.com/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Gnosis 白皮书 (Gnosis Whitepaper)",
+                      "url": "https://blockchainlab.com/pdf/gnosis_whitepaper.pdf",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "189950fc-73d6-4a04-9bce-feae14813dca",
+                  "xid": "d82870a2-2ac5-49ed-9c6d-1728fe93a39a"
+                },
+                {
+                  "title": "火币生态链",
+                  "description": "火币的ECO链（也称为HECO）是一个公共区块链，它为开发人员提供了一个低成本的链上环境，用于运行去中心化应用（dApps）的智能合约以及存储数字资产。\n\n",
+                  "links": [
+                    {
+                      "title": "HECO链介绍",
+                      "url": "https://docs.hecochain.com/#/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "火币生态链白皮书",
+                      "url": "https://www.hecochain.com/developer.133bd45.pdf",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "c7a665a0-c8a2-4dbd-b933-f22d5b377d65",
+                  "xid": "6835fa85-21f2-430e-900c-d5dc20c418fb"
+                },
+                {
+                  "title": "雪崩协议 (Avalanche)",
+                  "description": "雪崩协议 (Avalanche) 将自己定义为一个“开放的、可编程的智能合约平台，用于去中心化应用”。\n\n这是什么意思？像许多其他去中心化协议一样，雪崩协议 (Avalanche) 拥有其自己的代币称为AVAX，用于支付交易费用，并可作为抵押品来保障网络安全。\n\n",
+                  "links": [
+                    {
+                      "title": "雪崩协议 (Avalanche)",
+                      "url": "https://www.avax.network/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "开始使用雪崩协议 (Avalanche)",
+                      "url": "https://www.avax.network/developers",
+                      "type": "article"
+                    },
+                    {
+                      "title": "雪崩协议 (Avalanche) 白皮书",
+                      "url": "https://assets.website-files.com/5d80307810123f5ffbb34d6e/6008d7bbf8b10d1eb01e7e16_Avalanche%20Platform%20Whitepaper.pdf",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "6d6bc97f-d6ff-428a-81fe-5ef8a93ee7bb",
+                  "xid": "2b7713ee-64a9-4fda-a7d2-ef920a6bdd2a"
+                },
+                {
+                  "title": "Fantom",
+                  "description": "Fantom 是一个支持去中心化应用（dApps）和数字资产的去中心化、开源智能合约平台。\n\n它是作为比以太坊更快、更高效的替代方案构建的众多区块链网络之一，使用权益证明（proof-of-stake）共识机制。\n\n",
+                  "links": [
+                    {
+                      "title": "Fantom 概述",
+                      "url": "https://docs.fantom.foundation/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Fantom 白皮书",
+                      "url": "https://arxiv.org/pdf/1810.10360.pdf",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "453a1a64-46ad-42cb-9fd6-d0cf6d411bdc",
+                  "xid": "e548c5fa-7a20-4049-8c62-700996457ed0"
+                },
+                {
+                  "title": "Moonbeam / Moonriver",
+                  "description": "Moonbeam 是一个 Polkadot（波卡）网络平行链，旨在实现 Ethereum（以太坊）和 Polkadot（波卡）之间的跨链互操作性。\n\n更具体地说，Moonbeam 是一个智能合约平台，它使开发者能够在两个网络之间迁移 dApps（去中心化应用），而无需重写代码或重新部署基础设施。\n\nMoonriver 是一个激励测试网，它使开发者能够在 Moonbeam 上线之前创建、测试和调整其协议。\n\nMoonbeam 是该生态系统的主网。\n\n",
+                  "links": [
+                    {
+                      "title": "Moonbeam",
+                      "url": "https://moonbeam.network/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "关于 Moonbeam",
+                      "url": "https://docs.moonbeam.network/learn/platform/networks/moonbeam/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Moonbeam 愿景",
+                      "url": "https://docs.moonbeam.network/learn/platform/vision/",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "d85e2cb8-49ff-4c8b-86ba-78ce5ea2722c",
+                  "xid": "1d0056c6-42b0-40b8-a440-d267cabd1d41"
+                }
+              ],
+              "id": "ea66e6c9-f34e-4ae0-8fad-c5e5d129a2ae",
+              "xid": "95761507-9b66-4fcc-b7ce-efdf073d69e3"
+            },
+            {
+              "title": "第2层区块链 (L2 Blockchains)",
+              "description": "第2层 (Layer-2) 是指在底层区块链协议之上运行的网络或技术，旨在提高其可扩展性和效率。\n\n这一类扩容解决方案涉及将以太坊部分交易负担转移到相邻的系统架构上，然后该架构负责处理网络的大部分处理工作，并仅在后续向以太坊汇报结果以最终确定其结果。\n\n",
+              "links": [
+                {
+                  "title": "第1层和第2层区块链扩展解决方案 (Layer-1 and Layer-2 Blockchain Scaling Solutions)",
+                  "url": "https://www.gemini.com/cryptopedia/blockchain-layer-2-network-layer-1-network",
+                  "type": "article"
+                },
+                {
+                  "title": "第2层 - Binance 学院 (Layer 2 - Binance Academy)",
+                  "url": "https://academy.binance.com/en/glossary/layer-2",
+                  "type": "article"
+                },
+                {
+                  "title": "使用Polygon CDK开源框架开发ZK支持的第2层 (Develop a ZK-powered Layer 2 with the Polygon CDK open-source framework)",
+                  "url": "https://wiki.polygon.technology/docs/cdk/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关区块链的顶级文章 (Explore top posts about Blockchain)",
+                  "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "Arbitrum",
+                  "description": "Arbitrum旨在减少交易费用和拥堵，通过尽可能将计算和数据存储从以太坊主区块链（Layer 1）移出。\n\n在以太坊区块链之外存储数据被称为Layer 2扩展解决方案。\n\n",
+                  "links": [
+                    {
+                      "title": "Arbitrum - 以太坊的未来",
+                      "url": "https://arbitrum.io/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "开始使用Arbitrum",
+                      "url": "https://docs.arbitrum.io/welcome/get-started",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Arbitrum白皮书",
+                      "url": "https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-kalodner.pdf",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "3a702844-6abc-4fe0-b105-fb0a1e42bbf8",
+                  "xid": "619b12dd-2c45-4462-a41b-fb1e77054c5f"
+                },
+                {
+                  "title": "Moonbeam / Moonriver",
+                  "description": "Moonbeam 是一个 Polkadot（波卡）网络平行链，它承诺在 Ethereum（以太坊）和 Polkadot 之间实现跨链互操作性。\n\n更具体地说，Moonbeam 是一个智能合约平台，允许开发者在两个网络之间转移 dApps（去中心化应用程序），而无需重写代码或重新部署基础设施。\n\nMoonriver 是一个激励测试网。\n\n它使开发者能够在 Moonbeam 上线之前创建、测试和调整他们的协议。\n\nMoonbeam 是该生态系统的主网。\n\n",
+                  "links": [
+                    {
+                      "title": "Moonbeam",
+                      "url": "https://moonbeam.network/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "关于 Moonbeam",
+                      "url": "https://docs.moonbeam.network/learn/platform/networks/moonbeam/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Moonbeam 愿景",
+                      "url": "https://docs.moonbeam.network/learn/platform/vision/",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "a5f770fb-0e8c-417f-bcbf-34f00484f04c",
+                  "xid": "66da5a5e-9c9d-4a06-baf5-699711eece80"
+                }
+              ],
+              "id": "321f937a-31e0-4832-a0c2-23168335700b",
+              "xid": "c8ea1bbb-e41a-49df-a7f5-f99cd02dd69d"
+            }
+          ],
+          "id": "75ce9a9e-626c-4e57-b4c5-1308639853f1",
+          "xid": "5c7658fa-1389-4c9b-bda5-64d9fa9934e8"
+        }
+      ],
+      "id": "7f4bb3d4-a055-4558-b2a5-e2c96ba1fbe2",
+      "xid": "d0b54fb0-15b1-4613-a4ac-93ea5d1d0daf"
+    },
+    {
+      "title": "预言机(Oracles)",
+      "description": "区块链预言机(Oracle)是一种第三方服务，它将智能合约与现实世界连接起来，主要是为了从现实世界中获取信息，但也支持反向操作。\n\n来自现实世界的信息涵盖了多种来源，以获得去中心化的知识。\n\n",
+      "links": [
+        {
+          "title": "区块链预言机(Oracle)",
+          "url": "https://en.wikipedia.org/wiki/Blockchain_oracle",
+          "type": "article"
+        },
+        {
+          "title": "什么是区块链预言机(Oracle)?",
+          "url": "https://chain.link/education/blockchain-oracles",
+          "type": "article"
+        },
+        {
+          "title": "探索有关区块链的顶级文章",
+          "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "混合智能合约",
+          "description": "混合智能合约结合了在区块链上运行的代码（链上）和由去中心化预言机网络提供的区块链外的数据和计算（链下）。\n\n",
+          "links": [
+            {
+              "title": "混合智能合约解析",
+              "url": "https://blog.chain.link/hybrid-smart-contracts-explained/",
+              "type": "article"
+            },
+            {
+              "title": "混合智能合约指南",
+              "url": "https://www.leewayhertz.com/hybrid-smart-contracts/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b88b81ba-282b-49eb-95db-44ed09a475e3",
+          "xid": "68152a07-7721-4bfb-aab2-6b4df78bf9f9"
+        },
+        {
+          "title": "Chainlink (Chainlink)",
+          "description": "Chainlink 是一个去中心化的预言机 (oracle) 网络，使智能合约能够安全地与存在于区块链网络之外的实际世界数据和服务交互。\n\n",
+          "links": [
+            {
+              "title": "什么是 Chainlink？初学者指南",
+              "url": "https://blog.chain.link/what-is-chainlink/",
+              "type": "article"
+            },
+            {
+              "title": "5分钟内了解 Chainlink",
+              "url": "https://www.gemini.com/cryptopedia/what-is-chainlink-and-how-does-it-work",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "bacc476a-68f8-4379-91ed-472c92dc7780",
+          "xid": "cb1871d7-794d-495d-882e-9c696dd11b4d"
+        },
+        {
+          "title": "Oracle网络(Oracle Networks)",
+          "description": "通过利用多种不同数据源，并实施一个不受单一实体控制的Oracle系统，去中心化Oracle网络为智能合约提供了更高水平的安全性和公平性。\n\n",
+          "links": [
+            {
+              "title": "去中心化Oracle网络(Decentralized Oracle Networks)",
+              "url": "https://medium.com/coinmonks/decentralized-oracle-networks-9fead28f5fe5",
+              "type": "article"
+            },
+            {
+              "title": "关于去中心化Oracle网络进化的新手指南(A Beginner's Guide To The Evolution Of Decentralized Oracle Networks)",
+              "url": "https://chainlinktoday.com/a-beginners-guide-to-the-evolution-of-decentralized-oracle-networks/",
+              "type": "article"
+            },
+            {
+              "title": "理解区块链Oracle(Understanding Blockchain Oracle)",
+              "url": "https://chain.link/education/blockchain-oracles",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Oracle的热门文章(Explore top posts about Oracle)",
+              "url": "https://app.daily.dev/tags/oracle?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7a9135be-dfed-4876-96e2-7e9d0ffa1d4b",
+          "xid": "3dc76d82-32a1-475e-a7b5-8af63f7dba07"
+        }
+      ],
+      "id": "b3bf9df8-d3a8-49ac-a892-814fc969f686",
+      "xid": "227fa0f6-b1b3-46b2-81c9-b2970a7ec6aa"
+    },
+    {
+      "title": "智能合约(Smart Contracts)",
+      "description": "智能合约(Smart Contracts)是一种计算机程序或交易协议，旨在根据合同或协议的条款自动执行、控制或记录具有法律意义的事件和行为。\n\n",
+      "links": [
+        {
+          "title": "智能合约(Smart Contracts)",
+          "url": "https://www.ibm.com/topics/smart-contracts",
+          "type": "article"
+        },
+        {
+          "title": "什么是智能合约(Smart Contracts)，它们是如何工作的？",
+          "url": "https://chain.link/education/smart-contracts",
+          "type": "article"
+        },
+        {
+          "title": "探索关于智能合约(Smart Contracts)的顶级文章",
+          "url": "https://app.daily.dev/tags/smart-contracts?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "智能合约(Smart Contracts) - 简单解析",
+          "url": "https://youtu.be/ZE2HxTmxfrI",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "编程语言",
+          "description": "编程语言",
+          "links": [],
+          "children": [
+            {
+              "title": "Solidity",
+              "description": "Solidity是由以太坊（Ethereum）网络团队为在各种区块链平台上构建智能合约而特别创建的一种面向对象的编程语言，其中最著名的是以太坊平台。\n\n它用于创建实现业务逻辑并生成区块链系统中交易记录链的智能合约（smart contracts）。\n\n它作为创建机器级代码并将其编译在以太坊虚拟机（Ethereum Virtual Machine，EVM）上的一个工具。\n\n",
+              "links": [
+                {
+                  "title": "Solidity编程语言",
+                  "url": "https://soliditylang.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Solidity教程",
+                  "url": "https://www.tutorialspoint.com/solidity/index.htm",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于Solidity的顶级文章",
+                  "url": "https://app.daily.dev/tags/solidity?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "FreeCodeCamp的Solidity课程",
+                  "url": "https://www.youtube.com/watch?v=ipwxYa-F1uY",
+                  "type": "video"
+                },
+                {
+                  "title": "Dapp University的Solidity课程",
+                  "url": "https://www.youtube.com/watch?v=EhPeHeoKF88",
+                  "type": "video"
+                },
+                {
+                  "title": "学习区块链、Solidity及全栈Web3开发",
+                  "url": "https://youtu.be/gyMwXuJrbJQ",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "a213a6ae-6c4b-42e7-93bc-e1380f38241f",
+              "xid": "e5896925-3f45-45b0-b367-6a457bf9eba8"
+            },
+            {
+              "title": "Vyper",
+              "description": "Vyper 是一种面向合约的编程语言，采用了 Python 的语法风格，其目标是 Ethereum 虚拟机 (EVM)。\n\n",
+              "links": [
+                {
+                  "title": "Vyper 编程语言",
+                  "url": "https://vyper.readthedocs.io/en/stable/",
+                  "type": "article"
+                },
+                {
+                  "title": "在 Y 分钟内学习 Vyper",
+                  "url": "https://learnxinyminutes.com/docs/vyper/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5a94eee7-a514-4d44-8d6b-cb4337094dfe",
+              "xid": "467ef8a6-0927-494c-bee4-7b08f8748daa"
+            },
+            {
+              "title": "Rust (Rust)",
+              "description": "Rust 是一种多范式通用编程语言。\n\nRust 强调性能、类型安全性和并发性。\n\n它在 Solana 和 Polkadot 智能合约链中很受欢迎。\n\n",
+              "links": [
+                {
+                  "title": "Rust 编程语言 (Rust Programming Language)",
+                  "url": "https://www.rust-lang.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "学习 Rust (Learn Rust)",
+                  "url": "https://www.rust-lang.org/learn",
+                  "type": "article"
+                },
+                {
+                  "title": "如何用 Rust 编写和部署智能合约 (How to write and deploy a smart contract in Rust)",
+                  "url": "https://docs.near.org/tutorials/nfts/introduction",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Rust 的热门文章 (Explore top posts about Rust)",
+                  "url": "https://app.daily.dev/tags/rust?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "920ca7ae-84e7-401e-802e-b7bd83e34430",
+              "xid": "aa66e493-7be2-4ade-bd10-ae67e990bb6d"
+            }
+          ],
+          "id": "89ed804b-d816-4e4c-84cb-573174de435a",
+          "xid": "cd8e01c0-1672-44fc-b734-afda09471dc1"
+        },
+        {
+          "title": "测试",
+          "description": "测试",
+          "links": [],
+          "children": [
+            {
+              "title": "单元测试",
+              "description": "单元测试涉及对智能合约中的各个组件进行正确性测试。\n\n单元测试简单、快速且易于运行，并且如果测试失败，可以清楚地知道是什么出错了。\n\n",
+              "links": [
+                {
+                  "title": "智能合约单元测试",
+                  "url": "https://ethereum.org/en/developers/docs/smart-contracts/testing/#unit-testing",
+                  "type": "article"
+                },
+                {
+                  "title": "关于如何在Solidity中进行以太坊智能合约单元测试的一些建议",
+                  "url": "https://betterprogramming.pub/a-few-tips-for-unit-testing-ethereum-smart-contract-in-solidity-d804062068fb",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于测试的热门文章",
+                  "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6a015876-8db7-43e8-8219-7d145c6fdbb4",
+              "xid": "e533ef81-19be-41c5-a1b1-c0feca039ebf"
+            },
+            {
+              "title": "集成测试",
+              "description": "集成测试验证多个组件之间的交互。\n\n对于智能合约测试，这可能意味着单个合约的不同组件之间的交互，或者多个合约之间的交互。\n\n",
+              "links": [
+                {
+                  "title": "区块链测试指南",
+                  "url": "https://blog.logrocket.com/complete-guide-blockchain-testing/",
+                  "type": "article"
+                },
+                {
+                  "title": "查看关于测试的热门帖子",
+                  "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "单元测试 vs 集成测试",
+                  "url": "https://youtu.be/GxnX9k8i0zM",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "9d4a858c-20b2-4d5e-b920-f13c6227ec12",
+              "xid": "0199f31a-8c4c-4989-9f69-e2760cf94ac2"
+            },
+            {
+              "title": "代码覆盖率",
+              "description": "代码覆盖率是一种可以帮助你了解源代码中有多少部分已经被测试的指标。\n\n它是一个非常有用的指标，可以帮助你评估测试套件的质量。\n\n",
+              "links": [
+                {
+                  "title": "测试智能合约",
+                  "url": "https://ethereum.org/en/developers/docs/smart-contracts/testing/",
+                  "type": "article"
+                },
+                {
+                  "title": "智能合约代码覆盖率在Hardhat中的应用",
+                  "url": "https://medium.com/coinmonks/smart-contract-code-coverage-in-hardhat-d4a5ff6c9ba6",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于通用编程的热门文章",
+                  "url": "https://app.daily.dev/tags/general-programming?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "291a213e-5662-47f0-a7e4-73171fdec3ec",
+              "xid": "5d36806a-56d2-4821-9980-0812d687b8ee"
+            }
+          ],
+          "id": "92b0db11-d738-4465-a8c5-9aa335b79286",
+          "xid": "5a39a80c-3d9a-4fee-bee6-d9a88a66bdc0"
+        },
+        {
+          "title": "部署",
+          "description": "与其它软件不同，智能合约（smart contracts）不运行在本地计算机或远程服务器上，而是存在于区块链（blockchain）上。\n\n因此，与它们进行交互的方式与传统应用程序有所不同。\n\n",
+          "links": [
+            {
+              "title": "部署智能合约",
+              "url": "https://ethereum.org/en/developers/docs/smart-contracts/deploying/",
+              "type": "article"
+            },
+            {
+              "title": "部署和与智能合约交互",
+              "url": "https://docs.openzeppelin.com/learn/deploying-and-interacting",
+              "type": "article"
+            },
+            {
+              "title": "探索关于CI/CD的热门文章",
+              "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "51f17e5c-510d-416b-9525-56beb3eaf188",
+          "xid": "092689b4-eb5f-4730-880a-971078e492b0"
+        },
+        {
+          "title": "监控",
+          "description": "监控智能合约（Monitoring smart contracts）允许其作者根据生成的交易和事件来查看合约的活动和交互情况，从而验证合约的预期目的和功能。\n\n",
+          "links": [
+            {
+              "title": "监控智能合约",
+              "url": "https://consensys.github.io/smart-contract-best-practices/development-recommendations/solidity-specific/event-monitoring/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于监控的热门文章",
+              "url": "https://app.daily.dev/tags/monitoring?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "fdaa8a66-e488-442e-970e-65baabcaeaea",
+          "xid": "46c11343-2c0c-4e4f-b908-861cb62336f8"
+        },
+        {
+          "title": "升级",
+          "description": "智能合约默认是不可变的。\n\n一旦创建了合约，就无法修改它们，从而在参与者之间充当了不可破坏的合约。\n\n但是，在某些场景下，修改它们是有必要的。\n\n",
+          "links": [
+            {
+              "title": "升级以太坊合约",
+              "url": "https://ethereum.org/en/developers/docs/smart-contracts/upgrading/",
+              "type": "article"
+            },
+            {
+              "title": "升级智能合约",
+              "url": "https://docs.openzeppelin.com/learn/upgrading-smart-contracts",
+              "type": "article"
+            },
+            {
+              "title": "什么是可升级的智能合约？完整指南",
+              "url": "https://moralis.io/what-are-upgradable-smart-contracts-full-guide/",
+              "type": "article"
+            },
+            {
+              "title": "升级你的智能合约 | 教程与介绍",
+              "url": "https://youtu.be/bdXJmWajZRY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "df1a2952-474b-470c-82e4-5afec6770a09",
+          "xid": "6e320721-7bca-4b70-bc08-0e78f70448ba"
+        },
+        {
+          "title": "集成开发环境(Integrated Development Environments)",
+          "description": "集成开发环境是一种软件应用程序，为软件开发的计算机程序员提供了全面的设施。\n\n集成开发环境通常至少包括源代码编辑器、构建自动化工具和调试器。\n\n",
+          "links": [
+            {
+              "title": "集成开发环境(Integrated Development Environments)",
+              "url": "https://ethereum.org/en/developers/docs/ides/",
+              "type": "article"
+            },
+            {
+              "title": "Remix - Ethereum 集成开发环境 & 社区",
+              "url": "https://remix-project.org/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于开发工具的热门帖子",
+              "url": "https://app.daily.dev/tags/devtools?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ada20682-71be-421d-8413-6fefb82dcca6",
+          "xid": "d05b3277-75c3-40f1-b8ca-60a7a166aa43"
+        },
+        {
+          "title": "ERC 代币",
+          "description": "《以太坊请求意见》（Ethereum Request for Comments，ERC）文档是程序员为以太坊区块链上的智能合约编写规则的工具。\n\n这些规则要求基于以太坊的代币必须遵守。\n\n尽管有许多以太坊标准，但以下这些 ERC 标准最为著名和普及：ERC-20、ERC-721、ERC-1155 和 ERC-777。\n\n",
+          "links": [
+            {
+              "title": "什么是以太坊请求意见（ERC）标准",
+              "url": "https://dev.to/envoy_/ks-what-are-ethereum-request-for-comments-erc-standards-5f80",
+              "type": "article"
+            },
+            {
+              "title": "ERC-20 代币标准",
+              "url": "https://ethereum.org/en/developers/docs/standards/tokens/erc-20/",
+              "type": "article"
+            },
+            {
+              "title": "ERC-721 代币标准（NFT）",
+              "url": "https://decrypt.co/resources/erc-721-ethereum-nft-token-standard",
+              "type": "article"
+            },
+            {
+              "title": "ERC-1155 代币标准（多代币）",
+              "url": "https://decrypt.co/resources/what-is-erc-1155-ethereums-flexible-token-standard",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b21f84d7-3c36-441f-85ab-c83f3b45345d",
+          "xid": "58b06b50-260a-4887-9dd2-0257d6c32fc2"
+        },
+        {
+          "title": "加密货币钱包",
+          "description": "加密货币钱包是一种设备、物理介质、程序或服务，用于存储加密货币交易的公钥（public keys）和/或私钥（private keys）。\n\n除了这个基本的存储密钥的功能外，加密货币钱包还通常提供加密和/或签名信息的功能。\n\n",
+          "links": [
+            {
+              "title": "什么是加密货币钱包？初学者指南",
+              "url": "https://crypto.com/university/crypto-wallets",
+              "type": "article"
+            },
+            {
+              "title": "加密货币钱包是什么？",
+              "url": "https://www.coinbase.com/learn/crypto-basics/what-is-a-crypto-wallet",
+              "type": "article"
+            },
+            {
+              "title": "探索关于加密货币的热门帖子",
+              "url": "https://app.daily.dev/tags/crypto?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ed075b65-b8d0-4676-a860-a94e681a0fde",
+          "xid": "00d610ea-988d-4147-87e8-8634c1e3c0f2"
+        },
+        {
+          "title": "加密货币分发器",
+          "description": "加密货币分发器允许用户通过完成简单任务来赚取小额加密货币奖励。\n\n这个比喻基于这样的概念：即使是水龙头的一滴水，最终也能装满一杯水。\n\n加密货币分发器包括比特币（BTC）、以太坊（ETH）和币安币（BNB）分发器等多种类型。\n\n分发器在开发环境中很常见，开发者可以获取测试网加密货币来开发和测试其应用程序，然后再将应用程序部署到主网。\n\n",
+          "links": [
+            {
+              "title": "什么是加密货币分发器？",
+              "url": "https://academy.binance.com/en/articles/what-is-a-crypto-faucet",
+              "type": "article"
+            },
+            {
+              "title": "什么是加密货币分发器？它们如何工作？",
+              "url": "https://cointelegraph.com/news/what-are-crypto-faucets-and-how-do-they-work",
+              "type": "article"
+            },
+            {
+              "title": "探索关于加密货币的顶级帖子",
+              "url": "https://app.daily.dev/tags/crypto?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "13eb7b6e-3e89-4b17-8c77-106c4c24389e",
+          "xid": "f7675958-8de3-498a-bc5e-569c0b9a4e10"
+        },
+        {
+          "title": "去中心化存储",
+          "description": "去中心化存储是将数据存储在去中心化的网络中，该网络分布于多个地点，由受到激励加入、存储数据并保证数据可访问性的用户或群体组成。\n\n使用的服务器由个人托管，而不是由单一公司托管。\n\n任何人都可以自由加入，由于智能合约的约束，这些参与者会保持诚实，并通过代币激励参与其中。\n\n",
+          "links": [
+            {
+              "title": "去中心化存储",
+              "url": "https://ethereum.org/en/developers/docs/storage/",
+              "type": "article"
+            },
+            {
+              "title": "什么是去中心化存储？",
+              "url": "https://medium.com/@ppio/what-is-decentralized-storage-9c4b761942e2",
+              "type": "article"
+            },
+            {
+              "title": "探索关于去中心化的顶部文章",
+              "url": "https://app.daily.dev/tags/decentralized?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8fb9a08b-1f1f-41d2-bdbf-c5e716b81b5d",
+          "xid": "af56ecd5-ad06-4bc4-9ac8-b57b6b68445d"
+        }
+      ],
+      "id": "e55d290b-0ede-4b92-ad95-fe436d8432ba",
+      "xid": "5fb57b91-f914-4e79-b22e-ee9747add214"
+    },
+    {
+      "title": "智能合约框架(Smart Contract Frameworks)",
+      "description": "构建一个完整的分布式应用程序(dapp)需要不同的技术组件。\n\n软件框架包含了所需的许多功能，或提供了易于插件的系统，让你可以选择所需的工具。\n\n",
+      "links": [
+        {
+          "title": "分布式应用程序(dapp)开发框架",
+          "url": "https://ethereum.org/en/developers/docs/frameworks/",
+          "type": "article"
+        },
+        {
+          "title": "以太坊开发者工具的权威清单 - 框架",
+          "url": "https://media.consensys.net/an-definitive-list-of-ethereum-developer-tools-2159ce865974#frameworks",
+          "type": "article"
+        },
+        {
+          "title": "2022年你需要的十大智能合约开发者工具",
+          "url": "https://medium.com/better-programming/top-10-smart-contract-developer-tools-you-need-for-2022-b763f5df689a",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Hardhat",
+          "description": "Hardhat 是一个以太坊（Ethereum）开发环境。\n\n它允许用户编译合约并在开发网络上运行它们。\n\n获得 Solidity（Solidity）堆栈跟踪、console.log 和更多功能。\n\n",
+          "links": [
+            {
+              "title": "Hardhat",
+              "url": "https://hardhat.org/",
+              "type": "article"
+            },
+            {
+              "title": "Hardhat 概述",
+              "url": "https://hardhat.org/hardhat-runner/docs/getting-started#overview",
+              "type": "article"
+            },
+            {
+              "title": "浏览有关 Hardhat 的热门文章",
+              "url": "https://app.daily.dev/tags/hardhat?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "使用 Hardhat 构建和部署智能合约",
+              "url": "https://youtu.be/GBc3lBrXEBo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ed395618-6fe4-402f-a576-c20f0894d05e",
+          "xid": "bc000d04-1a23-47ef-999d-cff27ef01714"
+        },
+        {
+          "title": "布朗尼（Brownie）",
+          "description": "布朗尼（Brownie）是一个基于Python的开发和测试框架，旨在针对以太坊虚拟机（Ethereum Virtual Machine）的智能合约。\n\n",
+          "links": [
+            {
+              "title": "布朗尼概述（Brownie Overview）",
+              "url": "https://eth-brownie.readthedocs.io/",
+              "type": "article"
+            },
+            {
+              "title": "Python和区块链：使用布朗尼（Brownie）部署智能合约",
+              "url": "https://youtu.be/QfFO22lwSw4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0d688d4a-c91e-4fdd-be05-691d1407cd62",
+          "xid": "ff459881-2ef2-4883-acbb-a838fde6c576"
+        },
+        {
+          "title": "Truffle (开发环境)",
+          "description": "一个用于使用以太坊虚拟机（Ethereum Virtual Machine, EVM）的区块链的开发环境、测试框架和资产管道，旨在使开发人员的工作更轻松。\n\n",
+          "links": [
+            {
+              "title": "Truffle 文档",
+              "url": "https://trufflesuite.com/docs/truffle/",
+              "type": "article"
+            },
+            {
+              "title": "Truffle 使用终极指南",
+              "url": "https://archive.trufflesuite.com/guides/ultimate-guide-to-truffle-the-gateway-to-full-stack-blockchain-development/",
+              "type": "article"
+            },
+            {
+              "title": "Truffle 入门教程",
+              "url": "https://youtu.be/62f757RVEvU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "974a0301-d331-4d0a-aacf-c15840cb223b",
+          "xid": "d5299b15-0e63-4ed7-b08c-5675f277af57"
+        },
+        {
+          "title": "铸造厂（Foundry）",
+          "description": "铸造厂（Foundry）是一个智能合约开发工具链。\n\n铸造厂（Foundry）管理您的依赖项，编译您的项目，运行测试，部署合约，并让您通过命令行和Solidity脚本与链进行交互。\n\n",
+          "links": [
+            {
+              "title": "铸造厂（Foundry）概述",
+              "url": "https://book.getfoundry.sh/",
+              "type": "article"
+            },
+            {
+              "title": "铸造厂（Foundry）简介",
+              "url": "https://youtu.be/fNMfMxGxeag",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1b32ec0d-036c-4c91-acb8-c8e684c37409",
+          "xid": "4d2f1fe1-bac9-4f4c-9f60-f953f8a39ea9"
+        }
+      ],
+      "id": "761d04ce-4f27-4d93-9a9b-2db46e6689a1",
+      "xid": "30323407-551e-421b-a0cb-3c417ca7a43e"
+    },
+    {
+      "title": "安全",
+      "description": "智能合约极其灵活，可以持有大量代币（通常超过10亿美元），并基于先前部署的智能合约代码执行不可变的逻辑。\n\n虽然这创造了一个充满活力且富有创造力的无信任、互联的智能合约生态系统，但这同时也为攻击者提供了一个完美的环境，他们可以通过利用漏洞来获利。\n\n",
+      "links": [
+        {
+          "title": "智能合约安全",
+          "url": "https://ethereum.org/en/developers/docs/smart-contracts/security/",
+          "type": "article"
+        },
+        {
+          "title": "以太坊智能合约安全建议",
+          "url": "https://consensys.net/blog/developers/ethereum-smart-contract-security-recommendations/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于区块链的热门文章",
+          "url": "https://app.daily.dev/tags/blockchain?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "实践",
+          "description": "智能合约编程需要一种不同的工程思维。\n\n失败的成本可能很高，而且进行更改可能会很困难。\n\n",
+          "links": [
+            {
+              "title": "以太坊智能合约安全最佳实践(Ethereum Smart Contract Security Best Practices)",
+              "url": "https://consensys.github.io/smart-contract-best-practices/",
+              "type": "article"
+            },
+            {
+              "title": "智能合约安全性和审计入门(Smart Contract Security and Auditing 101)",
+              "url": "https://youtu.be/0aJfCug1zTM",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "模糊测试 & 静态分析",
+              "description": "模糊测试（Fuzz Testing）是一种自动化软件测试技术，其主要方式是为智能合约（smart contract）提供无效的、意想不到的或随机的数据作为输入。\n\n静态分析（Static Analysis）是指在不执行智能合约的情况下对其进行的分析。\n\n",
+              "links": [
+                {
+                  "title": "智能合约模糊测试入门",
+                  "url": "https://www.immunebytes.com/blog/getting-started-with-smart-contract-fuzzing/",
+                  "type": "article"
+                },
+                {
+                  "title": "Solidity智能合约静态代码分析",
+                  "url": "https://lightrains.com/blogs/solidity-static-analysis-tools/#static-code-analysis",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于测试的头条帖子",
+                  "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "智能合约模糊测试",
+                  "url": "https://youtu.be/LRyyNzrqgOc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "c9c8801f-7714-4aca-b798-b2e9563817fc",
+              "xid": "d048c3b0-caa7-48bb-8ed6-d69f83e9cf97"
+            },
+            {
+              "title": "常见威胁向量",
+              "description": "智能合约审计（Smart contract audits）使开发者能够对智能合约集进行全面分析。\n\n智能合约审计的主要目标是检测并消除漏洞，首先从最常见的威胁向量（threat vectors）开始。\n\n",
+              "links": [
+                {
+                  "title": "智能合约攻击向量",
+                  "url": "https://github.com/kadenzipfel/smart-contract-attack-vectors",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Solidity安全检查点",
+                  "url": "https://blog.sigmaprime.io/solidity-security.html",
+                  "type": "article"
+                },
+                {
+                  "title": "区块链攻击向量：最安全技术的漏洞",
+                  "url": "https://www.apriorit.com/dev-blog/578-blockchain-attack-vectors",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6db1ef61-f187-4f63-9dd5-7da65119788a",
+              "xid": "6e289aa2-ff96-4952-9f8f-64619c2a2f91"
+            },
+            {
+              "title": "随机性攻击的来源",
+              "description": "密码系统的安全性依赖于某些只有授权人员知晓但对他人来说未知且不可预测的秘密数据。\n\n为了实现这种不可预测性，通常会采用某种随机化手段。\n\n现代密码学协议通常需要频繁生成随机量。\n\n针对或利用这一过程中的弱点的密码攻击被称为随机性攻击(randomness attacks)。\n\n",
+              "links": [
+                {
+                  "title": "智能合约随机性攻击或ReplicatedLogic攻击",
+                  "url": "https://blog.finxter.com/randomness-or-replicatedlogic-attack-on-smart-contracts/",
+                  "type": "article"
+                },
+                {
+                  "title": "关于安全性的热门文章",
+                  "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f25e057c-62e0-429f-aca7-a9d8eddf916a",
+              "xid": "588a0cc0-1671-485d-90f4-d3fc3419dbe6"
+            }
+          ],
+          "id": "100e05c3-a806-4c36-a1bc-ad1e0848fd66",
+          "xid": "f6385839-1c10-4f79-b467-cd2727c402e0"
+        },
+        {
+          "title": "工具",
+          "description": "区块链（Blockchain）和智能合约（Smart Contract）技术相对较新，因此应预期安全形势会不断变化，因为新的漏洞和安全风险会被发现，新的最佳实践（Best Practices）会被开发出来。\n\n这种不断变化的环境很难跟踪，因此，使用工具来帮助这一任务非常重要。\n\n未能妥善保护智能合约的代价可能很高，且因为改变可能会比较困难，我们必须利用这些工具。\n\n",
+          "links": [
+            {
+              "title": "最佳区块链工具",
+              "url": "https://101blockchains.com/best-blockchain-tools/",
+              "type": "article"
+            },
+            {
+              "title": "区块链开发的十大工具",
+              "url": "https://www.blockchain-council.org/blockchain/top-10-tools-for-blockchain-development/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "滑行(Slither)",
+              "description": "滑行(Slither)是一个用Python 3编写的Solidity静态分析框架。\n\n它运行一系列漏洞检测器，打印关于合约细节的可视化信息，并提供API以方便编写自定义分析。\n\n滑行(Slither)使开发人员能够发现漏洞，提高对代码的理解，并迅速原型化自定义分析。\n\n",
+              "links": [
+                {
+                  "title": "Solidity源代码分析器滑行(Slither)",
+                  "url": "https://github.com/crytic/slither",
+                  "type": "opensource"
+                },
+                {
+                  "title": "滑行(Slither)框架",
+                  "url": "https://blog.trailofbits.com/2018/10/19/slither-a-solidity-static-analysis-framework/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "92a40791-6a30-4069-9219-54520fb9bdc6",
+              "xid": "cbf4359b-9032-4f93-95b0-24c89ce4ad99"
+            },
+            {
+              "title": "曼提科尔(Manticore)",
+              "description": "曼提科尔(Manticore)是一个用于智能合约和二进制文件分析的符号执行工具。\n\n",
+              "links": [
+                {
+                  "title": "曼提科尔(Manticore)文档",
+                  "url": "https://manticore.readthedocs.io/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e85cbee7-56eb-4a44-84a6-ee2e7527b5f8",
+              "xid": "99727878-a577-4f36-8dfb-1b562dc430c2"
+            },
+            {
+              "title": "MythX",
+              "description": "MythX是由Consensys开发的一种全面的智能合约安全分析工具。\n\n它允许用户在整个开发生命周期中检测以太坊智能合约的安全漏洞，并分析Solidity（Solidity）dapp的安全问题和已知的智能合约漏洞。\n\n",
+              "links": [
+                {
+                  "title": "MythX",
+                  "url": "https://mythx.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "MythX 使用文档",
+                  "url": "https://docs.mythx.io/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ea4aabcd-01a5-465c-a218-20d852deb558",
+              "xid": "31c1878d-bd6c-4c9a-8545-4b3974081955"
+            },
+            {
+              "title": "针鼹（Echidna）",
+              "description": "针鼹（Echidna）是一个用Haskell编写的设计用于以太坊智能合约模糊测试/属性测试的程序。\n\n它基于合约ABI使用复杂的基于语法规则的模糊测试策略来针对用户定义的断言或Solidity断言进行反证。\n\n",
+              "links": [
+                {
+                  "title": "针鼹（Echidna）：一款快速的智能合约模糊器",
+                  "url": "https://github.com/crytic/echidna/",
+                  "type": "opensource"
+                },
+                {
+                  "title": "针鼹（Echidna） - 智能合约",
+                  "url": "https://secure-contracts.com/program-analysis/echidna/index.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c5d80da6-4220-4877-b0bf-d60978c1a47a",
+              "xid": "6d5a54d5-1f44-4fdb-9e26-e001e6a6f475"
+            }
+          ],
+          "id": "57304ca8-9883-48f1-8ac8-e545a973a1fe",
+          "xid": "7733f2af-1b32-444c-8332-8d0f970e7335"
+        }
+      ],
+      "id": "e57688f5-d70c-4936-bc15-3da47cb0145e",
+      "xid": "7d376f55-c3db-499a-8f04-b0f01e370b20"
+    },
+    {
+      "title": "管理平台",
+      "description": "在生产环境（主网）中管理智能合约可能非常困难，因为用户必须跟踪不同的版本、区块链、部署等。\n\n使用工具进行此过程可以消除许多手动跟踪带来的风险。\n\n",
+      "links": [
+        {
+          "title": "什么是区块链平台？",
+          "url": "https://www.bitdegree.org/crypto/tutorials/blockchain-platform",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "OpenZeppelin",
+          "description": "OpenZeppelin Contracts（OpenZeppelin 合约）通过使用针对以太坊及其他区块链的智能合约的经实战考验的库来帮你降低风险。\n\n它包括了 ERC 标准的最常用的实现方式。\n\n",
+          "links": [
+            {
+              "title": "OpenZeppelin Contracts（OpenZeppelin 合约）",
+              "url": "https://docs.openzeppelin.com/contracts/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d1035d88-77c8-4be1-8fc0-cc4e13c0eefe",
+          "xid": "0f321f45-4156-48b7-a506-d20fa358aed8"
+        }
+      ],
+      "id": "bba8f8e2-8238-4d9d-89c5-81e290c9ab99",
+      "xid": "3aae5ac1-f40d-4e1c-ae33-2082e032c2c9"
+    },
+    {
+      "title": "dApps - 去中心化应用程序（Decentralized Applications）",
+      "description": "去中心化应用程序（dApp）是一种能够自主运行的应用程序，通过在区块链上运行的智能合约（smart contracts）实现。\n\n与传统应用程序类似，dApps 提供给其用户某种功能或效用。\n\n",
+      "links": [
+        {
+          "title": "去中心化应用程序（dApps）简介",
+          "url": "https://ethereum.org/en/developers/docs/dapps/",
+          "type": "article"
+        },
+        {
+          "title": "什么是dApp？详解去中心化应用程序",
+          "url": "https://www.coindesk.com/learn/what-is-a-dapp-decentralized-apps-explained/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "前端框架",
+          "description": "Web框架（Web frameworks）是用于编写网络应用的。\n\n框架是由多个库组成的集合，有助于软件产品或网站的开发。\n\n网络应用开发框架是由各种工具组成的集合。\n\n各大框架在能力和功能方面有所不同，这取决于它们需要完成的任务。\n\n它们定义了结构，建立了规则，并提供了所需开发工具。\n\n",
+          "links": [
+            {
+              "title": "Web3前端 - 关于构建Dapp前端你需要了解的一切",
+              "url": "https://moralis.io/web3-frontend-everything-you-need-to-learn-about-building-dapp-frontends/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于前端开发的顶级文章",
+              "url": "https://app.daily.dev/tags/frontend?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "框架和库之间有什么区别？",
+              "url": "https://www.youtube.com/watch?v=D_MO9vIRBcA",
+              "type": "video"
+            },
+            {
+              "title": "哪个JS框架最好？",
+              "url": "https://www.youtube.com/watch?v=cuHDQhDhvPE",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "React（React）",
+              "description": "React 是最流行的前端 JavaScript 库，用于构建用户界面。\n\nReact 也可以使用 Node 在服务器端渲染，并使用 React Native 驱动移动应用。\n\n",
+              "links": [
+                {
+                  "title": "访问专用的 React 学习路线",
+                  "url": "https://roadmap.sh/react",
+                  "type": "article"
+                },
+                {
+                  "title": "React 官方网站",
+                  "url": "https://react.dev/",
+                  "type": "article"
+                },
+                {
+                  "title": "开始使用 React",
+                  "url": "https://react.dev/learn",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 React 的热门文章",
+                  "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "React JS 入门课程",
+                  "url": "https://www.youtube.com/watch?v=nTeuhbP7wdE",
+                  "type": "video"
+                },
+                {
+                  "title": "React 入门教程 - React JavaScript 库 [2022]",
+                  "url": "https://www.youtube.com/watch?v=bMknfKXIFA8",
+                  "type": "video"
+                },
+                {
+                  "title": "理解 React 的 UI 渲染过程",
+                  "url": "https://www.youtube.com/watch?v=i793Qm6kv3U",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "f1062735-6619-4d62-9951-475dbd1f5d37",
+              "xid": "791281a9-02f0-4298-b29d-960abd72f2f8"
+            },
+            {
+              "title": "Angular",
+              "description": "Angular 是一个基于组件的前端开发框架，构建于 TypeScript 之上，包含了一系列功能丰富的集成库，如路由（routing）、表单管理（forms management）、客户端-服务器通信（client-server communication）等。\n\n",
+              "links": [
+                {
+                  "title": "访问专门的 Angular 学习路线",
+                  "url": "https://roadmap.sh/angular",
+                  "type": "article"
+                },
+                {
+                  "title": "Angular",
+                  "url": "https://angular.dev/",
+                  "type": "article"
+                },
+                {
+                  "title": "开始使用 Angular",
+                  "url": "https://angular.dev/overview",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Angular 的顶级文章",
+                  "url": "https://app.daily.dev/tags/angular?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "390aa2c4-e94a-49be-9515-90ba33bc3e9d",
+              "xid": "6c3e2c78-f0cb-46e2-b7d0-85cfd255086f"
+            },
+            {
+              "title": "Vue",
+              "description": "Vue.js 是一个开源的JavaScript框架，用于构建用户界面和单页应用程序。\n\n它主要关注前端开发。\n\n",
+              "links": [
+                {
+                  "title": "访问专用的Vue学习路线",
+                  "url": "https://roadmap.sh/vue",
+                  "type": "article"
+                },
+                {
+                  "title": "Vue.js 官网",
+                  "url": "https://vuejs.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Vue.js 说明",
+                  "url": "https://vuejs.org/v2/guide/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于Vue.js的顶级文章",
+                  "url": "https://app.daily.dev/tags/vuejs?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Vue.js 初学者课程",
+                  "url": "https://www.youtube.com/watch?v=FXpIoQ_rT_c",
+                  "type": "video"
+                },
+                {
+                  "title": "Vue.js 快速入门课程",
+                  "url": "https://www.youtube.com/watch?v=qZXt1Aom3Cs",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "826ed3c7-a251-4865-a801-bd22da44f506",
+              "xid": "aae727b3-d700-4c90-8a1e-5d98c8145142"
+            }
+          ],
+          "id": "4a31c7f9-f7b2-4610-bcd4-7eee09ddd53c",
+          "xid": "4f2a795e-1ee1-43df-ad6e-1a407f60c238"
+        },
+        {
+          "title": "客户端库 (Client Libraries)",
+          "description": "你不需要在你的项目中从头开始编写每个智能合约。\n\n有很多开源的智能合约库可用，它们为你的项目提供了可重复使用的构建模块，可以让你免于重新造轮子的麻烦。\n\n",
+          "links": [
+            {
+              "title": "Viem 库 (Viem Library)",
+              "url": "https://viem.sh",
+              "type": "article"
+            },
+            {
+              "title": "客户端库 (Client Libraries)",
+              "url": "https://docs.waves.tech/en/building-apps/waves-api-and-sdk/client-libraries/",
+              "type": "article"
+            },
+            {
+              "title": "智能合约库 (Smart Contract Libraries)",
+              "url": "https://ethereum.org/en/developers/docs/smart-contracts/libraries/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "ethers.js",
+              "description": "ethers.js库旨在成为与Ethereum（以太坊）区块链及其生态系统进行交互的完整且紧凑的库。\n\n它最初是为[ethers.io](http://ethers.io)设计的，后来发展成为一种通用库。\n\n",
+              "links": [
+                {
+                  "title": "ethers.js文档",
+                  "url": "https://docs.ethers.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于JavaScript的顶级文章",
+                  "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "cb0955c6-15b9-4883-943c-d5420a0dafc6",
+              "xid": "ccf760c9-8da6-494b-9625-e6db3925d804"
+            },
+            {
+              "title": "web3.js",
+              "description": "web3.js 是一组库，使您能够使用 HTTP、IPC 或 WebSocket 与本地或远程的以太坊节点 (ethereum node) 进行交互。\n\n",
+              "links": [
+                {
+                  "title": "Web3.js 文档",
+                  "url": "https://web3js.readthedocs.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关 Web3 的热门帖子",
+                  "url": "https://app.daily.dev/tags/web3?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "13aa96a6-3eb2-4a24-ae60-1d5a5eefbe23",
+              "xid": "9c2782c9-20da-4555-9362-40238ad3095d"
+            },
+            {
+              "title": "Moralis",
+              "description": "一个库，使你能够从JavaScript应用程序访问强大的Moralis服务器后端。\n\n",
+              "links": [
+                {
+                  "title": "Moralis SDK",
+                  "url": "https://github.com/MoralisWeb3/Moralis-JS-SDK",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Moralis",
+                  "url": "https://moralis.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "Moralis 文档",
+                  "url": "https://docs.moralis.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关Moralis的顶级文章",
+                  "url": "https://app.daily.dev/tags/moralis?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "efcde666-58cd-42c9-94bf-299165de7b25",
+              "xid": "5c4ea57f-43f9-4126-bd2a-f4834b97a2f1"
+            }
+          ],
+          "id": "f5367986-33b4-42cc-841c-9f1c417d9d82",
+          "xid": "af07d4af-4fc9-447a-bf88-14d412b11535"
+        },
+        {
+          "title": "客户端节点",
+          "description": "区块链是一个运行可以验证区块和交易数据的软件的计算机（称为节点）的分布式网络。\n\n该软件应用程序，称为客户端（client），必须在您的计算机上运行，以使其成为区块链节点。\n\n",
+          "links": [
+            {
+              "title": "节点和客户端",
+              "url": "https://ethereum.org/en/developers/docs/nodes-and-clients/",
+              "type": "article"
+            },
+            {
+              "title": "以太坊节点",
+              "url": "https://www.coindesk.com/learn/ethereum-nodes-and-clients-a-complete-guide/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Geth (Go Ethereum)",
+              "description": "Go Ethereum (Geth) 是以太坊协议的三个原始实现之一（另外两个是 C++ 和 Python）。\n\n它用 Go 语言编写，完全开源，并根据 GNU LGPL v3 许可。\n\n",
+              "links": [
+                {
+                  "title": "Geth (Go Ethereum)",
+                  "url": "https://geth.ethereum.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Geth 文档",
+                  "url": "https://geth.ethereum.org/docs/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ada6e351-ff85-4537-9f21-ffdac032254c",
+              "xid": "e8e9e982-5f01-45fe-b572-38fd93e3cc68"
+            },
+            {
+              "title": "Besu",
+              "description": "Besu 是一款基于 Apache 2.0 许可证、兼容 MainNet（主网）的 Ethereum（以太坊）客户端，采用 Java 编写。\n\n",
+              "links": [
+                {
+                  "title": "Besu 以太坊客户端",
+                  "url": "https://github.com/hyperledger/besu",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Besu 官方网站",
+                  "url": "https://www.lfdecentralizedtrust.org/projects/besu",
+                  "type": "article"
+                },
+                {
+                  "title": "Hyperledger Besu",
+                  "url": "https://youtu.be/gF__bwiG66g",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "3634a61f-d71a-436c-859e-b844b43b2740",
+              "xid": "3f5c1c42-5cc9-4c3f-8b6f-2d1c1a2f9121"
+            },
+            {
+              "title": "Nethermind",
+              "description": "Nethermind 是一款高性能且高度可配置的全功能 Ethereum（以太坊）协议客户端，基于 .NET 构建，并可在 Linux、Windows 和 macOS 上运行。\n\n它支持 Clique（团块）、Aura、Ethash 和 Proof-of-Stake（权益证明）共识算法。\n\n",
+              "links": [
+                {
+                  "title": "Nethermind",
+                  "url": "https://www.nethermind.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "Nethermind Documentation",
+                  "url": "https://docs.nethermind.io/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c526b3e3-d38c-4651-8e77-8580e83589aa",
+              "xid": "44a9c1b2-aeeb-4ec9-98e4-8c948f9b3aa8"
+            },
+            {
+              "title": "Substrate",
+              "description": "Substrate 是一种专门为区块链提供所有基本组件的软件开发工具包（Software Development Kit, SDK），这样您就可以专注于打造使您的链独特和创新的逻辑。\n\n",
+              "links": [
+                {
+                  "title": "Substrate 文档",
+                  "url": "https://docs.substrate.io/quick-start/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "80e03982-b48a-45e9-b68c-ff7ec8205fcc",
+              "xid": "f9eca6f4-e7b9-4027-997a-a9df17d2c6f8"
+            }
+          ],
+          "id": "385ad86c-533d-4dd2-bdcf-ab6948c74195",
+          "xid": "14804805-6f72-44c0-b7d2-125000d5cf9b"
+        },
+        {
+          "title": "测试",
+          "description": "构建符合需求且无缺陷的软件的关键是测试。\n\n软件测试帮助开发者知道他们正在构建正确的软件。\n\n当测试作为开发过程的一部分运行（通常使用持续集成工具），它们能增强信心并防止代码中的退化。\n\n",
+          "links": [
+            {
+              "title": "什么是软件测试？",
+              "url": "https://www.guru99.com/software-testing-introduction-importance.html",
+              "type": "article"
+            },
+            {
+              "title": "测试金字塔",
+              "url": "https://www.browserstack.com/guide/testing-pyramid-for-test-automation",
+              "type": "article"
+            },
+            {
+              "title": "如何测试dApps（去中心化应用）",
+              "url": "https://rhian-is.medium.com/how-to-test-dapps-decentralized-applications-4662cf61db90",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于测试的热门帖子",
+              "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9f417f1a-1ea0-4072-bcb6-5944bcc3410a",
+          "xid": "e68b544b-3fc4-4b05-8706-562fa1b6d2f3"
+        },
+        {
+          "title": "部署",
+          "description": "部署dApp（Decentralized Application）需要部署其所有的层级，通常通过一个管理框架来完成。\n\n",
+          "links": [
+            {
+              "title": "使用集成Web3监控构建Ethereum DApp（Decentralized Application）的教程",
+              "url": "https://www.moesif.com/blog/blockchain/ethereum/Tutorial-for-building-Ethereum-Dapp-with-Integrated-Error-Monitoring/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关CI/CD的热门文章",
+              "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "构建和部署现代Web 3.0区块链应用",
+              "url": "https://youtu.be/Wn_Kb3MR_cU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0287c2ea-88f8-4d42-b1dc-7197673f2aed",
+          "xid": "611b7c4f-5677-4e60-9cf2-9b96a9b59df2"
+        },
+        {
+          "title": "维护",
+          "description": "dApps（去中心化应用）的维护可能更为困难，因为发布到区块链上的代码和数据较难修改。\n\n一旦dApps及其背后的存储数据被部署，开发者很难对其进行更新，即使在旧版本中发现了漏洞或安全风险也是如此。\n\n",
+          "links": [
+            {
+              "title": "区块链维护",
+              "url": "https://imiblockchain.com/blockchain-coding/maintenance/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "28742941-b36d-402e-874c-2c229f1fd232",
+          "xid": "b0ef8b70-473e-4109-880e-86ff8b2732d4"
+        },
+        {
+          "title": "架构",
+          "description": "与Web2应用程序不同，Web3中没有集中式数据库来存储应用程序状态或用户身份，也没有集中式Web服务器用于存放后端逻辑。\n\n",
+          "links": [
+            {
+              "title": "Web 3.0应用程序的架构",
+              "url": "https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于架构的热门文章",
+              "url": "https://app.daily.dev/tags/architecture?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "区块链开发：Dapp架构",
+              "url": "https://youtu.be/KBSq8-LnUDI?t=286",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8c55ce4d-f575-414e-8e36-ac49576115a1",
+          "xid": "cfd56515-97d6-4034-8ca5-6f5362136f15"
+        },
+        {
+          "title": "安全性",
+          "description": "dApps（分布式应用程序）在其运行的不可变区块链上面临着独特的安全挑战。\n\ndApps难以维护，开发人员一旦部署了代码，便无法对其进行修改或更新。\n\n因此，在将其部署到区块链之前，必须进行特别考虑。\n\n",
+          "links": [
+            {
+              "title": "dApp安全标准",
+              "url": "https://github.com/Dexaran/DAPP-security-standards/blob/master/README.md",
+              "type": "opensource"
+            },
+            {
+              "title": "dApp安全考量",
+              "url": "https://livebook.manning.com/book/building-ethereum-dapps/chapter-14/",
+              "type": "article"
+            },
+            {
+              "title": "dApp安全：你需要知道的一切",
+              "url": "https://www.immunebytes.com/blog/dapp-security/#Benefits_of_DApps_Security",
+              "type": "article"
+            },
+            {
+              "title": "探索顶级安全相关文章",
+              "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "32931bc6-8709-4341-a04b-df8edb42f04d",
+          "xid": "a583393b-6d9f-4d6e-bfce-220ad48c5874"
+        },
+        {
+          "title": "支持的语言",
+          "description": "虽然区块链应用中的大部分逻辑由智能合约处理，但支持这些智能合约的所有周边服务（前端、监控等）通常使用其他语言编写。\n\n",
+          "links": [
+            {
+              "title": "智能合约编程语言",
+              "url": "https://blog.logrocket.com/smart-contract-programming-languages/",
+              "type": "article"
+            },
+            {
+              "title": "区块链开发顶级编程语言",
+              "url": "https://www.codecademy.com/resources/blog/programming-languages-blockchain-development/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "JavaScript",
+              "description": "JavaScript，通常缩写为JS，是一种编程语言（programming language），是构成万维网（World Wide Web）的核心技术之一，与HTML和CSS并列。\n\n它让我们能够向网页添加交互性（interactivity），例如你在不同的网站上看到的滑块（sliders）、警告（alerts）、点击交互（click interactions）和弹出窗口（popups）等 -- 所有这些都是通过JavaScript构建的。\n\n除了在浏览器中使用之外，它也用于其他非浏览器环境（non-browser environments），例如Node.js用于编写服务器端代码（server-side code）的JavaScript，Electron用于编写桌面应用程序（desktop applications），React Native用于移动应用程序（mobile applications）等。\n\n",
+              "links": [
+                {
+                  "title": "你还不知道JavaScript",
+                  "url": "https://github.com/getify/You-Dont-Know-JS",
+                  "type": "opensource"
+                },
+                {
+                  "title": "访问专门针对JavaScript的学习路线图",
+                  "url": "https://roadmap.sh/javascript",
+                  "type": "article"
+                },
+                {
+                  "title": "现代JavaScript教程",
+                  "url": "https://javascript.info/",
+                  "type": "article"
+                },
+                {
+                  "title": "优雅的JavaScript - 书籍",
+                  "url": "https://eloquentjavascript.net/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于JavaScript的最佳文章",
+                  "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "JavaScript 快速入门 - 初学者",
+                  "url": "https://youtu.be/hdI2bqOjy3c",
+                  "type": "video"
+                },
+                {
+                  "title": "Node.js 教程 - 初学者",
+                  "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "6553b028-cd7c-4a22-8579-28ea5db2628b",
+              "xid": "d5d5c92e-94d9-43d7-a830-e7deb48805c4"
+            },
+            {
+              "title": "Python",
+              "description": "Python 是一种广为人知的编程语言 (programming language)，它既是强类型又是动态类型语言 (dynamically typed language)。\n\n作为一种解释型语言 (interpreted language)，代码会在编写后立即执行，而且 Python 语法允许以函数式、面向过程或面向对象的方式编写代码。\n\n",
+              "links": [
+                {
+                  "title": "访问专用 Python 学习路线 (Dedicated Python Roadmap)",
+                  "url": "https://roadmap.sh/python",
+                  "type": "article"
+                },
+                {
+                  "title": "Python 入门 (Getting Started)",
+                  "url": "https://www.python.org/about/gettingstarted/",
+                  "type": "article"
+                },
+                {
+                  "title": "Python 官方网站 (Website)",
+                  "url": "https://www.python.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Python 文档 (Documentation)",
+                  "url": "https://www.docs.python.org/3",
+                  "type": "article"
+                },
+                {
+                  "title": "W3Schools - Python 教程 (Python Tutorial)",
+                  "url": "https://www.w3schools.com/python/",
+                  "type": "article"
+                },
+                {
+                  "title": "Python 入门手册 (Python Crash Course)",
+                  "url": "https://ehmatthes.github.io/pcc/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Python 的热门文章 (top posts about Python)",
+                  "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1eded118-6f7f-4aba-93e6-b961c5f057ea",
+              "xid": "2d318da7-31cc-4ee6-8ad6-5e8e5da43785"
+            },
+            {
+              "title": "Go",
+              "description": "Go是一种由Google支持的开源编程语言。\n\nGo可以用于编写云服务、命令行工具、用于API开发等，应用广泛。\n\n",
+              "links": [
+                {
+                  "title": "访问专用的Go学习路线",
+                  "url": "https://roadmap.sh/golang",
+                  "type": "article"
+                },
+                {
+                  "title": "Go之旅 — Go基础",
+                  "url": "https://go.dev/tour/welcome/1",
+                  "type": "article"
+                },
+                {
+                  "title": "Go参考文档",
+                  "url": "https://go.dev/doc/",
+                  "type": "article"
+                },
+                {
+                  "title": "Go通过示例学习 - 注释的例子程序",
+                  "url": "https://gobyexample.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "W3Schools Go教程",
+                  "url": "https://www.w3schools.com/go/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于Golang的热门帖子",
+                  "url": "https://app.daily.dev/tags/golang?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4c302c60-3f35-4887-9b1b-345e5e56d3f1",
+              "xid": "bf6c15db-6304-47c7-bf91-114754bd766b"
+            }
+          ],
+          "id": "42d29dec-03ca-4c88-970b-6323eac587a6",
+          "xid": "5919b24c-341d-4515-952d-6621c851ec89"
+        },
+        {
+          "title": "适用性",
+          "description": "分散式应用程序（dApps）几乎可用于任何需要两个或更多方达成一致的情况。\n\n在满足适当条件时，智能合约（smart contract）将自动执行。\n\n重要的一点是，这些交易不再基于信任，而是基于得到加密保障的智能合约（smart contract）。\n\n",
+          "links": [
+            {
+              "title": "什么是dApp？分散式应用程序指南",
+              "url": "https://www.sofi.com/learn/content/what-is-a-dapp/",
+              "type": "article"
+            },
+            {
+              "title": "按行业划分的区块链用例和应用程序",
+              "url": "https://consensys.net/blockchain-use-cases/",
+              "type": "article"
+            },
+            {
+              "title": "区块链技术的真实世界用例",
+              "url": "https://roboticsandautomationnews.com/2022/05/20/the-real-world-use-cases-for-blockchain-technology/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "去中心化金融 (DeFi)",
+              "description": "去中心化金融 (DeFi) 提供金融工具，不需要依赖经纪商、交易所或银行等中介机构，而是通过区块链上的智能合约实现。\n\n",
+              "links": [
+                {
+                  "title": "去中心化金融 (DeFi) 定义",
+                  "url": "https://www.investopedia.com/decentralized-finance-defi-5113835",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是去中心化金融 (DeFi)?",
+                  "url": "https://www.coinbase.com/learn/crypto-basics/what-is-defi",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于去中心化金融 (DeFi) 的热门文章",
+                  "url": "https://app.daily.dev/tags/defi?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是去中心化金融 (DeFi)? (动画版)",
+                  "url": "https://www.youtube.com/watch?v=17QRFlml4pA",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "3f869a37-6aab-49d4-a2cc-bcfdcbedf479",
+              "xid": "fd2a2c47-bb01-448c-b338-db8ee370f57e"
+            },
+            {
+              "title": "去中心化自治组织（DAOs）",
+              "description": "去中心化自治组织（Decentralized Autonomous Organization，DAO）是一种新兴的法律结构形式。\n\n由于没有中央管理机构，DAO内的每个成员通常都拥有一个共同目标，并试图为了组织的最大利益而行动。\n\nDAO通过加密货币爱好者和区块链技术而受到关注，并用来通过自下而上的管理模式做出决策。\n\n",
+              "links": [
+                {
+                  "title": "什么是DAO以及它们是如何工作的？",
+                  "url": "https://consensys.net/blog/blockchain-explained/what-is-a-dao-and-how-do-they-work/",
+                  "type": "article"
+                },
+                {
+                  "title": "去中心化自治组织（DAO）",
+                  "url": "https://www.investopedia.com/tech/what-dao/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f46b8607-1298-4d55-ac32-582dc591b64f",
+              "xid": "199e63fa-d9ac-49fd-b66f-7b9a58d7ec55"
+            },
+            {
+              "title": "非同质化代币（NFTs）",
+              "description": "非同质化代币（NFT）是一种金融证券，由存储在区块链这种分布式账本形式中的数字数据组成。\n\nNFT的所有权记录在区块链中，并可由所有者转让，从而使NFT可以被买卖和交易。\n\n",
+              "links": [
+                {
+                  "title": "什么是非同质化代币（NFTs）？",
+                  "url": "https://www.coindesk.com/learn/what-are-nfts-and-how-do-they-work/",
+                  "type": "article"
+                },
+                {
+                  "title": "非同质化代币（NFT）",
+                  "url": "https://www.investopedia.com/non-fungible-tokens-nft-5115211",
+                  "type": "article"
+                },
+                {
+                  "title": "NFT解释",
+                  "url": "https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于非同质化代币（NFT）的热门文章",
+                  "url": "https://app.daily.dev/tags/nft?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "5分钟了解NFT | 什么是NFT？- 非同质化代币",
+                  "url": "https://youtu.be/NNQLJcJEzv0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "93245917-171c-447d-bec2-d382de373205",
+              "xid": "1da930f4-27ff-44d2-bad3-d630ea3d1e52"
+            },
+            {
+              "title": "支付",
+              "description": "区块链技术有能力消除中心化组织在支付转账过程中收取的所有手续费。\n\n",
+              "links": [
+                {
+                  "title": "区块链如何影响全球支付和汇款？",
+                  "url": "https://consensys.net/blockchain-use-cases/finance/#payments",
+                  "type": "article"
+                },
+                {
+                  "title": "智能合约用例 - 支付",
+                  "url": "https://blog.chain.link/smart-contract-use-cases/#external-payments",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d3f2d974-280b-4ab5-bbe3-61211b0fae9a",
+              "xid": "1611a315-297e-4128-99d4-63bc9acba4c6"
+            },
+            {
+              "title": "保险",
+              "description": "区块链技术能够通过使用预言机（oracle）验证现实世界的数据来实现索赔功能的自动化。\n\n它还自动处理索赔相关方之间的付款，从而降低保险公司的管理成本。\n\n",
+              "links": [
+                {
+                  "title": "智能合约用例 - 保险",
+                  "url": "https://blog.chain.link/smart-contract-use-cases/#insurance",
+                  "type": "article"
+                },
+                {
+                  "title": "保险行业区块链的前7大应用场景",
+                  "url": "https://imaginovation.net/blog/blockchain-insurance-industry-examples/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6b8300e3-8786-4122-bd26-8e47916f9436",
+              "xid": "f8fdc9fe-3a54-488e-8b91-8659c19b2cb1"
+            }
+          ],
+          "id": "fb6a6e5b-79b2-416c-8182-73c303fc3dfc",
+          "xid": "88126d3d-3540-410d-a5b1-c666822e45df"
+        },
+        {
+          "title": "区块链节点即服务（Node as a Service）",
+          "description": "运行您自己的区块链节点可能具有挑战性，特别是在刚开始或快速扩展的时候。\n\n有许多服务可以为您运行优化的节点基础设施，这样您就可以专注于开发您的应用程序或产品。\n\n",
+          "links": [
+            {
+              "title": "区块链节点提供商及其工作原理",
+              "url": "https://www.infoq.com/articles/blockchain-as-a-service-get-block/",
+              "type": "article"
+            },
+            {
+              "title": "节点即服务 - Ethereum",
+              "url": "https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "炼金术(Alchemy)",
+              "description": "炼金术(Alchemy)是一个开发平台，它使公司能够构建可扩展且可靠的去中心化应用程序，而无需管理内部的区块链基础设施的麻烦。\n\n",
+              "links": [
+                {
+                  "title": "炼金术(Alchemy)",
+                  "url": "https://www.alchemy.com/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7fde2b5d-bf1a-43df-b27d-91aff471e560",
+              "xid": "a04fb075-e432-4d22-8c0b-0deae9c36220"
+            },
+            {
+              "title": "Infura",
+              "description": "Infura 提供工具和基础设施，让开发者能够轻松地将区块链应用程序从测试阶段转移到大规模部署阶段 - 通过简单可靠的途径访问 Ethereum(以太坊) 和 IPFS。\n\n",
+              "links": [
+                {
+                  "title": "Infura",
+                  "url": "https://infura.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "Infura 文档",
+                  "url": "https://docs.infura.io/api",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "50979a58-6ff7-4556-9637-87590717d0e7",
+              "xid": "ce2a96e7-5b31-41e5-ac59-90ac22c54779"
+            },
+            {
+              "title": "Moralis",
+              "description": "Moralis 提供了一个单一的工作流程来构建高性能的去中心化应用程序（dapps）。\n\n完全兼容您最喜欢的 web3 工具和服务。\n\n",
+              "links": [
+                {
+                  "title": "Moralis",
+                  "url": "https://moralis.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "浏览关于 Moralis 的热门文章",
+                  "url": "https://app.daily.dev/tags/moralis?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "31d16c58-38d7-4172-ac11-0a0864b4361d",
+              "xid": "8e836ec9-d1bb-4085-b6ea-f7d7e7b0f9e1"
+            },
+            {
+              "title": "Quicknode",
+              "description": "QuickNode 是一个用于构建和扩展区块链应用的Web3开发者平台。\n\n",
+              "links": [
+                {
+                  "title": "Quicknode",
+                  "url": "https://www.quicknode.com/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "efb73325-ce75-4b41-aa47-fee8652ff908",
+              "xid": "dc4ac76d-f39a-4458-8881-53841a7dff43"
+            }
+          ],
+          "id": "da9a9763-3e72-4e23-a284-74fac2262d27",
+          "xid": "a7759596-d1d7-4eb9-9918-3d682e18ae5a"
+        }
+      ],
+      "id": "45075a26-94b8-44ba-b5e2-a061a8cc5b52",
+      "xid": "0d66e408-9d0e-4b2c-b783-1c1cdb1ff87e"
+    },
+    {
+      "title": "版本控制系统",
+      "description": "版本控制（Version Control）/源代码控制系统允许开发人员随时间跟踪和控制代码的变化。\n\n这些服务通常包括对代码进行原子修订、从特定点分支/分叉以及比较代码版本的能力。\n\n它们有助于确定代码更改的执行者（who）、更改内容（what）、更改时间（when）和更改原因（why）。\n\n",
+      "links": [
+        {
+          "title": "Git",
+          "url": "https://git-scm.com/",
+          "type": "article"
+        },
+        {
+          "title": "Mercurial",
+          "url": "https://www.mercurial-scm.org/",
+          "type": "article"
+        },
+        {
+          "title": "什么是版本控制？",
+          "url": "https://www.atlassian.com/git/tutorials/what-is-version-control",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Git (版本控制软件)",
+          "description": "Git 是一个免费、开源的分布式版本控制系统，旨在快速高效地处理从小型到非常大型的所有项目。\n\n",
+          "links": [
+            {
+              "title": "访问专用于 Git 的学习路线图",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "Git (版本控制软件)",
+              "url": "https://git-scm.com/",
+              "type": "article"
+            },
+            {
+              "title": "Git 文档",
+              "url": "https://git-scm.com/doc",
+              "type": "article"
+            },
+            {
+              "title": "利用教程、新闻和技巧学习 Git - Atlassian",
+              "url": "https://www.atlassian.com/git",
+              "type": "article"
+            },
+            {
+              "title": "Git 快速参考指南",
+              "url": "https://cs.fyi/guide/git-cheatsheet",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Git 的热门文章",
+              "url": "https://app.daily.dev/tags/git?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Git 和 GitHub 入门速成课程",
+              "url": "https://www.youtube.com/watch?v=SWYqp7iY_Tc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "06858fb1-e8b6-4448-92b7-0afa16936b93",
+          "xid": "e9e3cdd9-a346-4d44-95c6-447e857eda9d"
+        }
+      ],
+      "id": "08a22735-d04f-486b-9195-633f16d579ef",
+      "xid": "b8b9ec33-c7dc-4e12-97dc-e9e827d6a3fb"
+    },
+    {
+      "title": "代码仓库托管服务",
+      "description": "当团队协作时，通常需要一个远程位置来存放代码，以便其他人可以访问它，创建自己的分支，并创建或审查拉取请求（pull requests）。\n\n这些服务通常包括问题跟踪、代码审查和持续集成功能。\n\n几个知名的选择包括GitHub（GitHub）、GitLab（GitLab）、BitBucket（BitBucket）和AWS CodeCommit（AWS CodeCommit）。\n\n",
+      "links": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com/features/",
+          "type": "article"
+        },
+        {
+          "title": "GitLab",
+          "url": "https://about.gitlab.com/",
+          "type": "article"
+        },
+        {
+          "title": "BitBucket",
+          "url": "https://bitbucket.org/product/guides/getting-started/overview",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "GitHub",
+          "description": "GitHub 是一个使用 Git 软件进行互联网托管的开发和版本控制提供商。\n\n它提供了 Git 的分布式版本控制和源代码管理功能，并加入了其自身的特性。\n\n",
+          "links": [
+            {
+              "title": "访问专用的 GitHub 路线图",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "GitHub",
+              "url": "https://github.com",
+              "type": "article"
+            },
+            {
+              "title": "GitHub 文档",
+              "url": "https://docs.github.com/en/get-started/quickstart",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于 GitHub 的热门文章",
+              "url": "https://app.daily.dev/tags/github?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是 GitHub？",
+              "url": "https://www.youtube.com/watch?v=w3jLJU7DT5E",
+              "type": "video"
+            },
+            {
+              "title": "Git vs. GitHub: 它们之间的区别是什么？",
+              "url": "https://www.youtube.com/watch?v=wpISo9TNjfU",
+              "type": "video"
+            },
+            {
+              "title": "面向初学者的 Git 和 GitHub",
+              "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "73da4589-235c-46fa-aedc-e2a1affd5c56",
+          "xid": "3485374a-e566-465d-99c1-5a16f629e0de"
+        },
+        {
+          "title": "GitLab",
+          "description": "GitLab 是一个为软件开发和版本控制（Version Control）提供互联网托管服务的平台，使用 Git 作为其技术基础。\n\n它不仅提供了 Git 的分布式版本控制和源代码管理的功能，还提供了自己的特色功能。\n\n",
+          "links": [
+            {
+              "title": "GitLab 网站",
+              "url": "https://gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "GitLab 文档",
+              "url": "https://docs.gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 GitLab 的热门文章",
+              "url": "https://app.daily.dev/tags/gitlab?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "76a3d1fe-0c4a-49b2-b685-e26fa5148174",
+          "xid": "f3b05f83-4fc9-4a74-b7b3-2ad01b0392ba"
+        },
+        {
+          "title": "Bitbucket",
+          "description": "Bitbucket 是一种基于 Git 的托管和源代码仓库服务（source code repository service），是 Atlassian 面对其他产品如 GitHub、GitLab 等的替代方案。\n\nBitbucket 提供了多种托管选项，包括 Bitbucket Cloud（Atlassian 的服务器）、Bitbucket Server（客户的本地环境）或 Bitbucket Data Centre（客户本地环境或云环境中的多服务器配置）。\n\n",
+          "links": [
+            {
+              "title": "Bitbucket 网站",
+              "url": "https://bitbucket.org/product",
+              "type": "article"
+            },
+            {
+              "title": "Bitbucket 概览",
+              "url": "https://bitbucket.org/product/guides/getting-started/overview#a-brief-overview-of-bitbucket",
+              "type": "article"
+            },
+            {
+              "title": "开始使用 Bitbucket",
+              "url": "https://bitbucket.org/product/guides/basics/bitbucket-interface",
+              "type": "article"
+            },
+            {
+              "title": "使用 Git 与 Bitbucket Cloud",
+              "url": "https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Bitbucket 的热门文章",
+              "url": "https://app.daily.dev/tags/bitbucket?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Bitbucket 教程 | Bitbucket 初学者指南",
+              "url": "https://www.youtube.com/watch?v=i5T-DB8tb4A",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "051a335f-37e4-4ccd-86f9-c7261b0c5bc4",
+          "xid": "a649b331-a071-4d51-8601-6abf5f6068ff"
+        }
+      ],
+      "id": "1d58ed74-7309-4d54-8aca-f2f70845a990",
+      "xid": "24e98922-3322-4065-a338-40822da13bad"
+    },
+    {
+      "title": "构建扩展性",
+      "description": "由于区块链内置的每秒交易数（Transactions Per Second，TPS）有限，出现了多种替代机制和技术来帮助区块链dApps（分布式应用）实现扩展。\n\n",
+      "links": [
+        {
+          "title": "区块链扩展性",
+          "url": "https://medium.com/iovlabs-innovation-stories/blockchain-scalability-4dce74382930",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "状态通道与支付通道",
+          "description": "状态通道（State channels）指的是用户直接在区块链之外，或说‘链下（off-chain）’进行交易的过程，这极大地减少了他们使用‘链上（on-chain）’操作的需求。\n\n",
+          "links": [
+            {
+              "title": "状态通道基础",
+              "url": "https://education.district0x.io/general-topics/understanding-ethereum/basics-state-channels/",
+              "type": "article"
+            },
+            {
+              "title": "状态通道：链下交易入门",
+              "url": "https://www.talentica.com/blogs/state-channels-an-introduction-to-off-chain-transactions/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ec1338d8-9ecf-4e54-a334-0b731ca4e7ec",
+          "xid": "a0f72985-b662-4805-b929-a5ee24da398c"
+        },
+        {
+          "title": "乐观汇总(Optimistic Rollups)与欺诈证明(Fraud Proofs)",
+          "description": "乐观汇总是一种第2层（L2）构造，通过将计算和数据存储移至链下，提高了以太坊基础层的吞吐量和延迟。\n\n乐观汇总在外链处理交易，减少了基础层的拥堵，提高了可扩展性。\n\n乐观汇总允许任何人发布区块，无需提供有效性的证明。\n\n然而，为了确保链的安全性，乐观汇总指定了一个时间窗口，在此期间任何人都可以质疑状态过渡。\n\n",
+          "links": [
+            {
+              "title": "乐观汇总是如何工作的（完整指南）",
+              "url": "https://www.alchemy.com/overviews/optimistic-rollups",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ef9a1c29-76fd-48cf-9174-027dd88590ab",
+          "xid": "0a6ad62f-71d8-4ae9-8682-43744da02144"
+        },
+        {
+          "title": "Zk Rollups与零知识证明",
+          "description": "零知识汇总（Zero-knowledge rollups, ZK-rollups）是第2层（layer 2）扩展解决方案，通过将计算和状态存储移至链下（off-chain）来提高区块链的吞吐量。\n\n",
+          "links": [
+            {
+              "title": "零知识汇总 - Ethereum",
+              "url": "https://ethereum.org/en/developers/docs/scaling/zk-rollups",
+              "type": "article"
+            },
+            {
+              "title": "zk-SNARK为何以及如何工作",
+              "url": "https://medium.com/@imolfar/why-and-how-zk-snark-works-1-introduction-the-medium-of-a-proof-d946e931160",
+              "type": "article"
+            },
+            {
+              "title": "零知识SNARK简介",
+              "url": "https://vitalik.eth.limo/general/2021/01/26/snarks.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e7774118-f5b5-491c-9cab-3c128812d066",
+          "xid": "5b3f8a07-8111-4c17-b3d9-58549fe1b812"
+        },
+        {
+          "title": "Validium",
+          "description": "Validium是一种扩展解决方案，它使用类似于零知识rollup（ZK-rollup）的有效性证明来确保交易的完整性，但不会将交易数据存储在以太坊主网（Ethereum Mainnet）上。\n\n虽然离线数据可用性引入了权衡，但它可以极大地提高可扩展性。\n\n",
+          "links": [
+            {
+              "title": "Validium - 以太坊",
+              "url": "https://ethereum.org/en/developers/docs/scaling/validium/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c6dcadd7-2635-4b33-bb22-f5115ec023bb",
+          "xid": "eddb1cef-9116-4548-b99e-cc1157873daf"
+        },
+        {
+          "title": "等离子链（Plasma）",
+          "description": "等离子链（Plasma）是一个框架，它允许创建使用主以太坊链作为信任和仲裁层的子区块链。\n\n在等离子链（Plasma）中，子链可以被设计成满足特定应用场景的需求，特别是那些当前在以太坊上不可行的应用。\n\n",
+          "links": [
+            {
+              "title": "Plasma Chains - 以太坊",
+              "url": "https://ethereum.org/en/developers/docs/scaling/plasma/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "068621b6-5181-4278-8925-e37f8fe228bd",
+          "xid": "39793777-0158-4a06-9989-49fd0aa1604a"
+        },
+        {
+          "title": "侧链(Sidechains)",
+          "description": "侧链(Sidechain)是一个独立的区块链网络，通过双向挂钩(two-way peg)与另一个被称为父链(parent blockchain)或主链(mainnet)的区块链相连。\n\n",
+          "links": [
+            {
+              "title": "侧链(Sidechains) - 以太坊(Ethereum)",
+              "url": "https://ethereum.org/en/developers/docs/scaling/sidechains/",
+              "type": "article"
+            },
+            {
+              "title": "侧链(Sidechains)简介",
+              "url": "https://www.coindesk.com/learn/an-introduction-to-sidechains",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4c5c0b07-5d4e-4061-bdaf-b6d577bf5189",
+          "xid": "cea1186b-8ce2-4503-87a7-078618f32989"
+        },
+        {
+          "title": "以太坊2.0 (Ethereum 2.0)",
+          "description": "以太坊2.0标志着对以太坊公共主网的重大预期升级。\n\n通过改善其性能，以太坊2.0旨在加速以太坊的使用和采用，它实现了权益证明 (Proof of Stake)机制。\n\n",
+          "links": [
+            {
+              "title": "什么是以太坊2.0 (Ethereum 2.0)?",
+              "url": "https://consensys.net/blog/blockchain-explained/what-is-ethereum-2/",
+              "type": "article"
+            },
+            {
+              "title": "什么是以太坊2.0 (Ethereum 2.0)? 理解合并 (The Merge)",
+              "url": "https://www.forbes.com/advisor/investing/cryptocurrency/ethereum-2/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于以太坊的顶级文章",
+              "url": "https://app.daily.dev/tags/ethereum?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e3c1a15b-dc7b-491c-945e-841cdd8a4672",
+          "xid": "1da65517-30f8-4576-84d8-3b187f9050d6"
+        },
+        {
+          "title": "链上扩容",
+          "description": "链上扩容指的是对区块链进行的任何直接修改，例如以太坊2.0版本中的数据分片(data sharding)和执行分片(execution sharding)。\n\n另一种链上扩容方式可以是通过双向桥接(two-way bridge)连接以太坊的侧链，例如Polygon。\n\n",
+          "links": [
+            {
+              "title": "扩容 - 以太坊",
+              "url": "https://ethereum.org/en/developers/docs/scaling/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "96b39826-5912-4e71-8fa3-dae65cff75b4",
+          "xid": "b8091605-37c7-420a-9a7b-59b065f8fa90"
+        }
+      ],
+      "id": "38827a1d-f259-486d-8cc1-76ab7b35f12a",
+      "xid": "39c3d1ca-6ee8-46db-9346-888e4b9bdf83"
+    }
+  ],
+  "id": "9dbffbf1-a294-4c59-9830-0380939cc529",
+  "xid": "47f61c73-13de-4ee8-a7bb-698b07bdc28a"
+}

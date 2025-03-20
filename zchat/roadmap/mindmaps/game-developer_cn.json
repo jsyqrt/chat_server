@@ -1,0 +1,2664 @@
+{
+  "title": "游戏开发者",
+  "description": "成为游戏开发者（Game Developer）的路线图（2025年版）",
+  "links": [],
+  "children": [
+    {
+      "title": "客户端开发",
+      "description": "在游戏开发中，术语\"客户端\"（Client Side）指的是在游戏机器上发生的所有操作和活动，这可以是控制台、计算机甚至是手机。\n\n客户端负责渲染图形、处理用户输入，并且有时会处理游戏逻辑。\n\n这与服务器端操作相对，服务器端涉及处理多人联机连接以及同步多个客户端的游戏状态。\n\n在客户端开发中，开发者需要确保性能优化、流畅的用户界面和用户体验、快速的加载时间以及安全性，以提供一种充满互动、无延迟的游戏体验。\n\n安全性对于防止多人游戏中作弊也很关键，可以通过措施如数据混淆和加密来解决这些问题。\n\n",
+      "links": [
+        {
+          "title": "客户端架构",
+          "url": "https://gabrielgambetta.com/client-server-game-architecture.html",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "54b1381e-2cb4-421a-a348-306022621b5f",
+      "xid": "60599ae8-cc4c-4beb-a744-7cef6d3cd471"
+    },
+    {
+      "title": "学习基础知识",
+      "description": "短语\"适用于使用或目的\"概括了质量的含义，这是一个极其难以定义的概念。\n\n归根结底，这些都取决于产品在实用性、设计、可靠性、耐用性和价格方面满足消费者需求和期望的程度。\n\n保证无非是对一种商品或服务的一种自信声明。\n\n它是对商品或服务良好结果的保证。\n\n它承诺产品将按照预期或需求无故障运行。\n\n质量保证(Quality Assurance, QA)是一种活动，确保组织能够为客户提供最佳的产品或服务。\n\n软件的QA测试包括性能、适应性和功能性的测试。\n\n然而，软件质量保证不仅限于软件质量；它还涵盖了用于软件产品的开发、测试和发布的质量过程。\n\n质量保证依赖于软件开发生命周期，这包括软件需求管理、设计、编码、测试和发布。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "线性代数(Linear Algebra)",
+          "description": "线性代数(Linear Algebra)是数学中一个至关重要的领域，在游戏开发中被广泛使用。\n\n它围绕向量空间(vector spaces)及其使用的数学结构，包括矩阵(matrices)、行列式(determinants)、向量(vectors)、特征值(eigenvalues)和特征向量(eigenvectors)等。\n\n在线性游戏开发的语境中，线性代数主要用于计算机图形学、物理、人工智能等方面。\n\n它使开发人员能够处理空间变换，帮助他们操纵和有效地与游戏中的三维空间交互。\n\n从更广泛的角度来看，在计算机编程中，线性代数对于算法、景深位移(parallax shifting)、多边形建模(polygonal modeling)、碰撞检测(collision detection)等非常重要。\n\n从物体的移动、位置计算、游戏物理，到创建游戏中的动力学，线性代数都是关键因素。\n\n",
+          "links": [
+            {
+              "title": "线性代数(Linear Algebra)",
+              "url": "https://en.wikipedia.org/wiki/Linear_algebra",
+              "type": "article"
+            },
+            {
+              "title": "探索关于数学的顶级文章",
+              "url": "https://app.daily.dev/tags/math?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Kimberly Brehm的线性代数完整课程",
+              "url": "https://youtube.com/playlist?list=PLl-gb0E4MII03hiCrZa7YqxUMEeEPmZqK&si=_r0WDwh94NKJbs_R",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1886f480-cd56-4269-ba65-673ab2ad1ba3",
+          "xid": "e796113e-9bd0-4ff0-9d7f-10b0158aef47"
+        },
+        {
+          "title": "向量 (Vector)",
+          "description": "在游戏开发中，`向量 (Vector)` 是一个数学概念，也是游戏物理的重要组成部分。\n\n它表示一个既有大小又有方向的量。\n\n在游戏里，向量可用于表示不同的元素，如位置、速度、加速度或方向。\n\n在三维游戏中，向量通常用来定义三维坐标 (x, y, z)。\n\n例如，如果玩家角色在游戏中向上移动，就可以应用一个指向上的向量。\n\n因此，掌握如何操作向量是游戏开发的基本技能。\n\n",
+          "links": [
+            {
+              "title": "游戏开发中的向量实用入门",
+              "url": "https://dev.to/marcbeaujean/practical-introduction-to-vectors-for-game-development-532f",
+              "type": "article"
+            },
+            {
+              "title": "向量入门 (由 Sebastian Lague 编制)",
+              "url": "https://youtu.be/m7VY1T6f8Ak?feature=shared",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a2907f4a-ac79-4a56-97aa-e1be96de86bb",
+          "xid": "9c3b4ee5-14cf-473b-a738-3cfa153d7fb2"
+        },
+        {
+          "title": "矩阵",
+          "description": "在游戏开发中，**矩阵(matrix)** 是游戏数学的基础部分。\n\n它是一组排成行和列的数字，对于3D游戏开发尤其重要。\n\n这些矩阵通常是4x4的矩阵，即包含16个浮点数，并且广泛用于转换。\n\n它们允许对3D顶点进行缩放、旋转和平移（移动）。\n\n通过矩阵，可以将这些转换组合起来，将变换后的顶点用于将3D模型的复制品绘制到2D屏幕空间中以进行渲染。\n\n",
+          "links": [
+            {
+              "title": "矩阵代数与游戏编程",
+              "url": "https://www.gameludere.com/2019/12/21/matrix-algebra-and-game-programming/",
+              "type": "article"
+            },
+            {
+              "title": "游戏开发中的矩阵",
+              "url": "https://dev.to/fkkarakurt/matrices-and-vectors-in-game-development-67h",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4b34ed9c-27e3-457c-94db-cc14b5b5030f",
+          "xid": "62af6e04-996f-4795-9fe4-752604e282fd"
+        },
+        {
+          "title": "几何学",
+          "description": "几何学在游戏开发中，指的是用于定义游戏内的空间元素的数学研究。\n\n这对于确定游戏环境中的对象如何交互至关重要。\n\n特别是，几何学在对象渲染、碰撞检测、角色移动，以及角度和距离的计算等方面都有应用。\n\n它允许开发者为游戏创建空间参数，包括对象的尺寸和方向。\n\n理解基本概念，如2D vs 3D（2D vs 3D）、多边形（polygons）、顶点（vertices）、网格（meshes），及更高级的主题如向量（vectors）、矩阵（matrices）、四元数（quaternions）等，对于这个领域来说至关重要。\n\n",
+          "links": [
+            {
+              "title": "游戏几何学 - 数学很有趣",
+              "url": "https://www.mathsisfun.com/geometry/index.html",
+              "type": "article"
+            },
+            {
+              "title": "游戏中的几何学和基本图形",
+              "url": "https://dev.to/fkkarakurt/geometry-and-primitives-in-game-development-1og",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c2728546-cfcc-413c-9f91-fd3fcf6926fb",
+          "xid": "bfa64ccd-5012-4a03-89f4-e50b96acd6b6"
+        },
+        {
+          "title": "线性变换 (Linear Transformation)",
+          "description": "`线性变换 (Linear Transformation)` 或 `线性映射 (Linear Map)` 是数学中的一个重要概念，特别是在线性代数和泛函分析这些领域。\n\n线性变换可以理解为一种保持向量加法和标量乘法操作的变换。\n\n换句话说，如果对于每一对向量 `x` 和 `y`，方程 `T(x + y) = T(x) + T(y)` 都成立，那么变换 T 就是线性的。\n\n同样，对于任何标量 `c` 和任何向量 `x`，方程 `T(cx)=cT(x)` 也应该成立。\n\n这一特性使得它们在处理线性方程组、矩阵及计算机图形学的很多领域，包括游戏开发中极为有用。\n\n",
+          "links": [
+            {
+              "title": "线性变换 (Linear Transformation)",
+              "url": "https://en.wikipedia.org/wiki/Linear_map",
+              "type": "article"
+            },
+            {
+              "title": "探索关于数学的顶尖文章",
+              "url": "https://app.daily.dev/tags/math?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4abe9e5e-4734-4eca-ab7a-90aee93a65cb",
+          "xid": "14f9793d-da4e-46e2-9f38-728cd436a9dc"
+        },
+        {
+          "title": "仿射空间(Affine Space)",
+          "description": "在游戏数学的背景下，**仿射空间(Affine Space)** 是一个你应该理解的基本概念。\n\n它是具有与几何和代数相关的属性的几何结构。\n\n仿射空间的一个重要方面是它能够更方便地处理点和向量。\n\n虽然向量空间本身专注于既有大小又有方向的向量，但不涉及点。\n\n仿射空间使得将向量加到点上或将点相减以得到向量变得容易。\n\n这一概念在游戏开发领域非常有用，尤其是在处理图形模型、动画和运动控制时。\n\n",
+          "links": [
+            {
+              "title": "仿射空间(Affine Space)",
+              "url": "https://en.wikipedia.org/wiki/Affine_space",
+              "type": "article"
+            },
+            {
+              "title": "理解仿射空间(Affine Space)",
+              "url": "https://brilliant.org/wiki/affine-spaces/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "eeaa7c6f-bd1b-46f1-a0f0-74902afa81bf",
+          "xid": "869130dd-9399-400b-b7ea-f8f9a21b99e3"
+        },
+        {
+          "title": "仿射变换 (Affine Transformation)",
+          "description": "在游戏数学的背景下，**仿射变换 (affine transformation)** 是连接仿射空间之间保持点、直线和面的函数。\n\n此外，一组平行线在经过仿射变换后仍然保持平行。\n\n在视频游戏中，它通常用于在3D空间中操纵对象的位置。\n\n这一操作使游戏开发者能够执行多种变换，例如平移（将对象从一个位置移动到另一个位置）、缩放（改变对象大小）和旋转（围绕一个点旋转对象）。\n\n仿射变换的重要特征之一是它保留点的独特性；若开始时两点不相同，则变换后它们依然不相同。\n\n需要注意的是，这些变换是在对象自身的坐标系而非世界坐标系中相对于对象应用的。\n\n",
+          "links": [
+            {
+              "title": "仿射变换 (Affine Transformation)",
+              "url": "https://www.gamedevs.org/uploads/affine-transformations.pdf",
+              "type": "article"
+            },
+            {
+              "title": "理解仿射变换 (Understanding Affine Transformations)",
+              "url": "https://code.tutsplus.com/understanding-affine-transformations-with-matrix-mathematics--active-10884t",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d747edec-a892-46b6-9fbc-f626d728b607",
+          "xid": "612f2789-440b-4f95-ae07-876786de4c34"
+        },
+        {
+          "title": "方向调整",
+          "description": "在游戏开发的背景下，**方向调整（Orientation）**指的是三维空间中物体指向的方向。\n\n确定三维空间中物体的方向通常使用三个角度：俯仰角、偏航角和滚转角，这组角度被称为欧拉角（Euler's angles）。\n\n**俯仰角（Pitch）**是在X轴上的旋转，**偏航角（Yaw）**是在Y轴上的旋转，而**滚转角（Roll）**是在Z轴上的旋转。\n\n此外，方向也可以使用四元数（Quaternion）来表示。\n\n四元数的优点是可以避免一种称为万向锁（Gimbal lock）的问题，即在使用欧拉角时三维空间中会丢失一个自由度。\n\n",
+          "links": [
+            {
+              "title": "角色的方向调整",
+              "url": "https://medium.com/@dev.szabo.endre/a-bit-e-of-game-dev-math-01-character-movement-with-vectors-effc862a1e4f",
+              "type": "article"
+            },
+            {
+              "title": "游戏开发者的向量数学",
+              "url": "https://www.gamedeveloper.com/programming/vector-maths-for-game-dev-beginners",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "四元数（Quaternion）",
+              "description": "**四元数（quaternion）**是一种复数系统，它扩展了三维空间中旋转的概念。\n\n四元数包括四个组成部分：一个实数部分和三个虚数部分。\n\n四元数在游戏开发中被用来高效准确地计算旋转和方向。\n\n相较于欧拉角度等其他方法，四元数特别有用，因为它们能有效地避免诸如万向锁（Gimbal lock）的问题。\n\n尽管四元数的性质相当复杂，但理解和实现四元数能够极大地增强游戏的3D旋转机制和精度。\n\n",
+              "links": [
+                {
+                  "title": "理解四元数（Understanding Quaternions）",
+                  "url": "https://www.3dgep.com/understanding-quaternions/",
+                  "type": "article"
+                },
+                {
+                  "title": "Unity 文档 - 四元数（Quaternions）",
+                  "url": "https://docs.unity3d.com/ScriptReference/Quaternion.html",
+                  "type": "article"
+                },
+                {
+                  "title": "四元数和3D旋转的互动解释（Quaternions and 3d rotation,explained interactively）",
+                  "url": "https://youtu.be/zjMuIxRvygQ?si=ANmFr5k8JMUzBCUC",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "9753693a-5fb0-4b96-88e5-6009b39e6754",
+              "xid": "574c8c27-dae8-4201-887f-b6cd95c56c9a"
+            },
+            {
+              "title": "欧拉角（Euler Angle）",
+              "description": "**欧拉角（Euler angle）**是数学和物理学中的一个概念，用于描述三维空间中刚体或坐标系的方向。\n\n它使用三个角度，通常命名为alpha （α）、beta （β）和gamma（γ），表示沿原始坐标系的三个轴的连续旋转。\n\n欧拉角可以将任何旋转表示为三个基本旋转的序列。\n\n需要注意的是，欧拉角不是唯一的，不同的旋转序列可以表示相同的总效果。\n\n同样值得注意的是，欧拉角容易出现一个称为万向锁的问题，当第一个轴和第三个轴对齐时，会导致自由度减少，并在某些特定方向上产生不可预测的行为。\n\n",
+              "links": [
+                {
+                  "title": "游戏开发中的欧拉角（Euler Angle）",
+                  "url": "https://www.gameludere.com/2020/03/12/euler-angles-hamilton-quaternions-and-video-games/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c0190809-e480-4e58-bba8-e2e8bb289241",
+              "xid": "fe78e1d3-aef8-4c32-80b2-5c8bbe3e669b"
+            },
+            {
+              "title": "样条曲线 (Spline)",
+              "description": "样条曲线 (Spline) 是计算机图形学中广泛使用的一种数学函数，用于生成曲线和表面。\n\n它通过平滑的曲线连接两个或多个点，常用于游戏中定义路径、运动轨迹、物体形状和流程控制。\n\n样条曲线不仅限于二维空间，可以扩展到三维或更高维度。\n\n样条曲线的类型包括线性样条曲线 (Linear)、三次样条曲线 (Cubic) 和贝塞尔样条曲线 (Bezier)。\n\n线性样条曲线在点之间生成直线，而三次样条曲线和贝塞尔样条曲线通过添加控制点和手柄提供了更多的控制和复杂性。\n\n深入了解样条曲线及其用法可以极大地改善游戏的流畅性和视觉美感。\n\n",
+              "links": [
+                {
+                  "title": "数学中的样条曲线 (Spline)",
+                  "url": "https://en.wikipedia.org/wiki/Spline_(mathematics)",
+                  "type": "article"
+                },
+                {
+                  "title": "关于样条曲线 (Splines) 的深入视频由Freya Holmér讲解",
+                  "url": "https://youtu.be/jvPPXbo87ds?si=JX_G-gS81tOwQwjf",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "93ea2449-c1e0-4cdd-920b-564987ca6224",
+              "xid": "907c8f7e-72a4-4f9d-b942-2d189c499fa5"
+            },
+            {
+              "title": "埃尔米特",
+              "description": "埃尔米特（Hermite）指的是埃尔米特插值法，这是游戏开发中实现平滑过渡的一项基本技术。\n\n实质上，埃尔米特插值法是多项式数学的应用之一，通常使用两个点作为起始/结束点（一般是三维位置向量），并且这些点上的切线控制着曲线的形状。\n\n该技术的名称来自其发明者，法国数学家查尔斯·埃尔米特（Charles Hermite）。\n\n埃尔米特插值法可以应用于游戏开发的不同方面，例如创建平滑的动画、摄像机路径或运动模式。\n\n需要注意的是，尽管埃尔米特插值法能够控制序列的起始点和结束点，但可能无法精确预测曲线的全部行为。\n\n",
+              "links": [
+                {
+                  "title": "埃尔米特插值法",
+                  "url": "https://en.wikipedia.org/wiki/Hermite_interpolation",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "52ece40c-3319-4650-b564-7a09ecb1774b",
+              "xid": "756305a0-9442-4b34-929a-db4bdd05c830"
+            },
+            {
+              "title": "贝塞尔曲线",
+              "description": "`贝塞尔曲线（Bezier curves）`是以法国工程师皮埃尔·贝塞尔的名字命名的，他在雷诺汽车公司工作，在20世纪60年代使用这些曲线设计汽车车身。\n\n贝塞尔曲线由一组控制点定义，这些点的数目至少为两个，但没有上限。\n\n曲线计算在第一个和最后一个控制点之间，不经过控制点，但这些点仅影响曲线的方向。\n\n贝塞尔曲线有线性、二次和三次几种形式，但也可能有更多的控制点。\n\n它们被广泛应用于计算机图形、动画中，并广泛用于矢量图像和工具中，以创建形状、文本和对象。\n\n",
+              "links": [
+                {
+                  "title": "为您的游戏创建贝塞尔曲线",
+                  "url": "http://devmag.org.za/2011/04/05/bzier-curves-a-tutorial/",
+                  "type": "article"
+                },
+                {
+                  "title": "贝塞尔曲线解析",
+                  "url": "https://www.youtube.com/watch?v=pnYccz1Ha34",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "11a8fbaf-5b22-4d96-93f5-2e44f3290eb0",
+              "xid": "208ae8aa-6caf-43c1-8b96-a4beada868fb"
+            },
+            {
+              "title": "Catmull-Rom (Catmull-Rom)",
+              "description": "Catmull-Rom 样条是一种在二维和三维图形中使用的插值形式。\n\n它以 Edwin Catmull 和 Raphael Rom 命名，为以一种平滑方式移动对象或在图形学术语中平滑绘制链接多个点的曲线提供了一种简单的方法。\n\n它是一种三次插值样条，意味着它使用三次多项式来计算坐标，因此 Catmull-Rom 适合于在图形和动画中创建平滑且自然的曲线。\n\n它还具有 C1 连续性这一特性，以确保曲线没有方向上的突然变化。\n\n然而，如果没有妥善管理，它可能在点之间产生回路。\n\n",
+              "links": [
+                {
+                  "title": "Catmull Rom (Catmull Rom)",
+                  "url": "https://gamedev.net/forums/topic/535895-catmull-rom-in-shmups/",
+                  "type": "article"
+                },
+                {
+                  "title": "Catmull Rom 样条 - 游戏开发 (Catmull Rom Spline - Game Development)",
+                  "url": "https://gamedev.stackexchange.com/questions/47354/catmull-rom-spline-constant-speed",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d4149d61-fa46-43d7-90f7-1b57c1cfa1e9",
+              "xid": "13b03a4e-e51b-454c-a67a-50691990dfc2"
+            }
+          ],
+          "id": "0b5b032f-3bc0-46a6-9915-594af88f9b01",
+          "xid": "c8e5b2df-fd88-4ecf-be18-8ed4d3b918ce"
+        },
+        {
+          "title": "投影",
+          "description": "在游戏数学中，`投影（Projection）`通常是指将三维图像转换到二维平面（通常是计算机屏幕）的方法。\n\n游戏开发中有两种主要的投影类型：`平行投影（Orthographic Projection）`和`透视投影（Perspective Projection）`。\n\n在平行投影中，物体会保持其大小，无论它们离摄像机有多远。\n\n这通常用于2D游戏或3D游戏中视角不重要的场景。\n\n另一方面，透视投影模仿人类眼睛的视角，远处的物体看起来更小。\n\n这种方法为3D游戏提供了更真实的渲染效果。\n\n理解投影在游戏开发中的重要性是因为它决定了虚拟3D空间和物体如何显示在2D观看平台上。\n\n",
+          "links": [
+            {
+              "title": "网格三角划分与多面体",
+              "url": "https://mathworld.wolfram.com/Projection.html",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "视角",
+              "description": "在游戏开发中，**视角(Perspective)** 在二维空间创建三维世界方面发挥着重要作用。\n\n它模仿我们的眼睛感知距离和深度的方式，随着物体离我们越来越远，它们看起来会越来越小。\n\n本质上，这是通过将3D坐标投影到虚拟屏幕上实现的。\n\n视角投影分为两种类型 - 一种是一点透视，即只有在深度方向上一个轴的大小发生变化，另一种是二点透视，即两个轴的大小都发生变化。\n\n这创造了更加真实的视觉效果，增强了游戏的可视化和沉浸感。\n\n一个重要的方面是玩家的视点，即在远处平行线汇聚的消失点。\n\n",
+              "links": [
+                {
+                  "title": "游戏中的视角",
+                  "url": "https://www.gamedeveloper.com/design/making-the-most-out-of-the-first-person-perspectives",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e96801bb-2e79-4808-84b3-2edfaecc779e",
+              "xid": "64258d50-d6c5-486a-b503-24d845f19b8b"
+            },
+            {
+              "title": "正交 (Orthogonal)",
+              "description": "正交投影（orthogonal projection），又称正射投影（orthographic projection），是一种在游戏开发中使用的平行投影方法，其中投影线垂直于投影平面。\n\n这会创建一个正面视角，基本上去除了透视效果。\n\n不同于透视投影——在透视投影中，距离观察者较远的对象显得较小——在正交投影中，对象的大小不会因距离而改变。\n\n正交投影缺少透视的效果，在特定类型如平台游戏或策略游戏中非常有用。\n\n此外，它在计算机辅助设计（CAD）和工程图纸中也经常使用。\n\n",
+              "links": [
+                {
+                  "title": "正交投影 (Orthogonal Projection)",
+                  "url": "https://medium.com/retronator-magazine/game-developers-guide-to-graphical-projections-with-video-game-examples-part-1-introduction-aa3d051c137d",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "818a1786-afb9-4992-b10c-ae5316a0d8be",
+              "xid": "cd037cb7-6fdd-4de6-8fe4-3cc8234eacec"
+            }
+          ],
+          "id": "dbdcf43f-9498-46d4-b6e0-91119b4b1e15",
+          "xid": "96574d81-32fd-41a6-818e-b8bad6b3d63e"
+        },
+        {
+          "title": "曲线",
+          "description": "在游戏开发中，“曲线”(curve)是一种用于创建平滑线条或路径的数学工具，应用领域包括动画、3D建模、UI设计及关卡布局。\n\n曲线简化了复杂形状和动作，使得结果比线性方法更为自然。\n\n曲线对于实现“逼真动画”(lifelike animations)、有机形状、“真实物理效果”(realistic physics)以及平滑的摄像机移动至关重要，这些都是打造精致流畅游戏设计的关键。\n\n",
+          "links": [
+            {
+              "title": "曲线",
+              "url": "https://en.wikipedia.org/wiki/Curve",
+              "type": "article"
+            },
+            {
+              "title": "曲线基础",
+              "url": "https://byjus.com/maths/curve/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "43bda10e-4599-47b7-9ced-dcc431d14562",
+          "xid": "6aa79f7a-6d23-4338-b58a-66186f7c51a0"
+        }
+      ],
+      "id": "8419c326-793a-4c34-87b5-ea01cb16f19e",
+      "xid": "e8532635-b785-437b-bc11-db085b7f287c"
+    },
+    {
+      "title": "游戏物理",
+      "description": "游戏物理是游戏开发中不可或缺的一部分，它在虚拟环境中模拟物理定律。\n\n这种模拟通过定义物体如何移动、交互以及对碰撞和力作出反应，为游戏增添了真实性。\n\n游戏物理涵盖了从角色在2D或3D空间中的跳跃和移动，到更复杂的机制如流体动力学(fluid dynamics)或布娃娃物理(ragdoll physics)的各个方面。\n\n游戏物理主要有两种类型，一种是更简单、更抽象的'街机物理'(arcade physics)，另一种是试图完全重现现实生活中的物理交互的'真实物理'(realistic physics)。\n\n实现游戏物理需要结合数学知识和编程技能以整合物理引擎，如Unity的PhysX和Unreal Engine内置的物理工具。\n\n",
+      "links": [
+        {
+          "title": "游戏物理",
+          "url": "https://en.wikipedia.org/wiki/Game_physics",
+          "type": "article"
+        },
+        {
+          "title": "今天就掌握游戏物理！",
+          "url": "https://www.udemy.com/course/gamephysics/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "动力学",
+          "description": "**动力学(Dynamics)** 在游戏物理中指的是计算和模拟物体随时间的运动和相互作用，考虑诸如质量、力和速度等属性。\n\n其目的是确保游戏元素的运动符合现实世界的预期，或符合游戏设计师定义的特定条件。\n\n这通常包括运动学（速度和加速度）、牛顿运动定律、力（如重力或摩擦力）和守恒定律（如动量或能量）等主题。\n\n这也涉及求解游戏对象的运动方程、检测碰撞并解决它们。\n\n动力学与静力学（研究如何让静止的刚体上的力平衡）共同构成了游戏物理仿真的核心。\n\n",
+          "links": [
+            {
+              "title": "游戏物理中的动力学",
+              "url": "https://americanprofessionguide.com/game-mechanics-and-dynamics/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "质心（Center of Mass）",
+              "description": "质心是一个相对于物体或物体系统定义的位置。\n\n通常用符号（COM）表示，它指的是系统中所有部分的加权平均位置，权重依据各部分的质量。\n\n例如，如果你有一个密度均匀的物体，该物体的质心就在其几何中心。\n\n在游戏开发中，物体的质心会影响施加力时物体的行为方式。\n\n这包括物体对力的响应移动方式，并可能影响游戏中的物理模拟的真实感。\n\n",
+              "links": [
+                {
+                  "title": "质心（Center of Mass）",
+                  "url": "https://medium.com/@brazmogu/physics-for-game-dev-a-platformer-physics-cheatsheet-f34b09064558",
+                  "type": "article"
+                },
+                {
+                  "title": "使用虚幻引擎物理学：质心（Center of Mass）",
+                  "url": "https://www.youtube.com/watch?v=JVX7TA8GkzE",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "cc17c47d-d728-4892-9e44-0451e38a1618",
+              "xid": "bdf7fe75-3272-4156-8f5f-74f1fd456c4f"
+            },
+            {
+              "title": "转动惯量(Moment of Inertia)",
+              "description": "转动惯量（moment of inertia），也称为回转惯性，是衡量物体对旋转变化阻力的一种度量。\n\n简单来说，它描述了从静止状态启动或停止旋转的难度。\n\n转动惯量由物体的质量及其相对于旋转轴的质量分布共同决定。\n\n在游戏开发的背景下，转动惯量对于创建游戏中人物、物体或车辆的真实移动至关重要。\n\n这尤其在涉及旋转实体的场景中非常重要。\n\n计算并应用这些物理特性可以确保更沉浸式和更可信的游戏体验。\n\n",
+              "links": [
+                {
+                  "title": "转动惯量(Moment of Inertia)",
+                  "url": "https://en.wikipedia.org/wiki/Moment_of_inertia",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "b454b5e2-64b9-4950-962b-5cfe811dc05a",
+              "xid": "7deb607a-c562-44f8-96fc-3fd253a4193e"
+            },
+            {
+              "title": "加速度(Acceleration)",
+              "description": "**加速度(Acceleration)**指的是单位时间内速度的变化率。\n\n这一物理概念被应用在游戏动态中，影响游戏人物或物体的移动速度。\n\n例如，当一个角色开始移动时，在达到最高速度之前通常会有一个短暂的延迟，只要移动按钮被持续按下，最高速度就会持续不变。\n\n这是由加速度引起的。\n\n相反，当释放按钮时，角色并不会立刻停下而是缓慢减速，这是由于减速度，其本质上是负加速度。\n\n通过掌握加速度和减速度，游戏开发者能够使游戏角色的动作更加真实和有趣。\n\n",
+              "links": [
+                {
+                  "title": "游戏中简单的加速度",
+                  "url": "http://earok.net/sections/articles/game-dev/theory/simplified-acceleration-games",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2061f6e9-d879-48f5-a55c-0798b13d57ec",
+              "xid": "71724129-43dd-425b-9307-dfb7353e4746"
+            },
+            {
+              "title": "关节",
+              "description": "在游戏开发中，关节主要指两个对象之间的连接，通常用于物理模拟和角色动画的上下文中。\n\n这些关节可以模拟现实世界中类似铰链或弹簧的物理学特性。\n\n开发者可以控制关节的各种特性，如约束、力和反应。\n\n不同类型的关节具有适用于特定需求的各种属性。\n\n例如，固定关节（Fixed joints）将对象固定在一起，铰链关节（Hinge joints）允许对象围绕一个轴旋转，而弹簧关节（Spring joints）施加力以使对象保持分开。\n\n",
+              "links": [
+                {
+                  "title": "关节简介",
+                  "url": "https://docs.unity3d.com/Manual/Joints.html",
+                  "type": "article"
+                },
+                {
+                  "title": "游戏中的角色结构设计",
+                  "url": "https://game-ace.com/blog/character-rigging-for-video-games/",
+                  "type": "article"
+                },
+                {
+                  "title": "Unity中的关节",
+                  "url": "https://simonpham.medium.com/joints-in-unity-f9b602212524",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e4537da4-3bb1-42f0-b6e1-5f106e3a7094",
+              "xid": "2649c7a6-da54-4378-87ad-d63f57d41913"
+            },
+            {
+              "title": "力",
+              "description": "**力**是游戏开发中的一个重要概念，特别是在创建游戏物理方面。\n\n在游戏中，'力'（Force）是一个导致物体发生特定变化的影响因素，变化可能涉及其移动、方向或几何结构。\n\n力通常在游戏引擎的物理模拟部分中实现，如计算重力、摩擦力或开发者定义的自定义力。\n\n在游戏中加入力可以使游戏拥有真实的触感，允许物体根据物理定律进行自然交互。\n\n这在赛车游戏、体育游戏及任何涉及物体间物理互动的游戏类型中都至关重要。\n\n记住`F = ma`，物体的加速度与作用力成正比，与质量成反比。\n\n力的平衡与操控对于动态和沉浸式的游戏体验至关重要。\n\n",
+              "links": [
+                {
+                  "title": "游戏开发的物理知识",
+                  "url": "https://medium.com/@brazmogu/physics-for-game-dev-a-platformer-physics-cheatsheet-f34b09064558",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "cceef96b-0eb5-490e-944d-e5d8a347b069",
+              "xid": "57b31bc9-a816-4e19-9198-728fc9b5270a"
+            },
+            {
+              "title": "复原系数",
+              "description": "在游戏中开发，**复原系数（Restitution）**是一个与物体物理特性密切相关的属性。\n\n基本上，复原系数代表着物体的“弹性”或是在科学术语中，两个物体碰撞后，最终相对速度与初始相对速度之间的比率。\n\n在游戏物理的背景下，当物体碰撞时，复原系数用于计算物体反弹或反冲的程度。\n\n复原系数的值通常介于0和1之间， 0表示物体完全没有反弹，而1表示碰撞中没有能量损失的理想弹性碰撞。\n\n因此，复原系数值越高，物体在碰撞后的反弹程度就越高。\n\n",
+              "links": [
+                {
+                  "title": "复原系数属性",
+                  "url": "https://gamedev.stackexchange.com/questions/49616/why-do-restitution-values-less-than-one-still-cause-infinite-bouncing-in-box2d",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "456a8789-72e1-4d04-a333-a333b6a9d108",
+              "xid": "1a022230-4c83-443b-b5cd-8ec640663039"
+            },
+            {
+              "title": "角速度",
+              "description": "角速度，用符号'ω'表示，是单位时间内角度变化率的度量。\n\n简单来说，它对应于物体绕圆周运动或绕中心点旋转的快慢程度。\n\n角速度通常以每秒弧度（rad/s）来衡量。\n\n想象一个物体在圆周路径上移动，角速度即为该物体沿着圆周运动时角度变化的速度。\n\n角速度是一个矢量量（vector quantity），意味着它具有大小和方向。\n\n角速度矢量的方向垂直于旋转平面，并遵循右手定则。\n\n角速度在游戏开发中发挥着至关重要的作用，特别是在物理模拟和角色控制方面。\n\n",
+              "links": [
+                {
+                  "title": "角速度",
+                  "url": "https://allenchou.net/2013/12/game-physics-motion-dynamics-fundamentals/",
+                  "type": "article"
+                },
+                {
+                  "title": "理解角速度",
+                  "url": "https://math.libretexts.org/Bookshelves/Precalculus/Book%3A_Trigonometry_(Sundstrom_and_Schlicker)/01%3A_The_Trigonometric_Functions/1.04%3A_Velocity_and_Angular_Velocity",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e09c0395-6ea8-4244-9f8c-3b9ad3d7ed45",
+              "xid": "84eeb653-bec1-4621-8d25-af7c21adaab5"
+            },
+            {
+              "title": "浮力(Buoyancy)",
+              "description": "**浮力(Buoyancy)** 是物理学中的一种特定相互作用，当一个物体浸入流体中（例如游戏玩家在水中）时，会体验到一个向上力，这个力可以抵消重力。\n\n这使得物体要么漂浮起来，要么显得更轻。\n\n在游戏开发中，实现浮力可以增强现实感，特别是涉及水基活动或环境的游戏。\n\n通过调整密度和体积，浮力可以被调整来产生各种效果－从让重物漂浮到让轻物沉没。\n\n通常通过将物体简化为一个球体或其他简单几何形状，然后应用阿基米德原理(Archimedes' Principle)来计算浮力。\n\n该原理说明了浮力等于物体所排开的流体的重量。\n\n在电子游戏领域中，编程浮力可能涉及复杂的物理方程和精细的测试，以在现实感和可玩性之间找到平衡。\n\n",
+              "links": [
+                {
+                  "title": "游戏开发中的浮力(Buoyancy in Game Development)",
+                  "url": "https://www.gamedeveloper.com/programming/water-interaction-model-for-boats-in-video-games-part-2",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d43c9808-8763-45f3-989a-e6cd7aa5b5cd",
+              "xid": "db5fe7ec-1b16-4bde-8f3c-d2471f994deb"
+            },
+            {
+              "title": "摩擦力",
+              "description": "`摩擦力`是游戏动力学中的一个关键概念。\n\n在游戏中，通常用来减缓或阻碍移动，使角色或对象的运动感觉更真实。\n\n例如，当玩家角色在光滑表面奔跑与在粗糙表面奔跑相比，摩擦力会影响角色的速度和控制。\n\n它体现在汽车在结冰路面上打滑、根据地形变化的行走速度、或球滚动并最终减速的现象中。\n\n计算摩擦力的公式通常是`f = μN`，其中`f`是摩擦力，`μ`是摩擦系数（取决于相互作用的两个表面），`N`是法向力（通常是物体的重力）。\n\n可以调整游戏中的摩擦系数以产生不同的效果，根据预期的最终结果来决定。\n\n",
+              "links": [
+                {
+                  "title": "游戏开发中的摩擦力",
+                  "url": "https://medium.com/@originallearguy/rub-the-right-way-applying-friction-in-game-design-122bd98de69d",
+                  "type": "article"
+                },
+                {
+                  "title": "摩擦力",
+                  "url": "https://youtu.be/t1HWIoDUWXg?si=FmFsIGTSHpLS72vp",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "70c9f12a-309d-4ebc-86cf-4ce91a83656e",
+              "xid": "12725749-fa67-475d-9424-f9d43eb5d3ff"
+            },
+            {
+              "title": "线性速度(Linear Velocity)",
+              "description": "**线性速度(Linear Velocity)** 是物理学中的一个基本概念，在游戏开发中广泛使用。\n\n它指的是相对于参考系物体位置变化的速率。\n\n通过将位置变化除以时间变化来计算线性速度，通常用向量 'v' 表示。\n\n在游戏开发中，可以操纵一个物体的线性速度来控制其速度和方向。\n\n这在开发物理模拟或依赖运动的游戏元素时尤其重要。\n\n例如，可以使用线性速度让一个角色奔跑或驾驶，或是以不同的速度和方向投掷物体。\n\n",
+              "links": [
+                {
+                  "title": "线性速度(Linear Velocity)",
+                  "url": "https://byjus.com/physics/linear-velocity/",
+                  "type": "article"
+                },
+                {
+                  "title": "浏览关于数学的热门文章",
+                  "url": "https://app.daily.dev/tags/math?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "b44a0f94-e0e3-458e-9843-8124035c0edc",
+              "xid": "a2202702-bf44-4d99-aa9c-c968d3ac684d"
+            }
+          ],
+          "id": "19af407b-2cec-4441-abb1-4a9f794da761",
+          "xid": "1841a1ff-05d0-49c1-bfbb-4b763dc6ae84"
+        },
+        {
+          "title": "碰撞检测(Collision Detection)",
+          "description": "**碰撞检测(Collision Detection)** 是游戏物理中的一个重要方面，它处理的是计算机在游戏环境中计算和响应两个或更多对象相接触的能力。\n\n这是确保对象的交互逼真、不会互相穿过并在游戏中按预期影响世界的关键。\n\n碰撞检测的技术会根据游戏所需的复杂度不同而有所不同。\n\n简单的方法可能涉及封装对象的边界框或边界球，当这些球或框相交时，假定发生了碰撞。\n\n更复杂的方法则考虑对象的形状和体积，以实现精确检测。\n\n许多库和游戏引擎提供内置的碰撞检测支持，这使开发人员更容易在自己的游戏中实现该功能。\n\n",
+          "links": [
+            {
+              "title": "游戏中的碰撞检测(Collision Detection in Games)",
+              "url": "https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "精细阶段（Narrow Phase）",
+              "description": "在**精细阶段（Narrow Phase）**，碰撞检测会深入进行详细地碰撞检查，这些检查涉及在粗略阶段（Broad Phase）中已被确定有可能发生碰撞的对象对。\n\n精细阶段实质上是一个微调过程。\n\n当粗略阶段检测到潜在碰撞后，它会确定两个对象间精确的碰撞点，并可能涉及更详细的形状表示和更复杂算法。\n\n它还可能计算出口物理仿真所需的附加信息（如确切的碰撞时间和接触面法线）。\n\n这一阶段常用的检测方法包括包围盒、包围球或许阻轴定理（Separating Axis Theorem）。\n\n然而，具体采用的方法会根据对象形状的复杂程度和特定游戏需求的不同而变化。\n\n",
+              "links": [
+                {
+                  "title": "游戏开发中的精细阶段（Narrow Phase）",
+                  "url": "https://rocketbrush.com/blog/game-development-process-guide",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "交集 (Intersection)",
+                  "description": "`交集 (Intersection)` 是游戏开发中的狭义阶段概念，用于确定两个可能碰撞的对象之间的精确碰撞点。\n\n这个过程发生在广义阶段确定有可能碰撞之后。\n\n根据物体的形状，使用诸如轴对齐边界框 (Axis-Aligned Bounding Boxes, AABB)，分离轴定理 (Separating Axis Theorem, SAT)，球形或胶囊形边界测试等诸多算法来进行不同的交集测试。\n\n交集提供的数据，如接触点，穿透方向和深度等对计算碰撞中的准确物理响应至关重要。\n\n",
+                  "links": [
+                    {
+                      "title": "游戏中的交集测试",
+                      "url": "https://www.gamedeveloper.com/game-platforms/simple-intersection-tests-for-games",
+                      "type": "article"
+                    },
+                    {
+                      "title": "交集几何",
+                      "url": "https://www.petercollingridge.co.uk/tutorials/computational-geometry/line-line-intersections/",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "title": "SAT (分离轴定理)",
+                      "description": "`SAT`，或分离轴定理（separating axis theorem），在游戏开发中的碰撞检测中经常被使用。\n\n它的主要优点是能够简单且快速地检测两个凸多边形是否相交。\n\n该定理稍显复杂——它通过将两个多边形的所有点投影到形状周围的多个轴上，然后检查这些投影是否存在重叠来工作。\n\n然而，当处理更复杂的模型或大量对象时，由于需要计算投影，它可能会相对耗时，因此通常在较粗略的检测系统中使用。\n\n对`SAT`工作原理的深入解释可能涉及到一些数学概念或视觉辅助工具，但是这是其在游戏开发中应用的基础。\n\n",
+                      "links": [
+                        {
+                          "title": "分离轴定理",
+                          "url": "https://dyn4j.org/2010/01/sat/",
+                          "type": "article"
+                        },
+                        {
+                          "title": "使用分离轴定理进行碰撞检测",
+                          "url": "https://code.tutsplus.com/collision-detection-using-the-separating-axis-theorem--gamedev-169t",
+                          "type": "article"
+                        }
+                      ],
+                      "children": [],
+                      "id": "fc69b6ab-4f2e-4408-818e-e3bc1596b8d3",
+                      "xid": "dacbcc45-606e-4db1-a755-44511dacfc95"
+                    },
+                    {
+                      "title": "GJK算法",
+                      "description": "GJK算法（Gilbert–Johnson–Keerthi）是一种计算几何算法，广泛应用于视频游戏和模拟中检测凸形物体之间的碰撞。\n\n该算法的主要作用是评估两个凸形之间的交集。\n\n它之所以独特且广泛使用，是因为即使在处理复杂三维形状时，它的效率和准确性都非常高。\n\n它使用\"闵可夫斯基差分\"的概念来简化计算，并确定两个形状是否相交。\n\n",
+                      "links": [
+                        {
+                          "title": "游戏几何学 - 数学乐趣",
+                          "url": "https://en.wikipedia.org/wiki/Gilbert-Johnson-Keerthi_distance_algorithm",
+                          "type": "article"
+                        },
+                        {
+                          "title": "GJK算法",
+                          "url": "https://medium.com/@mbayburt/walkthrough-of-the-gjk-collision-detection-algorithm-80823ef5c774",
+                          "type": "article"
+                        },
+                        {
+                          "title": "GJK算法解释与实现",
+                          "url": "https://www.youtube.com/watch?v=MDusDn8oTSE",
+                          "type": "video"
+                        }
+                      ],
+                      "children": [],
+                      "id": "1730f725-423c-4017-9e07-4b5621cc32da",
+                      "xid": "b7e8f389-f586-4797-a9ea-d9e247f2dfbe"
+                    },
+                    {
+                      "title": "EPA (扩展多面体算法)",
+                      "description": "扩展多面体算法（EPA, Expanding Polytope Algorithm）是一种迭代算法，用于在碰撞检测中计算两个形状之间的穿透深度。\n\n它广泛应用于物理引擎和机器人技术。\n\n该算法从先前应用的GJK算法得到的结果单纯形出发，迭代地将多面体向闵可夫斯基差分边界扩展，直到找到离原点最近的点。\n\n从该点到原点的向量即为穿透向量，其大小等于两个形状之间的穿透深度。\n\n",
+                      "links": [
+                        {
+                          "title": "EPA: 2D/3D 碰撞响应算法 - winter.dev",
+                          "url": "https://winter.dev/articles/epa-algorithm",
+                          "type": "article"
+                        },
+                        {
+                          "title": "EPA (扩展多面体算法) - dyn4j",
+                          "url": "https://dyn4j.org/2010/05/epa-expanding-polytope-algorithm/",
+                          "type": "article"
+                        }
+                      ],
+                      "children": [],
+                      "id": "090bfebf-0b1e-4651-aa3a-d0df2cc3ab5c",
+                      "xid": "72feb0fe-f261-46a4-9173-a96fe5dee94f"
+                    }
+                  ],
+                  "id": "024a0e04-15e6-4d5d-b5b1-c0d46b712225",
+                  "xid": "8b77da37-24d9-45b5-a633-03fed30a1d03"
+                },
+                {
+                  "title": "凸性",
+                  "description": "凸性是游戏开发中使用的一个重要概念，特别是在碰撞检测的狭窄阶段。\n\n一个形状被认为是凸的，如果对于形状内部的每对点，连接它们的整个线段也都在这个形状内部。\n\n简单来说，凸形状没有向内凹的角。\n\n在游戏开发中，凸形状可以带来很多好处，因为它们在计算上更容易处理。\n\n例如，在碰撞检测算法，如分离轴定理（Separating Axis Theorem，SAT）和Gilbert–Johnson–Keerthi（Gilbert–Johnson–Keerthi，GJK）算法中，输入形状通常是凸的。\n\n而非凸形状或凹形状通常需要更加复杂的方法来进行碰撞检测，经常需要将形状划分成更小的凸部分。\n\n",
+                  "links": [
+                    {
+                      "title": "游戏开发中的凸性",
+                      "url": "https://www.gamedeveloper.com/game-platforms/understanding-convexity-in-ltv-modelling",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "title": "凸形 (Convex)",
+                      "description": "在游戏开发中，\"凸形 (convex)\" 术语主要与游戏环境中的形状和碰撞检测有关。\n\n如果一个形状内的任意两点之间的所有线段都完全位于该形状内，则该形状被视为凸形 (convex)。\n\n这一概念在编程游戏中的碰撞检测和物理引擎时是至关重要的，因为当物体为凸形 (convex) 时，数学计算可以更直接且效率更高。\n\n此外，许多渲染算法在处理凸形 (convex) 物体时也能达到最佳效果，从而帮助提升游戏的图形性能。\n\n",
+                      "links": [
+                        {
+                          "title": "游戏开发中的凸形 (Convex in Game Development)",
+                          "url": "https://dev.to/fkkarakurt/geometry-and-primitives-in-game-development-1og",
+                          "type": "article"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "title": "凸包(Convex Hull)",
+                          "description": "凸包(Convex Hull)是一种在游戏开发的各个领域（特别是在物理引擎和碰撞检测的创建）中广泛应用的基础概念。\n\n实质上，它是在二维空间中包含一组点的最小凸多边形，或者是在三维空间中包含一组点的最小凸多面体。\n\n可以将其想象成一个橡皮筋环绕住这些点并释放后形成的形状。\n\n在计算几何学中，人们开发了诸如Graham扫描(Graham's Scan)和快速凸包(QuickHull)等算法来快速计算凸包(Convex Hull)。\n\n在游戏引擎中使用凸包(Convex Hull)可以大幅提高碰撞检测程序的性能，因为需要检查重叠的点较少，这也有助于创建更加流畅的游戏玩法。\n\n",
+                          "links": [
+                            {
+                              "title": "三维凸分解(Convex Decomposition for 3D)",
+                              "url": "https://colin97.github.io/CoACD/",
+                              "type": "article"
+                            }
+                          ],
+                          "children": [],
+                          "id": "99cecdbf-f7ef-422d-8c2b-a1e59496ce96",
+                          "xid": "20c9264a-4a19-486a-897c-e04d377e82a8"
+                        }
+                      ],
+                      "id": "809437a3-aaab-4ee2-a174-211d78d69061",
+                      "xid": "42796ec2-e180-449f-afd7-ca0ab149d301"
+                    },
+                    {
+                      "title": "凹形(Concave)",
+                      "description": "在游戏中，一个形状如果有一个大于180度的内角，则被认为是“凹形(Concave)”。\n\n简单来说，如果形状有一个向内弯曲或凹槽的部分，那么这个形状就是凹形(Concave)。\n\n与凸形(Convex)形状不同，凹形(Concave)形状内的直线可能不完全位于形状的边界内。\n\n凹形(Concave)形状在游戏中增加了物理算法的复杂性，特别是在碰撞检测方面，因为需要考虑更多的点和角度，相较之下凸形(Convex)形状较简单。\n\n这些形状经常出现在游戏元素中，如地形、迷宫、游戏关卡边界和游戏角色。\n\n需要注意的是，凹形(Concave)形状的实际应用很大程度上取决于游戏玩法需求和游戏所需的逼真程度。\n\n",
+                      "links": [
+                        {
+                          "title": "什么是凹形(Concave)形状？",
+                          "url": "https://dev.to/fkkarakurt/geometry-and-primitives-in-game-development-1og",
+                          "type": "article"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "title": "凸分解 (Convex Decomposition)",
+                          "description": "凸分解 (Convex Decomposition) 是游戏开发过程中的一种技术，涉及将复杂的非凸形状分解为更简单的凸形状。\n\n这种技术大大简化了碰撞检测中的计算，这是任何包含物理模拟的游戏开发项目中的关键部分。\n\n具体地讲，非凸形状有一个或多个“凹陷”或凹槽，而凸形状则没有任何这样的凹陷——简单说来，它“鼓了出来”，没有内角超过180度。\n\n因此，凸分解实质上是将具有“凹陷”或“内凹”的形状分解为只“鼓出来”的简单形状。\n\n",
+                          "links": [
+                            {
+                              "title": "三维凸分解 (Convex Decomposition for 3D)",
+                              "url": "https://colin97.github.io/CoACD/",
+                              "type": "article"
+                            }
+                          ],
+                          "children": [],
+                          "id": "eba81053-26c2-40c8-b25b-ee9069ea1735",
+                          "xid": "b3ad4997-91a5-4287-b386-e580866c019d"
+                        }
+                      ],
+                      "id": "9a801bab-23d4-4d87-92fb-67c48dde8440",
+                      "xid": "3613c77d-9338-4879-8ecf-1e6cd74c879f"
+                    }
+                  ],
+                  "id": "e4ec261b-b907-4784-89d0-b61de15b67d6",
+                  "xid": "3e71a2d2-b64d-43a9-a093-d2cdcb87bd01"
+                }
+              ],
+              "id": "4cc7ca39-b95d-4c00-ad0e-d28cb8101bbc",
+              "xid": "b2aef051-4418-4a80-a692-f23abe6a11d7"
+            },
+            {
+              "title": "粗略阶段",
+              "description": "**粗略阶段碰撞检测(Broad Phase Collision Detection)**是碰撞检测过程中的第一步。\n\n其主要功能是确定哪些对象的对可能相撞。\n\n它并不检查每个对象整体的可能碰撞，而是用一个更简单的形状（如包围盒或球）将每个对象包起来，旨在减少计算量。\n\n该阶段的输出是一个“候选对”列表，然后这些“候选对”被传递到下一阶段，即细查阶段(Narrow Phase)，进行详细的重叠检查。\n\n",
+              "links": [
+                {
+                  "title": "粗略阶段碰撞检测(Broad Phase Collision Detection)",
+                  "url": "http://buildnewgames.com/broad-phase-collision-detection/",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "包围体",
+                  "description": "`包围体(Bounding Volume)`是一种简单的形状，完全包含一个更复杂的game model(游戏模型)。\n\n与检查实际模型之间的交集相比，检查包围体的交集的成本较低。\n\n在游戏开发中常用的包围体类型包括轴对齐包围盒(Axis-Aligned Bounding Boxes, AABBs)、包围球(Bounding Spheres)和定向包围盒(Oriented Bounding Boxes, OBBs)。\n\nAABBs和包围球简单易实现，适用于静态对象，而OBBs则较为复杂，常用于需要旋转的动态对象。\n\n",
+                  "links": [
+                    {
+                      "title": "3D游戏中的碰撞检测",
+                      "url": "https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_collision_detection",
+                      "type": "article"
+                    },
+                    {
+                      "title": "包围体可视化",
+                      "url": "https://www.haroldserrano.com/blog/visualizing-the-boundary-volume-hierarchy-collision-algorithm",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "title": "轴对齐边界框(AABB)",
+                      "description": "轴对齐边界框(AABB)是游戏开发中常用的一种边界体积形式。\n\n它是一个直接与坐标系轴对齐的包围盒，并封装了一个游戏对象。\n\nAABB的侧面与轴对齐，这在进行某些计算时非常有用，否则非轴对齐的盒子将需要更复杂的数学计算。\n\nAABB主要用于粗略层次的碰撞检测（broad-phase collision detection），这意味着检查两个对象是否可能正在发生碰撞。\n\n尽管AABB相对保守，并且有时会比定向边界框（Oriented Bounding Box, OBB）有更大的包围体积，但它们在碰撞检测中使用起来更简单和快速。\n\n",
+                      "links": [
+                        {
+                          "title": "轴对齐边界框(Axis-Aligned Bounding Box)",
+                          "url": "https://gdbooks.gitbooks.io/3dcollisions/content/Chapter1/aabb.html",
+                          "type": "article"
+                        }
+                      ],
+                      "children": [],
+                      "id": "67e45fd9-9f52-45d4-921f-df77aa4f3291",
+                      "xid": "1f24a1bf-9878-46fb-9f15-4010d68d273d"
+                    },
+                    {
+                      "title": "带方向的包围盒（Oriented Bounding Box, OBB）",
+                      "description": "`带方向的包围盒（Oriented Bounding Box, OBB）`是一种用于计算机图形学和计算几何的包围体类型。\n\n它通常用于通过关联一个尺寸和方向上更接近实际对象的盒子简化复杂几何物体。\n\n与`轴对齐包围盒（Axis-Aligned Bounding Box, AABB）`不同，`带方向的包围盒（OBB）`不受轴对齐约束，因此盒子可以旋转。\n\n其方向通常基于物体的局部坐标系统选择，所以`OBB`能够保持其旋转。\n\n一个`OBB`的属性包括其中心点、尺寸以及方向。\n\n然而，值得注意的是由于数学复杂性，与`AABB`相比，`OBB`的计算可能会更耗资源。\n\n",
+                      "links": [
+                        {
+                          "title": "OBB与OBB碰撞检测",
+                          "url": "https://gamedev.stackexchange.com/questions/25397/obb-vs-obb-collision-detection",
+                          "type": "article"
+                        },
+                        {
+                          "title": "带方向的包围盒（Oriented Bounding Box）",
+                          "url": "https://gamedev.stackexchange.com/questions/49041/oriented-bounding-box-how-to",
+                          "type": "article"
+                        }
+                      ],
+                      "children": [],
+                      "id": "d4b11793-20b6-439a-9cbe-3f73e47292ef",
+                      "xid": "a1bbfe1b-4161-48fb-93b0-e52e755c0d3d"
+                    }
+                  ],
+                  "id": "0fef6099-e6a5-4dec-8cbd-2a35257cbc85",
+                  "xid": "b74f177f-2256-4964-bf70-6c4c736c4bd7"
+                },
+                {
+                  "title": "空间分割(Spatial Partitioning)",
+                  "description": "空间分割(Spatial Partitioning)是在计算几何中使用的一种技术，旨在使涉及空间中对象的计算更加高效。\n\n它涉及将一个大的虚拟空间划分为一系列较小的空间，或称作“分区”(partitions)。\n\n这些分区可以用来快速排除对特定计算或查询无关的区域，从而降低整体计算成本。\n\n该技术在游戏开发中用于碰撞检测、渲染、路径寻找等领域。\n\n空间分割的方法多种多样，包括基于网格(grid-based)、基于树(tree-based)（例如四叉树(Quadtree)和八叉树(Octree)）、以及基于填充曲线(space-filling curve)（例如Z序或希尔伯特曲线(Hilbert curve)）的方法。\n\n",
+                  "links": [
+                    {
+                      "title": "空间分割(Spatial Partitioning)",
+                      "url": "https://en.wikipedia.org/wiki/Space_partitioning",
+                      "type": "article"
+                    },
+                    {
+                      "title": "游戏编程中的空间分割(Spatial Partitioning in Game Programming)",
+                      "url": "https://gameprogrammingpatterns.com/spatial-partition.html",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "title": "排序与扫描",
+                      "description": "**排序与扫描**是一种算法，用于游戏开发中的碰撞检测，通过优化潜在相交物体的识别过程来提高效率。\n\n这里是如何工作的：首先，游戏中所有的物体沿着特定的轴（通常是 'x' 轴）进行排序。\n\n然后一条线（称为 '扫描线'(sweep line)）沿着这个轴进行移动。\n\n当这条线扫描整个场景时，任何穿过此线的物体都会被添加到一个“活动”列表中。\n\n当一个物体不再与扫描线相交时，它将从列表中被移除。\n\n进行相交检查的只有在“活动”列表中的物体，从而减少了必要的检查次数。\n\n因此，排序与扫描是一种高效的空间划分策略。\n\n",
+                      "links": [
+                        {
+                          "title": "排序、扫描和裁剪",
+                          "url": "https://leanrada.com/notes/sweep-and-prune/",
+                          "type": "article"
+                        },
+                        {
+                          "title": "碰撞检测算法",
+                          "url": "https://notes.billmill.org/visualization/interactive_explainers/sort__sweep_and_prune_-_collision_detection_algorithms.html",
+                          "type": "article"
+                        }
+                      ],
+                      "children": [],
+                      "id": "77691905-b4d3-44b8-ba29-06458ba21c23",
+                      "xid": "e480e32a-4cee-459e-a6f0-2248f2b0c7a4"
+                    },
+                    {
+                      "title": "BVH（Bounding Volume Hierarchy）",
+                      "description": "BVH（Bounding Volume Hierarchy，包围体积层次结构）是一种用于3D计算机图形学的算法，它能加速渲染过程。\n\nBVH通过分层结构来组织几何体，其中树中的每个节点表示一个包围体积（包围或包含一个或多个几何对象的体积）。\n\nBVH的根节点包含所有其他的节点或几何对象，其子节点表示空间的分区，而叶节点通常是单个几何对象。\n\n使用BVH的主要目标是快速排除场景中大量不需要渲染的部分，从而减少对场景中每一个对象单独评估的计算负荷。\n\n",
+                      "links": [
+                        {
+                          "title": "Unity包围体积层次结构",
+                          "url": "https://github.com/rossborchers/UnityBoundingVolumeHeirachy",
+                          "type": "opensource"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "title": "动态边界体积树（DBVT）",
+                          "description": "`动态边界体积树（DBVT）`或者称作`Dynamic Bounding Volume Tree`是一种加速数据结构，主要被用于物理模拟中，比如碰撞检测。\n\n它是一种边界体积层次结构（Bounding Volume Hierarchy，简称BVH），然而DBVT的独特之处在于它处理动态对象的方式。\n\n正如其名称所示，它特别设计来高效处理变化的场景，比如对象移动或环境变化，相比之下要比普通的BVH要更优秀。\n\n与静态的BVH不同，DBVT会随着对象的移动动态更新树结构，保持碰撞查询的高效性。\n\n它主要是通过树旋转和重调整边界体积来实现这一点，而不是重新构建整个树。\n\n这使得DBVT非常适合于动态性很大的场景。\n\n",
+                          "links": [
+                            {
+                              "title": "动态边界体积树（DBVT）",
+                              "url": "https://sopiro.github.io/DynamicBVH/",
+                              "type": "article"
+                            },
+                            {
+                              "title": "动态边界体积层次结构",
+                              "url": "https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf",
+                              "type": "article"
+                            }
+                          ],
+                          "children": [],
+                          "id": "e5209e99-4bfe-4be1-a42a-a6915e921e43",
+                          "xid": "d5c0b9c4-76d0-4b52-927d-1d30bc5660a5"
+                        }
+                      ],
+                      "id": "6bb0b7e3-01c1-4e1e-a5b6-b28b2f4a1915",
+                      "xid": "5c6fbade-a690-455f-8d30-ff79effaf0b9"
+                    }
+                  ],
+                  "id": "c439811a-a2c9-4d36-80d7-ff5e6a439c36",
+                  "xid": "f8c2d088-961d-43fc-8474-8f795c0aee11"
+                }
+              ],
+              "id": "7f86bbcd-dcaa-4ca3-b74e-aa1b50c30836",
+              "xid": "b2123fba-299c-49c0-93fe-c104276357be"
+            },
+            {
+              "title": "CCD (连续碰撞检测)",
+              "description": "**CCD (连续碰撞检测)**是一种在游戏中的碰撞检测技术，比传统的离散碰撞检测更为高级。\n\n它不是在指定的时间间隔内进行碰撞检测，而是会检查整个时间段或移动路径上的任何可能碰撞。\n\n这可以防止“穿模”现象的发生，即一个对象移动得如此之快，以至于在帧与帧之间能从检测中穿过墙壁或障碍物。\n\n尽管与离散检测相比计算成本更高，但CCD提供的碰撞检测精度更高，对于需要精确移动的游戏来说至关重要。\n\n",
+              "links": [
+                {
+                  "title": "连续碰撞检测",
+                  "url": "https://docs.unity3d.com/Manual/ContinuousCollisionDetection.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "74db1422-63e0-42cd-8cbf-cb3b415f4dab",
+              "xid": "0dd012d9-0464-44d0-808a-2cd2708012e0"
+            }
+          ],
+          "id": "6041bd9a-06a4-497f-8aea-bde2f3d4b34d",
+          "xid": "7f4908f8-32ae-42d4-b07a-2314fa911b3b"
+        }
+      ],
+      "id": "6eec4dfc-ddfe-4c77-9c13-1ad3193ae136",
+      "xid": "ff2a1597-0591-4324-a1a6-15423a5dc3f4"
+    },
+    {
+      "title": "游戏引擎",
+      "description": "游戏引擎（Game Engine）是一种设计用来简化视频游戏创建和开发的软件框架。\n\n开发人员使用它们来为游戏机、移动设备和个人电脑创建游戏。\n\n游戏引擎通常提供的核心功能包括用于2D或3D图形的渲染引擎（\"renderer\"）、物理引擎或碰撞检测（以及碰撞响应）、声音、脚本、动画、人工智能、网络、流媒体、内存管理和场景图。\n\n通过提供这些可重用的组件，游戏引擎可以大大节省开发时间。\n\n然而，它们并非万能解决方案，因为开发者仍需定制大量代码以满足他们游戏的独特需求。\n\n一些流行的游戏引擎有Unity、Unreal Engine和Godot。\n\n",
+      "links": [
+        {
+          "title": "游戏引擎",
+          "url": "https://en.wikipedia.org/wiki/Game_engine",
+          "type": "article"
+        },
+        {
+          "title": "选择游戏引擎易如反掌！",
+          "url": "https://www.youtube.com/watch?v=aMgB018o71U",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Unity 3D",
+          "description": "**Unity 3D** 是一个多功能的跨平台游戏引擎，支持开发2D和3D游戏。\n\n该游戏引擎允许用户使用C#语言创建各种类型的游戏，包括增强现实（AR）、虚拟现实（VR）、移动游戏、主机游戏和电脑游戏。\n\n它提供了一系列强大的功能和工具，例如脚本撰写（scripting）、资源捆绑包（asset bundling）、场景构建（scene building）以及模拟（simulation），以帮助开发者创建互动内容。\n\nUnity 3D还拥有一个庞大且活跃的社区，该社区定期贡献教程、脚本、资源等等，使其成为适合各个水平游戏开发者使用的强大平台。\n\n",
+          "links": [
+            {
+              "title": "Unity",
+              "url": "https://unity.com/",
+              "type": "article"
+            },
+            {
+              "title": "用于视频游戏的Unity引擎",
+              "url": "https://unity.com/products/unity-engine",
+              "type": "article"
+            },
+            {
+              "title": "创建3D游戏",
+              "url": "https://docs.unity3d.com/2021.2/Documentation/Manual/Quickstart3DCreate.html",
+              "type": "article"
+            },
+            {
+              "title": "Unity 在100秒内介绍",
+              "url": "https://www.youtube.com/watch?v=iqlH4okiQqg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "55fb3637-ab39-44bb-81cc-c983bff03990",
+          "xid": "845d07a6-993a-4808-bea1-d255325959d6"
+        },
+        {
+          "title": "虚幻引擎 (Unreal Engine)",
+          "description": "虚幻引擎 (Unreal Engine) 是 Epic Games 开发的一款强大的游戏开发引擎。\n\n全球的游戏开发者使用虚幻引擎 (Unreal Engine) 在包括 iOS、Android、Windows、Mac、Xbox 和 PlayStation 等多个平台上创造高质量的游戏。\n\n虚幻引擎 (Unreal Engine) 以其逼真的渲染、动态物理效果和特效、强大的多人框架，以及被称为 Blueprint (蓝图) 的灵活脚本系统而闻名。\n\n该引擎还配备了专用于动画、AI、照明、电影技术和后期处理效果等工具和功能。\n\n最新版本虚幻引擎 5 (Unreal Engine 5) 引入了实时全局光照，并实现了电影级别的实时图形效果。\n\n",
+          "links": [
+            {
+              "title": "虚幻引擎文档 (Unreal Engine Documentation)",
+              "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-4-documentation",
+              "type": "article"
+            },
+            {
+              "title": "虚幻引擎 YouTube 频道 (Unreal Engine YouTube Channel)",
+              "url": "https://m.youtube.com/channel/UCBobmJyzsJ6Ll7UbfhI4iwQ",
+              "type": "article"
+            },
+            {
+              "title": "Unreal Source Discord",
+              "url": "https://discord.gg/unrealsource",
+              "type": "article"
+            },
+            {
+              "title": "《100秒了解虚幻引擎 (Unreal in 100 Seconds)》",
+              "url": "https://www.youtube.com/watch?v=DXDe-2BC4cE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f23098bb-86ad-427f-a2ce-80dd29dc9b2f",
+          "xid": "b67f4839-4435-4149-ae83-1db2380e7d6d"
+        },
+        {
+          "title": "原生",
+          "description": "制作游戏时，你不必一定使用Unreal（虚幻引擎）、Unity3d（ Unity3D）或Godot（戈多引擎）之类的工具。\n\n你也可以使用像C++或Rust这样的原生语言来制作游戏。\n\n然而，你将需要自己完成很多工作，你需要学习许多已经在游戏引擎中为你准备好的东西。\n\n",
+          "links": [
+            {
+              "title": "访问专门的C++路线图",
+              "url": "https://roadmap.sh/cpp",
+              "type": "article"
+            },
+            {
+              "title": "访问专门的Rust路线图",
+              "url": "https://roadmap.sh/rust",
+              "type": "article"
+            },
+            {
+              "title": "使用C++学习游戏开发",
+              "url": "https://learn.microsoft.com/en-us/cpp/overview/game-development-cpp?view=msvc-170",
+              "type": "article"
+            },
+            {
+              "title": "使用Rust构建游戏",
+              "url": "https://rustmeup.com/building-games-with-rust",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "02795821-ef6e-456e-baa4-aa530842743f",
+          "xid": "734faa9c-6276-4283-8fcf-26c906925f79"
+        },
+        {
+          "title": "Godot",
+          "description": "Godot 是一款开源的跨平台游戏引擎，以其功能丰富和易于使用而闻名。\n\n它可以开发2D和3D游戏，并由来自世界各地的数百名贡献者共同开发。\n\nGodot 使用其自有的脚本语言 GDScript（GDScript），该语言类似于 Python，但也支持 C#。\n\n它配备了一个独特的场景系统，并带有众多工具，可以加快开发进程。\n\nGodot的设计理念注重灵活性、可扩展性和易用性，为游戏开发初学者和专业人士提供了一个实用的工具。\n\n",
+          "links": [
+            {
+              "title": "godotengine/godot",
+              "url": "https://github.com/godotengine/godot",
+              "type": "opensource"
+            },
+            {
+              "title": "Godot",
+              "url": "https://godotengine.org/",
+              "type": "article"
+            },
+            {
+              "title": "Godot文档",
+              "url": "https://docs.godotengine.org/en/stable/",
+              "type": "article"
+            },
+            {
+              "title": "妙趣横生的Godot",
+              "url": "https://www.youtube.com/watch?v=QKgTZWbwD1U",
+              "type": "video"
+            },
+            {
+              "title": "教程 - 如何使用 Godot 制作电子游戏",
+              "url": "https://www.youtube.com/watch?v=LOhfqjmasi0",
+              "type": "video"
+            },
+            {
+              "title": "教程 - 如何使用 Godot 制作3D游戏",
+              "url": "https://www.youtube.com/watch?v=ke5KpqcoiIU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f4de658b-1c57-4544-bbf5-484f795a475a",
+          "xid": "a5a49a8c-f265-402f-85db-f36db00593d2"
+        }
+      ],
+      "id": "d654ef38-4411-4cc9-ba1d-e9e3aee97416",
+      "xid": "7400ce52-17a9-48b3-b0e7-feeb0b3d27a2"
+    },
+    {
+      "title": "编程语言",
+      "description": "编程语言对游戏开发非常重要，因为它们构成了游戏设计和功能的核心。\n\n可以使用多种编程语言，但某些语言由于其强大和高效而在行业中更受欢迎。\n\n最受欢迎的语言包括C++（C++）、C#（C#）和Java。\n\n**C++**是一种高级语言，主要用于开发视频游戏，以其速度和效率著称。\n\n**C#**是由微软开发的，广泛用于Unity游戏引擎开发多平台游戏。\n\n**Java**在该领域也很成熟，经常用于开发Android游戏。\n\n对于游戏开发者来说，选择与项目需求和性质相匹配的语言至关重要。\n\n无论你选择哪种编程语言，深入理解其结构、逻辑和功能对于成功的游戏开发都是必要的。\n\n",
+      "links": [
+        {
+          "title": "访问专为C++设计的道路图",
+          "url": "https://roadmap.sh/cpp",
+          "type": "article"
+        },
+        {
+          "title": "访问专为Rust设计的道路图",
+          "url": "https://roadmap.sh/rust",
+          "type": "article"
+        },
+        {
+          "title": "访问专为Java设计的道路图",
+          "url": "https://roadmap.sh/java",
+          "type": "article"
+        },
+        {
+          "title": "使用C++学习游戏开发",
+          "url": "https://learn.microsoft.com/en-us/cpp/overview/game-development-cpp?view=msvc-170",
+          "type": "article"
+        },
+        {
+          "title": "使用Rust构建游戏",
+          "url": "https://rustmeup.com/building-games-with-rust",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "C# (CSharp)",
+          "description": "**C# (CSharp)** 是由微软开发和维护的一种现代面向对象编程语言。\n\n主要用于开发桌面应用程序，尤其是在 [Microsoft.Net](http://Microsoft.Net) 框架内开发 Windows 应用程序。\n\n不过，该语言多才多艺，广泛应用于 Web 服务、网站、企业软件，甚至移动应用开发。\n\nC# 以其简洁性、类型安全性以及支持组件式软件开发而著称。\n\n它也被广泛使用的 Unity 游戏引擎采用，使其成为游戏开发的首选语言之一。\n\n",
+          "links": [
+            {
+              "title": "学习 C#",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+              "type": "article"
+            },
+            {
+              "title": "C# 编程语言",
+              "url": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9b95b10e-5fca-40aa-9d74-2ee9c0094d85",
+          "xid": "0b54ea00-444e-4b2f-b49c-5f4dd1b25fcd"
+        },
+        {
+          "title": "C/C++",
+          "description": "**C** 和 **C++ (通常称为 CPP)** 是计算机科学中最基础的两种高级编程语言。\n\n**C** 语言是在20世纪70年代开发的，是一种面向过程的语言，这意味着它遵循一步一步的方法。\n\n其基本原则包括结构化编程和词法变量作用域。\n\n另一方面，**C++** 遵循面向过程和面向对象编程的范式。\n\nC++ 作为 C 的扩展进行开发，增加了“类”这一面向对象编程的核心特性。\n\nC++ 通过引入函数重载、异常处理和模板等功能来增强 C 语言。\n\n",
+          "links": [
+            {
+              "title": "C 编程语言",
+              "url": "https://en.wikipedia.org/wiki/C_%28programming_language%29",
+              "type": "article"
+            },
+            {
+              "title": "C++ 编程语言",
+              "url": "https://en.wikipedia.org/wiki/C%2B%2B",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "73e8fdc0-aaf0-48eb-9c39-0035052f451d",
+          "xid": "2cca7a47-b7ed-4b70-85f7-d0619939f5fa"
+        },
+        {
+          "title": "GDScript",
+          "description": "GDScript是一种专为Godot Engine（戈多引擎）设计的高级动态类型编程语言，Godot Engine是一个开源游戏开发平台。\n\n它旨在提高易用性和游戏逻辑与功能的快速开发。\n\nGDScript的语法类似于Python，这对于熟悉Python的开发者来说可以简化学习和编码过程，同时提供了直接访问Godot丰富内置函数和特定游戏API的功能。\n\n该语言与Godot的场景系统和脚本环境紧密结合，使开发者能够高效地创建和操作游戏对象、处理输入以及控制游戏行为。\n\n",
+          "links": [
+            {
+              "title": "GDScript官方网站",
+              "url": "https://gdscript.com/",
+              "type": "article"
+            },
+            {
+              "title": "如何在Godot中编程 - GDScript教程",
+              "url": "https://www.youtube.com/watch?v=e1zJS31tr88",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "fac2ec87-546d-457d-a72d-e891c02dfc56",
+          "xid": "d1005abe-3226-4640-aa59-d53e53abd3dd"
+        },
+        {
+          "title": "Rust（Rust语言）",
+          "description": "**Rust（Rust语言）**是一种现代的、开源的、多范式的编程语言，旨在提供高性能和安全性，特别是安全的并发性。\n\n它最初由Mozilla Research设计，作为一种能够在没有垃圾回收（garbage collection）的情况下提供内存安全的语言。\n\n自那时以来，由于其特性和性能通常优于如C++等语言，它变得越来越流行。\n\nRust丰富的类型系统和所有权模型保证了内存安全性和线程安全性，同时保持了较高的抽象层次。\n\nRust支持命令式过程化、并发Actor、面向对象和纯函数式的混合编程风格。\n\n",
+          "links": [
+            {
+              "title": "访问Rust专用路线图",
+              "url": "https://roadmap.sh/rust",
+              "type": "article"
+            },
+            {
+              "title": "使用Rust构建游戏",
+              "url": "https://rustmeup.com/building-games-with-rust",
+              "type": "article"
+            },
+            {
+              "title": "学习Rust",
+              "url": "https://youtu.be/BpPEoZW5IiY?si=lyBbBPLXQ0HWdJNr",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0733ad6f-5418-458c-89e0-e9c915393449",
+          "xid": "ee2f08ab-a0b0-4ff0-a31c-65bc38f7adc5"
+        },
+        {
+          "title": "Python (Python)",
+          "description": "Python 是一种广受欢迎的高级编程语言，由 Guido van Rossum 设计，并于 1991 年发布。\n\n由于其学习和使用的简便性，它非常适合初学者。\n\nPython 的设计哲学强调代码可读性，这得益于其显著的缩进使用。\n\n其语言结构和面向对象方法旨在帮助开发人员为小型和大型项目编写清晰、逻辑性的代码。\n\nPython 是动态类型和垃圾回收的。\n\n此外，它支持多种编程范式，包括过程式、面向对象和函数式编程。\n\nPython 常用于网络开发、软件开发、数据库操作和机器学习。\n\n虽然 Python 不常用于游戏开发，但一些游戏开发者会利用 Python 进行脚本编写和任务自动化。\n\n",
+          "links": [
+            {
+              "title": "访问专用 Python 学习路线",
+              "url": "https://roadmap.sh/python",
+              "type": "article"
+            },
+            {
+              "title": "Python (Python)",
+              "url": "https://www.python.org/",
+              "type": "article"
+            },
+            {
+              "title": "Python 文档 (Python Documentation)",
+              "url": "https://www.python.org/doc/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1f7e9dd1-7b58-4657-998d-c18034dc5751",
+          "xid": "f91af440-d31e-49ab-adae-8457d6fab4ed"
+        }
+      ],
+      "id": "9f387622-171e-4b9a-a3af-1b64c219af79",
+      "xid": "e133e519-fd35-45a9-84d2-8bee4611e0ba"
+    },
+    {
+      "title": "计算机图形学",
+      "description": "计算机图形学是计算机科学的一个子领域，研究数字合成和操作视觉内容的方法。\n\n它通过专用的计算机软件和硬件来创建和操作视觉内容。\n\n这个领域主要应用于数字和视频游戏的创作、电影中的计算机生成图像（CGI）以及商业广告中的视觉效果。\n\n该领域主要分为两大类：**光栅图形（Raster graphics）**和**矢量图形（Vector graphics）**。\n\n光栅图形，也称为位图，通过点矩阵数据结构来表现图像，而矢量图形则通过多边形来表现计算机图形中的图像。\n\n这两种方法各自具有独特的使用场景。\n\n计算机图形学研究中的其他重要概念包括渲染（包括实时渲染和离线渲染）、动画和3D建模。\n\n通常，计算机图形学技能对于游戏开发者和动画专家来说是必不可少的。\n\n",
+      "links": [
+        {
+          "title": "什么是计算机图形学？",
+          "url": "https://www.geeksforgeeks.org/introduction-to-computer-graphics/",
+          "type": "article"
+        },
+        {
+          "title": "计算机图形学简介",
+          "url": "https://open.umn.edu/opentextbooks/textbooks/420",
+          "type": "article"
+        },
+        {
+          "title": "视频游戏图形是如何工作的？",
+          "url": "https://www.youtube.com/watch?v=C8YtdC8mxTU",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "光线追踪",
+          "description": "光线追踪是计算机图形学中的一种渲染技术，它模拟了光的物理行为。\n\n它生成具有高度视觉真实感的图像，因为它能够捕捉阴影、反射和光线的折射。\n\n光线追踪从相机（眼睛）到光源（光对象）反向追踪光的路径，在此过程中计算图像中每个像素的颜色值。\n\n颜色值的计算考虑了光线反射或折射的物体以及光源的性质，即其是否为环境光、点光源或聚光灯。\n\n光线追踪算法处理的效果是光栅化算法（如扫描线渲染和'Z-buffer'）难以处理的效果。\n\n",
+          "links": [
+            {
+              "title": "什么是光线追踪？",
+              "url": "https://www.pcmag.com/how-to/what-is-ray-tracing-and-what-it-means-for-pc-gaming",
+              "type": "article"
+            },
+            {
+              "title": "Nvidia GeForce RTX",
+              "url": "https://www.nvidia.com/en-us/geforce/rtx/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5229822b-d715-4534-b978-0cbd71d27ff5",
+          "xid": "6f3cb884-477e-4779-b5a4-5bd7325ff844"
+        },
+        {
+          "title": "光栅化(Rasterization)",
+          "description": "在计算机图形学领域，**光栅化(Rasterization)**指的是将图像数据转换为位图形式，即像素或点的过程。\n\n在3D渲染中它被广泛使用，在此过程中，三维多边形形状被转化为具有高度、宽度和色彩数据的二维图像。\n\n这是一个扫描转换过程，其中图形流水线处理的顶点和基元被数学地转换为片段。\n\n每个片段在光栅网格中找到其位置。\n\n最终，片段会转化为帧缓存中的像素，也就是呈现在屏幕上的最终渲染图像。\n\n然而，需要注意的是光栅化将图像的分辨率限制在了显示设备的分辨率以内。\n\n",
+          "links": [
+            {
+              "title": "3D渲染光栅化(Rasterization)",
+              "url": "https://www.techspot.com/article/1888-how-to-3d-rendering-rasterization-ray-tracing/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "11d0e69a-c5e8-49a0-bdae-c545a65bb476",
+          "xid": "f957544a-fb82-486f-943e-15a345fa1ad3"
+        },
+        {
+          "title": "图形流水线 (Graphics Pipeline)",
+          "description": "**图形流水线 (Graphics Pipeline)**，也经常被称为渲染流水线，是指图形系统将3D模型转换为可在屏幕上显示的2D图像或视图的一系列步骤。\n\n这些步骤通常包括变换、裁剪、光照、光栅化、着色等过程。\n\n流水线中的每一步都是一个操作，它准备或操作数据以供下游阶段使用。\n\n该流水线以场景的高层次描述开始，并以最终呈现在屏幕上的图像结束。\n\n图形流水线是计算机图形学中的一个主要概念，开发人员应该学习它，因为它可以帮助实现高效的渲染和高质量的可视化。\n\n",
+          "links": [
+            {
+              "title": "图形流水线 (Graphics Pipelines)",
+              "url": "https://www.cs.cornell.edu/courses/cs4620/2020fa/slides/11pipeline.pdf",
+              "type": "article"
+            },
+            {
+              "title": "图形流水线的定义 (Definition of Graphics Pipeline)",
+              "url": "https://www.pcmag.com/encyclopedia/term/graphics-pipeline",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "46bd0716-641d-45d5-951f-a1205ba297e0",
+          "xid": "f8eddca0-31e5-496a-9614-3ab32548eb7f"
+        },
+        {
+          "title": "采样",
+          "description": "**采样**在计算机图形学中是一种将连续的数学函数（图像、信号、光线和声音）转换为离散的数字表示的方法。\n\n该过程通过定期间隔的“采样”来“拍照”实现，这也正是“采样”概念的由来。\n\n一些常见的采样技术包括：均匀采样（等间距样本）、随机采样（随机间隔抽取样本）和抖动采样（均匀和随机采样之间的折衷方案）。\n\n采样率越高，意味着原始函数能够被更精确地从离散样本中重构出来。\n\n有效的采样是实现逼真计算机图形的关键方面。\n\n",
+          "links": [
+            {
+              "title": "纹理和采样",
+              "url": "https://cglearn.eu/pub/computer-graphics/textures-and-sampling",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "320a97e3-ab39-4ac0-851e-420dc1bd29da",
+          "xid": "f2788272-834a-497a-8c93-d4eb891915ca"
+        },
+        {
+          "title": "着色器(Shader)",
+          "description": "着色器(Shader)是用于3D计算机图形的一种软件。\n\n它们通过计算和转换图像数据来渲染高质量的视觉效果。\n\n此外，着色器还负责确定物体的最终颜色。\n\n着色器有多种类型：顶点着色器(vertex shaders)、几何着色器(geometry shaders)、像素着色器(pixel shaders)和计算着色器(compute shaders)。\n\n每种着色器都被编程来操作图像的特定属性，如顶点、像素和整体几何体。\n\n着色器是游戏开发者旨在生成逼真且引人入胜的视觉体验的关键工具。\n\n",
+          "links": [
+            {
+              "title": "视频游戏中什么是着色器(Shader)？",
+              "url": "https://www.gamedesigning.org/learn/shaders/",
+              "type": "article"
+            },
+            {
+              "title": "编码图形着色器(Shader)的入门指南",
+              "url": "https://gamedevelopment.tutsplus.com/a-beginners-guide-to-coding-graphics-shaders--cms-23313t",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "渲染方程",
+              "description": "**渲染方程（Render Equation）**，也被称为**渲染方程（Rendering Equation）**，是计算机图形学中的一个基本原则，为当今大多数高级照明算法提供了基础。\n\n它首先由James Kajiya于1986年提出，定义了在给定环境中光线如何与物理对象相互作用。\n\n该方程试图模拟光线的行为，考虑到诸如透射、吸收、散射和发射等方面。\n\n精确求解该方程可能需要大量的计算。\n\n值得注意的是，已经开发出许多方法来近似和求解它，从而在计算机图形学中生成高度逼真的图像。\n\n",
+              "links": [
+                {
+                  "title": "渲染方程",
+                  "url": "https://en.wikipedia.org/wiki/Rendering_equation",
+                  "type": "article"
+                },
+                {
+                  "title": "交互式图形12 - 渲染方程",
+                  "url": "https://www.youtube.com/watch?v=wawf7Am6xy0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "f4645f96-9e96-4f93-97bb-12e4e2eec461",
+              "xid": "55fe9fde-228c-45aa-94ed-586dc2de300e"
+            },
+            {
+              "title": "反射",
+              "description": "在游戏开发中，特别是着色器中，反射是一种模拟光线从物体表面反射的现象，类似于现实世界中的情况。\n\n着色器通过从光源发射光线来模拟这种效果，然后这些光线撞击到物体表面。\n\n当光线击中表面时，计算光线的颜色和角度，以定义如何从该表面反射光线。\n\n着色器中的反射可以进一步分为两种类型：镜面反射（Specular Reflection）和漫反射（Diffuse Reflection）。\n\n镜面反射是光线从表面以镜面方式反射，其中每个入射光线都以相等但相反的角度反射出光线。\n\n而漫反射则是光线向多个方向散射，产生柔和的效果。\n\n这些反射在计算机图形学中经常使用反射模型（如Phong反射模型或Lambertian反射模型）来量化。\n\n",
+              "links": [
+                {
+                  "title": "渲染完美的反射",
+                  "url": "https://developer.nvidia.com/blog/rendering-perfect-reflections-and-refractions-in-path-traced-games/",
+                  "type": "article"
+                },
+                {
+                  "title": "我们如何在游戏中使用反射技术？",
+                  "url": "https://www.youtube.com/watch?v=R1A86lZ8myQ",
+                  "type": "video"
+                }
+              ],
+              "children": [
+                {
+                  "title": "漫反射",
+                  "description": "在3D渲染和游戏开发的世界中，“漫反射(diffuse)”指的是漫反射光照或漫反射现象。\n\n它是使物体看起来具有三维效果和真实光照的关键概念。\n\n",
+                  "links": [
+                    {
+                      "title": "Albedo和漫反射贴图(diffuse map)之间的区别",
+                      "url": "https://www.a23d.co/blog/difference-between-albedo-and-diffuse-map/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "纹理风格学习完全指南",
+                      "url": "https://cgobsession.com/complete-guide-to-texture-map-types/",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "e56e3d00-2bc6-4553-b424-cec35757d63a",
+                  "xid": "6c8d7440-9385-4ee3-991c-06a0ad063bea"
+                },
+                {
+                  "title": "镜面反射(Specular)",
+                  "description": "`镜面反射(Specular)`是一种像镜子一样的反射。\n\n在这种情况下，光线的反射要比吸收强烈。\n\n入射角等于反射角，也就是说，光线进入介质并弹射出时的角度与光束弹射出的角度相同。\n\n",
+                  "links": [
+                    {
+                      "title": "镜面反射(Specular) - 维基百科",
+                      "url": "https://en.wikipedia.org/wiki/Specular_reflection",
+                      "type": "article"
+                    },
+                    {
+                      "title": "镜面反射(Specular) - 规则反射, 镜子, 漫反射",
+                      "url": "https://www.rp-photonics.com/specular_reflection.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "镜面反射(Specular)",
+                      "url": "https://www.youtube.com/watch?v=2cFvJkc4pQk",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "23123a24-74e6-4da0-b464-39f91caf3cd8",
+                  "xid": "8fe221e8-7327-4307-bd51-26efb31b5dae"
+                }
+              ],
+              "id": "388c271b-5f3b-4379-a090-99c84f88285e",
+              "xid": "70e0c467-57f5-4c74-80f4-34eee731fa65"
+            },
+            {
+              "title": "映射",
+              "description": "在游戏开发中，尤其是在着色器的上下文中，\"映射\"主要指的是纹理映射（Texture Mapping）和法线映射（Normal Mapping）。\n\n**纹理映射**是将纹理（图像或颜色数据）应用于3D模型表面的过程。\n\n这个过程定义了如何将2D表面包裹在3D模型上，或如何将平面图像拉伸跨越模型表面以绘制其外观。\n\n这可能是从对象的颜色到其粗糙度或反射性的任何内容。\n\n而**法线映射**是一种用于创建3D模型表面复杂性的错觉的技术，而不需要增加任何额外的几何体。\n\n法线贴图是一种特殊的纹理贴图，它允许添加表面细节，例如凸起、凹槽和划痕，这些细节能像真正的几何体一样捕获光线，从而让低多边形模型看起来像是一个更加复杂的形状。\n\n",
+              "links": [
+                {
+                  "title": "设计地图",
+                  "url": "https://www.gamedeveloper.com/design/designing-maps-that-complement-game-mechanics",
+                  "type": "article"
+                },
+                {
+                  "title": "游戏开发中的映射和瓷砖",
+                  "url": "https://code.tutsplus.com/an-introduction-to-creating-a-tile-map-engine--gamedev-10900t",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "纹理",
+                  "description": "`纹理`是物体的视觉品质。\n\n其中`网格`（mesh）决定了物体的形状或`拓扑`（topology），而纹理则描述了这个物体的品质。\n\n例如，如果有一个球形的网格，它是应该有光泽的吗？它是应该粗糙的吗？它是应该像岩石还是像木头？这类问题通常可以通过纹理来解决。\n\n纹理通常是被包裹到3D网格上的2D图像。\n\n首先将3D网格分割成各个段落并摊开；然后将3D网格转换成2D块，这个过程被称为`UV展平`（UV Unwrapping）。\n\n一但网格被展平，以图像形式的纹理就应用于3D网格的2D块上，从而使纹理知道如何正确地包裹网格以避免任何冲突。\n\n纹理决定了游戏的视觉感受和美学。\n\n",
+                  "links": [
+                    {
+                      "title": "纹理与材质",
+                      "url": "https://gamedevinsider.com/making-games/game-artist/texturing-and-materials/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "任天堂的纹理是如何工作的",
+                      "url": "https://www.youtube.com/watch?v=WrCMzHngLxI",
+                      "type": "video"
+                    },
+                    {
+                      "title": "皮克斯的纹理是如何工作的",
+                      "url": "https://www.youtube.com/watch?v=o_I6jxlN-Ck",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "f5954551-4c53-4886-a83a-dd34d3743477",
+                  "xid": "4766b81c-5219-4417-b8fe-488fbbbaa820"
+                },
+                {
+                  "title": "浮雕贴图",
+                  "description": "浮雕贴图（`Bump`）与纹理非常相似。\n\n实际上，它本身就是一种纹理。\n\n如果你观察砖墙的纹理，可以发现如果对墙内所有的细节进行几何处理将是极其耗费资源和不必要的。\n\n为了克服这种低效性，就创造了浮雕贴图（`bump` maps）。\n\n传统上，一张平面纹理只是一个被称为颜色贴图（`color map`）的图像，即确定每个像素的颜色位置以表现纹理。\n\n当你拍摄地板、墙壁或任何物体的照片时，这张图片本质上就是一个颜色贴图。\n\n而浮雕贴图则不同，它提供了纹理的法线（`normal`）值信息。\n\n因此，如果你将一张2D平面网格应用浮雕贴图，它会在2D平面上渲染出所有的法线值，创造出一种模拟三维效果的图像。\n\n",
+                  "links": [
+                    {
+                      "title": "浮雕贴图",
+                      "url": "https://developer.valvesoftware.com/wiki/Bump_map",
+                      "type": "article"
+                    },
+                    {
+                      "title": "法线、法线贴图和浮雕贴图",
+                      "url": "https://www.youtube.com/watch?v=l5PYyzsZED8",
+                      "type": "video"
+                    },
+                    {
+                      "title": "浮雕贴图、法线贴图和位移贴图",
+                      "url": "https://www.youtube.com/watch?v=43Ilra6fNGc",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "4a8c893d-7b2b-4598-863e-d34472c77274",
+                  "xid": "b9205823-1c0b-4aab-a5f4-5106f4a37c6f"
+                },
+                {
+                  "title": "视差（Parallax）",
+                  "description": "在游戏开发和图形中，视差（Parallax）指的是从两个不同视线看同一个物体时，物体的明显位移或相对位置的差异，用连接这两个视线的角或半倾角来测量。\n\n用更简单的说法，视差是一种通过以不同的速度移动背景层来模拟2D环境中深度错觉的技术，这与前景的移动相对。\n\n",
+                  "links": [
+                    {
+                      "title": "视差效果（Parallax Effect）",
+                      "url": "https://www.encora.com/insights/how-to-take-advantage-of-parallax-in-programming-and-video-games",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "9d35ca81-6c4e-4586-8e25-4d4ba62b64cc",
+                  "xid": "1e56ae9a-38d4-4ee4-9a82-4fe22a6e5e6c"
+                },
+                {
+                  "title": "地平线",
+                  "description": "在图形学中，地平线（horizon）指的是表示天空与地面或诸如海洋等平坦表面交汇的视觉边界的一条水平线。\n\n它是透视和艺术中的一个基本概念，作为参考点用于在图像中营造深度和距离感。\n\n地平线的放置位置会对图像的构图和氛围产生显著影响，高或低的地平线会在观众对场景的感知中产生不同的效果。\n\n",
+                  "links": [
+                    {
+                      "title": "消失点",
+                      "url": "https://en.wikipedia.org/wiki/Vanishing_point",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "008a8d24-84c2-480d-a05c-f9acf9e4846e",
+                  "xid": "f6f65933-568f-4154-b957-16460698d06f"
+                }
+              ],
+              "id": "05c6dcb2-4889-4a61-9887-baa232104e45",
+              "xid": "ad134e46-c23b-4f4c-8666-f0447dad21d5"
+            }
+          ],
+          "id": "861b9f9e-da86-4f47-b71d-e0faeaa0bf59",
+          "xid": "0571e5f5-9c17-4099-87e5-da4ddbd9adb9"
+        },
+        {
+          "title": "计算机动画",
+          "description": "计算机动画是指通过使用计算机创建移动图像的艺术。\n\n计算机动画在游戏开发行业中变得越来越重要。\n\n基本上，它分为两个类别：2D动画和3D动画。\n\n2D动画，也称为矢量动画（vector animation），在二维环境中创建图像，包括变形、扭曲和洋葱皮技术。\n\n另一方面，3D动画，也称为计算机生成图像（CGI），则是在三维空间中移动对象和角色。\n\n动画过程通常涉及创建一个三维对象的数学表示。\n\n然后通过动画师在虚拟空间中操纵该对象以创建最终的动画。\n\n在游戏开发中，经常使用Unity、Maya和Blender等软件进行计算机动画。\n\n",
+          "links": [
+            {
+              "title": "计算机动画",
+              "url": "https://www.adobe.com/uk/creativecloud/animation/discover/computer-animation.html",
+              "type": "article"
+            },
+            {
+              "title": "什么是计算机动画？",
+              "url": "https://unity.com/topics/what-is-computer-animation",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cb270a8c-1d52-470b-b72e-aa2b3529b328",
+          "xid": "794e1136-0737-4b5d-96f4-34a1f01e01ec"
+        },
+        {
+          "title": "颜色",
+          "description": "在计算机图形学领域，颜色扮演着核心角色。\n\n它可以定义在各种颜色模型中，如RGB（Red, Green, Blue）模型，CYMK（Cyan, Yellow, Magenta, Black）模型及其他模型。\n\nRGB是一种颜色模型，通过以不同比例混合三种基本颜色（红、绿、蓝）来生成连续的色谱。\n\n该模型通常用于数字显示。\n\n相比之下，CMYK是用于彩色打印的一种颜色模型。\n\n它以青色、洋红、黄色和黑色作为基本颜色。\n\nHSL（Hue, Saturation, Lightness）和HSV（Hue, Saturation, Value）是基于人类感知来表示颜色的其他有用模型。\n\n计算机图形学中颜色的另一个重要元素是颜色深度，也称为位深度，它决定了能够同时显示的颜色数量。\n\n",
+          "links": [
+            {
+              "title": "皮克斯学院 - 颜色",
+              "url": "https://www.khanacademy.org/computing/pixar/animate/ball/v/intro-animation",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1fb06263-d3b8-431a-8307-8adfafbbe687",
+          "xid": "4a52bbf0-0f39-4ff2-bfdf-ec5896e729ef"
+        },
+        {
+          "title": "视觉感知",
+          "description": "视觉感知是游戏开发的一个基本方面，在计算机图形学领域得到了广泛探讨。\n\n它涉及到解释和理解我们眼睛接收到的视觉信息的能力，对于创建沉浸式和动态的视觉体验至关重要。\n\n视觉感知研究包括对光（light）、颜色（color）、形状（shape）、形态（form）、深度（depth）和运动（motion）等要素的理解，这些都是创造美观和引人入胜图形的关键元素。\n\n充分利用视觉感知，游戏开发者能够控制和操纵玩家与游戏世界的互动方式，不仅极大地提升视觉吸引力，也增强了整体的游戏体验。\n\n",
+          "links": [
+            {
+              "title": "视觉心理学和感知",
+              "url": "https://www.gamedeveloper.com/design/it-s-all-in-your-mind-visual-psychology-and-perception-in-game-design",
+              "type": "article"
+            },
+            {
+              "title": "扩展视频游戏理念",
+              "url": "https://link.springer.com/chapter/10.1007/978-3-030-45545-3_7",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e943ae30-dd91-4d59-94f8-da5f185832c5",
+          "xid": "066fdcf1-be5d-44ae-b151-29955008d331"
+        },
+        {
+          "title": "色调再现",
+          "description": "`色调再现` 或 `色调映射` 是计算机图形学中用于在具有更有限动态范围的介质中模拟高动态范围图像外观的技术。\n\n打印输出、CRT、LCD显示器及其他显示设备只能再现缩减后的动态范围。\n\n该技术在游戏开发中广泛使用，开发者利用它来改善视觉体验。\n\n此过程涉及将场景中的光线映射到较窄的色调范围内，同时保持视觉外观，即亮度、饱和度和色调不变。\n\n有许多色调映射算法可供选择，每种算法都具有适用于不同成像任务的独特属性。\n\n",
+          "links": [
+            {
+              "title": "色调映射",
+              "url": "https://graphics-programming.org/resources/tonemapping/index.html",
+              "type": "article"
+            },
+            {
+              "title": "视频游戏的声音设计",
+              "url": "https://www.gamedeveloper.com/audio/sound-design-for-video-games-a-primer",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a0dd4702-d937-4212-b1f1-7dd986d6def5",
+          "xid": "271f37d9-dd80-4942-9784-e0e7ac89beb3"
+        },
+        {
+          "title": "照明和阴影",
+          "description": "**照明和阴影**是计算机图形学的重要元素，极大地提升了游戏的视觉逼真度。\n\n它们创造了深度感，并在二维显示器上营造出三维空间的效果。\n\n**照明**在游戏中模仿现实世界的光特性。\n\n它涉及到基于物体和表面的材质特性以及光源的强度、方向和颜色，计算光线与不同物体和表面如何相互作用的过程。\n\n各种算法，例如光线追踪(Ray Tracing)或光栅化(Rasterization)，被用来模拟这些相互作用。\n\n另一方面，**阴影**是由于物体阻挡光线而未被照亮的区域。\n\n生成逼真的阴影涉及复杂的计算，包括考量光源的位置、阻挡物体的形状和大小，以及被影响区域的距离。\n\n阴影贴图(Shadow Mapping)和阴影体积(Shadow Volume)是游戏开发中常用的技术。\n\n对这些方面的特别关注能够大幅度提升游戏环境中的真实感和沉浸感。\n\n",
+          "links": [
+            {
+              "title": "照明和阴影",
+              "url": "https://www.techspot.com/article/1998-how-to-3d-rendering-lighting-shadows/",
+              "type": "article"
+            },
+            {
+              "title": "游戏照明的艺术",
+              "url": "https://3dskillup.com/effective-lighting-for-games/",
+              "type": "article"
+            },
+            {
+              "title": "3D游戏中的照明介绍",
+              "url": "https://www.gridpaperstudio.com/post/introduction-to-lighting-in-3d-game-engines-a-beginner-s-guide",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "模板阴影",
+              "description": "模板阴影（Stencil shadows）是三维计算机图形中用于创建阴影的一种技术。\n\n模板阴影算法将阴影视为一种称为阴影体积（shadow volume）的三维空间体积。\n\n场景中位于该阴影体积内的任何部分将处于阴影中，而位于阴影体积外的部分则处于光照下。\n\n阴影体积是沿光源视线方向将三维对象的多边形轮廓线推入空间形成的。\n\n对于等效的复杂对象，填充模板缓冲区所需的边或顶点数量通常会少于计算阴影贴图所需的像素数量，这使得模板阴影在这方面更高效。\n\n然而，如果不进一步改进，这种技术产生的阴影可能会看起来方块、不现实。\n\n",
+              "links": [
+                {
+                  "title": "模板阴影实现",
+                  "url": "https://devforum.roblox.com/t/stencil-shadows-implementation/2079287",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6103d336-3c93-45bc-9286-820893700e9e",
+              "xid": "7b39257b-1bb3-4c2a-93d2-fcc3f26d7bf6"
+            },
+            {
+              "title": "阴影地图（Shadow Map）",
+              "description": "阴影映射是计算机图形学中用于在场景中添加阴影的一种技术。\n\n该过程包括两个步骤：生成阴影地图和渲染场景。\n\n在生成阴影地图的步骤中，从光源的角度渲染场景，捕获深度信息。\n\n结果是一个存储每个光源方向上从光源到最近表面距离的纹理，即“阴影地图（shadow map）”。\n\n在渲染场景的步骤中，从摄像机的角度渲染场景。\n\n对于每个可见表面点，计算其到光源的距离并将其与阴影地图中存储的相应距离进行比较。\n\n如果该点的距离大于存储的距离，则该点处于阴影中；否则，它是被照明的。\n\n利用这一信息调整该点的颜色，从而产生阴影效果。\n\n",
+              "links": [
+                {
+                  "title": "阴影映射技术（Shadow Mapping Techniques）",
+                  "url": "https://dev.to/hayyanstudio/shadow-mapping-techniques-implementing-shadows-in-3d-scenes-using-shadow-mapping-46hl/",
+                  "type": "article"
+                },
+                {
+                  "title": "阴影映射入门指南（A Beginner's Guide to Shadow Mapping）",
+                  "url": "https://gamedev.net/blog/2080/entry-2261232-shadow-mapping-part-1-pcf-and-vsms/",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "二维游戏开发 (2D Game Development)",
+                  "description": "二维游戏开发 (2D Game Development) 致力于在二维平面上创建游戏，利用平面图形，通常利用x和y坐标。\n\n从二十世纪八九十年代的经典街机游戏到现今丰富的独立游戏，二维游戏开发是游戏行业充满活力和多样化的一部分。\n\n二维游戏不仅视觉上具有吸引力和怀旧感，而且由于其机制相对3D游戏开发更加简单，也更易于开发者制作。\n\n",
+                  "links": [
+                    {
+                      "title": "二维和三维游戏开发 (2D and 3D Game Development)",
+                      "url": "https://hireindiandevelopers.medium.com/2d-and-3d-game-development-a-comprehensive-guide-7d22c4fdd706",
+                      "type": "article"
+                    },
+                    {
+                      "title": "如何制作二维游戏 (How to Make a 2D Game)",
+                      "url": "https://gamemaker.io/en/blog/how-to-make-a-2d-game",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "8d870996-f32a-4ece-86de-ed43e21d7add",
+                  "xid": "0464e58a-4a29-4ab1-a880-a8f630cac352"
+                },
+                {
+                  "title": "立方体",
+                  "description": "在计算机图形学中，\"立方体\"在阴影的背景下通常指的是使用立方体形状的对象来可视化\"阴影体积\"的概念。\n\n设想一个光源照射在一个立方体上。\n\n从光源的角度看到的立方体的轮廓，无限向外延伸，形成了一个体积。\n\n任何在这个\"阴影体积\"内的对象都被认为是在阴影之中。\n\n虽然有助于理解，但阴影体积本身并不总是立方体形状——它们的复杂程度取决于投射阴影的对象。\n\n",
+                  "links": [
+                    {
+                      "title": "绘制立方体",
+                      "url": "https://dev-tut.com/2022/unity-draw-a-debug-cube/",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "2f326d97-615b-4d5f-92ff-cadb91c3eda7",
+                  "xid": "3bba49b9-97f5-46eb-80db-2e78b2e88879"
+                },
+                {
+                  "title": "级联",
+                  "description": "级联通常指的是级联阴影映射（Cascaded shadow maps），这是一种在大面积上渲染逼真阴影的技术。\n\n",
+                  "links": [
+                    {
+                      "title": "级联阴影",
+                      "url": "https://www.gamedev.net/forums/topic/632574-cascading-shadow-maps-best-approach-to-learn/4988720/",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "d24e14d5-66c7-4f5d-b06e-fecc20d30b28",
+                  "xid": "b660e166-0cc0-4f6f-9288-4176a27a303b"
+                }
+              ],
+              "id": "b412f958-0b9b-4415-830c-3c692450065c",
+              "xid": "252c828f-6fbe-441f-b42d-b098312f6f66"
+            },
+            {
+              "title": "光源",
+              "description": "在游戏中开发，**光源**是影响场景视觉吸引力和真实感的关键组件。\n\n它表示游戏中发出光的对象，如太阳、吊灯或火把。\n\n光源可以分为静态或动态两类。\n\n静态光源在游戏过程中不移动或改变，而动态光源可以移动，且其属性可以实时改变。\n\n可以操作的光源属性包括亮度（光的亮度）、颜色、范围（光延伸的距离）、方向和类型（点光源、定向光源或聚光灯）。\n\n然后根据这些光源属性及其与游戏场景中各种对象的互动来计算照明和阴影效果。\n\n",
+              "links": [
+                {
+                  "title": "游戏照明的艺术",
+                  "url": "https://3dskillup.com/effective-lighting-for-games/",
+                  "type": "article"
+                },
+                {
+                  "title": "游戏环境中的照明",
+                  "url": "https://cgcookie.com/posts/art-of-lighting-game-environments",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "方向光",
+                  "description": "方向光模拟远处的光源，如太阳。\n\n它只有方向而没有具体位置，这意味着它的光线是平行的，并且无论场景中物体的位置如何，都会投射出一致的阴影。\n\n这使其非常适合模拟阳光或月光，提供逼真的户外照明效果，同时在渲染时性能相对较高。\n\n",
+                  "links": [
+                    {
+                      "title": "方向光",
+                      "url": "https://www.a23d.co/blog/difference-between-albedo-and-diffuse-map/",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "ac3df4ca-54a7-41e9-958d-2bbb82091044",
+                  "xid": "c4dcd051-32a3-4aa7-865c-27a5584d91e3"
+                },
+                {
+                  "title": "点光源 (Point)",
+                  "description": "点光源是计算机图形学和游戏中最常用的光源类型之一。\n\n它们类似于现实生活中的电灯泡，向四周均匀发射光线。\n\n这种光源在大多数游戏引擎中都是开箱即用的，并提供了诸如强度、衰减、颜色等一系列可定制参数。\n\n点光源是最简单的光源类型之一，因此非常适合快速直观地对场景进行照明。\n\n",
+                  "links": [
+                    {
+                      "title": "照明基础知识 (The Basics of Lighting)",
+                      "url": "https://blog.logrocket.com/lighting-basics-unity/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "光源组件类型 (Types of Lighting Component)",
+                      "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/Lighting.html",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "630e18a3-fdc3-40d4-ba26-e48315db2fe3",
+                  "xid": "0b22fd46-431a-49dd-8c59-36fb2158db30"
+                },
+                {
+                  "title": "聚光灯",
+                  "description": "聚光灯(Spotlights)是计算机图形学和游戏中常见的一种灯光类型，它模仿了现实世界中聚光灯的行为。\n\n聚光灯提供了一系列参数来调整其行为，例如半径(radius)、锥角(cone angle)、衰减(falloff)和强度(intensity)。\n\n无论是Unreal还是Unity游戏引擎，都提供了现成的聚光灯，使其成为在场景中添加真实和动态照明的方便强大工具。\n\n",
+                  "links": [
+                    {
+                      "title": "计算机图形学照明",
+                      "url": "https://en.wikipedia.org/wiki/Computer_graphics_lighting",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "89c864b2-bb75-4997-ac5b-205407dee8c4",
+                  "xid": "b9032b55-e976-4c9e-bf89-9ca72c18b195"
+                },
+                {
+                  "title": "无限(Infinite)",
+                  "description": "",
+                  "links": [],
+                  "children": [],
+                  "id": "d2301b9e-43c1-4882-98e9-36468e51f89a",
+                  "xid": "42b16a79-dd8f-4e4d-91c6-661295f2951a"
+                }
+              ],
+              "id": "70e1b560-5f54-4e96-bd2c-64c2c33935d0",
+              "xid": "052e6dee-4e5b-41aa-858b-75684423136a"
+            }
+          ],
+          "id": "6d181222-10bc-46d0-a569-ac7987355f79",
+          "xid": "774274e1-1ad5-4299-9cf9-d51df4dbaa08"
+        },
+        {
+          "title": "可见性和遮挡",
+          "description": "计算机图形学中的\"可见性（Visibility）\"和\"遮挡（Occlusion）\"是对指定视角下哪些部分的对象是可见的，哪些部分被隐藏的过程的描述。\n\n\"遮挡（Occlusion）\"描述了一个对象被另一个对象遮挡的现象。\n\n理解这些概念对于游戏设计中的逼真渲染非常重要。\n\n实时引擎通常使用数据结构，如BSP树（BSP-trees）、四叉树（Quad-trees）或八叉树（Octrees），快速识别遮挡。\n\n高级技术如遮挡剔除（Occlusion culling）和深度缓冲（Z-buffering）被用来进一步优化三维物体的可见和隐藏部分的表现。\n\n了解与可见性和遮挡相关的深度和尺寸，能使游戏开发者提升画面表现和性能。\n\n",
+          "links": [
+            {
+              "title": "遮挡剔除简介",
+              "url": "https://medium.com/@Umbra3D/introduction-to-occlusion-culling-3d6cfb195c79",
+              "type": "article"
+            },
+            {
+              "title": "计算机图形学中的可见性",
+              "url": "https://ima.udg.edu/~sellares/ComGeo/VisComGra.pdf",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "遮挡物(Occluder)",
+              "description": "在游戏开发中，**遮挡物(Occluder)** 是一个用于隐藏游戏环境中的其他对象的工具或方法。\n\n当一个已知为遮挡物的特定对象从摄像机的角度阻挡了另一个对象的视线时，被隐藏或阻挡的对象就不需要被渲染了。\n\n这个遮挡物可以是建筑物或地形特征等各种物体。\n\n管理这些遮挡物的过程称为遮挡剔除(Occlusion Culling)。\n\n使用遮挡物的目的是通过减少不必要的渲染工作量来优化游戏并提高其性能。\n\n然而，值得注意的是，设置遮挡物需要仔细规划，以确保不会影响游戏玩法或视觉质量。\n\n",
+              "links": [
+                {
+                  "title": "遮挡物及其使用方法",
+                  "url": "https://80.lv/articles/occluders-and-how-to-use-them-for-level-design/",
+                  "type": "article"
+                },
+                {
+                  "title": "遮挡剔除(Occlusion Culling)教程",
+                  "url": "https://thegamedev.guru/unity-performance/occlusion-culling-tutorial/",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "雾 (Fog)",
+                  "description": "在游戏中，雾 (Fog) 是一种视觉效果，用于模拟大气条件并增强游戏环境中的深度感知。\n\n它创建了一个能见度渐变，通常使物体逐渐融入背景，可以通过减少远处呈现实体的数量来提升性能。\n\n雾 (Fog) 可以通过多种方式实现，例如线性雾 (linear fog)，根据物体与摄像机的距离逐渐掩盖物体，或者指数雾 (exponential fog)，通过距离增加雾 (Fog) 密度，产生更戏剧的效果。\n\n",
+                  "links": [
+                    {
+                      "title": "雾 (Fog) - 图形和GPU编程 (Graphics and GPU Programming)",
+                      "url": "https://gamedev.net/reference/articles/article677.asp",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "9ec001ce-b19d-4e5f-8bde-222642f49250",
+                  "xid": "c47c3c66-585b-472d-b682-8871eb75b6f7"
+                }
+              ],
+              "id": "21d7ebc0-3066-44af-8a4a-a8ef7a7036f5",
+              "xid": "4b603375-f968-4b4d-8a06-9a1a12b208f6"
+            },
+            {
+              "title": "裁剪(Culling)",
+              "description": "**裁剪(Culling)** 是游戏开发中提高效率和速度的一种性能优化策略。\n\n裁剪通过消除玩家不可见或位于游戏视口外的元素来减少渲染负载。\n\n裁剪有几种类型，主要有：**视锥体裁剪(Frustum Culling)** 和 **遮挡裁剪(Occlusion Culling)**。\n\n视锥体裁剪涉及消除在相机视场外的对象。\n\n而遮挡裁剪则丢弃被其他对象遮挡或隐藏的对象。\n\n裁剪确保只有对玩家体验有益或必要的元素会被处理。\n\n",
+              "links": [
+                {
+                  "title": "游戏开发中的裁剪(Culling)",
+                  "url": "https://medium.com/@niitwork0921/what-is-culling-in-game-design-a97c0b6344dd",
+                  "type": "article"
+                },
+                {
+                  "title": "虚幻引擎中的对象裁剪(Object Culling)",
+                  "url": "https://gamedevinsider.com/object-culling-in-unreal-engine/",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "棱台",
+                  "description": "棱台剔除（Frustum Culling）是计算机图形学中的一个标准做法，在几乎所有游戏中都用于优化性能，通过不渲染视野范围之外的对象。\n\n可以将你的视野范围想象成一个棱台，即被截顶的金字塔形状。\n\n最远的一侧称为远裁剪平面（far clip plane），最近的一侧称为近裁剪平面（near clip plane）。\n\n任何落在这个棱台之外的游戏对象都将被剔除（culled），也就是说它们不会被渲染，从而提升性能。\n\n这个特性在虚幻引擎（Unreal Engine）中是内置的。\n\n",
+                  "links": [
+                    {
+                      "title": "棱台剔除（Frustum Culling）",
+                      "url": "https://gamedev.net/tutorials/programming/general-and-gameplay-programming/frustum-culling-r4613/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "棱台剔除（Frustum Culling） - 游戏优化入门 - 虚幻引擎（Unreal Engine）",
+                      "url": "https://www.youtube.com/watch?v=Ql56s1erTMI",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "886af0e4-fb97-495b-bc56-37d47274efb0",
+                  "xid": "eaf1863e-7b32-4969-8613-832c21ed1f90"
+                },
+                {
+                  "title": "光线",
+                  "description": "光线是指在3D环境中光的视觉表现形式。\n\n它用于模拟现实世界中光的行为方式，为物体和场景增添深度、体积和逼真感。\n\n光线可以归类为不同的类型，例如环境光（ambient）、漫反射光（diffuse）、高光（specular）和自发光（emissive），每种类型在创建令人信服和沉浸式的视觉体验中都发挥特定的作用。\n\n适当的光照可以极大地提升场景的氛围、气氛和整体美感，是图形和游戏开发中不可或缺的一部分。\n\n",
+                  "links": [
+                    {
+                      "title": "游戏中环境的光线照明",
+                      "url": "https://medium.com/my-games-company/using-light-and-color-in-game-development-a-beginners-guide-400edf4a7ae0",
+                      "type": "article"
+                    },
+                    {
+                      "title": "游戏照明的艺术",
+                      "url": "https://3dskillup.com/effective-lighting-for-games/",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "f34daa0d-0059-41c4-b071-395f07182cb6",
+                  "xid": "5be1572f-b3fe-4880-92de-13de895e1821"
+                },
+                {
+                  "title": "阴影(Shadow)",
+                  "description": "阴影在增强视频游戏中场景的真实感和深度方面发挥着至关重要的作用。\n\n它们通过模拟光线如何与3D环境中的对象交互来帮助创造更加沉浸式的体验。\n\n",
+                  "links": [
+                    {
+                      "title": "阴影映射技术(Shadow Mapping Techniques)",
+                      "url": "https://dev.to/hayyanstudio/shadow-mapping-techniques-implementing-shadows-in-3d-scenes-using-shadow-mapping-46hl",
+                      "type": "article"
+                    },
+                    {
+                      "title": "实时阴影投射使用阴影体积(Real Time Shadow Casting using Shadow Volumes)",
+                      "url": "https://www.gamedeveloper.com/business/real-time-shadow-casting-using-shadow-volumes",
+                      "type": "article"
+                    },
+                    {
+                      "title": "编程和解释阴影(Programming and Explaining Shadows)",
+                      "url": "https://www.youtube.com/watch?v=RJr14qUt624L",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "a3257985-015d-487d-8fcb-f91a0beb66cf",
+                  "xid": "a6e32952-ede8-4cae-b701-b1b235bb3dd7"
+                }
+              ],
+              "id": "3d36fd77-6335-4f19-8574-dae0c832c141",
+              "xid": "d9dcffa0-bdc9-4e3e-9b8f-cfbfee022b39"
+            },
+            {
+              "title": "裁剪(Clippping)",
+              "description": "`裁剪(Clippping)`是计算机图形学中的一项基本技术，主要用来高效渲染三维场景。\n\n这个过程涉及去除场景中视野之外或被其他物体遮挡的物体部分。\n\n裁剪可以通过多种方式进行，其中最常见的一种方法是`视椎体剔除(View-frustum culling)`，在这个过程中，完全位于相机视野之外的物体将被丢弃。\n\n裁剪的目的是通过减少图形硬件需要处理的多边形数量来优化图形渲染管线。\n\n因此，这有助于提高渲染过程的速度和整体性能。\n\n",
+              "links": [
+                {
+                  "title": "游戏中的裁剪(Clipping)",
+                  "url": "https://www.haroldserrano.com/blog/what-is-clipping-in-opengl",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "多边形(Polygon)",
+                  "description": "在计算机图形学和游戏开发中，多边形(Polygon)是由一组顶点(Vertex)通过边(Edge)连接而成的二维(2D)或三维(3D)形状。\n\n多边形用于在游戏中和模拟中表示物体(Object)、角色(Character)和环境(Environment)。\n\n",
+                  "links": [
+                    {
+                      "title": "多边形和着色(Polygons and Shading)",
+                      "url": "https://electronics.howstuffworks.com/3do5.htm",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "67793b64-4786-47ad-9079-3035b97d0495",
+                  "xid": "25fb1c94-b0a1-4479-ba49-fe41ba132e58"
+                },
+                {
+                  "title": "多面体",
+                  "description": "在计算机图形学和游戏开发中，多面体（polyhedron）是由一组多边形组成的3D形状，这些多边形包围了一个体积。\n\n多面体用于表示游戏和模拟中的对象、角色和环境。\n\n",
+                  "links": [
+                    {
+                      "title": "网格三角剖分和多面体",
+                      "url": "https://gamedev.stackexchange.com/questions/140978/need-some-insight-on-mesh-triangulation-and-geodesic-spheres",
+                      "type": "article"
+                    },
+                    {
+                      "title": "多面体游戏物理",
+                      "url": "https://gamedev.net/forums/topic/653589-misc-polyhedon-related-posts-for-game-physics/",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "7e8c8498-dd1b-4548-aa93-828aea1f22f1",
+                  "xid": "61a97c00-c226-48b2-be13-169f3ea04bbf"
+                }
+              ],
+              "id": "07edaaba-bbdf-40f9-9be5-52f11047667c",
+              "xid": "6d394a37-fae7-4772-8903-e832c2bf7733"
+            }
+          ],
+          "id": "8ea08ced-950e-48d7-a759-c3a9f39d14d5",
+          "xid": "e587f164-9d4f-48c5-a8e4-50105fc85c45"
+        }
+      ],
+      "id": "6835bb7c-4887-4d2c-8b75-09cc8831f1ca",
+      "xid": "c3473629-1d0b-498e-97aa-285f9846e011"
+    },
+    {
+      "title": "图形API",
+      "description": "图形API（Application Programming Interface，应用程序编程接口）是游戏开发者用来构建游戏的一系列命令、函数、协议和工具的集合。\n\n它在游戏和设备的硬件（通常是计算机或游戏机）之间形成一个接口，并帮助实现2D和3D图形性能。\n\nAPI将绘制多边形、纹理处理或光照等复杂任务封装为更易于管理的更高级过程。\n\n常见的实例有Vulkan、DirectX、OpenGL和Metal。\n\n每个API在不同的平台和设备上的可用性和性能各不相同，并且具有一些可用于游戏开发的独特功能。\n\n",
+      "links": [
+        {
+          "title": "Unity中的图形API",
+          "url": "https://docs.unity3d.com/2022.3/Documentation/ScriptReference/PlayerSettings.SetGraphicsAPIs.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "DirectX",
+          "description": "**DirectX** 是微软开发的一系列应用程序接口（APIs），用于处理与多媒体相关的工作，尤其是在Microsoft平台上的游戏编程和视频方面。\n\n它首次发布于1995年，已经成为PC游戏的重要组成部分。\n\nDirectX作为硬件和软件之间的中间件，管理硬件的状态并向其发出指令。\n\nDirectX包含的技术有用于3D图形的Direct3D，用于2D图形的DirectDraw，用于声音的DirectSound，以及用于与键盘和鼠标等输入设备进行接口交互的DirectInput。\n\n",
+          "links": [
+            {
+              "title": "微软的DirectX",
+              "url": "https://visualstudio.microsoft.com/vs/features/directx-game-dev/",
+              "type": "article"
+            },
+            {
+              "title": "学习DirectX",
+              "url": "https://learn.microsoft.com/en-us/shows/introduction-to-c-and-directx-game-development/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "HLSL (High-Level Shader Language)",
+              "description": "**HLSL (High-Level Shader Language)** 是由微软开发的专有着色语言，用于与 Microsoft Direct3D API 配合使用。\n\n就像 OpenGL 的对应语言 GLSL 一样，它通过提供创建自定义渲染效果或执行在 CPU 上计算密集的功能的能力，为开发者提供了可编程 GPU 的功能。\n\nHLSL 类似于 C 编程语言，这使得来自传统编程背景的开发者更容易上手。\n\n它通常被认为是 Direct X 生态系统的重要组成部分，被用于开发复杂且视觉效果惊人的游戏图形。\n\n",
+              "links": [
+                {
+                  "title": "HLSL (High-Level Shader Language)",
+                  "url": "https://en.wikipedia.org/wiki/High-Level_Shader_Language",
+                  "type": "article"
+                },
+                {
+                  "title": "HLSL 比较",
+                  "url": "https://docs.vulkan.org/guide/latest/high_level_shader_language_comparison.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5c53cb3b-c70e-4115-a994-9444aa59318f",
+              "xid": "5512e25d-070e-46ca-93db-8358656ce956"
+            }
+          ],
+          "id": "a5965900-bc9a-40af-b36a-e1b74eeae196",
+          "xid": "487d9e5a-500e-4b91-b314-0f047dc659e1"
+        },
+        {
+          "title": "OpenGL",
+          "description": "OpenGL（Open Graphics Library），又称开放图形库，是一种跨语言、跨平台的API，用于渲染2D和3D向量图形。\n\n作为图形硬件的软件接口，OpenGL使程序员能够详细地创建复杂的图形视觉效果。\n\nOpenGL由Silicon Graphics Inc.于1992年首次开发，并迅速成为图形渲染行业中非常受欢迎的工具。\n\nOpenGL广泛应用于计算机辅助设计（CAD）、虚拟现实、科学可视化、信息可视化和飞行模拟等领域。\n\n在视频游戏制作中，在实时渲染需求的前提下也使用了OpenGL。\n\n该API设计用于与不同制造商提供的广泛硬件配合工作。\n\n作为一个开源项目，OpenGL的代码功能可以由软件社区中的任何人扩展。\n\n\n",
+          "links": [
+            {
+              "title": "开放图形库",
+              "url": "https://www.opengl.org/",
+              "type": "article"
+            },
+            {
+              "title": "OpenGL库",
+              "url": "https://www.opengl.org/sdk/libs/",
+              "type": "article"
+            },
+            {
+              "title": "OpenGL教程",
+              "url": "https://youtube.com/playlist?list=PLPaoO-vpZnumdcb4tZc4x5Q-v7CkrQ6M-&si=Mr71bYJMgoDhN9h-",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "GLSL",
+              "description": "**GLSL** (图形库着色语言) 是一种受 C 语言启发的高级着色语言，基于 OpenGL 着色语言的语法。\n\n它在图形编程中用于定义图形内容的外观。\n\nGLSL 允许开发者利用现代 GPU (图形处理单元) 的能力，实现对图形渲染的直接、不受限制的控制。\n\n该语言的一个关键方面是它能够创建着色器，着色器是可以在 GPU 上运行的小程序。\n\n着色器被用于各种图形效果，如顶点操作、像素颜色计算或后处理效果。\n\n",
+              "links": [
+                {
+                  "title": "GLSL着色器",
+                  "url": "https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "669d850b-0c57-4599-acd8-51e709a9270e",
+              "xid": "ee01cffc-88fd-48b4-bd12-a16277847ed4"
+            }
+          ],
+          "id": "eb77ad94-1cda-4f9b-af31-45c32c118aa8",
+          "xid": "f2f98f83-b1ec-4012-afb0-9da41a5c4060"
+        },
+        {
+          "title": "Vulkan（Vulkan）",
+          "description": "Vulkan 是由 Khronos Group 发布的高性能跨平台图形和计算任务 API。\n\n与其它图形 API 不同，Vulkan 提供了对 GPU 的直接控制，并旨在充分利用多核处理器，从而在 3D 应用程序中实现显著的性能提升。\n\n它支持 Windows、Linux、Android、iOS 和 MacOS 平台。\n\n它从底层构建以确保 CPU 侧的开销最小，从而提供更均衡的 CPU/GPU 使用情况，因此不会将游戏限制在单个核心上。\n\nVulkan 可以被视为 OpenGL 的继任者，因为它提供了更低层次的功能和更高效的多线程能力。\n\n",
+          "links": [
+            {
+              "title": "Vulkan（Vulkan）",
+              "url": "https://www.vulkan.org/",
+              "type": "article"
+            },
+            {
+              "title": "什么是 Vulkan？",
+              "url": "https://docs.vulkan.org/guide/latest/what_is_vulkan.html",
+              "type": "article"
+            },
+            {
+              "title": "Vulkan 驱动支持",
+              "url": "https://developer.nvidia.com/vulkan-driver",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "SPIR-V (Standard Portable Intermediate Representation - Vulkan)",
+              "description": "`SPIR-V`是一种由Khronos Group定义的用于图形和计算内核的二进制中间语言。\n\n这种编程语言已被Vulkan广泛采用，Vulkan是一个低开销、跨平台的3D图形和计算API。\n\n Vulkan直接使用`SPIR-V`，作为GPU之前的最终着色器阶段。\n\n`SPIR-V`的二进制格式设计用于可移植性和灵活性，通过添加新指令而无需重建工具链或着色器，它成为开发人员的强大工具。\n\n这使`SPIR-V`成为Vulkan，特别是对于正在创建大型、多样化的世界景观和复杂图形的游戏开发者来说，至关重要的一部分。\n\n",
+              "links": [
+                {
+                  "title": "SPIR概述 - The Khronos Group Inc",
+                  "url": "https://www.khronos.org/spir/",
+                  "type": "article"
+                },
+                {
+                  "title": "SPIR-V -OpenGL Wiki - The Khronos Group",
+                  "url": "https://www.khronos.org/opengl/wiki/SPIR-V",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d0cf7caf-c1b3-41f6-a366-2c5f3785e803",
+              "xid": "bf56a02d-726f-4743-a405-a461e53d8164"
+            }
+          ],
+          "id": "32a9ef0c-f378-462f-b3eb-33f9f9f6a596",
+          "xid": "61a65cc3-884f-40d0-ac42-ca48c2c552f7"
+        },
+        {
+          "title": "WebGL (Web Graphics Library)",
+          "description": "`WebGL` (Web图形库) 是一个JavaScript API，用于在任何兼容的网络浏览器中渲染交互式的二维和三维图形，而无需使用插件。\n\n它利用了图形处理单元(GPU)的力量，提供了高效的渲染功能。\n\nWebGL程序由用JavaScript编写的控制代码和用OpenGL着色语言(GLSL)编写的着色代码组成，允许开发者控制图形渲染的细节。\n\n除了与HTML5的兼容性以及能在任何支持网络的平台上渲染，WebGL完全整合到了所有网络标准中，促进了基于GPU加速的图像处理和效果。\n\n",
+          "links": [
+            {
+              "title": "WebGL (Web Graphics Library)",
+              "url": "https://en.wikipedia.org/wiki/WebGL",
+              "type": "article"
+            },
+            {
+              "title": "Getting Started with WebGL",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9367c049-f95d-44bf-9e9f-77dda4ebf2c5",
+          "xid": "f88b75b9-182d-49c3-99df-090da72a88ed"
+        },
+        {
+          "title": "OpenGL ES (嵌入式系统的开放图形库)",
+          "description": "OpenGL ES (Open Graphics Library for Embedded Systems) 是 OpenGL 的简化版本，专为计算能力较低的系统（如移动设备和嵌入式系统）设计。\n\n尽管有所简化，OpenGL ES 仍然保持其高度的灵活性和能力，可以在这些较小的、计算能力较弱的系统上实现高性能的2D和3D图形。\n\nOpenGL ES 在移动游戏开发中特别受欢迎，主流平台如 Android 和 iOS 都对其提供了全面支持。\n\n该 API 分为若干版本，最新版本是 2016 年发布的 OpenGL ES 3.2。\n\n",
+          "links": [
+            {
+              "title": "LVGL —— 轻量且多功能的嵌入式图形库",
+              "url": "https://lvgl.io/",
+              "type": "article"
+            },
+            {
+              "title": "嵌入式照明",
+              "url": "http://embeddedlightning.com/ugui/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1d64cf48-549a-4a7e-8236-a0806e3f8876",
+          "xid": "a737f81c-feb8-4acb-8ea7-df537d4ed065"
+        },
+        {
+          "title": "金属（Metal）",
+          "description": "金属（Metal）是Apple开发的一种低级、高性能的应用编程接口（API）。\n\n它于iOS 8中首次亮相，专注于图形和数据并行计算。\n\n本质上，金属API旨在利用Apple设备上的现代GPU架构，优化性能和能耗效率。\n\n该API适用于多个平台，包括iOS、macOS和tvOS。\n\n与OpenGL等高级API相比，Metal提供了更小的开销，使开发人员能够对GPU进行更直接的控制。\n\n对于开发人员来说，这意味着他们可以利用硬件资源取得更好的性能。\n\n借助Metal，开发人员可以更详细地了解和控制GPU，这将带来更好的图形输出和更流畅的性能。\n\n",
+          "links": [
+            {
+              "title": "金属文档（Metal Documentation）",
+              "url": "https://developer.apple.com/metal/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7b1436e5-31c3-4eb3-836f-3bb70bb7ee5b",
+          "xid": "9cbe8590-7364-4087-9d78-ca2fae4120c2"
+        }
+      ],
+      "id": "91266bb3-89e8-4068-a108-336908731ecc",
+      "xid": "6ad60608-8bda-4601-a51c-56c31eb9eb95"
+    },
+    {
+      "title": "游戏人工智能",
+      "description": "游戏人工智能是人工智能（AI）的一个子领域，用于创建像真实人类玩家一样行动和反应的视频游戏角色。\n\n游戏人工智能被应用于各种类型的视频游戏中，从简单的益智游戏到复杂的策略游戏。\n\n游戏人工智能可以用来创建与玩家互动的非玩家角色（NPCs），以及创建能够挑战玩家的智能对手。\n\n",
+      "links": [
+        {
+          "title": "游戏人工智能",
+          "url": "https://medium.com/@alidrsn/game-development-with-ai-strategy-tools-and-examples-7ae77257c062",
+          "type": "article"
+        },
+        {
+          "title": "游戏开发中的AI",
+          "url": "https://modl.ai/ai-game-development/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "决策制定",
+          "description": "在游戏中，决策制定通常指的是决定非玩家角色或游戏环境行为的逻辑或过程。\n\n主要使用的决策制定类型有三种：确定性决策（deterministic）、随机性决策（stochastic）和战略性决策（strategic）。\n\n确定性决策基于预定义的规则，随机性决策结果则是基于概率的，提供了随机性元素。\n\n战略性决策涉及规划一系列动作以实现特定目标。\n\n决策也可以通过各种API工具进行指导，例如**路径搜索算法**（pathfinding algorithms，用于确定两点之间的最短路径）或**决策树**（decision trees，基于某些条件帮助选择行动）。\n\n决策方法的选择主要取决于你希望游戏元素的复杂性和行为。\n\n",
+          "links": [
+            {
+              "title": "游戏开发中的决策制定",
+              "url": "https://www.cgspectrum.com/blog/game-design-decision-making-troy-dunniway",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "决策树 (Decision Tree)",
+              "description": "**决策树 (Decision Tree)** 是在游戏中用来可视化的图形表示，它帮助开发者展示游戏根据玩家选择可能的后续结果或路径。\n\n树中的每个分支代表一个可能的选择、结果或反应，而树中的每个节点代表一个游戏场景或事件。\n\n决策树帮助游戏开发者进行战略设计，创建复杂的敌人人工智能，并总体上帮助预测游戏的交互或进程。\n\n它允许游戏开发者布局决策点、可能的选择及其结果，从而使追踪游戏的进程变得更加容易。\n\n",
+              "links": [
+                {
+                  "title": "关于决策树 (Decision Tree) 的文章",
+                  "url": "https://www.gamedeveloper.com/programming/behavior-trees-for-ai-how-they-work",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是决策树 (Decision Tree)?",
+                  "url": "https://www.youtube.com/watch?v=bmP4ppe_-cw",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "ebd17e5d-80a1-46d0-9672-85c09751740e",
+              "xid": "8d6dbd20-f15f-4b87-8439-4564631e0137"
+            },
+            {
+              "title": "状态机(State Machine)",
+              "description": "**状态机(State Machine)** 是一个在游戏开发中常用于管理游戏状态或条件的概念模型。\n\n它由多个不同的“状态”或模式组成，以及它们之间的转换。\n\n例如，一个移动游戏可以有诸如“开始屏幕”、“进行中”、“暂停”和“游戏结束”等多个状态。\n\n这些状态中的每一个都会有关联的具体指令和转换到其他状态的规则。\n\n这将决定游戏的流程和行为。\n\n状态机可以用于AI角色行为、用户界面系统，或游戏状态级别。\n\n状态机使代码保持有组织和易于管理，使开发者更容易实现复杂的游戏逻辑。\n\n",
+              "links": [
+                {
+                  "title": "游戏中状态机",
+                  "url": "https://gamedev.net/tutorials/_/technical/game-programming/state-machines-in-games-r2982/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5478de20-0327-46b1-b880-ab10308cade1",
+              "xid": "fc3bb58a-f0ec-417b-a188-22e64fc02910"
+            },
+            {
+              "title": "行为树 (Behavior Tree)",
+              "description": "行为树 (Behavior Tree) 是一种在游戏开发中用于AI角色行为的决策系统。\n\n这些树结构帮助定义AI角色将采取的行为动作，基于预定义的任务和条件。\n\n树结构从单个根开始，分支到代表这些决策或任务的节点。\n\n任务可以很简单，例如从一个点移动到另一个点，也可以是复杂决策，比如攻击或撤退的选择。\n\n这种结构的优势在于，无需破坏树结构或影响其他任务即可方便地添加、删除或修改任务，使其高度灵活且易于管理，无论任务的复杂程度如何。\n\n",
+              "links": [
+                {
+                  "title": "开放行为树 (Open Behavior Tree)",
+                  "url": "https://sterberino.github.io/open-behavior-trees-documentation/index.html",
+                  "type": "article"
+                },
+                {
+                  "title": "Unreal Engine 5 教程 - AI 第2部分：行为树 (Behavior Tree)",
+                  "url": "https://www.youtube.com/watch?v=hbHqv9ov8IM&list=PL4G2bSPE_8uklDwraUCMKHRk2ZiW29R6e&index=3&t=16s",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "549fb2ca-30f8-4e41-bd64-6f787b3ae152",
+              "xid": "59257e49-aa1c-4e56-aaf7-14e3e6332bd6"
+            },
+            {
+              "title": "模糊逻辑(Fuzzy Logic)",
+              "description": "模糊逻辑(Fuzzy Logic)是一种解决决策和系统控制问题的数学逻辑方法。\n\n与传统的二元集合（真或假）不同，模糊逻辑变量的真值在0和1之间的程度上变化。\n\n这使得它们能够处理部分真值的概念，其中真相值可以在完全真和完全假之间变化。\n\n在游戏开发中，模糊逻辑通常用于人工智能，使游戏更加逼真。\n\n例如，它可以用来编程非玩家角色（NPCs），使其能够对环境变化做出动态反应，从而使游戏的玩法更加吸引人和互动性更强。\n\n",
+              "links": [
+                {
+                  "title": "游戏中应用模糊逻辑",
+                  "url": "https://www.michelepirovano.com/pdf/fuzzy_ai_in_games.pdf",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c8697612-d635-401d-a3ee-9edb0db2f913",
+              "xid": "5c96f01b-a439-4b8f-9541-07c258957bed"
+            },
+            {
+              "title": "马尔可夫系统（Markov System）",
+              "description": "马尔可夫系统（Markov System）或马尔可夫链（Markov Chain）是一种在游戏开发中的决策情境中使用的统计模型。\n\n该模型基于「无记忆性」的概念，即某个事件的概率仅依赖于前一个事件所达到的状态。\n\n它运用一系列可能的事件，其中每个事件的概率取决于前一个事件所达到的状态。\n\n马尔可夫系统在设计游戏的人工智能行为时得到广泛的应用，每个状态代表不同的行为，状态间的转换被马尔可夫链的概率决定。\n\n",
+              "links": [
+                {
+                  "title": "马尔可夫系统（Markov System）",
+                  "url": "https://towardsdatascience.com/modeling-games-with-markov-chains-c7b614731a7f",
+                  "type": "article"
+                },
+                {
+                  "title": "在游戏开发中使用马尔可夫链（Markov Chain）",
+                  "url": "https://www.gamedeveloper.com/design/advanced-math-in-game-design-random-walks-and-markov-chains-in-action",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "35d6deeb-fdc0-4ca1-821a-b09aa55df10d",
+              "xid": "d5bd5d24-05d4-42d4-95c0-f8d1c4244d19"
+            },
+            {
+              "title": "目标导向行为",
+              "description": "目标导向行为在游戏开发中指的是赋予非玩家角色（NPCs）基于特定目标或任务做出决策的人工智能算法。\n\n这些NPC会分析游戏环境中的情况，制定计划以达成具体目标，然后执行。\n\n这些算法的复杂程度可以从简单的路径规划到复杂的解决问题的方案不等。\n\n由于行为模型不是硬编码的，所以这为NPC提供了更大的适应性和自主性。\n\n",
+              "links": [
+                {
+                  "title": "目标导向行动规划",
+                  "url": "https://duckduckgo.com/?q=Goal%20Oriented%20Behaviorin%20Game%20Dev+site:www.gamedeveloper.com",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "23590198-df6e-470e-9335-301b30ee8fa7",
+              "xid": "b691187f-93a5-49c9-a813-3bedcd676730"
+            }
+          ],
+          "id": "7a607753-1e41-4e31-b821-bf0285b951f6",
+          "xid": "4a8d1864-6b03-47ed-bb0a-613ad68f5a5e"
+        },
+        {
+          "title": "运动",
+          "description": "在游戏开发和游戏API（Application Programming Interface，应用程序编程接口）的背景下，运动指的是改变游戏对象的位置或方向的过程。\n\n这一过程涉及使用编程函数来控制对象的移动，如行走、跑步、跳跃、飞行或其他任何形式的游戏世界中的物理动作。\n\n运动是创建游戏动态的核心，并且对游戏物理和游戏逻辑都至关重要。\n\n不同的游戏引擎提供不同的处理运动的方式。\n\n在某些API中，这个过程可能简单到直接设置新位置，比如 `object.position = new Vector3(5, 10, 0)`。\n\n而在其他一些API中，则需要使用涉及现实世界物理的复杂方法，比如应用力量或改变速度。\n\n",
+          "links": [
+            {
+              "title": "游戏中的运动",
+              "url": "https://www.gamedeveloper.com/design/analyzing-core-character-movement-in-3d",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c9e6d0c5-44e3-4276-b544-a20def5e248c",
+          "xid": "a98a7bc8-4313-49ba-93a8-2ff4f0dc1b2b"
+        },
+        {
+          "title": "桌面游戏",
+          "description": "**桌面游戏**代表一种桌面游戏类型，这种游戏包括玩家根据预设的一套规则在预先标记的表面或“棋盘”上移动或放置计数器或棋子。\n\n有些游戏是纯粹的策略游戏，但许多含有运气成分，还有一些完全是运气驱动，没有技巧成分。\n\n这些游戏通常都有玩家所追求的目标。\n\n早期的桌面游戏代表了两个军队之间的战斗，而大多数现代桌面游戏仍然基于击败对手的战略，如计数器、胜利位置或累积分数。\n\n随着桌面游戏的数字化，开发者使用各种**游戏API（Game APIs）**来创建吸引人且互动的桌面游戏体验。\n\nAPI定义了一组规则和协议来构建并与其他软件应用程序进行交互。\n\n游戏API允许开发者与游戏特定功能集成，如游戏机制、玩家统计数据、成就等。\n\n",
+          "links": [
+            {
+              "title": "什么是桌面游戏？",
+              "url": "https://code.tutsplus.com/how-to-learn-board-game-design-and-development--gamedev-11607a",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "极小化极大算法",
+              "description": "`极小化极大算法(Minimax)`是一种决策制定的人工智能（AI）算法，主要应用于决策和博弈论，特别适用于双人零和博弈。\n\n此算法通过模拟所有可能的游戏情景，并假设对手将采取最优策略来制定策略。\n\n极小化极大算法通过玩家最小化最坏情况下的可能损失来运行，所以它是让可能的最坏情况变得最好。\n\n这种算法通常与`α-β剪枝(alpha-beta pruning)`技术结合使用，以提高其效率。\n\n",
+              "links": [
+                {
+                  "title": "极小化极大算法",
+                  "url": "https://en.wikipedia.org/wiki/Minimax",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "65e19f28-7142-4268-8637-aeaeb984e54b",
+              "xid": "aeecd9b4-98dd-4598-92dc-d7dd2abb22d7"
+            },
+            {
+              "title": "AB剪枝",
+              "description": "`Alpha-Beta剪枝(Alpha-Beta pruning)`是一种用于人工智能（AI）编程中极小化极大算法的优化技术，比如在游戏开发中。\n\n它能切断游戏中不再需要探索的分支，因为已经有了更好的走法。\n\n它使用两个参数，alpha和beta，分别代表最大化玩家所确保的最低得分和最小化玩家所确保的最高得分。\n\n在遍历游戏树的过程中，不可能影响最终决策的树枝不会被探索。\n\n这个过程'剪枝'了极小化极大的树，节省了计算时间和资源。\n\n",
+              "links": [
+                {
+                  "title": "AB剪枝",
+                  "url": "https://en.wikipedia.org/wiki/Alpha-beta_pruning",
+                  "type": "article"
+                },
+                {
+                  "title": "Alpha-Beta剪枝(Alpha-Beta Pruning): 深度探究其历史",
+                  "url": "https://dev.to/vedantasati03/alpha-beta-pruning-a-deep-dive-into-its-history-implementation-and-functionality-4ojf",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "57ca1004-0b69-435e-90b4-a7418728bdb6",
+              "xid": "dc252f9b-7b8b-45e9-9da5-4a6cff7cc34c"
+            },
+            {
+              "title": "MCTS（蒙特卡洛树搜索）",
+              "description": "MCTS（蒙特卡洛树搜索）是一种搜索算法，它利用决策方法来解决复杂问题，在诸如棋盘游戏等应用中广泛实施。\n\n它通过逐节点构建搜索树来运行，为游戏的可能状态建立模型，然后使用蒙特卡洛模拟来提供潜在结果的统计分析。\n\n它根据游戏规则随机生成动作，然后根据这些模拟的结果做出决策。\n\n在棋盘游戏中，它通常用来模拟可能的游戏场景，以决定AI的操作，从而使AI系统更强大和更具挑战性。\n\n",
+              "links": [
+                {
+                  "title": "MCTS（蒙特卡洛树搜索）算法",
+                  "url": "https://en.wikipedia.org/wiki/Monte_Carlo_tree_search/",
+                  "type": "article"
+                },
+                {
+                  "title": "蒙特卡洛树搜索",
+                  "url": "https://www.geeksforgeeks.org/ml-monte-carlo-tree-search-mcts/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "aa7909a4-9bbb-4654-8673-80c1b6ece2af",
+              "xid": "3cb15a1f-d103-49e0-be41-ea9dc681c7d4"
+            }
+          ],
+          "id": "5a297259-ea6b-44ab-b3ba-5a0087b0d6c7",
+          "xid": "9b68e2a0-cfbc-4999-9b94-45be931e9261"
+        }
+      ],
+      "id": "c934ab17-8493-4ef8-ba67-8e24bd394987",
+      "xid": "b6909757-b386-4097-acec-6d939c51d0b5"
+    },
+    {
+      "title": "游戏人工智能(Game AI)",
+      "description": "游戏人工智能(Game AI)是人工智能(AI)的一个子领域，用于创建行为和反应如同真实玩家的视频游戏角色。\n\n游戏人工智能(Game AI)被用于各种各样的视频游戏中，从简单的益智游戏到复杂的策略游戏。\n\n游戏人工智能(Game AI)可用于创建与玩家互动的非玩家角色(NPCs)，还可以用来创建挑战玩家的智能对手。\n\n",
+      "links": [
+        {
+          "title": "游戏人工智能(Game AI)",
+          "url": "https://medium.com/@alidrsn/game-development-with-ai-strategy-tools-and-examples-7ae77257c062",
+          "type": "article"
+        },
+        {
+          "title": "游戏开发中的AI",
+          "url": "https://modl.ai/ai-game-development/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "学习",
+          "description": "机器学习（Machine Learning）是一门研究如何使计算机具备无需明确编程即可学习的能力的学科。\n\n它是基于系统能够从数据中学习（learning from data）、识别模式并进行决策的人工智能（Artificial Intelligence）的一个分支，且这一过程需要尽量减少人为干预。\n\n在游戏开发方面，机器学习可以用于创建能够根据玩家的操作进行学习并适应的非玩家角色（NPCs，Non-Player Characters）。\n\n",
+          "links": [
+            {
+              "title": "机器学习 - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/Machine_learning",
+              "type": "article"
+            },
+            {
+              "title": "机器学习解析",
+              "url": "https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-explained",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "决策学习",
+              "description": "在游戏开发领域，**决策学习（Decision Learning）**是指识别和分析模式以辅助决策的信息系统。\n\n它特别用于人工智能游戏开发中，其中的决策算法或人工智能被编程去从以往的经验或预设的决策树中学习并据此作出决策。\n\n这些决策可以涉及游戏行为、玩家互动、环境变化等。\n\n各种方法，如强化学习、贝叶斯方法、决策树、神经网络，都被用来促进游戏开发中的决策学习。\n\n",
+              "links": [
+                {
+                  "title": "游戏开发中的决策学习",
+                  "url": "https://medium.com/@alidrsn/game-development-with-ai-strategy-tools-and-examples-7ae77257c062",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "48ac7cde-d232-4741-83d9-e3483e37cc99",
+              "xid": "10b1f481-f4df-4278-bb99-a2f24b763161"
+            },
+            {
+              "title": "朴素贝叶斯分类器（Naive Bayes Classifier）",
+              "description": "朴素贝叶斯分类器（Naive Bayes Classifier）是一种用于分类任务的概率机器学习模型。\n\n这些任务可以是电子邮件过滤、情感分析或文档分类。\n\n该模型被称为'朴素'，是因为它假设每个输入特征都是彼此独立的。\n\n这种简化的假设使得涉及的概率计算变得简单得多。\n\n朴素贝叶斯分类器遵循贝叶斯定理（Bayes' Theorem）公式来预测给定数据点的类别。\n\n尽管这个分类器看似简单，但它在复杂的现实情况中表现相当好。\n\n由于其简单性和高效率，朴素贝叶斯分类器是机器学习应用中最可靠和实用的方法之一。\n\n",
+              "links": [
+                {
+                  "title": "朴素贝叶斯分类器如何工作？",
+                  "url": "https://www.machinelearningplus.com/predictive-modeling/how-naive-bayes-algorithm-works-with-example-and-full-code/",
+                  "type": "article"
+                },
+                {
+                  "title": "使用朴素贝叶斯分类器进行文本分类",
+                  "url": "https://gamedevacademy.org/text-classification-tutorial-with-naive-bayes/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "079b6c88-4b81-40d6-a8b8-b7a5ec0d657e",
+              "xid": "27c17b4c-b99f-4322-9dd1-9876119bb291"
+            },
+            {
+              "title": "决策树学习(Decision Tree Learning)",
+              "description": "`决策树学习(Decision Tree Learning)`是游戏开发中的一个重要概念，特别是在游戏人物的人工智能开发中。\n\n它是一种基于使用决策树模型来预测或分类信息的机器学习方法。\n\n决策树是一种流程图样式的模型，其中每个内部节点表示一个属性上的测试，每个分支代表该测试的一个结果，每个叶节点则持有类别标签（在测试了所有属性后所作出的决策）。\n\n通过应用决策树学习模型，计算机控制的角色可以根据不同的条件或状态做出决策。\n\n它们在创造复杂且互动的游玩体验中扮演着关键角色，通过使游戏人物能够适应玩家的行为及不断变化的游戏环境。\n\n",
+              "links": [
+                {
+                  "title": "游戏策略 - 实时决策树(Real Time Decision Tree)",
+                  "url": "https://medium.com/@aleena.sebastian/game-strategy-optimization-using-decision-trees-d4067008eed1",
+                  "type": "article"
+                },
+                {
+                  "title": "实时决策树(Real Time Decision Tree)",
+                  "url": "https://www.codewithc.com/real-time-decision-trees-in-pygame-ai/",
+                  "type": "article"
+                },
+                {
+                  "title": "决策树 - 友好的介绍(Decision Trees - A Friendly Introduction)",
+                  "url": "https://www.youtube.com/watch?v=HkyWAhr9v8g",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "f248e499-2dc0-474a-9c00-e47b7fb3b983",
+              "xid": "a6f12781-ee1a-4db6-8ecf-e5a086e459d0"
+            },
+            {
+              "title": "深度学习",
+              "description": "深度学习是机器学习的一个子领域，其灵感来自于人类大脑的结构和功能，特别设计用于处理复杂的输入/输出转换。\n\n它使用有许多层的人工神经网络（因此称为'深度'学习）来建模复杂的、非线性的假设，并在大型数据集中发现隐藏的模式。\n\n深度学习技术在游戏开发中至关重要，主要用于创建游戏代理的智能化行为和特征、程序化内容生成以及玩家画像。\n\n你可能听说过深度学习技术在像谷歌DeepMind的AlphaGo这样的流行尖端游戏中的应用。\n\nPython、R等编程语言和TensorFlow、Keras、PyTorch等框架常用于深度学习任务。\n\n学习深度学习可以成为你游戏开发旅程中的一个重要转折点。\n\n",
+              "links": [
+                {
+                  "title": "深度学习",
+                  "url": "https://en.wikipedia.org/wiki/Deep_learning",
+                  "type": "article"
+                },
+                {
+                  "title": "深度学习书籍",
+                  "url": "https://www.deeplearningbook.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "深度学习入门",
+                  "url": "https://www.ibm.com/topics/deep-learning",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是神经网络？",
+                  "url": "https://www.youtube.com/watch?v=aircAruvnKk",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "d90b90f5-6a86-4731-b3f7-7fb06c4410d9",
+              "xid": "13f99f9b-a9cc-4cd9-a864-f2d7002e3669"
+            },
+            {
+              "title": "人工神经网络 (Artificial Neural Network)",
+              "description": "人工神经网络（ANN）是机器学习的一个分支，其灵感来源于生物神经网络。\n\nANN能够从观测数据中进行'学习'，从而在许多方面提高游戏开发。\n\n它们由互联层的节点或人工神经元组成，这些节点通过互联网络处理信息。\n\n每个节点连接都有一个数值权重，在学习过程中会调整该权重，这有助于问题求解的优化。\n\n人工神经网络被用于游戏开发的各个方面，如改善AI行为、程序化内容生成和游戏测试。\n\n它们也可以用于图像识别任务，如识别游戏环境中的人物或动作。\n\n",
+              "links": [
+                {
+                  "title": "人工神经网络 (ANN)",
+                  "url": "https://www.geeksforgeeks.org/artificial-neural-networks-and-its-applications/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是ANN？",
+                  "url": "https://www.coursera.org/articles/artificial-neural-network",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是神经网络？",
+                  "url": "https://www.ibm.com/topics/neural-networks",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "82a85f1c-ece9-45bc-98ac-02d7222dc68e",
+              "xid": "c3f582bd-fc5b-48af-a218-8f781d725630"
+            },
+            {
+              "title": "强化学习（Reinforcement Learning）",
+              "description": "`强化学习（Reinforcement Learning）`属于一种面向决策的机器学习类型（Machine Learning）。\n\n它涉及一种在环境中通过采取某些行动并观察结果或奖励（rewards/results）来进行学习的代理（agent）。\n\n强化学习的主要原则是奖励（reward）良好的行为（behavior），惩罚（penalize）不良行为（bad behavior）。\n\n代理（agent）从行动（actions）的后果中学习，而不是通过明确的教学（taught explicitly）。\n\n在游戏开发的背景下，可以通过强化学习来开发能够基于奖励驱动行为（reward-driven behavior）提高其游戏表现的人工智能（Artificial Intelligence，AI）。\n\nAI 逐渐学会最优策略（policy），以达到最佳结果。\n\n",
+              "links": [
+                {
+                  "title": "渲染完美的反射",
+                  "url": "https://developer.nvidia.com/blog/rendering-perfect-reflections-and-refractions-in-path-traced-games/",
+                  "type": "article"
+                },
+                {
+                  "title": "AI 学会走路（深度强化学习（Deep Reinforcement Learning））",
+                  "url": "https://m.youtube.com/watch?v=L_4BPjLBF4E",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "25e04cc4-1a61-4c36-bb9b-7417daee7990",
+              "xid": "183de210-abc1-4cb3-934b-a3d341d31e7b"
+            }
+          ],
+          "id": "d51a8d6a-a903-4bf4-b630-8e1ceeb87c8e",
+          "xid": "96a3fbec-49cf-44e7-a359-d45ff3aedfbf"
+        }
+      ],
+      "id": "c42c15be-2fd5-4889-b041-4711f0ca65db",
+      "xid": "8193abdd-cdc9-4e05-a6b5-d2c55b26fd7a"
+    },
+    {
+      "title": "高级渲染",
+      "description": "**高级渲染**是一种在游戏开发中使用的技术，它将3D模型或场景转换成2D图像或动画。\n\n高级渲染技术可以涉及各种复杂的方法，例如基于物理的渲染（physically-based rendering）、光线追踪（ray tracing）、全局照明（global illumination）、次表面散射（subsurface scattering）、焦散（caustics）和体积渲染（volumetric rendering）。\n\n高级渲染技术可以生成高度逼真的图形，因为它采用复杂的计算来描绘现实世界中光线的行为。\n\n高级渲染通常需要强大的硬件资源和专业的软件工具才能实现所需的图像和动画。\n\n",
+      "links": [
+        {
+          "title": "高级渲染",
+          "url": "https://www.advances.realtimerendering.com/",
+          "type": "article"
+        },
+        {
+          "title": "实时渲染技术的进展",
+          "url": "https://www.advances.realtimerendering.com/s2024/index.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "实时光线追踪",
+          "description": "**实时光线追踪**是渲染技术的一项显著进步。\n\n它旨在通过模拟光线如何与不同表面相互作用来模仿现实世界中的光线工作方式。\n\n在实时光线追踪中，光线从观看者的视角生成并发送到场景中。\n\n这些光线可以从表面上反射、透过材料折射或散射到不同方向。\n\n这些光线也可以被吸收，从而产生阴影并塑造物体的可见性。\n\n实时光线追踪的独特之处在于它能够在实时计算所有这些交互，从而使得图形更加动态和互动。\n\n实时光线追踪的复杂性需要大量的计算能力，并且已经成为新硬件和软件发布中的一个突破性特性。\n\n",
+          "links": [
+            {
+              "title": "什么是实时光线追踪？",
+              "url": "https://www.unrealengine.com/en-US/explainers/ray-tracing/what-is-real-time-ray-tracing",
+              "type": "article"
+            },
+            {
+              "title": "Nvidia RTX 实时光线追踪",
+              "url": "https://blogs.nvidia.com/blog/rtx-real-time-ray-tracing/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "DirectX光线追踪（DirectX Ray Tracing）",
+              "description": "DirectX光线追踪（DXR）是与DirectX 12一起引入的高级Windows API。\n\n它为游戏和专业可视化领域的实时开发带来了电影级别的渲染质量。\n\n它提供了高效且简单的对RT Core硬件的访问。\n\nDXR为DirectX 12引入了四个新的概念：加速结构（acceleration structure）、光线追踪管道状态对象（Ray tracing pipeline state object）、着色器表（Shader tables）和命令列表方法（DispatchRays）。\n\n这标志着微软在接纳光线追踪作为实时渲染管线的新标准方面迈出了重要一步。\n\n对于开发人员而言，将DirectX光线追踪集成到现有引擎中相当直接，因为它易于兼容现有的DirectX 12编程模型。\n\n然而，要充分发挥DXR的性能优势，需要对图形工作负载和追踪算法有深入的理解。\n\n",
+              "links": [
+                {
+                  "title": "宣布Microsoft DirectX光线追踪（DirectX Ray Tracing）",
+                  "url": "https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/",
+                  "type": "article"
+                },
+                {
+                  "title": "DirectX光线追踪（DirectX Ray Tracing）",
+                  "url": "https://developer.nvidia.com/blog/introduction-nvidia-rtx-directx-ray-tracing/",
+                  "type": "article"
+                },
+                {
+                  "title": "DX12光线追踪（DX12 Ray Tracing）",
+                  "url": "https://developer.nvidia.com/blog/dx12-raytracing-tutorials/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "88b40cdf-799d-49c4-9da8-b73093857a74",
+              "xid": "62e1b79f-8af2-4661-82fa-45e8505f3076"
+            },
+            {
+              "title": "Vulkan 光线追踪 (Vulkan Ray Tracing)",
+              "description": "`Vulkan 光线追踪 (Vulkan Ray Tracing)` 是 Vulkan API（应用编程接口）的一个扩展，该 API 是由 Khronos Group 开发的开源跨平台接口。\n\n其主要目标是为开发人员提供对 GPU 的更大控制，从而实现更好的性能和更高效的多系统多核使用。\n\nVulkan 光线追踪扩展提供了一个类似于 DirectX Raytracing 的标准化光线追踪接口，使开发人员能够在 Vulkan 上构建实时光线追踪应用程序。\n\n此扩展包括加速结构构建和管理、光线追踪着色器阶段和管线、以及间接光线追踪调度等多项功能。\n\n",
+              "links": [
+                {
+                  "title": "NVIDIA Vulkan 光线追踪教程 (NVIDIA Vulkan Ray Tracing Tutorial)",
+                  "url": "https://developer.nvidia.com/rtx/raytracing/vkray",
+                  "type": "article"
+                },
+                {
+                  "title": "使用 Vulkan 进行光线追踪 (Ray Tracing with Vulkan)",
+                  "url": "https://docs.vulkan.org/guide/latest/extensions/ray_tracing.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "884e0b0f-5e33-43c1-8882-8981352d48af",
+              "xid": "4d310bb3-495e-4cfa-a8d7-175c70003ad6"
+            },
+            {
+              "title": "OptiX",
+              "description": "`OptiX` 是由NVIDIA开发的一个应用框架，旨在实现图形处理单元（GPU）编程中的高性能光线追踪。\n\n它主要适用于实时图形应用、科学模拟以及其他视觉计算应用。\n\n`OptiX` 提供了关键功能，如分层对象加速、可编程光线生成、材质着色和动态场景管理，以实现快速和最先进的渲染。\n\n这个高效、可扩展且灵活的API支持应用程序的编码，不仅适用于图形渲染，还适用于碰撞检测和物理模拟。\n\n请注意，当前访问`OptiX` 需要Kepler、Maxwell、Pascal、Volta、Turing和更新一代GPU的NVIDIA GeForce、Quadro 和Tesla产品。\n\n",
+              "links": [
+                {
+                  "title": "NVIDIA的OptiX",
+                  "url": "https://developer.nvidia.com/optix/",
+                  "type": "article"
+                },
+                {
+                  "title": "OptiX API文档",
+                  "url": "https://developer.nvidia.com/rtx/ray-tracing/optix",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "de6271e2-73db-44dd-a850-0ff53b19fd5d",
+              "xid": "ad1b4b2d-7e70-4365-886f-6bfd33160c41"
+            }
+          ],
+          "id": "5b2a2c2d-f56c-4806-b74f-d85fa6eee798",
+          "xid": "cfdb68e8-2540-4c78-b7b4-17360097eceb"
+        },
+        {
+          "title": "基于物理的渲染",
+          "description": "基于物理的渲染（Physically Based Rendering，PBR）是计算机图形学中的一种技术，旨在模拟现实世界中光与表面相互作用的方式。\n\n它通过从反射到折射的诸多方式模拟光线的行为，以准确地表现现实。\n\nPBR模型结合了材料的物理属性，如粗糙度或金属度（metallicity），使渲染结果在不同光照条件下保持一致和可预测。\n\n它运用复杂的着色算法和光线计算来生成高度的逼真感。\n\n为了实现这一点，许多PBR系统结合了两个重要的组成部分：双向反射分布函数（Bidirectional Reflectance Distribution Function，BRDF），它定义光线如何从物体表面反射；以及双向表面散射反射分布函数（Bidirectional Surface Scattering Reflectance Distribution Function，BSSRDF），它处理光线如何在物体表面下散射。\n\n",
+          "links": [
+            {
+              "title": "基于物理的渲染",
+              "url": "https://dev.epicgames.com/community/learning/tutorials/Yx3q/unreal-engine-physically-based-rendering-pbr-explained-in-depth",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "能量守恒",
+              "description": "在基于物理的渲染领域中，**透光性（translucency）** 和 **透明度（transparency）** 是创建视觉上真实而引人入胜的图像的关键方面。\n\n透明度指的是让光线无阻碍地穿过物体的属性，因此让物体变得清晰或不可见。\n\n这一特性常见于玻璃、透明塑料和水等材料。\n\n另一方面，透光性描述了光线与半透明物体的相互作用。\n\n光线不是直接穿过物体，而是进入物体内部，在物体内部行进一段距离后，在不同位置再次透出。\n\n这类表面的常见例子包括人类皮肤、大理石、牛奶或蜡等，当光线透过它们时会显示出柔和、散射的照明效果。\n\n要实现这种效果的方法之一是次表面散射（subsurface scattering），它包括将进入的光线在物体表面下散射，从而以展示物体内部结构的方式照亮物体。\n\n",
+              "links": [
+                {
+                  "title": "什么是凹形？",
+                  "url": "https://dev.to/fkkarakurt/geometry-and-primitives-in-game-development-1og",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "37c7ca0a-2cbe-41fa-a9eb-3b9a6c0db527",
+              "xid": "0536a52f-4118-45a5-b56f-09017d41e6a6"
+            },
+            {
+              "title": "金属度",
+              "description": "在基于物理的渲染（Physically Based Rendering, PBR）中，**金属度**是材料的一个关键属性，它影响材料与光的相互作用。\n\n这是一个二元属性，表明材料是“金属”还是“非金属”。\n\n金属具有较高的金属度值（通常是1），而非金属（如木头、塑料等）具有较低的金属度值（通常是0）。\n\n有趣的是，在PBR中，不存在“部分金属”的材料，这是一个要么全有要么全无的特性。\n\n这个属性对颜色处理也有重要影响，因为金属的颜色来自镜面反射，而非金属的颜色来自次表面散射（漫反射）。\n\n",
+              "links": [
+                {
+                  "title": "PBR中的金属度",
+                  "url": "https://en.wikipedia.org/wiki/Physically_based_rendering",
+                  "type": "article"
+                },
+                {
+                  "title": "3D游戏中PBR是什么",
+                  "url": "https://www.adobe.com/products/substance3d/discover/pbr.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "3cad1eb6-4083-44da-9284-f68704c37929",
+              "xid": "bbf8029a-f932-4c12-aab9-731b6bc7da57"
+            },
+            {
+              "title": "微表面散射（Microsurface Scattering）",
+              "description": "微表面散射，也被称为次表面散射（Sub-surface Scattering），是基于物理的渲染（Physically Based Rendering，PBR）中的一个重要现象。\n\n该过程涉及到光线穿透材料表面，在与材料相互作用的过程中发生散射。\n\n换句话说，当光线照射到物体上时，它并不只是简单地从表面反射回来；而是有些光线会进入物体内部，在内部散射后再发射出来。\n\n这是实现皮肤、大理石、牛奶等半透明材料更逼真渲染的关键。\n\n对于在你的游戏中逼真地再现光线如何与真实世界的材料交互而言，这一点至关重要。\n\n",
+              "links": [
+                {
+                  "title": "次表面渲染（Subsurface Rendering）",
+                  "url": "https://gamedev.net/forums/topic/600708-subsurface-scattering/",
+                  "type": "article"
+                },
+                {
+                  "title": "实时次表面渲染（Real Time Sub Surface Rendering）",
+                  "url": "https://therealmjp.github.io/posts/sss-intro/",
+                  "type": "article"
+                },
+                {
+                  "title": "次表面散射的类型（Types of Subsurface Scattering）",
+                  "url": "https://www.youtube.com/watch?v=GkjvYSbGHg4",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "6e282f0b-4f14-4ec8-890a-d980106367b0",
+              "xid": "e081b716-e917-4101-b753-ffc3e6e08ada"
+            }
+          ],
+          "id": "86894ece-11ae-4e64-84f9-c42f5185f614",
+          "xid": "506851e3-9c21-4f14-a8c9-1362aff9787a"
+        }
+      ],
+      "id": "fce9908b-a1ad-4772-9e67-15fe699c2995",
+      "xid": "97de4fcd-19e7-4b45-acf5-ec3ef9cc7648"
+    }
+  ],
+  "id": "3565b547-bda5-4e40-9b5d-5e9919a0d001",
+  "xid": "b83515ed-8983-4d5a-966f-e4838d4781be"
+}

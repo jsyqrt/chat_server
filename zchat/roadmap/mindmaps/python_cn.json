@@ -1,0 +1,1170 @@
+{
+  "title": "Python开发人员",
+  "description": "逐步指南：成为2025年的Python开发人员",
+  "links": [],
+  "children": [
+    {
+      "title": "学习基础",
+      "description": "Python是一种高级的、解释型的、通用编程语言。\n\n其设计理念强调使用显著缩进来提升代码的可读性。\n\nPython是一种动态类型和自动内存管理的语言。\n\n",
+      "links": [
+        {
+          "title": "Python 官方网站",
+          "url": "https://www.python.org/",
+          "type": "article"
+        },
+        {
+          "title": "Python - 维基百科",
+          "url": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+          "type": "article"
+        },
+        {
+          "title": "教程系列：如何用Python编程",
+          "url": "https://www.digitalocean.com/community/tutorials/how-to-write-your-first-python-3-program",
+          "type": "article"
+        },
+        {
+          "title": "Google的Python课程",
+          "url": "https://developers.google.com/edu/python",
+          "type": "article"
+        },
+        {
+          "title": "W3Schools - Python 教程",
+          "url": "https://www.w3schools.com/python",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Python的热门文章",
+          "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "学习Python - 完整课程",
+          "url": "https://www.youtube.com/watch?v=4M87qBgpafk",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "基本语法",
+          "description": "设置Python的开发环境，并开始学习基础知识。\n\n",
+          "links": [
+            {
+              "title": "W3Schools - Python",
+              "url": "https://www.w3schools.com/python/",
+              "type": "article"
+            },
+            {
+              "title": "Python基础知识",
+              "url": "https://www.tutorialspoint.com/python/python_basic_syntax.htm",
+              "type": "article"
+            },
+            {
+              "title": "Learn X in Y Minutes / Python",
+              "url": "https://learnxinyminutes.com/docs/python/",
+              "type": "article"
+            },
+            {
+              "title": "Python入门教程 - 在1小时内学会Python",
+              "url": "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "db39218a-68d4-412f-acc0-ee21a40fc63d",
+          "xid": "bf975ace-8613-488d-a5d9-0f6bb0085ea6"
+        },
+        {
+          "title": "变量和数据类型",
+          "description": "变量用于在计算机程序中存储信息，以便引用和操作。\n\n它们还提供了一种用描述性名称标注数据的方法，以便我们的程序能够被阅读者和我们自己更清楚地理解。\n\n把变量想象成信息的容器是有帮助的。\n\n它们的唯一目的是在内存中标记和存储数据。\n\n这些数据随后可以在您的整个程序中使用。\n\n",
+          "links": [
+            {
+              "title": "Python 中的变量",
+              "url": "https://realpython.com/python-variables",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools — Python 变量",
+              "url": "https://www.w3schools.com/python/python_variables.asp",
+              "type": "article"
+            },
+            {
+              "title": "Python 数据类型",
+              "url": "https://www.w3schools.com/python/python_datatypes.asp",
+              "type": "article"
+            },
+            {
+              "title": "Python 初学者：数据类型",
+              "url": "https://thenewstack.io/python-for-beginners-data-types/",
+              "type": "article"
+            },
+            {
+              "title": "Python 变量和数据类型",
+              "url": "https://www.youtube.com/playlist?list=PLBlnK6fEyqRhN-sfWgCU1z_Qhakc1AGOn",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "339b8e20-19dd-4d65-8992-578ebea7e390",
+          "xid": "75b500d7-1c24-4d99-8563-b15e7f4f8a69"
+        },
+        {
+          "title": "条件语句",
+          "description": "在 Python 中，条件语句根据特定条件是否为真（true）或假（false）执行不同的操作。\n\n条件语句通过 _if-elif-else_ 语句和 MATCH-CASE 语句（match-case statements）来处理。\n\n",
+          "links": [
+            {
+              "title": "Python 中的条件语句",
+              "url": "https://realpython.com/python-conditional-statements/",
+              "type": "article"
+            },
+            {
+              "title": "Python 条件语句",
+              "url": "https://www.guru99.com/if-loop-python-conditional-structures.html",
+              "type": "article"
+            },
+            {
+              "title": "如何在 Python 中使用 Match 语句",
+              "url": "https://learnpython.com/blog/python-match-case-statement/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "bca06379-fae1-4ab0-9d00-70137dff9316",
+          "xid": "1eee5f7d-c48f-4197-8026-27a33afcbbba"
+        },
+        {
+          "title": "类型转换 (Type Casting)",
+          "description": "将一个数据类型（整型、字符串、浮点型等）的值转换为另一种数据类型的过程称为类型转换 (type conversion)。\n\nPython 有两种类型转换：隐式转换 (Implicit) 和显式转换 (Explicit)。\n\n",
+          "links": [
+            {
+              "title": "类型转换和类型转换 (Type Conversion and Casting)",
+              "url": "https://www.programiz.com/python-programming/type-conversion-and-casting",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "44eb67ff-b103-4341-9535-6ff0779f1a9a",
+          "xid": "6c357ed2-f1b5-45eb-af62-c21fc28d92f3"
+        },
+        {
+          "title": "函数，内置函数",
+          "description": "在编程中，函数是可重用的代码块，在调用时执行特定的功能。\n\n函数是每种编程语言的重要组成部分，因为它们可以帮助使代码更具模块化和复用性。\n\n在Python中，我们使用`def`关键字定义一个函数，然后写下函数标识符（名称），后跟括号和冒号。\n\n示例\n-------\n\n    def greet(name):\n        print(f\"Hello, {name}!\")\n    \n    greet(\"Roadmap.sh\")     \n    \n\n",
+          "links": [
+            {
+              "title": "Python 内置函数(Built-in Functions)",
+              "url": "https://docs.python.org/3/library/functions.html",
+              "type": "article"
+            },
+            {
+              "title": "Python 函数(Python Functions) - W3Schools",
+              "url": "https://www.w3schools.com/python/python_functions.asp",
+              "type": "article"
+            },
+            {
+              "title": "定义 Python 函数(Defining Python Functions)",
+              "url": "https://realpython.com/defining-your-own-python-function/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d6e656f3-b507-42e2-8e4f-c0a200ae2c3c",
+          "xid": "b74a9b98-984e-40e2-91fe-123455990ec4"
+        },
+        {
+          "title": "列表",
+          "description": "**列表（Lists）:** 列表就像其他语言中声明的动态大小数组（C++中的vector和Java中的ArrayList）。\n\n列表不需要总是同构的，这使它成为Python中最强大的工具之一。\n\n**元组（Tuple）:** 元组是用逗号分隔的Python对象的集合。\n\n在某些方面，元组类似于列表，如索引、嵌套对象和重复，但元组是不可变的，与可变列表不同。\n\n**集合（Set）:** 集合是一个没有重复元素的可迭代的、可变的无序集合数据类型。\n\nPython的集合类代表了数学中的集合概念。\n\n**字典（Dictionary）:** 在Python中，字典是一种有序的（自Python 3.7起）\\[无序的（Python 3.6及之前版本）\\]数据值集合，用于像映射一样存储数据值，与只能包含单个值作为元素的其他数据类型不同，字典包含键值对。\n\n在字典中提供键值对以使其更加优化。\n\n",
+          "links": [
+            {
+              "title": "Python中的元组、列表和集合的对比",
+              "url": "https://jerrynsh.com/tuples-vs-lists-vs-sets-in-python/",
+              "type": "article"
+            },
+            {
+              "title": "Python入门：列表",
+              "url": "https://thenewstack.io/python-for-beginners-lists/",
+              "type": "article"
+            },
+            {
+              "title": "Python入门：何时及如何使用元组",
+              "url": "https://thenewstack.io/python-for-beginners-when-and-how-to-use-tuples/",
+              "type": "article"
+            },
+            {
+              "title": "Python中列表、元组、集合和字典的区别",
+              "url": "https://www.youtube.com/watch?v=n0krwG38SHI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "89139db5-f9d9-4000-9bf0-4405a14c5c50",
+          "xid": "90c3e0f1-34c0-40aa-bdf2-79d096ec6eac"
+        }
+      ],
+      "id": "8235c195-b5a8-4677-a42c-654efae6e271",
+      "xid": "c31fd828-c431-498d-b0fe-a5990b8b1463"
+    },
+    {
+      "title": "数据结构与算法",
+      "description": "数据结构是可用于存储和组织数据的命名位置。\n\n算法是为了解决特定问题而收集的一系列步骤。\n\n学习数据结构与算法使我们能够编写高效且优化的计算机程序。\n\n",
+      "links": [
+        {
+          "title": "访问专用的DS & Algorithms路线图",
+          "url": "https://roadmap.sh/datastructures-and-algorithms",
+          "type": "article"
+        },
+        {
+          "title": "学习数据结构与算法",
+          "url": "https://www.programiz.com/dsa",
+          "type": "article"
+        },
+        {
+          "title": "探索关于算法的热门帖子",
+          "url": "https://app.daily.dev/tags/algorithms?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "数据结构图解",
+          "url": "https://www.youtube.com/playlist?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "数组和链表",
+          "description": "数组将元素存储在连续的内存位置中，使得可以很容易地计算出存储元素的地址，这使得能够更快地访问特定索引处的元素。\n\n链表在存储结构上相对灵活，其元素通常不存储在连续的位置，因此它们需要通过包含指向下个元素的标签来存储。\n\n这种数据存储方案的不同决定了在特定情况下哪种数据结构更为合适。\n\n\n",
+          "links": [
+            {
+              "title": "Python中的数组",
+              "url": "https://www.edureka.co/blog/arrays-in-python/",
+              "type": "article"
+            },
+            {
+              "title": "Python中的链表",
+              "url": "https://realpython.com/linked-lists-python/",
+              "type": "article"
+            },
+            {
+              "title": "数组数据结构 | 画解数据结构",
+              "url": "https://www.youtube.com/watch?v=QJNwK2uJyGs",
+              "type": "video"
+            },
+            {
+              "title": "链表数据结构 | 画解数据结构",
+              "url": "https://www.youtube.com/watch?v=odW9FU8jPRQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "7fd0652e-e9fb-4fe6-904e-98f895cbb84f",
+          "xid": "da5b7978-37f9-476b-9d1e-1f5f9a4c3e5b"
+        },
+        {
+          "title": "堆、栈和队列",
+          "description": "**栈（Stacks）:** 操作遵循LIFO（先进后出）原则，这意味着最后一个添加的元素将是第一个被移除的元素。\n\n栈可以使用数组或链表来实现。\n\n如果栈没有足够的内存进行操作，则称为栈溢出（stack overflow）。\n\n**队列（Queue）:** 操作遵循FIFO（先进先出）原则，这意味着第一个添加的元素将是第一个被移除的元素。\n\n队列可以使用数组来实现。\n\n**堆（Heap）:** 一种树形数据结构，其中父节点的值根据某种方式与其子节点的值排序。\n\n堆可以是 **最小堆（Min Heap）**（父节点的值小于或等于子节点的值）或 **最大堆（Max Heap）**（父节点的值大于或等于子节点的值）。\n\n",
+          "links": [
+            {
+              "title": "堆、栈和队列",
+              "url": "https://stephanosterburg.gitbook.io/scrapbook/coding/coding-interview/data-structures/heaps-stacks-queues",
+              "type": "article"
+            },
+            {
+              "title": "如何在Python中实现栈？",
+              "url": "https://realpython.com/how-to-implement-python-stack/",
+              "type": "article"
+            },
+            {
+              "title": "实践中Python栈、队列和优先队列",
+              "url": "https://realpython.com/queue-in-python/",
+              "type": "article"
+            },
+            {
+              "title": "Python中的堆实现",
+              "url": "https://www.educative.io/answers/heap-implementation-in-python",
+              "type": "article"
+            },
+            {
+              "title": "栈数据结构 | 插图数据结构",
+              "url": "https://www.youtube.com/watch?v=I5lq6sCuABE",
+              "type": "video"
+            },
+            {
+              "title": "队列数据结构 | 插图数据结构",
+              "url": "https://www.youtube.com/watch?v=mDCi1lXd9hc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e445d648-1559-4516-93e4-a29d49bc6a08",
+          "xid": "1988de40-8b96-48c4-91b1-a9ec7f88ab4f"
+        },
+        {
+          "title": "哈希表(Hash Tables)",
+          "description": "哈希表(Hash Table)，映射(Map)，哈希映射(HashMap)，字典(Dictionary)或关联数组(Associative Array)都是指同一种数据结构。\n\n这是一个实现了数据类型抽象的数据结构，可以将键映射到值。\n\n",
+          "links": [
+            {
+              "title": "用 Python 构建哈希表",
+              "url": "https://realpython.com/python-hash-table/",
+              "type": "article"
+            },
+            {
+              "title": "Python 中的哈希表和哈希映射",
+              "url": "https://www.edureka.co/blog/hash-tables-and-hashmaps-in-python/",
+              "type": "article"
+            },
+            {
+              "title": "哈希表数据结构 | 数据结构可视化",
+              "url": "https://www.youtube.com/watch?v=jalSiaIi8j4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6a8c1bec-4941-47c7-9fae-8f68b71099a6",
+          "xid": "3b40e89f-9274-4189-aecf-d25b0c3ab19f"
+        },
+        {
+          "title": "二叉搜索树 (Binary Search Tree)",
+          "description": "二叉搜索树，也被称为有序或排序的二叉树，是一种根二叉树数据结构。\n\n每个内部节点的关键字都大于其左子树中的所有关键字，并且小于其右子树中的所有关键字。\n\n",
+          "links": [
+            {
+              "title": "如何在Python中实现二叉搜索树 (Binary Search Tree)",
+              "url": "https://web.archive.org/web/20230601181553/https://www.section.io/engineering-education/implementing-binary-search-tree-using-python/",
+              "type": "article"
+            },
+            {
+              "title": "Python中的二叉搜索树 (Binary Search Tree)",
+              "url": "https://www.pythonforbeginners.com/data-structures/binary-search-tree-in-python",
+              "type": "article"
+            },
+            {
+              "title": "树形数据结构 | 说明数据结构",
+              "url": "https://www.youtube.com/watch?v=S2W3SXGPVyU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e9d34d25-ad95-48b0-82a2-acee62ff72af",
+          "xid": "38cf9c88-5027-46b9-b2db-605d21d33f49"
+        },
+        {
+          "title": "递归(Recursion)",
+          "description": "递归(Recursion)是一种解决计算问题的方法，在这种方法中，解决方案依赖于同一问题更小实例的解决方案。\n\n递归通过使用在其代码内部自行调用的函数来解决此类递归问题。\n\n",
+          "links": [
+            {
+              "title": "Python中的递归(Recursion)介绍",
+              "url": "https://realpython.com/python-recursion/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于递归(Recursion)的热门文章",
+              "url": "https://app.daily.dev/tags/recursion?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a98f4d70-6a23-4cc8-8597-36ea8a626778",
+          "xid": "f702f3fc-1147-4315-aa95-a869d3bf50d5"
+        },
+        {
+          "title": "排序算法",
+          "description": "排序是指以特定格式组织数据。\n\n排序算法（Sorting Algorithm）规定了以特定顺序组织数据的方式，最常见的顺序是数值顺序或词典顺序（lexicographical order）。\n\n排序的重要性在于，如果数据以排序方式存储，数据搜索可以优化到非常高的水平。\n\n",
+          "links": [
+            {
+              "title": "Python中的排序算法",
+              "url": "https://realpython.com/sorting-algorithms-python/",
+              "type": "article"
+            },
+            {
+              "title": "Python - 排序算法",
+              "url": "https://www.tutorialspoint.com/python_data_structure/python_sorting_algorithms.htm",
+              "type": "article"
+            },
+            {
+              "title": "探索关于算法的最热帖子",
+              "url": "https://app.daily.dev/tags/algorithms?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "40a517a5-bb39-4930-ac9f-c95edf2e68d2",
+          "xid": "8ef1e0ff-e83f-41c5-9f15-606c6a491250"
+        }
+      ],
+      "id": "208f5bf8-b194-4caa-98de-5e281dbd9765",
+      "xid": "c9b99c6e-6cec-4511-8eaa-1041f5e2e5e9"
+    },
+    {
+      "title": "Python高级主题",
+      "description": "Python高级主题",
+      "links": [],
+      "children": [
+        {
+          "title": "模块",
+          "description": "模块指的是包含Python语句和定义的文件。\n\n例如，包含Python代码的文件 `example.py` 被称为一个模块，其模块名称为 example。\n\n我们使用模块将大型程序分解为小的、可管理且有序的文件。\n\n此外，模块提供了代码的可重用性。\n\n",
+          "links": [
+            {
+              "title": "Python 模块",
+              "url": "https://docs.python.org/3/tutorial/modules.html",
+              "type": "article"
+            },
+            {
+              "title": "Python 中的模块",
+              "url": "https://www.programiz.com/python-programming/modules",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "内置",
+              "description": "Python 拥有一个丰富的标准库，其中包含了许多内建模块，提供了广泛的功能。\n\n一些最常用的内建模块包括：sys，os，math，datetime，random，re，itertools 等。\n\n",
+              "links": [
+                {
+                  "title": "Python 模块索引",
+                  "url": "https://docs.python.org/3/py-modindex.html",
+                  "type": "article"
+                },
+                {
+                  "title": "Python 模块",
+                  "url": "https://www.digitalocean.com/community/tutorials/python-modules",
+                  "type": "article"
+                },
+                {
+                  "title": "Python - 内建模块",
+                  "url": "https://www.knowledgehut.com/tutorials/python-tutorial/python-built-in-modules",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "49932a64-40e8-477a-92e0-7e06af8d3c61",
+              "xid": "195c60f3-6b7c-4502-be4c-43364e903f50"
+            },
+            {
+              "title": "自定义",
+              "description": "模块是指包含Python语句和定义的文件。\n\n包含Python代码的文件，例如：`example.py`，被称为模块，其模块名称为example。\n\n我们使用模块将大型程序分解成小的、易于管理并有序的文件。\n\n此外，模块提供了代码的复用性。\n\n",
+              "links": [
+                {
+                  "title": "Python模块",
+                  "url": "https://docs.python.org/3/tutorial/modules.html",
+                  "type": "article"
+                },
+                {
+                  "title": "Python中的模块",
+                  "url": "https://www.programiz.com/python-programming/modules",
+                  "type": "article"
+                },
+                {
+                  "title": "Python模块和包",
+                  "url": "https://realpython.com/python-modules-packages/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "0665f560-18ec-46df-9229-4d0a0f0b5b88",
+              "xid": "c60c8db5-8c12-45f0-99dc-1084bc518f52"
+            }
+          ],
+          "id": "7c641bba-0066-4dcc-9499-9fb834574b1f",
+          "xid": "6d01a36e-bb05-432a-8442-336f0d176f42"
+        },
+        {
+          "title": "面向对象编程",
+          "description": "在Python中，面向对象编程（Object Oriented Programming, OOPs）是一种使用对象和类进行编程的编程范式。\n\n它旨在将诸如继承、多态、封装等现实世界中的实体实现在编程中。\n\nOOP的核心概念是将数据与其上的操作函数绑定在一起，作为一个单一的单元，不让代码的其他部分访问此数据。\n\n",
+          "links": [
+            {
+              "title": "Python中的面向对象编程",
+              "url": "https://realpython.com/python3-object-oriented-programming/",
+              "type": "article"
+            },
+            {
+              "title": "Python中的面向对象编程（OOP）- 初学者速成课程",
+              "url": "https://www.youtube.com/watch?v=-pEs-Bss8Wc/",
+              "type": "video"
+            },
+            {
+              "title": "Python中的一次性面向对象编程（OOP）",
+              "url": "https://www.youtube.com/watch?v=Ej_02ICOIgs",
+              "type": "video"
+            },
+            {
+              "title": "Python OOP教程",
+              "url": "https://www.youtube.com/watch?v=IbMDCwVm63M",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "类",
+              "description": "类是用户定义的蓝图或原型，从中创建对象。\n\n类提供了一种将数据和功能捆绑在一起的方法。\n\n创建新的类会创建一种新的对象类型，允许创建该类型的实例。\n\n每个类实例可以附加属性来维持其状态。\n\n类实例还可以有方法（由类定义）来修改其状态。\n\n",
+              "links": [
+                {
+                  "title": "Python中的类",
+                  "url": "https://docs.python.org/3/tutorial/classes.html",
+                  "type": "article"
+                },
+                {
+                  "title": "Python 类和对象",
+                  "url": "https://www.w3schools.com/python/python_classes.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "Python 面向对象编程教程",
+                  "url": "https://www.youtube.com/watch?v=ZDa-Z5JzLYM&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "e27ff033-2615-419a-98ec-c3353612a1be",
+              "xid": "e5c0f6ab-3ec4-4072-9346-0e431ba81f42"
+            },
+            {
+              "title": "继承",
+              "description": "继承是面向对象编程（OOP）中的一个基本概念，它允许一个类继承另一个类的属性和行为。\n\n",
+              "links": [
+                {
+                  "title": "Python 继承",
+                  "url": "https://www.w3schools.com/python/python_inheritance.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "Python 中的继承",
+                  "url": "https://www.javatpoint.com/inheritance-in-python",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "0830ee1b-63db-4222-8547-2eed615f5c90",
+              "xid": "0d89be1f-b3ab-4e35-a6d4-91cffe9bc973"
+            },
+            {
+              "title": "方法, 双下划线方法(Dunder)",
+              "description": "在python中，方法与函数相似，但它是与对象/类关联的。\n\nPython中的方法与函数非常相似，但有两大主要差异。\n\n*   方法在调用时隐式地用于该对象。\n\n\n*   方法可以访问类中包含的数据。\n\nPython中的双下划线方法（也称为魔法方法）是指方法名称前后有两个下划线的方法。\n\n这里双下划线（Dunder）指的是“Double Under (Underscores)”。\n\n这些方法通常用于操作符重载。\n\n双下划线方法的一些例子包括：**`__init__`**，**`__add__`**，**`__len__`**，**`__repr__`** 等。\n\n",
+              "links": [
+                {
+                  "title": "Python中方法与函数的区别",
+                  "url": "https://www.tutorialspoint.com/difference-between-method-and-function-in-python",
+                  "type": "article"
+                },
+                {
+                  "title": "Python - 魔法或双下划线方法",
+                  "url": "https://www.tutorialsteacher.com/python/magic-methods-in-python",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "532fcfaa-e4fc-43f4-a108-1b63e752307d",
+              "xid": "33049001-623a-43ec-a929-e61985527283"
+            }
+          ],
+          "id": "2fe60344-d7df-4392-b920-3ee5aa273b78",
+          "xid": "6d016984-ac62-4f1c-bd8f-86a63f5f0cfa"
+        },
+        {
+          "title": "正则表达式(Regular Expressions)",
+          "description": "正则表达式是一种字符序列，用于在文本中指定搜索模式。\n\n通常，这种模式由字符串查找算法用于字符串的“查找”或“查找并替换”操作，或进行输入验证。\n\n",
+          "links": [
+            {
+              "title": "Python中的正则表达式(Regular Expressions in Python)",
+              "url": "https://docs.python.org/3/library/re.html",
+              "type": "article"
+            },
+            {
+              "title": "Python正则表达式(Python Regular Expressions)",
+              "url": "https://developers.google.com/edu/python/regular-expressions",
+              "type": "article"
+            },
+            {
+              "title": "Python - 正则表达式(Python - Regular Expressions)",
+              "url": "https://www.tutorialspoint.com/python/python_reg_expressions.htm",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1734ec4f-e055-4436-aaff-61007420ab14",
+          "xid": "3307b69b-aa92-4069-8bdb-9c20ad6778e8"
+        },
+        {
+          "title": "装饰器",
+          "description": "装饰器（Decorator）是Python中的一种设计模式，它允许用户向现有对象添加新的功能，而不修改其结构。\n\n装饰器通常在定义你想要装饰的函数之前调用。\n\n",
+          "links": [
+            {
+              "title": "在Python中学习装饰器",
+              "url": "https://pythonbasics.org/decorators/",
+              "type": "article"
+            },
+            {
+              "title": "Python 装饰器",
+              "url": "https://www.datacamp.com/tutorial/decorators-python",
+              "type": "article"
+            },
+            {
+              "title": "Python中的装饰器",
+              "url": "https://www.youtube.com/watch?v=FXUUSfJO_J4",
+              "type": "video"
+            },
+            {
+              "title": "1分钟理解Python装饰器",
+              "url": "https://www.youtube.com/watch?v=BE-L7xu8pO4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "25dc2c9a-b05a-4461-bfd2-f495baa61948",
+          "xid": "6da3e153-45d1-46ed-8389-91db7948c454"
+        },
+        {
+          "title": "Lambda表达式",
+          "description": "Python Lambda函数是匿名函数，即函数没有名字。\n\n我们已经知道在Python中使用def关键字定义一个普通函数。\n\n类似地，在Python中可以使用lambda关键字定义一个匿名函数。\n\n",
+          "links": [
+            {
+              "title": "Python中的Lambda表达式",
+              "url": "https://www.w3schools.com/python/python_lambda.asp",
+              "type": "article"
+            },
+            {
+              "title": "如何使用Lambda函数",
+              "url": "https://realpython.com/python-lambda/",
+              "type": "article"
+            },
+            {
+              "title": "Python Lambda函数",
+              "url": "https://www.youtube.com/watch?v=KR22jigJLok",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "fd9149d2-d5bf-4156-b9be-7d1eaf8987d2",
+          "xid": "9eccad1f-164e-4df8-aeee-92aa446d6f3a"
+        },
+        {
+          "title": "迭代器",
+          "description": "迭代器是一个包含可数个值的对象。\n\n迭代器是可以被迭代的对象，这意味着你可以遍历其所有值。\n\n在Python中，技术上讲，迭代器是实现了迭代器协议的对象，这个协议包含**iter**() 和 **next**() 方法。\n\n",
+          "links": [
+            {
+              "title": "Python中的迭代器",
+              "url": "https://www.w3schools.com/python/python_iterators.asp",
+              "type": "article"
+            },
+            {
+              "title": "Python迭代器",
+              "url": "https://www.programiz.com/python-programming/iterator",
+              "type": "article"
+            },
+            {
+              "title": "Python中的迭代器和可迭代对象",
+              "url": "https://realpython.com/python-iterators-iterables/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0debd9de-2657-4888-949f-e30afef6a193",
+          "xid": "404c69cc-a427-4fd8-8f2d-3a011a961e06"
+        },
+        {
+          "title": "列表推导式",
+          "description": "列表推导式（List Comprehensions）是使用一行Python代码创建列表的一种简洁方式。\n\n它们是创建和操作列表的强大工具，可以简化和缩短代码。\n\n",
+          "links": [
+            {
+              "title": "Python列表推导式",
+              "url": "https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions",
+              "type": "article"
+            },
+            {
+              "title": "Python - 列表推导式",
+              "url": "https://www.w3schools.com/python/python_lists_comprehension.asp",
+              "type": "article"
+            },
+            {
+              "title": "Python中的列表推导式究竟是什么？ - CodeGuage",
+              "url": "https://www.codeguage.com/courses/python/lists-list-comprehensions",
+              "type": "article"
+            },
+            {
+              "title": "Python列表推导式测验 - CodeGuage",
+              "url": "https://www.codeguage.com/courses/python/lists-list-comprehensions-quiz",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6fcdd2a1-6558-40af-8ac7-e283837855f1",
+          "xid": "571d4868-d441-4418-a606-f893db1c7820"
+        },
+        {
+          "title": "生成器表达式(Generator Expressions)",
+          "description": "生成器表达式是使用单行代码在Python中创建生成器的一种简洁方式。\n\n它们类似于列表生成式，但与后者创建一个列表不同，它们创建一个生成器对象，该对象在需要时才按需生成值。\n\n生成器表达式是高效生成大量数值序列的有用工具，无需一次性在内存中创建整个序列，从而通常占用较少的内存，特别是在大序列中。\n\n",
+          "links": [
+            {
+              "title": "Python生成器表达式(Python Generator Expressions)",
+              "url": "https://www.pythontutorial.net/advanced-python/python-generator-expressions/",
+              "type": "article"
+            },
+            {
+              "title": "Python中的列表生成式和生成器表达式(List Comprehensions in Python and Generator Expressions)",
+              "url": "https://djangostars.com/blog/list-comprehensions-and-generator-expressions/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "273159c2-19b3-414e-976b-fe5906110389",
+          "xid": "a65be953-4683-46f0-85f6-53071611a3ad"
+        },
+        {
+          "title": "编程范式",
+          "description": "Python 是一种多范式编程语言，这意味着它可以支持几种编程范式。\n\nPython 支持的一些主要编程范式是：\n\n*   命令式编程：此范式侧重于告诉计算机依次执行哪些操作。\n\nPython 通过变量、循环和控制结构等功能支持命令式编程。\n\n\n*   面向对象编程（OOP）：此范式基于对象和它们之间交互的理念。\n\nPython 通过类、继承和多态等功能支持面向对象编程。\n\n\n*   函数式编程：此范式基于将函数视为一等公民的理念，并强调使用纯函数和不可变数据。\n\nPython 通过高阶函数、lambda 表达式和生成器等功能支持函数式编程。\n\n\n*   面向切面编程：此范式基于将交叉关注点与程序的主要功能分离的理念。\n\nPython 本身不支持面向切面编程，但是可以利用库或语言扩展实现该范式。\n\n",
+          "links": [
+            {
+              "title": "Python 编程范式",
+              "url": "https://opensource.com/article/19/10/python-programming-paradigms",
+              "type": "article"
+            },
+            {
+              "title": "学习函数式编程 - Python 课程",
+              "url": "https://www.youtube.com/watch?v=5QZYGU0C2OA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f38c6683-71e2-4327-ad00-55c26db9806e",
+          "xid": "dbd07347-fe25-4ebd-a0c2-e8c8ba1192a7"
+        }
+      ],
+      "id": "a8740836-2339-4c83-9c39-a85680b7fd18",
+      "xid": "003b2b3b-a736-4273-befa-f82b5fd0095f"
+    },
+    {
+      "title": "包管理器",
+      "description": "包管理器允许你管理项目正常运行所需的依赖项（你或其他人编写的外部代码）。\n\n`PyPI` 和 `Pip` 是最常见的选择，但也有一些其他可供选择的选项。\n\n",
+      "links": [
+        {
+          "title": "pypa/pipx",
+          "url": "https://github.com/pypa/pipx",
+          "type": "opensource"
+        },
+        {
+          "title": "探索关于 Python 的热门文章",
+          "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "PyPI",
+          "description": "PyPI（发音通常为派-派-艾），是一个包含几十余万个软件包的仓库。\n\n这些软件包的范围从简单的“Hello, World”实现到高级的深度学习库。\n\n",
+          "links": [
+            {
+              "title": "PyPI 网站",
+              "url": "https://pypi.org/",
+              "type": "article"
+            },
+            {
+              "title": "如何将开源的Python包发布到PyPI",
+              "url": "https://realpython.com/pypi-publish-python-package/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Python的热门文章",
+              "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "在Python中使用Pip和PyPI入门",
+              "url": "https://www.youtube.com/watch?v=bPSfNKvhooA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "878e6bd3-4199-4ed6-ae21-2b1f8af69aa8",
+          "xid": "ce94c43a-2a9c-42ff-97e8-4ee7a9f1f5c3"
+        },
+        {
+          "title": "pip",
+          "description": "pip是Python的标准包管理器。\n\n它允许你安装和管理不属于Python标准库的软件包。\n\n",
+          "links": [
+            {
+              "title": "pip文档",
+              "url": "https://pip.pypa.io/en/stable/installation/",
+              "type": "article"
+            },
+            {
+              "title": "使用Python的pip管理你的项目依赖",
+              "url": "https://realpython.com/what-is-pip/",
+              "type": "article"
+            },
+            {
+              "title": "Python PIP简介",
+              "url": "https://www.w3schools.com/python/python_pip.asp",
+              "type": "article"
+            },
+            {
+              "title": "探索关于pip的热门文章",
+              "url": "https://app.daily.dev/tags/pip?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "73071a81-9e7c-4bff-bb09-c48ba23c17c8",
+          "xid": "326ab2a1-d7a2-4449-98cf-9c0c1f1b11e3"
+        },
+        {
+          "title": "Conda",
+          "description": "Conda 是一个开源的包管理系统和环境管理系统，可在 Windows、macOS 和 Linux 上运行。\n\nConda 可快速安装、运行和更新包及其依赖项。\n\nConda 可轻松在本地计算机上创建、保存、加载和切换环境。\n\n它最初是为 Python 程序创建的，但它可以为任何语言的软件打包和分发。\n\n",
+          "links": [
+            {
+              "title": "Conda 文档",
+              "url": "https://docs.conda.io/en/latest/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "22552858-59d6-4d09-b28e-3c481d85e493",
+          "xid": "3df932bd-349a-487a-a51b-440ce6dbffff"
+        },
+        {
+          "title": "诗歌",
+          "description": "诗歌(Poetry)是专门为Python设计的依赖管理和打包工具，可以在Windows、macOS和Linux上运行。\n\n诗歌(Poetry)能够高效地安装、管理和更新包及其依赖项。\n\n诗歌(Poetry)能够在您本地计算机上无缝地创建、保存、加载和切换项目环境。\n\n它特别针对Python项目进行了设计，提供了一个有序的流程来管理依赖项、虚拟环境和构建包。\n\n作为包管理器，诗歌(Poetry)可以帮助您找到并安装包。\n\n如果您需要包的特定版本或Python的不同版本，诗歌(Poetry)可以毫不费力地处理依赖关系管理和虚拟环境。\n\n只需几个命令，您就可以建立一个完全隔离的环境来运行Python的不同版本或包配置，与此同时保持您的常规开发环境。\n\n诗歌(Poetry)的锁定文件确保了跨不同环境的安装一致性，提升了项目的再现性及稳定性。\n\n",
+          "links": [
+            {
+              "title": "诗歌文档",
+              "url": "https://python-poetry.org/docs/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "dbb64b08-f6db-4dde-881a-40b4b7e259f7",
+          "xid": "4231e6b9-ffb1-4c5f-ac22-6cd931f1b297"
+        }
+      ],
+      "id": "e0b98d20-df7c-4b55-8caf-ede8329fdaff",
+      "xid": "7c5bdfcf-01a3-4b1c-80ce-503f71be5476"
+    },
+    {
+      "title": "学习一个框架",
+      "description": "框架通过自动实现常见解决方案来赋予用户灵活性，使用户可以专注于应用程序逻辑而非基础的常规流程。\n\n框架通过提供应用程序开发结构，使Web开发者的Life变得更容易。\n\n它们提供快速、可靠且易于维护的Web应用常见模式。\n\n",
+      "links": [
+        {
+          "title": "Pyscript: 一个基于浏览器的Python框架",
+          "url": "https://thenewstack.io/pyscript-a-browser-based-python-framework/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Python的顶级文章",
+          "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "同步(synchronous)",
+          "description": "同步(synchronous)",
+          "links": [],
+          "children": [
+            {
+              "title": "金字塔( Pyramid )",
+              "description": "金字塔( Pyramid ) 是一个通用的、开源的、用Python编写的Web应用程序开发框架。\n\n它允许Python开发人员轻松创建Web应用程序。\n\n金字塔 Pyramid 由企业知识管理系统KARL (由乔治·索罗斯项目支持) 提供支持。\n\n",
+              "links": [
+                {
+                  "title": "金字塔网站( Pyramid Website )",
+                  "url": "https://trypyramid.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "金字塔文档( Pyramid Documentation )",
+                  "url": "https://trypyramid.com/documentation.html",
+                  "type": "article"
+                },
+                {
+                  "title": "金字塔框架介绍( Pyramid Framework Introduction )",
+                  "url": "https://www.tutorialspoint.com/python_web_development_libraries/python_web_development_libraries_pyramid_framework.htm",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6ca44da2-97a3-4b2e-8db4-d5a9b2b9ca62",
+              "xid": "dc241b43-da52-479c-a8da-e976bae6a77d"
+            },
+            {
+              "title": "Django",
+              "description": "Django是一个免费且开源的Python网络框架，遵循模型-模板-视图（Model-Template-Views）的架构模式。\n\n它由位于美国的非营利组织Django软件基金会（Django Software Foundation）维护。\n\n",
+              "links": [
+                {
+                  "title": "Django网站",
+                  "url": "https://www.djangoproject.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "入门指南",
+                  "url": "https://www.djangoproject.com/start/",
+                  "type": "article"
+                },
+                {
+                  "title": "Django是同步还是异步？",
+                  "url": "https://stackoverflow.com/questions/58548089/django-is-synchronous-or-asynchronous",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于Django的热门文章",
+                  "url": "https://app.daily.dev/tags/django?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Django入门教程",
+                  "url": "https://www.youtube.com/watch?v=rHux0gMZ3Eg",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "9daa7405-dad8-4ddd-b2f4-8dc15af483b5",
+              "xid": "31eb65a8-c134-4a14-913a-02d9ed607543"
+            },
+            {
+              "title": "Flask",
+              "description": "Flask 是一个用 Python 编写的微网络框架（micro web framework）。\n\n它被归类为微框架，因为它不需要特定的工具或库。\n\nFlask 没有数据库抽象层、表单验证等功能，其他这些功能通常由现有的第三方库提供。\n\n相反，Flask 通过要求你选择和整合最合适的库来满足项目需求，来提供灵活性。\n\n",
+              "links": [
+                {
+                  "title": "Flask 官网",
+                  "url": "https://flask.palletsprojects.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "Flask 教程",
+                  "url": "https://flask.palletsprojects.com/en/3.0.x/tutorial/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Flask 的热门文章",
+                  "url": "https://app.daily.dev/tags/flask?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "b9097a26-ba6c-4700-9d93-f17bac57acfa",
+              "xid": "70a0ce15-54d0-4718-8636-85785be7a342"
+            }
+          ],
+          "id": "d694d02d-3b14-48d2-807c-d5f026c7940f",
+          "xid": "5c8ad295-8498-453a-a90c-c68e2d86661e"
+        },
+        {
+          "title": "快速API",
+          "description": "FastAPI（快速API）是用于在Python中开发RESTful API的Web框架。\n\nFastAPI基于Pydantic和类型提示来验证、序列化和反序列化数据，并自动生成OpenAPI文档。\n\n",
+          "links": [
+            {
+              "title": "FastAPI文档",
+              "url": "https://fastapi.tiangolo.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于FastAPI的热门帖子",
+              "url": "https://app.daily.dev/tags/fastapi?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "使用Fast-API创建API（完整19小时课程）",
+              "url": "https://www.youtube.com/watch?v=0sOvCWFmrtA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "474f4911-a311-47df-9787-12f87826c24f",
+          "xid": "4d023bbc-1d1f-40fa-8640-9645db1fd5c9"
+        },
+        {
+          "title": "异步(asynchronous)",
+          "description": "异步(asynchronous)",
+          "links": [],
+          "children": [
+            {
+              "title": "gevent",
+              "description": "gevent 是一个 Python 库，提供了一个高级的事件循环接口。\n\n它基于非阻塞IO（libevent/libev）和轻量级的greenlet（微线程）。\n\n非阻塞IO意味着等待网络IO的请求不会阻塞其他请求；greenlet意味着我们可以继续用同步风格编写代码。\n\n",
+              "links": [
+                {
+                  "title": "gevent/gevent",
+                  "url": "https://github.com/gevent/gevent",
+                  "type": "opensource"
+                },
+                {
+                  "title": "gevent 网站",
+                  "url": "http://www.gevent.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "开发中的Python开发者使用的gevent",
+                  "url": "https://sdiehl.github.io/gevent-tutorial/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4ddf20c6-6fde-444f-a38d-c53f70dd4a42",
+              "xid": "155a9f1c-4a6d-4d4e-b90d-0dda1a8c440b"
+            },
+            {
+              "title": "aiohttp",
+              "description": "aiohttp 是一个适用于 Python 3.5+ 的库，它提供了一个简单且强大的异步 HTTP 客户端（asynchronous HTTP client）和服务器（server）实现。\n\n",
+              "links": [
+                {
+                  "title": "aiohttp 文档",
+                  "url": "https://docs.aiohttp.org/en/stable/",
+                  "type": "article"
+                },
+                {
+                  "title": "使用 Python 和 aiohttp 创建 RESTful API",
+                  "url": "https://tutorialedge.net/python/create-rest-api-python-aiohttp/",
+                  "type": "article"
+                },
+                {
+                  "title": "Python Asyncio, Requests, Aiohttp | 加快 API 调用速度",
+                  "url": "https://www.youtube.com/watch?v=nFn4_nA_yk8",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "29a61f60-b919-4614-81a3-e28d8a6c0bc8",
+              "xid": "1b9caf9e-25f7-4235-ac02-ec88a3108aa8"
+            },
+            {
+              "title": "旋风（Tornado）",
+              "description": "旋风（Tornado）是一个用Python编写的可扩展的、非阻塞的Web服务器和Web应用程序框架。\n\n它最初是为了FriendFeed公司开发的；FriendFeed公司于2009年被Facebook收购，随后旋风（Tornado）就被开放了源代码。\n\n",
+              "links": [
+                {
+                  "title": "旋风（Tornado）官网",
+                  "url": "https://www.tornadoweb.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Python旋风（Tornado）逐步教程",
+                  "url": "https://phrase.com/blog/posts/tornado-web-framework-i18n/",
+                  "type": "article"
+                },
+                {
+                  "title": "Python旋风（Tornado）框架",
+                  "url": "https://www.youtube.com/watch?v=-gJ21qzpieA",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "5fd9ad47-bdb2-4f7d-a7fb-51a3081f22c2",
+              "xid": "e9c628bf-63dd-4d9d-8d62-4e9471568877"
+            },
+            {
+              "title": "桑尼克(Sanic)",
+              "description": "桑尼克(Sanic)是一个基于Python 3.7+的web服务器和web框架，旨在实现高速运行。\n\n它允许使用在Python 3.5中引入的async/await语法，这使得您的代码具有非阻塞和高效的特点。\n\n",
+              "links": [
+                {
+                  "title": "桑尼克(Sanic) 网站",
+                  "url": "https://sanic.dev/en/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7dfa44d0-bab0-4274-a163-c19f43f03f95",
+              "xid": "f7461ed4-147d-43ae-a400-1548036fa4da"
+            }
+          ],
+          "id": "e37090bb-07b4-4607-8592-73a1382d01ac",
+          "xid": "1b3e514a-2513-42c5-a9f7-f7124337940e"
+        }
+      ],
+      "id": "5131c94e-ccec-4254-81fd-770f1e5d5474",
+      "xid": "6b6828fb-1f78-4a19-961b-74b6f6a34849"
+    },
+    {
+      "title": "Python测试",
+      "description": "Python测试",
+      "links": [],
+      "children": [
+        {
+          "title": "doctest（文档测试）",
+          "description": "Python 的标准库配备了名为 doctest（文档测试）的测试框架模块。\n\ndoctest（文档测试）模块会自动搜索 Python 代码中的注释，寻找类似交互式 Python 会话的文本部分，然后执行这些会话，以确认 doctest（文档测试）引用的代码是否按预期运行。\n\n",
+          "links": [
+            {
+              "title": "Doctest（文档测试）模块",
+              "url": "https://docs.python.org/3/library/doctest.html",
+              "type": "article"
+            },
+            {
+              "title": "如何在 Python 中编写文档测试",
+              "url": "https://www.digitalocean.com/community/tutorials/how-to-write-doctests-in-python",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f231a088-9539-47f7-b6ae-c5da772abb8d",
+          "xid": "434f5a04-12c9-4f22-9c70-4ca6ba59acbe"
+        },
+        {
+          "title": "鼻子(nose)",
+          "description": "鼻子(nose)是另一个开源的测试框架，它扩展了`unittest`来提供一个更灵活的测试框架。\n\n请注意，鼻子(nose)已不再维护，并推荐使用`pytest`作为替代。\n\n",
+          "links": [
+            {
+              "title": "鼻子(nose)介绍",
+              "url": "https://nose.readthedocs.io/en/latest/",
+              "type": "article"
+            },
+            {
+              "title": "使用Python开始使用鼻子(nose)",
+              "url": "https://www.lambdatest.com/blog/selenium-python-nose-tutorial/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e9338be3-179b-4415-b540-554a2524ad8d",
+          "xid": "067e2047-4558-4210-a52e-fe87b60f21bd"
+        },
+        {
+          "title": "pytest",
+          "description": "pytest 是一个成熟的全功能 Python 测试工具，它帮助您编写更好的程序。\n\n",
+          "links": [
+            {
+              "title": "Pytest 文档",
+              "url": "https://docs.pytest.org/",
+              "type": "article"
+            },
+            {
+              "title": "Pytest 教程",
+              "url": "https://www.tutorialspoint.com/pytest/index.htm",
+              "type": "article"
+            },
+            {
+              "title": "使用 Pytest 进行有效的 Python 测试",
+              "url": "https://realpython.com/pytest-python-testing/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Python 的热门文章",
+              "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b8ec6c12-0270-49f7-91c3-a2440009b348",
+          "xid": "bc92cdfb-3a5c-4874-8379-239270b8e11c"
+        },
+        {
+          "title": "单元测试/unittest",
+          "description": "PyUnit 是使用 Python 创建单元测试程序和单元测试 (UnitTests) 的简便方式。\n\n（请注意 [docs.python.org](http://docs.python.org) 使用的名称是 \"unittest\"，这也是该模块的名称。\n\n）\n\n",
+          "links": [
+            {
+              "title": "PyUnit 文档",
+              "url": "https://wiki.python.org/moin/PyUnit%C2%A0",
+              "type": "article"
+            },
+            {
+              "title": "如何使用 unittest 为 Python 中的函数编写测试用例",
+              "url": "https://www.digitalocean.com/community/tutorials/how-to-use-unittest-to-write-a-test-case-for-a-function-in-python",
+              "type": "article"
+            },
+            {
+              "title": "Python 单元测试的温和介绍",
+              "url": "https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-python/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9ed573cd-c054-4eba-a3fb-ff4d19c2b4fe",
+          "xid": "3a5231e2-2d82-4fb6-9971-ec6938399652"
+        }
+      ],
+      "id": "5f09420e-7b5a-4a20-9fde-6ae1727e10c6",
+      "xid": "4913aa0c-5fe6-4c5f-892a-543c4faaf930"
+    }
+  ],
+  "id": "179bb70a-61f6-4cd7-9075-f3d1b08ee2db",
+  "xid": "80bc39ea-6823-4ec7-90f2-b4098379c743"
+}

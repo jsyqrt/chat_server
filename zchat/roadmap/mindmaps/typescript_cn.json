@@ -1,0 +1,1487 @@
+{
+  "title": "TypeScript",
+  "description": "2025年学习TypeScript所需的一切",
+  "links": [],
+  "children": [
+    {
+      "title": "TypeScript入门",
+      "description": "TypeScript是一种由Microsoft开发并维护的静态类型编程语言，它是JavaScript的超集。\n\nTypeScript的创建旨在解决构建大型JavaScript应用程序时面临的挑战，同时为语言添加了可选的类型注释、类(class)、接口(interface)等特性。\n\n使用TypeScript的主要优点包括：\n\n*   类型检查(Type Safety)\n*   工具改进(Improved Tooling)\n*   可维护性提高(Improved Maintainability)\n*   向后兼容性(Backwards Compatibility)\n\n",
+      "links": [
+        {
+          "title": "TypeScript概述",
+          "url": "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html",
+          "type": "article"
+        },
+        {
+          "title": "TypeScript官方手册",
+          "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+          "type": "article"
+        },
+        {
+          "title": "什么是TypeScript?",
+          "url": "https://thenewstack.io/what-is-typescript/",
+          "type": "article"
+        },
+        {
+          "title": "探索有关TypeScript的热门帖子",
+          "url": "https://app.daily.dev/tags/typescript?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "视频：TypeScript在哪方面表现出色",
+          "url": "https://youtu.be/BUo7B6UuoJ4",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "TypeScript 与 JavaScript",
+          "description": "TypeScript (TypeScript) 是一种 JavaScript (JavaScript) 的超集，它添加了可选的类型注解和其他特性，比如接口、类和命名空间。\n\nJavaScript 是一种动态类型语言，主要用于客户端的 Web 开发，也可以用于服务器端的开发。\n\nTypeScript 和 JavaScript 之间的几个关键差异如下：\n\n*   **类型**: TypeScript 支持带有可选类型注解，而 JavaScript 是动态类型。\n\n这意味着，在 TypeScript 中，你可以指定变量、参数和返回值的数据类型，这有助于在编译时发现类型相关的错误。\n\n\n*   **语法**: TypeScript 扩展了 JavaScript 的语法，增加了诸如接口、类和命名空间的特性。\n\n这提供了更丰富和结构化的方式，使大型项目更加稳固和组织良好。\n\n\n*   **工具支持**: TypeScript 拥有更强大的工具支持，如更好的编辑器集成、类型检查和代码重构。\n\n\n*   **向后兼容性**: TypeScript 完全兼容现有的 JavaScript 代码，这意味着你可以在任何 JavaScript 环境中使用 TypeScript。\n\n",
+          "links": [
+            {
+              "title": "学习 JavaScript 和 TypeScript",
+              "url": "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html#learning-javascript-and-typescript",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript 与 JavaScript",
+              "url": "https://thenewstack.io/typescript-vs-javascript/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 JavaScript 的热门文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "703c7af8-6c98-40f0-ab27-f93f7b017b72",
+          "xid": "154e2f06-c261-47d6-99cb-167e99043a68"
+        },
+        {
+          "title": "TypeScript 和 JavaScript 的互操作性",
+          "description": "TypeScript 和 JavaScript 具有完全的互操作性（Interoperability），这意味着你可以在 JavaScript 项目中使用 TypeScript 代码，反之亦然。\n\nTypeScript 是 JavaScript 的超集（superset），这意味着任何有效的 JavaScript 代码也是有效的 TypeScript 代码。\n\n你可以在 TypeScript 项目中使用 JavaScript 库，可以通过直接包含 JavaScript 文件或使用该库的类型定义（type definitions）。\n\n类型定义为 JavaScript 库提供类型信息，使它们更容易在 TypeScript 中使用。\n\n另一方面，你只需将 TypeScript 代码编译成 JavaScript，就可以在 JavaScript 项目中使用 TypeScript 代码。\n\n生成的 JavaScript 代码可以在任何 JavaScript 环境中使用，并且它将以与普通 JavaScript 代码相同的方式运行。\n\nTypeScript 编译器（compiler）还通过在文件顶部添加 `// @ts-check` 注释，支持对普通 JavaScript 代码的类型检查。\n\n这使编译器能够通过检查 JSDoc 注释来验证类型：\n\n    // @ts-check\n    \n    /**\n     * 把两个数字相加。\n\n\n     * @param {number} a - 第一个数字。\n\n\n     * @param {number} b - 第二个数字。\n\n\n     * @returns {number} 两个数字的和。\n\n\n     */\n    function add(a, b) {\n      return a + b;\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "检查 JavaScript 文件的类型",
+              "url": "https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html",
+              "type": "article"
+            },
+            {
+              "title": "在 TypeScript 中使用 JavaScript",
+              "url": "https://youtu.be/AZhZlEbBaB4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4f95aa4f-70f6-4246-857f-3b5dfa509c7d",
+          "xid": "3020a410-6cd1-4d63-bc1d-394ed80a7b41"
+        },
+        {
+          "title": "安装和配置",
+          "description": "要在项目中安装和配置TypeScript，您需要执行以下步骤：\n\n*   通过执行以下命令在项目目录中初始化npm：\n\n    npm init\n    \n\n*   通过执行以下命令将TypeScript安装为项目依赖项：\n\n    npm install --save-dev typescript\n    \n\n*   在您的项目目录中创建一个`tsconfig.json`文件，以指定用于构建项目的编译选项。\n\n例如：\n\n    {\n      \"compilerOptions\": {\n        \"target\": \"es5\",\n        \"module\": \"commonjs\",\n        \"strict\": true,\n        \"outDir\": \"./dist\",\n        \"rootDir\": \"./src\"\n      },\n      \"exclude\": [\"node_modules\"]\n    }\n    \n\n*   使用以下命令编译TypeScript代码：\n\n    npx tsc\n    \n\n注意：您还可以通过在tsc命令后指定文件路径来编译单个TypeScript文件。\n\n例如：\n\n    npx tsc ./src/index.ts\n    \n\n现在您已经准备好了！您现在可以在您的项目中开始编写TypeScript代码了。\n\n",
+          "links": [
+            {
+              "title": "安装和配置TypeScript",
+              "url": "https://www.typescriptlang.org/download",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript 入门",
+              "url": "https://thenewstack.io/typescript-tutorial-a-guide-to-using-the-programming-language/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "tsconfig.json",
+              "description": "tsconfig.json 是 TypeScript 中的一个配置文件，用于指定构建项目的编译选项。\n\n它帮助 TypeScript 编译器理解项目的结构以及如何将其编译为 JavaScript。\n\n一些常见的选项包括：\n\n*   `target`（目标版本）: 编译的目标 JavaScript 版本。\n\n\n*   `module`（模块系统）: 选用的模块系统。\n\n\n*   `strict`（严格类型检查）: 启用/禁用严格类型检查。\n\n\n*   `outDir`（输出目录）: 编译后的 JavaScript 文件的输出目录。\n\n\n*   `rootDir`（根目录）: TypeScript 文件的根目录。\n\n\n*   `include`（包含）: 用于包含在编译中的文件/目录模式的数组。\n\n\n*   `exclude`（排除）: 用于排除在编译之外的文件/目录模式的数组。\n\n下面是 `tsconfig.json` 文件的一个示例：\n\n    {\n      \"compilerOptions\": {\n        \"target\": \"es5\",\n        \"module\": \"commonjs\",\n        \"strict\": true,\n        \"outDir\": \"./dist\",\n        \"rootDir\": \"./src\",\n      },\n      \"exclude\": [\"node_modules\"],\n      \"include\": [\"src\"]\n    }\n    \n\n",
+              "links": [
+                {
+                  "title": "什么是 tsconfig.json",
+                  "url": "https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#handbook-content",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "beb690f9-fa56-4116-8910-f3b91a706b43",
+              "xid": "60d5d3db-d115-4c68-bab5-a44e63319418"
+            },
+            {
+              "title": "编译器选项 (Compiler Options)",
+              "description": "TypeScript 编译器 (TypeScript compiler) 接受一些命令行选项，让你可以自定义编译过程。\n\n这些选项可以使用 `--` 前缀传递给编译器，例如：\n\n    tsc --target ES5 --module commonjs\n    \n\n",
+              "links": [
+                {
+                  "title": "编译器选项 (Compiler Options)",
+                  "url": "https://www.typescriptlang.org/docs/handbook/compiler-options.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "61ded682-6952-4c0a-8df2-c5864f259a47",
+              "xid": "369656ca-f88e-4f77-b4a1-03fa54437071"
+            }
+          ],
+          "id": "aeb656ad-2859-48a5-baa8-5a5ed9ecb796",
+          "xid": "f2c30e6d-9536-466c-bce3-15505d6075b1"
+        },
+        {
+          "title": "运行 TypeScript",
+          "description": "要运行 TypeScript 代码，您需要安装 TypeScript 编译器。\n\n以下是运行 TypeScript 代码的一般过程：\n\n*   在 `.ts` 文件中编写 TypeScript 代码（例如 `app.ts`）\n*   使用 TypeScript 编译器将 TypeScript 代码编译为 JavaScript：\n\n    tsc app.ts\n    \n\n*   使用 JavaScript 运行时环境（如 Node.js）运行生成的 JavaScript 代码：\n\n    node app.js\n    \n\n通过以下链接了解更多信息：",
+          "links": [
+            {
+              "title": "运行您的 TypeScript 代码",
+              "url": "https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 TypeScript 的热门文章",
+              "url": "https://app.daily.dev/tags/typescript?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "tsc",
+              "description": "`tsc` 是TypeScript编译器的命令行工具。\n\n它将TypeScript代码编译成JavaScript代码，使其与浏览器或任何JavaScript运行时环境兼容。\n\n您可以在终端或命令提示符中运行以下命令来使用`tsc`命令编译TypeScript代码：\n\n    tsc\n    \n\n此命令会编译项目中`tsconfig.json`文件中指定的所有TypeScript文件。\n\n如果您想要编译特定的TypeScript文件，可以在`tsc`命令后指定文件名，如下所示：\n\n    tsc index.ts\n    \n\n`tsc`命令有若干选项和标志，可用于自定义编译过程。\n\n例如，可以使用`--target`选项指定要编译的目标JavaScript版本，或使用`--outDir`选项指定编译后的JavaScript文件的输出目录。\n\n您可以通过运行`tsc --help`来查看所有可用选项和标志的列表。\n\n\n",
+              "links": [
+                {
+                  "title": "tsc CLI选项",
+                  "url": "https://www.typescriptlang.org/docs/handbook/compiler-options.html#using-the-cli",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于TypeScript的热门文章",
+                  "url": "https://app.daily.dev/tags/typescript?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8c1d3927-2df5-48a6-b053-aaacbf8a2d9a",
+              "xid": "d47378a7-4bbe-4894-aeb0-c1f5cfe99861"
+            },
+            {
+              "title": "ts-node",
+              "description": "ts-node 是一个 TypeScript 执行环境和 REPL（读取-求值-打印循环），适用于 node.js，具有源代码映射和原生 ESM（ECMAScript 模块）支持。\n\n",
+              "links": [
+                {
+                  "title": "ts-node - GitHub 项目",
+                  "url": "https://github.com/TypeStrong/ts-node",
+                  "type": "opensource"
+                },
+                {
+                  "title": "如何使用 ts-node 运行 TypeScript 脚本",
+                  "url": "https://www.digitalocean.com/community/tutorials/typescript-running-typescript-ts-node",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 TypeScript 的顶级文章",
+                  "url": "https://app.daily.dev/tags/typescript?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f1dce268-b75d-4a80-a83f-cfd304de81aa",
+              "xid": "58cc5a8a-7e0a-41c8-9d01-fc81a07cad0a"
+            },
+            {
+              "title": "TS 沙箱 (TS Playground)",
+              "description": "TypeScript 沙箱 (TypeScript Playground) 是一个学习 TypeScript 的绝佳工具。\n\n它允许你编写 TypeScript 代码，并查看其 JavaScript 输出。\n\n你还可以与他人分享你的代码。\n\n",
+              "links": [
+                {
+                  "title": "TypeScript 官方 - 沙箱 (Playground)",
+                  "url": "https://www.typescriptlang.org/play",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 TypeScript 的热门文章",
+                  "url": "https://app.daily.dev/tags/typescript?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "438bc026-6ac9-4a89-b213-0051d4fb75ad",
+              "xid": "9e9bfa9e-ab35-4727-9abf-490adc798cec"
+            }
+          ],
+          "id": "ee45a975-83bd-4e40-840b-71f55a70d247",
+          "xid": "47e5474a-860e-418d-b45f-e2948f500865"
+        }
+      ],
+      "id": "259374b7-8843-45ed-830d-d23307d132cb",
+      "xid": "f2ff93f7-e5a5-4429-a973-709abed946fb"
+    },
+    {
+      "title": "TypeScript 类型",
+      "description": "TypeScript 包含几种内置类型，包括:\n\n*   number (数字)\n*   string (字符串)\n*   boolean (布尔)\n*   any (任意)\n*   void (无值)\n*   null (空) 和 undefined (未定义)\n*   never (永不)\n*   object (对象)\n*   symbol (符号)\n*   枚举类型 (enum)\n*   元组类型 (Tuple)\n*   数组类型 (Array)\n*   联合类型 (Union)\n*   交叉类型 (Intersection)\n*   类型别名 (Type alias)\n*   类型断言 (Type assertion)\n\n你还可以使用接口、类和类型别名在 TypeScript 中创建自定义类型。\n\n\n",
+      "links": [
+        {
+          "title": "TypeScript - 每日类型",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 TypeScript 的热门文章",
+          "url": "https://app.daily.dev/tags/typescript?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "类型断言(type-assertions)",
+          "description": "类型断言(type-assertions)",
+          "links": [],
+          "children": [
+            {
+              "title": "as const",
+              "description": "`as const`是TypeScript中的一种类型断言，可以用于声明一个表达式具有特定的类型，并且它的值应该被视为只读值。\n\n例如：\n\n    const colors = ['red', 'green', 'blue'] as const;\n    \n    // colors 现在的类型为 readonly ['red', 'green', 'blue']\n    \n\n使用 `as const` 使得TypeScript可以对常量进行更精确的类型推断，这可以提高代码中的类型检查和类型推断的准确性。\n\n",
+              "links": [
+                {
+                  "title": "const 断言(const assertions)",
+                  "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d8615b6d-a013-4968-92f8-c716648f6d51",
+              "xid": "c279ffa1-f726-49bc-8134-b71209f33ba3"
+            },
+            {
+              "title": "作为 [类型]",
+              "description": "在TypeScript中，as关键字用于类型断言（type assertions），允许你在类型无法自动推断时明确地告知编译器某个值的类型。\n\n类型断言是覆盖默认静态类型检查行为的一种方式，以告知编译器你比编译器更了解某个表达式的类型。\n\n这里有一个简单的例子：\n\n    let someValue: any = \"Hello, TypeScript!\";\n    let strLength: number = (someValue as string).length;\n    \n    console.log(strLength); // 输出：18\n    \n\n在这个例子中，someValue最初是any类型，我们使用as操作符确保它在访问length属性前为string类型。\n\n重要的是要注意，类型断言不会改变值的运行时类型，也不会引发任何类型转换。\n\n它们是一种在TypeScript中用于静态类型检查的编译时结构。\n\n",
+              "links": [
+                {
+                  "title": "类型断言",
+                  "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "24e9ad20-5ebc-4905-93b3-814ee662e23b",
+              "xid": "d7237501-6150-4413-b4d0-1a012915e4dd"
+            },
+            {
+              "title": "as any",
+              "description": "`any` 是 TypeScript 中的一个特殊类型（special type），表示任意类型的值。\n\n当一个值被声明为 `any` 类型时，编译器不会对该值进行类型检查或类型推断。\n\n例如：\n\n    let anyValue: any = 42;\n    \n    // 我们可以将任意类型的值赋给 anyValue\n    anyValue = 'Hello, world!';\n    anyValue = true;\n    \n\n",
+              "links": [
+                {
+                  "title": "数组",
+                  "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "79eb8d56-628c-4694-81b8-31f6e066a485",
+              "xid": "87d0bcdb-060d-4372-8947-1cd9bd8f927e"
+            },
+            {
+              "title": "非空断言",
+              "description": "非空断言运算符（non-null assertion operator）(!) 是 TypeScript 中的一种类型断言，允许你告诉编译器某值绝不会是 `null` 或 `undefined`。\n\n    let name: string | null = null;\n    \n    // 使用非空断言运算符，告诉编译器 name 值是永远不会为 null 的\n    let nameLength = name!.length;\n    \n\n非空断言运算符用于声明一个值不是 null 或 undefined，并告诉编译器按照非空类型处理该值。\n\n但是，使用非空断言运算符时必须小心，如果该值实际上是 `null` 或 `undefined`，这会导致运行时错误。\n\n",
+              "links": [
+                {
+                  "title": "非空断言运算符",
+                  "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "aa191822-131c-4b48-9380-488f834f0e1e",
+              "xid": "3b0ac841-db91-4c03-8dc1-f79289cb0377"
+            }
+          ],
+          "id": "262eb0c5-f675-459d-ab5a-56cc0b753201",
+          "xid": "6cc8e30f-a58f-4c34-8aee-0461fda2e8b7"
+        },
+        {
+          "title": "满足关键字",
+          "description": "`satisfies` 操作符允许我们在不改变表达式结果类型的情况下验证表达式的类型是否与某些类型匹配。\n\n",
+          "links": [
+            {
+              "title": "满足关键字 (satisfies Keyword)",
+              "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d0a0519c-cde5-4a1c-83af-0b3137f0e1d5",
+          "xid": "a6b838bd-1586-437b-ba77-af3fd02285e6"
+        },
+        {
+          "title": "布尔值(boolean)",
+          "description": "`布尔值(boolean)` 是 TypeScript 中的一种原始数据类型，用于表示布尔值，即 `true` 或 `false`。\n\n下例展示了如何声明布尔变量：\n\n    let isTrue: 布尔值(boolean) = true;\n    let isFalse: 布尔值(boolean) = false;\n    \n\n",
+          "links": [
+            {
+              "title": "Number, String, Boolean, Symbol 和 Object",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-primitives-string-number-and-boolean",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "49593ad7-661c-4c84-8b86-80846e01e3ef",
+          "xid": "86f654fc-f5e5-4004-ae61-e850f4f992f5"
+        },
+        {
+          "title": "数字类型",
+          "description": "它是TypeScript中的原始数据类型，用于表示数值。\n\n该类型包括整数和浮点数。\n\n    let intValue: number = 42;\n    let floatValue: number = 3.14;\n    \n\n",
+          "links": [
+            {
+              "title": "数字、字符串、布尔值、符号和对象",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-primitives-string-number-and-boolean",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "39fc06c8-6e6b-4f1d-bbd2-9c241056593f",
+          "xid": "b549215d-1599-4c33-93af-67c1c1e7e239"
+        },
+        {
+          "title": "字符串",
+          "description": "在TypeScript中，它是一种基本数据类型，用于表示文本数据。\n\n它是一组16位Unicode字符集元素。\n\n    let name: 字符串 = 'John Doe';\n    \n\n更多内容请参阅以下链接",
+          "links": [
+            {
+              "title": "数字, 字符串, 布尔值, 符号和对象(Number, String, Boolean, Symbol and Object)",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-primitives-string-number-and-boolean",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "958a3d54-47dd-49f8-bcf6-4a929f7cd235",
+          "xid": "ac14ba49-1a3e-49c4-a894-e1453a7c9ab4"
+        },
+        {
+          "title": "void",
+          "description": "`void` 表示不返回任何值的函数的返回值类型。\n\n每当一个函数没有任何 `return` 语句，或者 `return` 语句没有返回任何显式的值时，它的推断类型就是 `void` 类型：\n\n    // 推断的返回类型是 void\n    function noop() {\n      return;\n    }\n    \n\n在 JavaScript 中，一个没有返回任何值的函数会隐式返回 `undefined` 值。\n\n然而，在 TypeScript 中，`void` 和 `undefined` 是不同的概念。\n\n更多详情见本章末尾。\n\n",
+          "links": [
+            {
+              "title": "void - TypeScript 文档",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html#void",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8350364e-3bd3-4b5b-adfb-7b7749f069bf",
+          "xid": "202fcc75-e658-402f-b9bc-87a3bda6d6e6"
+        },
+        {
+          "title": "未定义",
+          "description": "JavaScript 有两种原始值，用于表示缺失或未初始化的值：`null`（缺失）和`undefined`（未初始化）。\n\nTypeScript 也有两个相应类型的同名类型。\n\n这些类型的行为取决于是否启用了 `strictNullChecks` 选项。\n\n如果没有启用 `strictNullChecks`，可能为 `null` 或 `undefined` 的值仍然可以正常访问，而且 `null` 和 `undefined` 可以被分配给任何类型的属性。\n\n这类似于不具备 `null` 检查功能的语言（例如 C#、Java）的行为。\n\n缺乏此类值的检查通常是导致严重错误的主要原因；TypeScript 总是建议在代码库中实际可能时启用 `strictNullChecks` 选项。\n\n启用 `strictNullChecks` 后，当值是 `null` 或 `undefined` 时，你需要在使用该值的方法或属性前对其进行测试。\n\n就像在使用可选属性前检查 `undefined` 一样，我们可以使用类型缩小来检查可能为 `null` 的值：\n\n    function doSomething(x: string | null) {\n      if (x === null) {\n        // 不做任何操作\n      } else {\n        console.log('你好，' + x.toUpperCase());\n      }\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "null 和 undefined",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#null-and-undefined",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "77113a7e-6a65-4db9-aecf-b8bd07edb81b",
+          "xid": "ad85c42f-91b4-4ebb-88df-264a0da33c33"
+        },
+        {
+          "title": "null",
+          "description": "JavaScript 使用两种原始值来表示空缺 (absent) 或未初始化 (unintialized) 的值：`null`（空缺）和 `undefined`（未初始化）。\n\nTypeScript 也有对应名称的两种类型：null类型 和 undefined类型。\n\n这些类型的处理方式取决于是否启用了 `strictNullChecks` 选项。\n\n当 `strictNullChecks` 关闭时，可能为 `null` 或 `undefined` 的值仍然可以正常访问，并且 `null` 和 `undefined` 的值可以分配给任何类型的属性。\n\n这类似于没有 `null` 检查的语言（如 C#，Java）的行为。\n\n这些值的检查缺失往往是错误的主要来源；TypeScript 总是建议在代码库中实际可行的情况下启用 `strictNullChecks`。\n\n当 `strictNullChecks` 开启时，如果一个值是 `null` 或 `undefined`，在使用该值的方法或属性之前，需要先检测这些值。\n\n就像在使用可选属性前检查 `undefined` 一样，我们可以使用类型缩小来检查可能为 `null` 的值：\n\n    function doSomething(x: string | null) {\n      if (x === null) {\n        // do nothing\n      } else {\n        console.log('Hello, ' + x.toUpperCase());\n      }\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "null 和 undefined",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#null-and-undefined",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f1ea9901-65e1-48ff-8027-8d1b5f9a58c9",
+          "xid": "0ed72589-d9fd-4794-a20f-30240ba747ed"
+        },
+        {
+          "title": "接口",
+          "description": "TypeScript 允许你使用接口（Interface）来明确地定义一个对象的类型，并且这种定义可以在多个对象中复用。\n\n    interface Person {\n      name: string;\n      age: number;\n    }\n    \n    function greet(person: Person) {\n      return 'Hello ' + person.name;\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "对象类型 - 接口",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c3583f89-18f0-427c-b0a5-172d01de6626",
+          "xid": "10d8be01-f0b9-4188-bcd1-52e5afdad5ba"
+        },
+        {
+          "title": "类",
+          "description": "在TypeScript中，类（Class）是创建具有特定属性和方法的对象的蓝图。\n\n类是面向对象编程中的一个基本概念。\n\n下面是一个简单的TypeScript类的示例：\n\n    class Car {\n      make: string;\n      model: string;\n      year: number;\n    \n      constructor(make: string, model: string, year: number) {\n        this.make = make;\n        this.model = model;\n        this.year = year;\n      }\n    \n      drive() {\n        console.log(`Driving my ${this.year} ${this.make} ${this.model}`);\n      }\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "TypeScript 类",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8b164a0c-af80-45ca-a08d-9a7a6ada44ac",
+          "xid": "73f2bd23-2bd8-4a38-9936-6f1829ff3076"
+        },
+        {
+          "title": "枚举 (Enum)",
+          "description": "枚举 (Enums) 不是 JavaScript 的类型级别扩展。\n\n它允许开发人员定义一组命名常量。\n\n使用枚举可以使意图文档化更容易，或创建一组不同的情况。\n\nTypeScript 提供了基于数字和基于字符串的枚举。\n\n以下是一个 TypeScript 中数字枚举的例子：\n\n    enum Direction {\n      Up = 1,\n      Down,\n      Left,\n      Right,\n    }\n    \n\n在上面的例子中，我们有一个数字枚举，其中 `Up` 被初始化为 `1`。\n\n其后的所有成员都会从此处自动递增。\n\n换句话说，`Direction.Up` 的值为 `1`，`Down` 为 `2`，`Left` 为 `3`，`Right` 为 `4`。\n\n如果我们省略 `Up` 的初始值，它的值将是 `0`，其余的成员会从这里开始自动递增。\n\n\n",
+          "links": [
+            {
+              "title": "TypeScript - 枚举 (Enums)",
+              "url": "https://www.typescriptlang.org/docs/handbook/enums.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7029aac9-798d-434a-9ed7-34341c4ae484",
+          "xid": "d0c72b0a-ecf7-4a2e-b313-a61d06417814"
+        },
+        {
+          "title": "数组",
+          "description": "要指定数组的类型，例如 `[1, 2, 3]`，你可以使用语法 `number[]`；这种语法适用于任何类型（例如 `string[]` 是字符串数组，等等）。\n\n你可能也会看到这种写法 `Array<number>`，意思是相同的。\n\n    const numbers: number[] = [1, 2, 3];\n    \n\n",
+          "links": [
+            {
+              "title": "数组",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#arrays",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9631a472-4817-4990-9981-068c35a18ff4",
+          "xid": "372d02f8-2036-4ad9-bffb-69faf2c117e5"
+        },
+        {
+          "title": "元组（Tuple）",
+          "description": "元组类型是另一种数组类型，它确切地知道所包含的元素数量，以及特定位置上包含的类型。\n\n    type StringNumberPair = [string, number];\n    \n    const pair: StringNumberPair = ['hello', 42];\n    \n    const first = pair[0];\n    const second = pair[1];\n    \n    // 错误：索引超出边界\n    const third = pair[2];\n    \n\n",
+          "links": [
+            {
+              "title": "元组类型（Tuple Types）",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e5bd5c1e-5680-4ed6-9f4a-956fe1b02caf",
+          "xid": "cae2ddea-17ef-42c5-b1b2-304700a0ef9f"
+        },
+        {
+          "title": "any",
+          "description": "TypeScript有一个特殊的类型，`any`，当你不希望某个特定值引发类型检查错误时，就可以使用该类型。\n\n当一个值是`any`类型时，你可以访问它的任何属性（这些属性也将是`any`类型），像函数一样调用它，将其赋值给（或者从）任何类型的值，或者做任何其他在语法上允许的操作：\n\n    let obj: any = { x: 0 };\n    // 下面没有一行代码会抛出编译器错误。\n\n\n    // 使用`any`禁用了进一步的类型检查，认为你知道的环境信息比TypeScript更多。\n\n\n    obj.foo();\n    obj();\n    obj.bar = 100;\n    obj = 'hello';\n    const n: number = obj;\n    \n\n",
+          "links": [
+            {
+              "title": "`any`类型在TypeScript中",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c5dddae9-4439-417d-ab0f-c0efe59b54f9",
+          "xid": "955cd590-0449-4305-beda-7026f5a7ab9a"
+        },
+        {
+          "title": "对象",
+          "description": "定义一个`对象(object)`类型时，我们只需列出其属性及其类型。\n\n例如，这里是一个接受类似于点的对象的函数:\n\n    // 参数的类型注解是一个对象类型\n    function printCoord(pt: { x: number; y: number }) {\n      console.log(\"坐标x值为\" + pt.x);\n      console.log(\"坐标y值为\" + pt.y);\n    }\n    \n    printCoord({ x: 3, y: 7 });\n    \n\n",
+          "links": [
+            {
+              "title": "TypeScript中的对象类型",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "23d8dddb-1e02-4f4c-8a27-79e9e9cc58fe",
+          "xid": "38bf6c78-447d-49cb-9e32-4ac3efaa8011"
+        },
+        {
+          "title": "未知类型 (unknown)",
+          "description": "`未知类型 (unknown)` 是 `any` 的类型安全替代品。\n\n任何类型都可以被赋值给 `未知类型 (unknown)`，但 `未知类型 (unknown)` 除了通过类型断言或控制流分析外，不能被赋值给任何类型，除了它自身和 `any`。\n\n同样地，在进行任何操作前，需要先对 `未知类型 (unknown)` 进行类型断言或控制流分析，以转换为更具体的类型。\n\n    function f1(a: any) {\n      a.b(); // 正确\n    }\n    \n    function f2(a: unknown) {\n      // 错误：类型 'unknown' 上不存在属性 'b'。\n\n\n      a.b();\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "TypeScript 中的未知类型 (unknown)",
+              "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "07ef7a6f-4d80-4d7d-8afc-481acbf97dc9",
+          "xid": "d3138219-8dce-4c33-94d5-15a643763e0f"
+        },
+        {
+          "title": "never类型",
+          "description": "`never`类型表示永远不会出现的值类型。\n\n例如，永远抛出异常或者永远不会返回的函数表达式或箭头函数表达式的返回类型即为`never`。\n\n当变量通过永远不会为`true`的类型断言进行缩小后，也会获得`never`类型。\n\n`never`类型是所有类型的子类型，可被赋值给任何类型；但是，没有类型是`never`的子类型，或者可被赋值给`never`（除了`never`本身）。\n\n即使是`any`也不可被赋值给`never`。\n\n返回`never`类型的函数示例:\n\n    // 返回never的函数不能达到终点\n    function error(message: string): never {\n      throw new Error(message);\n    }\n    \n    // 推断返回值类型为never\n    function fail() {\n      return error('Something failed');\n    }\n    \n    // 返回never的函数不能达到终点\n    function infiniteLoop(): never {\n      while (true) {}\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "Never类型",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-never-type",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "352817b3-4afd-4088-8e72-aff64e0783c1",
+          "xid": "08aeb62f-e1f5-4ba3-9380-a211f56d36d4"
+        }
+      ],
+      "id": "1e0927cd-1159-4c74-bb67-684c3d90e1e3",
+      "xid": "b022d950-d2c3-4eaf-bb88-2920386d78b7"
+    },
+    {
+      "title": "类型推断",
+      "description": "在TypeScript中，类型推断是指根据赋值给变量的值自动确定变量类型的过程。\n\n这可以让代码更简洁，更易于理解，因为TypeScript编译器可以推断变量的类型，而不必显式指定它们。\n\n下面是一个TypeScript中类型推断的例子：\n\n    let name = 'John Doe';\n    \n\n在这个例子中，TypeScript编译器自动推断变量name的类型为string。\n\n这意味着你可以像使用其他字符串一样使用name变量，并且TypeScript编译器会确保你不会对它进行任何无效的操作。\n\n",
+      "links": [
+        {
+          "title": "类型推断",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-inference.html#handbook-content",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "690c1740-4130-4212-ba30-964bd73f4538",
+      "xid": "37a789eb-6f18-40c7-a4e5-07a2eb745071"
+    },
+    {
+      "title": "类型兼容性",
+      "description": "TypeScript (类型兼容性) 使用结构性类型系统来确定类型之间的兼容性。\n\n这意味着，如果两个类型具有相同的结构，则它们被认为是兼容的，无论它们的名字是什么。\n\n这是 TypeScript 中类型兼容性的一个示例：\n\n    interface Point {\n      x: number;\n      y: number;\n    }\n    \n    let p1: Point = { x: 10, y: 20 };\n    let p2: { x: number; y: number } = p1;\n    \n    console.log(p2.x); // 输出: 10\n    \n\n在这个例子中，`p1` 的类型是 `Point`，而 `p2` 的类型是 `{ x: number; y: number }`。\n\n尽管这两个类型的名字不同，但由于它们具有相同的结构，所以被认为是兼容的。\n\n这意味着你可以将类型为 `Point` 的值赋给类型为 `{ x: number; y: number }` 的变量，正如我们在 `p1` 和 `p2` 示例中所做的那样。\n\n",
+      "links": [
+        {
+          "title": "类型兼容性",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "49516142-b5c0-4c61-a146-c90eb39705dc",
+      "xid": "4ca59509-95f5-409c-ae64-4ead60e6a25d"
+    },
+    {
+      "title": "组合类型",
+      "description": "在TypeScript类型脚本中，可以使用类型联合(type union)和类型交叉(type intersection)来组合类型。\n\n类型联合\n----------\n\n联合操作符 `|` 用于将两个或多个类型组合成一个单一的类型，该类型代表所有可能的类型。\n\n例如：\n\n    type stringOrNumber = string | number;\n    let value: stringOrNumber = 'hello';\n    \n    value = 42;\n    \n\n类型交叉\n-----------------\n\n交叉操作符 `&` 用于将两个或多个类型交叉成一个单一的类型，该类型代表了所有类型的所有属性。\n\n例如：\n\n    interface A {\n      a: string;\n    }\n    \n    interface B {\n      b: number;\n    }\n    \n    type AB = A & B;\n    let value: AB = { a: 'hello', b: 42 };\n    \n\n",
+      "links": [
+        {
+          "title": "TypeScript中的类型联合",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types",
+          "type": "article"
+        },
+        {
+          "title": "TypeScript中的类型交叉",
+          "url": "https://www.typescripttutorial.net/typescript-tutorial/typescript-intersection-types/",
+          "type": "article"
+        },
+        {
+          "title": "类型别名",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases",
+          "type": "article"
+        },
+        {
+          "title": "键入类型操作符",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html#handbook-content",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "联合类型(Union Types)",
+          "description": "TypeScript中的联合类型(Union Types)允许您为单个变量或参数指定多种可能的数据类型。\n\n联合类型以竖线 `|` 分隔的类型列表形式编写。\n\n例如，考虑一个函数，该函数接受一个字符串或数字作为参数:\n\n    function combine(input1: string | number, input2: string | number) {\n      return input1 + input2;\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "TypeScript中的联合类型(Union Types)",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2564e167-451e-40a1-b186-204f974fb6b4",
+          "xid": "f53d5575-428d-4bcd-9c2a-6c4036963f2c"
+        },
+        {
+          "title": "交叉类型(Intersection Types)",
+          "description": "交叉类型通过组合多个现有类型来创建一种新的类型。\n\n新类型具有所有现有类型的特征。\n\n要组合类型，可以使用`&`运算符，如下所示：\n\n    type 交叉类型AB = 类型A & 类型B;\n    \n\n`交叉类型AB`将包含类型A和类型B的所有属性。\n\n需要注意的是，联合类型使用`|`运算符来定义一个变量，该变量可以持有`类型A`或`类型B`的值，或同时持有两者。\n\n",
+          "links": [
+            {
+              "title": "TypeScript中的交叉类型(Intersection Types in TypeScript)",
+              "url": "https://www.typescripttutorial.net/typescript-tutorial/typescript-intersection-types/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "201593c4-44e5-497a-a8c8-3403036c00a4",
+          "xid": "d8fa51ae-d4b3-4fc7-863e-ca959b50fdb7"
+        },
+        {
+          "title": "类型别名",
+          "description": "TypeScript中的类型别名（Type Alias）允许你为一种类型创建一个新的名字。\n\n例如：\n\n    type 名称 = string;\n    type 年龄 = number;\n    type 用户 = { 名称: 名称; 年龄: 年龄 };\n    \n    const 用户实例: 用户 = { 名称: 'John', 年龄: 30 };\n    \n\n在上述例子中，`名称`和`年龄`分别是`string`和`number`的类型别名。\n\n而`用户`是具有`名称`类型为`名称`，`年龄`类型为`年龄`的属性的对象的类型别名。\n\n",
+          "links": [
+            {
+              "title": "类型别名",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a2bdb08a-ef8c-4922-abad-5ee36648ddb5",
+          "xid": "6bcc41b3-439e-490f-8841-24059ea08b76"
+        },
+        {
+          "title": "`keyof` 操作符",
+          "description": "TypeScript 中的 `keyof` 操作符用于从对象类型获取键的联合类型。\n\n这里是其使用的一个示例：\n\n    interface 用户 {\n      名称: string;\n      年龄: number;\n      地址: string;\n    }\n    \n    type 用户键 = keyof 用户; // \"名称\" | \"年龄\" | \"地址\"\n    const 键: 用户键 = '名称';\n    \n\n在这个示例中，`用户键` 类型表示 `用户` 接口的键的联合类型，即 `\"名称\"` | `\"年龄\"` | `\"地址\"`。\n\n然后声明了一个类型为 `用户键` 的常量 `键`，其值为 `\"名称\"`。\n\n",
+          "links": [
+            {
+              "title": "`keyof` 类型操作符",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html#handbook-content",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0515ff06-39b7-4e51-91cb-c6675fe56d53",
+          "xid": "96701eee-1eaf-4e0a-acf3-c556361a59c2"
+        }
+      ],
+      "id": "06cf9f7d-0011-4644-a1b6-7a1eb156df6e",
+      "xid": "de437b5b-f367-4d2c-919b-29e6117d1a06"
+    },
+    {
+      "title": "类型保护 / 类型缩小（Type Guards / Narrowing）",
+      "description": "类型保护是一种缩小变量类型的手段。\n\n当你想要根据变量的类型执行不同的操作时，这会非常有用。\n\n",
+      "links": [
+        {
+          "title": "类型保护 - TypeScript 文档（Type Guards - TypeScript Docs）",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#typeof-type-guards",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "instanceof",
+          "description": "`instanceof` 操作符是一种用来判断变量类型的方式。\n\n它用于检查一个对象是否是一个特定类（class）的实例。\n\n    class 鸟 {\n      fly() {\n        console.log('飞行中...');\n      }\n      layEggs() {\n        console.log('产卵中...');\n      }\n    }\n    \n    const 宠物 = new 鸟();\n    \n    // instanceof\n    if (宠物 instanceof 鸟) {\n      宠物.fly();\n    } else {\n      console.log('宠物不是一只鸟');\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "instanceof 操作符",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#instanceof-narrowing",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "918afce5-1064-4c2d-a0a7-28afd45d80f6",
+          "xid": "194b0b77-a6cf-4cb7-a3e2-2f22ce668008"
+        },
+        {
+          "title": "typeof",
+          "description": "`typeof` 操作符用于检查变量的类型。\n\n它返回一个字符串值，表示变量的类型。\n\n    let value: string | number = 'hello';\n    \n    if (typeof value === 'string') {\n      console.log('value 是一个字符串');\n    } else {\n      console.log('value 是一个数字');\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "类型守卫和区分类型",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#typeof-type-guards",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "128c65e7-ebfe-4ae4-9683-0e4fb02eb67d",
+          "xid": "be2aeb2e-21ce-4205-831d-a0ee5d2a9115"
+        },
+        {
+          "title": "等式",
+          "description": "TypeScript 同样使用 switch 语句和等式检查（`===`，`!==`，`==` 和 `!=`）来缩小类型。\n\n例如：\n\n    function example(x: string | number, y: string | boolean) {\n      if (x === y) {\n        // 我们现在可以在 'x' 或 'y' 上调用任何 'string' 方法。\n\n\n        x.toUpperCase();\n        y.toLowerCase();\n      } else {\n        console.log(x);\n        console.log(y);\n      }\n    }\n    \n\n在上述示例中，当我们检查 `x` 和 `y` 是否相等时，TypeScript 知道它们的类型也必须相等。\n\n由于 `string` 是 `x` 和 `y` 都能取到的唯一共通类型，TypeScript 知道在第一分支中 `x` 和 `y` 必须是 `string` 类型。\n\n",
+          "links": [
+            {
+              "title": "等式推断",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#equality-narrowing",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "80433a1f-be18-4031-97f8-f61825c4ba51",
+          "xid": "5999148b-28c5-4d57-bc6f-363410518519"
+        },
+        {
+          "title": "真实性",
+          "description": "真实性可能不是一个你能在字典中找到的词，但在JavaScript中你经常能听到这个词。\n\n在JavaScript中，我们可以在条件语句、`&&`操作符、`||`操作符、`if`语句、布尔否定（`!`）等中使用任何表达式。\n\n例如，`if`语句并不期望其条件始终是布尔类型。\n\n    function getUsersOnlineMessage(numUsersOnline: number) {\n      if (numUsersOnline) {\n        return `在线有 ${numUsersOnline} 人！`;\n      }\n    \n      return \"没有人在线。\n\n:(\";\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "真实性裁窄",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#truthiness-narrowing",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8a7acc44-5c36-4943-b560-0167f481d358",
+          "xid": "cbd676e6-dc61-4b28-be7e-61864da691bf"
+        },
+        {
+          "title": "类型谓词",
+          "description": "类型谓词是返回布尔值的函数。\n\n用于缩小变量的类型。\n\n类型谓词在类型保护中使用。\n\n    function isString(value: unknown): value is string {\n      return typeof value === 'string';\n    }\n    \n    function example(x: unknown) {\n      if (isString(x)) {\n        // 现在可以在 'x' 上调用任何 'string' 方法。\n\n\n        x.toUpperCase();\n      } else {\n        console.log(x);\n      }\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "类型保护和区分类型",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "196b5cfb-04bc-4b21-a644-55978cf5135b",
+          "xid": "6ac7bbb0-12e0-4f4e-891a-b624f4cd1f99"
+        }
+      ],
+      "id": "b2bceb5d-8a03-4342-ae64-1776e233f4e9",
+      "xid": "f71a59c6-73e1-4ef4-afcf-f639b6ec2293"
+    },
+    {
+      "title": "TypeScript 函数",
+      "description": "函数是TypeScript中的核心构建块。\n\n函数允许你将一段代码封装起来并多次重用。\n\nTypeScript中的函数可以使用函数声明语法或函数表达式语法来声明。\n\n> 函数声明语法：\n\n    function name(param1: type1, param2: type2, ...): returnType {\n      return value;\n    }\n    \n\n> 函数表达式语法：\n\n    let name = function(param1: type1, param2: type2, ...): returnType {\n      return value;\n    };\n    \n\n",
+      "links": [
+        {
+          "title": "TypeScript中的函数",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "函数类型",
+          "description": "在TypeScript（类型脚本）中，可以通过几种不同的方式为函数添加类型，以指示函数的输入参数和返回类型。\n\n带有类型的函数声明：\n\n    function add(a: number, b: number): number {\n      return a + b;\n    }\n    \n\n带有类型的箭头函数：\n\n    const multiply = (a: number, b: number): number => {\n      return a * b;\n    };\n    \n\n函数类型：\n\n    let divide: (a: number, b: number) => number;\n    \n    divide = (a, b) => {\n      return a / b;\n    };\n    \n",
+          "links": [
+            {
+              "title": "TypeScript 函数",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "42d6b353-c165-46e5-aa29-2e3225a7eefd",
+          "xid": "a0f9c3c1-44b3-4408-9a2d-50f671d46c67"
+        },
+        {
+          "title": "函数重载",
+          "description": "函数重载（Function Overloading）在TypeScript中允许定义名称相同但参数不同的多个函数。\n\n在运行时，根据传递给函数的参数的数量、类型和顺序，确定调用哪个函数。\n\n    function add(a: number, b: number): number;\n    function add(a: string, b: string): string;\n    \n    function add(a: any, b: any): any {\n      return a + b;\n    }\n    \n    console.log(add(1, 2)); // 3\n    console.log(add('Hello', ' World')); // \"Hello World\"\n    \n\n",
+          "links": [
+            {
+              "title": "函数重载",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b23b85bb-a11b-482e-a666-ba194cc0e4ff",
+          "xid": "504afc68-87b3-4c7a-9cab-61c54eea9d1c"
+        }
+      ],
+      "id": "e9c67bdd-f3cb-49eb-b17b-be65686aef76",
+      "xid": "ba07deec-fe07-404e-b46a-7211e933e495"
+    },
+    {
+      "title": "TypeScript 接口(Interfaces)",
+      "description": "TypeScript 接口(Interface)提供了一种定义类型契约的方式，包括一组属性、方法和事件。\n\n它用于强制对象、类或函数参数的结构。\n\n接口不会被转译(transpiled)为JavaScript，仅在编译时由TypeScript用于类型检查(type-checking)。\n\n以下是一个在TypeScript中定义并使用接口的例子：\n\n    interface User {\n      name: string;\n      age: number;\n    }\n    \n    const user: User = {\n      name: 'John Doe',\n      age: 30,\n    };\n    \n\n在本例中，`User`接口定义了`user`对象的结构，具有两个属性，即`name`和`age`。\n\n然后使用类型断言(type-assertion)将其标记为`User`类型。\n\n",
+      "links": [
+        {
+          "title": "TypeScript - 接口(Interfaces)",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "类型（Types）与接口（Interfaces）",
+          "description": "在TypeScript中，类型（types）和接口（interfaces）都可用于定义对象的结构并执行类型检查。\n\n但是，二者之间还是存在一些差异的。\n\n类型（types）用于基于现有类型创建新的命名类型，或结合现有类型形成新的类型。\n\n它们可以通过使用type关键字创建。\n\n例如：\n\n    type Person = {\n      name: string;\n      age: number;\n    };\n    \n    const person: Person = {\n      name: 'John Doe',\n      age: 30,\n    };\n    \n\n另一方面，接口（interfaces）用于描述对象和类的结构。\n\n它们可以通过使用interface关键字创建。\n\n例如：\n\n    interface Person {\n      name: string;\n      age: number;\n    }\n    \n    const person: Person = {\n      name: 'John Doe',\n      age: 30,\n    };\n    \n\n",
+          "links": [
+            {
+              "title": "接口（Interfaces）与类型别名（Type Aliases）",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript中的接口（Interfaces）与类型（Types）",
+              "url": "https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1b6a3660-e616-43c6-b388-1c4d45c90039",
+          "xid": "5e9a222b-2f0b-447d-9e00-448f5a0c840c"
+        },
+        {
+          "title": "接口扩展",
+          "description": "在TypeScript中，你可以通过创建一个新的接口来扩展一个接口，使用\"extends\"关键字继承原始接口。\n\n新的接口可以包含额外的属性、方法或者重新定义原始接口的成员。\n\n    interface Shape {\n      width: number;\n      height: number;\n    }\n    \n    interface Square extends Shape {\n      sideLength: number;\n    }\n    \n    let square: Square = {\n      width: 10,\n      height: 10,\n      sideLength: 10,\n    };\n    \n\n在这个例子中，`Square`接口扩展了`Shape`接口，并添加了一个额外的属性`sideLength`。\n\n一个`Square`类型的变量必须具有`Shape`和`Square`接口中定义的所有属性。\n\n",
+          "links": [
+            {
+              "title": "接口扩展",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2abeb009-87e4-41a4-b7f3-44ca6ed064bf",
+          "xid": "e5ef81c6-1723-486e-ba18-9241db3680f1"
+        },
+        {
+          "title": "接口声明",
+          "description": "在TypeScript中，一个`interface`（接口）是一种创建具有特定结构的对象的蓝图。\n\n一个`interface`定义了一系列的属性、方法和事件，类或对象必须实现这些定义。\n\n接口是对象和类之间的契约，可用于确保代码中的对象具有特定的结构。\n\n下面是一个TypeScript中接口声明的例子：\n\n    interface Person {\n      firstName: string;\n      lastName: string;\n      age?: number;\n    \n      getFullName(): string;\n    }\n    \n\n在这个例子中，`Person`接口定义了四个属性：`firstName`（名）、`lastName`（姓）、`age`（年龄）以及一个方法`getFullName()`（获取全名）。\n\n`age`属性是可选的，通过`?`符号来表示。\n\n任何实现了`Person`接口的类或对象都必须包含这些属性和方法。\n\n",
+          "links": [
+            {
+              "title": "扩展接口",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4cbf78c0-5e49-4f74-86c7-911aeea1f327",
+          "xid": "23d47e5c-8589-4273-8e8f-32055c1037d6"
+        },
+        {
+          "title": "混合类型",
+          "description": "在TypeScript中，混合类型（Hybrid Types）是一种将多种类型合并为单一类型的类型。\n\n结果的类型被视为这些类型的并集（union）。\n\n这允许你指定一个值可以有多种类型，而不仅仅是单一类型。\n\n例如，你可以创建一种混合类型，该类型可以接受字符串或数字：\n\n    type StringOrNumber = string | number;\n    \n\n你也可以使用混合类型来创建更复杂的类型，这些类型可以表示多种不同类型值的组合。\n\n例如：\n\n    type Education = {\n      degree: string;\n      school: string;\n      year: number;\n    };\n    \n    type User = {\n      name: string;\n      age: number;\n      email: string;\n      education: Education;\n    };\n    \n\n",
+          "links": [
+            {
+              "title": "Geeksforgeeks.org - 混合类型（Hybrid Types）",
+              "url": "https://www.geeksforgeeks.org/what-are-hybrid-types-in-typescript/#:~:text=Hybrid%20types%20are%20a%20combination,properties%20like%20a%20regular%20object.",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7a6fb6cc-f479-483d-ab88-e1f50dc224fc",
+          "xid": "91757437-0886-4d15-8a63-8054e79c116e"
+        }
+      ],
+      "id": "e9146242-ab69-4bad-9c14-3ac3d5bfdebe",
+      "xid": "780d006b-5ac1-4534-9700-e1274bec7571"
+    },
+    {
+      "title": "类",
+      "description": "TypeScript中的类作为创建对象（类的实例）的蓝图，提供了一种组织对象、封装数据和行为的方式。\n\nTypeScript中的类与其他面向对象编程语言（如Java和C#）中的类具有相似的语法。\n\n在TypeScript中，使用class关键字定义类，并依次定义类名。\n\n类定义可以包括字段（也称为属性或属性）、方法（函数）和构造函数。\n\n    class Animal {\n      name: string;\n      constructor(name: string) {\n        this.name = name;\n      }\n    \n      makeSound(): void {\n        console.log(`${this.name} is making a sound`);\n      }\n    }\n    \n    const dog = new Animal('Dog');\n    dog.makeSound(); // 输出: Dog is making a sound\n    \n\n在这个例子中，`Animal`类具有一个name字段，一个用于设置`name`字段值的构造函数，以及一个`makeSound`方法。\n\n使用`new`关键字创建`Animal`类的实例，并使用点符号访问其方法和属性。\n\n",
+      "links": [
+        {
+          "title": "教程 - 类",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "构造函数参数",
+          "description": "在TypeScript中，构造函数参数可以使用访问修饰符（例如`public`（公共），`private`（私有），`protected`（保护））和/或类型注解来声明。\n\n这些参数然后会自动分配给构造函数内部具有相同名称的属性，并且可以在类内部进行访问。\n\n例如：\n\n    class Example {\n      constructor(private name: string, public age: number) {}\n    }\n    \n\n在该示例中，构造函数有两个参数：name和age。\n\nname具有私有访问修饰符，因此只能在Example类内部访问它。\n\nage具有公共访问修饰符，因此也可以从类外部访问它。\n\n",
+          "links": [
+            {
+              "title": "TypeScript - 构造函数(Constructor)",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "27b2a925-f922-4280-882d-deb7e74924a2",
+          "xid": "9941b6b6-c93e-4804-bd04-7753972d443d"
+        },
+        {
+          "title": "构造函数重载(Constructor Overloading)",
+          "description": "在TypeScript中，通过在一个类中使用具有不同参数列表的多个构造函数定义，可以实现构造函数重载。\n\n下面的例子展示了我们为构造函数定义了多个形式的情况：\n\n    class Point {\n      // 重载\n      constructor(x: number, y: string);\n      constructor(s: string);\n      constructor(xs: any, y?: any) {\n        // TBD\n      }\n    }\n    \n\n请注意，与函数重载类似，我们只有一个构造函数的实现，只有签名被重载。\n\n",
+          "links": [
+            {
+              "title": "构造函数 - TypeScript",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cddd710b-1bb0-478e-9d6e-9442a9a4c5a4",
+          "xid": "d6422679-80df-4575-8369-50a0e61546f7"
+        },
+        {
+          "title": "访问修饰符",
+          "description": "在TypeScript中，访问修饰符是一种用于控制类属性和方法的可见性和访问性的关键字。\n\nTypeScript中有三种访问修饰符：\n\n*   `public`（公共）: 这是最常用的访问修饰符。\n\n声明为公共的属性和方法可以从任何地方访问，无论是在类内部还是外部。\n\n\n*   `private`（私有）: 声明为私有的属性和方法只能在同一个类中访问。\n\n它们不能被类外的代码访问。\n\n\n*   `protected`（受保护）: 声明为受保护的属性和方法可以在类自身及其子类中访问。\n\n它们不能被类及其子类外部的代码访问。\n\nTypeScript中的访问修饰符使你能够定义类中属性和方法的可见性和访问性等级，从而使代码更加易于维护和安全。\n\n",
+          "links": [
+            {
+              "title": "TypeScript 访问修饰符",
+              "url": "https://www.typescripttutorial.net/typescript-tutorial/typescript-access-modifiers/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3671228b-38c8-400b-ab8f-f4543b60704d",
+          "xid": "d0b68b89-51b2-4ab2-98fc-d5d471ec6714"
+        },
+        {
+          "title": "抽象类",
+          "description": "在TypeScript中，抽象类（Abstract Classes）不能单独实例化，必须由其他类继承。\n\n抽象类为其他类提供了蓝图，可以包含抽象方法，抽象方法是没有方法体的，必须由子类实现。\n\n这些类对于定义一个共同的接口或基本功能非常有用，其他类可以继承这些功能并在此基础上进行扩展。\n\n    abstract class Animal {\n      abstract makeSound(): void;\n    \n      move(): void {\n        console.log('moving...');\n      }\n    }\n    \n    class Dog extends Animal {\n      makeSound(): void {\n        console.log('bark');\n      }\n    }\n    \n\n",
+          "links": [
+            {
+              "title": "抽象类",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5b5be555-0714-4b9b-be34-d87d1207c26a",
+          "xid": "d483fb3e-a085-4813-bd4e-f3c121210fed"
+        },
+        {
+          "title": "继承 vs 多态",
+          "description": "继承 (Inheritance) 和多态 (Polymorphism) 是面向对象编程中的两个基本概念，并且在 TypeScript 中也得到了支持。\n\n继承指的是一个子类从其父类继承属性和方法的机制。\n\n这使得子类能够重用其父类的代码和行为，同时还可以添加或修改自己的行为。\n\n在 TypeScript 中，使用 extends 关键字实现继承。\n\n多态指的是对象可以多种形态出现的能力。\n\n这使得不同类的对象可以作为共享相同接口 (interface) 或继承层次结构 (inheritance hierarchy) 的同一类处理。\n\n在 TypeScript 中，通过方法重写 (method overriding) 和方法重载 (method overloading) 实现多态。\n\n    class Animal {\n      makeSound(): void {\n        console.log('Making animal sound');\n      }\n    }\n    \n    class Dog extends Animal {\n      makeSound(): void {\n        console.log('Bark');\n      }\n    }\n    \n    class Cat extends Animal {\n      makeSound(): void {\n        console.log('Meow');\n      }\n    }\n    \n    let animal: Animal;\n    \n    animal = new Dog();\n    animal.makeSound(); // 输出: Bark\n    \n    animal = new Cat();\n    animal.makeSound(); // 输出: Meow\n    \n\n",
+          "links": [
+            {
+              "title": "Dev.to - TypeScript 中的面向对象编程大师",
+              "url": "https://dev.to/rajrathod/mastering-object-oriented-programming-with-typescript-encapsulation-abstraction-inheritance-and-polymorphism-explained-c6p",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript 中的继承和多态",
+              "url": "https://www.youtube.com/watch?v=Sn6K57YSuwU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "16b1343d-ca68-4ec0-a07d-f7ff4ce7bd6d",
+          "xid": "4b6c2c4a-298e-4f06-aa26-5056572f0f9c"
+        },
+        {
+          "title": "方法重写",
+          "description": "在TypeScript中，方法重写是一种机制，子类提供了父类中已经定义的方法的新实现。\n\n这允许子类继承父类的行为，但根据自己的需求改变其行为。\n\n在TypeScript中重写方法时，子类中的方法签名必须与父类中的方法签名完全匹配。\n\n    class Animal {\n      makeSound(): void {\n        console.log('Making animal sound');\n      }\n    }\n    \n    class Dog extends Animal {\n      makeSound(): void {\n        console.log('Bark');\n      }\n    }\n    \n    let animal: Animal;\n    \n    animal = new Dog();\n    animal.makeSound(); // 输出: Bark\n    \n\n在这个示例中，`Dog`类重写了Animal类中定义的makeSound方法，并提供了自己的实现。\n\n当在`Dog`类的实例上调用makeSound方法时，它将使用`Dog`类中的实现而不是`Animal`类中的实现。\n\n",
+          "links": [
+            {
+              "title": "TypeScript - 方法重写",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html#overriding-methods",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "92e5d266-5c35-4bb8-b20b-6d6fdc0c7640",
+          "xid": "79815158-8ce8-4c22-8ae2-ed28781eb57f"
+        }
+      ],
+      "id": "8853bf5f-6b8d-4f00-a2c5-632c5c95be18",
+      "xid": "0fb6f5c4-9a74-4328-9a32-d2cb065da9c2"
+    },
+    {
+      "title": "泛型",
+      "description": "TypeScript中的泛型（Generics）是一种使代码能够处理多种数据类型的方法，而不是仅限于单一数据类型。\n\n泛型允许你编写接受一个或多个类型参数的函数、类和接口，这些类型参数充当实际数据类型在函数、类或接口被使用时的占位符。\n\n例如，下面是一个泛型函数（generic function），它接受任意数据类型的一个参数并返回相同的数据类型：\n\n    function identity<T>(arg: T): T {\n      return arg;\n    }\n    \n    let output = identity<string>('Hello'); // output 的类型将是 'string'\n    \n\n在这个例子中，`identity` 函数接受任意数据类型的单个参数并返回相同的数据类型。\n\n在调用函数时，通过在参数 `\"Hello\"` 之前使用 `<string>` 指定了实际的数据类型。\n\n",
+      "links": [
+        {
+          "title": "泛型的Hello World",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html#hello-world-of-generics",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "泛型类型",
+          "description": "TypeScript中的泛型类型允许您编写可以处理多种数据类型（而不是仅限于单一数据类型）的对象、函数和类。\n\n通过使用尖括号 `<T>` 定义的泛型类型可以作为特定数据类型的占位符。\n\n当使用函数或类时，会在具体位置指定数据类型。\n\n例如，以下是一个接受任意数据类型单个参数并返回相同数据类型的泛型函数：\n\n    function identity<T>(arg: T): T {\n      return arg;\n    }\n    \n    let output = identity<string>('Hello'); // output 的类型将为 'string'\n    \n\n在本例中，`identity` 函数接受一个任意数据类型的参数，并返回相同的数据类型。\n\n当调用函数时，通过在参数 `Hello` 的前面使用 `<string>` 指定实际的数据类型。\n\n泛型也可以用于类、接口和对象类型，使它们可以处理多种数据类型。\n\n例如：\n\n    class GenericNumber<T> {\n      zeroValue: T;\n      add: (x: T, y: T) => T;\n    }\n    \n    let myGenericNumber = new GenericNumber<number>();\n    myGenericNumber.zeroValue = 0;\n    myGenericNumber.add = function (x, y) {\n      return x + y;\n    };\n    \n\n",
+          "links": [
+            {
+              "title": "泛型的Hello World",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html#hello-world-of-generics",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0e23ab82-d1cd-4a2a-a528-9f1a34c573ea",
+          "xid": "d429a60f-e305-4cb6-a88b-2253bf9436d6"
+        },
+        {
+          "title": "泛型约束",
+          "description": "在TypeScript中，泛型约束允许您指定在泛型类型中使用的类型参数的要求。\n\n这些约束确保用于泛型类型的类型参数满足某些要求。\n\n约束使用`extends`关键字指定，后跟类型参数必须扩展或实现的类型。\n\n    interface 长度接口 {\n      length: number;\n    }\n    \n    function 日志身份验证<T extends 长度接口>(arg: T): T {\n      // 现在我们知道它有一个.length属性，所以不会报错了\n      console.log(arg.length);\n    \n      return arg;\n    }\n    \n    日志身份验证(3); // 错误，因为数字没有.length属性\n    日志身份验证({ length: 10, value: 3 }); // 正确\n    \n\n在这个例子中，`长度接口`定义了一个`length`属性。\n\n`日志身份验证`函数使用了一个被`长度接口`约束的泛型类型参数`T`，这意味着类型参数必须扩展或实现`长度接口`。\n\n此约束确保传递给`日志身份验证`函数的参数具有length属性。\n\n",
+          "links": [
+            {
+              "title": "泛型约束 - TypeScript",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cc29347a-0241-4e72-92e8-1007709f2171",
+          "xid": "7e00446c-641a-486a-a208-6353002865b0"
+        }
+      ],
+      "id": "d77aed63-80a1-4a14-9497-fcbb76033b6f",
+      "xid": "e91b4050-4610-4467-b3ee-1f763a3cb893"
+    },
+    {
+      "title": "装饰器",
+      "description": "装饰器是TypeScript的一项功能，允许你修改类、属性、方法或参数的行为。\n\n它们是一种向已有代码添加额外功能的方式，可用于多种任务，包括日志记录、性能优化和验证。\n\n以下是一个在TypeScript中使用装饰器的例子：\n\n    function log(\n      target: Object,\n      propertyKey: string | symbol,\n      descriptor: PropertyDescriptor\n    ) {\n      const originalMethod = descriptor.value;\n    \n      descriptor.value = function (...args: any[]) {\n        console.log(`调用 ${propertyKey} 方法时的参数: ${args}`);\n        return originalMethod.apply(this, args);\n      };\n    \n      return descriptor;\n    }\n    \n    class Calculator {\n      @log\n      add(a: number, b: number): number {\n        return a + b;\n      }\n    }\n    \n    const calculator = new Calculator();\n    calculator.add(1, 2);\n    // 输出: 调用 add 方法时的参数: 1,2\n    // 输出: 3\n    \n\n在此示例中，我们使用 `@log`（装饰器）来修改 `Calculator` 类中 `add` 方法的行为。\n\n`log`装饰器在调用原方法前记录方法收到的参数。\n\n这使我们能够在不修改方法代码的情况下查看传递给方法的参数。\n\n",
+      "links": [
+        {
+          "title": "装饰器",
+          "url": "https://www.typescriptlang.org/docs/handbook/decorators.html#handbook-content",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "3e67f18d-7f27-4dc2-829d-edc97cb13b6b",
+      "xid": "42e26762-5144-4ef6-aed7-bf728d9556ba"
+    },
+    {
+      "title": "实用类型",
+      "description": "TypeScript 提供了多种实用类型，可用于操作和转换现有类型。\n\n以下是最常用的几种类型：\n\n*   `Partial`：使类型的所有属性变为可选的。\n\n\n*   `Readonly`：使类型的所有属性变为只读。\n\n\n*   `Pick`：允许从一个类型中选择特定的属性。\n\n\n*   `Omit`：允许从一个类型中省略特定的属性。\n\n\n*   `Exclude`：创建一个类型，该类型是 A 和 B 的集合差。\n\n\n*   等等。\n\n\n",
+      "links": [
+        {
+          "title": "TypeScript - 实用类型",
+          "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html",
+          "type": "article"
+        },
+        {
+          "title": "TypeScript 实用类型指南",
+          "url": "https://camchenry.com/blog/typescript-utility-types",
+          "type": "article"
+        },
+        {
+          "title": "TypeScript 实用类型：关键概念和最佳实践",
+          "url": "https://marketsplash.com/tutorials/typescript/typescript-utility-types/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Partial（部分）",
+          "description": "在TypeScript中，Partial类型允许你将一个类型中的所有属性设置为可选。\n\n当你需要创建一个只包含现有类型的一部分属性的对象时，这非常有用。\n\n这里是Partial类型在TypeScript中的一个使用示例：\n\n    interface User {\n      name: string;\n      age: number;\n      email: string;\n    }\n    \n    function createUser(user: Partial<User>): User {\n      return {\n        name: 'John Doe',\n        age: 30,\n        email: 'john.doe@example.com',\n        ...user,\n      };\n    }\n    \n    const newUser = createUser({ name: 'Jane Doe' });\n    \n    console.log(newUser);\n    // 输出: { name: 'Jane Doe', age: 30, email: 'john.doe@example.com' }\n    \n\n@official@Partial",
+          "links": [],
+          "children": [],
+          "id": "28459c82-85c3-42ea-a15d-5c79f3a04556",
+          "xid": "72ae20be-cf49-4922-90dd-b3e31edaf051"
+        },
+        {
+          "title": "选择",
+          "description": "选择通过从类型Type中选取一组属性Keys（字符串字面量或字符串字面量的联合）来构建类型。\n\n    interface Todo {\n      title: string;\n      description: string;\n      completed: boolean;\n    }\n    \n    type TodoPreview = 选择<Todo, 'title' | 'completed'>;\n    \n    const todo: TodoPreview = {\n      title: 'Clean room',\n      completed: false,\n    };\n    \n\n",
+          "links": [
+            {
+              "title": "选择<Type, Keys>",
+              "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a81ebd92-6a90-4f9c-bfb7-f67647d629ec",
+          "xid": "e2fd5681-e694-4aaa-8438-5a05d1975c97"
+        },
+        {
+          "title": "Omit",
+          "description": "Omit 构建一个类型，通过从类型中选择所有属性，然后再移除指定的属性键。\n\n此处的属性键必须是字符串字面量或字符串字面量的联合类型。\n\n    interface Todo {\n      title: string;\n      description: string;\n      completed: boolean;\n      createdAt: number;\n    }\n    \n    type TodoPreview = Omit<Todo, 'description'>;\n    \n    const todo: TodoPreview = {\n      title: 'Clean room',\n      completed: false,\n      createdAt: 1615544252770,\n    };\n    \n    type TodoInfo = Omit<Todo, 'completed' | 'createdAt'>;\n    \n    const todoInfo: TodoInfo = {\n      title: 'Pick up kids',\n      description: 'Kindergarten closes at 5pm',\n    };\n    \n",
+          "links": [
+            {
+              "title": "Omit<Type, Keys>",
+              "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c738643d-12d2-4dbe-a565-4f3fa5ea21f0",
+          "xid": "f6ac2964-a676-48e0-adbd-3ace6c9b9927"
+        },
+        {
+          "title": "只读类型构造函数",
+          "description": "ReadOnly 构造函数创建一个类型，其中Type的所有属性都被设置为只读，这意味着构造的类型中的属性不能被重新赋值。\n\n    interface Todo {\n      title: string;\n    }\n    \n    const todo: Readonly<Todo> = {\n      title: '删除不活跃用户',\n    };\n    \n    // 不能给 'title' 赋值，因为它是只读属性。\n\n\n    todo.title = '你好';\n    \n\n@official@Readonly",
+          "links": [],
+          "children": [],
+          "id": "f1c34171-0f99-41f5-96b5-41c039838f5d",
+          "xid": "8a3eac75-d4ee-42ee-bfcf-b22ebc435f82"
+        },
+        {
+          "title": "记录",
+          "description": "记录（Record）构造一个对象类型，其属性键为Keys，属性值为Type。\n\n此工具可以用来将类型的属性映射到另一个类型。\n\n    接口 CatInfo {\n      age: number;\n      breed: string;\n    }\n    \n    类型 CatName = 'miffy' | 'boris' | 'mordred';\n    \n    const cats: Record<CatName, CatInfo> = {\n      miffy: { age: 10, breed: '波斯猫' },\n      boris: { age: 5, breed: '缅因猫' },\n      mordred: { age: 16, breed: '英国短毛猫' },\n    };\n    \n\n",
+          "links": [
+            {
+              "title": "记录<Keys, Type>",
+              "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2f260d54-9618-471d-b1f1-5c7c6c1132ba",
+          "xid": "08f2a288-4bd7-4747-b54f-50f6ea9092f9"
+        },
+        {
+          "title": "排除",
+          "description": "Exclude 构造一个类型，该类型从 UnionType 中排除所有可分配给 ExcludedMembers 的联合成员。\n\n    type T0 = Exclude<'a' | 'b' | 'c', 'a'>; // \"b\" | \"c\"\n    type T1 = Exclude<'a' | 'b' | 'c', 'a' | 'b'>; // \"c\"\n    type T2 = Exclude<string | number | (() => void), Function>; // string | number\n    \n\n",
+          "links": [
+            {
+              "title": "Exclude<UnionType, ExcludedMembers>",
+              "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "814b2057-65e6-4bd6-97fc-28ca5092eb19",
+          "xid": "3ed321cb-b82b-418d-acd7-e6045013fcda"
+        },
+        {
+          "title": "提取",
+          "description": "提取通过提取类型Type中可赋值给Union的联合成员来构建一个类型。\n\n    type T0 = 提取<'a' | 'b' | 'c', 'a' | 'f'>;\n    //    ^ = type T0 = \"a\"\n    \n\n",
+          "links": [
+            {
+              "title": "提取<Type, Union>",
+              "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html#extracttype-union",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "746fe458-a2ab-4491-b6ca-906d1f0d573e",
+          "xid": "8365bdba-bdf1-4903-bf85-a52ea23357ff"
+        },
+        {
+          "title": "非空类型（NonNullable）",
+          "description": "非空类型（NonNullable）通过排除类型中的 `null` 和 `undefined` 来构建一个新的类型。\n\n    type T0 = NonNullable<string | number | undefined>;\n    // type T0 = string | number\n    \n    type T1 = NonNullable<string[] | null | undefined>;\n    // type T1 = string[]\n    \n\n@official@NonNullable",
+          "links": [],
+          "children": [],
+          "id": "834cd79e-0f62-43e4-9bc2-e9103259a25a",
+          "xid": "67a53178-0a37-41e5-abcd-c8b15e5ff5eb"
+        },
+        {
+          "title": "参数类型",
+          "description": "Parameters 从函数类型 Type 的参数类型中构建一个元组类型。\n\n    type T0 = Parameters<() => string>;\n    // type T0 = []\n    \n    type T1 = Parameters<(s: string) => void>;\n    // type T1 = [s: string]\n    \n    type T2 = Parameters<<T>(arg: T) => T>;\n    // type T2 = [arg: unknown]\n    \n    declare function f1(arg: { a: number; b: string }): void;\n    type T3 = Parameters<typeof f1>;\n    // type T3 = [arg: {\n    //     a: number;\n    //     b: string;\n    // }]\n    \n    type T4 = Parameters<any>;\n    // type T4 = unknown[]\n    \n    type T5 = Parameters<never>;\n    // type T5 = never\n    \n    type T6 = Parameters<string>;\n    // ^ 类型 'string' 不满足约束条件 '(...args: any) => any'。\n\n\n    \n    type T7 = Parameters<Function>;\n    // ^ 类型 'Function' 不满足约束条件 '(...args: any) => any'。\n\n\n    \n\n@official@Parameters",
+          "links": [],
+          "children": [],
+          "id": "7735c92f-93a4-41d2-98f8-f80b494a3ecf",
+          "xid": "4dd61f45-b1a5-4981-880e-74d48592e41c"
+        },
+        {
+          "title": "ReturnType",
+          "description": "ReturnType 构造一个类型，该类型由函数的返回类型构成。\n\n    type T0 = ReturnType<() => string>;\n    // type T0 = string\n    \n    type T1 = ReturnType<(s: string) => void>;\n    // type T1 = void\n    \n    type T2 = ReturnType<<T>() => T>;\n    // type T2 = unknown\n    \n    type T3 = ReturnType<<T extends U, U extends number[]>() => T>;\n    // type T3 = number[]\n    \n    declare function f1(): { a: number; b: string };\n    type T4 = ReturnType<typeof f1>;\n    // type T4 = {\n    //     a: number;\n    //     b: string;\n    // }\n    \n    type T5 = ReturnType<any>;\n    // type T5 = any\n    \n    type T6 = ReturnType<never>;\n    // type T6 = never\n    \n    type T7 = ReturnType<string>;\n    // ^ 类型 'string' 不满足约束 '(...args: any) => any'。\n\n\n    \n    type T8 = ReturnType<Function>;\n    // ^ 类型 'Function' 不满足约束 '(...args: any) => any'。\n\n\n    \n\n@official@ReturnType",
+          "links": [],
+          "children": [],
+          "id": "467aa4ef-4b7b-48c6-8437-bb6d50cec8b2",
+          "xid": "d136241b-4e92-4308-ac90-458fb84b157a"
+        },
+        {
+          "title": "InstanceType",
+          "description": "这种类型构造了一个类型，该类型由在Type中构造函数的实例类型组成。\n\n    class C {\n      x = 0;\n      y = 0;\n    }\n    \n    type T0 = InstanceType<typeof C>;\n    // type T0 = C\n    \n    type T1 = InstanceType<any>;\n    // type T1 = any\n    \n    type T2 = InstanceType<never>;\n    // type T2 = never\n    \n    type T3 = InstanceType<string>;\n    // ^ 类型 'string' 不满足约束 'abstract new (...args: any) => any'。\n\n\n    \n    type T4 = InstanceType<Function>;\n    // ^ 类型 'Function' 不满足约束 'abstract new (...args: any) => any'。\n\n\n",
+          "links": [
+            {
+              "title": "InstanceType<Type>",
+              "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html#instancetypetype",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b47130c9-1a44-4569-b798-25767471afb0",
+          "xid": "6f96f337-2d13-41f8-9713-cf2541553a8c"
+        },
+        {
+          "title": "Awaited",
+          "description": "这种类型旨在模拟async函数中的await操作或Promises上的`.then()`方法——特别是它们递归解包Promises的方式。\n\n    type A = Awaited<Promise<string>>;\n    // type A = string\n    \n    type B = Awaited<Promise<Promise<number>>>;\n    // type B = number\n    \n    type C = Awaited<boolean | Promise<number>>;\n    // type C = number | boolean\n    \n\n",
+          "links": [
+            {
+              "title": "Awaited<Type>",
+              "url": "https://www.typescriptlang.org/docs/handbook/utility-types.html#awaitedtype",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a64021cd-f8e9-4cb3-aed2-fd65a83020df",
+          "xid": "39410aff-ec73-4ca3-b322-72350621e1cf"
+        }
+      ],
+      "id": "acfa00fa-07f6-4b86-9b66-9e30f0b3869c",
+      "xid": "d2551af6-8309-4fcd-857c-12c73bbc7f86"
+    },
+    {
+      "title": "高级类型",
+      "description": "TypeScript中的高级类型是一系列高级类型结构，它们允许创建更为复杂和表达力更强的类型系统。\n\nTypeScript中使用最多的高级类型包括：\n\n*   交叉类型（Intersection Types）\n*   联合类型（Union Types）\n*   类型别名（Type Aliases）\n*   条件类型（Conditional Types）\n*   索引类型（Index Types）\n*   映射类型（Mapped Types）\n*   类型守卫（Type Guards）\n\n这些高级类型使得可能实现更为复杂和表达力更强的类型系统，并能让你编写更安全、更易于维护且更易理解的代码。\n\n通过利用这些高级类型，可以编写出更健壮、更少出现错误且更易于维护的代码。\n\n",
+      "links": [
+        {
+          "title": "高级主题",
+          "url": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html#advanced-topics",
+          "type": "article"
+        },
+        {
+          "title": "TypeScript 教程 - 高级类型",
+          "url": "https://www.youtube.com/playlist?list=PLw5h0DiJ-9PBIgIyd2ZA1CVnJf0BLFJg2",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "映射类型",
+          "description": "在TypeScript中，映射类型（Mapped Types）是一种基于现有类型创建新类型的方式，其中现有类型的每个属性以某种方式被转换。\n\n映射类型使用`keyof`操作符与一个将现有类型的每个属性映射到新属性类型的类型共同声明。\n\n例如，以下是一个映射类型，它接受一个对象类型并生成一个新的类型，具有原类型的所有属性，但将它们的类型更改为`readonly`：\n\n    type Readonly<T> = {\n      readonly [P in keyof T]: T[P];\n    };\n    \n    let obj = { x: 10, y: 20 };\n    let readonlyObj: Readonly<typeof obj> = obj;\n    \n\n在这个例子中，`Readonly`映射类型接受一个对象类型`T`并创建一个新类型，该新类型含有`T`的所有属性，但其类型被更改为`readonly`。\n\n`keyof` `T`操作符用于提取`T`的属性名称，而`T[P]`语法用于访问`T`的每个属性的类型。\n\n`readonly`关键字被用来使新类型的属性变为只读。\n\n",
+          "links": [
+            {
+              "title": "映射类型",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#handbook-content",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8fc65358-6479-4ca5-8379-280c20900911",
+          "xid": "e978a7dc-5050-4d7f-acdc-025ee084e90e"
+        },
+        {
+          "title": "条件类型",
+          "description": "条件类型（Conditional Types）是TypeScript中一种基于条件选择类型的方式。\n\n它们允许你编写一种类型，这种类型可以根据输入类型动态地选择类型。\n\n条件类型通过结合使用`infer`关键字和用于测试条件并根据测试结果选择类型的类型来声明。\n\n例如，下面是一个条件类型，它接受两个类型，并返回如果第一个参数类型扩展自第二个参数类型，则返回第一个参数类型，否则返回第二个参数类型：\n\n    type Extends<T, U> = T extends U ? T : U;\n    \n    type A = Extends<string, any>; // 类型 A 为 'string'\n    type B = Extends<any, string>; // 类型 B 为 'string'\n    \n\n在这个例子中，Extends（扩展）条件类型接受两个参数类型T和U。\n\n如果T扩展自U，则类型为第一个参数`T`，否则返回第二个参数类型`U`。\n\nT extends `U`语法用来测试`T`是否扩展自`U`，而`? T : U`语法用于在测试通过时选择类型`T`，否则选择类型`U`。\n\n",
+          "links": [
+            {
+              "title": "条件类型",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#handbook-content",
+              "type": "article"
+            },
+            {
+              "title": "高级TypeScript条件类型",
+              "url": "https://www.youtube.com/watch?v=QFWrbNehKk0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f3a53431-ff7e-4899-89d4-61bed1cc7bcd",
+          "xid": "de1c2f86-d5b3-4468-b2f5-5280a3cafa86"
+        },
+        {
+          "title": "字面量类型",
+          "description": "在TypeScript中，字面量类型是一种精确指定值的方式，而不仅仅是类型。\n\n字面量类型可以用来强制值必须是特定类型和特定值。\n\n字面量类型通过使用字面量值（例如字符串、数字或布尔值）作为类型来创建。\n\n例如，下面是表示值为42的字面量类型:\n\n    type Age = 42;\n    \n    let age: Age = 42; // 正确\n    let age: Age = 43; // 错误\n    \n\n在这个例子中，通过将数字`42`作为类型，创建了一个`Age`字面量类型。\n\n这个类型可以用来强制值必须是`number`类型且值为`42`。\n\n",
+          "links": [
+            {
+              "title": "字面量类型",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "06ad3194-0535-4d00-8d8f-1844e6383d57",
+          "xid": "60bd53ec-f20a-4535-a2ab-6d687c8fc2b9"
+        },
+        {
+          "title": "模板字面量类型",
+          "description": "在TypeScript中，模板字面量类型（Template Literal Types）是一种以类型形式操作字符串值的方法。\n\n它们允许你基于字符串操作或连接的结果创建类型。\n\n模板字面量类型使用反引号（\\`\\`）字符和类型内的字符串操作表达式来创建。\n\n例如，下面是一个通过连接两个字符串创建的模板字面量类型：\n\n    type Name = `Mr. ${string}`;\n    \n    let name: Name = `Mr. Smith`;  // 正确\n    let name: Name = `Mrs. Smith`;  // 错误\n    \n\n在这个例子中，`Name`模板字面量类型是通过连接字符串`\"Mr. \"`和类型`string`创建的。\n\n这个类型可以被用来强制要求值必须以`\"Mr. \"`开始的字符串。\n\n",
+          "links": [
+            {
+              "title": "模板字面量类型",
+              "url": "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#handbook-content",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9c65988b-f3a8-454d-8daf-59252a90aeed",
+          "xid": "3100c2a9-7acd-43b5-8feb-4c0fe956aa91"
+        },
+        {
+          "title": "递归类型",
+          "description": "在TypeScript中，递归类型是用来定义引用自身的类型的一种方式。\n\n递归类型用于定义复杂的数据结构，比如树或链表，其中值可以包含一个或多个相同类型的值。\n\n例如，下面是一种表示链表的递归类型：\n\n    type LinkedList<T> = {\n      value: T;\n      next: LinkedList<T> | null;\n    };\n    \n    let list: LinkedList<number> = {\n      value: 1,\n      next: { value: 2, next: { value: 3, next: null } },\n    };\n    \n\n在这个例子中，`LinkedList`类型定义为一个扩展了`T`并且包含同类型`LinkedList<T>`的`next`属性的类型。\n\n这使我们能够创建一个链表，其中每个节点包含一个类型为`T`的值和一个指向列表中下一个节点的引用。\n\n",
+          "links": [
+            {
+              "title": "TypeScript中的递归类型",
+              "url": "https://www.typescriptlang.org/play/3-7/types-and-code-flow/recursive-type-references.ts.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f4d01bb1-126e-414e-b4b2-67a35fd275a3",
+          "xid": "e2118e48-3152-4ff1-89fe-c15f05ce817c"
+        }
+      ],
+      "id": "936c788b-5917-42bf-b336-4cc6415f6f3e",
+      "xid": "8350737a-edcf-4cbf-a795-e277f98f820f"
+    },
+    {
+      "title": "TypeScript 模块",
+      "description": "在 TypeScript 中，模块用于组织和重用代码。\n\nTypeScript 中有两种类型的模块：\n\n*   内部模块（Internal）\n*   外部模块（External）\n\n内部模块用于在一个文件内组织代码，也称为命名空间（namespace），使用 \"namespace\" 关键字来定义。\n\n外部模块用于跨多个文件组织代码。\n\n在一个文件中使用 \"export\" 关键字定义模块，在另一个文件中使用 \"import\" 关键字导入模块。\n\nTypeScript 中的外部模块遵循 CommonJS 或 ES 模块标准。\n\n这是一个 TypeScript 中如何使用内部模块的示例：\n\n    // myModule.ts\n    namespace MyModule {\n      export function doSomething() {\n        console.log('Doing something...');\n      }\n    }\n    \n    // main.ts\n    /// <reference path=\"myModule.ts\" />\n    MyModule.doSomething(); // 输出: \"Doing something...\"\n    \n\n",
+      "links": [
+        {
+          "title": "模块",
+          "url": "https://www.typescriptlang.org/docs/handbook/modules.html#handbook-content",
+          "type": "article"
+        },
+        {
+          "title": "TypeScript - 模块",
+          "url": "https://www.youtube.com/watch?v=EpOPR03z4Vw",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "命名空间",
+          "description": "在TypeScript中，命名空间(Namespace)用于在多个文件之间组织和共享代码。\n\n命名空间允许你将相关的功能归为一个单元，并防止命名冲突。\n\n下面是一个如何在TypeScript中使用命名空间的示例：\n\n    // myNamespace.ts\n    namespace MyNamespace {\n      export function doSomething() {\n        console.log('Doing something...');\n      }\n    }\n    \n    // main.ts\n    /// <reference path=\"myNamespace.ts\" />\n    MyNamespace.doSomething(); // 输出: \"Doing something...\"\n    \n\n在这个示例中，我们在 \"myNamespace.ts\" 文件中使用 `namespace` 关键字定义了一个命名空间 \"MyNamespace\"。\n\n在该命名空间内，我们导出了一个函数 \"doSomething\"。\n\n\n",
+          "links": [
+            {
+              "title": "命名空间概述",
+              "url": "https://www.typescriptlang.org/docs/handbook/namespaces.html",
+              "type": "article"
+            },
+            {
+              "title": "命名空间和模块",
+              "url": "https://www.typescriptlang.org/docs/handbook/namespaces-and-modules.html",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript - 使用命名空间",
+              "url": "https://typescriptlang.org/docs/handbook/namespaces-and-modules.html#using-namespaces",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "822a2cfa-0c44-4463-92e4-a6e641e97768",
+          "xid": "b02228dd-857a-42c8-b526-01a6fa38b7a0"
+        },
+        {
+          "title": "环境模块",
+          "description": "TypeScript中的环境模块（Ambient Modules）用于在TypeScript程序中声明外部模块或第三方库。\n\n环境模块为那些没有TypeScript声明但存在于全局范围内的模块提供类型信息。\n\n下面是一个在TypeScript中使用环境模块的例子：\n\n    // myModule.d.ts\n    declare module 'my-module' {\n      export function doSomething(): void;\n    }\n    \n    // main.ts\n    import * as myModule from 'my-module';\n    myModule.doSomething();\n    \n\n在这个例子中，我们在`myModule.d.ts`文件中声明了一个环境模块\"my-module\"。\n\n这个声明为\"my-module\"模块提供了类型信息，包括从该模块导出的\"doSomething\"函数。\n\n",
+          "links": [
+            {
+              "title": "环境模块",
+              "url": "https://www.typescriptlang.org/docs/handbook/modules/reference.html#ambient-modules",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "97ea4bc0-7fb5-48a9-8b6d-148d0c0cdaef",
+          "xid": "976f487d-15cb-42e0-a791-de654e754928"
+        },
+        {
+          "title": "外部模块（External Modules）",
+          "description": "在TypeScript中，外部模块允许您组织和在多个文件之间共享代码。\n\nTypeScript中的外部模块遵循CommonJS或ES模块标准。\n\n以下是一个在TypeScript中使用外部模块的示例：\n\n    // myModule.ts\n    export function doSomething() {\n      console.log('处理中...');\n    }\n    \n    // main.ts\n    import { doSomething } from './myModule';\n    doSomething(); // 输出: \"处理中...\"\n    \n\n在这个示例中，我们在\"myModule.ts\"文件中使用\"export\"关键字导出\"doSomething\"函数，使其可供其他文件使用。\n\n",
+          "links": [
+            {
+              "title": "外部模块（External Module）",
+              "url": "https://www.javatpoint.com/typescript-module",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript - 外部模块（External Module）",
+              "url": "https://learncodeweb.com/typescript/modules-in-typescript-explain-with-an-example/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "22601661-95f3-40aa-839f-0d9ef6b41833",
+          "xid": "4c8eda42-0d5d-4408-b121-b9117eec003c"
+        },
+        {
+          "title": "命名空间增强(Namespace Augmentation)",
+          "description": "在TypeScript中，命名空间增强(Namespace Augmentation)是一种扩展或修改现有命名空间的方法。\n\n这在你想为现有命名空间添加新功能，或者修复第三方库中缺失或不正确的声明时非常有用。\n\n这是一个如何在TypeScript中使用命名空间增强的示例：\n\n    // myModule.d.ts\n    declare namespace MyModule {\n      export interface MyModule {\n        newFunction(): void;\n      }\n    }\n    \n    // main.ts\n    /// <reference path=\"myModule.d.ts\" />\n    namespace MyModule {\n      export class MyModule {\n        public newFunction() {\n          console.log('我是MyModule中的新函数!');\n        }\n      }\n    }\n    \n    const obj = new MyModule.MyModule();\n    obj.newFunction(); // 输出: \"我是MyModule中的新函数!\"\n    \n\n在该示例中，我们通过在声明文件 `myModule.d.ts` 中，在\"MyModule\"命名空间内声明一个新的接口\"MyModule\"，并向其添加\"newFunction\"函数，以使用命名空间增强为\"MyModule\"命名空间新增一个函数\"newFunction\"。\n\n",
+          "links": [
+            {
+              "title": "模块增强(Module Augmentation)",
+              "url": "https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8c5ac02a-6eb4-43e8-b321-a1ef855ac241",
+          "xid": "08245693-ba77-4a17-b2e3-4309d4c6746d"
+        },
+        {
+          "title": "全局扩展",
+          "description": "在TypeScript中，全局扩展是一种将声明添加到全局作用域的方法。\n\n这在想要为现有库添加新功能或扩展TypeScript中的内置类型时非常有用。\n\n以下是如何在TypeScript中使用全局扩展的示例：\n\n    // myModule.d.ts\n    declare namespace NodeJS {\n      interface Global {\n        myGlobalFunction(): void;\n      }\n    }\n    \n    // main.ts\n    global.myGlobalFunction = function () {\n      console.log('我是一个全局函数！');\n    };\n    \n    myGlobalFunction(); // 输出: \"我是一个全局函数！\"\n    \n\n在此示例中，我们声明了一个新的命名空间 \"NodeJS\"（NodeJS），并向其中添加了一个接口 \"Global\"。\n\n在 \"Global\" 接口中，我们声明了一个新的函数 \"myGlobalFunction\"。\n\n",
+          "links": [
+            {
+              "title": "全局扩展",
+              "url": "https://www.typescriptlang.org/docs/handbook/declaration-merging.html#global-augmentation",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1ec33068-53b2-4e44-a740-a6fb054c113f",
+          "xid": "034bbb08-49ca-4b72-ac98-1368919c1977"
+        }
+      ],
+      "id": "5ae443cb-9ccb-4202-962c-589154063362",
+      "xid": "901f2d0c-ec23-41e0-b269-69b3db9d6522"
+    },
+    {
+      "title": "生态系统",
+      "description": "查看链接的节点，了解可用于构建项目的不同工具和框架。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "格式化",
+          "description": "Prettier [代码格式化器]是一个具有意见化的代码格式化工具，支持JavaScript、HTML、CSS、YAML、Markdown和GraphQL模式。\n\n采用Prettier的最大理由是能停止正在进行的各种有关样式格式的争论。\n\nBiome 是 Prettier 的更快替代品！（它还支持代码检测！）",
+          "links": [
+            {
+              "title": "Prettier 网站",
+              "url": "https://prettier.io",
+              "type": "article"
+            },
+            {
+              "title": "为什么使用 Prettier",
+              "url": "https://prettier.io/docs/en/why-prettier.html",
+              "type": "article"
+            },
+            {
+              "title": "BiomeJS 网站",
+              "url": "https://biomejs.dev",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3e6f07fb-ac1a-4d95-ac26-44214080465e",
+          "xid": "9ada7aff-1fad-4c45-96a9-28bcf963544f"
+        },
+        {
+          "title": "代码检查",
+          "description": "使用ESLint (Linting工具)，您可以根据一组独立的规则强制实施编码规范。\n\n",
+          "links": [
+            {
+              "title": "ESLint 官方网站",
+              "url": "https://eslint.org/",
+              "type": "article"
+            },
+            {
+              "title": "ESLint 入门",
+              "url": "https://dev.to/shivambmgupta/eslint-what-why-when-how-5f1d",
+              "type": "article"
+            },
+            {
+              "title": "ESLint 快速入门 - 自动查找错误",
+              "url": "https://www.youtube.com/watch?v=qhuFviJn-es",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6e3d1804-250a-4d22-9e20-6298a3ac83e5",
+          "xid": "c0eb3e3c-f946-42cf-b95e-914cc7a85c27"
+        },
+        {
+          "title": "有用的包",
+          "description": "TypeScript拥有一个庞大的包生态系统，可用于扩展语言或为项目添加功能。\n\n以下是一些最常用的包列表。\n\n*   [@article@zod](https://zod.dev/): 一种以TypeScript为主的（TypeScript-first）数据验证库\n*   [@opensource@ts-morph](https://github.com/dsherret/ts-morph): 一种用于操作TypeScript代码的以TypeScript为主的（TypeScript-first）API\n*   [@article@ts-node](https://typestrong.org/ts-node/): 一个用于node.js的TypeScript执行和REPL环境\n*   [@opensource@ts-jest](https://github.com/kulshekhar/ts-jest): 一个支持源码映射的Jest转换器，可以使用Jest测试用TypeScript编写（TypeScript-written）的项目。\n\n\n*   [@opensource@typesync](https://github.com/jeffijoe/typesync): 为package.json中的依赖项安装缺失的TypeScript类型声明文件（TypeScript typings）。\n\n\n*   [@opensource@tsd](https://github.com/SamVerschueren/tsd) - TypeScript定义管理器（TypeScript Definition Manager）\n*   [@opensource@type-fest](https://github.com/sindresorhus/type-fest) - 一个基本的TypeScript类型集合",
+          "links": [],
+          "children": [],
+          "id": "3e05df88-cb7d-4369-8e1d-f8af06f22e4f",
+          "xid": "3292b2bb-fe8b-4317-a1fb-aa1134b13284"
+        },
+        {
+          "title": "构建工具",
+          "description": "任务运行工具可以自动执行命令并执行后台过程。\n\n这有助于通过执行单调且重复的任务来自动化您的工作流程，从而避免浪费大量时间重复这些任务。\n\n任务运行工具的常见用法包括许多开发任务，例如：启动开发服务器，编译代码（例如从 SCSS 到 CSS），运行代码检查工具，从计算机的本地端口提供服务文件，等等！\n\n",
+          "links": [
+            {
+              "title": "webpack 是用于现代JavaScript应用程序的静态模块打包器",
+              "url": "https://webpack.js.org/",
+              "type": "article"
+            },
+            {
+              "title": "Vite 是下一代前端工具",
+              "url": "https://vitejs.dev",
+              "type": "article"
+            },
+            {
+              "title": "Parcel 是一种无需配置的Web构建工具",
+              "url": "https://parceljs.org/",
+              "type": "article"
+            },
+            {
+              "title": "esbuild 是一个极快的JavaScript打包器和压缩器",
+              "url": "https://esbuild.github.io/",
+              "type": "article"
+            },
+            {
+              "title": "swc 是一个超快速的用 Rust 编写的编译器",
+              "url": "https://swc.rs/",
+              "type": "article"
+            },
+            {
+              "title": "tsup 是一款针对TypeScript的无需配置的构建工具",
+              "url": "https://tsup.egoist.dev/",
+              "type": "article"
+            },
+            {
+              "title": "Rollup 是一款用于JavaScript的模块打包工具",
+              "url": "https://rollupjs.org/guide/en/",
+              "type": "article"
+            },
+            {
+              "title": "tsdx 是一个无需配置的CLI工具，用于TypeScript包开发",
+              "url": "https://tsdx.io/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关工具的顶级文章",
+              "url": "https://app.daily.dev/tags/tools?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "603fc01a-7521-49a2-ad65-3d840ce460ab",
+          "xid": "5ff72ef7-7eac-411a-b096-075902685321"
+        }
+      ],
+      "id": "79ebef52-7607-4201-b5e0-0580a7a65b33",
+      "xid": "1b17898d-c6b8-4045-a178-d12ca77c6f89"
+    }
+  ],
+  "id": "ccf7bc47-9b39-471a-ae23-fe25e5eb4288",
+  "xid": "299fc64a-9334-44dc-a3fd-d61342a3695e"
+}

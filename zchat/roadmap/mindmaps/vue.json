@@ -1,5 +1,5 @@
 {
-  "id": "fca79ac1-6bb5-46be-b9cf-49fbaa56d8b2",
+  "id": "fe88eaeb-38a9-4ae6-8f42-fe01d276e075",
   "title": "Vue Developer",
   "description": "Everything that is there to learn about Vue and the ecosystem in 2025.",
   "question_title": "",
@@ -9,13 +9,13 @@
       "title": "fundamental-topics",
       "xid": "",
       "description": "fundamental-topics",
-      "id": "3b740dba-4dd9-44b0-8393-26a205842b42",
+      "id": "73c2f14b-926f-4864-bdbb-cea953d40a1f",
       "children": [
         {
           "title": "create-vue",
           "xid": "y9ToYDix-koRbR6FLydFw",
           "description": "create-vue is a CLI tool that helps you create a new Vue project with a single command. It is a simple and easy-to-use tool that saves you time and effort when setting up a new Vue project.\n\nLearn more using the following resources:",
-          "id": "5371307f-b8aa-4731-bd25-3c57fd19204e",
+          "id": "39ac40de-cc59-4406-a42e-40c4fb66e112",
           "children": [],
           "links": [
             {
@@ -39,13 +39,13 @@
           "title": "Components",
           "xid": "0EevuyZiyty3X3Jzpjl4y",
           "description": "Components allow us to split the UI into independent and reusable pieces, and think about each piece in isolation.\n\n",
-          "id": "6dd49624-2b8a-4f5a-9823-a50f0ef45fe1",
+          "id": "eeaf5f96-852e-43c0-abf5-359e3dfa6a6b",
           "children": [
             {
               "title": "Single File Components",
               "xid": "VNBRlJkdH6NOOzGXUrbZK",
               "description": "Vue Single-File Components (a.k.a. `*.vue` files, abbreviated as SFC) is a special file format that allows us to encapsulate the template, logic, and styling of a Vue component in a single file.\n\n",
-              "id": "55b3774a-3d50-4fa0-b435-66eba277319a",
+              "id": "1cc15b18-7246-411b-a6fe-d53aa73300b9",
               "children": [],
               "links": [
                 {
@@ -59,7 +59,7 @@
               "title": "Component Registration",
               "xid": "2HhKifjuDcP3eKpanRMEQ",
               "description": "A Vue component needs to be \"registered\" so that Vue knows where to locate its implementation when it is encountered in a template. There are two ways to register components: global and local.\n\n",
-              "id": "20111145-322f-45ca-a470-104a36bdae72",
+              "id": "eb5055a8-1356-4e5f-bd4a-bb27b8fc53a2",
               "children": [],
               "links": [
                 {
@@ -73,7 +73,7 @@
               "title": "Props",
               "xid": "raEfI4GLMW2fOucka07VE",
               "description": "If we are building a blog, we will likely need a component representing a blog post. We want all the blog posts to share the same visual layout, but with different content. Such a component won't be useful unless you can pass data to it, such as the title and content of the specific post we want to display. That's where props come in.\n\nProps are custom attributes you can register on a component.\n\n",
-              "id": "b028536a-3bed-4744-a557-2575487301ef",
+              "id": "ebe81bc1-96c0-4f05-8405-a87979d97004",
               "children": [],
               "links": [
                 {
@@ -92,7 +92,7 @@
               "title": "Events",
               "xid": "X0J3ogH3W8EQe68tLfcGL",
               "description": "As we develop our applications we may need to communicate with the parent component in order to notify of some actions e.g. when a user clicks on a button. In order to do this we need to use events.\n\n",
-              "id": "52261f3e-2cac-4d67-8eba-8648240f2faf",
+              "id": "b7a3f297-e0bd-4190-932a-9fa2cc5c985a",
               "children": [],
               "links": [
                 {
@@ -111,7 +111,7 @@
               "title": "v-model",
               "xid": "swpyZFUO4UO3mW8Bvf1Te",
               "description": "v-model is a directive that allows you to create two-way data bindings on form input, textarea, and select elements. It automatically picks the correct way to update the element based on the input type.\n\n",
-              "id": "e684e792-2047-453a-88f8-877cd4bfeb77",
+              "id": "1f08ad63-edec-4fe9-a70d-941542510519",
               "children": [],
               "links": [
                 {
@@ -125,7 +125,7 @@
               "title": "Attribute Inheritance",
               "xid": "4S5fVFsFDMbq05ld7n0sF",
               "description": "Attribute inheritance aka \"fallthrough attributes\" is a feature of Vue.js that allows you to inherit attributes from a parent component.\n\n",
-              "id": "31e27360-055b-47be-8b95-45a775539828",
+              "id": "c9e70da4-eb89-437f-b551-74c2d59b236d",
               "children": [],
               "links": [
                 {
@@ -153,7 +153,7 @@
           "title": "Templates",
           "xid": "VlcYnTHW5d4J_zLYupvu5",
           "description": "Vue uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM to the underlying component instance's data. All Vue templates are syntactically valid HTML that can be parsed by spec-compliant browsers and HTML parsers.\n\n",
-          "id": "9555296e-f353-4c18-b545-de537b0cafd9",
+          "id": "fb0876b0-ff02-4d89-9cb6-04696c1f029f",
           "children": [],
           "links": [
             {
@@ -167,7 +167,7 @@
           "title": "Directives",
           "xid": "CGdw3PqLRb9OqFU5SqmE1",
           "description": "Directives are special attributes with the `v-` prefix. Vue provides a number of built-in directives.\n\n",
-          "id": "07c3a341-931e-49fb-b14d-941b0704f701",
+          "id": "73ada6d7-e7dd-4e3f-92e8-d9c29a342d35",
           "children": [],
           "links": [
             {
@@ -186,13 +186,13 @@
           "title": "API Styles",
           "xid": "OpJ2NMKCGXQezpzURE45R",
           "description": "Up until Vue 2, there was one way to create components in Vue. With Vue 3, a new methodology was introduced called the Composition API. Now, if we want to make a component in Vue, we have two ways to do it. You might be wondering what the difference is, exactly, so let\u2019s take a look at how the newer Composition API differs from the Vue 2 methodology, which is now known as the Options API\n\n",
-          "id": "5ec28bca-fd6c-47d0-8ed3-ea5fc48ffcd1",
+          "id": "2461bc38-2184-41a0-88bf-b37a17a50e41",
           "children": [
             {
               "title": "Options API",
               "xid": "PPUU3Rb73aCpT4zcyvlJE",
               "description": "We use Options API in a Vue application to write and define different components. With this API, we can use options such as data, methods, and mounted. To state it simply, Options API is an old way to structure a Vue.JS application. Due to some limitations in this API, Composition API was introduced in Vue 3.\n\n",
-              "id": "c9640bd2-e860-431f-a8ed-55a1f4346bd2",
+              "id": "bec7fefa-67f6-4229-a14b-5b9e50edb8c5",
               "children": [],
               "links": [
                 {
@@ -211,7 +211,7 @@
               "title": "Composition API",
               "xid": "a0qwdQTunxEjQ9A5wpF-q",
               "description": "With the release of Vue 3, developers now have access to the Composition API, a new way to write Vue components. This API allows features to be grouped together logically, rather than having to organize your single-file components by function. Using the Composition API can lead to more readable code, and gives the developer more flexibility when developing their applications.\n\n",
-              "id": "2a44deef-4921-43b4-8db4-70aadc93e5c8",
+              "id": "60be8e76-98d7-41a4-babd-dc8fbb160026",
               "children": [],
               "links": [
                 {
@@ -254,7 +254,7 @@
           "title": "App Configurations",
           "xid": "qRm08uDZW-D8QDc-9sPX8",
           "description": "Every application instance exposes a `config` object that contains the configuration settings for that application. You can modify its properties before mounting your application.\n\n",
-          "id": "e4d09e9d-3d31-430a-b18f-7784196e5f3b",
+          "id": "5bfb754b-bf41-427c-a077-2c1fdb8e1718",
           "children": [],
           "links": [
             {
@@ -268,7 +268,7 @@
           "title": "Rendering Lists",
           "xid": "ftqDoGpwqqWQnu4NQSsMk",
           "description": "We can use the `v-for` directive to render a list of items based on an array. The `v-for` directive requires a special syntax in the form of `item in items`, where `items` is the source data array and `item` is an alias for the array element being iterated on.\n\n",
-          "id": "3b579c15-b925-4d1f-aa1e-25c455caa565",
+          "id": "ab8d6a00-3cb4-4474-8603-6202a40c20ae",
           "children": [],
           "links": [
             {
@@ -282,7 +282,7 @@
           "title": "Conditional Rendering",
           "xid": "tU4Umtnfu01t9gLlnlK6b",
           "description": "The directive `v-if` is used to conditionally render a block. The block will only be rendered if the directive's expression returns a truthy value.\n\n",
-          "id": "cf899c50-7fe7-46df-bdd2-f9b9997991be",
+          "id": "87064ced-7003-4a77-8c46-f0b9d9c2e541",
           "children": [],
           "links": [
             {
@@ -296,7 +296,7 @@
           "title": "Lifecycle Hooks",
           "xid": "WiGG9_4G5y-AVA9byw6_g",
           "description": "Each Vue component instance goes through a series of initialization steps when it's created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and update the DOM when data changes. Along the way, it also runs functions called lifecycle hooks, giving users the opportunity to add their own code at specific stages.\n\n",
-          "id": "86d305c3-27ee-4f24-afc9-fe860b395a9c",
+          "id": "ab33c8a3-d9b1-4b23-8ea0-44e4c7a82c6b",
           "children": [],
           "links": [
             {
@@ -320,7 +320,7 @@
           "title": "Forms Handling",
           "xid": "PQu4TyJOfCEaafW5th0e4",
           "description": "You can use the `v-model` directive to create two-way data bindings on form input elements. It automatically picks the correct way to update the element based on the input type.\n\n",
-          "id": "648e569c-24cc-4cd9-986a-60a00fb2de76",
+          "id": "eea188af-a379-4bf6-8542-3bade343914f",
           "children": [],
           "links": [
             {
@@ -344,7 +344,7 @@
           "title": "Event Handling",
           "xid": "4p6Gh2fMPA8hls_mWa5HR",
           "description": "When you build a dynamic website with Vue you'll most likely want it to be able to respond to events. For example, if a user clicks a button, submits a form, or even just moves their mouse, you may want your Vue site to respond somehow.\n\n",
-          "id": "7008fbd3-ce40-4209-93cc-672c005eebeb",
+          "id": "acfe8b72-c746-4c98-8dd0-9fe1df3bc7a4",
           "children": [],
           "links": [
             {
@@ -358,7 +358,7 @@
           "title": "Computed Properties",
           "xid": "Bx1Atxcf15AEaA1BiSIc6",
           "description": "In-template expressions are very convenient, but they are meant for simple operations. Putting too much logic in your templates can make them bloated and hard to maintain. Computed properties allow us to simplify the complex logic that includes reactive data.\n\n",
-          "id": "4a553cff-78a2-420f-9545-7e761f3f80f3",
+          "id": "f09d5150-024b-4050-8e35-d3fdd1ecb83d",
           "children": [],
           "links": [
             {
@@ -375,13 +375,13 @@
       "title": "advanced-topics",
       "xid": "",
       "description": "advanced-topics",
-      "id": "a8dfbd18-15f4-42df-ac1b-e83fbea7cea4",
+      "id": "0b0fcf83-9464-470c-823f-5f021d240a4a",
       "children": [
         {
           "title": "Async Components",
           "xid": "Re7tv1U0LxYqE5ShFxQSf",
           "description": "In large applications, we may need to divide the app into smaller chunks and only load a component from the server when it's needed. To make that possible, Vue has a `defineAsyncComponent` function.\n\n",
-          "id": "823c1407-2874-4085-9ea9-d8cd030d191a",
+          "id": "94d1aeb5-0cd8-410e-af1f-c392131c4676",
           "children": [],
           "links": [
             {
@@ -395,7 +395,7 @@
           "title": "Teleport Components",
           "xid": "SGsd08ZTu4H76s8cfbCKe",
           "description": "Sometimes we may run into the following scenario: a part of a component's template belongs to it logically, but from a visual standpoint, it should be displayed somewhere else in the DOM, outside of the Vue application. This is where the `<Teleport>` component comes in.\n\n",
-          "id": "7767e5c9-ae46-452c-a2d8-63a6f10abfd7",
+          "id": "d5f2d6fd-e822-4041-9ff0-4404ae24e41a",
           "children": [],
           "links": [
             {
@@ -409,7 +409,7 @@
           "title": "Provide / Inject",
           "xid": "xwVbhOpQMPPB4G-lhro0B",
           "description": "Usually, when we need to pass data from the parent to a child component, we use props. However, imagine the case where we have a large component tree, and a deeply nested component needs something from a distant ancestor component. With only props, we would have to pass the same prop across the entire parent chain. We can solve props drilling with `provide` and `inject`.\n\n",
-          "id": "398b69a5-8a5b-455d-afa8-cf7fe2e92c05",
+          "id": "fd676b97-eaf1-46b2-9873-87a4e8985e5c",
           "children": [],
           "links": [
             {
@@ -423,7 +423,7 @@
           "title": "Custom Directives",
           "xid": "br1r8KIf5KInY5mk2xhA6",
           "description": "So far you may have covered two forms of code reuse in Vue: components and composables. Components are the main building blocks, while composables are focused on reusing stateful logic. Custom directives, on the other hand, are mainly intended for reusing logic that involves low-level DOM access on plain elements.\n\n",
-          "id": "6e84a7a4-90b6-4026-b0f9-2cf7302c3c09",
+          "id": "25bce39a-d8e8-4920-8f8b-f008f3d4609a",
           "children": [],
           "links": [
             {
@@ -447,7 +447,7 @@
           "title": "Plugins",
           "xid": "_Nc8ivQrdpKuf8MwaV-K7",
           "description": "Plugins are self-contained code that usually add app-level functionality to Vue.\n\n",
-          "id": "1cb5baba-9e4b-4870-b5c0-1516b8abc8cc",
+          "id": "767ecf04-7f2a-4160-a46e-d650a18ff644",
           "children": [],
           "links": [
             {
@@ -466,7 +466,7 @@
           "title": "Watchers",
           "xid": "kdlXhbw_a81xdZtyK-pVa",
           "description": "Computed properties allow us to declaratively compute derived values. However, there are cases where we need to perform \"side effects\" in reaction to state changes - for example, mutating the DOM, or changing another piece of state based on the result of an async operation. With Composition API, we can use the watch function to trigger a callback whenever a piece of reactive state changes.\n\n",
-          "id": "742d2bd8-62ef-495d-b49f-4852991a531b",
+          "id": "f42ed216-26d0-45c3-a7d8-6cb3d7b20c0d",
           "children": [],
           "links": [
             {
@@ -480,7 +480,7 @@
           "title": "Slots",
           "xid": "jkX66izOHVWqtyd6KZ0K6",
           "description": "In some cases, we may want to pass a template fragment to a child component, and let the child component render the fragment within its own template. The `<slot>` element is a slot outlet that indicates where the parent-provided slot content should be rendered.\n\n",
-          "id": "818dcc83-a33e-4f11-b7d6-63da8029c79f",
+          "id": "1c745d1b-f37c-400e-a050-3144c466534c",
           "children": [],
           "links": [
             {
@@ -494,7 +494,7 @@
           "title": "Transition",
           "xid": "SWpWg5J5N9ZfY_DaIigA5",
           "description": "Vue offers two built-in components that can help work with transitions and animations in response to changing state:\n\n*   `<Transition>` for applying animations when an element or component is entering and leaving the DOM. This is covered on this page.\n*   `<TransitionGroup>` for applying animations when an element or component is inserted into, removed from, or moved within a `v-for` list. This is covered in the next chapter.\n\n",
-          "id": "a14ffbd9-e216-4766-a886-d667ae97742e",
+          "id": "042bbf61-d039-454a-bc50-4a787df87996",
           "children": [],
           "links": [
             {
@@ -508,7 +508,7 @@
           "title": "Transition Group",
           "xid": "HjzOYjS-7ZEBvElRJ8uN2",
           "description": "`<TransitionGroup>` is a built-in component designed for animating the insertion, removal, and order change of elements or components that are rendered in a list.\n\n",
-          "id": "f306ee05-b04c-40d3-b488-4420b838fa1a",
+          "id": "29be0aae-4038-4822-b82a-6d8e85bc5cfc",
           "children": [],
           "links": [
             {
@@ -525,13 +525,13 @@
       "title": "ecosystem",
       "xid": "",
       "description": "ecosystem",
-      "id": "f08df9c1-1044-47c5-b4a9-6b930ea79e2d",
+      "id": "db049161-61e0-4d6c-9e36-d26308cb06a3",
       "children": [
         {
           "title": "VueUse",
           "xid": "Z9szBPFXfqK_KsvzkR-rf",
           "description": "VueUse is a collection of utility functions based on Composition API. It has over 200+ functions, is tree-shakable, has first-class TypeScript support, and has a small bundle size. VueUse is a great choice for adding common utilities to your Vue 3 projects.\n\n",
-          "id": "def3b7ce-7b05-4b2e-842c-4754b826b630",
+          "id": "eec5c82c-84fe-4174-ae42-aabfd63cfc18",
           "children": [],
           "links": [
             {
@@ -545,13 +545,13 @@
           "title": "Routing",
           "xid": "ixRG0xfEp4BmyvCR0mtoR",
           "description": "Routing is an essential concept in Single Page Applications (SPA). When your application is divided into separated logical sections, and all of them are under their own URL, your users can easily share links among each other.\n\n",
-          "id": "ed8cbf3d-fdae-4bd5-aa61-bf174e9f63c3",
+          "id": "2a788c5d-d241-4f0d-8e3b-964cf0d39a94",
           "children": [
             {
               "title": "Vue Router",
               "xid": "COxkmvqe9jFtV9WtGjfbh",
               "description": "Vue Router is the official router for Vue.js which allows creating static/dynamic routes, has support for navigation interception, allows for component based configuration and much more.\n\n",
-              "id": "fcc4551e-571f-42b4-93c2-0e8916f162f9",
+              "id": "43cde3af-bf2e-44b4-a284-dae072889263",
               "children": [],
               "links": [
                 {
@@ -589,13 +589,13 @@
           "title": "Forms",
           "xid": "izGdctxP_OvQNvaMwVIrh",
           "description": "Apart from the built-in form-binding support, there are several options available that allow for handling forms and data in much convenient manner.\n\n",
-          "id": "6f3584e4-1c26-4456-9500-96138c697e65",
+          "id": "840d2787-5981-4922-8e53-211a6ab9bf0e",
           "children": [
             {
               "title": "FormKit",
               "xid": "BXz1utB_2eYzFvzSbFKx0",
               "description": "FormKit helps build forms faster by simplifying form structure, generation, validation, theming, submission, error handling, and more.\n\n",
-              "id": "905c85cd-53e0-4296-a629-6c402d898ac3",
+              "id": "76e28403-e4f4-49cb-9211-e4097aacfbca",
               "children": [],
               "links": [
                 {
@@ -609,7 +609,7 @@
               "title": "Vee Validate",
               "xid": "_Fmp8_z4SKWfKUE80_fqb",
               "description": "OpenSource plugin to handle form validations in Vue.js\n\n",
-              "id": "6e373a82-2bf8-46ec-8f52-b89e4170ec9b",
+              "id": "82d8203d-482d-45fc-b21a-4a613e097303",
               "children": [],
               "links": [
                 {
@@ -628,7 +628,7 @@
               "title": "Vuelidate",
               "xid": "6U_CAhAY_jyj_4Mzj_HL_",
               "description": "Simple, lightweight model-based validation for Vue.js.\n\n",
-              "id": "e50b4287-35c5-4965-87fc-0703e4c179a3",
+              "id": "820f937f-ee1b-4ffa-8670-f266114884f0",
               "children": [],
               "links": [
                 {
@@ -661,13 +661,13 @@
           "title": "SSR",
           "xid": "Cm6mqXYp-G4mGfPxuU73_",
           "description": "Server-side rendering refers to the process that the service side completes the HTML structure splicing of the page, sends it to the browser, and then binds the status and events for it to become a fully interactive page.\n\n",
-          "id": "cd8365ff-60e4-4f3f-9168-ccd47fb4552b",
+          "id": "9450068e-4796-4b15-8a32-34c187b532b6",
           "children": [
             {
               "title": "Quasar",
               "xid": "f2udJnT2q5eDmBZ_OKtmi",
               "description": "Quasar Framework is an open-source Vue.js based framework for building apps, with a single codebase, and deploy it on the Web as a SPA, PWA, SSR, to a Mobile App, using Cordova for iOS & Android, and to a Desktop App, using Electron for Mac, Windows, and Linux.\n\n",
-              "id": "13f0167c-f94e-4140-8fb7-63f9c1bf1a1b",
+              "id": "c566f9af-a67d-4c41-97fa-9c8f5d6a4b43",
               "children": [],
               "links": [
                 {
@@ -691,7 +691,7 @@
               "title": "Nuxt.js",
               "xid": "8xZxTLYq5m5_nkGh2lfUt",
               "description": "Nuxt.js is a free and open source JavaScript library based on Vue.js, Node.js, Webpack and Babel.js. Nuxt is inspired by Next.js, which is a framework of similar purpose, based on React.js.\n\n",
-              "id": "a6ec1373-44a0-4ae5-92e9-e9f2fbd66ac4",
+              "id": "602c8544-7064-4e3f-8a53-48414f5756a3",
               "children": [],
               "links": [
                 {
@@ -759,13 +759,13 @@
           "title": "SSG",
           "xid": "822tGnM9jOkYh9aNlosPr",
           "description": "A static site generator is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, a static site generator automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time. Because these HTML pages are pre-built, they can load very quickly in users' browsers.\n\n",
-          "id": "7178c4f3-06e4-4f1c-bf4e-e845dbefa3f1",
+          "id": "d043fb50-7d1c-43ba-9ec1-d3f364681081",
           "children": [
             {
               "title": "VitePress",
               "xid": "_46COO0FGaFuCYwqaRRWy",
               "description": "Vitepress is a static site generator that is built on top of Vite. It is a lightweight and fast static site generator that is designed to work with Vue 3. Vitepress is a great choice for building documentation sites, blogs, and other static sites.\n\n",
-              "id": "f407f2c0-32cc-44fb-bac3-b921c3d227be",
+              "id": "683571bd-db02-4c1f-9471-5749506d3070",
               "children": [],
               "links": [
                 {
@@ -808,7 +808,7 @@
           "title": "Vitest",
           "xid": "LjEAviRMtPLwUUlfcof1h",
           "description": "Vitest is a fast Vite-native unit test framework with out-of-box ESM and TypeScript support. It Works on React, Vue, Svelte and more projects created with Vite.\n\n",
-          "id": "52ff8cf2-f224-4ded-8231-bc522b807d43",
+          "id": "e94611a3-63a0-441e-b078-24f7ad6844b8",
           "children": [],
           "links": [
             {
@@ -827,7 +827,7 @@
           "title": "Vue Testing Library",
           "xid": "p5bUvgr_3H-A55ZnEExk8",
           "description": "The Vue Testing Library is a very lightweight solution for testing Vue components. Its primary guiding principle is: The more your tests resemble the way your software is used, the more confidence they can give you.\n\n",
-          "id": "f4b6552f-5e5e-4cfd-b3c3-494acfff89f2",
+          "id": "faf655e1-fa30-4191-a69b-34585df0cdb1",
           "children": [],
           "links": [
             {
@@ -846,7 +846,7 @@
           "title": "Cypress",
           "xid": "JbMKUVDMUygjXXmhndHVs",
           "description": "Cypress framework is a JavaScript-based end-to-end testing framework built on top of Mocha \u2013 a feature-rich JavaScript test framework running on and in the browser, making asynchronous testing simple and convenient. It also uses a BDD/TDD assertion library and a browser to pair with any JavaScript testing framework.\n\n",
-          "id": "651a8b90-ed8f-44d2-b360-77db73d42a5b",
+          "id": "4fca3ee1-9387-4e89-a3f2-abe757d374c7",
           "children": [],
           "links": [
             {
@@ -875,7 +875,7 @@
           "title": "Playwright",
           "xid": "zqcE3bTnymdepV-Yc8qBl",
           "description": "Playwright Test was created specifically to accommodate the needs of end-to-end testing. Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox. Test on Windows, Linux, and macOS, locally or on CI, headless or headed with native mobile emulation of Google Chrome for Android and Mobile Safari.Playwright leverages the DevTools protocol to write powerful, stable automated tests.Playwright can actually see into and control the browser rather than relying on a middle translation layer, it allows for the simulation of more insightful and relevant user scenarios.\n\n",
-          "id": "2896b2dd-491a-4dbe-b11a-f1e5c477b5f8",
+          "id": "f5d69c39-7842-4d57-972a-ad85e4bc2fed",
           "children": [],
           "links": [
             {
@@ -894,7 +894,7 @@
           "title": "Tailwind CSS",
           "xid": "TkzlmJ85O-e-KfMhTBwry",
           "description": "CSS Framework that provides atomic CSS classes to help you style components e.g. `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup.\n\n",
-          "id": "4b4a78da-d021-4223-ae1b-0a4608ddee60",
+          "id": "14beed86-78b1-49fc-aab4-45461ebcde2d",
           "children": [],
           "links": [
             {
@@ -933,7 +933,7 @@
           "title": "Vuetify",
           "xid": "VNclt_QQthWb2u4xWI_uY",
           "description": "Vuetify is a Vue UI Library with beautifully handcrafted Material Components. No design skills required \u2014 everything you need to create amazing applications is at your fingertips.\n\n",
-          "id": "cf40ff21-a4eb-432e-a357-282da462b250",
+          "id": "34ff1354-78a0-42d4-a6d9-7b02f620986a",
           "children": [],
           "links": [
             {
@@ -962,7 +962,7 @@
           "title": "Element UI",
           "xid": "NMIh8rqLM5P-Uk65uHATn",
           "description": "Element UI is another Vue.js component library with several built-in components to style your Vue.js applications.\n\n",
-          "id": "a00e9cbe-3a47-43e3-8dea-d3d4d0c1aaa4",
+          "id": "29c96023-4ac1-4d51-a645-2e862776dae4",
           "children": [],
           "links": [
             {
@@ -981,13 +981,13 @@
           "title": "State Management",
           "xid": "9AwVtwIv6TfP9F4ulz2F0",
           "description": "Application state management is the process of maintaining knowledge of an application's inputs across multiple related data flows that form a complete business transaction -- or a session -- to understand the condition of the app at any given moment. In computer science, an input is information put into the program by the user and state refers to the condition of an application according to its stored inputs -- saved as variables or constants. State can also be described as the collection of preserved information that forms a complete session.\n\n",
-          "id": "c55486cf-7a23-41b8-9b01-f997cbf4a646",
+          "id": "54d36360-ee91-4484-af36-309232f7e256",
           "children": [
             {
               "title": "Pinia",
               "xid": "NIvjyhtTFC1gomtGQT_2t",
               "description": "Pinia is a store library for Vue.js, and can be used in Vue 2 and Vue 3, with the same API, except in SSR and its installation. It allows state sharing between pages and components around the application. As the documentation says, it is extensible, intuitive (by organization), has devtools support (in Vue.js devtools), inferred typed state even in javascript and more. In Pinia you can access, mutate, replace, use getters that works like computed, use actions, etc. The library is recommended by the official Vue.js documentation.\n\n",
-              "id": "6a4a40cc-ac97-43d2-8bfd-4602143a0ed6",
+              "id": "8dbe30f7-c7f3-4828-9505-2906e600b2e8",
               "children": [],
               "links": [
                 {
@@ -1020,13 +1020,13 @@
           "title": "Mobile Apps",
           "xid": "3RwIO-S8-xOYKNmfwk0pf",
           "description": "Building a mobile application with Vue.js is not impossible. In fact, you can build production-ready apps that look and feel like native mobile apps with Vue.js.\n\n",
-          "id": "453c17bf-5256-4851-b6f8-72824f42e3e0",
+          "id": "9c52b533-581a-45bb-859a-d59f8d6548e9",
           "children": [
             {
               "title": "Capacitor",
               "xid": "IsNzCdS05tbAK0D1zz0Sf",
               "description": "Since Vue.js is a web framework, it does not natively support mobile app development. So how do we get access to native mobile features such as the camera and geolocation? Ionic has an official native runtime called Capacitor. With Capacitor\u2019s plugin, you can access the native API of the device your app is running on and build truly native mobile application with Ionic Vue.\n\n",
-              "id": "236f31e1-679d-40cf-a324-c459921d927e",
+              "id": "82d2540e-7fbf-4796-9c5f-f4c7dc32fa31",
               "children": [],
               "links": [
                 {
@@ -1064,13 +1064,13 @@
           "title": "API Calls",
           "xid": "ZLlz0Azfze-8k3z8HnVvE",
           "description": "There are several options available to make API calls from your Vue.js applications.\n\n",
-          "id": "02565a1f-73a4-4d04-9f1f-c75c3effad88",
+          "id": "23563e3d-7444-4d52-a41a-d408f150f97e",
           "children": [
             {
               "title": "Apollo",
               "xid": "l2Rl6OQbL7kYvPlpYCZ0Z",
               "description": "Apollo is a platform for building a unified graph, a communication layer that helps you manage the flow of data between your application clients (such as web and native apps) and your back-end services.\n\n",
-              "id": "0cbbeead-4eb2-4fef-a6f8-cdef0cdd1ee2",
+              "id": "f8e85f5d-ba05-4e48-8582-6e8c13116092",
               "children": [],
               "links": [
                 {
@@ -1104,7 +1104,7 @@
               "title": "Axios",
               "xid": "n5IlN-wv4k0r16CvhoSpD",
               "description": "Axios is a client HTTP API based on the XMLHttpRequest interface provided by browsers. The most common way for frontend programs to communicate with servers is through the HTTP protocol. You are probably familiar with the Fetch API and the XMLHttpRequest interface, which allows you to fetch resources and make HTTP requests.\n\n",
-              "id": "3d38eb49-8657-44ef-83d2-06f33eb1cf4a",
+              "id": "59f51446-4f23-4523-8c36-ad60b3819adc",
               "children": [],
               "links": [
                 {
@@ -1128,7 +1128,7 @@
               "title": "fetch",
               "xid": "ufnt87swK61kxShLuVc1-",
               "description": "The `fetch()` method in JavaScript is used to request to the server and load the information on the webpages. The request can be of any APIs that return the data of the format JSON or XML. This method returns a promise.\n\n",
-              "id": "c51359ad-7afb-49ee-8b75-c4f485f18f24",
+              "id": "6b9ac2ca-ebe4-42e2-8992-cfb8b0cd5044",
               "children": [],
               "links": [
                 {
@@ -1152,7 +1152,7 @@
               "title": "Tanstack Query",
               "xid": "WSq_cDKQPZa_qmQlIdGXg",
               "description": "TanStack Query is a data fetching and caching library for Vue.js and React. It is a part of the TanStack ecosystem.\n\n",
-              "id": "39b8ff37-2442-495f-95db-04601094ae7e",
+              "id": "2adae180-cedd-4bf4-97c4-368458492662",
               "children": [],
               "links": [
                 {
@@ -1179,5 +1179,6 @@
       ],
       "links": []
     }
-  ]
+  ],
+  "links": []
 }

@@ -302,11 +302,14 @@ class MindmapFromFiles:
         ]
 
         try_count = 0
-        while try_count < 3:
+        max_try_count = 1000
+        while try_count < max_try_count:
             try_count += 1
             try:
-                response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
-                # response = get_response_from_llm(messages, "deepseek-chat", 8192, platform='deepseek')
+                response = get_response_from_llm(messages, "qwen-2.5-32b", 4096, platform='siliconflow')
+                # response = get_response_from_llm(messages, "qwen-qwq-32b", 32768)
+                # response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
+                # response = get_response_from_llm(messages, "deepseek-chat", 8192, platform='deepseek') # this is too slow and shit
                 json_blocks = get_json_blocks_from_llm_response(response)
                 new_mindmap = json.loads(json_blocks[0])
                 print(new_mindmap)
@@ -314,7 +317,7 @@ class MindmapFromFiles:
             except Exception as e:
                 print(f"error: {e}")
 
-        if try_count >= 3:
+        if try_count >= max_try_count:
             print('!!!!!!!! Failed to translate !!!!!!!!!! for json:')
             print(mindmap_to_translate_json)
 
@@ -338,10 +341,39 @@ if __name__ == "__main__":
 
     all_mindmap_loader = AllMindmapLoader()
     base_dir = "/Users/liuqian/mycode/github/sf/archive/developer-roadmap/src/data/roadmaps"
-    result_dir = "/Users/liuqian/mycode/github/sf/be/chat_server/zchat/mindmap/mindmaps"
+    result_dir = "/Users/liuqian/mycode/github/sf/be/chat_server/zchat/roadmap/mindmaps"
     # for directory in os.listdir(base_dir):
     for directory in [
-      # "backend",
+    #   "nodejs",
+    #   "devops",
+    #   "server-side-game-developer",
+    #   "frontend",
+    #   "computer-science",
+
+    #   "python",
+    #   "software-architect",
+    #   "data-analyst",
+
+    #   "typescript",
+    #   "mlops",
+    #   "vue",
+
+    #   "postgresql-dba",
+    #   "angular",
+
+    #   "qa",
+    #   "cyber-security",
+    #   "blockchain",
+    #   "full-stack",
+    #   "android",
+    #   "system-design",
+    #   "javascript",
+    #   "technical-writer",
+    #   "game-developer",
+
+    #   "react",
+    #   "ux-design",
+    #   "sql",
       ]:
         if os.path.isdir(os.path.join(base_dir, directory)):
             if os.path.exists(os.path.join(base_dir, directory, "migration-mapping.json")):
@@ -357,7 +389,7 @@ if __name__ == "__main__":
 
                 # 生成翻译后的mindmap
                 mindmap_cn = mindmap_from_files.translate_mindmap(mindmap_en)
-                json_str_result = json.dumps(mindmap_cn, indent=2, ensure_ascii=False).replace("。", "。\n\n").replace("\n\n\n\n", "\n\n")
+                json_str_result = json.dumps(mindmap_cn, indent=2, ensure_ascii=False).replace("。", "。\\n\\n").replace("\\n\\n\\n\\n", "\\n\\n")
                 with open(os.path.join(result_dir, f"{directory}_cn.json"), "w") as f:
                     print(f"writing {directory}_cn.json")
                     f.write(json_str_result)

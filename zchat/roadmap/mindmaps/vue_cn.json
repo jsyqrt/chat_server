@@ -1,0 +1,1183 @@
+{
+  "title": "Vue 开发者",
+  "description": "关于 Vue 及其生态系统的全部学习内容（2025版）。\n\n",
+  "links": [],
+  "children": [
+    {
+      "title": "基础主题",
+      "description": "基础主题",
+      "links": [],
+      "children": [
+        {
+          "title": "创建Vue项目",
+          "description": "create-vue是一个CLI工具，它帮助你通过单个命令创建一个新的Vue项目。\n\n它是一个简单易用的工具，在设置新的Vue项目时可以节省你的时间和精力。\n\n通过以下资源了解更多信息：",
+          "links": [
+            {
+              "title": "vuejs/create-vue",
+              "url": "https://github.com/vuejs/create-vue",
+              "type": "opensource"
+            },
+            {
+              "title": "创建Vue项目",
+              "url": "https://cli.vuejs.org/guide/creating-a-project.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Vue.js的热门文章",
+              "url": "https://app.daily.dev/tags/vuejs?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a607ac57-2fff-4892-9832-de4b192bb53c",
+          "xid": "39ac40de-cc59-4406-a42e-40c4fb66e112"
+        },
+        {
+          "title": "组件",
+          "description": "组件使我们能够将用户界面拆分成独立且可重用的部分，并能够孤立地思考每个部分。\n\n",
+          "links": [
+            {
+              "title": "组件基础",
+              "url": "https://vuejs.org/guide/essentials/component-basics.html",
+              "type": "article"
+            },
+            {
+              "title": "组件深入",
+              "url": "https://vuejs.org/guide/components/registration.html",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "单文件组件 (Single File Components)",
+              "description": "Vue的单文件组件（也称为`*.vue`文件，简写为SFC）是一种特殊文件格式，允许我们将Vue组件的模板、逻辑和样式封装在单个文件中。\n\n",
+              "links": [
+                {
+                  "title": "单文件组件 (Single File Components)",
+                  "url": "https://vuejs.org/guide/scaling-up/sfc.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1d29a50a-a92c-4a0f-a2e5-8e73180c9b63",
+              "xid": "1cc15b18-7246-411b-a6fe-d53aa73300b9"
+            },
+            {
+              "title": "组件注册",
+              "description": "Vue组件需要进行\"注册\"，这样才能在模板中遇到时知道在哪里查找其实现。\n\n注册组件有两种方式：全局注册和局部注册。\n\n",
+              "links": [
+                {
+                  "title": "组件注册",
+                  "url": "https://vuejs.org/guide/components/registration.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d34f08d6-5901-42a6-8bef-ee1bcdbb7d57",
+              "xid": "eb5055a8-1356-4e5f-bd4a-bb27b8fc53a2"
+            },
+            {
+              "title": "属性 Props",
+              "description": "如果我们正在构建一个博客，我们可能会需要一个代表博客文章的组件。\n\n我们希望所有博客文章都共享相同的视觉布局，但内容不同。\n\n这样的组件如果不能传递数据（例如我们想要展示的文章标题和内容）将没有用处。\n\n这里就是属性 Props 的用武之地了。\n\nProps 是你可以在组件上注册的自定义属性。\n\n\n",
+              "links": [
+                {
+                  "title": "Props 基础",
+                  "url": "https://vuejs.org/guide/essentials/component-basics.html#passing-props",
+                  "type": "article"
+                },
+                {
+                  "title": "深入理解 Props",
+                  "url": "https://vuejs.org/guide/components/props.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c13595d6-9a3f-4777-bc0a-686de3e4f63d",
+              "xid": "ebe81bc1-96c0-4f05-8405-a87979d97004"
+            },
+            {
+              "title": "事件",
+              "description": "随着我们开发应用程序，可能需要与父组件进行通信以通知某些操作，例如当用户点击按钮时。\n\n为了实现这一点，我们需要使用事件(event)。\n\n",
+              "links": [
+                {
+                  "title": "监听事件",
+                  "url": "https://vuejs.org/guide/essentials/component-basics.html#listening-to-events",
+                  "type": "article"
+                },
+                {
+                  "title": "事件详解",
+                  "url": "https://vuejs.org/guide/components/events.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4cd40781-ed27-4bc8-a436-d08924c27792",
+              "xid": "b7a3f297-e0bd-4190-932a-9fa2cc5c985a"
+            },
+            {
+              "title": "v-model",
+              "description": "v-model 是一个指令，允许你在表单输入、文本区域和选择元素上创建双向数据绑定。\n\n它会根据输入类型自动选择正确的方式来更新元素。\n\n",
+              "links": [
+                {
+                  "title": "Vue.js 指南",
+                  "url": "https://vuejs.org/guide/components/v-model.html#component-v-model",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4d1d99bb-ebc1-456d-96d6-648031bdb405",
+              "xid": "1f08ad63-edec-4fe9-a70d-941542510519"
+            },
+            {
+              "title": "属性继承",
+              "description": "属性继承，又称\"穿透属性\"(fallthrough attributes)，是Vue.js的一项功能，允许您从父组件继承属性。\n\n",
+              "links": [
+                {
+                  "title": "穿透属性",
+                  "url": "https://vuejs.org/guide/components/attrs.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "58ea7079-8b53-45ac-b1a6-71d525d70a0a",
+              "xid": "c9e70da4-eb89-437f-b551-74c2d59b236d"
+            }
+          ],
+          "id": "dbc3e689-e7ac-4dae-aa78-aaa5d1e9b285",
+          "xid": "eeaf5f96-852e-43c0-abf5-359e3dfa6a6b"
+        },
+        {
+          "title": "模板",
+          "description": "Vue 使用基于 HTML 的模板语法，允许你声明式地将渲染的 DOM 绑定到底层组件实例的数据 (data)。\n\n所有 Vue 模板都是语法上正确的 HTML，可以被符合规范的浏览器和 HTML 解析器识别和解析。\n\n",
+          "links": [
+            {
+              "title": "模板语法",
+              "url": "https://vuejs.org/guide/essentials/template-syntax.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c17a059e-4cfe-4494-abef-b817849aa592",
+          "xid": "fb0876b0-ff02-4d89-9cb6-04696c1f029f"
+        },
+        {
+          "title": "指令",
+          "description": "指令是带有 `v-` 前缀的特殊属性。\n\nVue 提供了许多内置指令。\n\n",
+          "links": [
+            {
+              "title": "指令文档",
+              "url": "https://vuejs.org/guide/essentials/template-syntax.html#directives",
+              "type": "article"
+            },
+            {
+              "title": "内置指令",
+              "url": "https://vuejs.org/api/built-in-directives.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "8382f48d-8e2f-4cf7-a6ac-1f4d37c813f0",
+          "xid": "73ada6d7-e7dd-4e3f-92e8-d9c29a342d35"
+        },
+        {
+          "title": "API 风格",
+          "description": "在 Vue 2 中，创建组件只有一种方法。\n\n到了 Vue 3，引入了一种新的方法，称为组合式 API (Composition API)。\n\n现在，如果我们想要在 Vue 中创建一个组件，有两种方法可以实现。\n\n你可能会想知道它们之间的具体差异是什么，那么让我们来看看较新的组合式 API (Composition API) 与现行的被称为选项式 API (Options API) 的 Vue 2 方法有何不同。\n\n",
+          "links": [
+            {
+              "title": "Vue 中的组合式 API 和选项式 API 的差异",
+              "url": "https://fjolt.com/article/vue-composition-api-vs-options-api",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "选项API (Options API)",
+              "description": "我们在Vue应用中使用选项API (Options API)来编写和定义不同的组件。\n\n利用此API，我们可以使用data、methods和mounted等选项。\n\n简单来说，选项API (Options API)是结构Vue.JS应用的传统方式。\n\n由于该API存在一些限制，因此在Vue 3中引入了组合API (Composition API)。\n\n",
+              "links": [
+                {
+                  "title": "TypeScript与选项API (Options API)",
+                  "url": "https://vuejs.org/guide/typescript/options-api.html",
+                  "type": "article"
+                },
+                {
+                  "title": "选项API (Options API)文档",
+                  "url": "https://vuejs.org/api/#options-api",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "b9c045e7-6469-42ec-832d-ffbb479b2625",
+              "xid": "bec7fefa-67f6-4229-a14b-5b9e50edb8c5"
+            },
+            {
+              "title": "组合API (Composition API)",
+              "description": "随着Vue 3的发布，开发者现在可以使用组合API (Composition API)，这是一种编写Vue组件的新方式。\n\n这种API允许将功能逻辑分组，而不需要按功能来组织单文件组件。\n\n使用组合API可以使代码更易读，并在开发应用时给予开发者更多的灵活性。\n\n",
+              "links": [
+                {
+                  "title": "TypeScript与组合API (Composition API)",
+                  "url": "https://vuejs.org/guide/typescript/composition-api.html",
+                  "type": "article"
+                },
+                {
+                  "title": "组合API (Composition API) 常见问题",
+                  "url": "https://vuejs.org/guide/extras/composition-api-faq.html",
+                  "type": "article"
+                },
+                {
+                  "title": "组合API (Composition API)",
+                  "url": "https://vuejs.org/api/#composition-api",
+                  "type": "article"
+                },
+                {
+                  "title": "Vue 3组合API (Composition API)",
+                  "url": "https://www.thisdot.co/blog/vue-3-composition-api-ref-and-reactive",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于Vue.js的顶级文章",
+                  "url": "https://app.daily.dev/tags/vuejs?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d4d49156-a76c-4485-98dd-aa0185d8889e",
+              "xid": "60be8e76-98d7-41a4-babd-dc8fbb160026"
+            }
+          ],
+          "id": "b50d9526-7acc-4419-bb98-135d4844b6a0",
+          "xid": "2461bc38-2184-41a0-88bf-b37a17a50e41"
+        },
+        {
+          "title": "应用配置 (App Configurations)",
+          "description": "每个应用实例都会暴露一个 `config` 对象，其中包含该应用的配置设置。\n\n你可以在挂载应用之前修改这些属性。\n\n",
+          "links": [
+            {
+              "title": "Vue.js 文档 (Vue.js Documentation)",
+              "url": "https://vuejs.org/api/application.html#app-config",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "67113e36-6e61-45ce-b1b4-1aa75e5449cd",
+          "xid": "5bfb754b-bf41-427c-a077-2c1fdb8e1718"
+        },
+        {
+          "title": "列表渲染",
+          "description": "我们可以使用 `v-for` (v-for) 指令基于数组来渲染项目列表。\n\n`v-for` 指令需要采用 `item in items` 形式的特殊语法，其中 `items` 是源数据数组，`item` 是正在迭代的数组元素的别名。\n\n",
+          "links": [
+            {
+              "title": "Vue.js 中的列表渲染",
+              "url": "https://vuejs.org/guide/essentials/list.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "08061324-b040-40cc-9a76-ae3f95c0bd3a",
+          "xid": "ab8d6a00-3cb4-4474-8603-6202a40c20ae"
+        },
+        {
+          "title": "条件渲染",
+          "description": "指令 `v-if` 用于条件性地渲染一个区块。\n\n仅当指令的表达式返回一个真值时，该区块才会被渲染。\n\n",
+          "links": [
+            {
+              "title": "条件渲染",
+              "url": "https://vuejs.org/guide/essentials/conditional.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "12eeecfc-8f73-4771-90eb-ce71338ba5b5",
+          "xid": "87064ced-7003-4a77-8c46-f0b9d9c2e541"
+        },
+        {
+          "title": "生命周期钩子(Lifecycle Hooks)",
+          "description": "每个Vue组件实例在创建时会经历一系列初始化步骤——例如，它需要设置数据观察、编译模板、将实例挂载到DOM中，并在数据变化时更新DOM。\n\n在此过程中，它还会运行被称作生命周期钩子(lifecycle hooks)的函数，给用户在特定阶段添加自己的代码的机会。\n\n",
+          "links": [
+            {
+              "title": "生命周期钩子(Lifecycle Hooks)",
+              "url": "https://vuejs.org/guide/essentials/lifecycle.html",
+              "type": "article"
+            },
+            {
+              "title": "Vue.js的生命周期(Vue.js Lifecycles)",
+              "url": "https://dev.to/amolikvivian/the-lifecycles-of-vue-js-lhh",
+              "type": "article"
+            },
+            {
+              "title": "探讨关于React Hooks的热门文章",
+              "url": "https://app.daily.dev/tags/react-hooks?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4897db9c-e6e3-4110-8b0c-e2a5852aa794",
+          "xid": "ab33c8a3-d9b1-4b23-8ea0-44e4c7a82c6b"
+        },
+        {
+          "title": "表单处理",
+          "description": "您可以使用 `v-model`（v-model）指令在表单输入元素上创建双向数据绑定。\n\n它会根据输入类型自动选择正确的方式来更新元素。\n\n",
+          "links": [
+            {
+              "title": "表单输入绑定",
+              "url": "https://vuejs.org/guide/essentials/forms.html",
+              "type": "article"
+            },
+            {
+              "title": "Vue.js 中表单的完整指南",
+              "url": "https://blog.logrocket.com/an-imperative-guide-to-forms-in-vue-js-2/",
+              "type": "article"
+            },
+            {
+              "title": "Vue JS 3 教程 - 表单处理",
+              "url": "https://www.youtube.com/watch?v=T-AE-GtSlN4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "437574f3-d40f-4f25-83d7-001d0e430a6f",
+          "xid": "eea188af-a379-4bf6-8542-3bade343914f"
+        },
+        {
+          "title": "事件处理",
+          "description": "当你使用 Vue 构建一个动态网站时，你可能希望它能够响应事件。\n\n例如，用户点击按钮、提交表单，甚至仅移动鼠标时，你可能希望你的 Vue 网站以某种方式作出响应。\n\n",
+          "links": [
+            {
+              "title": "Vue.js 中的事件处理",
+              "url": "https://vuejs.org/guide/essentials/event-handling.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "19696c99-82b3-4dd2-8278-958a45bc5db4",
+          "xid": "acfe8b72-c746-4c98-8dd0-9fe1df3bc7a4"
+        },
+        {
+          "title": "计算属性(Computed Properties)",
+          "description": "模板中的表达式非常方便，但它们主要用于简单的操作。\n\n如果在模板中放入太多逻辑，会导致它们变得臃肿且难以维护。\n\n计算属性(Computed Properties)使我们能够简化包含响应式数据的复杂逻辑。\n\n",
+          "links": [
+            {
+              "title": "计算属性(Computed Properties)",
+              "url": "https://vuejs.org/guide/essentials/computed.html#computed-properties",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "adb9e344-28be-4138-9f12-7fdd30cdc4dc",
+          "xid": "f09d5150-024b-4050-8e35-d3fdd1ecb83d"
+        }
+      ],
+      "id": "701a81f6-25c4-45e2-9e18-adc7d173d072",
+      "xid": "73c2f14b-926f-4864-bdbb-cea953d40a1f"
+    },
+    {
+      "title": "高级主题",
+      "description": "高级主题",
+      "links": [],
+      "children": [
+        {
+          "title": "异步组件 (Async Components)",
+          "description": "在大型应用中，我们可能需要将应用划分为更小的块，并且只在需要时从服务器加载组件。\n\n为了实现这一点，Vue 提供了 `defineAsyncComponent` 函数。\n\n",
+          "links": [
+            {
+              "title": "异步组件 (Async Components)",
+              "url": "https://vuejs.org/guide/components/async.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6d57ba0e-b97e-4b8d-babb-44e136e53247",
+          "xid": "94d1aeb5-0cd8-410e-af1f-c392131c4676"
+        },
+        {
+          "title": "Teleport组件",
+          "description": "有时候，我们可能会遇到以下情况：组件模板的一部分在逻辑上属于该组件，但从视觉上看，它应该在DOM的其他地方显示，甚至在Vue应用外部。\n\n这时，<Teleport>组件就发挥作用了。\n\n",
+          "links": [
+            {
+              "title": "Teleport组件",
+              "url": "https://vuejs.org/guide/built-ins/teleport.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6681be16-46ff-45e8-8ae4-157744ac35d5",
+          "xid": "d5f2d6fd-e822-4041-9ff0-4404ae24e41a"
+        },
+        {
+          "title": "provide / inject",
+          "description": "通常，当我们需要从父组件向子组件传递数据时，我们会使用props。\n\n然而，想象一下拥有一个大型组件树的情况，其中深层嵌套的组件需要来自远祖组件的信息。\n\n如果只使用props，我们就必须在整个父组件链中传递相同的prop。\n\n我们可以使用`provide` 和 `inject` 来解决props传递的问题。\n\n",
+          "links": [
+            {
+              "title": "Vue.js中的Provide / Inject",
+              "url": "https://vuejs.org/guide/components/provide-inject.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "08dc6d8f-9c51-4c1b-b016-9873fc5b30a9",
+          "xid": "fd676b97-eaf1-46b2-9873-87a4e8985e5c"
+        },
+        {
+          "title": "自定义指令 (Custom Directives)",
+          "description": "到目前为止，你可能已经了解了 Vue 中的两种代码复用形式：组件 (components) 和组合式函数 (composables)。\n\n组件是主要的构建模块，而组合式函数则专注于复用有状态 (stateful) 逻辑。\n\n而自定义指令 (Custom Directives) 主要用于在普通元素上复用涉及低级 DOM 操作的逻辑。\n\n",
+          "links": [
+            {
+              "title": "自定义指令 (Custom Directives)",
+              "url": "https://vuejs.org/guide/reusability/custom-directives.html",
+              "type": "article"
+            },
+            {
+              "title": "组合式函数 (Composables)",
+              "url": "https://vuejs.org/guide/reusability/composables.html",
+              "type": "article"
+            },
+            {
+              "title": "组件 (Components)",
+              "url": "https://vuejs.org/guide/essentials/component-basics.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7bbdf0e3-5e69-4f4d-a776-83a18b332097",
+          "xid": "25bce39a-d8e8-4920-8f8b-f008f3d4609a"
+        },
+        {
+          "title": "插件(Plugins)",
+          "description": "插件(Plugins) 是一段自包含代码，通常用来为 Vue 增加应用程序级别的功能。\n\n",
+          "links": [
+            {
+              "title": "Vue.js 中的插件(Plugins)",
+              "url": "https://vuejs.org/guide/reusability/plugins.html",
+              "type": "article"
+            },
+            {
+              "title": "如何编写自己的 Vue.js 插件(Plugins)",
+              "url": "https://www.linode.com/docs/guides/how-to-write-vue-js-plugins/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2885d773-3f7c-49eb-9aeb-1186b1cb450b",
+          "xid": "767ecf04-7f2a-4160-a46e-d650a18ff644"
+        },
+        {
+          "title": "观察者",
+          "description": "计算属性（Computed Properties）允许我们声明式地计算派生值。\n\n然而，在某些情况下，我们需要在状态变化时进行“副作用”（side effects）操作，比如更新DOM或基于异步操作的结果来改变另一部分状态。\n\n借助组合式API（Composition API），我们可以使用watch函数在响应式状态变化时触发回调函数。\n\n",
+          "links": [
+            {
+              "title": "Vue.js 中的观察者",
+              "url": "https://vuejs.org/guide/essentials/watchers.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b732c0cb-8723-439b-9191-9898f0f7753e",
+          "xid": "f42ed216-26d0-45c3-a7d8-6cb3d7b20c0d"
+        },
+        {
+          "title": "插槽(Slots)",
+          "description": "在某些情况下，我们可能希望将一个模板片段传递给子组件，并让子组件在自己的模板内部渲染该片段。\n\n`<slot>` 元素是一个插槽出口，用于指示在哪里渲染父组件提供的插槽内容。\n\n",
+          "links": [
+            {
+              "title": "Vue.js 中的插槽(Slots)",
+              "url": "https://vuejs.org/guide/components/slots.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7f9c66c1-e86f-4e7e-b7db-e3f04fb597cb",
+          "xid": "1c745d1b-f37c-400e-a050-3144c466534c"
+        },
+        {
+          "title": "过渡",
+          "description": "Vue 提供了两个内置组件，可以在响应状态变化时帮助处理过渡和动画：\n\n*   `<Transition>` 用于在元素或组件进入或离开 DOM 时应用动画效果。\n\n这是本页的内容。\n\n\n*   `<TransitionGroup>` 用于在元素或组件被插入、从或移动在 `v-for` 列表中的时候应用动画。\n\n这在下一章中讲述。\n\n",
+          "links": [
+            {
+              "title": "Transition 组件",
+              "url": "https://vuejs.org/guide/built-ins/transition.html#transition",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "fe7eea6a-1e7b-42ef-8c1d-797bbe201678",
+          "xid": "042bbf61-d039-454a-bc50-4a787df87996"
+        },
+        {
+          "title": "过渡组",
+          "description": "`<TransitionGroup>` 是一个内置组件，旨在为以列表形式渲染的元素或组件的插入、移除和顺序变化提供动画效果。\n\n",
+          "links": [
+            {
+              "title": "TransitionGroup 组件",
+              "url": "https://vuejs.org/guide/built-ins/transition-group.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "183a4a30-08fd-4f8e-b651-7489deab8f55",
+          "xid": "29be0aae-4038-4822-b82a-6d8e85bc5cfc"
+        }
+      ],
+      "id": "73b99b55-17b0-4f84-b42a-d11b80a86257",
+      "xid": "0b0fcf83-9464-470c-823f-5f021d240a4a"
+    },
+    {
+      "title": "生态系统 (ecosystem)",
+      "description": "生态系统 (ecosystem)",
+      "links": [],
+      "children": [
+        {
+          "title": "VueUse",
+          "description": "VueUse 是一组基于组合式API（Composition API）的实用函数。\n\n它拥有超过200+个函数，支持模块树形摇树（tree-shakable），具有一流（first-class）的TypeScript支持，并且打包体积较小。\n\nVueUse 是为 Vue 3 项目添加常用工具的理想选择。\n\n",
+          "links": [
+            {
+              "title": "VueUse",
+              "url": "https://vueuse.org/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "41a20535-33a4-44a0-9606-575dfa0d3c1f",
+          "xid": "eec5c82c-84fe-4174-ae42-aabfd63cfc18"
+        },
+        {
+          "title": "路由",
+          "description": "路由是单页应用（Single Page Applications, SPA）中的一个基本概念。\n\n当你的应用被划分为独立的逻辑部分，每部分都拥有自己的URL时，用户可以方便地相互分享链接。\n\n",
+          "links": [
+            {
+              "title": "Vue.js中的路由",
+              "url": "https://vuejs.org/guide/scaling-up/routing.html",
+              "type": "article"
+            },
+            {
+              "title": "Vue Router",
+              "url": "https://router.vuejs.org/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Vue 路由器（Vue Router）",
+              "description": "Vue 路由器（Vue Router）是 Vue.js 的官方路由器，它支持创建静态/动态路由，提供了导航拦截支持，并允许基于组件的配置等更多功能。\n\n",
+              "links": [
+                {
+                  "title": "Vue 路由器（The Vue Router）",
+                  "url": "https://router.vuejs.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "浏览有关 Vue.js 的热门文章",
+                  "url": "https://app.daily.dev/tags/vuejs?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Vue 路由器（The Vue Router）",
+                  "url": "https://www.youtube.com/watch?v=juocv4AtrHo",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "601df5ed-8497-457b-aa26-1b7c69cb218d",
+              "xid": "43cde3af-bf2e-44b4-a284-dae072889263"
+            }
+          ],
+          "id": "2016f63c-2980-4a7e-84fa-d9f5ad0e360e",
+          "xid": "2a788c5d-d241-4f0d-8e3b-964cf0d39a94"
+        },
+        {
+          "title": "表单",
+          "description": "除了内置的表单绑定支持之外，还有一些选项允许以更便捷的方式处理表单和数据。\n\n",
+          "links": [
+            {
+              "title": "表单输入绑定",
+              "url": "https://vuejs.org/guide/essentials/forms.html",
+              "type": "article"
+            },
+            {
+              "title": "Vue 3 中的用户输入",
+              "url": "https://vueschool.io/lessons/user-inputs-vue-devtools-in-vue-3?friend=vuejs",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "FormKit",
+              "description": "FormKit (FormKit) 可帮助您更快地构建表单，通过简化表单结构、生成、验证、主题、提交、错误处理等功能。\n\n",
+              "links": [
+                {
+                  "title": "FormKit 文档 (Formkit Documentation)",
+                  "url": "https://formkit.com/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "dbf5ecd3-9ca3-4030-a6c3-860a02b42a95",
+              "xid": "76e28403-e4f4-49cb-9211-e4097aacfbca"
+            },
+            {
+              "title": "Vee Validate（表单验证插件）",
+              "description": "开源插件，用于处理Vue.js中的表单验证",
+              "links": [
+                {
+                  "title": "logarem/vee-validate",
+                  "url": "https://github.com/logaretm/vee-validate",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Vee官网: Vee Validate",
+                  "url": "https://vee-validate.logaretm.com/v4/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "817d4690-25fa-4965-a254-1f221aac88d6",
+              "xid": "82d8203d-482d-45fc-b21a-4a613e097303"
+            },
+            {
+              "title": "Vuelidate",
+              "description": "基于模型的简单轻量级验证库（model-based validation）适用于 Vue.js。\n\n",
+              "links": [
+                {
+                  "title": "vuelidate/vuelidate",
+                  "url": "https://github.com/vuelidate/vuelidate",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Vuelidate 官方网站",
+                  "url": "https://vuelidate.js.org/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "006c4f82-a758-4dbe-bce5-28e35b6de21c",
+              "xid": "820f937f-ee1b-4ffa-8670-f266114884f0"
+            }
+          ],
+          "id": "cb2ca2e4-140f-48c7-ac90-120013e77e7a",
+          "xid": "840d2787-5981-4922-8e53-211a6ab9bf0e"
+        },
+        {
+          "title": "服务器端渲染 (SSR)",
+          "description": "服务器端渲染是指服务端完成页面的HTML结构拼接，发送给浏览器，然后再绑定状态和事件，使页面成为完全可交互的。\n\n",
+          "links": [
+            {
+              "title": "什么是服务器端渲染 (SSR)?",
+              "url": "https://www.educative.io/answers/what-is-server-side-rendering",
+              "type": "article"
+            },
+            {
+              "title": "什么情况下我应该进行服务器端渲染?",
+              "url": "https://medium.com/@mbleigh/when-should-i-server-side-render-c2a383ff2d0f",
+              "type": "article"
+            },
+            {
+              "title": "服务器端渲染 (SSR)",
+              "url": "https://vuejs.org/guide/scaling-up/ssr.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Web开发的最佳文章",
+              "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Web开发中的服务器端渲染 (SSR) 是什么?",
+              "url": "https://www.youtube.com/watch?v=okvg3MRAPs0",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "夸萨尔 (Quasar)",
+              "description": "夸萨尔框架 (Quasar Framework) 是一个基于开源的 Vue.js 的框架，用于构建应用，使用单一代码库，可以将其部署为 Web 上的单页面应用 (SPA)，渐进式网络应用 (PWA)，服务器端渲染 (SSR) 的应用，以及通过使用 Cordova 部署在 iOS 和 Android 的移动应用，还可以通过 Electron 部署为在 Mac，Windows 和 Linux 上的桌面应用。\n\n",
+              "links": [
+                {
+                  "title": "夸萨尔 (Quasar)",
+                  "url": "https://quasar.dev/",
+                  "type": "article"
+                },
+                {
+                  "title": "夸萨尔框架：Vue.js 跨平台应用 (Quasar Framework: Vue.js Cross Platform App)",
+                  "url": "https://www.youtube.com/watch?v=opmng7llVJ0&list=PLAiDzIdBfy8iu_MZrq3IPuSFcRgCQ0iL0",
+                  "type": "video"
+                },
+                {
+                  "title": "如何使用夸萨尔框架 (Quasar Framework) 构建一个应用",
+                  "url": "https://www.youtube.com/watch?v=czJIuHyPPXo",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "5c6ad673-ec4a-4ac6-b1e0-7080db743b34",
+              "xid": "c566f9af-a67d-4c41-97fa-9c8f5d6a4b43"
+            },
+            {
+              "title": "Nuxt.js",
+              "description": "Nuxt.js 是一个基于 Vue.js、Node.js、Webpack 和 Babel.js 的免费且开源的 JavaScript 框架。\n\nNuxt 受 Next.js 的启发，后者是基于 React.js 的一个类似目的的框架。\n\n",
+              "links": [
+                {
+                  "title": "Nuxt 网站",
+                  "url": "https://nuxt.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "Nuxt 文档",
+                  "url": "https://nuxt.com/docs/getting-started/introduction",
+                  "type": "article"
+                },
+                {
+                  "title": "Nuxt 示例",
+                  "url": "https://nuxt.com/docs/examples/essentials/hello-world",
+                  "type": "article"
+                },
+                {
+                  "title": "开始使用 Nuxt",
+                  "url": "https://explorers.netlify.com/learn/get-started-with-nuxt",
+                  "type": "article"
+                },
+                {
+                  "title": "Nuxt.js 基础",
+                  "url": "https://vueschool.io/courses/nuxtjs-fundamentals",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 JavaScript 的热门文章",
+                  "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "34558b35-f55a-4abe-92b1-558d9f52f72a",
+              "xid": "602c8544-7064-4e3f-8a53-48414f5756a3"
+            }
+          ],
+          "id": "c4f50c4f-1cb8-4388-afd0-9018037c4964",
+          "xid": "9450068e-4796-4b15-8a32-34c187b532b6"
+        },
+        {
+          "title": "静态站点生成器（SSG）",
+          "description": "静态站点生成器是一种工具，它基于原始数据和一组模板生成一个完整的静态HTML网站。\n\n本质上，静态站点生成器自动化了编写单独的HTML页面的任务，并提前将这些页面准备好供用户使用。\n\n由于这些HTML页面是预先构建的，因此它们可以在用户的浏览器中非常快速地加载。\n\n",
+          "links": [
+            {
+              "title": "什么是静态站点生成器（Static Site Generator）？",
+              "url": "https://www.cloudflare.com/learning/performance/static-site-generator/",
+              "type": "article"
+            },
+            {
+              "title": "Next.js 静态站点生成器（SSG）",
+              "url": "https://nextjs.org/docs/advanced-features/static-html-export",
+              "type": "article"
+            },
+            {
+              "title": "Gatsby 静态站点生成器（SSG）",
+              "url": "https://www.gatsbyjs.com/docs/glossary/static-site-generator/",
+              "type": "article"
+            },
+            {
+              "title": "SSG — 一种11ty、Vite和JAM三明治（An 11ty, Vite And JAM Sandwich）",
+              "url": "https://www.smashingmagazine.com/2021/10/building-ssg-11ty-vite-jam-sandwich/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关Web开发的顶级文章",
+              "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "VitePress",
+              "description": "Vitepress 是一个基于 Vite 构建的静态网站生成器（Static Site Generator）。\n\n它是一个轻量级且快速的静态网站生成器，旨在与 Vue 3 结合使用。\n\nVitepress 是构建文档站点、博客以及其他静态网站的绝佳选择。\n\n",
+              "links": [
+                {
+                  "title": "Vitepress 官网",
+                  "url": "https://vitepress.dev/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "0594588e-c2e0-46af-b707-29adf40d064c",
+              "xid": "683571bd-db02-4c1f-9471-5749506d3070"
+            }
+          ],
+          "id": "f09f5b24-6305-42bb-86e6-2e2529c046fb",
+          "xid": "d043fb50-7d1c-43ba-9ec1-d3f364681081"
+        },
+        {
+          "title": "Vitest",
+          "description": "Vitest是一个快速的Vite原生单元测试框架，内置支持ESM和TypeScript。\n\n它适用于使用Vite创建的React、Vue、Svelte和其他项目。\n\n",
+          "links": [
+            {
+              "title": "Vitest官网",
+              "url": "https://vitest.dev/",
+              "type": "article"
+            },
+            {
+              "title": "使用Vitest进行测试",
+              "url": "https://www.youtube.com/watch?v=cM_AeQHzlGg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f9b2d73e-5e03-4935-afe6-f594422a42ad",
+          "xid": "e94611a3-63a0-441e-b078-24f7ad6844b8"
+        },
+        {
+          "title": "Vue 测试库（Vue Testing Library）",
+          "description": "Vue 测试库是一种用于测试 Vue 组件的非常轻量级的解决方案。\n\n其主要的指导原则是：测试越接近于软件的使用方式，所能提供的信心就越大。\n\n",
+          "links": [
+            {
+              "title": "Vue 测试库入门",
+              "url": "https://testing-library.com/docs/vue-testing-library/intro/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于测试的热门文章",
+              "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1271112f-507e-4662-9a37-a95d4373c75a",
+          "xid": "faf655e1-fa30-4191-a69b-34585df0cdb1"
+        },
+        {
+          "title": "Cypress框架",
+          "description": "Cypress框架是一个基于JavaScript的端到端测试框架，构建于Mocha之上（Mocha是一个运行在浏览器中和浏览器上的功能丰富的JavaScript测试框架），它使异步测试变得简单方便。\n\n此外，它还使用BDD/TDD断言库（即行为驱动开发/测试驱动开发断言库）和浏览器与任何JavaScript测试框架配合使用。\n\n",
+          "links": [
+            {
+              "title": "Cypress官方网站",
+              "url": "https://www.cypress.io/",
+              "type": "article"
+            },
+            {
+              "title": "Cypress文档",
+              "url": "https://docs.cypress.io/guides/overview/why-cypress#Other",
+              "type": "article"
+            },
+            {
+              "title": "浏览有关Cypress的顶级帖子",
+              "url": "https://app.daily.dev/tags/cypress?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Cypress端到端测试",
+              "url": "https://www.youtube.com/watch?v=7N63cMKosIE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "35a9081d-879d-4639-9d22-71100ae730d6",
+          "xid": "4fca3ee1-9387-4e89-a3f2-abe757d374c7"
+        },
+        {
+          "title": "Playwright",
+          "description": "Playwright 测试框架（Playwright Test）专门设计用于满足端到端测试（end-to-end testing）的需求。\n\nPlaywright 支持所有现代渲染引擎，包括 Chromium、WebKit 和 Firefox。\n\n可以在 Windows、Linux 和 macOS 上进行测试，本地或在 CI 环境中，无头模式或有头模式，并且包含对 Google Chrome for Android 和 Mobile Safari 的原生移动模拟。\n\nPlaywright 利用 DevTools 协议（DevTools protocol）编写强大的、稳定的自动化测试。\n\nPlaywright 可直接查看并控制浏览器，而不需要依赖中间翻译层，从而实现更多有洞察力和相关性的用户场景模拟。\n\n",
+          "links": [
+            {
+              "title": "Playwright 官网",
+              "url": "https://playwright.dev/",
+              "type": "article"
+            },
+            {
+              "title": "Playwright 教程：基础知识和配置",
+              "url": "https://www.browserstack.com/guide/playwright-tutorial",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cdfc43a8-808f-4743-bb2c-f2106a6385e3",
+          "xid": "f5d69c39-7842-4d57-972a-ad85e4bc2fed"
+        },
+        {
+          "title": "Tailwind CSS",
+          "description": "Tailwind CSS（CSS框架）提供了原子CSS类，帮助您设计组件，例如`flex`、`pt-4`、`text-center`和`rotate-90`，您可以在标记中直接组合这些类来构建任何设计。\n\n",
+          "links": [
+            {
+              "title": "Tailwind CSS官方网站",
+              "url": "https://tailwindcss.com",
+              "type": "article"
+            },
+            {
+              "title": "探索关于CSS的最佳文章",
+              "url": "https://app.daily.dev/tags/css?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Tailwind CSS初学者完整教程",
+              "url": "https://www.youtube.com/watch?v=lCxcTsOHrjo",
+              "type": "video"
+            },
+            {
+              "title": "Tailwind CSS速成课程",
+              "url": "https://www.youtube.com/watch?v=UBOj6rqRUME",
+              "type": "video"
+            },
+            {
+              "title": "您应该使用Tailwind CSS吗？",
+              "url": "https://www.youtube.com/watch?v=hdGsFpZ0J2E",
+              "type": "video"
+            },
+            {
+              "title": "官方视频教程",
+              "url": "https://www.youtube.com/c/TailwindLabs/videos",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0efd724d-f9ca-4a7f-b977-911a4590623c",
+          "xid": "14beed86-78b1-49fc-aab4-45461ebcde2d"
+        },
+        {
+          "title": "Vuetify",
+          "description": "Vuetify 是一个包含精美手工制作的 Material Components (材料组件) 的 Vue UI 库。\n\n无需设计技巧——创建出色应用程序所需的一切都在您的指尖。\n\n",
+          "links": [
+            {
+              "title": "Vuetify 官网",
+              "url": "https://vuetifyjs.com/en/",
+              "type": "article"
+            },
+            {
+              "title": "开始使用 Vuetify",
+              "url": "https://vuetifyjs.com/en/getting-started/installation/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Vue.js 的热门帖子",
+              "url": "https://app.daily.dev/tags/vuejs?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Vuetify: 用 Vue JS 创建 App ——仅需 30 分钟！",
+              "url": "https://www.youtube.com/watch?v=CjXgoYo86yY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f51f13ab-d9f4-44f7-90f2-95d2364d8dc6",
+          "xid": "34ff1354-78a0-42d4-a6d9-7b02f620986a"
+        },
+        {
+          "title": "Element UI",
+          "description": "Element UI 是另一款为 Vue.js 应用提供内置组件的组件库，帮助你打造风格一致的应用程序。\n\n",
+          "links": [
+            {
+              "title": "Element UI 官方网站",
+              "url": "https://element-plus.org/en-US/",
+              "type": "article"
+            },
+            {
+              "title": "Element UI 快速上手",
+              "url": "https://element-plus.org/en-US/guide/design.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1621b4cb-eb1d-4508-9750-48fdd2ccc6e7",
+          "xid": "29c96023-4ac1-4d51-a645-2e862776dae4"
+        },
+        {
+          "title": "状态管理",
+          "description": "应用状态管理是维护应用跨多个相关数据流的知识的过程，这些数据流形成了一个完整的业务事务--或者是一次会话--以理解应用程序在任何给定时刻的状态。\n\n在计算机科学中，输入是指用户向程序提供的信息，状态是指根据存储的输入--保存为变量或常量--应用的状况。\n\n状态也可以描述为构成完整会话的保存信息的集合。\n\n",
+          "links": [
+            {
+              "title": "状态管理",
+              "url": "https://vuejs.org/guide/scaling-up/state-management.html",
+              "type": "article"
+            },
+            {
+              "title": "什么是状态管理？",
+              "url": "https://www.techtarget.com/searchapparchitecture/definition/state-management",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Pinia",
+              "description": "Pinia是Vue.js的[状态存储库](store library)，可以用在Vue 2和Vue 3中，并具有相同的API，除了在服务端渲染(SSR)及其安装方面。\n\n它允许在整个应用程序中的页面和组件之间共享状态。\n\n正如文档所述，它是可扩展的，直观的（通过组织），支持开发工具（Vue.js开发工具内），在JavaScript中也能推断出类型的状态等。\n\n在Pinia中，可以访问、变更、替换状态，使用类似于计算属性的getter，使用action等。\n\n该库被官方Vue.js文档推荐。\n\n",
+              "links": [
+                {
+                  "title": "Pinia文档",
+                  "url": "https://pinia.vuejs.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "在30分钟内学习Pinia",
+                  "url": "https://www.youtube.com/watch?v=JGC7aAC-3y8",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "8d4a138b-3e12-4cea-9528-9c42eafb5664",
+              "xid": "8dbe30f7-c7f3-4828-9505-2906e600b2e8"
+            }
+          ],
+          "id": "cbb56b40-1ec7-4a6f-8879-d30542f11078",
+          "xid": "54d36360-ee91-4484-af36-309232f7e256"
+        },
+        {
+          "title": "移动应用",
+          "description": "使用Vue.js构建移动应用并非不可能。\n\n实际上，你可以使用Vue.js构建出外观和体验都像原生移动应用的生产就绪应用。\n\n",
+          "links": [
+            {
+              "title": "比较使用Vue.js开发移动应用的框架",
+              "url": "https://blog.logrocket.com/comparing-vue-js-mobile-app-development-frameworks/#whyusevuejstobuildmobileapps",
+              "type": "article"
+            },
+            {
+              "title": "Native Script + Vue",
+              "url": "https://nativescript-vue.org/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于移动开发的热门文章",
+              "url": "https://app.daily.dev/tags/mobile?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "电容器 (Capacitor)",
+              "description": "由于 Vue.js 是一个 Web 框架，它不原生支持移动应用开发。\n\n那么我们如何才能够访问诸如相机和地理位置这样的移动设备原生功能呢？Ionic 提供了一个官方的原生运行时，名叫电容器 (Capacitor)。\n\n通过电容器 (Capacitor) 的插件，您可以访问您应用所运行设备的原生 API，并使用 Ionic Vue 构建真正的原生移动应用。\n\n",
+              "links": [
+                {
+                  "title": "使用电容器 (Capacitor) 和 Vue.js 构建跨平台应用",
+                  "url": "https://blog.logrocket.com/building-cross-platform-apps-with-capacitor-and-vue-js/",
+                  "type": "article"
+                },
+                {
+                  "title": "使用电容器 (Capacitor) 和 Vue.js 构建移动应用",
+                  "url": "https://www.smashingmagazine.com/2018/07/mobile-apps-capacitor-vue-js/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "71d50669-b02b-4404-9628-210fd56f2bef",
+              "xid": "82d2540e-7fbf-4796-9c5f-f4c7dc32fa31"
+            }
+          ],
+          "id": "2c6cf0c5-b5ec-4ada-a219-8dcf004530f9",
+          "xid": "9c52b533-581a-45bb-859a-d59f8d6548e9"
+        },
+        {
+          "title": "API调用",
+          "description": "有几种方法可以从您的Vue.js应用程序中发起API调用。\n\n",
+          "links": [
+            {
+              "title": "如何在Vue.JS应用程序中发起API调用",
+              "url": "https://medium.com/bb-tutorials-and-thoughts/how-to-make-api-calls-in-vue-js-applications-43e017d4dc86",
+              "type": "article"
+            },
+            {
+              "title": "如何使用RapidAPI客户端与Vue.js",
+              "url": "https://rapidapi.com/guides/fetch-api-with-vue",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "阿波罗(Apollo)",
+              "description": "阿波罗(Apollo)是一个用于构建统一图层(graph)的平台，这是一个通信层，帮助管理您的应用程序客户端（例如Web和原生应用）与后端服务之间的数据流。\n\n",
+              "links": [
+                {
+                  "title": "阿波罗官网(Apollo Website)",
+                  "url": "https://www.apollographql.com",
+                  "type": "article"
+                },
+                {
+                  "title": "阿波罗文档(Apollo Docs)",
+                  "url": "https://www.apollographql.com/docs/",
+                  "type": "article"
+                },
+                {
+                  "title": "探讨阿波罗(Apollo)的热门帖子",
+                  "url": "https://app.daily.dev/tags/apollo?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "阿波罗(Apollo)的YouTube频道",
+                  "url": "https://www.youtube.com/c/ApolloGraphQL/",
+                  "type": "video"
+                },
+                {
+                  "title": "使用React教程：阿波罗客户端(Apollo Client)",
+                  "url": "https://www.youtube.com/watch?v=YyUWW04HwKY",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "b995a15d-6d23-4024-ab10-e9789fb5efa3",
+              "xid": "f8e85f5d-ba05-4e48-8582-6e8c13116092"
+            },
+            {
+              "title": "Axios",
+              "description": "Axios 是一种基于浏览器提供的 XMLHttpRequest 接口的客户端 HTTP API。\n\n前端程序与服务器通信最常见的方式是通过 HTTP 协议。\n\n您可能对 Fetch API 和 XMLHttpRequest 接口比较熟悉，它们允许您获取资源和发起 HTTP 请求。\n\n",
+              "links": [
+                {
+                  "title": "使用 Axios 开始",
+                  "url": "https://axios-http.com/docs/intro",
+                  "type": "article"
+                },
+                {
+                  "title": "如何使用 Axios 发起 HTTP 请求",
+                  "url": "https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/#why",
+                  "type": "article"
+                },
+                {
+                  "title": "了解关于 Axios 的热门文章",
+                  "url": "https://app.daily.dev/tags/axios?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5bbb3ea2-2b40-40f2-a719-33c2874ac320",
+              "xid": "59f51446-4f23-4523-8c36-ad60b3819adc"
+            },
+            {
+              "title": "fetch",
+              "description": "在JavaScript中，`fetch()`方法用于向服务器发出请求并加载网页上的信息。\n\n请求可以是任何返回JSON或XML格式数据的API。\n\n此方法返回一个Promise。\n\n",
+              "links": [
+                {
+                  "title": "Fetch - MDN",
+                  "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+                  "type": "article"
+                },
+                {
+                  "title": "Fetch W3school Docs",
+                  "url": "https://www.w3schools.com/jsref/api_fetch.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "Network Request - Fetch",
+                  "url": "https://javascript.info/fetch",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "bb8e41bc-5fa1-479d-a387-b95054aa76c9",
+              "xid": "6b9ac2ca-ebe4-42e2-8992-cfb8b0cd5044"
+            },
+            {
+              "title": "Tanstack Query",
+              "description": "TanStack Query 是一款用于 Vue.js 和 React 的数据获取和缓存库。\n\n它是 TanStack 生态系统的一部分。\n\n",
+              "links": [
+                {
+                  "title": "Tanstack Query 网站",
+                  "url": "https://tanstack.com/query",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "216ebd21-7a2d-4811-afe3-77531697daed",
+              "xid": "2adae180-cedd-4bf4-97c4-368458492662"
+            }
+          ],
+          "id": "6fea6ecf-d7a5-42fa-8506-bea90063482b",
+          "xid": "23563e3d-7444-4d52-a41a-d408f150f97e"
+        }
+      ],
+      "id": "29800c96-9250-4305-ba87-3208478265ed",
+      "xid": "db049161-61e0-4d6c-9e36-d26308cb06a3"
+    }
+  ],
+  "id": "a94580d7-527a-488d-a5e2-2bf847b17a30",
+  "xid": "fe88eaeb-38a9-4ae6-8f42-fe01d276e075"
+}

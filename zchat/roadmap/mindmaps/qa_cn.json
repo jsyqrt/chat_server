@@ -1,0 +1,3158 @@
+{
+  "title": "质量保证工程师(QA Engineer)",
+  "description": "成为2025年现代质量保证工程师(QA Engineer)的步骤",
+  "links": [],
+  "children": [
+    {
+      "title": "学习基础知识",
+      "description": "短语“适合使用或目的”总结了质量的概念，而质量是极其难以定义的。\n\n这一切归结为满足消费者对于产品实用性、设计、可靠性、耐用性和价格的需求和期望。\n\n质量保证是一种对于商品或服务的自信声明。\n\n它是对于商品或服务能够带来良好结果的保证。\n\n它提供了产品将按照预期或需求无故障运行的保证。\n\n质量保证（Quality Assurance，QA）也被称为QA测试，是一项确保组织向客户提供最优质的产品或服务的活动。\n\n软件的QA测试包括性能、适应性和功能性的测试。\n\n但软件质量保证不仅仅是关于软件质量；它还涵盖了用于开发、测试和发布软件产品的质量过程。\n\nQA依赖于软件开发生命周期，这一过程包括软件需求管理、设计、编码、测试和发布。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "测试预言机",
+          "description": "测试预言机（Test Oracle）是一种机制；它不同于程序本身，可以用于检查针对测试用例的程序输出的正确性。\n\n理论上，我们可以将测试视为一个过程，在这个过程中将测试用例输入给测试预言机（Test Oracle）和被测程序。\n\n",
+          "links": [
+            {
+              "title": "什么是测试预言机？",
+              "url": "https://ecomputernotes.com/software-engineering/what-are-test-oracles",
+              "type": "article"
+            },
+            {
+              "title": "软件测试中的测试预言机",
+              "url": "https://www.youtube.com/watch?v=DR22zNNetp0&t=1s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e91f1c36-54bf-4ab2-94fa-1e7b4966ef92",
+          "xid": "4a277e0e-c0bc-49ac-b9cb-f1e820e92ca2"
+        },
+        {
+          "title": "测试优先级排序",
+          "description": "测试优先级排序是对即将执行的测试用例进行排序。\n\n优先级排序测试用例有助于满足软件测试中的两个重要约束，即时间和预算，以尽可能早地提高故障检测率。\n\n",
+          "links": [
+            {
+              "title": "测试优先级排序概览",
+              "url": "https://www.browserstack.com/guide/test-case-prioritization",
+              "type": "article"
+            },
+            {
+              "title": "测试优先级排序",
+              "url": "https://www.professionalqa.com/test-prioritization",
+              "type": "article"
+            },
+            {
+              "title": "测试优先级排序基础",
+              "url": "https://testomat.io/features/test-case-priorities/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6f5b1cdc-300f-4fb6-87f9-91afe7b09dd6",
+          "xid": "5db0e8f3-097a-48bd-8e1d-62b9db58ce86"
+        },
+        {
+          "title": "管理您的测试",
+          "description": "测试管理是一种管理测试活动的过程，旨在确保软件应用程序的高质量和高端测试。\n\n该方法包括组织、控制、确保测试过程的可追溯性和可见性，以便交付高质量的软件应用程序。\n\n它确保软件测试过程按预期进行。\n\n",
+          "links": [
+            {
+              "title": "软件测试中的测试管理过程",
+              "url": "https://www.guru99.com/test-management-phases-a-complete-guide-for-testing-project.html",
+              "type": "article"
+            },
+            {
+              "title": "探索有关测试的顶级帖子",
+              "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "qTest",
+              "description": "qTest 是一个用于项目管理、缺陷跟踪和测试管理的测试管理工具。\n\n它遵循集中的测试管理概念，有助于轻松沟通，并协助跨质量保证团队和其他利益相关者的任务快速开发。\n\n",
+              "links": [
+                {
+                  "title": "qTest教程",
+                  "url": "https://www.tutorialspoint.com/qtest/qtest_introduction.htm",
+                  "type": "article"
+                },
+                {
+                  "title": "开始使用qTest和参数",
+                  "url": "https://www.youtube.com/watch?v=1q8vQ2XF9QE",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "c6a312bd-2786-4d16-a69c-974167e3a7db",
+              "xid": "9277d624-6ca8-4240-8c28-f5612200a70b"
+            },
+            {
+              "title": "TestRail",
+              "description": "TestRail 是一款基于网页的测试案例管理工具（test case management tool）。\n\n它被测试人员、开发人员和团队负责人用来管理、追踪和组织软件测试工作。\n\nTestRail 允许团队成员输入测试案例、组织测试套件、执行测试运行并追踪其结果，所有操作都通过一个现代且易于使用的网页界面进行。\n\n",
+              "links": [
+                {
+                  "title": "TestRail",
+                  "url": "https://www.gurock.com/testrail/",
+                  "type": "article"
+                },
+                {
+                  "title": "TestRail 评审教程：学习端到端测试案例管理（TestRail Review Tutorial: Learn End-To-End Test Case Management）",
+                  "url": "https://www.softwaretestinghelp.com/testrail-tutorial/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "beede553-8e7e-440a-8b76-701bb3964f36",
+              "xid": "4e3a7236-e0cc-4567-9da6-0ea582e71c60"
+            },
+            {
+              "title": "测试链接(TestLink)",
+              "description": "测试链接(TestLink)是最广泛使用的基于Web的开源测试管理工具。\n\n它同步了需求规格和测试规格。\n\n测试人员可以使用此工具创建测试项目并记录测试用例。\n\n使用测试链接(TestLink)，您可以为多个用户创建帐户并分配不同的用户角色。\n\n",
+              "links": [
+                {
+                  "title": "测试链接(TestLink)",
+                  "url": "https://testlink.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "测试链接教程(TestLink Tutorial)：完整指南",
+                  "url": "https://www.guru99.com/testlink-tutorial-complete-guide.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "fe913d5a-aec0-4fe4-8111-47f7412c2d41",
+              "xid": "d9365ad8-6ef9-4c71-a2fe-b46ffbe2881e"
+            },
+            {
+              "title": "Zephyr",
+              "description": "Zephyr（Zephyr）是一款测试解决方案，通过管理和监督端到端测试来提高软件的质量。\n\n它在管理手动测试方面非常有效。\n\n其核心功能包括：\n\n*   测试用例创建\n*   按产品发布和组件组织测试\n*   将测试任务分配给质量保证团队\n\n",
+              "links": [
+                {
+                  "title": "JIRA中的Zephyr教程：测试管理工具",
+                  "url": "https://www.guru99.com/zephyr-agile-jira.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "85ee123d-1534-480b-a43c-e8e4ee53d109",
+              "xid": "c5f63cdb-8f76-4e19-bd8f-1f74011f161f"
+            }
+          ],
+          "id": "6ab5f0ec-f88c-4ca4-a353-ed79d14a3d2f",
+          "xid": "f4341f10-385d-4de7-951b-b1140fdad18a"
+        },
+        {
+          "title": "什么是质量保证?",
+          "description": "质量很难定义，但可以简单地表述为：“适合使用或目的。\n\n”它涉及到满足客户对产品功能、设计、可靠性、耐用性和价格的需求和期望。\n\n什么是保证\n-----------------\n\n保证不过是产品或服务的正面声明，它提供了信心。\n\n它确信产品或服务将正常工作。\n\n它提供了保证，确保产品将按预期或需求良好运行。\n\n软件测试中的质量保证\n-------------------------------------\n\n软件测试中的质量保证被定义为一个确保组织提供给客户的软件产品或服务的质量的过程。\n\n质量保证侧重于改进软件开发过程，使其符合为软件产品定义的质量标准。\n\n质量保证通常被称为QA测试。\n\n",
+          "links": [
+            {
+              "title": "什么是质量保证(QA)? 过程、方法、示例",
+              "url": "https://www.guru99.com/all-about-quality-assurance.html",
+              "type": "article"
+            },
+            {
+              "title": "软件测试人员做什么?",
+              "url": "https://www.ministryoftesting.com/dojo/lessons/what-do-software-testers-do-version-0-1",
+              "type": "article"
+            },
+            {
+              "title": "探索关于QA的顶级文章",
+              "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "27a91a0a-2de2-4ec0-9609-3a2058638af6",
+          "xid": "3dc1ee2e-ace3-48f9-9125-28bffc25047a"
+        },
+        {
+          "title": "质量保证思维",
+          "description": "作为质量保证工程师，您主要的责任是在整个组织内培养积极主动的、以质量为中心的、全面的思维模式。\n\n这包括推广这样一种理解，即质量不仅仅是质量保证（QA）部门的责任，也不是仅通过手动测试就可以实现的，而是一种需要所有团队成员协作的共同承诺。\n\n质量应该无缝地融入软件开发生命周期（SDLC）的各个阶段，从需求收集到部署和维护。\n\n您的角色是要采取主动，提供指导，并引导公司在采纳最佳实践和重视质量的方法论方面实现进阶。\n\n通过教育和赋权您的同事，您可以在公司培养一种文化，在该文化中，每个人都明白交付高质量产品的重要性，并配备有相关知识和工具来有效贡献于这一目标。\n\n几个重要的点：\n\n* 培养以质量为中心的思维模式，组织内推广对质量的共同责任\n* 将质量流程整合到软件开发生命周期（SDLC）的各个阶段，并鼓励团队成员之间的协作\n* 采取主动，提供指导，并引领公司在确保高质量产品的最佳实践中前进\n* 实施和维护强大的自动化框架，以提高测试效率、覆盖率及其可靠性\n* 持续改进质量流程，保持行业趋势的更新，并倡导质量对于提高客户满意度和商业成功的重要性\n* 鼓励创新思维，提出问题，探索边缘案例，不要害怕误用产品来揭示潜在的问题\n* 培养开放沟通，透明度，以及一种在开发过程早期主动发现和缓解质量问题的方法\n\n",
+          "links": [
+            {
+              "title": "软件测试人员的思维模式",
+              "url": "https://softwaretester.careers/the-software-testers-mindset/",
+              "type": "article"
+            },
+            {
+              "title": "QA所需技能",
+              "url": "https://theqalead.com/careers/quality-assurance-skills/",
+              "type": "article"
+            },
+            {
+              "title": "如何像测试人员那样思考",
+              "url": "https://medium.com/@blakenorrish/how-to-think-like-a-tester-7a174ff6aeaf",
+              "type": "article"
+            },
+            {
+              "title": "ISTQB® 基础级别课程大纲2024 - v4.0",
+              "url": "https://astqb.org/assets/documents/ISTQB_CTFL_Syllabus-v4.0.pdf",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c480dd56-67da-45d3-aa86-cd68c2b0316e",
+          "xid": "45aa45d7-5dbd-4b45-ba35-e2064368081d"
+        },
+        {
+          "title": "测试方法",
+          "description": "测试方法包括两种技术：\n\n*   主动型 - 一种尽早启动测试设计过程的方法（Proactive），以便在构建之前发现并修复缺陷。\n\n\n*   被动型 - 在设计和编码完成后才开始测试的一种方法（Reactive）。\n\n常用三种方法来实现功能性测试（Functional Testing）：\n\n*   黑盒测试（Black Box Testing）\n*   白盒测试（White Box Testing）\n*   灰盒测试（Gray Box Testing）\n\n",
+          "links": [
+            {
+              "title": "功能性测试方法和敏捷考虑因素",
+              "url": "https://www.qualitylogic.com/knowledge-center/functional-testing-approaches-agile-considerations/",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于测试的热门文章",
+              "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "白盒测试(White Box Testing)",
+              "description": "白盒测试(White Box Testing)是一项针对软件内部结构、设计和编程进行检测的技术，用于验证输入输出流、改善设计、可用性和安全性。\n\n在白盒测试中，代码对测试人员是可见的，因此它也被称为透明盒测试(White Box Testing)、开放盒测试(Open Box Testing)、清晰盒测试(Clear Box Testing)、基于代码的测试(Code-based Testing)和玻璃盒测试(Glass Box Testing)。\n\n",
+              "links": [
+                {
+                  "title": "白盒测试(White Box Testing) – 概念、技术、示例及类型",
+                  "url": "https://www.guru99.com/white-box-testing.html",
+                  "type": "article"
+                },
+                {
+                  "title": "一组完整的关于技术、示例、工具的指南",
+                  "url": "https://www.softwaretestinghelp.com/white-box-testing-techniques-with-example/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于测试的顶级文章",
+                  "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "d942e6bb-79c2-4ccf-8f68-91bc645e385b",
+              "xid": "85ec94e8-b2c8-45c4-b0a4-b6a6b114a2c5"
+            },
+            {
+              "title": "灰盒测试(Gray Box Testing)",
+              "description": "灰盒测试(Gray box testing)是一种软件测试技术，用于在部分了解应用程序内部结构的情况下测试软件产品或应用程序。\n\n灰盒测试的目的是查找和识别由于代码结构不当或应用程序使用不当而导致的缺陷。\n\n",
+              "links": [
+                {
+                  "title": "什么是灰盒测试(Gray Box Testing)? 技术与示例",
+                  "url": "https://www.guru99.com/grey-box-testing.html",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于测试的顶级文章",
+                  "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7fc65758-7216-4b10-9eea-c2cf697e8108",
+              "xid": "12f3ab24-69bb-4603-8dd5-ebad4f032913"
+            },
+            {
+              "title": "黑盒测试(Black Box Testing)",
+              "description": "黑盒测试(Black Box Testing)是一种软件测试方法，在这种方法中，软件应用程序的功能性测试不依赖于内部代码结构、实现细节和内部路径。\n\n黑盒测试(Black Box Testing)主要关注软件应用程序的输入和输出，并且完全基于软件需求和规范。\n\n它也被称为行为测试(Behavioral Testing)。\n\n",
+              "links": [
+                {
+                  "title": "什么是黑盒测试(Black Box Testing)? 技术、示例及类型",
+                  "url": "https://www.guru99.com/black-box-testing.html",
+                  "type": "article"
+                },
+                {
+                  "title": "黑盒测试(Black Box Testing)：包含实例和技术的深入教程",
+                  "url": "https://www.softwaretestinghelp.com/black-box-testing/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于测试的热门帖子",
+                  "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a064d224-c242-483a-bdee-d199b0a13db5",
+              "xid": "54a60aa3-198d-4708-90b6-6fb6a43d78c5"
+            }
+          ],
+          "id": "fb9a6d6d-4e9f-4f81-b120-c3528802fa00",
+          "xid": "2d580602-c369-4427-9a44-3287410345fc"
+        },
+        {
+          "title": "项目管理",
+          "description": "项目是为了创建独特的产品、服务或成果而开展的临时性工作。\n\n项目具有临时性，因为它有明确的开始和结束时间，且具有独特性，因为它专门设置了一组操作以实现某个目标。\n\n项目管理是一门规划、组织、激励和控制资源以实现特定项目目标的学科。\n\n项目管理的主要目标是在考虑项目范围、时间、质量及成本的前提下实现项目目标和指标。\n\n它促进项目工作流程中团队在单个项目上的协作。\n\n",
+          "links": [
+            {
+              "title": "项目管理的主要目标是什么？",
+              "url": "https://www.guru99.com/introduction-project-management-pmp-certification.html",
+              "type": "article"
+            },
+            {
+              "title": "软件测试中的项目管理",
+              "url": "https://huddle.eurostarsoftwaretesting.com/project-management-in-software-testing/",
+              "type": "article"
+            },
+            {
+              "title": "项目管理生命周期阶段：有哪些步骤？",
+              "url": "https://www.guru99.com/initiation-phase-project-management-life-cycle.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于项目管理的最佳文章",
+              "url": "https://app.daily.dev/tags/project-management?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Atlassian",
+              "description": "Jira（Jira）是一款用于问题跟踪和项目管理的软件应用程序。\n\n这款由澳大利亚软件公司Atlassian开发的工具已被广泛用于敏捷开发团队跟踪缺陷、用户故事、史诗以及其他任务。\n\n",
+              "links": [
+                {
+                  "title": "Atlassian",
+                  "url": "https://www.atlassian.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "Jira用于什么？",
+                  "url": "https://www.atlassian.com/software/jira/guides/use-cases/what-is-jira-used-for#glossary-of-items",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是Jira？",
+                  "url": "https://www.simplilearn.com/tutorials/jira/what-is-jira-and-how-to-use-jira-testing-software",
+                  "type": "article"
+                },
+                {
+                  "title": "JIRA教程：完整的手把手使用JIRA指南",
+                  "url": "https://www.softwaretestinghelp.com/atlassian-jira-tutorial-1/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于Atlassian的热门帖子",
+                  "url": "https://app.daily.dev/tags/atlassian?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2f618294-bba5-4ccb-8ac0-5988a7905ba4",
+              "xid": "86f11f6b-e210-4f8a-8a1e-0a6eed93ba68"
+            },
+            {
+              "title": "Assembla",
+              "description": "Assembla 是一个全面的软件开发应用程序套件，支持分布式的敏捷团队。\n\n它允许开发团队管理、启动和维护敏捷项目、应用程序和网站。\n\n",
+              "links": [
+                {
+                  "title": "Assembla",
+                  "url": "https://get.assembla.com/projects/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是 Assembla？",
+                  "url": "https://www.selecthub.com/project-management-software/assembla",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "64516bcc-a8a8-41d0-a8cb-9bff58d564b6",
+              "xid": "70ea95a7-7d6b-41ae-8d29-da92fdd1baad"
+            },
+            {
+              "title": "YouTrack",
+              "description": "YouTrack 是由 JetBrains 开发的项目管理软件（project management software）。\n\n它以插件的形式存在，可以附加到 JetBrains IDE（集成开发环境）中，如 Intellij Idea，帮助创建任务并分配给开发团队，同时跟踪工作的进度。\n\n",
+              "links": [
+                {
+                  "title": "YouTrack",
+                  "url": "https://www.jetbrains.com/youtrack/",
+                  "type": "article"
+                },
+                {
+                  "title": "YouTrack 入门",
+                  "url": "https://medium.com/nerd-for-tech/youtrack-for-beginners-31e1e156fdd0",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a2c1cd2c-88f4-4c0c-9e36-70fc07144367",
+              "xid": "70db8af0-97c5-4521-b520-737b5c8967b4"
+            },
+            {
+              "title": "Trello",
+              "description": "Trello 是一款广受欢迎的简单易用的协作工具（collaboration tool），能够让你将项目及其所有相关内容组织到看板（boards）中。\n\n使用 Trello，你可以找到各种各样的信息，比如：\n\n*   正在进行什么工作？\n*   谁在做什么？\n*   项目进展如何？\n\n",
+              "links": [
+                {
+                  "title": "Trello",
+                  "url": "https://trello.com/en",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是 Trello 以及如何使用它？",
+                  "url": "https://www.simplilearn.com/tutorials/project-management-tutorial/what-is-trello",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8cfeb72e-03ab-4ac8-a190-68922d387988",
+              "xid": "5a91e672-254f-4955-8e32-ed7f752a87d5"
+            }
+          ],
+          "id": "3f2581c1-8d49-4a02-8dea-25ee577d1ec2",
+          "xid": "605edf07-3a03-45ae-931c-b5b71bdfad7d"
+        },
+        {
+          "title": "测试技术",
+          "description": "测试技术是指用于评估系统或组件的方法，旨在确定其是否满足给定需求。\n\n系统测试有助于识别差距、错误或任何类型与实际需求不符的缺失需求。\n\n这些技术确保产品的整体质量（包括性能、安全性、客户体验等）。\n\n",
+          "links": [
+            {
+              "title": "什么是测试技术：类型、优势与劣势",
+              "url": "https://www.elprocus.com/what-are-testing-techniques-types-advantages-disadvantages/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于测试的热门帖子",
+              "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "功能性测试",
+              "description": "功能性测试是一种软件测试方法，用于将软件系统验证为符合功能需求/规格。\n\n功能性测试的目的是通过提供适当输入来测试软件应用程序的每个功能，并根据功能需求验证输出。\n\n",
+              "links": [
+                {
+                  "title": "什么是功能性测试？类型和示例",
+                  "url": "https://www.guru99.com/functional-testing.html",
+                  "type": "article"
+                },
+                {
+                  "title": "功能性测试：详细指南",
+                  "url": "https://www.browserstack.com/guide/functional-testing",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于测试的顶级文章",
+                  "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "验收测试(UAT)",
+                  "description": "用户验收测试(UAT)是指在软件应用程序移至生产环境前，由最终用户或客户执行的一种验证/接受软件系统的测试类型。\n\nUAT在功能测试、集成测试和系统测试完成后的最后阶段进行。\n\n",
+                  "links": [
+                    {
+                      "title": "什么是用户验收测试(UAT)?",
+                      "url": "https://www.guru99.com/user-acceptance-testing.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "如何规划您的UAT",
+                      "url": "https://www.youtube.com/watch?v=AU8SV7091-s",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "67c7f55e-631b-47fd-a63c-40adf420dc49",
+                  "xid": "957e6ed1-056c-4669-ac04-f28b41b57420"
+                },
+                {
+                  "title": "探索性测试(Exploratory Testing)",
+                  "description": "探索性测试是通过探索和实验来了解并评估产品的一种方法，包括但不限于：提问、研究、建模、观察、推理等。\n\n",
+                  "links": [
+                    {
+                      "title": "探索性测试(Exploratory Testing)",
+                      "url": "https://www.satisfice.com/exploratory-testing",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索性测试3.0(Exploratory Testing 3.0)",
+                      "url": "https://www.satisfice.com/blog/archives/1509",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索性测试定义的历史(History of Definitions of Exploratory Testing)",
+                      "url": "https://www.satisfice.com/blog/archives/1504",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于测试的热门文章(Explore top posts about Testing)",
+                      "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "d4d0aadf-2a13-4d61-b29b-cc060e3a0270",
+                  "xid": "70243c1d-56f1-4390-9c45-b15b3bdd5770"
+                },
+                {
+                  "title": "健全性测试(Sanity Testing)",
+                  "description": "健全性测试是一种在接收到软件构建后并进行代码或功能的小范围改动时进行的软件测试类型，以确认已修复的错误没有重新引入新的问题。\n\n其目标是确认拟增加的功能大致按预期工作。\n\n如果健全性测试失败，将拒绝该构建以节省进行更严格测试所涉及的时间和成本。\n\n",
+                  "links": [
+                    {
+                      "title": "什么是健全性测试(Sanity Testing)?",
+                      "url": "https://www.browserstack.com/guide/sanity-testing#:~:text=Sanity%20Testing%20or%20Surface%20Level,working%20properly%20without%20any%20bugs.",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "0974662b-b971-4e2e-b351-8a3667c3e625",
+                  "xid": "bed587e5-29fa-40bc-b59c-de00b4f70af7"
+                },
+                {
+                  "title": "回归测试(Regression Testing)",
+                  "description": "回归测试是一种软件测试，用于确认最近的程序或代码更改没有对现有的功能产生不利影响。\n\n回归测试是一种黑盒测试技术。\n\n通过重新执行测试用例来检查应用程序的原有功能是否正常运作，并且新更改没有引入任何错误或bug。\n\n",
+                  "links": [
+                    {
+                      "title": "回归测试(Regression Testing)",
+                      "url": "https://www.javatpoint.com/regression-testing",
+                      "type": "article"
+                    },
+                    {
+                      "title": "什么是回归测试及其测试用例",
+                      "url": "https://www.guru99.com/regression-testing.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于测试的热门文章",
+                      "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "3bc7dc87-82b0-4392-942e-a0b31b61f809",
+                  "xid": "71894efb-3d40-435b-a134-d8062a3cc9ec"
+                },
+                {
+                  "title": "冒烟测试(Smoke Testing)",
+                  "description": "冒烟测试(Smoke Testing)是一种软件测试过程，用于确定部署的软件版本是否稳定。\n\n冒烟测试是质量保证(QA)团队决定是否继续进行进一步软件测试的确认。\n\n它包括对每个版本进行的最少数量的测试，以测试软件功能。\n\n",
+                  "links": [
+                    {
+                      "title": "冒烟测试 | 软件测试(Smoke Testing | Software Testing)",
+                      "url": "https://www.guru99.com/smoke-testing.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于测试的热门文章(Explore top posts about Testing)",
+                      "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "28cf823d-6a57-4149-b0de-34a8e1e10fdb",
+                  "xid": "e082f286-d263-47b0-a7d4-720dc5391551"
+                },
+                {
+                  "title": "单元测试",
+                  "description": "单元测试是针对软件的各个独立**单元**（模块、函数/方法、例行程序等）进行测试，以确保它们的正确性。\n\n这种低级别的测试确保了较小的组件功能上是健全的，从而减轻了高级别测试的负担。\n\n通常，开发人员在开发过程中编写这些测试，并将它们作为自动化测试运行。\n\n",
+                  "links": [
+                    {
+                      "title": "单元测试教程",
+                      "url": "https://www.guru99.com/unit-testing-guide.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于测试的顶级文章",
+                      "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                      "type": "article"
+                    },
+                    {
+                      "title": "什么是单元测试？",
+                      "url": "https://youtu.be/3kzHmaeozDI",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "559da80d-e4ad-4549-8258-9843568ad19f",
+                  "xid": "33e8ff86-9a36-40fa-98c5-b89696485c43"
+                },
+                {
+                  "title": "集成测试",
+                  "description": "集成测试是一种测试类型，软件模块被逻辑地集成并作为一个组进行测试。\n\n典型的软件项目由多位程序员编码的多个软件模块组成。\n\n此测试级别旨在发现这些软件模块在集成时相互作用中的缺陷。\n\n集成测试的重点是检查这些模块之间的数据通信。\n\n",
+                  "links": [
+                    {
+                      "title": "集成测试教程",
+                      "url": "https://www.guru99.com/integration-testing.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于测试的顶级文章",
+                      "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "723aea0b-794a-4cf2-a25a-3735a84286ac",
+                  "xid": "8eb00c09-a69a-4d5d-808e-0af60931adbf"
+                }
+              ],
+              "id": "11223b9d-4d76-4282-9bc2-6ea378c50c03",
+              "xid": "0e82db98-d941-4f7b-95cc-c43d75fb7060"
+            },
+            {
+              "title": "非功能性测试(Non-Functional Testing)",
+              "description": "非功能性测试(Non-Functional Testing)是一种软件测试类型，用于测试软件的非功能性参数，如可靠性、负载测试、性能和可问责性。\n\n非功能性测试的主要目的是根据非功能性参数测试软件系统的读取速度。\n\n非功能性测试的参数总是在功能性测试之后才进行测试。\n\n",
+              "links": [
+                {
+                  "title": "什么是非功能性测试(Non Functional Testing)",
+                  "url": "https://www.browserstack.com/guide/what-is-non-functional-testing",
+                  "type": "article"
+                },
+                {
+                  "title": "非功能性测试(Non Functional Testing)的类型",
+                  "url": "https://www.guru99.com/non-functional-testing.html",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于测试的顶级文章",
+                  "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [
+                {
+                  "title": "负载测试",
+                  "description": "负载测试( Load Testing )是一种性能测试，用于确定系统、软件产品或软件应用程序在基于现实生活的负载条件下的性能。\n\n负载测试确定了多个用户同时使用应用程序时的行为。\n\n它是在不同的负载条件下测量系统的响应。\n\n",
+                  "links": [
+                    {
+                      "title": "负载测试和最佳实践",
+                      "url": "https://loadninja.com/load-testing/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于负载测试的最佳文章",
+                      "url": "https://app.daily.dev/tags/load-testing?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "8197ac4d-ff36-4bce-bf2f-789524035928",
+                  "xid": "aed26993-462a-4e53-96a1-f385b675c960"
+                },
+                {
+                  "title": "性能测试",
+                  "description": "性能测试是性能工程（Performance Engineering）的一个子集。\n\n它是一个评估系统在各种极端条件下的行为的过程。\n\n性能测试的主要目的是监视和改进关键性能指标，如响应时间、吞吐量、内存、CPU利用率等。\n\n性能测试的目标是要观察和评估三个S：`Speed`（速度）、`Scalability`（可扩展性）和`Stability`（稳定性）。\n\n性能测试类型\n-----------------------------\n\n以下是常用的一些性能测试类型，但不仅限于这些类型：\n\n*   负载测试（Load Testing）\n*   压力测试（Stress Testing）\n*   突发测试（Spike Testing）\n*   耐力测试（Endurance Testing）\n*   体积测试（Volume Testing）\n*   可扩展性测试（Scalability Testing）\n*   容量测试（Capacity Testing）\n\n",
+                  "links": [
+                    {
+                      "title": "性能测试教程 – 类型（示例）",
+                      "url": "https://www.guru99.com/performance-testing.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于性能的顶级文章",
+                      "url": "https://app.daily.dev/tags/performance?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "59e95b60-613b-4a8a-9a5d-9cc7bb716f0b",
+                  "xid": "5935f6e0-2a89-4770-b8b2-08c36671f1f3"
+                },
+                {
+                  "title": "压力测试",
+                  "description": "`压力测试`是一种`性能测试`。\n\n压力测试的目的是在极端正常负载下识别应用程序的崩溃点。\n\n例如：向API每秒注入大量请求可能导致其服务中断，或者返回HTTP 503 服务不可用或其他后果。\n\n",
+                  "links": [
+                    {
+                      "title": "什么是软件测试中的压力测试？",
+                      "url": "https://www.guru99.com/stress-testing-tutorial.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于测试的热门文章",
+                      "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "9c9ac1a8-82ce-4694-aeb0-048583927455",
+                  "xid": "c2c19b18-48b4-4fba-b089-ebf05eecf12f"
+                },
+                {
+                  "title": "安全测试",
+                  "description": "安全测试是一种软件测试，旨在发现软件应用程序中的漏洞(vulnerabilities)、威胁(threats)或风险(risks)，并防止入侵者恶意攻击。\n\n安全测试的目的在于识别软件系统可能存在的所有可能的漏洞(loopholes)和弱点(weaknesses)，这些漏洞和弱点可能会导致信息、收入或声誉受到组织内部员工或外部人员的损失。\n\n",
+                  "links": [
+                    {
+                      "title": "什么是安全测试？类型和示例",
+                      "url": "https://www.guru99.com/what-is-security-testing.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "安全测试：类型、工具和最佳实践",
+                      "url": "https://brightsec.com/blog/security-testing/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于安全的顶级文章",
+                      "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "06a0cb6d-5a7f-407d-ae1b-94fac5344fda",
+                  "xid": "d06ed9f4-34e4-40af-b60d-6ee8a224ae71"
+                },
+                {
+                  "title": "可访问性测试(Accessibility Testing)",
+                  "description": "可访问性测试是一种软件测试类型，旨在确保被测试的应用程序可以被听力障碍、色盲、老年人、低视力及其他弱势群体的人士使用。\n\n",
+                  "links": [
+                    {
+                      "title": "什么是可访问性测试？(示例)",
+                      "url": "https://www.guru99.com/accessibility-testing.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "可访问性测试教程(逐步指南)",
+                      "url": "https://www.softwaretestinghelp.com/what-is-web-accessibility-testing/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "IBM可访问性工具包(IBM Accessibility Toolkit)",
+                      "url": "https://www.ibm.com/able/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于可访问性的顶级文章",
+                      "url": "https://app.daily.dev/tags/accessibility?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "05e5c882-071d-40fe-9899-6f9bcd101e29",
+                  "xid": "8d44d999-2409-4518-bf8e-a68ae102448a"
+                }
+              ],
+              "id": "8b3f57c4-dc23-427f-93a1-4a7a6e9329e4",
+              "xid": "1c1c1d1d-9483-458a-af82-c5631096366a"
+            }
+          ],
+          "id": "7df98d08-643a-49e0-9206-7ccf1159b1f4",
+          "xid": "03f4b758-b91e-40df-a370-e2c53b019a7d"
+        }
+      ],
+      "id": "fc1997c0-ad03-43e1-90f8-4c6195a84060",
+      "xid": "ba84aba8-c63d-4a2e-8452-c013c96235ef"
+    },
+    {
+      "title": "软件开发生命周期(SDLC)交付模型",
+      "description": "软件开发生命周期(SDLC)是在软件组织内遵循的软件项目的流程。\n\n它包括一个详细规划，描述如何开发、维护、替换或修改或增强特定软件。\n\n生命周期定义了提高软件和整体开发过程质量的方法论。\n\n",
+      "links": [
+        {
+          "title": "SDLC中的QA角色：质量保证在IT中的重要性",
+          "url": "https://cadabra.studio/blog/why-is-quality-assurance-important-qa-role-in-sdlc/",
+          "type": "article"
+        },
+        {
+          "title": "SDLC概述",
+          "url": "https://www.tutorialspoint.com/sdlc/sdlc_overview.htm",
+          "type": "article"
+        },
+        {
+          "title": "探索关于QA的热门文章",
+          "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "敏捷模型(Agile Model)",
+          "description": "敏捷模型是指一种基于迭代开发的软件开发方法。\n\n敏捷方法将任务分解为较小的迭代或部分，这些部分并不直接涉及长期规划。\n\n项目范围和需求在开发过程的开始时就被明确。\n\n关于迭代次数、持续时间和每次迭代范围的计划在事先明确定义。\n\n敏捷软件开发方法是将业务需求的愿景转化为软件解决方案最简单且最有效流程之一。\n\n",
+          "links": [
+            {
+              "title": "敏捷方法：软件测试中的敏捷模型是什么？",
+              "url": "https://www.guru99.com/agile-scrum-extreme-testing.html",
+              "type": "article"
+            },
+            {
+              "title": "敏捷模型",
+              "url": "https://www.javatpoint.com/software-engineering-agile-model",
+              "type": "article"
+            },
+            {
+              "title": "敏捷软件开发宣言",
+              "url": "https://agilemanifesto.org/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于敏捷的顶级文章",
+              "url": "https://app.daily.dev/tags/agile?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "看板(Kanban)",
+              "description": "看板(Kanban)是敏捷软件开发方法论中非常流行的一个框架。\n\n它提供了一种可视化团队任务和工作容量的透明方式。\n\n主要使用物理和数字看板(Kanban)，使团队成员能够可视化他们正在从事的项目的当前状态。\n\n看板(Kanban)板是一种敏捷项目管理工具，旨在帮助团队成员可视化工作流程，限制正在进行的工作，并最大化效率。\n\n",
+              "links": [
+                {
+                  "title": "看板(Kanban) - 简介",
+                  "url": "https://www.atlassian.com/agile/kanban",
+                  "type": "article"
+                },
+                {
+                  "title": "软件工程中的看板(Kanban)模型",
+                  "url": "https://www.guru99.com/kanban-cards-boards-methodology.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "57e793cc-8935-4747-90d9-bc69e0a105e2",
+              "xid": "ec538fa3-a5bb-4383-a084-f1e35c7c70da"
+            },
+            {
+              "title": "Scrum",
+              "description": "Scrum（渐进明细）在软件测试中是一种用于构建复杂软件应用程序的方法论。\n\n它为执行复杂任务提供了简单的解决方案。\n\nScrum 帮助开发团队专注于软件产品开发的所有方面，如质量、性能、可用性等。\n\n它在软件开发过程中提供了透明度、检查和适应，以避免复杂性。\n\n",
+              "links": [
+                {
+                  "title": "Scrum 测试方法论教程",
+                  "url": "https://www.guru99.com/scrum-testing-beginner-guide.html",
+                  "type": "article"
+                },
+                {
+                  "title": "Scrum - 是什么，如何运作",
+                  "url": "https://www.atlassian.com/agile/scrum",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Scrum 的热门文章",
+                  "url": "https://app.daily.dev/tags/scrum?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "627b8640-dd8a-4643-8e33-dcb239de4867",
+              "xid": "2bbb704e-d95f-4cc1-ac48-eb0f595a8a19"
+            },
+            {
+              "title": "SAFe（Scaled Agile Framework）",
+              "description": "SAFe（Scaled Agile Framework）是一个免费的在线知识库，允许您在企业层面应用精益敏捷实践。\n\n它为软件开发提供了简单且轻量级的体验。\n\n它是一系列旨在指导企业扩展精益和敏捷实践的组织和工作流程模式的集合。\n\n它被划分为三个部分，即团队（Team）、方案（Program）和投资组合（Portfolio）。\n\n",
+              "links": [
+                {
+                  "title": "SAFe（Scaled Agile Framework）教程",
+                  "url": "https://www.guru99.com/scaled-agile-framework.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "6a87067b-d5a2-4810-a9ed-fc445724d299",
+              "xid": "503f84c9-5b7f-4aa8-a11e-ad20e9776fc4"
+            },
+            {
+              "title": "极限编程(XP)",
+              "description": "极限编程(XP)是一种敏捷软件开发框架，旨在提高软件质量和开发团队的生活质量。\n\nXP是关于软件开发中适当的工程实践方面最为具体的敏捷框架之一。\n\n",
+              "links": [
+                {
+                  "title": "什么是极限编程(XP)?",
+                  "url": "https://www.agilealliance.org/glossary/xp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a810b376-561f-47c6-86e9-e57a73f904c8",
+              "xid": "420bae7f-4b67-418a-8ad0-868971e07bc3"
+            }
+          ],
+          "id": "1089fecd-3959-43ce-a075-c7d05e97149c",
+          "xid": "e57ad0c1-f761-4b75-a178-2e71e8239238"
+        },
+        {
+          "title": "V模型",
+          "description": "V模型是一种高度规范的软件开发生命周期（SDLC）模型，其中每个开发阶段都有一个并行的测试阶段。\n\nV模型是瀑布模型的一种扩展形式，其中软件开发和测试按顺序进行执行。\n\n它也被称为验证模型或确认模型。\n\n",
+          "links": [
+            {
+              "title": "软件测试中的V模型",
+              "url": "https://www.guru99.com/v-model-software-testing.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "97268988-5aaf-457c-833e-ba4dbefc9d16",
+          "xid": "751f88c3-bf5e-4e96-9e55-d4a46e0d7f96"
+        },
+        {
+          "title": "瀑布模型",
+          "description": "瀑布模型是一种顺序模型，将软件开发划分为预定义的阶段。\n\n每个阶段必须在下一个阶段开始之前完成，阶段之间没有任何重叠。\n\n每个阶段的设计都是为了在软件开发生命周期（SDLC）中执行特定的活动。\n\n",
+          "links": [
+            {
+              "title": "SDLC中的瀑布模型是什么？优缺点",
+              "url": "https://www.guru99.com/what-is-sdlc-or-waterfall-model.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "02271832-1d78-4d0d-91c9-167e6c400768",
+          "xid": "96ea4724-0c57-4de4-a6f0-35a714180b61"
+        }
+      ],
+      "id": "0aa0dc2a-6814-47c1-b18c-175f3293ca52",
+      "xid": "8cebf7d6-ce59-4f15-be74-e8e3685d8178"
+    },
+    {
+      "title": "手动测试",
+      "description": "手动测试是一种软件测试类型，测试人员在不使用任何自动化工具的情况下手动执行测试用例。\n\n手动测试的目的是识别软件应用程序中的错误、问题和缺陷。\n\n手动测试是所有测试类型中最为原始的技术，有助于发现软件应用程序中的关键缺陷。\n\n",
+      "links": [
+        {
+          "title": "手动测试教程：什么是手动测试、类型、概念",
+          "url": "https://www.guru99.com/manual-testing.html",
+          "type": "article"
+        },
+        {
+          "title": "手册测试",
+          "url": "https://www.javatpoint.com/manual-testing",
+          "type": "article"
+        },
+        {
+          "title": "探索关于质量保证的热门帖子",
+          "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "TDD（测试驱动开发）",
+          "description": "测试驱动开发（Test Driven Development, TDD）是一种软件开发方法论，在这种方法论中，为规定和验证代码功能而开发测试用例。\n\n简单来说，就是为每个功能编写并优先进行测试用例的测试，如果测试失败，则编写新的代码以通过测试，从而使代码简洁而无错误。\n\n",
+          "links": [
+            {
+              "title": "什么是测试驱动开发（TDD）？教程和示例",
+              "url": "https://www.guru99.com/test-driven-development.html",
+              "type": "article"
+            },
+            {
+              "title": "测试驱动开发（TDD）简介",
+              "url": "https://pt.coursera.org/learn/test-and-behavior-driven-development-tdd-bdd",
+              "type": "article"
+            },
+            {
+              "title": "探索关于TDD的热门帖子",
+              "url": "https://app.daily.dev/tags/tdd?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7336fabb-ebb9-47d1-af20-496ffb92a159",
+          "xid": "1f7e439b-6417-4b1c-8e3c-16c06ef2e7e5"
+        },
+        {
+          "title": "测试计划",
+          "description": "测试计划是一种详细文档，描述了测试策略、目标、计划、估算、可交付成果以及执行软件产品测试所需资源。\n\n测试计划帮助我们确定验证待测应用程序质量所需的资源。\n\n",
+          "links": [
+            {
+              "title": "测试计划：是什么，如何创建（附示例）",
+              "url": "https://www.guru99.com/what-everybody-ought-to-know-about-test-planing.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "886f0eb8-7936-4da5-a97f-5c32a6bea6a8",
+          "xid": "398e32ed-38a3-4182-be43-f183422ca564"
+        },
+        {
+          "title": "测试用例和测试场景",
+          "description": "测试用例(Test Case)是一系列用于验证软件应用程序特定功能或功能的操作。\n\n测试用例包含为特定测试场景(Scenario)开发的测试步骤(test steps)、测试数据(test data)、前提条件(precondition)和后续条件(postcondition)，以验证任何需求。\n\n测试用例包括特定的变量或条件，通过这些变量或条件，测试工程师可以比较预期结果和实际结果，以确定软件产品是否按客户要求运行。\n\n测试场景(Test Scenario)被定义为可以测试的任何功能。\n\n它是测试用例的集合，有助于测试团队确定项目的正负特征。\n\n",
+          "links": [
+            {
+              "title": "测试用例 vs 测试场景 - 他们之间的区别",
+              "url": "https://www.guru99.com/test-case-vs-test-scenario.html",
+              "type": "article"
+            },
+            {
+              "title": "如何在软件测试中编写测试用例 - 带有示例",
+              "url": "https://www.guru99.com/test-case.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f72bda24-ab66-498b-9fab-766f7a583624",
+          "xid": "2a2eba04-54d1-4b8d-8a12-305d04b19b24"
+        },
+        {
+          "title": "兼容性(Compatibility)",
+          "description": "兼容性指的就是共存或共同生活的可能性。\n\n兼容性测试是一种软件测试，用于检查软件是否能够运行在不同的硬件、操作系统、应用程序、网络环境或移动设备上。\n\n",
+          "links": [
+            {
+              "title": "什么是兼容性测试？前向和后向兼容性示例",
+              "url": "https://www.guru99.com/compatibility-testing.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3554e378-2900-4592-868a-4c6c4ff30118",
+          "xid": "01b3f83c-7d4f-4277-81ae-9132567a2322"
+        },
+        {
+          "title": "验证和确认",
+          "description": "在软件测试中，验证是一个检查文档、设计、代码和程序的过程，以检查软件是否是根据需求构建的。\n\n验证过程的主要目标是确保软件应用程序、设计、架构等的质量。\n\n验证过程包括诸如审查、走查和检查等活动。\n\n在软件工程中，确认是一个动态测试和验证机制，用于测试软件产品是否确实满足客户的确切需求。\n\n该过程有助于确保软件在适当环境中满足预期用途。\n\n确认过程包括诸如单元测试、集成测试、系统测试和用户验收测试等活动。\n\n",
+          "links": [
+            {
+              "title": "验证与确认之间的差异",
+              "url": "https://www.guru99.com/verification-v-s-validation-in-a-software-testing.html",
+              "type": "article"
+            },
+            {
+              "title": "设计验证与确认过程",
+              "url": "https://www.guru99.com/design-verification-process.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b86d1cc1-c076-4c70-b7d1-800f49eb092a",
+          "xid": "ac697fa5-411d-4062-b6f5-4f13c0b396bb"
+        }
+      ],
+      "id": "312c3e7c-4c98-4d23-9fbb-14ec4206d9a2",
+      "xid": "2aabb8de-ee14-46de-afc6-279c27b6ae6c"
+    },
+    {
+      "title": "自动化测试(automated testing)",
+      "description": "自动化测试(automated testing)",
+      "links": [],
+      "children": [
+        {
+          "title": "移动自动化",
+          "description": "移动自动化，顾名思义，是指在移动设备上执行的'自动化'(automation)。\n\n移动自动化可以测试WAP网站或应用程序。\n\n众所周知，移动设备包含硬件和软件组件，而移动应用只是其中的软件部分。\n\n测试移动设备也与评估硬件组件和软件部分有关。\n\n",
+          "links": [
+            {
+              "title": "移动自动化测试步骤和流程",
+              "url": "https://u-tor.com/topic/mobile-automation-steps",
+              "type": "article"
+            },
+            {
+              "title": "探索关于自动化的顶级文章",
+              "url": "https://app.daily.dev/tags/automation?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "浓缩咖啡（Espresso）",
+              "description": "浓缩咖啡（Espresso）是 Android 的原生测试框架，用于编写可靠的用户界面（UI）测试。\n\nGoogle 在2013年10月发布了 Espresso 框架，并且自版本2.0发布以来，Espresso 已成为 Android 支持库（Support Repository）的一部分。\n\nEspresso 的一个重要功能是它可以自动同步测试操作与应用程序的用户界面（UI）。\n\n该框架还保证在运行测试之前启动活动（activity）。\n\n它还可以强制测试等待所有观察者后台活动完成，这有时会在其他测试框架中成为一个问题。\n\n",
+              "links": [
+                {
+                  "title": "Github上的Espresso代码示例",
+                  "url": "https://github.com/android/testing-samples",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Espresso文档",
+                  "url": "https://developer.android.com/training/testing/espresso#kotlin",
+                  "type": "article"
+                },
+                {
+                  "title": "Espresso测试教程",
+                  "url": "https://www.tutorialspoint.com/espresso_testing/index.htm",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "fa48ef0e-a4e1-4e9b-8f2b-e58d0a87f52b",
+              "xid": "9e3ec87f-081c-49d0-9030-524382a684a6"
+            },
+            {
+              "title": "排毒(Detox)",
+              "description": "排毒(Detox)是一个JavaScript移动测试框架，已内置到应用程序中，并且测试执行在应用程序启动时开始。\n\n这使得测试执行非常快速和稳健，因为无需任何额外的外部工具来进行测试执行期间的编排和同步。\n\n",
+              "links": [
+                {
+                  "title": "排毒(Detox)",
+                  "url": "https://wix.github.io/Detox/",
+                  "type": "article"
+                },
+                {
+                  "title": "开始使用排毒(Detox)",
+                  "url": "https://wix.github.io/Detox/docs/introduction/getting-started",
+                  "type": "article"
+                },
+                {
+                  "title": "测试自动化工具：排毒(Detox)",
+                  "url": "https://www.spritecloud.com/test-automation-tools-detox/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "3895d740-7468-45f9-a652-f094c6fbb595",
+              "xid": "498224b6-84b6-4539-b903-e378bfddae8b"
+            },
+            {
+              "title": "Appium",
+              "description": "Appium 是一款开源框架，允许 QAs（Quality Assurance，质量保证）在不同平台上（如 Android、iOS 和 Windows）进行自动化应用测试。\n\n它由 Sauce Labs 开发和维护，用于自动化原生和混合移动应用。\n\nAppium 是一种跨平台移动自动化工具，这意味着它允许在多个平台上运行相同的测试。\n\n",
+              "links": [
+                {
+                  "title": "Appium 示例测试在 Github",
+                  "url": "https://github.com/appium/appium/tree/1.x/sample-code",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Appium",
+                  "url": "https://appium.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "Appium 文档",
+                  "url": "https://appium.io/docs/en/2.0/intro/",
+                  "type": "article"
+                },
+                {
+                  "title": "用于移动应用测试的 Appium 教程",
+                  "url": "https://www.browserstack.com/guide/appium-tutorial-for-testing",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8c67a920-d0e1-4a6f-86d2-063d4ebddd0c",
+              "xid": "5a6bab18-f434-47ee-80e4-0748c95eb502"
+            },
+            {
+              "title": "XCUITest",
+              "description": "移动应用测试，尤其是应用用户界面(UI)测试，涉及检查用户执行操作时界面的行为，并将其与预期的结果进行比较。\n\n在这里，测试人员尝试精确地模拟用户如何与应用程序进行交互，并验证UI的状态。\n\nXCUITest允许他们使用两个基本概念编写测试用例(test cases)来实现这些目的。\n\n",
+              "links": [
+                {
+                  "title": "XCUITest 文档",
+                  "url": "https://developer.apple.com/documentation/xctest/",
+                  "type": "article"
+                },
+                {
+                  "title": "开始使用 XCUITest",
+                  "url": "https://www.browserstack.com/guide/getting-started-xcuitest-framework",
+                  "type": "article"
+                },
+                {
+                  "title": "Xcuitest - 端到端测试",
+                  "url": "https://testautomationu.applitools.com/learningpaths.html?id=mobile-swift-path",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1b1d8107-96f5-4860-a721-b6a5deb06a3c",
+              "xid": "e68b7f9f-97c6-4869-af9f-5886c06da34c"
+            }
+          ],
+          "id": "e342d3de-38b9-4af8-98c3-df8ca774f7bc",
+          "xid": "2247f6f7-aabc-4adb-aa37-65a448fc2254"
+        },
+        {
+          "title": "后端自动化 (Backend Automation)",
+          "description": "后端测试 (Backend Testing) 是一种测试方法，用于检查Web应用程序或软件的服务器端或数据库。\n\n后端测试旨在测试应用层或数据层，以确保Web应用程序或软件不包含诸如死锁 (deadlock)、数据损坏 (data corruption) 或数据丢失 (data loss) 等数据库缺陷。\n\n",
+          "links": [
+            {
+              "title": "什么是后端测试 (What is Backend Testing)?",
+              "url": "https://testinggenez.com/what-is-backend-testing-and-types/",
+              "type": "article"
+            },
+            {
+              "title": "后端测试教程 (Backend Testing Tutorial)",
+              "url": "https://www.guru99.com/what-is-backend-testing.html",
+              "type": "article"
+            },
+            {
+              "title": "探索有关自动化 (Automation) 的顶级文章",
+              "url": "https://app.daily.dev/tags/automation?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Karate框架(Karateframework)",
+              "description": "Karate是唯一将API测试自动化、模拟、性能测试甚至UI自动化整合到一个单一统一框架中的开源工具。\n\n由Cucumber普及的行为驱动开发(BDD)语法具有语言中立性，即使非程序员也能轻松上手。\n\n断言和HTML报告都内置其中，并且您可以并行运行测试以提高速度。\n\n对于不习惯Java的团队，还提供跨平台的独立可执行程序。\n\n您无需编译代码，只需使用一种简单易读的语法编写测试——该语法经过精心设计，适用于HTTP、JSON、GraphQL和XML。\n\n并且您可以在同一测试脚本中结合API和UI测试自动化。\n\n对于那些倾向于通过编程方式集成Karate丰富的自动化和数据断言功能的人来说，也存在Java API。\n\n",
+              "links": [
+                {
+                  "title": "Karate架构(karate architecture)",
+                  "url": "https://github.com/karatelabs/karate/blob/master/karate-core/src/test/resources/karate-map.jpg?raw=true",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Karate框架(Karate Framework)",
+                  "url": "https://www.karatelabs.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "Karate入门(karate for beginner)",
+                  "url": "https://www.youtube.com/watch?v=1f6xtJpRx4k&list=PLhW3qG5bs-L-y5Q1zDXJAur1JNZVFB534",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "87691bed-0f2d-4a91-afa2-cf7c79f81407",
+              "xid": "a5a2c901-643f-412c-ae3e-e6a84b1b95e0"
+            },
+            {
+              "title": "Cypress",
+              "description": "Cypress框架（Cypress framework）是一款基于JavaScript的端到端（end-to-end）测试框架，它构建在Mocha（一款特性丰富的JavaScript测试框架）之上，可以在浏览器上运行，使得异步测试变得简单且方便。\n\n它还使用了一款BDD/TDD断言库（assertion library）和浏览器，可以与任何JavaScript测试框架结合使用。\n\n",
+              "links": [
+                {
+                  "title": "Cypress",
+                  "url": "https://www.cypress.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "Cypress 文档",
+                  "url": "https://docs.cypress.io/guides/overview/why-cypress#Other",
+                  "type": "article"
+                },
+                {
+                  "title": "如何运行",
+                  "url": "https://www.cypress.io/how-it-works",
+                  "type": "article"
+                },
+                {
+                  "title": "Cypress - 端到端测试框架",
+                  "url": "https://dev.to/bushraalam/cypress-end-to-end-testing-framework-3naa",
+                  "type": "article"
+                },
+                {
+                  "title": "有关Cypress的热门文章",
+                  "url": "https://app.daily.dev/tags/cypress?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "Cypress端到端测试",
+                  "url": "https://www.youtube.com/watch?v=7N63cMKosIE",
+                  "type": "video"
+                },
+                {
+                  "title": "Cypress技巧",
+                  "url": "https://www.youtube.com/watch?v=PZ2OsLBts1E&list=PLP9o9QNnQuAYYRpJzDNWpeuOVTwxmIxcI",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "387cdadc-3849-4619-b803-828c34b04aca",
+              "xid": "e069b703-c5ae-4668-aba6-240f4f5cd0a8"
+            },
+            {
+              "title": "SoapUI（SoapUI）",
+              "description": "SoapUI是全球领先的用于SOAP和REST测试的功能测试工具。\n\n凭借其易于使用的图形界面和企业级功能，SoapUI使您能够轻松迅速地创建和执行自动化的功能测试、回归测试和负载测试。\n\n",
+              "links": [
+                {
+                  "title": "SoapUI（SoapUI）",
+                  "url": "https://www.soapui.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "SoapUI文档（SoapUI Docs）",
+                  "url": "https://www.soapui.org/getting-started/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ae3ae1d3-cacf-4edf-b079-e9c4134827ad",
+              "xid": "b70fc7be-38a3-44cf-b883-fa22bd6cb7e2"
+            },
+            {
+              "title": "Postman / Newman",
+              "description": "Postman 是一个 API 平台（API platform），用于创建和使用API。\n\nPostman 简化了 API 生命周期的每一步，并简化了协作，让您能够更快地创建更好的 API。\n\n它是一个 API 客户端（API client），使开发人员能够轻松地创建、共享、测试和记录 API。\n\n借助这个开源解决方案，用户可以创建和保存简单和复杂的 HTTP/s 请求，并阅读其响应。\n\nNewman 是一个命令行集合运行器（Collection Runner），用于 Postman。\n\n它允许您直接从命令行运行和测试 Postman 集合（Collection）。\n\n它构建了可扩展性，将其与您的持续集成服务器和构建系统集成。\n\n",
+              "links": [
+                {
+                  "title": "Postman",
+                  "url": "https://www.postman.com",
+                  "type": "article"
+                },
+                {
+                  "title": "了解 Postman",
+                  "url": "https://learning.postman.com/docs/getting-started/introduction/",
+                  "type": "article"
+                },
+                {
+                  "title": "Newman 命令行界面",
+                  "url": "https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Postman 的热门帖子",
+                  "url": "https://app.daily.dev/tags/postman?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "使用 Postman 进行 API 测试",
+                  "url": "https://www.youtube.com/watch?v=VywxIQ2ZXw4",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "82186c2e-7647-4fa9-b3e8-32369c5bcf7e",
+              "xid": "db4728f2-56ae-4d24-92b8-1ca0af381ff2"
+            },
+            {
+              "title": "REST Assured (REST Assured)",
+              "description": "Rest-assured 帮助开发人员和测试工程师使用Groovy和Ruby等动态语言中使用的技术在Java中轻松测试REST API。\n\n",
+              "links": [
+                {
+                  "title": "REST Assured (REST Assured) 网站",
+                  "url": "https://rest-assured.io",
+                  "type": "article"
+                },
+                {
+                  "title": "REST Assured (REST Assured) 教程：如何使用示例测试API",
+                  "url": "https://www.guru99.com/rest-assured.html",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于REST API的热门文章",
+                  "url": "https://app.daily.dev/tags/rest-api?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "aeceb6c7-42f2-4150-935b-76d7c6cca535",
+              "xid": "32ff8123-a893-4072-a36e-56e47fc30d88"
+            }
+          ],
+          "id": "b9c0a469-02d7-43e6-9c1e-769987480302",
+          "xid": "17c890f0-8c3e-4ed2-9fd1-53ff6c15e81b"
+        },
+        {
+          "title": "前端自动化",
+          "description": "前端自动化是一种自动化方式，它通过简化与交互性、网站和有人值守流程相关任务来提高效率。\n\n机器人流程自动化（Robotic process automation，RPA）被认为是前端或从用户界面（UI）层面的自动化。\n\n前端自动化的好处包括快速构建任务且无需编程知识、不需要对现有程序或应用程序进行任何更改，以及熟悉快捷键的操作人员可以轻松构建自动化任务。\n\n",
+          "links": [
+            {
+              "title": "我们是如何在前端进行自动化测试的",
+              "url": "https://dev.to/davidz/how-we-do-automated-testing-on-our-frontend-b10",
+              "type": "article"
+            },
+            {
+              "title": "探索关于自动化技术的顶级帖子",
+              "url": "https://app.daily.dev/tags/automation?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "基本介绍",
+              "description": "基本介绍",
+              "links": [],
+              "children": [
+                {
+                  "title": "HTML、CSS、JavaScript",
+                  "description": "HTML 代表 HyperText Markup Language（超文本标记语言）。\n\n它用于前端，并为网页提供结构，你可以使用 CSS（Cascading Style Sheets）对其进行样式设计，并使用 JavaScript 使其具有交互性。\n\nCSS 或 Cascading Style Sheets（层叠样式表）是用于设计任何网站前端的语言。\n\nCSS 是 Web 世界的基石技术之一，与 HTML 和 JavaScript 并列。\n\nJavaScript 允许你为页面添加交互性。\n\n你可能在网站上见过一些常见的例子：滑块、点击交互、弹出窗口等等。\n\n",
+                  "links": [
+                    {
+                      "title": "W3Schools - 学习 HTML",
+                      "url": "https://www.w3schools.com/html/html_intro.asp",
+                      "type": "article"
+                    },
+                    {
+                      "title": "W3Schools — 学习 CSS",
+                      "url": "https://www.w3schools.com/css/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "W3Schools — JavaScript 教程",
+                      "url": "https://www.w3schools.com/js/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "浏览关于 CSS 的精选文章",
+                      "url": "https://app.daily.dev/tags/css?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "4cafecd5-33d6-49df-b5bf-e2a444887ad8",
+                  "xid": "406fe28b-f786-47c1-830d-4ce9f514bd3f"
+                },
+                {
+                  "title": "浏览器 / 开发工具",
+                  "description": "每个现代网络浏览器都包含一套强大的开发工具。\n\n这些工具可以完成多种功能，包括检查当前加载的HTML、CSS和JavaScript，显示页面请求的资源及其加载时间。\n\n本文将解释如何使用浏览器开发工具的基本功能。\n\n",
+                  "links": [
+                    {
+                      "title": "浏览器开发工具是什么？",
+                      "url": "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于开发工具的热门帖子",
+                      "url": "https://app.daily.dev/tags/devtools?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "53985766-f9ba-4ffe-a402-53de00db6500",
+                  "xid": "1e65d8f5-9b5a-44b2-aada-67b74cb83ec8"
+                },
+                {
+                  "title": "Ajax",
+                  "description": "Ajax 是 Asynchronous JavaScript And XML（异步JavaScript和XML）的缩写。\n\n简而言之，它是使用 XMLHttpRequest 对象与服务器通信。\n\n它可以发送和接收各种格式的信息，包括 JSON、XML、HTML 和文本文件。\n\n",
+                  "links": [
+                    {
+                      "title": "什么是 Ajax？",
+                      "url": "https://www.w3schools.com/whatis/whatis_ajax.asp",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Ajax 入门",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started",
+                      "type": "article"
+                    },
+                    {
+                      "title": "什么是 Ajax？",
+                      "url": "https://www.youtube.com/watch?v=3l13qGLTgNw",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "a1170e5c-ac68-4b87-963f-ef66ce0f96ab",
+                  "xid": "c3761f4e-be37-467c-83fa-7158859f90d0"
+                },
+                {
+                  "title": "缓存(Caching)",
+                  "description": "缓存(Caching)确保一次性下载的资源可以重复使用，而不是再次进行全新的获取。\n\n这对于通过重复使用缓存的图像、字体和其他静态资产来提高后续页面加载速度非常有用。\n\n不应在动态内容上通常进行缓存(Caching)。\n\n例如，文章列表或评论列表。\n\n在测试策略中，需要测试缓存(Caching)和缓存失效(cache invalidation)（防止获取陈旧的动态内容）。\n\n",
+                  "links": [
+                    {
+                      "title": "什么是缓存(Caching)以及它如何工作 | AWS",
+                      "url": "https://aws.amazon.com/caching/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "缓存(Caching) - 简单解释",
+                      "url": "https://www.youtube.com/watch?v=6FyXURRVmR0",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "ed61366b-1f6a-430a-8b19-827056d698f4",
+                  "xid": "b6d25467-7c00-47e2-9fe5-5fc33f9080cf"
+                },
+                {
+                  "title": "静态网络应用(SWAs)、渐进式网络应用(PWAs)、JAMStack",
+                  "description": "静态网络应用(SWAs)\n----\n\n静态网络应用是指可以直接传递给终端用户的浏览器、无需在服务器端修改HTML、CSS或JavaScript内容的任何网络应用。\n\n虽然它包括非常简单且变化不大的网站，如企业网站，但静态网络应用通常指的是利用浏览器中的技术而不是服务器端技术来提供动态内容的富网站。\n\n渐进式网络应用(PWAs)\n----\n\n在核心上讲，渐进式网络应用只是网络应用。\n\n利用渐进增强技术，可在现代浏览器中启用新功能。\n\n通过使用服务工作者和服务应用清单，你的网络应用变得可靠且可安装。\n\n如果新功能不可用，用户依然可以享受核心体验。\n\n渐进式网络应用为你提供独一无二的机会，向用户交付他们喜爱的网络体验。\n\n利用最新的网络特性，渐进式网络应用增强了能力和可靠性，使你构建的应用可以在任何地方安装到任何设备上，且只需一个代码库。\n\nJAMStack\n--------\n\nJAMStack是一种架构方法，将网络体验层与数据和业务逻辑分离，这提高了灵活性、可扩展性、性能和可维护性。\n\nJAMStack消除了业务逻辑支配网络体验的需求。\n\n它为网络提供组合式架构，使自定义逻辑和第三方服务能够通过API消费。\n\n",
+                  "links": [
+                    {
+                      "title": "静态网络应用(SWA)",
+                      "url": "https://www.staticapps.org/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "渐进式网络应用(PWA)",
+                      "url": "https://web.dev/progressive-web-apps/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "JAMStack",
+                      "url": "https://jamstack.org/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "浏览关于JAMStack的顶级文章",
+                      "url": "https://app.daily.dev/tags/jamstack?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "ba0a6f65-7460-426f-beda-fe9fedfb2515",
+                  "xid": "c1b64d72-8b45-452e-b9ac-7b1dd2091783"
+                },
+                {
+                  "title": "客户端渲染（CSR）与服务器端渲染（SSR）",
+                  "description": "CSR 代表客户端渲染（Client Side Rendering），而 SSR 代表服务器端渲染（Server Side Rendering）。\n\n在 CSR 中，页面由您的设备处理后，再由您的浏览器呈现；而在 SSR 中，服务器直接发送可以立即显示的 Html 内容。\n\n主要的 React、Vue 和 Angular 应用程序是 CSR 的例子（从技术上讲，它们也可以在 SSR 模式下运行），而几乎所有的传统技术栈，如 PHP、Ruby on Rails、Java、.NET 等都是 SSR。\n\n从用户角度来看，CSR 应用程序的呈现时间较长，但可以通过避免后续页面重新加载（SPA 即单页应用）来弥补，而 SSR 应用程序通常初始加载时间更快，但经常执行完整的页面重新加载。\n\n",
+                  "links": [
+                    {
+                      "title": "服务器端渲染（SSR）与客户端渲染（CSR）与静态生成（SSG）",
+                      "url": "https://medium.com/@prashantramnyc/server-side-rendering-ssr-vs-client-side-rendering-csr-vs-pre-rendering-using-static-site-89f2d05182ef",
+                      "type": "article"
+                    },
+                    {
+                      "title": "浏览有关 Web 开发的热门文章",
+                      "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+                      "type": "article"
+                    },
+                    {
+                      "title": "服务器端渲染 vs 客户端渲染",
+                      "url": "https://www.youtube.com/watch?v=rNVcZklcmqU",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "fa3e5238-0f07-4dbb-a2b9-4741a004bc0f",
+                  "xid": "ebccd197-b08a-485d-8a0f-001dec886256"
+                },
+                {
+                  "title": "响应式设计 vs 适应式设计",
+                  "description": "确保网站针对手机、平板、笔记本和PC屏幕进行优化的有两种方法：响应式设计（responsive design）和适应式设计（adaptive design）。\n\n虽然两者旨在解决同样的问题，但它们采用不同的策略。\n\n什么是响应式设计？\n==========================\n\n使用响应式设计创建的网站为每个设备提供相同的站点，但该站点是流体式的，会根据设备的尺寸和方向改变其布局和外观。\n\n开发者使用CSS（层叠样式表）来确保每个站点页面可以根据用户视口（viewport）的大小重新格式化，并且只需为站点创建一个代码库。\n\n他们使用所谓的断点（breakpoints）来告诉网站在什么时机调整以适应不同的屏幕尺寸。\n\n大多数新网站现在都使用响应式设计，这得益于诸如WordPress（惠普动力）、Joomla（朱马拉）和Drupal（德鲁帕尔）等CMS系统的主题的可用性，使经验不足的设计者和开发者更容易实现。\n\n响应式设计提供的控制不如适应式设计（adaptive design）多，但构建和维护都较为省力。\n\n响应式布局是流体的，虽然适应式设计可以使用百分比在缩放时提供更流畅的感觉，但这些百分比同样可能在窗口尺寸调整时造成突变。\n\n什么是适应式设计？\n========================\n\n在适应式设计中，为每种设备屏幕创建不同的网站布局。\n\n加载时，网站会识别屏幕的大小并提供该视口的布局。\n\n事实上，您可以为六种从非常小到非常大的常见屏幕尺寸——即320px、480px、760px、960px、1200px和1600px——创建各自不同的用户体验。\n\n适应式设计对于将现有网站进行改造以使其更适合手机使用特别有用。\n\n这使您能够对特定多个视口的设计和网页开发进行控制。\n\n您要设计的视口数量完全取决于您、您的公司以及总体预算。\n\n它确实让您在设计中有某种程度的控制权（比如对内容和布局），这是使用响应式设计可能无法获得的。\n\n",
+                  "links": [],
+                  "children": [],
+                  "id": "94404c1d-b1ca-4f92-951b-718e35fa989d",
+                  "xid": "51578512-a4fb-44b2-8df7-4314e5959f51"
+                }
+              ],
+              "id": "e6df9573-d617-4ffd-afc2-94d0b407f42c",
+              "xid": "8485b596-638f-44a0-8789-0fb5409e6d0f"
+            },
+            {
+              "title": "Selenium IDE",
+              "description": "Selenium IDE 是来自 Selenium 套件 (Selenium Suite) 的一个开源网络自动化测试工具，主要用于质量保证 (QA) 目的。\n\n它功能类似于 Firefox 扩展，不需要编程知识，只需通过与浏览器交互即可轻松创建测试用例。\n\n本身，Selenium 是一个开源的自动化测试工具，用于在各种浏览器中测试网络应用程序。\n\n它主要由 Java 构建，并支持多种浏览器和编程语言。\n\nSelenium IDE 的开发目的是为了加快自动化脚本的创建速度。\n\n它是一个快速原型设计工具，可以被毫无编程经验的工程师使用。\n\n由于其简单性，Selenium IDE 最适合用作初步原型设计工具，而非开发和维护复杂测试套件的完整解决方案。\n\n",
+              "links": [
+                {
+                  "title": "Selenium IDE",
+                  "url": "https://www.selenium.dev/selenium-ide/",
+                  "type": "article"
+                },
+                {
+                  "title": "Selenium IDE 教程",
+                  "url": "https://www.softwaretestinghelp.com/selenium-ide-script-selenium-tutorial-3/",
+                  "type": "article"
+                },
+                {
+                  "title": "浏览关于 Selenium 的顶级文章",
+                  "url": "https://app.daily.dev/tags/selenium?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "fcf4f3a6-8b7e-4c7d-ba66-81d1cc0b27a5",
+              "xid": "02ba9d5e-d0ef-4c79-9755-1cc3ca015d66"
+            },
+            {
+              "title": "幽灵检测器 (Ghost Inspector)",
+              "description": "幽灵检测器 (Ghost Inspector) 是一个无需编写代码的自动化测试工具，它允许你轻松创建和运行针对网站和网络应用的自动化浏览器测试。\n\n这些测试在浏览器中执行操作的方式与真实用户相同，以确保一切运行正常。\n\n",
+              "links": [
+                {
+                  "title": "幽灵检测器 (Ghost Inspector)",
+                  "url": "https://ghostinspector.com/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是幽灵检测器 (Ghost Inspector)? 介绍及功能概览",
+                  "url": "https://theqalead.com/test-management/what-is-ghost-inspector-overview-tour-of-features/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "92da8c59-f302-4711-b0da-68cdde5db7c9",
+              "xid": "8be000d1-4ac4-43e3-a268-e22fc2338b37"
+            },
+            {
+              "title": "Bug Magnet (缺陷磁铁)",
+              "description": "探索性测试 (Exploratory Testing) 是通过漫游软件的随机路径探索其功能，发现软件能做什么以及不能做什么的过程。\n\n在探索性测试中，我们尝试验证系统如何应对特殊/无效输入和边界情况。\n\n缺陷磁铁 (Bug Magnet) 将帮助你配置数据验证和可能导致问题的各种输入场景。\n\n",
+              "links": [
+                {
+                  "title": "缺陷磁铁 (Bug Magnet) 网站",
+                  "url": "https://bugmagnet.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "缺陷磁铁 (Bug Magnet): 适用于探索性测试的 Chrome 扩展",
+                  "url": "http://www.testingjournals.com/bug-magnet-extension-exploratory-testing/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1c3f28bb-2dd6-4769-8bf7-0e5c95411569",
+              "xid": "fe98309f-6a18-4597-9631-2d46d210fdc1"
+            },
+            {
+              "title": "自动化框架",
+              "description": "自动化框架",
+              "links": [],
+              "children": [
+                {
+                  "title": "QA Wolf",
+                  "description": "QA Wolf 是一个混合平台和服务，它通过将质量保证（QA）完全从软件团队的手中接管，来帮助软件团队更快地开发出更好的软件。\n\n",
+                  "links": [
+                    {
+                      "title": "QA Wolf",
+                      "url": "https://www.qawolf.com/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "QA Wolf 文档",
+                      "url": "https://app.qawolf.com/docs/why-qa-wolf",
+                      "type": "article"
+                    },
+                    {
+                      "title": "开始使用 QA Wolf",
+                      "url": "https://app.qawolf.com/docs/create-a-test",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于 QA 的顶级文章",
+                      "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+                      "type": "article"
+                    },
+                    {
+                      "title": "QA Wolf 教程",
+                      "url": "https://www.youtube.com/watch?v=BRxVu0De-4k&list=PL33T95M59Kkg1zKCU5NHc2g2XYXOs3-DU",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "3bb05041-d96e-4b64-b050-36db468db15d",
+                  "xid": "7c5243c8-dcee-4b04-9857-ade4007c75a2"
+                },
+                {
+                  "title": "Cypress",
+                  "description": "Cypress（卡普塞尔）框架是一个基于JavaScript的端到端测试框架，构建在Mocha之上 - 一个功能丰富的JavaScript测试框架，在浏览器中运行，使异步测试简单且方便。\n\n它还使用行为驱动开发/测试驱动开发断言库（BDD/TDD assertion library）和浏览器来配合任何JavaScript测试框架。\n\n",
+                  "links": [
+                    {
+                      "title": "Cypress",
+                      "url": "https://www.cypress.io/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Cypress文档",
+                      "url": "https://docs.cypress.io/guides/overview/why-cypress#Other",
+                      "type": "article"
+                    },
+                    {
+                      "title": "它的工作原理",
+                      "url": "https://www.cypress.io/how-it-works",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Cypress - 端到端测试框架",
+                      "url": "https://dev.to/bushraalam/cypress-end-to-end-testing-framework-3naa",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于Cypress的顶级帖子",
+                      "url": "https://app.daily.dev/tags/cypress?ref=roadmapsh",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Cypress端到端测试",
+                      "url": "https://www.youtube.com/watch?v=7N63cMKosIE",
+                      "type": "video"
+                    },
+                    {
+                      "title": "Cypress技巧",
+                      "url": "https://www.youtube.com/watch?v=PZ2OsLBts1E&list=PLP9o9QNnQuAYYRpJzDNWpeuOVTwxmIxcI",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "dca611c8-b2e3-4f66-a0dd-bbd01b85d32a",
+                  "xid": "f334302a-f5cf-4751-85a4-46ec1c8e1018"
+                },
+                {
+                  "title": "Webdriver.io",
+                  "description": "WebdriverIO 是一个用于自动化现代 Web 和移动应用程序的渐进式自动化框架 (automation framework)。\n\n它简化了与应用程序的交互，并提供了一系列插件 (plugins)，帮助您构建可扩展、健壮且稳定的测试套件 (test suite)。\n\nWebdriverIO 利用了 WebDriver 协议 (WebDriver protocol) 的强大功能，该协议由所有浏览器供应商 (browser vendors) 开发并支持，保证了真正的跨浏览器测试体验。\n\n而其他自动化工具需要您下载实际用户不使用的修改版浏览器 (modified browser)，或者通过注入 JavaScript 来模拟用户行为，WebdriverIO 则依赖于一个共同认可的自动化标准 (automation standard)，它经过了充分测试，并确保在未来数十年内兼容。\n\n在开发这一自动化标准期间，Web 发生了很大的变化，今天开发人员对其 Web 应用程序进行测试的许多需求都无法再通过 WebDriver 来满足。\n\n虽然该项目的一些核心贡献者正在帮助支持 WebDriver 协议的下一代，但 WebdriverIO 基于 Chrome 开发工具协议 (Chrome DevTools protocol) 提供了一种替代的自动化解决方案。\n\n这允许用户无缝地在基于 WebDriver 的传统命令和 Puppeteer 的强大浏览器交互之间切换。\n\n",
+                  "links": [
+                    {
+                      "title": "WebdriverIO",
+                      "url": "https://webdriver.io/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "WebdriverIO 简介",
+                      "url": "https://webdriver.io/docs/what-is-webdriverio",
+                      "type": "article"
+                    },
+                    {
+                      "title": "使用 WebdriverIO 入门",
+                      "url": "https://webdriver.io/docs/gettingstarted",
+                      "type": "article"
+                    },
+                    {
+                      "title": "WebdriverIO 教程",
+                      "url": "https://www.youtube.com/watch?v=e8goAKb6CC0&list=PL6AdzyjjD5HBbt9amjf3wIVMaobb28ZYN",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "53060827-dc29-42c1-be21-ae6e47936596",
+                  "xid": "c1fb11e3-b179-45fe-a87a-e1f621046776"
+                },
+                {
+                  "title": "茉莉花(Jasmine)",
+                  "description": "茉莉花(Jasmine)是一款非常流行的JavaScript BDD（行为驱动开发）框架，适用于JavaScript应用程序的单元测试。\n\n它提供了可用于运行同步和异步代码自动化测试的工具。\n\n它不依赖于其他任何JavaScript框架，并且不需要DOM环境。\n\n",
+                  "links": [
+                    {
+                      "title": "茉莉花群(Jasmines)",
+                      "url": "https://jasmine.github.io/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "使用茉莉花(Jasmine)进行Angular测试的简单实用示例",
+                      "url": "https://semaphoreci.com/community/tutorials/testing-components-in-angular-2-with-jasmine",
+                      "type": "article"
+                    },
+                    {
+                      "title": "从零开始使用茉莉花(Jasmine)",
+                      "url": "https://www.testim.io/blog/jasmine-js-a-from-scratch-tutorial-to-start-testing",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "f7fc645e-b427-4fc3-b5a6-48602d4d3922",
+                  "xid": "19fea50f-5d70-48ac-954f-898ef48d364f"
+                },
+                {
+                  "title": "Nightwatch",
+                  "description": "Nightwatch.js 是一个开源的自动化测试框架，该框架由 Node.js 驱动，为使用 Selenium Javascript 进行的 web 应用、浏览器应用和网站的自动化测试提供完整的端到端（E2E, end to end）解决方案。\n\n",
+                  "links": [
+                    {
+                      "title": "Nightwatch.js 官方网站",
+                      "url": "https://nightwatchjs.org/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "NightwatchJS 教程：开始自动化测试",
+                      "url": "https://www.browserstack.com/guide/nightwatch-framework-tutorial",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "c8bddd75-7115-4683-b274-bc54bc9be043",
+                  "xid": "e9f0c174-38b1-4f67-8f9e-22187e1d9d63"
+                },
+                {
+                  "title": "机器人框架",
+                  "description": "机器人框架（Robot Framework）是一个基于Python的、可扩展的关键字驱动自动化框架，适用于验收测试、验收测试驱动开发（ATDD）、行为驱动开发（BDD）和机器人流程自动化（RPA）。\n\n机器人框架（Robot Framework）是开放和可扩展的。\n\n它可以与几乎任何其他工具集成，以创建强大且灵活的自动化解决方案。\n\n",
+                  "links": [
+                    {
+                      "title": "机器人框架官方网站",
+                      "url": "https://robotframework.org/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "机器人框架官方用户指南",
+                      "url": "https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html",
+                      "type": "article"
+                    },
+                    {
+                      "title": "逐步介绍机器人框架的基础教程",
+                      "url": "https://medium.com/swlh/robot-framework-the-basics-dfeadc025bea",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "d9c26a20-cf3b-4c12-a317-04ec868b0997",
+                  "xid": "e18cc6f0-54c3-463a-93ec-8875122d0d48"
+                },
+                {
+                  "title": "Selenium（塞莱尼姆）",
+                  "description": "Selenium（塞莱尼姆）是一款开源工具，用于自动化网络浏览器。\n\n它提供了一个单一接口，允许您使用诸如Ruby（红宝石）、Java（Java）、NodeJS（NodeJS）、PHP（PHP）、Perl（Perl）、Python（Python）和C#（C#）等编程语言编写测试脚本。\n\n",
+                  "links": [
+                    {
+                      "title": "Selenium（塞莱尼姆）",
+                      "url": "https://www.selenium.dev/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Selenium教程",
+                      "url": "https://www.browserstack.com/selenium",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于Selenium（塞莱尼姆）的热门帖子",
+                      "url": "https://app.daily.dev/tags/selenium?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "2065e9d4-d552-4a11-a5d9-9c8d93db4208",
+                  "xid": "91d135ac-cc6a-49fd-94aa-51483c91efd6"
+                },
+                {
+                  "title": "Jest",
+                  "description": "Jest 是一个注重简洁性的 JavaScript 测试框架（JavaScript Testing Framework）。\n\n它适用于使用 Babel、TypeScript、Node、React、Angular、Vue 等技术的项目。\n\n",
+                  "links": [
+                    {
+                      "title": "Jest",
+                      "url": "https://jestjs.io/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Jest 文档（Jest Documentation）",
+                      "url": "https://jestjs.io/docs/getting-started",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于 Jest 的热门文章",
+                      "url": "https://app.daily.dev/tags/jest?ref=roadmapsh",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Jest 快速入门 - JavaScript 单元测试",
+                      "url": "https://www.youtube.com/watch?v=7r4xVDI2vho",
+                      "type": "video"
+                    }
+                  ],
+                  "children": [],
+                  "id": "46c33325-44c6-449c-b89e-61a774482c2b",
+                  "xid": "d7f63ed2-98c8-4a9b-aca7-b2456620043e"
+                },
+                {
+                  "title": "Puppeteer",
+                  "description": "Puppeteer 是一个 Node 图书馆（library），它通过 DevTools 协议（DevTools Protocol）提供了用于控制无头 Chrome 或 Chromium 的高级别 API（API）。\n\n它也可以配置为使用完整的（非无头）Chrome 或 Chromium。\n\n",
+                  "links": [
+                    {
+                      "title": "Puppeteer",
+                      "url": "https://developer.chrome.com/docs/puppeteer/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "探索关于爬取的热门帖子",
+                      "url": "https://app.daily.dev/tags/crawling?ref=roadmapsh",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "064b7b2e-f494-48e8-8efa-a55ec031693e",
+                  "xid": "c5b3cdcd-6592-4ffe-8282-a12fbaba2885"
+                },
+                {
+                  "title": "Playwright",
+                  "description": "Playwright 测试（Playwright Test）专门创建以符合端到端测试（end-to-end testing）的需求。\n\nPlaywright 支持所有现代渲染引擎，包括 Chromium、WebKit 和 Firefox。\n\n可以在 Windows、Linux 和 macOS 上进行测试，无论是在本地还是在 CI（持续集成）中，以无头模式（headless）或有头模式（headed）与 Google Chrome for Android 和 Mobile Safari 的原生移动设备模拟功能一同进行测试。\n\nPlaywright 利用 DevTools（开发者工具）协议来编写强大且稳定的自动化测试。\n\nPlaywright 实际上能够查看和控制浏览器，而非依赖中间翻译层（middle translation layer），这使得可以模拟更加深刻且相关的用户场景。\n\n",
+                  "links": [
+                    {
+                      "title": "Playwright",
+                      "url": "https://playwright.dev/",
+                      "type": "article"
+                    },
+                    {
+                      "title": "Playwright 教程：学习基础和配置",
+                      "url": "https://www.browserstack.com/guide/playwright-tutorial",
+                      "type": "article"
+                    }
+                  ],
+                  "children": [],
+                  "id": "d4c54da2-523c-46f8-87b8-f6e02230e1e0",
+                  "xid": "4e38e034-6f4e-4759-ad67-551228256d4f"
+                }
+              ],
+              "id": "3c615e81-24d3-41df-bc71-f29bb42dfc0f",
+              "xid": "5318fad2-12ab-4182-bf79-8276c2349bd5"
+            }
+          ],
+          "id": "9a48bef1-ba9a-4dd1-96c2-4c2583190275",
+          "xid": "772f305a-0444-4355-98e5-e96dc908e495"
+        }
+      ],
+      "id": "662a452e-294d-4e79-9ff0-901a6c7f88d4",
+      "xid": "486f7749-2bdc-443f-95e8-60095342dd86"
+    },
+    {
+      "title": "qa-非功能性测试(non-functional testing)",
+      "description": "qa-非功能性测试(non-functional testing)",
+      "links": [],
+      "children": [
+        {
+          "title": "可访问性测试(Accessibility Tests)",
+          "description": "在软件质量保证(QA)中，可访问性测试是指确认应用程序尽可能对所有人可用，包括有视力障碍、听力问题和认知障碍的残疾人士。\n\n",
+          "links": [
+            {
+              "title": "可访问性测试 - Javatpoint",
+              "url": "https://www.javatpoint.com/accessibility-testing",
+              "type": "article"
+            },
+            {
+              "title": "探索关于可访问性的顶级文章",
+              "url": "https://app.daily.dev/tags/accessibility?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "Chrome 开发者工具（Chrome DevTools）",
+              "description": "这是一套集成到浏览器中的工具，能够帮助前端开发者诊断和解决应用中的各种问题，包括 JavaScript 问题（JavaScript bugs）、逻辑错误和其他 CSS 样式问题甚至是快速临时地修改 DOM。\n\n要进入开发工具，您可以右键点击并点击**检查**（Inspect）（或者按 `ctrl+shift+c`/`cmd+opt+c` 进入“元素”面板）。\n\n在这里您能够调试 CSS 和 HTML 问题。\n\n如果您想查看记录的消息或与 JavaScript 交互，可以从上方的标签进入**控制台**（Console）面板（或按 `ctrl+shift+j`/`cmd+opt+j` 直接进入）。\n\n“性能检查”（Lighthouse）是 Chrome 开发者工具中非常有用的另一个特性——这将在后文中有所提及。\n\n注意事项：此功能并非 Chrome 特有，大多数浏览器（无论是基于 Chromium 或其他内核的浏览器）都会有自己的开发工具，其大部分功能与之类似。\n\n",
+              "links": [
+                {
+                  "title": "Chrome 开发者工具",
+                  "url": "https://developer.chrome.com/docs/devtools/overview/",
+                  "type": "article"
+                },
+                {
+                  "title": "查找有关 DevTools 的热门帖子",
+                  "url": "https://app.daily.dev/tags/devtools?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f9d45cc0-9d84-4f78-a97c-29c6ad3910a5",
+              "xid": "85ab677a-c18b-48a5-9627-a6f86e45bb86"
+            },
+            {
+              "title": "Wave（Wave）",
+              "description": "Wave 是一套评估工具，帮助作者使其网络内容对残疾人士更具可访问性。\n\nWave 可以识别许多可访问性和 Web 内容可访问性指南（WCAG）错误，同时也可以促进对网络内容的人工评估。\n\n",
+              "links": [
+                {
+                  "title": "Wave（Wave）",
+                  "url": "https://wave.webaim.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "WAVE 可访问性测试工具教程（WAVE Accessibility Testing Tool Tutorial）",
+                  "url": "https://www.softwaretestinghelp.com/web-accessibility-testing-tools/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "28c7afb3-4727-4b43-84ba-a3dde35b738a",
+              "xid": "ff209242-9b7e-494c-8ec3-2f78460105ab"
+            },
+            {
+              "title": "AXE",
+              "description": "AXE 是一个快速且轻量级的可访问性测试工具，它可以检查整个文档是否符合规则，并生成包含所有违规情况、通过情况等的报告。\n\n",
+              "links": [
+                {
+                  "title": "AXE 网站",
+                  "url": "https://www.deque.com/axe/",
+                  "type": "article"
+                },
+                {
+                  "title": "使用 axe-core 库进行可访问性测试",
+                  "url": "https://www.browserstack.com/docs/automate/selenium/accessibility-testing",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ea8619f4-40a2-4396-b903-e28836abc244",
+              "xid": "1680a914-72ba-4cee-8469-dd4568055eca"
+            }
+          ],
+          "id": "090f6094-5e6d-4fe5-a556-58580906325d",
+          "xid": "41bb836b-b693-4293-bace-63ed7d0d6878"
+        },
+        {
+          "title": "负载及性能测试",
+          "description": "性能测试是性能工程的子集。\n\n它是评估系统在各种极端条件下行为的过程。\n\n性能测试的主要目的是监控和改善关键性能指标，如响应时间（Response Time）、吞吐量（Throughput）、内存（Memory）、CPU利用率（CPU Utilization）等。\n\n性能测试有三个观察和评估目标（三个S）：`速度`（Speed）、`可扩展性`（Scalability）和`稳定性`（Stability）。\n\n以下是一些常用的性能测试类型，但不仅限于这些类型：\n\n*   负载测试\n*   压力测试\n*   突发测试\n*   耐力测试\n*   压力容限测试\n*   可扩展性测试\n*   容量测试\n\n负载测试是一种性能测试类型。\n\n它有助于评估在正常工作负载下的应用程序行为，如响应时间、吞吐量、成功/失败交易等。\n\n例如，在典型营业时间里，购物车结算响应时间为500毫秒。\n\n",
+          "links": [],
+          "children": [
+            {
+              "title": "维吉塔(Vegeta)",
+              "description": "维吉塔(Vegeta)是一种多功能的HTTP负载测试工具，它基于需要以恒定的请求速率钻取HTTP服务的需求而构建。\n\n它可以作为命令行工具以及库进行使用。\n\n",
+              "links": [
+                {
+                  "title": "维吉塔(Vegeta)",
+                  "url": "https://github.com/tsenart/vegeta",
+                  "type": "opensource"
+                }
+              ],
+              "children": [],
+              "id": "22d1afde-a0b6-49c7-b758-5cb9834898ea",
+              "xid": "ae3d1abe-3282-4abe-be94-4d8e03a27ecf"
+            },
+            {
+              "title": "JMeter",
+              "description": "Apache JMeter（Apache JMeter）是一个Apache项目，可用作负载测试工具，用于分析和衡量各种服务（特别是网络应用程序）的性能。\n\n",
+              "links": [
+                {
+                  "title": "Apache JMeter",
+                  "url": "https://jmeter.apache.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于测试的顶级文章",
+                  "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+                  "type": "article"
+                },
+                {
+                  "title": "学习JMeter",
+                  "url": "https://www.youtube.com/playlist?list=PLJ9A48W0kpRIjLkZ32Do9yDZXnnm7_uj_",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "585da15a-d4a9-4688-b014-9787df8bedf1",
+              "xid": "24baf576-fb08-4872-b5a9-a3d2673eab11"
+            },
+            {
+              "title": "Locust (性能测试工具)",
+              "description": "Locust (性能测试工具) 是一款易于使用、可脚本化和可扩展的性能测试工具。\n\n您可以通过常规的 Python 代码来定义用户的行为，而不是被限制在用户界面或专用的领域特定语言中。\n\n这使得 Locust 极限可扩展且非常易于开发者使用。\n\n下面是 Locust 的一些特性。\n\n*   在普通的 Python 代码中编写测试场景\n*   分布式且可扩展 - 支持数十万个并发用户\n*   网页基础的用户界面\n*   可测试任何系统\n*   可扩展性强\n\n",
+              "links": [
+                {
+                  "title": "Locust (性能测试工具)",
+                  "url": "https://locust.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "学习 Locust (性能测试工具)",
+                  "url": "https://www.youtube.com/playlist?list=PLJ9A48W0kpRKMCzJARCObgJs3SinOewp5",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "38a94487-2b78-4b1d-886e-c99652e09924",
+              "xid": "7573f301-eb2c-4f40-81b3-61d85b4ea35a"
+            },
+            {
+              "title": "灯塔（Lighthouse）",
+              "description": "灯塔是一款开源的自动化工具，用于提高网页的质量。\n\n您可以将其用于任何网页，无论是公开的还是需要身份验证的。\n\n它提供了性能、可访问性、渐进式网络应用（Progressive Web Apps）、搜索引擎优化（SEO）等方面的审计。\n\n您可以在 Chrome 开发者工具（DevTools）、命令行或作为 Node 模块中运行灯塔。\n\n使用灯塔对一个网址进行审计，运行一系列针对该页面的审计，并生成一个报告，说明页面的表现情况。\n\n从那里，利用未通过的审计结果作为改进页面的指示。\n\n每个审计都有一个参考文档，解释该审计为何重要以及如何修复它。\n\n",
+              "links": [
+                {
+                  "title": "灯塔源代码",
+                  "url": "https://github.com/GoogleChrome/lighthouse/",
+                  "type": "opensource"
+                },
+                {
+                  "title": "浏览关于灯塔的顶级帖子",
+                  "url": "https://app.daily.dev/tags/lighthouse?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "8e12b538-642b-49f9-b935-5d7581bc6995",
+              "xid": "2571c08f-8856-4f0e-93dc-19c7d0e962fa"
+            },
+            {
+              "title": "网页性能测试",
+              "description": "WebPageTest（网页性能测试）是一种网页性能工具，提供深入诊断信息，解释页面在各种条件下表现的具体情况。\n\n每次测试可以在全球不同地点进行，使用真实的浏览器，并且可以在任何数量的可定制网络条件下执行。\n\n",
+              "links": [
+                {
+                  "title": "WebPageTest",
+                  "url": "https://www.webpagetest.org/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4058f63d-5881-470d-9010-43be13e59139",
+              "xid": "bb8bcee2-dfe1-4343-9e51-fa2f7b37981d"
+            },
+            {
+              "title": "Gatling",
+              "description": "Gatling是一款功能强大的负载测试工具。\n\n它设计的目的是易于使用、便于维护且性能高。\n\n开箱即用，Gatling提供了对HTTP协议的出色支持，使其成为任何HTTP服务器负载测试的首选工具。\n\n由于核心引擎实际上是协议无关的，因此可以实现对其他协议的支持。\n\n例如，Gatling当前也提供了JMS支持。\n\nGatling的架构是异步的，只要底层协议（如HTTP）可以以非阻塞的方式实现。\n\n这种架构让我们可以将虚拟用户实现为消息而不是专用线程，使它们的资源消耗非常低。\n\n因此，运行数千个并发虚拟用户不是问题。\n\n\n",
+              "links": [
+                {
+                  "title": "Gatling",
+                  "url": "https://gatling.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "学习Gatling",
+                  "url": "https://www.youtube.com/playlist?list=PLJ9A48W0kpRJE6s8I1MjWm-z8BGbUYNCw",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "65a1bed8-14d4-465e-833e-6c82d0874865",
+              "xid": "2386cc17-cf79-43d4-b8bb-9b7c9d32b2f0"
+            },
+            {
+              "title": "K6",
+              "description": "Grafana k6 是一款开源负载测试工具（load testing tool），使性能测试对于工程团队来说变得简单且富有成效。\n\nk6 是免费的、面向开发人员的（developer-centric）且具有可扩展性（extensible）。\n\n使用 k6，您可以测试系统的可靠性和性能，提前发现问题和性能退化（performance regressions）。\n\nk6 将帮助您构建具备弹性和高性能的可扩展应用（applications that scale）。\n\n",
+              "links": [
+                {
+                  "title": "Grafana k6 官网",
+                  "url": "https://k6.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "学习 k6",
+                  "url": "https://www.youtube.com/playlist?list=PLJ9A48W0kpRJKmVeurt7ltKfrOdr8ZBdt",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "f4f26bc5-47ab-4394-999c-6dca007eb61b",
+              "xid": "21ae6d35-76d0-46bf-808e-7d7db0739272"
+            },
+            {
+              "title": "火炮（Artillery）",
+              "description": "火炮（Artillery）是一个现代的、强大的且易于使用的性能测试工具包。\n\n它帮助您部署可扩展的应用程序，使这些应用程序在高负载下保持高性能和弹性的运行。\n\n火炮（Artillery）优先考虑开发者的生产力和幸福感，遵循“开箱即用”（batteries-included）的理念。\n\n特性\n--------\n\n*   使用场景模拟复杂用户行为\n*   负载测试和冒烟测试\n*   开箱即用\n*   可扩展和易于定制\n*   集成和插件\n*   为跨团队协作而设计\n*   全球规模测试\n\n",
+              "links": [
+                {
+                  "title": "火炮（Artillery）",
+                  "url": "https://www.artillery.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "学习火炮（Artillery）",
+                  "url": "https://www.youtube.com/playlist?list=PLJ9A48W0kpRJh1_uW2mVNhSIVCMYmNlm7",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "5a525338-56c5-4574-95df-eb761e4d1978",
+              "xid": "8596d08e-df3e-4cb9-9499-743c2f37d546"
+            }
+          ],
+          "id": "8178b6dd-80fe-403e-8c60-fba7af49e736",
+          "xid": "68b468d2-1f71-4a7b-b8f9-bcc8436851b1"
+        },
+        {
+          "title": "安全测试",
+          "description": "安全测试是一个旨在揭示信息系统中保护数据并保持预期功能性的安全机制中漏洞的过程。\n\n由于安全测试的逻辑限制，通过安全测试并不意味着不存在漏洞或系统充分满足安全要求。\n\n典型的安全要求可能包括保密性、完整性、身份验证、可用性、授权和不可否认性的特定要素。\n\n实际测试的安全要求取决于系统实现的安全要求。\n\n作为术语，安全测试有许多不同的含义，并且可以通过多种方式完成。\n\n因此，安全分类学帮助我们通过提供一个基本层面来理解这些不同的方法和含义。\n\n",
+          "links": [
+            {
+              "title": "安全测试维基百科",
+              "url": "https://en.wikipedia.org/wiki/Security_testing",
+              "type": "article"
+            },
+            {
+              "title": "探索关于安全的顶级文章",
+              "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "身份验证 / 授权",
+              "description": "`身份验证（Authentication）` 是验证一个个人、实体或网站是否为所声称的对象的过程。\n\n在 Web 应用程序的上下文中，身份验证通常通过提交用户名或 ID 及一个或多个只有特定用户应知的私人信息来完成。\n\n`授权（Authorization）` 可以定义为「验证特定实体是否批准了所请求的操作或服务的过程」（NIST）。\n\n授权与验证不同，后者是验证实体身份的过程。\n\n在设计和开发软件解决方案时，重要的是要记住这些区别。\n\n一个已通过验证的用户（例如通过提供用户名和密码）通常并未被授权访问系统中所有技术上可能获取的资源和执行的操作。\n\n",
+              "links": [
+                {
+                  "title": "OWASP 网站",
+                  "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+                  "type": "article"
+                },
+                {
+                  "title": "浏览关于身份验证的热门贴文",
+                  "url": "https://app.daily.dev/tags/authentication?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1e2d86d3-d0e1-48c1-a060-df937bb2a9e3",
+              "xid": "6ef9b23c-1633-4109-888c-e749e1dd8eb2"
+            },
+            {
+              "title": "凭证管理(Credentials Management)",
+              "description": "凭证管理(Credentials Management)是一种系统化的管理、存储、保护和检索各类系统、数据库和其他服务的凭证的方法。\n\n凭证包括密码、SSH密钥、证书、API密钥、备用代码等等。\n\n",
+              "links": [
+                {
+                  "title": "AWS 凭证管理(Credentials Management)官网",
+                  "url": "https://aws.amazon.com/secrets-manager/",
+                  "type": "article"
+                },
+                {
+                  "title": "Vault 官网",
+                  "url": "https://www.vaultproject.io/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关凭证管理(Credentials Management)的热门文章",
+                  "url": "https://app.daily.dev/tags/secrets-management?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "778c4141-5614-412a-9819-51cef27fc788",
+              "xid": "9ce36b65-f5d1-440a-bc25-63e1f0a3ffd1"
+            },
+            {
+              "title": "漏洞扫描",
+              "description": "漏洞扫描识别主机及主机属性（例如，操作系统、应用程序、开放端口），但它还试图识别漏洞，而不是依赖于人工解读扫描结果。\n\n许多漏洞扫描程序配备了接受来自网络发现和网络端口及服务识别的结果的功能，这减少了漏洞扫描所需的工作量。\n\n此外，一些扫描程序可以自行执行网络发现和网络端口及服务识别。\n\n漏洞扫描有助于识别过时的软件版本、缺失的补丁和不当配置，以及验证是否遵守或偏离组织的安全政策。\n\n这是通过识别主机上运行的操作系统和主要软件应用程序，并将它们与扫描程序漏洞数据库中存储的已知漏洞信息进行匹配来实现的。\n\n",
+              "links": [
+                {
+                  "title": "NIST 网站",
+                  "url": "https://csrc.nist.gov/glossary/term/vulnerability_scanning",
+                  "type": "article"
+                },
+                {
+                  "title": "阅读有关漏洞的热门文章",
+                  "url": "https://app.daily.dev/tags/vulnerability?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c328bbc4-70f4-4a6e-a42d-cdb11da9948a",
+              "xid": "93eae666-a666-49bf-a601-a67be5ce40ee"
+            },
+            {
+              "title": "OWASP 10（OWASP Top 10）",
+              "description": "Open Web Application Security Project（OWASP）是一个致力于网络应用安全的国际非盈利组织。\n\nOWASP Top 10是一份定期更新的报告，概述了网络应用安全的关注点，重点关注了10个最严重的风险。\n\n该报告由来自世界各地的安全专家团队共同编写。\n\nOWASP将Top 10称为一个‘意识文件’，并且他们建议所有公司将其纳入自己的流程，以最小化和/或缓解安全风险。\n\n",
+              "links": [
+                {
+                  "title": "OWASP Top 10",
+                  "url": "https://owasp.org/www-project-top-ten/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是OWASP Top 10？",
+                  "url": "https://www.cloudflare.com/learning/security/threats/owasp-top-10/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2a3d8ec0-49e0-4900-b4c7-f9752f00c585",
+              "xid": "5b64ba23-af92-45aa-92ec-ce8ae335450d"
+            },
+            {
+              "title": "攻击矢量（Attack Vectors）",
+              "description": "此度量标准反映了可利用漏洞的环境。\n\n度量值（也因此基础分数）将根据攻击者能够利用漏洞组件的远程程度（逻辑和物理）而变大。\n\n假设可以从网络上进行利用的漏洞的潜在攻击者的数量大于需要物理访问设备来利用漏洞的潜在攻击者数量，因此应给予更高的基础分数。\n\n",
+              "links": [
+                {
+                  "title": "FIRST.org 网站",
+                  "url": "https://www.first.org/cvss/v3.1/specification-document",
+                  "type": "article"
+                },
+                {
+                  "title": "探索热门安全文章",
+                  "url": "https://app.daily.dev/tags/security?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "9b431160-9eb5-49bc-a895-e6a15458d66e",
+              "xid": "d9cfdf62-3d6b-4ab1-9e44-1227eaff085e"
+            }
+          ],
+          "id": "9b2ec5c1-8b93-4f6b-b6b6-6bbae9e3356b",
+          "xid": "90bf65f3-9878-44ef-b255-85b263ade863"
+        }
+      ],
+      "id": "4dab8f6c-439d-483e-91d6-a359582ce600",
+      "xid": "0c74f46e-7d74-4feb-951b-824447a0da64"
+    },
+    {
+      "title": "电子邮件测试",
+      "description": "电子邮件测试允许您在将其发送到订阅者列表之前预览电子邮件，以验证链接、设计、拼写错误等。\n\n",
+      "links": [
+        {
+          "title": "关于电子邮件测试",
+          "url": "https://www.campaignmonitor.com/blog/email-marketing/how-email-testing-and-rendering-works-and-why-its-important/",
+          "type": "article"
+        },
+        {
+          "title": "检查清单：如何测试和质量保证电子邮件",
+          "url": "https://sponge.io/checklist-how-to-test-and-qa-an-email/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于质量保证的顶级文章",
+          "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Gmail测试器",
+          "description": "Gmail测试器(Gmail-tester)是一个简单的Node.js Gmail客户端，它可以检查/返回来自任何Gmail账户（包括私人和公司账户）的电子邮件信息。\n\n",
+          "links": [
+            {
+              "title": "Gmail测试器包",
+              "url": "https://www.npmjs.com/package/gmail-tester",
+              "type": "opensource"
+            },
+            {
+              "title": "使用gmail测试器(Gmail-tester) + Puppeteer轮询Gmail收件箱",
+              "url": "https://medium.com/@sergtimosh/using-gmail-tester-puppeteer-to-poll-gmail-inbox-65bbee17618c",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d8268104-c18e-414e-917f-e244e96abd1a",
+          "xid": "17d713cf-c87c-4b5b-a78b-6e545fb551b8"
+        },
+        {
+          "title": "Mailinator",
+          "description": "Mailinator 允许开发者和质量保证（QA）测试团队自动测试他们的短信和电子邮件工作流，例如双重身份验证（2FA）验证、注册和密码重置，数万亿个邮箱尽在您的指尖。\n\n无论您是进行手动测试、使用 API，还是使用 Selenium、Cypress、Playwright 或 Puppeteer 等框架 - Mailinator 将关闭电子邮件/短信测试的循环。\n\n",
+          "links": [
+            {
+              "title": "Mailinator",
+              "url": "https://www.mailinator.com/",
+              "type": "article"
+            },
+            {
+              "title": "Mailinator 官方文档",
+              "url": "https://www.mailinator.com/docs/index.html#mailinator",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "70f71451-1b8d-4327-9cc1-08aa771518a4",
+          "xid": "d0a1bccb-cb30-4668-95c9-9db7f8b5fbf4"
+        }
+      ],
+      "id": "c2198d63-416d-419f-9af5-0a15ad7da55e",
+      "xid": "efb437d6-4c45-4de0-b9d7-a4601e660d7b"
+    },
+    {
+      "title": "报告",
+      "description": "国际软件测试资格委员会(ISTQB)的术语表中将质量管理(QA)报告定义为：_总结测试活动和结果的文档_。\n\n通过记录已进行的测试及其产生的结果，QA报告提供了关于代码库健康状况和关键指标的重要见解。\n\n因此，应定期生成这些报告以确保达到质量标准。\n\n基本上，测试报告应记录软件测试过程中执行的所有测试用例及其测试结果。\n\n它们还应提供关于产品的相关信息，并突出显示可以改进的领域。\n\n",
+      "links": [
+        {
+          "title": "如何编写质量管理(QA)报告？",
+          "url": "https://www.netguru.com/blog/how-to-write-qa-report",
+          "type": "article"
+        },
+        {
+          "title": "如何编写质量管理(QA)测试摘要报告？[13个简单步骤]",
+          "url": "https://www.qatouch.com/blog/how-to-write-qa-test-summary-report/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于质量管理(QA)的顶级文章",
+          "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "JUnit",
+          "description": "JUnit 是一种用于 Java 编程语言的单位测试框架（unit testing framework）。\n\nJUnit 在测试驱动开发（test-driven development）的发展中扮演了关键角色，并且是单位测试框架家族的一员。\n\nJUnit 有助于编写可重复的测试，验证应用程序的代码单元（code units）。\n\nJUnit 体现了“先测试，后编码”的理念，这种测试方法解释为——测试一小部分 + 编码一小部分 = JUnit。\n\nJUnit 帮助程序员提高代码片段（code snippets）的生产和稳定性，从而减少测试者在代码调试上花费的时间。\n\n",
+          "links": [
+            {
+              "title": "什么是 JUnit？",
+              "url": "https://www.tutorialspoint.com/junit/junit_test_framework.htm",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1b3c6f89-dcb1-4577-bb4f-32aac42620cb",
+          "xid": "e796659d-edcf-41b1-a7eb-de5d1095d0b2"
+        },
+        {
+          "title": "Allure",
+          "description": "Allure 报告 (Allure Report) 是一款灵活且轻量级的多语言测试报告工具。\n\n它提供清晰的图形报告，并使参与开发过程的每个人都能从日常测试过程中提取尽可能多的信息。\n\n",
+          "links": [
+            {
+              "title": "Allure",
+              "url": "https://qameta.io/",
+              "type": "article"
+            },
+            {
+              "title": "Allure 文档 (Allure Docs)",
+              "url": "https://docs.qameta.io/allure-report/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "dfbc3f62-06f5-4d2f-88b4-ab8502490c9a",
+          "xid": "e8137386-516f-4822-be5b-722fa67769e1"
+        },
+        {
+          "title": "TestRail",
+          "description": "TestRail 是一款网络基础的测试管理工具（Test Management Tool），由测试人员、开发者和其他利益相关者使用，以管理、跟踪和组织软件测试工作。\n\n它遵循集中式测试管理理念（centralized test management concept），有助于轻松沟通，并使任务在QA团队和其他利益相关者之间快速开发。\n\n",
+          "links": [
+            {
+              "title": "TestRail",
+              "url": "https://www.gurock.com/testrail/",
+              "type": "article"
+            },
+            {
+              "title": "TestRail 官方文档",
+              "url": "https://support.gurock.com/hc/en-us/",
+              "type": "article"
+            },
+            {
+              "title": "TestRail 教程文档",
+              "url": "https://www.tutorialspoint.com/testrail/testrail_introduction.htm",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "47efa754-c6dd-4266-9598-966cef2585e5",
+          "xid": "6042d5d5-7c0c-477c-a1bb-0b36e179b5b5"
+        }
+      ],
+      "id": "964bcea0-bc0b-4cb3-85a0-34768cb6290c",
+      "xid": "68d7ad03-1824-4221-aeb3-4ebd40cbfc2e"
+    },
+    {
+      "title": "监控与日志(Monitoring & Logs)",
+      "description": "DevOps监控涵盖从计划、开发、集成和测试、部署到运营的整个开发过程。\n\n它涉及生产环境中应用程序、服务和基础设施状态的完整实时视图。\n\n实时流传输、历史回放和可视化是应用程序和服务监控的关键组件。\n\n",
+      "links": [
+        {
+          "title": "现代QA的两大支柱 - 错误和日志(Two Pillars of Modern QA - Errors and Logs)",
+          "url": "https://medium.com/@mohsenny/the-two-pillars-of-modern-qa-from-error-prevention-to-post-release-monitoring-4c11cc99fe14",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Grafana",
+          "description": "Grafana 是一个开源平台，用于监控和可观测性(observability)。\n\n它允许你查询、可视化、告警和理解你的指标，无论这些指标存储在哪里。\n\n",
+          "links": [
+            {
+              "title": "Grafana",
+              "url": "https://grafana.com/",
+              "type": "article"
+            },
+            {
+              "title": "Grafana 文档",
+              "url": "https://grafana.com/docs/",
+              "type": "article"
+            },
+            {
+              "title": "Grafana 社区",
+              "url": "https://community.grafana.com/",
+              "type": "article"
+            },
+            {
+              "title": "Grafana 网络研讨会和视频",
+              "url": "https://grafana.com/videos/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 Grafana 的热门文章",
+              "url": "https://app.daily.dev/tags/grafana?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2dca89e1-f896-4d37-a84f-ca656ad2359b",
+          "xid": "b3852506-9c1c-4190-88f1-bdb52b0a17b1"
+        },
+        {
+          "title": "New Relic（New Relic）",
+          "description": "New Relic 是一个可观测性平台，帮助您构建更好的软件。\n\n您可以从任何数字来源引入数据，以便您能够全面了解您的系统以及如何改进它。\n\n",
+          "links": [
+            {
+              "title": "New Relic（New Relic）",
+              "url": "https://newrelic.com/",
+              "type": "article"
+            },
+            {
+              "title": "学习 New Relic（Learn New Relic）",
+              "url": "https://learn.newrelic.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 DevOps 的顶级帖子",
+              "url": "https://app.daily.dev/tags/devops?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "532b9ebb-ee0f-47bf-b8e4-139e69aad798",
+          "xid": "543a2251-8cb2-4f7c-be0c-86f0d5fd8870"
+        },
+        {
+          "title": "RunScope",
+          "description": "用于监控复杂API的简单工具。\n\n验证您的API调用的结构和内容是否符合预期。\n\n强大的灵活断言（assertions）使您完全控制成功API调用的定义。\n\n即使是复杂的用例，也可以使用动态数据创建简单监控（monitors）。\n\n不仅仅是简单的字符串匹配，无代码构建API验证，并跨本地开发、预生产和生产环境中使用。\n\n",
+          "links": [
+            {
+              "title": "Runscope",
+              "url": "https://www.runscope.com",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c5d18397-42ca-4a2f-8302-58f5e55d428e",
+          "xid": "390e608c-9630-430f-944c-fdf4221601d8"
+        },
+        {
+          "title": "Sentry",
+          "description": "Sentry 跟踪您的软件性能，测量吞吐量（throughput）和延迟时间（latency）等指标，并显示错误在多个系统中的影响。\n\nSentry 捕获由事务（transactions）和跨度（spans）组成的分布式跟踪，用于衡量各个服务及其内部操作的性能。\n\n",
+          "links": [
+            {
+              "title": "Sentry",
+              "url": "https://sentry.io",
+              "type": "article"
+            },
+            {
+              "title": "Sentry 文档",
+              "url": "https://docs.sentry.io/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f59324e4-2c65-4377-91b9-919360fa8c11",
+          "xid": "4e27a7ad-6a2c-4bf1-86a5-e76f14b5be7a"
+        },
+        {
+          "title": "Kibana",
+          "description": "Kibana 是一个免费的开源用户界面，可让你可视化 Elasticsearch（Elasticsearch）数据并浏览 Elastic Stack（Elastic Stack）。\n\n你可以从跟踪查询负载，到理解请求如何流经你的应用，做任何事情。\n\n",
+          "links": [
+            {
+              "title": "Elastic Kibana",
+              "url": "https://www.elastic.co/kibana/",
+              "type": "article"
+            },
+            {
+              "title": "学习 Kibana",
+              "url": "https://www.elastic.co/training/free",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 ELK 的顶级文章",
+              "url": "https://app.daily.dev/tags/elk?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "86cd2d7f-a3ee-4781-9e97-9ec28252062c",
+          "xid": "1d20d233-db4a-48e3-8f3a-9647d1e00e06"
+        },
+        {
+          "title": "Datadog",
+          "description": "Datadog是一个适用于大规模应用的监控和分析平台。\n\n它涵盖了基础设施监控、应用性能监控、日志管理和用户体验监控。\n\nDatadog通过400+集成（integration）功能，在整个技术栈中汇集数据，用于故障排除、告警和图表展示。\n\n",
+          "links": [
+            {
+              "title": "Datadog",
+              "url": "https://www.datadoghq.com/",
+              "type": "article"
+            },
+            {
+              "title": "Datadog 文档",
+              "url": "https://docs.datadoghq.com/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "fc4da57b-a206-4dda-8484-3bc00e5a1987",
+          "xid": "419c5721-c759-41ac-9565-a05fe558f63b"
+        },
+        {
+          "title": "值班调度(Pager Duty)",
+          "description": "通过其基于SaaS的平台，值班调度(PagerDuty)赋能开发者、开发运维(DevOps)、IT运营和业务领导者，预防并解决影响业务的事件，以实现卓越的客户体验。\n\n当收入和品牌声誉取决于客户满意度时，值班调度(PagerDuty)使组织具备洞察力，能够主动管理可能在其IT环境中影响客户的事件。\n\n拥有数百种原生集成、值班调度、升级、机器学习、公司范围响应编排、分析等，值班调度(PagerDuty)在实时将正确的数据交到正确的人手中。\n\n",
+          "links": [
+            {
+              "title": "值班调度(PagerDuty)官方网站",
+              "url": "https://www.pagerduty.com/",
+              "type": "article"
+            },
+            {
+              "title": "学习值班调度(PagerDuty)",
+              "url": "https://university.pagerduty.com/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "897ac5c6-4e30-4091-af27-772c63fe84a6",
+          "xid": "9daf546f-43de-4fdf-81b5-2a070d71524f"
+        }
+      ],
+      "id": "c1d08f9e-6243-4f34-b901-e5661db9e045",
+      "xid": "7691c98a-3149-4503-95b8-05f0726ed4d3"
+    },
+    {
+      "title": "版本控制系统",
+      "description": "版本控制（Version Control）系统允许开发人员追踪并控制代码随时间的变化。\n\n这些服务通常包括对代码进行原子化修订、从特定点分支（branch）/分叉（fork）以及比较代码版本的功能。\n\n它们在确定代码更改的为何人（who）、更改了什么（what）、何时更改（when）以及为何更改（why）方面非常有用。\n\n",
+      "links": [
+        {
+          "title": "Git",
+          "url": "https://git-scm.com/",
+          "type": "article"
+        },
+        {
+          "title": "Mercurial",
+          "url": "https://www.mercurial-scm.org/",
+          "type": "article"
+        },
+        {
+          "title": "什么是版本控制？",
+          "url": "https://www.atlassian.com/git/tutorials/what-is-version-control",
+          "type": "article"
+        },
+        {
+          "title": "探索QA领域的热门帖子",
+          "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Git",
+          "description": "Git 是一个开源的分布式版本控制系统 (distributed version control system)，旨在以速度和效率处理从小型到非常大型的各种项目。\n\n",
+          "links": [
+            {
+              "title": "Git",
+              "url": "https://git-scm.com/",
+              "type": "article"
+            },
+            {
+              "title": "使用教程、新闻和技巧学习Git - Atlassian",
+              "url": "https://www.atlassian.com/git",
+              "type": "article"
+            },
+            {
+              "title": "Git 快速参考指南",
+              "url": "https://cs.fyi/guide/git-cheatsheet",
+              "type": "article"
+            },
+            {
+              "title": "查看关于 Git 的热门帖子",
+              "url": "https://app.daily.dev/tags/git?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Git & GitHub 初学者速成课程",
+              "url": "https://www.youtube.com/watch?v=SWYqp7iY_Tc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4a7d01b6-e0dc-4d47-a369-13abf968f3f0",
+          "xid": "06b40a24-7b3b-4dea-9ef0-249207a317ec"
+        }
+      ],
+      "id": "4903418a-d461-4171-9ef4-2883695e617b",
+      "xid": "ec1770cd-f552-45c2-a3ff-b7f9d8fa9288"
+    },
+    {
+      "title": "代码仓库托管服务",
+      "description": "有多种代码仓库托管服务，最著名的包括 GitHub（GitHub）、GitLab（GitLab） 和 BitBucket（BitBucket）。\n\n我推荐在 GitHub 上创建一个账户，因为那里是大部分开源工作和开发者的聚集地。\n\n",
+      "links": [
+        {
+          "title": "GitHub: 全球软件构建之地",
+          "url": "https://github.com",
+          "type": "opensource"
+        },
+        {
+          "title": "GitLab: 加速迭代，共同创新",
+          "url": "https://gitlab.com",
+          "type": "opensource"
+        },
+        {
+          "title": "BitBucket: 专业团队的 Git 解决方案",
+          "url": "https://bitbucket.com",
+          "type": "article"
+        },
+        {
+          "title": "探索关于质量保证的顶级文章",
+          "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "GitLab",
+          "description": "GitLab 是使用 Git 进行软件开发和版本控制的互联网托管服务提供商。\n\n它提供 Git 的分布式版本控制系统和源代码管理功能，同时拥有自己的功能。\n\n",
+          "links": [
+            {
+              "title": "GitLab",
+              "url": "https://gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "GitLab 文档",
+              "url": "https://docs.gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 GitLab 的热门文章",
+              "url": "https://app.daily.dev/tags/gitlab?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "da603b53-976e-4c7a-bf11-a64b28872931",
+          "xid": "5bfd41fb-ca39-4050-9c8d-d28ab67c7dbc"
+        },
+        {
+          "title": "Bitbucket",
+          "description": "Bitbucket（Bitbucket）是一款基于Git的托管和源代码仓库服务，是Atlassian公司提供的与GitHub、GitLab等产品竞争的替代品。\n\nBitbucket提供了通过Bitbucket Cloud（Atlassian的服务器）、Bitbucket Server（用户的本地服务器）或Bitbucket Data Centre（在用户的本地或云端环境中的多个服务器）的托管选项。\n\n",
+          "links": [
+            {
+              "title": "Bitbucket",
+              "url": "https://bitbucket.org/product",
+              "type": "article"
+            },
+            {
+              "title": "关于Bitbucket的简要概述",
+              "url": "https://bitbucket.org/product/guides/getting-started/overview#a-brief-overview-of-bitbucket",
+              "type": "article"
+            },
+            {
+              "title": "开始使用Bitbucket",
+              "url": "https://bitbucket.org/product/guides/basics/bitbucket-interface",
+              "type": "article"
+            },
+            {
+              "title": "使用Git与Bitbucket Cloud",
+              "url": "https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud",
+              "type": "article"
+            },
+            {
+              "title": "探索有关Bitbucket的热门文章",
+              "url": "https://app.daily.dev/tags/bitbucket?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "如何使用Bitbucket Cloud",
+              "url": "https://www.youtube.com/watch?v=M44nEyd_5To",
+              "type": "video"
+            },
+            {
+              "title": "Bitbucket教程 | Bitbucket入门",
+              "url": "https://www.youtube.com/watch?v=i5T-DB8tb4A",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "25de667f-534e-43f5-af59-5bec3db66e15",
+          "xid": "56d5db33-2b37-4a8b-9e6f-c005d60686ae"
+        },
+        {
+          "title": "GitHub",
+          "description": "GitHub 是一个使用 Git 进行软件开发和版本控制 (version control) 的互联网托管 (Internet hosting) 提供商。\n\n它提供了 Git 的分布式版本控制和源代码管理 (source code management) 功能，加上其自身特性。\n\n",
+          "links": [
+            {
+              "title": "访问专用于 GitHub 的路线图",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "GitHub",
+              "url": "https://github.com",
+              "type": "article"
+            },
+            {
+              "title": "GitHub 文档",
+              "url": "https://docs.github.com/en/get-started/quickstart",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 GitHub 的热门文章",
+              "url": "https://app.daily.dev/tags/github?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是 GitHub？",
+              "url": "https://www.youtube.com/watch?v=w3jLJU7DT5E",
+              "type": "video"
+            },
+            {
+              "title": "Git 与 GitHub 有什么区别？",
+              "url": "https://www.youtube.com/watch?v=wpISo9TNjfU",
+              "type": "video"
+            },
+            {
+              "title": "面向初学者的 Git 和 GitHub",
+              "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
+              "type": "video"
+            },
+            {
+              "title": "Git 和 GitHub - CS50 Beyond 2019",
+              "url": "https://www.youtube.com/watch?v=eulnSXkhE7I",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8ec75276-46ec-45a1-9973-23efed4b0965",
+          "xid": "3012f961-7446-4236-86ff-e94b242e28c4"
+        }
+      ],
+      "id": "1dc2530d-1b7a-4188-8241-dd1d97d68df4",
+      "xid": "c9057339-8679-436d-a93d-630c989a3830"
+    },
+    {
+      "title": "持续集成（Continuous Integration，CI） / 持续交付（Continuous Delivery，CD）",
+      "description": "持续集成是一种软件开发方法，在这种方法中，团队成员每天至少集成一次他们的工作。\n\n自动构建检查每次集成以检测此方法中的错误。\n\n在持续集成中，软件在代码提交后立即进行构建和测试。\n\n在大型项目中，有多个开发人员一天中会多次提交代码。\n\n每次提交后，代码都会被构建和测试。\n\n持续交付是一种软件工程方法，其中团队在短时间内开发软件产品。\n\n它确保软件可以随时轻松地发布。\n\n持续交付的主要目标是以良好的速度和频率构建、测试和交付软件。\n\n通过允许频繁生产更新，它有助于减少交付更改的成本、时间和风险。\n\n",
+      "links": [
+        {
+          "title": "什么是CI/CD？持续集成和持续交付",
+          "url": "https://www.guru99.com/continuous-integration.html",
+          "type": "article"
+        },
+        {
+          "title": "持续集成 vs 持续交付 vs 持续部署",
+          "url": "https://www.guru99.com/continuous-integration-vs-delivery-vs-deployment.html",
+          "type": "article"
+        },
+        {
+          "title": "CI/CD管道：通过示例学习",
+          "url": "https://www.guru99.com/ci-cd-pipeline.html",
+          "type": "article"
+        },
+        {
+          "title": "探索有关质量保证（QA）的热门文章",
+          "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Circle CI",
+          "description": "CircleCI 是一个CI/CD (Continuous Integration/Continuous Deployment) 服务，可以与GitHub、BitBucket 和GitLab 仓库集成。\n\n此服务可作为SaaS (Software as a Service) 提供，也可以使用您自己的资源进行自管。\n\n",
+          "links": [
+            {
+              "title": "CircleCI",
+              "url": "https://circleci.com/",
+              "type": "article"
+            },
+            {
+              "title": "CircleCI 文档",
+              "url": "https://circleci.com/docs",
+              "type": "article"
+            },
+            {
+              "title": "配置教程",
+              "url": "https://circleci.com/docs/config-intro",
+              "type": "article"
+            },
+            {
+              "title": "探索有关CI/CD的顶级文章",
+              "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ceef6c31-5bfc-4864-96d9-9419706e5cc4",
+          "xid": "6390a20c-410f-4cc6-a0df-95de42a2978d"
+        },
+        {
+          "title": "无人机(Drone)",
+          "description": "无人机(Drone)是Harness提供的一种CI/CD服务。\n\n每个构建都在一个隔离的Docker容器中运行，无人机(Drone)与GitHub、BitBucket和GitLab等许多流行的源代码管理仓库集成。\n\n",
+          "links": [
+            {
+              "title": "无人机(Drone)",
+              "url": "https://www.drone.io/",
+              "type": "article"
+            },
+            {
+              "title": "无人机(Drone)文档",
+              "url": "https://docs.drone.io/",
+              "type": "article"
+            },
+            {
+              "title": "无人机(Drone)入门指南",
+              "url": "https://docs.drone.io/server/overview/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "42db828d-3ef8-4d7b-8501-4eacda1a79d2",
+          "xid": "0ce129e4-1c51-41c5-8413-9ea7e5d2f6e2"
+        },
+        {
+          "title": "Jenkins (Jenkins)",
+          "description": "Jenkins 是一个开源的持续集成/持续交付 (CI/CD) 自动化服务器。\n\nJenkins 主要用于构建项目、运行测试、静态代码分析和部署。\n\n",
+          "links": [
+            {
+              "title": "Jenkins (Jenkins)",
+              "url": "https://www.jenkins.io/",
+              "type": "article"
+            },
+            {
+              "title": "官方 Jenkins 手册 (Official Jenkins Handbook)",
+              "url": "https://www.jenkins.io/doc/book/",
+              "type": "article"
+            },
+            {
+              "title": "Jenkins 入门指南 (Jenkins Getting Started Guide)",
+              "url": "https://www.jenkins.io/doc/pipeline/tour/getting-started/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Jenkins 的热门文章 (Explore top posts about Jenkins)",
+              "url": "https://app.daily.dev/tags/jenkins?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "acec58f3-12fc-4aa3-83dc-aab043a99ab0",
+          "xid": "882ac9b5-6ed3-49dc-98b7-bdaface8e220"
+        },
+        {
+          "title": "Travis CI (持续集成/持续交付服务)",
+          "description": "Travis CI (持续集成/持续交付服务) 主要用于构建和测试托管在 BitBucket 和 GitHub 上的项目。\n\n开源项目可以免费使用 Travis CI。\n\n",
+          "links": [
+            {
+              "title": "Travis CI 网站",
+              "url": "https://www.travis-ci.com/",
+              "type": "article"
+            },
+            {
+              "title": "Travis CI 文档",
+              "url": "https://docs.travis-ci.com/",
+              "type": "article"
+            },
+            {
+              "title": "Travis CI 教程",
+              "url": "https://docs.travis-ci.com/user/tutorial/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 CI/CD 的顶级文章",
+              "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cb348329-9049-4d44-b58a-f924e96706f2",
+          "xid": "7eabb0eb-b6bc-4d77-900e-202720530031"
+        },
+        {
+          "title": "GitLab持续集成（CI）",
+          "description": "GitLab提供了持续集成/持续交付（CI/CD）服务，该服务可用作软件即服务（SaaS）产品，也可以使用您自己的资源进行自托管。\n\n您可以使用GitLab CI与任何GitLab托管的存储库结合使用，或者与在GitLab Premium自托管、GitLab Premium SaaS及更高版本中的任何BitBucket云或GitHub存储库一起使用。\n\n",
+          "links": [
+            {
+              "title": "GitLab",
+              "url": "https://gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "GitLab文档",
+              "url": "https://docs.gitlab.com/",
+              "type": "article"
+            },
+            {
+              "title": "开始使用GitLab CI",
+              "url": "https://docs.gitlab.com/ee/ci/quick_start/",
+              "type": "article"
+            },
+            {
+              "title": "GitLab学习教程",
+              "url": "https://docs.gitlab.com/ee/tutorials/",
+              "type": "article"
+            },
+            {
+              "title": "GitLab CI/CD示例",
+              "url": "https://docs.gitlab.com/ee/ci/examples/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于GitLab的热门文章",
+              "url": "https://app.daily.dev/tags/gitlab?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "fca764d5-502f-4221-8e7d-4e01280d9217",
+          "xid": "7790f417-f82a-4020-b035-484e43a263b7"
+        },
+        {
+          "title": "竹简(Bamboo)",
+          "description": "竹简(Bamboo)是由Atlassian提供的一款CI/CD服务。\n\n竹简(Bamboo)主要用于在一个工作流中自动化构建、测试和发布。\n\n",
+          "links": [
+            {
+              "title": "竹简(Bamboo)",
+              "url": "https://www.atlassian.com/software/bamboo",
+              "type": "article"
+            },
+            {
+              "title": "竹简(Bamboo)文档",
+              "url": "https://confluence.atlassian.com/bamboo/bamboo-documentation-289276551.html",
+              "type": "article"
+            },
+            {
+              "title": "竹简(Bamboo)入门指南",
+              "url": "https://confluence.atlassian.com/bamboo/getting-started-with-bamboo-289277283.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "121a8eb3-b2f8-484b-a29e-87084f23ca3a",
+          "xid": "ae4524f9-a79f-415d-ae71-61d09cb32386"
+        },
+        {
+          "title": "TeamCity",
+          "description": "TeamCity 是由 JetBrains 提供的持续集成/持续交付 (CI/CD) 服务。\n\nTeamCity 可以作为软件即服务 (SaaS) 提供，也可以通过您自己的资源自行管理。\n\n",
+          "links": [
+            {
+              "title": "TeamCity",
+              "url": "https://www.jetbrains.com/teamcity/",
+              "type": "article"
+            },
+            {
+              "title": "TeamCity 文档",
+              "url": "https://www.jetbrains.com/help/teamcity/teamcity-documentation.html",
+              "type": "article"
+            },
+            {
+              "title": "TeamCity 教程",
+              "url": "https://www.jetbrains.com/teamcity/tutorials/",
+              "type": "article"
+            },
+            {
+              "title": "TeamCity 学习门户",
+              "url": "https://www.jetbrains.com/teamcity/learn/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b48b2082-362d-4e2b-a33c-e82a654abbdc",
+          "xid": "67ee8039-b487-42b0-9cd5-c335f6238a90"
+        },
+        {
+          "title": "Azure 开发运营服务（Azure DevOps Services）",
+          "description": "Azure 开发运营（Azure DevOps）是由微软开发的一项全面的应用生命周期管理和持续集成/持续部署（CI/CD）服务。\n\nAzure 开发运营提供了允许团队规划工作、协作代码开发以及构建和部署应用程序的开发者服务。\n\n",
+          "links": [
+            {
+              "title": "Azure 开发运营（Azure DevOps）",
+              "url": "https://azure.microsoft.com/en-us/services/devops/#overview",
+              "type": "article"
+            },
+            {
+              "title": "Azure 文档（Azure Documentation）",
+              "url": "https://docs.microsoft.com/en-us/azure/devops/?view=azure-devops&viewFallbackFrom=vsts",
+              "type": "article"
+            },
+            {
+              "title": "Azure 开发运营入门指南（Azure DevOps Getting Started Guide）",
+              "url": "https://docs.microsoft.com/en-us/azure/devops/user-guide/sign-up-invite-teammates?view=azure-devops",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Azure 的热门帖子（Explore top posts about Azure）",
+              "url": "https://app.daily.dev/tags/azure?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1177d934-1c5a-4740-807e-52be1d65fac8",
+          "xid": "1aac2e1a-ae62-4911-a598-2923bf242678"
+        }
+      ],
+      "id": "cca7c196-258b-488a-8bca-143ac7eebf93",
+      "xid": "01b26764-28e6-4040-ac26-3563b3239ef5"
+    },
+    {
+      "title": "无头测试(Headless Testing)",
+      "description": "无头测试(Headless Testing)是指在不加载浏览器用户界面的情况下进行端到端测试。\n\n尽管浏览器像普通浏览器一样运行，但不使用用户界面，因此被认为非常适合自动化测试。\n\n一些可能使用无头浏览器测试示例案例包括：\n\n*   自动化HTML事件响应，如表单提交、键盘事件、鼠标点击等。\n\n\n*   网页抓取(Web scraping)\n*   生成网页截图\n\n",
+      "links": [
+        {
+          "title": "什么是无头浏览器测试(Headless Browser Testing)，为什么它很重要？",
+          "url": "https://www.browserstack.com/guide/what-is-headless-browser-testing",
+          "type": "article"
+        },
+        {
+          "title": "探索关于质量保证(QA)的顶级文章",
+          "url": "https://app.daily.dev/tags/qa?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Zombie.js（僵尸.js）",
+          "description": "Zombie.js（僵尸.js）允许你在不使用真实网络浏览器的情况下运行单元测试或集成测试。\n\n相反，它使用一个模拟浏览器来存储HTML代码并运行HTML页面中可能包含的JavaScript。\n\n这意味着HTML页面无需被显示出来，因此节省了用于渲染页面的宝贵时间。\n\n",
+          "links": [
+            {
+              "title": "Zombie.js（僵尸.js）",
+              "url": "http://zombie.js.org/",
+              "type": "article"
+            },
+            {
+              "title": "开始使用Zombie.js（僵尸.js）",
+              "url": "https://www.packt.com/getting-started-zombiejs/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于JavaScript的顶级文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f069af6e-32e9-4ce5-8fd3-75bfa8e760f7",
+          "xid": "33765f93-e69a-41d2-a86d-f33d4a515ee6"
+        },
+        {
+          "title": "Playwright",
+          "description": "Playwright是一个开源的测试自动化库（test automation library），最初由微软贡献者开发。\n\n它支持Java、Python、C#和NodeJS等编程语言。\n\nPlaywright采用Apache 2.0许可证，并且在使用Javascript/Typescript的NodeJS环境中最为流行。\n\n",
+          "links": [
+            {
+              "title": "Playwright官网",
+              "url": "https://playwright.dev/",
+              "type": "article"
+            },
+            {
+              "title": "Playwright教程：学习基础和设置",
+              "url": "https://www.browserstack.com/guide/playwright-tutorial",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9b3cb10e-4cea-4f9c-95cd-4d027c967a33",
+          "xid": "699d1bb8-2101-4601-88ca-06ad7a18e395"
+        },
+        {
+          "title": "Puppeteer",
+          "description": "Puppeteer 是一个 Node 库，它通过 DevTools 协议（DevTools Protocol）提供了用于控制无头 Chrome 或 Chromium 浏览器的高级别 API。\n\n它也可以配置为使用完整（非无头）Chrome 或 Chromium。\n\n",
+          "links": [
+            {
+              "title": "Puppeteer",
+              "url": "https://pptr.dev/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于爬取的热门文章",
+              "url": "https://app.daily.dev/tags/crawling?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2d90b0f0-b693-44c3-aa0c-9e77a0e4cc71",
+          "xid": "34ab5878-63c9-4333-a04e-1b8161b6c0ed"
+        },
+        {
+          "title": "Cypress",
+          "description": "Cypress（库柏塞斯）是一个基于JavaScript的端到端测试框架，构建在Mocha之上——一个功能丰富的JavaScript测试框架，既可以运行在浏览器中也可以在浏览器上运行，使异步测试变得简单方便。\n\n它还使用了BDD/TDD断言库并结合了任何JavaScript测试框架的浏览器。\n\n",
+          "links": [
+            {
+              "title": "Cypress",
+              "url": "https://www.cypress.io/",
+              "type": "article"
+            },
+            {
+              "title": "Cypress文档",
+              "url": "https://docs.cypress.io/guides/overview/why-cypress#Other",
+              "type": "article"
+            },
+            {
+              "title": "如何工作",
+              "url": "https://www.cypress.io/how-it-works",
+              "type": "article"
+            },
+            {
+              "title": "Cypress - 端到端测试框架",
+              "url": "https://dev.to/bushraalam/cypress-end-to-end-testing-framework-3naa",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Cypress的头条文章",
+              "url": "https://app.daily.dev/tags/cypress?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Cypress端到端测试",
+              "url": "https://www.youtube.com/watch?v=7N63cMKosIE",
+              "type": "video"
+            },
+            {
+              "title": "Cypress技巧与窍门",
+              "url": "https://www.youtube.com/watch?v=PZ2OsLBts1E&list=PLP9o9QNnQuAYYRpJzDNWpeuOVTwxmIxcI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "6c8a9535-ed84-4409-89bd-1efb14ed1567",
+          "xid": "68bb90c6-ee05-44f7-a93b-07587741bb48"
+        },
+        {
+          "title": "无头Chrome（Headless Chrome）",
+          "description": "无头Chrome（Headless Chrome）是一种在没有完整浏览器用户界面的环境中运行Chrome浏览器的方法。\n\n使用无头Chrome（与直接在Node中测试相比）的一个好处是，您的JavaScript测试将与您网站的用户在相同的环境中执行。\n\n",
+          "links": [
+            {
+              "title": "无头Chromium（Headless Chromium）",
+              "url": "https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Google Chrome的热门文章",
+              "url": "https://app.daily.dev/tags/google-chrome?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "07643dbf-f484-4dee-965c-e5fd446ca3b8",
+          "xid": "ed453583-dbdc-4090-b0e7-662ad628f1ed"
+        },
+        {
+          "title": "无头狐（Headless Fox）",
+          "description": "无头浏览器测试（Headless Browser Testing）是指在没有浏览器用户界面（UI）或图形用户界面（GUI）的情况下运行浏览器测试的过程。\n\n在无头浏览器测试中，测试人员可以在不需要实际运行待测试应用程序的浏览器的情况下，准确且成功地执行跨浏览器测试的测试用例。\n\n",
+          "links": [
+            {
+              "title": "在Firefox中使用无头模式（Headless Mode）",
+              "url": "https://hacks.mozilla.org/2017/12/using-headless-mode-in-firefox/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b3423c9a-a99c-4531-bf2d-c6668cad351b",
+          "xid": "d2d1bede-4bfa-49b8-b099-dfeefcd1ec38"
+        },
+        {
+          "title": "HTML单元（HTML Unit）",
+          "description": "HtmlUnit是一款“面向Java程序的无GUI浏览器”（GUI-Less browser for Java programs）。\n\n它能模拟HTML文档，并提供一个API，允许你调用页面、填写表单、点击链接等，就像你在“常规”浏览器中所做的那样。\n\n它具有较为良好的JavaScript支持（这种支持不断改进），能够应对相当复杂的AJAX库，模拟Chrome、Firefox或Internet Explorer，具体取决于所使用的配置。\n\nHtmlUnit不是一个通用的单元测试框架。\n\n它特别是一种用于测试目的的模拟浏览器的方式，旨在与JUnit或TestNG等其他测试框架结合使用。\n\n",
+          "links": [
+            {
+              "title": "HtmlUnit",
+              "url": "https://htmlunit.sourceforge.io/",
+              "type": "article"
+            },
+            {
+              "title": "HtmlUnit简介",
+              "url": "https://www.baeldung.com/htmlunit",
+              "type": "article"
+            },
+            {
+              "title": "探索关于HTML的热门文章",
+              "url": "https://app.daily.dev/tags/html?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "37d4ffea-d719-4e96-b550-fc5d8c4e74a9",
+          "xid": "d71f902e-7c6f-4d9a-8fe7-21460ce7748c"
+        }
+      ],
+      "id": "54ee7f61-b745-49f6-be23-bfd944604e5d",
+      "xid": "42e826e0-b16c-4f70-bf9d-3d6c15d1e0d9"
+    }
+  ],
+  "id": "f6620d71-1f8b-4fb4-ac6a-eb6307ac1a76",
+  "xid": "cfc09ef6-9449-4f67-bf06-53e06c1cb570"
+}

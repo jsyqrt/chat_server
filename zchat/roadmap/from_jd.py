@@ -1,18 +1,31 @@
 import re
-from zchat.apis.llm import get_response_from_llm
+from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response
+from zchat.roadmap.common_prompts import MINDMAP_JSON_SCHEMA, MINDMAP_GENERATION_GUIDELINES, OUTPUT_FORMAT_GUIDELINES
 
 system_prompt = """
-请分析提供的职位描述（JD），提取所有关键信息，并以JSON格式输出。关键信息包括但不限于职位标题、地点、薪资范围、学历要求、工作年限要求、部门、主要职责和所需技能，确保信息全面且结构清晰。
+您是一位专业的职业发展顾问和学习路径规划专家，擅长分析职位描述并创建个性化学习计划。
 
-然后，为用户规划一条学习路径，以达到该JD的要求。学习路径需详细分析JD，将学习目标分解为10-15个主要主题或知识点，每个主题包含5-10个子主题或知识点，形成前后依赖的学习顺序。
-需要包括用户所有要学习和理解的知识，技能，软技能等。
+请完成以下两项任务：
 
-最后，以思维导图的形式表示学习路径，并用JSON格式输出思维导图结构。要求总共不少于100个节点。如果可能的话，在根节点中包含行业、岗位、技能标签。
+1. 职位描述分析：
+   - 仔细分析提供的职位描述(JD)
+   - 提取所有关键信息，包括职位标题、地点、薪资、学历要求、工作年限、部门、职责和技能要求
+   - 识别明确要求和隐含要求
+   - 区分必备技能和加分技能
 
+2. 学习路径规划：
+   - 基于JD分析结果，创建一个全面的学习路径
+   - 考虑用户当前的职业背景和技能水平(如果提供)
+   - 设计一个结构化的、渐进式的学习计划
+   - 包含技术技能、软技能、行业知识和职业发展策略
+   - 以思维导图形式呈现，确保逻辑连贯且覆盖全面
+
+您的分析应当专业、全面且实用，帮助求职者清晰了解职位要求并有效准备。
 """
 
-user_prompt= """
-请提供以下两个JSON的输出：
+user_prompt = """
+请提供以下两个JSON输出：
+
 1. 职位描述的关键信息JSON，需符合以下JSON Schema：
 ```json
 {
@@ -31,97 +44,52 @@ user_prompt= """
     },
     "required_skills": {
       "type": "array",
-      "items": { "type": "object", "properties": { "skill": { "type": "string" }, "experience": { "type": "string" }, "description": { "type": "string" } } },
-      "description": "所需技能列表"
+      "items": { "type": "object", "properties": { "skill": { "type": "string" }, "importance": { "type": "string", "enum": ["必备", "重要", "加分"] }, "description": { "type": "string" } } },
+      "description": "所需技能列表，包括技能名称、重要性和描述"
     },
     "preferred_qualifications": {
       "type": "array",
       "items": { "type": "object", "properties": { "description": { "type": "string" } } },
       "description": "优先条件或加分项"
     },
-    "notes": { "type": "string", "description": "其他备注或加分项" }
+    "industry_context": { "type": "string", "description": "行业背景和公司情况" },
+    "career_path": { "type": "string", "description": "该职位可能的职业发展路径" }
   },
-  "required": ["job_title", "key_responsibilities", "required_skills"],
-  "additionalProperties": false
+  "required": ["job_title", "key_responsibilities", "required_skills"]
 }
 ```
-2. 学习路径的JSON，使用思维导图表示，用JSON输出，需要符合以下JSON Schema：
-```json
-{
-    "type": "object",
-    "properties": {
-        "title": {
-            "type": "string",
-            "description": "节点标题"
-        },
-        "children": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/node"
-            },
-            "description": "子节点列表"
-        },
-        "industry_tag": {
-            "type": "string",
-            "description": "行业标签"
-        },
-        "job_tag": {
-            "type": "string",
-            "description": "岗位标签"
-        },
-        "skill_tag": {
-            "type": "string",
-            "description": "技能标签"
-        }
-    },
-    "required": [
-        "title",
-        "children",
-        "industry_tag",
-        "job_tag",
-        "skill_tag"
-    ],
-    "definitions": {
-        "node": {
-            "type": "object",
-            "properties": {
-                "title": {
-                    "type": "string",
-                    "description": "节点标题"
-                },
-                "children": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/node"
-                    },
-                    "description": "子节点列表"
-                }
-            },
-            "required": [
-                "title"
-            ]
-        }
-    }
-}
-```
-注意:
-* 学习路径的所有概念总数需要大于100个，需要包含你知道的所有相关概念。
-* 确保输出严格遵循上述JSON Schema，确保数据完整性和一致性。
 
+2. 学习路径的JSON，使用思维导图表示：
+${MINDMAP_JSON_SCHEMA}
+
+${MINDMAP_GENERATION_GUIDELINES}
+
+针对JD的特殊要求：
+- 分析JD中明确和隐含的技能要求
+- 将学习路径分为短期目标(应对面试)和长期目标(职业发展)
+- 包含该职位所需的行业知识和专业术语
+- 如果用户提供了简历信息，根据用户当前技能水平定制学习路径
+- 为每个主要技能提供学习资源建议和实践项目
+
+${OUTPUT_FORMAT_GUIDELINES}
 """
 
 jd_prompt_template = """
-JD信息，你需要考虑JD中要求的技能和经验，为用户量身定制学习计划，设定不同阶段，以及每一个阶段要学习的知识，技能，或者要实践和参与的项目等：
-```text
+## 职位描述
+```
 {jd}
 ```
+
+请仔细分析上述职位描述，提取所有明确和隐含的要求，包括技术技能、软技能、行业知识和经验要求。
 """
 
 resume_prompt_template = """
-简历信息，你需要考虑用户的职场经验，以及用户掌握的技能，为用户提供更合适，更准确的学习路径：
-```text
+## 用户简历信息
+```
 {resume}
 ```
+
+请根据用户的职场经验和已掌握的技能，调整学习路径，重点关注用户需要提升的领域，避免已掌握的基础内容。
 """
 
 
@@ -133,17 +101,13 @@ def get_llm_response(jd, resume):
                                       user_prompt },
     ]
   print(messages)
-  response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
+  # response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
+  response = get_response_from_llm(messages, "qwen-2.5-32b", 8192, platform='aliyun')
+  # response = get_response_from_llm(messages, "qwen-2.5-32b", 4096, platform='siliconflow')
   return response
 
 def parse_llm_response(response):
-  # 定义正则表达式模式：匹配 ```json 和 ``` 之间的内容
-  pattern = r'```json\n(.*?)\n```'
-
-  # 查找所有匹配的代码块
-  json_blocks = re.findall(pattern, response, re.DOTALL)
-
-  return json_blocks
+  return get_json_blocks_from_llm_response(response)
 
 def mindmap_from_jd_and_resume(jd, resume):
   response = get_llm_response(jd, resume)

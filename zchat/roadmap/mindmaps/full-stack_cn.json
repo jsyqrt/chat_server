@@ -1,0 +1,1003 @@
+{
+  "title": "全栈开发人员(Full Stack Developer)",
+  "description": "逐步指南，成为2025年的现代全栈开发人员",
+  "links": [],
+  "question_title": "什么是全栈开发？",
+  "question_description": "全栈开发是指精通网络应用开发的前端和后端方面的实践。\n\n全栈开发人员能够负责软件应用的每一层开发工作，从用户界面和用户体验（前端）到服务器、数据库和服务器端逻辑（后端）。\n\n这种灵活性使得他们可以独立或作为开发团队的一部分来创建和维护完整的网络应用程序。\n\n",
+  "children": [
+    {
+      "title": "超文本标记语言(HTML)",
+      "description": "超文本标记语言(HTML)用于前端，为网页提供结构，您可以使用层叠样式表(CSS)对其进行样式设置，并使用JavaScript使其具有交互性。\n\n",
+      "links": [
+        {
+          "title": "W3Schools: 学习超文本标记语言(HTML)",
+          "url": "https://www.w3schools.com/html/html_intro.asp",
+          "type": "article"
+        },
+        {
+          "title": "探索关于超文本标记语言(HTML)的热门文章",
+          "url": "https://app.daily.dev/tags/html?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "超文本标记语言(HTML)面向初学者的完整课程",
+          "url": "https://youtu.be/mJgBOIoGihA",
+          "type": "video"
+        },
+        {
+          "title": "超文本标记语言(HTML)完整课程 - 构建网站教程",
+          "url": "https://www.youtube.com/watch?v=pQN-pnXPaVg",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "8ae5f8b0-992c-4ff5-a295-102cf3e4c42a",
+      "xid": "e111ca38-1bf8-4e73-b408-277f42be469e"
+    },
+    {
+      "title": "CSS (Cascading Style Sheets)",
+      "description": "CSS 或层叠样式表（Cascading Style Sheets）是用于美化网站前端的编程语言。\n\nCSS 是 Web 万维网的核心技术之一，与 HTML 和 JavaScript 并列。\n\n",
+      "links": [
+        {
+          "title": "W3Schools — 学习 CSS",
+          "url": "https://www.w3schools.com/css/",
+          "type": "article"
+        },
+        {
+          "title": "Google Web.dev — 学习 CSS",
+          "url": "https://web.dev/learn/css/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 CSS 的热门文章",
+          "url": "https://app.daily.dev/tags/css?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "CSS 完整课程",
+          "url": "https://youtu.be/n4R2E7O-Ngo",
+          "type": "video"
+        },
+        {
+          "title": "HTML 和 CSS 教程",
+          "url": "https://www.youtube.com/watch?v=D-h8L5hgW-w",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "e7635de9-d216-451b-9cd3-60374a225ebc",
+      "xid": "4e257dd2-0b0c-48bc-96f7-589570121bb1"
+    },
+    {
+      "title": "检查点 - 静态网页",
+      "description": "现在你已经学习了HTML和CSS，你应该能够构建静态网页。\n\n我建议你在路线图中的每个黄色步骤尽可能多地构建测试项目，以巩固你所学的知识。\n\n我学习时遵循的练习方法如下：\n\n*   当你看课程或读书时，确保与讲师/作者一同编写代码——定期暂停视频，并编码你正在学习的内容。\n\n\n*   在YouTube上搜索并观看一些你正在学习的主题的项目导向教程。\n\n除了与讲师一同编写代码以外：\n    *   尝试至少自己独立构建2到3次相同的项目，不要照看视频。\n\n如果你卡住了，参考视频中讲师构建该项目部分的部分内容。\n\n\n    *   构建与你刚刚构建的项目类似的东西。\n\n例如，如果你刚刚构建了一个待办事项应用，尝试构建一个笔记应用或提醒应用。\n\n项目想法\n-------------\n\n现在你已经学习了HTML和CSS，这里有几个供你构建的想法：\n\n*   尝试复制你喜欢的一个网站的设计。\n\n\n    *   这里有一个你可以尝试复制的[简单的博客设计（figma）](https://www.figma.com/file/nh0V05z3NB87ue9v5PcO3R/writings.dev?type=design&node-id=0%3A1&t=2iQplaIojU3ydAfW-1)。\n\n\n    *   或尝试重构[这个网站](https://cs.fyi/)的网页。\n\n\n*   从[他人的个人作品集](https://astro.build/showcase/)中汲取灵感，构建自己的个人作品集。\n\n",
+      "links": [],
+      "children": [],
+      "id": "83c44937-f721-4090-94b9-c4ecf881e7ee",
+      "xid": "6aa0c455-30fc-4931-8e88-5ae0c8e9f91b"
+    },
+    {
+      "title": "JavaScript",
+      "description": "JavaScript 允许你为页面添加互动性。\n\n你可能在网站上看到过的一些常见例子包括滑块、点击交互、弹出窗口等。\n\n",
+      "links": [
+        {
+          "title": "访问专门的 JavaScript 学习路线 (JavaScript Roadmap)",
+          "url": "https://roadmap.sh/javascript",
+          "type": "article"
+        },
+        {
+          "title": "现代 JavaScript 教程 (Modern JavaScript Tutorial)",
+          "url": "https://javascript.info/",
+          "type": "article"
+        },
+        {
+          "title": "30 天内构建 30 个 JavaScript 项目 (Build 30 Javascript projects in 30 days)",
+          "url": "https://javascript30.com/",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 JavaScript 的热门文章 (Explore top posts about JavaScript)",
+          "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "JavaScript 快速入门课程 (JavaScript Crash Course for Beginners)",
+          "url": "https://youtu.be/hdI2bqOjy3c?t=2",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "0227fb6f-d259-425d-95be-e469e6306fdc",
+      "xid": "6494f957-ad6d-44c8-9a8e-f4a13d8b0e1b"
+    },
+    {
+      "title": "检查点 - 互动性",
+      "description": "到这一点，你应该能够使用JavaScript向你的网页添加互动性。\n\n你需要确保已经学习以下内容：\n\n*   了解变量、循环、数据类型、条件语句、函数。\n\n\n*   了解数组和对象以及访问其数据的不同方法。\n\n\n*   了解如何选择DOM元素。\n\n\n*   为DOM元素添加事件监听器（例如点击、焦点、表单提交）。\n\n\n*   使用JavaScript添加和删除DOM元素\n*   为DOM元素添加和删除类\n*   使用JavaScript向外部API（即`fetch`）发起HTTP请求\n*   使用JavaScript将数据存储在浏览器的本地存储中\n\n这里是几个练习技能的想法：\n\n*   创建一个简单的待办事项列表应用程序，让用户可以搜索、添加、编辑和删除项目。\n\n使用本地存储来存储数据。\n\n\n*   创建一个简单的网页，用户可以在其中输入任何人的GitHub用户名来查看他们的个人资料信息。\n\n你可以使用GitHub的API来获取数据。\n\n例如，这是一个[我的数据的示例URL](https://api.github.com/users/kamranahmedse)。\n\n确保添加验证和错误处理。\n\n\n*   创建一个基本的计算器应用程序，让用户体验基本的算术运算。\n\n",
+      "links": [],
+      "children": [],
+      "id": "b2b73ce9-784e-4b27-904d-f571ef8eef8e",
+      "xid": "454a44f6-9b26-4252-a502-f05a762a1585"
+    },
+    {
+      "title": "npm",
+      "description": "npm是由npm, Inc.维护的JavaScript编程语言的包管理器（package manager）。\n\nnpm是JavaScript运行时环境Node.js的默认包管理器（package manager）。\n\n",
+      "links": [
+        {
+          "title": "如何使用NPM",
+          "url": "https://github.com/workshopper/how-to-npm",
+          "type": "opensource"
+        },
+        {
+          "title": "为恐龙讲解的现代JavaScript",
+          "url": "https://peterxjang.com/blog/modern-javascript-explained-for-dinosaurs.html",
+          "type": "article"
+        },
+        {
+          "title": "npm初学者使用指南",
+          "url": "https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/",
+          "type": "article"
+        },
+        {
+          "title": "浏览关于NPM的热门文章",
+          "url": "https://app.daily.dev/tags/npm?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "NPM入门教程",
+          "url": "https://www.youtube.com/watch?v=2V1UUhBJ62Y",
+          "type": "video"
+        },
+        {
+          "title": "快速掌握NPM",
+          "url": "https://www.youtube.com/watch?v=jHDhaSSKmB0",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "2d7eb644-4d02-4051-8433-20d9ca512901",
+      "xid": "1f04b977-ad7a-44a4-88cc-dd7080832355"
+    },
+    {
+      "title": "检查点 - 外部包",
+      "description": "到目前为止，你应该能够使用 `npm` 安装并使用外部包。\n\n你可能已经知道可以在 [npmjs.com](https://npmjs.com/) 上搜索包并阅读它们的文档。\n\n你也应该熟悉 `package.json` 文件，并知道如何使用它来管理你的项目依赖（project dependencies）。\n\n你现在不需要深入了解模块捆绑器（module bundlers）和构建工具（build tools）。\n\n只需要确保能够使用简单的链接和脚本标签在 HTML 中使用安装在 `node_modules` 文件夹中的依赖即可。\n\n关于项目，这里有一些你可以尝试的想法：\n\n*   创建一个简单的网页来显示用户的当前时间。\n\n你可以使用 [dayjs](https://day.js.org/) 来获取当前时间并在页面上显示。\n\n这里是 [主页样例设计](https://i.imgur.com/yGIMGkr.png)。\n\n\n*   安装 [micromodal](https://micromodal.vercel.app/#introduction) 库。\n\n在页面上创建一个按钮，点击该按钮应打开一个模态窗口，让用户从下拉列表中选择一个时区。\n\n一旦用户选择了时区，模态窗口应关闭，页面上的时间应更新为所选时区的时间。\n\n这里是 [模态窗口样例设计](https://imgur.com/a/vFY6Sdl)。\n\n",
+      "links": [],
+      "children": [],
+      "id": "6e0ca09f-72ed-495f-b26e-742efe673668",
+      "xid": "bebf8068-2c38-406f-9956-651a5a67efff"
+    },
+    {
+      "title": "Git",
+      "description": "Git 是一个免费且开源的分布式版本控制系统，旨在以高效的方式处理从小型到大型的各种项目。\n\n",
+      "links": [
+        {
+          "title": "访问专用 Git & GitHub 学习路径",
+          "url": "https://roadmap.sh/git-github",
+          "type": "article"
+        },
+        {
+          "title": "Git 文档",
+          "url": "https://git-scm.com/",
+          "type": "article"
+        },
+        {
+          "title": "使用教程、新闻和技巧学习 Git - Atlassian",
+          "url": "https://www.atlassian.com/git",
+          "type": "article"
+        },
+        {
+          "title": "Git 快速参考指南",
+          "url": "https://cs.fyi/guide/git-cheatsheet",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 Git 的热门文章",
+          "url": "https://app.daily.dev/tags/git?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Git & GitHub 初学者速成课程",
+          "url": "https://www.youtube.com/watch?v=SWYqp7iY_Tc",
+          "type": "video"
+        },
+        {
+          "title": "Git 教程（适合新手）",
+          "url": "https://www.youtube.com/watch?v=mJ-qvsxPHpY",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "c3cae713-25ac-4746-958a-a5687465cdf3",
+      "xid": "0b1a9ca1-5ed3-4f34-89b4-921bd8356fbd"
+    },
+    {
+      "title": "GitHub",
+      "description": "GitHub 是一家提供使用 Git 的软件开发和版本控制（Version Control）互联网托管服务的供应商。\n\n它提供了 Git 的分布式版本控制（Distributed Version Control）和源代码管理（Source Code Management）功能，并有自己的特点。\n\n",
+      "links": [
+        {
+          "title": "GitHub",
+          "url": "https://github.com",
+          "type": "article"
+        },
+        {
+          "title": "GitHub 文档",
+          "url": "https://docs.github.com/en/get-started/quickstart",
+          "type": "article"
+        },
+        {
+          "title": "如何在专业开发团队中使用 Git",
+          "url": "https://ooloo.io/project/github-flow",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 GitHub 的热门文章",
+          "url": "https://app.daily.dev/tags/github?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "什么是 GitHub？",
+          "url": "https://www.youtube.com/watch?v=w3jLJU7DT5E",
+          "type": "video"
+        },
+        {
+          "title": "Git vs. GitHub： 差异何在？",
+          "url": "https://www.youtube.com/watch?v=wpISo9TNjfU",
+          "type": "video"
+        },
+        {
+          "title": "面向初学者的 Git 和 GitHub",
+          "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
+          "type": "video"
+        },
+        {
+          "title": "Git 和 GitHub - CS50 Beyond 2019",
+          "url": "https://www.youtube.com/watch?v=eulnSXkhE7I",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "fff528c7-e9cc-4c31-b894-77d9f9a13308",
+      "xid": "3de0cfad-e4b8-4d21-960a-b79466d2f792"
+    },
+    {
+      "title": "检查点 - 协作工作",
+      "description": "既然你已经学习了Git和GitHub，你应该准备好和其他人协作了。\n\n你现在应该设置你的GitHub个人资料，并将到目前为止构建的所有项目推送到你的GitHub个人资料上。\n\n以下是我对你GitHub个人资料的一些建议:\n\n*   将仓库名称保持为小写，并使用短横线分隔单词，例如 `todo-app` 而不是 `TodoApp` 或 `Todo-App`。\n\n\n*   在你创建的每个仓库中添加一个 `README.md` 文件。\n\n该文件应包含项目描述。\n\n在编写readme时要投入一些努力，确保它清楚地详细说明了项目的内容以及任何人如何可以在本地运行它。\n\n\n*   在readme文件中添加项目的截图，这样任何人都可以看到项目的样子，而无需在本地运行它。\n\n\n*   在你创建的每个仓库中添加一个 `LICENSE` 文件。\n\n该文件应包含你想要用来为项目许可的许可协议。\n\n你可以使用[choosealicense.com](https://choosealicense.com/)来帮你选择许可协议。\n\n你可以查看[我的GitHub个人资料](https://github.com/kamranahmedse)并了解我是如何结构化我的仓库的，以及[我的一些readme文件的样子](https://github.com/kamranahmedse/aws-cost-cli)。\n\n",
+      "links": [],
+      "children": [],
+      "id": "c92ade7c-857e-47dc-a32d-c7e9fe9ff95a",
+      "xid": "4046239c-eec2-4185-9758-f0778490ca65"
+    },
+    {
+      "title": "Tailwind CSS",
+      "description": "Tailwind CSS是一种CSS框架，提供原子化CSS类，如`flex`，`pt-4`，`text-center`和`rotate-90`，帮助你直接在标记中对组件进行样式设计，并构成任意的设计。\n\n",
+      "links": [
+        {
+          "title": "Tailwind CSS",
+          "url": "https://tailwindcss.com",
+          "type": "article"
+        },
+        {
+          "title": "探索关于Tailwind CSS的热门文章",
+          "url": "https://app.daily.dev/tags/tailwind-css?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Tailwind CSS初学者完整课程",
+          "url": "https://www.youtube.com/watch?v=lCxcTsOHrjo",
+          "type": "video"
+        },
+        {
+          "title": "Tailwind CSS速成课程",
+          "url": "https://www.youtube.com/watch?v=UBOj6rqRUME",
+          "type": "video"
+        },
+        {
+          "title": "你应该使用Tailwind CSS吗？",
+          "url": "https://www.youtube.com/watch?v=hdGsFpZ0J2E",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "a6124494-cca3-4da2-8414-558127fbc3c2",
+      "xid": "31fb81bb-bf00-4d43-89ef-62cef65b4dd7"
+    },
+    {
+      "title": "React (React)",
+      "description": "React 是最受欢迎的用于构建用户界面的前端 JavaScript 库。\n\nReact 还可以使用 Node 在服务器端渲染，并使用 React Native 驱动移动应用。\n\n",
+      "links": [
+        {
+          "title": "访问专门的 React 路线图",
+          "url": "https://roadmap.sh/react",
+          "type": "article"
+        },
+        {
+          "title": "React (React)",
+          "url": "https://react.dev/",
+          "type": "article"
+        },
+        {
+          "title": "React 入门",
+          "url": "https://react.dev/learn/tutorial-tic-tac-toe",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 React 的顶级文章",
+          "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "React JS 初学者课程",
+          "url": "https://www.youtube.com/watch?v=nTeuhbP7wdE",
+          "type": "video"
+        },
+        {
+          "title": "React 课程 - React 初学者教程",
+          "url": "https://www.youtube.com/watch?v=bMknfKXIFA8",
+          "type": "video"
+        },
+        {
+          "title": "理解 React 的用户界面渲染过程",
+          "url": "https://www.youtube.com/watch?v=i793Qm6kv3U",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "a7d8ec26-f863-40d8-a84e-2572c4a933ad",
+      "xid": "3ccc0739-441e-4f27-bcb7-eefb54dfd609"
+    },
+    {
+      "title": "检查点 - 前端应用",
+      "description": "到目前为止，你应该能够构建一个完整的前端应用，包括以下功能：\n\n*   使用HTML（HyperText Markup Language）结构化网页\n*   使用CSS（Cascading Style Sheets）对网页进行样式设计\n*   使用JavaScript为网页增加互动性\n*   使用DOM（Document Object Model）API来操作网页\n*   使用Fetch API进行HTTP请求\n*   理解Promise（承诺）和使用`async`/`await`语法编写异步代码\n*   使用npm（Node Package Manager）安装并使用外部库\n*   使用Git进行代码版本控制\n*   将代码推送到GitHub\n\n如果你决定暂时跳过React（一种用于构建用户界面的JavaScript库）和Tailwind（一种CSS框架），那也是可以的，但你应该能使用基础的HTML、CSS和JavaScript构建一个完整的前端应用。\n\n然而，需要注意的是，现代前端应用大多使用React、Vue（一种用于构建用户界面的渐进式框架）和Angular（一种用于构建移动和桌面应用的JavaScript框架）等框架进行构建。\n\n因此，你应该至少学习其中一种。\n\n这就标志着前端基础学习的结束，我们现在将会转向后端开发。\n\n虽然你继续学习后端开发，但请注意前端开发还有更多的内容，切记在你的学习旅程中后期查看[前端路线图](/frontend)。\n\n",
+      "links": [],
+      "children": [],
+      "id": "3cc4a7da-7cb4-4b6e-bb89-95ec5d08934e",
+      "xid": "d6ecd66f-4b87-4957-80b9-8aa77d47e4fb"
+    },
+    {
+      "title": "Node.js (Node.js)",
+      "description": "Node.js 是一个开源的跨平台 JavaScript 运行时环境。\n\n它几乎适用于任何类型的项目！Node.js 运行 V8 JavaScript 引擎，这是 Google Chrome 的核心部分，在浏览器之外运行。\n\n这使得 Node.js 非常高效。\n\nNode.js 应用在一个进程中运行，无需为每个请求创建新的线程。\n\nNode.js 在其标准库中提供一组非阻塞 I/O 原语，这使得 JavaScript 代码不会阻塞。\n\n通常，Node.js 中的库是用非阻塞范例编写的，使得阻塞行为成为例外而非常规。\n\n",
+      "links": [
+        {
+          "title": "访问专用的 Node.js 路线图",
+          "url": "https://roadmap.sh/nodejs",
+          "type": "article"
+        },
+        {
+          "title": "Node.js 网站",
+          "url": "https://nodejs.org/en/about/",
+          "type": "article"
+        },
+        {
+          "title": "学习 Node.js 官方网站",
+          "url": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs",
+          "type": "article"
+        },
+        {
+          "title": "Node.js 介绍",
+          "url": "https://www.w3schools.com/nodejs/nodejs_intro.asp",
+          "type": "article"
+        },
+        {
+          "title": "探索顶级的 Node.js 文章",
+          "url": "https://app.daily.dev/tags/nodejs?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Node.js 和 Express.js 全程课程",
+          "url": "https://www.youtube.com/watch?v=Oe421EPjeBE",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "732655e1-f930-498e-9a13-c65014a13e94",
+      "xid": "d021d891-76b2-4b2e-9da4-8a346388ba6c"
+    },
+    {
+      "title": "检查点 —— 命令行界面应用程序",
+      "description": "在此阶段，你应该能够使用Node.js或你所选择的后端编程语言来构建命令行界面（CLI）应用程序。\n\n你应该可以构建一个能够执行以下操作的CLI应用程序：\n\n*   读取和写入文件\n*   解析命令行参数\n*   发送HTTP请求\n*   解析JSON\n*   使用第三方库（例如，用于解析CSV文件的库）\n*   使用第三方API\n\n以下是一些你可以构建的CLI应用程序的想法：\n\n*   创建一个CLI应用程序，它可以接受一个URL和一个CSS选择器参数，并打印出匹配该选择器的元素的文本内容。\n\n提示：你可以使用[Cheerio](https://github.com/cheeriojs/cheerio)\n*   构建一个可选地接收两个日期的程序并将这段时间内获得最多星标的GitHub项目打印出来。\n\n提示：你可以使用[GitHub的搜索API](https://developer.github.com/v3/search/#search-repositories)\n*   批量重命名目录中的文件。\n\n提示：你可以使用[fs](https://nodejs.org/api/fs.html)和[path](https://nodejs.org/api/path.html)\n*   编写一个CLI应用程序，该程序将路径作为输入，并压缩该目录下的所有图像。\n\n它应允许指定一个输出路径；如果没有提供输出路径，它应该就地压缩图像，否则将压缩的图像写入输出路径。\n\n提示：你可以使用[Sharp](https://github.com/lovell/sharp)。\n\n",
+      "links": [],
+      "children": [],
+      "id": "7eaaf963-254a-404a-ab5a-ac87acddb4d3",
+      "xid": "9121b3fc-1f62-42a9-82cf-7cd5b7e16b6e"
+    },
+    {
+      "title": "PostgreSQL",
+      "description": "PostgreSQL（Postgres）是一种免费且开放源代码的关系型数据库管理系统，强调可扩展性和SQL合规性。\n\n",
+      "links": [
+        {
+          "title": "访问专门的PostgreSQL数据库管理员（DBA）路线图",
+          "url": "https://roadmap.sh/postgresql-dba",
+          "type": "article"
+        },
+        {
+          "title": "PostgreSQL官方网站",
+          "url": "https://www.postgresql.org/",
+          "type": "article"
+        },
+        {
+          "title": "初学者PostgreSQL教程-完整教程",
+          "url": "https://www.postgresqltutorial.com/",
+          "type": "article"
+        },
+        {
+          "title": "探索有关PostgreSQL的顶级帖子",
+          "url": "https://app.daily.dev/tags/postgresql?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "初学者PostgreSQL教程-入门完整课程",
+          "url": "https://www.youtube.com/watch?v=qw--VYLpxG4",
+          "type": "video"
+        },
+        {
+          "title": "初学者的Postgres教程",
+          "url": "https://www.youtube.com/watch?v=eMIxuk0nOkU",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "03643c22-fbef-4067-805a-973bd526ceeb",
+      "xid": "cc73dd8c-78c4-474e-b987-67b66ab6d64f"
+    },
+    {
+      "title": "检查点 —— 简易的CRUD应用",
+      "description": "**CRUD** 代表 **创建(_CREATE_)、读取(READ)、更新(UPDATE)和删除(DELETE)**。\n\n这些是使用任何web应用、数据库和API时，你可以对数据进行的四种基本操作。\n\n如今你已经了解了编程语言和数据库，你应该能够构建一个简单的CLI应用来与数据库交互。\n\n我们还未涉及API，但你并不需要API即可练习CRUD操作。\n\n以下是一些你可以构建的CLI应用以练习CRUD操作的例子：\n\n*   一个用于CLI的简单待办事项应用，具有以下选项：\n    *   `--new` 添加新的待办事项\n    *   `--list [all|pending|done]` 列出待办事项\n    *   `--done [id]` 更新待办事项\n    *   `--delete [id]` 删除待办事项\n    *   `--help` 列出所有可用选项\n    *   `--version` 打印应用的版本",
+      "links": [],
+      "children": [],
+      "id": "d4b36bc9-7206-486f-a329-57c2fa8de163",
+      "xid": "26738359-ecc3-47c8-8b86-c8d12f8f4f5f"
+    },
+    {
+      "title": "RESTful API（RESTful应用程序接口）",
+      "description": "REST，或表示状态转移（REpresentational State Transfer），是网络上计算机系统间提供标准的一种架构风格，使系统之间更容易进行通信。\n\n",
+      "links": [
+        {
+          "title": "什么是REST API（REST应用程序接口）？",
+          "url": "https://www.redhat.com/en/topics/api/what-is-a-rest-api",
+          "type": "article"
+        },
+        {
+          "title": "Roy Fielding的论文章节，表示状态转移（REST，Representational State Transfer）",
+          "url": "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm",
+          "type": "article"
+        },
+        {
+          "title": "学习REST：一个RESTful教程",
+          "url": "https://restapitutorial.com/",
+          "type": "article"
+        },
+        {
+          "title": "什么是RESTful API（RESTful应用程序接口）？REST与HTTP的解释",
+          "url": "https://www.youtube.com/watch?v=Q-BpqyOT3a8",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "90385b25-484a-4125-8103-aabff1359fa8",
+      "xid": "8373e9df-0675-44f7-b7bd-94a485087af9"
+    },
+    {
+      "title": "JWT 身份验证",
+      "description": "JWT 代表 JSON Web Token（JSON Web Token），是一种基于令牌的加密开放标准/方法，用于安全地传输 JSON 对象。\n\n客户端和服务器使用 JWT 来安全地共享信息，JWT 中包含已编码的 JSON 对象和声明（claims）。\n\nJWT 被设计为紧凑且适合在 URL 中使用，并且非常适合单点登录（SSO）上下文。\n\n",
+      "links": [
+        {
+          "title": "jwt.io",
+          "url": "https://jwt.io/",
+          "type": "article"
+        },
+        {
+          "title": "JSON Web Tokens 介绍",
+          "url": "https://jwt.io/introduction",
+          "type": "article"
+        },
+        {
+          "title": "什么是 JWT？",
+          "url": "https://www.akana.com/blog/what-is-jwt",
+          "type": "article"
+        },
+        {
+          "title": "探索 JWT 的热门文章",
+          "url": "https://app.daily.dev/tags/jwt?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "JWT 是什么，为什么要使用 JWT",
+          "url": "https://www.youtube.com/watch?v=7Q17ubqLfaM",
+          "type": "video"
+        },
+        {
+          "title": "JWT 是什么？JSON Web Token 介绍",
+          "url": "https://www.youtube.com/watch?v=926mknSW9Lo",
+          "type": "video"
+        },
+        {
+          "title": "使用 Node.js 的 JWT 身份验证教程",
+          "url": "https://www.youtube.com/watch?v=mbsmsi7l3r4",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "f18c60ad-14a8-48ef-b296-a8dffc0930ae",
+      "xid": "cf5eaac3-37ea-49f2-b1c6-f2a31ad6f09e"
+    },
+    {
+      "title": "Redis",
+      "description": "Redis 是一个开源（BSD 许可证）的内存数据结构存储，可用作数据库、缓存、消息中间件和流处理引擎。\n\nRedis 提供的数据结构包括字符串（strings）、哈希（hashes）、列表（lists）、集合（sets）、带有范围查询的有序集合（sorted sets）、位图（bitmaps）、超日志（hyperloglogs）、地理空间索引（geospatial indexes）和流（streams）。\n\nRedis 具有内置的复制（replication）、Lua 脚本（Lua scripting）、LRU 替换策略（LRU eviction）、事务（transactions）以及不同程度的磁盘持久化（on-disk persistence），并通过 Redis Sentinel 提供高可用性，并通过 Redis Cluster 提供自动分区功能。\n\n",
+      "links": [
+        {
+          "title": "访问专用的 Redis 路线图",
+          "url": "https://roadmap.sh/redis",
+          "type": "article"
+        },
+        {
+          "title": "Redis 官方网站",
+          "url": "https://redis.io/",
+          "type": "article"
+        },
+        {
+          "title": "Redis 文档",
+          "url": "https://redis.io/docs/latest/",
+          "type": "article"
+        },
+        {
+          "title": "Redis 大学",
+          "url": "https://university.redis.io/academy",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 Redis 的热门文章",
+          "url": "https://app.daily.dev/tags/redis?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "100秒之内了解 Redis",
+          "url": "https://www.youtube.com/watch?v=G1rOthIU-uo",
+          "type": "video"
+        },
+        {
+          "title": "Node.js 中的 Redis 缓存",
+          "url": "https://www.youtube.com/watch?v=oaJq1mQ3dFI",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "9c226ec1-9172-482b-a2e6-4f164490ec9e",
+      "xid": "b33a0e85-6668-404a-aab5-fbde53b4da00"
+    },
+    {
+      "title": "检查点 —— 完整应用",
+      "description": "到这一步，你应该具备构建一个完整应用所需的所有要素，该应用包括以下特性：\n\n*   拥有响应式前端，用户可以与之进行交互。\n\n\n*   拥有后端API，并通过JWT (JSON Web Token) 认证进行安全保护。\n\n\n*   拥有一个数据库，用于存储数据。\n\n到这一步，你应该尽可能多地自行构建应用，以巩固你的知识。\n\n如果你需要灵感，这里有一些想法：\n\n*   构建一个简单的博客应用，用户可以注册、登录、设置自己的博客并撰写文章。\n\n\n*   一个单页面站点生成器，用户可以挑选模板、进行修改并发布。\n\n**提示**：你需要文件系统来存储设计模板。\n\n模板文件将包含你需要用用户数据替换的占位符。\n\n\n*   构建一个简单的电子商务应用，该应用将有两种类型的用户，即**卖家**：可以注册为卖家、登录、设置店铺、添加产品、编辑产品、删除产品、查看接收到的订单、更新订单状态（待处理、已发货、已送达）、以及**买家**：可以注册、登录、浏览所有卖家的产品、将产品添加到购物车、结账、查看订单历史、查看订单状态、取消订单、查看卖家资料、查看卖家产品。\n\n这只是用于起步的一些想法。\n\n你可以构建任何你想要的东西。\n\n目标是从头开始实践构建一个完整的应用。\n\n",
+      "links": [],
+      "children": [],
+      "id": "e126d5a8-bca2-4e3a-9224-71628dc54180",
+      "xid": "5b5a1109-79f7-4b7b-8f57-8d9f63168965"
+    },
+    {
+      "title": "基础AWS服务",
+      "description": "AWS提供多项服务，但您不必全部了解。\n\n您可以从一些常见的服务开始，例如EC2 (Elastic Compute Cloud)、VPN (Virtual Private Network)、S3 (Simple Storage Service)、Route 53 和 SES (Simple Email Service)。\n\n以下是一些入门资源：",
+      "links": [
+        {
+          "title": "使用AWS VPC (Virtual Private Cloud) 快速入门",
+          "url": "https://cs.fyi/guide/up-and-running-with-aws-vpc",
+          "type": "article"
+        },
+        {
+          "title": "使用AWS EC2 (Elastic Compute Cloud) 快速入门",
+          "url": "https://cs.fyi/guide/up-and-running-with-aws-ec2",
+          "type": "article"
+        },
+        {
+          "title": "VPC (Virtual Private Cloud) 基础知识",
+          "url": "https://cloudcasts.io/course/vpc-basics",
+          "type": "article"
+        },
+        {
+          "title": "EC2 (Elastic Compute Cloud) 必备知识",
+          "url": "https://cloudcasts.io/course/ec2-essentials",
+          "type": "article"
+        },
+        {
+          "title": "探索关于AWS的顶级帖子",
+          "url": "https://app.daily.dev/tags/aws?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "在AWS EC2 (Elastic Compute Cloud) 上部署Node应用",
+          "url": "https://youtu.be/oHAQ3TzUTro",
+          "type": "video"
+        },
+        {
+          "title": "给初学者的AWS VPC (Virtual Private Cloud) 及子网",
+          "url": "https://youtu.be/TUTqYEZZUdc",
+          "type": "video"
+        },
+        {
+          "title": "使用AWS Route 53进行域名系统(DNS)管理",
+          "url": "https://www.youtube.com/watch?v=yRIY7BJohfo",
+          "type": "video"
+        },
+        {
+          "title": "从Node后端上传图片到S3 (Simple Storage Service)",
+          "url": "https://www.youtube.com/watch?v=NZElg91l_ms",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "Route53",
+          "description": "Route53是AWS的域名系统（DNS）服务，它在将用户请求连接到您的网络应用或其他基础设施资源中发挥着关键作用。\n\n通过Route53，您可以轻松管理域名，重定向流量，并配置与域名相关的设置。\n\n该服务具有多项优势，包括高可用性、低延迟以及与AWS其他资源的集成。\n\n",
+          "links": [
+            {
+              "title": "Route53",
+              "url": "https://aws.amazon.com/route53/",
+              "type": "article"
+            },
+            {
+              "title": "Amazon Route 53",
+              "url": "https://www.youtube.com/watch?v=RGWgfhZByAI",
+              "type": "video"
+            },
+            {
+              "title": "AWS Route 53 域名",
+              "url": "https://www.youtube.com/watch?v=jDz4j_kkyLA",
+              "type": "video"
+            },
+            {
+              "title": "使用AWS Route 53进行DNS管理",
+              "url": "https://www.youtube.com/watch?v=yRIY7BJohfo&t=2s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a727da36-dc51-4372-a96d-d95c08ccc44f",
+          "xid": "662dbbf8-1a4a-4adf-a49d-473137bfbf37"
+        },
+        {
+          "title": "SES",
+          "description": "Amazon SES（简单电子邮件服务）是一种可扩展的、灵活的、具有成本效益的基于云的电子邮件服务，专为开发者、营销人员和企业设计，用于发送和接收营销邮件、交易邮件和通知邮件。\n\nSES尤其在需要发送大量电子邮件时非常有用，因为它提供了高送达率、可靠性以及易于使用的特点。\n\n",
+          "links": [
+            {
+              "title": "Amazon AWS SES",
+              "url": "https://aws.amazon.com/ses/",
+              "type": "article"
+            },
+            {
+              "title": "使用AWS SES提交联系表单",
+              "url": "https://www.youtube.com/watch?v=HiHflLTqiwU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "70fe8d5f-2f4b-4e5b-8e0b-5eb8414eabbf",
+          "xid": "6c3432bd-62f9-46dc-a86e-48311ab48297"
+        },
+        {
+          "title": "EC2",
+          "description": "Amazon 弹性计算云（Elastic Compute Cloud, EC2）是一种网络服务，它以虚拟服务器（称为实例）的形式提供可调整的计算能力。\n\n借助 EC2，您可以随着计算需求的变化迅速扩大或缩小基础设施规模。\n\n这项服务有效缩短了获取和启动新服务器实例所需的时间，使您能够根据应用程序的需求轻松调整计算能力。\n\n",
+          "links": [
+            {
+              "title": "Amazon AWS EC2",
+              "url": "https://aws.amazon.com/ec2/",
+              "type": "article"
+            },
+            {
+              "title": "使用 AWS EC2 快速入门",
+              "url": "https://cs.fyi/guide/up-and-running-with-aws-ec2",
+              "type": "article"
+            },
+            {
+              "title": "EC2 基础",
+              "url": "https://cloudcasts.io/course/ec2-essentials",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 AWS EC2 的热门帖子",
+              "url": "https://app.daily.dev/tags/aws-ec2?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "在 AWS EC2 上部署 Node 应用",
+              "url": "https://youtu.be/oHAQ3TzUTro",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "20b56925-ee46-4b41-96ad-06df86085794",
+          "xid": "bf4be0a6-524d-4eff-9f70-4cbdf3027909"
+        },
+        {
+          "title": "VPC (Virtual Private Cloud)",
+          "description": "VPC（虚拟私有云）是由AWS提供的一项重要服务，它允许您在AWS云中创建一个私有且隔离的部分，在这里您可以定义自己的虚拟网络。\n\n它提供了一个更安全和受控的环境，使您能够轻松地在个人网络中启动和管理资源。\n\n",
+          "links": [
+            {
+              "title": "Amazon AWS VPC",
+              "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html",
+              "type": "article"
+            },
+            {
+              "title": "快速上手 AWS VPC",
+              "url": "https://cs.fyi/guide/up-and-running-with-aws-vpc",
+              "type": "article"
+            },
+            {
+              "title": "VPC 基础知识",
+              "url": "https://cloudcasts.io/course/vpc-basics",
+              "type": "article"
+            },
+            {
+              "title": "AWS VPC 和子网入门",
+              "url": "https://youtu.be/TUTqYEZZUdc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "68036e90-f762-472c-a577-75d35fb962b0",
+          "xid": "5f6c3b1d-3521-4e70-9908-d65f8bd4dccc"
+        },
+        {
+          "title": "S3 (Simple Storage Service)",
+          "description": "S3 是一种允许你在云端存储文件的服务。\n\n它是一个你可以用来存储文件并为用户提供文件的简单服务。\n\n",
+          "links": [
+            {
+              "title": "Amazon AWS S3",
+              "url": "https://aws.amazon.com/s3/",
+              "type": "article"
+            },
+            {
+              "title": "关于 AWS S3 的热门文章",
+              "url": "https://app.daily.dev/tags/aws-s3?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "从 Node 后端上传图片到 S3",
+              "url": "https://www.youtube.com/watch?v=NZElg91l_ms",
+              "type": "video"
+            },
+            {
+              "title": "使用 S3 存储桶托管静态网站",
+              "url": "https://www.youtube.com/watch?v=RoY3ekCCxKc&list=PL0X6fGhFFNTcU-_MCPe9dkH6sqmgfhy_M",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2338b16b-ab83-4ac5-81e7-63bdbc586ac5",
+          "xid": "bf61dc14-6d6a-403d-bc96-7cd0faceeb94"
+        }
+      ],
+      "id": "ba58481f-cd46-49b1-be3c-3767da42589d",
+      "xid": "b97d61dd-a39b-4c34-a061-a9befe8bfc14"
+    },
+    {
+      "title": "Linux 基础知识",
+      "description": "掌握 UNIX (UNIX)知识几乎是所有开发任务的必备条件，因为您编写的大部分代码最终将部署在 UNIX/Linux 机器上。\n\nLinux 一直是自由和开源软件运动的支柱，为几乎所有的需求提供了一个简单而优雅的操作系统。\n\n",
+      "links": [
+        {
+          "title": "Coursera - Unix 课程",
+          "url": "https://www.coursera.org/courses?query=unix",
+          "type": "course"
+        },
+        {
+          "title": "访问专用的 Linux 学习路线",
+          "url": "https://roadmap.sh/linux",
+          "type": "article"
+        },
+        {
+          "title": "Linux 基础知识",
+          "url": "https://dev.to/rudrakshi99/linux-basics-2onj",
+          "type": "article"
+        },
+        {
+          "title": "Unix/Linux 教程",
+          "url": "https://www.tutorialspoint.com/unix/index.htm",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 Linux 的顶级文章",
+          "url": "https://app.daily.dev/tags/linux?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Linux 操作系统 - 精要课程",
+          "url": "https://www.youtube.com/watch?v=ROjZy1WbCIA",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "cca79114-28a6-47d5-814d-d26fe824e31f",
+      "xid": "6d7b9035-ff33-4d2f-8710-a1b2b5a2765b"
+    },
+    {
+      "title": "检查点 — 部署",
+      "description": "现在你已经了解了AWS的基本知识，你应该能够将你的应用部署到AWS。\n\n你不需要使用所有的AWS服务，您可以从以下几点开始部署您的程序：\n\n*  使用任意AMI（例如：最新版的Ubuntu）来设置一个EC2实例\n*  使用您创建的密钥对通过SSH登录到EC2实例\n*  在EC2实例上安装Node.js\n*  在EC2实例上安装Git\n*  从GitHub上克隆您的应用\n*  在EC2实例上安装和配置数据库（例如：PostgreSQL）\n*  确保EC2实例的安全组允许HTTP和HTTPS流量\n*  尝试通过EC2实例的公网IP地址来访问您的应用\n*  使用Route53（或其他域名提供商）购买或设置一个域名，并指向EC2实例的公网IP地址\n*  使用 [certbot](https://roadmap.sh/guides/setup-and-auto-renew-ssl-certificates) 设置HTTPS\n*  太棒了！您已成功将应用部署到AWS！\n\n如果卡住了，这里有一段视频，展示了如何将Node.js应用程序部署到AWS EC2：",
+      "links": [
+        {
+          "title": "探索有关CI/CD的顶级文章",
+          "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "在AWS EC2上部署Node应用",
+          "url": "https://youtu.be/oHAQ3TzUTro",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "4f2c5f05-7eba-4d5e-ba6d-576ad8c04432",
+      "xid": "e23cf2bc-b9aa-4588-8632-cbdb3e41f44a"
+    },
+    {
+      "title": "Monit",
+      "description": "在监控应用程序健康状况方面，有几个不同的选项可供选择。\n\n我最喜欢的监控堆栈是Prometheus和Grafana，但设置和配置它们可能会让你感到有些不知所措。\n\n如果你在寻找一个更简单的解决方案，**Monit (Monit)** 是一个很好的替代品，可以用来监控和管理系统资源，如服务、进程、文件、目录、设备和网络连接，从而使你的应用程序更加可靠并具备应对崩溃、无响应或资源耗尽等问题的能力。\n\n",
+      "links": [
+        {
+          "title": "Monit",
+          "url": "https://mmonit.com/monit/",
+          "type": "article"
+        },
+        {
+          "title": "Monit Documentation",
+          "url": "https://mmonit.com/monit/documentation/",
+          "type": "article"
+        },
+        {
+          "title": "Monit - 开源自我修复服务器监控",
+          "url": "https://www.youtube.com/watch?v=3cA5lNje1Ow",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "204db08a-4bc3-457b-84e3-29f1a2791554",
+      "xid": "5ec08f2f-b80b-4e64-9787-bc124fa2a93f"
+    },
+    {
+      "title": "检查点 — 监控",
+      "description": "你现在应该使用monit为你的应用程序实现监控和自动重启。\n\n关于自动重启，你也可以使用[pm2](https://pm2.keymetrics.io/)。\n\n你应该为应用程序实现以下一些监控器。\n\n*   CPU 使用率\n*   内存 使用率\n*   磁盘 使用率\n*   网络 使用率\n*   服务 可用性\n*   进程 可用性\n\nMonit提供了许多服务的现有配置。\n\n你可以在 `/etc/monit/conf-available` 找到它们。\n\n你可以将它们复制到 `/etc/monit/conf-enabled`（如有需要可进行修改）以启用它们。\n\n",
+      "links": [],
+      "children": [],
+      "id": "3a5c942d-c877-415f-9222-1db572ebef83",
+      "xid": "9b9d169f-357d-4a61-bf45-aa8fefdeebf0"
+    },
+    {
+      "title": "GitHub Actions (GitHub 动作)",
+      "description": "GitHub Actions 是 GitHub 提供的一种工作流自动化工具，可用于自动化应用程序开发过程中各种任务。\n\n",
+      "links": [
+        {
+          "title": "访问专门的 Git & GitHub 路线图",
+          "url": "https://roadmap.sh/git-github",
+          "type": "article"
+        },
+        {
+          "title": "GitHub 动作",
+          "url": "https://github.com/features/actions",
+          "type": "article"
+        },
+        {
+          "title": "GitHub 动作文档",
+          "url": "https://docs.github.com/en/actions",
+          "type": "article"
+        },
+        {
+          "title": "探索关于 GitHub 的顶级文章",
+          "url": "https://app.daily.dev/tags/github-actions?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "应用程序 DevOps 化的五种方式",
+          "url": "https://www.youtube.com/watch?v=eB0nUzAI7M8",
+          "type": "video"
+        },
+        {
+          "title": "100 秒内解释 DevOps 持续集成/持续交付",
+          "url": "https://www.youtube.com/watch?v=scEDHsr3APg",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "38f13772-fbc7-4663-85c1-f1ba83f364a6",
+      "xid": "31ba5ce0-d741-4382-98e1-d4c29a093681"
+    },
+    {
+      "title": "检查点 —— 持续集成/持续部署（CI / CD）",
+      "description": "现在您已经搭建好了基础设施，是时候自动化部署流程了。\n\n这时就需要用到持续集成/持续部署（CI / CD）。\n\n如果您不了解CI/CD是什么，您应该观看[DevOps CI/CD 100秒速解](https://www.youtube.com/watch?v=scEDHsr3APg)。\n\n下一步是使用GitHub Actions为您的应用程序实现持续集成/持续部署（CI/CD）。\n\n设置一个GitHub Actions，每当您向master推送更改时，它将自动执行以下操作：\n\n*   运行您的测试（如果您尚未学习此步骤，可以忽略）\n*   将您的应用程序部署到AWS\n\n关于部署到AWS，您可以使用`rsync`将文件复制到服务器。\n\n这里有一个使用`rsync`的[示例GitHub工作流程](https://gist.github.com/kamranahmedse/1e94b412006040f38e24b9443b2da41a)。\n\n",
+      "links": [],
+      "children": [],
+      "id": "03a8f043-4d60-4aee-a9f4-0ae1ca2790ee",
+      "xid": "e98623e0-de33-4fa9-9b9d-5638dcebc498"
+    },
+    {
+      "title": "Ansible（自动化工具）",
+      "description": "Ansible 是一个开源的配置管理、应用程序部署和分配工具，它使用自身声明性的 YAML 语言。\n\nAnsible 是无代理的，这意味着您只需要通过 SSH 或通过 Powershell 的 Windows 远程管理即可运行。\n\n\n",
+      "links": [
+        {
+          "title": "Ansible（自动化工具）",
+          "url": "https://www.ansible.com/",
+          "type": "article"
+        },
+        {
+          "title": "Ansible 文档",
+          "url": "https://docs.ansible.com/",
+          "type": "article"
+        },
+        {
+          "title": "Ansible 入门指南",
+          "url": "https://www.ansible.com/resources/get-started",
+          "type": "article"
+        },
+        {
+          "title": "浏览关于 Ansible 的顶级帖子",
+          "url": "https://app.daily.dev/tags/ansible?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Ansible 初学者完整课程",
+          "url": "https://www.youtube.com/watch?v=9Ua2b06oAr4",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "9b342d8e-e22a-4387-b91d-a137d5c85a38",
+      "xid": "a5c72aa6-ce5d-41ef-94a7-8a52842ec5ad"
+    },
+    {
+      "title": "Terraform",
+      "description": "Terraform 是一个非常流行的开源基础设施即代码（Infrastructure as Code, IaC）工具，可以与许多不同的云和服务提供商API配合使用。\n\nTerraform 专注于基础设施的不可变性，在状态文件中记中心处来跟踪您实际基础设施的状态。\n\n",
+      "links": [
+        {
+          "title": "访问专用的Terraform路线图",
+          "url": "https://roadmap.sh/terraform",
+          "type": "article"
+        },
+        {
+          "title": "Terraform 网站",
+          "url": "https://www.terraform.io/",
+          "type": "article"
+        },
+        {
+          "title": "Terraform 文档",
+          "url": "https://www.terraform.io/docs",
+          "type": "article"
+        },
+        {
+          "title": "Terraform CDK",
+          "url": "https://www.terraform.io/cdktf",
+          "type": "article"
+        },
+        {
+          "title": "Terraform 教程",
+          "url": "https://learn.hashicorp.com/terraform",
+          "type": "article"
+        },
+        {
+          "title": "探索有关Terraform的顶级文章",
+          "url": "https://app.daily.dev/tags/terraform?ref=roadmapsh",
+          "type": "article"
+        },
+        {
+          "title": "Terraform 入门视频",
+          "url": "https://www.youtube.com/watch?v=h970ZBgKINg&ab_channel=HashiCorp",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "aba409ee-f481-49a5-a7ba-21637ce6e321",
+      "xid": "1e27a3b3-ab61-4c21-b7ba-0e89b66c4bcb"
+    },
+    {
+      "title": "检查点 — 自动化(Automation)",
+      "description": "现在你已经学习了Ansible，你可以用它来自动化应用的部署。\n\n在此时你可以做的一个任务就是自动化先前手动配置EC2实例的步骤，即SSH进入服务器、安装Node.js、Git、PostgreSQL、运行应用等。\n\n编写一个Ansible剧本(playbook)来自动化这些步骤，并尝试在不SSH进入实例且手动安装所有依赖的情况下启动一个新的EC2实例。\n\n",
+      "links": [],
+      "children": [],
+      "id": "e783ea99-d9f5-415f-b414-b38e1d388640",
+      "xid": "beb50295-264d-4838-8685-182f70901eaa"
+    },
+    {
+      "title": "检查点 - 基础设施（Infrastructure）",
+      "description": "如果你还记得，早些时候在路线图中，你需要手动登录到AWS控制台并设置服务。\n\n现在你已经了解了terraform，可以使用terraform自动化应用基础设施的创建过程，从而实现全流程自动化部署，即你应该做到：\n\n*   使用terraform设置基础设施\n*   使用Ansible进行配置管理（Provisioning）\n*   使用GitHub Actions进行持续集成/持续部署（CI/CD）\n*   使用Monit进行监控（Monitoring）\n\n就是这样！你已经成功完成了路线图，现在已经成为了一名全栈开发人员。\n\n恭喜！🎉\n\n接下来做什么？\n------------\n\n继续创建一些酷炫的东西！与社区分享你的学习成果，并帮助其他人学习。\n\n如果你有任何问题，欢迎加入我们的[discord服务器](https://roadmap.sh/discord)提问。\n\n",
+      "links": [],
+      "children": [],
+      "id": "99036018-ae71-459d-b8e1-750482c68763",
+      "xid": "2ab9afa3-e259-49eb-bbcb-38185e352ff5"
+    }
+  ],
+  "id": "29e58448-c2d7-41b1-a34e-f2d84f1c43ee",
+  "xid": "da21790d-e7e8-4211-a206-80e1b179a008"
+}

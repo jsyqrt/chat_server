@@ -1,0 +1,1411 @@
+{
+  "title": "React 开发者",
+  "description": "2025年有关 React 及其生态系统的所有学习内容。\n\n",
+  "links": [],
+  "children": [
+    {
+      "title": "条件渲染(Conditional Rendering)",
+      "description": "指令 `v-if` 用于条件性地渲染一个块。\n\n只有当指令的表达式返回一个真值(truthy value)时，该块才会被渲染。\n\n",
+      "links": [
+        {
+          "title": "条件渲染(Conditional Rendering)",
+          "url": "https://vuejs.org/guide/essentials/conditional.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "创建Vue项目",
+          "description": "create-vue 是一个CLI工具（CLI），它帮助你通过一条命令创建一个新的Vue项目。\n\n它是一个简单易用的工具，能为你节省在设置新的Vue项目时的时间和精力。\n\n使用以下资源学习更多内容：",
+          "links": [
+            {
+              "title": "vuejs/create-vue",
+              "url": "https://github.com/vuejs/create-vue",
+              "type": "opensource"
+            },
+            {
+              "title": "创建Vue项目",
+              "url": "https://cli.vuejs.org/guide/creating-a-project.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Vue.js的顶级帖子",
+              "url": "https://app.daily.dev/tags/vuejs?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "329df85a-6433-47df-a746-370794a98072",
+          "xid": "b8af76f6-393f-4e8e-b3f8-d9791dd4bd9b"
+        }
+      ],
+      "id": "6fa29b09-b383-48de-8e9d-3a83f6525abc",
+      "xid": "aa9849ad-8352-47ab-9ef9-b811580793be"
+    },
+    {
+      "title": "组件 (Components)",
+      "description": "组件是React应用的基础构建块。\n\n它们使我们能够将用户界面拆分成独立且可重用的部分，并且可以单独思考每个部分。\n\n",
+      "links": [
+        {
+          "title": "创建和嵌套组件 (Creating and nesting components)",
+          "url": "https://react.dev/learn#components",
+          "type": "article"
+        },
+        {
+          "title": "探索React中的不同组件类型 (Explore the different types of components in React)",
+          "url": "https://www.robinwieruch.de/react-component-types/",
+          "type": "article"
+        },
+        {
+          "title": "组件 (Components)、元素 (elements) 和实例 (instances) 之间的区别是什么？",
+          "url": "https://www.robinwieruch.de/react-element-component/",
+          "type": "article"
+        },
+        {
+          "title": "React中的组件 (Components) 与模板 (Templates)",
+          "url": "https://www.youtube.com/watch?v=9D1x7-2FmTA",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "函数组件(Functional Components)",
+          "description": "函数组件是我们在使用React时会遇到的一些常见组件。\n\n这些组件本质上就是JavaScript函数。\n\n我们可以通过编写JavaScript函数来创建React函数组件。\n\n这些函数可能会也可能不会接收参数数据。\n\n在函数组件中，返回值是用于渲染到DOM树上的JSX代码。\n\n函数组件还可以使用React hooks来管理状态(state)。\n\n",
+          "links": [
+            {
+              "title": "函数组件和Props(Functional Components and Props)",
+              "url": "https://react.dev/reference/react/Component",
+              "type": "article"
+            },
+            {
+              "title": "你的第一个组件(Your first component)",
+              "url": "https://react.dev/learn/your-first-component",
+              "type": "article"
+            },
+            {
+              "title": "将Props传递给组件(Passing props to a component)",
+              "url": "https://react.dev/learn/passing-props-to-a-component",
+              "type": "article"
+            },
+            {
+              "title": "React中的函数组件(Functional Components in React)",
+              "url": "https://www.robinwieruch.de/react-function-component/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于React的热门帖子(Explore top posts about React)",
+              "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "React JS函数组件(React JS Functional Components)",
+              "url": "https://www.youtube.com/watch?v=NJ_qbsLf52w",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "bf089f45-09e9-4c8f-9aff-acc77b4e5019",
+          "xid": "4a4942df-0bbd-440c-9264-751d129c0691"
+        },
+        {
+          "title": "JSX",
+          "description": "JSX 代表 JavaScript XML (JavaScript XML)。\n\n它允许在 JavaScript 中编写 HTML，并将 HTML 标签转换为 React 元素。\n\n",
+          "links": [
+            {
+              "title": "使用 JSX 编写标记",
+              "url": "https://react.dev/learn/writing-markup-with-jsx",
+              "type": "article"
+            },
+            {
+              "title": "在 JSX 中使用大括号内的 JavaScript",
+              "url": "https://react.dev/learn/javascript-in-jsx-with-curly-braces",
+              "type": "article"
+            },
+            {
+              "title": "使用 JSX 工作 - React - CodeGuage",
+              "url": "https://www.codeguage.com/courses/react/jsx",
+              "type": "article"
+            },
+            {
+              "title": "w3school 上的 React 中的 JSX",
+              "url": "https://www.w3schools.com/react/react_jsx.asp",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 JSX 的热门帖子",
+              "url": "https://app.daily.dev/tags/jsx?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c29ec212-430a-4b33-84b3-a52a04cdb6b6",
+          "xid": "e34640b6-3bcb-4556-81bc-7bfae94a3599"
+        },
+        {
+          "title": "Props 与 State",
+          "description": "Props（属性的缩写）和 State 都是普通的 JavaScript 对象。\n\n虽然两者都存储了影响组件渲染输出的信息，但它们在一个重要方面有所不同：Props 是外传入组件的（类似于函数参数），而 State 是在组件内部管理的（类似于函数内部声明的变量）。\n\n",
+          "links": [
+            {
+              "title": "State：组件的记忆",
+              "url": "https://react.dev/learn/state-a-components-memory",
+              "type": "article"
+            },
+            {
+              "title": "如何在 React 中使用 Props",
+              "url": "https://www.robinwieruch.de/react-pass-props-to-component/",
+              "type": "article"
+            },
+            {
+              "title": "React 中 State 和 Props 的区别是什么？",
+              "url": "https://stackoverflow.com/questions/27991366/what-is-the-difference-between-state-and-props-in-react",
+              "type": "article"
+            },
+            {
+              "title": "如何在 React 中从 Props 更新 State",
+              "url": "https://www.robinwieruch.de/react-derive-state-props/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "615ef8a4-bc21-4f69-858f-b7eed28296e3",
+          "xid": "312e5f4c-7ff1-48d7-92c8-05732b47ef77"
+        },
+        {
+          "title": "条件渲染",
+          "description": "在React中，你可以创建各自封装所需功能的不同组件。\n\n然后，你可以根据应用程序的状态来仅渲染其中的一部分。\n\nReact中的条件渲染方式与JavaScript中的条件语句处理方式一致。\n\n使用JavaScript运算符如[if](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)或[条件运算符](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)来创建代表当前状态的元素，并让React更新用户界面以匹配这些元素。\n\n",
+          "links": [
+            {
+              "title": "条件渲染",
+              "url": "https://react.dev/learn/conditional-rendering",
+              "type": "article"
+            },
+            {
+              "title": "React中条件渲染的不同技术",
+              "url": "https://www.robinwieruch.de/conditional-rendering-react/",
+              "type": "article"
+            },
+            {
+              "title": "React中的条件渲染",
+              "url": "https://www.youtube.com/watch?v=4oCVDkb_EIs",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "973d904c-a5e3-4062-8b78-1f4ed2aa5e93",
+          "xid": "5a5294fc-a27c-4ce7-aca8-5d895f548242"
+        },
+        {
+          "title": "组合",
+          "description": "React 拥有一个强大的组合模型，建议在组件之间复用代码时使用组合而不是继承(Composition)。\n\n",
+          "links": [
+            {
+              "title": "组合 vs 继承",
+              "url": "https://reactjs.org/docs/composition-vs-inheritance.html",
+              "type": "article"
+            },
+            {
+              "title": "如何在 React 中进行组件组合",
+              "url": "https://www.robinwieruch.de/react-component-composition/",
+              "type": "article"
+            },
+            {
+              "title": "使用 React 组合实现可重用性",
+              "url": "https://formidable.com/blog/2021/react-composition/",
+              "type": "article"
+            },
+            {
+              "title": "传递 JSX 作为子组件",
+              "url": "https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a2bc40de-8dda-492f-bdf6-69780d37b158",
+          "xid": "35fa5577-63e5-4b1b-8c47-3b89b2dac2a7"
+        }
+      ],
+      "id": "a9bc3fa3-4650-4544-aad6-42c9c0311728",
+      "xid": "b24e122b-ebcc-493f-96eb-c2ff8ed0e8c7"
+    },
+    {
+      "title": "渲染",
+      "description": "React 采用了声明式方法来渲染组件，这意味着开发人员指定组件应是什么样子，而 React 负责将组件渲染到屏幕上。\n\n这与命令式方法形成了对比，在命令式方法中，开发人员会编写代码来手动操作 DOM（Document Object Model）来更新用户界面。\n\n虚拟 DOM（VDOM）是 React 工作方式的重要方面。\n\n它是一个轻量级的内存表示，用于表示 DOM（Document Object Model），并且用于优化 React 应用中的组件渲染。\n\n*   组件写作为定义了 render 方法的 JavaScript 类或函数。\n\nrender 方法使用 JSX 语法返回组件应呈现的样子的描述。\n\n\n*   当组件被渲染时，React 会创建该组件的虚拟 DOM（VDOM）表示。\n\nVDOM 是一种轻量级的内存中 DOM 表示，用于优化组件的渲染。\n\n\n*   React 会比较组件的 VDOM 表示与先前的 VDOM 表示（如果存在）。\n\n如果两个 VDOM 之间存在差异，React 会计算出需要执行的最小数量的 DOM 更新，以使实际 DOM 与新 VDOM 保持一致。\n\n\n*   React 用最小数量的 DOM 更新实际 DOM，以反映 VDOM 中的更改。\n\n这个过程称为协调 (reconciliation)，是 React 工作方式的重要方面。\n\n通过使用声明式方法和 VDOM，React 能够优化组件的渲染，并提升 Web 应用程序的性能。\n\n",
+      "links": [
+        {
+          "title": "渲染和提交 - 官方文档",
+          "url": "https://react.dev/learn/render-and-commit",
+          "type": "article"
+        },
+        {
+          "title": "React 中的渲染 - ui.dev",
+          "url": "https://ui.dev/why-react-renders",
+          "type": "article"
+        },
+        {
+          "title": "修复慢渲染之前先修复重渲染",
+          "url": "https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "组件生命周期",
+          "description": "React 组件的生命周期分为三个阶段：挂载（Mounting），更新（Updating）和卸载（Unmounting），并包括数个可在特定时间重写以执行代码的“生命周期方法”（lifecycle methods）。\n\n不建议手动使用生命周期方法。\n\n相反，应使用 useEffect 钩子（hook）与函数组件（functional component）。\n\n",
+          "links": [
+            {
+              "title": "响应式效应的生命周期（Lifecycle of Reactive Effects）",
+              "url": "https://react.dev/learn/lifecycle-of-reactive-effects",
+              "type": "article"
+            },
+            {
+              "title": "类组件（Class Component）",
+              "url": "https://react.dev/reference/react/Component",
+              "type": "article"
+            },
+            {
+              "title": "React 组件生命周期：React 生命周期方法与钩子（React component lifecycle: React lifecycle methods & hooks）",
+              "url": "https://tsh.io/blog/react-component-lifecycle-methods-vs-hooks/",
+              "type": "article"
+            },
+            {
+              "title": "React 生命周期：详细解析方法和钩子（The React lifecycle: methods and hooks explained）",
+              "url": "https://retool.com/blog/the-react-lifecycle-methods-and-hooks-explained#react-hooks-and-the-component-lifecycle",
+              "type": "article"
+            },
+            {
+              "title": "React 生命周期：详细解析方法与钩子（React Lifecycle: Methods & Hooks In Detail）",
+              "url": "https://www.bairesdev.com/blog/react-lifecycle-methods-hooks/",
+              "type": "article"
+            },
+            {
+              "title": "生命周期图（lifecycle diagram）",
+              "url": "https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "34c323f5-f407-41d8-8b0c-789af65acc54",
+          "xid": "1e6f639e-ff26-45a0-a80c-452458e90248"
+        },
+        {
+          "title": "列表和键",
+          "description": "在React中渲染列表时，可以使用`key`属性为每个项目指定一个唯一的键。\n\n这个键用于标识需要更新哪个项目，当您希望更新某个特定项目时就会用到它。\n\n",
+          "links": [
+            {
+              "title": "列表和键",
+              "url": "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key",
+              "type": "article"
+            },
+            {
+              "title": "渲染列表",
+              "url": "https://react.dev/learn/rendering-lists",
+              "type": "article"
+            },
+            {
+              "title": "通过示例了解React中的列表组件",
+              "url": "https://www.robinwieruch.de/react-list-component/",
+              "type": "article"
+            },
+            {
+              "title": "为什么我们在React中需要key属性？",
+              "url": "https://www.robinwieruch.de/react-list-key/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "946e63ab-ebc2-41bf-908b-874b82ced760",
+          "xid": "e8c905ca-c425-4e1e-ae3d-c250ff345dc9"
+        },
+        {
+          "title": "渲染属性（Render Props）",
+          "description": "术语'渲染属性（render props）'指的是通过属性值为函数来在React组件之间共享代码的技巧。\n\n具有渲染属性的组件接收一个返回React元素的函数，并调用该函数而不是实现它自己的渲染逻辑。\n\n",
+          "links": [
+            {
+              "title": "React中的渲染属性（Render Props）",
+              "url": "https://react.dev/learn/passing-props-to-a-component",
+              "type": "article"
+            },
+            {
+              "title": "如何创建一个渲染属性（Render Props）组件",
+              "url": "https://www.robinwieruch.de/react-render-props/",
+              "type": "article"
+            },
+            {
+              "title": "渲染属性（Render Props）模式",
+              "url": "https://www.patterns.dev/posts/render-props-pattern/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ad995eac-7784-432f-a24e-0897feed9a49",
+          "xid": "1ead5101-465e-4b08-8503-59d351995add"
+        },
+        {
+          "title": "Refs（引用）",
+          "description": "Refs（引用）提供了一种访问在render方法中创建的DOM节点或React元素的方式。\n\n在典型的React数据流中，props（属性）是父组件与子组件交互的唯一方式。\n\n为了修改一个子组件，你通过新的props（属性）重新渲染它。\n\n然而，在某些情况下，你需要在典型的React数据流之外强制性地修改一个子组件。\n\n要被修改的子组件可能是React组件的一个实例，也可能是DOM元素。\n\n这两种情况下，React都提供了一个逃生舱口（escape hatch）。\n\n",
+          "links": [
+            {
+              "title": "使用Refs（引用）引用值",
+              "url": "https://react.dev/learn/referencing-values-with-refs",
+              "type": "article"
+            },
+            {
+              "title": "使用Refs（引用）操作DOM",
+              "url": "https://react.dev/learn/manipulating-the-dom-with-refs",
+              "type": "article"
+            },
+            {
+              "title": "在React中使用Refs（引用）的示例",
+              "url": "https://www.robinwieruch.de/react-ref/",
+              "type": "article"
+            },
+            {
+              "title": "React中使用useRef（）和Refs（引用）的完整指南",
+              "url": "https://dmitripavlutin.com/react-useref-guide/",
+              "type": "article"
+            },
+            {
+              "title": "精准理解是什么是Refs（引用）- React - CodeGuage",
+              "url": "https://www.codeguage.com/courses/react/refs",
+              "type": "article"
+            },
+            {
+              "title": "在11分钟内学习useRef（）- Web Dev Simplified",
+              "url": "https://www.youtube.com/watch?v=t2ypzz6gJm0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "38c7c51f-ca9b-41f4-9792-b2f6cd6cedd4",
+          "xid": "6160ebe9-6933-46dd-95e6-ee1c318f163c"
+        },
+        {
+          "title": "事件",
+          "description": "使用React元素处理事件与处理DOM元素事件非常相似。\n\n有一些语法上的差异：\n\n*   React事件使用驼峰命名法（camelCase），而不是小写字母。\n\n\n*   在JSX中，你传递一个函数作为事件处理程序，而不是一个字符串。\n\n\n",
+          "links": [
+            {
+              "title": "响应事件",
+              "url": "https://react.dev/learn/responding-to-events",
+              "type": "article"
+            },
+            {
+              "title": "React 事件对象（Synthetic Event）",
+              "url": "https://react.dev/reference/react-dom/components/common#react-event-object",
+              "type": "article"
+            },
+            {
+              "title": "React 事件处理程序",
+              "url": "https://www.robinwieruch.de/react-event-handler/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d77102c7-654c-4efc-8e4f-c7193e576e99",
+          "xid": "e5ba24ef-5c27-4c95-a991-ddf99eef8c5f"
+        },
+        {
+          "title": "高阶组件 (Higher Order Components)",
+          "description": "高阶组件 (HOC) 是 React 中用于重用组件逻辑的高级技术。\n\n严格来说，HOC 并不是 React API 的一部分。\n\n它们来自 React 的组合性本性而形成的一种模式。\n\n具体地说，高阶组件是一个函数，它接收一个组件并返回一个新的组件。\n\n在现代 React 代码中，高阶组件并不常用。\n\n现在为了重用逻辑，主要使用 React 钩子 (hooks)。\n\n",
+          "links": [
+            {
+              "title": "高阶组件 (High-Order Components)",
+              "url": "https://reactjs.org/docs/higher-order-components.html",
+              "type": "article"
+            },
+            {
+              "title": "如何创建一个高阶组件 (Higher-Order Component)",
+              "url": "https://www.robinwieruch.de/react-higher-order-components/",
+              "type": "article"
+            },
+            {
+              "title": "10分钟内学习 React 高阶组件 (HOC)",
+              "url": "https://youtu.be/J5P0q7EROfw?si=-8s5h1b0mZSGVgLt",
+              "type": "video"
+            },
+            {
+              "title": "ReactJS 教程 - 高阶组件 (Higher Order Components) (第一部分)",
+              "url": "https://www.youtube.com/watch?v=B6aNv8nkUSw",
+              "type": "video"
+            },
+            {
+              "title": "ReactJS 教程 - 高阶组件 (Higher Order Components) (第二部分)",
+              "url": "https://www.youtube.com/watch?v=rsBQj6X7UK8",
+              "type": "video"
+            },
+            {
+              "title": "ReactJS 教程 - 高阶组件 (Higher Order Components) (第三部分)",
+              "url": "https://www.youtube.com/watch?v=l8V59zIdBXU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a0a18170-7b15-4a6c-a187-db769a7fef24",
+          "xid": "5d449b30-d418-4fdc-af37-26a95522ac08"
+        }
+      ],
+      "id": "29cf5e07-f40e-4e80-b18a-5f9ade912be8",
+      "xid": "d2ce782b-9dd8-4c68-bca0-5efa206bfe36"
+    },
+    {
+      "title": "Hooks（钩子）",
+      "description": "Hooks 在 React 16.8 中引入，使我们可以在不编写类的情况下使用 React 的特性，如管理组件的状态或在状态发生更改时执行一些副作用。\n\n",
+      "links": [
+        {
+          "title": "Hooks 参考",
+          "url": "https://react.dev/reference/react",
+          "type": "article"
+        },
+        {
+          "title": "探索有关 React Hooks 的热门帖子",
+          "url": "https://app.daily.dev/tags/react-hooks?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "基础挂钩(basic-hooks)",
+          "description": "基础挂钩(basic-hooks)",
+          "links": [],
+          "children": [
+            {
+              "title": "useState",
+              "description": "`useState` 钩子（hook）用于在函数组件中管理组件的状态。\n\n调用 `useState` 会返回一个包含两个元素的数组：当前的状态值和一个用于更新状态的函数。\n\n",
+              "links": [
+                {
+                  "title": "使用状态钩子（State Hook）",
+                  "url": "https://react.dev/reference/react/useState",
+                  "type": "article"
+                },
+                {
+                  "title": "通过示例学习 React 的 useState 钩子（Hook）",
+                  "url": "https://www.robinwieruch.de/react-usestate-hook/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "f06260d6-dfbc-493f-b51b-2e8a52748c6a",
+              "xid": "84b7e9f6-5f05-43b5-9058-980c9e021fd5"
+            },
+            {
+              "title": "useEffect",
+              "description": "`useEffect` 是一个特殊的钩子（hook），它允许你在 React 中运行副作用。\n\n它类似于 componentDidMount 和 componentDidUpdate，但它只在组件（或某些其属性）发生变化时以及在初始挂载（mount）期间运行。\n\n",
+              "links": [
+                {
+                  "title": "使用 Effect Hook",
+                  "url": "https://react.dev/reference/react/useEffect",
+                  "type": "article"
+                },
+                {
+                  "title": "通过示例学习 React useEffect Hook",
+                  "url": "https://www.robinwieruch.de/react-useeffect-hook/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "7329a195-19b8-4b3f-a9e9-dd4ed7df942e",
+              "xid": "c690f6c6-16a3-4a80-8c7f-8f3716101308"
+            }
+          ],
+          "id": "8959ef90-c464-4e08-beba-b19e8f17b8ac",
+          "xid": "e0bca403-1f2e-41a1-8458-f0d358832341"
+        },
+        {
+          "title": "创建自定义Hooks",
+          "description": "创建自己的Hooks可以让你将组件逻辑提取到可重用的函数中。\n\n",
+          "links": [
+            {
+              "title": "使用自定义Hooks重用逻辑",
+              "url": "https://react.dev/learn/reusing-logic-with-custom-hooks",
+              "type": "article"
+            },
+            {
+              "title": "如何创建自定义Hook (2)，接着是示例",
+              "url": "https://www.robinwieruch.de/react-custom-hook/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关React Hooks的热门帖子",
+              "url": "https://app.daily.dev/tags/react-hooks?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "React中的自定义Hooks",
+              "url": "https://www.youtube.com/watch?v=I2Bgi0Qcdvc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f4b9c4ff-8ff7-4a47-8f24-8e29b9f0a5cb",
+          "xid": "16fd9846-ca04-476b-a67a-32812bfc83d8"
+        },
+        {
+          "title": "useCallback",
+          "description": "`useCallback` 是一个 React 钩子，返回一个回调函数的.memoized版本。\n\n它用于通过防止不必要的重新渲染来优化性能。\n\n特别地，当依赖项未更改时，它有助于避免重新创建函数，这在将回调传递给依赖于引用相等性来防止重新渲染的子组件时非常有用。\n\n",
+          "links": [
+            {
+              "title": "React 官方文档关于 useCallback",
+              "url": "https://react.dev/reference/react/useCallback",
+              "type": "article"
+            },
+            {
+              "title": "深入理解 useCallback",
+              "url": "https://kentcdodds.com/blog/usememo-and-usecallback",
+              "type": "article"
+            },
+            {
+              "title": "useCallback 钩子：入门指南",
+              "url": "https://dmitripavlutin.com/dont-overuse-react-usecallback/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ab847321-0d1b-480a-a2a4-0fbfd49505c3",
+          "xid": "ad47eb39-1179-4ad6-be7c-d35d4c3765f0"
+        }
+      ],
+      "id": "b517b86c-fa22-42ac-9166-3496d9c19c9c",
+      "xid": "4333f73a-209c-4564-93ff-dcc9540d93d9"
+    },
+    {
+      "title": "路由器",
+      "description": "路由是单页应用程序（Single Page Applications，SPA）中的一个重要概念。\n\n当您的应用程序被划分为独立的逻辑部分，且每个部分都有自己的URL时，用户可以方便地互相分享链接。\n\n",
+      "links": [
+        {
+          "title": "如何在React JS中使用路由：一份全面指南。\n\n",
+          "url": "https://blog.logrocket.com/react-router-v6-guide/",
+          "type": "article"
+        },
+        {
+          "title": "React Router 6 – 初学者教程。\n\n",
+          "url": "https://www.youtube.com/watch?v=59IXY5IDrBA",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "React 路由 (React Router)",
+          "description": "React 路由 (React Router) 是在 React 应用程序中实现路由功能最著名的库。\n\n",
+          "links": [
+            {
+              "title": "React 路由 (React Router) — 官方网站",
+              "url": "https://reactrouter.com/",
+              "type": "article"
+            },
+            {
+              "title": "快速入门指南",
+              "url": "https://reactrouter.com/en/main/start/tutorial",
+              "type": "article"
+            },
+            {
+              "title": "如何使用 React 路由 (React Router) v6",
+              "url": "https://www.robinwieruch.de/react-router/",
+              "type": "article"
+            },
+            {
+              "title": "React 路由 (React Router) 快速参考",
+              "url": "https://devhints.io/react-router/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 React 的热门帖子",
+              "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Tanstack/Router — 官方网站",
+              "url": "https://tanstack.com/router/latest/docs/framework/react/overview",
+              "type": "article"
+            },
+            {
+              "title": "在 1 小时内掌握 React 路由 (React Router) v6",
+              "url": "https://youtu.be/0cSVuySEB0A",
+              "type": "video"
+            },
+            {
+              "title": "TanStack/Router - 完整课程",
+              "url": "https://www.youtube.com/watch?v=4sslBg8LprE&list=PLOQjd5dsGSxJilh0lBofeY8Qib98kzmF5",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "29ab1c39-4f1c-4d36-845a-962e31a1044a",
+          "xid": "4b593b7e-1864-400e-947a-d81db10e8328"
+        }
+      ],
+      "id": "ee72f0bb-51a8-4cf7-9ac2-fe825e7757d8",
+      "xid": "b470b977-fcc8-4fdc-8321-c0eb79431b39"
+    },
+    {
+      "title": "状态管理",
+      "description": "应用程序状态管理是在应用程序完成整个业务交易--或会话--的过程中，维护多个相关数据流中的应用程序输入的知识，以便理解应用程序在任何给定时刻的状况。\n\n在计算机科学中，输入是由用户输入到程序中的信息，而状态是指应用程序根据其存储的输入（保存为变量或常量）所处的条件。\n\n状态也可以描述为构成完整会话的保存信息的集合。\n\n",
+      "links": [
+        {
+          "title": "什么是状态管理(State Management)?",
+          "url": "https://www.techtarget.com/searchapparchitecture/definition/state-management",
+          "type": "article"
+        },
+        {
+          "title": "React中的状态(React State)概述",
+          "url": "https://www.robinwieruch.de/react-state/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "上下文(Context)",
+          "description": "上下文(Context)提供了一种在组件树中传递数据的方法，无需在每一层手动传递属性。\n\n在典型的React应用程序中，数据是通过属性从上到下（从父组件到子组件）传递的，但对于某些类型（如语言偏好、UI主题）的属性，很多组件需要使用它们时，这种用法可能会很麻烦。\n\n上下文提供了一种在组件之间共享这些值的方法，而不必在树的每一层都显式地传递属性。\n\n\n",
+          "links": [
+            {
+              "title": "使用上下文(Context)将数据传输到深处",
+              "url": "https://react.dev/learn/passing-data-deeply-with-context",
+              "type": "article"
+            },
+            {
+              "title": "基本的useContext指南",
+              "url": "https://www.w3schools.com/react/react_usecontext.asp",
+              "type": "article"
+            },
+            {
+              "title": "使用useContext和useState/useReducer实现状态管理",
+              "url": "https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/",
+              "type": "article"
+            },
+            {
+              "title": "React上下文(Context)API速成课程",
+              "url": "https://www.youtube.com/watch?v=t9WmZFnE6Hg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "fe60ffa8-8125-4376-8232-398d5b54001d",
+          "xid": "572014c5-bdb3-4fc6-9ecb-e2f5137f33aa"
+        },
+        {
+          "title": " Zustand（ Zustand）",
+          "description": "Zustand 是一个小型、快速且可扩展的无框架状态管理解决方案，使用简化的 Flux 原理。\n\n其基于钩子的 API 非常便捷，没有繁重的样板代码也不强加约定。\n\nZustand 常被用作其他状态管理库（例如 Redux 和 MobX）的替代方案，因其简洁性和小巧的体积。\n\n它特别适合于小型到中型规模的应用程序，这类程序不需要大型状态管理库的复杂性。\n\n",
+          "links": [
+            {
+              "title": "Zustand - 官方网站",
+              "url": "https://github.com/pmndrs/zustand",
+              "type": "opensource"
+            },
+            {
+              "title": "Zustand 代码库",
+              "url": "https://github.com/pmndrs/zustand",
+              "type": "opensource"
+            },
+            {
+              "title": "使用 Zustand",
+              "url": "https://tkdodo.eu/blog/working-with-zustand",
+              "type": "article"
+            },
+            {
+              "title": "Zustand - 官方文档",
+              "url": "https://docs.pmnd.rs/zustand/getting-started/introduction",
+              "type": "article"
+            },
+            {
+              "title": "Zustand 新手教程",
+              "url": "https://www.youtube.com/watch?v=AYO4qHAnLQI&t",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1ab9db17-3826-4716-a1ca-79a8b7afb0e8",
+          "xid": "2d9a1e97-8cd8-4485-9461-f1c4ddda162d"
+        }
+      ],
+      "id": "067bf371-051c-4fbb-920b-a53bdd236600",
+      "xid": "c007fc9a-e4ae-4f26-a90c-19ac0c2bce58"
+    },
+    {
+      "title": "编写CSS",
+      "description": "尽管\"CSS in JS\"是现代前端应用中最主要的样式编写方式，但是仍然有多种方法可以为React应用编写样式，比如纯CSS、[CSS Modules（CSS Modules）](https://github.com/css-modules/css-modules)或[CSS in JS（CSS in JS）](https://css-tricks.com/a-thorough-analysis-of-css-in-js/)等，每种方法都有若干可用的框架。\n\n",
+      "links": [
+        {
+          "title": "为React应用CSS样式的方法",
+          "url": "https://www.robinwieruch.de/react-css-styling/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Tailwind CSS",
+          "description": "Tailwind CSS是一种提供原子CSS类的CSS框架，帮助您对组件进行样式设置，例如`flex`，`pt-4`，`text-center`和`rotate-90`，这些类可以在您的标记中组合以构建任何设计。\n\n",
+          "links": [
+            {
+              "title": "Tailwind CSS官网",
+              "url": "https://tailwindcss.com",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于Tailwind CSS的顶级文章",
+              "url": "https://app.daily.dev/tags/tailwind-css?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Tailwind CSS入门全课程",
+              "url": "https://www.youtube.com/watch?v=lCxcTsOHrjo",
+              "type": "video"
+            },
+            {
+              "title": "Tailwind CSS速成课程",
+              "url": "https://www.youtube.com/watch?v=UBOj6rqRUME",
+              "type": "video"
+            },
+            {
+              "title": "你应该使用Tailwind CSS吗？",
+              "url": "https://www.youtube.com/watch?v=hdGsFpZ0J2E",
+              "type": "video"
+            },
+            {
+              "title": "官方教学视频",
+              "url": "https://www.youtube.com/c/TailwindLabs/videos",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "2b68e6e1-c1f7-461f-bb48-e1ce3c09a070",
+          "xid": "8bcd742f-78fd-4d27-94fd-9d31c7afc3d7"
+        },
+        {
+          "title": "Chakra UI（组件库）",
+          "description": "Chakra UI（组件库）是一个简单、模块化且可访问的组件库，它为你提供了构建React应用所需的构建模块。\n\n",
+          "links": [
+            {
+              "title": "Chakra UI（组件库）官网",
+              "url": "https://chakra-ui.com/",
+              "type": "article"
+            },
+            {
+              "title": "Chakra UI（组件库）官方入门指南",
+              "url": "https://chakra-ui.com/docs/getting-started",
+              "type": "article"
+            },
+            {
+              "title": "官方入门视频",
+              "url": "https://youtu.be/wI2vqXsjsIo",
+              "type": "video"
+            },
+            {
+              "title": "Chakra UI（组件库）速成课程",
+              "url": "https://youtu.be/s-bIsz-NR3c",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "874e34f8-41a9-4468-83b4-cf2d13150650",
+          "xid": "5150b2af-38e6-4f54-aa62-b0ae5e35c5cc"
+        },
+        {
+          "title": "CSS模块(CSS Modules)",
+          "description": "默认情况下，类名和动画名都被局部限定的CSS文件。\n\n",
+          "links": [
+            {
+              "title": "项目GitHub仓库(Project GitHub Repository)",
+              "url": "https://github.com/css-modules/css-modules",
+              "type": "opensource"
+            },
+            {
+              "title": "在React应用中使用CSS模块(Using CSS Modules In React App)",
+              "url": "https://medium.com/@ralph1786/using-css-modules-in-react-app-c2079eadbb87",
+              "type": "article"
+            },
+            {
+              "title": "探索关于CSS的顶级文章(Explore top posts about CSS)",
+              "url": "https://app.daily.dev/tags/css?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "CSS模块的优点(CSS Modules: Why are they great?)",
+              "url": "https://www.youtube.com/watch?v=pKMWU9OrA2s",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "61ea4cb0-8620-49d0-a869-0326e0682169",
+          "xid": "f135b33e-5aee-4570-89cf-1ff6168723b6"
+        }
+      ],
+      "id": "b050f1b2-e9c1-498d-b552-64bc1b00aa19",
+      "xid": "651b9465-2606-4592-85c7-eb3d634b6fd6"
+    },
+    {
+      "title": "API 调用",
+      "description": "APIs（Application Programming Interfaces 的缩写）是软件到软件的接口。\n\n这意味着，它们允许不同的应用程序互相通信并交换信息或功能。\n\n这使得企业能够访问另一家企业’的数据、代码片段、软件或服务，以扩展其产品功能 —— 同时节省时间和成本。\n\n存在几种选项可以从你的 React.js 应用程序中进行 API 调用。\n\n",
+      "links": [
+        {
+          "title": "AJAX 和 APIs",
+          "url": "https://reactjs.org/docs/faq-ajax.html",
+          "type": "article"
+        },
+        {
+          "title": "如何在 React 中获取数据",
+          "url": "https://www.robinwieruch.de/react-hooks-fetch-data/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "阿波罗(Apollo)",
+          "description": "阿波罗(Apollo)是一个构建统一图数据平台的工具，作为通信层帮助你管理应用客户端（如网页和原生应用）与后端服务之间的数据流。\n\n",
+          "links": [
+            {
+              "title": "阿波罗(Apollo)官网",
+              "url": "https://www.apollographql.com",
+              "type": "article"
+            },
+            {
+              "title": "官方文档",
+              "url": "https://www.apollographql.com/docs/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关阿波罗(Apollo)的热门文章",
+              "url": "https://app.daily.dev/tags/apollo?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "官方YouTube频道",
+              "url": "https://www.youtube.com/c/ApolloGraphQL/",
+              "type": "video"
+            },
+            {
+              "title": "使用Apollo Client的React教程",
+              "url": "https://www.youtube.com/watch?v=YyUWW04HwKY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0a9d7729-02a4-44d9-8c90-a7b110aac47f",
+          "xid": "423c5a98-1b8d-4f61-8e72-91bf7d17456a"
+        },
+        {
+          "title": "Relay",
+          "description": "Relay 是在浏览器中用于获取 GraphQL 数据的 JavaScript 客户端。\n\n它是由 Facebook 开发的 JavaScript 框架，用于管理 React 应用中的数据获取。\n\n它秉承可扩展性的设计理念，以支持像 Facebook 这样的复杂应用。\n\nGraphQL 和 Relay 的最终目标是实现即时的用户界面响应交互。\n\n",
+          "links": [
+            {
+              "title": "官方网站",
+              "url": "https://relay.dev/",
+              "type": "article"
+            },
+            {
+              "title": "Relay modern 介绍",
+              "url": "https://relay.dev/docs/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6441193c-d8fb-45ad-a744-718ad27b4512",
+          "xid": "f5d6be7a-4535-4597-a6cf-5d8952b1b945"
+        },
+        {
+          "title": "urql (通用React查询库)",
+          "description": "urql (Universal React Query Library) 是一个用于在React应用程序中管理GraphQL数据的库。\n\n它由Formidable Labs开发和维护，并作为开源软件提供。\n\nurql旨在易于使用并且灵活，提供一个简化的API来执行GraphQL查询和变异。\n\n它基于客户端的概念，用于管理应用程序的GraphQL数据。\n\n客户端提供了一组用于管理GraphQL数据的实用程序和API，包括：\n\n*   executeQuery: 一个用于执行GraphQL查询的实用程序。\n\n\n*   executeMutation: 一个用于执行GraphQL变异的实用程序。\n\n\n*   useQuery: 一个钩子，用于执行GraphQL查询并在组件中访问结果。\n\n\n*   useMutation: 一个钩子，用于执行GraphQL变异并在组件中访问结果。\n\n由于其简单性和轻量级的特性，urql经常被用作其他GraphQL库（如Apollo Client）的替代品。\n\n它特别适用于那些不需要其他GraphQL库复杂性的中小型React应用程序。\n\n",
+          "links": [
+            {
+              "title": "urql - Formidable Labs",
+              "url": "https://formidable.com/open-source/urql/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3c9c9006-6cc2-47f0-b908-b95d4e2b9ace",
+          "xid": "d9c22a72-a3a8-4a5e-99b3-307f7b44799b"
+        },
+        {
+          "title": "swr",
+          "description": "SWR是一个用于数据获取的React Hooks库。\n\n“SWR”源自一种缓存失效策略——stale-while-revalidate（缓存再验证），该策略由HTTP RFC 5861普及。\n\nSWR首先从缓存中返回数据（陈旧），然后发送请求（再验证），最后返回最新的数据。\n\n通过一个钩子，您可以在项目中大大简化数据获取逻辑。\n\n",
+          "links": [
+            {
+              "title": "SWR: React Hooks for Data Fetching",
+              "url": "https://swr.vercel.app/",
+              "type": "article"
+            },
+            {
+              "title": "探索Next.js相关顶级文章",
+              "url": "https://app.daily.dev/tags/nextjs?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e26c31c2-7e79-424e-a0c7-ea2424e105e4",
+          "xid": "733b515d-cd48-4c67-8055-89f387ccdf1d"
+        },
+        {
+          "title": "react-query",
+          "description": "功能强大的异步状态管理（asynchronous state management）、服务器状态工具（server-state utilities）和数据获取（data fetching）功能，适用于TS/JS、React、Solid、Svelte 和 Vue。\n\n",
+          "links": [
+            {
+              "title": "TanStack Query",
+              "url": "https://github.com/TanStack/query",
+              "type": "opensource"
+            },
+            {
+              "title": "探索关于React的热门文章",
+              "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "100秒了解React Query",
+              "url": "https://www.youtube.com/watch?v=novnyCaa7To",
+              "type": "video"
+            },
+            {
+              "title": "React Query初学者教程-完整播放列表",
+              "url": "https://www.youtube.com/playlist?list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "8dfb17ad-3d9f-41e4-a138-4054c0d3d2a6",
+          "xid": "ed7cbd5a-2cb2-4785-ad14-66801963a471"
+        },
+        {
+          "title": "Axios",
+          "description": "前端程序与服务器通信最常见的方法是通过HTTP协议。\n\n你可能熟悉Fetch API和XMLHttpRequest接口，这些接口允许你获取资源并发送HTTP请求。\n\nAxios（Axios）是一个基于浏览器提供的XMLHttpRequest接口的客户端HTTP API。\n\n",
+          "links": [
+            {
+              "title": "Axios入门",
+              "url": "https://axios-http.com/docs/intro",
+              "type": "article"
+            },
+            {
+              "title": "如何使用Axios进行HTTP请求",
+              "url": "https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/#why",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Axios的顶级文章",
+              "url": "https://app.daily.dev/tags/axios?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f8e432dc-c523-44f4-a429-f64959dc8fb5",
+          "xid": "e2cfe848-4b06-452a-89cd-bb33585fc59d"
+        },
+        {
+          "title": "rtk-query",
+          "description": "[RTK Query](https://redux-toolkit.js.org/rtk-query/overview) 是一个被包含在 Redux Toolkit 工具包中的数据获取和缓存工具。\n\n它旨在简化诸如缓存、轮询和失效等常用的数据获取场景。\n\n",
+          "links": [
+            {
+              "title": "RTK Query - 官方网站",
+              "url": "https://redux-toolkit.js.org/rtk-query/overview",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "9d2224ee-8bc5-4b4c-8920-4b972b1f23d7",
+          "xid": "8cf9efc0-9713-49e7-b9aa-ef927181bc83"
+        }
+      ],
+      "id": "a0bb6895-acc3-4690-969d-597cf0ba2506",
+      "xid": "1a32fdf6-7bce-46ce-8d4d-0798b078681b"
+    },
+    {
+      "title": "测试",
+      "description": "构建满足需求且无缺陷的软件的关键在于测试。\n\n软件测试有助于开发人员了解他们正在构建正确的软件。\n\n当测试作为开发过程的一部分运行（通常是通过持续集成（Continuous Integration）工具），它们可以增强信心，并防止代码中的回归（Regression）。\n\n",
+      "links": [
+        {
+          "title": "什么是软件测试？",
+          "url": "https://www.guru99.com/software-testing-introduction-importance.html",
+          "type": "article"
+        },
+        {
+          "title": "测试金字塔",
+          "url": "https://www.browserstack.com/guide/testing-pyramid-for-test-automation",
+          "type": "article"
+        },
+        {
+          "title": "探索有关测试的热门文章",
+          "url": "https://app.daily.dev/tags/testing?ref=roadmapsh",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Jest",
+          "description": "Jest 是一款注重简洁的 JavaScript 测试框架（JavaScript Testing Framework）。\n\n它适用于使用以下技术的项目：Babel，TypeScript，Node，React，Angular，Vue 等！",
+          "links": [
+            {
+              "title": "Jest 官网",
+              "url": "https://jestjs.io/",
+              "type": "article"
+            },
+            {
+              "title": "关于 Jest 的热门文章",
+              "url": "https://app.daily.dev/tags/jest?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "在 Vultr 上使用 Jest 测试 JavaScript",
+              "url": "https://developer.mozilla.org/en-US/blog/test-javascript-with-jest-on-vultr/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "559e2a33-1c1b-47bf-aa5a-b0b21d4e1df8",
+          "xid": "3de7c48a-875e-4ca7-96bb-1a6c67457688"
+        },
+        {
+          "title": "Vitest",
+          "description": "Vitest 是一个快速的 Vite 原生单元测试框架，原生支持 ESM（ECMAScript Modules）、TypeScript 和 JSX。\n\n适用于用 Vite 创建的 React、Vue、Svelte 等项目",
+          "links": [
+            {
+              "title": "Vitest 官网",
+              "url": "https://vitest.dev/",
+              "type": "article"
+            },
+            {
+              "title": "使用 Vitest 进行测试",
+              "url": "https://www.youtube.com/watch?v=cM_AeQHzlGg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "53278e3b-d1f1-4f62-9c89-c4328a91c1fe",
+          "xid": "a31b66c1-b8c7-46c2-95ce-efd9288749dc"
+        },
+        {
+          "title": "React测试库（React Testing Library）",
+          "description": "React测试库是一个非常轻量级的解决方案，用于测试React组件。\n\n它在react-dom和react-dom/test-utils之上提供了轻量级的实用功能函数，以鼓励更好的测试实践。\n\n其主要指导原则是：测试的方法越接近软件的使用方式，测试给你的信心就越强。\n\n",
+          "links": [
+            {
+              "title": "React测试库（React Testing Library）",
+              "url": "https://testing-library.com/docs/react-testing-library/intro/",
+              "type": "article"
+            },
+            {
+              "title": "如何使用React测试库（React Testing Library）",
+              "url": "https://www.robinwieruch.de/react-testing-library/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于React的热门文章",
+              "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c0ead68f-a458-492e-90c5-2c0bb60c931c",
+          "xid": "19f4813c-c2a2-4162-8b79-d1aa5c2edb84"
+        },
+        {
+          "title": "Cypress框架",
+          "description": "Cypress框架是一个基于JavaScript的端到端测试框架（End-to-end），构建在Mocha之上——Mocha是一个强大的JavaScript测试框架，它在浏览器上运行，使异步测试变得简单和方便。\n\n它还使用BDD/TDD断言库（Assertion Library）和浏览器，与任何JavaScript测试框架配对使用。\n\n",
+          "links": [
+            {
+              "title": "官方网站",
+              "url": "https://www.cypress.io/",
+              "type": "article"
+            },
+            {
+              "title": "官方文档",
+              "url": "https://docs.cypress.io/guides/overview/why-cypress#Other",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Cypress的顶级文章",
+              "url": "https://app.daily.dev/tags/cypress?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Cypress端到端测试",
+              "url": "https://www.youtube.com/watch?v=7N63cMKosIE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f459a165-5e27-4253-8152-1b4b373f32d7",
+          "xid": "80f8b196-b55e-456e-ab6f-81a40ce6d45a"
+        },
+        {
+          "title": "Playwright",
+          "description": "Playwright 测试框架（Playwright Test）专门为了满足端到端（end-to-end）测试的需求而创建。\n\nPlaywright 支持所有现代渲染引擎，包括 Chromium、WebKit 和 Firefox。\n\n可以在 Windows、Linux 和 macOS 系统上进行测试，无论是本地还是在持续集成（CI）环境中，无论是无头浏览器模式还是带界面模式下，都可进行测试，并支持通过 Google Chrome 和 Mobile Safari 进行原生移动设备模拟。\n\nPlaywright 借助开发工具协议（DevTools protocol）来编写强大且稳定的自动化测试。\n\nPlaywright 可以直接观察和控制浏览器，而不是依赖中间翻译层，这允许模拟更深入和相关的用户场景。\n\n",
+          "links": [
+            {
+              "title": "官方网站：Playwright",
+              "url": "https://playwright.dev/",
+              "type": "article"
+            },
+            {
+              "title": "Playwright 教程：学习基础并设置",
+              "url": "https://www.browserstack.com/guide/playwright-tutorial",
+              "type": "article"
+            },
+            {
+              "title": "开始使用 Playwright 进行端到端测试",
+              "url": "https://www.youtube.com/playlist?list=PLQ6Buerc008ed-F9OksF7ek37wR3y916p",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9ceb1e41-4b2f-47c2-b3a6-7cfe89ca4bec",
+          "xid": "c58073c5-99dd-490e-877a-0e8a6b7c15ae"
+        }
+      ],
+      "id": "51ee2fa8-37a0-458a-b5d0-0c8d46d8e6f8",
+      "xid": "5f125d52-7863-411d-bb83-6cec94570344"
+    },
+    {
+      "title": "框架",
+      "description": "服务器端渲染（Server-side rendering，SSR）是一种在服务器而非浏览器中渲染JavaScript应用的技术。\n\n这可以提升Web应用的性能和用户体验，因为应用的初始渲染在服务器完成，并以完全渲染好的HTML页面形式发送给浏览器。\n\n有许多可用于React应用服务器端渲染的框架和库，其中最常见的有Next.js和Remix：\n\n",
+      "links": [
+        {
+          "title": "Next.js",
+          "url": "https://nextjs.org/",
+          "type": "article"
+        },
+        {
+          "title": "Remix",
+          "url": "https://remix.run/",
+          "type": "article"
+        },
+        {
+          "title": "Next.js 14 全课程 2024",
+          "url": "https://www.youtube.com/watch?v=wm5gMKuwSYk",
+          "type": "video"
+        },
+        {
+          "title": "Remix 快速入门课程",
+          "url": "https://www.youtube.com/watch?v=RBYJTop1e-g",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "react-router",
+          "description": "以前这个列表中包含Remix，但他们宣布在v7之后将Remix合并到react-router中。\n\n",
+          "links": [
+            {
+              "title": "官方网站",
+              "url": "https://remix.run/",
+              "type": "article"
+            },
+            {
+              "title": "宣布将Remix合并到react-router",
+              "url": "https://remix.run/blog/merging-remix-and-react-router",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ac17d5e8-c896-4345-9463-c3d46972223c",
+          "xid": "8bf3908f-4552-4690-abcb-7fe91e59571a"
+        },
+        {
+          "title": "Next.js",
+          "description": "Next.js 是一个基于 Node.js 构建的开源开发框架，支持 React 基础的网络应用程序功能，如服务端渲染(server-side rendering)和生成静态网站。\n\n",
+          "links": [
+            {
+              "title": "官方网站",
+              "url": "https://nextjs.org/",
+              "type": "article"
+            },
+            {
+              "title": "官方入门文档",
+              "url": "https://nextjs.org/docs/getting-started",
+              "type": "article"
+            },
+            {
+              "title": "精通 Next.js",
+              "url": "https://masteringnextjs.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 JavaScript 的顶级文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Next.js 完整课程",
+              "url": "https://www.youtube.com/watch?v=9P8mASSREYM&list=PLC3y8-rFHvwgC9mj0qv972IO5DmD-H0ZH",
+              "type": "video"
+            },
+            {
+              "title": "Next.js 入门教程 - freeCodeCamp",
+              "url": "https://youtu.be/KjY94sAKLlw?si=orve81YcY8Fm2vDy",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "044345a6-2415-4eac-883e-71c0ebaeddc2",
+          "xid": "53c7b2bb-6e84-4247-9fd1-1eae36917026"
+        }
+      ],
+      "id": "5ed9719e-cbfa-4533-a024-55928382def6",
+      "xid": "6d25a1a8-ff80-4e31-b38b-d196771179ec"
+    },
+    {
+      "title": "表单",
+      "description": "尽管你可以使用原生React（vanilla React）构建表单，但这通常需要大量的样板代码（boilerplate code）。\n\n这是由于表单是利用状态（state）和属性（props）的组合构建的。\n\n为了更轻松地管理表单，我们使用某种类型的库（library）。\n\n",
+      "links": [
+        {
+          "title": "如何在React中使用表单",
+          "url": "https://www.robinwieruch.de/react-form/",
+          "type": "article"
+        },
+        {
+          "title": "React表单：最简单的实现方式",
+          "url": "https://www.youtube.com/watch?v=CT-72lTXdPg",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "React Hook Form（React Hook 表单）",
+          "description": "React Hook Form（React Hook 表单） 是一个为 React 设计的开源表单库。\n\n它具有高性能、灵活性和可扩展性，并且提供了简单易用的验证功能。\n\n",
+          "links": [
+            {
+              "title": "react-hook-form/react-hook-form（React Hook 表单/React Hook 表单）",
+              "url": "https://github.com/react-hook-form/react-hook-form",
+              "type": "opensource"
+            },
+            {
+              "title": "React Hook Form: 官方网站",
+              "url": "https://react-hook-form.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 React 的顶级文章",
+              "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b82d3e3b-fadc-448c-a1fe-d2beb7f534d0",
+          "xid": "44fb2442-bdff-4acb-9c2e-c7138ff346dc"
+        },
+        {
+          "title": "Formik",
+          "description": "Formik 是另一个著名的开源表单库，它帮助用户获取表单状态中的值，进行验证和错误信息处理，以及处理表单提交。\n\n",
+          "links": [
+            {
+              "title": "formik/formik",
+              "url": "https://github.com/formik/formik",
+              "type": "opensource"
+            },
+            {
+              "title": "官方网站 — Formik",
+              "url": "https://formik.org/",
+              "type": "article"
+            },
+            {
+              "title": "Formik - 让构建 React 表单更简单",
+              "url": "https://www.youtube.com/watch?v=khGypss-RJs",
+              "type": "video"
+            },
+            {
+              "title": "React Formik 教程与 Yup（React 表单验证）",
+              "url": "https://www.youtube.com/watch?v=7Ophfq0lEAY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "30ea8c12-31b5-40b5-a508-16257e4d4500",
+          "xid": "ea1edd3c-0730-44ef-ac12-e2122e38d280"
+        }
+      ],
+      "id": "4be1d329-2130-4dcc-80f2-25e02d94b581",
+      "xid": "74ff74b0-be78-42be-a716-325a6068067f"
+    },
+    {
+      "title": "悬疑(Suspense)",
+      "description": "React 悬疑(Suspense) 是 React 中的一项功能，它允许组件在等待某些事情发生（例如从 API 获取数据或加载图像）时“暂停”渲染。\n\nSuspense 可以让开发者通过在组件等待所需数据可用时渲染一个占位符或备用组件，从而创建更加流畅的用户体验。\n\n以下是对React 悬疑(Suspense)工作原理的一般概述：\n\n*  使用 Suspense 的组件将可能需要“暂停”渲染的组件封装在一个 `Suspense` 组件中。\n\n\n*  被封装的组件在需要暂停渲染时抛出一个 promise（承诺）。\n\n\n*  `Suspense` 组件捕捉到这个 promise（承诺）并在其尚未完成时渲染一个备用组件。\n\n\n*  当 promise（承诺）完成时，被封装的组件将使用所需的数据显示出来。\n\n",
+      "links": [
+        {
+          "title": "React 悬疑(Suspense)",
+          "url": "https://react.dev/reference/react/Suspense",
+          "type": "article"
+        },
+        {
+          "title": "React 悬疑(Suspense) - 完全指南",
+          "url": "https://hygraph.com/blog/react-suspense",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "20df3eb0-432a-442c-ab29-1a51756ecb57",
+      "xid": "8423b26a-29b8-4951-89c6-9349f420bc2b"
+    },
+    {
+      "title": "Portal(门控渲染)",
+      "description": "Portal提供了一种高级方法，可以将子元素渲染到DOM层次结构外的一个DOM节点中，而这个节点属于父组件的外部。\n\n",
+      "links": [
+        {
+          "title": "React中的Portal",
+          "url": "https://react.dev/reference/react-dom/createPortal",
+          "type": "article"
+        },
+        {
+          "title": "React Portal",
+          "url": "https://www.youtube.com/watch?v=HpHLa-5Wdys",
+          "type": "video"
+        }
+      ],
+      "children": [],
+      "id": "904e449a-e02d-4f0f-92dd-6bd26e498a75",
+      "xid": "b13a8938-7458-4ec9-b869-eb944a05d687"
+    },
+    {
+      "title": "错误边界 (Error Boundaries)",
+      "description": "在过去，组件内部的JavaScript错误会破坏React的内部状态，并在下一次渲染时引起难以理解的错误。\n\n这些错误总是由应用程序代码中较早的错误引起的，但React没有提供在组件中优雅处理这些错误的方法，也不能从中恢复。\n\n错误边界 (Error Boundaries) 是React组件的一种，用于捕捉其子组件树中任何位置的JavaScript错误，记录这些错误，并显示一个替代UI而不是崩溃的组件树。\n\n错误边界 (Error Boundaries) 在渲染时、生命周期方法中和整个子树的构造函数中捕捉错误。\n\n",
+      "links": [
+        {
+          "title": "React中的错误边界 (Error Boundaries)",
+          "url": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "08ad8499-446d-424e-aebb-f029cfcc9b70",
+      "xid": "d2500f47-7172-4026-9733-bf64df4d79a1"
+    },
+    {
+      "title": "移动应用程序",
+      "description": "React Native 是 Meta Platforms, Inc. 开发的一款开源 UI 软件框架。\n\n它允许开发者使用 React 框架结合原生平台功能（native platform capabilities），来开发适用于 Android、Android TV、iOS、macOS、tvOS、Web、Windows 和 UWP 的应用程序。\n\n",
+      "links": [
+        {
+          "title": "React Native 官方网站",
+          "url": "https://reactnative.dev/",
+          "type": "article"
+        },
+        {
+          "title": "React Native 初学者教程",
+          "url": "https://www.youtube.com/watch?v=ZBCUegTZF7M",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "React Native",
+          "description": "React Native 是由 Meta Platforms, Inc. 创建的一个开源用户界面(UI)软件框架。\n\n它允许开发人员使用 React 框架结合原生平台功能来开发适用于 Android、Android TV、iOS、macOS、tvOS、Web、Windows 和 UWP 的应用程序。\n\n",
+          "links": [
+            {
+              "title": "React Native: 官方网站",
+              "url": "https://reactnative.dev/",
+              "type": "article"
+            },
+            {
+              "title": "官方入门指南",
+              "url": "https://reactnative.dev/docs/getting-started",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 React 的顶级文章",
+              "url": "https://app.daily.dev/tags/react?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "28fce276-5178-4297-b932-a00ff27c38b4",
+          "xid": "ede24faa-1495-4251-83bb-2277c71d784d"
+        }
+      ],
+      "id": "0df2dbd5-9d02-430d-89c6-cc957f28124c",
+      "xid": "296a1702-b421-4d69-badc-0b649f56a0b0"
+    }
+  ],
+  "id": "4b3c0b67-5942-4f93-a50a-0c57d60dc208",
+  "xid": "c16d6cdb-05da-4d4b-8ac4-ab26dc5eb4eb"
+}

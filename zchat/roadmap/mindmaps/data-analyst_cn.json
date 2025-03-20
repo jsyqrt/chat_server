@@ -1,0 +1,2095 @@
+{
+  "title": "数据分析师职业路径",
+  "description": "2025年成为数据分析师的逐步指南",
+  "links": [],
+  "children": [
+    {
+      "title": "简介",
+      "description": "数据化分析在当今以数据为中心的世界中扮演着至关重要的角色。\n\n它包括检查、清理、转换和建模数据，以提取有价值的见解来辅助决策制定。\n\n数据分析师（Data Analyst）是专门从事收集、处理和对大型数据集进行统计分析的专业人员。\n\n他们发现数据可以如何用于回答问题和解决问题。\n\n随着现代企业中数据的迅速扩展，数据分析师的角色在不断进化，使他们成为商业策略和决策过程中的重要资产。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "数据分类分析",
+          "description": "数据分析已被证明是现代商业项目决策中的关键部分。\n\n负责发现、解读和将数据转化为有价值的信息。\n\n不同类型的分析着眼于企业运营的过去、现在或未来预测。\n\n作为该领域的代表，数据分析师应用这些类型回答各种问题：\n\n*   描述性分析(Descriptive Analytics) (过去发生了什么？)\n*   诊断性分析(Diagnostic Analytics) (过去为什么会发生？)\n*   预测性分析(Predictive Analytics) (未来会发生什么？)\n*   规范性分析(Prescriptive Analytics) (如何使其发生？)\n\n",
+          "links": [
+            {
+              "title": "数据分析及其类型",
+              "url": "https://www.geeksforgeeks.org/data-analytics-and-its-type/",
+              "type": "article"
+            },
+            {
+              "title": "4种类型的数据分析：终极指南",
+              "url": "https://careerfoundry.com/en/blog/data-analytics/different-types-of-data-analysis/",
+              "type": "article"
+            },
+            {
+              "title": "描述性 vs 诊断性 vs 预测性 vs 规范性分析：有何不同?",
+              "url": "https://www.youtube.com/watch?v=QoEpC7jUb9k",
+              "type": "video"
+            },
+            {
+              "title": "数据分类分析",
+              "url": "https://www.youtube.com/watch?v=lsZnSgxMwBA",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "描述性分析",
+              "description": "描述性分析(Descriptive Analytics)是数据分析师用于研究过去情况的基本数据解析类型之一。\n\n作为数据分析师，使用描述性分析涉及运用历史数据来了解业务随时间发生的变化。\n\n主要关注过去发生了什么，它通过分析过去的数据来推断并识别模式和趋势。\n\n这有助于公司了解自身的强项和弱点，发现运营问题，并为准确的业务智能和决策制定过程奠定基础。\n\n",
+              "links": [
+                {
+                  "title": "描述性分析概述及相关术语",
+                  "url": "https://www.investopedia.com/terms/d/descriptive-analytics.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是描述性分析",
+                  "url": "https://www.youtube.com/watch?v=DlFqQy10aCs",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "c95c1b64-ff18-4044-8805-82b11da91b16",
+              "xid": "cbea6bad-efd5-47b0-bf08-c7fde1dabebc"
+            },
+            {
+              "title": "诊断分析",
+              "description": "诊断分析（Diagnostic Analytics）作为数据分析的重要类型之一，专注于研究过去的业绩，以了解某些现象发生的原因。\n\n这是数据分析师工作的重要部分。\n\n通过使用诸如下钻分析、数据发现、相关性分析和因果分析等技术，数据分析师可以超越一般趋势的分析，识别数据中观察到的变化的根本原因。\n\n因此，这有助于企业有效地解决运营和战略问题，使他们能够理解这些原因背后的驱动因素。\n\n对于每个数据分析师而言，掌握诊断数据分析（Diagnostic Data Analytics）技能是必不可少的资产，它能够提升他们的分析能力。\n\n",
+              "links": [
+                {
+                  "title": "什么是诊断分析？",
+                  "url": "https://amplitude.com/explore/analytics/what-diagnostic-analytics",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是诊断分析？| 理解数据驱动的决策",
+                  "url": "https://www.youtube.com/watch?v=ikZjeAC1yJ0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "a6fc0d5a-763f-4ac9-96cb-18de1d49727c",
+              "xid": "80d23ed2-e5f6-4459-9d1d-c9da882ec645"
+            },
+            {
+              "title": "预测分析",
+              "description": "预测分析是任何有能力的数据分析师都应该理解的一种重要的数据分析类型。\n\n预测分析是指从现有数据集中提取信息，确定模式并预测未来结果和趋势的过程。\n\n数据分析师通过应用统计算法、机器学习技术及人工智能（AI）来预测未来的结果。\n\n预测分析能够让组织更具有前瞻性、思考未来并采取策略行动，通过提供对未来事件有价值的见解。\n\n这一强大的工具让企业通过风险管理和识别机会来进行战略决策，从而在竞争中保持优势。\n\n",
+              "links": [
+                {
+                  "title": "什么是预测分析？ - Google",
+                  "url": "https://cloud.google.com/learn/what-is-predictive-analytics",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是预测分析？",
+                  "url": "https://www.youtube.com/watch?v=cVibCHRSxB0",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "83336b4b-d0a1-4330-820b-33ba4fa738d9",
+              "xid": "59cd28c0-2184-471f-9848-cffab993dcf9"
+            },
+            {
+              "title": "规范性分析(Prescriptive Analytics)",
+              "description": "规范性分析(Prescriptive analytics)是一种至关重要的数据分析类型，对于商业和组织环境中基于数据的决策至关重要。\n\n作为一名数据分析师，规范性分析的目标是利用已知参数的预测来推荐各种行动方案，以帮助决策者理解可能的结果。\n\n规范性分析运用了算法、机器学习、计算建模程序和决策树结构等技术和工具的结合，以实现自动化决策。\n\n因此，规范性分析不仅预测事件将何时发生及其可能发生的原因，从而增强了数据分析师在组织中的重要性。\n\n",
+              "links": [
+                {
+                  "title": "什么是规范性分析(Prescriptive Analysis)？",
+                  "url": "https://www.investopedia.com/terms/p/prescriptive-analytics.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "规范性分析(Prescriptive Analysis)的例子",
+                  "url": "https://www.youtube.com/watch?v=NOo8Nc9zG20",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "41c949f6-45f2-4955-9e36-b8d8e9e58009",
+              "xid": "bc222617-1524-4bee-bc62-e5b8b2a3708b"
+            }
+          ],
+          "id": "6fbee465-dc11-462a-9dfa-da37c20da021",
+          "xid": "88db0db9-44a7-4637-8de9-bb81512d0c6e"
+        },
+        {
+          "title": "互联网是如何工作的？",
+          "description": "互联网是一个由使用标准化协议（尤其是传输控制协议/因特网协议[TCP/IP]）进行通信的全球互联计算机网络。\n\n当你请求一个网页时，你的设备通过你的互联网服务提供商（ISP）向域名系统[DNS]服务器发送一个数据包，该服务器将网站的域名转换为其IP地址。\n\n包通过各种网络（使用路由器和交换机）路由到目标服务器。\n\n该服务器处理请求并返回响应。\n\n这种来回交换使得数据如网页、电子邮件和文件得以传输，从而使互联网成为一个用于全球通信的动态、分散的系统。\n\n",
+          "links": [
+            {
+              "title": "互联网是如何工作的？",
+              "url": "https://cs.fyi/guide/how-does-internet-work",
+              "type": "article"
+            },
+            {
+              "title": "互联网解析",
+              "url": "https://www.vox.com/2014/6/16/18076282/the-internet",
+              "type": "article"
+            },
+            {
+              "title": "互联网是如何工作的？",
+              "url": "http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm",
+              "type": "article"
+            },
+            {
+              "title": "互联网介绍",
+              "url": "/guides/what-is-internet",
+              "type": "article"
+            },
+            {
+              "title": "互联网是如何工作的？",
+              "url": "https://www.youtube.com/watch?v=x3c1ih2NJEg",
+              "type": "video"
+            },
+            {
+              "title": "互联网是如何工作的？（完整课程）",
+              "url": "https://www.youtube.com/watch?v=zN8YNNHcaZc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "98d73cf7-84f6-49c8-a9e0-17219642a492",
+          "xid": "1a6b1fd1-513d-42bb-b164-90ddb87b8788"
+        },
+        {
+          "title": "什么是HTTP?",
+          "description": "HTTP (Hypertext Transfer Protocol，超文本传输协议) 是一种用于通过万维网传输超文本的协议。\n\n它定义了消息如何格式化和传输，以及Web服务器和浏览器应如何响应各种命令。\n\nHTTP基于请求-响应模型运行：客户端（通常是Web浏览器）向服务器发送HTTP请求，以获取资源，如网页或文件，服务器则以请求的内容和一个HTTP状态码响应，该状态码表示请求的结果。\n\nHTTP是无状态的，意思是客户端和服务器之间的每一次请求都是独立的，不会保存之前交互的信息。\n\nHTTP构成了Web数据通信的基础，通常与安全HTTP（HTTPS）结合使用，用于加密通信。\n\n",
+          "links": [
+            {
+              "title": "完整的HTTP网络课程",
+              "url": "https://www.youtube.com/watch?v=2JYT5f2isg4",
+              "type": "course"
+            },
+            {
+              "title": "什么是HTTP?",
+              "url": "https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/",
+              "type": "article"
+            },
+            {
+              "title": "HTTP概述",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+              "type": "article"
+            },
+            {
+              "title": "A到ZHTTP/3核心概念",
+              "url": "https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/",
+              "type": "article"
+            },
+            {
+              "title": "HTTP/1到HTTP/2到HTTP/3",
+              "url": "https://www.youtube.com/watch?v=a-sBfyiXysI",
+              "type": "video"
+            },
+            {
+              "title": "SSL, TLS, HTTPS解释",
+              "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "集合",
+              "description": "在数据分析领域，集合（Collection）的概念至关重要。\n\n正如术语所描述的，集合是指按照既定的系统化方式，搜集和测量选定变量的信息的过程，这使得数据分析师能够解答相关问题并评估结果。\n\n此步骤是任何数据分析方案的基石，因为它是与原始数据进行首次互动的阶段，这些数据随后会转化为可行的洞察。\n\n数据收集的质量和数量严重依赖于数据收集的效果。\n\n根据所需数据的性质，采用了不同的方法和工具，例如调查、观察、实验或采集在线数据存储。\n\n该过程应以明确的目标和仔细的考虑为指导，以确保在后续分析和决策阶段的准确性与相关性。\n\n",
+              "links": [
+                {
+                  "title": "数据收集方法",
+                  "url": "https://www.questionpro.com/blog/data-collection-methods/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是数据收集？",
+                  "url": "https://www.simplilearn.com/what-is-data-collection-article",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "eb1bbad1-9f4a-4b11-9d1a-dc407a4927c7",
+              "xid": "0541afd0-5f55-4ad6-841f-de386c42650c"
+            },
+            {
+              "title": "数据清理",
+              "description": "数据清理是数据分析师角色中的关键组成部分。\n\n数据清理涉及检验、清洗、转换和建模数据以发现有用信息、推断结论和支持决策制定的过程。\n\n这一过程对于数据分析师生成准确且具有重大意义的洞察至关重要，最终有助于做出更明智和更有信息支持的商业决策。\n\n精通数据清理程序和技术是任何数据分析师的基本技能。\n\n因此，在数据清理过程中，必须高度重视维护数据质量，管理数据完整性和准确性的一致性。\n\n",
+              "links": [
+                {
+                  "title": "十大数据清理方法",
+                  "url": "https://support.microsoft.com/en-gb/office/top-ten-ways-to-clean-your-data-2844b620-677c-47a7-ac3e-c2e157d1db19",
+                  "type": "article"
+                },
+                {
+                  "title": "十分钟精通Excel中的数据清理",
+                  "url": "https://www.youtube.com/watch?v=jxq4-KSB_OA",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "65b6f694-b14d-4730-b0fa-0ebaab56889b",
+              "xid": "7cf96f24-f776-4733-ac35-be5c7511666e"
+            },
+            {
+              "title": "探索",
+              "description": "在数据分析领域，数据探索(data exploration)是一项关键概念，数据分析师通过它来有效理解和解读数据。\n\n通常，这一探索过程包括辨别模式、识别异常、检查潜在结构和测试假设，这些任务往往通过描述性统计(descriptive statistics)、可视化方法或复杂算法实现。\n\n该过程是任何数据分析员进行下一步分析或建模的基础，指导他们把握进一步分析的方向。\n\n此概念是解决数据中的复杂性和不确定性的重要基础，因而增强在商业和金融、医疗保健和社会科学等众多领域的决策质量。\n\n",
+              "links": [
+                {
+                  "title": "什么是数据探索",
+                  "url": "https://www.heavy.ai/learn/data-exploration",
+                  "type": "article"
+                },
+                {
+                  "title": "如何进行数据探索",
+                  "url": "https://www.youtube.com/watch?v=OY4eQrekQvs",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "afe60b82-2fb6-4017-a8cb-0737aca7b64a",
+              "xid": "0858ac6c-ae66-4087-86a8-803eea649d0c"
+            },
+            {
+              "title": "可视化",
+              "description": "数据可视化是每个数据分析师工具包中必备的一项基本技能。\n\n本实践旨在将复杂的原始数据转化为图形格式，使大规模数据集、趋势、异常值和重要模式更容易理解。\n\n不论是饼图、折线图、柱状图还是热力图，数据可视化技术不仅能简化数据分析，还能促进研究结果更加有效地与他人沟通。\n\n这一关键概念强调了以易于消化且视觉吸引力的方式呈现数据的重要性，以推动组织中基于数据的决策制定。\n\n",
+              "links": [
+                {
+                  "title": "数据可视化入门指南",
+                  "url": "https://www.tableau.com/en-gb/learn/articles/data-visualization",
+                  "type": "article"
+                },
+                {
+                  "title": "2024年的数据可视化",
+                  "url": "https://www.youtube.com/watch?v=loYuxWSsLNc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "c8263154-cf30-4574-99c4-45ee9054023d",
+              "xid": "93013c9d-e094-460d-9259-aaf3eb31b82a"
+            },
+            {
+              "title": "统计分析",
+              "description": "统计分析在数据分析师的日常工作中扮演着至关重要的角色。\n\n它包括收集、检查、解释和呈现数据，使数据分析师能够揭露模式、趋势和关系，推导见解，并支持各个领域的决策过程。\n\n通过应用统计概念，数据分析师可以将复杂的（data sets）数据集转化为组织可以利用的可操作洞见的信息。\n\n作为数据分析的基石，统计分析使分析师能够提供预测模型、趋势分析和宝贵的企业洞见，在数据解析的世界中不可或缺。\n\n数据分析师需要掌握这些统计方法才能有效地解析他们处理的大数据量。\n\n",
+              "links": [
+                {
+                  "title": "理解统计分析",
+                  "url": "https://www.simplilearn.com/what-is-statistical-analysis-article",
+                  "type": "article"
+                },
+                {
+                  "title": "统计分析",
+                  "url": "https://www.youtube.com/watch?v=XjMBZE1DuBY",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "12738249-aa63-40fc-a928-7ff631dd73ac",
+              "xid": "cd4ec990-0775-46f0-afa9-6d9a39dc2c9c"
+            },
+            {
+              "title": "机器学习",
+              "description": "机器学习，作为人工智能（artificial intelligence）的一个子集，是数据分析师手中不可或缺的工具。\n\n它提供了自动学习、从经验中改进和在没有明确编程情况下做出决策的能力。\n\n对于数据分析师而言，在大量数据的基础上，机器学习在揭示隐藏的洞察、识别模式或做出预测方面具有重要贡献。\n\n通过利用不同算法和模型，数据分析师能够运用机器学习将原始数据转化为有意义的信息，使其成为数据分析中的一个关键概念。\n\n",
+              "links": [
+                {
+                  "title": "什么是机器学习（ML）？",
+                  "url": "https://www.ibm.com/topics/machine-learning",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是机器学习？",
+                  "url": "https://www.youtube.com/watch?v=9gGnTQTYNaE",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "8f5b3446-760e-4016-a392-c06b621c962b",
+              "xid": "b1247925-9719-4f4c-83ca-3a99a2b99883"
+            }
+          ],
+          "id": "37acbcc5-0a2f-4c3a-9684-2d9863305e48",
+          "xid": "016cafa7-ff85-445d-b2ff-4a5430c3b715"
+        }
+      ],
+      "id": "7f070dbb-77a2-4ec3-9c9f-01d30e87096f",
+      "xid": "fbeeb4ed-9d84-4cb2-bc27-a57f8ed92297"
+    },
+    {
+      "title": "Excel",
+      "description": "Excel",
+      "links": [],
+      "children": [
+        {
+          "title": "基本功能",
+          "description": "基本功能",
+          "links": [],
+          "children": [
+            {
+              "title": "IF",
+              "description": "Excel中的IF函数是数据分析师的重要工具，使他们能够创建条件语句，清理和验证数据，基于特定条件进行计算，创建自定义指标，应用条件格式，自动化任务，并生成动态报告。\n\n数据分析师使用IF来分类数据，处理缺失值，计算奖金或自定义指标，突出显示趋势，并增强可视化效果，最终通过数据分析促进基于数据的决策。\n\n",
+              "links": [
+                {
+                  "title": "IF函数",
+                  "url": "https://support.microsoft.com/en-gb/office/if-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2",
+                  "type": "article"
+                },
+                {
+                  "title": "Excel IF函数",
+                  "url": "https://exceljet.net/functions/if-function",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "55706515-31b5-4423-a897-42289bd29579",
+              "xid": "b2f34b08-3db9-4b9b-b245-bc011ba5e188"
+            },
+            {
+              "title": "DATEDIF",
+              "description": "`DATEDIF`函数是Data Analyst（数据分析师）在Excel或Google Sheets中非常有价值的工具，它能够计算两个日期之间的差异。\n\n该函数需要三个参数：开始日期、结束日期以及所需的时间差异类型（年份、月份、天数等）。\n\n在数据分析中，特别是在处理时间序列数据时，或者在需要揭示特定时期的趋势时，`DATEDIF`函数是一个必不可少的资产。\n\n理解该函数的功能将使数据分析师能够更高效地操作或调整数据。\n\n`DATEDIF`功能从技术上来说仍然受到支持，但不会作为选项显示。\n\n如需更多信息，请参阅Excel的\"Help\"（帮助）页面。\n\n",
+              "links": [
+                {
+                  "title": "DATEDIF函数",
+                  "url": "https://support.microsoft.com/en-gb/office/datedif-function-25dba1a4-2812-480b-84dd-8b32a451b35c",
+                  "type": "article"
+                },
+                {
+                  "title": "如何在Excel中使用DATEDIF",
+                  "url": "https://www.excel-easy.com/examples/datedif.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "08d31e70-d1a3-4e0a-b627-e3bd5e308384",
+              "xid": "cb1db00e-b371-496f-99e4-a7063e43cc26"
+            },
+            {
+              "title": "VLOOKUP / HLOOKUP",
+              "description": "数据分析师经常处理大量复杂的数据集，这些数据集需要高效的工具来进行数据操作和提取。\n\n这时，Excel中如VLOOKUP（垂直查找）和HLOOKUP（水平查找）这样的基本功能就变得极为有用。\n\n这些功能是多功能查找和引用函数，可以在大量数组中找到指定的数据，简化并方便了数据检索任务。\n\n垂直查找（VLOOKUP）用于查找垂直排序的表格中的数据，而水平查找（HLOOKUP）则用于查找水平组织的数据。\n\n掌握这些功能对于数据分析师来说至关重要，因为它们能极大地加快数据访问速度，减少数据提取中的错误，并简化整个分析过程。\n\n从本质上讲，这两个功能不仅仅是基本功能；它们可以作为高效数据分析的必备工具。\n\n",
+              "links": [
+                {
+                  "title": "VLOOKUP函数",
+                  "url": "https://support.microsoft.com/en-gb/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1",
+                  "type": "article"
+                },
+                {
+                  "title": "HLOOKUP函数",
+                  "url": "https://support.microsoft.com/en-gb/office/hlookup-function-a3034eec-b719-4ba3-bb65-e1ad662ed95f",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a254be67-ed73-4f67-871f-ca94b46211d9",
+              "xid": "208e5695-f2ad-4dac-a3df-6368f3051b9a"
+            },
+            {
+              "title": "REPLACE / SUBSTITUTE",
+              "description": "在Microsoft Excel中，REPLACE和SUBSTITUTE函数是用于修改单元格内文本数据的强大工具。\n\n这两个函数都用于更改文本，但它们根据所需的更改类型在不同的场景中被使用。\n\nSUBSTITUTE函数用于替换指定子字符串的所有出现的实例为一个新的子字符串。\n\n它允许基于字符匹配（而不是位置）替换文本，使其成为调整字符串中特定文本实例的理想选择。\n\nREPLACE函数用于用另一段文本替换文本字符串的一部分，基于其在原始文本中的位置。\n\n当你需要从指定位置开始替换文本的特定部分时，此功能特别有用。\n\n",
+              "links": [
+                {
+                  "title": "REPLACE函数",
+                  "url": "https://support.microsoft.com/en-us/office/replace-function-6acf209b-01b7-4078-b4b8-e0a4ef67d181",
+                  "type": "article"
+                },
+                {
+                  "title": "SUBSTITUTE函数",
+                  "url": "https://support.microsoft.com/en-us/office/substitute-function-6434944e-a904-4336-a9b0-1e58df3bc332",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "cad08b0f-db45-4306-b2c2-18f9ad8cee98",
+              "xid": "f9164b27-a8aa-4e86-bbb0-87c0e8da03fc"
+            },
+            {
+              "title": "UPPER / LOWER / PROPER",
+              "description": "在数据分析领域，Upper（大写）、Lower（小写）和Proper（首字母大写）功能是用于操作和转换文本数据的基本工具。\n\n数据分析师经常处理各种各样的数据集，其中文本数据可能不总是符合一致的格式。\n\n为了解决这些问题，会使用Upper、Lower和Proper功能。\n\n'Upper'将所有文本转换为大写，而'Lower'则相反，将所有文本转换为小写。\n\n'Proper'功能用于将每个单词的首字母大写，使其呈现首字母大写的情况。\n\n在进行清洗和准数据备工作时，这些功能是不可或缺的，这是数据分析师工作的重要组成部分。\n\n",
+              "links": [
+                {
+                  "title": "UPPER 函数",
+                  "url": "https://support.microsoft.com/en-gb/office/upper-function-c11f29b3-d1a3-4537-8df6-04d0049963d6",
+                  "type": "article"
+                },
+                {
+                  "title": "LOWER 函数",
+                  "url": "https://support.microsoft.com/en-gb/office/lower-function-3f21df02-a80c-44b2-afaf-81358f9fdeb4",
+                  "type": "article"
+                },
+                {
+                  "title": "PROPER 函数",
+                  "url": "https://support.microsoft.com/en-gb/office/proper-function-52a5a283-e8b2-49be-8506-b2887b889f94",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "4648b1e4-ae2d-4c60-baa1-07c7f332c9b6",
+              "xid": "fca9feac-52bc-47ee-b88f-fbc8a700e2c8"
+            },
+            {
+              "title": "CONCAT（串联）",
+              "description": "术语 'Concat' 或 'Concatenation'（串联）指的是将两个或多个数据结构（字符串、数组或数据集）顺序地连接在一起的操作。\n\n在数据分析的背景下，数据分析师使用串联作为基本功能，沿着一个轴（垂直或水平）合并或绑定数据集。\n\n此功能在数据预处理或数据清洗过程中经常被用于合并多个数据源的数据，处理缺失值，以及将数据塑造成更适合分析工具的形式。\n\n对 'Concat'（串联）的理解在管理数据分析师常处理的复杂、大规模数据集方面起着至关重要的作用。\n\n",
+              "links": [
+                {
+                  "title": "CONCAT（串联）函数",
+                  "url": "https://support.microsoft.com/en-gb/office/concat-function-9b1a9a3f-94ff-41af-9736-694cbd6b4ca2",
+                  "type": "article"
+                },
+                {
+                  "title": "Excel CONCAT（串联）函数",
+                  "url": "https://www.w3schools.com/excel/excel_concat.php",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "20b9e06b-0340-4e4c-aad9-9854f9322c58",
+              "xid": "635b8cc1-5134-49fe-a3d7-f4fdbe2663be"
+            },
+            {
+              "title": "TRIM（修剪）",
+              "description": "TRIM函数被认为是数据处理范围内的基本但至关重要的功能。\n\n它在准备和清理数据集中发挥了关键作用，这对于分析准确性来说是至关重要的。\n\nTRIM使得数据分析师能够通过移除多余的空格来简化数据集，提升数据质量。\n\n此外，TRIM功能有助于减少错误，提升数据建模的效率，并确保可靠的数据洞察生成。\n\n因此，理解TRIM函数是数据分析师工具箱中的重要组成部分。\n\n",
+              "links": [
+                {
+                  "title": "TRIM函数",
+                  "url": "https://corporatefinanceinstitute.com/resources/excel/trim-function/",
+                  "type": "article"
+                },
+                {
+                  "title": "Excel中的TRIM函数",
+                  "url": "https://support.microsoft.com/en-gb/office/trim-function-410388fa-c5df-49c6-b16c-9e5630b479f9",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e7c85f33-5235-4729-bbfb-f009c1578404",
+              "xid": "0987b596-f811-44ca-b152-cea6aafb7617"
+            },
+            {
+              "title": "平均数（AVERAGE）",
+              "description": "平均数，通常也称为均值（mean），是数据分析中使用最频繁的数学计算之一。\n\n它为一组数据提供了一个简单而有用的度量。\n\n对数据分析师来说，理解如何计算和解释平均数是基本的。\n\n包括平均数在内的基本函数是数据汇总和理解复杂数据集的关键组件。\n\n尽管概念上很简单，但平均数在各种分析中的作用范围广泛，从预测模型到理解数据集中的趋势和模式。\n\n",
+              "links": [
+                {
+                  "title": "AVERAGE函数",
+                  "url": "https://support.microsoft.com/en-gb/office/average-function-047bac88-d466-426c-a32b-8f33eb960cf6",
+                  "type": "article"
+                },
+                {
+                  "title": "Excel中的AVERAGE函数",
+                  "url": "https://www.w3schools.com/excel/excel_average.php",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "e3dd2157-5b42-4ccc-8e0a-b9641e486a94",
+              "xid": "07b97a77-7964-4afa-9f0b-3c743124ccb0"
+            },
+            {
+              "title": "COUNT",
+              "description": "在数据分析中，COUNT（计数）功能是一项数据分析师经常处理的基本任务。\n\n这个功能是一个简单而强大的工具，通过提供数据集中唯一元素的出现次数，有助于理解基础数据。\n\n在各种情况下，计数功能都非常重要——从了解某类别受欢迎程度到分析客户行为等等。\n\n这个基本功能为数据提供了关键洞察，使其成为任何数据分析师工具包中的必备技能。\n\n",
+              "links": [
+                {
+                  "title": "COUNT函数",
+                  "url": "https://support.microsoft.com/en-gb/office/count-function-a59cd7fc-b623-4d93-87a4-d23bf411294c",
+                  "type": "article"
+                },
+                {
+                  "title": "如何在Microsoft Excel中计数单元格（COUNT、COUNTA、COUNTIF、COUNTIFS函数）",
+                  "url": "https://www.youtube.com/watch?v=5RFLncJuMng",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "c922ca07-8f6b-4fcc-b9de-8a1e6660969e",
+              "xid": "f553a80f-8e03-406f-a208-c0924b34fda5"
+            },
+            {
+              "title": "求和（SUM）",
+              "description": "求和是数据分析中最基本的操作之一。\n\n作为一名数据分析师，快速准确地汇总数值数据的能力是提炼大量数据集中有意义洞见的关键。\n\n求和操作可以使用各种软件和编程语言（例如Excel、SQL、Python、R等）执行，每一种都提供了不同的求和方法。\n\n理解'求和'操作对于趋势分析、预测、预算编制以及任何涉及定量数据的操作至关重要。\n\n",
+              "links": [
+                {
+                  "title": "求和（SUM）函数",
+                  "url": "https://support.microsoft.com/en-gb/office/sum-function-043e1c7d-7726-4e80-8f32-07b23e057f89",
+                  "type": "article"
+                },
+                {
+                  "title": "如何在Excel中使用求和（SUM）函数",
+                  "url": "https://www.youtube.com/watch?v=-u-9f3QrdAQ",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "19a8fdb2-7cab-48d8-b1a4-aa3f3905981a",
+              "xid": "7ff0f36a-cd51-4170-8f90-01acd8a62b41"
+            },
+            {
+              "title": "最小值/最大值",
+              "description": "了解数据集中最小值和最大值在数据分析中至关重要。\n\n这些基本函数，通常被称为最小值/最大值（Min-Max）函数，是数据分析师用来检查特定数据集分布的统计工具。\n\n通过识别最低和最高值，数据分析师可以洞察数据集的范围，识别可能的异常值，并了解数据的变异性。\n\n除了在描述性统计中的应用，最小值/最大值函数在数据归一化中也扮演着关键角色，这有助于提高机器学习和人工智能领域的预测模型的准确性。\n\n",
+              "links": [
+                {
+                  "title": "MIN 函数",
+                  "url": "https://support.microsoft.com/en-gb/office/min-function-61635d12-920f-4ce2-a70f-96f202dcc152",
+                  "type": "article"
+                },
+                {
+                  "title": "MAX 函数",
+                  "url": "https://support.microsoft.com/en-gb/office/max-function-e0012414-9ac8-4b34-9a47-73e662c08098",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "efb9ef77-cd56-4896-93fc-bb9e6c71f596",
+              "xid": "8e23d5d2-31cb-447d-bfc3-44178763d6d1"
+            }
+          ],
+          "id": "88c30465-f0e7-4b50-bcc6-39f2963bd19a",
+          "xid": "727cc331-3c1e-4b04-abc1-849ee2d2feb4"
+        },
+        {
+          "title": "图表制作",
+          "description": "在数据整理、操作、恢复和可视化方面，Excel为数据分析师提供了一个强大的工具。\n\n它提供的一个令人难以置信的功能是'图表制作（Charting）'。\n\n通过图表制作，基本上就是创建数据的可视化表示形式，这有助于数据分析师更加容易理解复杂的数据，同时展示数据趋势、相关性和统计分析的引人入胜的故事。\n\n这些图表从简单的柱状图到更复杂的3D表面和股票图表。\n\n作为一个数据分析师，精通Excel中的图表制作大大增强了数据解释能力，使得从大量的数据集中提取有意义的洞见变得更加容易。\n\n",
+          "links": [
+            {
+              "title": "从头到尾创建图表",
+              "url": "https://support.microsoft.com/en-gb/office/create-a-chart-from-start-to-finish-0baf399e-dd61-4e18-8a73-b3fd5d5680c2",
+              "type": "article"
+            },
+            {
+              "title": "Excel图表和图形教程",
+              "url": "https://www.youtube.com/watch?v=eHtZrIb0oWY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4c8f7b3c-dacd-4c98-9542-31e545a8aa15",
+          "xid": "8c1b238c-3a0d-43cd-99dc-69c625c6a013"
+        },
+        {
+          "title": "数据透视表 (Pivot Tables)",
+          "description": "数据分析师经常需要总结、调查和分析数据，以做出有意义和富有洞察力的决策。\n\n在Microsoft Excel中，最强大的工具之一就是数据透视表 (Pivot Table)。\n\n数据透视表允许分析师以简洁的表格格式组织和总结大量的数据。\n\n数据透视表的强大之处在于其动态操作数据的能力，这将导致更快速的分析和更丰富的洞见。\n\n理解和高效使用数据透视表 (Pivot Table) 是每个数据分析师的基本技能，因为它直接影响到他们从原始数据集中提取重要信息的能力。\n\n",
+          "links": [
+            {
+              "title": "创建数据透视表 (Create a Pivot Table)",
+              "url": "https://support.microsoft.com/en-gb/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576",
+              "type": "article"
+            },
+            {
+              "title": "Excel中的数据透视表 (Pivot Tables in Excel)",
+              "url": "https://www.excel-easy.com/data-analysis/pivot-tables.html",
+              "type": "article"
+            },
+            {
+              "title": "如何在Excel中创建数据透视表 (How to Create a Pivot Table in Excel)",
+              "url": "https://www.youtube.com/watch?v=PdJzy956wo4",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f1b896eb-7838-46aa-9d87-e5c7660b5d2b",
+          "xid": "21ceedcd-63fc-4111-9df8-81c63d6a5575"
+        }
+      ],
+      "id": "393a5228-97bc-4d9e-9bd5-415ef77e40cf",
+      "xid": "5daddf27-9f1e-4bde-8e44-beff692dc9da"
+    },
+    {
+      "title": "SQL",
+      "description": "SQL",
+      "links": [],
+      "children": [],
+      "id": "dbdf4616-be39-437f-9eb5-9c3b279e3057",
+      "xid": "1e550d91-7d69-45d7-bdee-c96fcb6faf47"
+    },
+    {
+      "title": "学习编程语言",
+      "description": "在数据分析方面，我们有两种主要的编程语言：Python和R。\n\n这两种语言都有大量库来帮助在各种情况下进行决策，协助数据的操作、建模和可视化。\n\nPython是一种多用途语言，不仅用于数据分析，还用于Web开发、自动化、人工智能等领域。\n\n而R语言是专门为统计分析和数据可视化创建的，因此对于统计学家和研究员来说是一个很好的选择。\n\n它以其高级可视化功能而闻名，能够创建高度自定义和高级的图表和图形。\n\n面对在选择编程语言以推进数据职业方面可能存在的一些疑问，考虑到目标和/或当前市场需求来选择学习哪种语言是很有帮助的。\n\n如果你更喜欢一个将数据分析与软件开发、自动化或人工智能相结合的职业，Python可能是更好的选择。\n\n如果你专注于统计分析与数据可视化，R可能会更合适。\n\n",
+      "links": [
+        {
+          "title": "Python 数据科学手册",
+          "url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Python",
+          "description": "Python",
+          "links": [],
+          "children": [],
+          "id": "b2e6b75c-ea41-4e33-b88d-a75560be1cd7",
+          "xid": "d7dda901-7671-4159-b6ad-9c56196ac00a"
+        },
+        {
+          "title": "R",
+          "description": "R是一种强大的编程语言，被全球的数据分析师和统计学家广泛使用。\n\nR提供了大量的统计分析和图形技术，是数据操作、统计建模和可视化的一个优秀工具。\n\n借助其丰富的数据包集合和内置函数，R允许数据分析师执行复杂的数据探索性分析、构建复杂的模型，并创建令人惊叹的可视化效果。\n\n另外，由于R是一种开放源代码软件（open-source），它得到了全世界统计学家社区的持续改进和贡献。\n\n",
+          "links": [
+            {
+              "title": "R官方网站",
+              "url": "https://www.r-project.org/about.html",
+              "type": "article"
+            },
+            {
+              "title": "R与Python对比 | 哪个更适合数据分析？",
+              "url": "https://www.youtube.com/watch?v=1gdKC5O0Pwc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ca02d7ca-9576-48b6-8138-b482305b40c0",
+          "xid": "c32c659b-bf67-46f8-9950-c4cee354fa40"
+        }
+      ],
+      "id": "6833f08a-fb35-46e1-ac30-1c873ba4624c",
+      "xid": "2e75950e-8fb0-4415-b681-ce19bce24a00"
+    },
+    {
+      "title": "数据操纵库",
+      "description": "数据操纵库是数据科学和分析中必不可少的工具，它们能够高效处理、转换和分析大型数据集。\n\nPython 是一种用于数据科学的流行语言，提供了多个强大的数据操纵库。\n\nPandas（Pandas）是一个非常灵活的库，提供了像 DataFrames（数据框）这样的数据结构，这些结构允许对表格数据进行易于操作和分析。\n\nNumPy（NumPy）是另一个基本库，支持大型多维数组和矩阵，并附带一系列操作这些数组的数学函数。\n\nPandas 和 NumPy 一起构成了 Python 中数据操纵的基础架构，促进了例如数据清洗、合并、重塑和统计分析等任务，从而简化了机器学习和其他数据驱动应用程序的数据准备流程。\n\n",
+      "links": [
+        {
+          "title": "Pandas",
+          "url": "https://pandas.pydata.org/",
+          "type": "article"
+        },
+        {
+          "title": "NumPy",
+          "url": "https://numpy.org/",
+          "type": "article"
+        },
+        {
+          "title": "最佳 Python 数据科学库",
+          "url": "https://www.simplilearn.com/top-python-libraries-for-data-science-article",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Pandas",
+          "description": "Pandas 是一个在数据分析领域被广泛认可并极具实用性的数据操作库。\n\n以其强大的功能如数据清洗、数据整理和数据分析闻名，Pandas 已成为数据分析师首选的工具之一。\n\nPandas 建立在 NumPy 的基础上，提供了高性能且易于使用的数据结构和数据分析工具。\n\n简而言之，它的灵活性和多功能性使其成为数据分析师工具包中的关键组成部分，能够几乎满足任何数据操作任务。\n\n",
+          "links": [
+            {
+              "title": "Pandas",
+              "url": "https://pandas.pydata.org/",
+              "type": "article"
+            },
+            {
+              "title": "NumPy 与 Pandas",
+              "url": "https://www.youtube.com/watch?v=KHoEbRH46Zk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f30d9997-3e11-4adf-94f4-6978db1735a1",
+          "xid": "18003528-0bea-43af-aaa2-381f1f078ebd"
+        },
+        {
+          "title": "Dplyr",
+          "description": "Dplyr是一款强大且流行的R语言数据操作工具包。\n\n作为数据分析师来说，这个库提供了数据操作、清洗和处理的必要函数，操作效率高。\n\nDplyr设计得易于使用且直观，确保了语法的稳健性和一致性。\n\n确保数据可靠性和快速处理是分析师处理大规模数据集时至关重要的，因此Dplyr至关重要。\n\n通过专注于效率，Dplyr的函数如select（选择）、filter（过滤）、arrange（排序）、mutate（增加变量）、summarise（汇总）、group_by（分组）优化了数据操作步骤，使数据分析师的数据操作更顺畅，更加省心。\n\n",
+          "links": [
+            {
+              "title": "dplyr",
+              "url": "https://dplyr.tidyverse.org/",
+              "type": "article"
+            },
+            {
+              "title": "Dplyr Essentials",
+              "url": "https://www.youtube.com/watch?v=Gvhkp-Yw65U",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "46afd99d-27be-43f7-9ab2-56c7ca85f40e",
+          "xid": "107cf097-5179-40fd-8c5d-1137b2f230f6"
+        }
+      ],
+      "id": "38ae2c10-934d-4775-b9a8-8fee102a647f",
+      "xid": "2be864eb-b4d2-41d4-8ba0-dc6dd9b99d15"
+    },
+    {
+      "title": "数据可视化库",
+      "description": "数据可视化库在数据科学中至关重要，它们能够将复杂的数据集转化为清晰且易于解释的视觉表示形式，从而促进对数据洞察的更好理解和沟通。\n\n在Python中，有几种广泛使用的库来实现这一目标。\n\nMatplotlib（绘图库）提供了创建静态、动画和交互式图表的全面工具。\n\nSeaborn是建立在Matplotlib之上的一款库，提供了绘制具有吸引人且信息丰富的统计图形的高级接口，只需少量代码。\n\nPlotly（绘图库）是另一个强大的库，它可以创建交互式和动态的可视化效果，这些可视化效果可以轻松地嵌入到网络应用程序中。\n\n此外，像Bokeh和Altair这样的库提供了创建交互式图表和仪表板的能力，增强了探索性数据分析和数据发现的展示。\n\n综上所述，这些库使数据科学家能够有效地可视化数据中的趋势、模式和异常值，使分析变得更加易用且可操作。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "Matplotlib",
+          "description": "Matplotlib 是一个关键的数据可视化库，广泛用于数据分析领域，用于生成各种各样的图表和图形。\n\n通过 Matplotlib，数据分析师可以清晰而有效地传达结果，从复杂的数据集中提炼洞察。\n\n它提供了一个层级化的环境，非常适合数据科学家的工作。\n\nMatplotlib 提供了一个面向对象的应用程序接口（API），使其能够进行广泛的定制，并集成到更大的应用程序中。\n\n从直方图、条形图、散点图到 3D 图，Matplotlib 的灵活性帮助数据分析师更好地理解并有效展现数据。\n\n",
+          "links": [
+            {
+              "title": "Matplotlib",
+              "url": "https://matplotlib.org/",
+              "type": "article"
+            },
+            {
+              "title": "6分钟学会Matplotlib",
+              "url": "https://www.youtube.com/watch?v=nzKy9GY12yo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "99e0183c-89aa-4231-aed9-9f06e3d7a9d8",
+          "xid": "df94b1d1-ce7a-4e27-a427-bd1162bc3198"
+        },
+        {
+          "title": "Ggplot2",
+          "description": "在R编程中的数据可视化领域，ggplot2（ggplot2）作为数据分析师的主要工具之一，占据着举足轻重的地位。\n\n作为tidyverse软件包套件的一部分，这个数据可视化库有助于创建复杂的视觉叙事。\n\n凭借其图形语法（grammar of graphics）理念，ggplot2允许用户逐层构建图表，从而对图形特征和设计拥有精细的控制权。\n\n它在创建定制化且美观的图形上的灵活性，对于任何进行探索性数据分析、报告编制或仪表板构建的数据分析师来说，都是一个宝贵资源。\n\n",
+          "links": [
+            {
+              "title": "ggplot2",
+              "url": "https://ggplot2.tidyverse.org/",
+              "type": "article"
+            },
+            {
+              "title": "使用R制作美丽的图表",
+              "url": "https://www.youtube.com/watch?v=qnw1xDnt_Ec",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9da21263-26cb-4489-a4e6-c2694dfd8f71",
+          "xid": "2ff5ec7e-22d8-4aa7-8f84-84e7ca3b7050"
+        }
+      ],
+      "id": "072bf0a8-70ad-4743-b48a-5dbdf33bd887",
+      "xid": "d05a4fe2-82ae-4667-9053-5caf4edb6ac2"
+    },
+    {
+      "title": "数据收集",
+      "description": "数据收集是一个基础过程，涉及从各种来源收集相关数据。\n\n这些数据可以是定量的或定性的，来源可以是数据库、在线平台、客户反馈等。\n\n收集的信息随后会被清理、处理和解释，以提取有意义的见解。\n\n数据分析师会仔细执行这一整个过程，因为数据的质量对于确保准确的分析至关重要，这进而对业务决策和策略提供信息依据。\n\n这突显了在数据分析中的数据收集时，充分的理解、适当的工具和精确的技术的重要性。\n\n",
+      "links": [
+        {
+          "title": "数据收集",
+          "url": "https://en.wikipedia.org/wiki/Data_collection",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "数据库",
+          "description": "在每一位强大的数据分析师背后，不仅有丰富的数据资源，还有一套强大的数据库，使有效的数据收集成为可能。\n\n在当今这个需要管理、组织和评估大量数据的世界中，数据库是数据收集的基本组成部分。\n\n作为数据分析师，理解和使用数据库对于捕获定性和定量数据分析所需的数据、预测趋势和做出数据驱动的决策至关重要。\n\n因此，深入的数据库知识可以被认为是数据分析师工具包的关键部分。\n\n这些数据库可以从关系数据库（如SQL）到非关系数据库（如MongoDB）不等，各有其在数据收集过程中的独特作用。\n\n",
+          "links": [
+            {
+              "title": "访问SQL学习路线",
+              "url": "https://roadmap.sh/sql",
+              "type": "article"
+            },
+            {
+              "title": "访问PostgreSQL学习路线",
+              "url": "https://roadmap.sh/postgresql-dba",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ec9bad0d-82b9-49f6-af8b-829e88dc8cf7",
+          "xid": "388ae0bf-cf94-4c5c-8542-9a24518868df"
+        },
+        {
+          "title": "CSV 文件",
+          "description": "CSV（Comma Separated Values）文件在数据分析师的数据收集过程中扮演着至关重要的角色。\n\n这种文件类型允许高效地存储数据，通常由Microsoft Excel或Google Sheets等电子表格软件生成，但其简洁性使其与多种处理数据的应用程序兼容。\n\n在数据分析的背景下，CSV文件被广泛用于导入和导出大型数据集，因为它们是数据分析师工具包中的重要组件。\n\n它们使分析师能够将大量的信息组织成结构化的格式，这是从原始数据中提取有用见解的根本。\n\n",
+          "links": [
+            {
+              "title": "什么是CSV文件：全面指南",
+              "url": "https://flatfile.com/blog/what-is-a-csv-file-guide-to-uses-and-benefits/",
+              "type": "article"
+            },
+            {
+              "title": "理解CSV文件",
+              "url": "https://www.youtube.com/watch?v=UofTplCVkYI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c131db81-9fe1-47cf-9f4c-39e99edda687",
+          "xid": "6e6d2568-a30d-43b6-85e4-d4d99dda5b0f"
+        },
+        {
+          "title": "应用程序接口（APIs）",
+          "description": "应用程序编程接口（Application Programming Interfaces），简称APIs，在数据分析师的工作中，特别是在数据收集过程中，扮演着至关重要的角色。\n\nAPIs是一组协议、例程和工具的集合，使得不同的软件应用程序之间能够相互通信。\n\n在数据分析领域，APIs被广泛应用于从不同的来源以安全高效的方式收集、交换和操作数据。\n\n这一数据收集过程对形成分析员得出的见解至关重要。\n\n",
+          "links": [
+            {
+              "title": "什么是API？",
+              "url": "https://aws.amazon.com/what-is/api/",
+              "type": "article"
+            },
+            {
+              "title": "新手入门指南：什么是API",
+              "url": "https://www.postman.com/what-is-an-api/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d243a4c0-1a3a-4d57-b846-02cb7f83b2a8",
+          "xid": "b07faccb-5f28-4ca3-acab-6e40bf18f4c3"
+        },
+        {
+          "title": "网页抓取 (Web Scraping)",
+          "description": "网页抓取 (web scraping) 在收集用于数据分析的独特数据集方面发挥着重要作用。\n\n对于数据分析师的任务来说，网页抓取指的是从网站上提取信息并将其转化为结构化的可用格式，如CSV、Excel电子表格，甚至数据库的过程。\n\n该技术使数据分析师能够从互联网上收集大量数据，如果手动操作的话，这将会非常耗时。\n\n有效地抓取和解析数据的能力会使数据分析师在数据分析过程中具备竞争优势，从解锁深入的洞见信息到做出数据驱动的决策。\n\n",
+          "links": [
+            {
+              "title": "什么是网页抓取 (Web Scraping) 及其用途？",
+              "url": "https://www.parsehub.com/blog/what-is-web-scraping/",
+              "type": "article"
+            },
+            {
+              "title": "什么是网页抓取 (Web Scraping)?",
+              "url": "https://www.youtube.com/watch?v=dlj_QL-ENJM",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d97b08c5-1916-4d7e-9401-ce32df2056dd",
+          "xid": "89bce4b1-d31f-4da2-b1fb-7825b5373968"
+        }
+      ],
+      "id": "fcf96ea0-c1e2-4d56-b9b7-0e66daa6b39c",
+      "xid": "49b506c2-eeb5-4b9b-abd4-fde8662776af"
+    },
+    {
+      "title": "数据清理",
+      "description": "数据清理（Data Cleaning），也常被称为数据清洗（Data Cleansing）或数据清洗（Data Scrubbing），是数据分析过程中的一个重要且初始步骤。\n\n作为一名数据分析师，你的大量工作往往围绕着理解、清理和标准化原始数据展开，以便进行分析。\n\n数据清理涉及识别、更正或删除数据集中的任何错误或不一致，以提高其质量。\n\n这个过程极其重要，因为它直接决定了所生成的洞察准确性。\n\n如果有垃圾数据输入，就会产生垃圾信息输出——好的模型和可视化如果基于质量低下的数据，将不会产生太多有用的结果。\n\n因此，掌握数据清理技术对于任何数据分析师来说是至关重要的。\n\n",
+      "links": [
+        {
+          "title": "数据清理",
+          "url": "https://www.tableau.com/learn/articles/what-is-data-cleaning#:~:text=tools%20and%20software-,What%20is%20data%20cleaning%3F,to%20be%20duplicated%20or%20mislabeled.",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "处理缺失数据",
+          "description": "作为数据分析师在处理现实世界中的数据时，经常会遇到缺失或空值的情况。\n\n这种现象在数据分析领域被称为\"缺失数据\"。\n\n缺失数据会严重影响数据分析过程的结果，因为它会降低统计功效，从而扭曲结果的可靠性和稳健性。\n\n缺失数据是“数据清洗”步骤的一部分，而数据清洗是数据预处理中的一个重要组成部分。\n\n它包括识别不完整、不正确或不相关的数据，随后替换、修改或删除这些脏数据。\n\n成功清洗缺失数据可以显著提升数据的整体质量，从而提供有价值且可靠的见解。\n\n数据分析师需要理解处理缺失数据的不同技术，如根据数据特性和研究问题选择不同类型的数据填充方法。\n\n",
+          "links": [
+            {
+              "title": "数据清洗过程中如何处理缺失数据值",
+              "url": "https://insightsoftware.com/blog/how-to-handle-missing-data-values-while-data-cleaning/",
+              "type": "article"
+            },
+            {
+              "title": "在数据预处理和清洗中如何处理缺失数据",
+              "url": "https://medium.com/@yennhi95zz/handling-missing-data-in-data-preprocessing-and-cleaning-methods-and-examples-19a893336b2a",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c7bf5939-3016-42ea-913b-e5960bd3ef67",
+          "xid": "6d974046-73c0-460e-81f5-874d8e61a9e8"
+        },
+        {
+          "title": "去除重复项",
+          "description": "在数据分析的世界中，数据清洗是一个关键步骤，其中包括一项重要的子任务：去除重复条目。\n\n重复数据会通过给重复实例增加额外权重来扭曲数据分析结果，导致偏见或错误的结论。\n\n由于人为错误、合并数据集等原因，即使数据收集质量较高，数据集也可能包含重复记录。\n\n因此，数据分析师必须掌握识别并去除重复项的技能，以确保分析基于独特、准确和多样的数据集。\n\n这一过程有助于更准确的预测和推断，从而最大限度地提高从数据中获得的洞见。\n\n",
+          "links": [
+            {
+              "title": "数据集中重复值和异常值的处理",
+              "url": "https://medium.com/@ayushmandurgapal/handling-duplicate-values-and-outliers-in-a-dataset-b00ce130818e",
+              "type": "article"
+            },
+            {
+              "title": "如何去除数据集中的重复项并找到唯一值",
+              "url": "https://www.youtube.com/watch?v=KBzYrvjUsps",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a9b97684-65dc-4b70-81c0-1a69afc22cca",
+          "xid": "4d385830-5956-4c94-ac31-3b56a7d761cd"
+        },
+        {
+          "title": "识别离群值",
+          "description": "在数据分忻领域，数据清理是一个必要而重要的初步步骤。\n\n这一过程包括修正或删除在获得的原始数据中存在的任何错误、不准确或不相关的信息，使其更适合进行分析。\n\n其中重要的一方面是“识别离群值（finding outliers）”。\n\n离群值是不寻常或令人惊讶的数据点，它们显著偏离其他数据点。\n\n虽然这些值可能是由于简单的变异性或误差造成的，但它们通常会拉偏整体数据，导致结果偏差并阻碍数据分析的准确性。\n\n因此，正确识别和处理这些离群值对于确保后续数据分析任务的可靠性至关重要。\n\n",
+          "links": [
+            {
+              "title": "离群值",
+              "url": "https://www.mathsisfun.com/data/outliers.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ef2fc655-f57f-4020-b40b-c8f8b451f1f7",
+          "xid": "b4467c0a-5491-416c-9428-c099addaa68b"
+        },
+        {
+          "title": "数据转换",
+          "description": "数据转换（Data Transformation），也被称为数据整理（Data Wrangling），是数据分析师职责中的重要组成部分。\n\n该过程包括将数据从原始格式转换为另一个格式，使其更适合多种用途，例如分析。\n\n数据分析师转换数据以使其更适于分析，确保准确性，提高数据质量。\n\n适当的数据转换技术可以使数据结构化，增加数据的价值，并通过提供有意义的结果来提高分析的准确性。\n\n",
+          "links": [
+            {
+              "title": "什么是数据转换？",
+              "url": "https://www.qlik.com/us/data-management/data-transformation",
+              "type": "article"
+            },
+            {
+              "title": "探索关于数据分析的最佳文章",
+              "url": "https://app.daily.dev/tags/data-analysis?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1ab3b139-243e-4677-99bf-6d670cb8b826",
+          "xid": "bb07c3d9-06b1-4348-9f21-850d9a8fe31c"
+        },
+        {
+          "title": "Pandas",
+          "description": "在数据分析领域，数据清洗是一个至关重要的初步过程，在这个过程中，`pandas`（一种流行的Python库）表现出色。\n\npandas主要用于数据操作和分析，采用灵活而强大的数据结构（DataFrame和Series）来简化清理原始、杂乱数据集的过程。\n\n数据分析师经常处理大量数据，其中一些数据可能包含缺失或不一致的数据，这些数据可能会对分析结果产生负面影响。\n\n通过使用pandas，数据分析师可以快速识别、管理和填充这些缺失值，删除不必要的列，重命名列标题，过滤特定数据，应用函数执行更复杂的数据转换等等。\n\n因此，pandas成为数据清洗中不可或缺的工具。\n\n",
+          "links": [
+            {
+              "title": "Pandas",
+              "url": "https://pandas.pydata.org/",
+              "type": "article"
+            },
+            {
+              "title": "NumPy vs Pandas",
+              "url": "https://www.youtube.com/watch?v=KHoEbRH46Zk",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a7cbc00f-6800-4d60-81e3-0663ceecece6",
+          "xid": "f1bdce65-53c1-43be-9383-3b8b68c5aa85"
+        },
+        {
+          "title": "Dplyr",
+          "description": "数据清洗在数据处理管道中起着关键作用，可以纠正和提高数据质量，从而提高分析过程的效率和真实性。\n\n`dplyr`软件包作为R语言`tidyverse`套件的重要组成部分，已成为数据分析师进行数据清洗工作的重要工具。\n\n`dplyr`提供了一套连贯的动词，显著简化了数据结构（如数据框和数据库）的操作过程。\n\n这包括选择、排序、过滤记录，创建或修改变量，以及聚合记录等操作。\n\n在数据清洗过程中应用`dplyr`可以使数据分析师更有效地执行操作，提高代码的可读性，并轻松处理大量和复杂的数据。\n\n",
+          "links": [
+            {
+              "title": "dplyr",
+              "url": "https://dplyr.tidyverse.org/",
+              "type": "article"
+            },
+            {
+              "title": "Dplyr Essentials",
+              "url": "https://www.youtube.com/watch?v=Gvhkp-Yw65U",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5deb2286-4427-41d5-a61c-fb5bcaf40777",
+          "xid": "32c7f910-e9db-4551-9a86-184fb9317e30"
+        }
+      ],
+      "id": "99def770-1976-40f5-9044-7f5e665c807c",
+      "xid": "d4a2d1d6-3a10-4d7d-bf9f-c7ea0a1de41b"
+    },
+    {
+      "title": "描述性分析",
+      "description": "在数据分析领域，描述性分析（Descriptive Analysis）作为数据诠释的基本步骤扮演着至关重要的角色。\n\n基本上，描述性分析包括将复杂的数据进行总结、组织和简化，使其成为易于理解的形式。\n\n这种方法包含使用各种统计工具来描绘数据集中的模式、相关性和趋势。\n\n对于数据分析师而言，它是深入数据探索的基础，为构建进一步的分析技术（如预测性分析和规范性分析）提供了基础。\n\n",
+      "links": [
+        {
+          "title": "描述性分析：是什么及其相关术语",
+          "url": "https://www.investopedia.com/terms/d/descriptive-analytics.asp",
+          "type": "article"
+        },
+        {
+          "title": "什么是描述性分析？",
+          "url": "https://www.youtube.com/watch?v=DlFqQy10aCs",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "中心趋势",
+          "description": "描述性分析是数据分析领域的一个重要分支，在这个分支中，中心趋势（Central Tendency）的概念扮演着至关重要的角色。\n\n作为数据分析师，理解中心趋势是至关重要的，因为它为数据提供了快速的摘要。\n\n中心趋势提供了关于数值数据分布中心点的信息。\n\n中心趋势的三种主要类型包括均值（Mean）、中位数（Median）和众数（Mode）。\n\n数据分析师使用这些度量来识别趋势、进行比较或得出结论。\n\n因此，理解中心趋势为数据分析师提供了解释和理解统计数据的重要工具。\n\n",
+          "links": [
+            {
+              "title": "集中趋势的度量",
+              "url": "https://www.abs.gov.au/statistics/understanding-statistics/statistical-terms-and-concepts/measures-central-tendency",
+              "type": "article"
+            },
+            {
+              "title": "理解中心趋势",
+              "url": "https://www.youtube.com/watch?v=n_sSVhHBdj4",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "平均值",
+              "description": "集中趋势是指能够识别出代表整个分布单个值的统计度量。\n\n平均值或均值是最受欢迎和广泛使用的集中趋势度量之一。\n\n对于数据分析师而言，计算平均值是一项常规任务。\n\n单一值为分析师提供数据的快速概览，并可用于进一步的数据操作或统计分析。\n\n在处理大量数据集时，平均值特别有助于预测趋势和模式，或调整可能扭曲数据'真实'表示的影响因素。\n\n它是通过将一组值或数量的总和除以这些值的数量计算出来的算术平均数。\n\n",
+              "links": [
+                {
+                  "title": "集中趋势的度量",
+                  "url": "https://statistics.laerd.com/statistical-guides/measures-central-tendency-mean-mode-median.php",
+                  "type": "article"
+                },
+                {
+                  "title": "集中趋势的理解 | 平均值、中位数和众数",
+                  "url": "https://www.scribbr.co.uk/stats/measures-of-central-tendency/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "18c67680-e244-42c4-81b7-3679d8686e09",
+              "xid": "07a16975-ad5d-40d5-be2d-951c4db6256b"
+            },
+            {
+              "title": "中位数(Median)",
+              "description": "中位数是指当数据集按升序或降序排列时的中间值。\n\n作为数据分析师，理解、计算和解释中位数至关重要。\n\n中位数在处理数据集中的异常值时特别有用，因为它对极值不那么敏感。\n\n因此，中位数为偏态分布提供了更具现实意义的“中心”值。\n\n这一度量是数据集可靠反映的体现，在房地产、经济学和金融等领域广泛用于数据解释和决策。\n\n",
+              "links": [
+                {
+                  "title": "如何找到中位数值(How to find the median value)",
+                  "url": "https://www.mathsisfun.com/median.html",
+                  "type": "article"
+                },
+                {
+                  "title": "中位数：概念与计算方法(Median: What It Is and How to Calculate It)",
+                  "url": "https://www.investopedia.com/terms/m/median.asp",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ab282a4c-a41c-45a6-98b8-84652102e6c5",
+              "xid": "4a566428-9e39-4168-881d-b4ca38621c99"
+            },
+            {
+              "title": "众数 (Mode)",
+              "description": "集中趋势的概念在统计学中至关重要，并在数据分析中有广泛的应用。\n\n从数据分析师的角度来看，诸如均值、中位数和众数 (Mode) 等集中趋势指标，能够提供数据特性的丰富信息。\n\n在这些指标中，尽管众数 (Mode) 经常被低估，但它在解释数据集方面起着至关重要的作用。\n\n众数 (Mode) 在本质上表示数据集中出现最频繁的值。\n\n虽然它可能看起来简单，但众数 (Mode) 识别最常见值的能力，在一系列场景下非常重要，例如市场研究、客户行为分析或趋势识别。\n\n例如，数据分析员可以使用众数 (Mode) 来确定销售数据集中最热门的产品，或在软件错误日志中识别报告最频繁的错误。\n\n除此之外，与其他集中趋势指标（均值和中位数）一起使用众数 (Mode)，能提供更加全面的数据视角。\n\n这种方法反映了数据解析策略中所要求的多样性，以考虑各种数据分布和异常值。\n\n因此，众数 (Mode) 成为了数据分析师进行统计数据分析工具包中的一个重要组成部分。\n\n",
+              "links": [
+                {
+                  "title": "众数 (Mode): 是什么以及如何计算",
+                  "url": "https://www.investopedia.com/terms/m/mode.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "均值、中位数和众数 (Mode) 公式",
+                  "url": "https://www.cuemath.com/mean-median-mode-formula/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "12ca7214-28f7-4dca-9675-eb26c4c22051",
+              "xid": "dbe4c69d-bcb9-4872-bfae-36f6b8c768af"
+            },
+            {
+              "title": "平均值",
+              "description": "在关注数据分析时，理解关键的统计概念非常重要。\n\n在这些概念中，中心趋势是基础的元素。\n\n中心趋势是一种衡量指标，用来确定分布的中心位置。\n\n(平均值)是一种常用的统计工具，数据分析师可以借此识别数据中的趋势和模式。\n\n作为最被广泛认可的中心趋势形式之一，计算\"平均值\"要求累加数据集中所有数值，然后除以数值的数量。\n\n这为分析师提供了一个典型的值，其他数据通常围绕此值聚集，从而促进基于现有数据做出更好的决策。\n\n",
+              "links": [
+                {
+                  "title": "如何计算平均值",
+                  "url": "https://support.microsoft.com/en-gb/office/calculate-the-average-of-a-group-of-numbers-e158ef61-421c-4839-8290-34d7b1e68283#:~:text=Average%20This%20is%20the%20arithmetic,by%206%2C%20which%20is%205.",
+                  "type": "article"
+                },
+                {
+                  "title": "平均值公式",
+                  "url": "https://www.cuemath.com/average-formula/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "947529d7-48f2-4b96-a460-8a78129dc649",
+              "xid": "8d8401bf-db1f-4f38-9254-e31980a3208b"
+            }
+          ],
+          "id": "bda6dad8-297b-46c0-8dad-261c29445eb0",
+          "xid": "787a80ec-19f2-427e-ab63-aeb92b68f970"
+        },
+        {
+          "title": "分散性",
+          "description": "在描述性分析中，特别是对于数据分析师而言，分散性（dispersion）提供了一种关键方法来理解数据集中数据的变异性或分散性。\n\n描述性分析专注于描述和总结数据，以寻找模式、关系或趋势。\n\n不同的分散性度量，例如范围（range）、方差（variance）、标准差（standard deviation）和四分位距（interquartile range），有助于数据分析师洞察数据点的分散程度，以及检测到的任何模式的可靠性。\n\n对分散性的理解有助于数据分析师识别异常值、得出有意义的结论并作出有根据的预测。\n\n",
+          "links": [
+            {
+              "title": "什么是分散性？",
+              "url": "https://www.investopedia.com/terms/d/dispersion.asp",
+              "type": "article"
+            },
+            {
+              "title": "统计学101 - 分散性度量",
+              "url": "https://www.youtube.com/watch?v=goXdWMZxlqM",
+              "type": "video"
+            }
+          ],
+          "children": [
+            {
+              "title": "范围(Range)",
+              "description": "范围(Range)的概念是指数据集的分布情况，主要在统计学和数据分析领域中使用。\n\n这个度量对于数据分析师来说是至关重要的，因为它可以帮助理解数据集内数字的变异性。\n\n对于像数据分析师这样的角色来说，理解范围(Range)和离散度有助于进行更精确的分析和预测。\n\n理解范围(Range)内的离散度可以突出异常值，识别标准规范，构成标准差、方差和四分位距离等统计结论的基础。\n\n它允许理解特定数据集的可靠性和稳定性，这可以帮助指导许多行业的战略决策。\n\n因此，范围(Range)是每个数据分析师都必须掌握的关键概念。\n\n",
+              "links": [
+                {
+                  "title": "如何找到数据集的范围(Range)",
+                  "url": "https://www.scribbr.co.uk/stats/range-statistics/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "274cc252-f012-4ba2-8e6b-e57b94f84f59",
+              "xid": "cb50de3a-e66f-4eac-a993-4e7ce24db85b"
+            },
+            {
+              "title": "方差",
+              "description": "数据分析员依赖统计学概念来分析和解释数据，其中之一的基本概念就是方差（Variance）。\n\n方差是一个衡量离散程度的重要指标，量化了数据的分散度，提供了数据集中变异性水平的见解。\n\n理解方差对于数据分析员至关重要，因为许多统计模型的可靠性依赖于观测值间方差恒定的假设。\n\n换句话说，方差有助于分析员确定数据点与预期值或均值（mean）的偏差程度，这在识别异常值、理解数据分布和推动决策过程方面可能具有关键作用。\n\n然而，由于方差的平方性质，它不能在原始测量单位中被解释，这也是为什么方差经常与它的平方根，即标准差（Standard Deviation），一起使用的原因。\n\n",
+              "links": [
+                {
+                  "title": "方差是什么？",
+                  "url": "https://www.investopedia.com/terms/v/variance.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "如何计算方差",
+                  "url": "https://www.scribbr.co.uk/stats/variance-meaning/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "95bd6c82-1cb5-48da-ba7b-a0cc7b715c7c",
+              "xid": "067ea4c2-2d1d-4b15-8be7-84e6c1b43054"
+            },
+            {
+              "title": "标准差",
+              "description": "在数据分析领域，离散性的概念在理解和解释数据时起着关键作用。\n\n离散性的一个关键度量是标准差（Standard Deviation）。\n\n作为数据分析师，理解和掌握标准差至关重要，因为它揭示了数据点相对于平均值（均值）或预期值的变异或离散程度。\n\n标准差较低表示数据点通常接近均值，而标准差较高则意味着数据点在更广泛的范围内分布。\n\n通过掌握标准差的概念及相关离散性统计工具，数据分析师能够更好地提供有意义的分析和见解。\n\n",
+              "links": [
+                {
+                  "title": "标准差公式及其与方差的用途对比",
+                  "url": "https://www.investopedia.com/terms/s/standarddeviation.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "标准差",
+                  "url": "https://www.youtube.com/watch?v=esskJJF8pCc",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "3316098e-62a9-4af7-9f50-5d921d301e82",
+              "xid": "aa3111be-ccec-4979-886b-a1c94b42323c"
+            }
+          ],
+          "id": "cd1e638d-0127-4e70-a473-75858892971d",
+          "xid": "75b6af99-a194-436f-8298-5922593f17e0"
+        },
+        {
+          "title": "分布空间",
+          "description": "在数据分析领域，分布形状被认为是描述性分析的重要组成部分。\n\n数据分析师使用分布形状来理解数据集的扩散和趋势。\n\n这有助于识别偏斜（asymmetry，即偏态）和峰度（'tailedness'，即峰态）数据，并帮助揭示标准统计测量如均值或中位数可能无法捕捉的有意义模式。\n\n分布形状可以提供有关数据正态性和变异性方面的洞察，这有助于决定适当的统计方法进行进一步分析。\n\n",
+          "links": [
+            {
+              "title": "分布形状",
+              "url": "https://online.stat.psu.edu/stat414/lesson/13/13.5",
+              "type": "course"
+            },
+            {
+              "title": "分布的形状：定义，示例",
+              "url": "https://www.statisticshowto.com/shapes-of-distributions/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "偏斜度(Skewness)",
+              "description": "偏斜度(Skewness)是数据统计分析中的一个重要概念，是了解数据集分布形状的重要参数。\n\n从根本上说，偏斜度(Skewness)用作衡量和定义数据中不对称程度和方向的度量。\n\n正偏斜度表示数据分布尾部向正值方向延伸的不对称性，而负偏斜度表示数据分布尾部向负值方向延伸的不对称性。\n\n对于数据分析师而言，识别和分析偏斜度(Skewness)至关重要，因为它能够极大地影响模型选择、预测准确性以及结果解释。\n\n",
+              "links": [
+                {
+                  "title": "偏斜数据(Skewed Data)",
+                  "url": "https://www.mathsisfun.com/data/skewness.html",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "a53b3c9c-2743-4d72-b22d-f74edd773563",
+              "xid": "403f7fd4-9f0d-4f46-983e-f11e8675fdbe"
+            },
+            {
+              "title": "峰度(Kurtosis)",
+              "description": "掌握分布形状的了解是数据分析师日常工作中的核心部分。\n\n在他们分析统计数据时，分析师会考虑的一个关键特征就是分布的峰度。\n\n在统计学中，峰度用来衡量分布尾部的厚度和顶峰的尖锐度。\n\n对峰度的准确理解可以帮助分析师在风险管理、异常值检测中提供更深入的见解，以及对变异程度有更深刻的理解。\n\n因此，每个数据分析师都应掌握解释分布形状的峰度测量值的关键技能。\n\n",
+              "links": [
+                {
+                  "title": "峰度：定义、类型和重要性",
+                  "url": "https://www.investopedia.com/terms/k/kurtosis.asp",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是峰度？",
+                  "url": "https://www.youtube.com/watch?v=AsxEDBhESJg",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "d57db7ab-94aa-42a3-8de0-04e73745e328",
+              "xid": "f658a1e4-a85b-475f-97da-1502f14c0080"
+            }
+          ],
+          "id": "e1eee514-86f6-41cc-8188-ce8699495c4e",
+          "xid": "360f5835-bd30-48db-9d72-8c35a2f35f68"
+        },
+        {
+          "title": "分布可视化",
+          "description": "从数据分析师的角度看，分布可视化在理解整体分布和识别数据中的模式中起到了关键作用。\n\n它有助于以图形方式总结、组织和绘制结构化数据，从而提供重要见解。\n\n这包括使用不同的图表类型，如条形图、直方图和散点图来表示区间数据，使用饼图或条形图来表示分类数据。\n\n最终目标是提供一种直接且有效的方式，以便理解数据的特性和潜在结构。\n\n数据分析师会使用这些可视化技术来作出初步结论，检测异常值，并决定进一步的分析路径。\n\n",
+          "links": [
+            {
+              "title": "捕捉分布的数据可视化",
+              "url": "https://www.datacamp.com/blog/data-demystified-data-visualizations-that-capture-distributions",
+              "type": "article"
+            },
+            {
+              "title": "在Power BI中可视化分布",
+              "url": "https://www.youtube.com/watch?v=rOemr3sz2vw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "119804b2-4072-4573-acb8-8c919975af2b",
+          "xid": "b4c53f70-f8dd-4f4c-be83-ad79c2894547"
+        }
+      ],
+      "id": "2c459507-d895-4369-80ce-4774d37e6c7f",
+      "xid": "37f0717f-d5b2-49d9-a0ce-7eb938649665"
+    },
+    {
+      "title": "数据可视化",
+      "description": "数据可视化是数据分析师职责的一个基本组成部分。\n\n它涉及以图形或图像格式展示数据，这使得决策者能够直观地看到分析结果。\n\n这一做法可以帮助他们理解复杂概念或发现新的模式。\n\n通过交互式可视化，数据分析师可以将数据分析过程提升到全新水平——深入图表获取更多细节，以及交互式更改所展示的数据或其处理方式。\n\n因此，它构成了将原始数据转化为可执行洞察的关键环节，这是数据分析师的主要职责之一。\n\n",
+      "links": [
+        {
+          "title": "什么是数据可视化(Data Visualization)?",
+          "url": "https://www.ibm.com/think/topics/data-visualization",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Tableau",
+          "description": "Tableau（Tableau）是一款全球范围内的数据分析师广泛使用的强大数据可视化工具。\n\n其主要作用是将原始未处理的数据转化为易于理解的格式，无需任何技术技能或编码。\n\n数据分析师使用Tableau（Tableau）创建数据可视化、报告和仪表板，帮助企业做出更知情、基于数据的决策。\n\n还用于执行如趋势分析、模式识别和预测等任务，所有这些都在用户友好的界面下进行。\n\n此外，Tableau（Tableau）的数据可视化功能使利益相关者更容易理解复杂数据，并快速采取行动。\n\n",
+          "links": [
+            {
+              "title": "Tableau",
+              "url": "https://www.tableau.com/en-gb",
+              "type": "article"
+            },
+            {
+              "title": "什么是Tableau?",
+              "url": "https://www.youtube.com/watch?v=NLCzpPRCc7U",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "a48748d5-fb89-49c1-afc6-d26b6f6c4bbd",
+          "xid": "21f4371f-d82e-4b62-8994-379b80be1b66"
+        },
+        {
+          "title": "Matplotlib (绘图库)",
+          "description": "对于数据分析师而言，理解数据并且能够以视觉化的形式呈现是机构有效决策的重要组成部分。\n\nMatplotlib（绘图库），作为Python编程语言的绘图库，对于这一目的来说是一个极其有用的工具。\n\n它提供了一个灵活的框架，能够非常直接地创建线图、散点图、直方图、条形图等。\n\n该库还允许进行全面的自定义，提供了对其生成的图形外观的高度控制，从而提升了数据解释和交流的质量。\n\n",
+          "links": [
+            {
+              "title": "Matplotlib (绘图库)",
+              "url": "https://matplotlib.org/",
+              "type": "article"
+            },
+            {
+              "title": "6分钟学习Matplotlib",
+              "url": "https://www.youtube.com/watch?v=nzKy9GY12yo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "0d1a56da-8c03-4203-aade-629c4b169f21",
+          "xid": "b9d024be-10e3-4e85-bdc6-f2e1735d85c6"
+        },
+        {
+          "title": "Seaborn",
+          "description": "Seaborn是一个强大而全面的Python库，专注于创建具有信息性和吸引力的统计图表。\n\n对于数据分析师而言，seaborn在解释数据中的复杂视觉故事方面扮演着重要角色。\n\n通过提供绘制具有信息性和吸引力的统计图形的接口，它有助于理解数据。\n\nSeaborn构建于Python的核心可视化库Matplotlib之上，并与Pandas的数据结构进行了集成。\n\n这使得seaborn成为数据分析师工具箱中数据可视化的利器，使数据的探索和理解变得更加简单和直观。\n\n",
+          "links": [
+            {
+              "title": "Seaborn",
+              "url": "https://seaborn.pydata.org/",
+              "type": "article"
+            },
+            {
+              "title": "Seaborn教程：Seaborn完整课程",
+              "url": "https://www.youtube.com/watch?v=6GUZXDef2U0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "21e4bdf1-e412-4421-a578-58304ae4df33",
+          "xid": "00134b34-e650-48ae-9d8e-a49d07ad9162"
+        },
+        {
+          "title": "ggplot2",
+          "description": "ggplot2是数据分析工具箱中一个非常重要且强大的工具（tool），尤其是在可视化和理解复杂数据集方面（datasets）。\n\n它是在R编程语言（programming language）中构建的，提供了灵活、统一的环境（environment）来创建图表。\n\nggplot2的主要优势在于它能够生成复杂且定制化的可视化效果（visualizations）。\n\n这使数据分析师能够高效且有效地传达数据驱动的发现（findings），使利益相关者能够清晰地理解数据中识别到的相关见解和模式（patterns）。\n\n",
+          "links": [
+            {
+              "title": "ggplot2官网",
+              "url": "https://ggplot2.tidyverse.org/",
+              "type": "article"
+            },
+            {
+              "title": "在R中制作漂亮的图表",
+              "url": "https://www.youtube.com/watch?v=qnw1xDnt_Ec",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f018a328-203a-435a-9cca-0cb03dea74e2",
+          "xid": "2f5d4e6c-f2ec-4382-8531-1bcc197384ff"
+        },
+        {
+          "title": "Power BI",
+          "description": "PowerBI（交互式数据分析和商业智能工具），是一款由微软开发的交互式数据可视化和商业分析工具，在数据分析师的工作领域中扮演了至关重要的角色。\n\n它帮助数据分析师通过其易于使用的仪表板和报告功能将原始数据转换成有意义的见解。\n\n这个工具提供了一个统一的业务数据视图，使分析师能够跟踪并可视化关键绩效指标，并做出更明智的商业决策。\n\n通过PowerBI，数据分析师还能够操作并可视化大规模的数据集，这些数据可视化可以被组织内共享，使复杂的统计数据更容易理解。\n\n",
+          "links": [
+            {
+              "title": "Power BI",
+              "url": "https://www.microsoft.com/en-us/power-platform/products/power-bi",
+              "type": "article"
+            },
+            {
+              "title": "初学者的Power BI",
+              "url": "https://www.youtube.com/watch?v=NNSHu0rkew8",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9d1f2119-7560-4346-b6af-908e0c24d7e3",
+          "xid": "08bbc5ba-aa3b-406d-a56d-239552a1a44e"
+        },
+        {
+          "title": "条形图",
+          "description": "作为数据分析师工具包中的一个有力工具，条形图（Bar Charts）对于分析和解释复杂数据至关重要。\n\n条形图，又称为条形图（Bar Graphs），是一种常用于处理分类数据组或离散变量的图形表示法。\n\n凭借其鲜明的视觉对比和明确的测量，它们提供了一种简单而有效的方式来识别趋势，理解数据分布，并做出基于数据的决策。\n\n通过分析不同条形的长度或高度，数据分析师可以有效地比较类别或变量之间的差异，从中获得有价值的信息。\n\n简单性、易读性和易于解释性是使条形图成为数据分析世界中首选工具的关键特点。\n\n",
+          "links": [
+            {
+              "title": "条形图完整指南",
+              "url": "https://www.atlassian.com/data/charts/bar-chart-complete-guide",
+              "type": "article"
+            },
+            {
+              "title": "什么是条形图？",
+              "url": "https://www.youtube.com/watch?v=WTVdncVCvKo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "28110266-92bd-4166-97eb-ff5f6c965d20",
+          "xid": "1db3ac8d-27d3-400e-bed7-f68f12520f25"
+        },
+        {
+          "title": "直方图",
+          "description": "作为一名数据分析师，理解和以简化、易理解的形式表示复杂数据至关重要。\n\n这就引出了数据可视化的概念，特别是在使用直方图方面。\n\n直方图是一种图形表示方法，它将数据点组织到指定的范围内。\n\n它通过表示落入特定数值范围的数据点数量（称为区间或bin）提供了对数值数据的视觉解释。\n\n这一高效的工具使数据分析师能够在一个连续区间或特定时间段内查看数据分布，这有助于进一步识别数据中的趋势、异常值、模式或异常情况。\n\n因此，直方图对于基于这些数据解释做出明智的业务决策至关重要。\n\n",
+          "links": [
+            {
+              "title": "直方图如何显示数据",
+              "url": "https://www.investopedia.com/terms/h/histogram.asp",
+              "type": "article"
+            },
+            {
+              "title": "什么是直方图",
+              "url": "https://www.mathsisfun.com/data/histograms.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d96e3ad4-72c9-4f06-9109-6c12b31b92f1",
+          "xid": "94ea81f2-7c52-46ae-91c7-a0ca559e0d46"
+        },
+        {
+          "title": "线图",
+          "description": "数据可视化是每个数据分析师的一项重要技能，而线图是在该领域最常用的数据图类型之一。\n\n线图作为强大的工具，可用于总结和解释复杂的数据库。\n\n通过吸引人且互动性强的设计，这些图表能够清晰而高效地传达数据中的模式、趋势及异常值。\n\n这使得它们在呈现跨越一定时间范围的数据、预测趋势或展示不同的数据集之间的关系时，对数据分析师来说特别有价值。\n\n",
+          "links": [
+            {
+              "title": "线图：定义、类型、部分、用途及示例",
+              "url": "https://www.investopedia.com/terms/l/line-graph.asp",
+              "type": "article"
+            },
+            {
+              "title": "什么是线图？",
+              "url": "https://www.youtube.com/watch?v=rw-MxkzymEw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "042bcd62-293c-491b-a1cb-a5cbe9e8782d",
+          "xid": "2e741851-c9e7-4632-8f82-7d9d5c295dfc"
+        },
+        {
+          "title": "堆叠图表",
+          "description": "堆叠图表（Stacked Charts）是数据可视化领域中数据分析师的重要工具。\n\n这种类型的图表以视觉上吸引人的方式呈现定量数据，并允许用户在比较不同类别的同时还能比较总大小。\n\n当尝试测量部分与整体的关系、显示随时间累积的总量或呈现多个变量的数据时，这些图表非常有效。\n\n数据分析师经常使用堆叠图表来检测模式、趋势和异常，这有助于战略决策。\n\n",
+          "links": [
+            {
+              "title": "什么是堆叠图表？",
+              "url": "https://www.spotfire.com/glossary/what-is-a-stacked-chart",
+              "type": "article"
+            },
+            {
+              "title": "堆叠条形图完整指南",
+              "url": "https://www.atlassian.com/data/charts/stacked-bar-chart-complete-guide",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "40ec2482-0350-4eb4-8768-202e0ee1eea6",
+          "xid": "2f3915ab-6176-40d4-a1ab-ead68c6ab1f5"
+        },
+        {
+          "title": "散点图",
+          "description": "散点图（scatter plot）是数据可视化的重要组成部分，它使用笛卡尔坐标系表示来自两个不同变量的值。\n\n作为一名数据分析师，理解和解释散点图对于识别数据集中的相关性和趋势至关重要，并能够从中获得有意义的见解，以清晰、直观的方式展示这些发现。\n\n此外，在预测分析中，散点图因其揭示模式的能力而在预测未来事件时尤为关键。\n\n",
+          "links": [
+            {
+              "title": "掌握散点图",
+              "url": "https://www.atlassian.com/data/charts/what-is-a-scatter-plot",
+              "type": "article"
+            },
+            {
+              "title": "散点图：它们是什么以及如何绘制它们",
+              "url": "https://www.youtube.com/watch?v=Vyg9qmBsgAc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e43336c7-02c1-43a8-9272-d95bd8f1146b",
+          "xid": "42a819cc-109a-4793-bac8-c6a4678f3d0a"
+        },
+        {
+          "title": "热力图",
+          "description": "热力图（Heatmap）是数据可视化中的关键组件，数据分析师（Data Analysts）在其分析中经常使用这一工具。\n\n作为数据的多种图形表示方法之一，热力图展示了数据集中两个或多个变量之间的相关性或变化范围，使其在模式识别和异常值检测中十分有用。\n\n矩阵中的单独值在热力图中通过颜色表示，颜色的深浅表示发生次数的程度或强度。\n\n简而言之，数据分析师会使用热力图将复杂的多变量数据解码为易于理解的可视化图像，辅助决策。\n\n",
+          "links": [
+            {
+              "title": "热力图完整指南",
+              "url": "https://www.hotjar.com/heatmaps/",
+              "type": "article"
+            },
+            {
+              "title": "什么是热力图？",
+              "url": "https://www.atlassian.com/data/charts/heatmap-complete-guide",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c3b5449d-68c3-4345-b067-a0c947f3c12d",
+          "xid": "3c57cf51-46da-4f1c-aa38-8a77a8e0c36e"
+        },
+        {
+          "title": "漏斗图",
+          "description": "漏斗图（Funnel Chart）是数据分析师的重要工具。\n\n它是数据可视化的一部分，涉及数据的可视表示的创建和研究。\n\n漏斗图以逐步减少的数量显示值，让数据分析师能够理解对流程或系统输出有贡献的各个阶段。\n\n它通常用于销售、营销或任何涉及多步骤过程的领域，以评估效率或识别潜在问题区域。\n\n漏斗形状象征典型的客户转化过程，从最初的接触到最后的销售。\n\n作为数据分析师，理解和解读漏斗图可以提供重要的见解，以驱动最优的决策制定。\n\n",
+          "links": [
+            {
+              "title": "什么是漏斗图？",
+              "url": "https://www.atlassian.com/data/charts/funnel-chart-complete-guide",
+              "type": "article"
+            },
+            {
+              "title": "使用漏斗图解释你的数据",
+              "url": "https://www.youtube.com/watch?v=AwFB9Qg96Ek",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "813baa34-9897-4904-958e-daab7cafacc3",
+          "xid": "05461d87-2b37-4df9-b388-76165cb5c601"
+        },
+        {
+          "title": "环形图",
+          "description": "作为数据分析师，理解和高效地使用各种数据可视化形式至关重要。\n\n在这方面，环形图（Pie Charts）是一种重要的工具。\n\n环形图本质上是一种圆形的统计图表，通过分割成多个扇区来展示数值比例。\n\n每个扇区对应一个特定类别。\n\n环形图的美在于其简单性和视觉吸引力，使其成为展示相对比例或百分比的高效方式。\n\n对于数据分析师而言，其在需要展示分类数据的简单分布时尤为有用。\n\n然而，像任何工具一样，应明智地使用环形图—理想情况下，在数据集类别少于七个，且类别间比例明显时。\n\n",
+          "links": [
+            {
+              "title": "环形图全面指南",
+              "url": "https://www.atlassian.com/data/charts/pie-chart-complete-guide",
+              "type": "article"
+            },
+            {
+              "title": "什么是环形图",
+              "url": "https://www.youtube.com/watch?v=GjJdZaQrItg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "dc819bd4-758c-4e52-978a-7fb935ade5be",
+          "xid": "03ad4adc-064a-46cf-a3f3-7a766c5b1224"
+        }
+      ],
+      "id": "e9cff6a1-26b9-4564-9f9f-dcf5cf91476b",
+      "xid": "6d4b624a-d9fa-40c1-933f-f587aedb3e83"
+    },
+    {
+      "title": "统计分析",
+      "description": "统计分析是数据分析师工具箱中的核心组成部分。\n\n作为处理大量结构化和非结构化数据的专业人员，数据分析师经常通过统计方法来提取洞察并做出知情决策。\n\n统计分析在数据科学中的作用包括收集、审查、和解释数据，用于多种应用，使企业能够理解其表现、趋势和增长潜力。\n\n数据分析师使用各种统计技术，包括建模、机器学习和数据挖掘，来传达支持公司战略行动的重要信息。\n\n",
+      "links": [
+        {
+          "title": "了解统计分析",
+          "url": "https://www.simplilearn.com/what-is-statistical-analysis-article",
+          "type": "article"
+        },
+        {
+          "title": "统计分析",
+          "url": "https://www.youtube.com/watch?v=XjMBZE1DuBY",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "假设检验",
+          "description": "在数据分析师的背景下，假设检验对于根据数据建立推论或预测起着至关重要的作用。\n\n假设检验是一种用来检验关于总体参数的声明或理论的方法，该检验基于从样本中测量的数据。\n\n这种方法让数据分析师能够确定观察到的数据是否显著偏离常规。\n\n从本质上讲，它提供了一种基于概率的机制来量化并处理从不可完全信赖的数据中得出的结论固有的不确定性。\n\n\n",
+          "links": [
+            {
+              "title": "假设检验",
+              "url": "https://latrobe.libguides.com/maths/hypothesis-testing",
+              "type": "article"
+            },
+            {
+              "title": "假设检验 - 4 步骤",
+              "url": "https://www.investopedia.com/terms/h/hypothesistesting.asp",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a84ca361-2ee2-45ac-93f0-2992e3163d77",
+          "xid": "27eb2ad1-4d43-47f6-90e8-7e9efde117ad"
+        },
+        {
+          "title": "相关性分析",
+          "description": "相关性分析是一种定量方法，数据分析师广泛使用它来确定两个变量之间是否存在显著关系，关系强弱或正负。\n\n这种形式的分析帮助数据分析师识别数据集中的模式和趋势，并且通常通过散点图来可视化这些信息。\n\n通过使用相关性分析，数据分析师可以在广泛领域（从营销到金融）中获取有价值的见解，以支持决策过程。\n\n实施相关性分析对于预测未来结果、制定战略和推动业务增长至关重要。\n\n",
+          "links": [
+            {
+              "title": "相关性",
+              "url": "https://www.mathsisfun.com/data/correlation.html",
+              "type": "article"
+            },
+            {
+              "title": "什么是相关性分析？",
+              "url": "https://blog.flexmr.net/correlation-analysis-definition-exploration",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c3e54066-9870-4602-92f2-6e92322e777b",
+          "xid": "169b7f9d-9a91-4289-86d4-4111ef571f76"
+        },
+        {
+          "title": "回归分析(Regression)",
+          "description": "作为数据分析师，对回归分析（Regression）的理解至关重要。\n\n回归分析是一种预测建模技术，用于研究因变量与自变量之间关系。\n\n它用于预测、时间序列建模和寻找变量之间的因果关系。\n\n本质上，数据分析师使用回归技术根据一个或多个预测变量（自变量）来预测一个连续的结果变量（因变量）。\n\n主要目标是理解当一个自变量变化时在其他自变量保持不变的情况下，因变量的典型值如何变化。\n\n这种对回归的理解使数据分析从被动的位置转变为更强大的预测性分析，为数据分析师的工作提供了一个重要的工具。\n\n",
+          "links": [
+            {
+              "title": "回归分析(Regression): 定义、分析、计算和示例",
+              "url": "https://www.investopedia.com/terms/r/regression.asp",
+              "type": "article"
+            },
+            {
+              "title": "回归分析复习 - 哈佛",
+              "url": "https://hbr.org/2015/11/a-refresher-on-regression-analysis",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "11d16a62-1853-4a3a-b597-8d192c403acd",
+          "xid": "fc8b3a21-755b-4445-8961-882b33176938"
+        }
+      ],
+      "id": "fa23f1de-e956-4425-9a3f-375942398113",
+      "xid": "7e691aaf-f578-4567-a701-b8bc8e969b0f"
+    },
+    {
+      "title": "机器学习",
+      "description": "数据分析师在机器学习领域越来越活跃。\n\n这项新兴技术利用算法、统计模型及其他工具来教授机器执行通常需要人类智能的任务。\n\n这些任务包括基于数据进行预测、识别模式以及做出决策。\n\n因此，对于希望在行业内保持竞争力的现代数据分析师来说，理解机器学习的基础知识不仅是有益的，而且是至关重要的。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "强化学习(Reinforcement Learning)",
+          "description": "强化学习(Reinforcement Learning)是机器学习领域的一个重要主题。\n\n数据分析师和其他处理数据的专业人员经常使用强化学习技术。\n\n从简单的角度来看，强化学习可以认为是一种算法，它通过尝试和错误来找到问题的解决方案。\n\n值得注意的是，这些算法可以在特定环境中学习到理想的行为，目的是最大化性能。\n\n对于数据分析师而言，理解强化学习是一项关键的专业技能，尤其是在处理复杂数据结构并基于数据做出战略性决策时。\n\n",
+          "links": [
+            {
+              "title": "什么是强化学习(Reinforcement Learning)",
+              "url": "https://aws.amazon.com/what-is/reinforcement-learning/#:~:text=Reinforcement%20learning%20(RL)%20is%20a,use%20to%20achieve%20their%20goals.",
+              "type": "article"
+            },
+            {
+              "title": "IBM: 什么是强化学习(Reinforcement Learning)",
+              "url": "https://www.ibm.com/topics/reinforcement-learning",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "83490333-b281-4947-adbc-2b49a70a6254",
+          "xid": "b3728d77-6b9d-4857-a6b4-bef5d4821880"
+        },
+        {
+          "title": "无监督学习",
+          "description": "作为机器学习的核心方面，无监督学习在数据分析领域具有重要意义。\n\n它是一种方法，模型在这种情况下能够识别未标注或未分类数据集中的模式和关系。\n\n它对数据分析员特别有帮助，因为无监督学习能帮助识别不可预见的趋势，提供新的洞察或为其他机器学习任务做数据准备。\n\n这种无需直接监督就可以推断的能力，为从原始数据中发现潜在结构和获得新知识提供了巨大潜力。\n\n",
+          "links": [
+            {
+              "title": "什么是无监督学习？",
+              "url": "https://cloud.google.com/discover/what-is-unsupervised-learning",
+              "type": "article"
+            },
+            {
+              "title": "无监督学习简介",
+              "url": "https://www.datacamp.com/blog/introduction-to-unsupervised-learning",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "40f5995f-49b0-438f-ac8b-e33ba05cccb5",
+          "xid": "cd269bea-5590-4a43-be2f-728f4744ed6f"
+        },
+        {
+          "title": "监督学习(Supervised Learning)",
+          "description": "监督机器学习是数据分析师工具集中不可或缺的一部分。\n\n其重点直接放在从标记数据集中构建预测模型上，涉及根据这些已知输入和输出来训练算法，帮助数据分析师建立相关性并进行可靠的预测。\n\n通过增强数据分析师的角色，监督机器学习使得能够对复杂数据进行准确解释，从而提升决策过程。\n\n",
+          "links": [
+            {
+              "title": "什么是监督学习(Supervised Learning)?",
+              "url": "https://cloud.google.com/discover/what-is-supervised-learning",
+              "type": "article"
+            },
+            {
+              "title": "监督机器学习(Supervised Machine Learning)",
+              "url": "https://www.datacamp.com/blog/supervised-machine-learning",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "4d4fcf45-396d-4937-8840-d9231dbaab82",
+          "xid": "fafba8bf-21d0-48cb-a6a3-fe85a99aff2f"
+        },
+        {
+          "title": "模型评估技术",
+          "description": "作为一名数据分析师，理解各种模型评估技术至关重要。\n\n这些技术涉及不同方法来衡量机器学习模型的表现或准确性。\n\n例如，使用混淆矩阵、精确度、召回率、F1分数、ROC曲线或均方根误差（RMSE）等。\n\n有效应用这些技术不仅可以帮助选择最适合特定问题的模型，还能够指导优化模型的表现，以达到最佳效果。\n\n理解这些模型评估技术还使数据分析师能够解读评估结果，并判断模型的有效性和适用性。\n\n",
+          "links": [
+            {
+              "title": "什么是模型评估",
+              "url": "https://domino.ai/data-science-dictionary/model-evaluation",
+              "type": "article"
+            },
+            {
+              "title": "模型评估指标",
+              "url": "https://www.markovml.com/blog/model-evaluation-metrics",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "cbb6aec1-707d-4858-b153-16d2e5e02730",
+          "xid": "5bf1430e-0c7c-419c-bac9-b945ef70b5a2"
+        },
+        {
+          "title": "决策树",
+          "description": "作为一名数据分析师，理解机器学习（Machine Learning）主题如决策树（Decision Trees）至关重要。\n\n决策树是机器学习和人工智能领域的一个基本方面。\n\n它提供了一种简单而有效的方法来分析数据。\n\n决策树在多个领域都有应用，包括客户关系管理、欺诈检测、金融分析、医疗保健等。\n\n通俗地说，决策树可以被视为一种分解复杂决策和估算可能结果的方法。\n\n这一介绍将帮助数据分析师理解决策树背后的逻辑及其在预测建模中的构建方式。\n\n",
+          "links": [
+            {
+              "title": "什么是面向分析的机器学习？",
+              "url": "https://www.oracle.com/business-analytics/what-is-machine-learning-for-analytics/",
+              "type": "article"
+            },
+            {
+              "title": "机器学习在数据分析中的作用",
+              "url": "https://www.ironhack.com/gb/blog/the-role-of-machine-learning-in-data-analysis",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6286f906-0c12-4e61-b195-7f7e066538cb",
+          "xid": "e8e96f4a-9889-4761-933a-4190c4755a45"
+        },
+        {
+          "title": "朴素贝叶斯（Naive Bayes）",
+          "description": "作为一名数据分析员，理解各种机器学习算法至关重要。\n\n朴素贝叶斯（Naive Bayes）是其中一个基本但强大的算法，用于预测建模和数据分类。\n\n该算法应用了概率和统计原则，特别是贝叶斯定理（Bayes' theorem），并假设预测变量之间独立。\n\n朴素贝叶斯在处理大量数据时表现优秀，是文本分类、垃圾邮件过滤、推荐系统等方面的一个竞争力算法。\n\n理解朴素贝叶斯可以显著提高数据分析员创建更有效模型和产生更优质分析结果的能力。\n\n",
+          "links": [
+            {
+              "title": "什么是朴素贝叶斯分类器（Naïve Bayes classifiers）？",
+              "url": "https://www.ibm.com/topics/naive-bayes",
+              "type": "article"
+            },
+            {
+              "title": "朴素贝叶斯（Naive Bayes）",
+              "url": "https://scikit-learn.org/stable/modules/naive_bayes.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f8f69acc-8f55-4846-a6b6-ce920b5fd636",
+          "xid": "45106d25-baa3-4c45-bf87-1ca14891a119"
+        },
+        {
+          "title": "K近邻算法(K-Nearest Neighbors, KNN)",
+          "description": "K-近邻算法（KNN）是一种简单而强大的算法，通常在机器学习领域使用，数据分析师可能会利用该算法进行分类或回归任务。\n\n它的工作原理基于相似性，即新实例的分类取决于其最近邻的分类。\n\n对于处理复杂数据集的数据分析师来说，理解KNN算法的工作机制、适用性、优点和缺点至关重要。\n\n这将有助于他们在数据分析过程中做出明智的决策，以获得最佳结果。\n\n",
+          "links": [
+            {
+              "title": "什么是最近邻(KNN)算法?",
+              "url": "https://www.ibm.com/topics/knn#:~:text=The%20k%2Dnearest%20neighbors%20KNN,used%20in%20machine%20learning%20today.",
+              "type": "article"
+            },
+            {
+              "title": "最近邻",
+              "url": "https://scikit-learn.org/stable/modules/neighbors.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a0445f64-a0f4-4e2c-ae84-9babc8bc935e",
+          "xid": "1f000273-ffe8-4e41-a07f-f9367290a3ec"
+        },
+        {
+          "title": "K-均值聚类（K-Means Clustering）",
+          "description": "K均值聚类（Kmeans）是数据分析中极为重要的方法，属于广泛意义上的机器学习基础。\n\n数据分析师使用K均值聚类（K-means）根据特定的特征或参数将大体量的数据集划分为子组或聚类。\n\n其主要目的是从数据集中的相似或不相似度中衍生出洞见，这有利于识别模式、趋势，以及进行预测性建模。\n\n恰当地采用K均值聚类（K-means）能够显著提高基于数据的决策制定、预测和战略规划。\n\n",
+          "links": [
+            {
+              "title": "K-均值聚类（K-Means Clustering）",
+              "url": "https://en.wikipedia.org/wiki/K-means_clustering",
+              "type": "article"
+            },
+            {
+              "title": "K-均值聚类（K-Means）",
+              "url": "https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e78ddcc4-ff05-4fa5-8a32-eb9132ae3233",
+          "xid": "4df58d4a-e737-4bf6-bf1d-56efe6d523c2"
+        },
+        {
+          "title": "逻辑回归 (Logistic Regression)",
+          "description": "逻辑回归 (Logistic Regression) 是数据分析师在机器学习中必须掌握的基础方法之一。\n\n这种方法基于概率概念的一个预测分析算法。\n\n它用于将数据分类为不同的类别，因此对于二元分类问题特别有用。\n\n需要明白，尽管它的名字叫逻辑回归，但实际上用于分类问题而非回归任务。\n\n数据分析师使用这个算法来构建机器学习模型，以解决各种实际问题，如垃圾邮件过滤、贷款申请人的信用评估、营销策略的发展等。\n\n",
+          "links": [
+            {
+              "title": "关于逻辑回归 (Logistic Regression) 需要知道的一切",
+              "url": "https://www.spiceworks.com/tech/artificial-intelligence/articles/what-is-logistic-regression/",
+              "type": "article"
+            },
+            {
+              "title": "机器学习中的逻辑回归 (Logistic Regression)",
+              "url": "https://machinelearningmastery.com/logistic-regression-for-machine-learning/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "71721984-baa6-4a40-85d0-4f9360d82e78",
+          "xid": "13093920-917d-46a6-b806-d5c8acc8d758"
+        }
+      ],
+      "id": "b6b992bf-2b95-4a5b-a6c2-1ada0f11763d",
+      "xid": "a445624b-548e-4b5a-9183-5eb029c12223"
+    },
+    {
+      "title": "大数据技术",
+      "description": "在现代数字化世界中，大数据指的是难以使用传统数据处理应用程序进行管理和分析的极大量数据。\n\n这些数据集通常来自众多不同的来源，并且不仅量大，而且性质多样，包括结构化和非结构化数据。\n\n在大数据的背景下，数据分析师的作用至关重要。\n\n数据分析师负责检查、清洗、转换和建模大数据，以发现有用信息，得出结论，并支撑决策。\n\n他们利用自身的分析技能和各种大数据工具及技术，提取对组织有益并推动战略业务发展的情报。\n\n",
+      "links": [
+        {
+          "title": "大数据分析",
+          "url": "https://www.ibm.com/think/topics/big-data-analytics",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "大数据概念",
+          "description": "大数据指极大量且复杂的数据集，传统的数据处理系统无法有效管理这些数据。\n\n对数据分析师而言，理解大数据概念至关重要，因为这有助于他们从这些数据集中获取见解、做出决策，并创建有意义的演示。\n\n关键概念包括量（volume）、速（velocity）和多样性（variety），综合称为3V。\n\n量指的是数据的多少，速是指数据的处理速度，多样性则表示处理的数据类型。\n\n其他高级概念还包括变异性（variability）和准确性（veracity）。\n\n这些概念为理解和处理大数据提供了框架，有助于数据分析师。\n\n由于大数据在各行各业中的重要性日益增加，掌握这些概念使数据分析师能够更有效地分析和解释复杂的数据集。\n\n",
+          "links": [
+            {
+              "title": "大数据概念与术语简介",
+              "url": "https://www.digitalocean.com/community/tutorials/an-introduction-to-big-data-concepts-and-terminology",
+              "type": "article"
+            },
+            {
+              "title": "大数据概念简介",
+              "url": "https://www.suse.com/c/rancher_blog/an-introduction-to-big-data-concepts/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ddb4bd07-60c7-4218-b950-d3a7dac61f8e",
+          "xid": "fb56a88f-2c5f-487c-a522-bcec5b353877"
+        },
+        {
+          "title": "数据处理框架(data-processing-frameworks)",
+          "description": "数据处理框架(data-processing-frameworks)",
+          "links": [],
+          "children": [
+            {
+              "title": "Hadoop",
+              "description": "Hadoop是一个在数据处理框架领域至关重要的组件，为存储、管理和分析大量数据提供了有效的解决方案。\n\n从大量数据中提炼有意义的洞察是许多数据分析师面临的挑战。\n\n常规的数据处理工具无法处理大规模数据，而这正是像Hadoop这样的高级框架发挥作用的地方。\n\n作为Apache软件基金会的开源平台，Hadoop在分布式计算机集群上存储和处理大量数据方面表现出色。\n\n值得注意的是，Hadoop包含两个关键模块 - Hadoop分布式文件系统（HDFS）用于存储和MapReduce用于处理。\n\nHadoop处理结构化和非结构化数据的能力进一步扩大了其容量。\n\n对于任何数据分析师而言，深入了解Hadoop可以解锁强大的数据管理方式，并构建出有意义的分析结果。\n\n",
+              "links": [
+                {
+                  "title": "Apache Hadoop",
+                  "url": "https://hadoop.apache.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是Hadoop?",
+                  "url": "https://www.databricks.com/glossary/hadoop",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "2e103c33-e1f1-475e-afe5-1206b9bebf73",
+              "xid": "9f6d700e-a26a-46ea-99d5-16b33301760b"
+            },
+            {
+              "title": "Spark",
+              "description": "作为大规模数据处理框架，Apache Spark（火花）在数据分析领域展示了其重要性。\n\nSpark能够处理批处理和实时分析的能力，提供了一个具备隐式数据并行性和容错能力的集群编程接口。\n\n对于数据分析师而言，掌握Spark变得至关重要，以便能够高效地处理和分析复杂且大量数据。\n\n这一强大的开源工具可以简化从大量、纷杂的数据集中获取实用见解的艰巨任务。\n\n",
+              "links": [
+                {
+                  "title": "apache/spark",
+                  "url": "https://github.com/apache/spark",
+                  "type": "opensource"
+                },
+                {
+                  "title": "Apache Spark",
+                  "url": "https://spark.apache.org/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "68c318c2-1474-4dc8-b8c5-0bdae1f159e5",
+              "xid": "12001413-0532-46c2-8ebe-808f4de5e6bf"
+            }
+          ],
+          "id": "7b112d02-d9ff-4c00-b46d-7390695beca6",
+          "xid": "f663cdd6-d605-4498-85c3-cb7cbba2c7c3"
+        },
+        {
+          "title": "数据存储解决方案",
+          "description": "随着企业的扩展，其数据量也会增长。\n\n对于数据分析师而言，信息量的激增意味着他们需要高效且可扩展的数据存储解决方案来管理大量结构化和非结构化数据，这些数据统称为大数据（Big Data）。\n\n大数据存储解决方案对于在确保数据完整性的同时，提供快速便捷的数据访问至关重要。\n\n这些解决方案利用软件和硬件组件，在多个服务器上安全地存储大量信息，使数据分析师能够进行强大的数据抽取、数据处理和复杂的数据分析。\n\n有多种选择，从传统的关联数据库管理系统（Relational Database Management Systems，RDBMS）到较新的NoSQL数据库、Hadoop生态系统和云存储解决方案，每个都为不同的大数据需求提供独特的功能和优势。\n\n",
+          "links": [
+            {
+              "title": "访问专为SQL设计的学习路线",
+              "url": "https://roadmap.sh/sql",
+              "type": "article"
+            },
+            {
+              "title": "访问专为PostgreSQL数据库管理设计的学习路线",
+              "url": "https://roadmap.sh/postgresql-dba",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "30426434-34d6-4731-b489-2000371ebc9f",
+          "xid": "0d7567fa-661f-4d8f-bf61-5e83932f47bd"
+        },
+        {
+          "title": "数据处理技术(data-processing-techniques)",
+          "description": "数据处理技术(data-processing-techniques)",
+          "links": [],
+          "children": [
+            {
+              "title": "并行处理",
+              "description": "并行处理是一种高效的数据处理形式，它允许数据分析师以更快的速度处理更大的数据量。\n\n这是一种计算方法，可以使多个任务并发执行，而不是顺序执行，从而加快数据处理速度。\n\n并行处理对于数据分析师来说是无价的，因为他们经常需要分析海量数据集并实时编制报告。\n\n随着对快速数据处理和快速分析的需求不断增长， 并行处理技术成为了数据分析师多功能工具包中的关键要素。\n\n",
+              "links": [
+                {
+                  "title": "什么是并行处理？",
+                  "url": "https://www.spiceworks.com/tech/iot/articles/what-is-parallel-processing/",
+                  "type": "article"
+                },
+                {
+                  "title": "并行计算如何工作",
+                  "url": "https://computer.howstuffworks.com/parallel-processing.htm",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "3c435ff8-2773-40d6-a4aa-deb6b99da903",
+              "xid": "cb1071e2-f057-4153-9c61-ccfa4624ca27"
+            },
+            {
+              "title": "MPI (Message Passing Interface)",
+              "description": "消息传递接口（Message Passing Interface，MPI）是数据处理策略更广阔领域中的开创性技术。\n\n作为一名数据分析师，理解和实现MPI对于管理大规模数据集至关重要。\n\nMPI是执行并行计算的授权标准，它能够进行并行数据处理，保持高效且节省时间的操作。\n\n此系统在不同任务间交换数据，并有助于解决与计算和数据分析相关的复杂问题。\n\n通过在数据处理中利用MPI，分析师能够优化其工作，加快决策速度，从而提高整个组织的效率。\n\n",
+              "links": [
+                {
+                  "title": "消息传递接口论坛",
+                  "url": "https://www.mpi-forum.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Microsoft MPI",
+                  "url": "https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1b34ea22-887a-4548-bdce-e32a105c4206",
+              "xid": "58bf2d5d-5157-412e-9a7f-e266c0778c20"
+            },
+            {
+              "title": "MapReduce",
+              "description": "MapReduce是一种全世界的数据分析师广泛使用的重要数据处理技术。\n\n它使他们能够高效地处理大型数据集中的复杂、非结构化数据。\n\nMapReduce将大数据问题分解为较小的子任务（Map），然后将这些结果合并以创建更易于使用的输出格式（Reduce）。\n\n此技术特别适用于进行探索性分析，以及执行文本处理、图处理或更复杂的机器学习算法等大数据操作。\n\n",
+              "links": [
+                {
+                  "title": "MapReduce",
+                  "url": "https://www.databricks.com/glossary/mapreduce",
+                  "type": "article"
+                },
+                {
+                  "title": "什么是Apache MapReduce？",
+                  "url": "https://www.ibm.com/topics/mapreduce",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "b736a469-f50c-42c6-8478-67111c8e7349",
+              "xid": "850d9e38-ac3c-49ee-be95-9206753e18a0"
+            }
+          ],
+          "id": "551d425c-882b-44a3-b6c6-3c597bfa33ca",
+          "xid": "d6c0b497-b220-4200-8be5-b8d518dc3533"
+        }
+      ],
+      "id": "dae1af5c-d7a2-4cb7-b5da-ecb5eaf2d304",
+      "xid": "2793230b-674b-48cb-99c0-3acb7e22574b"
+    },
+    {
+      "title": "互联网",
+      "description": "互联网是一个全球互连的计算机网络系统，使用标准化协议（主要为TCP/IP）进行通信。\n\n当你请求一个网页时，你的设备通过互联网服务提供商（ISP）将数据包发送到DNS服务器，后者将网站的域名转换为IP地址。\n\n数据包随后通过各种网络（使用路由器和交换机）路由到目标服务器。\n\n服务器处理请求并发送回响应。\n\n这种来回交换实现了数据（如网页、电子邮件和文件）的传输，使互联网成为一个动态、去中心化的全球通信系统。\n\n",
+      "links": [
+        {
+          "title": "互联网是如何工作的？",
+          "url": "https://cs.fyi/guide/how-does-internet-work",
+          "type": "article"
+        },
+        {
+          "title": "互联网的解释",
+          "url": "https://www.vox.com/2014/6/16/18076282/the-internet",
+          "type": "article"
+        },
+        {
+          "title": "互联网是如何工作的？",
+          "url": "http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm",
+          "type": "article"
+        },
+        {
+          "title": "互联网简介",
+          "url": "/guides/what-is-internet",
+          "type": "article"
+        },
+        {
+          "title": "互联网是如何工作的？",
+          "url": "https://www.youtube.com/watch?v=x3c1ih2NJEg",
+          "type": "video"
+        },
+        {
+          "title": "互联网的工作方式概述",
+          "url": "https://www.youtube.com/watch?v=zN8YNNHcaZc",
+          "type": "video"
+        }
+      ],
+      "children": [
+        {
+          "title": "卷积神经网络(CNNs)",
+          "description": "卷积神经网络（CNNs）是深度学习框架中不可或缺的一部分，尤其是在图像处理领域。\n\n专注于深度学习应用的数据分析师经常使用CNNs来高效处理高维数据，如图像，并提取与任务相关的关键特征。\n\n作为一种强大的数据模式建模工具，CNNs在从图像识别到自然语言处理（NLP）的应用中得到广泛应用。\n\n因此，理解卷积神经网络（CNNs）为希望掌握深度学习技术潜力的数据分析师提供了坚实的基础。\n\n",
+          "links": [
+            {
+              "title": "卷积神经网络是什么？",
+              "url": "https://www.ibm.com/topics/convolutional-neural-networks",
+              "type": "article"
+            },
+            {
+              "title": "卷积神经网络（CNNs）是什么？",
+              "url": "https://www.youtube.com/watch?v=QzY57FaENXg",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e38e0a68-0f47-4cc0-a35d-d3198ff7f987",
+          "xid": "33766f40-2bc7-4fdb-aa21-06730a92475a"
+        },
+        {
+          "title": "递归神经网络（RNN）",
+          "description": "递归神经网络（RNNs）是一种人工神经网络（ANNs），它们将我们引入深度学习的领域，这一方面对数据分析的发展做出了重要贡献。\n\nRNNs专门设计以识别数据序列中的模式，如文本、基因组、手写和口语。\n\n这种RNNs的内在特性使其对数据分析师非常有用且灵活。\n\n数据分析师借助RNNs可以有效地描述数据序列的内在复杂性，对其进行分类和做出准确预测。\n\n通过深入学习的基本理解，数据分析师可以解锁RNNs在提供深入数据分析方面的全部潜力，这种分析超越了传统的统计方法。\n\n现代RNNs的研究和应用拓展到多个领域，包括自然语言处理、语音识别，甚至在金融领域用于股价预测，成为数据分析师工具箱中的关键工具。\n\n",
+          "links": [
+            {
+              "title": "什么是递归神经网络（RNN）？",
+              "url": "https://www.ibm.com/topics/recurrent-neural-networks",
+              "type": "article"
+            },
+            {
+              "title": "递归神经网络速查表",
+              "url": "https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "e557ea05-2d99-437f-9ccc-d40901d751d8",
+          "xid": "d7245483-2be8-49ad-aa89-cb4bb87201e6"
+        },
+        {
+          "title": "神经网络",
+          "description": "神经网络在深度学习领域中扮演着核心角色，为数据分析师提供了丰富的优势和应用场景。\n\n它们是计算模型，模拟人类大脑处理信息的方式，使机器能够做出智能决策。\n\n作为一名数据分析师，理解和利用神经网络可以极大地提升决策过程，因为它能让分析过程快速有效地处理大量数据集、识别模式以及预测未来趋势。\n\n在深度学习中，这些网络用于创建能够处理复杂任务如图像识别、自然语言处理和语音识别的先进模型，仅举几例。\n\n因此，深入了解神经网络对于任何有志向或专业的数据分析师来说是一项重要的资产。\n\n",
+          "links": [
+            {
+              "title": "什么是神经网络？",
+              "url": "https://aws.amazon.com/what-is/neural-network/",
+              "type": "article"
+            },
+            {
+              "title": "解读：神经网络",
+              "url": "https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "f2222d34-0fac-4bab-baca-1289781f3060",
+          "xid": "29b05b36-6e98-4960-981a-cb0e9febb27e"
+        },
+        {
+          "title": "TensorFlow",
+          "description": "TensorFlow，由Google Brain Team（谷歌大脑团队）开发，已经成为数据解析领域，尤其是深度学习领域的核心工具。\n\n这是一个开源的机器学习平台，提供一套全面且灵活的工具、库和社区资源生态系统。\n\n对于数据分析师来说，理解和实现TensorFlow用于深度学习模型，能够让我们识别复杂模式并做出深刻预测，这是标准分析所无法做到的。\n\n拥有这项技能能够提升我们处理庞大且复杂的结构化或非结构化数据集时生成准确洞察的能力。\n\n",
+          "links": [
+            {
+              "title": "TensorFlow",
+              "url": "https://www.tensorflow.org/",
+              "type": "article"
+            },
+            {
+              "title": "TensorFlow文档",
+              "url": "https://www.tensorflow.org/learn",
+              "type": "article"
+            },
+            {
+              "title": "百秒速览TensorFlow",
+              "url": "https://www.youtube.com/watch?v=i8NETqtGHms",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "25ab2fc1-545c-40dd-8c92-e6f728682064",
+          "xid": "4bb6acb3-b19c-4bb1-8da5-8e63f6b21af2"
+        },
+        {
+          "title": "PyTorch",
+          "description": "PyTorch（PyTorch），一个开源的机器学习库，在数据分析师中因其在自然语言处理和人工智能等任务中的简单性和高性能而获得了极大的欢迎。\n\n特别是在深度学习领域，PyTorch因其动态计算图而脱颖而出，提供了具有高度直观性和灵活性的平台，适用于构建复杂的模型。\n\n对于数据分析师而言，掌握PyTorch可以为数据模型开发、数据处理以及机器学习算法的整合，开辟广泛的机遇。\n\n",
+          "links": [
+            {
+              "title": "PyTorch",
+              "url": "https://pytorch.org/",
+              "type": "article"
+            },
+            {
+              "title": "PyTorch 文档",
+              "url": "https://pytorch.org/docs/stable/index.html",
+              "type": "article"
+            },
+            {
+              "title": "PyTorch 100秒速览",
+              "url": "https://www.youtube.com/watch?v=ORMx45xqWkA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "aa778486-9420-49aa-aa30-beb54dfd772a",
+          "xid": "8d6b9e76-2619-4b66-8b9c-4f8776ac88ab"
+        },
+        {
+          "title": "图像识别",
+          "description": "图像识别(Image Recognition)成为一个重要的领域，因为它有广泛应用，包括面部识别，目标检测，字符识别等。\n\n作为一个数据分析师(Data Analyst)，理解图像识别在深度学习中的应用变得至关重要。\n\n在这个背景下，数据分析师的角色是解析复杂模式并从图像数据中提取有价值的信息。\n\n这个机器学习领域结合了数据解析，图像处理和深度神经网络的知识，以提供精准的结果，对自动驾驶车辆，医学成像，监控等领域的进展有着重要的贡献。\n\n因此，掌握这个领域的技巧是实现高效数据分析的关键，为创新解决方案和提高决策制定提供了途径。\n\n",
+          "links": [
+            {
+              "title": "什么是图像识别？",
+              "url": "https://www.techtarget.com/searchenterpriseai/definition/image-recognition",
+              "type": "article"
+            },
+            {
+              "title": "图像识别：定义，算法与用途",
+              "url": "https://www.v7labs.com/blog/image-recognition-guide",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a9dd3640-1112-4c54-b724-6d30370953a6",
+          "xid": "f871ea7d-9d66-42fa-85a4-8aa19988b36d"
+        },
+        {
+          "title": "自然语言处理(Natural Language Processing)",
+          "description": "在数据分析领域，自然语言处理(Natural Language Processing, NLP)已经成为一个关键方面。\n\nNLP是人工智能的一个分支，涉及计算机与人类语言之间的交互。\n\n它使计算机能够理解和解释人类语言的意义和背景，并生成有意义的人类语言。\n\n这种能力为数据分析师开辟了强大的途径，他们经常需要处理未结构化的数据，例如客户评论、评论和其他文本内容。\n\n深度学习，作为基于人工神经网络的机器学习的一个子集，对于NLP任务特别有效，能够使计算机从大量数据中学习。\n\n对于数据分析师来说，理解和利用NLP的潜力可以极大地提高数据处理的效率和提取有价值的洞察力，特别是在处理大量或复杂的数据库时。\n\n这些知识可以显著提升他们基于数据来做决策和预测的能力，以适应特定的商业目标。\n\n",
+          "links": [
+            {
+              "title": "什么是自然语言处理(NLP)？",
+              "url": "https://aws.amazon.com/what-is/nlp/",
+              "type": "article"
+            },
+            {
+              "title": "自然语言处理(Natural Language Processing)",
+              "url": "https://www.deeplearning.ai/resources/natural-language-processing/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3b2bbc7f-9e36-40d4-b869-005eab03cbd1",
+          "xid": "f7957774-a94c-4659-bbf7-2eb5f49db4bc"
+        }
+      ],
+      "id": "9ee98815-fdf7-46fc-bfc7-94f2a6f4869b",
+      "xid": "6c157759-dc89-43fc-9f03-1b134bb7c74e"
+    }
+  ],
+  "id": "10f166de-71ce-4910-8209-f00ef180e5e5",
+  "xid": "1e574120-f661-428b-8e41-849dccefbeec"
+}

@@ -1,0 +1,2435 @@
+{
+  "title": "软件架构师",
+  "description": "逐步指南：2025年如何成为一名软件架构师",
+  "links": [],
+  "children": [
+    {
+      "title": "理解基础概念",
+      "description": "理解不同的概念，如什么是软件架构（software architecture）、软件架构师（software architect）、不同类型的架构师等。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "什么是软件架构",
+          "description": "描述了应用程序的构建方式，包括其组件、组件间的交互、其运行的环境等等。\n\n",
+          "links": [
+            {
+              "title": "软件工程中的软件架构是什么？",
+              "url": "https://www.computer.org/resources/software-architecture",
+              "type": "article"
+            },
+            {
+              "title": "软件架构：可能并不是你想象的那样",
+              "url": "https://www.infoq.com/articles/what-software-architecture/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于架构的优质文章",
+              "url": "https://app.daily.dev/tags/architecture?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a58b58c3-6d40-4e4f-aed6-68c66740526b",
+          "xid": "90f74ca5-c6f3-4ccf-906b-3f581e75f875"
+        },
+        {
+          "title": "什么是软件架构师",
+          "description": "一位经验丰富的开发者，从零开始设计软件解决方案，负责就技术标准、工具、设计原则、使用平台等方面做出高层次的决策，带领工程师团队创建最终产品。\n\n",
+          "links": [
+            {
+              "title": "软件架构师需要的12项技能",
+              "url": "https://www.redhat.com/architect/what-is-software-architect",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7b425ccc-8f3e-4ec2-810d-8be6dc1c5fc0",
+          "xid": "dc006f50-f9a6-4176-8fdc-7748c9c28b11"
+        },
+        {
+          "title": "架构层次",
+          "description": "架构可以在多个“层次”上进行设计，这些层次代表不同的抽象级别。\n\n层次的不同影响了所需技能的重要性。\n\n虽然有许多方法可以进行分类，但我的首选细分方法包含以下3个层次：\n\n*   **应用层（Application Level）**：架构的最低层次。\n\n专注于一个单独的应用程序。\n\n设计非常详细，且位于较低级别。\n\n沟通通常在一个开发团队内部。\n\n\n*   **解决方案层（Solution Level）**：架构的中层次。\n\n专注于一个或多个满足业务需求的应用程序（业务解决方案）。\n\n设计既有高层次的，但主要是低层次的。\n\n沟通存在于多个开发团队之间。\n\n\n*   **企业层（Enterprise Level）**：架构的最高层次。\n\n专注于多个解决方案。\n\n设计是高层次和抽象的，需要由解决方案架构师或应用架构师详细制定。\n\n沟通跨越整个组织。\n\n\n",
+          "links": [
+            {
+              "title": "软件工程架构",
+              "url": "https://www.geeksforgeeks.org/software-engineering-architectural-design/",
+              "type": "article"
+            }
+          ],
+          "children": [
+            {
+              "title": "解决方案架构",
+              "description": "架构的中间层级。\n\n专注于一个或多个满足业务需求（business solution）的应用程序。\n\n一些高级设计，但主要是低级设计。\n\n沟通发生在多个开发团队之间。\n\n",
+              "links": [
+                {
+                  "title": "解决方案架构",
+                  "url": "https://www.leanix.net/en/wiki/it-architecture/solution-architecture",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "41965968-5d9d-4112-a8d2-7fd9194954e1",
+              "xid": "f5f87505-a74e-4123-9d18-97adff1f76bf"
+            },
+            {
+              "title": "应用架构 (Application Architecture)",
+              "description": "架构的最低层级。\n\n专注于单一应用。\n\n非常详细，低层级设计。\n\n沟通通常限于一个开发团队内部。\n\n",
+              "links": [
+                {
+                  "title": "应用架构 (Application Architecture)",
+                  "url": "https://www.codesee.io/learning-center/application-architecture",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "1f83f694-5c4f-4473-ba4a-4b4e0e4db826",
+              "xid": "957f0409-330e-4394-bcab-248f1524bb1b"
+            },
+            {
+              "title": "企业架构",
+              "description": "最高级别的架构。\n\n关注多个解决方案。\n\n高层次、抽象的设计，需要由解决方案架构师或应用架构师细化。\n\n沟通在整个组织中进行。\n\n",
+              "links": [
+                {
+                  "title": "企业软件架构",
+                  "url": "https://medium.com/@hsienwei/enterprise-software-architecture-957288829daa",
+                  "type": "article"
+                },
+                {
+                  "title": "企业架构师 vs 软件架构师",
+                  "url": "https://www.linkedin.com/pulse/enterprise-architect-vs-software-who-you-luigi-saggese/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索有关架构的热门帖子",
+                  "url": "https://app.daily.dev/tags/architecture?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "5e392c5c-b1df-4a8c-98ba-60eea19e2302",
+              "xid": "f777ac92-13d3-4f56-99d1-cebf624ff28d"
+            }
+          ],
+          "id": "7917c39e-cc1a-4e09-a9b3-8f456672c1a8",
+          "xid": "ff9158c2-dcf9-4121-8b20-280b3c010416"
+        }
+      ],
+      "id": "6653d609-d5d7-4315-ab5e-5330b2521ae1",
+      "xid": "c1e5926a-83d8-4110-988d-eb16da3ed8c8"
+    },
+    {
+      "title": "职责",
+      "description": "为了理解一个软件架构师（Software Architect）需要具备哪些技能，我们首先需要了解他们的典型活动。\n\n以下是我认为最重要的活动列表：\n\n*   定义和决定开发技术和平台\n*   定义开发标准，例如，编码规范、工具、审查流程、测试方法等\n*   协助识别和理解业务需求（Business Requirements）\n*   设计系统，并根据需求做出决策\n*   记录和传达架构定义、设计和决策\n*   审查和评估架构和代码，例如，确认是否正确实现了定义的模式和编码规范\n*   与其他架构师和相关利益方合作\n*   指导和咨询开发人员\n*   确保在实施过程中保持架构的一致\n*   在代码审查过程中发挥关键作用\n*   将高层设计细化为底层设计\n\n",
+      "links": [
+        {
+          "title": "软件架构师",
+          "url": "https://en.wikipedia.org/wiki/Software_architect",
+          "type": "article"
+        }
+      ],
+      "children": [],
+      "id": "c35214db-8f21-4c91-af39-6f4c26bc09f8",
+      "xid": "5ad7d36f-8746-4aea-8e35-19b0a60df9ad"
+    },
+    {
+      "title": "重要技能学习",
+      "description": "为了支持已安排的活动，需要某些专门的技能。\n\n根据我的经验，通过阅读书籍和讨论，我们可以将这些提炼为每个软件架构师（Software Architect）应该具备的十项技能：\n\n*   设计（Design）\n*   决策（Decide）\n*   简化（Simplify）\n*   编码（Code）\n*   文档化（Document）\n*   沟通（Communicate）\n*   估算（Estimate）\n*   平衡（Balance）\n*   咨询（Consult）\n*   市场（Market）\n\n",
+      "links": [
+        {
+          "title": "软件架构师技能",
+          "url": "https://www.geeksforgeeks.org/software-architects-skills/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "设计与架构",
+          "description": "优秀的软件架构设计将理论知识与实践经验相结合。\n\n理论上，架构师应掌握基础的设计模式，如在《设计模式：可复用的面向对象软件元素》（_\"Design Patterns: Elements of Reusable Object-Oriented Software\"_）中详细描述的那些模式，这些模式仍然是现代架构的基础。\n\n对模式和反模式如《企业应用集成模式》（_\"Enterprise Integration Patterns\"_）中描述的那些更高级的理解，进一步扩展了这种认识。\n\n此外，架构师还必须关注质量度量，以确保设计满足可扩展性、安全性以及适应性等非功能需求。\n\n实践中，架构师通过实验各种技术堆栈来提高自己的能力，了解它们的优势和局限性。\n\n通过探索如Angular这样的框架，可以揭示实际的模式应用，如观察者模式（Observables），并通过动手编码加深理解。\n\n参加用户组和参与社区如Meetup上那样，可以拓宽视野，鼓励好奇心，使架构师能够保持更新并不断磨练技艺。\n\n",
+          "links": [
+            {
+              "title": "面向人类的设计模式",
+              "url": "https://github.com/kamranahmedse/design-patterns-for-humans",
+              "type": "opensource"
+            },
+            {
+              "title": "访问专属软件设计路线图",
+              "url": "https://roadmap.sh/software-design-architecture",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2688dddf-c5a1-4a01-8831-960beb3d4559",
+          "xid": "863f75fa-3845-4172-a7b5-74415775d0d3"
+        },
+        {
+          "title": "决策制定",
+          "description": "有效决策对于建筑师引导项目和组织向正确方向发展至关重要。\n\n通过强调**概念完整性**（保持一致的决策以实现简单和可维护性）和**统一性**（确保命名约定等标准始终如一地应用），专注于重要的事情。\n\n优先处理关键决策，以避免代价高昂的变通方案或项目延误，使用加权最短作业优先（Weighted Shortest Job First, WSJF）模型进行优先级排序。\n\n保持在你的能力范围内以维持信誉，与同行合作，并在架构层级中明确职责。\n\n在做出决策时，评估多个选项以确保深入分析，并增强利益相关者的信心。\n\n根据可衡量的标准（如成本或可行性）对比多个选项，可以做出更好、事实依据的决策。\n\n这一过程不仅支持可持续的结果，还为你在讨论中准备出有力的论据，确保团队和利益相关者的一致性。\n\n",
+          "links": [
+            {
+              "title": "决策制定 - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/Decision-making",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "52f355bc-f130-4f73-9505-0274f580664f",
+          "xid": "4db7de7e-6592-4ed9-8c14-9cba282dff40"
+        },
+        {
+          "title": "简化事物",
+          "description": "简化解决方案对于有效解决问题至关重要，这与奥卡姆剃刀(Occam's Razor)原则相一致，该原则通过减少不必要的假设来推崇简易。\n\n为了达到这个目标，要通过从不同角度分析并质疑其假设来“摇动”你的解决方案。\n\n在复杂的讨论之后，退一步审视整体情况，如果需要，重新设计以让大脑有时间处理这些想法。\n\n采用_分而治之(divide and conquer)_的方法将问题分解成较小的部分，随后验证它们的集成。\n\n最后，记住简化重构是一个改善过度复杂的解决方案的宝贵过程，前提是需要有足够的测试覆盖范围以及利益相关者的支持。\n\n",
+          "links": [
+            {
+              "title": "简化事物",
+              "url": "https://www.infoq.com/articles/driving-architectural-simplicity/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "42c0cf00-6b7c-4e30-a957-9bb699de78b0",
+          "xid": "5f1dc267-e881-4cc4-af6d-6e9a52e94a91"
+        },
+        {
+          "title": "如何编码",
+          "description": "作为一名企业架构师(EA)，保持与编码实践的联系至关重要，这有助于理解开发人员的挑战并赢得他们的信任。\n\n维护一个**副项目(side project)**使你能够亲身体验新技术、工具和方法论，这可以提升超越理论知识的实际经验。\n\n这有助于形成有根据的决策，并保持与开发趋势的同步。\n\n为了优先探索的内容，可以参考ThoughtWorks的**技术雷达(Technology Radar)**这类有结构的资源。\n\n它将技术分为**采用(Adopt)**、**试验(Trial)**、**评估(Assess)**和**保留(Hold)**，帮助架构师专注于影响大且适合企业的创新。\n\n保持信息灵通和参与可以促进与开发人员的合作与一致。\n\n",
+          "links": [
+            {
+              "title": "如何编码",
+              "url": "https://www.thoughtworks.com/insights/blog/how-to-code",
+              "type": "article"
+            },
+            {
+              "title": "技术雷达",
+              "url": "https://www.thoughtworks.com/radar",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0b239d19-f4b0-440f-8ce1-9ae6ea5e2567",
+          "xid": "0e77ec37-e387-4b01-9ebb-49d6432c882b"
+        },
+        {
+          "title": "文档",
+          "description": "架构文件的重要性有时高，有时低。\n\n重要的文档例如架构决策记录(architectural decisions)或编码规范(code guidelines)。\n\n编码开始前通常需要初始文档，并需要持续改进。\n\n其他文档可以自动生成，因为代码本身也可以作为文档，如UML类图(UML class diagrams)。\n\n",
+          "links": [
+            {
+              "title": "维基百科",
+              "url": "https://en.wikipedia.org/wiki/Documentation",
+              "type": "article"
+            },
+            {
+              "title": "终极软件架构文档指南",
+              "url": "https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7810893a-9252-479b-84e7-6f91ccf1e918",
+          "xid": "da240e9e-be22-43cf-9304-f4c0758b6cab"
+        },
+        {
+          "title": "沟通",
+          "description": "根据我的观察，沟通是被低估最多的技能之一。\n\n如果你的设计能力出众，但无法表达你的想法，那么你的观点可能影响较小，甚至无法成功。\n\n沟通是一项关键但常被低估的技能，尤其是对于建筑师而言。\n\n它涉及到清晰传达想法、有效组织讨论和推动会议进程。\n\n工具如“UZMO — Thinking With Your Pen”可以提升视觉表达技能。\n\n无论是面对小组还是大型团体，公开演讲需要练习并走出舒适区。\n\n根据听众的不同来调整沟通方式至关重要——开发者关注细节，而管理者则优先考虑成本和效果。\n\n定期、透明沟通可以确保决策的合理性在各个层面一致传达。\n\n互动时，准备好的关键幻灯片和回答可以提高自信和效率。\n\n",
+          "links": [
+            {
+              "title": "沟通技巧",
+              "url": "https://en.wikipedia.org/wiki/Communication",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ed2e5d6b-f69c-4ea8-904a-daffea7b34ba",
+          "xid": "94cfc222-38a6-4bad-aa02-73817e3cdeba"
+        },
+        {
+          "title": "估计与评估",
+          "description": "估算和评估是建筑师和首席开发人员的关键技能。\n\n建筑师必须理解基本的项目管理原则，以对时间表、资源和成本进行估算，全面考虑项目阶段，例如需求定义、测试和调试。\n\n利用过去的项目数据或建立的模型，如COCOMO模型(Construction Cost Estimation Model)，可以进一步细化估算。\n\n对于敏捷项目，由Mike Cohn的《敏捷估算与计划》(\"Agile Estimating and Planning\")这类资源提供了宝贵的指导。\n\n评估\"未知\"的软件架构涉及通过准备好的问题来考察其在当前和未来环境中的适用性。\n\n这些问题应涵盖设计实践（例如，模式和结构）、开发实践（例如，代码规定和部署规范）、质量保证（例如，自动化测试和同行评审）以及安全措施（例如，内置安全性和渗透测试）。\n\n这种结构化的方法确保了有效的决策，推动了稳固且易于维护的解决方案的实现。\n\n",
+          "links": [
+            {
+              "title": "评估软件架构",
+              "url": "https://medium.com/oolooroo/evaluating-digital-architectures-a-deep-dive-into-modern-software-systems-analysis-dff3b0d2da8f",
+              "type": "article"
+            },
+            {
+              "title": "如何评估软件架构：方法和工具",
+              "url": "https://www.linkedin.com/advice/0/what-most-common-software-architecture-evaluation",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "7edad836-bbfe-4b4f-a01f-cb7115303b0c",
+          "xid": "cfaea4ee-3106-4c7d-a0c5-86a4e32160d8"
+        },
+        {
+          "title": "平衡",
+          "description": "在建筑中实现平衡需要在质量、成本和开发速度之间进行权衡，避免过度设计的同时，协调功能性和非功能性需求。\n\n建筑师需要在相互冲突的目标之间进行导航，如平衡短期的简单性和长期的愿景，确保解决方案符合未来的需求，并让开发者、企业和管理者共同理解和评估财务和战略影响。\n\n此外，架构师还经常在不同的利益相关者之间进行调解，解决冲突并通过有效沟通（如Schulze von Thun的“四耳模型”Four-Ears Model）促进协作，从而实现平衡和战略性成果。\n\n",
+          "links": [
+            {
+              "title": "维基百科",
+              "url": "https://en.wikipedia.org/wiki/Balance_(architecture)",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "135b48b3-5a4f-4e4d-a329-3d2d48328150",
+          "xid": "3b786c0b-2d49-4cdb-9c57-4275784618e8"
+        },
+        {
+          "title": "咨询与辅导",
+          "description": "主动咨询和辅导对于防止架构问题升级至关重要。\n\n架构师必须预见未来的需求，并通过设定中期和长期目标的明确愿景来为组织做好准备，通常使用成熟度模型来提供结构并根据SMART标准衡量进展。\n\n建立一个**专业实践社区（Community of Practice, CoP）**可以促进具有共同兴趣的专业人士，如开发人员和架构师之间的合作、标准化和知识分享，从而促进个人和组织的成长。\n\n定期举行没有严格议程的开放式会议，鼓励开放沟通，迅速解决小问题，通过后续行动解决复杂问题，减少误解和模糊。\n\n",
+          "links": [
+            {
+              "title": "维基百科",
+              "url": "https://en.wikipedia.org/wiki/Consulting",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3e41501f-1732-4b17-96db-ce8ad99c39fb",
+          "xid": "d357e957-8794-4138-a398-f982a4a09c4d"
+        },
+        {
+          "title": "市场营销技能",
+          "description": "市场营销技能对于有效推广您的想法至关重要，尤其是在其他人可能不会立即接受您的想法时。\n\n为了说服他人，通过展示您的想法的价值和好处来激励他们是至关重要的，比如通过原型或视频以易于理解的格式来展示。\n\n坚持是关键；如果您相信您的想法（idea）的价值，您需要为之奋斗，即使面临阻力。\n\n建立支持您想法的盟友（allies）也可以更容易地获得影响力，因此请开始建立人际关系网。\n\n定期重复您的信息可能会有所帮助，但要注意不要过度，因为长期成功的关键在于可信度（credibility）。\n\n",
+          "links": [
+            {
+              "title": "建筑师的市场营销技能",
+              "url": "https://openasset.com/blog/marketing-for-architects/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "568b9ed2-f43e-43ff-bdf1-1eb7ab8750f8",
+          "xid": "e18e983a-ddf1-477d-aa50-2a014ef41871"
+        }
+      ],
+      "id": "d7c2ea77-fc37-4b81-b9c0-290e969023bc",
+      "xid": "fd16820f-311d-4624-a9c3-d6e84850d6b1"
+    },
+    {
+      "title": "技术技能",
+      "description": "*   软件开发经验\n*   项目管理经验\n*   掌握一种或多种编程语言，如Java、Python、JavaScript、Ruby、Rust和C语言\n*   熟悉不同的开发平台\n*   了解Web应用程序、网络安全技术和开源技术\n*   熟练分析代码中的问题和错误\n*   数据库平台经验\n*   运营和DevOps技能方面的经验",
+      "links": [],
+      "children": [],
+      "id": "026bd36b-c23c-465b-832e-7b2a5df30ded",
+      "xid": "9cb2ce82-0867-4a94-8427-770b375d8c91"
+    },
+    {
+      "title": "编程语言",
+      "description": "编程语言是一种用于编写计算机程序的记法系统。\n\n编程语言通常通过其语法和语义（syntax and semantics）来描述，这些通常由形式语言定义。\n\n编程语言通常提供的特性包括类型系统（type system）、变量以及错误处理机制。\n\n",
+      "links": [
+        {
+          "title": "编程语言",
+          "url": "https://en.wikipedia.org/wiki/Programming_language",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "基于 .NET Framework",
+          "description": ".NET 是一个开源平台，拥有用于构建 Web、移动、桌面、游戏、物联网 (Internet of Things)、云和微服务的工具和库。\n\n.NET 支持的官方编程语言：C#（C Sharp）、F#（F Sharp）、Visual Basic。\n\n",
+          "links": [
+            {
+              "title": ".NET 官方网站",
+              "url": "https://dotnet.microsoft.com/en-us/",
+              "type": "article"
+            },
+            {
+              "title": "什么是 .NET？",
+              "url": "https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet",
+              "type": "article"
+            },
+            {
+              "title": "为什么选择 .NET？",
+              "url": "https://dotnet.microsoft.com/en-us/platform/why-choose-dotnet",
+              "type": "article"
+            },
+            {
+              "title": "C# 文档",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/?WT.mc_id=dotnet-35129-website",
+              "type": "article"
+            },
+            {
+              "title": "F# 文档",
+              "url": "https://learn.microsoft.com/en-us/dotnet/fsharp/?WT.mc_id=dotnet-35129-website",
+              "type": "article"
+            },
+            {
+              "title": "Visual Basic 文档",
+              "url": "https://learn.microsoft.com/en-us/dotnet/visual-basic/?WT.mc_id=dotnet-35129-website",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 .NET 的热门文章",
+              "url": "https://app.daily.dev/tags/.net?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "51bfe89f-fea8-467a-8ef5-3fe89cd2f892",
+          "xid": "1149a236-8bf1-4e53-b650-e63962ae574c"
+        },
+        {
+          "title": "JavaScript / TypeScript",
+          "description": "JavaScript 允许您为网页添加互动性。\n\n您可能在网站上见过的常见例子包括滑块、点击交互、弹出窗口等。\n\nJavaScript 除了用于浏览器的前端之外，还有 Node.js，这是一个开源跨平台的后端 JavaScript 运行时环境，它在 V8 引擎上运行并在浏览器外执行 JavaScript 代码。\n\nTypeScript 向 JavaScript 添加了可选类型支持，为大型 JavaScript 应用程序提供工具支持，适用于任何浏览器、任何主机和任何操作系统。\n\nTypeScript 编译成可读的、符合标准的 JavaScript 代码。\n\n",
+          "links": [
+            {
+              "title": "访问专用 JavaScript 学习路线图",
+              "url": "https://roadmap.sh/javascript",
+              "type": "article"
+            },
+            {
+              "title": "访问专用 TypeScript 学习路线图",
+              "url": "https://roadmap.sh/typescript",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript",
+              "url": "https://www.typescriptlang.org/",
+              "type": "article"
+            },
+            {
+              "title": "TypeScript 文档深入研究",
+              "url": "https://www.typescriptlang.org/docs/",
+              "type": "article"
+            },
+            {
+              "title": "现代 JavaScript 教程",
+              "url": "https://javascript.info/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 JavaScript 的顶级文章",
+              "url": "https://app.daily.dev/tags/javascript?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "JavaScript 入门速成课",
+              "url": "https://youtu.be/hdI2bqOjy3c",
+              "type": "video"
+            },
+            {
+              "title": "Node.js 入门速成课",
+              "url": "https://www.youtube.com/watch?v=fBNz5xF-Kx4",
+              "type": "video"
+            },
+            {
+              "title": "Node.js 教程入门",
+              "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+              "type": "video"
+            },
+            {
+              "title": "TypeScript 入门",
+              "url": "https://www.youtube.com/watch?v=BwuLxPH8IDs",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "765c2d5c-145c-4fca-8ead-2a04d5738d85",
+          "xid": "a3981214-9cb9-4c93-9938-f1ddff02fb0e"
+        },
+        {
+          "title": "Python",
+          "description": "Python 是一种多范式语言。\n\n作为一门解释型语言，代码一经编写即可执行，并且 Python 的语法允许以函数式、过程式或面向对象的方式进行编程。\n\n由于其对可读性、一致性和易用性的重视，Python 常被推荐作为新程序员学习的第一门语言。\n\n然而，这也带来了一些缺点，即在大多数生产任务中，该语言并不是特别高效。\n\n",
+          "links": [
+            {
+              "title": "访问专用的 Python 学习路径 (Python Roadmap)",
+              "url": "https://roadmap.sh/python",
+              "type": "article"
+            },
+            {
+              "title": "Python 官方网站",
+              "url": "https://www.python.org/",
+              "type": "article"
+            },
+            {
+              "title": "Python 入门",
+              "url": "https://www.python.org/about/gettingstarted/",
+              "type": "article"
+            },
+            {
+              "title": "自动化枯燥的工作 (Automate the Boring Stuff)",
+              "url": "https://automatetheboringstuff.com/",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools - Python 教程",
+              "url": "https://www.w3schools.com/python/",
+              "type": "article"
+            },
+            {
+              "title": "Python 入门指南 (Python Crash Course)",
+              "url": "https://ehmatthes.github.io/pcc/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Python 的热门文章",
+              "url": "https://app.daily.dev/tags/python?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "54768c90-a24d-4995-a6d3-9bc1f144b2ed",
+          "xid": "e55bf8f2-fd1d-4683-8f60-7fce394e13e8"
+        },
+        {
+          "title": "Ruby",
+          "description": "Ruby是一种高级、解释型编程语言（Programming Language），结合了Perl、Smalltalk、Eiffel、Ada和Lisp的特性。\n\nRuby专注于简单性和生产效率，同时具有自然读写（Read and Write）的语法。\n\nRuby支持过程式编程、面向对象编程和函数式编程，并且是动态类型（Dynamically Typed）的。\n\n",
+          "links": [
+            {
+              "title": "Ruby",
+              "url": "https://www.ruby-lang.org/en/",
+              "type": "article"
+            },
+            {
+              "title": "20分钟内学习Ruby",
+              "url": "https://www.ruby-lang.org/en/documentation/quickstart/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Ruby的热门文章",
+              "url": "https://app.daily.dev/tags/ruby?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "fff9d8c5-9ac1-4843-b00f-1d01cbec8109",
+          "xid": "fcba059a-ba35-4a6a-80d3-209499b192ea"
+        },
+        {
+          "title": "Go",
+          "description": "Go 是一种由 Google 支持的开源编程语言。\n\nGo 可用于编写云服务、命令行工具（CLI tools），用来开发API，等等。\n\n",
+          "links": [
+            {
+              "title": "访问专用 Go 学习路线图",
+              "url": "https://roadmap.sh/golang",
+              "type": "article"
+            },
+            {
+              "title": "Go 之旅 - Go 基础",
+              "url": "https://go.dev/tour/welcome/1",
+              "type": "article"
+            },
+            {
+              "title": "Go 参考文档",
+              "url": "https://go.dev/doc/",
+              "type": "article"
+            },
+            {
+              "title": "Go 示例 - 注释示例程序",
+              "url": "https://gobyexample.com/",
+              "type": "article"
+            },
+            {
+              "title": "W3Schools Go 教程",
+              "url": "https://www.w3schools.com/go/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Golang 的热门文章",
+              "url": "https://app.daily.dev/tags/golang?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "56ddfcb8-fa42-4b90-b4b1-2531c44fcb48",
+          "xid": "1761b145-b880-458e-888a-637184aca0a5"
+        },
+        {
+          "title": "Java / Kotlin / Scala",
+          "description": "*   **Java**: Java 是一种广泛使用的面向对象编程语言，以其平台无关性（platform independence）、可靠性（reliability）和可扩展性（scalability）而闻名。\n\n它常用于构建大规模企业应用、Android 开发和 Web 服务。\n\nJava 拥有广泛的库、框架和强大的社区支持，使其成为开发者的热门选择。\n\n\n    \n*   **Scala**: Scala 是一种静态类型编程语言，结合了面向对象编程（object-oriented programming）和函数式编程（functional programming）范式。\n\n它运行在 Java 虚拟机（JVM）上，并以其简洁的语法（syntax）、表达力和与 Java 的兼容性而闻名。\n\nScala 常用于数据工程、后端服务和高并发应用。\n\n\n    \n*   **Kotlin**: Kotlin 是一种现代静态类型编程语言，旨在与 Java 完全互操作（interoperable），同时提供更简洁和更具表现力的语法（syntax）。\n\n它在 Android 开发中特别受欢迎，因为其简单性和安全性功能，如空指针（null）安全性，同时也在后端开发中获得越来越多的关注。\n\n\n    \n\n",
+          "links": [
+            {
+              "title": "访问专属 Java 学习路线",
+              "url": "https://roadmap.sh/java",
+              "type": "article"
+            },
+            {
+              "title": "Scala",
+              "url": "https://www.scala-lang.org/",
+              "type": "article"
+            },
+            {
+              "title": "Scala 文档",
+              "url": "https://docs.scala-lang.org/",
+              "type": "article"
+            },
+            {
+              "title": "Kotlin",
+              "url": "https://kotlinlang.org/",
+              "type": "article"
+            },
+            {
+              "title": "Kotlin 文档",
+              "url": "https://kotlinlang.org/docs/home.html",
+              "type": "article"
+            },
+            {
+              "title": "Java",
+              "url": "https://www.java.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Java 的顶级文章",
+              "url": "https://app.daily.dev/tags/java?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "062cd6b6-a3b0-475a-9997-2e01f5fbc5e6",
+          "xid": "5cd8acbb-6fda-45d0-af34-e22be3f105ae"
+        }
+      ],
+      "id": "ac689240-5800-4eff-a33b-32114f13ab13",
+      "xid": "1d52fdc8-be91-4247-a91c-5cdd214078ec"
+    },
+    {
+      "title": "模式与设计原则",
+      "description": "在软件架构领域，模式(patterns)与设计原则(principle)是基础工具，能够帮助架构师创建稳健、可扩展及可维护的系统。\n\n它们提供了针对常见问题的经过验证的解决方案，并指导整个软件开发生命周期中的决策制定。\n\n理解这些概念对于遵循软件架构师路线图的任何人来说是至关重要的，因为它们架起了高层次架构与实际实现之间的桥梁。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "模型-视图-控制器（MVC）、模型-视图-呈现器（MVP）、模型-视图-视图模型（MVVM）",
+          "description": "模型-视图-控制器（Model-view-controller，MVC）是一种用于分离用户界面、数据和应用程序逻辑的模式。\n\n它通过将应用程序分为三个部分来实现这一点：模型、视图和控制器。\n\n模型持有数据，视图概括了用户界面，而控制器在两者之间充当中介。\n\n模型-视图-呈现器（Model-view-presenter，MVP）旨在简化自动化单元测试，改善呈现逻辑的关注点分离。\n\nMVP 是MVC 模式的变体，尽管它在应用程序中将用户界面（视图）、数据（模型）和呈现逻辑（呈现器）分开。\n\n虽然模型和视图保持与 MVC 模式相同，但呈现器与控制器的区别在于呈现器可以操作模型并更新视图。\n\nMVC 的另一种变体是模型-视图-视图模型 (Model-view-viewmodel, MVVM) 模式。\n\nMVVM 将应用程序分为三个核心组件：模型、视图和视图模型。\n\n尽管视图和模型代表与它们在较早模式中的作用相同，视图模型在模型和视图之间充当桥梁，从模型获取数据并通过双向数据绑定将其提供给视图，并可以操纵模型的数据。\n\n",
+          "links": [
+            {
+              "title": "模型-视图-控制器（MVC）、模型-视图-呈现器（MVP）和模型-视图-视图模型（MVVM）的设计模式",
+              "url": "https://medium.com/@ankit.sinhal/mvc-mvp-and-mvvm-design-pattern-6e169567bbad",
+              "type": "article"
+            },
+            {
+              "title": "探索有关通用编程的热门帖子",
+              "url": "https://app.daily.dev/tags/general-programming?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3439c77d-9220-4687-9b14-30025e4a7236",
+          "xid": "c05472cd-a0e2-43a3-9ada-308303463258"
+        },
+        {
+          "title": "CQRS（命令查询职责分离），最终一致性",
+          "description": "CQRS（命令查询职责分离）是一种架构模式，它将读取操作和写入操作分离到两个独立的逻辑过程中。\n\n",
+          "links": [
+            {
+              "title": "CQRS",
+              "url": "https://martinfowler.com/bliki/CQRS.html",
+              "type": "article"
+            },
+            {
+              "title": "CQRS入门",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "82d67f56-db0a-424c-abc9-599e8dc9891f",
+          "xid": "38147fdd-aca5-42f4-904d-763d4970e58b"
+        },
+        {
+          "title": "面向对象编程（OOP）",
+          "description": "面向对象编程（OOP）是一种计算机编程模型，它围绕数据（或对象）组织软件设计，而非函数和逻辑。\n\n对象可以定义为具有独特属性和行为的数据字段。\n\n",
+          "links": [
+            {
+              "title": "面向对象编程（OOP）- 维基百科",
+              "url": "https://en.wikipedia.org/wiki/Object-oriented_programming",
+              "type": "article"
+            },
+            {
+              "title": "面向对象编程的基本概念",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming",
+              "type": "article"
+            },
+            {
+              "title": "W3schools - 面向对象编程概念",
+              "url": "https://www.w3schools.com/java/java_oop.asp",
+              "type": "article"
+            },
+            {
+              "title": "FreeCodeCamp - C++中的面向对象编程（OOP）",
+              "url": "https://www.youtube.com/watch?v=wN0x9eZLix4",
+              "type": "video"
+            },
+            {
+              "title": "FreeCodeCamp - Python中的面向对象编程（OOP）",
+              "url": "https://www.youtube.com/watch?v=Ej_02ICOIgs",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "ca0b1fec-250b-4a59-b88c-8e1372bd6917",
+          "xid": "aab927d7-2484-4468-aecb-4b4f07f9559b"
+        },
+        {
+          "title": "演员模型",
+          "description": "演员模型（Actor Model）是一种将演员（actor）作为系统基本单元的模型。\n\n这些演员只能通过消息（message）进行通信，且拥有私有状态（private state），还能管理其它演员，从而形成一个封装且容错的系统。\n\n",
+          "links": [
+            {
+              "title": "在10分钟内理解演员模型",
+              "url": "https://www.brianstorti.com/the-actor-model/",
+              "type": "article"
+            },
+            {
+              "title": "演员模型解释",
+              "url": "https://www.youtube.com/watch?v=ELwEdb_pD0k",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "97fba359-fd37-451b-a2ba-7fea3ade87a2",
+          "xid": "d933604d-2857-4e91-94dd-a5b55e4165a3"
+        },
+        {
+          "title": "ACID (原子性, 一致性, 隔离性, 持久性) 和 CAP (一致性, 可用性, 分区容错性) 定理",
+          "description": "ACID (原子性, 一致性, 隔离性, 持久性) 和 CAP (一致性, 可用性, 分区容错性) 是分布式系统中的核心概念。\n\n它们经常被用于解释一致性与可用性之间的取舍。\n\nCAP 是 Consistency (一致性), Availability (可用性), 和 Partition Tolerance (分区容错性) 的缩写。\n\n根据 CAP 定理, 一个分布式系统在同一时间只能确保这三个特性中的两个。\n\n三个特性无法同时得到保证。\n\nACID 是 Atomicity (原子性), Consistency (一致性), Isolation (隔离性), Durability (持久性) 的缩写。\n\nACID 是用于数据库事务的一组属性，旨在保证事务的有效性，即使在出现错误或电源故障等情况下也能保证数据的一致性。\n\n",
+          "links": [
+            {
+              "title": "CAP 定理是什么？",
+              "url": "https://www.bmc.com/blogs/cap-theorem/",
+              "type": "article"
+            },
+            {
+              "title": "CAP 定理 - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/CAP_theorem",
+              "type": "article"
+            },
+            {
+              "title": "CAP 定理的图形证明",
+              "url": "https://mwhittaker.github.io/blog/an_illustrated_proof_of_the_cap_theorem/",
+              "type": "article"
+            },
+            {
+              "title": "CAP 定理及其在 NoSQL 数据库中的应用",
+              "url": "https://www.ibm.com/uk-en/cloud/learn/cap-theorem",
+              "type": "article"
+            },
+            {
+              "title": "ACID - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/ACID",
+              "type": "article"
+            },
+            {
+              "title": "CAP 定理是什么？",
+              "url": "https://www.youtube.com/watch?v=_RbsFXWRZ10",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1ea5189d-9ad0-485a-b4ba-4d0a09022d85",
+          "xid": "40487bfd-a4b8-4df7-b2a9-e609f87a44a3"
+        },
+        {
+          "title": "SOLID",
+          "description": "SOLID是一组应用于面向对象设计（Object-Oriented Design, OOD）的原则，旨在通过这些原则创建可维护、易理解且灵活的代码，同时避免代码异味（code smells）和缺陷。\n\n这些原则包括：\n\n* 单一职责\n* 开放封闭\n* 里氏替换\n* 接口隔离\n* 依赖倒置\n\n",
+          "links": [
+            {
+              "title": "SOLID 原则",
+              "url": "https://www.baeldung.com/solid-principles",
+              "type": "article"
+            },
+            {
+              "title": "SOLID：面向对象设计的前5个原则",
+              "url": "https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d345a2b3-2ebd-456d-9af7-2f0c5a08947b",
+          "xid": "9a0c891e-5f5c-4d07-a733-1d06dd53b30b"
+        },
+        {
+          "title": "测试驱动开发 (TDD)",
+          "description": "测试驱动开发（Test driven development, TDD）是一个编写软件需求测试的过程，在软件开发满足这些需求之前，这些测试会失败。\n\n一旦这些测试通过，循环就重复开始，对代码进行重构或开发另一个特性/需求。\n\n理论上，这能确保软件以最简单的形式满足需求，避免代码缺陷。\n\n",
+          "links": [
+            {
+              "title": "什么是测试驱动开发 (TDD)?",
+              "url": "https://www.guru99.com/test-driven-development.html",
+              "type": "article"
+            },
+            {
+              "title": "测试驱动开发",
+              "url": "https://www.ibm.com/garage/method/practices/code/practice_test_driven_development/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于TDD的最佳文章",
+              "url": "https://app.daily.dev/tags/tdd?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "实践中的敏捷：测试驱动开发",
+              "url": "https://youtu.be/uGaNkTahrIw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c0aeef26-2c92-46b1-bb1e-da84539cf644",
+          "xid": "b6550c15-bca8-431a-81c5-4a1af8910282"
+        },
+        {
+          "title": "领域驱动设计（DDD）",
+          "description": "领域驱动设计（Domain-driven design, DDD）是一种软件设计方法，专注于根据该领域的专家提供的信息来设计与领域模型相匹配的软件。\n\n在面向对象编程的语境中，这意味着软件代码（类名、类方法、类变量）的结构和语言应与业务领域相匹配。\n\n例如，如果软件处理贷款申请，可能包含像LoanApplication（贷款申请）和Customer（客户）这样的类，以及AcceptOffer（接受提议）和Withdraw（撤回）这样的方法。\n\n领域驱动设计连接了实施和不断演进的模型，并以以下目标为前提：\n\n*   将项目的主要关注点放在核心领域和领域逻辑上；\n*   基于领域模型进行复杂设计；\n*   在技术专家和领域专家之间启动创造性合作，以迭代方式精炼一个解决特定领域问题的概念模型。\n\n",
+          "links": [
+            {
+              "title": "DDD快速开始建模过程",
+              "url": "https://github.com/ddd-crew/ddd-starter-modelling-process/",
+              "type": "article"
+            },
+            {
+              "title": "领域驱动设计速成",
+              "url": "https://web.archive.org/web/20230606035225/https://matfrs2.github.io/RS2/predavanja/literatura/Avram%20A,%20Marinescu%20F.%20-%20Domain%20Driven%20Design%20Quickly.pdf",
+              "type": "article"
+            },
+            {
+              "title": "探索架构相关的热门文章",
+              "url": "https://app.daily.dev/tags/architecture?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b8bf3ac0-06f6-470d-aabd-08e89d2b209a",
+          "xid": "070bb376-fcee-4c8a-a656-2a361e59445a"
+        }
+      ],
+      "id": "fb72c12e-5c45-47cd-a1c6-19e6ee6b9512",
+      "xid": "7aff9c2d-d353-41c9-9c97-cb0643634514"
+    },
+    {
+      "title": "工具",
+      "description": "架构工具是帮助建筑师设计、记录和管理软件架构的软件工具。\n\n这些工具可以用来创建架构图、生成代码并自动化软件开发流程。\n\n",
+      "links": [
+        {
+          "title": "2024年十大软件架构工具",
+          "url": "https://www.geeksforgeeks.org/software-architecture-tools/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Git",
+          "description": "Git 是一款分布式版本控制系统（Version Control System, VCS），旨在以高速和高效的方式处理任何规模的项目。\n\n林纳斯·托瓦兹（Linus Torvalds）于2005年创建了Git，用以在软件开发生命周期中跟踪源代码的变化，使多名开发者能够共同进行非线性开发。\n\nGit 提供了强大的分支管理（branching）、合并（merging）以及分布式开发工作流的支持。\n\nGit 记录了所有变更的完整历史，允许轻松回滚（rollback）和比较不同版本。\n\n其分布式特性意味着每位开发者都拥有一份完整副本的仓库，使得离线工作和备份成为可能。\n\nGit 的速度、灵活性以及强大的分支管理和合并功能使其成为了软件开发中最广泛使用的版本控制系统，尤其是在开源项目中。\n\n",
+          "links": [
+            {
+              "title": "访问专用的Git & GitHub路线图",
+              "url": "https://roadmap.sh/git-github",
+              "type": "article"
+            },
+            {
+              "title": "Git速查表",
+              "url": "https://cs.fyi/guide/git-cheatsheet",
+              "type": "article"
+            },
+            {
+              "title": "教程：面向所有人的Git",
+              "url": "https://thenewstack.io/tutorial-git-for-absolutely-everyone/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Git的热门文章",
+              "url": "https://app.daily.dev/tags/git?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Git & GitHub入门教程（面向初学者）",
+              "url": "https://www.youtube.com/watch?v=SWYqp7iY_Tc",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "17c8c636-8788-463f-a398-2574d7ffe4e4",
+          "xid": "04fba615-e86b-49bf-a658-70c89fe957d4"
+        },
+        {
+          "title": "Slack",
+          "description": "Slack 是一款面向企业的消息应用，帮助人们迅速接入所需信息。\n\n通过使人们共同工作成为一个统一的团队，Slack 改变了组织之间的通讯方式。\n\n",
+          "links": [
+            {
+              "title": "Slack",
+              "url": "https://slack.com",
+              "type": "article"
+            },
+            {
+              "title": "开始使用 Slack",
+              "url": "https://slack.com/intl/en-in/help/categories/360000049043",
+              "type": "article"
+            },
+            {
+              "title": "关于 Slack 的热门文章",
+              "url": "https://app.daily.dev/tags/slack?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是 Slack？",
+              "url": "https://www.youtube.com/watch?v=q19RtuCHt1Q",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "5493ae16-99d5-4466-bdd2-71c887236d8f",
+          "xid": "8cad06db-24ab-470c-b8c4-501854ca713d"
+        },
+        {
+          "title": "Trello",
+          "description": "Trello 是一款视觉工具，使您的团队能够管理任何类型的项目、工作流程或任务跟踪。\n\n",
+          "links": [
+            {
+              "title": "Trello",
+              "url": "https://trello.com",
+              "type": "article"
+            },
+            {
+              "title": "Trello 指南",
+              "url": "https://trello.com/guide",
+              "type": "article"
+            },
+            {
+              "title": "Trello 导览",
+              "url": "https://www.youtube.com/watch?v=AyfupeWS0yY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "c7a6af67-768a-40ca-998d-aa791de08e00",
+          "xid": "47a2e457-0c23-4e17-a556-252beadbbe6c"
+        },
+        {
+          "title": "Atlassian 工具",
+          "description": "Atlassian 工具提供了一系列解决方案，旨在为各种团队简化协作、项目管理和事件处理。\n\nJira 担任核心工作流引擎，允许组织通过可定制的工作流和细粒度权限来跟踪任务。\n\n专门的工具，如 Jira Service Desk 为服务台团队处理传入请求提供支持，而 Jira Core 则使商业团队能够在营销、人力资源和运营等部门组织和执行任务导向的项目。\n\n为了增强协作，Confluence 作为知识共享维基的用途，允许团队无缝地创建、共享和审计内容更改。\n\nBitbucket 为企业团队提供 Git 代码库管理，促进代码库上的高效协作。\n\n其他工具则针对更具体的需求。\n\n**Statuspage** 专注于在停机或维护期间的沟通，从调查到解决，持续使用户保持知情。\n\n**Opsgenie** 确保始终开机服务的顺畅事件管理，帮助开发和运营团队掌控警报。\n\nJira 的 **Advanced Roadmaps** 协助多个团队进行能力规划和依赖项追踪，而 **Jira Align** 则支持企业级别的敏捷规划，将策略与执行对齐并推动数字化转型。\n\n这组工具共同提升了团队在各种工作流程中的效率、透明度和适应能力。\n\n",
+          "links": [
+            {
+              "title": "Jira Service Desk",
+              "url": "https://www.atlassian.com/software/jira/service-management/features/service-desk",
+              "type": "article"
+            },
+            {
+              "title": "Jira Core",
+              "url": "https://www.atlassian.com/software/jira/work-management",
+              "type": "article"
+            },
+            {
+              "title": "Confluence",
+              "url": "https://www.atlassian.com/wac/software/confluence?",
+              "type": "article"
+            },
+            {
+              "title": "Bitbucket",
+              "url": "https://bitbucket.org/product/",
+              "type": "article"
+            },
+            {
+              "title": "Statuspage",
+              "url": "https://www.atlassian.com/software/statuspage",
+              "type": "article"
+            },
+            {
+              "title": "Opsgenie",
+              "url": "https://www.atlassian.com/software/opsgenie",
+              "type": "article"
+            },
+            {
+              "title": "Advanced Roadmaps for Jira",
+              "url": "https://www.atlassian.com/software/jira/features/roadmaps",
+              "type": "article"
+            },
+            {
+              "title": "Jira Align",
+              "url": "https://www.atlassian.com/software/jira/align",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 Atlassian 的热门文章",
+              "url": "https://app.daily.dev/tags/atlassian?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5f7fe339-e23f-46e1-8ce9-bcfee631ba8a",
+          "xid": "65eeee72-2306-4538-80f4-841482183f79"
+        }
+      ],
+      "id": "d8f0893c-3f2f-4bf3-9229-5ebf080799e2",
+      "xid": "6fd749c0-d063-4fe6-9555-e1495d0bbc2d"
+    },
+    {
+      "title": "架构设计",
+      "description": "架构设计（Architecture）是指专注于在开发过程中将要使用的工具和技术来设计和实施软件架构的方法。\n\n这一视角强调了工具的选择会对架构决策和系统的整体设计产生重大影响。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "无服务器计算",
+          "description": "无服务器架构（也称为无服务器计算或函数即服务，FaaS）是一种软件设计模式，在这种模式下，应用程序由第三方服务托管，消除了开发者对服务器软件和硬件的管理需求。\n\n应用程序被分解为独立的函数，这些函数可以单独调用和扩展。\n\n",
+          "links": [
+            {
+              "title": "AWS 的无服务器架构",
+              "url": "https://aws.amazon.com/lambda/serverless-architectures-learn-more/",
+              "type": "article"
+            },
+            {
+              "title": "深入了解无服务器",
+              "url": "https://martinfowler.com/articles/serverless.html",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于无服务器的顶级文章",
+              "url": "https://app.daily.dev/tags/serverless?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "eebf35ab-7260-4e14-9b43-db439c4a6768",
+          "xid": "11e7b4f7-a3b0-42f3-8c7f-9c822e64fbc7"
+        },
+        {
+          "title": "客户端 / 服务器",
+          "description": "客户端-服务器架构（Client-server architecture）是一种计算模型，该模型将任务或工作负载分离到服务提供者（服务器）和服务请求者（客户端）之间。\n\n这种架构广泛应用于网络应用程序中，包括Web应用程序，其中客户端与服务器交互以访问资源、服务和数据。\n\n",
+          "links": [
+            {
+              "title": "客户端-服务器架构是什么",
+              "url": "https://www.simplilearn.com/what-is-client-server-architecture-article",
+              "type": "article"
+            },
+            {
+              "title": "浏览关于架构的热门文章",
+              "url": "https://app.daily.dev/tags/architecture?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "951b2a4c-2239-4f86-8eb2-92e9f30747a7",
+          "xid": "9b470c76-f436-48c0-93d6-e8f928dd5830"
+        },
+        {
+          "title": "分层结构",
+          "description": "分层架构（Layered Architecture）是一种软件设计模式，其中应用程序被分为具有特定职责的不同层，例如表示层、业务逻辑层和数据访问层。\n\n这种方法促进模块化，更容易维护、测试和组件复用。\n\n最常见的实现是三层架构，它分离了用户界面、业务规则和数据处理之间的关注点。\n\n然而，如果实施不当，会引入复杂性、性能问题、紧密耦合和开销。\n\n尽管存在这些挑战，分层架构在构建可伸缩和可维护的系统中，尤其是在企业应用程序中，仍然被广泛使用。\n\n",
+          "links": [
+            {
+              "title": "维基百科",
+              "url": "https://en.wikipedia.org/wiki/Layered_architecture",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "01637ef2-fd92-438a-8d86-2fa9bfc4af47",
+          "xid": "54d9c48d-2dbf-4c6d-aa36-bf4aa04d6d65"
+        },
+        {
+          "title": "分布式系统",
+          "description": "分布式系统是一种计算架构，其中位于联网计算机上的组件通过传递消息进行通信和协调他们的行动。\n\n这些系统旨在共同工作以实现一个共同目标，通常以协作方式提供服务或处理数据。\n\n",
+          "links": [
+            {
+              "title": "Maarten van Steen 撰写的免费分布式系统书籍",
+              "url": "https://www.distributed-systems.net/index.php/books/ds3/",
+              "type": "article"
+            },
+            {
+              "title": "分布式架构",
+              "url": "https://estuary.dev/distributed-architecture/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于架构的顶级文章",
+              "url": "https://app.daily.dev/tags/architecture?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2d35d64b-1563-4e41-a21c-b25a9c7f8d4a",
+          "xid": "af0807c7-5a7b-4be9-ae4d-0345abb02db3"
+        },
+        {
+          "title": "面向服务的架构",
+          "description": "面向服务的架构（Service-oriented architecture，SOA）是一种为企业范围的软件开发方法，它利用可重复使用的软件组件，或称为服务。\n\nSOA 提供四种不同类型的服务：\n\n1.  功能服务（即业务服务），这是对业务应用程序至关重要的。\n\n\n2.  企业服务，用于实现功能。\n\n\n3.  应用服务，用于开发和部署应用程序。\n\n\n4.  基础设施服务，对后端过程如安全性和身份验证至关重要。\n\n",
+          "links": [
+            {
+              "title": "AWS 的 SOA 架构",
+              "url": "https://aws.amazon.com/what-is/service-oriented-architecture/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "dc611810-851d-4286-b728-7f254a628d21",
+          "xid": "70afa2d9-f64f-4b35-bd49-c2ce8b1bab29"
+        }
+      ],
+      "id": "0f8d5762-4918-4b02-8994-86c13d174b20",
+      "xid": "567d11e5-9f09-4594-acfd-a175ef3fc92d"
+    },
+    {
+      "title": "安全",
+      "description": "安全是一个广泛的领域，包括各种措施和实践，旨在保护信息、系统和网络免遭未经授权的访问、损坏或盗窃。\n\n它对于保障敏感数据的安全以及维持资源的完整性和可用性至关重要。\n\n",
+      "links": [
+        {
+          "title": "安全 - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Security",
+          "type": "article"
+        },
+        {
+          "title": "架构安全",
+          "url": "https://aws.amazon.com/blogs/architecture/lets-architect-security-in-software-architectures/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "散列算法",
+          "description": "散列算法用于根据给定的输入生成一个唯一的值。\n\n此值被称为散列(hash)。\n\n散列算法用于验证数据的完整性，存储密码，以及为数据生成唯一的标识符。\n\n",
+          "links": [
+            {
+              "title": "什么是散列？",
+              "url": "https://www.codecademy.com/resources/blog/what-is-hashing/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于算法的热门文章",
+              "url": "https://app.daily.dev/tags/algorithms?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "散列算法与安全性 - Computerphile",
+              "url": "https://www.youtube.com/watch?v=b4b8ktEV4Bg",
+              "type": "video"
+            },
+            {
+              "title": "密码学中的顶尖散列算法 | MD5和SHA 256算法解析 | Simplilearn",
+              "url": "https://www.youtube.com/watch?v=Plp4F3ZfC7A",
+              "type": "video"
+            },
+            {
+              "title": "SHA：安全散列算法 - Computerphile",
+              "url": "https://www.youtube.com/watch?v=DMtFhACPnTY",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "024e4e1e-1eab-401f-98b5-2e5ab5aa7406",
+          "xid": "9d3ef48a-0737-4368-87bf-9a72e832f884"
+        },
+        {
+          "title": "公钥基础设施(PKI)",
+          "description": "公钥基础设施(PKI)是一套包括角色、策略、硬件、软件和程序的体系，旨在创建、管理、分发、使用、存储和撤销数字证书及公钥加密。\n\n公钥基础设施(PKI)的目的是促进安全的电子信息传输，适用于多种网络活动，如电子商务、互联网银行和机密电子邮件。\n\n在需要更严格的验证以确认通信各方的身份并验证传输信息的有效性场合，简单的密码认证方法是不足的，这使公钥基础设施(PKI)变得必要。\n\n",
+          "links": [
+            {
+              "title": "公钥基础设施(PKI) - 维基百科",
+              "url": "https://en.wikipedia.org/wiki/Public_key_infrastructure",
+              "type": "article"
+            },
+            {
+              "title": "公钥基础设施(PKI) - 美国防部网络安全交流",
+              "url": "https://public.cyber.mil/pki-pke/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a6cbb926-0c11-4c0e-9183-e1cff2048977",
+          "xid": "23846586-6509-47e4-9755-8272ea561b2d"
+        },
+        {
+          "title": "OWASP (Open Web Application Security Project)",
+          "description": "OWASP（开放网络应用安全项目）是一个在线社区，该社区产生可自由获取的文章、方法论、文档、工具和技术，涵盖网络应用安全领域。\n\n",
+          "links": [
+            {
+              "title": "OWASP 网络应用安全测试检查表",
+              "url": "https://github.com/0xRadi/OWASP-Web-Checklist",
+              "type": "opensource"
+            },
+            {
+              "title": "维基百科 - OWASP",
+              "url": "https://en.wikipedia.org/wiki/OWASP",
+              "type": "article"
+            },
+            {
+              "title": "OWASP 顶级安全风险",
+              "url": "https://sucuri.net/guides/owasp-top-10-security-vulnerabilities-2021/",
+              "type": "article"
+            },
+            {
+              "title": "OWASP 快速参考指南",
+              "url": "https://cheatsheetseries.owasp.org/cheatsheets/AJAX_Security_Cheat_Sheet.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "b95427c8-2742-4ad8-8bef-4bfb3fe76cb9",
+          "xid": "5fe96714-e9f3-409a-a785-d6c0a50d707a"
+        },
+        {
+          "title": "身份验证策略",
+          "description": "身份验证策略对于确保对应用程序和系统的安全访问至关重要。\n\n它们定义了在授权用户访问资源之前如何对用户进行验证。\n\n以下是一些常见的身份验证策略：\n\n基于密码的身份验证\n\n多因素身份验证（MFA）\n\nOAuth 和 OpenID Connect\n\n基于令牌的身份验证\n\n生物特征身份验证\n\n基于证书的身份验证\n\n",
+          "links": [
+            {
+              "title": "JSON Web Token - 手册",
+              "url": "https://auth0.com/resources/ebooks/jwt-handbook",
+              "type": "article"
+            },
+            {
+              "title": "身份验证 vs 授权",
+              "url": "https://www.cerbos.dev/blog/authentication-vs-authorization",
+              "type": "article"
+            },
+            {
+              "title": "SAML 概览",
+              "url": "https://www.youtube.com/watch?v=i8wFExDSZv0",
+              "type": "video"
+            },
+            {
+              "title": "开发人员的 SAML 指南",
+              "url": "https://www.youtube.com/watch?v=l-6QSEqDJPo",
+              "type": "video"
+            },
+            {
+              "title": "SAML 2.0 技术概述",
+              "url": "https://www.youtube.com/watch?v=SvppXbpv-5k",
+              "type": "video"
+            },
+            {
+              "title": "OAuth 和 OpenID Connect 的图解指南",
+              "url": "https://www.youtube.com/watch?v=t18YB3xDfXI",
+              "type": "video"
+            },
+            {
+              "title": "OAuth 2.0 及 OpenID Connect (OIDC) 技术概述",
+              "url": "https://www.youtube.com/watch?v=rTzlF-U9Y6Y",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "800dbd3c-1256-4df8-8175-19801f47b46a",
+          "xid": "4afa1f2b-885c-4875-9ca9-d43366e65a9c"
+        }
+      ],
+      "id": "c1c57e8e-aaf8-44d6-b11e-a95fabf8d5e3",
+      "xid": "d183d3a2-f3b5-4353-ae6b-febaa8ba8ebd"
+    },
+    {
+      "title": "数据处理",
+      "description": "数据库工作涉及高效地存储、管理和检索数据，以支持应用程序和业务流程。\n\n数据库可以是关系型的，如MySQL和PostgreSQL，它们使用结构化表和SQL（Structured Query Language）进行查询，也可以是非关系型的（NoSQL），如MongoDB和Cassandra，它们处理无结构或半结构化数据。\n\n有效的数据库管理需要设计规范化（normalized）的模式（schema）以支持关系型数据库，确保数据完整性并优化查询以提升性能。\n\n对于NoSQL数据库，根据应用程序的需求选择正确的类型（例如，文档型、键值型、列族型）非常重要。\n\n此外，管理事务（transactions）、索引（indexing）、备份（backups）和安全性是维护可靠和可扩展的数据库系统的关键。\n\n",
+      "links": [
+        {
+          "title": "数据库简介",
+          "url": "https://www.digitalocean.com/community/conceptual-articles/an-introduction-to-databases",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "Hadoop，Spark，MapReduce",
+          "description": "Spark是一种数据处理框架，可以快速处理非常大的数据集中的处理任务，并能够将数据处理任务分配到多个计算机上，这可以是独立完成的，也可以与用于其他分布式计算的工具协作。\n\nHadoop MapReduce是一个软件框架，可以在可靠的、具有容错能力的方式下，轻松编写在大量集群（数千个节点）的商品硬件上并行处理大量数据（多太字节数据集）的应用程序。\n\n\n",
+          "links": [
+            {
+              "title": "Apache Spark",
+              "url": "https://spark.apache.org/",
+              "type": "article"
+            },
+            {
+              "title": "Spark 与 Hadoop MapReduce 对比",
+              "url": "https://www.integrate.io/blog/apache-spark-vs-hadoop-mapreduce",
+              "type": "article"
+            },
+            {
+              "title": "探讨关于 Apache Spark 的最佳文章",
+              "url": "https://app.daily.dev/tags/spark?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "五分钟之内了解 Hadoop",
+              "url": "https://www.youtube.com/watch?v=aReuLtY0YMI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d0a9ec31-b883-4994-bf1e-80c92840edb6",
+          "xid": "1010ece2-8a96-4c05-9f82-8834062e6949"
+        },
+        {
+          "title": "ETL（提取、转换、加载）、数据仓库",
+          "description": "ETL（提取、转换、加载）是数据仓库中的一个关键过程，实现了从多个来源提取数据并整合到一个集中式数据库中。\n\n这个过程通过从原始数据源获取数据开始，然后进行转换，以确保数据的质量、去重和组合，最后将数据加载到目标数据库中。\n\nETL工具使此过程更加流畅，使公司能够整合不同类型的数据，并确保无缝集成，从而实现有效的数据分析和决策。\n\n",
+          "links": [
+            {
+              "title": "什么是ETL？",
+              "url": "https://www.snowflake.com/guides/what-etl",
+              "type": "article"
+            },
+            {
+              "title": "探讨关于ETL的顶尖文章",
+              "url": "https://app.daily.dev/tags/etl?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "ETL详解",
+              "url": "https://www.youtube.com/watch?v=OW5OgsLpDCQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1c9260eb-70f3-4a65-9c0b-60a131d6852c",
+          "xid": "e749fc3c-437a-450b-b56a-8388b0c5f413"
+        },
+        {
+          "title": "SQL 数据库",
+          "description": "SQL 代表结构化查询语言（Structured Query Language）。\n\n它用于关系型数据库。\n\nSQL 数据库是一系列表的集合，用于存储特定的一组结构化数据。\n\nSQL 数据库的示例包括 MariaDB、MySQL 和 PostgreSQL。\n\n",
+          "links": [
+            {
+              "title": "访问专用 SQL 学习路径",
+              "url": "https://roadmap.sh/sql",
+              "type": "article"
+            },
+            {
+              "title": "什么是 SQL? - AWS",
+              "url": "https://aws.amazon.com/what-is/sql/",
+              "type": "article"
+            },
+            {
+              "title": "SQL 数据库",
+              "url": "https://www.openlogic.com/blog/what-sql-database",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 SQL 的热门文章",
+              "url": "https://app.daily.dev/tags/sql?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "6ac46009-1504-4098-8c34-6787fe622f8c",
+          "xid": "20a69fed-f70e-447c-a381-b2a4b1a239da"
+        },
+        {
+          "title": "NoSQL 数据库",
+          "description": "NoSQL 数据库（又称\"不仅SQL\"）是非表格数据库，并与关系表不同地存储数据。\n\n根据其数据模型的不同，NoSQL 数据库分为多种类型。\n\n主要类型包括文档型、键值对型、宽列型和图型。\n\n它们提供灵活的数据模式，并且可以很容易地在大量数据和高用户负载下扩展。\n\nNoSQL 数据库类型\n\n*   文档型数据库 例如 MongoDB\n*   键值对型数据库 例如 Redis\n*   宽列型数据库 例如 Cassandra\n*   图型数据库 例如 Neo4J\n\n",
+          "links": [
+            {
+              "title": "NoSQL 数据库 - AWS",
+              "url": "https://aws.amazon.com/nosql/",
+              "type": "article"
+            },
+            {
+              "title": "NoSQL 数据库",
+              "url": "https://www.mongodb.com/resources/basics/databases/nosql-explained",
+              "type": "article"
+            },
+            {
+              "title": "探索有关 NoSQL 的文章",
+              "url": "https://app.daily.dev/tags/nosql?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "a9b8c3eb-eeee-4623-8107-f58220fa3afb",
+          "xid": "3a7af5bb-5583-41d5-a037-46d18470f473"
+        },
+        {
+          "title": "分析(Analytics)",
+          "description": "分析(Analytics)",
+          "links": [],
+          "children": [
+            {
+              "title": "Apache Spark (Apache Spark)",
+              "description": "Apache Spark 是一个用于在单一节点机器或集群上执行数据工程、数据科学和机器学习的多语言引擎。\n\n",
+              "links": [
+                {
+                  "title": "Apache Spark (Apache Spark)",
+                  "url": "https://spark.apache.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Apache 的热门帖子",
+                  "url": "https://app.daily.dev/tags/apache?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "566af140-8a78-4764-8704-7c580600aa55",
+              "xid": "301108ae-687f-4768-a015-8d058dae2c4d"
+            },
+            {
+              "title": "Hadoop",
+              "description": "Apache Hadoop（Hadoop）软件库是一个框架，它使用简单的编程模型，在计算机集群上分布处理大型数据集。\n\n",
+              "links": [
+                {
+                  "title": "Apache Hadoop",
+                  "url": "https://hadoop.apache.org/",
+                  "type": "article"
+                },
+                {
+                  "title": "Apache Hadoop - 维基百科",
+                  "url": "https://en.wikipedia.org/wiki/Apache_Hadoop",
+                  "type": "article"
+                },
+                {
+                  "title": "探索关于 Apache Hadoop 的顶级文章",
+                  "url": "https://app.daily.dev/tags/apache-hadoop?ref=roadmapsh",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "ba06d733-1170-4de8-80c1-35f1886c203e",
+              "xid": "ba4ffcca-0c09-4a39-8118-0e8e7f24f4e0"
+            },
+            {
+              "title": "数据仓库原则",
+              "description": "它基于这样的假设：每个系统都应该以一种能够将这种关注点自身封装起来的方式处理某一关注点。\n\n",
+              "links": [
+                {
+                  "title": "Toptal 开发者网站",
+                  "url": "https://www.toptal.com/data-science/data-warehouse-concepts-principles",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "0ef58c62-cd8b-4828-b491-027ceaab49b4",
+              "xid": "1dcd728c-18ee-4f85-8cfe-e57beae84d30"
+            }
+          ],
+          "id": "e5bc3f3d-45a2-4ba6-a099-968e01ac3baf",
+          "xid": "ee74a079-69a4-4a39-8717-8addf1891e7a"
+        }
+      ],
+      "id": "b3e1fd45-81ab-47f7-b114-720f6b8d848d",
+      "xid": "af00c7c3-0623-4aa1-9cea-fea9fe2ffb65"
+    },
+    {
+      "title": "APIs & 集成",
+      "description": "APIs（应用程序编程接口）对于在不同的软件应用之间实现通信至关重要，使它们能够无缝地共享数据和功能。\n\n它们充当连接不同系统的桥梁，使得应用程序可以在不了解彼此内部工作的情况下进行交互。\n\n相比之下，集成指的是连接这些系统以实现有效协同工作的过程，通常利用API来促进数据交换和流程自动化。\n\n通过在集成中利用API，组织可以提升运营效率，减少数据孤岛，并通过在应用程序之间实现无缝数据流来改善用户体验。\n\n",
+      "links": [
+        {
+          "title": "API 集成是什么",
+          "url": "https://www.ibm.com/topics/api-integration",
+          "type": "article"
+        },
+        {
+          "title": "API 集成 - Postman",
+          "url": "https://www.postman.com/api-platform/api-integration/",
+          "type": "article"
+        },
+        {
+          "title": "API 先行集成",
+          "url": "https://www.infoq.com/articles/api-first-integration/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "gRPC",
+          "description": "gRPC是一种平台无关的序列化协议，用作服务之间的通信。\n\n它由Google在2015年设计，是REST API的一种现代替代方案。\n\n它是一种使用HTTP/2作为传输层的二进制协议，是一个高性能的开源通用RPC框架，优先考虑移动设备和HTTP/2。\n\n其主要用例是在同一应用程序中不同语言之间的通信。\n\n您可以使用Python与Go通信，或使用Java与C#通信。\n\ngRPC使用协议缓冲区语言(protocol buffer)来定义数据的结构。\n\n\n",
+          "links": [
+            {
+              "title": "gRPC 网站",
+              "url": "https://grpc.io/",
+              "type": "article"
+            },
+            {
+              "title": "gRPC 介绍",
+              "url": "https://grpc.io/docs/what-is-grpc/introduction/",
+              "type": "article"
+            },
+            {
+              "title": "gRPC 核心概念",
+              "url": "https://grpc.io/docs/what-is-grpc/core-concepts/",
+              "type": "article"
+            },
+            {
+              "title": "关于gRPC的热门文章",
+              "url": "https://app.daily.dev/tags/grpc?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Stéphane Määrä - gRPC 介绍",
+              "url": "https://youtu.be/XRXTsQwyZSU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "275f67f4-9b94-4c71-aaca-bdbca26987e6",
+          "xid": "36eee7ff-de1e-4f6a-9faa-08e9a9d987be"
+        },
+        {
+          "title": "ESB（企业服务总线）, SOAP（简单对象访问协议）",
+          "description": "ESB（企业服务总线）和SOAP（简单对象访问协议）是两种使不同系统之间能够通信的技术。\n\nESB是一种软件架构，它允许不同系统（如数据库、Web服务和移动应用程序）的集成。\n\nSOAP是一种消息传递协议，它使系统之间能够通过互联网交换结构化数据。\n\n",
+          "links": [
+            {
+              "title": "理解SOAP：Web服务的老卫队",
+              "url": "https://mariomthree.medium.com/understanding-soap-the-old-guard-of-web-services-6ca89d8ec312",
+              "type": "article"
+            },
+            {
+              "title": "企业服务总线",
+              "url": "https://en.wikipedia.org/wiki/Enterprise_service_bus",
+              "type": "article"
+            },
+            {
+              "title": "ESB - IBM",
+              "url": "https://www.ibm.com/topics/esb",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "397e5ba3-a897-4c27-8b8d-5d809713bdc0",
+          "xid": "0fb2a1b2-b904-437d-bebc-84e0f27e50f3"
+        },
+        {
+          "title": "GraphQL",
+          "description": "GraphQL是由Facebook开发的一种查询语言（Query Language）和运行时（Runtime）用于API。\n\nGraphQL的灵活性和效率使其成为构建复杂应用的热门选择，特别是那些具有多样客户端需求的应用。\n\n对于移动端应用，带宽效率至关重要，而GraphQL在这方面特别有用。\n\n虽然从REST范式转换到GraphQL需要改变思维模式，但许多开发人员和组织发现，GraphQL带来的好处超过了学习成本，尤其是在大规模或快速演进的API方面。\n\n",
+          "links": [
+            {
+              "title": "访问专用GraphQL路线图",
+              "url": "https://roadmap.sh/graphql",
+              "type": "article"
+            },
+            {
+              "title": "GraphQL入门",
+              "url": "https://graphql.org/learn/",
+              "type": "article"
+            },
+            {
+              "title": "GraphQL入门",
+              "url": "https://thenewstack.io/introduction-to-graphql/",
+              "type": "article"
+            },
+            {
+              "title": "如何执行简单的GraphQL查询",
+              "url": "https://thenewstack.io/how-to-execute-a-simple-graphql-query/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于GraphQL的最佳帖子",
+              "url": "https://app.daily.dev/tags/graphql?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "面向初学者的GraphQL课程",
+              "url": "https://www.youtube.com/watch?v=ed8SzALpx1Q",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "4974d63d-14b2-48fb-8a98-afd329f343d9",
+          "xid": "cc99be7d-f64e-4426-a3b6-178014a76887"
+        },
+        {
+          "title": "REST",
+          "description": "REST（REpresentational State Transfer，表述性状态转移）是网络上计算机系统之间提供标准的一种架构风格，使得系统间的通信更加容易。\n\n",
+          "links": [
+            {
+              "title": "什么是REST API？",
+              "url": "https://www.redhat.com/en/topics/api/what-is-a-rest-api",
+              "type": "article"
+            },
+            {
+              "title": "Roy Fielding的论文章节，表述性状态转移（REST）",
+              "url": "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm",
+              "type": "article"
+            },
+            {
+              "title": "学习REST：一个RESTful教程",
+              "url": "https://restapitutorial.com/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于REST API的最佳文章",
+              "url": "https://app.daily.dev/tags/rest-api?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "87456dc5-351d-4a70-a801-285bc17b3c89",
+          "xid": "77d261bb-7f13-48d3-99ad-da1504827355"
+        },
+        {
+          "title": "BPM, BPEL",
+          "description": "BPM: 业务流程管理（Business Process Management，BPM）\n--------------------------------\n\n中型或大型企业需要强大的流程来通过减少每个过程的成本和缩短每项活动的周转时间来简化其业务需求。\n\n为了实现这一目标，有许多BPM工具，如PEGA，IBM BPM，Appian等。\n\n这些工具通过强大的流程建模和实现来自动化流程。\n\nBPMN: 业务流程管理表示法（Business Process Management Notations，BPMN）\n-------------------------------------------\n\n这是一种用于图形化表示业务流程的标准。\n\n在建模流程时，用到的表示法就会按照BPMN这些标准进行编排（也有其他标准，比如EPC等）。\n\n因此，BPMN是一个BPM顾问遵循的标准表示法，用以建模业务流程。\n\nBPMN有多个版本，目前BPMN 2.0是最新的标准。\n\nBPEL：业务流程执行语言（Business Process Execution Language，BPEL）\n------------------------------------------\n\n程序员使用BPEL来定义涉及Web服务的业务流程将如何执行。\n\nBPEL消息通常用于调用远程服务、编排流程执行、管理事件以及异常处理。\n\nBPEL通常与业务流程管理表示法相关联。\n\n在许多组织中，分析师使用BPMN来可视化业务流程，开发人员将可视化转化为BPEL以供执行。\n\n",
+          "links": [
+            {
+              "title": "什么是BPM？",
+              "url": "https://www.redhat.com/en/topics/automation/what-is-business-process-management",
+              "type": "article"
+            },
+            {
+              "title": "BPEL概述",
+              "url": "https://www.ibm.com/docs/en/baw/19.x?topic=SS8JB4_19.x/com.ibm.wbpm.wid.main.doc/prodoverview/topics/cbpelproc.html",
+              "type": "article"
+            },
+            {
+              "title": "BPM vs BPEL",
+              "url": "https://www.youtube.com/watch?v=V6nr5dnb1JQ",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f3f4951d-d7c9-47b2-b54e-868717c97158",
+          "xid": "2f612a81-97b6-43c6-9154-ed292ba78d2a"
+        },
+        {
+          "title": "消息队列(Message Queues)",
+          "description": "消息队列(Message Queues)使得应用程序可以异步通信，通过在队列中向彼此发送消息来实现。\n\n消息队列在发送方和接收方之间提供临时存储，使得在接收程序忙或未连接时，发送方能继续操作而不会中断。\n\n",
+          "links": [
+            {
+              "title": "消息队列(Message Queues)",
+              "url": "https://aws.amazon.com/message-queue/",
+              "type": "article"
+            },
+            {
+              "title": "消息队列教程(Message Queues Tutorial)",
+              "url": "https://www.tutorialspoint.com/inter_process_communication/inter_process_communication_message_queues.htm",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "1932eba6-ba0e-4421-9e2e-e75375f6614f",
+          "xid": "10ca3e59-55bc-44e3-a68e-bed4fdd22431"
+        }
+      ],
+      "id": "ac65f87a-fff2-4709-a4ff-32fbe422c540",
+      "xid": "b730d098-0b55-4c8e-b13f-cafdaeb5128f"
+    },
+    {
+      "title": "网络应用，移动应用",
+      "description": "网络应用和移动应用是两种专为不同平台设计的软件应用。\n\n网络应用通过网络浏览器访问，可以使用互联网连接在各种设备上运行。\n\n它们是平台独立的，使其易于更新和维护，但通常需要一个活跃的互联网连接。\n\n移动应用则是专门针对Android和iOS等移动操作系统开发的，提供了增强的性能、离线功能以及对GPS、摄像头和传感器等设备功能的无缝访问。\n\n虽然网络应用优先考虑可访问性和成本效益，但移动应用则专注于提供定制和优化的用户体验。\n\n",
+      "links": [
+        {
+          "title": "网络应用 vs 移动应用",
+          "url": "https://buildfire.com/difference-between-web-app-and-mobile-app/",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "响应式编程(Reactive Programming)",
+          "description": "响应式编程(Reactive Programming)描述了一种设计范式，依赖于异步编程逻辑（asynchronous programming logic）来处理实时更新静态内容的情况。\n\n它提供了一种有效的方法——利用自动数据流（automated data streams）——在用户查询时处理内容的数据更新。\n\n",
+          "links": [
+            {
+              "title": "什么是响应式编程(Reactive Programming)?",
+              "url": "https://www.techtarget.com/searchapparchitecture/definition/reactive-programming",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "3059e026-57f4-4145-8581-aaaf11abffd8",
+          "xid": "773967cf-6443-4e5e-9467-c592a488d448"
+        },
+        {
+          "title": "React, Vue, Angular",
+          "description": "React 是最流行的前端 JavaScript 库，用于构建用户界面 (user interfaces)。\n\nReact 还可以在服务端使用 Node 进行渲染，并且可以通过 React Native 驱动移动应用 (mobile apps)。\n\nVue.js 是一款专为构建用户界面和单页应用程序 (single-page applications) 设计的渐进式 JavaScript 框架 (JavaScript framework)。\n\nAngular 是一个由 Google 的 Angular 团队领导开发的基于 TypeScript 的开源前端 Web 应用框架 (front-end web application framework)。\n\n",
+          "links": [
+            {
+              "title": "访问专门的 React 路线图 (React Roadmap)",
+              "url": "https://roadmap.sh/react",
+              "type": "article"
+            },
+            {
+              "title": "访问专门的 Vue 路线图 (Vue Roadmap)",
+              "url": "https://roadmap.sh/vue",
+              "type": "article"
+            },
+            {
+              "title": "访问专门的 Angular 路线图 (Angular Roadmap)",
+              "url": "https://roadmap.sh/angular",
+              "type": "article"
+            },
+            {
+              "title": "React",
+              "url": "https://react.dev/",
+              "type": "article"
+            },
+            {
+              "title": "Vue.js",
+              "url": "https://vuejs.org/",
+              "type": "article"
+            },
+            {
+              "title": "Angular",
+              "url": "https://angular.dev/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 Angular 的热门帖子",
+              "url": "https://app.daily.dev/tags/angular?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "React JS 入门课程",
+              "url": "https://www.youtube.com/watch?v=nTeuhbP7wdE",
+              "type": "video"
+            },
+            {
+              "title": "Vue.js 入门课程",
+              "url": "https://www.youtube.com/watch?v=FXpIoQ_rT_c",
+              "type": "video"
+            },
+            {
+              "title": "Angular 入门课程",
+              "url": "https://www.youtube.com/watch?v=3qBXWUpoPHo",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "e5909427-4cff-49fd-972c-39a956d25cf0",
+          "xid": "658dd6f8-e3af-49aa-971d-73ddcb1fd100"
+        },
+        {
+          "title": "单页应用程序(SPA)、服务器端渲染(SSR)、静态站点生成(SSG)",
+          "description": "*   **单页应用程序(SPA)**: 单页应用程序从服务器仅加载一份网页文档，随后通过`JavaScript API`按需更新该文档内容，而无需重新加载整个文档。\n\nReact、Vue、Angular是最常用于创建单页应用程序的框架。\n\n\n*   **服务器端渲染(SSR)**: 该技术使用如`Node.js`的服务器在接收到请求时完全渲染网页文档，再返回给客户端。\n\n这样一来，用户能够立即获得所有必需信息的交互文档，无需等待任何JavaScript或CSS文件的加载。\n\n\n*   **静态站点生成(SSG)**: 静态站点生成也在服务器端渲染网页文档（类似于SSR），但文档是在**构建时**渲染的。\n\n因此，页面并非在接收到请求时才由服务器进行渲染，而是事先已经渲染完毕，等待提供给客户端。\n\n",
+          "links": [
+            {
+              "title": "网络设计模式 — 服务器端渲染(SSR)、静态站点生成(SSG)、单页应用程序(SPA)",
+              "url": "https://medium.com/codex/web-design-patterns-ssr-ssg-and-spa-fadad7673dfe",
+              "type": "article"
+            },
+            {
+              "title": "网络上的渲染",
+              "url": "https://web.dev/rendering-on-the-web/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Web开发的顶级文章",
+              "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "869014a9-ff6d-447e-bf07-bc18c6c222bc",
+          "xid": "7ada5d40-603f-446b-9726-8fa73a46de2b"
+        },
+        {
+          "title": "微前端架构",
+          "description": "微前端架构是一种软件架构风格，其中不同团队使用不同技术构建的可独立交付的前端应用程序被组合成更大的整体。\n\n简单来说，一个微前端（Micro-Frontend）是网页的一部分（而不是整个页面）。\n\n在微前端架构（Micro-Frontend Architecture）中，存在一个“宿主”（Host）或“容器”（Container）页面，它可以托管一个或多个微前端。\n\n",
+          "links": [
+            {
+              "title": "微前端",
+              "url": "https://micro-frontends.org/",
+              "type": "article"
+            },
+            {
+              "title": "探索顶级的Web开发文章",
+              "url": "https://app.daily.dev/tags/webdev?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "微前端课程 - 从入门到精通",
+              "url": "https://www.youtube.com/watch?v=lKKsjpH09dU",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1e0b3d6e-863e-48de-9812-4f28201b75d2",
+          "xid": "816445f2-4d27-4396-9d23-485134be7c70"
+        },
+        {
+          "title": "W3C 和 WHATWG",
+          "description": "万维网联盟 (World Wide Web Consortium, W3C) 标准定义了最佳的网络开发实践，使开发者能够构建丰富且交互式的体验，这些体验能在任何设备上使用。\n\n这些标准包括推荐的网络技术，如超文本标记语言 (HyperText Markup Language, HTML)、层叠样式表 (Cascading Style Sheets, CSS) 和可扩展标记语言 (eXtensible Markup Language, XML)，以及广泛接受的网络架构、语义和网络服务的原则。\n\n网络超文本应用技术工作小组 (Web Hypertext Application Technology Working Group, WHATWG) 是另一套网络标准，它们在W3C宣布将专注于可扩展超文本标记语言 (XHTML) 而非超文本标记语言 (HTML) 之后出现的。\n\n",
+          "links": [
+            {
+              "title": "W3C 标准",
+              "url": "https://www.w3.org/standards/",
+              "type": "article"
+            },
+            {
+              "title": "WHATWG 标准",
+              "url": "https://spec.whatwg.org/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0e3b403b-8e57-4ba5-b547-31e99805e3d8",
+          "xid": "d8f191bf-5790-4d79-b283-70321b70436f"
+        }
+      ],
+      "id": "f3fd74eb-1970-4f21-982c-e6fea68367b8",
+      "xid": "fddeafbe-49be-4616-b043-5cc1e50cf552"
+    },
+    {
+      "title": "框架",
+      "description": "架构框架（Architect frameworks）是提供软件架构结构化方法的工具。\n\n它们帮助架构师组织工作，管理依赖关系，并确保项目的统一性。\n\n一些受欢迎的框架包括：\n\n",
+      "links": [
+        {
+          "title": "架构框架",
+          "url": "https://www.techtarget.com/searchapparchitecture/definition/enterprise-architecture-framework",
+          "type": "article"
+        },
+        {
+          "title": "常见的软件架构框架",
+          "url": "https://medium.com/@publicapplicationcenter/tutorial-notes-common-software-architecture-frameworks-1a9915e1d806",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "业务分析知识体系指南 (BABOK Guide)",
+          "description": "业务分析知识体系指南 (BABOK Guide) 是国际业务分析协会 (IIBA) 出版的一本书，为业务分析师 (BAs) 提供使用数据改进组织的工作流程、技术、产品和服务的策略。\n\n",
+          "links": [
+            {
+              "title": "业务分析知识体系指南 (BABOK Guide)",
+              "url": "https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/",
+              "type": "article"
+            },
+            {
+              "title": "维基百科 (Wikipedia)",
+              "url": "https://en.wikipedia.org/wiki/A_Guide_to_the_Business_Analysis_Body_of_Knowledge",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "872ae6ec-1b74-410d-8813-5c0d85780b29",
+          "xid": "6a0cb4c0-5560-4c9d-8d84-96b8735012f6"
+        },
+        {
+          "title": "综合架构框架（IAF）",
+          "description": "综合架构框架（Integrated Architecture Framework，IAF）是一个企业架构框架，涵盖了业务、信息、信息系统和技术基础设施。\n\n",
+          "links": [
+            {
+              "title": "维基百科",
+              "url": "https://en.wikipedia.org/wiki/Integrated_Architecture_Framework",
+              "type": "article"
+            },
+            {
+              "title": "IAF PDF",
+              "url": "https://www.capgemini.com/wp-content/uploads/2018/03/architecture-for-the-information-age.pdf",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "2df416ec-1569-4927-8280-d2de78cc13f4",
+          "xid": "432d896a-49ec-47c1-8bcb-a0b610ac97c1"
+        },
+        {
+          "title": "统一建模语言（UML）",
+          "description": "统一建模语言（UML）是一种建模语言，旨在提供一种标准化的方式来可视化和描述系统的设计。\n\n",
+          "links": [
+            {
+              "title": "UML官方网站",
+              "url": "https://www.uml.org",
+              "type": "article"
+            },
+            {
+              "title": "IBM的UML模式",
+              "url": "https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=files-uml-pattern-frameworks",
+              "type": "article"
+            },
+            {
+              "title": "统一建模语言参考手册（第二版）",
+              "url": "https://personal.utdallas.edu/~chung/Fujitsu/UML_2.0/Rumbaugh--UML_2.0_Reference_CD.pdf",
+              "type": "article"
+            },
+            {
+              "title": "维基百科",
+              "url": "https://en.wikipedia.org/wiki/Unified_Modeling_Language",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0b922da0-d042-4a76-b601-d0f5e782338b",
+          "xid": "af3f6990-636f-4adc-aaaa-65f94a5ccc22"
+        },
+        {
+          "title": "TOGAF (The Open Group Architecture Framework)",
+          "description": "TOGAF 内容框架提供了架构工作产品的详细模型，包括可交付成果、可交付成果内的工件，以及这些工件所代表的架构构建块。\n\n",
+          "links": [
+            {
+              "title": "TOGAF",
+              "url": "https://www.opengroup.org/togaf",
+              "type": "article"
+            },
+            {
+              "title": "Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/The_Open_Group_Architecture_Framework",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "c96d6619-0517-43c6-94de-165bf830d495",
+          "xid": "9b08e5d3-cb87-4e35-a7cd-3fc1591fe324"
+        }
+      ],
+      "id": "486faa22-a6d1-4dcc-b629-be9c59688b63",
+      "xid": "c43ac9cc-98e3-4949-a5ca-088d513a8c0d"
+    },
+    {
+      "title": "管理",
+      "description": "软件架构师的管理涵盖了确保软件系统成功设计、开发和实施的各种责任和实践。\n\n软件架构师在弥合业务需求和技术实现之间的差距方面发挥着关键作用。\n\n",
+      "links": [
+        {
+          "title": "维基百科",
+          "url": "https://en.wikipedia.org/wiki/Management",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "认证(certifications)",
+          "description": "认证(certifications)",
+          "links": [],
+          "children": [
+            {
+              "title": "PMI",
+              "description": "PMI认证（项目管理协会）是国际公认的项目管理资质。\n\n其中最为知名的是PMP®（项目管理专业人士），该认证验证了专业人员运用在PMBOK®（项目管理知识体系）指南中定义的最佳实践和标准，有效地管理项目的能力。\n\n",
+              "links": [
+                {
+                  "title": "项目管理协会",
+                  "url": "https://www.pmi.org/",
+                  "type": "article"
+                }
+              ],
+              "children": [],
+              "id": "c4519033-9679-49e3-a65b-79425628311d",
+              "xid": "03d6e1b6-e532-43f1-8b3a-61f8739d894b"
+            }
+          ],
+          "id": "b013c9b7-dd6b-4e9c-b62d-5aa3e0c7ddff",
+          "xid": "803e2277-e4ed-4b6a-8c32-04b94a7d9b7c"
+        },
+        {
+          "title": "敏捷开发-Scrum",
+          "description": "敏捷开发-Scrum",
+          "links": [],
+          "children": [
+            {
+              "title": "LeSS",
+              "description": "**LeSS** (大规模Scrum) 是一个敏捷框架，旨在让多个团队在同一个产品上协同使用Scrum。\n\n它遵循Scrum的原则，强调简洁和持续改进。\n\nLeSS 通过使用单个产品待办事项列表和共同的 产品负责人（Product Owner）促进团队间的协调。\n\n每个团队负责产品的某个部分，但在联合开发产品时会进行频繁的反馈循环以调整项目方向。\n\n其目标是以敏捷高效的方式，最小化官僚作风，最大化价值交付。\n\n",
+              "links": [
+                {
+                  "title": "LeSS 框架",
+                  "url": "https://less.works/less/framework",
+                  "type": "article"
+                },
+                {
+                  "title": "LeSS 介绍",
+                  "url": "https://www.youtube.com/watch?v=1BZf_Oa7W94",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "78705df4-add6-40bd-bab8-7de17d0edfc2",
+              "xid": "c8ce9590-3cb7-4254-9c3d-544e98f17339"
+            },
+            {
+              "title": "SAFe",
+              "description": "**SAFe** 是一个敏捷框架，旨在为大型和复杂组织扩展敏捷实践。\n\n与LeSS不同，SAFe更加结构化，提供了一种正式的方法来协调多个团队、项目和投资组合。\n\n它结合了 `精益`（Lean）、`DevOps` 和 `敏捷原则`（agile principles）的元素，并定义了额外的角色、仪式和工件，以使团队目标与企业战略保持一致。\n\nSAFe促进了**大规模规划**（large-scale planning）、**持续交付**（continuous delivery）和**组织效率提升**（improvement of organizational efficiency），为企业级的敏捷转型提供了一个全面框架。\n\n",
+              "links": [
+                {
+                  "title": "SAFe 6.0",
+                  "url": "https://scaledagileframework.com/SAFE",
+                  "type": "article"
+                },
+                {
+                  "title": "五分钟讲解SAFe",
+                  "url": "https://www.youtube.com/watch?v=aW2m-BtCJyE&t=2s",
+                  "type": "video"
+                }
+              ],
+              "children": [],
+              "id": "3912df9a-4934-42ff-8fab-32b20e494cea",
+              "xid": "70a8934d-0b5e-4c3c-b7f2-4f12791fef0f"
+            }
+          ],
+          "id": "18213191-d6a6-485a-89b4-77ac9030ec29",
+          "xid": "fafc3b5b-decb-48e2-adc0-63fc92bd46bc"
+        }
+      ],
+      "id": "b8119ef9-60f1-4966-90b4-a8668c9edb4e",
+      "xid": "f58653c0-9b00-4905-8902-006ee73ad72a"
+    },
+    {
+      "title": "网络",
+      "description": "计算机网络是位于网络节点上的或由这些节点提供的共享资源的一组计算机。\n\n这些计算机通过数字互连使用通用的通信协议与彼此进行通信。\n\n这些互连由电信网络技术组成，基于有线、光学和无线射频方法，可以按照各种网络拓扑结构进行排列。\n\n",
+      "links": [
+        {
+          "title": "网络 - IBM",
+          "url": "https://www.ibm.com/topics/networking",
+          "type": "article"
+        },
+        {
+          "title": "网络 - 维基百科",
+          "url": "https://en.wikipedia.org/wiki/Networking",
+          "type": "article"
+        },
+        {
+          "title": "网络基础",
+          "url": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "开放系统互联参考模型（OSI）",
+          "description": "开放系统互联参考模型（OSI）和传输控制协议/因特网互联层（TCP/IP）模型用于帮助开发人员设计兼容互操作性的系统。\n\n开放系统互联参考模型（OSI）由7层组成，而传输控制协议/因特网互联层（TCP/IP）模型则以更简洁的形式概括了开放系统互联参考模型（OSI），只包含4层。\n\n如果你正在试图设计一个可以与其他系统进行通讯的系统，这一点非常重要。\n\n",
+          "links": [
+            {
+              "title": "Cloudflare - 什么是开放系统互联参考模型（OSI）",
+              "url": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "d4edb1a8-a943-4fce-a942-1e57db02e095",
+          "xid": "a27bf6d3-5f01-418e-93dd-fd8960117ac8"
+        },
+        {
+          "title": "HTTP, HTTPS",
+          "description": "HTTP 是基于`TCP/IP`的[应用层]通讯协议，它标准化了客户端与服务器之间的通信方式。\n\n它定义了内容是如何被请求并传送到互联网上的。\n\nHTTPS(安全超文本传输协议)是HTTP的加密版本，是主要用来在[Web浏览器]和网站之间发送数据的协议。\n\n`HTTPS = HTTP + SSL/TLS`\n\n",
+          "links": [
+            {
+              "title": "什么是HTTPS？",
+              "url": "https://www.cloudflare.com/en-gb/learning/ssl/what-is-https/",
+              "type": "article"
+            },
+            {
+              "title": "什么是HTTP？",
+              "url": "https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/",
+              "type": "article"
+            },
+            {
+              "title": "HTTP简介",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+              "type": "article"
+            },
+            {
+              "title": "关于HTTP你需要知道的一切",
+              "url": "https://cs.fyi/guide/http-in-depth",
+              "type": "article"
+            },
+            {
+              "title": "从A到Z探索HTTP/3: 核心概念",
+              "url": "https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/",
+              "type": "article"
+            },
+            {
+              "title": "为什么HTTPS很重要",
+              "url": "https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https",
+              "type": "article"
+            },
+            {
+              "title": "在服务器上启用HTTPS",
+              "url": "https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https",
+              "type": "article"
+            },
+            {
+              "title": "HTTP速成课程与探索",
+              "url": "https://www.youtube.com/watch?v=iYM2zFP3Zn0",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "b91ab3c2-05bb-40a4-bbf9-52a7399cf82f",
+          "xid": "88fe0dc0-e7c8-4c8d-b71f-f46d908fec8f"
+        },
+        {
+          "title": "代理服务器",
+          "description": "在计算机网络中，代理服务器（proxy server）是一种运行在客户端和提供资源的服务器之间的中间件，作为二者之间的中介。\n\n",
+          "links": [
+            {
+              "title": "代理服务器",
+              "url": "https://en.wikipedia.org/wiki/Proxy_server",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "0134dbb1-90bf-4964-9186-eb27c69cbf87",
+          "xid": "7e58e05e-3fb2-4522-90fb-e7dafbe14059"
+        },
+        {
+          "title": "防火墙",
+          "description": "防火墙是一种网络安全部署，它基于组织已建立的安全策略，监控并过滤进出的网络流量。\n\n防火墙通常位于可信网络和不可信网络之间；通常情况下，不可信网络是Internet。\n\n例如，办公室网络经常使用防火墙来保护其网络免受在线威胁。\n\n",
+          "links": [
+            {
+              "title": "什么是防火墙？ - Cloudflare",
+              "url": "https://www.cloudflare.com/learning/security/what-is-a-firewall/",
+              "type": "article"
+            },
+            {
+              "title": "防火墙 - Cisco",
+              "url": "https://www.cisco.com/site/us/en/learn/topics/security/what-is-a-firewall.html",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "94e74046-4a6c-4fca-a6a2-1aac5917bfc1",
+          "xid": "08b3c327-f229-4136-bc74-c38558ebd8fa"
+        }
+      ],
+      "id": "d931e88e-6906-4f86-a438-052559bc1be0",
+      "xid": "d83f4d69-7d99-4a16-9613-1ff0393b5f53"
+    },
+    {
+      "title": "运营知识",
+      "description": "运营知识是指软件架构师在软件系统的整个生命周期中有效设计、实施和管理所需的理解和洞察力。\n\n这些知识涵盖了软件开发、部署和维护的各个方面，并且对于确保系统高效、可靠和安全地运行至关重要。\n\n",
+      "links": [],
+      "children": [
+        {
+          "title": "基础设施即代码 (Infrastructure as Code)",
+          "description": "有时简称为IaC，这个部分指的是定义基础设施的技术和工具，通常使用标记语言如YAML或JSON。\n\n基础设施即代码(Infrastructure as Code)允许DevOps工程师使用与软件开发人员相同的流程来对基础设施进行版本控制、回滚和其他变更管理。\n\n术语基础设施即代码(Infrastructure as Code)包括从启动、配置到编排的所有方面，并被认为是业界管理所有基础设施的最佳实践。\n\n该技术导致了现代DevOps组织中系统复杂性的激增。\n\n",
+          "links": [
+            {
+              "title": "什么是基础设施即代码 (Infrastructure as Code)?",
+              "url": "https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac",
+              "type": "article"
+            },
+            {
+              "title": "GUIs、CLI、APIs：学习基础设施即代码(Infrastructure-as-Code)的基本术语",
+              "url": "https://thenewstack.io/guis-cli-apis-learn-basic-terms-of-infrastructure-as-code/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于基础设施的热门文章",
+              "url": "https://app.daily.dev/tags/infrastructure?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是基础设施即代码 (Infrastructure as Code)?",
+              "url": "https://www.youtube.com/watch?v=zWw2wuiKd5o",
+              "type": "video"
+            },
+            {
+              "title": "什么是基础设施即代码 (Infrastructure as Code)? 工具之间的差异",
+              "url": "https://www.youtube.com/watch?v=POPP2WTJ8es",
+              "type": "video"
+            },
+            {
+              "title": "基础设施即代码 (Infrastructure as Code)简介",
+              "url": "https://www.youtube.com/watch?v=zWw2wuiKd5o",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "916e03f2-d484-47e2-8417-1bc2ddb205b0",
+          "xid": "0682ad6b-a8da-4d2c-8d64-fb5f7d83b5ad"
+        },
+        {
+          "title": "云服务提供商",
+          "description": "云服务提供商提供了一层API层，用来抽象基础架构，并根据安全性和计费边界来配置资源。\n\n云运行在数据中心的服务器上，但这些抽象巧妙地使用户感觉像是与一个“平台”或大型应用程序进行交互。\n\n使用云服务提供商迅速配置、配置和保护资源的能力已成为现代DevOps（开发运维）巨大成功和复杂性的关键。\n\n",
+          "links": [
+            {
+              "title": "云服务提供商",
+              "url": "https://www.techtarget.com/searchitchannel/definition/cloud-service-provider-cloud-provider",
+              "type": "article"
+            },
+            {
+              "title": "什么是云服务提供商？",
+              "url": "https://www.redhat.com/en/topics/cloud-computing/what-are-cloud-providers",
+              "type": "article"
+            },
+            {
+              "title": "探索关于云计算的热门文章",
+              "url": "https://app.daily.dev/tags/cloud?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "301dbe75-6a7c-4b1b-a1b5-8e240f79c162",
+          "xid": "5860dcc2-7b8a-4603-99ef-6fdbef095a66"
+        },
+        {
+          "title": "无服务器计算概念",
+          "description": "无服务器计算(Serverless)是一种云原生开发模式，允许开发人员在无需管理服务器的情况下构建和运行应用。\n\n在无服务器计算中仍然存在服务器，但它们被抽象出应用程序开发过程。\n\n云服务提供商负责服务器基础设施的配置、维护和扩展的例行工作。\n\n开发人员可以简单地将其代码打包到容器中进行部署。\n\n",
+          "links": [
+            {
+              "title": "什么是无服务器计算?",
+              "url": "https://www.redhat.com/en/topics/cloud-native-apps/what-is-serverless",
+              "type": "article"
+            },
+            {
+              "title": "什么是无服务器计算?",
+              "url": "https://www.cloudflare.com/learning/serverless/what-is-serverless/",
+              "type": "article"
+            },
+            {
+              "title": "AWS上的无服务器计算",
+              "url": "https://aws.amazon.com/serverless/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于无服务器计算的热门文章",
+              "url": "https://app.daily.dev/tags/serverless?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "243d2783-cdf9-4c7b-af00-8133e6141e25",
+          "xid": "d2e800d7-497c-44e1-bc91-7304e8280591"
+        },
+        {
+          "title": "Linux / Unix",
+          "description": "几乎所有的开发都需要了解UNIX知识，因为大多数你编写的代码最终会部署在UNIX/Linux机器上。\n\nLinux一直是免费和开源软件运动的基石，为几乎所有的需求提供了一个简单而优雅的操作系统。\n\n",
+          "links": [
+            {
+              "title": "Coursera - Unix 课程",
+              "url": "https://www.coursera.org/courses?query=unix",
+              "type": "course"
+            },
+            {
+              "title": "访问专用Linux路线图",
+              "url": "https://roadmap.sh/linux",
+              "type": "article"
+            },
+            {
+              "title": "Unix & Linux 教程",
+              "url": "https://www.tutorialspoint.com/unix/index.htm",
+              "type": "article"
+            },
+            {
+              "title": "Linux 基础",
+              "url": "https://dev.to/rudrakshi99/linux-basics-2onj",
+              "type": "article"
+            },
+            {
+              "title": "探索关于Linux的顶级文章",
+              "url": "https://app.daily.dev/tags/linux?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "Linux 操作系统 - 快速入门",
+              "url": "https://www.youtube.com/watch?v=ROjZy1WbCIA",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "28d0fa23-b124-459d-9131-37990d108d74",
+          "xid": "592ad7fe-c254-4acf-b19b-e91df7ccbc4d"
+        },
+        {
+          "title": "服务网格",
+          "description": "服务网格（Service Mesh）是专门用于处理服务间通信的基础设施层。\n\n它负责通过组成现代云原生应用的复杂服务拓扑可靠地传递请求。\n\n通俗点说，它是一个帮助你控制不同服务之间如何互相通信的工具。\n\n",
+          "links": [
+            {
+              "title": "红帽 - 什么是服务网格（Service Mesh）？",
+              "url": "https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh",
+              "type": "article"
+            },
+            {
+              "title": "Kubernetes服务网格 - 博客文章",
+              "url": "https://platform9.com/blog/kubernetes-service-mesh-a-comparison-of-istio-linkerd-and-consul/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于服务网格（Service Mesh）的顶级帖子",
+              "url": "https://app.daily.dev/tags/service-mesh?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "15分钟内了解服务网格（Service Mesh）",
+              "url": "https://youtu.be/16fgzklcF7Y",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "f560bc02-24c7-4b12-9ff4-60ff8a1a266d",
+          "xid": "bda83c30-7c6f-4092-8a71-9c013adf97a0"
+        },
+        {
+          "title": "持续集成/持续交付（CI/CD）",
+          "description": "持续集成/持续交付（CI/CD）是一种通过在应用程序开发阶段引入自动化来频繁地向客户交付应用程序的方法。\n\nCI/CD的主要概念包括：持续集成（Continuous Integration）、持续交付（Continuous Delivery）和持续部署（Continuous Deployment）。\n\nCI/CD是解决新代码整合引起的问题（亦称为\"集成地狱\"）的解决方案，这些问题会对开发和运维团队产生影响。\n\n\n",
+          "links": [
+            {
+              "title": "持续集成/持续交付（CI/CD） - Github",
+              "url": "https://github.com/resources/articles/devops/ci-cd",
+              "type": "article"
+            },
+            {
+              "title": "什么是持续集成/持续交付（CI/CD）？ - Redhat",
+              "url": "https://www.redhat.com/en/topics/devops/what-is-ci-cd",
+              "type": "article"
+            },
+            {
+              "title": "持续集成和持续交付（CI/CD）详解",
+              "url": "https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html",
+              "type": "article"
+            },
+            {
+              "title": "探索关于持续集成/持续交付（CI/CD）的最佳文章",
+              "url": "https://app.daily.dev/tags/cicd?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "aa5aa3c5-0af7-489b-bbd3-5a0dadb2bd68",
+          "xid": "72cc286c-03d4-4766-923e-4a68a3f89b58"
+        },
+        {
+          "title": "容器",
+          "description": "容器是一种构造，利用控制组(cgroups)、命名空间(namespaces)和chroot来完全封装和隔离一个过程。\n\n这种被封装的过程，称为容器镜像，与其他容器共享主机的内核，使容器比虚拟机更小且运行速度更快。\n\n这些镜像设计为具有可移植性，可以在本地完全测试静态镜像，并可以轻松部署到容器管理系统中。\n\n",
+          "links": [
+            {
+              "title": "控制组(cgroups)",
+              "url": "https://en.wikipedia.org/wiki/Cgroups",
+              "type": "article"
+            },
+            {
+              "title": "命名空间(namespaces)",
+              "url": "https://en.wikipedia.org/wiki/Linux_namespaces",
+              "type": "article"
+            },
+            {
+              "title": "chroot",
+              "url": "https://en.wikipedia.org/wiki/Chroot",
+              "type": "article"
+            },
+            {
+              "title": "容器是什么？",
+              "url": "https://cloud.google.com/learn/what-are-containers",
+              "type": "article"
+            },
+            {
+              "title": "什么是容器？",
+              "url": "https://www.docker.com/resources/what-container/",
+              "type": "article"
+            },
+            {
+              "title": "The New Stack上的容器相关文章",
+              "url": "https://thenewstack.io/category/containers/",
+              "type": "article"
+            },
+            {
+              "title": "关于容器的热门文章",
+              "url": "https://app.daily.dev/tags/containers?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "容器是什么？",
+              "url": "https://www.youtube.com/playlist?list=PLawsLZMfND4nz-WDBZIj8-nbzGFD4S9oz",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "9f6017f5-5b95-4d07-bc66-5465c1795c8f",
+          "xid": "beea4485-6520-4db4-892c-6eb886b35b12"
+        },
+        {
+          "title": "云设计模式",
+          "description": "这些设计模式对于在云平台上构建可靠、可扩展、安全的应用程序非常有用。\n\n云设计模式中的每个模式都描述了该模式解决的问题、应用该模式时的注意事项，以及基于Microsoft Azure的示例。\n\n大多数模式都包括代码示例或片段，展示如何在Azure上实现该模式。\n\n然而，大多数模式都与任何分布式系统相关，无论是在Azure上托管还是其他云平台。\n\n",
+          "links": [
+            {
+              "title": "云设计模式",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/",
+              "type": "article"
+            },
+            {
+              "title": "探索关于云的热门帖子",
+              "url": "https://app.daily.dev/tags/cloud?ref=roadmapsh",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "ac0fc5ec-490b-4eb2-b969-5a61ad569d06",
+          "xid": "77bf1d41-de53-4cb5-abda-f2e3acc1c8bf"
+        }
+      ],
+      "id": "8aba0044-0272-4d0c-a419-c795271d0d21",
+      "xid": "790c7739-c5a4-4d76-8fb5-218d6b699fd8"
+    },
+    {
+      "title": "企业软件",
+      "description": "企业软件（Enterprise software）指的是为大型组织或企业提供服务的软件应用程序。\n\n这些应用程序通常复杂、可扩展，并且能够与其他系统集成，以支持广泛的业务功能。\n\n企业软件用于提高效率，简化流程，并在整个组织的不同部门内提升生产率。\n\n",
+      "links": [
+        {
+          "title": "企业软件",
+          "url": "https://en.wikipedia.org/wiki/Enterprise_software",
+          "type": "article"
+        }
+      ],
+      "children": [
+        {
+          "title": "MS 动态（MS Dynamics）",
+          "description": "Microsoft Dynamics 365 结合了企业资源计划 (ERP) 软件和客户关系管理 (CRM) 软件。\n\n",
+          "links": [
+            {
+              "title": "您想了解的所有关于 Microsoft Dynamics 的信息",
+              "url": "https://www.nigelfrank.com/insights/everything-you-ever-wanted-to-know-about-dynamics-crm",
+              "type": "article"
+            },
+            {
+              "title": "什么是 Microsoft Dynamics？",
+              "url": "https://www.youtube.com/watch?v=ogfclHWgqgE",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "d5de019d-74e1-467f-bdcf-593b8058bc27",
+          "xid": "f3605390-7cbc-4b53-8d32-e537817e8aea"
+        },
+        {
+          "title": "SAP ERP（企业资源规划）、HANA（高性能分析应用）、Business Objects（商务对象）",
+          "description": "SAP（Systems, Applications, and Products in Data Processing，系统、应用和数据处理产品）是领先的ERP（企业资源规划）软件提供商，助力组织有效管理其业务运营和客户关系。\n\nSAP ERP将财务、销售、采购和人力资源等各种业务流程集成到一个统一的系统中，从而实现实时数据访问和提高决策能力。\n\nSAP HANA（High-Performance Analytic Appliance，高性能分析应用）是一个内存数据库和应用程序开发平台，它允许企业快速高效地处理大量数据，支持高级分析和实时报告。\n\nBusinessObjects是SAP商务智能套件的一部分，提供强大的工具用于数据可视化、报告和分析，使用户能够将原始数据转化成可执行的洞察力。\n\n这些解决方案共同帮助组织优化运营，提高生产力，并通过基于数据的洞察力推动战略决策。\n\n",
+          "links": [
+            {
+              "title": "SAP",
+              "url": "https://www.sap.com/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "5ea5e5f4-5dee-4734-82f9-db95357bc71a",
+          "xid": "c3a08832-d8e5-494e-a311-dffde157cc88"
+        },
+        {
+          "title": "EMC 和 DMS",
+          "description": "EMC (企业元数据目录) 和 DMS (文档管理系统) 是数据管理和信息系统领域中的两个不同概念。\n\n以下是每个概念的概述:\n\n企业元数据目录 (Enterprise Metadata Catalog, EMC) 是一个集中式的仓库，用于存储组织内数据资产的元数据。\n\n此元数据为数据提供上下文、含义和结构，从而实现更好的数据管理和利用。\n\n文档管理系统 (Document Management System, DMS) 是一种软件解决方案，帮助组织捕获、存储、管理和追踪电子文档及基于纸张的信息的图像。\n\nDMS 解决方案对于组织和保护数字格式的文件至关重要。\n\n",
+          "links": [
+            {
+              "title": "DMS",
+              "url": "https://www.opentext.com/products/documentum-content-management",
+              "type": "article"
+            },
+            {
+              "title": "EMC 软件",
+              "url": "https://www.spiceworks.com/collaboration/content-collaboration/articles/top-10-enterprise-content-management-software-systems/",
+              "type": "article"
+            }
+          ],
+          "children": [],
+          "id": "16b83148-db28-470b-981d-4615010005d2",
+          "xid": "ffc9b9b4-c79f-4003-a073-664d92ce7dd4"
+        },
+        {
+          "title": "IBM 业务流程管理（BPM）",
+          "description": "IBM 业务流程管理（BPM）是一个全面的业务流程管理平台。\n\n它提供了一整套工具来编写、测试和部署业务流程，以及对管理这些业务流程的全面可见性和洞察力。\n\n",
+          "links": [
+            {
+              "title": "BPM 概览",
+              "url": "https://www.ibm.com/docs/en/bpm/8.5.5?topic=manager-business-process-overview",
+              "type": "article"
+            },
+            {
+              "title": "探索关于 IBM 的热门文章",
+              "url": "https://app.daily.dev/tags/ibm?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "BPM 演示",
+              "url": "https://www.youtube.com/watch?v=6yn4nCWMNLI",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "1b6277f0-3515-442a-950e-c1d23ac3ffc8",
+          "xid": "09482404-d7bd-4dc2-bb1e-800195ecf1b0"
+        },
+        {
+          "title": "Salesforce",
+          "description": "Salesforce是一种云平台，帮助企业管理和维护与客户的联系。\n\n",
+          "links": [
+            {
+              "title": "什么是Salesforce以及用于什么？",
+              "url": "https://ascendix.com/blog/what-is-salesforce-what-salesforce-is-used-for/",
+              "type": "article"
+            },
+            {
+              "title": "探索有关Salesforce的最佳文章",
+              "url": "https://app.daily.dev/tags/salesforce?ref=roadmapsh",
+              "type": "article"
+            },
+            {
+              "title": "什么是Salesforce？",
+              "url": "https://www.youtube.com/watch?v=xx2sK-QiBjw",
+              "type": "video"
+            }
+          ],
+          "children": [],
+          "id": "3fe4e04b-0379-4c73-a15d-304d24b989b3",
+          "xid": "ef2f2e7e-fa6b-40cc-9cbc-8dcde095097a"
+        }
+      ],
+      "id": "0fd9d679-8f32-47a2-99bb-70c7dbf5640d",
+      "xid": "0c00bc65-7bcb-4ad1-8296-1431c18aa70b"
+    }
+  ],
+  "id": "3df74d7f-fb45-4de1-9454-0708ad6502a1",
+  "xid": "65c506d5-081b-437a-aba4-c8065def022d"
+}

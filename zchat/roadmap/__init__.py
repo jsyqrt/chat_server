@@ -240,21 +240,23 @@ def create_from_jd_and_resume():
 @login_required
 def create_from_topic():
     topic = request.form.get('topic')
-    learning_goal = request.form.get('learning_goal')
     skill_level = request.form.get('skill_level')
+    learning_goal = request.form.get('learning_goal', '')
+    user_background = request.form.get('user_background', '')
+    other_prompts = request.form.get('other_prompts', '')
     user_id = current_user.get_id_int()
 
     is_valid = False
     max_retries = 3
     while not is_valid and max_retries > 0:
         try:
-            mindmap = mindmap_from_topic(topic, learning_goal, skill_level)
+            mindmap = mindmap_from_topic(topic, skill_level, learning_goal, user_background, other_prompts)
             if mindmap:
                 mindmap = json.loads(mindmap)
                 is_valid = True
         except Exception as e:
             # try again
-            mindmap = mindmap_from_topic(topic, learning_goal, skill_level)
+            mindmap = mindmap_from_topic(topic, skill_level, learning_goal, user_background, other_prompts)
             max_retries -= 1
 
     if not mindmap:
@@ -554,14 +556,11 @@ def learning_status():
     mindmap_id = request.args.get('mindmap_id')
 
     mindmap_status = get_learning_status_from_meili(current_app, current_user.get_id_int(), mindmap_id)
-    if mindmap_status and len(mindmap_status['hits']) > 0:
-        mindmap_status = mindmap_status['hits'][0]
-        current_app.logger.debug(f"learning status: {mindmap_status}")
+    if mindmap_status:
         return jsonify(mindmap_status)
     else:
         current_app.logger.debug(f"learning status not found: {mindmap_id}")
-        return jsonify({'message': 'Learning status not found'})
-
+        return jsonify({'message': 'Learning status not found'}), 404
 
 @bp.route('/recent_maps', methods=['GET'])
 @login_required
