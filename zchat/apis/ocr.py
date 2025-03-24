@@ -32,7 +32,7 @@ def ocr_file(file_path):
         pdf_document.close()
         return '\n\n'.join(all_text)  # Join all pages with double newlines
 
-    elif file_path.lower().endswith('.png'):
+    elif file_path.lower().endswith('.png') or file_path.lower().endswith('.jpg') or file_path.lower().endswith('.jpeg'):
         annotations = ocrmac.OCR(file_path, language_preference=['zh-Hans']).recognize()
         return '\n'.join([a[0] for a in annotations])
     else:
@@ -40,4 +40,4 @@ def ocr_file(file_path):
 
 
 if __name__ == '__main__':
-    print(ocr_file('/Users/liuqian/Downloads/产品经理-付杰昱-拉勾招聘.pdf'))
+    print(ocr_file('/Users/liuqian/mycode/github/sf/be/chat_server/zchat/resume_optimize/resume.pdf'))

@@ -310,4 +310,29 @@ def get_favorites():
 def get_file_records():
     user_id = current_user.get_id_int()
     file_records = get_file_records_from_meili(current_app, user_id)
-    return jsonify(file_records), 200
+    current_app.logger.debug(f"file_records: {file_records}")
+    if file_records:
+        return jsonify(file_records), 200
+    else:
+        return jsonify({
+            'jd_files': [],
+            'resume_files': []
+        }), 200
+
+@bp.route('/file_content', methods=['GET'])
+@login_required
+def get_file_content():
+    file_name = request.args.get('file_name')
+    user_id = current_user.get_id_int()
+
+    file_records = get_file_records_from_meili(current_app, user_id)
+    if file_records:
+        for file in file_records.get('resume_files', []) + file_records.get('jd_files', []):
+            if file['filename'] == file_name:
+                file_path = file['path']
+                break
+    if file_path:
+        full_file_path = f"{current_app.instance_path}/{file_path}"
+        return send_file(full_file_path, mimetype='text/plain')
+    else:
+        return jsonify({'error': 'File not found'}), 404

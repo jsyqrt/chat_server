@@ -17,6 +17,12 @@ MODEL_MAPPINGS: Dict[str, Dict[str, str]] = {
         "aliyun": "qwq-32b-preview",
         "siliconflow": "Qwen/QwQ-32B"
     },
+    "deepseek-r1" : {
+        "groq": "qwen-qwq-32b",
+        "deepseek": "deepseek-chat",
+        "aliyun": "qwq-32b-preview",
+        "siliconflow": "deepseek-ai/DeepSeek-R1"
+    }
 }
 
 def get_platform_model_name(base_model: str, platform: str) -> str:
@@ -47,14 +53,34 @@ def get_response_from_llm(messages, model, max_tokens, platform="groq"):
   client = openai.OpenAI(
     base_url=api_url,
     api_key=api_key,
-    timeout=20,
+    timeout=1200,
+    # max_retries=3,
   )
   response = client.chat.completions.create(
     model=platform_model,
     messages=messages,
     max_tokens=max_tokens,
+    temperature=0,
   )
   return response.choices[0].message.content
+
+def get_response_from_llm_stream(messages, model, max_tokens, platform="groq"):
+  api_url, api_key = get_api_url_and_key(platform)
+  platform_model = get_platform_model_name(model, platform)
+  client = openai.OpenAI(
+    base_url=api_url,
+    api_key=api_key,
+  )
+  response = client.chat.completions.create(
+    model=platform_model,
+    messages=messages,
+    max_tokens=max_tokens,
+    # temperature=0,
+    stream=True,
+  )
+  for chunk in response:
+    if chunk.choices[0].delta.content is not None:
+      yield chunk.choices[0].delta.content
 
 def get_json_blocks_from_llm_response(response):
   """从LLM响应中提取JSON代码块"""
@@ -65,3 +91,13 @@ def get_json_blocks_from_llm_response(response):
   json_blocks = re.findall(pattern, response, re.DOTALL)
 
   return json_blocks
+
+def get_html_blocks_from_llm_response(response):
+  """从LLM响应中提取HTML代码块"""
+  # 定义正则表达式模式：匹配 ```html 和 ``` 之间的内容
+  pattern = r'```html\n(.*?)\n```'
+
+  # 查找所有匹配的代码块
+  html_blocks = re.findall(pattern, response, re.DOTALL)
+
+  return html_blocks

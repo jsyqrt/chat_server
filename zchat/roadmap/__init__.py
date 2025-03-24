@@ -412,6 +412,7 @@ def my_roadmaps():
 def description():
     topic = request.args.get('topic')
     topic_path = request.args.get('topic_path')
+    topic_path = topic_path.split(',')
 
     description_json = description_from_topic_path(topic, topic_path)
     is_valid = False

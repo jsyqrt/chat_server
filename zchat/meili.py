@@ -28,4 +28,9 @@ from zchat.storage.api import (
     add_file_records as add_file_records_to_meili,
     get_file_records as get_file_records_from_meili,
     update_file_records as update_file_records_to_meili,
+    add_resume_optimization_record as add_resume_optimization_record_to_meili,
+    get_resume_optimization_records as get_resume_optimization_records_from_meili,
+    add_jd_record as add_jd_record_to_meili,
+    get_jd_record as get_jd_record_from_meili,
+    get_jd_records as get_jd_records_from_meili,
 )

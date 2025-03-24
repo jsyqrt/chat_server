@@ -79,4 +79,11 @@ def create_app(test_config=None):
     from . import assessment
     app.register_blueprint(assessment.bp)
 
+    from . import job
+    app.register_blueprint(job.bp)
+
+    from . import resume
+    app.register_blueprint(resume.bp)
+
+
     return app

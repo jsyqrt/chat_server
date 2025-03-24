@@ -541,6 +541,130 @@ def get_feedback_list(app, status: str = 'pending', offset: int = 0, limit: int 
     index_name = 'feedback'
     return app.document_store.search(index_name, '', {'filter': [f'status={status}'], 'offset': offset, 'limit': limit})['hits']
 
+def create_jd_records_collection(app, user_id: str):
+    """创建职位描述记录集合
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+    """
+    collection_name = f'jd_records_{user_id}'
+
+    collections = app.document_store.list_collections()
+    exists = False
+    for collection in collections['collections']:
+        if collection['name'] == collection_name:
+            exists = True
+            break
+
+    if not exists:
+        app.document_store.create_collection(
+            collection_name=collection_name,
+            options={
+                'primaryKey': 'id',
+                'indexedFields': ['created_at', 'updated_at', 'job_title', 'company']
+            }
+        )
+    return
+
+def add_jd_record(app, user_id: str, jd_record: Dict[str, Any]) -> Dict[str, Any]:
+    """添加职位描述记录
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+        jd_record: 职位描述记录
+
+    Returns:
+        操作结果
+    """
+    create_jd_records_collection(app, user_id)
+    index_name = f'jd_records_{user_id}'
+    return app.document_store.add_document(index_name, jd_record)
+
+def get_jd_record(app, user_id: str, jd_id: str) -> Dict[str, Any]:
+    """获取职位描述记录
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+        jd_id: 职位描述记录ID
+
+    Returns:
+        职位描述记录
+    """
+    index_name = f'jd_records_{user_id}'
+    return app.document_store.get_document(index_name, jd_id)
+
+def get_jd_records(app, user_id: str, offset: int = 0, limit: int = 10) -> List[Dict[str, Any]]:
+    """获取职位描述记录列表
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+        offset: 偏移量
+        limit: 限制
+
+    Returns:
+        职位描述记录列表
+    """
+    index_name = f'jd_records_{user_id}'
+    return app.document_store.search(index_name, '', {'offset': offset, 'limit': limit, 'sort': ['created_at:desc']})['hits']
+
+def create_resume_optimization_records_collection(app, user_id: str):
+    """创建简历优化记录集合
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+    """
+
+    collection_name = f'resume_optimization_records_{user_id}'
+
+    collections = app.document_store.list_collections()
+    exists = False
+    for collection in collections['collections']:
+        if collection['name'] == collection_name:
+            exists = True
+            break
+
+    if not exists:
+        app.document_store.create_collection(
+            collection_name=collection_name,
+            options={
+                'primaryKey': 'id',
+                'indexedFields': ['created_at', 'updated_at']
+            }
+        )
+    return
+
+def add_resume_optimization_record(app, user_id: str, resume_optimization_record: Dict[str, Any]) -> Dict[str, Any]:
+    """添加简历优化记录
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+        resume_optimization_record: 简历优化记录
+    """
+    create_resume_optimization_records_collection(app, user_id)
+    index_name = f'resume_optimization_records_{user_id}'
+    return app.document_store.add_document(index_name, resume_optimization_record)
+
+def get_resume_optimization_records(app, user_id: str, offset: int = 0, limit: int = 10) -> List[Dict[str, Any]]:
+    """获取简历优化记录
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+        offset: 偏移量
+        limit: 限制
+
+    Returns:
+        简历优化记录列表
+    """
+    index_name = f'resume_optimization_records_{user_id}'
+    return app.document_store.search(index_name, '', {'offset': offset, 'limit': limit, 'sort': ['created_at:desc']})['hits']
+
 # --- 危险操作！仅供管理员使用 ---
 def delete_collection(app, collection_name: str) -> Dict[str, Any]:
     """删除集合
