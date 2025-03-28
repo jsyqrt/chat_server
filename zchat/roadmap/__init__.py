@@ -354,13 +354,13 @@ def skill_tags_of_job_tags():
         'skill_tags': skill_tags,
     })
 
-@bp.route('/search_topic', methods=['GET'])
+@bp.route('/search_topic', methods=['POST'])
 @login_required
 def search_topic():
-    topics = request.args.get('topics')
+    topics = request.form.get('topics')
     topics = topics.split(',')
-    allow_user_created = request.args.get('allow_user_created', 'false') == 'true'
-    limit = int(request.args.get('limit', '5'))
+    allow_user_created = request.form.get('allow_user_created', 'false') == 'true'
+    limit = int(request.form.get('limit', '5'))
 
     current_app.logger.debug(f"search_topic: {topics}, allow_user_created: {allow_user_created}, limit: {limit}")
 
@@ -370,8 +370,10 @@ def search_topic():
     enough = False
     for topic in topics:
         roadmaps = roadmap_ops.search_roadmaps_for_topic(topic, RoadmapType.OFFICIAL.value, limit)
+        current_app.logger.debug(f"search_topic roadmaps official, count: {len(roadmaps)}")
         if allow_user_created:
             roadmaps.extend(roadmap_ops.search_roadmaps_for_topic(topic, RoadmapType.USER.value, limit))
+        current_app.logger.debug(f"search_topic roadmaps user, count: {len(roadmaps)}")
         for roadmap in roadmaps:
             if roadmap['id'] not in result_ids:
                 if len(results) < limit:
@@ -385,6 +387,8 @@ def search_topic():
                     break
         if enough:
             break
+
+    current_app.logger.debug(f"search_topic results count: {len(results)}")
 
     return jsonify(list(results.values()))
 
@@ -407,12 +411,14 @@ def my_roadmaps():
         'count': count,
     })
 
-@bp.route('/description', methods=['GET'])
+@bp.route('/description', methods=['POST'])
 @login_required
 def description():
-    topic = request.args.get('topic')
-    topic_path = request.args.get('topic_path')
+    topic = request.form.get('topic')
+    topic_path = request.form.get('topic_path')
     topic_path = topic_path.split(',')
+
+    current_app.logger.debug(f"description topic: {topic}, topic_path: {topic_path}")
 
     description_json = description_from_topic_path(topic, topic_path)
     is_valid = False
