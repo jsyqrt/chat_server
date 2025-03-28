@@ -269,14 +269,13 @@ def create_from_topic():
 
     interaction_ops = RoadmapInteractionOps(db.session)
     interaction_ops.participant(roadmap_id, user_id)
-    interaction_ops.favorite(roadmap_id, user_id)
 
     add_mindmap_to_meili(current_app, mindmap)
 
     return jsonify({
         'participants': 1,
         'completions': 0,
-        'favorites': 1,
+        'favorites': 0,
         'shares': 0,
         'id': roadmap.roadmap_id,
         'icon': roadmap.roadmap_icon,
