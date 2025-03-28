@@ -442,6 +442,7 @@ def optimize_resume_prompt(jd_text, resume_text):
 - 重新措辞现有内容以突出与职位相关的经验和技能
 - 使用职位描述中的关键词，但仅当它们真实反映候选人的技能和经验时
 - 调整技能部分的顺序，将最相关的技能放在前面
+- 除非简历中已经明确提到求职者精通某项技能，否则不要添加精通某项技能的描述，最多只能添加熟悉某项技能的描述
 - 量化成就，但只使用简历中已有的数据或合理的估计
 - 不要编造工作经验、教育背景或技能
 - 不要过度夸大成就或责任
@@ -653,7 +654,7 @@ def comparison_schema():
             }
           }
         },
-        "experience": {
+        "experiences": {
           "type": "array",
           "items": {
             "type": "object",
@@ -680,7 +681,7 @@ def comparison_schema():
             }
           }
         },
-        "education": {
+        "educations": {
           "type": "array",
           "items": {
             "type": "object",

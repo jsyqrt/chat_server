@@ -1,6 +1,6 @@
 import re
 from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response
-from zchat.roadmap.common_prompts import MINDMAP_JSON_SCHEMA, MINDMAP_GENERATION_GUIDELINES, OUTPUT_FORMAT_GUIDELINES
+from zchat.roadmap.common_prompts import MINDMAP_JSON_SCHEMA, MINDMAP_GENERATION_GUIDELINES
 
 system_prompt_template = """
 您是一位专业的学习路径设计专家，擅长创建结构化、全面的学习计划。您的任务是为用户提供一个详细的学习路径，帮助他们掌握所需的知识和技能。
@@ -38,6 +38,7 @@ system_prompt_template = """
 user_prompt = """
 请为我创建一个关于以下主题的详细学习路径，以思维导图JSON格式输出：
 
+思维导图的JSON Schema:
 ${MINDMAP_JSON_SCHEMA}
 
 ${MINDMAP_GENERATION_GUIDELINES}
@@ -49,8 +50,6 @@ ${MINDMAP_GENERATION_GUIDELINES}
 4. 考虑我的背景和经验，提供更有针对性的学习建议
 5. 如果主题是职业相关的，包含职业发展路径、不同级别要求和软技能
 6. 为每个主要知识领域提供学习顺序建议
-
-${OUTPUT_FORMAT_GUIDELINES}
 
 如果我提供的主题涉及政治敏感、暴力、色情、赌博、毒品、枪支等敏感内容，请直接返回：
 ```json
@@ -93,13 +92,10 @@ def get_llm_response(topic, skill_level, learning_goal, user_background, other_p
         (user_background_prompt_template.format(user_background=user_background) if user_background else '') + \
         (other_prompts_template.format(other_prompts=other_prompts) if other_prompts else '') + \
         user_prompt.replace("${MINDMAP_JSON_SCHEMA}", MINDMAP_JSON_SCHEMA)
-                .replace("${MINDMAP_GENERATION_GUIDELINES}", MINDMAP_GENERATION_GUIDELINES)
-                .replace("${OUTPUT_FORMAT_GUIDELINES}", OUTPUT_FORMAT_GUIDELINES) },
+                .replace("${MINDMAP_GENERATION_GUIDELINES}", MINDMAP_GENERATION_GUIDELINES) },
   ]
   print(messages)
-  response = get_response_from_llm(messages, "qwen-2.5-32b", 4096, platform='siliconflow')
-  # response = get_response_from_llm(messages, "qwen-qwq-32b", 8192, platform='aliyun')
-  # response = get_response_from_llm(messages, "qwen-2.5-32b", 8192, platform='aliyun')
+  response = get_response_from_llm(messages, "qwen-qwq-32b", 8192, platform='siliconflow')
   return response
 
 def parse_llm_response(response):

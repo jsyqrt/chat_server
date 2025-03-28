@@ -71,52 +71,23 @@ class MindmapModifier:
 @bp.route('/create_from_jd_and_resume', methods=['POST'])
 @login_required
 def create_from_jd_and_resume():
-    jd_file = request.files.get('jd_file', None)
-    jd_file_name = request.form.get('jd_file_name', None)
-    jd_text = request.form.get('jd_text', None)
+    jd_id = request.form.get('jd_id', None)
+    if not jd_id:
+        return jsonify({'error': 'No JD ID provided'}), 400
+
     resume_file = request.files.get('resume_file', None)
     resume_file_name = request.form.get('resume_file_name', None)
     user_id = current_user.get_id_int()
 
-    if not jd_file and not jd_text and not jd_file_name:
-        return jsonify({'error': 'No JD file or JD text provided'}), 400
+    jd_record = get_jd_record_from_meili(current_app, user_id, jd_id)
+    if not jd_record:
+        return jsonify({'error': f'JD not found for the given JD ID: {jd_id}'}), 400
+
+    jd = jd_record.get('jd_text', '')
+    if not jd:
+        return jsonify({'error': f'No JD provided for the given JD ID: {jd_id}'}), 400
 
     file_records = {}
-
-    if jd_file:
-        filename = secure_filename(jd_file.filename)
-        filename = f'{uuid.uuid4()}_{filename}'
-        dir_path = os.path.join(current_app.instance_path, 'jds')
-        if not os.path.exists(dir_path):
-            os.makedirs(dir_path)
-        file_records['jd_files'] = [
-            {
-                'filename': jd_file.filename,
-                'path': f'/jds/{filename}',
-            }
-        ]
-        file_path = os.path.join(dir_path, filename)
-        jd_file.save(file_path)
-        jd = ocr_file(file_path)
-    elif jd_file_name:
-        old_file_records = get_file_records_from_meili(current_app, user_id)
-        if old_file_records:
-            for jd_file in old_file_records['jd_files']:
-                if jd_file['filename'] == jd_file_name:
-                    file_path = jd_file['path']
-                    break
-        if file_path:
-            full_file_path = f"{current_app.instance_path}/{file_path}"
-            jd = ocr_file(full_file_path)
-        else:
-            jd = ''
-    elif jd_text:
-        jd = jd_text
-    else:
-        pass
-
-    if not jd:
-        return jsonify({'error': 'No JD provided'}), 400
 
     if resume_file:
         filename = secure_filename(resume_file.filename)
@@ -154,27 +125,25 @@ def create_from_jd_and_resume():
         file_records['user_id'] = user_id
         old_file_records = get_file_records_from_meili(current_app, user_id)
         if old_file_records:
-            file_records['jd_files'] = old_file_records['jd_files'] + file_records['jd_files']
-            file_records['resume_files'] = old_file_records['resume_files'] + file_records['resume_files']
-        add_file_records_to_meili(current_app, file_records)
+            old_file_records['resume_files'] = old_file_records['resume_files'] + file_records['resume_files']
+            add_file_records_to_meili(current_app, old_file_records)
 
-    jd_info_json, mindmap_json = mindmap_from_jd_and_resume(jd, resume)
+    mindmap_json = mindmap_from_jd_and_resume(jd, resume)
 
-    current_app.logger.debug(f"got mindmap json, jd_info_json: {jd_info_json}, mindmap_json: {mindmap_json}")
+    current_app.logger.debug(f"got mindmap json: {mindmap_json}")
 
     is_valid = False
     max_retries = 3
     while not is_valid and max_retries > 0:
         try:
-            jd_info = json.loads(jd_info_json)
             mindmap_info = json.loads(mindmap_json)
             is_valid = True
         except Exception as e:
             # try again
-            jd_info_json, mindmap_json = mindmap_from_jd_and_resume(jd, resume)
+            mindmap_json = mindmap_from_jd_and_resume(jd, resume)
             max_retries -= 1
 
-    if not jd_info or not mindmap_info:
+    if not mindmap_info:
         return jsonify({'error': 'Failed to create mindmap'}), 400
 
     mindmap_id_generator = MindmapModifier()
@@ -183,7 +152,7 @@ def create_from_jd_and_resume():
     mindmap['created_by'] = user_id
     mindmap['created_at'] = time.time()
     mindmap['updated_at'] = time.time()
-    mindmap['jd'] = jd_info
+    mindmap['jd_id'] = jd_id
 
     roadmap_id = mindmap['roadmap_id']
     # https://emojipedia.org/people
@@ -217,14 +186,13 @@ def create_from_jd_and_resume():
 
     interaction_ops = RoadmapInteractionOps(db.session)
     interaction_ops.participant(roadmap_id, user_id)
-    interaction_ops.favorite(roadmap_id, user_id)
 
     add_mindmap_to_meili(current_app, mindmap)
 
     return jsonify({
         'participants': 1,
         'completions': 0,
-        'favorites': 1,
+        'favorites': 0,
         'shares': 0,
         'id': roadmap.roadmap_id,
         'icon': roadmap.roadmap_icon,

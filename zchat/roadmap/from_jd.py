@@ -1,6 +1,6 @@
 import re
 from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response
-from zchat.roadmap.common_prompts import MINDMAP_JSON_SCHEMA, MINDMAP_GENERATION_GUIDELINES, OUTPUT_FORMAT_GUIDELINES
+from zchat.roadmap.common_prompts import MINDMAP_JSON_SCHEMA, MINDMAP_GENERATION_GUIDELINES
 
 system_prompt = """
 您是一位专业的职业发展顾问和学习路径规划专家，擅长分析职位描述并创建个性化学习计划。
@@ -24,46 +24,6 @@ system_prompt = """
 """
 
 user_prompt = """
-请提供以下两个JSON输出：
-
-1. 职位描述的关键信息JSON，需符合以下JSON Schema：
-```json
-{
-  "type": "object",
-  "properties": {
-    "job_title": { "type": "string", "description": "职位标题" },
-    "location": { "type": "string", "description": "工作地点" },
-    "salary_range": { "type": "string", "description": "薪资范围" },
-    "education_requirement": { "type": "string", "description": "学历要求" },
-    "work_experience_requirement": { "type": "string", "description": "工作年限要求" },
-    "department": { "type": "string", "description": "所属部门" },
-    "key_responsibilities": {
-      "type": "array",
-      "items": { "type": "object", "properties": { "description": { "type": "string" } } },
-      "description": "主要职责列表"
-    },
-    "required_skills": {
-      "type": "array",
-      "items": { "type": "object", "properties": { "skill": { "type": "string" }, "importance": { "type": "string", "enum": ["必备", "重要", "加分"] }, "description": { "type": "string" } } },
-      "description": "所需技能列表，包括技能名称、重要性和描述"
-    },
-    "preferred_qualifications": {
-      "type": "array",
-      "items": { "type": "object", "properties": { "description": { "type": "string" } } },
-      "description": "优先条件或加分项"
-    },
-    "industry_context": { "type": "string", "description": "行业背景和公司情况" },
-    "career_path": { "type": "string", "description": "该职位可能的职业发展路径" }
-  },
-  "required": ["job_title", "key_responsibilities", "required_skills"]
-}
-```
-
-2. 学习路径的JSON，使用思维导图表示：
-${MINDMAP_JSON_SCHEMA}
-
-${MINDMAP_GENERATION_GUIDELINES}
-
 针对JD的特殊要求：
 - 分析JD中明确和隐含的技能要求
 - 将学习路径分为短期目标(应对面试)和长期目标(职业发展)
@@ -71,7 +31,12 @@ ${MINDMAP_GENERATION_GUIDELINES}
 - 如果用户提供了简历信息，根据用户当前技能水平定制学习路径
 - 为每个主要技能提供学习资源建议和实践项目
 
-${OUTPUT_FORMAT_GUIDELINES}
+${MINDMAP_GENERATION_GUIDELINES}
+
+请提供用JSON格式表示的思维导图，思维导图的JSON Schema:
+${MINDMAP_JSON_SCHEMA}
+
+确保JSON格式正确无误，可以被直接解析。不要添加额外的解释或注释。
 """
 
 jd_prompt_template = """
@@ -98,12 +63,11 @@ def get_llm_response(jd, resume):
       {"role": "system", "content": system_prompt},
       {"role": "user", "content":  jd_prompt_template.format(jd=jd) + \
                                     (resume_prompt_template.format(resume=resume) if resume else '') + \
-                                      user_prompt },
+                                    user_prompt.replace("${MINDMAP_JSON_SCHEMA}", MINDMAP_JSON_SCHEMA)
+                                            .replace("${MINDMAP_GENERATION_GUIDELINES}", MINDMAP_GENERATION_GUIDELINES) },
     ]
   print(messages)
-  # response = get_response_from_llm(messages, "qwen-2.5-32b", 32768)
-  response = get_response_from_llm(messages, "qwen-2.5-32b", 8192, platform='aliyun')
-  # response = get_response_from_llm(messages, "qwen-2.5-32b", 4096, platform='siliconflow')
+  response = get_response_from_llm(messages, "qwen-qwq-32b", 8192, platform='siliconflow')
   return response
 
 def parse_llm_response(response):
@@ -112,13 +76,12 @@ def parse_llm_response(response):
 def mindmap_from_jd_and_resume(jd, resume):
   response = get_llm_response(jd, resume)
   json_blocks = parse_llm_response(response)
-  if len(json_blocks) < 2:
-    return None, None
+  if len(json_blocks) < 1:
+    return None
 
-  jd_info_json = json_blocks[0]
-  mindmap_json = json_blocks[1]
+  mindmap_json = json_blocks[0]
 
-  return jd_info_json, mindmap_json
+  return mindmap_json
 
 
 if __name__ == "__main__":

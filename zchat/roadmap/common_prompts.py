@@ -96,16 +96,3 @@ MINDMAP_GENERATION_GUIDELINES = """
 
 请确保输出的JSON严格遵循提供的Schema，并包含丰富、实用的学习内容。
 """
-
-# 通用的输出格式指南
-OUTPUT_FORMAT_GUIDELINES = """
-请严格按照以下格式输出结果：
-
-```json
-{
-    // 您的JSON数据，确保符合提供的Schema
-}
-```
-
-确保JSON格式正确无误，可以被直接解析。不要添加额外的解释或注释。
-"""
