@@ -1,3 +1,4 @@
+from flask import current_app
 from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response
 import json
 

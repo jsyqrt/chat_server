@@ -184,13 +184,10 @@ def create_from_jd_and_resume():
         skill_tag=skill_tag,
     )
 
-    interaction_ops = RoadmapInteractionOps(db.session)
-    interaction_ops.participant(roadmap_id, user_id)
-
     add_mindmap_to_meili(current_app, mindmap)
 
     return jsonify({
-        'participants': 1,
+        'participants': 0,
         'completions': 0,
         'favorites': 0,
         'shares': 0,
@@ -267,13 +264,10 @@ def create_from_topic():
         skill_tag=skill_tag,
     )
 
-    interaction_ops = RoadmapInteractionOps(db.session)
-    interaction_ops.participant(roadmap_id, user_id)
-
     add_mindmap_to_meili(current_app, mindmap)
 
     return jsonify({
-        'participants': 1,
+        'participants': 0,
         'completions': 0,
         'favorites': 0,
         'shares': 0,

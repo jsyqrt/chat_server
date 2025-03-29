@@ -9,8 +9,10 @@ def ocr_file(file_path):
         pdf_document = fitz.open(file_path)
         all_text = []
 
+        max_pages = 3
+
         # Process each page individually
-        for page_num in range(len(pdf_document)):
+        for page_num in range(min(len(pdf_document), max_pages)):
             # Create a temporary file for the PNG
             temp_png = tempfile.NamedTemporaryFile(suffix='.png', delete=False)
             temp_png_path = temp_png.name
