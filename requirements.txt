@@ -43,3 +43,4 @@ wsproto==1.2.0
 yarl==1.9.4
 openai==1.64.0
 pytesseract==0.3.13
+PyMuPDF==1.25.3
