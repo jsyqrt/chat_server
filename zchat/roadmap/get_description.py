@@ -1,5 +1,5 @@
 import re
-from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response
+from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response, get_response_from_llm_stream
 
 system_prompt_template = """
 您是一位专业的教育内容开发专家，擅长将复杂概念分解为清晰、全面的解释。
@@ -10,7 +10,6 @@ system_prompt_template = """
 1. 分析该思维导图路径 (topic → subtopic → leaf_topic): {topic_path}
 2. 在「{topic_path}」的前提背景下，「{topic}」具体代表了什么，提供深入、全面的解释
 3. 使用技术博客，杂志期刊文章，或微信公众号文章的风格，但不要提供任何链接
-4. 将内容组织为结构化的JSON格式
 
 您的解释应当：
 - 专业且准确：确保技术细节正确无误
@@ -31,6 +30,13 @@ user_prompt_template = """
 
 如果是写一篇大的文章，那些路径就是各级标题，「{topic}」就是当前章节的标题，所以你的任务是写出当前章节的内容。
 
+"""
+
+output_style = """
+请使用犀利准确的语言，不要使用冗长的句子，不要使用复杂的句子。使用markdown格式。
+"""
+
+json_schema = """
 请以JSON格式输出，严格遵循以下schema：
 
 ```json
@@ -68,6 +74,7 @@ def get_llm_response(topic, topic_path):
   messages=[
     {"role": "system", "content": system_prompt_template.format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
     {"role": "user", "content": user_prompt_template.format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
+    {"role": "user", "content": json_schema},
   ]
   print(messages)
   # 使用更大的token限制以获取更详细的描述
@@ -87,6 +94,23 @@ def description_from_topic_path(topic, topic_path):
   description = json_blocks[0]
   return description
 
+def get_llm_response_stream(topic, topic_path):
+    messages=[
+        {"role": "system", "content": system_prompt_template.format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
+        {"role": "user", "content": user_prompt_template.format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
+        {"role": "user", "content": output_style},
+    ]
+    # Use the stream function from llm.py
+    return get_response_from_llm_stream(
+        messages,
+        "qwen-2.5-32b",
+        4096,
+        platform='siliconflow'
+    )
+
+def description_from_topic_path_stream(topic, topic_path):
+    """Stream the description for a topic path directly from the LLM"""
+    return get_llm_response_stream(topic, topic_path)
 
 if __name__ == "__main__":
   topic = "UI/UX设计基础"

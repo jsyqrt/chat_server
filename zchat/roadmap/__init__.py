@@ -5,7 +5,7 @@ import time
 import random
 from enum import Enum
 
-from flask import request, current_app, Blueprint, jsonify
+from flask import request, current_app, Blueprint, jsonify, Response, stream_with_context
 from werkzeug.utils import secure_filename
 
 from zchat.auth import login_required, current_user, admin_required
@@ -14,7 +14,7 @@ from zchat.models.user import UserOps
 from zchat.models.roadmap import RoadmapOps, RoadmapInteractionOps
 from zchat.roadmap.from_jd import mindmap_from_jd_and_resume
 from zchat.roadmap.from_topic import mindmap_from_topic
-from zchat.roadmap.get_description import description_from_topic_path
+from zchat.roadmap.get_description import description_from_topic_path, description_from_topic_path_stream
 from zchat.meili import *
 from zchat.apis.ocr import ocr_file
 
@@ -394,6 +394,21 @@ def description():
             max_retries -= 1
 
     return jsonify(description_info)
+
+@bp.route('/description_stream', methods=['POST'])
+@login_required
+def description_stream():
+    topic = request.form.get('topic')
+    topic_path = request.form.get('topic_path')
+    topic_path = topic_path.split(',')
+
+    current_app.logger.debug(f"description_stream topic: {topic}, topic_path: {topic_path}")
+
+    def generate():
+        for chunk in description_from_topic_path_stream(topic, topic_path):
+            yield chunk
+
+    return Response(stream_with_context(generate()), mimetype='text/plain')
 
 # ------------------------------------------------------------
 
