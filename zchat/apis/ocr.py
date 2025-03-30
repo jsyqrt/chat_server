@@ -1,7 +1,21 @@
-from ocrmac import ocrmac
 import os
 import fitz  # PyMuPDF
 import tempfile
+
+import pytesseract
+
+# if mac
+# from ocrmac import ocrmac
+
+def ocr_function(img_file_path):
+    # with ocrmac
+    # result = ocrmac.OCR(img_file_path, language_preference=['zh-Hans', 'en-US']).recognize()
+    # result = '\n'.join([a[0] for a in result])
+
+    # with pytesseract
+    result = pytesseract.image_to_string(img_file_path, lang='chi_sim+eng')
+    result = result.replace(' ', '')
+    return result
 
 def ocr_file(file_path):
     # Check if file is PDF
@@ -24,8 +38,7 @@ def ocr_file(file_path):
             pix.save(temp_png_path)
 
             # OCR the PNG file
-            annotations = ocrmac.OCR(temp_png_path, language_preference=['zh-Hans']).recognize()
-            page_text = '\n'.join([a[0] for a in annotations])
+            page_text = ocr_function(temp_png_path)
             all_text.append(page_text)
 
             # Clean up temporary file
@@ -35,8 +48,7 @@ def ocr_file(file_path):
         return '\n\n'.join(all_text)  # Join all pages with double newlines
 
     elif file_path.lower().endswith('.png') or file_path.lower().endswith('.jpg') or file_path.lower().endswith('.jpeg'):
-        annotations = ocrmac.OCR(file_path, language_preference=['zh-Hans']).recognize()
-        return '\n'.join([a[0] for a in annotations])
+        return ocr_function(file_path)
     else:
         raise ValueError('Unsupported file type')
 

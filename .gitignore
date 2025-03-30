@@ -1,5 +1,8 @@
 .venv/
 
+venv*/
+log*/
+
 vectordb/
 
 *.mp4

@@ -41,3 +41,5 @@ urllib3==2.2.2
 Werkzeug==3.0.3
 wsproto==1.2.0
 yarl==1.9.4
+openai==1.64.0
+pytesseract==0.3.13
