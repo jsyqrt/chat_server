@@ -82,6 +82,11 @@ def get_response_from_llm_stream(messages, model, max_tokens, platform="groq"):
     if chunk.choices[0].delta.content is not None:
       yield chunk.choices[0].delta.content
 
+def chat_with_llm_stream(message, history, model, max_tokens, platform="groq"):
+  messages = history
+  messages.append({"role": "user", "content": message})
+  return get_response_from_llm_stream(messages, model, max_tokens, platform)
+
 def get_json_blocks_from_llm_response(response):
   """从LLM响应中提取JSON代码块"""
   # 定义正则表达式模式：匹配 ```json 和 ``` 之间的内容

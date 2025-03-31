@@ -85,5 +85,8 @@ def create_app(test_config=None):
     from . import resume
     app.register_blueprint(resume.bp)
 
+    from .aichat import chat, chat_stream
+    app.register_blueprint(chat.bp)
+    app.register_blueprint(chat_stream.bp)
 
     return app

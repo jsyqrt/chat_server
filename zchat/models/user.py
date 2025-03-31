@@ -4,11 +4,14 @@ import time
 from enum import Enum
 
 from flask import current_app, url_for
+from flask_login import UserMixin
 
 from zchat.db import db
 from zchat.rand import *
 
-class User(db.Model):
+from sqlalchemy.orm import relationship
+
+class User(UserMixin, db.Model):
     __tablename__ = 'USER'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -27,6 +30,9 @@ class User(db.Model):
     interested_skills = db.Column(db.String, nullable=True)
 
     create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
+
+    # 添加这一行关系定义
+    chat_sessions = relationship("ChatSession", back_populates="user", cascade="all, delete-orphan")
 
     __table_args__ = (
         db.Index('index_USER_phone_number', 'phone_number', unique=True),
