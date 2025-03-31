@@ -12,6 +12,10 @@ MINDMAP_JSON_SCHEMA = """
             "type": "string",
             "description": "节点标题"
         },
+        "description": {
+            "type": "string",
+            "description": "节点描述"
+        },
         "children": {
             "type": "array",
             "items": {
@@ -34,6 +38,7 @@ MINDMAP_JSON_SCHEMA = """
     },
     "required": [
         "title",
+        "description",
         "children",
         "industry_tag",
         "job_tag",
