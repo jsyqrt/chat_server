@@ -15,10 +15,21 @@ class ChatSession(db.Model):
     updated_at = db.Column(db.REAL, default=time.time(), onupdate=time.time)
     is_archived = db.Column(db.Boolean, default=False)  # 是否已归档
     session_metadata = db.Column(db.JSON, default={})  # 存储会话元数据
+    roadmap_id = db.Column(db.String, nullable=True)  # 关联的roadmap id
 
     # 关系
     user = relationship("User", back_populates="chat_sessions")
     messages = relationship("ChatMessage", back_populates="session", cascade="all, delete-orphan")
+
+    __table_args__ = (
+        db.Index('index_CHAT_SESSION_title', 'title', unique=False),
+        db.Index('index_CHAT_SESSION_type', 'type', unique=False),
+        db.Index('index_CHAT_SESSION_user_id', 'user_id', unique=False),
+        db.Index('index_CHAT_SESSION_created_at', 'created_at', unique=False),
+        db.Index('index_CHAT_SESSION_updated_at', 'updated_at', unique=False),
+        db.Index('index_CHAT_SESSION_is_archived', 'is_archived', unique=False),
+        db.Index('index_CHAT_SESSION_roadmap_id', 'roadmap_id', unique=False),
+    )
 
     def to_dict(self):
         return {
@@ -30,7 +41,8 @@ class ChatSession(db.Model):
             "updated_at": self.updated_at,
             "is_archived": self.is_archived,
             "session_metadata": self.session_metadata,
-            "message_count": len(self.messages) if self.messages else 0
+            "message_count": len(self.messages) if self.messages else 0,
+            "roadmap_id": self.roadmap_id
         }
 
 
@@ -47,6 +59,12 @@ class ChatMessage(db.Model):
 
     # 关系
     session = relationship("ChatSession", back_populates="messages")
+
+    __table_args__ = (
+        db.Index('index_CHAT_MESSAGE_session_id', 'session_id', unique=False),
+        db.Index('index_CHAT_MESSAGE_sender_type', 'sender_type', unique=False),
+        db.Index('index_CHAT_MESSAGE_timestamp', 'timestamp', unique=False),
+    )
 
     def to_dict(self):
         return {

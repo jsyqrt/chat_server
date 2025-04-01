@@ -18,8 +18,8 @@ def chat_with_ai():
     """与AI聊天并获取流式响应"""
     data = request.json
     user_message = data.get('message')
-    session_id = data.get('session_id')
-    session_data = data.get('session_data', {})
+    session_id = data.get('session_id', None)
+    chat_context = data.get('chat_context', None)
 
     if not user_message:
         return Response(json.dumps({"error": "消息内容不能为空"}),
@@ -29,28 +29,18 @@ def chat_with_ai():
     session = None
     if session_id:
         session = ChatSession.query.filter_by(id=session_id, user_id=current_user.get_id_int()).first()
-        if not session:
-            return Response(json.dumps({"error": "会话不存在或无权访问"}),
-                            status=404, mimetype='application/json')
-    else:
-        # 创建新会话
-        title = session_data.get('title', f"与AI的对话 {datetime.utcnow().strftime('%Y-%m-%d %H:%M')}")
-        session = ChatSession(
-            id=str(uuid.uuid4()),
-            title=title,
-            type=session_data.get('type', 'general'),
-            user_id=current_user.get_id_int(),
-            session_metadata=session_data.get('session_metadata', {})
-        )
-        db.session.add(session)
-        db.session.commit()
+
+    if session is None:
+        return Response(json.dumps({"error": "会话不存在或无权访问"}),
+                        status=404, mimetype='application/json')
 
     # 保存用户消息
     user_chat_message = ChatMessage(
         id=str(uuid.uuid4()),
         session_id=session.id,
         sender_type='user',
-        content=user_message
+        content=user_message,
+        timestamp=time.time()
     )
     db.session.add(user_chat_message)
     db.session.commit()
@@ -58,36 +48,38 @@ def chat_with_ai():
     # 获取会话历史记录
     history = get_chat_history(session.id)
 
+    if chat_context:
+        history.extend(chat_msgs_from_context(chat_context))
+
     # 准备AI响应消息记录
     ai_message = ChatMessage(
         id=str(uuid.uuid4()),
         session_id=session.id,
         sender_type='ai',
-        content=""  # 将在流式响应完成后更新
+        content="",  # 将在流式响应完成后更新
+        timestamp=time.time()
     )
     db.session.add(ai_message)
+    session.updated_at = time.time()
     db.session.commit()
 
     # 创建流式响应
     def generate():
         full_response = ""
 
+        # current_app.logger.debug(f"history: {history}, user_message: {user_message}")
+
         # 调用LLM API并处理流式响应
         for chunk in chat_with_llm_stream(user_message, history=history, model="qwen-2.5-32b", max_tokens=4096, platform="siliconflow"):
             if chunk:
                 full_response += chunk
-                current_app.logger.debug(f"chunk: {chunk}")
                 yield f"data: {json.dumps({'text': chunk, 'session_id': session.id, 'message_id': ai_message.id})}\n\n"
 
         # 流式响应结束后，更新AI消息内容
         ai_message.content = full_response
         db.session.commit()
 
-        # 更新会话的更新时间
-        session.updated_at = time.time()
-        db.session.commit()
-
-        current_app.logger.debug(f"ai_message: {ai_message.content}")
+        # current_app.logger.debug(f"ai_message: {ai_message.content}")
 
         # 发送完成信号
         yield f"data: {json.dumps({'done': True, 'session_id': session.id, 'message_id': ai_message.id})}\n\n"
@@ -109,4 +101,17 @@ def get_chat_history(session_id, max_messages=20):
         role = "user" if message.sender_type == "user" else "assistant"
         history.append({"role": role, "content": message.content})
 
+    history.reverse()
+
     return history
+
+def chat_msgs_from_context(chat_context):
+    roadmap_title = chat_context.get("roadmap_title")
+    node_title = chat_context.get("node_title")
+    node_path = chat_context.get("node_path")
+    node_description = chat_context.get("node_description")
+
+    return [
+        {"role": "user", "content": f"我正在学习一个大的主题：「{roadmap_title}」，目前的学习路径是「{node_path}」，请给我解释一下这个主题：「{node_title}」"},
+        {"role": "assistant", "content": f"{node_description}"}
+    ]
