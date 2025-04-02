@@ -62,15 +62,15 @@ class Roadmap(db.Model):
 class RoadmapInteraction(db.Model):
     __tablename__ = 'ROADMAP_INTERACTION'
 
-    roadmap_id = db.Column(db.String, primary_key=True)
-    user_id = db.Column(db.String, nullable=False)
-
+    roadmap_id = db.Column(db.String)
+    user_id = db.Column(db.String)
     participanted = db.Column(db.Integer, nullable=False, default=0)
     completed = db.Column(db.Integer, nullable=False, default=0)
     favorited = db.Column(db.Integer, nullable=False, default=0)
     shared = db.Column(db.Integer, nullable=False, default=0)
 
     __table_args__ = (
+        db.PrimaryKeyConstraint('roadmap_id', 'user_id'),
         db.Index('index_ROADMAP_INTERACTION_user_id', 'user_id', unique=False),
         db.Index('index_ROADMAP_INTERACTION_participanted', 'participanted', unique=False),
         db.Index('index_ROADMAP_INTERACTION_completed', 'completed', unique=False),

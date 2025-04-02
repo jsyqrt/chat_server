@@ -488,13 +488,11 @@ def submit_update():
 
     old_mindmap = get_mindmap_from_meili(current_app, mindmap_id)
     if old_mindmap:
-        if old_mindmap['created_by'] == current_user.get_id_int():
-            mindmap['updated_at'] = time.time()
-            result =  update_mindmap_to_meili(current_app, mindmap)
-            current_app.logger.debug(f"update mindmap: {result}, mindmap: {mindmap}")
-            return jsonify({'message': 'Update submitted'})
-        else:
-            return jsonify({'error': 'You are not the creator of this roadmap'}), 403
+        mindmap['updated_at'] = time.time()
+        mindmap['updated_by'] = current_user.get_id_int()
+        result =  update_mindmap_to_meili(current_app, mindmap)
+        current_app.logger.debug(f"update mindmap: {result} by user: {current_user.get_id_int()}")
+        return jsonify({'message': 'Update submitted'})
 
     return jsonify({'error': 'Roadmap not found'}), 404
 
