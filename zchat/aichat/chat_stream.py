@@ -40,7 +40,12 @@ def chat_with_ai():
         session_id=session.id,
         sender_type='user',
         content=user_message,
-        timestamp=time.time()
+        timestamp=time.time(),
+        message_metadata= {
+            "roadmap_id": chat_context.get("roadmap_id"),
+            "node_id": chat_context.get("node_id"),
+            "node_path": chat_context.get("node_path"),
+        } if chat_context else {}
     )
     db.session.add(user_chat_message)
     db.session.commit()
@@ -57,7 +62,7 @@ def chat_with_ai():
         session_id=session.id,
         sender_type='ai',
         content="",  # 将在流式响应完成后更新
-        timestamp=time.time()
+        timestamp=time.time(),
     )
     db.session.add(ai_message)
     session.updated_at = time.time()
@@ -79,7 +84,7 @@ def chat_with_ai():
         ai_message.content = full_response
         db.session.commit()
 
-        # current_app.logger.debug(f"ai_message: {ai_message.content}")
+        current_app.logger.debug(f"ai_message: {ai_message.content}")
 
         # 发送完成信号
         yield f"data: {json.dumps({'done': True, 'session_id': session.id, 'message_id': ai_message.id})}\n\n"

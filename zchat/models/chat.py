@@ -73,5 +73,5 @@ class ChatMessage(db.Model):
             "sender_type": self.sender_type,
             "content": self.content,
             "timestamp": self.timestamp,
-            "message_metadata": self.message_metadata
+            "metadata": self.message_metadata
         }
