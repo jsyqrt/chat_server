@@ -416,7 +416,7 @@ def generate_css_for_pdf():
 </style>
 """
 
-def generate_resume_markdown(data, include_css=True):
+def generate_resume_markdown(data, include_css=False):
     """生成完整的简历Markdown"""
     sections = []
 
@@ -501,7 +501,7 @@ def main():
     resume_data = load_resume_data(input_path)
 
     # 生成Markdown
-    markdown_content = generate_resume_markdown(resume_data, not args.no_css)
+    markdown_content = generate_resume_markdown(resume_data, args.no_css)
 
     # 写入文件
     try:

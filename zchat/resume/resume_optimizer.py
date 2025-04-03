@@ -8,421 +8,452 @@ from flask import current_app
 
 from zchat.apis.ocr import ocr_file
 from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response
+from zchat.resume.resume_generator import generate_resume_markdown
 
 def optimization_schema():
     json_schema = """
 {
-  "type": "object",
-  "properties": {
-    "optimized_resume": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "候选人全名"
+    "type": "object",
+    "properties": {
+        "optimized_resume": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "候选人全名"
+                },
+                "contact": {
+                    "type": "object",
+                    "properties": {
+                        "email": {
+                            "type": "string",
+                            "description": "电子邮件地址"
+                        },
+                        "phone": {
+                            "type": "string",
+                            "description": "电话号码"
+                        },
+                        "linkedin": {
+                            "type": "string",
+                            "description": "LinkedIn个人资料URL"
+                        },
+                        "github": {
+                            "type": "string",
+                            "description": "GitHub个人资料URL"
+                        },
+                        "website": {
+                            "type": "string",
+                            "description": "个人网站URL"
+                        },
+                        "address": {
+                            "type": "string",
+                            "description": "实际地址（如有）"
+                        }
+                    },
+                    "required": [
+                        "email",
+                        "phone"
+                    ]
+                },
+                "personal_info": {
+                    "type": "object",
+                    "properties": {
+                        "nationality": {
+                            "type": "string",
+                            "description": "国籍（如有提及）"
+                        },
+                        "languages": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "language": {
+                                        "type": "string",
+                                        "description": "语言名称"
+                                    },
+                                    "proficiency": {
+                                        "type": "string",
+                                        "description": "熟练程度"
+                                    }
+                                }
+                            }
+                        },
+                        "other_details": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "个人信息名称"
+                                    },
+                                    "value": {
+                                        "type": "string",
+                                        "description": "个人信息值"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "education": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "degree": {
+                                "type": "string",
+                                "description": "学位名称或学习项目"
+                            },
+                            "field_of_study": {
+                                "type": "string",
+                                "description": "专业或研究领域"
+                            },
+                            "institution": {
+                                "type": "string",
+                                "description": "院校名称"
+                            },
+                            "location": {
+                                "type": "string",
+                                "description": "院校所在地"
+                            },
+                            "start_date": {
+                                "type": "string",
+                                "description": "教育开始日期"
+                            },
+                            "end_date": {
+                                "type": "string",
+                                "description": "教育结束日期或预期毕业日期"
+                            },
+                            "gpa": {
+                                "type": "string",
+                                "description": "GPA或学术成就"
+                            },
+                            "details": {
+                                "type": "string",
+                                "description": "关于教育的其他详细信息"
+                            }
+                        }
+                    }
+                },
+                "self_evaluation": {
+                    "type": "string",
+                    "description": "自我评价"
+                },
+                "interests": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "个人或职业兴趣"
+                },
+                "good_at": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "特长，擅长的事情"
+                },
+                "skills": {
+                    "type": "object",
+                    "properties": {
+                        "technical": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "技术技能（编程语言、工具、平台及其掌握程度，比如熟悉XX，了解YY，精通ZZ）"
+                        },
+                        "soft": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "软技能（沟通、领导力等，比如沟通能力强，有很强的团队协作能力，有很强的抗压能力）"
+                        },
+                        "languages": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "语言技能（比如英语流利，日语熟练）"
+                        },
+                        "other": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "不适合上述类别的其他技能（比如擅长沟通，擅长写作，擅长设计）"
+                        }
+                    }
+                },
+                "certifications": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "证书名称"
+                            },
+                            "issuer": {
+                                "type": "string",
+                                "description": "颁发机构, 如果不明确，可以为空字符串"
+                            },
+                            "date": {
+                                "type": "string",
+                                "description": "获得日期"
+                            },
+                            "expiration": {
+                                "type": "string",
+                                "description": "到期日期（如适用）"
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "证书ID（如有）"
+                            },
+                            "url": {
+                                "type": "string",
+                                "description": "验证证书的URL（如有）"
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ]
+                    }
+                },
+                "experience": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "type": "string",
+                                "description": "职位名称"
+                            },
+                            "organization": {
+                                "type": "string",
+                                "description": "组织或公司名称"
+                            },
+                            "location": {
+                                "type": "string",
+                                "description": "工作地点"
+                            },
+                            "start_date": {
+                                "type": "string",
+                                "description": "就业开始日期"
+                            },
+                            "end_date": {
+                                "type": "string",
+                                "description": "就业结束日期或'至今'（如果是当前工作）"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "整体工作描述"
+                            },
+                            "responsibilities": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "该角色的主要职责"
+                            },
+                            "achievements": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "具体成就、指标或结果"
+                            },
+                            "technologies": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "使用的技术、工具或方法"
+                            }
+                        }
+                    }
+                },
+                "projects": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "项目名称"
+                            },
+                            "role": {
+                                "type": "string",
+                                "description": "在项目中的角色"
+                            },
+                            "start_date": {
+                                "type": "string",
+                                "description": "项目开始日期"
+                            },
+                            "end_date": {
+                                "type": "string",
+                                "description": "项目结束日期或'至今'（如果正在进行）"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "项目描述"
+                            },
+                            "technologies": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "使用的技术、工具或方法"
+                            },
+                            "achievements": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "具体成就或成果"
+                            },
+                            "url": {
+                                "type": "string",
+                                "description": "项目URL（如有）"
+                            }
+                        }
+                    }
+                },
+                "publications": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "type": "string",
+                                "description": "出版物名称"
+                            },
+                            "authors": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "作者列表"
+                            },
+                            "publisher": {
+                                "type": "string",
+                                "description": "出版商或期刊名称"
+                            },
+                            "date": {
+                                "type": "string",
+                                "description": "出版日期"
+                            },
+                            "url": {
+                                "type": "string",
+                                "description": "出版物URL（如有）"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "出版物简介或摘要"
+                            }
+                        }
+                    }
+                },
+                "awards": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "奖项名称"
+                            },
+                            "issuer": {
+                                "type": "string",
+                                "description": "颁发机构"
+                            },
+                            "date": {
+                                "type": "string",
+                                "description": "获奖日期"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "奖项简介"
+                            }
+                        }
+                    }
+                },
+                "volunteer_experience": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "role": {
+                                "type": "string",
+                                "description": "志愿者角色"
+                            },
+                            "organization": {
+                                "type": "string",
+                                "description": "组织名称"
+                            },
+                            "start_date": {
+                                "type": "string",
+                                "description": "开始日期"
+                            },
+                            "end_date": {
+                                "type": "string",
+                                "description": "结束日期或'至今'（如果是当前工作）"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "志愿者工作描述"
+                            }
+                        }
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "contact",
+                "education",
+                "self_evaluation",
+                "interests",
+                "good_at",
+                "skills",
+                "experience",
+                "projects",
+                "publications",
+                "awards",
+                "volunteer_experience"
+            ]
         },
-        "contact": {
-          "type": "object",
-          "properties": {
-            "email": {
-              "type": "string",
-              "description": "电子邮件地址"
-            },
-            "phone": {
-              "type": "string",
-              "description": "电话号码"
-            },
-            "linkedin": {
-              "type": "string",
-              "description": "LinkedIn个人资料URL"
-            },
-            "github": {
-              "type": "string",
-              "description": "GitHub个人资料URL"
-            },
-            "website": {
-              "type": "string",
-              "description": "个人网站URL"
-            },
-            "address": {
-              "type": "string",
-              "description": "实际地址（如有）"
-            }
-          }
-        },
-        "personal_info": {
-          "type": "object",
-          "properties": {
-            "nationality": {
-              "type": "string",
-              "description": "国籍（如有提及）"
-            },
-            "languages": {
-              "type": "array",
-              "items": {
+        "learning_suggestions": {
+            "type": "array",
+            "items": {
                 "type": "object",
                 "properties": {
-                  "language": {
-                    "type": "string",
-                    "description": "语言名称"
-                  },
-                  "proficiency": {
-                    "type": "string",
-                    "description": "熟练程度"
-                  }
-                }
-              }
-            },
-            "other_details": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "个人信息名称"
-                  },
-                  "value": {
-                    "type": "string",
-                    "description": "个人信息值"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "education": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "degree": {
-                "type": "string",
-                "description": "学位名称或学习项目"
-              },
-              "field_of_study": {
-                "type": "string",
-                "description": "专业或研究领域"
-              },
-              "institution": {
-                "type": "string",
-                "description": "院校名称"
-              },
-              "location": {
-                "type": "string",
-                "description": "院校所在地"
-              },
-              "start_date": {
-                "type": "string",
-                "description": "教育开始日期"
-              },
-              "end_date": {
-                "type": "string",
-                "description": "教育结束日期或预期毕业日期"
-              },
-              "gpa": {
-                "type": "string",
-                "description": "GPA或学术成就"
-              },
-              "details": {
-                "type": "string",
-                "description": "关于教育的其他详细信息"
-              }
-            }
-          }
-        },
-        "self_evaluation": {
-          "type": "string",
-          "description": "自我评价"
-        },
-        "interests": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "个人或职业兴趣"
-        },
-        "good_at": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "特长，擅长的事情"
-        },
-        "skills": {
-          "type": "object",
-          "properties": {
-            "technical": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "description": "技术技能（编程语言、工具、平台及其掌握程度，比如熟悉XX，了解YY，精通ZZ）"
-            },
-            "soft": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "description": "软技能（沟通、领导力等，比如沟通能力强，有很强的团队协作能力，有很强的抗压能力）"
-            },
-            "languages": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "description": "语言技能（比如英语流利，日语熟练）"
-            },
-            "other": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "description": "不适合上述类别的其他技能（比如擅长沟通，擅长写作，擅长设计）"
-            }
-          }
-        },
-        "certifications": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string",
-                "description": "证书名称"
-              },
-              "issuer": {
-                "type": "string",
-                "description": "颁发机构"
-              },
-              "date": {
-                "type": "string",
-                "description": "获得日期"
-              },
-              "expiration": {
-                "type": "string",
-                "description": "到期日期（如适用）"
-              },
-              "id": {
-                "type": "string",
-                "description": "证书ID（如有）"
-              },
-              "url": {
-                "type": "string",
-                "description": "验证证书的URL（如有）"
-              }
-            }
-          }
-        },
-        "experience": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "title": {
-                "type": "string",
-                "description": "职位名称"
-              },
-              "organization": {
-                "type": "string",
-                "description": "组织或公司名称"
-              },
-              "location": {
-                "type": "string",
-                "description": "工作地点"
-              },
-              "start_date": {
-                "type": "string",
-                "description": "就业开始日期"
-              },
-              "end_date": {
-                "type": "string",
-                "description": "就业结束日期或'至今'（如果是当前工作）"
-              },
-              "description": {
-                "type": "string",
-                "description": "整体工作描述"
-              },
-              "responsibilities": {
-                "type": "array",
-                "items": {
-                  "type": "string"
+                    "skill": {
+                        "type": "string",
+                        "description": "需要学习的技能或知识领域"
+                    },
+                    "relevance": {
+                        "type": "string",
+                        "enum": [
+                            "高",
+                            "中",
+                            "低"
+                        ],
+                        "description": "与职位描述的相关性"
+                    }
                 },
-                "description": "该角色的主要职责"
-              },
-              "achievements": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "具体成就、指标或结果"
-              },
-              "technologies": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "使用的技术、工具或方法"
-              }
+                "required": [
+                    "skill",
+                    "relevance"
+                ]
             }
-          }
-        },
-        "projects": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string",
-                "description": "项目名称"
-              },
-              "role": {
-                "type": "string",
-                "description": "在项目中的角色"
-              },
-              "start_date": {
-                "type": "string",
-                "description": "项目开始日期"
-              },
-              "end_date": {
-                "type": "string",
-                "description": "项目结束日期或'至今'（如果正在进行）"
-              },
-              "description": {
-                "type": "string",
-                "description": "项目描述"
-              },
-              "technologies": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "使用的技术、工具或方法"
-              },
-              "achievements": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "具体成就或成果"
-              },
-              "url": {
-                "type": "string",
-                "description": "项目URL（如有）"
-              }
-            }
-          }
-        },
-        "publications": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "title": {
-                "type": "string",
-                "description": "出版物名称"
-              },
-              "authors": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "作者列表"
-              },
-              "publisher": {
-                "type": "string",
-                "description": "出版商或期刊名称"
-              },
-              "date": {
-                "type": "string",
-                "description": "出版日期"
-              },
-              "url": {
-                "type": "string",
-                "description": "出版物URL（如有）"
-              },
-              "description": {
-                "type": "string",
-                "description": "出版物简介或摘要"
-              }
-            }
-          }
-        },
-        "awards": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string",
-                "description": "奖项名称"
-              },
-              "issuer": {
-                "type": "string",
-                "description": "颁发机构"
-              },
-              "date": {
-                "type": "string",
-                "description": "获奖日期"
-              },
-              "description": {
-                "type": "string",
-                "description": "奖项简介"
-              }
-            }
-          }
-        },
-        "volunteer_experience": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "role": {
-                "type": "string",
-                "description": "志愿者角色"
-              },
-              "organization": {
-                "type": "string",
-                "description": "组织名称"
-              },
-              "start_date": {
-                "type": "string",
-                "description": "开始日期"
-              },
-              "end_date": {
-                "type": "string",
-                "description": "结束日期或'至今'（如果是当前工作）"
-              },
-              "description": {
-                "type": "string",
-                "description": "志愿者工作描述"
-              }
-            }
-          }
         }
-      },
-      "required": ["name", "contact", "education", "self_evaluation", "interests", "good_at", "skills", "experience", "projects", "publications", "awards", "volunteer_experience"]
     },
-    "learning_suggestions": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "skill": {
-            "type": "string",
-            "description": "需要学习的技能或知识领域"
-          },
-          "relevance": {
-            "type": "string",
-            "enum": ["高", "中", "低"],
-            "description": "与职位描述的相关性"
-          }
-        },
-        "required": ["skill", "relevance"]
-      }
-    }
-  },
-  "required": ["optimized_resume", "learning_suggestions"]
+    "required": [
+        "optimized_resume",
+        "learning_suggestions"
+    ]
 }
 """
     return json_schema
@@ -444,7 +475,7 @@ def optimize_resume_prompt(jd_text, resume_text):
 - 调整技能部分的顺序，将最相关的技能放在前面
 - 除非简历中已经明确提到求职者精通某项技能，否则不要添加精通某项技能的描述，最多只能添加熟悉某项技能的描述
 - 量化成就，但只使用简历中已有的数据或合理的估计
-- 不要编造工作经验、教育背景或技能
+- 不要编造工作经验、教育背景或技能，不要编造链接，数字或者证书
 - 不要过度夸大成就或责任
 
 注意：职位描述和原始简历是来自OCR的结果，可能存在错别字，请根据上下文内容，修正可能的错别字，不要让错别字出现在结果中。
@@ -472,7 +503,7 @@ def optimize_resume_prompt(jd_text, resume_text):
 - 确保所有优化都基于简历中已有的信息
 - 使用和原始简历相同的语言, 比如如果原始简历是中文，那么优化后的简历也必须是中文, 如果原始简历是英文，那么优化后的简历也必须是英文
 
-你的返回必须是一个有效的JSON对象，必须符合以下的JSON Schema：
+你的返回必须是一个合法的JSON对象，必须符合以下的JSON Schema：
 """ + optimization_schema()
     return system_prompt, user_prompt
 
@@ -823,8 +854,9 @@ def optimize(jd_text=None, resume_text=None):
 
 def compare_resumes(original_resume_text, optimized_resume_json, jd_text):
     try:
-        optimized_resume_text = json.dumps(optimized_resume_json["optimized_resume"],
-                                          ensure_ascii=False, indent=2)
+        # optimized_resume_text = json.dumps(optimized_resume_json["optimized_resume"],
+        #                                   ensure_ascii=False, indent=2)
+        optimized_resume_text = generate_resume_markdown(optimized_resume_json["optimized_resume"])
 
         current_app.logger.debug(f"original_resume_text: {original_resume_text}")
         current_app.logger.debug(f"optimized_resume_text: {optimized_resume_text}")
