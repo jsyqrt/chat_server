@@ -449,10 +449,16 @@ def official_maps():
 @login_required
 def get_map():
     id = request.args.get('id')
+    with_mindmap = request.args.get('with_mindmap', 'false') == 'true'
+
     roadmap_ops = RoadmapOps(db.session)
     roadmap = roadmap_ops.get_roadmap(id)
     if roadmap:
-        mindmap = get_mindmap_from_meili(current_app, roadmap.mindmap_id)
+        if with_mindmap:
+            mindmap = get_mindmap_from_meili(current_app, roadmap.mindmap_id)
+        else:
+            mindmap = None
+
         interaction_ops = RoadmapInteractionOps(db.session)
         interaction_stats = interaction_ops.get_stats(id)
 
