@@ -17,6 +17,8 @@ from zchat.roadmap.from_topic import mindmap_from_topic
 from zchat.roadmap.get_description import description_from_topic_path, description_from_topic_path_stream
 from zchat.meili import *
 from zchat.apis.ocr import ocr_file
+from zchat.models.points import ServiceType
+from zchat.points import check_points_sufficient, consume_points_for_service
 
 bp = Blueprint('roadmap', __name__, url_prefix='/roadmap')
 
@@ -75,9 +77,15 @@ def create_from_jd_and_resume():
     if not jd_id:
         return jsonify({'error': 'No JD ID provided'}), 400
 
+    user_id = current_user.get_id_int()
+
+    # 检查积分是否足够
+    sufficient, message = check_points_sufficient(user_id, ServiceType.CREATE_ROADMAP.value)
+    if not sufficient:
+        return jsonify({'error': message, 'points_required': True}), 402
+
     resume_file = request.files.get('resume_file', None)
     resume_file_name = request.form.get('resume_file_name', None)
-    user_id = current_user.get_id_int()
 
     jd_record = get_jd_record_from_meili(current_app, user_id, jd_id)
     if not jd_record:
@@ -146,6 +154,11 @@ def create_from_jd_and_resume():
     if not mindmap_info:
         return jsonify({'error': 'Failed to create mindmap'}), 400
 
+    # 消费积分
+    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, "创建学习路径")
+    if not success:
+        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+
     mindmap_id_generator = MindmapModifier()
     mindmap = mindmap_id_generator.generate(mindmap_info)
     mindmap['roadmap_id'] = str(uuid.uuid4())
@@ -198,6 +211,7 @@ def create_from_jd_and_resume():
         'type': roadmap.roadmap_type,
         'kind': roadmap.roadmap_kind,
         'mindmap': mindmap,
+        'points_spent': points_spent
     })
 
 
@@ -210,6 +224,11 @@ def create_from_topic():
     user_background = request.form.get('user_background', '')
     other_prompts = request.form.get('other_prompts', '')
     user_id = current_user.get_id_int()
+
+    # 检查积分是否足够
+    sufficient, message = check_points_sufficient(user_id, ServiceType.CREATE_ROADMAP.value)
+    if not sufficient:
+        return jsonify({'error': message, 'points_required': True}), 402
 
     is_valid = False
     max_retries = 3
@@ -226,6 +245,11 @@ def create_from_topic():
 
     if not mindmap:
         return jsonify({'error': 'Failed to create mindmap'}), 400
+
+    # 消费积分
+    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, "创建学习路径")
+    if not success:
+        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 
     mindmap_id_generator = MindmapModifier()
     mindmap = mindmap_id_generator.generate(mindmap)
@@ -278,6 +302,7 @@ def create_from_topic():
         'type': roadmap.roadmap_type,
         'kind': roadmap.roadmap_kind,
         'mindmap': mindmap,
+        'points_spent': points_spent
     })
 
 @bp.route('/industry_tags', methods=['GET'])
@@ -378,8 +403,14 @@ def description():
     topic = request.form.get('topic')
     topic_path = request.form.get('topic_path')
     topic_path = topic_path.split(',')
+    user_id = current_user.get_id_int()
 
     current_app.logger.debug(f"description topic: {topic}, topic_path: {topic_path}")
+
+    # 检查积分是否足够
+    sufficient, message = check_points_sufficient(user_id, ServiceType.GET_DESCRIPTION.value)
+    if not sufficient:
+        return jsonify({'error': message, 'points_required': True}), 402
 
     description_json = description_from_topic_path(topic, topic_path)
     is_valid = False
@@ -393,7 +424,15 @@ def description():
             description_json = description_from_topic_path(topic, topic_path)
             max_retries -= 1
 
-    return jsonify(description_info)
+    # 消费积分
+    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, "获取节点描述")
+    if not success:
+        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+
+    return jsonify({
+        'description': description_info,
+        'points_spent': points_spent
+    })
 
 @bp.route('/description_stream', methods=['POST'])
 @login_required
@@ -401,12 +440,25 @@ def description_stream():
     topic = request.form.get('topic')
     topic_path = request.form.get('topic_path')
     topic_path = topic_path.split(',')
+    user_id = current_user.get_id_int()
 
     current_app.logger.debug(f"description_stream topic: {topic}, topic_path: {topic_path}")
+
+    # 检查积分是否足够
+    sufficient, message = check_points_sufficient(user_id, ServiceType.GET_DESCRIPTION.value)
+    if not sufficient:
+        return jsonify({'error': message, 'points_required': True}), 402
+
+    # 消费积分
+    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, "获取节点描述")
+    if not success:
+        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 
     def generate():
         for chunk in description_from_topic_path_stream(topic, topic_path):
             yield chunk
+        # 在最后添加一个特殊的点数信息
+        yield f"\n\n__POINTS_SPENT:{points_spent}__"
 
     return Response(stream_with_context(generate()), mimetype='text/plain')
 

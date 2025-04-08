@@ -17,6 +17,8 @@ from zchat.apis.ocr import ocr_file
 from zchat.meili import get_file_records_from_meili, add_file_records_to_meili, update_file_records_to_meili, add_jd_record_to_meili, get_jd_records_from_meili
 
 from zchat.job.jd_parser import parse_jd
+from zchat.models.points import ServiceType
+from zchat.points import check_points_sufficient, consume_points_for_service
 
 bp = Blueprint('job', __name__, url_prefix='/job')
 
@@ -31,6 +33,11 @@ def analyze():
         return jsonify({'error': 'No JD file or JD text provided'}), 400
 
     user_id = current_user.get_id_int()
+
+    # 检查积分是否足够
+    sufficient, message = check_points_sufficient(user_id, ServiceType.JOB_ANALYSIS.value)
+    if not sufficient:
+        return jsonify({'error': message, 'points_required': True}), 402
 
     file_records = {}
 
@@ -88,6 +95,11 @@ def analyze():
     if not jd_analysis_result:
         return jsonify({'error': 'Try again later'}), 500
 
+    # 消费积分
+    success, points_spent = consume_points_for_service(user_id, ServiceType.JOB_ANALYSIS.value, "岗位分析")
+    if not success:
+        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+
     current_app.logger.debug(f"jd analysis result: {json.dumps(jd_analysis_result, indent=4, ensure_ascii=False)}")
 
     jd_record =  {
@@ -101,6 +113,10 @@ def analyze():
         'updated_at': time.time(),
     }
     add_jd_record_to_meili(current_app, user_id, jd_record)
+
+    # 添加积分消耗信息
+    jd_record['points_spent'] = points_spent
+
     return jsonify(jd_record)
 
 @bp.route('/analysis_history', methods=['GET'])

@@ -128,6 +128,7 @@ def unauthorized_handler():
 def login():
     phone_number = request.args.get('phone_number', '0')
     verification_code = request.args.get('verification_code', '0')
+    invite_code = request.args.get('invite_code', None)  # 新增：接收邀请码
 
     if phone_number == '0' or verification_code == '0':
         return { "error": "Invalid Phone Number or Verification Code!" }, 400
@@ -151,8 +152,21 @@ def login():
     # Remove the used verification code
     del current_app.vcode_dict[phone_number]
 
+    # 处理邀请者ID
+    inviter_id = None
+    if invite_code:
+        try:
+            user = User.query.filter_by(invite_code=invite_code).first()
+            if user:
+                inviter_id = user.id
+                current_app.logger.debug(f"Found inviter with ID {inviter_id} for invite code {invite_code}")
+            else:
+                current_app.logger.debug(f"No inviter found for invite code {invite_code}")
+        except Exception as e:
+            current_app.logger.error(f"Error finding inviter for invite code {invite_code}: {str(e)}")
+
     user_ops = UserOps(session=db.session)
-    user_id = user_ops.get_or_create_user(phone_number=phone_number)
+    user_id = user_ops.get_or_create_user(phone_number=phone_number, invited_by=inviter_id)
     if user_id is None:
         return { "error": "No such user!" }, 400
 
@@ -166,7 +180,8 @@ def login():
         {
             "error": "login succeed",
             "jwt": token,
-            "user_id": user_id
+            "user_id": user_id,
+            "invited_by": inviter_id  # 返回邀请者ID信息
         }
     )
 

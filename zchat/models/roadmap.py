@@ -1,3 +1,4 @@
+import os
 import json
 import uuid
 import time
@@ -6,7 +7,7 @@ from enum import Enum
 from flask import current_app, url_for
 
 from zchat.db import db
-from zchat.rand import *
+# from zchat.rand import *
 from zchat.meili import *
 
 class Roadmap(db.Model):
@@ -19,8 +20,10 @@ class Roadmap(db.Model):
     roadmap_type = db.Column(db.String, nullable=False) # official, user
     roadmap_kind = db.Column(db.String, nullable=False) # role, skill, concept
     roadmap_status = db.Column(db.Integer, nullable=False, default=0) # 0->create, 1->verified, 2->public
+
     mindmap_id = db.Column(db.String, nullable=False)
     created_by = db.Column(db.String, nullable=True)
+
     industry_tag = db.Column(db.String, nullable=True)
     job_tag = db.Column(db.String, nullable=True)
     skill_tag = db.Column(db.String, nullable=True)
@@ -33,8 +36,9 @@ class Roadmap(db.Model):
         db.Index('index_ROADMAP_subtitle', 'roadmap_subtitle', unique=False),
         db.Index('index_ROADMAP_type', 'roadmap_type', unique=False),
         db.Index('index_ROADMAP_kind', 'roadmap_kind', unique=False),
-        db.Index('index_ROADMAP_type', 'roadmap_type', unique=False),
+        db.Index('index_ROADMAP_status', 'roadmap_status', unique=False),
         db.Index('index_ROADMAP_mindmap_id', 'mindmap_id', unique=False),
+        db.Index('index_ROADMAP_created_by', 'created_by', unique=False),
         db.Index('index_ROADMAP_industry_tag', 'industry_tag', unique=False),
         db.Index('index_ROADMAP_job_tag', 'job_tag', unique=False),
         db.Index('index_ROADMAP_skill_tag', 'skill_tag', unique=False),

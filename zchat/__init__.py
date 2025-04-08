@@ -89,4 +89,16 @@ def create_app(test_config=None):
     app.register_blueprint(chat.bp)
     app.register_blueprint(chat_stream.bp)
 
+    # 注册积分系统相关蓝图
+    from . import points
+    points.init_app(app)
+
+    # 注册邀请系统相关蓝图
+    from . import invitation
+    invitation.init_app(app)
+
+    # 初始化定时任务调度器（用于检查订阅过期和积分过期）
+    from . import scheduler
+    scheduler.init_app(app)
+
     return app

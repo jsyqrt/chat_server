@@ -1,4 +1,4 @@
-from flask import Blueprint, request, Response, current_app, stream_with_context
+from flask import Blueprint, request, Response, current_app, stream_with_context, jsonify
 from flask_login import login_required, current_user
 import json
 import time
@@ -9,6 +9,8 @@ import uuid
 from zchat.db import db
 from zchat.models.chat import ChatSession, ChatMessage
 from zchat.apis.llm import chat_with_llm_stream
+from zchat.models.points import ServiceType
+from zchat.points import check_points_sufficient, consume_points_for_service
 
 bp = Blueprint('aichat_stream', __name__, url_prefix='/aichat')
 
@@ -31,6 +33,14 @@ def chat_with_ai():
     if not user_message:
         return Response(json.dumps({"error": "消息内容不能为空"}),
                         status=400, mimetype='application/json')
+
+    user_id = current_user.get_id_int()
+
+    # 检查积分是否足够
+    sufficient, message = check_points_sufficient(user_id, ServiceType.AI_CHAT.value)
+    if not sufficient:
+        return Response(json.dumps({"error": message, "points_required": True}),
+                        status=402, mimetype='application/json')
 
     # 获取或创建聊天会话
     session = None
@@ -140,6 +150,12 @@ def chat_with_ai():
 4. 确保JSON格式正确，所有属性间使用逗号分隔"""
     })
 
+    # 消费积分
+    success, points_spent = consume_points_for_service(user_id, ServiceType.AI_CHAT.value, "AI聊天")
+    if not success:
+        return Response(json.dumps({"error": "积分扣除失败，请稍后重试", "points_required": True}),
+                        status=402, mimetype='application/json')
+
     # 准备AI响应消息记录
     ai_message = ChatMessage(
         id=str(uuid.uuid4()),
@@ -158,6 +174,9 @@ def chat_with_ai():
         full_response = ""
 
         current_app.logger.debug(f"history: {history}, user_message: {user_message}")
+
+        # 发送积分消耗信息
+        yield f"data: {json.dumps({'points_spent': points_spent})}\n\n"
 
         # 调用LLM API并处理流式响应
         for chunk in chat_with_llm_stream(user_message, history=history, model="qwen-2.5-32b", max_tokens=4096, platform="siliconflow"):

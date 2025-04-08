@@ -24,8 +24,18 @@ from zchat.meili import get_file_records_from_meili, \
 from zchat.resume.resume_optimizer import optimize as optimize_resume
 from zchat.resume.resume_optimizer import compare_resumes as compare_resumes
 from zchat.resume.resume_generator import generate_resume_markdown as format_resume
+from zchat.models.points import ServiceType
+from zchat.points import check_points_sufficient, consume_points_for_service
 
 bp = Blueprint('resume', __name__, url_prefix='/resume')
+
+@bp.route('/index', methods=['GET'])
+def index():
+    return render_template('resume/resume.html')
+
+@bp.route('/resume.json', methods=['GET'])
+def resume_json():
+    return send_file('/Users/liuqian/mycode/github/sf/be/chat_server/zchat/templates/resume/resume.json', mimetype='application/json')
 
 @bp.route('/optimize', methods=['POST'])
 @login_required
@@ -41,6 +51,11 @@ def optimize():
         return jsonify({'error': 'No resume file or resume text provided'}), 400
 
     user_id = current_user.get_id_int()
+
+    # 检查积分是否足够
+    sufficient, message = check_points_sufficient(user_id, ServiceType.OPTIMIZE_RESUME.value)
+    if not sufficient:
+        return jsonify({'error': message, 'points_required': True}), 402
 
     file_records = {}
 
@@ -111,6 +126,11 @@ def optimize():
     if not comparison:
         return jsonify({'error': 'Try again later'}), 500
 
+    # 消费积分
+    success, points_spent = consume_points_for_service(user_id, ServiceType.OPTIMIZE_RESUME.value, "简历优化")
+    if not success:
+        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+
     current_app.logger.debug(f"comparison: {json.dumps(comparison, indent=4, ensure_ascii=False)}")
 
     formatted_resume = format_resume(optimized_resume["optimized_resume"], include_css=False)
@@ -127,6 +147,7 @@ def optimize():
         'file_records': file_records,
         'created_at': time.time(),
         'updated_at': time.time(),
+        'points_spent': points_spent
     }
     add_resume_optimization_record_to_meili(current_app, user_id, resume_optimization_record)
     return jsonify(resume_optimization_record)
