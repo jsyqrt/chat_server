@@ -60,6 +60,13 @@ def get_balance():
         "total_available": daily_available + purchased_total + invitation_total
     })
 
+@bp.route('/costs_and_rewards', methods=['GET'])
+@login_required
+def get_costs_and_rewards():
+    """获取积分成本和奖励"""
+    points_ops = PointsOps(db.session)
+    return jsonify(points_ops.get_costs_and_rewards())
+
 @bp.route('/packages', methods=['GET'])
 @login_required
 def get_point_packages():

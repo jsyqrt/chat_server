@@ -6,7 +6,7 @@ import string
 from flask import current_app
 
 from zchat.db import db
-from zchat.models.points import PointsOps
+from zchat.models.points import PointsOps, RewardType
 
 class Invitation(db.Model):
     """邀请记录表"""
@@ -72,7 +72,7 @@ class InvitationOps:
         """处理邀请奖励（为邀请人和被邀请人添加积分）"""
         try:
             points_ops = PointsOps(self.session)
-            reward_points = points_ops.INVITATION_POINTS
+            reward_points = points_ops.REWARDS[RewardType.INVITATION.value]
 
             # 为邀请人添加积分
             inviter_success = points_ops.add_invitation_points(inviter_id)

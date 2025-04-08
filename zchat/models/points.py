@@ -21,11 +21,16 @@ class PointsSourceType(Enum):
     INVITATION = 'invitation'  # 邀请获得的积分
 
 class ServiceType(Enum):
-    CREATE_ROADMAP = 'create_roadmap'            # 创建学习路径
-    OPTIMIZE_RESUME = 'optimize_resume'          # 优化简历
-    GET_DESCRIPTION = 'get_description'          # 获取描述
+    CAREER_ASSESSMENT = 'career_assessment'      # 职业评估
     JOB_ANALYSIS = 'job_analysis'                # 岗位分析
+    OPTIMIZE_RESUME = 'optimize_resume'          # 优化简历
+    CREATE_ROADMAP = 'create_roadmap'            # 创建学习路径
+    UNLOCK_ROADMAP = 'unlock_roadmap'            # 解锁学习路径
+    GET_DESCRIPTION = 'get_description'          # 获取描述
     AI_CHAT = 'ai_chat'                          # AI聊天
+
+class RewardType(Enum):
+    INVITATION = 'invitation'  # 邀请奖励
 
 class PointsTransaction(db.Model):
     """积分交易记录表"""
@@ -93,11 +98,13 @@ class PointsOps:
 
     # 常量定义
     POINTS_COST = {
-        ServiceType.CREATE_ROADMAP.value: 30,
-        ServiceType.OPTIMIZE_RESUME.value: 40,
-        ServiceType.GET_DESCRIPTION.value: 1,
+        ServiceType.CAREER_ASSESSMENT.value: 30,
         ServiceType.JOB_ANALYSIS.value: 20,
-        ServiceType.AI_CHAT.value: 1,
+        ServiceType.OPTIMIZE_RESUME.value: 60,
+        ServiceType.UNLOCK_ROADMAP.value: 5,
+        ServiceType.CREATE_ROADMAP.value: 30,
+        ServiceType.GET_DESCRIPTION.value: 2,
+        ServiceType.AI_CHAT.value: 2,
     }
 
     DAILY_POINTS = {
@@ -106,12 +113,22 @@ class PointsOps:
         AccountType.PRO.value: 2000,
     }
 
-    INVITATION_POINTS = 80  # 邀请奖励积分
+    REWARDS = {
+        RewardType.INVITATION.value: 80  # 邀请奖励积分
+    }
+
     INVITATION_EXPIRE_DAYS = 30  # 邀请积分有效期(天)
     PURCHASED_POINTS_EXPIRE_DAYS = 30  # 购买积分有效期(天)
 
     # 新增：一天的秒数
     SECONDS_PER_DAY = 86400
+
+    def get_costs_and_rewards(self):
+        """获取积分成本和奖励"""
+        return {
+            'costs': self.POINTS_COST,
+            'rewards': self.REWARDS
+        }
 
     def get_service_cost(self, service_type):
         """获取服务所需的积分"""
@@ -432,21 +449,21 @@ class PointsOps:
             transaction = self.add_transaction(
                 user_id=user_id,
                 transaction_type=PointsTransactionType.INVITATION.value,
-                points_amount=self.INVITATION_POINTS,
+                points_amount=self.REWARDS[RewardType.INVITATION.value],
                 expires_at=expire_time,
-                description=f"邀请奖励: {self.INVITATION_POINTS}积分"
+                description=f"邀请奖励: {self.REWARDS[RewardType.INVITATION.value]}积分"
             )
 
             if transaction:
                 # 增加积分余额
                 balance = self.add_points_balance(
                     user_id=user_id,
-                    points_amount=self.INVITATION_POINTS,
+                    points_amount=self.REWARDS[RewardType.INVITATION.value],
                     source_type=PointsSourceType.INVITATION.value,
                     expires_at=expire_time
                 )
 
-                current_app.logger.debug(f"User {user_id} received invitation reward: {self.INVITATION_POINTS} points")
+                current_app.logger.debug(f"User {user_id} received invitation reward: {self.REWARDS[RewardType.INVITATION.value]} points")
                 return balance is not None
 
             return False

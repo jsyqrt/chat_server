@@ -21,19 +21,13 @@ def get_share_link():
     if not invite_code:
         return jsonify({"error": "Failed to get invitation code"}), 500
 
-    # 构建邀请链接
-    base_url = request.host_url.rstrip('/')
-    invite_url = f"{base_url}/register?invite_code={invite_code}"
-
     # 构建分享文本
     user = user_ops.get_one(user_id)
-    share_text = f"我正在使用「职路」进行职业提升，邀请你一起加入！注册时使用我的邀请码 {invite_code} 或点击链接 {invite_url}，我们都可以获得80积分奖励！"
+    share_text = f"我正在使用「职路」APP，邀请你一起加入！注册时使用我的邀请码「 {invite_code}」 获得额外积分奖励！"
 
     return jsonify({
         "invite_code": invite_code,
-        "invite_url": invite_url,
         "share_text": share_text,
-        "qr_code_url": f"{base_url}/invitation/qrcode?code={invite_code}"
     })
 
 @bp.route('/statistics', methods=['GET'])
