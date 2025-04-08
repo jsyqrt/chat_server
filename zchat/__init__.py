@@ -97,6 +97,10 @@ def create_app(test_config=None):
     from . import invitation
     invitation.init_app(app)
 
+    # 注册官网页面蓝图
+    from . import website
+    app.register_blueprint(website.bp)
+
     # 初始化定时任务调度器（用于检查订阅过期和积分过期）
     from . import scheduler
     scheduler.init_app(app)

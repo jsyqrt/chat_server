@@ -87,7 +87,7 @@ def chat_with_ai():
 分析上下文并回复用户消息，遵循以下指导原则：
 
 【回复结构要求】
-1. 主要内容：清晰、有条理地回应用户问题，提供有价值的见解和建议
+1. 主要内容：清晰、有条理地回应用户问题，提供有价值的见解和建议，最好能提供实际的示例或者案例，以帮助用户更好地理解。
 2. 分隔符：在主要内容结束后，使用该特殊字符串作为分隔符: <|------ 互动建议 ------|>
 3. 互动建议：在分隔符后提供JSON格式的互动建议，包含以下三类信息：
    - questions_to_ai：用户可能想问AI的后续问题（以用户的视角和口吻提问）
@@ -208,6 +208,9 @@ def get_chat_history(session_id, max_messages=6):
     history = []
     for message in messages:
         role = "user" if message.sender_type == "user" else "assistant"
+        if role == "assistant":
+            message.content = message.content.split("------ 互动建议 ------")[0]
+
         history.append({"role": role, "content": message.content})
 
     history.reverse()

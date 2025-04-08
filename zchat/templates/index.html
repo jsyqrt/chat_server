@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职路 - 您的职业发展伙伴</title>
+    <meta name="description" content="职路是一款专注于职业发展、求职指导和职场提升的应用，助您踏上理想的职业之路。">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 添加网站图标 -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="职路logo">
+                <h1>职路</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#features">产品特色</a></li>
+                    <li><a href="#benefits">核心优势</a></li>
+                    <li><a href="#download">立即下载</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主横幅 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>开启您的职业成功之旅</h2>
+                <p>职路，专业的职业发展平台，为您提供全方位的求职指导、简历优化、面试准备和职业规划服务。</p>
+                <div class="hero-btns">
+                    <a href="#download" class="btn btn-primary">立即下载</a>
+                    <a href="#features" class="btn btn-secondary">了解更多</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/app-showcase.png') }}" alt="职路应用展示">
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色功能 -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">产品特色</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>简历优化</h3>
+                    <p>AI驱动的简历优化工具，帮助您打造专业的简历，提高求职成功率。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>AI面试助手</h3>
+                    <p>模拟真实面试场景，提供个性化的面试技巧和答案指导。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>职业规划</h3>
+                    <p>根据您的技能、兴趣和目标，提供定制化的职业发展路径。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>职位匹配</h3>
+                    <p>智能推荐最适合您的职位，精准匹配您的专业技能与雇主需求。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">核心优势</h2>
+            <div class="benefits-wrapper">
+                <div class="benefit-content">
+                    <div class="benefit-item">
+                        <h3><i class="fas fa-robot"></i> AI技术驱动</h3>
+                        <p>运用先进的人工智能技术，提供个性化的职业发展建议和求职指导。</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3><i class="fas fa-user-tie"></i> 行业专家支持</h3>
+                        <p>汇集各行业资深HR和职业发展专家，提供专业的指导与建议。</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3><i class="fas fa-chart-line"></i> 数据驱动决策</h3>
+                        <p>基于大数据分析，帮助您做出更明智的职业决策。</p>
+                    </div>
+                </div>
+                <div class="benefit-image">
+                    <img src="{{ url_for('static', filename='images/benefits.png') }}" alt="职路核心优势">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">用户评价</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"职路帮助我优化了简历，收到了梦想公司的面试邀请。面试助手功能让我充满信心地应对了每一个问题。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="用户头像">
+                        <div>
+                            <h4>张先生</h4>
+                            <p>软件工程师</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"作为一名应届毕业生，我通过职路的职业规划功能找到了适合自己的发展方向，现在已经在理想的公司工作了。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="{{ url_for('static', filename='images/user2.jpg') }}" alt="用户头像">
+                        <div>
+                            <h4>李女士</h4>
+                            <p>市场营销专员</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"职路的职位匹配功能太棒了，为我推荐的工作机会都非常符合我的期望，让我的求职过程高效又轻松。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="{{ url_for('static', filename='images/user3.jpg') }}" alt="用户头像">
+                        <div>
+                            <h4>王先生</h4>
+                            <p>产品经理</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">立即下载</h2>
+            <p class="download-subtitle">随时随地，开启您的职业发展之旅</p>
+            <div class="app-badges">
+                <a href="https://apps.apple.com/cn/app/职路/id123456789" class="app-badge" id="ios-download">
+                    <img src="{{ url_for('static', filename='images/app-store-badge.png') }}" alt="App Store下载">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.zhilu.app" class="app-badge" id="android-download">
+                    <img src="{{ url_for('static', filename='images/google-play-badge.png') }}" alt="Google Play下载">
+                </a>
+            </div>
+            <div class="qr-code">
+                <img src="{{ url_for('static', filename='images/download-qr.png') }}" alt="扫码下载职路APP">
+                <p>扫描二维码下载</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">关于我们</h2>
+            <div class="about-content">
+                <p>职路由一群热爱职业发展领域的专业人士创立，我们致力于利用科技的力量，帮助每个人找到适合自己的职业道路，实现个人价值。</p>
+                <p>我们的团队汇集了人工智能专家、职业顾问、人力资源专家和产品设计师，共同打造这款专注于职业发展的应用。</p>
+                <p>我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="职路logo">
+                    <h3>职路</h3>
+                    <p>您的职业发展伙伴</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-group">
+                        <h4>公司</h4>
+                        <ul>
+                            <li><a href="#about">关于我们</a></li>
+                            <li><a href="#!">新闻动态</a></li>
+                            <li><a href="#!">加入我们</a></li>
+                            <li><a href="#!">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>产品</h4>
+                        <ul>
+                            <li><a href="#features">产品特色</a></li>
+                            <li><a href="#benefits">核心优势</a></li>
+                            <li><a href="#download">下载应用</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>支持</h4>
+                        <ul>
+                            <li><a href="#!">帮助中心</a></li>
+                            <li><a href="#!">用户指南</a></li>
+                            <li><a href="#!">常见问题</a></li>
+                            <li><a href="#!">隐私政策</a></li>
+                            <li><a href="#!">服务条款</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4>关注我们</h4>
+                    <div class="social-icons">
+                        <a href="#!"><i class="fab fa-weixin"></i></a>
+                        <a href="#!"><i class="fab fa-weibo"></i></a>
+                        <a href="#!"><i class="fab fa-qq"></i></a>
+                        <a href="#!"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 职路科技有限公司. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 移动端应用商店跳转脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检测设备类型
+            const userAgent = navigator.userAgent;
+            const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+            const isAndroid = /Android/.test(userAgent);
+            const isXiaomi = /MI\s|Redmi|HM\sNOTE|Mix\s/.test(userAgent);
+            const isOppo = /OPPO|PAFM|PBFM|PCRM|PCGM|PCLM|PDHM/.test(userAgent);
+            const isVivo = /vivo/.test(userAgent);
+            const isHuawei = /HUAWEI|Honor/.test(userAgent);
+
+            // 获取下载按钮和容器
+            const iosDownloadBtn = document.getElementById('ios-download');
+            const androidDownloadBtn = document.getElementById('android-download');
+
+            // 创建额外的应用商店按钮
+            const downloadContainer = document.querySelector('.app-badges');
+
+            // 设置iOS设备跳转
+            if (isIOS) {
+                iosDownloadBtn.href = 'https://apps.apple.com/cn/app/职路/id123456789';
+                // 隐藏其他下载按钮
+                if (androidDownloadBtn) androidDownloadBtn.style.display = 'none';
+            }
+            // Android设备根据品牌设置不同商店链接
+            else if (isAndroid) {
+                // 默认下载按钮（通用Android）
+                if (androidDownloadBtn) {
+                    androidDownloadBtn.querySelector('img').alt = '下载Android版';
+
+                    // 根据设备品牌设置不同的下载链接
+                    if (isXiaomi) {
+                        // 小米应用商店链接
+                        androidDownloadBtn.href = 'https://app.mi.com/details?id=com.zhilu.app';
+                        androidDownloadBtn.querySelector('img').alt = '小米应用商店下载';
+
+                        // 添加小米应用商店标识
+                        const storeName = document.createElement('span');
+                        storeName.textContent = '小米应用商店';
+                        storeName.className = 'store-name';
+                        androidDownloadBtn.appendChild(storeName);
+                    }
+                    else if (isOppo) {
+                        // OPPO应用商店链接
+                        androidDownloadBtn.href = 'https://store.oppomobile.com/search?keyword=职路';
+                        androidDownloadBtn.querySelector('img').alt = 'OPPO应用商店下载';
+
+                        // 添加OPPO应用商店标识
+                        const storeName = document.createElement('span');
+                        storeName.textContent = 'OPPO应用商店';
+                        storeName.className = 'store-name';
+                        androidDownloadBtn.appendChild(storeName);
+                    }
+                    else if (isHuawei) {
+                        // 华为应用商店链接
+                        androidDownloadBtn.href = 'https://appgallery.huawei.com/search/职路';
+                        androidDownloadBtn.querySelector('img').alt = '华为应用商店下载';
+
+                        // 添加华为应用商店标识
+                        const storeName = document.createElement('span');
+                        storeName.textContent = '华为应用商店';
+                        storeName.className = 'store-name';
+                        androidDownloadBtn.appendChild(storeName);
+                    }
+                    else if (isVivo) {
+                        // vivo应用商店链接
+                        androidDownloadBtn.href = 'https://info.appstore.vivo.com.cn/detail/职路';
+                        androidDownloadBtn.querySelector('img').alt = 'vivo应用商店下载';
+
+                        // 添加vivo应用商店标识
+                        const storeName = document.createElement('span');
+                        storeName.textContent = 'vivo应用商店';
+                        storeName.className = 'store-name';
+                        androidDownloadBtn.appendChild(storeName);
+                    }
+                    else {
+                        // 应用宝链接作为通用Android商店
+                        androidDownloadBtn.href = 'https://a.app.qq.com/o/simple.jsp?pkgname=com.zhilu.app';
+                        androidDownloadBtn.querySelector('img').alt = '应用宝下载';
+
+                        // 添加应用宝标识
+                        const storeName = document.createElement('span');
+                        storeName.textContent = '应用宝';
+                        storeName.className = 'store-name';
+                        androidDownloadBtn.appendChild(storeName);
+                    }
+                }
+
+                // 隐藏iOS下载按钮
+                if (iosDownloadBtn) iosDownloadBtn.style.display = 'none';
+
+                // 创建"其他应用商店"下拉菜单
+                const otherStoresContainer = document.createElement('div');
+                otherStoresContainer.className = 'other-stores';
+
+                const otherStoresToggle = document.createElement('button');
+                otherStoresToggle.className = 'other-stores-toggle';
+                otherStoresToggle.textContent = '其他应用商店';
+
+                const otherStoresDropdown = document.createElement('div');
+                otherStoresDropdown.className = 'stores-dropdown';
+
+                // 添加各种应用商店链接
+                const storeLinks = [
+                    {name: '应用宝', url: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.zhilu.app'},
+                    {name: '华为应用商店', url: 'https://appgallery.huawei.com/search/职路'},
+                    {name: '小米应用商店', url: 'https://app.mi.com/details?id=com.zhilu.app'},
+                    {name: 'OPPO应用商店', url: 'https://store.oppomobile.com/search?keyword=职路'},
+                    {name: 'vivo应用商店', url: 'https://info.appstore.vivo.com.cn/detail/职路'},
+                    {name: '魅族应用商店', url: 'https://app.meizu.com/apps/public/detail?package_name=com.zhilu.app'}
+                ];
+
+                storeLinks.forEach(store => {
+                    // 跳过当前已经显示的商店
+                    if ((isXiaomi && store.name === '小米应用商店') ||
+                        (isOppo && store.name === 'OPPO应用商店') ||
+                        (isHuawei && store.name === '华为应用商店') ||
+                        (isVivo && store.name === 'vivo应用商店') ||
+                        (!isXiaomi && !isOppo && !isHuawei && !isVivo && store.name === '应用宝')) {
+                        return;
+                    }
+
+                    const link = document.createElement('a');
+                    link.href = store.url;
+                    link.textContent = store.name;
+                    otherStoresDropdown.appendChild(link);
+                });
+
+                otherStoresContainer.appendChild(otherStoresToggle);
+                otherStoresContainer.appendChild(otherStoresDropdown);
+                downloadContainer.appendChild(otherStoresContainer);
+
+                // 为"其他应用商店"按钮添加点击事件
+                otherStoresToggle.addEventListener('click', function() {
+                    otherStoresDropdown.classList.toggle('active');
+                });
+            }
+
+            // 菜单切换和平滑滚动功能保持不变
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // 如果导航菜单是展开的，点击后关闭它
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
