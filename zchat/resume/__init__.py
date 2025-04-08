@@ -29,13 +29,13 @@ from zchat.points import check_points_sufficient, consume_points_for_service
 
 bp = Blueprint('resume', __name__, url_prefix='/resume')
 
-@bp.route('/index', methods=['GET'])
-def index():
-    return render_template('resume/resume.html')
+# @bp.route('/index', methods=['GET'])
+# def index():
+#     return render_template('resume/resume.html')
 
-@bp.route('/resume.json', methods=['GET'])
-def resume_json():
-    return send_file('/Users/liuqian/mycode/github/sf/be/chat_server/zchat/templates/resume/resume.json', mimetype='application/json')
+# @bp.route('/resume.json', methods=['GET'])
+# def resume_json():
+#     return send_file('/Users/liuqian/mycode/github/sf/be/chat_server/zchat/templates/resume/resume.json', mimetype='application/json')
 
 @bp.route('/optimize', methods=['POST'])
 @login_required
@@ -127,7 +127,7 @@ def optimize():
         return jsonify({'error': 'Try again later'}), 500
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.OPTIMIZE_RESUME.value, "简历优化")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.OPTIMIZE_RESUME.value, "简历定制")
     if not success:
         return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 

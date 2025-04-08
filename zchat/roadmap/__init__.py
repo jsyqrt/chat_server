@@ -425,7 +425,7 @@ def description():
             max_retries -= 1
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, "获取节点描述")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, "获取知识详情")
     if not success:
         return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 
@@ -450,7 +450,7 @@ def description_stream():
         return jsonify({'error': message, 'points_required': True}), 402
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, "获取节点描述")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, "获取知识详情")
     if not success:
         return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 

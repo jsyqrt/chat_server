@@ -96,7 +96,7 @@ def analyze():
         return jsonify({'error': 'Try again later'}), 500
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.JOB_ANALYSIS.value, "岗位分析")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.JOB_ANALYSIS.value, "职位分析")
     if not success:
         return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 

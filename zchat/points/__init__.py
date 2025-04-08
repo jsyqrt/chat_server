@@ -75,7 +75,7 @@ def get_point_packages():
     packages = [
         {
             "id": 1,
-            "name": "积分套餐1",
+            "name": "积分套餐A",
             "points": 1000,
             "price": 10.0,
             "validity_days": 30,
@@ -83,7 +83,7 @@ def get_point_packages():
         },
         {
             "id": 2,
-            "name": "积分套餐2",
+            "name": "积分套餐B",
             "points": 3000,
             "price": 28.0,
             "validity_days": 30,
@@ -91,7 +91,7 @@ def get_point_packages():
         },
         {
             "id": 3,
-            "name": "积分套餐3",
+            "name": "积分套餐C",
             "points": 5000,
             "price": 45.0,
             "validity_days": 30,
@@ -178,28 +178,28 @@ def get_subscription_plans():
             "id": 0,
             "type": AccountType.FREE.value,
             "name": "免费账户",
-            "price": 0,
+            "price": PointsOps.PRICES[AccountType.FREE.value],
             "cycle": "unlimited",
-            "daily_points": 80,
-            "description": "免费账户，每天80积分，满足基本使用需求"
+            "daily_points": PointsOps.DAILY_POINTS[AccountType.FREE.value],
+            "description": f"免费账户，每天{PointsOps.DAILY_POINTS[AccountType.FREE.value]}积分"
         },
         {
             "id": 1,
             "type": SubscriptionType.BASIC.value,
-            "name": "Basic会员",
-            "price": 29.9,
+            "name": "基础会员",
+            "price": PointsOps.PRICES[AccountType.BASIC.value],
             "cycle": "month",
-            "daily_points": 1000,
-            "description": "每月29.9元，每天1000积分，适合一般用户"
+            "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
+            "description": f"每月{PointsOps.PRICES[AccountType.BASIC.value]}元，每天{PointsOps.DAILY_POINTS[AccountType.BASIC.value]}积分"
         },
         {
             "id": 2,
             "type": SubscriptionType.PRO.value,
-            "name": "Pro会员",
-            "price": 180.0,
+            "name": "高级会员",
+            "price": PointsOps.PRICES[AccountType.PRO.value],
             "cycle": "year",
-            "daily_points": 2000,
-            "description": "每年180元，每天2000积分，性价比高，适合重度用户"
+            "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
+            "description": f"每年{PointsOps.PRICES[AccountType.PRO.value]}元(相当于每月{PointsOps.PRICES[AccountType.PRO.value] / 12}元)，每天{PointsOps.DAILY_POINTS[AccountType.PRO.value]}积分，性价比高"
         }
     ]
 

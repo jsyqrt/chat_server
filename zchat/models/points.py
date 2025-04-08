@@ -22,11 +22,10 @@ class PointsSourceType(Enum):
 
 class ServiceType(Enum):
     CAREER_ASSESSMENT = 'career_assessment'      # 职业评估
-    JOB_ANALYSIS = 'job_analysis'                # 岗位分析
-    OPTIMIZE_RESUME = 'optimize_resume'          # 优化简历
+    JOB_ANALYSIS = 'job_analysis'                # 职位分析
+    OPTIMIZE_RESUME = 'optimize_resume'          # 简历定制
     CREATE_ROADMAP = 'create_roadmap'            # 创建学习路径
-    UNLOCK_ROADMAP = 'unlock_roadmap'            # 解锁学习路径
-    GET_DESCRIPTION = 'get_description'          # 获取描述
+    GET_DESCRIPTION = 'get_description'          # 获取知识详情
     AI_CHAT = 'ai_chat'                          # AI聊天
 
 class RewardType(Enum):
@@ -99,22 +98,27 @@ class PointsOps:
     # 常量定义
     POINTS_COST = {
         ServiceType.CAREER_ASSESSMENT.value: 30,
-        ServiceType.JOB_ANALYSIS.value: 20,
+        ServiceType.JOB_ANALYSIS.value: 40,
         ServiceType.OPTIMIZE_RESUME.value: 60,
-        ServiceType.UNLOCK_ROADMAP.value: 5,
-        ServiceType.CREATE_ROADMAP.value: 30,
-        ServiceType.GET_DESCRIPTION.value: 2,
-        ServiceType.AI_CHAT.value: 2,
+        ServiceType.CREATE_ROADMAP.value: 40,
+        ServiceType.GET_DESCRIPTION.value: 5,
+        ServiceType.AI_CHAT.value: 5,
     }
 
     DAILY_POINTS = {
-        AccountType.FREE.value: 80,
-        AccountType.BASIC.value: 1000,
-        AccountType.PRO.value: 2000,
+        AccountType.FREE.value: 88,
+        AccountType.BASIC.value: 500,
+        AccountType.PRO.value: 1000,
+    }
+
+    PRICES = {
+        AccountType.FREE.value: 0,
+        AccountType.BASIC.value: 29.9,
+        AccountType.PRO.value: 180,
     }
 
     REWARDS = {
-        RewardType.INVITATION.value: 80  # 邀请奖励积分
+        RewardType.INVITATION.value: 88  # 邀请奖励积分
     }
 
     INVITATION_EXPIRE_DAYS = 30  # 邀请积分有效期(天)
@@ -147,7 +151,8 @@ class PointsOps:
                 points_amount=points_amount,
                 service_type=service_type,
                 expires_at=expires_at,
-                description=description
+                description=description,
+                created_at=time.time()
             )
             self.session.add(transaction)
             self.session.commit()
