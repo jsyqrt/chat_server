@@ -29,6 +29,9 @@ def get_balance():
     # 获取积分信息
     points_ops = PointsOps(db.session)
 
+    # 检查并过期积分（懒更新机制）
+    points_ops.check_and_expire_points()
+
     # 计算可用的每日积分（懒更新机制）
     daily_available = points_ops.get_daily_available_points(user_id, user.account_type)
     daily_total = points_ops.get_daily_points(user.account_type)
@@ -111,6 +114,10 @@ def purchase_points():
     package_id = data.get('package_id')
     payment_method = data.get('payment_method', 'alipay')
 
+    # 检查用户订阅状态
+    user_ops = UserOps(db.session)
+    user_ops.check_and_update_subscription_status(user_id)
+
     # 获取套餐信息
     packages = {
         1: {"points": 1000, "price": 10.0},
@@ -131,6 +138,10 @@ def purchase_points():
 
     # 添加积分
     points_ops = PointsOps(db.session)
+
+    # 检查并过期积分（懒更新机制）
+    points_ops.check_and_expire_points()
+
     success = points_ops.purchase_points(
         user_id=user_id,
         points_amount=package["points"],
@@ -159,7 +170,16 @@ def get_transactions():
     offset = int(request.args.get('offset', 0))
     limit = int(request.args.get('limit', 10))
 
+    # 检查用户订阅状态
+    user_ops = UserOps(db.session)
+    user_ops.check_and_update_subscription_status(user_id)
+
+    # 获取积分信息
     points_ops = PointsOps(db.session)
+
+    # 检查并过期积分（懒更新机制）
+    points_ops.check_and_expire_points()
+
     transactions = points_ops.get_points_transactions(user_id, limit, offset)
     total = points_ops.get_points_transactions_count(user_id)
 
@@ -269,6 +289,10 @@ def subscription_history():
     offset = int(request.args.get('offset', 0))
     limit = int(request.args.get('limit', 10))
 
+    # 检查用户订阅状态
+    user_ops = UserOps(db.session)
+    user_ops.check_and_update_subscription_status(user_id)
+
     subscription_ops = SubscriptionOps(db.session)
     subscriptions = subscription_ops.get_subscriptions(user_id, limit, offset)
 
@@ -311,8 +335,15 @@ def get_invitation_records():
     offset = int(request.args.get('offset', 0))
     limit = int(request.args.get('limit', 10))
 
-    invitation_ops = InvitationOps(db.session)
+    # 检查用户订阅状态
     user_ops = UserOps(db.session)
+    user_ops.check_and_update_subscription_status(user_id)
+
+    # 检查并过期积分
+    points_ops = PointsOps(db.session)
+    points_ops.check_and_expire_points()
+
+    invitation_ops = InvitationOps(db.session)
 
     records = invitation_ops.get_invitations_by_inviter(user_id, limit, offset)
     total = invitation_ops.get_invitations_count_by_inviter(user_id)
@@ -364,7 +395,7 @@ def check_points_sufficient(user_id, service_type):
 
     return True, ""
 
-# 消费积分的辅助函数
+# 消费积分的辅助函数，调用之前必须先check_points_sufficient
 def consume_points_for_service(user_id, service_type, description=None):
     """消费指定服务的积分"""
     points_ops = PointsOps(db.session)

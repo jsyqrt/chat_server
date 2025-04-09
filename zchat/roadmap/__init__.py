@@ -366,8 +366,9 @@ def search_topic():
                     result_ids.add(roadmap['id'])
                     results[roadmap['id']] = roadmap
                     mindmap = get_mindmap_from_meili(current_app, roadmap['mindmap_id'])
-                    stats = stats_of_mindmap(mindmap)
-                    roadmap['description'] = stats
+                    roadmap['description'] = mindmap['description']
+                    roadmap['subtitle'] = stats_of_mindmap(mindmap)
+                    roadmap['total_stages'] = len(mindmap.get('children', []))
                 else:
                     enough = True
                     break
@@ -390,7 +391,9 @@ def my_roadmaps():
     count = roadmap_ops.get_roadmaps_count_by_user_id(user_id)
     for roadmap in roadmaps:
         mindmap = get_mindmap_from_meili(current_app, roadmap['mindmap_id'])
-        roadmap['description'] = stats_of_mindmap(mindmap)
+        roadmap['subtitle'] = stats_of_mindmap(mindmap)
+        roadmap['description'] = mindmap['description']
+        roadmap['total_stages'] = len(mindmap.get('children', []))
 
     return jsonify({
         'roadmaps': roadmaps,
@@ -493,7 +496,9 @@ def official_maps():
     official_roadmaps = roadmap_ops.get_official_roadmaps()
     for item in official_roadmaps:
         mindmap = get_mindmap_from_meili(current_app, item['mindmap_id'])
-        item['description'] = stats_of_mindmap(mindmap)
+        item['subtitle'] = stats_of_mindmap(mindmap)
+        item['description'] = mindmap['description']
+        item['total_stages'] = len(mindmap.get('children', []))
 
     return jsonify(official_roadmaps)
 
@@ -654,9 +659,11 @@ def recent_maps():
         if roadmap:
             mindmap = get_mindmap_from_meili(current_app, recent_map['mindmap_id'])
             result = roadmap.to_dict()
-            result['description'] = stats_of_mindmap(mindmap)
+            result['subtitle'] = stats_of_mindmap(mindmap)
+            result['description'] = mindmap['description']
             result['completed'] = recent_map['completed_nodes']
             result['total'] = recent_map['total_nodes']
+            result['total_stages'] = len(mindmap.get('children', []))
             results.append(result)
 
     return jsonify({
