@@ -188,60 +188,6 @@ fi
 
 # 创建必要的目录
 mkdir -p ./docker/mysql/init
-mkdir -p ./docker/mongodb/init
-
-# 确保初始化脚本存在
-if [ ! -f "./docker/mysql/init/01-schema.sql" ]; then
-    echo "创建MySQL初始化脚本..."
-    cat > ./docker/mysql/init/01-schema.sql << 'EOL'
--- 创建数据库表结构
-CREATE DATABASE IF NOT EXISTS zchat;
-USE zchat;
-
--- 确保用户存在并有正确权限
-CREATE USER IF NOT EXISTS 'zchat'@'%' IDENTIFIED BY 'zchat_password';
-GRANT ALL PRIVILEGES ON zchat.* TO 'zchat'@'%';
-FLUSH PRIVILEGES;
-EOL
-fi
-
-if [ ! -f "./docker/mongodb/init/01-init.js" ]; then
-    echo "创建MongoDB初始化脚本..."
-    cat > ./docker/mongodb/init/01-init.js << 'EOL'
-// 在admin数据库中进行认证
-db = db.getSiblingDB('admin');
-db.auth('zchat', 'zchat_password');
-
-// 创建和初始化zchat数据库
-db = db.getSiblingDB('zchat');
-
-// 创建文档集合
-if (!db.getCollectionNames().includes('documents')) {
-    db.createCollection('documents');
-    print("Created 'documents' collection");
-}
-
-// 检查并删除可能存在的文本索引以避免冲突
-var indexes = db.documents.getIndexes();
-for (var i = 0; i < indexes.length; i++) {
-    var idx = indexes[i];
-    if (idx.key && idx.key._fts) {
-        print("Dropping existing text index: " + idx.name);
-        db.documents.dropIndex(idx.name);
-    }
-}
-
-// 为documents集合创建索引
-db.documents.createIndex({ "id": 1 }, { unique: true });
-db.documents.createIndex({ "content": "text", "metadata.title": "text" });
-db.documents.createIndex({ "type": 1 });
-db.documents.createIndex({ "created_at": 1 });
-db.documents.createIndex({ "updated_at": 1 });
-db.documents.createIndex({ "metadata.user_id": 1 });
-
-print("Initialized MongoDB database and collections successfully");
-EOL
-fi
 
 # 更新Nginx配置以使用域名
 echo "更新Nginx配置以使用域名 ${DOMAIN_NAME}..."
@@ -308,33 +254,4 @@ echo "可以使用以下命令查看日志:"
 echo "  docker-compose logs -f app"
 echo "  docker-compose logs -f nginx"
 echo "  docker-compose logs -f mysql"
-echo "  docker-compose logs -f mongodb"
 echo "  docker-compose logs -f meilisearch"
-
-echo ""
-echo "========================================="
-echo "     数据库管理"
-echo "========================================="
-echo "如果遇到数据库相关错误，您可以使用以下命令进行修复和排查："
-echo ""
-echo "1. 查看应用日志:"
-echo "   docker-compose logs -f app"
-echo ""
-echo "2. 进入容器执行数据库修复命令:"
-echo "   docker exec -it zchat-app bash"
-echo "   cd /app && python scripts/db_manager.py fix"
-echo ""
-echo "3. 检查数据库状态:"
-echo "   docker exec -it zchat-app bash -c 'cd /app && python scripts/db_manager.py status'"
-echo ""
-echo "4. 如果遇到MongoDB索引冲突，可以使用以下命令修复:"
-echo "   docker exec -it zchat-app bash"
-echo "   cd /app && python scripts/db_manager.py init-mongo"
-echo ""
-echo "5. 如果需要重置数据库迁移:"
-echo "   docker exec -it zchat-app bash"
-echo "   cd /app && python scripts/db_manager.py reset-migrations --force"
-echo ""
-echo "详细文档请参考:"
-echo "  docs/database_management.md"
-echo "========================================="

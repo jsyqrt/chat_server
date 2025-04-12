@@ -11,8 +11,6 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-      mongodb:
-        condition: service_healthy
       meilisearch:
         condition: service_healthy
     volumes:
@@ -27,8 +25,12 @@ services:
       - MEILISEARCH_KEY=aSampleMasterKey
       - MEILISEARCH_TIMEOUT=10
       - SQLALCHEMY_DATABASE_URI=mysql+pymysql://zchat:zchat_password@mysql:3306/zchat
-      - MONGODB_URI=mongodb://zchat:zchat_password@mongodb:27017/
-      - MONGODB_DB=zchat
+      - DOCUMENT_STORE_TYPE=mysql
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=zchat
+      - MYSQL_PASSWORD=zchat_password
+      - MYSQL_DB=zchat
       - LOG_LEVEL=${LOG_LEVEL:-info}
       - SF_ZCHAT_API_KEY=${SF_ZCHAT_API_KEY:-UNKNOWN}
       - IS_DOCKER=true
@@ -61,7 +63,7 @@ services:
     networks:
       - zchat-network
 
-  # MySQL数据库 - 存储结构化数据
+  # MySQL数据库 - 存储结构化数据和文档数据
   mysql:
     image: mysql:8.0
     container_name: zchat-mysql
@@ -88,31 +90,6 @@ services:
       start_period: 30s
     cap_add:
       - SYS_NICE  # CAP_SYS_NICE: 允许提高进程优先级以及更改其他进程的优先级
-
-  # MongoDB文档数据库 - 存储非结构化数据
-  mongodb:
-    image: mongo:6.0
-    container_name: zchat-mongodb
-    restart: always
-    ports: # TODO remove this
-      - "27017:27017"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=zchat
-      - MONGO_INITDB_ROOT_PASSWORD=zchat_password
-      - MONGO_INITDB_DATABASE=zchat
-    volumes:
-      - ./instance/mongodb-data:/data/db
-      - ./docker/mongodb/init:/docker-entrypoint-initdb.d
-      - ./docker/mongodb/config:/etc/mongod
-    networks:
-      - zchat-network
-    command: --wiredTigerCacheSizeGB 1 --bind_ip_all
-    healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh mongodb://zchat:zchat_password@localhost:27017/admin --quiet
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
 
   # MeiliSearch搜索服务 - 支持高效搜索
   meilisearch:
@@ -193,8 +170,6 @@ services:
 #   zchat-logs:
 #     driver: local
 #   mysql-data:
-#     driver: local
-#   mongodb-data:
 #     driver: local
 #   meilisearch-data:
 #     driver: local

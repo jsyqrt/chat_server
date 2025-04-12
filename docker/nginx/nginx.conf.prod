@@ -2,6 +2,9 @@ server {
     listen 80;
     server_name localhost;
 
+    # Set maximum upload size to 10MB
+    client_max_body_size 10M;
+
     # Let's Encrypt ACME Challenge
     location /.well-known/acme-challenge/ {
         root /var/www/html;
@@ -16,6 +19,9 @@ server {
 server {
     listen 443 ssl;
     server_name localhost;
+
+    # Set maximum upload size to 10MB
+    client_max_body_size 10M;
 
     # SSL配置
     ssl_certificate /etc/nginx/ssl/fullchain.pem;

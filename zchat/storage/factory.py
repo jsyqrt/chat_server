@@ -1,14 +1,14 @@
 from typing import Dict, Optional, Type
 from .abstract import DocumentStore
 from .sqlite_store import SQLiteDocumentStore
-from .mongodb_store import MongoDBDocumentStore
+from .mysql_store import MySQLDocumentStore
 
 class StorageFactory:
     """存储工厂，用于创建和管理存储实例"""
 
     _stores: Dict[str, Type[DocumentStore]] = {
         'sqlite': SQLiteDocumentStore,
-        'mongodb': MongoDBDocumentStore
+        'mysql': MySQLDocumentStore
     }
 
     @classmethod

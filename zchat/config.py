@@ -10,26 +10,20 @@ LOG_LEVEL = os.environ.get('LOG_LEVEL', 'info')
 SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:///zchat.db')
 # SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-# MongoDB配置
-MONGODB_URI = os.environ.get('MONGODB_URI', 'mongodb://zchat:zchat_password@mongodb:27017/')
-MONGODB_DB = os.environ.get('MONGODB_DB', 'zchat')
-MONGODB_DOCS_COLLECTION = os.environ.get('MONGODB_DOCS_COLLECTION', 'documents')
-
 # 文档存储配置
-# 如果MongoDB可用，则使用MongoDB，否则使用SQLite
-try:
-    import pymongo
-    # 尝试连接MongoDB
-    client = pymongo.MongoClient(MONGODB_URI, serverSelectionTimeoutMS=2000)
-    client.server_info()  # 强制连接检查
-    DOCUMENT_STORE_TYPE = os.environ.get('DOCUMENT_STORE_TYPE', 'mongodb')
+# 默认使用MySQL，如果设置了其他存储类型则使用其他存储类型
+DOCUMENT_STORE_TYPE = os.environ.get('DOCUMENT_STORE_TYPE', 'mysql')
+if DOCUMENT_STORE_TYPE == 'mysql':
     DOCUMENT_STORE_CONFIG = {
-        'uri': MONGODB_URI,
-        'db_name': MONGODB_DB
+        'host': os.environ.get('MYSQL_HOST', 'mysql'),
+        'port': int(os.environ.get('MYSQL_PORT', '3306')),
+        'user': os.environ.get('MYSQL_USER', 'zchat'),
+        'password': os.environ.get('MYSQL_PASSWORD', 'zchat_password'),
+        'db_name': os.environ.get('MYSQL_DB', 'zchat')
     }
-except (ImportError, pymongo.errors.ServerSelectionTimeoutError):
-    # 如果无法连接MongoDB，使用SQLite
-    DOCUMENT_STORE_TYPE = os.environ.get('DOCUMENT_STORE_TYPE', 'sqlite')
+else:
+    # 如果需要使用SQLite存储
+    DOCUMENT_STORE_TYPE = 'sqlite'
     DOCUMENT_STORE_CONFIG = {
         'db_path': os.environ.get('DOCUMENT_STORE_PATH', 'instance/document_store.db')
     }

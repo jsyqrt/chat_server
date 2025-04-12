@@ -22,8 +22,8 @@ def init_app(app):
     if 'SQLALCHEMY_DATABASE_URI' in app.config:
         app.logger.info(f"MySQL配置: {app.config['SQLALCHEMY_DATABASE_URI']}")
 
-    if 'MONGODB_URI' in app.config:
-        app.logger.info(f"MongoDB配置: {app.config['MONGODB_URI']}")
+    if 'DOCUMENT_STORE_TYPE' in app.config:
+        app.logger.info(f"文档存储类型: {app.config['DOCUMENT_STORE_TYPE']}")
 
     @app.route('/api/system/db-status', methods=['GET'])
     def db_status_route():
@@ -36,7 +36,7 @@ def init_app(app):
         # 检查所有数据库状态
         status = {
             "mysql": {"status": "unknown"},
-            "mongodb": {"status": "unknown"},
+            "document_store": {"status": "unknown", "type": current_app.config.get('DOCUMENT_STORE_TYPE', 'unknown')},
             "meilisearch": {"status": "unknown"},
         }
 

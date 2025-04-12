@@ -1,376 +1,319 @@
-from meilisearch import Client
-from flask import current_app, g
-import json
-import uuid
-import time
-from datetime import datetime
-import logging
-from typing import Dict, List, Any, Optional
-# Remove direct import of db module to avoid circular dependencies
-# from . import db
+# import uuid
+# import meilisearch
+# import os
+# import json
+# from datetime import datetime
+# from flask import current_app
+# import logging
+# from zchat.storage.api import add_document as storage_add_document, get_document as storage_get_document, update_document as storage_update_document, delete_document as storage_delete_document, search as storage_search
 
-# 全局MeiliSearch客户端
-client = None
+# # 全局客户端实例
+# client = None
 
-def init_app(app):
-    """初始化MeiliSearch客户端
+# def init_app(app):
+#     """初始化MeiliSearch
 
-    Args:
-        app: Flask应用实例
-    """
-    global client
+#     Args:
+#         app: Flask应用
+#     """
+#     host = app.config.get('MEILISEARCH_HOST', 'http://localhost:7700')
+#     api_key = app.config.get('MEILISEARCH_KEY', None)
+#     timeout = app.config.get('MEILISEARCH_TIMEOUT', 10)
 
-    try:
-        # 使用配置中的主机和密钥创建客户端
-        client = Client(app.config['MEILISEARCH_HOST'], app.config['MEILISEARCH_KEY'])
+#     app.logger.info(f"初始化MeiliSearch: {host}")
 
-        # 设置客户端超时时间
-        client.timeout = app.config.get('MEILISEARCH_TIMEOUT', 5)
+#     # 创建客户端实例
+#     try:
+#         ms_client = meilisearch.Client(
+#             host,
+#             api_key,
+#             timeout=timeout
+#         )
+#         # 测试连接
+#         ms_client.health()
+#         app.meilisearch = ms_client
 
-        # 健康检查
-        try:
-            health = client.health()
-            app.logger.info(f"MeiliSearch健康状态: {health['status']}")
-        except Exception as health_error:
-            app.logger.warning(f"MeiliSearch健康检查失败: {str(health_error)}")
-            # 继续尝试使用客户端，即使健康检查失败
+#         # 设置全局客户端
+#         global client
+#         client = ms_client
 
-        # 确保核心索引存在
-        try:
-            _ensure_core_indexes(app)
-        except Exception as index_error:
-            app.logger.error(f"创建核心索引失败: {str(index_error)}")
-            # 继续使用客户端，即使索引创建失败
+#         # 确保核心索引存在
+#         _ensure_core_indexes(app)
 
-        # 将客户端添加到应用配置中，方便访问
-        app.meilisearch = client
+#         app.logger.info("MeiliSearch初始化成功")
+#     except Exception as e:
+#         app.logger.error(f"MeiliSearch初始化失败: {str(e)}")
+#         app.logger.warning("应用将继续运行，但搜索功能可能不可用")
 
-        app.logger.info("MeiliSearch初始化完成")
+# def _ensure_core_indexes(app):
+#     """确保核心索引存在
 
-    except Exception as e:
-        app.logger.error(f"MeiliSearch初始化失败: {str(e)}")
-        app.logger.warning("应用将在没有MeiliSearch的情况下继续运行，搜索功能可能不可用")
+#     Args:
+#         app: Flask应用
+#     """
+#     try:
+#         # 确保documents索引存在
+#         try:
+#             app.meilisearch.get_index('documents')
+#             app.logger.debug("documents索引已存在")
+#         except meilisearch.errors.MeiliSearchApiError as e:
+#             if e.code == 'index_not_found':
+#                 app.logger.info("创建documents索引")
+#                 app.meilisearch.create_index('documents', {'primaryKey': 'id'})
+#                 app.meilisearch.index('documents').update_settings({
+#                     'searchableAttributes': [
+#                         'content',
+#                         'metadata.title',
+#                         'metadata.description',
+#                         'metadata.tags'
+#                     ],
+#                     'filterableAttributes': [
+#                         'type',
+#                         'metadata.category',
+#                         'metadata.tags',
+#                         'created_at'
+#                     ],
+#                     'sortableAttributes': [
+#                         'created_at',
+#                         'updated_at'
+#                     ]
+#                 })
+#             else:
+#                 raise
+#     except Exception as e:
+#         app.logger.error(f"核心索引创建失败: {str(e)}")
+#         app.logger.error(f"异常类型: {type(e)}")
 
-def _ensure_core_indexes(app):
-    """确保核心索引存在
+# def get_client():
+#     """获取MeiliSearch客户端
 
-    Args:
-        app: Flask应用实例
-    """
-    try:
-        # 获取现有索引
-        indexes = client.get_indexes()
+#     Returns:
+#         MeiliSearch客户端实例
+#     """
+#     if client is None:
+#         # 如果客户端不存在，尝试从当前应用获取
+#         if hasattr(current_app, 'meilisearch'):
+#             return current_app.meilisearch
+#         else:
+#             current_app.logger.error("MeiliSearch客户端未初始化")
+#             raise RuntimeError("MeiliSearch客户端未初始化")
+#     return client
 
-        # 处理索引，确保我们能获取到uid
-        existing_index_uids = []
-        for index in indexes:
-            # 有些版本的MeiliSearch可能返回不同格式的索引对象
-            # 所以我们需要兼容处理
-            if hasattr(index, 'uid'):
-                existing_index_uids.append(index.uid)
-            elif isinstance(index, dict) and 'uid' in index:
-                existing_index_uids.append(index['uid'])
-            elif isinstance(index, str):
-                existing_index_uids.append(index)
+# def store_document(doc_type, content, metadata=None):
+#     """存储文档到文档存储和MeiliSearch
 
-        # 定义核心索引及其配置
-        core_indexes = {
-            'documents': {
-                'primaryKey': 'id',
-                'searchableAttributes': ['content', 'metadata.title', 'metadata.tags'],
-                'filterableAttributes': ['type', 'created_at', 'updated_at', 'metadata.user_id'],
-                'sortableAttributes': ['created_at', 'updated_at']
-            }
-        }
+#     Args:
+#         doc_type: 文档类型
+#         content: 文档内容
+#         metadata: 文档元数据
 
-        # 创建不存在的索引
-        for index_name, settings in core_indexes.items():
-            if index_name not in existing_index_uids:
-                app.logger.info(f"创建索引: {index_name}")
-                client.create_index(index_name, {'primaryKey': settings['primaryKey']})
+#     Returns:
+#         文档ID
+#     """
+#     # 创建文档记录
+#     doc_id = str(uuid.uuid4())
+#     created_at = datetime.now().isoformat()
 
-                # 配置索引设置
-                index = client.index(index_name)
-                if 'searchableAttributes' in settings:
-                    index.update_searchable_attributes(settings['searchableAttributes'])
-                if 'filterableAttributes' in settings:
-                    index.update_filterable_attributes(settings['filterableAttributes'])
-                if 'sortableAttributes' in settings:
-                    index.update_sortable_attributes(settings['sortableAttributes'])
-    except Exception as e:
-        app.logger.error(f"核心索引创建失败: {str(e)}")
-        app.logger.error(f"异常类型: {type(e)}")
+#     document = {
+#         'id': doc_id,
+#         'type': doc_type,
+#         'content': content,
+#         'metadata': metadata or {},
+#         'created_at': created_at,
+#         'updated_at': created_at
+#     }
 
-def get_client():
-    """获取MeiliSearch客户端
+#     # 存储到文档存储
+#     try:
+#         storage_add_document(current_app, 'documents', document)
+#         current_app.logger.debug(f"已将文档 {doc_id} 存储到文档存储")
+#     except Exception as e:
+#         current_app.logger.error(f"文档存储错误: {str(e)}")
+#         raise
 
-    Returns:
-        MeiliSearch客户端实例
-    """
-    if client is None:
-        # 如果客户端不存在，尝试从当前应用获取
-        if hasattr(current_app, 'meilisearch'):
-            return current_app.meilisearch
-        else:
-            current_app.logger.error("MeiliSearch客户端未初始化")
-            raise RuntimeError("MeiliSearch客户端未初始化")
-    return client
+#     # 索引到MeiliSearch
+#     try:
+#         meili_client = get_client()
+#         meili_client.index('documents').add_documents([document])
+#         current_app.logger.debug(f"已将文档 {doc_id} 索引到MeiliSearch")
+#     except Exception as e:
+#         current_app.logger.error(f"MeiliSearch索引错误: {str(e)}")
+#         # MeiliSearch错误不应阻止整个操作，我们已经保存到文档存储了
 
-def store_document(doc_type, content, metadata=None):
-    """存储文档到MongoDB和MeiliSearch
+#     return doc_id
 
-    Args:
-        doc_type: 文档类型
-        content: 文档内容
-        metadata: 文档元数据
+# def get_document(doc_id):
+#     """从文档存储获取文档
 
-    Returns:
-        文档ID
-    """
-    # 创建文档记录
-    doc_id = str(uuid.uuid4())
-    created_at = datetime.now().isoformat()
+#     Args:
+#         doc_id: 文档ID
 
-    document = {
-        'id': doc_id,
-        'type': doc_type,
-        'content': content,
-        'metadata': metadata or {},
-        'created_at': created_at,
-        'updated_at': created_at
-    }
+#     Returns:
+#         文档数据或None
+#     """
+#     try:
+#         doc = storage_get_document(current_app, 'documents', doc_id)
+#         return doc
+#     except Exception as e:
+#         current_app.logger.error(f"获取文档 {doc_id} 失败: {str(e)}")
+#         return None
 
-    # 存储到MongoDB
-    try:
-        # Import db module here to avoid circular imports
-        from . import db
-        collection = db.get_documents_collection()
-        collection.insert_one(document)
-        current_app.logger.debug(f"已将文档 {doc_id} 存储到MongoDB")
-    except Exception as e:
-        current_app.logger.error(f"MongoDB存储错误: {str(e)}")
-        raise
+# def search_documents(query, filters=None, limit=20, offset=0):
+#     """使用MeiliSearch搜索文档
 
-    # 索引到MeiliSearch
-    try:
-        meili_client = get_client()
-        # 为了防止MongoDB _id字段的序列化问题，创建副本
-        meili_doc = document.copy()
-        meili_client.index('documents').add_documents([meili_doc])
-        current_app.logger.debug(f"已将文档 {doc_id} 索引到MeiliSearch")
-    except Exception as e:
-        current_app.logger.error(f"MeiliSearch索引错误: {str(e)}")
-        # MeiliSearch错误不应阻止整个操作，我们已经保存到MongoDB了
+#     Args:
+#         query: 搜索查询
+#         filters: 过滤条件
+#         limit: 结果数量限制
+#         offset: 结果起始偏移量
 
-    return doc_id
+#     Returns:
+#         搜索结果列表
+#     """
+#     try:
+#         meili_client = get_client()
 
-def get_document(doc_id):
-    """从MongoDB获取文档
+#         # 准备搜索参数
+#         search_params = {
+#             'limit': limit,
+#             'offset': offset
+#         }
 
-    Args:
-        doc_id: 文档ID
+#         # 添加过滤条件
+#         if filters:
+#             search_params['filter'] = filters
 
-    Returns:
-        文档数据或None
-    """
-    try:
-        # Import db module here to avoid circular imports
-        from . import db
-        collection = db.get_documents_collection()
-        doc = collection.find_one({'id': doc_id})
-        if doc and '_id' in doc:
-            # 移除MongoDB _id字段
-            doc.pop('_id')
-        return doc
-    except Exception as e:
-        current_app.logger.error(f"获取文档 {doc_id} 失败: {str(e)}")
-        return None
+#         # 执行搜索
+#         results = meili_client.index('documents').search(query, search_params)
+#         current_app.logger.debug(f"MeiliSearch搜索成功: 找到 {len(results['hits'])} 条结果")
+#         return {
+#             'hits': results['hits'],
+#             'total': results.get('estimatedTotalHits', 0),
+#             'processing_time_ms': results.get('processingTimeMs', 0)
+#         }
+#     except Exception as e:
+#         current_app.logger.error(f"MeiliSearch搜索错误: {str(e)}")
+#         # 如果MeiliSearch搜索失败，回退到文档存储搜索
+#         return fallback_search_storage(query, filters, limit, offset)
 
-def search_documents(query, filters=None, limit=20, offset=0):
-    """使用MeiliSearch搜索文档
+# def fallback_search_storage(query, filters=None, limit=20, offset=0):
+#     """文档存储搜索回退方案
 
-    Args:
-        query: 搜索查询
-        filters: 过滤条件
-        limit: 结果数量限制
-        offset: 结果起始偏移量
+#     当MeiliSearch不可用时，使用文档存储进行基本搜索
 
-    Returns:
-        搜索结果列表
-    """
-    try:
-        meili_client = get_client()
+#     Args:
+#         query: 搜索查询
+#         filters: 过滤条件
+#         limit: 结果数量限制
+#         offset: 结果起始偏移量
 
-        # 准备搜索参数
-        search_params = {
-            'limit': limit,
-            'offset': offset
-        }
+#     Returns:
+#         搜索结果字典
+#     """
+#     current_app.logger.info(f"使用文档存储回退搜索: {query}")
+#     try:
+#         # 准备搜索选项
+#         options = {
+#             'limit': limit,
+#             'offset': offset
+#         }
 
-        # 添加过滤条件
-        if filters:
-            search_params['filter'] = filters
+#         # 添加过滤条件
+#         if filters:
+#             filter_list = []
+#             for key, value in filters.items():
+#                 filter_list.append(f"{key}={value}")
+#             options['filter'] = filter_list
 
-        # 执行搜索
-        results = meili_client.index('documents').search(query, search_params)
-        current_app.logger.debug(f"MeiliSearch搜索成功: 找到 {len(results['hits'])} 条结果")
-        return {
-            'hits': results['hits'],
-            'total': results.get('estimatedTotalHits', 0),
-            'processing_time_ms': results.get('processingTimeMs', 0)
-        }
-    except Exception as e:
-        current_app.logger.error(f"MeiliSearch搜索错误: {str(e)}")
-        # 如果MeiliSearch搜索失败，回退到MongoDB
-        return fallback_search_mongodb(query, filters, limit, offset)
+#         # 执行搜索
+#         results = storage_search(current_app, 'documents', query, options)
 
-def fallback_search_mongodb(query, filters=None, limit=20, offset=0):
-    """MongoDB搜索回退方案
+#         return {
+#             'hits': results.get('hits', []),
+#             'total': results.get('estimatedTotalHits', 0),
+#             'processing_time_ms': 0  # 文档存储不提供处理时间
+#         }
+#     except Exception as e:
+#         current_app.logger.error(f"文档存储搜索错误: {str(e)}")
+#         # 如果两种搜索都失败，返回空结果
+#         return {'hits': [], 'total': 0, 'processing_time_ms': 0}
 
-    当MeiliSearch不可用时，使用MongoDB进行基本文本搜索
+# def update_document(doc_id, content=None, metadata=None):
+#     """更新文档存储和MeiliSearch中的文档
 
-    Args:
-        query: 搜索查询
-        filters: 过滤条件（MongoDB格式）
-        limit: 结果数量限制
-        offset: 结果起始偏移量
+#     Args:
+#         doc_id: 文档ID
+#         content: 新的文档内容（可选）
+#         metadata: 新的文档元数据（可选）
 
-    Returns:
-        搜索结果字典
-    """
-    current_app.logger.info(f"使用MongoDB回退搜索: {query}")
-    try:
-        # Import db module here to avoid circular imports
-        from . import db
-        collection = db.get_documents_collection()
+#     Returns:
+#         更新后的文档或None
+#     """
+#     try:
+#         # 获取当前文档
+#         doc = get_document(doc_id)
+#         if not doc:
+#             current_app.logger.warning(f"要更新的文档 {doc_id} 不存在")
+#             return None
 
-        # 构建搜索查询
-        search_query = {'$text': {'$search': query}}
-        if filters:
-            for key, value in filters.items():
-                search_query[key] = value
+#         # 更新字段
+#         updated_doc = doc.copy()
+#         if content is not None:
+#             updated_doc['content'] = content
+#         if metadata is not None:
+#             updated_doc['metadata'] = metadata
+#         updated_doc['updated_at'] = datetime.now().isoformat()
 
-        # 确保文本索引存在
-        try:
-            # 检查是否已存在文本索引
-            indexes = collection.index_information()
-            has_text_index = any('text' in index.get('key', []) for index in indexes.values())
+#         # 更新文档存储
+#         storage_update_document(current_app, 'documents', updated_doc)
+#         current_app.logger.debug(f"已更新文档存储中的文档 {doc_id}")
 
-            if not has_text_index:
-                current_app.logger.info("在MongoDB documents集合上创建文本索引")
-                collection.create_index([('content', 'text'), ('metadata.title', 'text')])
-        except Exception as e:
-            current_app.logger.warning(f"创建MongoDB文本索引失败: {str(e)}")
+#         # 更新MeiliSearch
+#         try:
+#             meili_client = get_client()
+#             meili_client.index('documents').update_documents([updated_doc])
+#             current_app.logger.debug(f"已更新MeiliSearch中的文档 {doc_id}")
+#         except Exception as e:
+#             current_app.logger.error(f"MeiliSearch文档更新错误: {str(e)}")
+#             # MeiliSearch更新失败不应阻止整个操作
 
-        # 执行搜索
-        total = collection.count_documents(search_query)
-        cursor = collection.find(search_query).skip(offset).limit(limit)
+#         return updated_doc
+#     except Exception as e:
+#         current_app.logger.error(f"更新文档 {doc_id} 失败: {str(e)}")
+#         return None
 
-        # 准备结果
-        hits = []
-        for doc in cursor:
-            if '_id' in doc:
-                # 将ObjectId转换为字符串
-                doc['_id'] = str(doc['_id'])
-            hits.append(doc)
+# def delete_document(doc_id):
+#     """删除文档存储和MeiliSearch中的文档
 
-        return {
-            'hits': hits,
-            'total': total,
-            'processing_time_ms': 0  # MongoDB不提供处理时间
-        }
-    except Exception as e:
-        current_app.logger.error(f"MongoDB搜索错误: {str(e)}")
-        # 如果两种搜索都失败，返回空结果
-        return {'hits': [], 'total': 0, 'processing_time_ms': 0}
+#     Args:
+#         doc_id: 文档ID
 
-def update_document(doc_id, content=None, metadata=None):
-    """更新MongoDB和MeiliSearch中的文档
+#     Returns:
+#         是否删除成功
+#     """
+#     storage_success = False
+#     meili_success = False
 
-    Args:
-        doc_id: 文档ID
-        content: 新的文档内容（可选）
-        metadata: 新的文档元数据（可选）
+#     # 从文档存储删除
+#     try:
+#         result = storage_delete_document(current_app, 'documents', doc_id)
+#         storage_success = result.get('status') == 'success'
 
-    Returns:
-        更新后的文档或None
-    """
-    try:
-        # Import db module here to avoid circular imports
-        from . import db
-        collection = db.get_documents_collection()
+#         if storage_success:
+#             current_app.logger.debug(f"已从文档存储中删除文档 {doc_id}")
+#         else:
+#             current_app.logger.warning(f"未能从文档存储中删除文档 {doc_id}，可能不存在")
+#     except Exception as e:
+#         current_app.logger.error(f"从文档存储删除文档 {doc_id} 失败: {str(e)}")
 
-        # 准备更新数据
-        update_data = {'updated_at': datetime.now().isoformat()}
-        if content is not None:
-            update_data['content'] = content
-        if metadata is not None:
-            update_data['metadata'] = metadata
+#     # 从MeiliSearch删除
+#     try:
+#         meili_client = get_client()
+#         meili_client.index('documents').delete_document(doc_id)
+#         meili_success = True
+#         current_app.logger.debug(f"已从MeiliSearch中删除文档 {doc_id}")
+#     except Exception as e:
+#         current_app.logger.error(f"从MeiliSearch删除文档 {doc_id} 失败: {str(e)}")
 
-        # 更新MongoDB
-        result = collection.update_one({'id': doc_id}, {'$set': update_data})
-        if result.matched_count == 0:
-            current_app.logger.warning(f"未找到要更新的文档: {doc_id}")
-            return None
-
-        # 获取更新后的完整文档
-        updated_doc = collection.find_one({'id': doc_id})
-        if updated_doc:
-            # 删除MongoDB _id字段
-            meili_doc = updated_doc.copy()
-            if '_id' in meili_doc:
-                del meili_doc['_id']
-
-            # 更新MeiliSearch
-            try:
-                meili_client = get_client()
-                meili_client.index('documents').update_documents([meili_doc])
-                current_app.logger.debug(f"已在MeiliSearch中更新文档 {doc_id}")
-            except Exception as e:
-                current_app.logger.error(f"MeiliSearch更新错误: {str(e)}")
-                # MeiliSearch错误不应阻止整个操作
-
-            return updated_doc
-        else:
-            current_app.logger.warning(f"更新后无法检索文档: {doc_id}")
-            return None
-    except Exception as e:
-        current_app.logger.error(f"更新文档 {doc_id} 失败: {str(e)}")
-        return None
-
-def delete_document(doc_id):
-    """删除MongoDB和MeiliSearch中的文档
-
-    Args:
-        doc_id: 文档ID
-
-    Returns:
-        操作成功的布尔值
-    """
-    try:
-        # 从MongoDB删除
-        # Import db module here to avoid circular imports
-        from . import db
-        collection = db.get_documents_collection()
-        result = collection.delete_one({'id': doc_id})
-        mongodb_success = result.deleted_count > 0
-
-        if mongodb_success:
-            current_app.logger.debug(f"已从MongoDB中删除文档 {doc_id}")
-        else:
-            current_app.logger.warning(f"未能从MongoDB中删除文档 {doc_id}，可能不存在")
-
-        # 从MeiliSearch删除
-        try:
-            meili_client = get_client()
-            meili_client.index('documents').delete_document(doc_id)
-            current_app.logger.debug(f"已从MeiliSearch中删除文档 {doc_id}")
-            meili_success = True
-        except Exception as e:
-            current_app.logger.error(f"MeiliSearch删除错误: {str(e)}")
-            meili_success = False
-
-        return mongodb_success
-    except Exception as e:
-        current_app.logger.error(f"删除文档 {doc_id} 失败: {str(e)}")
-        return False
+#     # 任一成功即视为成功
+#     return storage_success or meili_success

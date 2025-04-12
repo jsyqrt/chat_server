@@ -60,13 +60,13 @@ def create_app(test_config=None):
     from . import storage
     storage.init_app(app)
 
-    # 3. 初始化 MeiliSearch
-    try:
-        from . import meili
-        meili.init_app(app)
-    except Exception as e:
-        app.logger.error(f"MeiliSearch 初始化失败: {str(e)}")
-        app.logger.warning("应用将在没有MeiliSearch的情况下继续运行")
+    # # 3. 初始化 MeiliSearch
+    # try:
+    #     from . import meili
+    #     meili.init_app(app)
+    # except Exception as e:
+    #     app.logger.error(f"MeiliSearch 初始化失败: {str(e)}")
+    #     app.logger.warning("应用将在没有MeiliSearch的情况下继续运行")
 
     # 4. 初始化监控模块
     try:

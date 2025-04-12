@@ -166,89 +166,154 @@ def reset_mysql_migrations(args):
     init_mysql(args)
     print("迁移已重置")
 
-# ========== MongoDB数据库管理函数 ==========
+# ========== 文档存储管理函数 ==========
 
-def init_mongo(args):
-    """初始化MongoDB数据库"""
-    app = import_app()
+def init_document_store(args):
+    """初始化文档存储数据库"""
+    try:
+        from flask import current_app
+        from zchat.storage.api import create_initial_collections
 
-    with app.app_context():
-        from zchat.db import get_mongo_db, get_documents_collection
+        logger.info("正在初始化文档存储...")
+        # 创建必要的集合
+        create_initial_collections(current_app)
 
-        try:
-            # 获取MongoDB连接
-            mongo_db = get_mongo_db()
+        logger.info("文档存储初始化完成")
+        return True
+    except Exception as e:
+        logger.error(f"文档存储初始化失败: {e}")
+        return False
 
-            # 确保必要的集合存在
-            docs_collection_name = app.config['MONGODB_DOCS_COLLECTION']
-            if docs_collection_name not in mongo_db.list_collection_names():
-                mongo_db.create_collection(docs_collection_name)
-                logger.info(f"创建了MongoDB集合: {docs_collection_name}")
+def check_document_store_status(args):
+    """检查文档存储状态"""
+    try:
+        from flask import current_app
 
-            # 创建必要的索引
-            docs = get_documents_collection()
+        print("=== 文档存储状态 ===")
+        print(f"文档存储类型: {current_app.config['DOCUMENT_STORE_TYPE']}")
 
-            # 获取现有索引列表
-            existing_indexes = list(docs.list_indexes())
-            existing_index_names = [idx['name'] for idx in existing_indexes]
+        if current_app.config['DOCUMENT_STORE_TYPE'] == 'mysql':
+            # MySQL文档存储
+            mysql_config = current_app.config.get('DOCUMENT_STORE_CONFIG', {})
+            print(f"MySQL主机: {mysql_config.get('host', 'unknown')}")
+            print(f"MySQL数据库: {mysql_config.get('db_name', 'unknown')}")
+        else:
+            # SQLite文档存储或其他类型
+            print(f"存储配置: {current_app.config['DOCUMENT_STORE_CONFIG']}")
 
-            # 检查并删除冲突的文本索引
-            text_indexes = [idx for idx in existing_indexes if 'text' in idx['key']]
-            if text_indexes:
-                logger.info(f"发现{len(text_indexes)}个现有文本索引，正在删除...")
-                for idx in text_indexes:
-                    logger.info(f"删除索引: {idx['name']}")
-                    docs.drop_index(idx['name'])
+        # 获取集合信息
+        collections = current_app.document_store.list_collections()
+        print("\n集合数量:", len(collections.get('collections', [])))
 
-            # ID索引
-            if 'id_1' not in existing_index_names:
-                docs.create_index([("id", 1)], unique=True)
-                logger.info("创建ID唯一索引")
+        for coll in collections.get('collections', []):
+            print(f"集合: {coll.get('name')} (主键: {coll.get('primaryKey')})")
 
-            # 创建新的文本索引
-            logger.info("创建内容全文索引")
-            docs.create_index([("content", "text"), ("metadata.title", "text")])
+        return True
+    except Exception as e:
+        print(f"检查文档存储状态失败: {e}")
+        return False
 
-            # 其他索引
-            if 'type_1' not in existing_index_names:
-                docs.create_index([("type", 1)])
-                logger.info("创建类型索引")
+def backup_document_store(args):
+    """备份文档存储数据库"""
+    try:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup_dir = BACKUP_DIR / f"document_store_backup_{timestamp}"
+        backup_dir.mkdir(parents=True, exist_ok=True)
 
-            if 'created_at_1' not in existing_index_names:
-                docs.create_index([("created_at", 1)])
-                logger.info("创建时间索引")
+        from flask import current_app
 
-            logger.info("MongoDB初始化完成")
-        except Exception as e:
-            logger.error(f"MongoDB初始化失败: {e}")
-            sys.exit(1)
+        # 导出所有集合的数据
+        collections = current_app.document_store.list_collections()
+        for coll in collections.get('collections', []):
+            coll_name = coll.get('name')
+            if coll_name:
+                # 搜索该集合中的所有文档
+                results = current_app.document_store.search(coll_name, '', {'limit': 1000})
+                documents = results.get('hits', [])
 
-def check_mongo_status(args):
-    """检查MongoDB状态"""
-    app = import_app()
+                # 将文档保存到JSON文件
+                coll_file = backup_dir / f"{coll_name}.json"
+                with open(coll_file, 'w', encoding='utf-8') as f:
+                    json.dump(documents, f, ensure_ascii=False, indent=2)
 
-    with app.app_context():
-        from zchat.db import get_mongo_db
+                logger.info(f"已备份集合 {coll_name} 中的 {len(documents)} 个文档")
 
-        try:
-            mongo_db = get_mongo_db()
-            collections = mongo_db.list_collection_names()
+        # 备份集合元数据
+        with open(backup_dir / "collections_metadata.json", 'w', encoding='utf-8') as f:
+            json.dump(collections, f, ensure_ascii=False, indent=2)
 
-            print("=== MongoDB状态 ===")
-            print(f"MongoDB URI: {app.config['MONGODB_URI']}")
-            print(f"数据库名: {app.config['MONGODB_DB']}")
-            print(f"集合数量: {len(collections)}")
+        logger.info(f"文档存储备份已创建: {backup_dir}")
+        return str(backup_dir)
+    except Exception as e:
+        logger.error(f"文档存储备份失败: {e}")
+        return None
 
-            for coll in collections:
-                count = mongo_db[coll].count_documents({})
-                print(f"  - {coll} ({count} 文档)")
+def restore_document_store(args):
+    """恢复文档存储数据库"""
+    try:
+        backup_dir = args.directory
+        if not backup_dir or not os.path.isdir(backup_dir):
+            logger.error("需要指定文档存储备份目录 (--directory)")
+            return False
 
-                # 显示索引
-                print("    索引:")
-                for idx in mongo_db[coll].list_indexes():
-                    print(f"    - {idx['name']}: {idx['key']}")
-        except Exception as e:
-            print(f"检查MongoDB状态失败: {e}")
+        from flask import current_app
+        import json
+
+        # 读取集合元数据
+        metadata_file = os.path.join(backup_dir, "collections_metadata.json")
+        if not os.path.exists(metadata_file):
+            logger.error(f"备份目录中缺少元数据文件: {metadata_file}")
+            return False
+
+        with open(metadata_file, 'r', encoding='utf-8') as f:
+            collections_metadata = json.load(f)
+
+        # 恢复集合
+        for coll in collections_metadata.get('collections', []):
+            coll_name = coll.get('name')
+            if not coll_name:
+                continue
+
+            # 创建集合（如果不存在）
+            options = coll.get('options', {})
+            try:
+                # 尝试创建集合
+                current_app.document_store.create_collection(
+                    coll_name,
+                    {
+                        'primaryKey': coll.get('primaryKey', 'id'),
+                        'indexedFields': options.get('indexedFields', [])
+                    }
+                )
+                logger.info(f"创建集合: {coll_name}")
+            except Exception as e:
+                logger.warning(f"创建集合 {coll_name} 失败，可能已存在: {str(e)}")
+
+            # 恢复文档
+            coll_file = os.path.join(backup_dir, f"{coll_name}.json")
+            if os.path.exists(coll_file):
+                with open(coll_file, 'r', encoding='utf-8') as f:
+                    documents = json.load(f)
+
+                # 恢复文档到集合
+                for doc in documents:
+                    try:
+                        # 尝试先删除可能存在的文档
+                        doc_id = doc.get(coll.get('primaryKey', 'id'))
+                        if doc_id:
+                            current_app.document_store.delete_document(coll_name, doc_id)
+                        # 添加文档
+                        current_app.document_store.add_document(coll_name, doc)
+                    except Exception as e:
+                        logger.warning(f"恢复文档到集合 {coll_name} 失败: {str(e)}")
+
+                logger.info(f"已恢复 {len(documents)} 个文档到集合 {coll_name}")
+
+        logger.info(f"文档存储数据已从 {backup_dir} 恢复")
+        return True
+    except Exception as e:
+        logger.error(f"文档存储恢复失败: {e}")
+        return False
 
 # ========== MeiliSearch管理函数 ==========
 
@@ -331,34 +396,6 @@ def backup_mysql(args):
             backup_file.unlink()
         return None
 
-def backup_mongo(args):
-    """备份MongoDB数据库"""
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    backup_dir = BACKUP_DIR / f"mongodb_backup_{timestamp}"
-    backup_dir.mkdir(exist_ok=True)
-
-    try:
-        # 从应用获取MongoDB配置
-        app = import_app()
-        mongo_uri = app.config['MONGODB_URI']
-
-        # 执行mongodump
-        cmd = [
-            "mongodump",
-            f"--uri={mongo_uri}",
-            f"--out={backup_dir}"
-        ]
-
-        subprocess.run(cmd, check=True)
-
-        logger.info(f"MongoDB备份已创建: {backup_dir}")
-        return str(backup_dir)
-    except Exception as e:
-        logger.error(f"MongoDB备份失败: {e}")
-        if backup_dir.exists():
-            shutil.rmtree(backup_dir)
-        return None
-
 def create_full_backup(args):
     """创建完整备份"""
     try:
@@ -372,25 +409,16 @@ def create_full_backup(args):
         if mysql_backup:
             shutil.copy(mysql_backup, temp_dir)
 
-        # 备份MongoDB
-        mongo_backup = backup_mongo(args)
-        if mongo_backup:
-            # 复制MongoDB备份目录的内容
-            mongo_backup_path = Path(mongo_backup)
-            mongo_target = temp_dir / "mongodb_backup"
-            mongo_target.mkdir(exist_ok=True)
-
-            for item in mongo_backup_path.iterdir():
-                if item.is_dir():
-                    shutil.copytree(item, mongo_target / item.name)
-                else:
-                    shutil.copy2(item, mongo_target)
+        # 备份文档存储
+        document_store_backup = backup_document_store(args)
+        if document_store_backup:
+            shutil.copy(document_store_backup, temp_dir)
 
         # 创建元数据文件
         metadata = {
             "timestamp": timestamp,
             "mysql_backup": os.path.basename(mysql_backup) if mysql_backup else None,
-            "mongodb_backup": "mongodb_backup" if mongo_backup else None,
+            "document_store_backup": os.path.basename(document_store_backup) if document_store_backup else None,
             "description": args.description if hasattr(args, 'description') else "自动备份"
         }
 
@@ -406,8 +434,8 @@ def create_full_backup(args):
         shutil.rmtree(temp_dir)
         if mysql_backup:
             Path(mysql_backup).unlink(missing_ok=True)
-        if mongo_backup:
-            shutil.rmtree(mongo_backup, ignore_errors=True)
+        if document_store_backup:
+            shutil.rmtree(document_store_backup, ignore_errors=True)
 
         logger.info(f"完整备份已创建: {archive_path}")
 
@@ -484,38 +512,6 @@ def restore_mysql(args):
         logger.error(f"MySQL恢复失败: {e}")
         return False
 
-def restore_mongo(args):
-    """恢复MongoDB数据库"""
-    if not args.directory:
-        logger.error("需要指定MongoDB备份目录 (--directory)")
-        return False
-
-    backup_dir = Path(args.directory)
-    if not backup_dir.exists() or not backup_dir.is_dir():
-        logger.error(f"备份目录不存在: {backup_dir}")
-        return False
-
-    try:
-        # 从应用获取MongoDB配置
-        app = import_app()
-        mongo_uri = app.config['MONGODB_URI']
-
-        # 执行mongorestore
-        cmd = [
-            "mongorestore",
-            f"--uri={mongo_uri}",
-            "--drop",  # 删除现有集合
-            str(backup_dir)
-        ]
-
-        subprocess.run(cmd, check=True)
-
-        logger.info(f"MongoDB数据已从 {backup_dir} 恢复")
-        return True
-    except Exception as e:
-        logger.error(f"MongoDB恢复失败: {e}")
-        return False
-
 def restore_full_backup(args):
     """恢复完整备份"""
     if not args.file and not args.latest:
@@ -571,13 +567,13 @@ def restore_full_backup(args):
             if not restore_mysql(mysql_args):
                 logger.warning("MySQL恢复失败")
 
-        # 恢复MongoDB
-        mongo_backup = extract_dir / "mongodb_backup"
-        if mongo_backup.exists() and mongo_backup.is_dir():
-            mongo_args = argparse.Namespace()
-            mongo_args.directory = str(mongo_backup)
-            if not restore_mongo(mongo_args):
-                logger.warning("MongoDB恢复失败")
+        # 恢复文档存储
+        document_store_backup = extract_dir / "document_store_backup"
+        if document_store_backup.exists() and document_store_backup.is_dir():
+            document_store_args = argparse.Namespace()
+            document_store_args.directory = str(document_store_backup)
+            if not restore_document_store(document_store_args):
+                logger.warning("文档存储恢复失败")
 
         # 清理临时目录
         shutil.rmtree(temp_dir)
@@ -601,9 +597,9 @@ def init_all(args):
     logger.info("初始化MySQL...")
     init_mysql(args)
 
-    # 初始化MongoDB
-    logger.info("初始化MongoDB...")
-    init_mongo(args)
+    # 初始化文档存储
+    logger.info("初始化文档存储...")
+    init_document_store(args)
 
     # 初始化MeiliSearch
     logger.info("初始化MeiliSearch...")
@@ -620,8 +616,8 @@ def check_all_status(args):
     check_mysql_status(args)
     print("\n")
 
-    # 检查MongoDB
-    check_mongo_status(args)
+    # 检查文档存储
+    check_document_store_status(args)
     print("\n")
 
     # 检查MeiliSearch
@@ -723,7 +719,7 @@ def main():
 
     init_mysql_parser = subparsers.add_parser("init-mysql", help="初始化MySQL数据库")
 
-    init_mongo_parser = subparsers.add_parser("init-mongo", help="初始化MongoDB数据库")
+    init_document_store_parser = subparsers.add_parser("init-document-store", help="初始化文档存储数据库")
 
     init_search_parser = subparsers.add_parser("init-search", help="初始化MeiliSearch")
 
@@ -732,7 +728,7 @@ def main():
 
     mysql_status_parser = subparsers.add_parser("mysql-status", help="检查MySQL状态")
 
-    mongo_status_parser = subparsers.add_parser("mongo-status", help="检查MongoDB状态")
+    document_store_status_parser = subparsers.add_parser("document-store-status", help="检查文档存储状态")
 
     search_status_parser = subparsers.add_parser("search-status", help="检查MeiliSearch状态")
 
@@ -748,7 +744,7 @@ def main():
 
     backup_mysql_parser = subparsers.add_parser("backup-mysql", help="备份MySQL数据库")
 
-    backup_mongo_parser = subparsers.add_parser("backup-mongo", help="备份MongoDB数据库")
+    backup_document_store_parser = subparsers.add_parser("backup-document-store", help="备份文档存储数据库")
 
     # 恢复命令
     restore_parser = subparsers.add_parser("restore", help="从备份恢复")
@@ -758,8 +754,8 @@ def main():
     restore_mysql_parser = subparsers.add_parser("restore-mysql", help="恢复MySQL数据库")
     restore_mysql_parser.add_argument("--file", required=True, help="MySQL备份文件")
 
-    restore_mongo_parser = subparsers.add_parser("restore-mongo", help="恢复MongoDB数据库")
-    restore_mongo_parser.add_argument("--directory", required=True, help="MongoDB备份目录")
+    restore_document_store_parser = subparsers.add_parser("restore-document-store", help="恢复文档存储数据库")
+    restore_document_store_parser.add_argument("--directory", required=True, help="文档存储备份目录")
 
     # 维护命令
     fix_parser = subparsers.add_parser("fix", help="尝试修复数据库问题")
@@ -777,16 +773,16 @@ def main():
         init_all(args)
     elif args.command == "init-mysql":
         init_mysql(args)
-    elif args.command == "init-mongo":
-        init_mongo(args)
+    elif args.command == "init-document-store":
+        init_document_store(args)
     elif args.command == "init-search":
         init_search(args)
     elif args.command == "status":
         check_all_status(args)
     elif args.command == "mysql-status":
         check_mysql_status(args)
-    elif args.command == "mongo-status":
-        check_mongo_status(args)
+    elif args.command == "document-store-status":
+        check_document_store_status(args)
     elif args.command == "search-status":
         check_search_status(args)
     elif args.command == "reset-migrations":
@@ -795,14 +791,14 @@ def main():
         create_full_backup(args)
     elif args.command == "backup-mysql":
         backup_mysql(args)
-    elif args.command == "backup-mongo":
-        backup_mongo(args)
+    elif args.command == "backup-document-store":
+        backup_document_store(args)
     elif args.command == "restore":
         restore_full_backup(args)
     elif args.command == "restore-mysql":
         restore_mysql(args)
-    elif args.command == "restore-mongo":
-        restore_mongo(args)
+    elif args.command == "restore-document-store":
+        restore_document_store(args)
     elif args.command == "fix":
         fix_database(args)
     elif args.command == "validate":

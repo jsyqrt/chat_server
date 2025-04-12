@@ -18,7 +18,7 @@ RUN apt-get update \
 
 # 复制项目文件
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 
 # 复制入口点脚本
 COPY docker/app/entrypoint.sh /entrypoint.sh

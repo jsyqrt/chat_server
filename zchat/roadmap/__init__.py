@@ -502,7 +502,6 @@ def official_maps():
     official_roadmaps = roadmap_ops.get_official_roadmaps()
     for item in official_roadmaps:
         mindmap = get_mindmap_nosql(current_app, item['mindmap_id'])
-        current_app.logger.debug(f"mindmap: {mindmap}")
         item['subtitle'] = stats_of_mindmap(mindmap)
         item['description'] = mindmap['description']
         item['total_stages'] = len(mindmap.get('children', []))
@@ -519,16 +518,17 @@ def get_map():
     roadmap = roadmap_ops.get_roadmap(id)
     if roadmap:
         if with_mindmap:
-            current_app.logger.debug(f"get_map roadmap: {roadmap.mindmap_id}")
             mindmap = get_mindmap_nosql(current_app, roadmap.mindmap_id)
-            current_app.logger.debug(f"get_map mindmap: {mindmap}")
         else:
             mindmap = None
 
         interaction_ops = RoadmapInteractionOps(db.session)
         interaction_stats = interaction_ops.get_stats(id)
 
+        user_participated = interaction_ops.participated(id, current_user.get_id_int())
+
         return jsonify({
+            'user_participated': user_participated,
             'participants': interaction_stats['participants'],
             'completions': interaction_stats['completions'],
             'favorites': interaction_stats['favorites'],

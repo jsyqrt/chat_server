@@ -33,31 +33,6 @@ except Exception as e:
 done
 echo "MySQL connection confirmed!"
 
-echo "Waiting for MongoDB..."
-until nc -z mongodb 27017; do
-  sleep 1
-done
-echo "MongoDB is ready!"
-
-# Add verification that MongoDB is fully operational
-echo "Verifying MongoDB data access..."
-until python -c "
-import pymongo
-try:
-    client = pymongo.MongoClient('mongodb://zchat:zchat_password@mongodb:27017/')
-    db = client['zchat']
-    # Try a simple operation to verify database is responsive
-    db.command('ping')
-    exit(0)
-except Exception as e:
-    print(f'Error connecting to MongoDB: {e}')
-    exit(1)
-" >/dev/null 2>&1; do
-  echo "Waiting for MongoDB to be fully operational..."
-  sleep 2
-done
-echo "MongoDB connection confirmed!"
-
 echo "Waiting for MeiliSearch..."
 until nc -z meilisearch 7700; do
   sleep 1

@@ -45,9 +45,9 @@ def init_app(app):
             if hasattr(app.document_store.store, 'close'):
                 try:
                     app.document_store.store.close()
-                    logger.info("进程退出时关闭MongoDB连接")
+                    logger.info("进程退出时关闭数据库连接")
                 except Exception as e:
-                    logger.error(f"进程退出时关闭MongoDB连接失败: {str(e)}")
+                    logger.error(f"进程退出时关闭数据库连接失败: {str(e)}")
 
     # 注册进程退出处理函数
     atexit.register(close_db_on_exit)
@@ -57,18 +57,21 @@ def init_app(app):
     def db_health():
         """数据库健康检查端点"""
         try:
-            # 检查MongoDB连接
+            # 检查数据库连接
             if hasattr(app, 'document_store') and hasattr(app.document_store, 'store'):
                 store = app.document_store.store
-                if hasattr(store, '_client'):
-                    # 执行简单的ping命令
-                    store._client.admin.command('ping')
-                    return {'status': 'ok', 'message': 'MongoDB连接正常'}, 200
+                if hasattr(store, '_get_connection'):
+                    # 执行简单的连接检查
+                    conn = store._get_connection()
+                    cursor = conn.cursor()
+                    cursor.execute('SELECT 1')
+                    cursor.fetchone()
+                    return {'status': 'ok', 'message': '数据库连接正常'}, 200
 
-            return {'status': 'error', 'message': 'MongoDB连接异常'}, 500
+            return {'status': 'error', 'message': '数据库连接异常'}, 500
         except Exception as e:
-            logger.error(f"MongoDB健康检查失败: {str(e)}")
-            return {'status': 'error', 'message': f'MongoDB健康检查失败: {str(e)}'}, 500
+            logger.error(f"数据库健康检查失败: {str(e)}")
+            return {'status': 'error', 'message': f'数据库健康检查失败: {str(e)}'}, 500
 
 def create_initial_collections(app):
     """创建初始集合

@@ -97,6 +97,12 @@ class RoadmapInteractionOps:
     def __init__(self, session):
         self.session = session
 
+    def participated(self, roadmap_id: str, user_id: str)->bool:
+        interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
+        if interaction:
+            return interaction.participanted == 1
+        return False
+
     def participant(self, roadmap_id: str, user_id: str)->bool:
         interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
         if interaction:
