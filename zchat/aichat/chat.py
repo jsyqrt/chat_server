@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify, current_app
 from flask_login import login_required, current_user
 from sqlalchemy import desc
 import uuid
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.chat import ChatSession, ChatMessage
 import time
 

@@ -5,7 +5,7 @@ import random
 import string
 from flask import current_app
 
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.points import PointsOps, RewardType
 
 class Invitation(db.Model):
@@ -107,7 +107,8 @@ class InvitationOps:
     def get_invitations_count_by_inviter(self, inviter_id):
         """获取用户的邀请数量"""
         try:
-            count = self.session.query(db.func.count(Invitation.id))\
+            from sqlalchemy import func, Integer
+            count = self.session.query(func.cast(func.count(Invitation.id), Integer))\
                 .filter(Invitation.inviter_id == inviter_id)\
                 .scalar()
 
@@ -119,9 +120,10 @@ class InvitationOps:
     def get_total_points_rewarded(self, inviter_id):
         """获取用户通过邀请获得的总积分"""
         try:
-            total_points = self.session.query(db.func.sum(Invitation.points_rewarded))\
+            from sqlalchemy import func, Integer
+            total_points = self.session.query(func.cast(func.coalesce(func.sum(Invitation.points_rewarded), 0), Integer))\
                 .filter(Invitation.inviter_id == inviter_id)\
-                .scalar() or 0
+                .scalar()
 
             return total_points
         except Exception as e:

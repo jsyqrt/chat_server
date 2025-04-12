@@ -2,7 +2,7 @@ import time
 from flask import Blueprint, request, jsonify, current_app, g, redirect, url_for
 from flask_login import login_required, current_user, login_user
 
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.user import UserOps
 from zchat.models.invitation import InvitationOps
 from zchat.models.points import PointsOps

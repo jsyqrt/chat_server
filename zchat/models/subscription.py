@@ -3,7 +3,7 @@ from enum import Enum
 from flask import current_app
 from sqlalchemy.orm import relationship
 
-from zchat.db import db
+from zchat.models.base import db
 
 class AccountType(Enum):
     FREE = 'free'
@@ -20,12 +20,12 @@ class Subscription(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
-    subscription_type = db.Column(db.String, nullable=False)  # 'basic' or 'pro'
+    subscription_type = db.Column(db.String(50), nullable=False)  # 'basic' or 'pro'
     start_time = db.Column(db.REAL, nullable=False, default=time.time())
     end_time = db.Column(db.REAL, nullable=False)
     payment_amount = db.Column(db.REAL, nullable=False)
-    payment_method = db.Column(db.String, nullable=True)
-    payment_order_id = db.Column(db.String, nullable=True)  # 新增支付订单号字段
+    payment_method = db.Column(db.String(100), nullable=True)
+    payment_order_id = db.Column(db.String(255), nullable=True)  # 新增支付订单号字段
     created_at = db.Column(db.REAL, nullable=False, default=time.time())
 
     # Indexes

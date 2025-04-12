@@ -9,13 +9,13 @@ from flask import request, current_app, Blueprint, jsonify, Response, stream_wit
 from werkzeug.utils import secure_filename
 
 from zchat.auth import login_required, current_user, admin_required
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.user import UserOps
 from zchat.models.roadmap import RoadmapOps, RoadmapInteractionOps
 from zchat.roadmap.from_jd import mindmap_from_jd_and_resume
 from zchat.roadmap.from_topic import mindmap_from_topic
 from zchat.roadmap.get_description import description_from_topic_path, description_from_topic_path_stream
-from zchat.meili import *
+from zchat.nosql import *
 from zchat.apis.ocr import ocr_file
 from zchat.models.points import ServiceType
 from zchat.points import check_points_sufficient, consume_points_for_service
@@ -87,7 +87,7 @@ def create_from_jd_and_resume():
     resume_file = request.files.get('resume_file', None)
     resume_file_name = request.form.get('resume_file_name', None)
 
-    jd_record = get_jd_record_from_meili(current_app, user_id, jd_id)
+    jd_record = get_jd_record_nosql(current_app, user_id, jd_id)
     if not jd_record:
         return jsonify({'error': f'JD not found for the given JD ID: {jd_id}'}), 400
 
@@ -113,9 +113,9 @@ def create_from_jd_and_resume():
         resume_file.save(file_path)
         resume = ocr_file(file_path)
     elif resume_file_name:
-        old_file_records = get_file_records_from_meili(current_app, user_id)
+        old_file_records = get_file_records_nosql(current_app, user_id)
         if old_file_records:
-            for resume_file in old_file_records['resume_files']:
+            for resume_file in old_file_records.get('resume_files', []):
                 if resume_file['filename'] == resume_file_name:
                     file_path = resume_file['path']
                     break
@@ -131,10 +131,10 @@ def create_from_jd_and_resume():
 
     if len(file_records.keys()) > 0:
         file_records['user_id'] = user_id
-        old_file_records = get_file_records_from_meili(current_app, user_id)
+        old_file_records = get_file_records_nosql(current_app, user_id)
         if old_file_records:
-            old_file_records['resume_files'] = old_file_records['resume_files'] + file_records['resume_files']
-            add_file_records_to_meili(current_app, old_file_records)
+            old_file_records['resume_files'] = old_file_records.get('resume_files', []) + file_records['resume_files']
+            add_file_records_nosql(current_app, old_file_records)
 
     mindmap_json = mindmap_from_jd_and_resume(jd, resume)
 
@@ -197,7 +197,7 @@ def create_from_jd_and_resume():
         skill_tag=skill_tag,
     )
 
-    add_mindmap_to_meili(current_app, mindmap)
+    add_mindmap_nosql(current_app, mindmap)
 
     return jsonify({
         'participants': 0,
@@ -288,7 +288,7 @@ def create_from_topic():
         skill_tag=skill_tag,
     )
 
-    add_mindmap_to_meili(current_app, mindmap)
+    add_mindmap_nosql(current_app, mindmap)
 
     return jsonify({
         'participants': 0,
@@ -365,7 +365,7 @@ def search_topic():
                 if len(results) < limit:
                     result_ids.add(roadmap['id'])
                     results[roadmap['id']] = roadmap
-                    mindmap = get_mindmap_from_meili(current_app, roadmap['mindmap_id'])
+                    mindmap = get_mindmap_nosql(current_app, roadmap['mindmap_id'])
                     roadmap['description'] = mindmap['description']
                     roadmap['subtitle'] = stats_of_mindmap(mindmap)
                     roadmap['total_stages'] = len(mindmap.get('children', []))
@@ -390,10 +390,16 @@ def my_roadmaps():
     roadmaps = roadmap_ops.get_roadmaps_by_user_id(user_id, offset, limit)
     count = roadmap_ops.get_roadmaps_count_by_user_id(user_id)
     for roadmap in roadmaps:
-        mindmap = get_mindmap_from_meili(current_app, roadmap['mindmap_id'])
-        roadmap['subtitle'] = stats_of_mindmap(mindmap)
-        roadmap['description'] = mindmap['description']
-        roadmap['total_stages'] = len(mindmap.get('children', []))
+        mindmap = get_mindmap_nosql(current_app, roadmap['mindmap_id'])
+        if mindmap:
+            roadmap['subtitle'] = stats_of_mindmap(mindmap)
+            roadmap['description'] = mindmap['description']
+            roadmap['total_stages'] = len(mindmap.get('children', []))
+        else:
+            current_app.logger.error(f"mindmap not found: {roadmap['mindmap_id']}, mindmap: {mindmap}")
+            roadmap['subtitle'] = ''
+            roadmap['description'] = ''
+            roadmap['total_stages'] = 0
 
     return jsonify({
         'roadmaps': roadmaps,
@@ -495,7 +501,8 @@ def official_maps():
     roadmap_ops = RoadmapOps(db.session)
     official_roadmaps = roadmap_ops.get_official_roadmaps()
     for item in official_roadmaps:
-        mindmap = get_mindmap_from_meili(current_app, item['mindmap_id'])
+        mindmap = get_mindmap_nosql(current_app, item['mindmap_id'])
+        current_app.logger.debug(f"mindmap: {mindmap}")
         item['subtitle'] = stats_of_mindmap(mindmap)
         item['description'] = mindmap['description']
         item['total_stages'] = len(mindmap.get('children', []))
@@ -512,7 +519,9 @@ def get_map():
     roadmap = roadmap_ops.get_roadmap(id)
     if roadmap:
         if with_mindmap:
-            mindmap = get_mindmap_from_meili(current_app, roadmap.mindmap_id)
+            current_app.logger.debug(f"get_map roadmap: {roadmap.mindmap_id}")
+            mindmap = get_mindmap_nosql(current_app, roadmap.mindmap_id)
+            current_app.logger.debug(f"get_map mindmap: {mindmap}")
         else:
             mindmap = None
 
@@ -549,11 +558,11 @@ def submit_update():
     mindmap = request.form.get('mindmap')
     mindmap = json.loads(mindmap)
 
-    old_mindmap = get_mindmap_from_meili(current_app, mindmap_id)
+    old_mindmap = get_mindmap_nosql(current_app, mindmap_id)
     if old_mindmap:
         mindmap['updated_at'] = time.time()
         mindmap['updated_by'] = current_user.get_id_int()
-        result =  update_mindmap_to_meili(current_app, mindmap)
+        result =  update_mindmap_nosql(current_app, mindmap)
         current_app.logger.debug(f"update mindmap: {result} by user: {current_user.get_id_int()}")
         return jsonify({'message': 'Update submitted'})
 
@@ -590,7 +599,7 @@ def submit_learning_status():
     interaction_ops = RoadmapInteractionOps(db.session)
     interaction_ops.participant(roadmap_id, user_id)
 
-    upsert_user_mindmap_status_to_meili(current_app, user_id, mindmap_status)
+    upsert_user_mindmap_status_nosql(current_app, user_id, mindmap_status)
 
     return jsonify({'message': 'Learning status submitted successfully'})
 
@@ -599,7 +608,7 @@ def submit_learning_status():
 def learning_status():
     mindmap_id = request.args.get('mindmap_id')
 
-    mindmap_status = get_learning_status_from_meili(current_app, current_user.get_id_int(), mindmap_id)
+    mindmap_status = get_learning_status_nosql(current_app, current_user.get_id_int(), mindmap_id)
     if mindmap_status:
         return jsonify(mindmap_status)
     else:
@@ -616,7 +625,7 @@ def recent_maps():
     interaction_ops = RoadmapInteractionOps(db.session)
     count = interaction_ops.get_participants_count_of_user(user_id)
 
-    mindmap_statuses = get_learning_list_from_meili(current_app, user_id, offset, limit)
+    mindmap_statuses = get_learning_list_nosql(current_app, user_id, offset, limit)
 
     current_app.logger.debug(f'mindmap_statuses: {mindmap_statuses}')
 
@@ -657,9 +666,10 @@ def recent_maps():
     for recent_map in recent_maps:
         roadmap = roadmap_ops.get_roadmap_by_mindmap_id(recent_map['mindmap_id'])
         if roadmap:
-            mindmap = get_mindmap_from_meili(current_app, recent_map['mindmap_id'])
+            mindmap = get_mindmap_nosql(current_app, recent_map['mindmap_id'])
             result = roadmap.to_dict()
             result['subtitle'] = stats_of_mindmap(mindmap)
+            current_app.logger.debug(f"mindmap: {mindmap}, recent_map_id: {recent_map['mindmap_id']}")
             result['description'] = mindmap['description']
             result['completed'] = recent_map['completed_nodes']
             result['total'] = recent_map['total_nodes']
@@ -743,6 +753,6 @@ def heading_quote():
 @admin_required
 def delete_index():
     index_name = request.args.get('name')
-    delete_index_from_meili(current_app, index_name)
+    delete_index_nosql(current_app, index_name)
     current_app.logger.debug('index deleted')
     return jsonify({'message': 'Index deleted'})

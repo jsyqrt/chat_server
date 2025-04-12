@@ -1,0 +1,50 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Docker
+.dockerignore
+docker-compose*.yml
+Dockerfile*
+
+# Logs
+log/
+*.log
+
+# OS specific
+.DS_Store
+.idea/
+.vscode/
+
+# 不需要上传到Docker的文件
+*.md
+*.MD
+LICENSE
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# 保留 README.md
+!README.md
+
+# 测试文件
+test/
+tests/

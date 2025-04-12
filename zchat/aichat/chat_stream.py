@@ -5,8 +5,10 @@ import time
 from datetime import datetime
 from sqlalchemy import desc
 import uuid
+import logging
+import traceback
 
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.chat import ChatSession, ChatMessage
 from zchat.apis.llm import chat_with_llm_stream
 from zchat.models.points import ServiceType
@@ -18,55 +20,84 @@ bp = Blueprint('aichat_stream', __name__, url_prefix='/aichat')
 @login_required
 def chat_with_ai():
     """与AI聊天并获取流式响应"""
-    data = request.json
-    user_message = data.get('message')
-    session_id = data.get('session_id', None)
-    chat_context = data.get('chat_context', None)
-    message_metadata= {
-        "roadmap_id": chat_context.get("roadmap_id", None),
-        "node_id": chat_context.get("node_id", None),
-        "node_path": chat_context.get("node_path", None),
-        "ref_msg_id": chat_context.get("ref_msg_id", None),
-        "ref_msg_content": chat_context.get("ref_msg_content", None),
-    } if chat_context else {}
+    try:
+        data = request.json
+        if not data:
+            return Response(json.dumps({"error": "无效的请求数据"}),
+                         status=400, mimetype='application/json')
 
-    if not user_message:
-        return Response(json.dumps({"error": "消息内容不能为空"}),
-                        status=400, mimetype='application/json')
+        user_message = data.get('message')
+        session_id = data.get('session_id', None)
+        chat_context = data.get('chat_context', None)
+        message_metadata= {
+            "roadmap_id": chat_context.get("roadmap_id", None) if chat_context else None,
+            "node_id": chat_context.get("node_id", None) if chat_context else None,
+            "node_path": chat_context.get("node_path", None) if chat_context else None,
+            "ref_msg_id": chat_context.get("ref_msg_id", None) if chat_context else None,
+            "ref_msg_content": chat_context.get("ref_msg_content", None) if chat_context else None,
+        }
 
-    user_id = current_user.get_id_int()
+        # 验证必要参数
+        if not user_message:
+            return Response(json.dumps({"error": "消息内容不能为空"}),
+                            status=400, mimetype='application/json')
 
-    # 检查积分是否足够
-    sufficient, message = check_points_sufficient(user_id, ServiceType.AI_CHAT.value)
-    if not sufficient:
-        return Response(json.dumps({"error": message, "points_required": True}),
-                        status=402, mimetype='application/json')
+        if not session_id:
+            return Response(json.dumps({"error": "会话ID不能为空"}),
+                            status=400, mimetype='application/json')
 
-    # 获取或创建聊天会话
-    session = None
-    if session_id:
-        session = ChatSession.query.filter_by(id=session_id, user_id=current_user.get_id_int()).first()
+        user_id = current_user.get_id_int()
 
-    if session is None:
-        return Response(json.dumps({"error": "会话不存在或无权访问"}),
-                        status=404, mimetype='application/json')
+        # 检查积分是否足够
+        try:
+            sufficient, message = check_points_sufficient(user_id, ServiceType.AI_CHAT.value)
+            if not sufficient:
+                return Response(json.dumps({"error": message, "points_required": True}),
+                                status=402, mimetype='application/json')
+        except Exception as e:
+            current_app.logger.error(f"积分检查失败: {str(e)}")
+            return Response(json.dumps({"error": "积分检查失败，请稍后重试"}),
+                            status=500, mimetype='application/json')
 
-    # 保存用户消息
-    user_chat_message = ChatMessage(
-        id=str(uuid.uuid4()),
-        session_id=session.id,
-        sender_type='user',
-        content=user_message,
-        timestamp=time.time(),
-        message_metadata=message_metadata,
-    )
-    db.session.add(user_chat_message)
-    db.session.commit()
+        # 获取聊天会话
+        try:
+            session = ChatSession.query.filter_by(id=session_id, user_id=user_id).first()
+            if session is None:
+                return Response(json.dumps({"error": "会话不存在或无权访问"}),
+                                status=404, mimetype='application/json')
+        except Exception as e:
+            current_app.logger.error(f"查询会话失败: {str(e)}")
+            return Response(json.dumps({"error": "查询会话失败，请稍后重试"}),
+                            status=500, mimetype='application/json')
 
-    # 获取会话历史记录
-    history = get_chat_history(session.id)
+        # 保存用户消息
+        user_chat_message = None
+        try:
+            user_chat_message = ChatMessage(
+                id=str(uuid.uuid4()),
+                session_id=session.id,
+                sender_type='user',
+                content=user_message,
+                timestamp=time.time(),
+                message_metadata=message_metadata,
+            )
+            db.session.add(user_chat_message)
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            current_app.logger.error(f"保存用户消息失败: {str(e)}")
+            return Response(json.dumps({"error": "保存用户消息失败，请稍后重试"}),
+                            status=500, mimetype='application/json')
 
-    history.insert(0, {"role": "system", "content": """你是「职路领航员」，一位专业的职业发展顾问，在「职路」平台工作。「职路」是一家专注于职业咨询、技能培训和职业规划的综合平台。
+        # 获取会话历史记录
+        try:
+            history = get_chat_history(session.id)
+        except Exception as e:
+            current_app.logger.error(f"获取聊天历史失败: {str(e)}")
+            return Response(json.dumps({"error": "获取聊天历史失败，请稍后重试"}),
+                            status=500, mimetype='application/json')
+
+        history.insert(0, {"role": "system", "content": """你是「职路领航员」，一位专业的职业发展顾问，在「职路」平台工作。「职路」是一家专注于职业咨询、技能培训和职业规划的综合平台。
 
 【你的角色和职责】
 1. 提供全面、客观、有深度的职业建议和知识指导
@@ -82,8 +113,8 @@ def chat_with_ai():
 5. 诚实性：对不确定的问题坦诚说明，避免误导用户
 
 在与用户的互动中，保持谦逊、专业且有帮助性，以促进用户的职业发展和个人成长。"""
-  })
-    history.insert(1, {"role": "system", "content": """
+          })
+        history.insert(1, {"role": "system", "content": """
 分析上下文并回复用户消息，遵循以下指导原则：
 
 【回复结构要求】
@@ -136,11 +167,15 @@ def chat_with_ai():
 - 各属性之间需要逗号分隔
 """})
 
-    if chat_context:
-        history.extend(chat_msgs_from_context(chat_context))
+        if chat_context:
+            try:
+                history.extend(chat_msgs_from_context(chat_context))
+            except Exception as e:
+                current_app.logger.error(f"处理聊天上下文失败: {str(e)}")
+                # 继续执行，这不是致命错误
 
-    history.append({
-        "role": "system", "content": """关于【互动建议】部分:
+        history.append({
+            "role": "system", "content": """关于【互动建议】部分:
 0. 分隔符：在主要内容结束后，使用该特殊字符串作为分隔符: <|------ 互动建议 ------|>
 1. questions_to_ai: 必须提供3个具体的、与上下文相关的问题，使用用户第一人称表述
 2. questions_to_user: 必须提供1-3个问题，用于获取更多信息，使用AI第一人称表述
@@ -148,86 +183,134 @@ def chat_with_ai():
    - 求职场景: 适当推荐career_assessment, job_analysis, resume_optimization
    - 技能学习场景: 优先推荐learning_path_gen
 4. 确保JSON格式正确，所有属性间使用逗号分隔"""
-    })
+        })
 
-    # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.AI_CHAT.value, "AI聊天")
-    if not success:
-        return Response(json.dumps({"error": "积分扣除失败，请稍后重试", "points_required": True}),
-                        status=402, mimetype='application/json')
+        # 消费积分
+        try:
+            success, points_spent = consume_points_for_service(user_id, ServiceType.AI_CHAT.value, "AI聊天")
+            if not success:
+                return Response(json.dumps({"error": "积分扣除失败，请稍后重试", "points_required": True}),
+                                status=402, mimetype='application/json')
+        except Exception as e:
+            current_app.logger.error(f"积分消费失败: {str(e)}")
+            return Response(json.dumps({"error": "积分消费失败，请稍后重试"}),
+                            status=500, mimetype='application/json')
 
-    # 准备AI响应消息记录
-    ai_message = ChatMessage(
-        id=str(uuid.uuid4()),
-        session_id=session.id,
-        sender_type='ai',
-        content="",  # 将在流式响应完成后更新
-        timestamp=time.time(),
-        message_metadata=message_metadata,
-    )
-    db.session.add(ai_message)
-    session.updated_at = time.time()
-    db.session.commit()
+        # 准备AI响应消息记录
+        ai_message = None
+        try:
+            ai_message = ChatMessage(
+                id=str(uuid.uuid4()),
+                session_id=session.id,
+                sender_type='ai',
+                content="",  # 将在流式响应完成后更新
+                timestamp=time.time(),
+                message_metadata=message_metadata,
+            )
+            db.session.add(ai_message)
+            session.updated_at = time.time()
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            current_app.logger.error(f"创建AI消息记录失败: {str(e)}")
+            return Response(json.dumps({"error": "创建AI消息记录失败，请稍后重试"}),
+                            status=500, mimetype='application/json')
 
-    # 创建流式响应
-    def generate():
-        full_response = ""
+        # 创建流式响应
+        def generate():
+            full_response = ""
 
-        current_app.logger.debug(f"history: {history}, user_message: {user_message}")
+            current_app.logger.debug(f"history: {history}, user_message: {user_message}")
 
-        # 发送积分消耗信息
-        yield f"data: {json.dumps({'points_spent': points_spent})}\n\n"
+            # 发送积分消耗信息
+            yield f"data: {json.dumps({'points_spent': points_spent})}\n\n"
 
-        # 调用LLM API并处理流式响应
-        for chunk in chat_with_llm_stream(user_message, history=history, model="qwen-2.5-32b", max_tokens=4096, platform="siliconflow"):
-            if chunk:
-                full_response += chunk
-                yield f"data: {json.dumps({'text': chunk, 'session_id': session.id, 'message_id': ai_message.id})}\n\n"
+            # 调用LLM API并处理流式响应
+            try:
+                for chunk in chat_with_llm_stream(user_message, history=history, model="qwen-2.5-32b", max_tokens=4096, platform="siliconflow"):
+                    if chunk:
+                        full_response += chunk
+                        yield f"data: {json.dumps({'text': chunk, 'session_id': session.id, 'message_id': ai_message.id})}\n\n"
+            except Exception as e:
+                error_msg = f"AI响应生成失败: {str(e)}"
+                current_app.logger.error(error_msg)
+                # 向客户端发送错误信息
+                yield f"data: {json.dumps({'error': '获取AI响应时出现错误，请稍后重试', 'session_id': session.id, 'message_id': ai_message.id})}\n\n"
+                # 保存错误信息到AI消息
+                try:
+                    ai_message.content = "[系统提示: 获取AI响应时出现错误]"
+                    db.session.commit()
+                except Exception as db_error:
+                    current_app.logger.error(f"保存错误消息失败: {str(db_error)}")
+                yield f"data: {json.dumps({'done': True, 'session_id': session.id, 'message_id': ai_message.id})}\n\n"
+                return
 
-        # 流式响应结束后，更新AI消息内容
-        ai_message.content = full_response
-        db.session.commit()
+            # 流式响应结束后，更新AI消息内容
+            try:
+                ai_message.content = full_response
+                db.session.commit()
+            except Exception as e:
+                current_app.logger.error(f"更新AI消息内容失败: {str(e)}")
+                # 继续执行，不中断客户端连接
 
-        current_app.logger.debug(f"ai_message: {ai_message.content}")
+            current_app.logger.debug(f"ai_message: {ai_message.content}")
 
-        # 发送完成信号
-        yield f"data: {json.dumps({'done': True, 'session_id': session.id, 'message_id': ai_message.id})}\n\n"
+            # 发送完成信号
+            yield f"data: {json.dumps({'done': True, 'session_id': session.id, 'message_id': ai_message.id})}\n\n"
 
-    return Response(stream_with_context(generate()),
-                    mimetype='text/event-stream',
-                    headers={'Cache-Control': 'no-cache',
-                             'X-Accel-Buffering': 'no'})
+        return Response(stream_with_context(generate()),
+                        mimetype='text/event-stream',
+                        headers={'Cache-Control': 'no-cache',
+                                'X-Accel-Buffering': 'no'})
+
+    except Exception as e:
+        # 捕获整个函数的所有未处理异常
+        error_detail = traceback.format_exc()
+        current_app.logger.error(f"聊天请求处理失败: {str(e)}\n{error_detail}")
+        return Response(json.dumps({"error": "处理请求时发生错误，请稍后重试"}),
+                        status=500, mimetype='application/json')
 
 def get_chat_history(session_id, max_messages=6):
     """获取聊天历史记录用于AI上下文"""
-    messages = ChatMessage.query.filter_by(session_id=session_id) \
-                            .order_by(desc(ChatMessage.timestamp)) \
-                            .limit(max_messages).all()
+    try:
+        messages = ChatMessage.query.filter_by(session_id=session_id) \
+                                .order_by(desc(ChatMessage.timestamp)) \
+                                .limit(max_messages).all()
 
-    # 构造历史记录格式
-    history = []
-    for message in messages:
-        role = "user" if message.sender_type == "user" else "assistant"
-        if role == "assistant":
-            message.content = message.content.split("------ 互动建议 ------")[0]
+        # 构造历史记录格式
+        history = []
+        for message in messages:
+            role = "user" if message.sender_type == "user" else "assistant"
+            if role == "assistant" and "------ 互动建议 ------" in message.content:
+                message.content = message.content.split("------ 互动建议 ------")[0]
 
-        history.append({"role": role, "content": message.content})
+            history.append({"role": role, "content": message.content})
 
-    history.reverse()
+        history.reverse()
+        return history
 
-    return history
+    except Exception as e:
+        logging.error(f"获取聊天历史记录失败: {str(e)}")
+        # 如果无法获取历史记录，返回空列表以便继续服务
+        return []
 
 def chat_msgs_from_context(chat_context):
-    ref_msgs = chat_context.get("ref_msgs", [])
-    if ref_msgs:
-        return ref_msgs
-    else:
-        roadmap_title = chat_context.get("roadmap_title")
-        node_title = chat_context.get("node_title")
-        node_path = chat_context.get("node_path")
-        node_description = chat_context.get("node_description")
+    """从聊天上下文中提取消息"""
+    try:
+        ref_msgs = chat_context.get("ref_msgs", [])
+        if ref_msgs:
+            return ref_msgs
+        else:
+            roadmap_title = chat_context.get("roadmap_title", "未知主题")
+            node_title = chat_context.get("node_title", "未知节点")
+            node_path = chat_context.get("node_path", "未知路径")
+            node_description = chat_context.get("node_description", "暂无描述")
 
-        return [
-            {"role": "user", "content": f"我正在学习一个大的主题：「{roadmap_title}」，目前的学习路径是「{node_path}」，请给我解释一下这个主题：「{node_title}」"},
-            {"role": "assistant", "content": f"{node_description}"}
-        ]
+            return [
+                {"role": "user", "content": f"我正在学习一个大的主题：「{roadmap_title}」，目前的学习路径是「{node_path}」，请给我解释一下这个主题：「{node_title}」"},
+                {"role": "assistant", "content": f"{node_description}"}
+            ]
+    except Exception as e:
+        logging.error(f"处理聊天上下文失败: {str(e)}")
+        # 返回空列表以便继续服务
+        return []

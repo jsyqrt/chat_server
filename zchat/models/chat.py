@@ -1,13 +1,13 @@
 import time
 from sqlalchemy.orm import relationship
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.user import User
 
 class ChatSession(db.Model):
     """聊天会话模型"""
     __tablename__ = 'CHAT_SESSION'
 
-    id = db.Column(db.String, primary_key=True)
+    id = db.Column(db.String(255), primary_key=True)
     title = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(50), nullable=False, default='general')  # 会话类型，如general, project, etc.
     user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
@@ -15,7 +15,7 @@ class ChatSession(db.Model):
     updated_at = db.Column(db.REAL, default=time.time(), onupdate=time.time)
     is_archived = db.Column(db.Boolean, default=False)  # 是否已归档
     session_metadata = db.Column(db.JSON, default={})  # 存储会话元数据
-    roadmap_id = db.Column(db.String, nullable=True)  # 关联的roadmap id
+    roadmap_id = db.Column(db.String(255), nullable=True)  # 关联的roadmap id
 
     # 关系
     user = relationship("User", back_populates="chat_sessions")
@@ -50,8 +50,8 @@ class ChatMessage(db.Model):
     """聊天消息模型"""
     __tablename__ = 'CHAT_MESSAGE'
 
-    id = db.Column(db.String, primary_key=True)
-    session_id = db.Column(db.String, db.ForeignKey('CHAT_SESSION.id'), nullable=False)
+    id = db.Column(db.String(255), primary_key=True)
+    session_id = db.Column(db.String(255), db.ForeignKey('CHAT_SESSION.id'), nullable=False)
     sender_type = db.Column(db.String(20), nullable=False)  # 'user' 或 'ai'
     content = db.Column(db.Text, nullable=False)
     timestamp = db.Column(db.REAL, default=time.time())

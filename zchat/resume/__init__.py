@@ -14,12 +14,14 @@ from werkzeug.utils import secure_filename
 
 from zchat.auth import login_required, current_user
 from zchat.apis.ocr import ocr_file
-from zchat.meili import get_file_records_from_meili, \
-    add_file_records_to_meili, \
-    update_file_records_to_meili, \
-    add_resume_optimization_record_to_meili, \
-    get_resume_optimization_records_from_meili, \
-    get_jd_record_from_meili
+from zchat.nosql import (
+    get_file_records_nosql,
+    add_file_records_nosql,
+    update_file_records_nosql,
+    add_resume_optimization_record_nosql,
+    get_resume_optimization_records_nosql,
+    get_jd_record_nosql
+)
 
 from zchat.resume.resume_optimizer import optimize as optimize_resume
 from zchat.resume.resume_optimizer import compare_resumes as compare_resumes
@@ -59,7 +61,7 @@ def optimize():
 
     file_records = {}
 
-    jd_record = get_jd_record_from_meili(current_app, user_id, jd_id)
+    jd_record = get_jd_record_nosql(current_app, user_id, jd_id)
     if not jd_record:
         return jsonify({'error': f'JD not found for the given JD ID: {jd_id}'}), 400
 
@@ -84,9 +86,9 @@ def optimize():
         resume_file.save(file_path)
         resume = ocr_file(file_path)
     elif resume_file_name:
-        old_file_records = get_file_records_from_meili(current_app, user_id)
+        old_file_records = get_file_records_nosql(current_app, user_id)
         if old_file_records:
-            for resume_file in old_file_records['resume_files']:
+            for resume_file in old_file_records.get('resume_files', []):
                 if resume_file['filename'] == resume_file_name:
                     file_path = resume_file['path']
                     break
@@ -105,13 +107,13 @@ def optimize():
 
     if len(file_records.keys()) > 0:
         file_records['user_id'] = user_id
-        old_file_records = get_file_records_from_meili(current_app, user_id)
+        old_file_records = get_file_records_nosql(current_app, user_id)
         if old_file_records:
-            old_file_records['resume_files'] = old_file_records['resume_files'] + file_records['resume_files']
-            update_file_records_status = update_file_records_to_meili(current_app, old_file_records)
+            old_file_records['resume_files'] = old_file_records.get('resume_files', []) + file_records['resume_files']
+            update_file_records_status = update_file_records_nosql(current_app, old_file_records)
             current_app.logger.debug(f"update file records status: {update_file_records_status}")
         else:
-            add_file_records_status = add_file_records_to_meili(current_app, file_records)
+            add_file_records_status = add_file_records_nosql(current_app, file_records)
             current_app.logger.debug(f"add file records status: {add_file_records_status}")
 
     current_app.logger.debug(f"ready to optimize resume")
@@ -149,7 +151,7 @@ def optimize():
         'updated_at': time.time(),
         'points_spent': points_spent
     }
-    add_resume_optimization_record_to_meili(current_app, user_id, resume_optimization_record)
+    add_resume_optimization_record_nosql(current_app, user_id, resume_optimization_record)
     return jsonify(resume_optimization_record)
 
 
@@ -160,7 +162,7 @@ def optimization_history():
     limit = request.args.get('limit', 10)
 
     user_id = current_user.get_id_int()
-    resume_optimization_records = get_resume_optimization_records_from_meili(current_app, user_id, offset, limit)
+    resume_optimization_records = get_resume_optimization_records_nosql(current_app, user_id, offset, limit)
     return jsonify({
         'history': resume_optimization_records,
     })

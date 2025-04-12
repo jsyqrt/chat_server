@@ -6,7 +6,7 @@ from enum import Enum
 from flask import current_app, url_for
 from flask_login import UserMixin
 
-from zchat.db import db
+from zchat.models.base import db
 # from zchat.rand import *
 
 from sqlalchemy.orm import relationship
@@ -16,27 +16,27 @@ class User(UserMixin, db.Model):
     __tablename__ = 'USER'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    phone_number = db.Column(db.String, nullable=False, default='13800001111')
+    phone_number = db.Column(db.String(20), nullable=False, default='13800001111')
 
-    avatar_name = db.Column(db.String, nullable=False, default='/static/images/default_avatar.png')
-    nickname = db.Column(db.String, nullable=False, default='专家785') # TODO use random name
-    signature_text = db.Column(db.String, nullable=False, default='Hello World!')
+    avatar_name = db.Column(db.String(255), nullable=False, default='/static/images/default_avatar.png')
+    nickname = db.Column(db.String(100), nullable=False)
+    signature_text = db.Column(db.String(255), nullable=False, default='成为更好的自己')
 
-    gender = db.Column(db.String, nullable=False, default='未知')
-    edubg = db.Column(db.String, nullable=False, default='未知')
-    yearofwork = db.Column(db.String, nullable=False, default='未知')
+    gender = db.Column(db.String(20), nullable=False, default='未知')
+    edubg = db.Column(db.String(50), nullable=False, default='未知')
+    yearofwork = db.Column(db.String(20), nullable=False, default='未知')
 
-    interested_industries = db.Column(db.String, nullable=True)
-    interested_roles = db.Column(db.String, nullable=True)
-    interested_skills = db.Column(db.String, nullable=True)
+    interested_industries = db.Column(db.String(500), nullable=True)
+    interested_roles = db.Column(db.String(500), nullable=True)
+    interested_skills = db.Column(db.String(500), nullable=True)
 
     # 新增字段 - 会员订阅和积分系统
-    account_type = db.Column(db.String, nullable=False, default=AccountType.FREE.value)
+    account_type = db.Column(db.String(20), nullable=False, default=AccountType.FREE.value)
     daily_points = db.Column(db.Integer, nullable=False, default=80)
     points_reset_time = db.Column(db.REAL, nullable=True)
     subscription_start_time = db.Column(db.REAL, nullable=True)
     subscription_end_time = db.Column(db.REAL, nullable=True)
-    invite_code = db.Column(db.String, nullable=True)
+    invite_code = db.Column(db.String(50), nullable=True)
     invited_by = db.Column(db.Integer, nullable=True)
 
     create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
@@ -362,10 +362,11 @@ class UserOps:
 
     def get_stats(self)->dict:
         try:
-            total = self.session.query(User).count()
-            create_today = self.session.query(User).filter(User.create_timestamp >= time.time() - 24 * 60 * 60).count()
-            create_this_week = self.session.query(User).filter(User.create_timestamp >= time.time() - 7 * 24 * 60 * 60).count()
-            create_this_month = self.session.query(User).filter(User.create_timestamp >= time.time() - 30 * 24 * 60 * 60).count()
+            from sqlalchemy import func, Integer
+            total = self.session.query(func.cast(func.count(User.id), Integer)).scalar()
+            create_today = self.session.query(func.cast(func.count(User.id), Integer)).filter(User.create_timestamp >= time.time() - 24 * 60 * 60).scalar()
+            create_this_week = self.session.query(func.cast(func.count(User.id), Integer)).filter(User.create_timestamp >= time.time() - 7 * 24 * 60 * 60).scalar()
+            create_this_month = self.session.query(func.cast(func.count(User.id), Integer)).filter(User.create_timestamp >= time.time() - 30 * 24 * 60 * 60).scalar()
 
             return {
                 'total': total,

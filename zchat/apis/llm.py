@@ -1,7 +1,9 @@
 import openai
 import os
 import re
-from typing import Dict, List, Tuple
+import logging
+from typing import Dict, List, Tuple, Generator, Optional, Any
+import time
 
 # 模型名称映射：根据基础模型名和平台名，提供平台特定的模型名称
 MODEL_MAPPINGS: Dict[str, Dict[str, str]] = {
@@ -41,74 +43,171 @@ def get_platform_model_name(base_model: str, platform: str) -> str:
 
     return MODEL_MAPPINGS[base_model][platform]
 
-def get_api_url_and_key(platform="groq"):
-  if platform == "groq":
-    return "https://api.groq.com/openai/v1", os.getenv("GROQ_API_KEY")
-  elif platform == "deepseek":
-    return "https://api.deepseek.com/v1", os.getenv("DEEPSEEK_API_KEY")
-  elif platform == "aliyun":
-    return "https://dashscope.aliyuncs.com/compatible-mode/v1", os.getenv("ALIYUN_API_KEY")
-  elif platform == "siliconflow":
-    return "https://api.siliconflow.cn/v1", os.getenv("SF_ZCHAT_API_KEY")
-  else:
-    raise ValueError(f"Unsupported platform: {platform}")
+def get_api_url_and_key(platform="groq") -> Tuple[str, str]:
+    """获取API URL和密钥，检查密钥是否存在"""
+    api_url = ""
+    api_key = ""
 
-def get_response_from_llm(messages, model, max_tokens, platform="groq"):
-  api_url, api_key = get_api_url_and_key(platform)
-  platform_model = get_platform_model_name(model, platform)
-  client = openai.OpenAI(
-    base_url=api_url,
-    api_key=api_key,
-    timeout=1200,
-    # max_retries=3,
-  )
-  response = client.chat.completions.create(
-    model=platform_model,
-    messages=messages,
-    max_tokens=max_tokens,
-    temperature=0,
-  )
-  return response.choices[0].message.content
+    if platform == "groq":
+        api_url = "https://api.groq.com/openai/v1"
+        api_key = os.getenv("GROQ_API_KEY")
+    elif platform == "deepseek":
+        api_url = "https://api.deepseek.com/v1"
+        api_key = os.getenv("DEEPSEEK_API_KEY")
+    elif platform == "aliyun":
+        api_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+        api_key = os.getenv("ALIYUN_API_KEY")
+    elif platform == "siliconflow":
+        api_url = "https://api.siliconflow.cn/v1"
+        api_key = os.getenv("SF_ZCHAT_API_KEY")
+    else:
+        raise ValueError(f"不支持的平台: {platform}")
 
-def get_response_from_llm_stream(messages, model, max_tokens, platform="groq"):
-  api_url, api_key = get_api_url_and_key(platform)
-  platform_model = get_platform_model_name(model, platform)
-  client = openai.OpenAI(
-    base_url=api_url,
-    api_key=api_key,
-  )
-  response = client.chat.completions.create(
-    model=platform_model,
-    messages=messages,
-    max_tokens=max_tokens,
-    # temperature=0,
-    stream=True,
-  )
-  for chunk in response:
-    if chunk.choices[0].delta.content is not None:
-      yield chunk.choices[0].delta.content
+    if not api_key:
+        raise ValueError(f"未找到平台 {platform} 的API密钥")
 
-def chat_with_llm_stream(message, history, model, max_tokens, platform="groq"):
-  messages = history
-  messages.append({"role": "user", "content": message})
-  return get_response_from_llm_stream(messages, model, max_tokens, platform)
+    return api_url, api_key
 
-def get_json_blocks_from_llm_response(response):
-  """从LLM响应中提取JSON代码块"""
-  # 定义正则表达式模式：匹配 ```json 和 ``` 之间的内容
-  pattern = r'```json\n(.*?)\n```'
+def get_response_from_llm(messages: List[Dict[str, str]], model: str, max_tokens: int, platform: str = "groq", retry_count: int = 3) -> str:
+    """
+    向LLM发送请求并获取完整响应
 
-  # 查找所有匹配的代码块
-  json_blocks = re.findall(pattern, response, re.DOTALL)
+    Args:
+        messages: 消息列表
+        model: 模型名称
+        max_tokens: 最大token数
+        platform: 平台名称
+        retry_count: 重试次数
 
-  return json_blocks
+    Returns:
+        LLM的完整响应文本
+    """
+    last_error = None
+    for attempt in range(retry_count):
+        try:
+            api_url, api_key = get_api_url_and_key(platform)
+            platform_model = get_platform_model_name(model, platform)
 
-def get_html_blocks_from_llm_response(response):
-  """从LLM响应中提取HTML代码块"""
-  # 定义正则表达式模式：匹配 ```html 和 ``` 之间的内容
-  pattern = r'```html\n(.*?)\n```'
+            client = openai.OpenAI(
+                base_url=api_url,
+                api_key=api_key,
+                timeout=1200,
+            )
 
-  # 查找所有匹配的代码块
-  html_blocks = re.findall(pattern, response, re.DOTALL)
+            response = client.chat.completions.create(
+                model=platform_model,
+                messages=messages,
+                max_tokens=max_tokens,
+                temperature=0,
+            )
 
-  return html_blocks
+            return response.choices[0].message.content
+
+        except Exception as e:
+            last_error = e
+            logging.error(f"LLM请求失败 (尝试 {attempt+1}/{retry_count}): {str(e)}")
+            if attempt < retry_count - 1:
+                # 指数退避重试
+                time.sleep(2 ** attempt)
+                continue
+            else:
+                # 最后一次尝试失败
+                logging.error(f"所有LLM请求尝试均失败: {str(e)}")
+                raise RuntimeError(f"LLM请求失败: {str(e)}") from e
+
+    # 这里应该不会到达，但为了安全起见
+    if last_error:
+        raise RuntimeError(f"LLM请求失败: {str(last_error)}") from last_error
+    return "无法获取LLM响应，请稍后重试"
+
+def get_response_from_llm_stream(messages: List[Dict[str, str]], model: str, max_tokens: int, platform: str = "groq") -> Generator[str, None, None]:
+    """
+    向LLM发送请求并流式获取响应
+
+    Args:
+        messages: 消息列表
+        model: 模型名称
+        max_tokens: 最大token数
+        platform: 平台名称
+
+    Yields:
+        LLM响应的流式内容块
+    """
+    try:
+        api_url, api_key = get_api_url_and_key(platform)
+        platform_model = get_platform_model_name(model, platform)
+
+        client = openai.OpenAI(
+            base_url=api_url,
+            api_key=api_key,
+            timeout=1200,
+        )
+
+        response = client.chat.completions.create(
+            model=platform_model,
+            messages=messages,
+            max_tokens=max_tokens,
+            stream=True,
+        )
+
+        for chunk in response:
+            if chunk.choices[0].delta.content is not None:
+                yield chunk.choices[0].delta.content
+
+    except Exception as e:
+        logging.error(f"LLM流式请求失败: {str(e)}")
+        # 在流中发送错误标记
+        yield f"\n\n[系统提示: 获取AI响应时出现错误，请重试或联系客服]"
+        # 重新抛出异常以便上层处理
+        raise RuntimeError(f"LLM流式请求失败: {str(e)}") from e
+
+def chat_with_llm_stream(message: str, history: List[Dict[str, str]], model: str, max_tokens: int, platform: str = "groq") -> Generator[str, None, None]:
+    """
+    与LLM聊天，并流式获取响应
+
+    Args:
+        message: 用户消息
+        history: 聊天历史
+        model: 模型名称
+        max_tokens: 最大token数
+        platform: 平台名称
+
+    Yields:
+        LLM响应的流式内容块
+    """
+    messages = history.copy()  # 创建副本，避免修改原始历史记录
+    messages.append({"role": "user", "content": message})
+
+    try:
+        yield from get_response_from_llm_stream(messages, model, max_tokens, platform)
+    except Exception as e:
+        logging.error(f"聊天流式请求失败: {str(e)}")
+        # 异常已在get_response_from_llm_stream中处理，这里不需要再次发送错误消息
+
+def get_json_blocks_from_llm_response(response: str) -> List[str]:
+    """从LLM响应中提取JSON代码块"""
+    try:
+        # 定义正则表达式模式：匹配 ```json 和 ``` 之间的内容
+        pattern = r'```json\n(.*?)\n```'
+
+        # 查找所有匹配的代码块
+        json_blocks = re.findall(pattern, response, re.DOTALL)
+
+        return json_blocks
+    except Exception as e:
+        logging.error(f"提取JSON代码块失败: {str(e)}")
+        return []
+
+def get_html_blocks_from_llm_response(response: str) -> List[str]:
+    """从LLM响应中提取HTML代码块"""
+    try:
+        # 定义正则表达式模式：匹配 ```html 和 ``` 之间的内容
+        pattern = r'```html\n(.*?)\n```'
+
+        # 查找所有匹配的代码块
+        html_blocks = re.findall(pattern, response, re.DOTALL)
+
+        return html_blocks
+    except Exception as e:
+        logging.error(f"提取HTML代码块失败: {str(e)}")
+        return []

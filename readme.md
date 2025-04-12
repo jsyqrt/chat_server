@@ -1,3 +1,11 @@
+# Zchat 应用
+
+## 部署文档
+
+完整的生产环境部署和运维指南请查看 [生产环境部署与运维指南](doc/production_deployment_guide.md)
+
+## 常用命令
+
 # install ocr tool
 sudo apt-get install tesseract-ocr
 wget https://github.com/tesseract-ocr/tessdata/raw/refs/heads/main/chi_sim.traineddata

@@ -6,27 +6,28 @@ from enum import Enum
 
 from flask import current_app, url_for
 
-from zchat.db import db
-# from zchat.rand import *
-from zchat.meili import *
+from zchat.models.base import db
+from zchat.nosql import add_mindmap_nosql, delete_mindmap_nosql
 
+# 使用db.Model定义SQLAlchemy模型
 class Roadmap(db.Model):
+    """学习路径模型"""
     __tablename__ = 'ROADMAP'
 
-    roadmap_id = db.Column(db.String, primary_key=True)
-    roadmap_icon = db.Column(db.String, nullable=False)
-    roadmap_title = db.Column(db.String, nullable=False)
-    roadmap_subtitle = db.Column(db.String, nullable=False)
-    roadmap_type = db.Column(db.String, nullable=False) # official, user
-    roadmap_kind = db.Column(db.String, nullable=False) # role, skill, concept
+    roadmap_id = db.Column(db.String(255), primary_key=True)
+    roadmap_icon = db.Column(db.String(255), nullable=False)
+    roadmap_title = db.Column(db.String(255), nullable=False)
+    roadmap_subtitle = db.Column(db.String(255), nullable=False)
+    roadmap_type = db.Column(db.String(50), nullable=False) # official, user
+    roadmap_kind = db.Column(db.String(50), nullable=False) # role, skill, concept
     roadmap_status = db.Column(db.Integer, nullable=False, default=0) # 0->create, 1->verified, 2->public
 
-    mindmap_id = db.Column(db.String, nullable=False)
-    created_by = db.Column(db.String, nullable=True)
+    mindmap_id = db.Column(db.String(255), nullable=False)
+    created_by = db.Column(db.String(255), nullable=True)
 
-    industry_tag = db.Column(db.String, nullable=True)
-    job_tag = db.Column(db.String, nullable=True)
-    skill_tag = db.Column(db.String, nullable=True)
+    industry_tag = db.Column(db.String(100), nullable=True)
+    job_tag = db.Column(db.String(100), nullable=True)
+    skill_tag = db.Column(db.String(100), nullable=True)
 
     create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
     update_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
@@ -66,8 +67,8 @@ class Roadmap(db.Model):
 class RoadmapInteraction(db.Model):
     __tablename__ = 'ROADMAP_INTERACTION'
 
-    roadmap_id = db.Column(db.String)
-    user_id = db.Column(db.String)
+    roadmap_id = db.Column(db.String(255))
+    user_id = db.Column(db.String(255))
     participanted = db.Column(db.Integer, nullable=False, default=0)
     completed = db.Column(db.Integer, nullable=False, default=0)
     favorited = db.Column(db.Integer, nullable=False, default=0)
@@ -110,10 +111,12 @@ class RoadmapInteractionOps:
             return True
 
     def get_participants_count_of_roadmap(self, roadmap_id: str)->int:
-        return self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, participanted=1).count()
+        from sqlalchemy import func, Integer
+        return self.session.query(func.cast(func.count(RoadmapInteraction.user_id), Integer)).filter_by(roadmap_id=roadmap_id, participanted=1).scalar()
 
     def get_participants_count_of_user(self, user_id: str)->int:
-        return self.session.query(RoadmapInteraction).filter_by(user_id=user_id, participanted=1).count()
+        from sqlalchemy import func, Integer
+        return self.session.query(func.cast(func.count(RoadmapInteraction.roadmap_id), Integer)).filter_by(user_id=user_id, participanted=1).scalar()
 
     def completion(self, roadmap_id: str, user_id: str)->bool:
         interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
@@ -167,12 +170,12 @@ class RoadmapInteractionOps:
             return True
 
     def get_stats(self, roadmap_id: str)->dict:
-        from sqlalchemy import func
+        from sqlalchemy import func, Integer
 
-        participant_count = self.session.query(func.sum(RoadmapInteraction.participanted)).filter_by(roadmap_id=roadmap_id).scalar() or 0
-        completion_count = self.session.query(func.sum(RoadmapInteraction.completed)).filter_by(roadmap_id=roadmap_id).scalar() or 0
-        favorite_count = self.session.query(func.sum(RoadmapInteraction.favorited)).filter_by(roadmap_id=roadmap_id).scalar() or 0
-        share_count = self.session.query(func.sum(RoadmapInteraction.shared)).filter_by(roadmap_id=roadmap_id).scalar() or 0
+        participant_count = self.session.query(func.cast(func.coalesce(func.sum(RoadmapInteraction.participanted), 0), Integer)).filter_by(roadmap_id=roadmap_id).scalar()
+        completion_count = self.session.query(func.cast(func.coalesce(func.sum(RoadmapInteraction.completed), 0), Integer)).filter_by(roadmap_id=roadmap_id).scalar()
+        favorite_count = self.session.query(func.cast(func.coalesce(func.sum(RoadmapInteraction.favorited), 0), Integer)).filter_by(roadmap_id=roadmap_id).scalar()
+        share_count = self.session.query(func.cast(func.coalesce(func.sum(RoadmapInteraction.shared), 0), Integer)).filter_by(roadmap_id=roadmap_id).scalar()
 
         return {
             'participants': participant_count,
@@ -595,7 +598,7 @@ class RoadmapOps:
         self.session.commit()
 
         for item in items:
-            with open(os.path.join(current_app.instance_path, item['id']), 'r') as f:
+            with open(os.path.join(current_app.instance_path, 'roadmaps', item['id']), 'r') as f:
                 mindmap = json.load(f)
 
             mindmap_id = mindmap.get('id', '')
@@ -634,10 +637,10 @@ class RoadmapOps:
             mindmap['created_at'] = time.time()
             mindmap['updated_at'] = time.time()
 
-            delete_result = delete_mindmap_from_meili(current_app, mindmap_id=mindmap_id)
+            delete_result = delete_mindmap_nosql(current_app, mindmap_id=mindmap_id)
             current_app.logger.debug(f'meili delete_result: {delete_result}')
 
-            add_result = add_mindmap_to_meili(current_app, mindmap)
+            add_result = add_mindmap_nosql(current_app, mindmap)
             current_app.logger.debug(f'meili add_result: {add_result}')
 
             current_app.logger.info(f'reset_official_roadmaps: {roadmap_id} {roadmap_title} {roadmap_subtitle} {roadmap_type} {roadmap_kind} {roadmap_status} {mindmap_id}')
@@ -658,7 +661,8 @@ class RoadmapOps:
         return [roadmap.to_dict() for roadmap in self.session.query(Roadmap).filter_by(created_by=user_id).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()]
 
     def get_roadmaps_count_by_user_id(self, user_id: str)->int:
-        return self.session.query(Roadmap).filter_by(created_by=user_id).count()
+        from sqlalchemy import func, Integer
+        return self.session.query(func.cast(func.count(Roadmap.roadmap_id), Integer)).filter_by(created_by=user_id).scalar()
 
     def search_roadmaps_with_title_like(self, title: str)->list:
         roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_title.like(f'%{title}%')).all()

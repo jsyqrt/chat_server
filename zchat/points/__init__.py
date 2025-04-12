@@ -3,7 +3,7 @@ import json
 from flask import Blueprint, request, jsonify, current_app, g
 from flask_login import login_required, current_user
 
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.user import UserOps
 from zchat.models.points import PointsOps, ServiceType
 from zchat.models.subscription import SubscriptionOps, AccountType, SubscriptionType

@@ -2,6 +2,7 @@ import os
 import hashlib
 import time
 import uuid
+import json
 
 from flask import (
     Blueprint, request, jsonify, current_app, g, send_file
@@ -9,11 +10,12 @@ from flask import (
 
 from werkzeug.utils import secure_filename
 
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.user import *
-from zchat.models.roadmap import *
+# 避免循环导入
+# from zchat.models.roadmap import *
 from zchat.auth import login_required, current_user, admin_required
-from zchat.meili import *
+from zchat.nosql import *
 
 bp = Blueprint('user', __name__, url_prefix='/user')
 
@@ -242,12 +244,15 @@ def sync_favorites():
     cards = request.form['cards']
     user_id = current_user.get_id_int()
 
-    set_favorites_to_meili(current_app, user_id, {
+    set_favorites_nosql(current_app, user_id, {
         'roadmaps': roadmaps,
         'cards': cards
     })
 
+    # 按需导入，避免循环导入
+    from zchat.models.roadmap import RoadmapInteractionOps
     interaction_ops = RoadmapInteractionOps(db.session)
+
     favorites = interaction_ops.get_favorites(user_id)
 
     current_app.logger.debug(f"roadmaps: {roadmaps}")
@@ -272,7 +277,7 @@ def sync_favorites():
 @login_required
 def get_favorites():
     user_id = current_user.get_id_int()
-    favorites = get_favorites_from_meili(current_app, user_id)
+    favorites = get_favorites_nosql(current_app, user_id)
     current_app.logger.debug(f"favorites: {favorites}")
     if favorites:
         if isinstance(favorites['favorites'], str):
@@ -291,6 +296,8 @@ def get_favorites():
         return jsonify(favorites['favorites'])
     else:
         results = {}
+        # 按需导入，避免循环导入
+        from zchat.models.roadmap import RoadmapOps, RoadmapInteractionOps
         roadmap_ops = RoadmapOps(db.session)
         interaction_ops = RoadmapInteractionOps(db.session)
         favorites = interaction_ops.get_favorites(user_id)
@@ -309,7 +316,7 @@ def get_favorites():
 @login_required
 def get_file_records():
     user_id = current_user.get_id_int()
-    file_records = get_file_records_from_meili(current_app, user_id)
+    file_records = get_file_records_nosql(current_app, user_id)
     current_app.logger.debug(f"file_records: {file_records}")
     if file_records:
         return jsonify(file_records), 200
@@ -325,7 +332,7 @@ def get_file_content():
     file_name = request.args.get('file_name')
     user_id = current_user.get_id_int()
 
-    file_records = get_file_records_from_meili(current_app, user_id)
+    file_records = get_file_records_nosql(current_app, user_id)
     if file_records:
         for file in file_records.get('resume_files', []) + file_records.get('jd_files', []):
             if file['filename'] == file_name:

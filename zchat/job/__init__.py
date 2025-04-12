@@ -14,7 +14,13 @@ from werkzeug.utils import secure_filename
 
 from zchat.auth import login_required, current_user
 from zchat.apis.ocr import ocr_file
-from zchat.meili import get_file_records_from_meili, add_file_records_to_meili, update_file_records_to_meili, add_jd_record_to_meili, get_jd_records_from_meili
+from zchat.nosql import (
+    get_file_records_nosql,
+    add_file_records_nosql,
+    update_file_records_nosql,
+    add_jd_record_nosql,
+    get_jd_records_nosql
+)
 
 from zchat.job.jd_parser import parse_jd
 from zchat.models.points import ServiceType
@@ -57,9 +63,9 @@ def analyze():
         jd_file.save(file_path)
         jd = ocr_file(file_path)
     elif jd_file_name:
-        old_file_records = get_file_records_from_meili(current_app, user_id)
+        old_file_records = get_file_records_nosql(current_app, user_id)
         if old_file_records:
-            for jd_file in old_file_records['jd_files']:
+            for jd_file in old_file_records.get('jd_files', []):
                 if jd_file['filename'] == jd_file_name:
                     file_path = jd_file['path']
                     break
@@ -80,13 +86,13 @@ def analyze():
 
     if len(file_records.keys()) > 0:
         file_records['user_id'] = user_id
-        old_file_records = get_file_records_from_meili(current_app, user_id)
+        old_file_records = get_file_records_nosql(current_app, user_id)
         if old_file_records:
-            old_file_records['jd_files'] = old_file_records['jd_files'] + file_records['jd_files']
-            update_file_records_status = update_file_records_to_meili(current_app, old_file_records)
+            old_file_records['jd_files'] = old_file_records.get('jd_files', []) + file_records['jd_files']
+            update_file_records_status = update_file_records_nosql(current_app, old_file_records)
             current_app.logger.debug(f"update file records status: {update_file_records_status}")
         else:
-            add_file_records_status = add_file_records_to_meili(current_app, file_records)
+            add_file_records_status = add_file_records_nosql(current_app, file_records)
             current_app.logger.debug(f"add file records status: {add_file_records_status}")
 
     current_app.logger.debug(f"ready to analyze jd")
@@ -112,7 +118,7 @@ def analyze():
         'created_at': time.time(),
         'updated_at': time.time(),
     }
-    add_jd_record_to_meili(current_app, user_id, jd_record)
+    add_jd_record_nosql(current_app, user_id, jd_record)
 
     # 添加积分消耗信息
     jd_record['points_spent'] = points_spent
@@ -126,7 +132,7 @@ def get_analysis_history():
     limit = request.args.get('limit', 10)
 
     user_id = current_user.get_id_int()
-    jd_records = get_jd_records_from_meili(current_app, user_id, offset, limit)
+    jd_records = get_jd_records_nosql(current_app, user_id, offset, limit)
     return jsonify({
         'history': jd_records,
     })

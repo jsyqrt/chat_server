@@ -11,7 +11,7 @@ from flask import (
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.user import *
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
@@ -165,9 +165,12 @@ def login():
         except Exception as e:
             current_app.logger.error(f"Error finding inviter for invite code {invite_code}: {str(e)}")
 
+    current_app.logger.debug(f'ready to get or create user, {phone_number}, {inviter_id}')
+
     user_ops = UserOps(session=db.session)
     user_id = user_ops.get_or_create_user(phone_number=phone_number, invited_by=inviter_id)
     if user_id is None:
+        current_app.logger.debug(f'no such user, {phone_number}, {inviter_id}')
         return { "error": "No such user!" }, 400
 
     u = user_ops.get_one(id=user_id)

@@ -7,7 +7,7 @@ from flask import (
 )
 
 from zchat.auth import login_required, current_user
-from zchat.meili import *
+from zchat.nosql import add_user_assessment_report_nosql, get_user_assessment_report_list_nosql
 from zchat.points import check_points_sufficient, consume_points_for_service
 
 bp = Blueprint('assessment', __name__, url_prefix='/assessment')
@@ -31,7 +31,7 @@ def submit_report():
         return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 
     current_app.logger.debug(f"report_data: {report_data}")
-    add_user_assessment_report_to_meili(current_app, user_id, report_data)
+    add_user_assessment_report_nosql(current_app, user_id, report_data)
 
     return jsonify({'message': 'Report submitted successfully'}), 200
 
@@ -40,5 +40,5 @@ def get_reports():
     user_id = current_user.get_id_int()
     offset = request.args.get('offset', 0, type=int)
     limit = request.args.get('limit', 10, type=int)
-    report_list = get_user_assessment_report_list_from_meili(current_app, user_id, offset, limit)
+    report_list = get_user_assessment_report_list_nosql(current_app, user_id, offset, limit)
     return jsonify({'message': 'Report list retrieved successfully', 'reports': report_list}), 200

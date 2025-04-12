@@ -4,6 +4,7 @@ import os
 from .factory import StorageFactory
 from .abstract import DocumentStore
 import time
+import logging
 
 class DocumentStoreService:
     """文档存储服务，提供高级文档存储功能"""
@@ -11,6 +12,7 @@ class DocumentStoreService:
     def __init__(self, app=None):
         self.app = app
         self.store = None
+        self.logger = logging.getLogger(__name__)
 
         if app is not None:
             self.init_app(app)
@@ -27,11 +29,27 @@ class DocumentStoreService:
         store_type = app.config.get('DOCUMENT_STORE_TYPE', 'sqlite')
         store_config = app.config.get('DOCUMENT_STORE_CONFIG', {})
 
+        # 为SQLite设置默认路径
         if store_type == 'sqlite' and 'db_path' not in store_config:
             store_config['db_path'] = os.path.join(app.instance_path, 'document_store.db')
 
-        # 创建存储实例
-        self.store = StorageFactory.create_store(store_type, **store_config)
+        try:
+            # 创建存储实例
+            self.store = StorageFactory.create_store(store_type, **store_config)
+            self.logger.info(f"成功初始化文档存储: {store_type}")
+        except Exception as e:
+            self.logger.error(f"初始化文档存储失败: {str(e)}")
+            # 如果指定的存储类型初始化失败，尝试回退到SQLite
+            if store_type != 'sqlite':
+                self.logger.warning(f"尝试回退到SQLite存储")
+                store_type = 'sqlite'
+                store_config = {'db_path': os.path.join(app.instance_path, 'document_store.db')}
+                try:
+                    self.store = StorageFactory.create_store(store_type, **store_config)
+                    self.logger.info(f"成功回退到SQLite存储")
+                except Exception as e2:
+                    self.logger.critical(f"回退到SQLite存储也失败: {str(e2)}")
+                    raise
 
         # 将服务添加到应用
         app.document_store = self
@@ -50,7 +68,11 @@ class DocumentStoreService:
         if options is None:
             options = {}
 
-        return self.store.create_collection(collection_name, options)
+        try:
+            return self.store.create_collection(collection_name, options)
+        except Exception as e:
+            self.logger.error(f"创建集合{collection_name}失败: {str(e)}")
+            return {"status": "error", "message": str(e)}
 
     def delete_collection(self, collection_name: str) -> Dict[str, Any]:
         """删除集合
@@ -61,7 +83,11 @@ class DocumentStoreService:
         Returns:
             操作结果
         """
-        return self.store.delete_collection(collection_name)
+        try:
+            return self.store.delete_collection(collection_name)
+        except Exception as e:
+            self.logger.error(f"删除集合{collection_name}失败: {str(e)}")
+            return {"status": "error", "message": str(e)}
 
     def list_collections(self) -> Dict[str, List[Dict[str, Any]]]:
         """列出所有集合
@@ -69,7 +95,11 @@ class DocumentStoreService:
         Returns:
             集合列表
         """
-        return self.store.list_collections()
+        try:
+            return self.store.list_collections()
+        except Exception as e:
+            self.logger.error(f"列出集合失败: {str(e)}")
+            return {"collections": []}
 
     def add_document(self, collection_name: str, document: Dict[str, Any]) -> Dict[str, Any]:
         """添加文档
@@ -81,7 +111,11 @@ class DocumentStoreService:
         Returns:
             操作结果
         """
-        return self.store.add_document(collection_name, document)
+        try:
+            return self.store.add_document(collection_name, document)
+        except Exception as e:
+            self.logger.error(f"添加文档到{collection_name}失败: {str(e)}")
+            return {"status": "error", "message": str(e)}
 
     def update_document(self, collection_name: str, document: Dict[str, Any]) -> Dict[str, Any]:
         """更新文档
@@ -93,7 +127,11 @@ class DocumentStoreService:
         Returns:
             操作结果
         """
-        return self.store.update_document(collection_name, document)
+        try:
+            return self.store.update_document(collection_name, document)
+        except Exception as e:
+            self.logger.error(f"更新{collection_name}中的文档失败: {str(e)}")
+            return {"status": "error", "message": str(e)}
 
     def get_document(self, collection_name: str, doc_id: str) -> Optional[Dict[str, Any]]:
         """获取文档
@@ -105,7 +143,11 @@ class DocumentStoreService:
         Returns:
             文档，如果不存在则为None
         """
-        return self.store.get_document(collection_name, doc_id)
+        try:
+            return self.store.get_document(collection_name, doc_id)
+        except Exception as e:
+            self.logger.error(f"获取{collection_name}中的文档{doc_id}失败: {str(e)}")
+            return None
 
     def delete_document(self, collection_name: str, doc_id: str) -> Dict[str, Any]:
         """删除文档
@@ -117,7 +159,11 @@ class DocumentStoreService:
         Returns:
             操作结果
         """
-        return self.store.delete_document(collection_name, doc_id)
+        try:
+            return self.store.delete_document(collection_name, doc_id)
+        except Exception as e:
+            self.logger.error(f"删除{collection_name}中的文档{doc_id}失败: {str(e)}")
+            return {"status": "error", "message": str(e)}
 
     def search(self, collection_name: str, query: str, options: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """搜索文档
@@ -130,4 +176,8 @@ class DocumentStoreService:
         Returns:
             搜索结果
         """
-        return self.store.search(collection_name, query, options)
+        try:
+            return self.store.search(collection_name, query, options)
+        except Exception as e:
+            self.logger.error(f"搜索{collection_name}集合失败: {str(e)}")
+            return {"hits": [], "status": "error", "message": str(e)}

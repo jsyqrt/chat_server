@@ -1,0 +1,209 @@
+version: '3.8'
+
+services:
+  # Zchat应用服务
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    container_name: zchat-app
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      meilisearch:
+        condition: service_healthy
+    volumes:
+      - ./zchat:/app/zchat
+      - ./scripts:/app/scripts
+      - ./migrations:/app/migrations
+      - ./instance:/app/instance
+      - ./instance/log:/app/log
+    environment:
+      - FLASK_ENV=production
+      - MEILISEARCH_HOST=http://meilisearch:7700
+      - MEILISEARCH_KEY=aSampleMasterKey
+      - MEILISEARCH_TIMEOUT=10
+      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://zchat:zchat_password@mysql:3306/zchat
+      - MONGODB_URI=mongodb://zchat:zchat_password@mongodb:27017/
+      - MONGODB_DB=zchat
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - SF_ZCHAT_API_KEY=${SF_ZCHAT_API_KEY:-UNKNOWN}
+      - IS_DOCKER=true
+    networks:
+      - zchat-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Nginx反向代理
+  nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    container_name: zchat-nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - app
+    volumes:
+      - ./docker/nginx/ssl:/etc/nginx/ssl
+      - ./docker/nginx/.htpasswd:/etc/nginx/.htpasswd
+      - ./certbot-webroot:/var/www/html
+      - ./docker/nginx/nginx.conf.${DEPLOY_MODE:-prod}:/etc/nginx/conf.d/default.conf
+    networks:
+      - zchat-network
+
+  # MySQL数据库 - 存储结构化数据
+  mysql:
+    image: mysql:8.0
+    container_name: zchat-mysql
+    restart: always
+    ports: # TODO remove this
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=zchat
+      - MYSQL_USER=zchat
+      - MYSQL_PASSWORD=zchat_password
+    volumes:
+      - ./instance/mysql-data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+      - ./docker/mysql/conf:/etc/mysql/conf.d
+    networks:
+      - zchat-network
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "zchat", "-pzchat_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    cap_add:
+      - SYS_NICE  # CAP_SYS_NICE: 允许提高进程优先级以及更改其他进程的优先级
+
+  # MongoDB文档数据库 - 存储非结构化数据
+  mongodb:
+    image: mongo:6.0
+    container_name: zchat-mongodb
+    restart: always
+    ports: # TODO remove this
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=zchat
+      - MONGO_INITDB_ROOT_PASSWORD=zchat_password
+      - MONGO_INITDB_DATABASE=zchat
+    volumes:
+      - ./instance/mongodb-data:/data/db
+      - ./docker/mongodb/init:/docker-entrypoint-initdb.d
+      - ./docker/mongodb/config:/etc/mongod
+    networks:
+      - zchat-network
+    command: --wiredTigerCacheSizeGB 1 --bind_ip_all
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb://zchat:zchat_password@localhost:27017/admin --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # MeiliSearch搜索服务 - 支持高效搜索
+  meilisearch:
+    image: getmeili/meilisearch:v1.8.3
+    container_name: zchat-meilisearch
+    restart: always
+    volumes:
+      - ./instance/meilisearch-data:/meili_data
+    environment:
+      - MEILI_MASTER_KEY=aSampleMasterKey
+      - MEILI_NO_ANALYTICS=true
+      - MEILI_ENV=production
+      - MEILI_LOG_LEVEL=INFO
+    networks:
+      - zchat-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7700/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # Prometheus监控
+  prometheus:
+    image: prom/prometheus:v2.50.1
+    container_name: zchat-prometheus
+    restart: always
+    volumes:
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./instance/prometheus-data:/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.console.libraries=/etc/prometheus/console_libraries
+      - --web.console.templates=/etc/prometheus/consoles
+    networks:
+      - zchat-network
+
+  # Node Exporter
+  node-exporter:
+    image: prom/node-exporter:v1.7.0
+    container_name: zchat-node-exporter
+    restart: always
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - --path.procfs=/host/proc
+      - --path.rootfs=/rootfs
+      - --path.sysfs=/host/sys
+      - --collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)
+    networks:
+      - zchat-network
+
+  # Grafana可视化
+  grafana:
+    image: grafana/grafana:10.4.0
+    container_name: zchat-grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./instance/grafana-data:/var/lib/grafana
+      - ./docker/grafana/provisioning:/etc/grafana/provisioning
+      - ./docker/grafana/dashboards:/var/lib/grafana/dashboards
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+    depends_on:
+      - prometheus
+    networks:
+      - zchat-network
+
+# # 持久化卷
+# volumes:
+#   zchat-logs:
+#     driver: local
+#   mysql-data:
+#     driver: local
+#   mongodb-data:
+#     driver: local
+#   meilisearch-data:
+#     driver: local
+#   prometheus-data:
+#     driver: local
+#   grafana-data:
+#     driver: local
+
+# 网络配置
+networks:
+  zchat-network:
+    driver: bridge

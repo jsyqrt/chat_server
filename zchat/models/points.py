@@ -4,7 +4,7 @@ from flask import current_app
 from sqlalchemy.orm import relationship
 import uuid
 
-from zchat.db import db
+from zchat.models.base import db
 from zchat.models.subscription import AccountType
 
 class PointsTransactionType(Enum):
@@ -37,12 +37,12 @@ class PointsTransaction(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
-    transaction_type = db.Column(db.String, nullable=False)  # 交易类型: PointsTransactionType
+    transaction_type = db.Column(db.String(50), nullable=False)  # 交易类型: PointsTransactionType
     points_amount = db.Column(db.Integer, nullable=False)    # 积分数量 (正值为获得，负值为消费)
-    service_type = db.Column(db.String, nullable=True)       # 服务类型
+    service_type = db.Column(db.String(100), nullable=True)       # 服务类型
     expires_at = db.Column(db.REAL, nullable=True)          # 有效期
     created_at = db.Column(db.REAL, nullable=False, default=time.time())
-    description = db.Column(db.String, nullable=True)
+    description = db.Column(db.String(255), nullable=True)
 
     # Indexes
     __table_args__ = (
@@ -70,7 +70,7 @@ class PointsBalance(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('USER.id'), nullable=False)
     points_amount = db.Column(db.Integer, nullable=False)    # 积分数量
-    source_type = db.Column(db.String, nullable=False)       # 积分来源: PointsSourceType
+    source_type = db.Column(db.String(50), nullable=False)       # 积分来源: PointsSourceType
     expires_at = db.Column(db.REAL, nullable=True)          # 有效期
     created_at = db.Column(db.REAL, nullable=False, default=time.time())
 
@@ -234,13 +234,14 @@ class PointsOps:
             # 查询今日已消费的积分
             today_start = current_day * self.SECONDS_PER_DAY  # 今天0点的时间戳
 
-            consumed_points = self.session.query(db.func.sum(PointsTransaction.points_amount))\
+            from sqlalchemy import func, Integer
+            consumed_points = self.session.query(func.cast(func.coalesce(func.sum(PointsTransaction.points_amount), 0), Integer))\
                 .filter(
                     PointsTransaction.user_id == user_id,
                     PointsTransaction.transaction_type == PointsTransactionType.CONSUMPTION.value,
                     PointsTransaction.created_at >= today_start
                 )\
-                .scalar() or 0
+                .scalar()
 
             # 计算剩余可用积分（每日额度 - 今日已消费）
             available_points = daily_quota + consumed_points  # consumed_points是负值
@@ -492,7 +493,8 @@ class PointsOps:
     def get_points_transactions_count(self, user_id):
         """获取用户积分交易记录总数"""
         try:
-            count = self.session.query(db.func.count(PointsTransaction.id))\
+            from sqlalchemy import func, Integer
+            count = self.session.query(func.cast(func.count(PointsTransaction.id), Integer))\
                 .filter(PointsTransaction.user_id == user_id)\
                 .scalar()
 

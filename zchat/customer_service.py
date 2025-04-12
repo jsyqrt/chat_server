@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify, current_app
 import uuid
 import time
-from zchat.meili import *
+from zchat.nosql import add_feedback_nosql, get_feedback_nosql, update_feedback_nosql, get_feedback_list_nosql
 from zchat.auth import login_required, current_user, admin_required
 
 bp = Blueprint('customer_service', __name__, url_prefix='/customer_service')
@@ -34,7 +34,7 @@ def feedback():
         'created_at': time.time(),
         'status': 'pending',
     }
-    add_feedback_to_meili(current_app, feedback)
+    add_feedback_to_nosql(current_app, feedback)
     return jsonify({'message': '反馈成功'})
 
 @bp.route('/feedback_list', methods=['GET'])
@@ -44,7 +44,7 @@ def feedback_list():
     status = request.args.get('status', 'pending')
     offset = request.args.get('offset', 0)
     limit = request.args.get('limit', 10)
-    feedback_list = get_feedback_list_from_meili(current_app, status, offset, limit)
+    feedback_list = get_feedback_list_nosql(current_app, status, offset, limit)
     return jsonify({'feedback_list': feedback_list})
 
 @bp.route('/handle_feedback', methods=['POST'])
