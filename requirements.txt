@@ -58,7 +58,8 @@ motor==3.3.2  # MongoDB的异步客户端
 
 # 支付宝SDK
 alipay-sdk-python==3.6.0
-pycryptodome==3.19.1  # 用于支付宝签名验证
+# pycryptodome==3.19.1  # 用于支付宝签名验证
+cryptography==43.0.1
 
 # 原有的MeiliSearch客户端保留
 meilisearch==0.31.3

@@ -177,34 +177,53 @@ class AlipayService:
             bool: 验证是否成功
         """
         try:
-            # 将参数组装成字符串
-            sorted_params = []
-            for key, value in sorted(data.items()):
-                if key != 'sign' and key != 'sign_type' and value:
-                    sorted_params.append(f"{key}={value}")
-            data_str = '&'.join(sorted_params)
+            current_app.logger.debug(f"Verifying notification with data keys: {list(data.keys())}")
 
-            # 导入签名验证模块
-            from Crypto.PublicKey import RSA
-            from Crypto.Signature import PKCS1_v1_5
-            from Crypto.Hash import SHA256
+            # 获取签名相关数据
+            sign = data.get('sign')
+            if not sign:
+                current_app.logger.warning("No signature found in notification data")
+                return False
+
+            # 使用cryptography库替代Crypto
+            # 这是一个更现代、更可靠的加密库
+            from cryptography.hazmat.primitives import hashes
+            from cryptography.hazmat.primitives.asymmetric import padding
+            from cryptography.hazmat.primitives.serialization import load_pem_public_key
             import base64
 
-            # 处理公钥
+            # 将参数组装成字符串
+            sign_content = ""
+            for key in sorted(data.keys()):
+                if key not in ['sign', 'sign_type'] and data[key]:
+                    sign_content += f"{key}={data[key]}&"
+            sign_content = sign_content[:-1]  # 移除最后的 &
+
+            # 处理公钥格式
             public_key = alipay_config.alipay_public_key
             if '-----BEGIN PUBLIC KEY-----' not in public_key:
                 public_key = f"-----BEGIN PUBLIC KEY-----\n{public_key}\n-----END PUBLIC KEY-----"
 
-            # 验证签名
-            key = RSA.importKey(public_key)
-            signer = PKCS1_v1_5.new(key)
-            digest = SHA256.new()
-            digest.update(data_str.encode('utf-8'))
+            # 加载公钥
+            key = load_pem_public_key(public_key.encode('utf-8'))
 
-            verify = signer.verify(digest, base64.b64decode(data.get('sign')))
-            return verify
+            # 验证签名
+            try:
+                key.verify(
+                    base64.b64decode(sign),
+                    sign_content.encode('utf-8'),
+                    padding.PKCS1v15(),
+                    hashes.SHA256() if data.get('sign_type') == 'RSA2' else hashes.SHA1()
+                )
+                # 验证成功不会抛出异常
+                current_app.logger.debug("Signature verification successful")
+                return True
+            except Exception as e:
+                current_app.logger.warning(f"Signature verification failed: {str(e)}")
+                return False
+
         except Exception as e:
-            current_app.logger.error(f"Failed to verify Alipay notification: {str(e)}")
+            current_app.logger.error(f"Failed to verify Alipay notification: {str(e)}", exc_info=True)
             return False
 
     @staticmethod
