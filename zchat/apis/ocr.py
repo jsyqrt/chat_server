@@ -71,7 +71,7 @@ def ocr_file(file_path, with_llm=True):
         pdf_document = fitz.open(file_path)
         all_text = []
 
-        max_pages = 3
+        max_pages = 5
 
         # Process each page individually
         for page_num in range(min(len(pdf_document), max_pages)):

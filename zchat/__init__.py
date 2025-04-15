@@ -77,7 +77,16 @@ def create_app(test_config=None):
         app.logger.error(f"监控模块初始化失败: {str(e)}")
         app.logger.warning("应用将在没有监控功能的情况下继续运行")
 
-    # 5. 注册所有蓝图
+    # 5. 初始化支付宝配置
+    try:
+        from zchat.utils.alipay_utils import alipay_config
+        alipay_config.init_app(app)
+        app.logger.info("支付宝模块初始化成功")
+    except Exception as e:
+        app.logger.error(f"支付宝模块初始化失败: {str(e)}")
+        app.logger.warning("应用将在没有支付宝功能的情况下继续运行")
+
+    # 6. 注册所有蓝图
 
     # 认证蓝图
     from . import auth
@@ -121,6 +130,10 @@ def create_app(test_config=None):
     # 积分系统蓝图
     from . import points
     points.init_app(app)
+
+    # 支付宝支付蓝图
+    from . import alipay
+    alipay.init_app(app)
 
     # 邀请系统蓝图
     from . import invitation

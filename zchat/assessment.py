@@ -8,7 +8,7 @@ from flask import (
 
 from zchat.auth import login_required, current_user
 from zchat.nosql import add_user_assessment_report_nosql, get_user_assessment_report_list_nosql
-from zchat.points import check_points_sufficient, consume_points_for_service
+from zchat.points import check_points_sufficient, consume_points_for_service, ServiceType
 
 bp = Blueprint('assessment', __name__, url_prefix='/assessment')
 

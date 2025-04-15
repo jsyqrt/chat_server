@@ -33,6 +33,14 @@ MEILISEARCH_HOST = os.environ.get('MEILISEARCH_HOST', 'http://meilisearch:7700')
 MEILISEARCH_KEY = os.environ.get('MEILISEARCH_KEY', 'aSampleMasterKey')
 MEILISEARCH_TIMEOUT = int(os.environ.get('MEILISEARCH_TIMEOUT', '10'))
 
+# 支付宝配置
+ALIPAY_APP_ID = os.environ.get('ALIPAY_APP_ID', '')
+ALIPAY_PRIVATE_KEY = os.environ.get('ALIPAY_PRIVATE_KEY', '')
+ALIPAY_PUBLIC_KEY = os.environ.get('ALIPAY_PUBLIC_KEY', '')
+ALIPAY_SANDBOX = os.environ.get('ALIPAY_SANDBOX', 'true') == 'true'  # 默认使用沙箱环境
+ALIPAY_NOTIFY_URL = os.environ.get('ALIPAY_NOTIFY_URL', 'http://edu-paths.com/alipay/notify') # TODO update this
+ALIPAY_RETURN_URL = os.environ.get('ALIPAY_RETURN_URL', 'http://edu-paths.com/alipay/return')
+
 # HTTPS配置
 PREFERRED_URL_SCHEME = os.environ.get('PREFERRED_URL_SCHEME', 'https')
 
