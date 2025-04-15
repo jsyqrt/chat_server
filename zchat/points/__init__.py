@@ -113,6 +113,8 @@ def purchase_points():
     user_id = current_user.get_id_int()
     data = request.json
 
+    current_app.logger.debug(f"Points purchase initiated by user {user_id} with data: {data}")
+
     package_id = data.get('package_id')
     payment_method = data.get('payment_method', PaymentMethod.ALIPAY.value)
 
@@ -134,6 +136,7 @@ def purchase_points():
 
     # 创建支付订单
     payment_ops = PaymentOrderOps(db.session)
+    current_app.logger.debug(f"Creating payment order for user {user_id}, package {package_id}, payment method {payment_method}")
     order = payment_ops.create_order(
         user_id=user_id,
         order_type=OrderType.POINTS_PURCHASE.value,
@@ -144,10 +147,14 @@ def purchase_points():
     )
 
     if not order:
+        current_app.logger.error(f"Failed to create payment order for user {user_id}, package {package_id}")
         return jsonify({"error": "Failed to create order"}), 500
+
+    current_app.logger.debug(f"Order created successfully: {order.order_id}")
 
     # 生成支付字符串
     if payment_method == PaymentMethod.ALIPAY.value:
+        current_app.logger.debug(f"Generating Alipay order string for order {order.order_id}")
         order_string = AlipayService.generate_order_string(
             subject=package["name"],
             out_trade_no=order.order_id,
@@ -156,11 +163,15 @@ def purchase_points():
         )
 
         if not order_string:
+            current_app.logger.error(f"Failed to generate Alipay payment string for order {order.order_id}")
             return jsonify({"error": "Failed to generate payment string"}), 500
+
+        current_app.logger.debug(f"Alipay order string generated successfully for order {order.order_id}")
     else:
         # 其他支付方式，目前不支持
         return jsonify({"error": "Unsupported payment method"}), 400
 
+    current_app.logger.debug(f"Returning payment information to client for order {order.order_id}")
     return jsonify({
         "order_id": order.order_id,
         "points": package["points"],
@@ -177,7 +188,10 @@ def verify_points_purchase():
     user_id = current_user.get_id_int()
     order_id = request.args.get('order_id')
 
+    current_app.logger.debug(f"Points purchase verification requested by user {user_id} for order {order_id}")
+
     if not order_id:
+        current_app.logger.warning(f"Order ID missing in verification request from user {user_id}")
         return jsonify({"error": "Order ID is required"}), 400
 
     # 获取订单信息
@@ -185,7 +199,10 @@ def verify_points_purchase():
     order = payment_ops.get_order_by_id(order_id)
 
     if not order:
+        current_app.logger.warning(f"Order {order_id} not found during verification for user {user_id}")
         return jsonify({"error": "Order not found"}), 404
+
+    current_app.logger.debug(f"Retrieved order {order_id} - status: {order.status}, payment method: {order.payment_method}")
 
     # 检查订单所有者
     if order.user_id != user_id:
@@ -198,15 +215,23 @@ def verify_points_purchase():
     # 解析附加数据
     extra_data = json.loads(order.extra_data) if order.extra_data else {}
     points = extra_data.get('points', 0)
+    current_app.logger.debug(f"Order {order_id} extra data: {extra_data}")
 
     # 如果订单状态为待支付，则查询支付宝订单状态
     if order.status == OrderStatus.PENDING.value and order.payment_method == PaymentMethod.ALIPAY.value:
+        current_app.logger.debug(f"Querying Alipay for payment status of order {order_id}")
         # 调用支付宝查询接口
         payment_result = AlipayService.verify_payment(order.order_id)
 
+        current_app.logger.debug(f"Alipay payment verification result for order {order_id}: {payment_result}")
+
         if payment_result and payment_result['success']:
             # 支付成功
-            if AlipayService.is_payment_successful(payment_result['trade_status']):
+            trade_status = payment_result.get('trade_status', '')
+            current_app.logger.debug(f"Alipay trade status for order {order_id}: {trade_status}")
+
+            if AlipayService.is_payment_successful(trade_status):
+                current_app.logger.debug(f"Payment successful for order {order_id}, updating order status")
                 # 更新订单状态
                 payment_ops.update_order_status(
                     order_id=order.order_id,
@@ -215,14 +240,20 @@ def verify_points_purchase():
                 )
 
                 # 为用户添加积分
+                current_app.logger.debug(f"Adding {points} points to user {user_id} for order {order_id}")
                 points_ops = PointsOps(db.session)
-                points_ops.purchase_points(
+                success = points_ops.purchase_points(
                     user_id=user_id,
                     points_amount=points,
                     payment_amount=order.amount,
                     payment_order_id=order.order_id,
                     payment_method=order.payment_method
                 )
+
+                if success:
+                    current_app.logger.debug(f"Successfully added points for order {order_id}")
+                else:
+                    current_app.logger.error(f"Failed to add points for order {order_id}")
 
                 return jsonify({
                     "success": True,
@@ -233,6 +264,7 @@ def verify_points_purchase():
                     "transaction_id": payment_result['trade_no']
                 })
             else:
+                current_app.logger.debug(f"Payment not yet successful for order {order_id}, status: {trade_status}")
                 # 支付未成功
                 return jsonify({
                     "success": False,
@@ -243,6 +275,7 @@ def verify_points_purchase():
                 })
 
     # 返回订单当前状态
+    current_app.logger.debug(f"Returning current order status for order {order_id}: {order.status}")
     return jsonify({
         "success": order.status == OrderStatus.PAID.value,
         "order_id": order.order_id,
@@ -356,6 +389,8 @@ def subscribe():
     user_id = current_user.get_id_int()
     data = request.json
 
+    current_app.logger.debug(f"Subscription initiated by user {user_id} with data: {data}")
+
     subscription_type = data.get('subscription_type')
     payment_method = data.get('payment_method', PaymentMethod.ALIPAY.value)
 
@@ -379,6 +414,7 @@ def subscribe():
     plan = subscription_info[subscription_type]
 
     # 创建支付订单
+    current_app.logger.debug(f"Creating subscription payment order for user {user_id}, type {subscription_type}")
     item_id = 1 if subscription_type == SubscriptionType.BASIC.value else 2
     payment_ops = PaymentOrderOps(db.session)
     order = payment_ops.create_order(
@@ -391,7 +427,10 @@ def subscribe():
     )
 
     if not order:
+        current_app.logger.error(f"Failed to create subscription order for user {user_id}, type {subscription_type}")
         return jsonify({"error": "Failed to create order"}), 500
+
+    current_app.logger.debug(f"Subscription order created: {order.order_id}")
 
     # 生成支付字符串
     if payment_method == PaymentMethod.ALIPAY.value:

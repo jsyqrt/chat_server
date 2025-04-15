@@ -90,6 +90,8 @@ class AlipayService:
                 current_app.logger.error("Alipay client not initialized")
                 return None
 
+            current_app.logger.debug(f"Generating order string for: {out_trade_no}, amount: {total_amount}")
+
             # 创建支付模型
             model = AlipayTradeAppPayModel()
             model.subject = subject
@@ -99,15 +101,20 @@ class AlipayService:
                 model.body = body
             model.product_code = "QUICK_MSECURITY_PAY"  # 固定值
 
+            current_app.logger.debug(f"Created payment model with subject: {subject}, body: {body}")
+
             # 创建请求对象
             request = AlipayTradeAppPayRequest(biz_model=model)
             request.notify_url = alipay_config.notify_url
 
+            current_app.logger.debug(f"Using notify URL: {alipay_config.notify_url}")
+
             # 调用SDK获取支付字符串
             response = alipay_config.client.sdk_execute(request)
+            current_app.logger.debug(f"SDK execute response received for order {out_trade_no}")
             return response
         except Exception as e:
-            current_app.logger.error(f"Failed to generate Alipay order string: {str(e)}")
+            current_app.logger.error(f"Failed to generate Alipay order string: {str(e)}", exc_info=True)
             return None
 
     @staticmethod
@@ -127,6 +134,8 @@ class AlipayService:
                 current_app.logger.error("Alipay client not initialized")
                 return None
 
+            current_app.logger.debug(f"Verifying payment for order: {out_trade_no}")
+
             # 创建查询模型
             model = AlipayTradeQueryModel()
             model.out_trade_no = out_trade_no
@@ -136,10 +145,13 @@ class AlipayService:
 
             # 调用SDK查询交易状态
             response = alipay_config.client.execute(request)
+            current_app.logger.debug(f"Alipay query response for order {out_trade_no}: {response}")
+
             response_dict = json.loads(response)
 
             # 从响应中提取结果
             result = response_dict.get('alipay_trade_query_response', {})
+            current_app.logger.debug(f"Parsed query result: {result}")
 
             # 返回结果
             return {
@@ -150,7 +162,7 @@ class AlipayService:
                 'message': result.get('msg', '')
             }
         except Exception as e:
-            current_app.logger.error(f"Failed to verify Alipay payment: {str(e)}")
+            current_app.logger.error(f"Failed to verify Alipay payment for order {out_trade_no}: {str(e)}", exc_info=True)
             return None
 
     @staticmethod
