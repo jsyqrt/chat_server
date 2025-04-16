@@ -65,7 +65,6 @@ services:
       - ./docker/nginx/.htpasswd:/etc/nginx/.htpasswd
       - ./certbot-webroot:/var/www/html
       - ./docker/nginx/nginx.conf.${DEPLOY_MODE:-prod}:/etc/nginx/conf.d/default.conf
-      - ./docker/nginx/whitelist.conf:/etc/nginx/conf.d/whitelist.conf
     networks:
       - zchat-network
 
