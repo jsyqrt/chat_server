@@ -73,8 +73,6 @@ services:
     image: mysql:8.0
     container_name: zchat-mysql
     restart: always
-    ports: # TODO remove this
-      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root_password
       - MYSQL_DATABASE=zchat

@@ -10,6 +10,18 @@ server {
         root /var/www/html;
     }
 
+    # Basic security headers
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+
+    # 屏蔽常见的攻击路径请求
+    location ~ ^/(wp-login\.php|wp-admin|admin|wordpress|wp|phpmyadmin|pma|mysql|myadmin|webdav|xmlrpc\.php|cgi-bin|\.git|\.env) {
+        return 404;
+        access_log off;
+        log_not_found off;
+    }
+
     # 直接代理到应用，不重定向到HTTPS
     location / {
         proxy_pass http://app:5000;
@@ -157,6 +169,13 @@ server {
         # 增加超时时间为5分钟
         proxy_read_timeout 300s;
     }
+
+    # 捕获所有未明确定义的路径，返回404
+    location ~ ^/(?!(static|metrics|roadmap|aichat|job|assessment|resume)/) {
+        return 404;
+        access_log off;
+        log_not_found off;
+    }
 }
 
 server {
@@ -181,6 +200,18 @@ server {
 
     # HSTS配置
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
+    # Basic security headers
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+
+    # 屏蔽常见的攻击路径请求
+    location ~ ^/(wp-login\.php|wp-admin|admin|wordpress|wp|phpmyadmin|pma|mysql|myadmin|webdav|xmlrpc\.php|cgi-bin|\.git|\.env) {
+        return 404;
+        access_log off;
+        log_not_found off;
+    }
 
     # 反向代理到Flask应用
     location / {
@@ -328,5 +359,12 @@ server {
 
         # 增加超时时间为5分钟
         proxy_read_timeout 300s;
+    }
+
+    # 捕获所有未明确定义的路径，返回404
+    location ~ ^/(?!(static|metrics|roadmap|aichat|job|assessment|resume)/) {
+        return 404;
+        access_log off;
+        log_not_found off;
     }
 }
