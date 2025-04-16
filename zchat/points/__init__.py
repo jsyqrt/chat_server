@@ -223,6 +223,14 @@ def verify_points_purchase():
         # 调用支付宝查询接口
         payment_result = AlipayService.verify_payment(order.order_id)
 
+        # 如果验证失败，尝试重新初始化支付宝客户端后再次验证
+        if payment_result is None:
+            current_app.logger.warning(f"First payment verification failed for order {order_id}, attempting to reinitialize Alipay client")
+            reinit_success = AlipayService.reinitialize_client()
+            if reinit_success:
+                current_app.logger.debug(f"Alipay client reinitialized successfully, retrying verification for order {order_id}")
+                payment_result = AlipayService.verify_payment(order.order_id)
+
         current_app.logger.debug(f"Alipay payment verification result for order {order_id}: {payment_result}")
 
         if payment_result and payment_result['success']:
@@ -507,8 +515,19 @@ def verify_subscription():
 
     # 如果订单状态为待支付，则查询支付宝订单状态
     if order.status == OrderStatus.PENDING.value and order.payment_method == PaymentMethod.ALIPAY.value:
+        current_app.logger.debug(f"Querying Alipay for payment status of subscription order {order_id}")
         # 调用支付宝查询接口
         payment_result = AlipayService.verify_payment(order.order_id)
+
+        # 如果验证失败，尝试重新初始化支付宝客户端后再次验证
+        if payment_result is None:
+            current_app.logger.warning(f"First payment verification failed for subscription order {order_id}, attempting to reinitialize Alipay client")
+            reinit_success = AlipayService.reinitialize_client()
+            if reinit_success:
+                current_app.logger.debug(f"Alipay client reinitialized successfully, retrying verification for subscription order {order_id}")
+                payment_result = AlipayService.verify_payment(order.order_id)
+
+        current_app.logger.debug(f"Alipay payment verification result for subscription order {order_id}: {payment_result}")
 
         if payment_result and payment_result['success']:
             # 支付成功

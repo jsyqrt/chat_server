@@ -67,6 +67,35 @@ class AlipayService:
     """支付宝服务类"""
 
     @staticmethod
+    def reinitialize_client():
+        """
+        重新初始化支付宝客户端
+        在支付验证时如果遇到网关地址或APP ID错误，可以调用此方法重新初始化
+        """
+        try:
+            # 从当前应用配置中读取支付宝配置
+            if alipay_config.app_id and alipay_config.private_key and alipay_config.alipay_public_key and alipay_config.gateway_url:
+                # 重新配置客户端
+                config = AlipayClientConfig()
+                config.app_id = alipay_config.app_id
+                config.app_private_key = alipay_config.private_key
+                config.alipay_public_key = alipay_config.alipay_public_key
+                config.sign_type = "RSA2"
+                config.gateway_url = alipay_config.gateway_url
+
+                # 重新创建客户端
+                alipay_config.client = DefaultAlipayClient(alipay_client_config=config)
+
+                current_app.logger.info(f"Alipay client reinitialized with gateway URL: {alipay_config.gateway_url}")
+                return True
+            else:
+                current_app.logger.error("Failed to reinitialize Alipay client: Missing required configurations")
+                return False
+        except Exception as e:
+            current_app.logger.error(f"Failed to reinitialize Alipay client: {str(e)}")
+            return False
+
+    @staticmethod
     def generate_order_string(subject, out_trade_no, total_amount, body=None):
         """
         生成支付宝支付字符串
@@ -129,6 +158,9 @@ class AlipayService:
             if alipay_config.client is None:
                 current_app.logger.error("Alipay client not initialized")
                 return None
+
+            # 添加调试日志，输出当前客户端配置信息
+            current_app.logger.debug(f"Alipay client config - App ID: {alipay_config.app_id}, Gateway URL: {alipay_config.gateway_url}")
 
             current_app.logger.debug(f"Verifying payment for order: {out_trade_no}")
 
