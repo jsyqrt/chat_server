@@ -34,11 +34,7 @@ class AlipayConfig:
         self.app_id = app.config.get('ALIPAY_APP_ID')
         self.private_key = app.config.get('ALIPAY_PRIVATE_KEY')
         self.alipay_public_key = app.config.get('ALIPAY_PUBLIC_KEY')
-        self.gateway_url = app.config.get('ALIPAY_GATEWAY_URL', 'https://openapi.alipay.com/gateway.do')
-
-        # 是否是沙箱环境
-        if app.config.get('ALIPAY_SANDBOX', False):
-            self.gateway_url = 'https://openapi-sandbox.dl.alipaydev.com/gateway.do'
+        self.gateway_url = app.config.get('ALIPAY_GATEWAY_URL')
 
         # 支付结果通知回调地址
         self.notify_url = app.config.get('ALIPAY_NOTIFY_URL')

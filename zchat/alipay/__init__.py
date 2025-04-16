@@ -19,7 +19,7 @@ def alipay_notify():
     try:
         # 解析通知数据
         data = AlipayService.parse_notification_data(request)
-        current_app.logger.debug(f"Received Alipay notification: {data}")
+        current_app.logger.debug(f"Received Alipay notification: {json.dumps(data, indent=4, ensure_ascii=False)}")
 
         # 验证通知的真实性
         verify_result = AlipayService.verify_async_notification(data)
