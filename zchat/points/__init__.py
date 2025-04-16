@@ -605,28 +605,6 @@ def subscription_history():
         "active": active
     })
 
-# 邀请相关API
-@bp.route('/invitation/code', methods=['GET'])
-@login_required
-def get_invitation_code():
-    """获取用户邀请码"""
-    user_id = current_user.get_id_int()
-
-    user_ops = UserOps(db.session)
-    invite_code = user_ops.get_invite_code(user_id)
-
-    if not invite_code:
-        return jsonify({"error": "Failed to get invitation code"}), 500
-
-    # 构建邀请链接
-    base_url = request.host_url.rstrip('/')
-    invite_url = f"{base_url}/register?invite_code={invite_code}"
-
-    return jsonify({
-        "invite_code": invite_code,
-        "invite_url": invite_url
-    })
-
 @bp.route('/invitation/records', methods=['GET'])
 @login_required
 def get_invitation_records():
