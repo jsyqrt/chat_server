@@ -2,9 +2,6 @@ server {
     listen 80;
     server_name localhost;
 
-    # 包含允许的路径前缀定义
-    include /etc/nginx/conf.d/whitelist.conf;
-
     # Set maximum upload size to 10MB
     client_max_body_size 10M;
 
@@ -174,7 +171,7 @@ server {
     }
 
     # 捕获所有未明确定义的路径，返回404
-    location ~ ^/(?!($allowed_prefixes)/) {
+    location ~ ^/(?!(static|metrics|health|hello|api|auth|user|assessment|job|resume|roadmap|aichat|alipay|payment|invitation|points|customer_service|download|.well-known)/) {
         return 404;
         access_log off;
         log_not_found off;
@@ -184,9 +181,6 @@ server {
 server {
     listen 443 ssl;
     server_name localhost;
-
-    # 包含允许的路径前缀定义
-    include /etc/nginx/conf.d/whitelist.conf;
 
     # Set maximum upload size to 10MB
     client_max_body_size 10M;
@@ -368,7 +362,7 @@ server {
     }
 
     # 捕获所有未明确定义的路径，返回404
-    location ~ ^/(?!($allowed_prefixes)/) {
+    location ~ ^/(?!(static|metrics|health|hello|api|auth|user|assessment|job|resume|roadmap|aichat|alipay|payment|invitation|points|customer_service|download|.well-known)/) {
         return 404;
         access_log off;
         log_not_found off;
