@@ -22,7 +22,7 @@ services:
     environment:
       - FLASK_ENV=production
       - SQLALCHEMY_DATABASE_URI=mysql+pymysql://zchat:zchat_password@mysql:3306/zchat
-      # - DOCUMENT_STORE_TYPE=${DOCUMENT_STORE_TYPE:-mysql}  # 可选: mysql, mongodb
+      # - DOCUMENT_STORE_TYPE=mysql  # 可选: mysql, mongodb
       - DOCUMENT_STORE_TYPE=mongodb  # 可选: mysql, mongodb
       - MYSQL_HOST=mysql
       - MYSQL_PORT=3306
@@ -113,7 +113,7 @@ services:
     networks:
       - zchat-network
     ports:
-      - "27017:27017"  # 可选，用于调试
+      - "27017:27017"  # TODO remove this
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "'db.adminCommand(\"ping\")'", "-u", "zchat", "-p", "zchat_password", "--authenticationDatabase", "admin"]
       interval: 10s

@@ -214,6 +214,49 @@ def create_from_jd_and_resume():
         'points_spent': points_spent
     })
 
+@bp.route('/dump_all_roadmaps', methods=['GET'])
+@login_required
+@admin_required
+def dump_all_roadmaps():
+    roadmap_ops = RoadmapOps(db.session)
+    roadmaps = roadmap_ops.get_all_roadmaps()
+    for roadmap in roadmaps:
+        mindmap = get_mindmap_nosql(current_app, roadmap['mindmap_id'])
+        roadmap['mindmap'] = mindmap
+    return jsonify({
+        'roadmaps': roadmaps,
+    })
+
+@bp.route('/restore_all_roadmaps', methods=['POST'])
+@login_required
+@admin_required
+def restore_all_roadmaps():
+    json_file = request.files.get('json_file')
+    if not json_file:
+        return jsonify({'error': 'No JSON file provided'}), 400
+
+    roadmap_ops = RoadmapOps(db.session)
+    roadmaps = json.load(json_file)
+    for roadmap in roadmaps['roadmaps']:
+        roadmap_ops.delete_roadmap(roadmap['id'])
+        roadmap_ops.create_roadmap(
+            id=roadmap['id'],
+            icon=roadmap['icon'],
+            title=roadmap['title'],
+            subtitle=roadmap['subtitle'],
+            type=roadmap['type'],
+            kind=roadmap['kind'],
+            status=roadmap['status'],
+            mindmap_id=roadmap['mindmap_id'],
+            created_by=roadmap['created_by'],
+            industry_tag=roadmap['industry_tag'],
+            job_tag=roadmap['job_tag'],
+            skill_tag=roadmap['skill_tag'],
+        )
+        add_mindmap_nosql(current_app, roadmap['mindmap'])
+    return jsonify({
+        'success': True,
+    })
 
 @bp.route('/create_from_topic', methods=['POST'])
 @login_required

@@ -6,6 +6,29 @@
 - MySQL数据库的备份和恢复
 - MongoDB文档存储的备份和恢复
 - 全量数据库备份和恢复
+
+常见问题解答(FAQ):
+
+Q: 我的MySQL备份恢复过程卡住了但没有报错，可能是什么原因？
+A: 最常见的原因是表元数据锁冲突。当恢复进程尝试修改表结构(如DROP TABLE)时，
+   如果有其他连接正在使用或持有这些表的锁，恢复过程会卡住等待锁释放。
+
+   解决方法:
+   1. 使用 "SHOW PROCESSLIST;" 检查当前所有数据库连接
+   2. 寻找状态为 "Waiting for table metadata lock" 的进程，确认是恢复操作
+   3. 终止所有空闲(Sleep)状态的连接: "KILL [connection_id];"
+   4. 如果有应用程序正在运行，临时停止它们以避免新的连接干扰恢复过程
+   5. 对于重复出现此问题的环境，考虑增大 innodb_lock_wait_timeout 参数值
+
+   注意：这种情况在开发或测试环境尤为常见，因为可能有多个连接同时打开且长时间不活动
+
+Q: 什么规模的数据库可以使用这个脚本进行备份和恢复？
+A: 此脚本适用于小型到中型数据库(几MB到几GB)。对于更大规模的数据库，可能需要:
+   1. 针对大型数据库优化的备份策略(如增量备份)
+   2. 考虑分表或分区策略
+   3. 使用专业备份工具如Percona XtraBackup(MySQL)或MongoDB Cloud Manager
+
+   恢复大型数据库时也可能面临更多资源限制和锁争用问题。
 """
 
 import os
@@ -565,7 +588,7 @@ def restore_full_backup(args):
     """恢复完整备份"""
     start_time = time.time()
 
-    if not args.file or hasattr(args, 'latest'):
+    if not args.file or args.latest:
         # 如果未指定文件，尝试使用最新的备份
         backups = sorted([f for f in BACKUP_DIR.glob("zchat_backup_*.tar.gz")])
         if not backups:

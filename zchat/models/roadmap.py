@@ -57,6 +57,7 @@ class Roadmap(db.Model):
             'kind' : self.roadmap_kind,
             'status': self.roadmap_status,
             'mindmap_id': self.mindmap_id,
+            'created_by': self.created_by,
             'industry_tag': self.industry_tag,
             'job_tag': self.job_tag,
             'skill_tag': self.skill_tag,
@@ -756,5 +757,16 @@ class RoadmapOps:
         roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
         if roadmap:
             roadmap.roadmap_status = 0
+            self.session.commit()
+        return True
+
+    def get_all_roadmaps(self)->list:
+        roadmaps = self.session.query(Roadmap).all()
+        return [roadmap.to_dict() for roadmap in roadmaps]
+
+    def delete_roadmap(self, roadmap_id: str)->bool:
+        roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+        if roadmap:
+            self.session.delete(roadmap)
             self.session.commit()
         return True
