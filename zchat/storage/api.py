@@ -23,6 +23,7 @@ def init_app(app):
     @app.teardown_appcontext
     def handle_teardown(exception):
         logger.debug("应用上下文已结束")
+        # 不关闭连接，由连接池管理
 
     # 请求后处理器 - 确保写入操作完成但不关闭连接
     @app.after_request
@@ -41,11 +42,14 @@ def init_app(app):
 
     def close_db_on_exit():
         """在进程退出时关闭数据库连接"""
+        logger.info("应用退出，执行连接清理...")
+        # 对于MongoDB，现在由全局连接池管理，在atexit中自动关闭
+        # 对于其他类型的存储，仍然需要手动关闭
         if hasattr(app, 'document_store') and hasattr(app.document_store, 'store'):
-            if hasattr(app.document_store.store, 'close'):
+            if hasattr(app.document_store.store, 'close') and app.config.get('DOCUMENT_STORE_TYPE') != 'mongodb':
                 try:
                     app.document_store.store.close()
-                    logger.info("进程退出时关闭数据库连接")
+                    logger.info("非MongoDB文档存储连接已关闭")
                 except Exception as e:
                     logger.error(f"进程退出时关闭数据库连接失败: {str(e)}")
 

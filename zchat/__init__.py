@@ -7,7 +7,23 @@ from logging.handlers import RotatingFileHandler
 
 def create_app(test_config=None):
     # create and configure the app
-    app = Flask(__name__)
+    app = Flask(__name__, instance_relative_config=True)
+    app.config.from_mapping(
+        SECRET_KEY='dev',
+        DATABASE=os.path.join(app.instance_path, 'zchat.sqlite'),
+    )
+
+    # 确保应用启动时标记为未关闭状态
+    app.config['SERVER_SHUTTING_DOWN'] = False
+
+    # 注册应用关闭时的处理函数 - 使用Flask 3.x兼容方式
+    import atexit
+
+    @atexit.register
+    def prepare_shutdown():
+        with app.app_context():
+            app.config['SERVER_SHUTTING_DOWN'] = True
+            app.logger.info("应用正在关闭，已设置关闭标志...")
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -176,5 +192,14 @@ def create_app(test_config=None):
     # 官网页面蓝图
     from . import website
     app.register_blueprint(website.bp)
+
+    # 初始化监控工具 (解决Grafana面板中缺少数据的问题)
+    try:
+        # 初始化用户活跃度监控
+        from . import user_monitor
+        user_monitor.init_app(app)
+        app.logger.info("用户活跃度监控初始化成功")
+    except Exception as e:
+        app.logger.error(f"用户活跃度监控初始化失败: {str(e)}")
 
     return app

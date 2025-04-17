@@ -2,11 +2,99 @@ import json
 import time
 import threading
 import logging
+import weakref
 from typing import Dict, List, Any, Optional, Union
 from pymongo import MongoClient, ASCENDING, DESCENDING
 from pymongo.read_preferences import ReadPreference
 from pymongo.errors import ConnectionFailure, DuplicateKeyError, OperationFailure
 from .abstract import DocumentStore
+
+# 全局连接池
+class MongoConnectionPool:
+    """MongoDB连接池，在应用级别管理连接"""
+
+    _instance = None
+    _lock = threading.RLock()
+
+    def __new__(cls):
+        with cls._lock:
+            if cls._instance is None:
+                cls._instance = super(MongoConnectionPool, cls).__new__(cls)
+                cls._instance.clients = {}
+                cls._instance.logger = logging.getLogger(__name__)
+                # 保持连接池的实例引用计数
+                cls._instance.ref_counts = {}
+        return cls._instance
+
+    def get_client(self, connection_key, conn_params):
+        """获取或创建MongoDB客户端连接
+
+        Args:
+            connection_key: 连接的唯一标识符（通常是host:port:db_name）
+            conn_params: MongoDB连接参数
+
+        Returns:
+            MongoDB客户端连接
+        """
+        with self._lock:
+            if connection_key not in self.clients:
+                self.logger.debug(f"创建新的MongoDB连接: {connection_key}")
+                client = MongoClient(**conn_params)
+                # 验证连接是否成功
+                client.admin.command('ping')
+                self.clients[connection_key] = client
+                self.ref_counts[connection_key] = 1
+                self.logger.info(f"MongoDB连接成功: {connection_key}")
+            else:
+                self.ref_counts[connection_key] += 1
+                self.logger.debug(f"复用MongoDB连接: {connection_key} (引用计数: {self.ref_counts[connection_key]})")
+
+            return self.clients[connection_key]
+
+    def release_client(self, connection_key):
+        """释放MongoDB客户端连接
+
+        Args:
+            connection_key: 连接的唯一标识符
+        """
+        with self._lock:
+            if connection_key in self.ref_counts:
+                self.ref_counts[connection_key] -= 1
+                self.logger.debug(f"释放MongoDB连接: {connection_key} (引用计数: {self.ref_counts[connection_key]})")
+
+                # 如果引用计数为0，关闭并移除连接
+                if self.ref_counts[connection_key] <= 0:
+                    if connection_key in self.clients:
+                        self.logger.info(f"关闭MongoDB连接: {connection_key}")
+                        self.clients[connection_key].close()
+                        del self.clients[connection_key]
+                    if connection_key in self.ref_counts:
+                        del self.ref_counts[connection_key]
+
+    def close_all(self):
+        """关闭所有MongoDB连接"""
+        with self._lock:
+            for key, client in list(self.clients.items()):
+                self.logger.info(f"关闭MongoDB连接: {key}")
+                client.close()
+            self.clients.clear()
+            self.ref_counts.clear()
+
+    def get_stats(self):
+        """获取连接池统计信息"""
+        with self._lock:
+            stats = {
+                "total_connections": len(self.clients),
+                "connections": {}
+            }
+            for key, count in self.ref_counts.items():
+                stats["connections"][key] = {
+                    "ref_count": count
+                }
+            return stats
+
+# 初始化全局连接池
+mongo_pool = MongoConnectionPool()
 
 class MongoDBDocumentStore(DocumentStore):
     """基于MongoDB的文档存储实现"""
@@ -67,16 +155,28 @@ class MongoDBDocumentStore(DocumentStore):
             'nearest': ReadPreference.NEAREST
         }
 
-        self.local = threading.local()  # 使用线程本地存储
+        # 创建连接标识符
+        self.connection_key = f"{host}:{port}/{db_name}"
+
+        # 替换线程本地存储为直接client引用
+        self.client = None
+
         self.lock = threading.RLock()   # 使用可重入锁
         self.logger = logging.getLogger(__name__)
+
+        # 创建析构器，确保在对象被回收时释放连接
+        self._finalizer = weakref.finalize(self, self._cleanup, self.connection_key)
 
         # 初始化连接和数据库
         self._init_db()
 
+    def _cleanup(self, connection_key):
+        """清理资源的析构方法"""
+        mongo_pool.release_client(connection_key)
+
     def _get_client(self):
-        """获取线程安全的MongoDB客户端连接"""
-        if not hasattr(self.local, 'client') or self.local.client is None:
+        """获取或创建MongoDB客户端连接"""
+        if self.client is None:
             try:
                 # 构建连接参数
                 conn_params = {
@@ -90,8 +190,8 @@ class MongoDBDocumentStore(DocumentStore):
                     'serverSelectionTimeoutMS': self.server_selection_timeout_ms,
                     'connectTimeoutMS': self.connect_timeout_ms,
                     'socketTimeoutMS': self.socket_timeout_ms,
-                    # 读取首选项
-                    'readPreference': self.read_preference_map.get(self.read_preference, ReadPreference.PRIMARY),
+                    # 读取首选项 - 使用字符串
+                    'readPreference': self.read_preference,
                     # 连接池选项
                     'retryWrites': True,
                     'retryReads': True,
@@ -115,14 +215,9 @@ class MongoDBDocumentStore(DocumentStore):
                 if self.tls:
                     conn_params['tls'] = True
 
-                # 创建客户端连接
-                self.logger.debug(f"创建MongoDB连接: {self.host}:{self.port}, 最大连接数: {self.max_pool_size}")
-                self.local.client = MongoClient(**conn_params)
+                # 从连接池获取连接
+                self.client = mongo_pool.get_client(self.connection_key, conn_params)
 
-                # 检查连接是否成功
-                self.local.client.admin.command('ping')
-
-                self.logger.info(f"MongoDB连接成功: {self.host}:{self.port}")
             except ConnectionFailure as e:
                 self.logger.error(f"MongoDB连接失败: {str(e)}")
                 raise
@@ -130,7 +225,7 @@ class MongoDBDocumentStore(DocumentStore):
                 self.logger.error(f"MongoDB初始化失败: {str(e)}")
                 raise
 
-        return self.local.client
+        return self.client
 
     def _get_db(self):
         """获取数据库连接"""
@@ -624,10 +719,10 @@ class MongoDBDocumentStore(DocumentStore):
 
     def close(self):
         """关闭数据库连接"""
-        if hasattr(self.local, 'client') and self.local.client is not None:
-            self.local.client.close()
-            self.local.client = None
-            self.logger.info("MongoDB连接已关闭")
+        if self.client is not None:
+            mongo_pool.release_client(self.connection_key)
+            self.client = None
+            self.logger.info(f"MongoDB连接已释放: {self.connection_key}")
 
     def ensure_writes(self):
         """确保所有写入操作已完成"""
@@ -643,24 +738,34 @@ class MongoDBDocumentStore(DocumentStore):
         stats = {"status": "unknown"}
 
         try:
-            if hasattr(self.local, 'client') and self.local.client is not None:
-                # 获取服务器状态
-                server_status = self.local.client.admin.command('serverStatus')
+            # 获取客户端
+            client = self._get_client()
 
-                # 获取连接信息
-                connections = server_status.get('connections', {})
+            # 获取服务器状态
+            server_status = client.admin.command('serverStatus')
 
-                stats = {
-                    "status": "ok",
-                    "current": connections.get('current', 0),
-                    "available": connections.get('available', 0),
-                    "totalCreated": connections.get('totalCreated', 0),
-                    "active": connections.get('active', 0),
-                    "maxPoolSize": self.max_pool_size,
-                    "minPoolSize": self.min_pool_size
-                }
+            # 获取连接信息
+            connections = server_status.get('connections', {})
+
+            # 获取连接池状态
+            pool_stats = mongo_pool.get_stats()
+
+            stats = {
+                "status": "ok",
+                "current": connections.get('current', 0),
+                "available": connections.get('available', 0),
+                "totalCreated": connections.get('totalCreated', 0),
+                "active": connections.get('active', 0),
+                "maxPoolSize": self.max_pool_size,
+                "minPoolSize": self.min_pool_size,
+                "appConnectionPool": pool_stats
+            }
         except Exception as e:
             self.logger.error(f"获取连接统计信息失败: {str(e)}")
             stats["error"] = str(e)
 
         return stats
+
+# 应用退出时关闭所有连接
+import atexit
+atexit.register(mongo_pool.close_all)

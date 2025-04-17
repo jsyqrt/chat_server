@@ -33,6 +33,38 @@ except Exception as e:
 done
 echo "MySQL connection confirmed!"
 
+# 等待MongoDB准备就绪
+echo "Waiting for MongoDB..."
+until nc -z mongodb 27017; do
+  sleep 1
+done
+echo "MongoDB is ready!"
+
+# 进一步验证MongoDB连接是否真正可用
+echo "Verifying MongoDB connectivity..."
+until python -c "
+import pymongo
+try:
+    client = pymongo.MongoClient(
+        host='mongodb',
+        port=27017,
+        username='zchat',
+        password='zchat_password',
+        authSource='admin',
+        serverSelectionTimeoutMS=2000
+    )
+    client.admin.command('ping')
+    client.close()
+    exit(0)
+except Exception as e:
+    print(f'Error connecting to MongoDB: {e}')
+    exit(1)
+" >/dev/null 2>&1; do
+  echo "Waiting for MongoDB to be fully operational..."
+  sleep 2
+done
+echo "MongoDB connection confirmed!"
+
 echo "Waiting for MeiliSearch..."
 until nc -z meilisearch 7700; do
   sleep 1
@@ -47,7 +79,7 @@ echo "Setting log level to: $LOG_LEVEL"
 echo "Starting Gunicorn server..."
 exec gunicorn -b 0.0.0.0:5000 \
     --workers=1 \
-    --threads=1 \
+    --threads=4 \
     --worker-class=gevent \
     --timeout 60 \
     --keep-alive 5 \

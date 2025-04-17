@@ -4,6 +4,7 @@ import re
 import logging
 from typing import Dict, List, Tuple, Generator, Optional, Any
 import time
+from ..api_monitor import APIMonitor, monitor_api_call  # 导入API监控工具
 
 # 模型名称映射：根据基础模型名和平台名，提供平台特定的模型名称
 MODEL_MAPPINGS: Dict[str, Dict[str, str]] = {
@@ -68,6 +69,7 @@ def get_api_url_and_key(platform="groq") -> Tuple[str, str]:
 
     return api_url, api_key
 
+@monitor_api_call("llm_completion")  # 添加API监控装饰器
 def get_response_from_llm(messages: List[Dict[str, str]], model: str, max_tokens: int, platform: str = "groq", retry_count: int = 3) -> str:
     """
     向LLM发送请求并获取完整响应
@@ -113,6 +115,7 @@ def get_response_from_llm(messages: List[Dict[str, str]], model: str, max_tokens
             else:
                 # 最后一次尝试失败
                 logging.error(f"所有LLM请求尝试均失败: {str(e)}")
+                # 记录API调用失败 - 装饰器会自动处理，这里不需要额外记录
                 raise RuntimeError(f"LLM请求失败: {str(e)}") from e
 
     # 这里应该不会到达，但为了安全起见
@@ -133,6 +136,7 @@ def get_response_from_llm_stream(messages: List[Dict[str, str]], model: str, max
     Yields:
         LLM响应的流式内容块
     """
+    api_name = f"llm_stream_{platform}"
     try:
         api_url, api_key = get_api_url_and_key(platform)
         platform_model = get_platform_model_name(model, platform)
@@ -150,17 +154,23 @@ def get_response_from_llm_stream(messages: List[Dict[str, str]], model: str, max
             stream=True,
         )
 
+        # 记录成功的API调用
+        APIMonitor.record_success(api_name)
+
         for chunk in response:
             if chunk.choices[0].delta.content is not None:
                 yield chunk.choices[0].delta.content
 
     except Exception as e:
         logging.error(f"LLM流式请求失败: {str(e)}")
+        # 记录API调用失败
+        APIMonitor.record_error(api_name)
         # 在流中发送错误标记
         yield f"\n\n[系统提示: 获取AI响应时出现错误，请重试或联系客服]"
         # 重新抛出异常以便上层处理
         raise RuntimeError(f"LLM流式请求失败: {str(e)}") from e
 
+@monitor_api_call("llm_chat")  # 添加API监控装饰器
 def chat_with_llm_stream(message: str, history: List[Dict[str, str]], model: str, max_tokens: int, platform: str = "groq") -> Generator[str, None, None]:
     """
     与LLM聊天，并流式获取响应

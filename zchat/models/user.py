@@ -8,6 +8,7 @@ from flask_login import UserMixin
 
 from zchat.models.base import db
 # from zchat.rand import *
+from zchat.db_monitor import track_query, SELECT, INSERT, UPDATE, DELETE, COMPLEX  # 导入数据库监控装饰器
 
 from sqlalchemy.orm import relationship
 from zchat.models.subscription import AccountType, SubscriptionType
@@ -95,6 +96,7 @@ class UserOps:
     def username_with_phone_number_suffix(self, phone_number)->str:
         return f"用户{phone_number[-4:]}"
 
+    @track_query(COMPLEX)  # 标记为复杂查询，因为它包含查询和插入操作
     def get_or_create_user(self, phone_number, invited_by=None)->int:
         current_app.logger.debug(f"get_or_create_user, {phone_number}")
         try:
@@ -134,6 +136,7 @@ class UserOps:
             current_app.logger.debug(f"failed to add user {phone_number}, error {str(e)}")
         return None
 
+    @track_query(UPDATE)  # 标记为更新操作
     def update_account_type(self, id, account_type, subscription_start_time=None, subscription_end_time=None)->bool:
         """更新用户账户类型"""
         try:
@@ -165,6 +168,7 @@ class UserOps:
             current_app.logger.warn(f"failed to update user account type {id}, error {str(e)}")
         return False
 
+    @track_query(COMPLEX)  # 标记为复杂操作，因为包含检查和可能的更新
     def check_and_update_subscription_status(self, id):
         """检查并更新用户订阅状态（如果过期则降级为免费账户）"""
         try:
@@ -184,6 +188,7 @@ class UserOps:
             current_app.logger.warn(f"Failed to check subscription status for user {id}, error {str(e)}")
             return False
 
+    @track_query(SELECT)  # 标记为查询操作
     def get_invite_code(self, id):
         """获取用户邀请码，如果没有则生成一个"""
         try:
@@ -343,40 +348,46 @@ class UserOps:
             current_app.logger.warn(f"failed to update user {id}, error {str(e)}")
         return False
 
+    @track_query(SELECT)  # 标记为查询操作
     def get_one(self, id)->User:
         try:
-            user = self.session.query(User).filter_by(id=id).first()
-            return user
+            return self.session.query(User).filter_by(id=id).first()
         except Exception as e:
-            current_app.logger.debug(f'failed to get user, error {str(e)}')
-            return None
+            current_app.logger.warn(f"get user {id} failed, {str(e)}")
+        return None
 
+    @track_query(SELECT)  # 标记为查询操作
     def get_all(self)->list:
         try:
             users = self.session.query(User).all()
-            current_app.logger.debug(f'len of all users {len(users)}')
             return [user.to_dict() for user in users]
         except Exception as e:
-            current_app.logger.debug(f'failed to get all users, error {str(e)}')
-            return []
+            current_app.logger.warn(f"get all users failed, {str(e)}")
+        return []
 
+    @track_query(COMPLEX)  # 标记为复杂查询操作
     def get_stats(self)->dict:
+        """获取用户统计信息"""
         try:
-            from sqlalchemy import func, Integer
-            total = self.session.query(func.cast(func.count(User.id), Integer)).scalar()
-            create_today = self.session.query(func.cast(func.count(User.id), Integer)).filter(User.create_timestamp >= time.time() - 24 * 60 * 60).scalar()
-            create_this_week = self.session.query(func.cast(func.count(User.id), Integer)).filter(User.create_timestamp >= time.time() - 7 * 24 * 60 * 60).scalar()
-            create_this_month = self.session.query(func.cast(func.count(User.id), Integer)).filter(User.create_timestamp >= time.time() - 30 * 24 * 60 * 60).scalar()
+            total_users = self.session.query(User).count()
+            free_users = self.session.query(User).filter_by(account_type=AccountType.FREE.value).count()
+            basic_users = self.session.query(User).filter_by(account_type=AccountType.BASIC.value).count()
+            pro_users = self.session.query(User).filter_by(account_type=AccountType.PRO.value).count()
 
             return {
-                'total': total,
-                'create_today': create_today,
-                'create_this_week': create_this_week,
-                'create_this_month': create_this_month,
+                "total_users": total_users,
+                "free_users": free_users,
+                "basic_users": basic_users,
+                "pro_users": pro_users
             }
         except Exception as e:
-            current_app.logger.debug(f'failed to get user stats, error {str(e)}')
-            return {}
+            current_app.logger.warn(f"get user stats failed, {str(e)}")
+            return {
+                "total_users": 0,
+                "free_users": 0,
+                "basic_users": 0,
+                "pro_users": 0
+            }
 
 class AdminUser(db.Model):
     __tablename__ = 'ADMIN_USER'

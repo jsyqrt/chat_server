@@ -1,6 +1,7 @@
 from typing import Dict, List, Any, Optional
 from flask import current_app
 import os
+import sys
 from .factory import StorageFactory
 from .abstract import DocumentStore
 import time
@@ -38,18 +39,10 @@ class DocumentStoreService:
             self.store = StorageFactory.create_store(store_type, **store_config)
             self.logger.info(f"成功初始化文档存储: {store_type}")
         except Exception as e:
-            self.logger.error(f"初始化文档存储失败: {str(e)}")
-            # 如果指定的存储类型初始化失败，尝试回退到SQLite
-            if store_type != 'sqlite':
-                self.logger.warning(f"尝试回退到SQLite存储")
-                store_type = 'sqlite'
-                store_config = {'db_path': os.path.join(app.instance_path, 'document_store.db')}
-                try:
-                    self.store = StorageFactory.create_store(store_type, **store_config)
-                    self.logger.info(f"成功回退到SQLite存储")
-                except Exception as e2:
-                    self.logger.critical(f"回退到SQLite存储也失败: {str(e2)}")
-                    raise
+            self.logger.critical(f"初始化文档存储失败: {str(e)}")
+            self.logger.critical(f"文档存储 {store_type} 初始化失败，应用将退出")
+            # 直接退出应用，不再尝试回退到SQLite
+            sys.exit(1)
 
         # 将服务添加到应用
         app.document_store = self

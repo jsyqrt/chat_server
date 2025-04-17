@@ -21,55 +21,62 @@ def init_app(app):
     global metrics, http_request_total, http_request_duration_seconds, http_request_exceptions_total
     global active_users_gauge, db_query_duration, api_requests_total, error_rate
 
-    # 创建PrometheusMetrics实例
-    metrics = PrometheusMetrics(app)
+    try:
+        # 创建PrometheusMetrics实例
+        metrics = PrometheusMetrics(app)
 
-    # 自动收集默认指标
-    metrics.info('app_info', 'Application info', version='1.0.0')
+        # 自动收集默认指标
+        metrics.info('app_info', 'Application info', version='1.0.0')
 
-    # 自定义指标
-    http_request_total = Counter(
-        'http_request_total',
-        'Total number of HTTP requests',
-        ['method', 'endpoint', 'status']
-    )
+        # 自定义指标
+        http_request_total = Counter(
+            'http_request_total',
+            'Total number of HTTP requests',
+            ['method', 'endpoint', 'status']
+        )
 
-    http_request_duration_seconds = Histogram(
-        'http_request_duration_seconds',
-        'HTTP request duration in seconds',
-        ['method', 'endpoint'],
-        buckets=(0.1, 0.25, 0.5, 0.75, 1.0, 2.5, 5.0, 7.5, 10.0, 25.0, 50.0, 75.0, 100.0, float('inf'))
-    )
+        http_request_duration_seconds = Histogram(
+            'http_request_duration_seconds',
+            'HTTP request duration in seconds',
+            ['method', 'endpoint'],
+            buckets=(0.1, 0.25, 0.5, 0.75, 1.0, 2.5, 5.0, 7.5, 10.0, 25.0, 50.0, 75.0, 100.0, float('inf'))
+        )
 
-    http_request_exceptions_total = Counter(
-        'http_request_exceptions_total',
-        'Total number of HTTP requests that resulted in exceptions',
-        ['method', 'endpoint', 'exception_type']
-    )
+        http_request_exceptions_total = Counter(
+            'http_request_exceptions_total',
+            'Total number of HTTP requests that resulted in exceptions',
+            ['method', 'endpoint', 'exception_type']
+        )
 
-    active_users_gauge = Gauge(
-        'active_users',
-        'Number of active users',
-        ['type']  # e.g., 'logged_in', 'anonymous'
-    )
+        active_users_gauge = Gauge(
+            'active_users',
+            'Number of active users',
+            ['type']  # e.g., 'logged_in', 'anonymous'
+        )
 
-    db_query_duration = Histogram(
-        'db_query_duration_seconds',
-        'Database query duration in seconds',
-        ['query_type'],
-        buckets=(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1.0, 5.0, 10.0, float('inf'))
-    )
+        db_query_duration = Histogram(
+            'db_query_duration_seconds',
+            'Database query duration in seconds',
+            ['query_type'],
+            buckets=(0.01, 0.025, 0.05, 0.075, 0.1, 0.25, 0.5, 0.75, 1.0, 2.5, 5.0, 7.5, 10.0, float('inf'))
+        )
 
-    api_requests_total = Counter(
-        'api_requests_total',
-        'Total number of API requests',
-        ['api_name', 'status']
-    )
+        api_requests_total = Counter(
+            'api_requests_total',
+            'Total number of API requests',
+            ['api_name', 'status']
+        )
 
-    error_rate = Gauge(
-        'error_rate',
-        'Error rate over the last minute',
-    )
+        error_rate = Gauge(
+            'error_rate',
+            'Error rate of HTTP requests',
+            ['endpoint']
+        )
+
+        app.logger.info("监控模块初始化成功")
+    except Exception as e:
+        app.logger.error(f"监控模块初始化失败: {str(e)}")
+        raise
 
     # 注册监控蓝图
     app.register_blueprint(bp, url_prefix='/metrics')
