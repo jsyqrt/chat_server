@@ -69,6 +69,7 @@ class RoadmapInteraction(db.Model):
 
     roadmap_id = db.Column(db.String(255))
     user_id = db.Column(db.String(255))
+    viewed = db.Column(db.Integer, nullable=False, default=0)
     participanted = db.Column(db.Integer, nullable=False, default=0)
     completed = db.Column(db.Integer, nullable=False, default=0)
     favorited = db.Column(db.Integer, nullable=False, default=0)
@@ -77,6 +78,7 @@ class RoadmapInteraction(db.Model):
     __table_args__ = (
         db.PrimaryKeyConstraint('roadmap_id', 'user_id'),
         db.Index('index_ROADMAP_INTERACTION_user_id', 'user_id', unique=False),
+        db.Index('index_ROADMAP_INTERACTION_viewed', 'viewed', unique=False),
         db.Index('index_ROADMAP_INTERACTION_participanted', 'participanted', unique=False),
         db.Index('index_ROADMAP_INTERACTION_completed', 'completed', unique=False),
         db.Index('index_ROADMAP_INTERACTION_favorited', 'favorited', unique=False),
@@ -87,6 +89,7 @@ class RoadmapInteraction(db.Model):
         return {
             'roadmap_id': self.roadmap_id,
             'user_id': self.user_id,
+            'viewed': self.viewed,
             'participanted': self.participanted,
             'completed': self.completed,
             'favorited': self.favorited,
@@ -96,6 +99,29 @@ class RoadmapInteraction(db.Model):
 class RoadmapInteractionOps:
     def __init__(self, session):
         self.session = session
+
+    def get_viewed(self, roadmap_id: str, user_id: str)->bool:
+        interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
+        if interaction:
+            return interaction.viewed == 1
+        return False
+
+    def get_viewed_roadmaps(self, user_id: str)->list:
+        interactions = self.session.query(RoadmapInteraction).filter_by(user_id=user_id).all()
+        return [interaction.roadmap_id for interaction in interactions if interaction.viewed == 1]
+
+    def view(self, roadmap_id: str, user_id: str)->bool:
+        interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
+        if interaction:
+            if interaction.viewed == 0:
+                interaction.viewed = 1
+                self.session.commit()
+                return True
+        else:
+            interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, viewed=1)
+            self.session.add(interaction)
+            self.session.commit()
+            return True
 
     def participated(self, roadmap_id: str, user_id: str)->bool:
         interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()

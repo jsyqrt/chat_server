@@ -14,6 +14,40 @@ def create_app(test_config=None):
         config_path = os.path.join(app.root_path, 'config.py')
         if os.path.exists(config_path):
             app.config.from_pyfile(config_path)
+
+        # 从环境变量加载文档存储配置
+        document_store_type = os.environ.get('DOCUMENT_STORE_TYPE', 'mysql')
+        app.config['DOCUMENT_STORE_TYPE'] = document_store_type
+
+        # 文档存储配置
+        document_store_config = {}
+
+        if document_store_type == 'mysql':
+            # MySQL文档存储配置
+            if all(key in os.environ for key in ['MYSQL_USER', 'MYSQL_PASSWORD', 'MYSQL_HOST', 'MYSQL_PORT']):
+                document_store_config.update({
+                    'host': os.environ.get('MYSQL_HOST', 'localhost'),
+                    'port': int(os.environ.get('MYSQL_PORT', '3306')),
+                    'user': os.environ.get('MYSQL_USER', 'zchat'),
+                    'password': os.environ.get('MYSQL_PASSWORD', 'zchat_password'),
+                    'db_name': os.environ.get('MYSQL_DB', 'zchat')
+                })
+        elif document_store_type == 'mongodb':
+            # MongoDB文档存储配置
+            if all(key in os.environ for key in ['MONGODB_USER', 'MONGODB_PASSWORD', 'MONGODB_HOST', 'MONGODB_PORT']):
+                document_store_config.update({
+                    'host': os.environ.get('MONGODB_HOST', 'localhost'),
+                    'port': int(os.environ.get('MONGODB_PORT', '27017')),
+                    'username': os.environ.get('MONGODB_USER', 'zchat'),
+                    'password': os.environ.get('MONGODB_PASSWORD', 'zchat_password'),
+                    'db_name': os.environ.get('MONGODB_DB', 'zchat'),
+                    'auth_source': os.environ.get('MONGODB_AUTH_SOURCE', 'admin')
+                })
+
+        app.config['DOCUMENT_STORE_CONFIG'] = document_store_config
+
+        # 记录当前选择的文档存储类型
+        app.logger.info(f"文档存储类型设置为: {document_store_type}")
     else:
         # load the test config if passed in
         app.config.from_mapping(test_config)

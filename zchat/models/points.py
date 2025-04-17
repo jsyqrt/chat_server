@@ -25,6 +25,7 @@ class ServiceType(Enum):
     JOB_ANALYSIS = 'job_analysis'                # 职位分析
     OPTIMIZE_RESUME = 'optimize_resume'          # 简历定制
     CREATE_ROADMAP = 'create_roadmap'            # 创建学习路径
+    UNLOCK_ROADMAP = 'unlock_roadmap'            # 解锁学习路径
     GET_DESCRIPTION = 'get_description'          # 获取知识详情
     AI_CHAT = 'ai_chat'                          # AI聊天
 
@@ -101,6 +102,7 @@ class PointsOps:
         ServiceType.JOB_ANALYSIS.value: 40,
         ServiceType.OPTIMIZE_RESUME.value: 60,
         ServiceType.CREATE_ROADMAP.value: 40,
+        ServiceType.UNLOCK_ROADMAP.value: 5,
         ServiceType.GET_DESCRIPTION.value: 5,
         ServiceType.AI_CHAT.value: 5,
     }

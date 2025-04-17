@@ -154,11 +154,6 @@ def create_from_jd_and_resume():
     if not mindmap_info:
         return jsonify({'error': 'Failed to create mindmap'}), 400
 
-    # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, "创建学习路径")
-    if not success:
-        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
-
     mindmap_id_generator = MindmapModifier()
     mindmap = mindmap_id_generator.generate(mindmap_info)
     mindmap['roadmap_id'] = str(uuid.uuid4())
@@ -198,6 +193,11 @@ def create_from_jd_and_resume():
     )
 
     add_mindmap_nosql(current_app, mindmap)
+
+    # 消费积分
+    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, f"创建学习路径({roadmap.roadmap_title})")
+    if not success:
+        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 
     return jsonify({
         'participants': 0,
@@ -246,11 +246,6 @@ def create_from_topic():
     if not mindmap:
         return jsonify({'error': 'Failed to create mindmap'}), 400
 
-    # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, "创建学习路径")
-    if not success:
-        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
-
     mindmap_id_generator = MindmapModifier()
     mindmap = mindmap_id_generator.generate(mindmap)
     mindmap['roadmap_id'] = str(uuid.uuid4())
@@ -287,6 +282,11 @@ def create_from_topic():
         job_tag=job_tag,
         skill_tag=skill_tag,
     )
+
+    # 消费积分
+    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, f"创建学习路径({topic})")
+    if not success:
+        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 
     add_mindmap_nosql(current_app, mindmap)
 
@@ -434,7 +434,7 @@ def description():
             max_retries -= 1
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, "获取知识详情")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, f"获取知识详情({topic})")
     if not success:
         return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 
@@ -459,15 +459,13 @@ def description_stream():
         return jsonify({'error': message, 'points_required': True}), 402
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, "获取知识详情")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, f"获取知识详情({topic})")
     if not success:
         return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
 
     def generate():
         for chunk in description_from_topic_path_stream(topic, topic_path):
             yield chunk
-        # 在最后添加一个特殊的点数信息
-        yield f"\n\n__POINTS_SPENT:{points_spent}__"
 
     return Response(stream_with_context(generate()), mimetype='text/plain')
 
@@ -517,6 +515,23 @@ def get_map():
     roadmap_ops = RoadmapOps(db.session)
     roadmap = roadmap_ops.get_roadmap(id)
     if roadmap:
+
+        # 检查是否已解锁
+        interaction_ops = RoadmapInteractionOps(db.session)
+        viewed = interaction_ops.get_viewed(id, current_user.get_id_int())
+        if not viewed:
+            # 检查积分是否足够
+            sufficient, message = check_points_sufficient(current_user.get_id_int(), ServiceType.UNLOCK_ROADMAP.value)
+            if not sufficient:
+                return jsonify({'error': message, 'points_required': True}), 402
+
+            # 消费积分
+            success, points_spent = consume_points_for_service(current_user.get_id_int(), ServiceType.UNLOCK_ROADMAP.value, f"解锁学习路径({roadmap.roadmap_title})")
+            if not success:
+                return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+
+            interaction_ops.view(id, current_user.get_id_int())
+
         if with_mindmap:
             mindmap = get_mindmap_nosql(current_app, roadmap.mindmap_id)
         else:

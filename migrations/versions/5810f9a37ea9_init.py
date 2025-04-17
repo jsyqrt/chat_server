@@ -1,8 +1,8 @@
 """init
 
-Revision ID: 35e1827d7a5b
+Revision ID: 5810f9a37ea9
 Revises: 
-Create Date: 2025-04-11 14:04:36.036886
+Create Date: 2025-04-17 05:59:42.353725
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '35e1827d7a5b'
+revision = '5810f9a37ea9'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -52,6 +52,7 @@ def upgrade():
     op.create_table('ROADMAP_INTERACTION',
     sa.Column('roadmap_id', sa.String(length=255), nullable=False),
     sa.Column('user_id', sa.String(length=255), nullable=False),
+    sa.Column('viewed', sa.Integer(), nullable=False),
     sa.Column('participanted', sa.Integer(), nullable=False),
     sa.Column('completed', sa.Integer(), nullable=False),
     sa.Column('favorited', sa.Integer(), nullable=False),
@@ -64,6 +65,7 @@ def upgrade():
         batch_op.create_index('index_ROADMAP_INTERACTION_participanted', ['participanted'], unique=False)
         batch_op.create_index('index_ROADMAP_INTERACTION_shared', ['shared'], unique=False)
         batch_op.create_index('index_ROADMAP_INTERACTION_user_id', ['user_id'], unique=False)
+        batch_op.create_index('index_ROADMAP_INTERACTION_viewed', ['viewed'], unique=False)
 
     op.create_table('USER',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
@@ -141,6 +143,30 @@ def upgrade():
         batch_op.create_index('index_INVITATION_created_at', ['created_at'], unique=False)
         batch_op.create_index('index_INVITATION_invitee_id', ['invitee_id'], unique=False)
         batch_op.create_index('index_INVITATION_inviter_id', ['inviter_id'], unique=False)
+
+    op.create_table('PAYMENT_ORDER',
+    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
+    sa.Column('order_id', sa.String(length=64), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('order_type', sa.String(length=50), nullable=False),
+    sa.Column('item_id', sa.Integer(), nullable=True),
+    sa.Column('amount', sa.REAL(), nullable=False),
+    sa.Column('status', sa.String(length=50), nullable=False),
+    sa.Column('payment_method', sa.String(length=50), nullable=False),
+    sa.Column('transaction_id', sa.String(length=64), nullable=True),
+    sa.Column('payment_time', sa.REAL(), nullable=True),
+    sa.Column('extra_data', sa.Text(), nullable=True),
+    sa.Column('created_at', sa.REAL(), nullable=False),
+    sa.Column('updated_at', sa.REAL(), nullable=False),
+    sa.ForeignKeyConstraint(['user_id'], ['USER.id'], ),
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('order_id')
+    )
+    with op.batch_alter_table('PAYMENT_ORDER', schema=None) as batch_op:
+        batch_op.create_index('index_PAYMENT_ORDER_created_at', ['created_at'], unique=False)
+        batch_op.create_index('index_PAYMENT_ORDER_order_id', ['order_id'], unique=False)
+        batch_op.create_index('index_PAYMENT_ORDER_status', ['status'], unique=False)
+        batch_op.create_index('index_PAYMENT_ORDER_user_id', ['user_id'], unique=False)
 
     op.create_table('POINTS_BALANCE',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
@@ -236,6 +262,13 @@ def downgrade():
         batch_op.drop_index('index_POINTS_BALANCE_expires_at')
 
     op.drop_table('POINTS_BALANCE')
+    with op.batch_alter_table('PAYMENT_ORDER', schema=None) as batch_op:
+        batch_op.drop_index('index_PAYMENT_ORDER_user_id')
+        batch_op.drop_index('index_PAYMENT_ORDER_status')
+        batch_op.drop_index('index_PAYMENT_ORDER_order_id')
+        batch_op.drop_index('index_PAYMENT_ORDER_created_at')
+
+    op.drop_table('PAYMENT_ORDER')
     with op.batch_alter_table('INVITATION', schema=None) as batch_op:
         batch_op.drop_index('index_INVITATION_inviter_id')
         batch_op.drop_index('index_INVITATION_invitee_id')
@@ -267,6 +300,7 @@ def downgrade():
 
     op.drop_table('USER')
     with op.batch_alter_table('ROADMAP_INTERACTION', schema=None) as batch_op:
+        batch_op.drop_index('index_ROADMAP_INTERACTION_viewed')
         batch_op.drop_index('index_ROADMAP_INTERACTION_user_id')
         batch_op.drop_index('index_ROADMAP_INTERACTION_shared')
         batch_op.drop_index('index_ROADMAP_INTERACTION_participanted')

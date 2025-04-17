@@ -73,6 +73,30 @@ def init_app(app):
             logger.error(f"数据库健康检查失败: {str(e)}")
             return {'status': 'error', 'message': f'数据库健康检查失败: {str(e)}'}, 500
 
+    # 添加MongoDB连接监控端点
+    @app.route('/api/db/mongodb/stats', methods=['GET'])
+    def mongodb_stats():
+        """MongoDB连接统计信息端点"""
+        try:
+            # 检查文档存储类型是否为MongoDB
+            store_type = app.config.get('DOCUMENT_STORE_TYPE')
+            if store_type != 'mongodb':
+                return {'status': 'error', 'message': f'当前存储类型不是MongoDB: {store_type}'}, 400
+
+            # 获取MongoDB连接统计信息
+            if hasattr(app, 'document_store') and hasattr(app.document_store, 'store'):
+                store = app.document_store.store
+                if hasattr(store, 'get_connection_stats'):
+                    stats = store.get_connection_stats()
+                    return {'status': 'ok', 'stats': stats}, 200
+                else:
+                    return {'status': 'error', 'message': 'MongoDB存储实例不支持获取连接统计信息'}, 500
+
+            return {'status': 'error', 'message': '文档存储未初始化'}, 500
+        except Exception as e:
+            logger.error(f"获取MongoDB连接统计信息失败: {str(e)}")
+            return {'status': 'error', 'message': f'获取MongoDB连接统计信息失败: {str(e)}'}, 500
+
 def create_initial_collections(app):
     """创建初始集合
 

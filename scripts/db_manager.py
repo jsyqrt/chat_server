@@ -4,6 +4,7 @@
 
 这个脚本提供了统一的命令行界面，用于管理Zchat应用的所有数据库相关操作：
 - MySQL数据库的初始化和迁移管理（包含文档存储）
+- MongoDB文档存储的管理
 - MeiliSearch索引管理
 - 数据库备份和恢复
 - 数据库状态检查和故障排除
@@ -56,6 +57,7 @@ def import_app():
         os.environ.setdefault('SQLALCHEMY_DATABASE_URI', 'mysql+pymysql://zchat:zchat_password@localhost:3306/zchat')
         os.environ.setdefault('MEILISEARCH_HOST', 'http://localhost:7700')
         os.environ.setdefault('MEILISEARCH_KEY', 'aSampleMasterKey')
+        os.environ.setdefault('DOCUMENT_STORE_TYPE', 'mysql')  # 默认使用MySQL文档存储
 
         app = create_app()
         logger.info("应用导入成功")
@@ -338,6 +340,10 @@ def create_full_backup(args):
         temp_dir = BACKUP_DIR / backup_name
         temp_dir.mkdir(exist_ok=True)
 
+        # 获取应用实例，以确定当前文档存储类型
+        app = import_app()
+        document_store_type = app.config.get('DOCUMENT_STORE_TYPE', 'mysql')
+
         # 备份MySQL
         logger.info("第1步: 备份MySQL数据库...")
         mysql_backup = backup_mysql(args)
@@ -347,14 +353,27 @@ def create_full_backup(args):
         else:
             logger.warning("MySQL备份失败，将继续但不包含MySQL数据")
 
+        # 如果使用MongoDB存储，备份MongoDB
+        mongodb_backup = None
+        if document_store_type == 'mongodb':
+            logger.info("第2步: 备份MongoDB数据库...")
+            mongodb_backup = backup_mongodb(args)
+            if mongodb_backup:
+                shutil.copy(mongodb_backup, temp_dir)
+                logger.info(f"MongoDB备份已复制到临时目录: {temp_dir}")
+            else:
+                logger.warning("MongoDB备份失败，将继续但不包含MongoDB数据")
+
         # 创建元数据文件
-        logger.info("第2步: 创建元数据文件...")
+        logger.info("第3步: 创建元数据文件...")
         metadata = {
             "timestamp": timestamp,
             "mysql_backup": os.path.basename(mysql_backup) if mysql_backup else None,
+            "mongodb_backup": os.path.basename(mongodb_backup) if mongodb_backup else None,
+            "document_store_type": document_store_type,
             "description": args.description if hasattr(args, 'description') else "自动备份",
             "created_at": datetime.now().isoformat(),
-            "backup_version": "1.1"  # 增加版本号以便跟踪备份格式变化
+            "backup_version": "1.2"  # 更新版本号以支持MongoDB
         }
 
         with open(temp_dir / "metadata.json", 'w') as f:
@@ -362,7 +381,7 @@ def create_full_backup(args):
             logger.info("元数据文件已创建")
 
         # 创建tar归档
-        logger.info("第3步: 创建tar归档...")
+        logger.info("第4步: 创建tar归档...")
         archive_path = BACKUP_DIR / f"{backup_name}.tar.gz"
 
         # 获取总文件大小，用于进度条
@@ -399,11 +418,13 @@ def create_full_backup(args):
                 custom_add(tar, str(temp_dir), backup_name)
 
         # 清理临时文件
-        logger.info("第4步: 清理临时文件...")
+        logger.info("第5步: 清理临时文件...")
         shutil.rmtree(temp_dir)
         if mysql_backup:
             Path(mysql_backup).unlink(missing_ok=True)
-            logger.info("临时MySQL备份文件已删除")
+        if mongodb_backup:
+            Path(mongodb_backup).unlink(missing_ok=True)
+        logger.info("临时备份文件已删除")
 
         # 计算最终大小和用时
         final_size = archive_path.stat().st_size / (1024 * 1024)  # 转换为MB
@@ -611,9 +632,12 @@ def restore_full_backup(args):
             with open(extract_dir / "metadata.json", 'r') as f:
                 metadata = json.load(f)
                 logger.info(f"备份元数据: 创建于 {metadata.get('timestamp', '未知')}, 描述: {metadata.get('description', '无')}")
+                document_store_type = metadata.get('document_store_type', 'mysql')
+                logger.info(f"备份的文档存储类型: {document_store_type}")
         except Exception as e:
             logger.warning(f"读取元数据失败: {e}")
             metadata = {}
+            document_store_type = 'mysql'  # 默认假设为MySQL
 
         # 恢复MySQL
         logger.info("第3步: 恢复MySQL数据库...")
@@ -631,8 +655,24 @@ def restore_full_backup(args):
         else:
             logger.warning("未找到MySQL备份文件")
 
+        # 恢复MongoDB（如果备份中存在）
+        mongodb_backup = None
+        for mongodb_file in extract_dir.glob("mongodb_backup_*.gz"):
+            mongodb_backup = mongodb_file
+            break
+
+        if document_store_type == 'mongodb' and mongodb_backup:
+            logger.info("第4步: 恢复MongoDB数据库...")
+            logger.info(f"找到MongoDB备份文件: {mongodb_backup}")
+            mongodb_args = argparse.Namespace()
+            mongodb_args.file = str(mongodb_backup)
+            if not restore_mongodb(mongodb_args):
+                logger.warning("MongoDB恢复失败")
+        elif document_store_type == 'mongodb':
+            logger.warning("未找到MongoDB备份文件，但文档存储类型为MongoDB")
+
         # 清理临时目录
-        logger.info("第4步: 清理临时文件...")
+        logger.info("第5步: 清理临时文件...")
         shutil.rmtree(temp_dir)
         logger.info("临时恢复目录已删除")
 
@@ -643,6 +683,378 @@ def restore_full_backup(args):
     except Exception as e:
         elapsed_time = time.time() - start_time
         logger.error(f"恢复失败: {e} (用时: {elapsed_time:.2f} 秒)")
+        if temp_dir.exists():
+            shutil.rmtree(temp_dir)
+        return False
+
+# ========== MongoDB管理函数 ==========
+
+def init_mongodb(args):
+    """初始化MongoDB"""
+    app = import_app()
+
+    with app.app_context():
+        try:
+            # 检查是否配置了MongoDB
+            if app.config.get('DOCUMENT_STORE_TYPE') != 'mongodb':
+                logger.info("当前文档存储类型不是MongoDB，将临时切换")
+                original_store_type = app.config.get('DOCUMENT_STORE_TYPE')
+                app.config['DOCUMENT_STORE_TYPE'] = 'mongodb'
+            else:
+                original_store_type = None
+
+            # 获取MongoDB存储实例
+            from zchat.storage.factory import StorageFactory
+            mongo_config = {
+                'host': app.config.get('MONGODB_HOST', 'localhost'),
+                'port': int(app.config.get('MONGODB_PORT', 27017)),
+                'username': app.config.get('MONGODB_USER'),
+                'password': app.config.get('MONGODB_PASSWORD'),
+                'db_name': app.config.get('MONGODB_DB', 'zchat'),
+                'auth_source': app.config.get('MONGODB_AUTH_SOURCE', 'admin')
+            }
+            mongo_store = StorageFactory.create_store('mongodb', **mongo_config)
+
+            # 创建初始集合
+            collections_to_create = [
+                {
+                    'name': 'mindmaps',
+                    'options': {
+                        'primaryKey': 'id',
+                        'indexedFields': ['title', 'created_by', 'difficulty']
+                    }
+                },
+                {
+                    'name': 'favorites',
+                    'options': {
+                        'primaryKey': 'user_id',
+                        'indexedFields': ['user_id']
+                    }
+                },
+                {
+                    'name': 'file_records',
+                    'options': {
+                        'primaryKey': 'id',
+                        'indexedFields': ['user_id', 'filename']
+                    }
+                },
+                {
+                    'name': 'feedback',
+                    'options': {
+                        'primaryKey': 'id',
+                        'indexedFields': ['user_id', 'status', 'created_at']
+                    }
+                }
+            ]
+
+            for coll in collections_to_create:
+                logger.info(f"创建MongoDB集合: {coll['name']}")
+                result = mongo_store.create_collection(coll['name'], coll['options'])
+                if result['status'] == 'error' and 'already exists' in result.get('message', ''):
+                    logger.info(f"集合 {coll['name']} 已存在")
+                elif result['status'] == 'error':
+                    logger.warning(f"创建集合 {coll['name']} 失败: {result.get('message')}")
+                else:
+                    logger.info(f"集合 {coll['name']} 创建成功")
+
+            # 关闭连接
+            mongo_store.close()
+
+            # 恢复原始存储类型
+            if original_store_type:
+                app.config['DOCUMENT_STORE_TYPE'] = original_store_type
+
+            logger.info("MongoDB初始化完成")
+        except Exception as e:
+            logger.error(f"MongoDB初始化失败: {e}")
+            if original_store_type:
+                app.config['DOCUMENT_STORE_TYPE'] = original_store_type
+
+def check_mongodb_status(args):
+    """检查MongoDB状态"""
+    app = import_app()
+
+    with app.app_context():
+        try:
+            # 检查是否配置了MongoDB
+            if app.config.get('DOCUMENT_STORE_TYPE') != 'mongodb':
+                logger.info("当前文档存储类型不是MongoDB，将临时切换")
+                original_store_type = app.config.get('DOCUMENT_STORE_TYPE')
+                app.config['DOCUMENT_STORE_TYPE'] = 'mongodb'
+            else:
+                original_store_type = None
+
+            # 获取MongoDB存储实例
+            from zchat.storage.factory import StorageFactory
+            mongo_config = {
+                'host': app.config.get('MONGODB_HOST', 'localhost'),
+                'port': int(app.config.get('MONGODB_PORT', 27017)),
+                'username': app.config.get('MONGODB_USER'),
+                'password': app.config.get('MONGODB_PASSWORD'),
+                'db_name': app.config.get('MONGODB_DB', 'zchat'),
+                'auth_source': app.config.get('MONGODB_AUTH_SOURCE', 'admin')
+            }
+            mongo_store = StorageFactory.create_store('mongodb', **mongo_config)
+
+            # 获取集合列表
+            collections = mongo_store.list_collections()
+
+            print("=== MongoDB状态 ===")
+            print(f"MongoDB连接: {mongo_config['host']}:{mongo_config['port']}")
+            print(f"数据库: {mongo_config['db_name']}")
+
+            if 'collections' in collections and collections['collections']:
+                print(f"集合数量: {len(collections['collections'])}")
+                for coll in collections['collections']:
+                    # 尝试获取集合中的文档数量
+                    db = mongo_store._get_db()
+                    doc_count = db[coll['name']].count_documents({})
+                    print(f"  - {coll['name']} (主键: {coll['primaryKey']}, 文档数: {doc_count})")
+            else:
+                print("没有找到集合，数据库可能为空")
+
+            # 关闭连接
+            mongo_store.close()
+
+            # 恢复原始存储类型
+            if original_store_type:
+                app.config['DOCUMENT_STORE_TYPE'] = original_store_type
+
+        except Exception as e:
+            print(f"检查MongoDB状态失败: {e}")
+            if original_store_type:
+                app.config['DOCUMENT_STORE_TYPE'] = original_store_type
+
+def backup_mongodb(args):
+    """备份MongoDB数据库"""
+    start_time = time.time()
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_dir = BACKUP_DIR / f"mongodb_backup_{timestamp}"
+    backup_dir.mkdir(exist_ok=True)
+
+    archive_path = BACKUP_DIR / f"mongodb_backup_{timestamp}.gz"
+
+    try:
+        # 从应用获取MongoDB配置
+        logger.info("开始MongoDB备份过程...")
+        app = import_app()
+
+        # MongoDB连接信息
+        host = app.config.get('MONGODB_HOST', 'localhost')
+        port = app.config.get('MONGODB_PORT', 27017)
+        user = app.config.get('MONGODB_USER')
+        password = app.config.get('MONGODB_PASSWORD')
+        db_name = app.config.get('MONGODB_DB', 'zchat')
+        auth_source = app.config.get('MONGODB_AUTH_SOURCE', 'admin')
+
+        logger.info(f"MongoDB连接信息: {host}:{port}, 数据库: {db_name}")
+
+        # 构建备份命令
+        cmd = [
+            "mongodump",
+            f"--host={host}",
+            f"--port={port}",
+            f"--db={db_name}",
+            f"--out={backup_dir}"
+        ]
+
+        # 如果提供了认证信息，添加到命令中
+        if user and password:
+            cmd.extend([
+                f"--username={user}",
+                f"--password={password}",
+                f"--authenticationDatabase={auth_source}"
+            ])
+
+        logger.info("执行MongoDB导出命令...")
+
+        # 创建进度显示函数
+        def show_progress():
+            pbar = tqdm(total=100, desc="MongoDB备份进度", unit="%")
+            last_size = 0
+
+            while True:
+                # 检查备份目录大小
+                if not backup_dir.exists():
+                    time.sleep(0.5)
+                    continue
+
+                # 计算目录总大小
+                total_size = sum(f.stat().st_size for f in backup_dir.glob('**/*') if f.is_file())
+
+                if total_size > last_size:
+                    # 更新进度，假设每次变化代表一定比例的进度
+                    increment = min(5, 100 - pbar.n)
+                    pbar.update(increment)
+                    last_size = total_size
+
+                    # 定期记录日志
+                    if pbar.n % 20 == 0:
+                        logger.info(f"MongoDB备份进行中... ({pbar.n}% 完成，当前大小: {total_size/1024/1024:.2f} MB)")
+
+                if pbar.n >= 100:
+                    break
+
+                time.sleep(1)
+
+            pbar.close()
+
+        # 启动进度线程
+        progress_thread = threading.Thread(target=show_progress)
+        progress_thread.daemon = True
+        progress_thread.start()
+
+        # 执行备份命令
+        process = subprocess.Popen(
+            cmd,
+            stderr=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            text=True
+        )
+
+        # 处理输出
+        for line in process.stdout:
+            if line.strip():
+                logger.info(f"mongodump: {line.strip()}")
+
+        for line in process.stderr:
+            if line.strip():
+                logger.warning(f"mongodump error: {line.strip()}")
+
+        # 等待进程完成
+        exit_code = process.wait()
+
+        if exit_code != 0:
+            raise Exception(f"mongodump 进程退出，错误码: {exit_code}")
+
+        # 等待进度线程完成
+        if progress_thread.is_alive():
+            time.sleep(2)
+
+        # 创建归档文件
+        logger.info("创建MongoDB备份归档...")
+        with tarfile.open(archive_path, "w:gz") as tar:
+            tar.add(backup_dir, arcname=backup_dir.name)
+
+        # 清理临时目录
+        shutil.rmtree(backup_dir)
+
+        # 计算总用时
+        elapsed_time = time.time() - start_time
+        final_size = archive_path.stat().st_size / (1024 * 1024)  # 转换为MB
+        logger.info(f"MongoDB备份已创建: {archive_path} (大小: {final_size:.2f} MB, 用时: {elapsed_time:.2f} 秒)")
+
+        return str(archive_path)
+    except Exception as e:
+        logger.error(f"MongoDB备份失败: {e}")
+        if backup_dir.exists():
+            shutil.rmtree(backup_dir)
+        if archive_path.exists():
+            archive_path.unlink()
+        return None
+
+def restore_mongodb(args):
+    """恢复MongoDB数据库"""
+    start_time = time.time()
+
+    if not args.file:
+        logger.error("需要指定MongoDB备份文件 (--file)")
+        return False
+
+    backup_file = Path(args.file)
+    if not backup_file.exists():
+        logger.error(f"备份文件不存在: {backup_file}")
+        return False
+
+    # 创建临时目录解压备份
+    temp_dir = BACKUP_DIR / "temp_mongodb_restore"
+    if temp_dir.exists():
+        shutil.rmtree(temp_dir)
+    temp_dir.mkdir()
+
+    try:
+        logger.info(f"开始从 {backup_file} 恢复MongoDB数据库...")
+
+        # 解压备份文件
+        logger.info("解压备份文件...")
+        with tarfile.open(backup_file, "r:gz") as tar:
+            tar.extractall(path=temp_dir)
+
+        # 查找解压后的备份目录
+        backup_dirs = [d for d in temp_dir.iterdir() if d.is_dir() and d.name.startswith("mongodb_backup_")]
+        if not backup_dirs:
+            logger.error("备份文件格式错误: 未找到MongoDB备份目录")
+            return False
+
+        mongodump_dir = backup_dirs[0]
+        logger.info(f"找到MongoDB备份目录: {mongodump_dir}")
+
+        # 从应用获取MongoDB配置
+        app = import_app()
+
+        # MongoDB连接信息
+        host = app.config.get('MONGODB_HOST', 'localhost')
+        port = app.config.get('MONGODB_PORT', 27017)
+        user = app.config.get('MONGODB_USER')
+        password = app.config.get('MONGODB_PASSWORD')
+        db_name = app.config.get('MONGODB_DB', 'zchat')
+        auth_source = app.config.get('MONGODB_AUTH_SOURCE', 'admin')
+
+        # 构建恢复命令
+        cmd = [
+            "mongorestore",
+            f"--host={host}",
+            f"--port={port}",
+            f"--db={db_name}",
+            "--drop"  # 恢复前删除现有集合
+        ]
+
+        # 如果提供了认证信息，添加到命令中
+        if user and password:
+            cmd.extend([
+                f"--username={user}",
+                f"--password={password}",
+                f"--authenticationDatabase={auth_source}"
+            ])
+
+        # 添加备份目录路径
+        cmd.append(str(mongodump_dir / db_name))
+
+        logger.info("执行MongoDB恢复命令...")
+
+        # 执行恢复命令
+        process = subprocess.Popen(
+            cmd,
+            stderr=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            text=True
+        )
+
+        # 处理输出
+        for line in process.stdout:
+            if line.strip():
+                logger.info(f"mongorestore: {line.strip()}")
+
+        for line in process.stderr:
+            if line.strip():
+                logger.warning(f"mongorestore error: {line.strip()}")
+
+        # 等待进程完成
+        exit_code = process.wait()
+
+        if exit_code != 0:
+            raise Exception(f"mongorestore 进程退出，错误码: {exit_code}")
+
+        # 清理临时目录
+        shutil.rmtree(temp_dir)
+
+        # 计算总用时
+        elapsed_time = time.time() - start_time
+        logger.info(f"MongoDB数据已从 {backup_file} 恢复 (用时: {elapsed_time:.2f} 秒)")
+        return True
+    except Exception as e:
+        elapsed_time = time.time() - start_time
+        logger.error(f"MongoDB恢复失败: {e} (用时: {elapsed_time:.2f} 秒)")
         if temp_dir.exists():
             shutil.rmtree(temp_dir)
         return False
@@ -772,12 +1184,16 @@ def main():
 
     init_mysql_parser = subparsers.add_parser("init-mysql", help="初始化MySQL数据库")
 
+    init_mongodb_parser = subparsers.add_parser("init-mongodb", help="初始化MongoDB")
+
     init_search_parser = subparsers.add_parser("init-search", help="初始化MeiliSearch")
 
     # 状态命令
     status_parser = subparsers.add_parser("status", help="检查所有数据库状态")
 
     mysql_status_parser = subparsers.add_parser("mysql-status", help="检查MySQL状态")
+
+    mongodb_status_parser = subparsers.add_parser("mongodb-status", help="检查MongoDB状态")
 
     search_status_parser = subparsers.add_parser("search-status", help="检查MeiliSearch状态")
 
@@ -793,6 +1209,8 @@ def main():
 
     backup_mysql_parser = subparsers.add_parser("backup-mysql", help="备份MySQL数据库")
 
+    backup_mongodb_parser = subparsers.add_parser("backup-mongodb", help="备份MongoDB")
+
     # 恢复命令
     restore_parser = subparsers.add_parser("restore", help="从备份恢复")
     restore_parser.add_argument("--file", help="备份文件路径")
@@ -800,6 +1218,9 @@ def main():
 
     restore_mysql_parser = subparsers.add_parser("restore-mysql", help="恢复MySQL数据库")
     restore_mysql_parser.add_argument("--file", required=True, help="MySQL备份文件")
+
+    restore_mongodb_parser = subparsers.add_parser("restore-mongodb", help="恢复MongoDB")
+    restore_mongodb_parser.add_argument("--file", required=True, help="MongoDB备份文件")
 
     # 维护命令
     fix_parser = subparsers.add_parser("fix", help="尝试修复数据库问题")
@@ -817,12 +1238,16 @@ def main():
         init_all(args)
     elif args.command == "init-mysql":
         init_mysql(args)
+    elif args.command == "init-mongodb":
+        init_mongodb(args)
     elif args.command == "init-search":
         init_search(args)
     elif args.command == "status":
         check_all_status(args)
     elif args.command == "mysql-status":
         check_mysql_status(args)
+    elif args.command == "mongodb-status":
+        check_mongodb_status(args)
     elif args.command == "search-status":
         check_search_status(args)
     elif args.command == "reset-migrations":
@@ -831,10 +1256,14 @@ def main():
         create_full_backup(args)
     elif args.command == "backup-mysql":
         backup_mysql(args)
+    elif args.command == "backup-mongodb":
+        backup_mongodb(args)
     elif args.command == "restore":
         restore_full_backup(args)
     elif args.command == "restore-mysql":
         restore_mysql(args)
+    elif args.command == "restore-mongodb":
+        restore_mongodb(args)
     elif args.command == "fix":
         fix_database(args)
     elif args.command == "validate":
