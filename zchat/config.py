@@ -28,11 +28,6 @@ else:
         'db_path': os.environ.get('DOCUMENT_STORE_PATH', 'instance/document_store.db')
     }
 
-# MeiliSearch配置
-MEILISEARCH_HOST = os.environ.get('MEILISEARCH_HOST', 'http://meilisearch:7700')
-MEILISEARCH_KEY = os.environ.get('MEILISEARCH_KEY', 'aSampleMasterKey')
-MEILISEARCH_TIMEOUT = int(os.environ.get('MEILISEARCH_TIMEOUT', '10'))
-
 # 支付宝配置
 ALIPAY_APP_ID = os.environ.get('ALIPAY_APP_ID', '')
 ALIPAY_PRIVATE_KEY = os.environ.get('ALIPAY_PRIVATE_KEY', '')

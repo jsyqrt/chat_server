@@ -65,12 +65,6 @@ except Exception as e:
 done
 echo "MongoDB connection confirmed!"
 
-echo "Waiting for MeiliSearch..."
-until nc -z meilisearch 7700; do
-  sleep 1
-done
-echo "MeiliSearch is ready!"
-
 # 设置默认日志级别
 LOG_LEVEL=${LOG_LEVEL:-info}
 echo "Setting log level to: $LOG_LEVEL"
@@ -78,7 +72,7 @@ echo "Setting log level to: $LOG_LEVEL"
 # 启动Gunicorn服务器
 echo "Starting Gunicorn server..."
 exec gunicorn -b 0.0.0.0:5000 \
-    --workers=1 \
+    --workers=4 \
     --threads=4 \
     --worker-class=gevent \
     --timeout 60 \

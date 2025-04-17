@@ -5,7 +5,7 @@
 """
 
 from flask import current_app
-from .monitoring import DBQueryTimer
+from . import DBQueryTimer
 
 def track_query(query_type):
     """

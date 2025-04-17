@@ -11,8 +11,6 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-      meilisearch:
-        condition: service_healthy
       mongodb:
         condition: service_healthy
     volumes:
@@ -23,9 +21,6 @@ services:
       - ./instance/log:/app/log
     environment:
       - FLASK_ENV=production
-      - MEILISEARCH_HOST=http://meilisearch:7700
-      - MEILISEARCH_KEY=aSampleMasterKey
-      - MEILISEARCH_TIMEOUT=10
       - SQLALCHEMY_DATABASE_URI=mysql+pymysql://zchat:zchat_password@mysql:3306/zchat
       # - DOCUMENT_STORE_TYPE=${DOCUMENT_STORE_TYPE:-mysql}  # 可选: mysql, mongodb
       - DOCUMENT_STORE_TYPE=mongodb  # 可选: mysql, mongodb
@@ -127,27 +122,6 @@ services:
       start_period: 30s
     command: ["--auth", "--bind_ip_all"]
 
-  # MeiliSearch搜索服务 - 支持高效搜索
-  meilisearch:
-    image: getmeili/meilisearch:v1.8.3
-    container_name: zchat-meilisearch
-    restart: always
-    volumes:
-      - ./instance/meilisearch-data:/meili_data
-    environment:
-      - MEILI_MASTER_KEY=aSampleMasterKey
-      - MEILI_NO_ANALYTICS=true
-      - MEILI_ENV=production
-      - MEILI_LOG_LEVEL=INFO
-    networks:
-      - zchat-network
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:7700/health"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
-
   # Prometheus监控
   prometheus:
     image: prom/prometheus:v2.50.1
@@ -200,19 +174,6 @@ services:
       - prometheus
     networks:
       - zchat-network
-
-# # 持久化卷
-# volumes:
-#   zchat-logs:
-#     driver: local
-#   mysql-data:
-#     driver: local
-#   meilisearch-data:
-#     driver: local
-#   prometheus-data:
-#     driver: local
-#   grafana-data:
-#     driver: local
 
 # 网络配置
 networks:

@@ -85,11 +85,6 @@ def create_app(test_config=None):
     except ImportError:
         print("No logging module found")
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
-
     # 健康检查端点，用于监控和负载均衡
     @app.route('/health')
     def health():
@@ -100,23 +95,15 @@ def create_app(test_config=None):
     from zchat.models.base import init_db
     init_db(app)
 
-    # 1.5 确保所有模型已被导入，这对Flask-Migrate非常重要
+    # 2. 确保所有模型已被导入，这对Flask-Migrate非常重要
     import zchat.models
 
-    # 2. 数据库组件（MongoDB + SQLAlchemy迁移）
+    # 3. 数据库组件
     from . import db
     db.init_app(app)
 
     from . import storage
     storage.init_app(app)
-
-    # # 3. 初始化 MeiliSearch
-    # try:
-    #     from . import meili
-    #     meili.init_app(app)
-    # except Exception as e:
-    #     app.logger.error(f"MeiliSearch 初始化失败: {str(e)}")
-    #     app.logger.warning("应用将在没有MeiliSearch的情况下继续运行")
 
     # 4. 初始化监控模块
     try:
@@ -192,14 +179,5 @@ def create_app(test_config=None):
     # 官网页面蓝图
     from . import website
     app.register_blueprint(website.bp)
-
-    # 初始化监控工具 (解决Grafana面板中缺少数据的问题)
-    try:
-        # 初始化用户活跃度监控
-        from . import user_monitor
-        user_monitor.init_app(app)
-        app.logger.info("用户活跃度监控初始化成功")
-    except Exception as e:
-        app.logger.error(f"用户活跃度监控初始化失败: {str(e)}")
 
     return app

@@ -24,23 +24,3 @@ def init_app(app):
 
     if 'DOCUMENT_STORE_TYPE' in app.config:
         app.logger.info(f"文档存储类型: {app.config['DOCUMENT_STORE_TYPE']}")
-
-    @app.route('/api/system/db-status', methods=['GET'])
-    def db_status_route():
-        # 只允许内部访问
-        from flask import request, jsonify
-        client_ip = request.remote_addr
-        if client_ip != '127.0.0.1' and not client_ip.startswith('10.') and not client_ip.startswith('172.'):
-            return jsonify({"error": "Unauthorized"}), 403
-
-        # 检查所有数据库状态
-        status = {
-            "mysql": {"status": "unknown"},
-            "document_store": {"status": "unknown", "type": current_app.config.get('DOCUMENT_STORE_TYPE', 'unknown')},
-            "meilisearch": {"status": "unknown"},
-        }
-
-        # Status checking implementation can be added back when needed
-        # Currently commented out in the original code
-
-        return jsonify(status)

@@ -5,7 +5,6 @@
 这个脚本提供了统一的命令行界面，用于管理Zchat应用的所有数据库相关操作：
 - MySQL数据库的初始化和迁移管理（包含文档存储）
 - MongoDB文档存储的管理
-- MeiliSearch索引管理
 - 数据库备份和恢复
 - 数据库状态检查和故障排除
 
@@ -55,8 +54,6 @@ def import_app():
 
         # 设置基本配置（从docker-compose.yml中获取）
         os.environ.setdefault('SQLALCHEMY_DATABASE_URI', 'mysql+pymysql://zchat:zchat_password@localhost:3306/zchat')
-        os.environ.setdefault('MEILISEARCH_HOST', 'http://localhost:7700')
-        os.environ.setdefault('MEILISEARCH_KEY', 'aSampleMasterKey')
         os.environ.setdefault('DOCUMENT_STORE_TYPE', 'mysql')  # 默认使用MySQL文档存储
 
         app = create_app()
@@ -168,41 +165,6 @@ def reset_mysql_migrations(args):
     # 初始化MySQL
     init_mysql(args)
     print("迁移已重置")
-
-# ========== MeiliSearch管理函数 ==========
-
-def init_search(args):
-    """初始化MeiliSearch"""
-    app = import_app()
-
-    with app.app_context():
-        try:
-            # 假设meili模块包含初始化搜索引擎的功能
-            from zchat import meili
-            meili.init_indexes()
-            logger.info("MeiliSearch初始化完成")
-        except Exception as e:
-            logger.error(f"MeiliSearch初始化失败: {e}")
-
-def check_search_status(args):
-    """检查MeiliSearch状态"""
-    app = import_app()
-
-    with app.app_context():
-        try:
-            from zchat import meili
-
-            print("=== MeiliSearch状态 ===")
-            print(f"MeiliSearch URL: {app.config.get('MEILISEARCH_URL')}")
-
-            # 检查索引
-            indexes = meili.get_client().get_indexes()
-            print(f"索引数量: {len(indexes)}")
-
-            for idx in indexes:
-                print(f"  - {idx.uid} (文档数: {idx.get_stats()['numberOfDocuments']})")
-        except Exception as e:
-            print(f"检查MeiliSearch状态失败: {e}")
 
 # ========== 备份和恢复函数 ==========
 
@@ -1070,10 +1032,6 @@ def init_all(args):
     logger.info("初始化MySQL...")
     init_mysql(args)
 
-    # 初始化MeiliSearch
-    logger.info("初始化MeiliSearch...")
-    init_search(args)
-
     logger.info("所有数据库初始化完成")
 
 def check_all_status(args):
@@ -1084,9 +1042,6 @@ def check_all_status(args):
     # 检查MySQL
     check_mysql_status(args)
     print("\n")
-
-    # 检查MeiliSearch
-    check_search_status(args)
 
 def fix_database(args):
     """修复数据库问题"""
@@ -1186,16 +1141,12 @@ def main():
 
     init_mongodb_parser = subparsers.add_parser("init-mongodb", help="初始化MongoDB")
 
-    init_search_parser = subparsers.add_parser("init-search", help="初始化MeiliSearch")
-
     # 状态命令
     status_parser = subparsers.add_parser("status", help="检查所有数据库状态")
 
     mysql_status_parser = subparsers.add_parser("mysql-status", help="检查MySQL状态")
 
     mongodb_status_parser = subparsers.add_parser("mongodb-status", help="检查MongoDB状态")
-
-    search_status_parser = subparsers.add_parser("search-status", help="检查MeiliSearch状态")
 
     # 迁移管理命令
     reset_migrations_parser = subparsers.add_parser("reset-migrations", help="重置数据库迁移（谨慎使用）")

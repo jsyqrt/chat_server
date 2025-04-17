@@ -78,6 +78,9 @@ def init_app(app):
         app.logger.error(f"监控模块初始化失败: {str(e)}")
         raise
 
+    from . import user_monitor
+    user_monitor.init_app(app)
+
     # 注册监控蓝图
     app.register_blueprint(bp, url_prefix='/metrics')
 

@@ -4,7 +4,7 @@ import re
 import logging
 from typing import Dict, List, Tuple, Generator, Optional, Any
 import time
-from ..api_monitor import APIMonitor, monitor_api_call  # 导入API监控工具
+from ..monitoring.api_monitor import APIMonitor, monitor_api_call  # 导入API监控工具
 
 # 模型名称映射：根据基础模型名和平台名，提供平台特定的模型名称
 MODEL_MAPPINGS: Dict[str, Dict[str, str]] = {
@@ -123,6 +123,7 @@ def get_response_from_llm(messages: List[Dict[str, str]], model: str, max_tokens
         raise RuntimeError(f"LLM请求失败: {str(last_error)}") from last_error
     return "无法获取LLM响应，请稍后重试"
 
+@monitor_api_call("llm_stream")  # 添加API监控装饰器
 def get_response_from_llm_stream(messages: List[Dict[str, str]], model: str, max_tokens: int, platform: str = "groq") -> Generator[str, None, None]:
     """
     向LLM发送请求并流式获取响应

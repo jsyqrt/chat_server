@@ -7,7 +7,7 @@ API调用监控工具
 import functools
 import time
 from flask import current_app
-from .monitoring import record_api_request
+from . import record_api_request
 
 def monitor_api_call(api_name):
     """

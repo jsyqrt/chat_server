@@ -670,10 +670,10 @@ class RoadmapOps:
             mindmap['updated_at'] = time.time()
 
             delete_result = delete_mindmap_nosql(current_app, mindmap_id=mindmap_id)
-            current_app.logger.debug(f'meili delete_result: {delete_result}')
+            current_app.logger.debug(f'nosql delete_result: {delete_result}')
 
             add_result = add_mindmap_nosql(current_app, mindmap)
-            current_app.logger.debug(f'meili add_result: {add_result}')
+            current_app.logger.debug(f'nosql add_result: {add_result}')
 
             current_app.logger.info(f'reset_official_roadmaps: {roadmap_id} {roadmap_title} {roadmap_subtitle} {roadmap_type} {roadmap_kind} {roadmap_status} {mindmap_id}')
 

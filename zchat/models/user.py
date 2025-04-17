@@ -8,7 +8,7 @@ from flask_login import UserMixin
 
 from zchat.models.base import db
 # from zchat.rand import *
-from zchat.db_monitor import track_query, SELECT, INSERT, UPDATE, DELETE, COMPLEX  # 导入数据库监控装饰器
+from zchat.monitoring.db_monitor import track_query, SELECT, INSERT, UPDATE, DELETE, COMPLEX  # 导入数据库监控装饰器
 
 from sqlalchemy.orm import relationship
 from zchat.models.subscription import AccountType, SubscriptionType

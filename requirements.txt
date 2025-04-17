@@ -61,8 +61,5 @@ alipay-sdk-python==3.6.0
 # pycryptodome==3.19.1  # 用于支付宝签名验证
 cryptography==43.0.1
 
-# 原有的MeiliSearch客户端保留
-meilisearch==0.31.3
-
 # 进度条
 tqdm==4.67.0

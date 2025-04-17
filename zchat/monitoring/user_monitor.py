@@ -160,6 +160,7 @@ def init_app(app):
 
     # 注册蓝图
     app.register_blueprint(bp)
+    app.logger.info("用户活跃度监控初始化成功")
 
     # 请求计数器，用于区分应用关闭和请求结束
     @app.before_request
