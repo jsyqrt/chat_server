@@ -5,7 +5,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 import logging
 from logging.handlers import RotatingFileHandler
 
-def create_app(test_config=None):
+def create_app(test_config=None, tool_mode=False):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
@@ -84,6 +84,11 @@ def create_app(test_config=None):
         logger.init_app(app)
     except ImportError:
         print("No logging module found")
+
+    # 如果是工具模式，这里提前返回应用实例
+    if tool_mode:
+        app.logger.info("以工具模式启动应用，跳过蓝图注册和非必要组件")
+        return app
 
     # 健康检查端点，用于监控和负载均衡
     @app.route('/health')

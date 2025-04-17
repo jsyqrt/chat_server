@@ -7,6 +7,7 @@ WORKDIR /app
 RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && sed -i 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
 
+# 首先安装基本工具
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     build-essential \
@@ -14,6 +15,21 @@ RUN apt-get update \
     netcat-openbsd \
     default-mysql-client \
     curl \
+    gnupg \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# 手动下载并安装MongoDB工具（支持ARM64和x86_64架构）
+RUN ARCH=$(dpkg --print-architecture) \
+    && if [ "$ARCH" = "arm64" ]; then \
+        MONGO_TOOLS_URL="https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2004-arm64-100.7.0.deb"; \
+    else \
+        MONGO_TOOLS_URL="https://fastdl.mongodb.org/tools/db/mongodb-database-tools-debian10-x86_64-100.7.0.deb"; \
+    fi \
+    && wget -q $MONGO_TOOLS_URL -O mongo-tools.deb \
+    && apt-get update \
+    && apt-get install -y ./mongo-tools.deb \
+    && rm -f mongo-tools.deb \
     && rm -rf /var/lib/apt/lists/*
 
 # 复制项目文件
