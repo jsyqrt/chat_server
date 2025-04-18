@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, send_from_directory, current_app
 
 bp = Blueprint('website', __name__)
 
@@ -8,6 +8,10 @@ def index():
     # 检测用户设备类型，但在服务器端不做任何处理
     # 设备类型的判断和跳转由前端JS处理
     return render_template('index.html')
+
+@bp.route('/favicon.ico')
+def favicon():
+    return send_from_directory(current_app.static_folder, 'favicon.ico')
 
 @bp.route('/download')
 def download():

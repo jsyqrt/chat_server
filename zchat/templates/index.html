@@ -9,20 +9,22 @@
     <!-- 引入字体图标 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- 添加网站图标 -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <!-- 预加载重要资源 -->
+    <link rel="preload" href="{{ url_for('static', filename='images/icon.png') }}" as="image">
+    <link rel="preload" href="{{ url_for('static', filename='images/heading.jpg') }}" as="image">
 </head>
 <body>
     <!-- 导航栏 -->
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="职路logo">
+                <img src="{{ url_for('static', filename='images/icon.png') }}" alt="职路logo">
                 <h1>职路</h1>
             </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="#features">产品特色</a></li>
-                    <li><a href="#benefits">核心优势</a></li>
                     <li><a href="#download">立即下载</a></li>
                     <li><a href="#about">关于我们</a></li>
                 </ul>
@@ -37,15 +39,15 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>开启您的职业成功之旅</h2>
-                <p>职路，专业的职业发展平台，为您提供全方位的求职指导、简历优化、面试准备和职业规划服务。</p>
+                <h2>职业成长，从精准规划开始</h2>
+                <p>领先一步的职业导航，让梦想有明确的坐标</p>
                 <div class="hero-btns">
                     <a href="#download" class="btn btn-primary">立即下载</a>
                     <a href="#features" class="btn btn-secondary">了解更多</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="{{ url_for('static', filename='images/app-showcase.png') }}" alt="职路应用展示">
+                <img src="{{ url_for('static', filename='images/heading.jpg') }}" alt="职路应用展示">
             </div>
         </div>
     </section>
@@ -57,102 +59,38 @@
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>简历优化</h3>
-                    <p>AI驱动的简历优化工具，帮助您打造专业的简历，提高求职成功率。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>AI面试助手</h3>
-                    <p>模拟真实面试场景，提供个性化的面试技巧和答案指导。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
                         <i class="fas fa-road"></i>
                     </div>
                     <h3>职业规划</h3>
-                    <p>根据您的技能、兴趣和目标，提供定制化的职业发展路径。</p>
+                    <p>AI动态规划成长方向，实时追踪行业趋势调整路径</p>
+                    <p>拆解目标为可执行任务，缩短成长周期，拒绝无效努力</p>
                 </div>
+
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3>职位匹配</h3>
-                    <p>智能推荐最适合您的职位，精准匹配您的专业技能与雇主需求。</p>
+                    <h3>简历定制</h3>
+                    <p>智能拆解JD隐藏关键词，精准提升简历匹配度</p>
+                    <p>一键生成最优方案，进一步提升面试邀约率</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 核心优势 -->
-    <section id="benefits" class="benefits">
-        <div class="container">
-            <h2 class="section-title">核心优势</h2>
-            <div class="benefits-wrapper">
-                <div class="benefit-content">
-                    <div class="benefit-item">
-                        <h3><i class="fas fa-robot"></i> AI技术驱动</h3>
-                        <p>运用先进的人工智能技术，提供个性化的职业发展建议和求职指导。</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="benefit-item">
-                        <h3><i class="fas fa-user-tie"></i> 行业专家支持</h3>
-                        <p>汇集各行业资深HR和职业发展专家，提供专业的指导与建议。</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3><i class="fas fa-chart-line"></i> 数据驱动决策</h3>
-                        <p>基于大数据分析，帮助您做出更明智的职业决策。</p>
-                    </div>
+                    <h3>职位分析</h3>
+                    <p> AI解析千万条招聘信息，深度提取企业隐性需求 </p>
+                    <p> 结合行业大数据，实时呈现岗位晋升路径，求职决策快人一步 </p>
                 </div>
-                <div class="benefit-image">
-                    <img src="{{ url_for('static', filename='images/benefits.png') }}" alt="职路核心优势">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 用户评价 -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">用户评价</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"职路帮助我优化了简历，收到了梦想公司的面试邀请。面试助手功能让我充满信心地应对了每一个问题。"</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bars"></i>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="用户头像">
-                        <div>
-                            <h4>张先生</h4>
-                            <p>软件工程师</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"作为一名应届毕业生，我通过职路的职业规划功能找到了适合自己的发展方向，现在已经在理想的公司工作了。"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="{{ url_for('static', filename='images/user2.jpg') }}" alt="用户头像">
-                        <div>
-                            <h4>李女士</h4>
-                            <p>市场营销专员</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"职路的职位匹配功能太棒了，为我推荐的工作机会都非常符合我的期望，让我的求职过程高效又轻松。"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="{{ url_for('static', filename='images/user3.jpg') }}" alt="用户头像">
-                        <div>
-                            <h4>王先生</h4>
-                            <p>产品经理</p>
-                        </div>
-                    </div>
+                    <h3>职业测评</h3>
+                    <p>三维模型（性格/能力/大数据）诊断职业基因，挖掘优势</p>
+                    <p>对标高薪岗位人才画像，转行跳槽少走弯路</p>
                 </div>
             </div>
         </div>
@@ -164,15 +102,12 @@
             <h2 class="section-title">立即下载</h2>
             <p class="download-subtitle">随时随地，开启您的职业发展之旅</p>
             <div class="app-badges">
-                <a href="https://apps.apple.com/cn/app/职路/id123456789" class="app-badge" id="ios-download">
-                    <img src="{{ url_for('static', filename='images/app-store-badge.png') }}" alt="App Store下载">
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.zhilu.app" class="app-badge" id="android-download">
-                    <img src="{{ url_for('static', filename='images/google-play-badge.png') }}" alt="Google Play下载">
+                <a href="https://app.mi.com/details?id=com.edu_paths.zhilu" class="app-badge" id="android-download">
+                    <img src="{{ url_for('static', filename='images/mi_store.png') }}" alt="小米应用商店下载">
                 </a>
             </div>
             <div class="qr-code">
-                <img src="{{ url_for('static', filename='images/download-qr.png') }}" alt="扫码下载职路APP">
+                <img src="{{ url_for('static', filename='images/download_qr.png') }}" alt="扫码下载职路APP">
                 <p>扫描二维码下载</p>
             </div>
         </div>
@@ -183,9 +118,9 @@
         <div class="container">
             <h2 class="section-title">关于我们</h2>
             <div class="about-content">
-                <p>职路由一群热爱职业发展领域的专业人士创立，我们致力于利用科技的力量，帮助每个人找到适合自己的职业道路，实现个人价值。</p>
-                <p>我们的团队汇集了人工智能专家、职业顾问、人力资源专家和产品设计师，共同打造这款专注于职业发展的应用。</p>
-                <p>我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。</p>
+                <p>职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错</p>
+                <p>我们的团队汇集了人工智能专家、职业专家顾问、前顶尖猎头合伙人，大厂资深AI算法团队，人力资源专家，共同打造这款专注于职业发展的应用</p>
+                <p>我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，不走弯路</p>
             </div>
         </div>
     </section>
@@ -195,7 +130,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="职路logo">
+                    <img src="{{ url_for('static', filename='images/icon.png') }}" alt="职路logo">
                     <h3>职路</h3>
                     <p>您的职业发展伙伴</p>
                 </div>
@@ -204,42 +139,31 @@
                         <h4>公司</h4>
                         <ul>
                             <li><a href="#about">关于我们</a></li>
-                            <li><a href="#!">新闻动态</a></li>
                             <li><a href="#!">加入我们</a></li>
                             <li><a href="#!">联系我们</a></li>
                         </ul>
                     </div>
                     <div class="footer-links-group">
-                        <h4>产品</h4>
-                        <ul>
-                            <li><a href="#features">产品特色</a></li>
-                            <li><a href="#benefits">核心优势</a></li>
-                            <li><a href="#download">下载应用</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-group">
                         <h4>支持</h4>
                         <ul>
-                            <li><a href="#!">帮助中心</a></li>
-                            <li><a href="#!">用户指南</a></li>
                             <li><a href="#!">常见问题</a></li>
-                            <li><a href="#!">隐私政策</a></li>
-                            <li><a href="#!">服务条款</a></li>
+                            <li><a href="/customer_service/privacy_policy">隐私政策</a></li>
+                            <li><a href="/customer_service/terms_of_service">服务条款</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="footer-social">
                     <h4>关注我们</h4>
                     <div class="social-icons">
-                        <a href="#!"><i class="fab fa-weixin"></i></a>
-                        <a href="#!"><i class="fab fa-weibo"></i></a>
-                        <a href="#!"><i class="fab fa-qq"></i></a>
-                        <a href="#!"><i class="fab fa-tiktok"></i></a>
+                        <a href="#!" aria-label="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#!" aria-label="微博"><i class="fab fa-weibo"></i></a>
+                        <a href="#!" aria-label="QQ"><i class="fab fa-qq"></i></a>
+                        <a href="#!" aria-label="抖音"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 职路科技有限公司. 保留所有权利.</p>
+                <p>&copy; 2025 职路APP. 保留所有权利.</p>
             </div>
         </div>
     </footer>
@@ -278,7 +202,7 @@
                     // 根据设备品牌设置不同的下载链接
                     if (isXiaomi) {
                         // 小米应用商店链接
-                        androidDownloadBtn.href = 'https://app.mi.com/details?id=com.zhilu.app';
+                        androidDownloadBtn.href = 'https://app.mi.com/details?id=com.edu_paths.zhilu';
                         androidDownloadBtn.querySelector('img').alt = '小米应用商店下载';
 
                         // 添加小米应用商店标识
@@ -322,7 +246,7 @@
                     }
                     else {
                         // 应用宝链接作为通用Android商店
-                        androidDownloadBtn.href = 'https://a.app.qq.com/o/simple.jsp?pkgname=com.zhilu.app';
+                        androidDownloadBtn.href = 'https://a.app.qq.com/o/simple.jsp?pkgname=com.edu_paths.zhilu';
                         androidDownloadBtn.querySelector('img').alt = '应用宝下载';
 
                         // 添加应用宝标识
@@ -349,12 +273,12 @@
 
                 // 添加各种应用商店链接
                 const storeLinks = [
-                    {name: '应用宝', url: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.zhilu.app'},
+                    {name: '应用宝', url: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.edu_paths.zhilu'},
                     {name: '华为应用商店', url: 'https://appgallery.huawei.com/search/职路'},
-                    {name: '小米应用商店', url: 'https://app.mi.com/details?id=com.zhilu.app'},
+                    {name: '小米应用商店', url: 'https://app.mi.com/details?id=com.edu_paths.zhilu'},
                     {name: 'OPPO应用商店', url: 'https://store.oppomobile.com/search?keyword=职路'},
                     {name: 'vivo应用商店', url: 'https://info.appstore.vivo.com.cn/detail/职路'},
-                    {name: '魅族应用商店', url: 'https://app.meizu.com/apps/public/detail?package_name=com.zhilu.app'}
+                    {name: '魅族应用商店', url: 'https://app.meizu.com/apps/public/detail?package_name=com.edu_paths.zhilu'}
                 ];
 
                 storeLinks.forEach(store => {

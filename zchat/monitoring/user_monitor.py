@@ -7,9 +7,7 @@
 from flask import current_app, g, request, session
 import threading
 import time
-from .monitoring import update_active_users
-from .models.base import db
-from .models.user import UserOps
+from . import update_active_users
 import logging
 from datetime import datetime, timedelta
 

@@ -26,6 +26,7 @@ def feedback():
 
     feedback = {
         'id': str(uuid.uuid4()),
+        'user_id': user_id,
         'content': content,
         'category': category,
         'image_urls': image_urls,

@@ -130,6 +130,7 @@ def create_from_jd_and_resume():
     current_app.logger.debug(f"received jd text: {jd}, resume text: {resume}")
 
     if len(file_records.keys()) > 0:
+        file_records['id'] = user_id
         file_records['user_id'] = user_id
         old_file_records = get_file_records_nosql(current_app, user_id)
         if old_file_records:
@@ -685,8 +686,6 @@ def recent_maps():
 
     mindmap_statuses = get_learning_list_nosql(current_app, user_id, offset, limit)
 
-    current_app.logger.debug(f'mindmap_statuses: {mindmap_statuses}')
-
     recent_maps = []
     for mindmap_status in mindmap_statuses:
         # 确保 status 是字典对象
@@ -727,7 +726,7 @@ def recent_maps():
             mindmap = get_mindmap_nosql(current_app, recent_map['mindmap_id'])
             result = roadmap.to_dict()
             result['subtitle'] = stats_of_mindmap(mindmap)
-            current_app.logger.debug(f"mindmap: {mindmap}, recent_map_id: {recent_map['mindmap_id']}")
+            current_app.logger.debug(f"recent_map_id: {recent_map['mindmap_id']}")
             result['description'] = mindmap['description']
             result['completed'] = recent_map['completed_nodes']
             result['total'] = recent_map['total_nodes']

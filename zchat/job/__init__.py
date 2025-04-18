@@ -85,6 +85,7 @@ def analyze():
     current_app.logger.debug(f"received jd text: {jd}")
 
     if len(file_records.keys()) > 0:
+        file_records['id'] = user_id
         file_records['user_id'] = user_id
         old_file_records = get_file_records_nosql(current_app, user_id)
         if old_file_records:
