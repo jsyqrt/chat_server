@@ -408,39 +408,38 @@ def skill_tags_of_job_tags():
 def search_topic():
     topics = request.form.get('topics')
     topics = topics.split(',')
-    allow_user_created = request.form.get('allow_user_created', 'false') == 'true'
-    limit = int(request.form.get('limit', '5'))
+    offset = int(request.form.get('offset', '0'))
+    limit = int(request.form.get('limit', '10'))
 
-    current_app.logger.debug(f"search_topic: {topics}, allow_user_created: {allow_user_created}, limit: {limit}")
+    current_app.logger.debug(f"search_topic: {topics}, offset: {offset}, limit: {limit}")
 
     roadmap_ops = RoadmapOps(db.session)
-    result_ids = set()
-    results = {}
-    enough = False
-    for topic in topics:
-        roadmaps = roadmap_ops.search_roadmaps_for_topic(topic, RoadmapType.OFFICIAL.value, limit)
-        current_app.logger.debug(f"search_topic roadmaps official, count: {len(roadmaps)}")
-        if allow_user_created:
-            roadmaps.extend(roadmap_ops.search_roadmaps_for_topic(topic, RoadmapType.USER.value, limit))
-        current_app.logger.debug(f"search_topic roadmaps user, count: {len(roadmaps)}")
-        for roadmap in roadmaps:
-            if roadmap['id'] not in result_ids:
-                if len(results) < limit:
-                    result_ids.add(roadmap['id'])
-                    results[roadmap['id']] = roadmap
-                    mindmap = get_mindmap_nosql(current_app, roadmap['mindmap_id'])
-                    roadmap['description'] = mindmap['description']
-                    roadmap['subtitle'] = stats_of_mindmap(mindmap)
-                    roadmap['total_stages'] = len(mindmap.get('children', []))
-                else:
-                    enough = True
-                    break
-        if enough:
-            break
+    roadmaps = roadmap_ops.search_roadmaps_for_topics(topics, offset, limit)
+    for roadmap in roadmaps:
+        mindmap = get_mindmap_nosql(current_app, roadmap['mindmap_id'])
+        roadmap['description'] = mindmap['description']
+        roadmap['subtitle'] = stats_of_mindmap(mindmap)
+        roadmap['total_stages'] = len(mindmap.get('children', []))
 
-    current_app.logger.debug(f"search_topic results count: {len(results)}")
+    return jsonify(roadmaps)
 
-    return jsonify(list(results.values()))
+@bp.route('/hot_roadmaps', methods=['POST'])
+@login_required
+def hot_roadmaps():
+    roadmap_kind = request.form.get('roadmap_kind', RoadmapKind.JOB.value)
+    order_by = request.form.get('order_by', 'participanted')
+    offset = int(request.form.get('offset', '0'))
+    limit = int(request.form.get('limit', '10'))
+
+    roadmap_ops = RoadmapOps(db.session)
+    roadmaps = roadmap_ops.get_hot_roadmaps(roadmap_kind, order_by, offset, limit)
+    for roadmap in roadmaps:
+        mindmap = get_mindmap_nosql(current_app, roadmap['mindmap_id'])
+        roadmap['description'] = mindmap['description']
+        roadmap['subtitle'] = stats_of_mindmap(mindmap)
+        roadmap['total_stages'] = len(mindmap.get('children', []))
+
+    return jsonify(roadmaps)
 
 @bp.route('/my_roadmaps', methods=['GET'])
 @login_required
@@ -601,16 +600,15 @@ def get_map():
             mindmap = None
 
         interaction_ops = RoadmapInteractionOps(db.session)
-        interaction_stats = interaction_ops.get_stats(id)
 
         user_participated = interaction_ops.participated(id, current_user.get_id_int())
 
         return jsonify({
             'user_participated': user_participated,
-            'participants': interaction_stats['participants'],
-            'completions': interaction_stats['completions'],
-            'favorites': interaction_stats['favorites'],
-            'shares': interaction_stats['shares'],
+            'participants': roadmap.participanted,
+            'completions': roadmap.completed,
+            'favorites': roadmap.favorited,
+            'shares': roadmap.shared,
             'title': roadmap.roadmap_title,
             'type': roadmap.roadmap_type,
             'kind': roadmap.roadmap_kind,

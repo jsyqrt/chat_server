@@ -9,6 +9,11 @@ from flask import current_app, url_for
 from zchat.models.base import db
 from zchat.nosql import add_mindmap_nosql, delete_mindmap_nosql
 
+class RoadmapStatus(Enum):
+    UNKNOWN = 0
+    PRIVATE = 1
+    PUBLIC = 2
+
 # 使用db.Model定义SQLAlchemy模型
 class Roadmap(db.Model):
     """学习路径模型"""
@@ -20,7 +25,7 @@ class Roadmap(db.Model):
     roadmap_subtitle = db.Column(db.String(255), nullable=False)
     roadmap_type = db.Column(db.String(50), nullable=False) # official, user
     roadmap_kind = db.Column(db.String(50), nullable=False) # industry, job, skill, skill_group, topic
-    roadmap_status = db.Column(db.Integer, nullable=False, default=0) # 0->create, 1->verified, 2->public
+    roadmap_status = db.Column(db.Integer, nullable=False, default=RoadmapStatus.UNKNOWN.value) # 0->unknown, 1->private, 2->public
 
     mindmap_id = db.Column(db.String(255), nullable=False)
     created_by = db.Column(db.String(255), nullable=True)
@@ -31,6 +36,12 @@ class Roadmap(db.Model):
 
     create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
     update_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
+
+    viewed = db.Column(db.Integer, nullable=False, default=0)
+    participanted = db.Column(db.Integer, nullable=False, default=0)
+    completed = db.Column(db.Integer, nullable=False, default=0)
+    favorited = db.Column(db.Integer, nullable=False, default=0)
+    shared = db.Column(db.Integer, nullable=False, default=0)
 
     __table_args__ = (
         db.Index('index_ROADMAP_title', 'roadmap_title', unique=False),
@@ -45,6 +56,11 @@ class Roadmap(db.Model):
         db.Index('index_ROADMAP_skill_tag', 'skill_tag', unique=False),
         db.Index('index_ROADMAP_create_timestamp', 'create_timestamp', unique=False),
         db.Index('index_ROADMAP_update_timestamp', 'update_timestamp', unique=False),
+        db.Index('index_ROADMAP_viewed', 'viewed', unique=False),
+        db.Index('index_ROADMAP_participanted', 'participanted', unique=False),
+        db.Index('index_ROADMAP_completed', 'completed', unique=False),
+        db.Index('index_ROADMAP_favorited', 'favorited', unique=False),
+        db.Index('index_ROADMAP_shared', 'shared', unique=False),
     )
 
     def to_dict(self):
@@ -63,6 +79,11 @@ class Roadmap(db.Model):
             'skill_tag': self.skill_tag,
             'created_at': self.create_timestamp,
             'updated_at': self.update_timestamp,
+            'viewed': self.viewed,
+            'participanted': self.participanted,
+            'completed': self.completed,
+            'favorited': self.favorited,
+            'shared': self.shared,
         }
 
 class RoadmapInteraction(db.Model):
@@ -116,11 +137,19 @@ class RoadmapInteractionOps:
         if interaction:
             if interaction.viewed == 0:
                 interaction.viewed = 1
+                roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+                if roadmap:
+                    roadmap.viewed += 1
                 self.session.commit()
                 return True
         else:
             interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, viewed=1)
             self.session.add(interaction)
+
+            roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+            if roadmap:
+                roadmap.viewed += 1
+
             self.session.commit()
             return True
 
@@ -135,11 +164,20 @@ class RoadmapInteractionOps:
         if interaction:
             if interaction.participanted == 0:
                 interaction.participanted = 1
+                roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+                if roadmap:
+                    roadmap.participanted += 1
+
                 self.session.commit()
                 return True
         else:
             interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, participanted=1)
             self.session.add(interaction)
+
+            roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+            if roadmap:
+                roadmap.participanted += 1
+
             self.session.commit()
             return True
 
@@ -157,11 +195,20 @@ class RoadmapInteractionOps:
             if interaction.completed == 0:
                 interaction.participanted = 1
                 interaction.completed = 1
+                roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+                if roadmap:
+                    roadmap.completed += 1
+
                 self.session.commit()
                 return True
         else:
             interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, participanted=1, completed=1)
             self.session.add(interaction)
+
+            roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+            if roadmap:
+                roadmap.completed += 1
+
             self.session.commit()
             return True
 
@@ -170,11 +217,20 @@ class RoadmapInteractionOps:
         if interaction:
             if interaction.favorited == 0:
                 interaction.favorited = 1
+                roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+                if roadmap:
+                    roadmap.favorited += 1
+
                 self.session.commit()
                 return True
         else:
             interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, favorited=1)
             self.session.add(interaction)
+
+            roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+            if roadmap:
+                roadmap.favorited += 1
+
             self.session.commit()
             return True
 
@@ -186,6 +242,10 @@ class RoadmapInteractionOps:
         interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
         if interaction:
             interaction.favorited = 0
+            roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+            if roadmap:
+                roadmap.favorited -= 1
+
             self.session.commit()
             return True
         return False
@@ -193,28 +253,48 @@ class RoadmapInteractionOps:
     def share(self, roadmap_id: str, user_id: str)->bool:
         interaction = self.session.query(RoadmapInteraction).filter_by(roadmap_id=roadmap_id, user_id=user_id).first()
         if interaction:
-            interaction.shared += 1
+            if interaction.shared == 0:
+                interaction.shared = 1
+                roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+                if roadmap:
+                    roadmap.shared += 1
+
             self.session.commit()
             return True
         else:
             interaction = RoadmapInteraction(roadmap_id=roadmap_id, user_id=user_id, shared=1)
             self.session.add(interaction)
+
+            roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
+            if roadmap:
+                roadmap.shared += 1
+
             self.session.commit()
             return True
 
-    def get_stats(self, roadmap_id: str)->dict:
+    def get_viewed_count_of_roadmap(self, roadmap_id: str)->int:
         from sqlalchemy import func, Integer
+        return self.session.query(func.cast(func.count(RoadmapInteraction.user_id), Integer)).filter_by(roadmap_id=roadmap_id, viewed=1).scalar()
 
-        participant_count = self.session.query(func.cast(func.coalesce(func.sum(RoadmapInteraction.participanted), 0), Integer)).filter_by(roadmap_id=roadmap_id).scalar()
-        completion_count = self.session.query(func.cast(func.coalesce(func.sum(RoadmapInteraction.completed), 0), Integer)).filter_by(roadmap_id=roadmap_id).scalar()
-        favorite_count = self.session.query(func.cast(func.coalesce(func.sum(RoadmapInteraction.favorited), 0), Integer)).filter_by(roadmap_id=roadmap_id).scalar()
-        share_count = self.session.query(func.cast(func.coalesce(func.sum(RoadmapInteraction.shared), 0), Integer)).filter_by(roadmap_id=roadmap_id).scalar()
+    def get_completions_count_of_roadmap(self, roadmap_id: str)->int:
+        from sqlalchemy import func, Integer
+        return self.session.query(func.cast(func.count(RoadmapInteraction.user_id), Integer)).filter_by(roadmap_id=roadmap_id, completed=1).scalar()
 
+    def get_favorites_count_of_roadmap(self, roadmap_id: str)->int:
+        from sqlalchemy import func, Integer
+        return self.session.query(func.cast(func.count(RoadmapInteraction.user_id), Integer)).filter_by(roadmap_id=roadmap_id, favorited=1).scalar()
+
+    def get_shares_count_of_roadmap(self, roadmap_id: str)->int:
+        from sqlalchemy import func, Integer
+        return self.session.query(func.cast(func.count(RoadmapInteraction.user_id), Integer)).filter_by(roadmap_id=roadmap_id, shared=1).scalar()
+
+    def get_stats(self, roadmap_id: str)->dict:
         return {
-            'participants': participant_count,
-            'completions': completion_count,
-            'favorites': favorite_count,
-            'shares': share_count,
+            'viewed': self.get_viewed_count_of_roadmap(roadmap_id),
+            'participants': self.get_participants_count_of_roadmap(roadmap_id),
+            'completions': self.get_completions_count_of_roadmap(roadmap_id),
+            'favorites': self.get_favorites_count_of_roadmap(roadmap_id),
+            'shares': self.get_shares_count_of_roadmap(roadmap_id),
         }
 
 class RoadmapOps:
@@ -697,30 +777,37 @@ class RoadmapOps:
         from sqlalchemy import func, Integer
         return self.session.query(func.cast(func.count(Roadmap.roadmap_id), Integer)).filter_by(created_by=user_id).scalar()
 
-    def search_roadmaps_with_title_like(self, title: str)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_title.like(f'%{title}%')).all()
+    def search_roadmaps_with_title_like(self, title: str, offset: int=0, limit: int=10)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_title.like(f'%{title}%') & (Roadmap.roadmap_status == 2)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
-    def search_roadmaps_with_industry_tag_like(self, industry_tag: str)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.industry_tag.like(f'%{industry_tag}%')).all()
+    def search_roadmaps_with_industry_tag_like(self, industry_tag: str, offset: int=0, limit: int=10)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.industry_tag.like(f'%{industry_tag}%')).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
-    def search_roadmaps_with_job_tag_like(self, job_tag: str)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.job_tag.like(f'%{job_tag}%')).all()
+    def search_roadmaps_with_job_tag_like(self, job_tag: str, offset: int=0, limit: int=10)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.job_tag.like(f'%{job_tag}%')).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
-    def search_roadmaps_with_skill_tag_like(self, skill_tag: str)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.skill_tag.like(f'%{skill_tag}%')).all()
+    def search_roadmaps_with_skill_tag_like(self, skill_tag: str, offset: int=0, limit: int=10)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.skill_tag.like(f'%{skill_tag}%')).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
-    def search_roadmaps_for_topic(self, topic, roadmap_type, limit: int=10)->list:
+    def search_roadmaps_for_topics(self, topics: list, offset: int=0, limit: int=10)->list:
+        from sqlalchemy import or_
+
+        query_filters = []
+        for topic in topics:
+            query_filters.append(
+                (Roadmap.roadmap_title.like(f'%{topic}%') |
+                Roadmap.industry_tag.like(f'%{topic}%') |
+                Roadmap.job_tag.like(f'%{topic}%') |
+                Roadmap.skill_tag.like(f'%{topic}%'))
+            )
+
         roadmaps = self.session.query(Roadmap).filter(
-            Roadmap.roadmap_type == roadmap_type,
-            (Roadmap.roadmap_title.like(f'%{topic}%') |
-            Roadmap.industry_tag.like(f'%{topic}%') |
-            Roadmap.job_tag.like(f'%{topic}%') |
-            Roadmap.skill_tag.like(f'%{topic}%'))
-        ).distinct().limit(limit).all()
+            or_(*query_filters)
+        ).distinct().order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
     def all_industry_tags(self)->list:
@@ -739,24 +826,17 @@ class RoadmapOps:
         public_roadmaps = self.session.query(Roadmap).filter_by(roadmap_status=2).all()
         return [roadmap.to_dict() for roadmap in public_roadmaps]
 
-    def verify_roadmap(self, roadmap_id: str)->bool:
+    def set_roadmap_public(self, roadmap_id: str)->bool:
         roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
         if roadmap:
-            roadmap.roadmap_status = 1
+            roadmap.roadmap_status = RoadmapStatus.PUBLIC.value
             self.session.commit()
         return True
 
-    def publish_roadmap(self, roadmap_id: str)->bool:
+    def set_roadmap_private(self, roadmap_id: str)->bool:
         roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
         if roadmap:
-            roadmap.roadmap_status = 2
-            self.session.commit()
-        return True
-
-    def private_roadmap(self, roadmap_id: str)->bool:
-        roadmap = self.session.query(Roadmap).filter_by(roadmap_id=roadmap_id).first()
-        if roadmap:
-            roadmap.roadmap_status = 0
+            roadmap.roadmap_status = RoadmapStatus.PRIVATE.value
             self.session.commit()
         return True
 
@@ -770,3 +850,20 @@ class RoadmapOps:
             self.session.delete(roadmap)
             self.session.commit()
         return True
+
+    def get_hot_roadmaps(self, roadmap_kind: str, order_by: str, offset: int=0, limit: int=10)->list:
+        if order_by == 'viewed':
+            order_by_field = Roadmap.viewed
+        elif order_by == 'participanted':
+            order_by_field = Roadmap.participanted
+        elif order_by == 'completed':
+            order_by_field = Roadmap.completed
+        elif order_by == 'favorited':
+            order_by_field = Roadmap.favorited
+        elif order_by == 'shared':
+            order_by_field = Roadmap.shared
+        else:
+            order_by_field = Roadmap.create_timestamp
+
+        roadmaps = self.session.query(Roadmap).filter_by(roadmap_kind=roadmap_kind).order_by(order_by_field.desc(), Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+        return [roadmap.to_dict() for roadmap in roadmaps]
