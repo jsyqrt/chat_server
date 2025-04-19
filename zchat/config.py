@@ -10,6 +10,12 @@ LOG_LEVEL = os.environ.get('LOG_LEVEL', 'info')
 SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:///zchat.db')
 # SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+# Redis配置
+REDIS_HOST = os.environ.get('REDIS_HOST', 'redis')
+REDIS_PORT = int(os.environ.get('REDIS_PORT', 6379))
+REDIS_PASSWORD = os.environ.get('REDIS_PASSWORD', None)
+REDIS_DB = int(os.environ.get('REDIS_DB', 0))
+
 # 文档存储配置
 # 默认使用MySQL，如果设置了其他存储类型则使用其他存储类型
 DOCUMENT_STORE_TYPE = os.environ.get('DOCUMENT_STORE_TYPE', 'mysql')

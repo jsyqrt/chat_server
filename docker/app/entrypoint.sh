@@ -65,6 +65,37 @@ except Exception as e:
 done
 echo "MongoDB connection confirmed!"
 
+# 等待Redis准备就绪
+echo "Waiting for Redis..."
+until nc -z redis 6379; do
+  sleep 1
+done
+echo "Redis is ready!"
+
+# 进一步验证Redis连接是否真正可用
+echo "Verifying Redis connectivity..."
+until python -c "
+import redis
+try:
+    client = redis.Redis(
+        host='redis',
+        port=6379,
+        password='zchat_password',
+        db=0,
+        socket_timeout=2
+    )
+    client.ping()
+    client.close()
+    exit(0)
+except Exception as e:
+    print(f'Error connecting to Redis: {e}')
+    exit(1)
+" >/dev/null 2>&1; do
+  echo "Waiting for Redis to be fully operational..."
+  sleep 2
+done
+echo "Redis connection confirmed!"
+
 # 设置默认日志级别
 LOG_LEVEL=${LOG_LEVEL:-info}
 echo "Setting log level to: $LOG_LEVEL"

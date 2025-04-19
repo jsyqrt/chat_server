@@ -13,6 +13,8 @@ services:
         condition: service_healthy
       mongodb:
         condition: service_healthy
+      redis:
+        condition: service_healthy
     volumes:
       - ./zchat:/app/zchat
       - ./scripts:/app/scripts
@@ -35,6 +37,10 @@ services:
       - MONGODB_PASSWORD=zchat_password
       - MONGODB_DB=zchat
       - MONGODB_AUTH_SOURCE=admin
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=zchat_password
+      - REDIS_DB=0
       - LOG_LEVEL=${LOG_LEVEL:-info}
       - SF_ZCHAT_API_KEY=${SF_ZCHAT_API_KEY:-UNKNOWN}
       - IS_DOCKER=true
@@ -174,6 +180,23 @@ services:
       - prometheus
     networks:
       - zchat-network
+
+  # Redis服务 - 用于缓存和共享状态
+  redis:
+    image: redis:7.0
+    container_name: zchat-redis
+    restart: always
+    command: redis-server --requirepass zchat_password
+    volumes:
+      - ./instance/redis-data:/data
+    networks:
+      - zchat-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "zchat_password", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
 # 网络配置
 networks:

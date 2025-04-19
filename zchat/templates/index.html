@@ -37,6 +37,8 @@
 
     <!-- 主横幅 -->
     <section class="hero">
+        <!-- 数据流效果 -->
+        <div class="data-stream" id="heroDataStream"></div>
         <div class="container">
             <div class="hero-content">
                 <h2>职业成长，从精准规划开始</h2>
@@ -54,34 +56,19 @@
 
     <!-- 特色功能 -->
     <section id="features" class="features">
+        <!-- 数据流效果 -->
+        <div class="data-stream" id="featuresDataStream"></div>
         <div class="container">
             <h2 class="section-title">产品特色</h2>
             <div class="feature-grid">
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-road"></i>
                     </div>
                     <h3>职业规划</h3>
-                    <p>AI动态规划成长方向，实时追踪行业趋势调整路径</p>
-                    <p>拆解目标为可执行任务，缩短成长周期，拒绝无效努力</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>简历定制</h3>
-                    <p>智能拆解JD隐藏关键词，精准提升简历匹配度</p>
-                    <p>一键生成最优方案，进一步提升面试邀约率</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>职位分析</h3>
-                    <p> AI解析千万条招聘信息，深度提取企业隐性需求 </p>
-                    <p> 结合行业大数据，实时呈现岗位晋升路径，求职决策快人一步 </p>
+                    <p class="typing" data-text="AI精准规划成长方向，实时追踪行业趋势调整路径"></p>
+                    <p class="typing" data-text="拆解目标为可执行任务，缩短成长周期，拒绝无效努力"></p>
                 </div>
 
                 <div class="feature-card">
@@ -89,18 +76,39 @@
                         <i class="fas fa-bars"></i>
                     </div>
                     <h3>职业测评</h3>
-                    <p>三维模型（性格/能力/大数据）诊断职业基因，挖掘优势</p>
-                    <p>对标高薪岗位人才画像，转行跳槽少走弯路</p>
+                    <p class="typing" data-text="三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势"></p>
+                    <p class="typing" data-text="对标高薪岗位人才画像，转行跳槽少走弯路"></p>
                 </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>职位分析</h3>
+                    <p class="typing" data-text="深度分析目标岗位，提取企业隐性需求"></p>
+                    <p class="typing" data-text="结合行业大数据，智能规划求职升职决策，快人一步"></p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>简历定制</h3>
+                    <p class="typing" data-text="智能拆解JD隐藏关键词，拉满简历匹配度"></p>
+                    <p class="typing" data-text="一键生成最优简历，大幅提升面试邀约率"></p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- 下载区域 -->
     <section id="download" class="download">
+        <!-- 浮动数据标签 -->
+        <div id="floatingDataContainer"></div>
         <div class="container">
             <h2 class="section-title">立即下载</h2>
-            <p class="download-subtitle">随时随地，开启您的职业发展之旅</p>
+            <p class="download-subtitle">随时随地，开启您的成功“职路”</p>
             <div class="app-badges">
                 <a href="https://app.mi.com/details?id=com.edu_paths.zhilu" class="app-badge" id="android-download">
                     <img src="{{ url_for('static', filename='images/mi_store.png') }}" alt="小米应用商店下载">
@@ -118,9 +126,9 @@
         <div class="container">
             <h2 class="section-title">关于我们</h2>
             <div class="about-content">
-                <p>职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错</p>
-                <p>我们的团队汇集了人工智能专家、职业专家顾问、前顶尖猎头合伙人，大厂资深AI算法团队，人力资源专家，共同打造这款专注于职业发展的应用</p>
-                <p>我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，不走弯路</p>
+                <p>职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。</p>
+                <p>我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。</p>
+                <p>我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有“职路”，不走弯路。</p>
             </div>
         </div>
     </section>
@@ -139,20 +147,18 @@
                         <h4>公司</h4>
                         <ul>
                             <li><a href="#about">关于我们</a></li>
-                            <li><a href="#!">加入我们</a></li>
                             <li><a href="#!">联系我们</a></li>
                         </ul>
                     </div>
                     <div class="footer-links-group">
                         <h4>支持</h4>
                         <ul>
-                            <li><a href="#!">常见问题</a></li>
                             <li><a href="/customer_service/privacy_policy">隐私政策</a></li>
                             <li><a href="/customer_service/terms_of_service">服务条款</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="footer-social">
+                <!-- <div class="footer-social">
                     <h4>关注我们</h4>
                     <div class="social-icons">
                         <a href="#!" aria-label="微信"><i class="fab fa-weixin"></i></a>
@@ -160,7 +166,7 @@
                         <a href="#!" aria-label="QQ"><i class="fab fa-qq"></i></a>
                         <a href="#!" aria-label="抖音"><i class="fab fa-tiktok"></i></a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="copyright">
                 <p>&copy; 2025 职路APP. 保留所有权利.</p>
@@ -172,6 +178,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // 检测设备类型
+            console.log('检测设备类型', navigator.userAgent);
             const userAgent = navigator.userAgent;
             const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
             const isAndroid = /Android/.test(userAgent);
@@ -179,6 +186,9 @@
             const isOppo = /OPPO|PAFM|PBFM|PCRM|PCGM|PCLM|PDHM/.test(userAgent);
             const isVivo = /vivo/.test(userAgent);
             const isHuawei = /HUAWEI|Honor/.test(userAgent);
+
+            // 检测屏幕尺寸
+            const isSmallScreen = window.matchMedia('(max-width: 992px)').matches;
 
             // 获取下载按钮和容器
             const iosDownloadBtn = document.getElementById('ios-download');
@@ -332,6 +342,414 @@
                     }
                 });
             });
+
+            // 获取所有特性卡片
+            const featureCards = document.querySelectorAll('.feature-card');
+
+            // 高亮卡片的类名
+            const highlightClass = 'feature-card-highlight';
+
+            // 当前高亮的卡片
+            let currentHighlightCard = null;
+
+            // 用于跟踪已触发过打字效果的卡片
+            const animatedCards = new Set();
+
+            // 预处理所有打字机效果文本
+            const typingElements = document.querySelectorAll('.feature-card p.typing');
+
+            // 处理每个打字机效果元素
+            typingElements.forEach(el => {
+                const text = el.getAttribute('data-text');
+                el.innerHTML = ''; // 清空原始内容
+
+                // 创建容器用于保存字符
+                const textContainer = document.createElement('span');
+                textContainer.className = 'text-container';
+                el.appendChild(textContainer);
+
+                // 为每个字符创建span
+                for (let i = 0; i < text.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = text[i];
+                    span.style.opacity = '0';
+                    textContainer.appendChild(span);
+                }
+
+                // 创建移动光标
+                const cursor = document.createElement('span');
+                cursor.className = 'cursor';
+                cursor.style.display = 'none';
+                el.appendChild(cursor);
+            });
+
+            // 移除所有卡片的高亮效果
+            function removeAllHighlights() {
+                featureCards.forEach(card => {
+                    card.classList.remove(highlightClass);
+                });
+                currentHighlightCard = null;
+            }
+
+            // 高亮特定卡片
+            function highlightCard(card) {
+                // 如果已经有高亮卡片且不是当前卡片，则移除高亮
+                if (currentHighlightCard && currentHighlightCard !== card) {
+                    currentHighlightCard.classList.remove(highlightClass);
+                }
+
+                // 高亮当前卡片
+                card.classList.add(highlightClass);
+                currentHighlightCard = card;
+            }
+
+            // 直接显示完整文本，不需要动画
+            function showCompleteText(elements) {
+                if (!elements || elements.length === 0) return;
+
+                elements.forEach(el => {
+                    // 隐藏光标
+                    const cursor = el.querySelector('.cursor');
+                    if (cursor) {
+                        cursor.style.display = 'none';
+                    }
+
+                    // 直接显示所有文字
+                    const spans = el.querySelectorAll('.text-container span');
+                    spans.forEach(span => {
+                        span.style.opacity = '1';
+                    });
+                });
+            }
+
+            // 初始化 - 在大屏幕上默认显示所有文本
+            if (!isSmallScreen) {
+                featureCards.forEach(card => {
+                    const cardTypingElements = card.querySelectorAll('p.typing');
+                    showCompleteText(cardTypingElements);
+                });
+            }
+
+            // 按顺序执行打字动画
+            function startSequentialTyping(elements) {
+                if (!elements || elements.length === 0) return;
+
+                // 先隐藏所有元素的光标
+                elements.forEach(el => {
+                    const cursor = el.querySelector('.cursor');
+                    if (cursor) {
+                        cursor.style.display = 'none';
+                    }
+
+                    // 重置所有文字为隐藏状态
+                    const spans = el.querySelectorAll('.text-container span');
+                    spans.forEach(span => {
+                        span.style.opacity = '0';
+                    });
+                });
+
+                let currentIndex = 0;
+                // 保存所有超时任务的ID，用于在需要时取消动画
+                const timeoutIds = [];
+
+                function typeNext() {
+                    if (currentIndex >= elements.length) return;
+
+                    const element = elements[currentIndex];
+                    const textContainer = element.querySelector('.text-container');
+                    const spans = textContainer.querySelectorAll('span');
+                    const cursor = element.querySelector('.cursor');
+
+                    // 显示当前行的光标
+                    if (cursor) {
+                        cursor.style.display = 'inline-block';
+                        // 初始位置在文本容器前面
+                        element.insertBefore(cursor, textContainer);
+                    }
+
+                    let currentCharIndex = 0;
+                    const letterDelay = 40; // 每个字母之间的延迟(ms)
+
+                    function revealNextChar() {
+                        if (currentCharIndex >= spans.length) {
+                            // 完成当前行打字
+                            const completionTimeoutId = setTimeout(() => {
+                                if (cursor) {
+                                    cursor.style.display = 'none';
+                                }
+
+                                // 如果不是最后一个元素，开始下一个
+                                currentIndex++;
+                                if (currentIndex < elements.length) {
+                                    typeNext();
+                                }
+                            }, 1000); // 最后一个字符后再等待1秒，光标再消失
+                            timeoutIds.push(completionTimeoutId);
+                            return;
+                        }
+
+                        // 显示当前字符
+                        const span = spans[currentCharIndex];
+                        span.style.opacity = '1';
+
+                        // 移动光标到当前字符后面
+                        if (cursor) {
+                            // 移除当前位置的光标
+                            cursor.remove();
+
+                            // 将光标插入到当前可见字符后面
+                            if (currentCharIndex < spans.length - 1) {
+                                // 插入到下一个字符之前
+                                textContainer.insertBefore(cursor, spans[currentCharIndex + 1]);
+                            } else {
+                                // 最后一个字符，放到文本容器的末尾
+                                textContainer.appendChild(cursor);
+                            }
+                        }
+
+                        // 递增索引并设置下一个字符的定时器
+                        currentCharIndex++;
+                        const nextCharTimeoutId = setTimeout(revealNextChar, letterDelay);
+                        timeoutIds.push(nextCharTimeoutId);
+                    }
+
+                    // 开始逐个显示字符
+                    revealNextChar();
+                }
+
+                // 开始第一个元素的打字动画
+                typeNext();
+
+                // 返回取消函数
+                return function cancelAnimation() {
+                    // 清除所有超时任务
+                    timeoutIds.forEach(id => clearTimeout(id));
+                };
+            }
+
+            // 保存每个卡片的活动动画取消函数
+            const activeAnimations = new Map();
+
+            // 大屏幕行为：鼠标悬停触发动画和高亮
+            if (!isSmallScreen) {
+                featureCards.forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        highlightCard(card);
+
+                        // 重置文本为隐藏状态
+                        const typingElements = card.querySelectorAll('p.typing .text-container span');
+                        typingElements.forEach(span => {
+                            span.style.opacity = '0';
+                        });
+
+                        // 开始打字动画
+                        const cardTypingElements = card.querySelectorAll('p.typing');
+                        const cancelAnimation = startSequentialTyping(cardTypingElements);
+
+                        // 保存取消函数
+                        activeAnimations.set(card, cancelAnimation);
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        card.classList.remove(highlightClass);
+                        currentHighlightCard = null;
+
+                        // 如果有活动的动画，取消它
+                        if (activeAnimations.has(card)) {
+                            const cancelAnimation = activeAnimations.get(card);
+                            if (cancelAnimation) cancelAnimation();
+                            activeAnimations.delete(card);
+                        }
+
+                        // 停止打字效果，直接显示完整内容
+                        const cardTypingElements = card.querySelectorAll('p.typing');
+                        showCompleteText(cardTypingElements);
+                    });
+                });
+            }
+            // 小屏幕行为：使用intersection observer
+            else {
+                // 添加防抖延时变量
+                let highlightDebounceTimeout = null;
+                const DEBOUNCE_DELAY = 500; // 500毫秒的防抖延迟
+
+                // 中间80%的区域观察选项
+                const observerOptions = {
+                    root: null,
+                    // 顶部和底部各缩小10%，只检测中间80%区域
+                    rootMargin: '-10% 0% -10% 0%',
+                    threshold: 0.8 // 当80%的元素可见时触发
+                };
+
+                // 为卡片添加观察器
+                const cardObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        const card = entry.target;
+
+                        // 如果卡片进入观察区域
+                        if (entry.isIntersecting) {
+                            // 清除之前的延时器
+                            clearTimeout(highlightDebounceTimeout);
+
+                            // 设置新的延时器
+                            highlightDebounceTimeout = setTimeout(() => {
+                                // 移除所有高亮
+                                removeAllHighlights();
+
+                                // 取消所有卡片的动画
+                                activeAnimations.forEach((cancelFn, c) => {
+                                    if (cancelFn) cancelFn();
+                                });
+                                activeAnimations.clear();
+
+                                // 高亮当前卡片
+                                highlightCard(card);
+
+                                // 获取卡片内所有打字效果元素
+                                const cardTypingElements = card.querySelectorAll('p.typing');
+
+                                // 检查该卡片是否已经触发过打字效果
+                                if (!animatedCards.has(card)) {
+                                    // 记录该卡片已触发打字效果
+                                    animatedCards.add(card);
+                                    // 开始打字动画
+                                    const cancelAnimation = startSequentialTyping(cardTypingElements);
+                                    activeAnimations.set(card, cancelAnimation);
+                                } else {
+                                    // 如果已触发过，则直接显示全部文字
+                                    showCompleteText(cardTypingElements);
+                                }
+                            }, DEBOUNCE_DELAY);
+                        }
+                        // 如果卡片离开观察区域
+                        else {
+                            // 清除之前的延时器
+                            clearTimeout(highlightDebounceTimeout);
+
+                            // 设置延时器来移除高亮，避免快速滚动时的闪烁
+                            highlightDebounceTimeout = setTimeout(() => {
+                                // 如果当前高亮的是这个卡片，则移除高亮
+                                if (currentHighlightCard === card) {
+                                    card.classList.remove(highlightClass);
+                                    currentHighlightCard = null;
+                                }
+
+                                // 如果有活动的动画，取消它
+                                if (activeAnimations.has(card)) {
+                                    const cancelAnimation = activeAnimations.get(card);
+                                    if (cancelAnimation) cancelAnimation();
+                                    activeAnimations.delete(card);
+                                }
+                            }, DEBOUNCE_DELAY);
+                        }
+                    });
+                }, observerOptions);
+
+                // 观察所有卡片
+                featureCards.forEach(card => {
+                    cardObserver.observe(card);
+
+                    // 初始化 - 默认显示所有卡片的文本
+                    const cardTypingElements = card.querySelectorAll('p.typing');
+                    showCompleteText(cardTypingElements);
+                });
+            }
+
+            // 创建数据流粒子效果
+            function createDataParticles(container, count) {
+                const dataStream = document.getElementById(container);
+                if (!dataStream) return;
+
+                for (let i = 0; i < count; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'data-particle';
+
+                    // 随机化粒子属性
+                    const y = Math.random() * 100; // 随机y位置 (%)
+                    const delay = Math.random() * 10; // 随机延迟
+                    const width = 5 + Math.random() * 15; // 随机宽度
+                    const height = 1 + Math.random() * 2; // 随机高度
+                    const opacity = 0.3 + Math.random() * 0.7; // 随机透明度
+
+                    // 设置样式
+                    particle.style.top = `${y}%`;
+                    particle.style.width = `${width}px`;
+                    particle.style.height = `${height}px`;
+                    particle.style.opacity = opacity;
+                    particle.style.animationDelay = `${delay}s`;
+                    particle.style.animationDuration = `${15 + Math.random() * 20}s`;
+
+                    // 添加到容器
+                    dataStream.appendChild(particle);
+                }
+            }
+
+            // 创建浮动数据标签
+            function createFloatingData() {
+                const dataTexts = [
+                    "职位分析进行中...",
+                    "职位分析完成，正在生成专属报告，5个核心技能强匹配，来看看吧",
+                    "简历定制完成，匹配度提升30%",
+                    "技能树定制完成，8个阶段，100+核心知识点，快来打卡吧",
+                    "匹配最优职位中...",
+                    "专属成长路径生成及技能树定制中...",
+                    "行业趋势分析中...",
+                    "简历匹配度分析中...",
+                    "职业能力评估中...",
+                    "职场竞争力提升中...",
+                    "简历曝光率提升中...",
+                    "面试机会增加中...",
+                    "薪资增长潜力提升中...",
+                    "职场竞争力+28%",
+                    "简历曝光率提升42%",
+                    "面试机会增加36%",
+                    "薪资增长潜力52%",
+                    "岗位需求增长17%",
+                ];
+
+                const container = document.getElementById('floatingDataContainer');
+                if (!container) return;
+
+                // 初始创建数据标签
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => createSingleFloatingData(), i * 2000);
+                }
+
+                // 持续创建新的数据标签
+                setInterval(createSingleFloatingData, 3000);
+
+                function createSingleFloatingData() {
+                    const dataElement = document.createElement('div');
+                    dataElement.className = 'floating-data';
+
+                    // 随机内容
+                    const randomText = dataTexts[Math.floor(Math.random() * dataTexts.length)];
+                    dataElement.textContent = randomText;
+
+                    // 随机位置
+                    const topPos = 10 + Math.random() * 80;
+                    dataElement.style.top = `${topPos}%`;
+
+                    // 随机动画持续时间
+                    const duration = 10 + Math.random() * 5;
+                    dataElement.style.animationDuration = `${duration}s`;
+
+                    // 添加到页面
+                    container.appendChild(dataElement);
+
+                    // 动画结束后移除元素
+                    setTimeout(() => {
+                        if (dataElement.parentNode === container) {
+                            container.removeChild(dataElement);
+                        }
+                    }, duration * 1000);
+                }
+            }
+
+            // 初始化数据流效果
+            createDataParticles('heroDataStream', 40);
+            createDataParticles('featuresDataStream', 35);
+            createFloatingData();
         });
     </script>
 </body>

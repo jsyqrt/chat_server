@@ -12,6 +12,8 @@ body {
     background-color: #f9f9f9;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 a {
@@ -34,6 +36,7 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .section-title {
@@ -231,7 +234,7 @@ img {
 
 .hero-content {
     flex: 1;
-    padding-right: 60px;
+    padding-right: 30px;
 }
 
 .hero-image {
@@ -291,12 +294,14 @@ img {
     padding: 100px 0;
     background-color: white;
     position: relative;
+    overflow: hidden;
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
     gap: 40px;
+    max-width: 100%;
 }
 
 .feature-card {
@@ -309,6 +314,30 @@ img {
     position: relative;
     z-index: 1;
     overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 添加高亮卡片样式 */
+.feature-card-highlight {
+    background: linear-gradient(135deg, #f4f8ff, #e8f0fe);
+    box-shadow: 0 20px 50px rgba(66, 133, 244, 0.15);
+    transform: translateY(-15px);
+    border: 1px solid rgba(66, 133, 244, 0.2);
+}
+
+.feature-card-highlight .feature-icon {
+    background: linear-gradient(135deg, #4285f4, #2b6fe3);
+    color: white;
+    transform: scale(1.1);
+}
+
+.feature-card-highlight h3 {
+    color: #4285f4;
+}
+
+.feature-card-highlight h3:after {
+    width: 70px;
 }
 
 .feature-card:hover {
@@ -385,12 +414,47 @@ img {
     color: #666;
     line-height: 1.8;
     margin-top: 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.feature-card p.typing {
+    color: #666;
+}
+
+.feature-card p.typing .text-container {
+    display: inline;
+    position: relative;
+}
+
+.feature-card p.typing span {
+    transition: opacity 0.1s ease;
+}
+
+.feature-card p.typing span.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: #4285f4;
+    animation: cursorBlink 1s infinite;
+    vertical-align: middle;
+    margin: 0 1px;
+    position: relative;
+}
+
+@keyframes cursorBlink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
 }
 
 /* 下载区域 */
 .download {
     padding: 100px 0 120px;
-    background: linear-gradient(160deg, #4285f4 0%, #2b6fe3 100%);
+    background: linear-gradient(135deg, #4285f4 0%, #2b6fe3 100%);
     color: white;
     text-align: center;
     position: relative;
@@ -411,18 +475,21 @@ img {
 
 .download .section-title {
     color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .download .section-title:after {
     background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .download-subtitle {
     max-width: 650px;
     margin: 0 auto 50px;
     font-size: 1.25rem;
-    opacity: 0.9;
+    opacity: 0.95;
     line-height: 1.7;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .app-badges {
@@ -433,7 +500,7 @@ img {
 }
 
 .app-badge {
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.25));
     transition: all 0.3s ease;
 }
 
@@ -443,7 +510,7 @@ img {
 }
 
 .app-badge:hover {
-    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.3));
     transform: translateY(-5px) scale(1.05);
 }
 
@@ -464,7 +531,7 @@ img {
     margin-bottom: 15px;
     background-color: white;
     padding: 10px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
 .qr-code p {
@@ -778,21 +845,42 @@ img {
         font-size: 2.5rem;
     }
 
-    .benefits-wrapper {
-        flex-direction: column;
-    }
-
-    .benefit-image {
-        order: -1;
-        margin-bottom: 30px;
-    }
-
     .feature-grid {
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        padding: 0 15px;
     }
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero .container,
+    .features .container,
+    .download .container,
+    .about .container {
+        padding: 20px;
+        border-radius: 12px;
+        margin: 0 10px;
+        max-width: calc(100% - 20px);
+    }
+
+    .feature-grid {
+        padding: 0;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        padding: 25px 20px;
+        margin: 0;
+        max-width: 90%;
+        width: 90%;
+    }
+
     .menu-toggle {
         display: block;
     }
@@ -853,14 +941,6 @@ img {
         margin: 0 auto;
     }
 
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .feature-card {
-        padding: 25px;
-    }
-
     .testimonial-slider {
         flex-direction: column;
         gap: 30px;
@@ -877,8 +957,28 @@ img {
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding: 130px 0 70px;
+    .hero .container,
+    .features .container,
+    .download .container,
+    .about .container {
+        padding: 15px;
+        border-radius: 10px;
+        margin: 0 15px;
+        max-width: calc(100% - 30px);
+    }
+
+    .feature-grid {
+        gap: 25px;
+    }
+
+    .feature-card {
+        padding: 20px 15px;
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .app-badges {
+        padding: 0 10px;
     }
 
     .section-title {
@@ -923,5 +1023,234 @@ img {
     .about-content p {
         font-size: 1.05rem;
     }
+}
+
+/* 动态背景效果 */
+.hero::after,
+.features::after,
+.about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.2;
+    background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='largeGrid' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 40 0 L 0 0 0 40' fill='none' stroke='%234285f4' stroke-width='0.8' opacity='0.7'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23largeGrid)'/%3E%3C/svg%3E");
+    animation: waveGridBackground 20s ease-in-out infinite alternate;
+    transform-origin: center center;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.download::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='largeGrid' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 40 0 L 0 0 0 40' fill='none' stroke='rgba(255, 255, 255, 0.3)' stroke-width='0.8' opacity='0.7'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23largeGrid)'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    animation: waveGridBackground 20s ease-in-out infinite alternate;
+    transform-origin: center center;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+@keyframes waveGridBackground {
+    0% {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1) skew(0deg, 0deg);
+    }
+    25% {
+        transform: perspective(1000px) rotateX(1deg) rotateY(2deg) scale(1.03) skew(-1deg, 0.5deg);
+    }
+    50% {
+        transform: perspective(1000px) rotateX(2deg) rotateY(0deg) scale(1.05) skew(1deg, -0.5deg);
+    }
+    75% {
+        transform: perspective(1000px) rotateX(1deg) rotateY(-2deg) scale(1.03) skew(0.5deg, 1deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateX(0deg) rotateY(-1deg) scale(1) skew(-0.5deg, -1deg);
+    }
+}
+
+/* 添加数据流动画效果 */
+.data-stream {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.data-stream .data-particle {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background-color: #4285f4;
+    animation: dataFlowHorizontal 15s linear infinite;
+    opacity: 0;
+    box-shadow: 0 0 4px rgba(66, 133, 244, 0.8);
+}
+
+@keyframes dataFlowHorizontal {
+    0% {
+        transform: translateX(calc(100vw + 100px));
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.8;
+    }
+    95% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+}
+
+/* 数字计数器动画 */
+.stats-counter {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #4285f4;
+    background: rgba(66, 133, 244, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 0 2px;
+    display: inline-block;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* 高亮闪烁效果 */
+@keyframes highlight {
+    0%, 100% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: rgba(66, 133, 244, 0.2);
+    }
+}
+
+.highlight {
+    animation: highlight 2s infinite;
+    border-radius: 2px;
+    padding: 0 3px;
+}
+
+/* 浮动数据标签 */
+.floating-data {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    animation: floatData 12s linear infinite;
+    transform: translate(100vw, 0);
+    white-space: nowrap;
+    font-weight: 500;
+    border-left: 3px solid #4285f4;
+}
+
+@keyframes floatData {
+    0% {
+        transform: translate(100vw, 0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-300px, 0);
+        opacity: 0;
+    }
+}
+
+/* AI计算背景 */
+.ai-calculation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.08;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ai-calculation::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image:
+        linear-gradient(rgba(66, 133, 244, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 133, 244, 0.2) 1px, transparent 1px),
+        repeating-linear-gradient(transparent, transparent 25px, rgba(66, 133, 244, 0.1) 25px, rgba(66, 133, 244, 0.1) 26px);
+    background-size: 26px 26px, 26px 26px, 100% 26px;
+    animation: aiCalc 60s linear infinite;
+}
+
+@keyframes aiCalc {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(5deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .container,
+    .features .container,
+    .download .container,
+    .about .container {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .feature-card p.typing::after {
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero .container,
+    .features .container,
+    .download .container,
+    .about .container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+}
+
+/* 全局修复布局抖动 */
+html {
+    overflow-x: hidden;
 }
 

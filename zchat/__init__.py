@@ -4,6 +4,7 @@ from flask import Flask
 from werkzeug.middleware.proxy_fix import ProxyFix
 import logging
 from logging.handlers import RotatingFileHandler
+import redis
 
 def create_app(test_config=None, tool_mode=False):
     # create and configure the app
@@ -94,6 +95,28 @@ def create_app(test_config=None, tool_mode=False):
     @app.route('/health')
     def health():
         return {'status': 'ok'}, 200
+
+    # 初始化Redis连接
+    redis_host = app.config.get('REDIS_HOST', 'redis')
+    redis_port = app.config.get('REDIS_PORT', 6379)
+    redis_password = app.config.get('REDIS_PASSWORD', None)
+    redis_db = app.config.get('REDIS_DB', 0)
+
+    try:
+        app.redis = redis.Redis(
+            host=redis_host,
+            port=redis_port,
+            password=redis_password,
+            db=redis_db,
+            decode_responses=True
+        )
+        # 测试Redis连接
+        app.redis.ping()
+        app.logger.info(f"Redis连接成功: {redis_host}:{redis_port}")
+    except Exception as e:
+        app.logger.error(f"Redis连接失败: {str(e)}")
+        app.logger.warning("应用将在没有Redis功能的情况下继续运行，某些功能可能不可用")
+        app.redis = None
 
     # 数据库初始化，按以下顺序处理，避免循环导入
     # 1. 初始化 SQLAlchemy - 这必须首先完成

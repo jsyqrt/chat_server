@@ -2,6 +2,7 @@ import functools
 import random
 import string
 import time
+import hashlib
 from collections import OrderedDict
 
 import jwt
@@ -22,62 +23,109 @@ def init_app(app):
     login_manager.init_app(app)
 
 def init_verification_code_dict(app):
-    # TODO change to thread-safe
-    app.vcode_dict = ExpiringDict()
+    # Redis实例已经在app中初始化，无需额外操作
+    pass
 
-class ExpiringDict(OrderedDict):
-    def __init__(self, expiration_time=60, cooldown_time=60):
-        super().__init__()
+def generate_secure_code(phone_number, length=6):
+    """生成安全的验证码，使用时间和手机号作为种子
+
+    Args:
+        phone_number: 手机号
+        length: 验证码长度，默认6位
+
+    Returns:
+        str: 生成的验证码
+    """
+    # 使用当前时间戳（精确到毫秒）和手机号作为种子
+    current_time_ms = int(time.time() * 1000)
+    seed_str = f"{phone_number}:{current_time_ms}:{current_app.config['SECRET_KEY']}"
+
+    # 使用哈希函数生成一个种子值
+    seed_hash = hashlib.md5(seed_str.encode()).hexdigest()
+    seed = int(seed_hash, 16) % 10000000  # 取模得到一个整数种子
+
+    # 使用种子初始化随机数生成器
+    random.seed(seed)
+
+    # 生成指定长度的数字验证码
+    verification_code = ''.join(random.choice(string.digits) for _ in range(length))
+
+    # 重置随机数生成器，避免影响其他使用随机数的地方
+    random.seed()
+
+    return verification_code
+
+class RedisVerificationCode:
+    def __init__(self, redis_client, expiration_time=60, cooldown_time=60):
+        self.redis = redis_client
         self.expiration_time = expiration_time
         self.cooldown_time = cooldown_time
+        self.prefix = "verification_code:"
+        self.timestamp_prefix = "verification_timestamp:"
 
     def __setitem__(self, key, value):
-        self.remove_expired_items()
-        super().__setitem__(key, (time.time(), value))
-
-    def remove_expired_items(self):
-        current_time = time.time()
-        for key, (insert_time, value) in list(self.items()):
-            if current_time - insert_time > self.expiration_time:
-                del self[key]
+        full_key = f"{self.prefix}{key}"
+        timestamp_key = f"{self.timestamp_prefix}{key}"
+        # Store both the code and the timestamp
+        pipe = self.redis.pipeline()
+        pipe.set(full_key, value, ex=self.expiration_time)
+        pipe.set(timestamp_key, time.time(), ex=self.expiration_time)
+        pipe.execute()
 
     def __getitem__(self, key):
-        self.remove_expired_items()
-        if key not in self:
+        full_key = f"{self.prefix}{key}"
+        timestamp_key = f"{self.timestamp_prefix}{key}"
+
+        # Get both the code and timestamp
+        code = self.redis.get(full_key)
+        timestamp = self.redis.get(timestamp_key)
+
+        if code is None or timestamp is None:
             return None
-        insert_time, value = super().__getitem__(key)
-        return (insert_time, value)
+
+        return (float(timestamp), code)
 
     def get(self, key, default=None):
-        try:
-            return self.__getitem__(key)
-        except:
-            return default
+        result = self.__getitem__(key)
+        return result if result is not None else default
 
     def can_resend(self, key):
         """Check if enough time has passed to allow resending a code"""
-        item = self.get(key)
-        if item is None:
+        timestamp_key = f"{self.timestamp_prefix}{key}"
+        timestamp = self.redis.get(timestamp_key)
+
+        if timestamp is None:
             return True
 
-        insert_time, _ = item
         current_time = time.time()
-        return current_time - insert_time > self.cooldown_time
+        return current_time - float(timestamp) > self.cooldown_time
+
+    def __delitem__(self, key):
+        full_key = f"{self.prefix}{key}"
+        timestamp_key = f"{self.timestamp_prefix}{key}"
+        pipe = self.redis.pipeline()
+        pipe.delete(full_key)
+        pipe.delete(timestamp_key)
+        pipe.execute()
 
 @bp.route('/verification_code', methods=['GET'])
 def verification_code():
     # TODO check if escape is needed
     phone_number = request.args.get('phone_number', '0')
-    verification_code = ''.join(random.choice(string.digits) for _ in range(6))
 
     if phone_number == '0':
         return { "error": "Invalid Phone Number!" }, 400
 
+    # Get the Redis verification code handler
+    vcode_handler = RedisVerificationCode(current_app.redis)
+
     # Check if we can send a new code (cooldown period)
-    if not current_app.vcode_dict.can_resend(phone_number):
+    if not vcode_handler.can_resend(phone_number):
         return { "error": "Please wait before requesting another code" }, 429
 
-    current_app.vcode_dict[phone_number] = verification_code
+    # 使用增强的安全验证码生成方法
+    verification_code = generate_secure_code(phone_number)
+    vcode_handler[phone_number] = verification_code
 
     current_app.logger.debug(f"auth/verification_code returns: phone: {phone_number}, code: {verification_code}")
 
@@ -133,7 +181,10 @@ def login():
     if phone_number == '0' or verification_code == '0':
         return { "error": "Invalid Phone Number or Verification Code!" }, 400
 
-    code_data = current_app.vcode_dict.get(phone_number)
+    # Get the Redis verification code handler
+    vcode_handler = RedisVerificationCode(current_app.redis)
+
+    code_data = vcode_handler.get(phone_number)
     if code_data is None:
         return { "error": "Verification code not found or expired" }, 400
 
@@ -141,16 +192,16 @@ def login():
     current_time = time.time()
 
     # Check if the code has expired
-    if current_time - insert_time > current_app.vcode_dict.expiration_time:
+    if current_time - insert_time > vcode_handler.expiration_time:
         # Remove expired code
-        del current_app.vcode_dict[phone_number]
+        del vcode_handler[phone_number]
         return { "error": "Verification code has expired" }, 400
 
     if verification_code != expected_code:
         return { "error": "Incorrect verification code" }, 400
 
     # Remove the used verification code
-    del current_app.vcode_dict[phone_number]
+    del vcode_handler[phone_number]
 
     # 处理邀请者ID
     inviter_id = None
@@ -210,17 +261,9 @@ def admin_required(func):
 @login_required
 def logout():
     user_id = current_user.get_id_int()
-    current_app.logger.debug(f'loging out user id, {user_id}')
-    try:
-        sid = app.get_user_session(user_id)
-        if sid:
-            app.socketio.disconnect(sid)
+    current_app.logger.debug(f'logging out user id, {user_id}')
 
-        logout_user()
-        current_app.remove_user_session(user_id)
-
-    except Exception as e:
-        pass
+    logout_user()
 
     return jsonify(
         {
