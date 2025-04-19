@@ -25,15 +25,15 @@ MINDMAP_JSON_SCHEMA = """
         },
         "industry_tag": {
             "type": "string",
-            "description": "行业标签"
+            "description": "行业标签, 该思维导图适用于哪个行业，可以为空字符串"
         },
         "job_tag": {
             "type": "string",
-            "description": "岗位标签"
+            "description": "岗位标签, 该思维导图适用于哪个岗位，可以为空字符串"
         },
         "skill_tag": {
             "type": "string",
-            "description": "技能标签"
+            "description": "技能标签, 该思维导图针对哪些技能，用逗号分隔，可以为空字符串"
         }
     },
     "required": [

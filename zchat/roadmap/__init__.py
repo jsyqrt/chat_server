@@ -27,8 +27,26 @@ class RoadmapType(Enum):
     USER = 'user'
 
 class RoadmapKind(Enum):
-    SKILL = 'skill'
+    INDUSTRY = 'industry'
     JOB = 'job'
+    SKILL = 'skill'
+    SKILL_GROUP = 'skill_group'
+    TOPIC = 'topic'
+
+    @staticmethod
+    def from_string(kind_str):
+        if kind_str == 'industry':
+            return RoadmapKind.INDUSTRY
+        elif kind_str == 'job':
+            return RoadmapKind.JOB
+        elif kind_str == 'skill':
+            return RoadmapKind.SKILL
+        elif kind_str == 'skill_group':
+            return RoadmapKind.SKILL_GROUP
+        elif kind_str == 'topic':
+            return RoadmapKind.TOPIC
+        else:
+            raise ValueError(f"Invalid roadmap kind: {kind_str}")
 
 class RoadmapStatus(Enum):
     CREATED = 0
@@ -263,6 +281,7 @@ def restore_all_roadmaps():
 @login_required
 def create_from_topic():
     topic = request.form.get('topic')
+    kind = request.form.get('kind')
     skill_level = request.form.get('skill_level')
     learning_goal = request.form.get('learning_goal', '')
     user_background = request.form.get('user_background', '')
@@ -278,13 +297,13 @@ def create_from_topic():
     max_retries = 3
     while not is_valid and max_retries > 0:
         try:
-            mindmap = mindmap_from_topic(topic, skill_level, learning_goal, user_background, other_prompts)
+            mindmap = mindmap_from_topic(topic, kind, skill_level, learning_goal, user_background, other_prompts)
             if mindmap:
                 mindmap = json.loads(mindmap)
                 is_valid = True
         except Exception as e:
             # try again
-            mindmap = mindmap_from_topic(topic, skill_level, learning_goal, user_background, other_prompts)
+            mindmap = mindmap_from_topic(topic, kind, skill_level, learning_goal, user_background, other_prompts)
             max_retries -= 1
 
     if not mindmap:
@@ -303,7 +322,7 @@ def create_from_topic():
     roadmap_title = topic
     roadmap_subtitle = learning_goal
     roadmap_type = RoadmapType.USER.value
-    roadmap_kind = RoadmapKind.SKILL.value
+    roadmap_kind = RoadmapKind.from_string(kind)
     roadmap_status = RoadmapStatus.VERIFIED.value
     mindmap_id = mindmap['id']
     industry_tag = mindmap['industry_tag']

@@ -5,6 +5,8 @@ from zchat.roadmap.common_prompts import MINDMAP_JSON_SCHEMA, MINDMAP_GENERATION
 system_prompt_template = """
 您是一位专业的学习路径设计专家，擅长创建结构化、全面的学习计划。您的任务是为用户提供一个详细的学习路径，帮助他们掌握所需的知识和技能。
 
+主题可能是行业、职业、技能、技能组、概念等不同类型，请根据主题的类型，选择合适的知识范围和深度。
+
 请分析用户提供的主题，并考虑以下因素：
 1. 主题的广度和深度
 2. 用户当前的知识水平（如果提供）
@@ -20,14 +22,33 @@ system_prompt_template = """
    - 专业工具和技术
    - 最佳实践和标准
 
-2. 如果主题是职业或者职位或者公司组织机构中的角色，还需包括以下内容，否则不需要：
+2. 如果主题是行业类型，还需包括以下内容：
+   - 行业现状和趋势
+   - 行业标准和规范
+   - 行业最佳实践
+   - 行业未来发展方向，包括AI时代下的行业发展趋势
+
+3. 如果主题是职业类型，还需包括以下内容：
    - 必备软技能（沟通、团队协作等）
    - 行业认证和资质
    - 职业发展阶段和晋升路径
    - 不同级别的职责和要求
    - 实践项目和经验积累方法
+   - 其他相关的职业信息，包括行业，技能，发展趋势等
+   - AI时代下的职业发展趋势，包括AI对职业的影响，AI时代下的职业发展路径等
 
-3. 学习资源和方法：
+4. 如果主题是技能或者技能组类型，还需包括以下内容：
+   - 技能的定义和分类
+   - 技能的实践方法
+   - 技能的评估标准
+   - 技能的实践项目
+   - 技能的进阶路径
+   - 其他相关的技能
+   - AI时代下的技能发展趋势，包括使用AI工具和平台等
+
+5. 如果主题是概念类型，区分主题是关于行业，职业，技能，技能组，还是其他概念，并根据对应的类型，选择合适的知识范围和深度。
+
+6. 学习资源和方法：
    - 推荐的学习顺序
    - 阶段性学习目标
    - 实践应用场景
@@ -62,6 +83,11 @@ topic_prompt_template = """
 {topic}
 """
 
+kind_prompt_template = """
+## 学习主题类型
+{kind}
+"""
+
 skill_level_prompt_template = """
 ## 当前水平
 {skill_level}
@@ -78,15 +104,16 @@ user_background_prompt_template = """
 """
 
 other_prompts_template = """
-## 其他用户输入的提示，在生成思维导图时需要考虑
+## 用户输入的其他提示，在生成思维导图时需要考虑
 {other_prompts}
 """
 
-def get_llm_response(topic, skill_level, learning_goal, user_background, other_prompts):
+def get_llm_response(topic, kind, skill_level, learning_goal, user_background, other_prompts):
   messages=[
     {"role": "system", "content": system_prompt_template},
     {"role": "user", "content":
         topic_prompt_template.format(topic=topic) + \
+        (kind_prompt_template.format(kind=kind) if kind else '') + \
         (skill_level_prompt_template.format(skill_level=skill_level) if skill_level else '') + \
         (learning_goal_prompt_template.format(learning_goal=learning_goal) if learning_goal else '') + \
         (user_background_prompt_template.format(user_background=user_background) if user_background else '') + \
@@ -101,8 +128,8 @@ def get_llm_response(topic, skill_level, learning_goal, user_background, other_p
 def parse_llm_response(response):
   return get_json_blocks_from_llm_response(response)
 
-def mindmap_from_topic(topic, skill_level, learning_goal, user_background, other_prompts):
-  response = get_llm_response(topic, skill_level, learning_goal, user_background, other_prompts)
+def mindmap_from_topic(topic, kind, skill_level, learning_goal, user_background, other_prompts):
+  response = get_llm_response(topic, kind, skill_level, learning_goal, user_background, other_prompts)
   json_blocks = parse_llm_response(response)
   print(json_blocks)
   if len(json_blocks) == 0:
@@ -115,6 +142,10 @@ def mindmap_from_topic(topic, skill_level, learning_goal, user_background, other
 if __name__ == "__main__":
   topic = """
   招聘基础知识
+  """
+
+  kind = """
+  job
   """
 
   learning_goal = """
@@ -133,5 +164,5 @@ if __name__ == "__main__":
   希望能够在3个月内掌握招聘技能，并能独立负责公司的招聘工作
   """
 
-  mindmap_json = mindmap_from_topic(topic, skill_level, learning_goal, user_background, other_prompts)
+  mindmap_json = mindmap_from_topic(topic, kind, skill_level, learning_goal, user_background, other_prompts)
   print(mindmap_json)

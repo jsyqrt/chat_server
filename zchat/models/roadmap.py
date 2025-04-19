@@ -19,7 +19,7 @@ class Roadmap(db.Model):
     roadmap_title = db.Column(db.String(255), nullable=False)
     roadmap_subtitle = db.Column(db.String(255), nullable=False)
     roadmap_type = db.Column(db.String(50), nullable=False) # official, user
-    roadmap_kind = db.Column(db.String(50), nullable=False) # role, skill, concept
+    roadmap_kind = db.Column(db.String(50), nullable=False) # industry, job, skill, skill_group, topic
     roadmap_status = db.Column(db.Integer, nullable=False, default=0) # 0->create, 1->verified, 2->public
 
     mindmap_id = db.Column(db.String(255), nullable=False)
