@@ -77,10 +77,7 @@ class InvitationOps:
             # 为邀请人添加积分
             inviter_success = points_ops.add_invitation_points(inviter_id)
 
-            # 为被邀请人添加积分
-            invitee_success = points_ops.add_invitation_points(invitee_id)
-
-            if inviter_success and invitee_success:
+            if inviter_success:
                 # 记录邀请关系
                 invitation = self.record_invitation(inviter_id, invitee_id, reward_points)
                 return invitation is not None

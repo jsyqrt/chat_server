@@ -107,7 +107,6 @@ class UserOps:
             from zchat.models.invitation import InvitationOps
             invitation_ops = InvitationOps(self.session)
 
-            # TODO with better random name
             user = User(
                 phone_number=phone_number,
                 nickname=self.username_with_phone_number_suffix(phone_number),

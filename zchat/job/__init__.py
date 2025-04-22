@@ -118,11 +118,9 @@ def analyze():
         'file_records': file_records,
         'created_at': time.time(),
         'updated_at': time.time(),
+        'points_spent': points_spent,
     }
     add_jd_record_nosql(current_app, user_id, jd_record)
-
-    # 添加积分消耗信息
-    jd_record['points_spent'] = points_spent
 
     return jsonify(jd_record)
 
