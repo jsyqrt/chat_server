@@ -14,6 +14,10 @@ def privacy_policy():
 def terms_of_service():
     return render_template('customer_service/terms_of_service.html')
 
+@bp.route('/premium_service_agreement', methods=['GET'])
+def premium_service_agreement():
+    return render_template('customer_service/premium_service_agreement.html')
+
 @bp.route('/feedback', methods=['POST'])
 @login_required
 def feedback():
