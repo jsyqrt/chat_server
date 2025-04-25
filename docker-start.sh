@@ -120,6 +120,28 @@ EOL
         # 创建临时Nginx配置用于证书申请
         mkdir -p ./certbot-webroot/.well-known/acme-challenge
 
+        # 创建临时Nginx配置文件
+        cat > ./certbot-nginx.conf << EOL
+server {
+    listen 80;
+    server_name ${DOMAIN_NAME};
+
+    # 设置根目录
+    root /var/www/html;
+
+    # 确保.well-known/acme-challenge能被正确访问
+    location /.well-known/acme-challenge/ {
+        allow all;
+        try_files \$uri =404;
+    }
+
+    # 其他请求返回404
+    location / {
+        return 404;
+    }
+}
+EOL
+
         cat > docker-compose.certbot-nginx.yml << EOL
 version: '3.8'
 services:
@@ -130,6 +152,7 @@ services:
       - "80:80"
     volumes:
       - ./certbot-webroot:/var/www/html
+      - ./certbot-nginx.conf:/etc/nginx/conf.d/default.conf
     command: nginx -g 'daemon off;'
 EOL
 
@@ -163,6 +186,7 @@ EOL
         # 清理临时文件
         rm -f docker-compose.certbot.yml
         rm -f docker-compose.certbot-nginx.yml
+        rm -f certbot-nginx.conf
     else
         echo "警告: SSL证书未找到"
         echo "创建自签名证书用于开发..."
@@ -212,6 +236,15 @@ fi
 
 echo "SF_ZCHAT_API_KEY: ${SF_ZCHAT_API_KEY:-UNKNOWN}"
 
+# 显示Docker卷状态和信息
+echo "检查Docker卷状态..."
+echo "现有Docker卷:"
+docker volume ls | grep -E 'mysql_data|mongodb_data|redis_data|grafana_data|prometheus_data|app_logs' || echo "没有找到Zchat相关卷，将在启动时自动创建"
+
+echo "Docker卷存储位置: $(docker info | grep "Docker Root Dir" | awk '{print $4}')/volumes"
+echo "提示: 如果需要将卷数据存储在其他位置，可修改/etc/docker/daemon.json配置文件"
+echo "      添加 {\"data-root\": \"/path/to/data/disk/docker\"} 并重启Docker服务"
+
 # 构建和启动容器
 echo "启动 Docker 容器..."
 # 创建临时 docker-compose-override.yml 用于注入环境变量
@@ -230,6 +263,8 @@ EOL
 # 导出环境变量以便Docker Compose使用
 export DEPLOY_MODE
 
+# 启动容器
+echo "使用命名卷部署，解决权限问题..."
 docker-compose up -d --build
 
 # 删除临时 override 文件
@@ -240,6 +275,10 @@ echo "检查服务状态..."
 sleep 10
 docker-compose ps
 
+# 检查Docker卷状态
+echo "检查Docker卷状态..."
+docker volume ls | grep -E 'mysql_data|mongodb_data|redis_data|grafana_data|prometheus_data|app_logs'
+
 echo ""
 echo "启动完成! 您现在可以访问:"
 echo "- 应用: https://${DOMAIN_NAME}"
@@ -249,6 +288,18 @@ fi
 echo "- Grafana: http://${DOMAIN_NAME}:3000 (默认用户名/密码: admin/admin)"
 echo "- 应用日志级别: ${LOG_LEVEL}"
 echo "- 部署模式: $([ "$DEV_MODE" = true ] && echo "开发模式" || echo "生产模式")"
+echo ""
+echo "数据卷备份说明:"
+echo "1. 备份卷数据: docker run --rm -v 卷名:/source -v \$(pwd)/backups:/backup alpine tar -czf /backup/卷名_backup.tar.gz -C /source ."
+echo "2. 恢复卷数据: docker run --rm -v 卷名:/target -v \$(pwd)/backups:/backup alpine sh -c \"cd /target && tar -xzf /backup/卷名_backup.tar.gz\""
+echo ""
+echo "查看卷数据和日志:"
+echo "1. 查看应用日志: docker-compose logs -f app"
+echo "2. 查看卷内容列表: docker run --rm -v 卷名:/data -it alpine ls -la /data"
+echo "3. 查看日志文件: docker run --rm -v app_logs:/logs -it alpine tail -f /logs/app.log"
+echo "4. 在容器内查看: docker exec -it zchat-app bash -c \"tail -f /app/log/app.log\""
+echo "5. MySQL慢查询日志: docker exec -it zchat-mysql bash -c \"tail -f /var/log/mysql/slow.log\""
+echo "6. 复制卷文件到主机: docker run --rm -v app_logs:/logs -v \$(pwd)/host-logs:/host-logs alpine cp -r /logs/* /host-logs/"
 echo ""
 echo "可以使用以下命令查看日志:"
 echo "  docker-compose logs -f app"

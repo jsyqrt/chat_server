@@ -20,7 +20,7 @@ services:
       - ./scripts:/app/scripts
       - ./migrations:/app/migrations
       - ./instance:/app/instance
-      - ./instance/log:/app/log
+      - app_logs:/app/log
     environment:
       - FLASK_ENV=production
       - SQLALCHEMY_DATABASE_URI=mysql+pymysql://zchat:zchat_password@mysql:3306/zchat
@@ -89,7 +89,7 @@ services:
       - MYSQL_USER=zchat
       - MYSQL_PASSWORD=zchat_password
     volumes:
-      - ./instance/mysql-data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
       - ./docker/mysql/init:/docker-entrypoint-initdb.d
       - ./docker/mysql/conf:/etc/mysql/conf.d
     networks:
@@ -114,7 +114,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=zchat_password
       - MONGO_INITDB_DATABASE=zchat
     volumes:
-      - ./instance/mongodb-data:/data/db
+      - mongodb_data:/data/db
       - ./docker/mongodb/init:/docker-entrypoint-initdb.d
     networks:
       - zchat-network
@@ -135,7 +135,7 @@ services:
     restart: always
     volumes:
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./instance/prometheus-data:/prometheus
+      - prometheus_data:/prometheus
     command:
       - --config.file=/etc/prometheus/prometheus.yml
       - --storage.tsdb.path=/prometheus
@@ -169,7 +169,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./instance/grafana-data:/var/lib/grafana
+      - grafana_data:/var/lib/grafana
       - ./docker/grafana/provisioning:/etc/grafana/provisioning
       - ./docker/grafana/dashboards:/var/lib/grafana/dashboards
     environment:
@@ -188,7 +188,7 @@ services:
     restart: always
     command: redis-server --requirepass zchat_password
     volumes:
-      - ./instance/redis-data:/data
+      - redis_data:/data
     networks:
       - zchat-network
     healthcheck:
@@ -202,3 +202,12 @@ services:
 networks:
   zchat-network:
     driver: bridge
+
+# 命名卷配置 - 解决权限问题的最佳方案
+volumes:
+  mysql_data:
+  mongodb_data:
+  redis_data:
+  grafana_data:
+  prometheus_data:
+  app_logs:
