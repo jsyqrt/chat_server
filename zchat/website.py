@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, send_from_directory, current_app
+from flask import Blueprint, render_template, request, redirect, url_for, send_from_directory, current_app, g, session
 
 bp = Blueprint('website', __name__)
 
@@ -42,3 +42,10 @@ def download():
     else:
         # 未知设备或桌面设备 - 显示下载页面
         return redirect(url_for('website.index', _anchor='download'))
+
+@bp.route('/switch_language/<lang>')
+def switch_language(lang):
+    if lang in ['en', 'zh_CN', 'zh_TW']:
+        current_app.logger.info(f"Switching language to {lang}")
+        session['lang'] = lang
+    return redirect(request.referrer or url_for('website.index'))

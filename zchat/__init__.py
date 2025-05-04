@@ -1,14 +1,43 @@
 import os
 
-from flask import Flask
+from flask import Flask, request, session, g
 from werkzeug.middleware.proxy_fix import ProxyFix
 import logging
 from logging.handlers import RotatingFileHandler
 import redis
+from flask_babel import Babel, gettext as _
 
 def create_app(test_config=None, tool_mode=False):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+
+    # 初始化 Babel
+    babel = Babel(app)
+
+    def get_locale():
+        # 尝试从 session 获取语言设置
+        if session.get('lang'):
+            return session.get('lang')
+        # 尝试从 URL 参数获取语言设置
+        if request.args.get('lang'):
+            return request.args.get('lang')
+        # 尝试从用户设置获取语言
+        if hasattr(g, 'user') and g.user and g.user.language:
+            return g.user.language
+        # 尝试从浏览器设置获取语言
+        return request.accept_languages.best_match(['en', 'zh_CN', 'zh_TW'])
+
+    # 设置语言选择函数
+    app.config['BABEL_DEFAULT_LOCALE'] = 'zh_CN'
+    app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'zh_CN', 'zh_TW']
+    babel.init_app(app, locale_selector=get_locale)
+
+    @app.before_request
+    def before_request():
+        # 从 session 中获取语言设置并设置到 g 对象
+        g.lang = session.get('lang', 'zh_CN')
+        # 确保 gettext 使用正确的语言
+        babel.locale_selector = get_locale
 
     if test_config is None:
         # load the instance config, if it exists, when not testing

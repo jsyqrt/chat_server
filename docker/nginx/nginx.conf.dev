@@ -181,7 +181,7 @@ server {
     }
 
     # 捕获所有未明确定义的路径，返回404
-    location ~ ^/(?!(static|metrics|health|hello|api|auth|user|assessment|job|resume|roadmap|aichat|alipay|payment|invitation|points|customer_service|download|favicon.ico|.well-known)(/|$)) {
+    location ~ ^/(?!(static|metrics|health|hello|api|auth|user|assessment|job|resume|roadmap|aichat|alipay|payment|invitation|points|customer_service|download|favicon.ico|.well-known|switch_language)(/|$)) {
         return 404;
         access_log on;
         log_not_found on;
@@ -382,7 +382,7 @@ server {
     }
 
     # 捕获所有未明确定义的路径，返回404
-    location ~ ^/(?!(static|metrics|health|hello|api|auth|user|assessment|job|resume|roadmap|aichat|alipay|payment|invitation|points|customer_service|download|favicon.ico|.well-known)(/|$)) {
+    location ~ ^/(?!(static|metrics|health|hello|api|auth|user|assessment|job|resume|roadmap|aichat|alipay|payment|invitation|points|customer_service|download|favicon.ico|.well-known|switch_language)(/|$)) {
         return 404;
         access_log on;
         log_not_found on;

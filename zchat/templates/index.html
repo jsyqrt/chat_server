@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{{ g.lang }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>职路 - 您的职业发展伙伴</title>
-    <meta name="description" content="职路是一款专注于职业发展、求职指导和职场提升的应用，助您踏上理想的职业之路。">
+    <title>{{ _('职路 - 您的职业发展伙伴') }}</title>
+    <meta name="description" content="{{ _('职路是一款专注于职业发展、求职指导和职场提升的应用，助您踏上理想的职业之路。') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- 引入字体图标 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -19,14 +19,33 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="{{ url_for('static', filename='images/icon.png') }}" alt="职路logo">
-                <h1>职路</h1>
+                <img src="{{ url_for('static', filename='images/icon.png') }}" alt="{{ _('职路') }}">
+                <h1>{{ _('职路') }}</h1>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#features">产品特色</a></li>
-                    <li><a href="#download">立即下载</a></li>
-                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#features">{{ _('产品特色') }}</a></li>
+                    <li><a href="#download">{{ _('立即下载') }}</a></li>
+                    <li><a href="#about">{{ _('关于我们') }}</a></li>
+                    <li class="language-switch">
+                        <div class="language-selector">
+                            <button class="language-button" onclick="toggleLanguageMenu()">
+                                <span class="current-language">{{ g.get('lang', 'zh_CN')|upper }}</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="language-menu" id="languageMenu">
+                                <a href="{{ url_for('website.switch_language', lang='zh_CN') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'zh_CN' else '' }}">
+                                    <span class="language-code">简体</span>
+                                </a>
+                                <a href="{{ url_for('website.switch_language', lang='zh_TW') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'zh_TW' else '' }}">
+                                    <span class="language-code">繁體</span>
+                                </a>
+                                <a href="{{ url_for('website.switch_language', lang='en') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'en' else '' }}">
+                                    <span class="language-code">EN</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div class="menu-toggle">
@@ -35,21 +54,118 @@
         </div>
     </header>
 
+    <style>
+        /* 语言切换按钮样式 */
+        .language-switch {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .language-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-button:hover {
+            background: #f5f5f5;
+            border-color: #d0d0d0;
+        }
+
+        .language-button .current-language {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .language-button i {
+            font-size: 12px;
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+
+        .language-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .language-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .language-menu a:hover {
+            background: #f5f5f5;
+        }
+
+        .language-menu a.active {
+            color: #4CAF50;
+            font-weight: 500;
+            background: #f0f7f0;
+        }
+
+        @media (max-width: 768px) {
+            .language-switch {
+                margin: 10px 0;
+            }
+
+            .language-menu {
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%) translateY(-10px);
+            }
+
+            .language-menu.show {
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+    </style>
+
     <!-- 主横幅 -->
     <section class="hero">
         <!-- 数据流效果 -->
         <div class="data-stream" id="heroDataStream"></div>
         <div class="container">
             <div class="hero-content">
-                <h2>职业成长，从精准规划开始</h2>
-                <p>领先一步的职业导航，让梦想有明确的坐标</p>
+                <h2>{{ _('职业成长，从精准规划开始') }}</h2>
+                <p>{{ _('领先一步的职业导航，让梦想有明确的坐标') }}</p>
                 <div class="hero-btns">
-                    <a href="#download" class="btn btn-primary">立即下载</a>
-                    <a href="#features" class="btn btn-secondary">了解更多</a>
+                    <a href="#download" class="btn btn-primary">{{ _('立即下载') }}</a>
+                    <a href="#features" class="btn btn-secondary">{{ _('了解更多') }}</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="{{ url_for('static', filename='images/heading.jpg') }}" alt="职路应用展示">
+                <img src="{{ url_for('static', filename='images/heading.jpg') }}" alt="{{ _('职路应用展示') }}">
             </div>
         </div>
     </section>
@@ -59,45 +175,43 @@
         <!-- 数据流效果 -->
         <div class="data-stream" id="featuresDataStream"></div>
         <div class="container">
-            <h2 class="section-title">产品特色</h2>
+            <h2 class="section-title">{{ _('产品特色') }}</h2>
             <div class="feature-grid">
-
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-road"></i>
                     </div>
-                    <h3>职业规划</h3>
-                    <p class="typing" data-text="AI精准规划成长方向，实时追踪行业趋势调整路径"></p>
-                    <p class="typing" data-text="拆解目标为可执行任务，缩短成长周期，拒绝无效努力"></p>
+                    <h3>{{ _('职业规划') }}</h3>
+                    <p class="typing" data-text="{{ _('AI精准规划成长方向，实时追踪行业趋势调整路径') }}"></p>
+                    <p class="typing" data-text="{{ _('拆解目标为可执行任务，缩短成长周期，拒绝无效努力') }}"></p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-bars"></i>
                     </div>
-                    <h3>职业测评</h3>
-                    <p class="typing" data-text="三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势"></p>
-                    <p class="typing" data-text="对标高薪岗位人才画像，转行跳槽少走弯路"></p>
+                    <h3>{{ _('职业测评') }}</h3>
+                    <p class="typing" data-text="{{ _('三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势') }}"></p>
+                    <p class="typing" data-text="{{ _('对标高薪岗位人才画像，转行跳槽少走弯路') }}"></p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>职位分析</h3>
-                    <p class="typing" data-text="深度分析目标岗位，提取企业隐性需求"></p>
-                    <p class="typing" data-text="结合行业大数据，智能规划求职升职决策，快人一步"></p>
+                    <h3>{{ _('职位分析') }}</h3>
+                    <p class="typing" data-text="{{ _('深度分析目标岗位，提取企业隐性需求') }}"></p>
+                    <p class="typing" data-text="{{ _('结合行业大数据，智能规划求职升职决策，快人一步') }}"></p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3>简历定制</h3>
-                    <p class="typing" data-text="智能拆解JD隐藏关键词，拉满简历匹配度"></p>
-                    <p class="typing" data-text="一键生成最优简历，大幅提升面试邀约率"></p>
+                    <h3>{{ _('简历定制') }}</h3>
+                    <p class="typing" data-text="{{ _('智能拆解JD隐藏关键词，拉满简历匹配度') }}"></p>
+                    <p class="typing" data-text="{{ _('一键生成最优简历，大幅提升面试邀约率') }}"></p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -107,16 +221,16 @@
         <!-- 浮动数据标签 -->
         <div id="floatingDataContainer"></div>
         <div class="container">
-            <h2 class="section-title">立即下载</h2>
-            <p class="download-subtitle">随时随地，开启您的成功“职路”</p>
+            <h2 class="section-title">{{ _('立即下载') }}</h2>
+            <p class="download-subtitle">{{ _('随时随地，开启您的成功"职路"') }}</p>
             <div class="app-badges">
                 <a href="https://app.mi.com/details?id=com.edu_paths.zhilu" class="app-badge" id="android-download">
-                    <img src="{{ url_for('static', filename='images/mi_store.png') }}" alt="小米应用商店下载">
+                    <img src="{{ url_for('static', filename='images/mi_store.png') }}" alt="{{ _('小米应用商店下载') }}">
                 </a>
             </div>
             <div class="qr-code">
-                <img src="{{ url_for('static', filename='images/download_qr.png') }}" alt="扫码下载职路APP">
-                <p>扫描二维码下载</p>
+                <img src="{{ url_for('static', filename='images/download_qr.png') }}" alt="{{ _('扫码下载职路APP') }}">
+                <p>{{ _('扫描二维码下载') }}</p>
             </div>
         </div>
     </section>
@@ -124,11 +238,11 @@
     <!-- 关于我们 -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">关于我们</h2>
+            <h2 class="section-title">{{ _('关于我们') }}</h2>
             <div class="about-content">
-                <p>职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。</p>
-                <p>我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。</p>
-                <p>我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有“职路”，不走弯路。</p>
+                <p>{{ _('职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。') }}</p>
+                <p>{{ _('我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。') }}</p>
+                <p>{{ _('我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有"职路"，不走弯路。') }}</p>
             </div>
         </div>
     </section>
@@ -138,28 +252,28 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="{{ url_for('static', filename='images/icon.png') }}" alt="职路logo">
-                    <h3>职路</h3>
-                    <p>您的职业发展伙伴</p>
+                    <img src="{{ url_for('static', filename='images/icon.png') }}" alt="{{ _('职路') }}">
+                    <h3>{{ _('职路') }}</h3>
+                    <p>{{ _('您的职业发展伙伴') }}</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
-                        <h4>公司</h4>
+                        <h4>{{ _('公司') }}</h4>
                         <ul>
-                            <li><a href="#about">关于我们</a></li>
-                            <li><a href="#!">联系我们</a></li>
+                            <li><a href="#about">{{ _('关于我们') }}</a></li>
+                            <li><a href="#!">{{ _('联系我们') }}</a></li>
                         </ul>
                     </div>
                     <div class="footer-links-group">
-                        <h4>支持</h4>
+                        <h4>{{ _('支持') }}</h4>
                         <ul>
-                            <li><a href="/customer_service/privacy_policy">隐私政策</a></li>
-                            <li><a href="/customer_service/terms_of_service">服务条款</a></li>
+                            <li><a href="/customer_service/privacy_policy">{{ _('隐私政策') }}</a></li>
+                            <li><a href="/customer_service/terms_of_service">{{ _('服务条款') }}</a></li>
                         </ul>
                     </div>
                 </div>
                 <!-- <div class="footer-social">
-                    <h4>关注我们</h4>
+                    <h4>{{ _('关注我们') }}</h4>
                     <div class="social-icons">
                         <a href="#!" aria-label="微信"><i class="fab fa-weixin"></i></a>
                         <a href="#!" aria-label="微博"><i class="fab fa-weibo"></i></a>
@@ -169,7 +283,7 @@
                 </div> -->
             </div>
             <div class="copyright">
-                <p>&copy; 2025 职路APP. 保留所有权利.</p>
+                <p>{{ _('&copy; 2025 职路APP. 保留所有权利.') }}</p>
             </div>
         </div>
     </footer>
@@ -207,61 +321,50 @@
             else if (isAndroid) {
                 // 默认下载按钮（通用Android）
                 if (androidDownloadBtn) {
-                    androidDownloadBtn.querySelector('img').alt = '下载Android版';
+                    androidDownloadBtn.querySelector('img').alt = '{{ _("下载Android版") }}';
 
                     // 根据设备品牌设置不同的下载链接
                     if (isXiaomi) {
                         // 小米应用商店链接
                         androidDownloadBtn.href = 'https://app.mi.com/details?id=com.edu_paths.zhilu';
-                        androidDownloadBtn.querySelector('img').alt = '小米应用商店下载';
+                        androidDownloadBtn.querySelector('img').alt = '{{ _("小米应用商店下载") }}';
 
                         // 添加小米应用商店标识
                         const storeName = document.createElement('span');
-                        storeName.textContent = '小米应用商店';
+                        storeName.textContent = '{{ _("小米应用商店") }}';
                         storeName.className = 'store-name';
                         androidDownloadBtn.appendChild(storeName);
                     }
                     else if (isOppo) {
                         // OPPO应用商店链接
                         androidDownloadBtn.href = 'https://store.oppomobile.com/search?keyword=职路';
-                        androidDownloadBtn.querySelector('img').alt = 'OPPO应用商店下载';
+                        androidDownloadBtn.querySelector('img').alt = '{{ _("OPPO应用商店下载") }}';
 
                         // 添加OPPO应用商店标识
                         const storeName = document.createElement('span');
-                        storeName.textContent = 'OPPO应用商店';
+                        storeName.textContent = '{{ _("OPPO应用商店") }}';
                         storeName.className = 'store-name';
                         androidDownloadBtn.appendChild(storeName);
                     }
                     else if (isHuawei) {
                         // 华为应用商店链接
                         androidDownloadBtn.href = 'https://appgallery.huawei.com/search/职路';
-                        androidDownloadBtn.querySelector('img').alt = '华为应用商店下载';
+                        androidDownloadBtn.querySelector('img').alt = '{{ _("华为应用商店下载") }}';
 
                         // 添加华为应用商店标识
                         const storeName = document.createElement('span');
-                        storeName.textContent = '华为应用商店';
+                        storeName.textContent = '{{ _("华为应用商店") }}';
                         storeName.className = 'store-name';
                         androidDownloadBtn.appendChild(storeName);
                     }
                     else if (isVivo) {
                         // vivo应用商店链接
                         androidDownloadBtn.href = 'https://info.appstore.vivo.com.cn/detail/职路';
-                        androidDownloadBtn.querySelector('img').alt = 'vivo应用商店下载';
+                        androidDownloadBtn.querySelector('img').alt = '{{ _("vivo应用商店下载") }}';
 
                         // 添加vivo应用商店标识
                         const storeName = document.createElement('span');
-                        storeName.textContent = 'vivo应用商店';
-                        storeName.className = 'store-name';
-                        androidDownloadBtn.appendChild(storeName);
-                    }
-                    else {
-                        // 应用宝链接作为通用Android商店
-                        androidDownloadBtn.href = 'https://a.app.qq.com/o/simple.jsp?pkgname=com.edu_paths.zhilu';
-                        androidDownloadBtn.querySelector('img').alt = '应用宝下载';
-
-                        // 添加应用宝标识
-                        const storeName = document.createElement('span');
-                        storeName.textContent = '应用宝';
+                        storeName.textContent = '{{ _("vivo应用商店") }}';
                         storeName.className = 'store-name';
                         androidDownloadBtn.appendChild(storeName);
                     }
@@ -687,24 +790,24 @@
             // 创建浮动数据标签
             function createFloatingData() {
                 const dataTexts = [
-                    "职位分析进行中...",
-                    "职位分析完成，正在生成专属报告，5个核心技能强匹配，来看看吧",
-                    "简历定制完成，匹配度提升30%",
-                    "技能树定制完成，8个阶段，100+核心知识点，快来打卡吧",
-                    "匹配最优职位中...",
-                    "专属成长路径生成及技能树定制中...",
-                    "行业趋势分析中...",
-                    "简历匹配度分析中...",
-                    "职业能力评估中...",
-                    "职场竞争力提升中...",
-                    "简历曝光率提升中...",
-                    "面试机会增加中...",
-                    "薪资增长潜力提升中...",
-                    "职场竞争力+28%",
-                    "简历曝光率提升42%",
-                    "面试机会增加36%",
-                    "薪资增长潜力52%",
-                    "岗位需求增长17%",
+                    "{{ _('职位分析进行中...')|e }}",
+                    "{{ _('职位分析完成，正在生成专属报告，5个核心技能强匹配，来看看吧')|e }}",
+                    "{{ _('简历定制完成，匹配度提升30%%')|e }}",
+                    "{{ _('技能树定制完成，8个阶段，100+核心知识点，快来打卡吧')|e }}",
+                    "{{ _('匹配最优职位中...')|e }}",
+                    "{{ _('专属成长路径生成及技能树定制中...')|e }}",
+                    "{{ _('行业趋势分析中...')|e }}",
+                    "{{ _('简历匹配度分析中...')|e }}",
+                    "{{ _('职业能力评估中...')|e }}",
+                    "{{ _('职场竞争力提升中...')|e }}",
+                    "{{ _('简历曝光率提升中...')|e }}",
+                    "{{ _('面试机会增加中...')|e }}",
+                    "{{ _('薪资增长潜力提升中...')|e }}",
+                    "{{ _('职场竞争力+28%%')|e }}",
+                    "{{ _('简历曝光率提升42%%')|e }}",
+                    "{{ _('面试机会增加36%%')|e }}",
+                    "{{ _('薪资增长潜力52%%')|e }}",
+                    "{{ _('岗位需求增长17%%')|e }}"
                 ];
 
                 const container = document.getElementById('floatingDataContainer');
@@ -750,6 +853,41 @@
             createDataParticles('heroDataStream', 40);
             createDataParticles('featuresDataStream', 35);
             createFloatingData();
+        });
+
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('languageMenu');
+            menu.classList.toggle('show');
+        }
+
+        // 点击其他地方关闭菜单
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('languageMenu');
+            const button = document.querySelector('.language-button');
+            if (!button.contains(event.target) && !menu.contains(event.target)) {
+                menu.classList.remove('show');
+            }
+        });
+
+        // 根据浏览器语言设置默认语言
+        document.addEventListener('DOMContentLoaded', function() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            const currentLang = '{{ g.get("lang", "zh_CN") }}';
+
+            // 如果当前没有设置语言，则根据浏览器语言设置
+            if (!currentLang) {
+                let targetLang = 'zh_CN'; // 默认简体中文
+                if (browserLang.startsWith('zh-TW') || browserLang.startsWith('zh-HK')) {
+                    targetLang = 'zh_TW';
+                } else if (browserLang.startsWith('en')) {
+                    targetLang = 'en';
+                }
+
+                // 如果浏览器语言与当前语言不同，则切换语言
+                if (targetLang !== currentLang) {
+                    window.location.href = "{{ url_for('website.switch_language', lang='') }}" + targetLang;
+                }
+            }
         });
     </script>
 </body>

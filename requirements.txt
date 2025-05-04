@@ -65,3 +65,6 @@ tqdm==4.67.0
 
 # 邮件发送
 Flask-Mail==0.9.1
+
+# 国际化
+Flask-Babel==4.0.0

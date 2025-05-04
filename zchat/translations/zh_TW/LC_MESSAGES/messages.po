@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zchat\n"
+"POT-Creation-Date: 2024-03-21 10:00+0800\n"
+"PO-Revision-Date: 2024-03-21 10:00+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "职路 - 您的职业发展伙伴"
+msgstr "職路 - 您的職業發展夥伴"
+
+msgid "职路是一款专注于职业发展、求职指导和职场提升的应用，助您踏上理想的职业之路。"
+msgstr "職路是一款專注於職業發展、求職指導和職場提升的應用，助您踏上理想的職業之路。"
+
+msgid "产品特色"
+msgstr "產品特色"
+
+msgid "立即下载"
+msgstr "立即下載"
+
+msgid "关于我们"
+msgstr "關於我們"
+
+msgid "职路"
+msgstr "職路"
+
+msgid "返回首页"
+msgstr "返回首頁"
+
+msgid "感谢使用职路"
+msgstr "感謝使用職路"
+
+msgid "职业成长，从精准规划开始"
+msgstr "職業成長，從精準規劃開始"
+
+msgid "领先一步的职业导航，让梦想有明确的坐标"
+msgstr "領先一步的職業導航，讓夢想有明確的座標"
+
+msgid "了解更多"
+msgstr "了解更多"
+
+msgid "职业规划"
+msgstr "職業規劃"
+
+msgid "AI精准规划成长方向，实时追踪行业趋势调整路径"
+msgstr "AI精準規劃成長方向，實時追蹤行業趨勢調整路徑"
+
+msgid "拆解目标为可执行任务，缩短成长周期，拒绝无效努力"
+msgstr "拆解目標為可執行任務，縮短成長週期，拒絕無效努力"
+
+msgid "职业测评"
+msgstr "職業測評"
+
+msgid "三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势"
+msgstr "三維模型（性格/能力/大數據）診斷職業偏好，挖掘優勢"
+
+msgid "对标高薪岗位人才画像，转行跳槽少走弯路"
+msgstr "對標高薪崗位人才畫像，轉行跳槽少走彎路"
+
+msgid "职位分析"
+msgstr "職位分析"
+
+msgid "深度分析目标岗位，提取企业隐性需求"
+msgstr "深度分析目標崗位，提取企業隱性需求"
+
+msgid "结合行业大数据，智能规划求职升职决策，快人一步"
+msgstr "結合行業大數據，智能規劃求職升職決策，快人一步"
+
+msgid "简历定制"
+msgstr "簡歷定制"
+
+msgid "智能拆解JD隐藏关键词，拉满简历匹配度"
+msgstr "智能拆解JD隱藏關鍵詞，拉滿簡歷匹配度"
+
+msgid "一键生成最优简历，大幅提升面试邀约率"
+msgstr "一鍵生成最優簡歷，大幅提升面試邀約率"
+
+msgid "随时随地，开启您的成功"职路""
+msgstr "隨時隨地，開啟您的成功「職路」"
+
+msgid "扫描二维码下载"
+msgstr "掃描二維碼下載"
+
+msgid "职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。"
+msgstr "職路由一群熱愛職業發展領域的專業人士創立，用AI與大數據為每個選擇注入科學的力量，讓職業成長告別盲目試錯。"
+
+msgid "我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。"
+msgstr "我們的團隊匯集了AI算法專家、資深職業規劃師、頂尖獵頭合夥人及前大廠HRBP，共同打造這款專注於職業發展的應用。"
+
+msgid "我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有"职路"，不走弯路。"
+msgstr "我們的使命是賦能每一位職場人士，讓職業發展變得更加清晰、高效和充滿可能性。真正做到有路可依，有「職路」，不走彎路。"
+
+msgid "您的职业发展伙伴"
+msgstr "您的職業發展夥伴"
+
+msgid "公司"
+msgstr "公司"
+
+msgid "联系我们"
+msgstr "聯繫我們"
+
+msgid "支持"
+msgstr "支持"
+
+msgid "隐私政策"
+msgstr "隱私政策"
+
+msgid "服务条款"
+msgstr "服務條款"
+
+msgid "关注我们"
+msgstr "關注我們"
+
+msgid "&copy; 2025 职路APP. 保留所有权利."
+msgstr "&copy; 2025 職路APP. 保留所有權利."
+
+msgid "职路应用展示"
+msgstr "職路應用展示"
+
+msgid "小米应用商店下载"
+msgstr "小米應用商店下載"
+
+msgid "扫码下载职路APP"
+msgstr "掃碼下載職路APP"
+
+msgid "下载Android版"
+msgstr "下載Android版"
+
+msgid "Reset Password"
+msgstr "重置密碼"
+
+msgid "New Password"
+msgstr "新密碼"
+
+msgid "Password must be at least 8 characters long"
+msgstr "密碼必須至少8個字符"
+
+msgid "Confirm Password"
+msgstr "確認密碼"
+
+msgid "Passwords do not match"
+msgstr "密碼不匹配"
+
+msgid "Processing..."
+msgstr "處理中..."
+
+msgid "Failed to reset password. Please try again later."
+msgstr "重置密碼失敗。請稍後再試。"
+
+msgid "Thank you for using VoyLead"
+msgstr "感謝使用職路"
+
+msgid "Password Reset Success"
+msgstr "密碼重置成功"
+
+msgid "Password Reset Successful"
+msgstr "密碼重置成功"
+
+msgid "Your password has been successfully reset. You can now log in with your new password."
+msgstr "您的密碼已成功重置。您現在可以使用新密碼登錄。"
+
+msgid "Error"
+msgstr "錯誤"
+
+msgid "Email Verified"
+msgstr "郵箱已驗證"
+
+msgid "Email Verification Successful"
+msgstr "郵箱驗證成功"
+
+msgid "Your email has been successfully verified. You can now use all features of VoyLead."
+msgstr "您的郵箱已成功驗證。您現在可以使用職路的所有功能。"
+
+msgid "职位分析进行中..."
+msgstr "職位分析進行中..."
+
+msgid "职位分析完成，正在生成专属报告，5個核心技能强匹配，来看看吧"
+msgstr "職位分析完成，正在生成專屬報告，5個核心技能強匹配，來看看吧"
+
+msgid "简历定制完成，匹配度提升30%%"
+msgstr "簡歷定制完成，匹配度提升30%%"
+
+msgid "技能树定制完成，8個階段，100+核心知識點，快來打卡吧"
+msgstr "技能樹定制完成，8個階段，100+核心知識點，快來打卡吧"
+
+msgid "匹配最优职位中..."
+msgstr "匹配最優職位中..."
+
+msgid "專屬成長路徑生成及技能樹定制中..."
+msgstr "專屬成長路徑生成及技能樹定制中..."
+
+msgid "行業趨勢分析中..."
+msgstr "行業趨勢分析中..."
+
+msgid "簡歷匹配度分析中..."
+msgstr "簡歷匹配度分析中..."
+
+msgid "職業能力評估中..."
+msgstr "職業能力評估中..."
+
+msgid "職場競爭力提升中..."
+msgstr "職場競爭力提升中..."
+
+msgid "簡歷曝光率提升中..."
+msgstr "簡歷曝光率提升中..."
+
+msgid "面試機會增加中..."
+msgstr "面試機會增加中..."
+
+msgid "薪資增長潛力提升中..."
+msgstr "薪資增長潛力提升中..."
+
+msgid "職場競爭力+28%%"
+msgstr "職場競爭力+28%%"
+
+msgid "簡歷曝光率提升42%%"
+msgstr "簡歷曝光率提升42%%"
+
+msgid "面試機會增加36%%"
+msgstr "面試機會增加36%%"
+
+msgid "薪資增長潛力52%%"
+msgstr "薪資增長潛力52%%"
+
+msgid "崗位需求增長17%%"
+msgstr "崗位需求增長17%%"

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{{ g.get('lang', 'zh_CN') }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - VoyLead</title>
+    <title>{{ _('Error') }} - VoyLead</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -26,7 +26,7 @@
         }
         .error-icon {
             color: #dc3545;
-            font-size: 64px;
+            font-size: 48px;
             margin-bottom: 1rem;
         }
         h1 {
@@ -36,8 +36,7 @@
         }
         p {
             color: #666;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         .button {
             display: inline-block;
@@ -46,6 +45,7 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            font-size: 16px;
             transition: background-color 0.3s;
         }
         .button:hover {
@@ -60,12 +60,12 @@
 </head>
 <body>
     <div class="container">
-        <div class="error-icon">⚠</div>
+        <div class="error-icon">✕</div>
         <h1>{{ title }}</h1>
         <p>{{ message }}</p>
-        <a href="{{ url_for('website.index') }}" class="button">返回首页</a>
+        <a href="{{ url_for('website.index') }}" class="button">{{ _('Return to Homepage') }}</a>
         <div class="footer">
-            <p>感谢您使用 VoyLead</p>
+            <p>{{ _('Thank you for using VoyLead') }}</p>
         </div>
     </div>
 </body>

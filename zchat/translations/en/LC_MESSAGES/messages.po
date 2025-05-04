@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zchat\n"
+"POT-Creation-Date: 2024-03-21 10:00+0800\n"
+"PO-Revision-Date: 2024-03-21 10:00+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "职路 - 您的职业发展伙伴"
+msgstr "VoyLead - Your Career Development Partner"
+
+msgid "职路是一款专注于职业发展、求职指导和职场提升的应用，助您踏上理想的职业之路。"
+msgstr "VoyLead is an application focused on career development, job guidance, and workplace advancement, helping you embark on your ideal career path."
+
+msgid "产品特色"
+msgstr "Features"
+
+msgid "立即下载"
+msgstr "Download Now"
+
+msgid "关于我们"
+msgstr "About Us"
+
+msgid "职路"
+msgstr "VoyLead"
+
+msgid "返回首页"
+msgstr "Return to Homepage"
+
+msgid "感谢使用职路"
+msgstr "Thank you for using VoyLead"
+
+msgid "职业成长，从精准规划开始"
+msgstr "Career Growth Starts with Precise Planning"
+
+msgid "领先一步的职业导航，让梦想有明确的坐标"
+msgstr "Stay ahead with career navigation that gives your dreams clear coordinates"
+
+msgid "了解更多"
+msgstr "Learn More"
+
+msgid "职业规划"
+msgstr "Career Planning"
+
+msgid "AI精准规划成长方向，实时追踪行业趋势调整路径"
+msgstr "AI precisely plans your growth direction, tracking industry trends in real-time to adjust your path"
+
+msgid "拆解目标为可执行任务，缩短成长周期，拒绝无效努力"
+msgstr "Break down goals into executable tasks, shorten growth cycles, and eliminate ineffective efforts"
+
+msgid "职业测评"
+msgstr "Career Assessment"
+
+msgid "三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势"
+msgstr "Three-dimensional model (personality/ability/big data) diagnoses career preferences and uncovers strengths"
+
+msgid "对标高薪岗位人才画像，转行跳槽少走弯路"
+msgstr "Align with high-salary position talent profiles, making career transitions smoother"
+
+msgid "职位分析"
+msgstr "Job Analysis"
+
+msgid "深度分析目标岗位，提取企业隐性需求"
+msgstr "Deep analysis of target positions, extracting implicit corporate requirements"
+
+msgid "结合行业大数据，智能规划求职升职决策，快人一步"
+msgstr "Combine industry big data to intelligently plan job search and promotion decisions, staying ahead"
+
+msgid "简历定制"
+msgstr "Resume Customization"
+
+msgid "智能拆解JD隐藏关键词，拉满简历匹配度"
+msgstr "Intelligently break down hidden JD keywords to maximize resume match rate"
+
+msgid "一键生成最优简历，大幅提升面试邀约率"
+msgstr "Generate optimal resumes with one click, significantly increasing interview invitation rates"
+
+msgid "随时随地，开启您的成功"职路""
+msgstr "Start your successful career path anytime, anywhere"
+
+msgid "扫描二维码下载"
+msgstr "Scan QR code to download"
+
+msgid "职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。"
+msgstr "VoyLead was founded by a group of professionals passionate about career development, using AI and big data to inject scientific power into every choice, making career growth free from blind trial and error."
+
+msgid "我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。"
+msgstr "Our team brings together AI algorithm experts, senior career planners, top headhunting partners, and former HRBPs from major companies to create this career development-focused application."
+
+msgid "我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有"职路"，不走弯路。"
+msgstr "Our mission is to empower every professional, making career development clearer, more efficient, and full of possibilities. Truly providing a clear path, a 'VoyLead', without detours."
+
+msgid "您的职业发展伙伴"
+msgstr "Your Career Development Partner"
+
+msgid "公司"
+msgstr "Company"
+
+msgid "联系我们"
+msgstr "Contact Us"
+
+msgid "支持"
+msgstr "Support"
+
+msgid "隐私政策"
+msgstr "Privacy Policy"
+
+msgid "服务条款"
+msgstr "Terms of Service"
+
+msgid "关注我们"
+msgstr "Follow Us"
+
+msgid "&copy; 2025 职路APP. 保留所有权利."
+msgstr "&copy; 2025 VoyLead APP. All rights reserved."
+
+msgid "职路应用展示"
+msgstr "VoyLead App Showcase"
+
+msgid "小米应用商店下载"
+msgstr "Download from Xiaomi App Store"
+
+msgid "扫码下载职路APP"
+msgstr "Scan to download VoyLead APP"
+
+msgid "下载Android版"
+msgstr "Download Android Version"
+
+msgid "Reset Password"
+msgstr "Reset Password"
+
+msgid "New Password"
+msgstr "New Password"
+
+msgid "Password must be at least 8 characters long"
+msgstr "Password must be at least 8 characters long"
+
+msgid "Confirm Password"
+msgstr "Confirm Password"
+
+msgid "Passwords do not match"
+msgstr "Passwords do not match"
+
+msgid "Processing..."
+msgstr "Processing..."
+
+msgid "Failed to reset password. Please try again later."
+msgstr "Failed to reset password. Please try again later."
+
+msgid "Thank you for using VoyLead"
+msgstr "Thank you for using VoyLead"
+
+msgid "Password Reset Success"
+msgstr "Password Reset Success"
+
+msgid "Password Reset Successful"
+msgstr "Password Reset Successful"
+
+msgid "Your password has been successfully reset. You can now log in with your new password."
+msgstr "Your password has been successfully reset. You can now log in with your new password."
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Email Verified"
+msgstr "Email Verified"
+
+msgid "Email Verification Successful"
+msgstr "Email Verification Successful"
+
+msgid "Your email has been successfully verified. You can now use all features of VoyLead."
+msgstr "Your email has been successfully verified. You can now use all features of VoyLead."
+
+msgid "职位分析进行中..."
+msgstr "Job Analysis in Progress..."
+
+msgid "职位分析完成，正在生成专属报告，5个核心技能强匹配，来看看吧"
+msgstr "Job Analysis Complete, Generating Custom Report with 5 Strongly Matched Core Skills, Check it Out"
+
+msgid "简历定制完成，匹配度提升30%%"
+msgstr "Resume Customization Complete, Match Rate Increased by 30%%"
+
+msgid "技能树定制完成，8个阶段，100+核心知识点，快来打卡吧"
+msgstr "Skill Tree Customization Complete, 8 Stages, 100+ Core Knowledge Points, Start Your Journey"
+
+msgid "匹配最优职位中..."
+msgstr "Matching Best Positions..."
+
+msgid "专属成长路径生成及技能树定制中..."
+msgstr "Generating Custom Growth Path and Skill Tree..."
+
+msgid "行业趋势分析中..."
+msgstr "Analyzing Industry Trends..."
+
+msgid "简历匹配度分析中..."
+msgstr "Analyzing Resume Match Rate..."
+
+msgid "职业能力评估中..."
+msgstr "Assessing Professional Capabilities..."
+
+msgid "职场竞争力提升中..."
+msgstr "Enhancing Workplace Competitiveness..."
+
+msgid "简历曝光率提升中..."
+msgstr "Increasing Resume Exposure..."
+
+msgid "面试机会增加中..."
+msgstr "Increasing Interview Opportunities..."
+
+msgid "薪资增长潜力提升中..."
+msgstr "Enhancing Salary Growth Potential..."
+
+msgid "职场竞争力+28%%"
+msgstr "Career Competitiveness +28%%"
+
+msgid "简历曝光率提升42%%"
+msgstr "Resume Exposure Rate Increased by 42%%"
+
+msgid "面试机会增加36%%"
+msgstr "Interview Opportunities Increased by 36%%"
+
+msgid "薪资增长潜力52%%"
+msgstr "Salary Growth Potential 52%%"
+
+msgid "岗位需求增长17%%"
+msgstr "Job Demand Growth 17%%"
