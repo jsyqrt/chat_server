@@ -34,6 +34,24 @@ else:
         'db_path': os.environ.get('DOCUMENT_STORE_PATH', 'instance/document_store.db')
     }
 
+# 邮件服务配置
+MAIL_SERVER=os.environ.get('MAIL_SERVER', 'smtp.voylead.com')
+MAIL_PORT=int(os.environ.get('MAIL_PORT', 465))
+MAIL_USE_TLS=os.environ.get('MAIL_USE_TLS', 'false').lower() in ['true', 'on', '1']  # 使用465端口时禁用TLS
+MAIL_USE_SSL=os.environ.get('MAIL_USE_SSL', 'true').lower() in ['true', 'on', '1']  # 使用465端口时启用SSL
+MAIL_USERNAME=os.environ.get('MAIL_USERNAME', 'noreply@voylead.com')
+MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD', '')
+MAIL_DEFAULT_SENDER=os.environ.get('MAIL_DEFAULT_SENDER', 'noreply@voylead.com')
+
+# 网站URL，用于生成邮件中的链接
+SITE_URL=os.environ.get('SITE_URL', '')
+
+# OAuth配置
+GOOGLE_CLIENT_ID=os.environ.get('GOOGLE_CLIENT_ID', '')
+GOOGLE_CLIENT_SECRET=os.environ.get('GOOGLE_CLIENT_SECRET', '')
+GITHUB_CLIENT_ID=os.environ.get('GITHUB_CLIENT_ID', '')
+GITHUB_CLIENT_SECRET=os.environ.get('GITHUB_CLIENT_SECRET', '')
+
 # 支付宝配置
 ALIPAY_APP_ID = os.environ.get('ALIPAY_APP_ID', '')
 ALIPAY_PRIVATE_KEY = os.environ.get('ALIPAY_PRIVATE_KEY', '')

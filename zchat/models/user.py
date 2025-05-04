@@ -5,6 +5,7 @@ from enum import Enum
 
 from flask import current_app, url_for
 from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from zchat.models.base import db
 # from zchat.rand import *
@@ -17,7 +18,18 @@ class User(UserMixin, db.Model):
     __tablename__ = 'USER'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    phone_number = db.Column(db.String(20), nullable=False, default='13800001111')
+    phone_number = db.Column(db.String(20), nullable=True, default=None)
+
+    # 新增邮箱相关字段
+    email = db.Column(db.String(120), nullable=True, unique=True)
+    email_verified = db.Column(db.Boolean, default=False)
+    password_hash = db.Column(db.String(256), nullable=True)
+    reset_token = db.Column(db.String(100), nullable=True)
+    reset_token_expiry = db.Column(db.REAL, nullable=True)
+
+    # OAuth相关字段
+    oauth_provider = db.Column(db.String(50), nullable=True)
+    oauth_id = db.Column(db.String(100), nullable=True)
 
     avatar_name = db.Column(db.String(255), nullable=False, default='/static/images/default_avatar.png')
     nickname = db.Column(db.String(100), nullable=False)
@@ -45,8 +57,24 @@ class User(UserMixin, db.Model):
     # 添加这一行关系定义
     chat_sessions = relationship("ChatSession", back_populates="user", cascade="all, delete-orphan")
 
+    # 密码相关方法
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def check_password(self, password):
+        if self.password_hash is None:
+            return False
+        return check_password_hash(self.password_hash, password)
+
+    # OAuth相关方法
+    def set_oauth_info(self, provider, oauth_id):
+        self.oauth_provider = provider
+        self.oauth_id = oauth_id
+
     __table_args__ = (
         db.Index('index_USER_phone_number', 'phone_number', unique=True),
+        db.Index('index_USER_email', 'email', unique=True),
+        db.Index('index_USER_oauth_provider_id', 'oauth_provider', 'oauth_id', unique=True),
 
         db.Index('index_USER_name', 'nickname', unique=False),
         db.Index('index_USER_signature_text', 'signature_text', unique=False),
@@ -66,6 +94,9 @@ class User(UserMixin, db.Model):
         return {
             'id' : self.id,
             'phone_number' : self.phone_number,
+            'email': self.email,
+            'email_verified': self.email_verified,
+            'oauth_provider': self.oauth_provider,
 
             'avatar': self.avatar_name,
             'nickname' : self.nickname,
@@ -96,24 +127,52 @@ class UserOps:
     def username_with_phone_number_suffix(self, phone_number)->str:
         return f"用户{phone_number[-4:]}"
 
+    def username_with_email_prefix(self, email)->str:
+        """根据邮箱生成用户名"""
+        if '@' in email:
+            return f"用户{email.split('@')[0]}"
+        return f"用户{email[:8]}"
+
     @track_query(COMPLEX)  # 标记为复杂查询，因为它包含查询和插入操作
-    def get_or_create_user(self, phone_number, invited_by=None)->int:
-        current_app.logger.debug(f"get_or_create_user, {phone_number}")
+    def get_or_create_user(self, phone_number=None, email=None, password=None, oauth_provider=None, oauth_id=None, invited_by=None)->int:
+        current_app.logger.debug(f"get_or_create_user, phone: {phone_number}, email: {email}, oauth: {oauth_provider}")
         try:
-            user = self.session.query(User).filter_by(phone_number=phone_number).first()
+            user = None
+
+            # 根据提供的凭据查找用户
+            if phone_number:
+                user = self.session.query(User).filter_by(phone_number=phone_number).first()
+            elif email:
+                user = self.session.query(User).filter_by(email=email).first()
+            elif oauth_provider and oauth_id:
+                user = self.session.query(User).filter_by(oauth_provider=oauth_provider, oauth_id=oauth_id).first()
+
             if user:
+                # 如果找到用户，更新OAuth信息（如果有）
+                if oauth_provider and oauth_id and not user.oauth_provider:
+                    user.oauth_provider = oauth_provider
+                    user.oauth_id = oauth_id
+                    self.session.commit()
                 return user.id
 
             from zchat.models.invitation import InvitationOps
             invitation_ops = InvitationOps(self.session)
 
+            # 创建新用户
             user = User(
                 phone_number=phone_number,
-                nickname=self.username_with_phone_number_suffix(phone_number),
+                email=email,
+                oauth_provider=oauth_provider,
+                oauth_id=oauth_id,
+                nickname=self.username_with_phone_number_suffix(phone_number) if phone_number else self.username_with_email_prefix(email) if email else f"User_{oauth_provider}",
                 account_type=AccountType.FREE.value,
                 daily_points=80,
                 invited_by=invited_by
             )
+
+            # 设置密码（如果提供）
+            if password:
+                user.set_password(password)
 
             self.session.add(user)
             self.session.commit()
@@ -123,7 +182,7 @@ class UserOps:
             user.invite_code = invite_code
             self.session.commit()
 
-            current_app.logger.debug(f"added user, id: {user.id}, phone_number: {phone_number}")
+            current_app.logger.debug(f"added user, id: {user.id}, phone/email: {phone_number or email}")
 
             # 如果是通过邀请注册的，处理邀请奖励
             if invited_by:
@@ -132,8 +191,77 @@ class UserOps:
             return user.id
         except Exception as e:
             self.session.rollback()
-            current_app.logger.debug(f"failed to add user {phone_number}, error {str(e)}")
+            current_app.logger.debug(f"failed to add user {phone_number or email}, error {str(e)}")
         return None
+
+    @track_query(SELECT)
+    def get_user_by_email(self, email):
+        """通过邮箱获取用户"""
+        try:
+            return self.session.query(User).filter_by(email=email).first()
+        except Exception as e:
+            current_app.logger.warn(f"get user by email {email} failed, {str(e)}")
+        return None
+
+    @track_query(SELECT)
+    def get_user_by_oauth(self, provider, oauth_id):
+        """通过OAuth信息获取用户"""
+        try:
+            return self.session.query(User).filter_by(oauth_provider=provider, oauth_id=oauth_id).first()
+        except Exception as e:
+            current_app.logger.warn(f"get user by oauth {provider}:{oauth_id} failed, {str(e)}")
+        return None
+
+    @track_query(UPDATE)
+    def set_reset_token(self, email, token, expiry):
+        """设置密码重置令牌"""
+        try:
+            user = self.session.query(User).filter_by(email=email).first()
+            if user:
+                user.reset_token = token
+                user.reset_token_expiry = expiry
+                self.session.commit()
+                return True
+            return False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"set reset token for {email} failed, {str(e)}")
+            return False
+
+    @track_query(UPDATE)
+    def reset_password(self, token, new_password):
+        """使用令牌重置密码"""
+        try:
+            current_time = time.time()
+            user = self.session.query(User).filter_by(reset_token=token).first()
+
+            if not user or not user.reset_token_expiry or user.reset_token_expiry < current_time:
+                return False
+
+            user.set_password(new_password)
+            user.reset_token = None
+            user.reset_token_expiry = None
+            self.session.commit()
+            return True
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"reset password failed, {str(e)}")
+            return False
+
+    @track_query(UPDATE)
+    def verify_email(self, user_id):
+        """标记用户邮箱为已验证"""
+        try:
+            user = self.session.query(User).filter_by(id=user_id).first()
+            if user:
+                user.email_verified = True
+                self.session.commit()
+                return True
+            return False
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"verify email for user {user_id} failed, {str(e)}")
+            return False
 
     @track_query(UPDATE)  # 标记为更新操作
     def update_account_type(self, id, account_type, subscription_start_time=None, subscription_end_time=None)->bool:
@@ -387,6 +515,50 @@ class UserOps:
                 "basic_users": 0,
                 "pro_users": 0
             }
+
+    @track_query(UPDATE)
+    def update_phone(self, user_id, phone_number)->bool:
+        """更新用户手机号"""
+        try:
+            user = self.session.query(User).filter_by(id=user_id).first()
+            if user:
+                user.phone_number = phone_number
+                self.session.commit()
+                current_app.logger.debug(f"updated user phone number {user_id}")
+                return True
+            else:
+                current_app.logger.warn(f"no user {user_id}")
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"failed to update user phone number {user_id}, error {str(e)}")
+        return False
+
+    @track_query(UPDATE)
+    def update_email(self, user_id, email, verified=False)->bool:
+        """更新用户邮箱"""
+        try:
+            user = self.session.query(User).filter_by(id=user_id).first()
+            if user:
+                user.email = email
+                user.email_verified = verified
+                self.session.commit()
+                current_app.logger.debug(f"updated user email {user_id}")
+                return True
+            else:
+                current_app.logger.warn(f"no user {user_id}")
+        except Exception as e:
+            self.session.rollback()
+            current_app.logger.warn(f"failed to update user email {user_id}, error {str(e)}")
+        return False
+
+    @track_query(SELECT)
+    def get_user_by_phone(self, phone_number):
+        """通过手机号获取用户"""
+        try:
+            return self.session.query(User).filter_by(phone_number=phone_number).first()
+        except Exception as e:
+            current_app.logger.warn(f"get user by phone {phone_number} failed, {str(e)}")
+        return None
 
 class AdminUser(db.Model):
     __tablename__ = 'ADMIN_USER'

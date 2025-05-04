@@ -3,6 +3,7 @@ aiosignal==1.3.1
 alembic==1.13.2
 annotated-types==0.7.0
 attrs==23.2.0
+authlib==1.3.0  # 用于OAuth认证
 bidict==0.23.1
 blinker==1.8.2
 camel-converter==3.1.2
@@ -61,3 +62,6 @@ cryptography==43.0.1
 
 # 进度条
 tqdm==4.67.0
+
+# 邮件发送
+Flask-Mail==0.9.1

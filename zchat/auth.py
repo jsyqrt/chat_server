@@ -3,6 +3,7 @@ import random
 import string
 import time
 import hashlib
+import uuid
 from collections import OrderedDict
 
 import jwt
@@ -11,16 +12,47 @@ from flask import (
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+from authlib.integrations.flask_client import OAuth
 
 from zchat.models.base import db
 from zchat.models.user import *
+from zchat.mail import send_verification_email, send_password_reset_email, generate_verification_token
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 login_manager = LoginManager()
+oauth = OAuth()
 
 def init_app(app):
     login_manager.init_app(app)
+    oauth.init_app(app)
+
+    # 配置Google OAuth
+    oauth.register(
+        name='google',
+        client_id=app.config.get('GOOGLE_CLIENT_ID'),
+        client_secret=app.config.get('GOOGLE_CLIENT_SECRET'),
+        access_token_url='https://accounts.google.com/o/oauth2/token',
+        access_token_params=None,
+        authorize_url='https://accounts.google.com/o/oauth2/auth',
+        authorize_params=None,
+        api_base_url='https://www.googleapis.com/oauth2/v1/',
+        userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo',
+        client_kwargs={'scope': 'openid email profile'},
+    )
+
+    # 配置GitHub OAuth
+    oauth.register(
+        name='github',
+        client_id=app.config.get('GITHUB_CLIENT_ID'),
+        client_secret=app.config.get('GITHUB_CLIENT_SECRET'),
+        access_token_url='https://github.com/login/oauth/access_token',
+        access_token_params=None,
+        authorize_url='https://github.com/login/oauth/authorize',
+        authorize_params=None,
+        api_base_url='https://api.github.com/',
+        client_kwargs={'scope': 'user:email'},
+    )
 
 def init_verification_code_dict(app):
     # Redis实例已经在app中初始化，无需额外操作
@@ -108,10 +140,78 @@ class RedisVerificationCode:
         pipe.delete(timestamp_key)
         pipe.execute()
 
-@bp.route('/verification_code', methods=['GET'])
+class RedisTokenStore:
+    """Redis存储验证令牌"""
+    def __init__(self, redis_client, expiration_time=3600):  # 默认1小时过期
+        self.redis = redis_client
+        self.expiration_time = expiration_time
+        self.verification_prefix = "email_verification:"
+        self.reset_prefix = "password_reset:"
+        self.refresh_prefix = "jwt_refresh:"
+
+    def store_verification_token(self, user_id, token):
+        """存储邮箱验证令牌"""
+        key = f"{self.verification_prefix}{user_id}"
+        self.redis.set(key, token, ex=self.expiration_time)
+
+    def verify_token(self, user_id, token):
+        """验证邮箱验证令牌"""
+        key = f"{self.verification_prefix}{user_id}"
+        stored_token = self.redis.get(key)
+        if stored_token:
+            # 如果存储的是字节类型，需要解码
+            if isinstance(stored_token, bytes):
+                stored_token = stored_token.decode('utf-8')
+            if stored_token == token:
+                self.redis.delete(key)  # 验证成功后删除令牌
+                return True
+        return False
+
+    def store_reset_token(self, email, token):
+        """存储密码重置令牌"""
+        key = f"{self.reset_prefix}{token}"
+        self.redis.set(key, email, ex=self.expiration_time)
+
+    def verify_reset_token(self, token):
+        """验证密码重置令牌，返回对应的邮箱"""
+        key = f"{self.reset_prefix}{token}"
+        email = self.redis.get(key)
+        if email:
+            # 如果存储的是字节类型，需要解码
+            if isinstance(email, bytes):
+                email = email.decode('utf-8')
+            # 注意：这里不删除令牌，等到密码重置成功后再删除
+            return email
+        return None
+
+    def invalidate_reset_token(self, token):
+        """使重置令牌失效"""
+        key = f"{self.reset_prefix}{token}"
+        self.redis.delete(key)
+
+    def store_refresh_token(self, user_id, token, expiration_time=604800):  # 默认7天过期
+        """存储JWT刷新令牌"""
+        key = f"{self.refresh_prefix}{token}"
+        self.redis.set(key, str(user_id), ex=expiration_time)
+
+    def verify_refresh_token(self, token):
+        """验证刷新令牌，返回用户ID"""
+        key = f"{self.refresh_prefix}{token}"
+        user_id = self.redis.get(key)
+        if user_id:
+            return int(user_id)
+        return None
+
+    def invalidate_refresh_token(self, token):
+        """使刷新令牌失效"""
+        key = f"{self.refresh_prefix}{token}"
+        self.redis.delete(key)
+
+@bp.route('/verification_code', methods=['POST'])
 def verification_code():
-    # TODO check if escape is needed
-    phone_number = request.args.get('phone_number', '0')
+    # 修改为POST方法
+    data = request.json if request.is_json else request.form
+    phone_number = data.get('phone_number', '0')
 
     if phone_number == '0':
         return { "error": "Invalid Phone Number!" }, 400
@@ -172,11 +272,12 @@ def unauthorized_handler():
     current_app.logger.warn(f"unauthorized_handler user id: {current_user.get_id()}")
     return 'Unauthorized', 401
 
-@bp.route('/login', methods=['GET']) # TODO to POST
+@bp.route('/login', methods=['POST'])
 def login():
-    phone_number = request.args.get('phone_number', '0')
-    verification_code = request.args.get('verification_code', '0')
-    invite_code = request.args.get('invite_code', None)  # 新增：接收邀请码
+    data = request.json if request.is_json else request.form
+    phone_number = data.get('phone_number', '0')
+    verification_code = data.get('verification_code', '0')
+    invite_code = data.get('invite_code', None)  # 新增：接收邀请码
 
     if phone_number == '0' or verification_code == '0':
         return { "error": "Invalid Phone Number or Verification Code!" }, 400
@@ -229,11 +330,15 @@ def login():
     succeed = login_user(user)
     current_app.logger.debug(f'log in succeed, {user.get_id_int()}, {succeed}')
 
-    token = jwt.encode({'user_id': user_id}, current_app.config['JWT_SECRET_KEY'])
+    # 生成访问令牌和刷新令牌
+    access_token = generate_jwt_token(user_id)
+    refresh_token = generate_refresh_token(user_id)
+
     return jsonify(
         {
             "error": "login succeed",
-            "jwt": token,
+            "jwt": access_token,
+            "refresh_token": refresh_token,
             "user_id": user_id,
             "invited_by": inviter_id  # 返回邀请者ID信息
         }
@@ -257,11 +362,20 @@ def admin_required(func):
 
     return decorated_view
 
-@bp.route('/logout', methods=['GET']) # TODO to POST
+@bp.route('/logout', methods=['POST'])
 @login_required
 def logout():
     user_id = current_user.get_id_int()
     current_app.logger.debug(f'logging out user id, {user_id}')
+
+    # 从请求中获取刷新令牌（如果有）
+    data = request.json if request.is_json else request.form
+    refresh_token = data.get('refresh_token')
+
+    # 使刷新令牌失效
+    if refresh_token:
+        token_store = RedisTokenStore(current_app.redis)
+        token_store.invalidate_refresh_token(refresh_token)
 
     logout_user()
 
@@ -271,4 +385,606 @@ def logout():
             "user_id": user_id
         }
     )
+
+@bp.route('/register', methods=['POST'])
+def register():
+    """邮箱密码注册"""
+    data = request.json if request.is_json else request.form
+    email = data.get('email')
+    password = data.get('password')
+    invite_code = data.get('invite_code')
+
+    if not email or not password:
+        return {"error": "Invalid Email or Password!"}, 400
+
+    # 检查邮箱格式
+    if '@' not in email:
+        return {"error": "Invalid Email!"}, 400
+
+    # 检查密码强度
+    if len(password) < 8:
+        return {"error": "Password must be at least 8 characters long!"}, 400
+
+    # 处理邀请者ID
+    inviter_id = None
+    if invite_code:
+        try:
+            user = User.query.filter_by(invite_code=invite_code).first()
+            if user:
+                inviter_id = user.id
+        except Exception as e:
+            current_app.logger.error(f"Error finding inviter for invite code {invite_code}: {str(e)}")
+
+    # 检查邮箱是否已注册
+    user_ops = UserOps(session=db.session)
+    existing_user = user_ops.get_user_by_email(email)
+    if existing_user:
+        return {"error": "This email has been registered!"}, 400
+
+    # 创建用户
+    user_id = user_ops.get_or_create_user(email=email, password=password, invited_by=inviter_id)
+    if not user_id:
+        return {"error": "Registration failed!"}, 500
+
+    # 生成验证令牌并发送验证邮件
+    token = generate_verification_token()
+    token_store = RedisTokenStore(current_app.redis)
+    token_store.store_verification_token(user_id, token)
+
+    # 发送验证邮件
+    try:
+        send_verification_email(user_id, email, token)
+    except Exception as e:
+        current_app.logger.error(f"Failed to send verification email: {str(e)}")
+        return {"error": "Failed to send verification email, but the account has been created!"}, 201
+
+    # 返回成功信息
+    return {
+        "error": "register succeed",
+        "message": "Registration succeed, please check the verification email!",
+        "user_id": user_id
+    }, 200
+
+@bp.route('/verify_email', methods=['GET', 'POST'])
+def verify_email():
+    """验证邮箱"""
+    if request.method == 'GET':
+        # 兼容旧版，从URL参数获取
+        user_id = request.args.get('user_id')
+        token = request.args.get('token')
+    else:
+        # 新版使用POST
+        data = request.json if request.is_json else request.form
+        user_id = data.get('user_id')
+        token = data.get('token')
+
+    if not user_id or not token:
+        return render_template('customer_service/error.html',
+                            title='无效的请求',
+                            message='缺少必要的参数，请确保使用正确的验证链接。')
+
+    # 验证令牌
+    token_store = RedisTokenStore(current_app.redis)
+    if not token_store.verify_token(user_id, token):
+        return render_template('customer_service/error.html',
+                            title='链接已失效',
+                            message='验证链接已过期或无效，请重新申请验证邮件。')
+
+    # 更新用户邮箱验证状态
+    user_ops = UserOps(session=db.session)
+    if not user_ops.verify_email(user_id):
+        return render_template('customer_service/error.html',
+                            title='验证失败',
+                            message='邮箱验证失败，请稍后重试或联系客服。')
+
+    # 返回HTML页面
+    return render_template('customer_service/email_verified.html')
+
+@bp.route('/email_login', methods=['POST'])
+def email_login():
+    """邮箱密码登录"""
+    data = request.json if request.is_json else request.form
+    email = data.get('email')
+    password = data.get('password')
+
+    if not email or not password:
+        return {"error": "Please provide email and password!"}, 400
+
+    # 根据邮箱查询用户
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_user_by_email(email)
+
+    if not user or not user.check_password(password):
+        return {"error": "Invalid email or password!"}, 401
+
+    # 检查邮箱是否已验证
+    if not user.email_verified:
+        return {"error": "Email not verified, please verify your email first!"}, 403
+
+    # 登录用户
+    lg_user = LGUser(user)
+    login_user(lg_user)
+
+    # 生成访问令牌和刷新令牌
+    access_token = generate_jwt_token(user.id)
+    refresh_token = generate_refresh_token(user.id)
+
+    return jsonify({
+        "error": "login succeed",
+        "jwt": access_token,
+        "refresh_token": refresh_token,
+        "user_id": user.id
+    })
+
+@bp.route('/forgot_password', methods=['POST'])
+def forgot_password():
+    """忘记密码，发送重置邮件"""
+    data = request.json if request.is_json else request.form
+    email = data.get('email')
+
+    if not email:
+        return {"error": "Please provide email!"}, 400
+
+    # 查询用户
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_user_by_email(email)
+
+    if not user:
+        # 出于安全考虑，即使邮箱不存在也返回成功
+        return {"message": "If the email has been registered, the password reset email has been sent!"}, 200
+
+    # 生成重置令牌
+    token = generate_verification_token()
+    token_store = RedisTokenStore(current_app.redis)
+    token_store.store_reset_token(email, token)
+
+    # 发送重置邮件
+    try:
+        send_password_reset_email(email, token)
+    except Exception as e:
+        current_app.logger.error(f"Failed to send password reset email: {str(e)}")
+        return {"error": "Failed to send password reset email!"}, 500
+
+    return {"message": "The password reset email has been sent, please check it!"}
+
+@bp.route('/reset_password', methods=['GET', 'POST'])
+def reset_password():
+    """重置密码"""
+    if request.method == 'GET':
+        # 显示重置密码表单
+        token = request.args.get('token')
+        if not token:
+            return render_template('customer_service/error.html',
+                                title='无效的请求',
+                                message='缺少必要的参数，请确保使用正确的重置密码链接。')
+
+        # 验证令牌是否有效
+        token_store = RedisTokenStore(current_app.redis)
+        email = token_store.verify_reset_token(token)
+        if not email:
+            return render_template('customer_service/error.html',
+                                title='链接已失效',
+                                message='重置密码链接已过期或无效，请重新申请重置密码。')
+
+        # 返回重置密码表单页面，同时传递token
+        return render_template('customer_service/reset_password.html', token=token)
+
+    elif request.method == 'POST':
+        # 处理重置密码表单提交
+        data = request.json if request.is_json else request.form
+        token = data.get('token')
+        new_password = data.get('new_password')
+
+        if not token or not new_password:
+            return render_template('customer_service/error.html',
+                                title='无效的请求',
+                                message='请提供所有必要的信息。')
+
+        if len(new_password) < 8:
+            return render_template('customer_service/error.html',
+                                title='密码不符合要求',
+                                message='密码长度必须至少为8个字符。')
+
+        # 验证令牌
+        token_store = RedisTokenStore(current_app.redis)
+        email = token_store.verify_reset_token(token)
+
+        if not email:
+            return render_template('customer_service/error.html',
+                                title='链接已失效',
+                                message='重置密码链接已过期或无效，请重新申请重置密码。')
+
+        # 更新密码
+        user_ops = UserOps(session=db.session)
+        user = user_ops.get_user_by_email(email)
+
+        if not user:
+            return render_template('customer_service/error.html',
+                                title='用户不存在',
+                                message='找不到对应的用户账号，请确认您的邮箱地址。')
+
+        try:
+            user.set_password(new_password)
+            db.session.commit()
+
+            # 密码更新成功后，使令牌失效
+            token_store.invalidate_reset_token(token)
+
+            # 重定向到成功页面
+            return redirect(url_for('auth.reset_password_success'))
+        except Exception as e:
+            current_app.logger.error(f"Failed to reset password: {str(e)}")
+            db.session.rollback()
+            return render_template('customer_service/error.html',
+                                title='重置失败',
+                                message='重置密码时发生错误，请稍后重试。')
+
+@bp.route('/reset_password_success')
+def reset_password_success():
+    """重置密码成功页面"""
+    return render_template('customer_service/reset_password_success.html')
+
+def generate_jwt_token(user_id, expiration=3600):
+    """生成JWT访问令牌"""
+    payload = {
+        'user_id': user_id,
+        'exp': time.time() + expiration,
+        'iat': time.time()
+    }
+    return jwt.encode(payload, current_app.config['JWT_SECRET_KEY'])
+
+def generate_refresh_token(user_id):
+    """生成刷新令牌并存储到Redis"""
+    token = str(uuid.uuid4())
+    token_store = RedisTokenStore(current_app.redis)
+    token_store.store_refresh_token(user_id, token)
+    return token
+
+@bp.route('/refresh_token', methods=['POST'])
+def refresh_token():
+    """使用刷新令牌获取新的访问令牌"""
+    data = request.json if request.is_json else request.form
+    refresh_token = data.get('refresh_token')
+
+    if not refresh_token:
+        return {"error": "Missing refresh token!"}, 400
+
+    # 验证刷新令牌
+    token_store = RedisTokenStore(current_app.redis)
+    user_id = token_store.verify_refresh_token(refresh_token)
+
+    if not user_id:
+        return {"error": "Invalid refresh token or expired!"}, 401
+
+    # 生成新的访问令牌
+    access_token = generate_jwt_token(user_id)
+
+    return jsonify({
+        "error": "refresh succeed",
+        "jwt": access_token,
+        "user_id": user_id
+    })
+
+@bp.route('/google_login')
+def google_login():
+    """Google OAuth登录"""
+    redirect_uri = url_for('auth.google_callback', _external=True)
+    return oauth.google.authorize_redirect(redirect_uri)
+
+@bp.route('/google_callback')
+def google_callback():
+    """Google OAuth回调"""
+    token = oauth.google.authorize_access_token()
+    user_info = oauth.google.get('userinfo').json()
+
+    if not user_info or 'email' not in user_info:
+        return {"error": "Google login failed, unable to get user information!"}, 400
+
+    email = user_info['email']
+    oauth_id = user_info['id']
+
+    # 查找或创建用户
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_user_by_oauth('google', oauth_id)
+
+    if not user:
+        user = user_ops.get_user_by_email(email)
+
+        if user:
+            # 如果邮箱已存在，关联OAuth信息
+            user.set_oauth_info('google', oauth_id)
+            db.session.commit()
+        else:
+            # 创建新用户
+            nickname = user_info.get('name', '用户')
+            user_id = user_ops.get_or_create_user(
+                email=email,
+                oauth_provider='google',
+                oauth_id=oauth_id
+            )
+            user = user_ops.get_one(id=user_id)
+
+            if not user:
+                return {"error": "Failed to create user!"}, 500
+
+            # 对于OAuth登录，自动验证邮箱
+            user.email_verified = True
+            db.session.commit()
+
+    # 登录用户
+    lg_user = LGUser(user)
+    login_user(lg_user)
+
+    # 生成访问令牌和刷新令牌
+    access_token = generate_jwt_token(user.id)
+    refresh_token = generate_refresh_token(user.id)
+
+    # 这里可以返回JSON或重定向到前端页面
+    return jsonify({
+        "error": "login succeed",
+        "jwt": access_token,
+        "refresh_token": refresh_token,
+        "user_id": user.id
+    })
+
+@bp.route('/github_login')
+def github_login():
+    """GitHub OAuth登录"""
+    redirect_uri = url_for('auth.github_callback', _external=True)
+    return oauth.github.authorize_redirect(redirect_uri)
+
+@bp.route('/github_callback')
+def github_callback():
+    """GitHub OAuth回调"""
+    token = oauth.github.authorize_access_token()
+    # 获取用户信息
+    resp = oauth.github.get('user', token=token)
+    user_info = resp.json()
+
+    if not user_info or 'id' not in user_info:
+        return {"error": "GitHub login failed, unable to get user information!"}, 400
+
+    oauth_id = str(user_info['id'])
+
+    # GitHub不会直接提供公开邮箱，需要额外请求邮箱信息
+    email = None
+    try:
+        emails_resp = oauth.github.get('user/emails', token=token)
+        emails_data = emails_resp.json()
+        # 查找主要且已验证的邮箱
+        for email_data in emails_data:
+            if email_data.get('primary', False) and email_data.get('verified', False):
+                email = email_data.get('email')
+                break
+        # 如果没有找到主要邮箱，使用第一个已验证的邮箱
+        if not email:
+            for email_data in emails_data:
+                if email_data.get('verified', False):
+                    email = email_data.get('email')
+                    break
+    except Exception as e:
+        current_app.logger.error(f"Failed to get GitHub emails: {str(e)}")
+
+    if not email:
+        return {"error": "GitHub login failed, unable to get valid email!"}, 400
+
+    # 查找或创建用户
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_user_by_oauth('github', oauth_id)
+
+    if not user:
+        user = user_ops.get_user_by_email(email)
+
+        if user:
+            # 如果邮箱已存在，关联OAuth信息
+            user.set_oauth_info('github', oauth_id)
+            db.session.commit()
+        else:
+            # 创建新用户
+            nickname = user_info.get('name') or user_info.get('login', '用户')
+            user_id = user_ops.get_or_create_user(
+                email=email,
+                oauth_provider='github',
+                oauth_id=oauth_id
+            )
+            user = user_ops.get_one(id=user_id)
+
+            if not user:
+                return {"error": "Failed to create user!"}, 500
+
+            # 对于OAuth登录，自动验证邮箱
+            user.email_verified = True
+            db.session.commit()
+
+    # 登录用户
+    lg_user = LGUser(user)
+    login_user(lg_user)
+
+    # 生成访问令牌和刷新令牌
+    access_token = generate_jwt_token(user.id)
+    refresh_token = generate_refresh_token(user.id)
+
+    # 这里可以返回JSON或重定向到前端页面
+    return jsonify({
+        "error": "login succeed",
+        "jwt": access_token,
+        "refresh_token": refresh_token,
+        "user_id": user.id
+    })
+
+# 用户管理接口
+@bp.route('/change_password', methods=['POST'])
+@login_required
+def change_password():
+    """修改密码"""
+    data = request.json if request.is_json else request.form
+    current_password = data.get('current_password')
+    new_password = data.get('new_password')
+
+    if not current_password or not new_password:
+        return {"error": "Please provide current password and new password!"}, 400
+
+    if len(new_password) < 8:
+        return {"error": "New password must be at least 8 characters long!"}, 400
+
+    # 获取当前用户
+    user_id = current_user.get_id_int()
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_one(id=user_id)
+
+    # 验证当前密码
+    if not user.check_password(current_password):
+        return {"error": "Current password is incorrect!"}, 401
+
+    # 更新密码
+    user.set_password(new_password)
+    db.session.commit()
+
+    return {"message": "Password updated successfully!"}
+
+@bp.route('/bind_phone', methods=['POST'])
+@login_required
+def bind_phone():
+    """绑定手机号"""
+    data = request.json if request.is_json else request.form
+    phone_number = data.get('phone_number')
+    verification_code = data.get('verification_code')
+
+    if not phone_number or not verification_code:
+        return {"error": "Please provide phone number and verification code!"}, 400
+
+    # 验证验证码
+    vcode_handler = RedisVerificationCode(current_app.redis)
+    code_data = vcode_handler.get(phone_number)
+
+    if code_data is None:
+        return {"error": "Verification code does not exist or has expired!"}, 400
+
+    insert_time, expected_code = code_data
+    current_time = time.time()
+
+    if current_time - insert_time > vcode_handler.expiration_time:
+        del vcode_handler[phone_number]
+        return {"error": "Verification code has expired!"}, 400
+
+    if verification_code != expected_code:
+        return {"error": "Verification code is incorrect!"}, 400
+
+    # 验证码正确，删除
+    del vcode_handler[phone_number]
+
+    # 检查手机号是否已被其他用户绑定
+    user_ops = UserOps(session=db.session)
+    existing_user = user_ops.get_user_by_phone(phone_number)
+
+    if existing_user and existing_user.id != current_user.get_id_int():
+        return {"error": "This phone number has been bound to another account!"}, 400
+
+    # 绑定手机号
+    user_id = current_user.get_id_int()
+    success = user_ops.update_phone(user_id, phone_number)
+
+    if success:
+        return {"message": "Phone number bound successfully!"}
+    else:
+        return {"error": "Failed to bind phone number!"}, 500
+
+@bp.route('/unbind_phone', methods=['POST'])
+@login_required
+def unbind_phone():
+    """解绑手机号"""
+    # 获取当前用户
+    user_id = current_user.get_id_int()
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_one(id=user_id)
+
+    # 检查用户是否已绑定手机号
+    if not user.phone_number:
+        return {"error": "Current account is not bound to a phone number!"}, 400
+
+    # 检查是否有邮箱，确保至少保留一种登录方式
+    if not user.email:
+        return {"error": "Unable to unbind phone number, account must retain at least one login method!"}, 400
+
+    # 解绑手机号
+    success = user_ops.update_phone(user_id, None)
+
+    if success:
+        return {"message": "Phone number unbound successfully!"}
+    else:
+        return {"error": "Failed to unbind phone number!"}, 500
+
+@bp.route('/bind_email', methods=['POST'])
+@login_required
+def bind_email():
+    """绑定邮箱"""
+    data = request.json if request.is_json else request.form
+    email = data.get('email')
+
+    if not email:
+        return {"error": "Please provide email!"}, 400
+
+    # 检查邮箱格式
+    if '@' not in email:
+        return {"error": "Invalid email format!"}, 400
+
+    # 检查邮箱是否已被其他用户绑定
+    user_ops = UserOps(session=db.session)
+    existing_user = user_ops.get_user_by_email(email)
+
+    if existing_user and existing_user.id != current_user.get_id_int():
+        return {"error": "This email has been bound to another account!"}, 400
+
+    # 获取当前用户
+    user_id = current_user.get_id_int()
+    user = user_ops.get_one(id=user_id)
+
+    # 如果已经绑定了相同的邮箱
+    if user.email == email and user.email_verified:
+        return {"message": "Current email is already bound and verified!"}
+
+    # 更新邮箱
+    success = user_ops.update_email(user_id, email, False)  # 新绑定的邮箱需要验证
+
+    if not success:
+        return {"error": "Failed to bind email!"}, 500
+
+    # 生成验证令牌并发送验证邮件
+    token = generate_verification_token()
+    token_store = RedisTokenStore(current_app.redis)
+    token_store.store_verification_token(user_id, token)
+
+    # 发送验证邮件
+    try:
+        send_verification_email(user_id, email, token)
+    except Exception as e:
+        current_app.logger.error(f"Failed to send verification email: {str(e)}")
+        return {"error": "Email is already bound, but failed to send verification email!"}, 201
+
+    return {"message": "Email bound successfully, please check the verification email!"}
+
+@bp.route('/unbind_email', methods=['POST'])
+@login_required
+def unbind_email():
+    """解绑邮箱"""
+    # 获取当前用户
+    user_id = current_user.get_id_int()
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_one(id=user_id)
+
+    # 检查用户是否已绑定邮箱
+    if not user.email:
+        return {"error": "Current account is not bound to an email!"}, 400
+
+    # 检查是否有手机号，确保至少保留一种登录方式
+    if not user.phone_number:
+        return {"error": "Unable to unbind email, account must retain at least one login method!"}, 400
+
+    # 解绑邮箱
+    success = user_ops.update_email(user_id, None, False)
+
+    if success:
+        return {"message": "Email unbound successfully!"}
+    else:
+        return {"error": "Failed to unbind email!"}, 500
 

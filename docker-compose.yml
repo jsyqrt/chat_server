@@ -21,34 +21,8 @@ services:
       - ./migrations:/app/migrations
       - ./instance:/app/instance
       - app_logs:/app/log
-    environment:
-      - FLASK_ENV=production
-      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://zchat:zchat_password@mysql:3306/zchat
-      # - DOCUMENT_STORE_TYPE=mysql  # 可选: mysql, mongodb
-      - DOCUMENT_STORE_TYPE=mongodb  # 可选: mysql, mongodb
-      - MYSQL_HOST=mysql
-      - MYSQL_PORT=3306
-      - MYSQL_USER=zchat
-      - MYSQL_PASSWORD=zchat_password
-      - MYSQL_DB=zchat
-      - MONGODB_HOST=mongodb
-      - MONGODB_PORT=27017
-      - MONGODB_USER=zchat
-      - MONGODB_PASSWORD=zchat_password
-      - MONGODB_DB=zchat
-      - MONGODB_AUTH_SOURCE=admin
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - REDIS_PASSWORD=zchat_password
-      - REDIS_DB=0
-      - LOG_LEVEL=${LOG_LEVEL:-info}
-      - SF_ZCHAT_API_KEY=${SF_ZCHAT_API_KEY:-UNKNOWN}
-      - IS_DOCKER=true
-      - ALIPAY_APP_ID=2021000148602067
-      - ALIPAY_PRIVATE_KEY=MIIEowIBAAKCAQEAgqtbZsLpoTxLkCoLvaq0pxh5nUnLFvjYu+5w+qy4CQOEXqCm6Q/vJQyzzPheBAigDn0tWLBgHsRMhA2e1q0rDqHudO2MSwu0GMMYO395MbJCecckVgHBf9pLdynw8GNtwhw/pb8gvQqTMyEZ0p/OUwyQJn7UhIc6Vj5UIjVrTEYGpudMqi5alu0+Zl/r8KXHUinV+XC8MXzfszg2VhiQPFxN8+kA3IiXg95S0LpyRjA2eX+WufhFtClMD3XbW0iU0KhOxzP7DgkiqLAgz4vA0IyzD/9VXaLRh26XTOBXsJC8OKHfucLkIJzSkvYRN0wOJgrOVjo1YfC//iDmD4Xa7wIDAQABAoIBAHqgUzuByXzdt9AIFVKeY8C4UFESknvxdnwPTYmCE4ep/ExNmbX4lSYA4K+HmbtRWNugD7E+fEYDVAdNPPYcNt8Zik3DLDi1OANQ+2nCvDquHoJoJ6prJWtVsiKXgpwlwzg6CGUEk7W0ueVut+wYuqjnjlQCDHB+83lCLvSXiyVc6sTh4XTpcZKURFc6ryNPmhUtjdTVr6B26TW0Ml+VQjPCrxk21t+Ps4a/65rSiiit2Zg/XQgcGTzq5GgkRC1w+P84Az+TnDvDh8ycDvswMZkQJEAN9GNa5bk++lFYssqu/9Na5hwJRP6sujKqtqz3GGn8Xhmt/SyTS3piWedFCyECgYEA1T737wJ3heHWmAcR22xDDMz9PTqtdmOiY3NM3hF5OGgMuyldWpKsqiCxoN817NTN3ov8BQYImSB2Tfe5B/Nt3054NhElBLTXz5nk9al0sDCKmw2/kSGZu2A0arOeVUX+fCabx6DI5jwsp9TladwE5MOUg8VVoUdQ1kTdhLpv4H8CgYEAnN4S3IJem1l0NV2BtcS+6V5x0TtA+aXzUc+8oC7HmkpPpy/3ficq0i8q7+S67IP1/a2iP8BpD4rFMpFktNz7zWu0678Ziiyn7w46Zut4Zjx2Gkn5hSKrLJaEvtKHObMeXOGMtmXkVJyqxRhTuJYH+7Kii6hKEzeWvjUHVy+ezZECgYAcKxozHz9Mlx1yrZRlSLK+sSFOgj7Bob2kp2li+CnsEoqD+p3TRga63mC4YGPOKfobyJ/8xeRC3e/isrNlYnmEAuiMM82RBpZvXOPKs5yvXWohuzov4KFfCAFEiv+CQiGwoqT3RLzk9NPtQ4keZ6rZ0SAAHAQIrtP1ydj9HGeE3wKBgCadkF0SBsINSkscwqKBVVHTewc7o+oQzQ4VqmRwP5ietG7+otk+QQ9Opy44yz8P2Q1ioe85qWM3EQY6vmS7hYzy962U9G+MQKbbhMrzKkdYmOYt0avRdfva7cCfyMQOcOoCaAY6nPOrQWqVa36kCEEQn2zrt5h1dblLCoyO33PRAoGBAKJy2J4byB/CbFcKFdRyXTrRAAfSrNb+eHY6fCRyphR8rqYjqsV2tc9sKSaQtTMM5vKd9DeyPZYQfMSDosNvybf5uMwZ/uxIU7UbZQzxX7fuf3ObT/ela7gnFRjl0eR2UTIsSf4u8VmCxE8IUJdlG3OLRIKh6QMR6S9MrouIfZkr
-      - ALIPAY_PUBLIC_KEY=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhuSG/+TDxt33SD4MpOFLuOxUUakc1wIXIkmNR7jDwLCduaPj95PXyNP4C5l3nam3FfY4QPnDtJMc1AbXYkX7SLWCHq8AxRGj75KtlOWDEkDetHc1lboJnk3pJxkTDooWUs55VO5gWNo1A8FCnQ84RKuOhSrUjwn1RwdDURNx28Ml1Q3k4PefHOQ/NXay/m/PSRFTp/4GY9flHXf8rGulRi+qlwgFTNZNYhCi23k7VQPiYfVEV6Lm0Fv5QigSZtiVVU5PT4Dt2l4j86Gf78Qr61P4VHZsin4lJ3HU/DrxBxLYRQE3rTHOLvqB06MsN+7U0bB9wTZxm+MdGlPF470AVwIDAQAB
-      # - ALIPAY_GATEWAY_URL=https://openapi.alipay.com/gateway.do
-      - ALIPAY_GATEWAY_URL=https://openapi-sandbox.dl.alipaydev.com/gateway.do
+    env_file:
+      - .env
     networks:
       - zchat-network
     healthcheck:
