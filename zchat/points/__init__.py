@@ -2,6 +2,7 @@ import time
 import json
 from flask import Blueprint, request, jsonify, current_app, g
 from flask_login import login_required, current_user
+from flask_babel import gettext as _
 
 from zchat.models.base import db
 from zchat.models.user import UserOps
@@ -80,27 +81,27 @@ def get_point_packages():
     packages = [
         {
             "id": 1,
-            "name": "积分套餐A",
+            "name": _("积分套餐A"),
             "points": 1000,
             "price": 10.0,
             "validity_days": 30,
-            "description": "10元购买1000积分，有效期30天"
+            "description": _("10元购买1000积分，有效期30天")
         },
         {
             "id": 2,
-            "name": "积分套餐B",
+            "name": _("积分套餐B"),
             "points": 3000,
             "price": 28.0,
             "validity_days": 30,
-            "description": "28元购买3000积分，有效期30天，比单独购买更优惠"
+            "description": _("28元购买3000积分，有效期30天，比单独购买更优惠")
         },
         {
             "id": 3,
-            "name": "积分套餐C",
+            "name": _("积分套餐C"),
             "points": 5000,
             "price": 45.0,
             "validity_days": 30,
-            "description": "45元购买5000积分，有效期30天，最实惠的选择"
+            "description": _("45元购买5000积分，有效期30天，最实惠的选择")
         }
     ]
 
@@ -124,9 +125,9 @@ def purchase_points():
 
     # 获取套餐信息
     packages = {
-        1: {"points": 1000, "price": 10.0, "name": "积分套餐A"},
-        2: {"points": 3000, "price": 28.0, "name": "积分套餐B"},
-        3: {"points": 5000, "price": 45.0, "name": "积分套餐C"},
+        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A")},
+        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B")},
+        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C")},
     }
 
     if package_id not in packages:
@@ -159,7 +160,7 @@ def purchase_points():
             subject=package["name"],
             out_trade_no=order.order_id,
             total_amount=package["price"],
-            body=f"购买{package['points']}积分"
+            body=_("购买{}积分").format(package['points'])
         )
 
         if not order_string:
@@ -267,7 +268,7 @@ def verify_points_purchase():
                     "success": True,
                     "order_id": order.order_id,
                     "status": OrderStatus.PAID.value,
-                    "message": "支付成功",
+                    "message": _("支付成功"),
                     "points": points,
                     "transaction_id": payment_result['trade_no']
                 })
@@ -278,7 +279,7 @@ def verify_points_purchase():
                     "success": False,
                     "order_id": order.order_id,
                     "status": order.status,
-                    "message": "支付处理中",
+                    "message": _("支付处理中"),
                     "points": points,
                 })
 
@@ -288,9 +289,9 @@ def verify_points_purchase():
         "success": order.status == OrderStatus.PAID.value,
         "order_id": order.order_id,
         "status": order.status,
-        "message": "支付成功" if order.status == OrderStatus.PAID.value else (
-            "支付失败" if order.status == OrderStatus.FAILED.value else
-            "已取消" if order.status == OrderStatus.CANCELLED.value else "待支付"
+        "message": _("支付成功") if order.status == OrderStatus.PAID.value else (
+            _("支付失败") if order.status == OrderStatus.FAILED.value else
+            _("已取消") if order.status == OrderStatus.CANCELLED.value else _("待支付")
         ),
         "points": points,
         "transaction_id": order.transaction_id
@@ -362,29 +363,29 @@ def get_subscription_plans():
         {
             "id": 0,
             "type": AccountType.FREE.value,
-            "name": "免费账户",
+            "name": _("免费账户"),
             "price": PointsOps.PRICES[AccountType.FREE.value],
             "cycle": "unlimited",
             "daily_points": PointsOps.DAILY_POINTS[AccountType.FREE.value],
-            "description": f"免费账户，每天{PointsOps.DAILY_POINTS[AccountType.FREE.value]}积分"
+            "description": _("免费账户，每天{}积分").format(PointsOps.DAILY_POINTS[AccountType.FREE.value])
         },
         {
             "id": 1,
             "type": SubscriptionType.BASIC.value,
-            "name": "基础会员",
+            "name": _("基础会员"),
             "price": PointsOps.PRICES[AccountType.BASIC.value],
             "cycle": "month",
             "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
-            "description": f"每月{PointsOps.PRICES[AccountType.BASIC.value]}元，每天{PointsOps.DAILY_POINTS[AccountType.BASIC.value]}积分"
+            "description": _("每月{}元，每天{}积分").format(PointsOps.PRICES[AccountType.BASIC.value], PointsOps.DAILY_POINTS[AccountType.BASIC.value])
         },
         {
             "id": 2,
             "type": SubscriptionType.PRO.value,
-            "name": "高级会员",
+            "name": _("高级会员"),
             "price": PointsOps.PRICES[AccountType.PRO.value],
             "cycle": "year",
             "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
-            "description": f"每年{PointsOps.PRICES[AccountType.PRO.value]}元(相当于每月{PointsOps.PRICES[AccountType.PRO.value] / 12}元)，每天{PointsOps.DAILY_POINTS[AccountType.PRO.value]}积分，性价比高"
+            "description": _("每年{}元(相当于每月{}元)，每天{}积分，性价比高").format(PointsOps.PRICES[AccountType.PRO.value], PointsOps.PRICES[AccountType.PRO.value] / 12, PointsOps.DAILY_POINTS[AccountType.PRO.value])
         }
     ]
 
@@ -409,12 +410,12 @@ def subscribe():
     subscription_info = {
         SubscriptionType.BASIC.value: {
             "price": PointsOps.PRICES[AccountType.BASIC.value],
-            "name": "基础会员(月)",
+            "name": _("基础会员(月)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value]
         },
         SubscriptionType.PRO.value: {
             "price": PointsOps.PRICES[AccountType.PRO.value],
-            "name": "高级会员(年)",
+            "name": _("高级会员(年)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value]
         }
     }
@@ -446,7 +447,7 @@ def subscribe():
             subject=plan["name"],
             out_trade_no=order.order_id,
             total_amount=plan["price"],
-            body=f"订阅{plan['name']}，每日{plan['daily_points']}积分"
+            body=_("订阅{}，每日{}积分").format(plan['name'], plan['daily_points'])
         )
 
         if not order_string:
@@ -567,7 +568,7 @@ def verify_subscription():
                     "success": True,
                     "order_id": order.order_id,
                     "status": OrderStatus.PAID.value,
-                    "message": "支付成功",
+                    "message": _("支付成功"),
                     "subscription_type": subscription_type,
                     "start_time": start_time,
                     "end_time": end_time,
@@ -579,7 +580,7 @@ def verify_subscription():
                     "success": False,
                     "order_id": order.order_id,
                     "status": order.status,
-                    "message": "支付处理中",
+                    "message": _("支付处理中"),
                     "subscription_type": subscription_type,
                     "start_time": start_time,
                     "end_time": end_time
@@ -590,9 +591,9 @@ def verify_subscription():
         "success": order.status == OrderStatus.PAID.value,
         "order_id": order.order_id,
         "status": order.status,
-        "message": "支付成功" if order.status == OrderStatus.PAID.value else (
-            "支付失败" if order.status == OrderStatus.FAILED.value else
-            "已取消" if order.status == OrderStatus.CANCELLED.value else "待支付"
+        "message": _("支付成功") if order.status == OrderStatus.PAID.value else (
+            _("支付失败") if order.status == OrderStatus.FAILED.value else
+            _("已取消") if order.status == OrderStatus.CANCELLED.value else _("待支付")
         ),
         "subscription_type": subscription_type,
         "start_time": start_time,
@@ -688,7 +689,7 @@ def check_points_sufficient(user_id, service_type):
 
     # 检查是否有足够积分
     if total_available < required_points:
-        return False, f"积分不足，当前可用积分: {total_available}，需要积分: {required_points}"
+        return False, _("积分不足，当前可用积分: {}，需要积分: {}").format(total_available, required_points)
 
     return True, ""
 
@@ -702,7 +703,7 @@ def consume_points_for_service(user_id, service_type, description=None):
 
     # 消费积分
     if not description:
-        description = f"使用服务: {service_type}"
+        description = _("使用服务: {}").format(service_type)
 
     success = points_ops.consume_points(user_id, required_points, service_type, description)
 

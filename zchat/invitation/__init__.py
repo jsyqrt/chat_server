@@ -1,6 +1,7 @@
 import time
 from flask import Blueprint, request, jsonify, current_app, g, redirect, url_for
 from flask_login import login_required, current_user, login_user
+from flask_babel import gettext as _
 
 from zchat.models.base import db
 from zchat.models.user import UserOps
@@ -19,11 +20,11 @@ def get_share_link():
     invite_code = user_ops.get_invite_code(user_id)
 
     if not invite_code:
-        return jsonify({"error": "Failed to get invitation code"}), 500
+        return jsonify({"error": _("Failed to get invitation code")}), 500
 
     # 构建分享文本
     user = user_ops.get_one(user_id)
-    share_text = f"我正在使用「职路」APP，邀请你一起加入！注册时使用我的邀请码「 {invite_code}」 获得额外积分奖励！"
+    share_text = _("我正在使用「职路」APP，邀请你一起加入！注册时使用我的邀请码「 {} 」获得额外积分奖励！").format(invite_code)
 
     return jsonify({
         "invite_code": invite_code,

@@ -1,231 +1,511 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version: zchat\n"
-"POT-Creation-Date: 2024-03-21 10:00+0800\n"
-"PO-Revision-Date: 2024-03-21 10:00+0800\n"
+"Project-Id-Version:  zchat\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-05-04 22:53+0800\n"
+"PO-Revision-Date: 2024-05-16 12:00+0800\n"
 "Last-Translator: \n"
-"Language-Team: \n"
 "Language: en\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
 
+#: zchat/invitation/__init__.py:23
+msgid "Failed to get invitation code"
+msgstr "Failed to get invitation code"
+
+#: zchat/invitation/__init__.py:27
+#, python-brace-format
+msgid "我正在使用「职路」APP，邀请你一起加入！注册时使用我的邀请码「 {} 」获得额外积分奖励！"
+msgstr ""
+"I'm using the VoyLead APP and inviting you to join! Use my invitation "
+"code \"{} \" when registering to get bonus points!"
+
+#: zchat/points/__init__.py:84 zchat/points/__init__.py:128
+msgid "积分套餐A"
+msgstr "Points Package A"
+
+#: zchat/points/__init__.py:88
+msgid "10元购买1000积分，有效期30天"
+msgstr "10 yuan for 1000 points, valid for 30 days"
+
+#: zchat/points/__init__.py:92 zchat/points/__init__.py:129
+msgid "积分套餐B"
+msgstr "Points Package B"
+
+#: zchat/points/__init__.py:96
+msgid "28元购买3000积分，有效期30天，比单独购买更优惠"
+msgstr ""
+"28 yuan for 3000 points, valid for 30 days, better value than individual "
+"purchase"
+
+#: zchat/points/__init__.py:100 zchat/points/__init__.py:130
+msgid "积分套餐C"
+msgstr "Points Package C"
+
+#: zchat/points/__init__.py:104
+msgid "45元购买5000积分，有效期30天，最实惠的选择"
+msgstr "45 yuan for 5000 points, valid for 30 days, best value option"
+
+#: zchat/points/__init__.py:163
+#, python-brace-format
+msgid "购买{}积分"
+msgstr "Purchase {} points"
+
+#: zchat/points/__init__.py:271 zchat/points/__init__.py:292
+#: zchat/points/__init__.py:571 zchat/points/__init__.py:594
+msgid "支付成功"
+msgstr "Payment successful"
+
+#: zchat/points/__init__.py:282 zchat/points/__init__.py:583
+msgid "支付处理中"
+msgstr "Payment processing"
+
+#: zchat/points/__init__.py:293 zchat/points/__init__.py:595
+msgid "支付失败"
+msgstr "Payment failed"
+
+#: zchat/points/__init__.py:294 zchat/points/__init__.py:596
+msgid "已取消"
+msgstr "Cancelled"
+
+#: zchat/points/__init__.py:294 zchat/points/__init__.py:596
+msgid "待支付"
+msgstr "Payment pending"
+
+#: zchat/points/__init__.py:366
+msgid "免费账户"
+msgstr "Free Account"
+
+#: zchat/points/__init__.py:370
+#, python-brace-format
+msgid "免费账户，每天{}积分"
+msgstr "Free account, {} points daily"
+
+#: zchat/points/__init__.py:375
+msgid "基础会员"
+msgstr "Basic Membership"
+
+#: zchat/points/__init__.py:379
+#, python-brace-format
+msgid "每月{}元，每天{}积分"
+msgstr "{} yuan monthly, {} points daily"
+
+#: zchat/points/__init__.py:384
+msgid "高级会员"
+msgstr "Premium Membership"
+
+#: zchat/points/__init__.py:388
+#, python-brace-format
+msgid "每年{}元(相当于每月{}元)，每天{}积分，性价比高"
+msgstr ""
+"{} yuan yearly (equivalent to {} yuan monthly), {} points daily, high "
+"value"
+
+#: zchat/points/__init__.py:413
+msgid "基础会员(月)"
+msgstr "Basic Membership (Monthly)"
+
+#: zchat/points/__init__.py:418
+msgid "高级会员(年)"
+msgstr "Premium Membership (Yearly)"
+
+#: zchat/points/__init__.py:450
+#, python-brace-format
+msgid "订阅{}，每日{}积分"
+msgstr "Subscribe to {}, {} points daily"
+
+#: zchat/points/__init__.py:692
+#, python-brace-format
+msgid "积分不足，当前可用积分: {}，需要积分: {}"
+msgstr "Insufficient points, current available points: {}, required points: {}"
+
+#: zchat/points/__init__.py:706
+#, python-brace-format
+msgid "使用服务: {}"
+msgstr "Service used: {}"
+
+#: zchat/templates/index.html:6
 msgid "职路 - 您的职业发展伙伴"
 msgstr "VoyLead - Your Career Development Partner"
 
+#: zchat/templates/index.html:7
 msgid "职路是一款专注于职业发展、求职指导和职场提升的应用，助您踏上理想的职业之路。"
-msgstr "VoyLead is an application focused on career development, job guidance, and workplace advancement, helping you embark on your ideal career path."
+msgstr ""
+"VoyLead is an application focused on career development, job guidance, "
+"and workplace advancement, helping you embark on your ideal career path."
 
-msgid "产品特色"
-msgstr "Features"
-
-msgid "立即下载"
-msgstr "Download Now"
-
-msgid "关于我们"
-msgstr "About Us"
-
+#: zchat/templates/index.html:22 zchat/templates/index.html:23
+#: zchat/templates/index.html:255 zchat/templates/index.html:256
 msgid "职路"
 msgstr "VoyLead"
 
-msgid "返回首页"
-msgstr "Return to Homepage"
+#: zchat/templates/index.html:27 zchat/templates/index.html:178
+msgid "产品特色"
+msgstr "Features"
 
-msgid "感谢使用职路"
-msgstr "Thank you for using VoyLead"
+#: zchat/templates/index.html:28 zchat/templates/index.html:163
+#: zchat/templates/index.html:224
+msgid "立即下载"
+msgstr "Download Now"
 
+#: zchat/templates/index.html:29 zchat/templates/index.html:241
+#: zchat/templates/index.html:263
+msgid "关于我们"
+msgstr "About Us"
+
+#: zchat/templates/index.html:160
 msgid "职业成长，从精准规划开始"
 msgstr "Career Growth Starts with Precise Planning"
 
+#: zchat/templates/index.html:161
 msgid "领先一步的职业导航，让梦想有明确的坐标"
 msgstr "Stay ahead with career navigation that gives your dreams clear coordinates"
 
+#: zchat/templates/index.html:164
 msgid "了解更多"
 msgstr "Learn More"
 
-msgid "职业规划"
-msgstr "Career Planning"
-
-msgid "AI精准规划成长方向，实时追踪行业趋势调整路径"
-msgstr "AI precisely plans your growth direction, tracking industry trends in real-time to adjust your path"
-
-msgid "拆解目标为可执行任务，缩短成长周期，拒绝无效努力"
-msgstr "Break down goals into executable tasks, shorten growth cycles, and eliminate ineffective efforts"
-
-msgid "职业测评"
-msgstr "Career Assessment"
-
-msgid "三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势"
-msgstr "Three-dimensional model (personality/ability/big data) diagnoses career preferences and uncovers strengths"
-
-msgid "对标高薪岗位人才画像，转行跳槽少走弯路"
-msgstr "Align with high-salary position talent profiles, making career transitions smoother"
-
-msgid "职位分析"
-msgstr "Job Analysis"
-
-msgid "深度分析目标岗位，提取企业隐性需求"
-msgstr "Deep analysis of target positions, extracting implicit corporate requirements"
-
-msgid "结合行业大数据，智能规划求职升职决策，快人一步"
-msgstr "Combine industry big data to intelligently plan job search and promotion decisions, staying ahead"
-
-msgid "简历定制"
-msgstr "Resume Customization"
-
-msgid "智能拆解JD隐藏关键词，拉满简历匹配度"
-msgstr "Intelligently break down hidden JD keywords to maximize resume match rate"
-
-msgid "一键生成最优简历，大幅提升面试邀约率"
-msgstr "Generate optimal resumes with one click, significantly increasing interview invitation rates"
-
-msgid "随时随地，开启您的成功"职路""
-msgstr "Start your successful career path anytime, anywhere"
-
-msgid "扫描二维码下载"
-msgstr "Scan QR code to download"
-
-msgid "职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。"
-msgstr "VoyLead was founded by a group of professionals passionate about career development, using AI and big data to inject scientific power into every choice, making career growth free from blind trial and error."
-
-msgid "我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。"
-msgstr "Our team brings together AI algorithm experts, senior career planners, top headhunting partners, and former HRBPs from major companies to create this career development-focused application."
-
-msgid "我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有"职路"，不走弯路。"
-msgstr "Our mission is to empower every professional, making career development clearer, more efficient, and full of possibilities. Truly providing a clear path, a 'VoyLead', without detours."
-
-msgid "您的职业发展伙伴"
-msgstr "Your Career Development Partner"
-
-msgid "公司"
-msgstr "Company"
-
-msgid "联系我们"
-msgstr "Contact Us"
-
-msgid "支持"
-msgstr "Support"
-
-msgid "隐私政策"
-msgstr "Privacy Policy"
-
-msgid "服务条款"
-msgstr "Terms of Service"
-
-msgid "关注我们"
-msgstr "Follow Us"
-
-msgid "&copy; 2025 职路APP. 保留所有权利."
-msgstr "&copy; 2025 VoyLead APP. All rights reserved."
-
+#: zchat/templates/index.html:168
 msgid "职路应用展示"
 msgstr "VoyLead App Showcase"
 
+#: zchat/templates/index.html:184
+msgid "职业规划"
+msgstr "Career Planning"
+
+#: zchat/templates/index.html:185
+msgid "AI精准规划成长方向，实时追踪行业趋势调整路径"
+msgstr ""
+"AI precisely plans your growth direction, tracking industry trends in "
+"real-time to adjust your path"
+
+#: zchat/templates/index.html:186
+msgid "拆解目标为可执行任务，缩短成长周期，拒绝无效努力"
+msgstr ""
+"Break down goals into executable tasks, shorten growth cycles, and "
+"eliminate ineffective efforts"
+
+#: zchat/templates/index.html:193
+msgid "职业测评"
+msgstr "Career Assessment"
+
+#: zchat/templates/index.html:194
+msgid "三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势"
+msgstr ""
+"Three-dimensional model (personality/ability/big data) diagnoses career "
+"preferences and uncovers strengths"
+
+#: zchat/templates/index.html:195
+msgid "对标高薪岗位人才画像，转行跳槽少走弯路"
+msgstr ""
+"Align with high-salary position talent profiles, making career "
+"transitions smoother"
+
+#: zchat/templates/index.html:202
+msgid "职位分析"
+msgstr "Job Analysis"
+
+#: zchat/templates/index.html:203
+msgid "深度分析目标岗位，提取企业隐性需求"
+msgstr ""
+"Deep analysis of target positions, extracting implicit corporate "
+"requirements"
+
+#: zchat/templates/index.html:204
+msgid "结合行业大数据，智能规划求职升职决策，快人一步"
+msgstr ""
+"Combine industry big data to intelligently plan job search and promotion "
+"decisions, staying ahead"
+
+#: zchat/templates/index.html:211
+msgid "简历定制"
+msgstr "Resume Customization"
+
+#: zchat/templates/index.html:212
+msgid "智能拆解JD隐藏关键词，拉满简历匹配度"
+msgstr "Intelligently break down hidden JD keywords to maximize resume match rate"
+
+#: zchat/templates/index.html:213
+msgid "一键生成最优简历，大幅提升面试邀约率"
+msgstr ""
+"Generate optimal resumes with one click, significantly increasing "
+"interview invitation rates"
+
+#: zchat/templates/index.html:225
+msgid "随时随地，开启您的成功\"职路\""
+msgstr "Start your successful career path anytime, anywhere"
+
+#: zchat/templates/index.html:228 zchat/templates/index.html:330
 msgid "小米应用商店下载"
 msgstr "Download from Xiaomi App Store"
 
+#: zchat/templates/index.html:232
 msgid "扫码下载职路APP"
 msgstr "Scan to download VoyLead APP"
 
+#: zchat/templates/index.html:233
+msgid "扫描二维码下载"
+msgstr "Scan QR code to download"
+
+#: zchat/templates/index.html:243
+msgid "职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。"
+msgstr ""
+"VoyLead was founded by a group of professionals passionate about career "
+"development, using AI and big data to inject scientific power into every "
+"choice, making career growth free from blind trial and error."
+
+#: zchat/templates/index.html:244
+msgid "我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。"
+msgstr ""
+"Our team brings together AI algorithm experts, senior career planners, "
+"top headhunting partners, and former HRBPs from major companies to create"
+" this career development-focused application."
+
+#: zchat/templates/index.html:245
+msgid "我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有\"职路\"，不走弯路。"
+msgstr ""
+"Our mission is to empower every professional, making career development "
+"clearer, more efficient, and full of possibilities. Truly providing a "
+"clear path, a 'VoyLead', without detours."
+
+#: zchat/templates/index.html:257
+msgid "您的职业发展伙伴"
+msgstr "Your Career Development Partner"
+
+#: zchat/templates/index.html:261
+msgid "公司"
+msgstr "Company"
+
+#: zchat/templates/index.html:264
+msgid "联系我们"
+msgstr "Contact Us"
+
+#: zchat/templates/index.html:268
+msgid "支持"
+msgstr "Support"
+
+#: zchat/templates/index.html:270
+msgid "隐私政策"
+msgstr "Privacy Policy"
+
+#: zchat/templates/index.html:271
+msgid "服务条款"
+msgstr "Terms of Service"
+
+#: zchat/templates/index.html:276
+msgid "关注我们"
+msgstr "Follow Us"
+
+#: zchat/templates/index.html:286
+msgid "&copy; 2025 职路APP. 保留所有权利."
+msgstr "&copy; 2025 VoyLead APP. All rights reserved."
+
+#: zchat/templates/index.html:324
 msgid "下载Android版"
 msgstr "Download Android Version"
 
-msgid "Reset Password"
-msgstr "Reset Password"
+#: zchat/templates/index.html:334
+#, fuzzy
+msgid "小米应用商店"
+msgstr "Download from Xiaomi App Store"
 
-msgid "New Password"
-msgstr "New Password"
+#: zchat/templates/index.html:341
+#, fuzzy
+msgid "OPPO应用商店下载"
+msgstr "Download from Xiaomi App Store"
 
-msgid "Password must be at least 8 characters long"
-msgstr "Password must be at least 8 characters long"
+#: zchat/templates/index.html:345
+msgid "OPPO应用商店"
+msgstr ""
 
-msgid "Confirm Password"
-msgstr "Confirm Password"
+#: zchat/templates/index.html:352
+#, fuzzy
+msgid "华为应用商店下载"
+msgstr "Download from Xiaomi App Store"
 
-msgid "Passwords do not match"
-msgstr "Passwords do not match"
+#: zchat/templates/index.html:356
+msgid "华为应用商店"
+msgstr ""
 
-msgid "Processing..."
-msgstr "Processing..."
+#: zchat/templates/index.html:363
+#, fuzzy
+msgid "vivo应用商店下载"
+msgstr "Download from Xiaomi App Store"
 
-msgid "Failed to reset password. Please try again later."
-msgstr "Failed to reset password. Please try again later."
+#: zchat/templates/index.html:367
+msgid "vivo应用商店"
+msgstr ""
 
-msgid "Thank you for using VoyLead"
-msgstr "Thank you for using VoyLead"
-
-msgid "Password Reset Success"
-msgstr "Password Reset Success"
-
-msgid "Password Reset Successful"
-msgstr "Password Reset Successful"
-
-msgid "Your password has been successfully reset. You can now log in with your new password."
-msgstr "Your password has been successfully reset. You can now log in with your new password."
-
-msgid "Error"
-msgstr "Error"
-
-msgid "Email Verified"
-msgstr "Email Verified"
-
-msgid "Email Verification Successful"
-msgstr "Email Verification Successful"
-
-msgid "Your email has been successfully verified. You can now use all features of VoyLead."
-msgstr "Your email has been successfully verified. You can now use all features of VoyLead."
-
+#: zchat/templates/index.html:793
 msgid "职位分析进行中..."
 msgstr "Job Analysis in Progress..."
 
+#: zchat/templates/index.html:794
 msgid "职位分析完成，正在生成专属报告，5个核心技能强匹配，来看看吧"
-msgstr "Job Analysis Complete, Generating Custom Report with 5 Strongly Matched Core Skills, Check it Out"
+msgstr ""
+"Job Analysis Complete, Generating Custom Report with 5 Strongly Matched "
+"Core Skills, Check it Out"
 
+#: zchat/templates/index.html:795
+#, python-format
 msgid "简历定制完成，匹配度提升30%%"
 msgstr "Resume Customization Complete, Match Rate Increased by 30%%"
 
+#: zchat/templates/index.html:796
 msgid "技能树定制完成，8个阶段，100+核心知识点，快来打卡吧"
-msgstr "Skill Tree Customization Complete, 8 Stages, 100+ Core Knowledge Points, Start Your Journey"
+msgstr ""
+"Skill Tree Customization Complete, 8 Stages, 100+ Core Knowledge Points, "
+"Start Your Journey"
 
+#: zchat/templates/index.html:797
 msgid "匹配最优职位中..."
 msgstr "Matching Best Positions..."
 
+#: zchat/templates/index.html:798
 msgid "专属成长路径生成及技能树定制中..."
 msgstr "Generating Custom Growth Path and Skill Tree..."
 
+#: zchat/templates/index.html:799
 msgid "行业趋势分析中..."
 msgstr "Analyzing Industry Trends..."
 
+#: zchat/templates/index.html:800
 msgid "简历匹配度分析中..."
 msgstr "Analyzing Resume Match Rate..."
 
+#: zchat/templates/index.html:801
 msgid "职业能力评估中..."
 msgstr "Assessing Professional Capabilities..."
 
+#: zchat/templates/index.html:802
 msgid "职场竞争力提升中..."
 msgstr "Enhancing Workplace Competitiveness..."
 
+#: zchat/templates/index.html:803
 msgid "简历曝光率提升中..."
 msgstr "Increasing Resume Exposure..."
 
+#: zchat/templates/index.html:804
 msgid "面试机会增加中..."
 msgstr "Increasing Interview Opportunities..."
 
+#: zchat/templates/index.html:805
 msgid "薪资增长潜力提升中..."
 msgstr "Enhancing Salary Growth Potential..."
 
+#: zchat/templates/index.html:806
+#, python-format
 msgid "职场竞争力+28%%"
 msgstr "Career Competitiveness +28%%"
 
+#: zchat/templates/index.html:807
+#, python-format
 msgid "简历曝光率提升42%%"
 msgstr "Resume Exposure Rate Increased by 42%%"
 
+#: zchat/templates/index.html:808
+#, python-format
 msgid "面试机会增加36%%"
 msgstr "Interview Opportunities Increased by 36%%"
 
+#: zchat/templates/index.html:809
+#, python-format
 msgid "薪资增长潜力52%%"
 msgstr "Salary Growth Potential 52%%"
 
+#: zchat/templates/index.html:810
+#, python-format
 msgid "岗位需求增长17%%"
 msgstr "Job Demand Growth 17%%"
+
+#: zchat/templates/customer_service/email_verified.html:6
+msgid "Email Verified"
+msgstr "Email Verified"
+
+#: zchat/templates/customer_service/email_verified.html:64
+msgid "Email Verification Successful"
+msgstr "Email Verification Successful"
+
+#: zchat/templates/customer_service/email_verified.html:65
+msgid ""
+"Your email has been successfully verified. You can now use all features "
+"of VoyLead."
+msgstr ""
+"Your email has been successfully verified. You can now use all features "
+"of VoyLead."
+
+#: zchat/templates/customer_service/email_verified.html:66
+#: zchat/templates/customer_service/error.html:66
+#: zchat/templates/customer_service/reset_password_success.html:66
+msgid "Return to Homepage"
+msgstr ""
+
+#: zchat/templates/customer_service/email_verified.html:68
+#: zchat/templates/customer_service/error.html:68
+#: zchat/templates/customer_service/reset_password.html:106
+#: zchat/templates/customer_service/reset_password_success.html:68
+msgid "Thank you for using VoyLead"
+msgstr "Thank you for using VoyLead"
+
+#: zchat/templates/customer_service/error.html:6
+msgid "Error"
+msgstr "Error"
+
+#: zchat/templates/customer_service/reset_password.html:6
+#: zchat/templates/customer_service/reset_password.html:90
+#: zchat/templates/customer_service/reset_password.html:103
+#: zchat/templates/customer_service/reset_password.html:165
+msgid "Reset Password"
+msgstr "Reset Password"
+
+#: zchat/templates/customer_service/reset_password.html:93
+msgid "New Password"
+msgstr "New Password"
+
+#: zchat/templates/customer_service/reset_password.html:95
+msgid "Password must be at least 8 characters long"
+msgstr "Password must be at least 8 characters long"
+
+#: zchat/templates/customer_service/reset_password.html:98
+msgid "Confirm Password"
+msgstr "Confirm Password"
+
+#: zchat/templates/customer_service/reset_password.html:100
+msgid "Passwords do not match"
+msgstr "Passwords do not match"
+
+#: zchat/templates/customer_service/reset_password.html:137
+msgid "Processing..."
+msgstr "Processing..."
+
+#: zchat/templates/customer_service/reset_password.html:166
+msgid "Failed to reset password. Please try again later."
+msgstr "Failed to reset password. Please try again later."
+
+#: zchat/templates/customer_service/reset_password_success.html:6
+msgid "Password Reset Success"
+msgstr "Password Reset Success"
+
+#: zchat/templates/customer_service/reset_password_success.html:64
+msgid "Password Reset Successful"
+msgstr "Password Reset Successful"
+
+#: zchat/templates/customer_service/reset_password_success.html:65
+msgid ""
+"Your password has been successfully reset. You can now log in with your "
+"new password."
+msgstr ""
+"Your password has been successfully reset. You can now log in with your "
+"new password."
+
+#~ msgid "返回首页"
+#~ msgstr "Return to Homepage"
+
+#~ msgid "感谢使用职路"
+#~ msgstr "Thank you for using VoyLead"
+

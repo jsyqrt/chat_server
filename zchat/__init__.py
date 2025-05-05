@@ -24,6 +24,9 @@ def create_app(test_config=None, tool_mode=False):
         # 尝试从用户设置获取语言
         if hasattr(g, 'user') and g.user and g.user.language:
             return g.user.language
+        # 尝试从请求头中获取语言设置
+        if request.headers.get('X-Language'):
+            return request.headers.get('X-Language')
         # 尝试从浏览器设置获取语言
         return request.accept_languages.best_match(['en', 'zh_CN', 'zh_TW'])
 
