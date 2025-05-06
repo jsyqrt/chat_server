@@ -37,8 +37,7 @@ def create_app(test_config=None, tool_mode=False):
 
     @app.before_request
     def before_request():
-        # 从 session 中获取语言设置并设置到 g 对象
-        g.lang = session.get('lang', 'zh_CN')
+        g.lang = get_locale()
         # 确保 gettext 使用正确的语言
         babel.locale_selector = get_locale
 

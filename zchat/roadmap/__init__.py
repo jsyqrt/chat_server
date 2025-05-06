@@ -5,7 +5,7 @@ import time
 import random
 from enum import Enum
 
-from flask import request, current_app, Blueprint, jsonify, Response, stream_with_context
+from flask import request, current_app, Blueprint, jsonify, Response, stream_with_context, g
 from werkzeug.utils import secure_filename
 
 from zchat.auth import login_required, current_user, admin_required
@@ -21,6 +21,187 @@ from zchat.models.points import ServiceType
 from zchat.points import check_points_sufficient, consume_points_for_service
 
 bp = Blueprint('roadmap', __name__, url_prefix='/roadmap')
+
+# Get user language (one-line function)
+def get_user_lang():
+    current_app.logger.debug(f"g.lang: {g.lang}")
+    return getattr(g, 'lang', 'zh_CN')
+
+# Dictionary for translations
+TRANSLATIONS = {
+    'zh_CN': {
+        'no_jd_id': '未提供JD ID',
+        'jd_not_found': '找不到对应的JD: {jd_id}',
+        'no_jd_text': '提供的JD ID没有JD内容: {jd_id}',
+        'failed_create_mindmap': '创建思维导图失败',
+        'custom_career_path': '定制专属职业成长路径',
+        'create_roadmap_desc': '创建学习路径({title})',
+        'points_deduction_failed': '积分扣除失败，请稍后重试',
+        'no_json_file': '未提供JSON文件',
+        'description_not_found': '学习状态未找到',
+        'stages': '{count}个阶段',
+        'core_skills': '{count}个核心技能',
+        'resources_count': '{count}个资源',
+        'resources_plus': '{count}+资源',
+        'stats_format': '{stages} · {skills}{resources}',
+        'get_knowledge_detail': '获取知识详情({topic})',
+        'unlock_roadmap': '解锁学习路径({title})',
+        'roadmap_not_found': '找不到对应的学习路径',
+        'official_roadmaps_reset': '官方学习路径已重置',
+        'update_submitted': '更新已提交',
+        'missing_required_fields': '缺少必填字段',
+        'invalid_status_format': '状态格式无效',
+        'learning_status_submitted': '学习状态已成功提交',
+        'learning_status_not_found': '找不到学习状态',
+        'index_deleted': '索引已删除'
+    },
+    'en': {
+        'no_jd_id': 'No JD ID provided',
+        'jd_not_found': 'JD not found for the given JD ID: {jd_id}',
+        'no_jd_text': 'No JD provided for the given JD ID: {jd_id}',
+        'failed_create_mindmap': 'Failed to create mindmap',
+        'custom_career_path': 'Customize your career growth path',
+        'create_roadmap_desc': 'Create learning path ({title})',
+        'points_deduction_failed': 'Points deduction failed, please try again later',
+        'no_json_file': 'No JSON file provided',
+        'description_not_found': 'Learning status not found',
+        'stages': '{count} stages',
+        'core_skills': '{count} core skills',
+        'resources_count': '{count} resources',
+        'resources_plus': '{count}+ resources',
+        'stats_format': '{stages} · {skills}{resources}',
+        'get_knowledge_detail': 'Get knowledge details ({topic})',
+        'unlock_roadmap': 'Unlock learning path ({title})',
+        'roadmap_not_found': 'Roadmap not found',
+        'official_roadmaps_reset': 'Official roadmaps reset',
+        'update_submitted': 'Update submitted',
+        'missing_required_fields': 'Missing required fields',
+        'invalid_status_format': 'Invalid status format',
+        'learning_status_submitted': 'Learning status submitted successfully',
+        'learning_status_not_found': 'Learning status not found',
+        'index_deleted': 'Index deleted'
+    }
+}
+
+# Translation function
+def translate(key, lang='zh_CN', **kwargs):
+    """Translate a key based on language with optional format parameters"""
+
+    if not lang or lang not in TRANSLATIONS:
+        lang = 'zh_CN'  # Default to Chinese
+
+    translation = TRANSLATIONS[lang].get(key, TRANSLATIONS['zh_CN'].get(key, key))
+    if kwargs:
+        return translation.format(**kwargs)
+    return translation
+
+# Quotes for different languages
+QUOTES = {
+    'zh_CN': [
+        "学过的技能，是未来的底气",
+        "知识如光，照亮职场每一步",
+        "今日埋头充电，明日抬头领跑",
+        "坚持的人，终将抵达梦想的终点站",
+        "键盘敲出未来，代码编织梦想",
+        "秒针不停，学习不止，时间看得见",
+        "每天进步1%，一年强大37倍",
+        "低谷时蓄力，巅峰时从容",
+        "职场长跑，学习是永不停歇的补给站",
+        "重复千万遍，匠魂自然现",
+        "证书是水到渠成，不是终点",
+        "翻越舒适区，方见星辰大海",
+        "此刻的笔记，是明日的铠甲",
+        "困倦时多学5分钟，命运改道中",
+        "把知识磨成利剑，职场所向披靡",
+        "屏幕前的深夜，终将兑换成光芒",
+        "每个知识点，都是未来的垫脚石",
+        "学如登山，坚持者俯瞰云端",
+        "今天的枯燥，是未来的游刃有余",
+        "把\"我不会\"变成\"我刚学会\"",
+        "技能存折，每日存入未来利息",
+        "熬过无人问津，掌声自然轰鸣",
+        "职场没有白走的路，步步都算数",
+        "专注当下，让时间复利成长",
+        "三分钟热度，也能点燃人生",
+        "学海无涯，此刻即是最好的岸",
+        "别人追剧时，你在追赶人生",
+        "碎片时间拼图，终成事业版图",
+        "抱怨内卷不如磨砺锋芒",
+        "每个深夜的屏幕，都在雕刻未来",
+        "学得越痛，成长越狠",
+        "停止学习才是真正的瓶颈期",
+        "把焦虑转化为具体的学习动作",
+        "笨功夫里藏着最聪明的捷径",
+        "职场没有奇迹，只有累积轨迹",
+        "把证书当副产品，成长才是正收益",
+        "耐心浇灌，静待职场开花",
+        "学如氧气，时刻储备才能自由呼吸",
+        "低谷期是上帝给的进修时间",
+        "每个技能点，都在拓宽人生半径",
+        "别等机会敲门，先把自己武装到门框",
+        "今天的枯燥代码，明天的自由密钥",
+        "学习像竹子，四年扎根一朝破土",
+        "让知识迭代速度超过年龄增长",
+        "把\"我试试\"变成\"我擅长\"",
+        "职场如战场，学习是终身防弹衣",
+        "熬过平台期，迎来指数级跃升",
+        "在别人躺平时，悄悄重塑竞争力",
+        "每个知识点都在增加人生选项",
+        "学习是最不会背叛你的投资",
+    ],
+    'en': [
+        "Skills learned are future confidence",
+        "Knowledge is light, guiding every career step",
+        "Head down charging today, head up leading tomorrow",
+        "The persistent will reach their destination",
+        "Future typed on keyboards, dreams woven in code",
+        "Time ticks, learning continues, progress visible",
+        "Improve 1% daily, grow 37x yearly",
+        "Build strength in valleys, remain calm at peaks",
+        "Career is a marathon, learning is the endless supply station",
+        "Mastery comes through repetition",
+        "Certificates are milestones, not destinations",
+        "Beyond comfort zones lie stars and oceans",
+        "Today's notes are tomorrow's armor",
+        "Five more minutes when tired changes destiny's path",
+        "Sharpen knowledge into swords, conquer every challenge",
+        "Late nights at screens transform into future brilliance",
+        "Each knowledge point is a stepping stone to your future",
+        "Learning is like climbing mountains - persist to see above clouds",
+        "Today's tedium is tomorrow's excellence",
+        "Transform \"I don't know\" into \"I just learned\"",
+        "Skills are savings with future interest",
+        "Endure obscurity, applause will follow",
+        "No wasted steps in careers, everything counts",
+        "Focus on now, let time compound growth",
+        "Even brief enthusiasm can ignite life",
+        "In the endless learning sea, now is the best shore",
+        "While others chase shows, you chase your life",
+        "Fragments of time build your career map",
+        "Don't complain about competition, sharpen your edge",
+        "Every night screen carves your future",
+        "Greater learning pain, greater growth",
+        "The real plateau is when you stop learning",
+        "Convert anxiety to concrete learning actions",
+        "Slow methods hide the smartest shortcuts",
+        "No miracles in careers, only accumulated trajectories",
+        "Certificates are byproducts, growth is the real gain",
+        "Water patiently, wait for career blooms",
+        "Learning is oxygen, reserve it for freedom to breathe",
+        "Valleys are God-given upgrade times",
+        "Each skill point expands your life radius",
+        "Don't wait for opportunity to knock, arm yourself now",
+        "Today's tedious code, tomorrow's freedom key",
+        "Learning is like bamboo, four years of roots before breaking ground",
+        "Let knowledge update faster than age growth",
+        "Turn \"let me try\" into \"I excel at this\"",
+        "Career is battlefield, learning is lifelong armor",
+        "Endure plateaus for exponential leaps",
+        "Rebuild competitiveness while others rest",
+        "Every knowledge point adds life options",
+        "Learning is investment that never betrays you",
+    ]
+}
 
 class RoadmapType(Enum):
     OFFICIAL = 'official'
@@ -93,7 +274,8 @@ class MindmapModifier:
 def create_from_jd_and_resume():
     jd_id = request.form.get('jd_id', None)
     if not jd_id:
-        return jsonify({'error': 'No JD ID provided'}), 400
+        lang = get_user_lang()
+        return jsonify({'error': translate('no_jd_id', lang)}), 400
 
     user_id = current_user.get_id_int()
 
@@ -102,16 +284,19 @@ def create_from_jd_and_resume():
     if not sufficient:
         return jsonify({'error': message, 'points_required': True}), 402
 
+    # 获取用户语言
+    lang = get_user_lang()
+
     resume_file = request.files.get('resume_file', None)
     resume_file_name = request.form.get('resume_file_name', None)
 
     jd_record = get_jd_record_nosql(current_app, user_id, jd_id)
     if not jd_record:
-        return jsonify({'error': f'JD not found for the given JD ID: {jd_id}'}), 400
+        return jsonify({'error': translate('jd_not_found', lang, jd_id=jd_id)}), 400
 
     jd = jd_record.get('jd_text', '')
     if not jd:
-        return jsonify({'error': f'No JD provided for the given JD ID: {jd_id}'}), 400
+        return jsonify({'error': translate('no_jd_text', lang, jd_id=jd_id)}), 400
 
     file_records = {}
 
@@ -155,7 +340,7 @@ def create_from_jd_and_resume():
             old_file_records['resume_files'] = old_file_records.get('resume_files', []) + file_records['resume_files']
             add_file_records_nosql(current_app, old_file_records)
 
-    mindmap_json = mindmap_from_jd_and_resume(jd, resume)
+    mindmap_json = mindmap_from_jd_and_resume(jd, resume, lang)
 
     current_app.logger.debug(f"got mindmap json: {mindmap_json}")
 
@@ -167,11 +352,11 @@ def create_from_jd_and_resume():
             is_valid = True
         except Exception as e:
             # try again
-            mindmap_json = mindmap_from_jd_and_resume(jd, resume)
+            mindmap_json = mindmap_from_jd_and_resume(jd, resume, lang)
             max_retries -= 1
 
     if not mindmap_info:
-        return jsonify({'error': 'Failed to create mindmap'}), 400
+        return jsonify({'error': translate('failed_create_mindmap', lang)}), 400
 
     mindmap_id_generator = MindmapModifier()
     mindmap = mindmap_id_generator.generate(mindmap_info)
@@ -185,7 +370,7 @@ def create_from_jd_and_resume():
     # https://emojipedia.org/people
     roadmap_icon = '🧑‍💻'
     roadmap_title = mindmap['title']
-    roadmap_subtitle = '定制专属职业成长路径'
+    roadmap_subtitle = translate('custom_career_path', lang)
     roadmap_type = RoadmapType.USER.value
     roadmap_kind = RoadmapKind.JOB.value
     roadmap_status = RoadmapStatus.VERIFIED.value
@@ -214,9 +399,9 @@ def create_from_jd_and_resume():
     add_mindmap_nosql(current_app, mindmap)
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, f"创建学习路径({roadmap.roadmap_title})")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, translate('create_roadmap_desc', lang, title=roadmap.roadmap_title))
     if not success:
-        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+        return jsonify({'error': translate('points_deduction_failed', lang), 'points_required': True}), 402
 
     return jsonify({
         'participants': 0,
@@ -251,8 +436,10 @@ def dump_all_roadmaps():
 @admin_required
 def restore_all_roadmaps():
     json_file = request.files.get('json_file')
+    lang = get_user_lang()
+
     if not json_file:
-        return jsonify({'error': 'No JSON file provided'}), 400
+        return jsonify({'error': translate('no_json_file', lang)}), 400
 
     roadmap_ops = RoadmapOps(db.session)
     roadmaps = json.load(json_file)
@@ -293,17 +480,20 @@ def create_from_topic():
     if not sufficient:
         return jsonify({'error': message, 'points_required': True}), 402
 
+    # 获取用户语言
+    lang = get_user_lang()
+
     is_valid = False
     max_retries = 3
     while not is_valid and max_retries > 0:
         try:
-            mindmap = mindmap_from_topic(topic, kind, skill_level, learning_goal, user_background, other_prompts)
+            mindmap = mindmap_from_topic(topic, kind, skill_level, learning_goal, user_background, other_prompts, lang)
             if mindmap:
                 mindmap = json.loads(mindmap)
                 is_valid = True
         except Exception as e:
             # try again
-            mindmap = mindmap_from_topic(topic, kind, skill_level, learning_goal, user_background, other_prompts)
+            mindmap = mindmap_from_topic(topic, kind, skill_level, learning_goal, user_background, other_prompts, lang)
             max_retries -= 1
 
     if not mindmap:
@@ -347,9 +537,9 @@ def create_from_topic():
     )
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, f"创建学习路径({topic})")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.CREATE_ROADMAP.value, translate('create_roadmap_desc', lang, title=topic))
     if not success:
-        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+        return jsonify({'error': translate('points_deduction_failed', lang), 'points_required': True}), 402
 
     add_mindmap_nosql(current_app, mindmap)
 
@@ -483,7 +673,10 @@ def description():
     if not sufficient:
         return jsonify({'error': message, 'points_required': True}), 402
 
-    description_json = description_from_topic_path(topic, topic_path)
+    # 获取用户语言
+    lang = get_user_lang()
+
+    description_json = description_from_topic_path(topic, topic_path, lang)
     is_valid = False
     max_retries = 3
     while not is_valid and max_retries > 0:
@@ -492,13 +685,13 @@ def description():
             is_valid = True
         except Exception as e:
             # try again
-            description_json = description_from_topic_path(topic, topic_path)
+            description_json = description_from_topic_path(topic, topic_path, lang)
             max_retries -= 1
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, f"获取知识详情({topic})")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, translate('get_knowledge_detail', lang, topic=topic))
     if not success:
-        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+        return jsonify({'error': translate('points_deduction_failed', lang), 'points_required': True}), 402
 
     return jsonify({
         'description': description_info,
@@ -520,13 +713,16 @@ def description_stream():
     if not sufficient:
         return jsonify({'error': message, 'points_required': True}), 402
 
+    # 获取用户语言
+    lang = get_user_lang()
+
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, f"获取知识详情({topic})")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, translate('get_knowledge_detail', lang, topic=topic))
     if not success:
-        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+        return jsonify({'error': translate('points_deduction_failed', lang), 'points_required': True}), 402
 
     def generate():
-        for chunk in description_from_topic_path_stream(topic, topic_path):
+        for chunk in description_from_topic_path_stream(topic, topic_path, lang):
             yield chunk
 
     return Response(stream_with_context(generate()), mimetype='text/plain')
@@ -534,8 +730,9 @@ def description_stream():
 # ------------------------------------------------------------
 
 def stats_of_mindmap(mindmap):
-    num_stages = len(mindmap.get('children', []))
+    lang = get_user_lang()
 
+    num_stages = len(mindmap.get('children', []))
     num_skills = 0
     for stage in mindmap.get('children', []):
         num_skills += len(stage.get('children', []))
@@ -545,15 +742,16 @@ def stats_of_mindmap(mindmap):
         for skill in stage.get('children', []):
             num_resources += len(skill.get('links', []))
 
+    stages_text = translate('stages', lang, count=num_stages)
+    skills_text = translate('core_skills', lang, count=num_skills)
+
     resources_str = ''
     if num_resources > 10:
-        resources_str = f'· {num_resources//10*10}+资源'
+        resources_str = ' · ' + translate('resources_plus', lang, count=num_resources//10*10)
     elif num_resources > 0:
-        resources_str = f'· {num_resources}个资源'
-    else:
-        resources_str = ''
+        resources_str = ' · ' + translate('resources_count', lang, count=num_resources)
 
-    return f'{num_stages}个阶段 · {num_skills}个核心技能' + resources_str
+    return f'{stages_text} · {skills_text}{resources_str}'
 
 @bp.route('/official_maps', methods=['GET'])
 @login_required
@@ -573,6 +771,7 @@ def official_maps():
 def get_map():
     id = request.args.get('id')
     with_mindmap = request.args.get('with_mindmap', 'false') == 'true'
+    lang = get_user_lang()
 
     roadmap_ops = RoadmapOps(db.session)
     roadmap = roadmap_ops.get_roadmap(id)
@@ -588,9 +787,9 @@ def get_map():
                 return jsonify({'error': message, 'points_required': True}), 402
 
             # 消费积分
-            success, points_spent = consume_points_for_service(current_user.get_id_int(), ServiceType.UNLOCK_ROADMAP.value, f"解锁学习路径({roadmap.roadmap_title})")
+            success, points_spent = consume_points_for_service(current_user.get_id_int(), ServiceType.UNLOCK_ROADMAP.value, translate('unlock_roadmap', lang, title=roadmap.roadmap_title))
             if not success:
-                return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+                return jsonify({'error': translate('points_deduction_failed', lang), 'points_required': True}), 402
 
             interaction_ops.view(id, current_user.get_id_int())
 
@@ -615,16 +814,17 @@ def get_map():
             'mindmap': mindmap,
         })
 
-    return jsonify({'error': 'Roadmap not found'}), 404
+    return jsonify({'error': translate('roadmap_not_found', lang)}), 404
 
 
 @bp.route('/reset_official_roadmaps', methods=['SET'])
 # @login_required
 # @admin_required
 def reset_official_roadmaps():
+    lang = get_user_lang()
     roadmap_ops = RoadmapOps(db.session)
     roadmap_ops.reset_official_roadmaps()
-    return jsonify({'message': 'Official roadmaps reset'})
+    return jsonify({'message': translate('official_roadmaps_reset', lang)})
 
 
 @bp.route('/submit_update', methods=['POST'])
@@ -632,6 +832,7 @@ def reset_official_roadmaps():
 def submit_update():
     mindmap_id = request.form.get('mindmap_id')
     mindmap = request.form.get('mindmap')
+    lang = get_user_lang()
     mindmap = json.loads(mindmap)
 
     old_mindmap = get_mindmap_nosql(current_app, mindmap_id)
@@ -640,9 +841,9 @@ def submit_update():
         mindmap['updated_by'] = current_user.get_id_int()
         result =  update_mindmap_nosql(current_app, mindmap)
         current_app.logger.debug(f"update mindmap: {result} by user: {current_user.get_id_int()}")
-        return jsonify({'message': 'Update submitted'})
+        return jsonify({'message': translate('update_submitted', lang)})
 
-    return jsonify({'error': 'Roadmap not found'}), 404
+    return jsonify({'error': translate('roadmap_not_found', lang)}), 404
 
 @bp.route('/submit_learning_status', methods=['POST'])
 @login_required
@@ -651,9 +852,10 @@ def submit_learning_status():
     mindmap_id = request.form.get('mindmap_id')
     roadmap_id = request.form.get('roadmap_id')
     status = request.form.get('status')
+    lang = get_user_lang()
 
     if not mindmap_id or not status:
-        return jsonify({'error': 'Missing required fields'}), 400
+        return jsonify({'error': translate('missing_required_fields', lang)}), 400
 
     user_id = current_user.get_id_int()
 
@@ -662,7 +864,7 @@ def submit_learning_status():
         try:
             status = json.loads(status)
         except json.JSONDecodeError:
-            return jsonify({'error': 'Invalid status format'}), 400
+            return jsonify({'error': translate('invalid_status_format', lang)}), 400
 
     # 使用 upsert 替代原来的 add 或 update
     mindmap_status = {
@@ -677,19 +879,20 @@ def submit_learning_status():
 
     upsert_user_mindmap_status_nosql(current_app, user_id, mindmap_status)
 
-    return jsonify({'message': 'Learning status submitted successfully'})
+    return jsonify({'message': translate('learning_status_submitted', lang)})
 
 @bp.route('/learning_status', methods=['GET'])
 @login_required
 def learning_status():
     mindmap_id = request.args.get('mindmap_id')
+    lang = get_user_lang()
 
     mindmap_status = get_learning_status_nosql(current_app, current_user.get_id_int(), mindmap_id)
     if mindmap_status:
         return jsonify(mindmap_status)
     else:
         current_app.logger.debug(f"learning status not found: {mindmap_id}")
-        return jsonify({'message': 'Learning status not found'}), 404
+        return jsonify({'message': translate('learning_status_not_found', lang)}), 404
 
 @bp.route('/recent_maps', methods=['GET'])
 @login_required
@@ -758,58 +961,9 @@ def recent_maps():
 @bp.route('/heading_quote', methods=['GET'])
 @login_required
 def heading_quote():
-    quotes = [
-        "学过的技能，是未来的底气",
-        "知识如光，照亮职场每一步",
-        "今日埋头充电，明日抬头领跑",
-        "坚持的人，终将抵达梦想的终点站",
-        "键盘敲出未来，代码编织梦想",
-        "秒针不停，学习不止，时间看得见",
-        "每天进步1%，一年强大37倍",
-        "低谷时蓄力，巅峰时从容",
-        "职场长跑，学习是永不停歇的补给站",
-        "重复千万遍，匠魂自然现",
-        "证书是水到渠成，不是终点",
-        "翻越舒适区，方见星辰大海",
-        "此刻的笔记，是明日的铠甲",
-        "困倦时多学5分钟，命运改道中",
-        "把知识磨成利剑，职场所向披靡",
-        "屏幕前的深夜，终将兑换成光芒",
-        "每个知识点，都是未来的垫脚石",
-        "学如登山，坚持者俯瞰云端",
-        "今天的枯燥，是未来的游刃有余",
-        "把\"我不会\"变成\"我刚学会\"",
-        "技能存折，每日存入未来利息",
-        "熬过无人问津，掌声自然轰鸣",
-        "职场没有白走的路，步步都算数",
-        "专注当下，让时间复利成长",
-        "三分钟热度，也能点燃人生",
-        "学海无涯，此刻即是最好的岸",
-        "别人追剧时，你在追赶人生",
-        "碎片时间拼图，终成事业版图",
-        "抱怨内卷不如磨砺锋芒",
-        "每个深夜的屏幕，都在雕刻未来",
-        "学得越痛，成长越狠",
-        "停止学习才是真正的瓶颈期",
-        "把焦虑转化为具体的学习动作",
-        "笨功夫里藏着最聪明的捷径",
-        "职场没有奇迹，只有累积轨迹",
-        "把证书当副产品，成长才是正收益",
-        "耐心浇灌，静待职场开花",
-        "学如氧气，时刻储备才能自由呼吸",
-        "低谷期是上帝给的进修时间",
-        "每个技能点，都在拓宽人生半径",
-        "别等机会敲门，先把自己武装到门框",
-        "今天的枯燥代码，明天的自由密钥",
-        "学习像竹子，四年扎根一朝破土",
-        "让知识迭代速度超过年龄增长",
-        "把\"我试试\"变成\"我擅长\"",
-        "职场如战场，学习是终身防弹衣",
-        "熬过平台期，迎来指数级跃升",
-        "在别人躺平时，悄悄重塑竞争力",
-        "每个知识点都在增加人生选项",
-        "学习是最不会背叛你的投资",
-    ]
+    lang = get_user_lang()
+    quotes = QUOTES.get(lang, QUOTES['zh_CN'])
+
     user_id = current_user.get_id_int()
     today = int(time.time() / 86400)
     seed = user_id + today
@@ -827,6 +981,7 @@ def heading_quote():
 @admin_required
 def delete_index():
     index_name = request.args.get('name')
+    lang = get_user_lang()
     delete_index_nosql(current_app, index_name)
     current_app.logger.debug('index deleted')
-    return jsonify({'message': 'Index deleted'})
+    return jsonify({'message': translate('index_deleted', lang)})

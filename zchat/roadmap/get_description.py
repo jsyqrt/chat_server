@@ -1,7 +1,10 @@
 import re
 from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response, get_response_from_llm_stream
 
-system_prompt_template = """
+from flask import current_app
+
+# Chinese system prompt
+system_prompt_template_zh = """
 您是一位专业的教育内容开发专家，擅长将复杂概念分解为清晰、全面的解释。
 
 用户想要了解主题「{topic}」是什么，包含什么，并按照思维导图进行系统性学习。用户已经掌握了思维导图中的上层概念，现在需要深入理解特定的叶子节点概念。
@@ -22,8 +25,30 @@ system_prompt_template = """
 请记住，您的解释将直接影响用户对该概念的理解深度和学习效果。
 """
 
-# 使用双花括号 {{ }} 来转义JSON中的花括号，避免与format()方法冲突
-user_prompt_template = """
+# English system prompt
+system_prompt_template_en = """
+You are a professional educational content developer, skilled at breaking down complex concepts into clear, comprehensive explanations.
+
+The user wants to understand what the topic "{topic}" is, what it encompasses, and learn it systematically according to a mind map. The user has already mastered the higher-level concepts in the mind map and now needs to deeply understand this specific leaf node concept.
+
+Your task is to:
+1. Analyze the mind map path (topic → subtopic → leaf_topic): {topic_path}
+2. Within the context of "{topic_path}", explain what "{topic}" specifically represents, providing a deep, comprehensive explanation
+3. Use the style of textbooks, academic papers, or technical blogs, but do not provide any links. The explanation needs to be detailed, comprehensive, in-depth, and complete.
+4. Provide 3 questions the user might want to ask further, to be used as prompts for the next step in AI interactive dialogue
+
+Your explanation should be:
+- Professional and accurate: ensure technical details are correct
+- Deep and comprehensive: cover all important aspects of the concept
+- Practical and actionable: include practical application guidance
+- Progressive: consider the user's existing knowledge base
+- Provide examples: ideally include practical examples, including usage scenarios, specific operations, application cases, etc., to help users understand
+
+Please remember that your explanation will directly impact the depth of the user's understanding and learning effectiveness.
+"""
+
+# Chinese user prompt
+user_prompt_template_zh = """
 ## 思维导图路径
 {topic_path}
 
@@ -34,7 +59,20 @@ user_prompt_template = """
 
 """
 
-output_style = """
+# English user prompt
+user_prompt_template_en = """
+## Mind Map Path
+{topic_path}
+
+## Target Concept
+{topic}
+
+If this were a large article, the path would represent different levels of headings, and "{topic}" would be the title of the current section. So your task is to write the content of this current section. Make sure your language style and output quality meet the requirements.
+
+"""
+
+# Chinese output style
+output_style_zh = """
 请使用犀利准确的语言，不要使用冗长的句子，不要使用复杂的句子。使用markdown格式。
 
 在解释的最后，给出用户有可能想要进一步提问的3个问题，用于下一步与AI交互对话的提示词。
@@ -47,10 +85,32 @@ output_style = """
 }
 ```
 
+必须用中文回答。
+
 开始你的解释。
 """
 
-json_schema = """
+# English output style
+output_style_en = """
+Please use precise and accurate language, avoiding long or complex sentences. Use markdown format.
+
+At the end of your explanation, provide 3 questions that the user might want to ask further, to be used as prompts for the next step in AI interactive dialogue.
+Separate the main text from the questions with <|------ Interaction Suggestions ------|>. The questions section should only contain JSON, without any other content.
+These three questions should be closely related to the current explanation, from the user's perspective, considering possible user inquiries.
+The three questions need to be output in JSON format, strictly following this schema, and using correct quotation marks in the JSON.
+```json
+{
+    "questions": ["Question 1", "Question 2", "Question 3"]
+}
+```
+
+Must respond in English.
+
+Begin your explanation.
+"""
+
+# Chinese JSON schema
+json_schema_zh = """
 请以JSON格式输出，严格遵循以下schema：
 
 ```json
@@ -84,13 +144,66 @@ json_schema = """
 请确保输出的JSON格式正确，可以直接被解析。不要添加额外的解释或注释。
 """
 
-def get_llm_response(topic, topic_path):
+# English JSON schema
+json_schema_en = """
+Please output in JSON format, strictly following this schema:
+
+```json
+{{
+    "type": "object",
+    "properties": {{
+        "title": {{
+            "type": "string",
+            "description": "Title of the leaf concept"
+        }},
+        "path": {{
+            "type": "array",
+            "items": {{
+                "type": "string"
+            }},
+            "description": "Complete path from root node to leaf node"
+        }},
+        "description": {{
+            "type": "string",
+            "description": "Detailed explanation including definition, principles, applications, etc., in markdown format"
+        }}
+    }},
+    "required": [
+        "title",
+        "path",
+        "description",
+    ]
+}}
+```
+
+Ensure the output JSON format is correct and can be parsed directly. Do not add additional explanations or comments.
+"""
+
+def get_prompts_by_language(lang):
+    """Get the appropriate prompts based on the user's language"""
+    if lang == 'en':
+        return {
+            'system_prompt': system_prompt_template_en,
+            'user_prompt': user_prompt_template_en,
+            'output_style': output_style_en,
+            'json_schema': json_schema_en
+        }
+    else:  # default to Chinese (zh_CN or zh_TW)
+        return {
+            'system_prompt': system_prompt_template_zh,
+            'user_prompt': user_prompt_template_zh,
+            'output_style': output_style_zh,
+            'json_schema': json_schema_zh
+        }
+
+def get_llm_response(topic, topic_path, lang='zh_CN'):
+  prompts = get_prompts_by_language(lang)
   messages=[
-    {"role": "system", "content": system_prompt_template.format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
-    {"role": "user", "content": user_prompt_template.format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
-    {"role": "user", "content": json_schema},
+    {"role": "system", "content": prompts['system_prompt'].format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
+    {"role": "user", "content": prompts['user_prompt'].format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
+    {"role": "user", "content": prompts['json_schema']},
   ]
-  print(messages)
+  current_app.logger.debug(f"get_llm_response messages: {messages}")
   # 使用更大的token限制以获取更详细的描述
   response = get_response_from_llm(messages, "qwen-2.5-32b", 4096, platform='siliconflow')
 #   response = get_response_from_llm(messages, "qwen-2.5-32b", 8192, platform='aliyun')
@@ -99,8 +212,8 @@ def get_llm_response(topic, topic_path):
 def parse_llm_response(response):
   return get_json_blocks_from_llm_response(response)
 
-def description_from_topic_path(topic, topic_path):
-  response = get_llm_response(topic, topic_path)
+def description_from_topic_path(topic, topic_path, lang='zh_CN'):
+  response = get_llm_response(topic, topic_path, lang)
   json_blocks = parse_llm_response(response)
   if len(json_blocks) == 0:
     return None
@@ -108,12 +221,14 @@ def description_from_topic_path(topic, topic_path):
   description = json_blocks[0]
   return description
 
-def get_llm_response_stream(topic, topic_path):
+def get_llm_response_stream(topic, topic_path, lang='zh_CN'):
+    prompts = get_prompts_by_language(lang)
     messages=[
-        {"role": "system", "content": system_prompt_template.format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
-        {"role": "user", "content": user_prompt_template.format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
-        {"role": "user", "content": output_style},
+        {"role": "system", "content": prompts['system_prompt'].format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
+        {"role": "user", "content": prompts['user_prompt'].format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
+        {"role": "user", "content": prompts['output_style']},
     ]
+    current_app.logger.debug(f"get_llm_response_stream messages: {messages}")
     # Use the stream function from llm.py
     return get_response_from_llm_stream(
         messages,
@@ -122,9 +237,9 @@ def get_llm_response_stream(topic, topic_path):
         platform='siliconflow'
     )
 
-def description_from_topic_path_stream(topic, topic_path):
+def description_from_topic_path_stream(topic, topic_path, lang='zh_CN'):
     """Stream the description for a topic path directly from the LLM"""
-    return get_llm_response_stream(topic, topic_path)
+    return get_llm_response_stream(topic, topic_path, lang)
 
 if __name__ == "__main__":
   topic = "UI/UX设计基础"

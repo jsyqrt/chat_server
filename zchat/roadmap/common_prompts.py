@@ -69,8 +69,8 @@ MINDMAP_JSON_SCHEMA = """
 ```
 """
 
-# 通用的思维导图生成指南
-MINDMAP_GENERATION_GUIDELINES = """
+# 通用的思维导图生成指南 - 中文版本
+MINDMAP_GENERATION_GUIDELINES_ZH = """
 生成思维导图时，请遵循以下指南：
 
 1. 结构化层次：
@@ -101,3 +101,41 @@ MINDMAP_GENERATION_GUIDELINES = """
 
 请确保输出的JSON严格遵循提供的Schema，并包含丰富、实用的学习内容。
 """
+
+# Mindmap Generation Guidelines - English version
+MINDMAP_GENERATION_GUIDELINES_EN = """
+When generating a mind map, please follow these guidelines:
+
+1. Structured hierarchy:
+   - First level: 10-15 main topics or knowledge domains
+   - Second level: 5-10 subtopics under each topic
+   - Third level and below: Further specialized knowledge points
+
+2. Comprehensive content:
+   - Technical knowledge: Core concepts, tools, frameworks, best practices
+   - Soft skills: Communication, teamwork, problem-solving abilities
+   - Career development: Career stages, promotion paths, certifications
+   - Industry knowledge: Industry trends, standards, regulations
+
+3. Logical coherence:
+   - Arrange nodes according to learning sequence
+   - Ensure clear dependencies between knowledge points
+   - Progressive learning path from basics to advanced topics
+
+4. Customization:
+   - Adjust content depth based on user's current level
+   - Provide relevant focal points according to user's learning goals
+   - Avoid including basic knowledge that the user has already mastered
+
+5. Completeness:
+   - Ensure the total number of nodes is not less than 100
+   - Cover all relevant knowledge domains and skills
+   - Include practical projects and application scenarios
+
+Please ensure the output JSON strictly follows the provided schema and contains rich, practical learning content.
+
+Must respond in English.
+"""
+
+# 使用当前的MINDMAP_GENERATION_GUIDELINES作为默认值，保持向后兼容
+MINDMAP_GENERATION_GUIDELINES = MINDMAP_GENERATION_GUIDELINES_ZH
