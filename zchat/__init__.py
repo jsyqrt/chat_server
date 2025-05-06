@@ -15,18 +15,20 @@ def create_app(test_config=None, tool_mode=False):
     babel = Babel(app)
 
     def get_locale():
+        to_zh_CN = lambda lang: 'zh_CN' if lang == 'zh' else lang
+
         # 尝试从 session 获取语言设置
         if session.get('lang'):
-            return session.get('lang')
+            return to_zh_CN(session.get('lang'))
         # 尝试从 URL 参数获取语言设置
         if request.args.get('lang'):
-            return request.args.get('lang')
+            return to_zh_CN(request.args.get('lang'))
         # 尝试从用户设置获取语言
         if hasattr(g, 'user') and g.user and g.user.language:
-            return g.user.language
+            return to_zh_CN(g.user.language)
         # 尝试从请求头中获取语言设置
         if request.headers.get('X-Language'):
-            return request.headers.get('X-Language')
+            return to_zh_CN(request.headers.get('X-Language'))
         # 尝试从浏览器设置获取语言
         return request.accept_languages.best_match(['en', 'zh_CN', 'zh_TW'])
 

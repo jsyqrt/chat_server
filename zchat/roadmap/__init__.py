@@ -373,7 +373,8 @@ def create_from_jd_and_resume():
     roadmap_subtitle = translate('custom_career_path', lang)
     roadmap_type = RoadmapType.USER.value
     roadmap_kind = RoadmapKind.JOB.value
-    roadmap_status = RoadmapStatus.VERIFIED.value
+    roadmap_status = RoadmapStatus.PUBLIC.value
+    roadmap_lang = lang
     mindmap_id = mindmap['id']
     created_by = user_id
     industry_tag = mindmap['industry_tag']
@@ -389,6 +390,7 @@ def create_from_jd_and_resume():
         type=roadmap_type,
         kind=roadmap_kind,
         status=roadmap_status,
+        roadmap_lang=roadmap_lang,
         mindmap_id=mindmap_id,
         created_by=created_by,
         industry_tag=industry_tag,
@@ -414,6 +416,7 @@ def create_from_jd_and_resume():
         'subtitle': roadmap.roadmap_subtitle,
         'type': roadmap.roadmap_type,
         'kind': roadmap.roadmap_kind,
+        'lang': roadmap.roadmap_lang,
         'mindmap': mindmap,
         'points_spent': points_spent
     })
@@ -453,6 +456,7 @@ def restore_all_roadmaps():
             type=roadmap['type'],
             kind=roadmap['kind'],
             status=roadmap['status'],
+            roadmap_lang=roadmap['lang'],
             mindmap_id=roadmap['mindmap_id'],
             created_by=roadmap['created_by'],
             industry_tag=roadmap['industry_tag'],
@@ -512,8 +516,9 @@ def create_from_topic():
     roadmap_title = topic
     roadmap_subtitle = learning_goal
     roadmap_type = RoadmapType.USER.value
+    roadmap_lang = lang
     roadmap_kind = RoadmapKind.from_string(kind)
-    roadmap_status = RoadmapStatus.VERIFIED.value
+    roadmap_status = RoadmapStatus.PUBLIC.value
     mindmap_id = mindmap['id']
     industry_tag = mindmap['industry_tag']
     job_tag = mindmap['job_tag']
@@ -529,6 +534,7 @@ def create_from_topic():
         type=roadmap_type,
         kind=roadmap_kind,
         status=roadmap_status,
+        roadmap_lang=roadmap_lang,
         mindmap_id=mindmap_id,
         created_by=created_by,
         industry_tag=industry_tag,
@@ -554,6 +560,7 @@ def create_from_topic():
         'subtitle': roadmap.roadmap_subtitle,
         'type': roadmap.roadmap_type,
         'kind': roadmap.roadmap_kind,
+        'lang': roadmap.roadmap_lang,
         'mindmap': mindmap,
         'points_spent': points_spent
     })
@@ -562,7 +569,8 @@ def create_from_topic():
 # @login_required
 def industry_tags():
     roadmap_ops = RoadmapOps(db.session)
-    industry_tags = roadmap_ops.all_industry_tags()
+    lang = get_user_lang()
+    industry_tags = roadmap_ops.all_industry_tags(lang)
     return jsonify({
         'industry_tags': industry_tags,
     })
@@ -573,9 +581,10 @@ def job_tags_of_industry_tags():
     industry_tags = request.args.get('industry_tags')
     industry_tags = industry_tags.split(',')
     roadmap_ops = RoadmapOps(db.session)
+    lang = get_user_lang()
     job_tags = []
     for industry_tag in industry_tags:
-        job_tags.extend(roadmap_ops.job_tags_of_industry_tag(industry_tag))
+        job_tags.extend(roadmap_ops.job_tags_of_industry_tag(industry_tag, lang))
     return jsonify({
         'job_tags': job_tags,
     })
@@ -586,9 +595,10 @@ def skill_tags_of_job_tags():
     job_tags = request.args.get('job_tags')
     job_tags = job_tags.split(',')
     roadmap_ops = RoadmapOps(db.session)
+    lang = get_user_lang()
     skill_tags = []
     for job_tag in job_tags:
-        skill_tags.extend(roadmap_ops.skill_tags_of_job_tag(job_tag))
+        skill_tags.extend(roadmap_ops.skill_tags_of_job_tag(job_tag, lang))
     return jsonify({
         'skill_tags': skill_tags,
     })
@@ -600,11 +610,12 @@ def search_topic():
     topics = topics.split(',')
     offset = int(request.form.get('offset', '0'))
     limit = int(request.form.get('limit', '10'))
+    lang = get_user_lang()
 
     current_app.logger.debug(f"search_topic: {topics}, offset: {offset}, limit: {limit}")
 
     roadmap_ops = RoadmapOps(db.session)
-    roadmaps = roadmap_ops.search_roadmaps_for_topics(topics, offset, limit)
+    roadmaps = roadmap_ops.search_roadmaps_for_topics(topics, lang, offset, limit)
     for roadmap in roadmaps:
         mindmap = get_mindmap_nosql(current_app, roadmap['mindmap_id'])
         roadmap['description'] = mindmap['description']
@@ -620,9 +631,10 @@ def hot_roadmaps():
     order_by = request.form.get('order_by', 'participanted')
     offset = int(request.form.get('offset', '0'))
     limit = int(request.form.get('limit', '10'))
+    lang = get_user_lang()
 
     roadmap_ops = RoadmapOps(db.session)
-    roadmaps = roadmap_ops.get_hot_roadmaps(roadmap_kind, order_by, offset, limit)
+    roadmaps = roadmap_ops.get_hot_roadmaps(roadmap_kind, order_by, lang, offset, limit)
     for roadmap in roadmaps:
         mindmap = get_mindmap_nosql(current_app, roadmap['mindmap_id'])
         roadmap['description'] = mindmap['description']
@@ -756,8 +768,9 @@ def stats_of_mindmap(mindmap):
 @bp.route('/official_maps', methods=['GET'])
 @login_required
 def official_maps():
+    lang = get_user_lang()
     roadmap_ops = RoadmapOps(db.session)
-    official_roadmaps = roadmap_ops.get_official_roadmaps()
+    official_roadmaps = roadmap_ops.get_official_roadmaps(lang)
     for item in official_roadmaps:
         mindmap = get_mindmap_nosql(current_app, item['mindmap_id'])
         item['subtitle'] = stats_of_mindmap(mindmap)

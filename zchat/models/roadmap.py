@@ -26,6 +26,7 @@ class Roadmap(db.Model):
     roadmap_type = db.Column(db.String(50), nullable=False) # official, user
     roadmap_kind = db.Column(db.String(50), nullable=False) # industry, job, skill, skill_group, topic
     roadmap_status = db.Column(db.Integer, nullable=False, default=RoadmapStatus.UNKNOWN.value) # 0->unknown, 1->private, 2->public
+    roadmap_lang = db.Column(db.String(50), nullable=False, default='zh_CN') # zh_CN, en
 
     mindmap_id = db.Column(db.String(255), nullable=False)
     created_by = db.Column(db.String(255), nullable=True)
@@ -49,6 +50,7 @@ class Roadmap(db.Model):
         db.Index('index_ROADMAP_type', 'roadmap_type', unique=False),
         db.Index('index_ROADMAP_kind', 'roadmap_kind', unique=False),
         db.Index('index_ROADMAP_status', 'roadmap_status', unique=False),
+        db.Index('index_ROADMAP_lang', 'roadmap_lang', unique=False),
         db.Index('index_ROADMAP_mindmap_id', 'mindmap_id', unique=False),
         db.Index('index_ROADMAP_created_by', 'created_by', unique=False),
         db.Index('index_ROADMAP_industry_tag', 'industry_tag', unique=False),
@@ -72,6 +74,7 @@ class Roadmap(db.Model):
             'type' : self.roadmap_type,
             'kind' : self.roadmap_kind,
             'status': self.roadmap_status,
+            'lang': self.roadmap_lang,
             'mindmap_id': self.mindmap_id,
             'created_by': self.created_by,
             'industry_tag': self.industry_tag,
@@ -301,7 +304,7 @@ class RoadmapOps:
     def __init__(self, session):
         self.session = session
 
-    def create_roadmap(self, id, icon, title, subtitle, type, kind, status, mindmap_id, created_by, industry_tag, job_tag, skill_tag)->Roadmap:
+    def create_roadmap(self, id, icon, title, subtitle, type, kind, status, lang, mindmap_id, created_by, industry_tag, job_tag, skill_tag)->Roadmap:
         try:
             roadmap = Roadmap(
                 roadmap_id=id,
@@ -311,6 +314,7 @@ class RoadmapOps:
                 roadmap_type=type,
                 roadmap_kind=kind,
                 roadmap_status=status,
+                roadmap_lang=lang,
                 mindmap_id=mindmap_id,
                 created_by=created_by,
                 industry_tag=industry_tag,
@@ -378,6 +382,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "后端开发",
                 "skill_tag": "Node.js",
+                "lang": "zh_CN",
             },
             # devops.json
             {
@@ -391,6 +396,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "后端开发",
                 "skill_tag": "运维",
+                "lang": "zh_CN",
             },
             # server-side-game-developer.json
             {
@@ -404,6 +410,7 @@ class RoadmapOps:
                 "industry_tag": "游戏开发",
                 "job_tag": "服务器端开发",
                 "skill_tag": "服务端游戏开发",
+                "lang": "zh_CN",
             },
             # frontend.json
             {
@@ -417,6 +424,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "前端开发",
                 "skill_tag": "前端开发",
+                "lang": "zh_CN",
             },
             # computer-science.json
             {
@@ -430,6 +438,7 @@ class RoadmapOps:
                 "industry_tag": "信息技术",
                 "job_tag": "",
                 "skill_tag": "计算机基础",
+                "lang": "zh_CN",
             },
             # python.json
             {
@@ -443,6 +452,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "后端开发",
                 "skill_tag": "Python",
+                "lang": "zh_CN",
             },
             # software-architect.json
             {
@@ -456,6 +466,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "架构师",
                 "skill_tag": "软件架构",
+                "lang": "zh_CN",
             },
             # data-analyst.json
             {
@@ -469,6 +480,7 @@ class RoadmapOps:
                 "industry_tag": "数据科学",
                 "job_tag": "数据分析师",
                 "skill_tag": "数据分析",
+                "lang": "zh_CN",
             },
             # typescript.json
             {
@@ -482,6 +494,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "前端开发",
                 "skill_tag": "TypeScript",
+                "lang": "zh_CN",
             },
             # mlops.json
             {
@@ -495,6 +508,7 @@ class RoadmapOps:
                 "industry_tag": "机器学习",
                 "job_tag": "机器学习工程师",
                 "skill_tag": "机器学习运维",
+                "lang": "zh_CN",
             },
             # vue.json
             {
@@ -508,6 +522,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "前端开发",
                 "skill_tag": "Vue",
+                "lang": "zh_CN",
             },
 
             # postgresql-dba.json
@@ -522,6 +537,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "后端开发",
                 "skill_tag": "PostgreSQL",
+                "lang": "zh_CN",
             },
             # angular.json
             {
@@ -535,6 +551,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "前端开发",
                 "skill_tag": "Angular",
+                "lang": "zh_CN",
             },
             # qa.json
             {
@@ -548,6 +565,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "测试工程师",
                 "skill_tag": "QA",
+                "lang": "zh_CN",
             },
             # backend_cn.json
             {
@@ -561,6 +579,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "后端开发",
                 "skill_tag": "后端开发",
+                "lang": "zh_CN",
             },
             # cyber-security.json
             {
@@ -574,6 +593,7 @@ class RoadmapOps:
                 "industry_tag": "安全",
                 "job_tag": "安全工程师",
                 "skill_tag": "网络安全",
+                "lang": "zh_CN",
             },
             # blockchain.json
             {
@@ -587,6 +607,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "后端开发",
                 "skill_tag": "区块链",
+                "lang": "zh_CN",
             },
             # full-stack.json
             {
@@ -600,6 +621,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "全栈开发",
                 "skill_tag": "全栈开发",
+                "lang": "zh_CN",
             },
             # android.json
             {
@@ -613,6 +635,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "移动开发",
                 "skill_tag": "Android",
+                "lang": "zh_CN",
             },
             # system-design.json
             {
@@ -626,6 +649,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "架构师",
                 "skill_tag": "系统设计",
+                "lang": "zh_CN",
             },
             # javascript.json
             {
@@ -639,6 +663,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "前端开发",
                 "skill_tag": "JavaScript",
+                "lang": "zh_CN",
             },
             # technical-writer.json
             {
@@ -652,6 +677,7 @@ class RoadmapOps:
                 "industry_tag": "技术写作",
                 "job_tag": "技术文案",
                 "skill_tag": "技术文档写作",
+                "lang": "zh_CN",
             },
             # game-developer.json
             {
@@ -665,6 +691,7 @@ class RoadmapOps:
                 "industry_tag": "游戏开发",
                 "job_tag": "游戏开发",
                 "skill_tag": "游戏开发",
+                "lang": "zh_CN",
             },
             # react.json
             {
@@ -678,6 +705,7 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "前端开发",
                 "skill_tag": "React",
+                "lang": "zh_CN",
             },
             # ux-design.json
             {
@@ -691,6 +719,7 @@ class RoadmapOps:
                 "industry_tag": "设计",
                 "job_tag": "设计师",
                 "skill_tag": "UX设计",
+                "lang": "zh_CN",
             },
             # sql.json
             {
@@ -704,8 +733,417 @@ class RoadmapOps:
                 "industry_tag": "软件开发",
                 "job_tag": "后端开发",
                 "skill_tag": "SQL",
+                "lang": "zh_CN",
+            },
+
+# android.json
+# angular.json
+# aspnet-core.json
+# backend.json
+# blockchain.json
+# computer-science.json
+# cyber-security.json
+# data-analyst.json
+# devops.json
+# frontend.json
+# full-stack.json
+# game-developer.json
+# javascript.json
+# mlops.json
+# nodejs.json
+# postgresql-dba.json
+# python.json
+# qa.json
+# react.json
+# server-side-game-developer.json
+# software-architect.json
+# sql.json
+# system-design.json
+# technical-writer.json
+# typescript.json
+# ux-design.json
+# vue.json
+
+            # android.json
+            {
+                "id": "android.json",
+                "icon": "📱",
+                "title": "Android Developer",
+                "subtitle": "Mobile Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Android Developer",
+                "skill_tag": "Android",
+                "lang": "en",
+            },
+            # angular.json
+            {
+                "id": "angular.json",
+                "icon": "⚛️",
+                "title": "Angular Developer",
+                "subtitle": "Web Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Full Stack Developer",
+                "skill_tag": "Angular",
+                "lang": "en",
+            },
+            # aspnet-core.json
+            {
+                "id": "aspnet-core.json",
+                "icon": "🔧",
+                "title": "ASP.NET Core Developer",
+                "subtitle": "Web Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Full Stack Developer",
+                "skill_tag": "ASP.NET Core",
+                "lang": "en",
+            },
+            # backend.json
+            {
+                "id": "backend.json",
+                "icon": "⚙️",
+                "title": "Backend Developer",
+                "subtitle": "Software Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Backend Developer",
+                "skill_tag": "Backend",
+                "lang": "en",
+            },
+            # blockchain.json
+            {
+                "id": "blockchain.json",
+                "icon": "⛓️",
+                "title": "Blockchain Developer",
+                "subtitle": "Software Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Backend Developer",
+                "skill_tag": "Blockchain",
+                "lang": "en",
+            },
+            # computer-science.json
+            {
+                "id": "computer-science.json",
+                "icon": "💻",
+                "title": "Computer Science",
+                "subtitle": "Computer Science",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Backend Developer",
+                "skill_tag": "Computer Science",
+                "lang": "en",
+            },
+            # cyber-security.json
+            {
+                "id": "cyber-security.json",
+                "icon": "🔒",
+                "title": "Cyber Security",
+                "subtitle": "Cyber Security",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Cyber Security",
+                "job_tag": "Cyber Security Engineer",
+                "skill_tag": "Cyber Security",
+                "lang": "en",
+            },
+            # data-analyst.json
+            {
+                "id": "data-analyst.json",
+                "icon": "📊",
+                "title": "Data Analyst",
+                "subtitle": "Data Analysis",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Data Science",
+                "job_tag": "Data Analyst",
+                "skill_tag": "Data Analysis",
+                "lang": "en",
+            },
+            # devops.json
+            {
+                "id": "devops.json",
+                "icon": "🔧",
+                "title": "DevOps Engineer",
+                "subtitle": "DevOps",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "DevOps Engineer",
+                "skill_tag": "DevOps",
+                "lang": "en",
+            },
+            # frontend.json
+            {
+                "id": "frontend.json",
+                "icon": "🎨",
+                "title": "Frontend Developer",
+                "subtitle": "Frontend Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Frontend Developer",
+                "skill_tag": "Frontend",
+                "lang": "en",
+            },
+            # full-stack.json
+            {
+                "id": "full-stack.json",
+                "icon": "🔄",
+                "title": "Full Stack Developer",
+                "subtitle": "Full Stack Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Full Stack Developer",
+                "skill_tag": "Full Stack",
+                "lang": "en",
+            },
+            # game-developer.json
+            {
+                "id": "game-developer.json",
+                "icon": "🎮",
+                "title": "Game Developer",
+                "subtitle": "Game Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Game Development",
+                "job_tag": "Game Developer",
+                "skill_tag": "Game Development",
+                "lang": "en",
+            },
+            # javascript.json
+            {
+                "id": "javascript.json",
+                "icon": "📜",
+                "title": "JavaScript Developer",
+                "subtitle": "JavaScript Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "JavaScript Developer",
+                "skill_tag": "JavaScript",
+                "lang": "en",
+            },
+            # mlops.json
+            {
+                "id": "mlops.json",
+                "icon": "🤖",
+                "title": "MLOps Engineer",
+                "subtitle": "MLOps",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Machine Learning",
+                "job_tag": "MLOps Engineer",
+                "skill_tag": "MLOps",
+                "lang": "en",
+            },
+            # nodejs.json
+            {
+                "id": "nodejs.json",
+                "icon": "🟢",
+                "title": "Node.js Developer",
+                "subtitle": "Node.js Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Node.js Developer",
+                "skill_tag": "Node.js",
+                "lang": "en",
+            },
+            # postgresql-dba.json
+            {
+                "id": "postgresql-dba.json",
+                "icon": "🐘",
+                "title": "PostgreSQL DBA",
+                "subtitle": "Database Administration",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Database Management",
+                "job_tag": "Database Administrator",
+                "skill_tag": "PostgreSQL",
+                "lang": "en",
+            },
+            # python.json
+            {
+                "id": "python.json",
+                "icon": "🐍",
+                "title": "Python Developer",
+                "subtitle": "Python Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Python Developer",
+                "skill_tag": "Python",
+                "lang": "en",
+            },
+            # qa.json
+            {
+                "id": "qa.json",
+                "icon": "✅",
+                "title": "QA Engineer",
+                "subtitle": "Quality Assurance",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Testing",
+                "job_tag": "QA Engineer",
+                "skill_tag": "Quality Assurance",
+                "lang": "en",
+            },
+            # react.json
+            {
+                "id": "react.json",
+                "icon": "⚛️",
+                "title": "React Developer",
+                "subtitle": "React Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "React Developer",
+                "skill_tag": "React",
+                "lang": "en",
+            },
+            # server-side-game-developer.json
+            {
+                "id": "server-side-game-developer.json",
+                "icon": "🖥️",
+                "title": "Server-side Game Developer",
+                "subtitle": "Game Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Game Development",
+                "job_tag": "Server-side Game Developer",
+                "skill_tag": "Server-side Development",
+                "lang": "en",
+            },
+            # software-architect.json
+            {
+                "id": "software-architect.json",
+                "icon": "🏛️",
+                "title": "Software Architect",
+                "subtitle": "Software Architecture",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Software Architect",
+                "skill_tag": "Architecture",
+                "lang": "en",
+            },
+            # sql.json
+            {
+                "id": "sql.json",
+                "icon": "🗄️",
+                "title": "SQL Developer",
+                "subtitle": "Database Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Database Management",
+                "job_tag": "SQL Developer",
+                "skill_tag": "SQL",
+                "lang": "en",
+            },
+            # system-design.json
+            {
+                "id": "system-design.json",
+                "icon": "🖥️",
+                "title": "System Designer",
+                "subtitle": "System Design",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "System Design",
+                "job_tag": "System Designer",
+                "skill_tag": "System Design",
+                "lang": "en",
+            },
+            # technical-writer.json
+            {
+                "id": "technical-writer.json",
+                "icon": "✍️",
+                "title": "Technical Writer",
+                "subtitle": "Technical Writing",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Technical Writing",
+                "job_tag": "Technical Writer",
+                "skill_tag": "Writing",
+                "lang": "en",
+            },
+            # typescript.json
+            {
+                "id": "typescript.json",
+                "icon": "📘",
+                "title": "TypeScript Developer",
+                "subtitle": "TypeScript Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "TypeScript Developer",
+                "skill_tag": "TypeScript",
+                "lang": "en",
+            },
+            # ux-design.json
+            {
+                "id": "ux-design.json",
+                "icon": "🎨",
+                "title": "UX Designer",
+                "subtitle": "User Experience Design",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Design",
+                "job_tag": "UX Designer",
+                "skill_tag": "UX Design",
+                "lang": "en",
+            },
+            # vue.json
+            {
+                "id": "vue.json",
+                "icon": "🖼️",
+                "title": "Vue Developer",
+                "subtitle": "Vue.js Development",
+                "type": "official",
+                "kind": "role",
+                "status": 2,
+                "industry_tag": "Software Development",
+                "job_tag": "Vue Developer",
+                "skill_tag": "Vue.js",
+                "lang": "en",
             },
         ]
+
 
         self.session.query(Roadmap).filter_by(roadmap_type='official').delete()
         self.session.commit()
@@ -723,6 +1161,7 @@ class RoadmapOps:
             roadmap_type = item['type']
             roadmap_kind = item['kind']
             roadmap_status = item['status']
+            roadmap_lang = item['lang']
             industry_tag = item['industry_tag']
             job_tag = item['job_tag']
             skill_tag = item['skill_tag']
@@ -736,6 +1175,7 @@ class RoadmapOps:
                 roadmap_type=roadmap_type,
                 roadmap_kind=roadmap_kind,
                 roadmap_status=roadmap_status,
+                roadmap_lang=roadmap_lang,
                 mindmap_id=mindmap_id,
                 created_by=created_by,
                 industry_tag=industry_tag,
@@ -756,12 +1196,12 @@ class RoadmapOps:
             add_result = add_mindmap_nosql(current_app, mindmap)
             current_app.logger.debug(f'nosql add_result: {add_result}')
 
-            current_app.logger.info(f'reset_official_roadmaps: {roadmap_id} {roadmap_title} {roadmap_subtitle} {roadmap_type} {roadmap_kind} {roadmap_status} {mindmap_id}')
+            current_app.logger.info(f'reset_official_roadmaps: {roadmap_id} {roadmap_title} {roadmap_subtitle} {roadmap_type} {roadmap_kind} {roadmap_status} {roadmap_lang} {mindmap_id}')
 
         return True
 
-    def get_official_roadmaps(self)->list:
-        official_roadmaps = self.session.query(Roadmap).filter_by(roadmap_type='official', roadmap_status=2).all()
+    def get_official_roadmaps(self, lang: str='zh_CN')->list:
+        official_roadmaps = self.session.query(Roadmap).filter_by(roadmap_type='official', roadmap_status=2, roadmap_lang=lang).all()
         return [roadmap.to_dict() for roadmap in official_roadmaps]
 
     def get_roadmap(self, roadmap_id: str)->Roadmap:
@@ -777,23 +1217,23 @@ class RoadmapOps:
         from sqlalchemy import func, Integer
         return self.session.query(func.cast(func.count(Roadmap.roadmap_id), Integer)).filter_by(created_by=user_id).scalar()
 
-    def search_roadmaps_with_title_like(self, title: str, offset: int=0, limit: int=10)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_title.like(f'%{title}%') & (Roadmap.roadmap_status == 2)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+    def search_roadmaps_with_title_like(self, title: str, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_title.like(f'%{title}%') & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
-    def search_roadmaps_with_industry_tag_like(self, industry_tag: str, offset: int=0, limit: int=10)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.industry_tag.like(f'%{industry_tag}%')).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+    def search_roadmaps_with_industry_tag_like(self, industry_tag: str, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.industry_tag.like(f'%{industry_tag}%') & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
-    def search_roadmaps_with_job_tag_like(self, job_tag: str, offset: int=0, limit: int=10)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.job_tag.like(f'%{job_tag}%')).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+    def search_roadmaps_with_job_tag_like(self, job_tag: str, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.job_tag.like(f'%{job_tag}%') & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
-    def search_roadmaps_with_skill_tag_like(self, skill_tag: str, offset: int=0, limit: int=10)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.skill_tag.like(f'%{skill_tag}%')).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+    def search_roadmaps_with_skill_tag_like(self, skill_tag: str, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.skill_tag.like(f'%{skill_tag}%') & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
-    def search_roadmaps_for_topics(self, topics: list, offset: int=0, limit: int=10)->list:
+    def search_roadmaps_for_topics(self, topics: list, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
         from sqlalchemy import or_
 
         query_filters = []
@@ -806,24 +1246,24 @@ class RoadmapOps:
             )
 
         roadmaps = self.session.query(Roadmap).filter(
-            or_(*query_filters)
+            or_(*query_filters) & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)
         ).distinct().order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
-    def all_industry_tags(self)->list:
-        industry_tags = self.session.query(Roadmap.industry_tag).distinct().all()
+    def all_industry_tags(self, lang: str='zh_CN')->list:
+        industry_tags = self.session.query(Roadmap.industry_tag).distinct().filter(Roadmap.roadmap_lang == lang).all()
         return [industry_tag[0] for industry_tag in industry_tags if industry_tag[0] is not None]
 
-    def job_tags_of_industry_tag(self, industry_tag: str)->list:
-        job_tags = self.session.query(Roadmap.job_tag).filter(Roadmap.industry_tag == industry_tag).distinct().all()
+    def job_tags_of_industry_tag(self, industry_tag: str, lang: str='zh_CN')->list:
+        job_tags = self.session.query(Roadmap.job_tag).filter(Roadmap.industry_tag == industry_tag).distinct().filter(Roadmap.roadmap_lang == lang).all()
         return [job_tag[0] for job_tag in job_tags if job_tag[0] is not None]
 
-    def skill_tags_of_job_tag(self, job_tag: str)->list:
-        skill_tags = self.session.query(Roadmap.skill_tag).filter(Roadmap.job_tag == job_tag).distinct().all()
+    def skill_tags_of_job_tag(self, job_tag: str, lang: str='zh_CN')->list:
+        skill_tags = self.session.query(Roadmap.skill_tag).filter(Roadmap.job_tag == job_tag).distinct().filter(Roadmap.roadmap_lang == lang).all()
         return [skill_tag[0] for skill_tag in skill_tags if skill_tag[0] is not None]
 
-    def get_public_roadmaps(self)->list:
-        public_roadmaps = self.session.query(Roadmap).filter_by(roadmap_status=2).all()
+    def get_public_roadmaps(self, lang: str='zh_CN')->list:
+        public_roadmaps = self.session.query(Roadmap).filter_by(roadmap_status=2, roadmap_lang=lang).all()
         return [roadmap.to_dict() for roadmap in public_roadmaps]
 
     def set_roadmap_public(self, roadmap_id: str)->bool:
@@ -840,8 +1280,8 @@ class RoadmapOps:
             self.session.commit()
         return True
 
-    def get_all_roadmaps(self)->list:
-        roadmaps = self.session.query(Roadmap).all()
+    def get_all_roadmaps(self, lang: str='zh_CN')->list:
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_lang == lang).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
     def delete_roadmap(self, roadmap_id: str)->bool:
@@ -851,7 +1291,7 @@ class RoadmapOps:
             self.session.commit()
         return True
 
-    def get_hot_roadmaps(self, roadmap_kind: str, order_by: str, offset: int=0, limit: int=10)->list:
+    def get_hot_roadmaps(self, roadmap_kind: str, order_by: str, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
         if order_by == 'viewed':
             order_by_field = Roadmap.viewed
         elif order_by == 'participanted':
@@ -865,5 +1305,5 @@ class RoadmapOps:
         else:
             order_by_field = Roadmap.create_timestamp
 
-        roadmaps = self.session.query(Roadmap).filter_by(roadmap_kind=roadmap_kind).order_by(order_by_field.desc(), Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+        roadmaps = self.session.query(Roadmap).filter_by(roadmap_kind=roadmap_kind, roadmap_lang=lang).order_by(order_by_field.desc(), Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
