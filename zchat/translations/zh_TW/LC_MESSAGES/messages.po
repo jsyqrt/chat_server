@@ -1,9 +1,8 @@
-
 msgid ""
 msgstr ""
 "Project-Id-Version:  zchat\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-04 22:53+0800\n"
+"POT-Creation-Date: 2025-05-08 15:49+0800\n"
 "PO-Revision-Date: 2024-05-16 12:00+0800\n"
 "Last-Translator: \n"
 "Language: zh_TW\n"
@@ -14,6 +13,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
+#: zchat/aichat/chat.py:72
+msgid "会话标题不能为空"
+msgstr "會話標題不能為空"
+
+#: zchat/aichat/chat.py:98 zchat/aichat/chat.py:108 zchat/aichat/chat.py:131
+#: zchat/aichat/chat.py:144 zchat/aichat/chat_stream.py:70
+msgid "会话不存在或无权访问"
+msgstr "會話不存在或無權訪問"
+
+#: zchat/aichat/chat.py:136
+msgid "会话已删除"
+msgstr "會話已刪除"
+
+#: zchat/aichat/chat_stream.py:30
+msgid "无效的请求数据"
+msgstr "無效的請求數據"
+
+#: zchat/aichat/chat_stream.py:46
+msgid "消息内容不能为空"
+msgstr "訊息內容不能為空"
+
+#: zchat/aichat/chat_stream.py:50
+msgid "会话ID不能为空"
+msgstr "會話ID不能為空"
+
+#: zchat/aichat/chat_stream.py:63
+msgid "积分检查失败，请稍后重试"
+msgstr "積分檢查失敗，請稍後重試"
+
+#: zchat/aichat/chat_stream.py:74
+msgid "查询会话失败，请稍后重试"
+msgstr "查詢會話失敗，請稍後重試"
+
+#: zchat/aichat/chat_stream.py:93
+msgid "保存用户消息失败，请稍后重试"
+msgstr "保存用戶訊息失敗，請稍後重試"
+
+#: zchat/aichat/chat_stream.py:101
+msgid "获取聊天历史失败，请稍后重试"
+msgstr "獲取聊天歷史失敗，請稍後重試"
+
+#: zchat/aichat/chat_stream.py:371
+msgid "AI聊天"
+msgstr "AI聊天"
+
+#: zchat/aichat/chat_stream.py:373
+msgid "积分扣除失败，请稍后重试"
+msgstr "積分扣除失敗，請稍後重試"
+
+#: zchat/aichat/chat_stream.py:377
+msgid "积分消费失败，请稍后重试"
+msgstr "積分消費失敗，請稍後重試"
+
+#: zchat/aichat/chat_stream.py:397
+msgid "创建AI消息记录失败，请稍后重试"
+msgstr "創建AI訊息記錄失敗，請稍後重試"
+
+#: zchat/aichat/chat_stream.py:419
+msgid "获取AI响应时出现错误，请稍后重试"
+msgstr "獲取AI響應時出現錯誤，請稍後重試"
+
+#: zchat/aichat/chat_stream.py:422
+msgid "[系统提示: 获取AI响应时出现错误]"
+msgstr "[系統提示: 獲取AI響應時出現錯誤]"
+
+#: zchat/aichat/chat_stream.py:451
+msgid "处理请求时发生错误，请稍后重试"
+msgstr "處理請求時發生錯誤，請稍後重試"
+
+#: zchat/aichat/chat_stream.py:486
+msgid "未知主题"
+msgstr "未知主題"
+
+#: zchat/aichat/chat_stream.py:487
+msgid "未知节点"
+msgstr "未知節點"
+
+#: zchat/aichat/chat_stream.py:488
+msgid "未知路径"
+msgstr "未知路徑"
+
+#: zchat/aichat/chat_stream.py:489
+msgid "暂无描述"
+msgstr "暫無描述"
+
 #: zchat/invitation/__init__.py:23
 msgid "Failed to get invitation code"
 msgstr "獲取邀請碼失敗"
@@ -22,6 +106,28 @@ msgstr "獲取邀請碼失敗"
 #, python-brace-format
 msgid "我正在使用「职路」APP，邀请你一起加入！注册时使用我的邀请码「 {} 」获得额外积分奖励！"
 msgstr "我正在使用「職路」APP，邀請你一起加入！註冊時使用我的邀請碼「 {} 」獲得額外積分獎勵！"
+
+#: zchat/job/__init__.py:40
+msgid "No JD file or JD text provided"
+msgstr ""
+
+#: zchat/job/__init__.py:84
+msgid "No JD provided"
+msgstr ""
+
+#: zchat/job/__init__.py:104 zchat/resume/__init__.py:126
+#: zchat/resume/__init__.py:132
+msgid "Try again later"
+msgstr ""
+
+#: zchat/job/__init__.py:107
+msgid "Job Analysis"
+msgstr ""
+
+#: zchat/job/__init__.py:110 zchat/resume/__init__.py:137
+#, fuzzy
+msgid "Points deduction failed, please try again later"
+msgstr "重置密碼失敗。請稍後再試。"
 
 #: zchat/points/__init__.py:84 zchat/points/__init__.py:128
 msgid "积分套餐A"
@@ -123,6 +229,232 @@ msgstr "積分不足，當前可用積分: {}，需要積分: {}"
 msgid "使用服务: {}"
 msgstr "使用服務: {}"
 
+#: zchat/resume/__init__.py:48
+msgid "No JD ID provided"
+msgstr ""
+
+#: zchat/resume/__init__.py:54
+msgid "No resume file or resume text provided"
+msgstr ""
+
+#: zchat/resume/__init__.py:67
+#, python-brace-format
+msgid "JD not found for the given JD ID: {}"
+msgstr ""
+
+#: zchat/resume/__init__.py:71
+#, python-brace-format
+msgid "No JD provided for the given JD ID: {}"
+msgstr ""
+
+#: zchat/resume/__init__.py:106
+msgid "No resume provided"
+msgstr ""
+
+#: zchat/resume/__init__.py:135 zchat/templates/index.html:211
+msgid "简历定制"
+msgstr "簡歷定制"
+
+#: zchat/resume/resume_optimizer.py:469
+msgid "简历优化专家"
+msgstr ""
+
+#: zchat/resume/resume_optimizer.py:846
+msgid "简历分析专家"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:5
+msgid "Education"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:6
+msgid "Degree"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:7
+msgid "Field of Study"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:8
+msgid "Institution"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:9
+msgid "GPA"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:12
+msgid "Skills"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:13
+msgid "Technical Skills"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:14
+msgid "Soft Skills"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:15
+msgid "Other Skills"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:16
+msgid "Languages"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:19
+msgid "Work Experience"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:20
+msgid "Responsibilities"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:21
+msgid "Achievements"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:22
+msgid "Technologies Used"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:25
+msgid "Projects"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:26
+msgid "Technologies"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:27
+msgid "Project Link"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:30
+msgid "Publications"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:31
+msgid "Authors"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:32
+msgid "Publisher"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:33
+msgid "Date"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:34
+msgid "Read Publication"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:37
+msgid "Awards"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:38
+msgid "Issuer"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:41
+msgid "Volunteer Experience"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:44
+msgid "Self-Evaluation"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:45
+msgid "Interests"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:46
+msgid "Strengths"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:49
+msgid "Email"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:50
+msgid "Phone"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:51
+msgid "Address"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:52
+msgid "LinkedIn"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:53
+msgid "GitHub"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:54
+msgid "Personal Website"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:57
+msgid "Present"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:58
+msgid " - "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:61
+msgid "Certifications"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:62
+msgid "Issuing Institution"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:63
+msgid "Date Obtained"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:64
+msgid "Expiration Date"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:65
+msgid "Certificate ID"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:66
+msgid "View Certificate"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:69
+msgid "@"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:70
+msgid ", "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:71
+msgid ": "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:72
+msgid " | "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:73
+msgid "- "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:76
+msgid "This resume was generated automatically"
+msgstr ""
+
 #: zchat/templates/index.html:6
 msgid "职路 - 您的职业发展伙伴"
 msgstr "職路 - 您的職業發展夥伴"
@@ -201,10 +533,6 @@ msgstr "深度分析目標崗位，提取企業隱性需求"
 #: zchat/templates/index.html:204
 msgid "结合行业大数据，智能规划求职升职决策，快人一步"
 msgstr "結合行業大數據，智能規劃求職升職決策，快人一步"
-
-#: zchat/templates/index.html:211
-msgid "简历定制"
-msgstr "簡歷定制"
 
 #: zchat/templates/index.html:212
 msgid "智能拆解JD隐藏关键词，拉满简历匹配度"
@@ -479,4 +807,233 @@ msgstr "您的密碼已成功重置。您現在可以使用新密碼登錄。"
 
 #~ msgid "感谢使用职路"
 #~ msgstr "感謝使用職路"
+
+#~ msgid "{editor}: Editing failed"
+#~ msgstr ""
+
+#~ msgid "{editor}: Editing failed: {e}"
+#~ msgstr ""
+
+#~ msgid "Aborted!"
+#~ msgstr ""
+
+#~ msgid "Show this message and exit."
+#~ msgstr ""
+
+#~ msgid "(Deprecated) {text}"
+#~ msgstr ""
+
+#~ msgid "Options"
+#~ msgstr ""
+
+#~ msgid "Got unexpected extra argument ({args})"
+#~ msgid_plural "Got unexpected extra arguments ({args})"
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "DeprecationWarning: The command {name!r} is deprecated."
+#~ msgstr ""
+
+#~ msgid "Commands"
+#~ msgstr ""
+
+#~ msgid "Missing command."
+#~ msgstr ""
+
+#~ msgid "No such command {name!r}."
+#~ msgstr ""
+
+#~ msgid "Value must be an iterable."
+#~ msgstr ""
+
+#~ msgid "Takes {nargs} values but 1 was given."
+#~ msgid_plural "Takes {nargs} values but {len} were given."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "env var: {var}"
+#~ msgstr ""
+
+#~ msgid "(dynamic)"
+#~ msgstr ""
+
+#~ msgid "default: {default}"
+#~ msgstr ""
+
+#~ msgid "required"
+#~ msgstr ""
+
+#~ msgid "%(prog)s, version %(version)s"
+#~ msgstr ""
+
+#~ msgid "Show the version and exit."
+#~ msgstr ""
+
+#~ msgid "Error: {message}"
+#~ msgstr ""
+
+#~ msgid "Try '{command} {option}' for help."
+#~ msgstr ""
+
+#~ msgid "Invalid value: {message}"
+#~ msgstr ""
+
+#~ msgid "Invalid value for {param_hint}: {message}"
+#~ msgstr ""
+
+#~ msgid "Missing argument"
+#~ msgstr ""
+
+#~ msgid "Missing option"
+#~ msgstr ""
+
+#~ msgid "Missing parameter"
+#~ msgstr ""
+
+#~ msgid "Missing {param_type}"
+#~ msgstr ""
+
+#~ msgid "Missing parameter: {param_name}"
+#~ msgstr ""
+
+#~ msgid "No such option: {name}"
+#~ msgstr ""
+
+#~ msgid "Did you mean {possibility}?"
+#~ msgid_plural "(Possible options: {possibilities})"
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "unknown error"
+#~ msgstr ""
+
+#~ msgid "Could not open file {filename!r}: {message}"
+#~ msgstr ""
+
+#~ msgid "Usage:"
+#~ msgstr ""
+
+#~ msgid "Argument {name!r} takes {nargs} values."
+#~ msgstr ""
+
+#~ msgid "Option {name!r} does not take a value."
+#~ msgstr ""
+
+#~ msgid "Option {name!r} requires an argument."
+#~ msgid_plural "Option {name!r} requires {nargs} arguments."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
+#~ msgstr ""
+
+#~ msgid "Couldn't detect Bash version, shell completion is not supported."
+#~ msgstr ""
+
+#~ msgid "Repeat for confirmation"
+#~ msgstr ""
+
+#~ msgid "Error: The value you entered was invalid."
+#~ msgstr ""
+
+#~ msgid "Error: {e.message}"
+#~ msgstr ""
+
+#~ msgid "Error: The two entered values do not match."
+#~ msgstr ""
+
+#~ msgid "Error: invalid input"
+#~ msgstr ""
+
+#~ msgid "Press any key to continue..."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Choose from:\n"
+#~ "\t{choices}"
+#~ msgstr ""
+
+#~ msgid "{value!r} is not {choice}."
+#~ msgid_plural "{value!r} is not one of {choices}."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "{value!r} does not match the format {format}."
+#~ msgid_plural "{value!r} does not match the formats {formats}."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "{value!r} is not a valid {number_type}."
+#~ msgstr ""
+
+#~ msgid "{value} is not in the range {range}."
+#~ msgstr ""
+
+#~ msgid "{value!r} is not a valid boolean."
+#~ msgstr ""
+
+#~ msgid "{value!r} is not a valid UUID."
+#~ msgstr ""
+
+#~ msgid "file"
+#~ msgstr ""
+
+#~ msgid "directory"
+#~ msgstr ""
+
+#~ msgid "path"
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} does not exist."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is a file."
+#~ msgstr ""
+
+#~ msgid "{name} '{filename}' is a directory."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not readable."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not writable."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not executable."
+#~ msgstr ""
+
+#~ msgid "{len_type} values are required, but {len_value} was given."
+#~ msgid_plural "{len_type} values are required, but {len_value} were given."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "Content purported to be compressed with %s but failed to decompress."
+#~ msgstr ""
+
+#~ msgid "Unsupported value for qop: %s."
+#~ msgstr ""
+
+#~ msgid "Unsupported value for algorithm: %s.algorithm"
+#~ msgstr ""
+
+#~ msgid "The challenge doesn't contain a server nonce, or this one is empty."
+#~ msgstr ""
+
+#~ msgid "Unsupported value for pw-algorithm: %s.pw-algorithm"
+#~ msgstr ""
+
+#~ msgid "Redirected but the response is missing a Location: header."
+#~ msgstr ""
+
+#~ msgid "Bases: %s"
+#~ msgstr ""
+
+#~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "x"
+#~ msgstr ""
+
+#~ msgid "y"
+#~ msgstr ""
 

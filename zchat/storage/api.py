@@ -227,6 +227,19 @@ def get_file_records(app, user_id: str) -> Dict[str, Any]:
         logger.error(f"获取文件记录失败: {str(e)}")
         return {}
 
+def delete_file_records(app, user_id: str) -> Dict[str, Any]:
+    """删除文件记录
+
+    Args:
+        app: Flask应用
+        user_id: 用户ID
+    """
+    try:
+        return app.document_store.delete_document('file_records', user_id)
+    except Exception as e:
+        logger.error(f"删除文件记录失败: {str(e)}")
+        return {"status": "error", "message": str(e)}
+
 def update_file_records(app, file_records: Dict[str, Any]) -> Dict[str, Any]:
     """更新文件记录
 
@@ -238,7 +251,13 @@ def update_file_records(app, file_records: Dict[str, Any]) -> Dict[str, Any]:
         操作结果
     """
     try:
-        return app.document_store.update_document('file_records', file_records)
+        error = delete_file_records(app, file_records['user_id'])
+        if error['status'] != 'success':
+            raise Exception(error['message'])
+        error = add_file_records(app, file_records)
+        if error['status'] != 'success':
+            raise Exception(error['message'])
+        return {"status": "success", "message": "文件记录更新成功"}
     except Exception as e:
         logger.error(f"更新文件记录失败: {str(e)}")
         return {"status": "error", "message": str(e)}

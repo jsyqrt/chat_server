@@ -7,6 +7,8 @@ import sys
 from datetime import datetime
 import argparse
 from pathlib import Path
+from flask_babel import gettext as _
+from zchat.resume.resume_translations import *
 
 def load_resume_data(file_path):
     """加载简历JSON数据"""
@@ -22,8 +24,10 @@ def format_date_range(start_date, end_date):
     if not start_date:
         return ""
 
-    end = end_date if end_date else "至今"
-    return f"{start_date} - {end}"
+    # 使用翻译常量
+    end = end_date if end_date else PRESENT
+
+    return f"{start_date}{DATE_RANGE_SEPARATOR}{end}"
 
 def generate_contact_section(contact):
     """生成联系方式部分"""
@@ -38,16 +42,16 @@ def generate_contact_section(contact):
 
     links = []
     if contact.get("linkedin"):
-        links.append(f"[LinkedIn]({contact['linkedin']})")
+        links.append(f"[{LINKEDIN}]({contact['linkedin']})")
     if contact.get("github"):
-        links.append(f"[GitHub]({contact['github']})")
+        links.append(f"[{GITHUB}]({contact['github']})")
     if contact.get("website"):
-        links.append(f"[个人网站]({contact['website']})")
+        links.append(f"[{PERSONAL_WEBSITE}]({contact['website']})")
 
     if links:
-        contact_lines.append(" | ".join(links))
+        contact_lines.append(PIPE_SEPARATOR.join(links))
 
-    return " | ".join(contact_lines)
+    return PIPE_SEPARATOR.join(contact_lines)
 
 def generate_personal_info(personal_info):
     """生成个人信息部分"""
@@ -56,20 +60,16 @@ def generate_personal_info(personal_info):
 
     sections = []
 
-    # 国籍
-    # if personal_info.get("nationality"):
-    #     sections.append(f"- **国籍**: {personal_info['nationality']}")
-
     # 语言能力
     if personal_info.get("languages") and len(personal_info["languages"]) > 0:
         language_list = [f"{lang['language']} ({lang['proficiency']})" for lang in personal_info["languages"]]
-        sections.append(f"- **语言能力**: {', '.join(language_list)}")
+        sections.append(f"{BULLET_POINT}**{LANGUAGES}**{COLON}{COMMA_SEPARATOR.join(language_list)}")
 
     # 其他个人信息
     if personal_info.get("other_details") and len(personal_info["other_details"]) > 0:
         for detail in personal_info["other_details"]:
             if detail.get("name") and detail.get("value"):
-                sections.append(f"- **{detail['name']}**: {detail['value']}")
+                sections.append(f"{BULLET_POINT}**{detail['name']}**{COLON}{detail['value']}")
 
     if sections:
         return "\n\n".join(sections)
@@ -80,12 +80,13 @@ def generate_education_section(education):
     if not education:
         return ""
 
-    sections = ["## 教育背景\n"]
+    # 使用翻译常量
+    sections = [f"## {EDUCATION}\n"]
 
     for edu in education:
         edu_title = f"**{edu.get('degree', '')}**"
         if edu.get('field_of_study'):
-            edu_title += f"，{edu['field_of_study']}"
+            edu_title += f"{COMMA_SEPARATOR}{edu['field_of_study']}"
 
         edu_details = []
         edu_details.append(f"*{edu.get('institution', '')}*")
@@ -99,13 +100,13 @@ def generate_education_section(education):
             location_date.append(date_range)
 
         if location_date:
-            edu_details.append(f"*{', '.join(location_date)}*")
+            edu_details.append(f"*{COMMA_SEPARATOR.join(location_date)}*")
 
         sections.append(f"{edu_title}")
-        sections.append(", ".join(edu_details))
+        sections.append(COMMA_SEPARATOR.join(edu_details))
 
         if edu.get('gpa'):
-            sections.append(f"GPA: {edu['gpa']}")
+            sections.append(f"{GPA}{COLON}{edu['gpa']}")
 
         if edu.get('details'):
             sections.append(f"{edu['details']}")
@@ -119,19 +120,20 @@ def generate_skills_section(skills):
     if not skills:
         return ""
 
-    sections = ["## 技能\n"]
+    # 使用翻译常量
+    sections = [f"## {SKILLS}\n"]
 
     # 技术技能
     if skills.get("technical") and len(skills["technical"]) > 0:
-        sections.append(f"- **技术技能**: {', '.join(skills['technical'])}")
+        sections.append(f"- **{TECHNICAL_SKILLS}**: {', '.join(skills['technical'])}")
 
     # 软技能
     if skills.get("soft") and len(skills["soft"]) > 0:
-        sections.append(f"- **软技能**: {', '.join(skills['soft'])}")
+        sections.append(f"- **{SOFT_SKILLS}**: {', '.join(skills['soft'])}")
 
     # 其他技能
     if skills.get("other") and len(skills["other"]) > 0:
-        sections.append(f"- **其他技能**: {', '.join(skills['other'])}")
+        sections.append(f"- **{OTHER_SKILLS}**: {', '.join(skills['other'])}")
 
     return "\n\n".join(sections) + "\n\n"
 
@@ -140,28 +142,32 @@ def generate_certifications_section(certifications):
     if not certifications or len(certifications) == 0:
         return ""
 
-    sections = ["## 证书\n"]
+    # Use translation constant
+    sections = [f"## {CERTIFICATIONS}\n"]
 
     for cert in certifications:
         cert_line = f"**{cert.get('name', '')}**"
 
         details = []
         if cert.get('issuer'):
-            details.append(f"颁发机构: {cert['issuer']}")
+            details.append(f"{ISSUING_INSTITUTION}{COLON}{cert['issuer']}")
+
         if cert.get('date'):
-            details.append(f"获得日期: {cert['date']}")
+            details.append(f"{DATE_OBTAINED}{COLON}{cert['date']}")
+
         if cert.get('expiration'):
-            details.append(f"到期日期: {cert['expiration']}")
+            details.append(f"{EXPIRATION_DATE}{COLON}{cert['expiration']}")
+
         if cert.get('id'):
-            details.append(f"证书ID: {cert['id']}")
+            details.append(f"{CERTIFICATE_ID}{COLON}{cert['id']}")
 
         sections.append(cert_line)
 
         if details:
-            sections.append(", ".join(details))
+            sections.append(COMMA_SEPARATOR.join(details))
 
         if cert.get('url'):
-            sections.append(f"[查看证书]({cert['url']})")
+            sections.append(f"[{VIEW_CERTIFICATE}]({cert['url']})")
 
         sections.append("")  # 添加空行
 
@@ -172,12 +178,12 @@ def generate_experience_section(experience):
     if not experience or len(experience) == 0:
         return ""
 
-    sections = ["## 工作经验\n"]
+    sections = [f"## {WORK_EXPERIENCE}\n"]
 
     for exp in experience:
-        exp_title = f"**{exp.get('title', '')}** @ *{exp.get('organization', '')}*"
+        exp_title = f"**{exp.get('title', '')}** {AT_SYMBOL} *{exp.get('organization', '')}*"
         if exp.get('location'):
-            exp_title += f", {exp['location']}"
+            exp_title += f"{COMMA_SEPARATOR}{exp['location']}"
 
         date_range = format_date_range(exp.get('start_date'), exp.get('end_date'))
 
@@ -190,19 +196,19 @@ def generate_experience_section(experience):
 
         # 职责
         if exp.get('responsibilities') and len(exp['responsibilities']) > 0:
-            sections.append("\n**职责:**")
+            sections.append(f"\n**{RESPONSIBILITIES}{COLON}**")
             for resp in exp['responsibilities']:
-                sections.append(f"- {resp}")
+                sections.append(f"{BULLET_POINT}{resp}")
 
         # 成就
         if exp.get('achievements') and len(exp['achievements']) > 0:
-            sections.append("\n**成就:**")
+            sections.append(f"\n**{ACHIEVEMENTS}{COLON}**")
             for achieve in exp['achievements']:
-                sections.append(f"- {achieve}")
+                sections.append(f"{BULLET_POINT}{achieve}")
 
         # 技术
         if exp.get('technologies') and len(exp['technologies']) > 0:
-            sections.append(f"\n**使用技术:** {', '.join(exp['technologies'])}")
+            sections.append(f"\n**{TECHNOLOGIES_USED}{COLON}**{COMMA_SEPARATOR.join(exp['technologies'])}")
 
         sections.append("")  # 添加空行
 
@@ -213,34 +219,34 @@ def generate_projects_section(projects):
     if not projects or len(projects) == 0:
         return ""
 
-    sections = ["## 项目经验\n"]
+    sections = [f"## {PROJECTS}\n"]
 
-    for proj in projects:
-        proj_title = f"**{proj.get('name', '')}**"
-        if proj.get('role'):
-            proj_title += f" - {proj['role']}"
+    for project in projects:
+        project_title = f"**{project.get('name', '')}**"
+        if project.get('role'):
+            project_title += f" - {project['role']}"
 
-        date_range = format_date_range(proj.get('start_date'), proj.get('end_date'))
+        date_range = format_date_range(project.get('start_date'), project.get('end_date'))
 
-        sections.append(f"{proj_title}")
+        sections.append(f"{project_title}")
         if date_range:
             sections.append(f"*{date_range}*")
 
-        if proj.get('description'):
-            sections.append(f"{proj['description']}")
+        if project.get('description'):
+            sections.append(f"{project['description']}")
 
         # 技术
-        if proj.get('technologies') and len(proj['technologies']) > 0:
-            sections.append(f"\n**使用技术:** {', '.join(proj['technologies'])}")
+        if project.get('technologies') and len(project['technologies']) > 0:
+            sections.append(f"**{TECHNOLOGIES}{COLON}**{COMMA_SEPARATOR.join(project['technologies'])}")
 
         # 成就
-        if proj.get('achievements') and len(proj['achievements']) > 0:
-            sections.append("\n**成就:**")
-            for achieve in proj['achievements']:
-                sections.append(f"- {achieve}")
+        if project.get('achievements') and len(project['achievements']) > 0:
+            sections.append(f"**{ACHIEVEMENTS}{COLON}**")
+            for achieve in project['achievements']:
+                sections.append(f"{BULLET_POINT}{achieve}")
 
-        if proj.get('url'):
-            sections.append(f"\n[项目链接]({proj['url']})")
+        if project.get('url'):
+            sections.append(f"[{PROJECT_LINK}]({project['url']})")
 
         sections.append("")  # 添加空行
 
@@ -251,32 +257,33 @@ def generate_publications_section(publications):
     if not publications or len(publications) == 0:
         return ""
 
-    sections = ["## 出版物\n"]
+    sections = [f"## {PUBLICATIONS}\n"]
 
     for pub in publications:
         pub_title = f"**{pub.get('title', '')}**"
 
         details = []
+
         if pub.get('authors') and len(pub['authors']) > 0:
-            authors = ", ".join(pub['authors'])
-            details.append(f"作者: {authors}")
+            authors_str = COMMA_SEPARATOR.join(pub['authors'])
+            details.append(f"{AUTHORS}{COLON}{authors_str}")
 
         if pub.get('publisher'):
-            details.append(f"发表于: {pub['publisher']}")
+            details.append(f"{PUBLISHER}{COLON}{pub['publisher']}")
 
         if pub.get('date'):
-            details.append(f"出版日期: {pub['date']}")
+            details.append(f"{DATE}{COLON}{pub['date']}")
 
         sections.append(pub_title)
 
         if details:
-            sections.append(", ".join(details))
+            sections.append(COMMA_SEPARATOR.join(details))
 
         if pub.get('description'):
             sections.append(f"{pub['description']}")
 
         if pub.get('url'):
-            sections.append(f"[查看出版物]({pub['url']})")
+            sections.append(f"[{READ_PUBLICATION}]({pub['url']})")
 
         sections.append("")  # 添加空行
 
@@ -287,22 +294,22 @@ def generate_awards_section(awards):
     if not awards or len(awards) == 0:
         return ""
 
-    sections = ["## 奖项荣誉\n"]
+    sections = [f"## {AWARDS}\n"]
 
     for award in awards:
         award_title = f"**{award.get('name', '')}**"
 
         details = []
         if award.get('issuer'):
-            details.append(f"颁发机构: {award['issuer']}")
+            details.append(f"{ISSUER}{COLON}{award['issuer']}")
 
         if award.get('date'):
-            details.append(f"获奖日期: {award['date']}")
+            details.append(f"{DATE}{COLON}{award['date']}")
 
         sections.append(award_title)
 
         if details:
-            sections.append(", ".join(details))
+            sections.append(COMMA_SEPARATOR.join(details))
 
         if award.get('description'):
             sections.append(f"{award['description']}")
@@ -316,14 +323,15 @@ def generate_volunteer_section(volunteer_experience):
     if not volunteer_experience or len(volunteer_experience) == 0:
         return ""
 
-    sections = ["## 志愿者经历\n"]
+    sections = [f"## {VOLUNTEER_EXPERIENCE}\n"]
 
     for vol in volunteer_experience:
-        vol_title = f"**{vol.get('role', '')}** @ *{vol.get('organization', '')}*"
+        vol_title = f"**{vol.get('role', '')}** {AT_SYMBOL} *{vol.get('organization', '')}*"
 
         date_range = format_date_range(vol.get('start_date'), vol.get('end_date'))
 
         sections.append(vol_title)
+
         if date_range:
             sections.append(f"*{date_range}*")
 
@@ -335,152 +343,204 @@ def generate_volunteer_section(volunteer_experience):
     return "\n\n".join(sections)
 
 def generate_personal_sections(data):
-    """生成个人评价、兴趣爱好等部分"""
+    """生成个人评价和兴趣爱好部分"""
     sections = []
 
     # 自我评价
     if data.get("self_evaluation"):
-        sections.append("## 自我评价\n")
-        sections.append(f"{data['self_evaluation']}\n")
-
-    # 特长与兴趣
-    if (data.get("good_at") and len(data["good_at"]) > 0) or \
-       (data.get("interests") and len(data["interests"]) > 0) or \
-       (data.get("weak_point") and len(data["weak_point"]) > 0):
-
-        sections.append("## 个人特点\n")
-
-        if data.get("good_at") and len(data["good_at"]) > 0:
-            sections.append(f"**特长**: {', '.join(data['good_at'])}")
-
-        if data.get("interests") and len(data["interests"]) > 0:
-            sections.append(f"**兴趣爱好**: {', '.join(data['interests'])}")
-
-        # if data.get("weak_point") and len(data["weak_point"]) > 0:
-            # sections.append(f"**待改进**: {', '.join(data['weak_point'])}")
-
+        sections.append(f"## {SELF_EVALUATION}\n")
+        sections.append(data["self_evaluation"])
         sections.append("")  # 添加空行
 
-    return "\n\n".join(sections)
+    # 兴趣爱好
+    if data.get("interests") and len(data["interests"]) > 0:
+        sections.append(f"## {INTERESTS}\n")
+        for interest in data["interests"]:
+            sections.append(f"{BULLET_POINT}{interest}")
+        sections.append("")  # 添加空行
+
+    # 擅长领域
+    if data.get("good_at") and len(data["good_at"]) > 0:
+        sections.append(f"## {STRENGTHS}\n")
+        for skill in data["good_at"]:
+            sections.append(f"{BULLET_POINT}{skill}")
+        sections.append("")  # 添加空行
+
+    if sections:
+        return "\n".join(sections)
+    return ""
 
 def generate_css_for_pdf():
-    """生成适合PDF打印的CSS样式"""
-    return """
-<style>
-@media print {
-    @page {
-        size: A4;
-        margin: 1.5cm;
-    }
+    """生成用于PDF的CSS样式"""
+    return """<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+p, li {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.date {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.subsection {
+    margin-left: 20px;
+}
+
+.skill-category {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.skill-list {
+    margin-left: 20px;
+}
+
+@media print {
     body {
-        font-family: 'Noto Sans SC', 'Arial', sans-serif;
-        font-size: 10pt;
-        line-height: 1.4;
-        color: #333;
+        font-size: 12px;
     }
 
     h1 {
-        font-size: 18pt;
-        margin-bottom: 0.3cm;
-        color: #2c3e50;
+        font-size: 24px;
     }
 
     h2 {
-        font-size: 14pt;
-        margin-top: 0.7cm;
-        margin-bottom: 0.3cm;
-        color: #3498db;
-        border-bottom: 1px solid #3498db;
-        padding-bottom: 0.1cm;
+        font-size: 18px;
     }
 
-    a {
-        color: #2980b9;
-        text-decoration: none;
-    }
-
-    ul {
-        padding-left: 0.5cm;
-    }
-
-    li {
-        margin-bottom: 0.2cm;
-    }
-
-    p {
-        margin-top: 0.1cm;
-        margin-bottom: 0.2cm;
+    p, li {
+        font-size: 12px;
     }
 }
-</style>
-"""
+</style>"""
 
 def generate_resume_markdown(data, include_css=False):
     """生成完整的简历Markdown"""
     sections = []
 
-    # 标题和联系方式
-    sections.append(f"# {data.get('name', '简历')}\n")
-    sections.append(generate_contact_section(data.get('contact', {})))
-    sections.append("")  # 添加空行
+    # 添加CSS（如果需要）
+    if include_css:
+        sections.append(generate_css_for_pdf())
+
+    # 标题（名称）
+    if data.get("name"):
+        sections.append(f"# {data['name']}")
+
+    # 联系方式
+    if data.get("contact"):
+        contact_section = generate_contact_section(data["contact"])
+        if contact_section:
+            sections.append(contact_section)
 
     # 个人信息
-    personal_info = generate_personal_info(data.get('personal_info', {}))
-    if personal_info:
-        sections.append(personal_info)
-        sections.append("")  # 添加空行
+    personal_info_section = generate_personal_info(data.get("personal_info", {}))
+    if personal_info_section:
+        sections.append(personal_info_section)
 
-    # 自我评价和个人特点
+    # 个人部分（自我评价、兴趣等）
     personal_sections = generate_personal_sections(data)
     if personal_sections:
         sections.append(personal_sections)
 
-    # 教育背景
-    education_section = generate_education_section(data.get('education', []))
+    # 教育经历
+    education_section = generate_education_section(data.get("education", []))
     if education_section:
         sections.append(education_section)
 
     # 技能
-    skills_section = generate_skills_section(data.get('skills', {}))
+    skills_section = generate_skills_section(data.get("skills", {}))
     if skills_section:
         sections.append(skills_section)
 
     # 工作经验
-    experience_section = generate_experience_section(data.get('experience', []))
+    experience_section = generate_experience_section(data.get("experience", []))
     if experience_section:
         sections.append(experience_section)
 
     # 项目经验
-    projects_section = generate_projects_section(data.get('projects', []))
+    projects_section = generate_projects_section(data.get("projects", []))
     if projects_section:
         sections.append(projects_section)
 
     # 证书
-    certifications_section = generate_certifications_section(data.get('certifications', []))
+    certifications_section = generate_certifications_section(data.get("certifications", []))
     if certifications_section:
         sections.append(certifications_section)
 
     # 出版物
-    publications_section = generate_publications_section(data.get('publications', []))
+    publications_section = generate_publications_section(data.get("publications", []))
     if publications_section:
         sections.append(publications_section)
 
     # 奖项
-    awards_section = generate_awards_section(data.get('awards', []))
+    awards_section = generate_awards_section(data.get("awards", []))
     if awards_section:
         sections.append(awards_section)
 
     # 志愿者经历
-    volunteer_section = generate_volunteer_section(data.get('volunteer_experience', []))
+    volunteer_section = generate_volunteer_section(data.get("volunteer_experience", []))
     if volunteer_section:
         sections.append(volunteer_section)
 
-    # 添加CSS (如果需要)
-    if include_css:
-        sections.append(generate_css_for_pdf())
+    # 组合所有部分
+    footer = f"\n\n---\n*{AUTO_GENERATED}*"
 
-    return "\n\n".join(sections)
+    return "\n\n".join(sections) + footer
 
 def main():
     parser = argparse.ArgumentParser(description='Generate a resume in Markdown format from JSON data.')

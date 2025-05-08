@@ -5,6 +5,7 @@ import uuid
 from zchat.models.base import db
 from zchat.models.chat import ChatSession, ChatMessage
 import time
+from flask_babel import gettext as _
 
 bp = Blueprint('aichat', __name__, url_prefix='/aichat')
 
@@ -68,7 +69,7 @@ def create_chat_session():
     data = request.json
 
     if not data.get('title'):
-        return jsonify({"error": "会话标题不能为空"}), 400
+        return jsonify({"error": _("会话标题不能为空")}), 400
 
     current_app.logger.debug(f"create_chat_session: {data}")
 
@@ -94,7 +95,7 @@ def get_chat_session(session_id):
     """获取特定聊天会话的详情"""
     session = ChatSession.query.filter_by(id=session_id, user_id=current_user.get_id_int()).first()
     if not session:
-        return jsonify({"error": "会话不存在或无权访问"}), 404
+        return jsonify({"error": _("会话不存在或无权访问")}), 404
 
     return jsonify(session.to_dict())
 
@@ -104,7 +105,7 @@ def update_chat_session(session_id):
     """更新聊天会话信息"""
     session = ChatSession.query.filter_by(id=session_id, user_id=current_user.get_id_int()).first()
     if not session:
-        return jsonify({"error": "会话不存在或无权访问"}), 404
+        return jsonify({"error": _("会话不存在或无权访问")}), 404
 
     data = request.json
 
@@ -127,12 +128,12 @@ def delete_chat_session(session_id):
     """删除聊天会话"""
     session = ChatSession.query.filter_by(id=session_id, user_id=current_user.get_id_int()).first()
     if not session:
-        return jsonify({"error": "会话不存在或无权访问"}), 404
+        return jsonify({"error": _("会话不存在或无权访问")}), 404
 
     db.session.delete(session)
     db.session.commit()
 
-    return jsonify({"message": "会话已删除"}), 200
+    return jsonify({"message": _("会话已删除")}), 200
 
 @bp.route('/sessions/<string:session_id>/messages', methods=['GET'])
 @login_required
@@ -140,7 +141,7 @@ def get_chat_messages(session_id):
     """获取特定会话的聊天记录"""
     session = ChatSession.query.filter_by(id=session_id, user_id=current_user.get_id_int()).first()
     if not session:
-        return jsonify({"error": "会话不存在或无权访问"}), 404
+        return jsonify({"error": _("会话不存在或无权访问")}), 404
 
     # 获取分页参数
     offset = int(request.args.get('offset', 0))

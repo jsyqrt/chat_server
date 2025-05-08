@@ -22,6 +22,7 @@ from zchat.nosql import (
     get_resume_optimization_records_nosql,
     get_jd_record_nosql
 )
+from flask_babel import gettext as _
 
 from zchat.resume.resume_optimizer import optimize as optimize_resume
 from zchat.resume.resume_optimizer import compare_resumes as compare_resumes
@@ -44,13 +45,13 @@ bp = Blueprint('resume', __name__, url_prefix='/resume')
 def optimize():
     jd_id = request.form.get('jd_id', None)
     if not jd_id:
-        return jsonify({'error': 'No JD ID provided'}), 400
+        return jsonify({'error': _('No JD ID provided')}), 400
 
     resume_file = request.files.get('resume_file', None)
     resume_file_name = request.form.get('resume_file_name', None)
 
     if not resume_file and not resume_file_name:
-        return jsonify({'error': 'No resume file or resume text provided'}), 400
+        return jsonify({'error': _('No resume file or resume text provided')}), 400
 
     user_id = current_user.get_id_int()
 
@@ -63,11 +64,11 @@ def optimize():
 
     jd_record = get_jd_record_nosql(current_app, user_id, jd_id)
     if not jd_record:
-        return jsonify({'error': f'JD not found for the given JD ID: {jd_id}'}), 400
+        return jsonify({'error': _('JD not found for the given JD ID: {}').format(jd_id)}), 400
 
     jd = jd_record.get('jd_text', '')
     if not jd:
-        return jsonify({'error': f'No JD provided for the given JD ID: {jd_id}'}), 400
+        return jsonify({'error': _('No JD provided for the given JD ID: {}').format(jd_id)}), 400
 
     if resume_file:
         resume_file_name = resume_file.filename
@@ -86,6 +87,7 @@ def optimize():
         resume_file.save(file_path)
         resume = ocr_file(file_path)
     elif resume_file_name:
+        file_path = None
         old_file_records = get_file_records_nosql(current_app, user_id)
         if old_file_records:
             for resume_file in old_file_records.get('resume_files', []):
@@ -101,7 +103,7 @@ def optimize():
         resume = ''
 
     if not resume:
-        return jsonify({'error': 'No resume provided'}), 400
+        return jsonify({'error': _('No resume provided')}), 400
 
     current_app.logger.debug(f"received jd text: {jd}, resume text: {resume}")
 
@@ -121,18 +123,18 @@ def optimize():
 
     optimized_resume = optimize_resume(jd, resume)
     if not optimized_resume:
-        return jsonify({'error': 'Try again later'}), 500
+        return jsonify({'error': _('Try again later')}), 500
 
     current_app.logger.debug(f"optimized resume: {json.dumps(optimized_resume, indent=4, ensure_ascii=False)}")
 
     comparison = compare_resumes(resume, optimized_resume, jd)
     if not comparison:
-        return jsonify({'error': 'Try again later'}), 500
+        return jsonify({'error': _('Try again later')}), 500
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.OPTIMIZE_RESUME.value, "简历定制")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.OPTIMIZE_RESUME.value, _("简历定制"))
     if not success:
-        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+        return jsonify({'error': _('Points deduction failed, please try again later'), 'points_required': True}), 402
 
     current_app.logger.debug(f"comparison: {json.dumps(comparison, indent=4, ensure_ascii=False)}")
 

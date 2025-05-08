@@ -332,6 +332,7 @@ def get_file_content():
     file_name = request.args.get('file_name')
     user_id = current_user.get_id_int()
 
+    file_path = None
     file_records = get_file_records_nosql(current_app, user_id)
     if file_records:
         for file in file_records.get('resume_files', []) + file_records.get('jd_files', []):

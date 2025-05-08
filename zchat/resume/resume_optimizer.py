@@ -4,11 +4,12 @@ import sys
 import tempfile
 import argparse
 
-from flask import current_app
+from flask import current_app, g
 
 from zchat.apis.ocr import ocr_file
 from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response
 from zchat.resume.resume_generator import generate_resume_markdown
+from flask_babel import gettext as _
 
 def optimization_schema():
     json_schema = """
@@ -459,7 +460,60 @@ def optimization_schema():
     return json_schema
 
 def optimize_resume_prompt(jd_text, resume_text):
-    system_prompt = f"""
+    # Get the current locale from Flask's g object
+    locale = getattr(g, 'lang', 'zh_CN')
+
+    # Select different system and user prompts based on locale
+    if locale == 'en':
+        system_prompt = f"""
+You are a professional {_("简历优化专家")}, your task is to optimize a given resume based on a job description to make it better match the position.
+
+As a professional resume optimization expert, you should:
+1. Carefully analyze the job description to identify key requirements, skills, and qualifications
+2. Thoroughly understand the candidate's resume content, including experience, skills, and achievements
+3. Create a complete optimization plan to better match the resume with job requirements
+4. Ensure all optimizations are based on information already in the resume, not fabricating or exaggerating facts
+5. Maintain the candidate's professional image and the authenticity of the resume
+
+Optimization guidelines:
+- Rephrase existing content to highlight experience and skills relevant to the position
+- Use keywords from the job description, but only when they genuinely reflect the candidate's skills and experience
+- Adjust the order of skills, placing the most relevant ones first
+- Do not add proficiency in skills unless explicitly mentioned in the resume; at most, add familiarity with certain skills
+- Quantify achievements, but use only data already in the resume or reasonable estimates
+- Do not fabricate work experience, educational background, or skills; do not fabricate links, numbers, or certifications
+- Do not exaggerate achievements or responsibilities
+
+Note: The job description and original resume are OCR results and may contain typos. Please correct possible typos based on context and make sure they don't appear in the results.
+"""
+        user_prompt = f"""
+# Job Description
+{jd_text}
+
+# Original Resume
+{resume_text}
+
+Please analyze the job description and resume, prepare a complete optimization plan, and then optimize the resume according to your plan.
+
+Finally, provide the following in JSON format:
+1. The fully optimized resume with all possible optimizations, noting that you should:
+   - Only refine and reorganize existing content, not add non-existent experience or skills
+   - Use keywords from the job description only when they truly reflect the candidate's background
+   - Maintain the authenticity and accuracy of the resume
+   - Highlight the experience and skills most relevant to the position
+2. List skills that the user can quickly improve through learning (based on gaps between the resume and job requirements)
+
+Important notes:
+- Do not fabricate any facts, experiences, skills, or achievements
+- Do not exaggerate the candidate's qualifications or abilities
+- Ensure all optimizations are based on information already in the resume
+- Use the same language as the original resume (if the original resume is in Chinese, the optimized resume must also be in Chinese; if the original resume is in English, the optimized resume must also be in English)
+
+Your response must be a valid JSON object that conforms to the following JSON Schema:
+""" + optimization_schema()
+    else:
+        # Default to Chinese
+        system_prompt = f"""
 你是专业的简历优化专家，你的任务是根据给定的职位描述和一份求职者的简历，优化该简历以使其更好地匹配职位描述。
 
 作为专业的简历优化专家，你应该：
@@ -480,7 +534,7 @@ def optimize_resume_prompt(jd_text, resume_text):
 
 注意：职位描述和原始简历是来自OCR的结果，可能存在错别字，请根据上下文内容，修正可能的错别字，不要让错别字出现在结果中。
 """
-    user_prompt = f"""
+        user_prompt = f"""
 # 职位描述
 {jd_text}
 
@@ -505,6 +559,7 @@ def optimize_resume_prompt(jd_text, resume_text):
 
 你的返回必须是一个合法的JSON对象，必须符合以下的JSON Schema：
 """ + optimization_schema()
+
     return system_prompt, user_prompt
 
 def comparison_schema():
@@ -782,7 +837,59 @@ def comparison_schema():
     return json_schema
 
 def compare_resumes_prompt(jd_text, original_resume, optimized_resume):
-    system_prompt = f"""
+    # Get the current locale from Flask's g object
+    locale = getattr(g, 'lang', 'zh_CN')
+
+    # Select different system and user prompts based on locale
+    if locale == 'en':
+        system_prompt = f"""
+You are a professional {_("简历分析专家")}. Your task is to compare an original resume and its optimized version for a target position, analyzing the optimization effect.
+
+As a professional resume analysis expert, you should:
+1. Carefully analyze the job description, original resume, and optimized resume
+2. Compare the match between original and optimized resume in various aspects
+3. Identify key improvements and changes
+4. Provide objective, detailed analysis
+
+Note: The job description and original resume are OCR results and may contain typos. Please handle typos correctly based on context.
+"""
+        user_prompt = f"""
+# Job Description
+{jd_text}
+
+# Original Resume
+{original_resume}
+
+# Optimized Resume
+{optimized_resume}
+
+Please analyze the original and optimized resumes, providing detailed comparison and analysis, including:
+
+1. Calculate match scores (before and after optimization):
+   - Overall match score
+   - Skills match score
+   - Experience match score
+   - Education match score
+2. Analyze keyword matching:
+   - Number of keywords from the job description matched in the original resume
+   - Number of keywords from the job description matched in the optimized resume
+   - List of newly matched keywords (not included if already present in the original resume or not present in the optimized resume)
+3. Compare performance of each skill before and after optimization
+4. Compare changes in each section of the resume:
+   - Changes in skills section
+   - Changes in work experience descriptions
+   - Changes in educational background
+   - Changes in project experience
+5. Summarize main improvements
+
+Note:
+- Do not exaggerate optimization effects; objectively and accurately compare how both resumes match the job description
+
+Your response must be a valid JSON object with the following structure:
+""" + comparison_schema()
+    else:
+        # Default to Chinese
+        system_prompt = f"""
 你是专业的简历分析专家，你的任务是比较原始简历和针对目标岗位优化后的简历，分析优化效果。
 
 作为专业的简历分析专家，你应该：
@@ -793,7 +900,7 @@ def compare_resumes_prompt(jd_text, original_resume, optimized_resume):
 
 注意：职位描述和原始简历来自OCR的结果，可能存在错别字，请根据上下文正确处理错别字的情况。
 """
-    user_prompt = f"""
+        user_prompt = f"""
 # 职位描述
 {jd_text}
 
@@ -827,6 +934,7 @@ def compare_resumes_prompt(jd_text, original_resume, optimized_resume):
 
 你的返回必须是一个有效的JSON对象，符合以下结构：
 """ + comparison_schema()
+
     return system_prompt, user_prompt
 
 def optimize(jd_text=None, resume_text=None):

@@ -317,6 +317,7 @@ def create_from_jd_and_resume():
         resume = ocr_file(file_path)
     elif resume_file_name:
         old_file_records = get_file_records_nosql(current_app, user_id)
+        file_path = None
         if old_file_records:
             for resume_file in old_file_records.get('resume_files', []):
                 if resume_file['filename'] == resume_file_name:
@@ -390,7 +391,7 @@ def create_from_jd_and_resume():
         type=roadmap_type,
         kind=roadmap_kind,
         status=roadmap_status,
-        roadmap_lang=roadmap_lang,
+        lang=roadmap_lang,
         mindmap_id=mindmap_id,
         created_by=created_by,
         industry_tag=industry_tag,
@@ -456,7 +457,7 @@ def restore_all_roadmaps():
             type=roadmap['type'],
             kind=roadmap['kind'],
             status=roadmap['status'],
-            roadmap_lang=roadmap['lang'],
+            lang=roadmap['lang'],
             mindmap_id=roadmap['mindmap_id'],
             created_by=roadmap['created_by'],
             industry_tag=roadmap['industry_tag'],
@@ -534,7 +535,7 @@ def create_from_topic():
         type=roadmap_type,
         kind=roadmap_kind,
         status=roadmap_status,
-        roadmap_lang=roadmap_lang,
+        lang=roadmap_lang,
         mindmap_id=mindmap_id,
         created_by=created_by,
         industry_tag=industry_tag,

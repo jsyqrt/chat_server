@@ -1,8 +1,407 @@
 from zchat.apis.llm import get_response_from_llm, get_json_blocks_from_llm_response
 import json
+from flask import g
 
 def resume_schema():
-    json_schema = """
+    # Check the current language from Flask g object
+    lang = getattr(g, 'lang', 'zh_CN')
+
+    if lang.startswith('en'):
+        # English version of the schema
+        json_schema = """
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Candidate's full name"
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Email address"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number"
+        },
+        "linkedin": {
+          "type": "string",
+          "description": "LinkedIn profile URL"
+        },
+        "github": {
+          "type": "string",
+          "description": "GitHub profile URL"
+        },
+        "website": {
+          "type": "string",
+          "description": "Personal website URL"
+        },
+        "address": {
+          "type": "string",
+          "description": "Physical address (if any)"
+        }
+      }
+    },
+    "personal_info": {
+      "type": "object",
+      "properties": {
+        "nationality": {
+          "type": "string",
+          "description": "Nationality (if mentioned)"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "language": {
+                "type": "string",
+                "description": "Language name"
+              },
+              "proficiency": {
+                "type": "string",
+                "description": "Proficiency level"
+              }
+            }
+          }
+        },
+        "other_details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Personal information name"
+              },
+              "value": {
+                "type": "string",
+                "description": "Personal information value"
+              }
+            }
+          }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "degree": {
+            "type": "string",
+            "description": "Degree name or study program"
+          },
+          "field_of_study": {
+            "type": "string",
+            "description": "Major or field of study"
+          },
+          "institution": {
+            "type": "string",
+            "description": "Institution name"
+          },
+          "location": {
+            "type": "string",
+            "description": "Institution location"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "Education start date"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "Education end date or expected graduation date"
+          },
+          "gpa": {
+            "type": "string",
+            "description": "GPA or academic achievements"
+          },
+          "details": {
+            "type": "string",
+            "description": "Other details about the education"
+          }
+        }
+      }
+    },
+    "self_evaluation": {
+      "type": "string",
+      "description": "Self-evaluation"
+    },
+    "interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Personal or professional interests"
+    },
+    "good_at": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Strengths, things the person is good at"
+    },
+    "skills": {
+      "type": "object",
+      "properties": {
+        "technical": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Technical skills (programming languages, tools, platforms and proficiency level, e.g., familiar with XX, knowledge of YY, expert in ZZ)"
+        },
+        "soft": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Soft skills (communication, leadership, etc., e.g., strong communication skills, strong teamwork abilities, strong stress resistance)"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Language skills (e.g., fluent in English, proficient in Japanese)"
+        },
+        "other": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other skills that don't fit the above categories (e.g., good at communication, writing, design)"
+        }
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Certificate name"
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Issuing institution"
+          },
+          "date": {
+            "type": "string",
+            "description": "Date obtained"
+          },
+          "expiration": {
+            "type": "string",
+            "description": "Expiration date (if applicable)"
+          },
+          "id": {
+            "type": "string",
+            "description": "Certificate ID (if any)"
+          },
+          "url": {
+            "type": "string",
+            "description": "URL to verify certificate (if any)"
+          }
+        }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Job title"
+          },
+          "organization": {
+            "type": "string",
+            "description": "Organization or company name"
+          },
+          "location": {
+            "type": "string",
+            "description": "Work location"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "Employment start date"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "Employment end date or 'Present' (if current job)"
+          },
+          "description": {
+            "type": "string",
+            "description": "Overall job description"
+          },
+          "responsibilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Main responsibilities of the role"
+          },
+          "achievements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Specific achievements, metrics, or results"
+          },
+          "technologies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Technologies, tools, or methods used"
+          }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Project name"
+          },
+          "role": {
+            "type": "string",
+            "description": "Role in the project"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "Project start date"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "Project end date or 'Present' (if ongoing)"
+          },
+          "description": {
+            "type": "string",
+            "description": "Project description"
+          },
+          "technologies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Technologies, tools, or methods used"
+          },
+          "achievements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Specific achievements or outcomes"
+          },
+          "url": {
+            "type": "string",
+            "description": "Project URL (if any)"
+          }
+        }
+      }
+    },
+    "publications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Publication title"
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of authors"
+          },
+          "publisher": {
+            "type": "string",
+            "description": "Publisher or journal name"
+          },
+          "date": {
+            "type": "string",
+            "description": "Publication date"
+          },
+          "url": {
+            "type": "string",
+            "description": "Publication URL (if any)"
+          },
+          "description": {
+            "type": "string",
+            "description": "Publication description or abstract"
+          }
+        }
+      }
+    },
+    "awards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Award name"
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Issuing institution"
+          },
+          "date": {
+            "type": "string",
+            "description": "Award date"
+          },
+          "description": {
+            "type": "string",
+            "description": "Award description"
+          }
+        }
+      }
+    },
+    "volunteer_experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "Volunteer role"
+          },
+          "organization": {
+            "type": "string",
+            "description": "Organization name"
+          },
+          "start_date": {
+            "type": "string",
+            "description": "Start date"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "End date or 'Present' (if current)"
+          },
+          "description": {
+            "type": "string",
+            "description": "Volunteer work description"
+          }
+        }
+      }
+    }
+  },
+  "required": ["name", "contact", "education", "self_evaluation", "interests", "good_at", "skills", "experience", "projects", "publications", "awards", "volunteer_experience"]
+}
+"""
+    else:
+        # Chinese version of the schema (default)
+        json_schema = """
 {
   "type": "object",
   "properties": {
@@ -396,7 +795,58 @@ def resume_schema():
     return "```json\n" + json_schema + "\n```"
 
 def parse_resume_prompt(resume_text):
-    system_prompt = """
+    # Check the current language from Flask g object
+    lang = getattr(g, 'lang', 'zh_CN')
+
+    if lang.startswith('en'):
+        # English version of the prompts
+        system_prompt = """
+You are an experienced resume analysis expert, skilled at extracting structured information from resumes of various formats and styles. Your task is to carefully analyze the provided resume text and extract all relevant information into the specified JSON format.
+
+As a professional resume analysis expert, you should:
+1. Thoroughly understand all parts of the resume, including personal information, educational background, work experience, skills, project experience, etc.
+2. Identify dates, contact information, and professional terminology in different formats
+3. Infer information categories from context, even without explicit headings
+4. Process multilingual resumes and extract information correctly
+5. Identify skill types (technical skills, soft skills, etc.) and categorize them appropriately
+
+Analysis guidelines:
+- Read the entire resume carefully to ensure no information is missed
+- Extract specific responsibilities, achievements, and technologies used for work experience and projects
+- Distinguish between core skills and auxiliary skills
+- Pay attention to date formats and ensure time periods are correctly parsed
+- If there is ambiguous or unclear information in the resume, try to infer from context, but do not fabricate non-existent information
+- For missing information, use null or empty arrays rather than filling in with guessed data
+"""
+
+        user_prompt = f"""
+Here is the resume text to analyze:
+
+{resume_text}
+
+Please analyze the above resume and extract relevant information, returning a JSON object that conforms to the following JSON Schema:
+""" + resume_schema() + """
+
+Analysis requirements:
+1. Your response must be a valid JSON object conforming to the above Schema
+2. Extract all information that can be found in the resume, including but not limited to:
+   - Personal information (name, contact details, etc.)
+   - Educational background (schools, degrees, majors, time periods, etc.)
+   - Work experience (companies, positions, time periods, responsibilities, achievements, etc.)
+   - Skills (technical skills, soft skills, etc.)
+   - Project experience (project names, descriptions, technologies used, etc.)
+   - Certifications, awards, volunteer experience, and other information
+3. For information not explicitly provided in the resume, use null or empty arrays
+4. Do not add information that does not exist in the resume
+5. Extract detailed information where possible, such as separating job responsibilities and achievements
+6. Skills should be categorized by type (technical skills, soft skills, etc.)
+7. Date information should include start and end times when possible
+
+Please ensure your analysis is comprehensive, accurate, and returns JSON in the correct format.
+"""
+    else:
+        # Chinese version of the prompts (default)
+        system_prompt = """
 你是一位经验丰富的简历分析专家，擅长从各种格式和风格的简历中提取结构化信息。你的任务是仔细分析提供的简历文本，并提取所有相关信息到指定的JSON格式中。
 
 作为专业的简历分析专家，你应该：
@@ -415,7 +865,7 @@ def parse_resume_prompt(resume_text):
 - 对于缺失的信息，使用null或空数组，不要填充猜测的数据
 """
 
-    user_prompt = f"""
+        user_prompt = f"""
 以下是需要分析的简历文本：
 
 {resume_text}
@@ -440,6 +890,7 @@ def parse_resume_prompt(resume_text):
 
 请确保你的分析全面、准确，并且返回的JSON格式正确。
 """
+
     return system_prompt, user_prompt
 
 def parse_resume(resume_text):

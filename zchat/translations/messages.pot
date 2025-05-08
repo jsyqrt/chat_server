@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-04 22:53+0800\n"
+"POT-Creation-Date: 2025-05-08 15:49+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
+#: zchat/aichat/chat.py:72
+msgid "会话标题不能为空"
+msgstr ""
+
+#: zchat/aichat/chat.py:98 zchat/aichat/chat.py:108 zchat/aichat/chat.py:131
+#: zchat/aichat/chat.py:144 zchat/aichat/chat_stream.py:70
+msgid "会话不存在或无权访问"
+msgstr ""
+
+#: zchat/aichat/chat.py:136
+msgid "会话已删除"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:30
+msgid "无效的请求数据"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:46
+msgid "消息内容不能为空"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:50
+msgid "会话ID不能为空"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:63
+msgid "积分检查失败，请稍后重试"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:74
+msgid "查询会话失败，请稍后重试"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:93
+msgid "保存用户消息失败，请稍后重试"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:101
+msgid "获取聊天历史失败，请稍后重试"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:371
+msgid "AI聊天"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:373
+msgid "积分扣除失败，请稍后重试"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:377
+msgid "积分消费失败，请稍后重试"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:397
+msgid "创建AI消息记录失败，请稍后重试"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:419
+msgid "获取AI响应时出现错误，请稍后重试"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:422
+msgid "[系统提示: 获取AI响应时出现错误]"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:451
+msgid "处理请求时发生错误，请稍后重试"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:486
+msgid "未知主题"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:487
+msgid "未知节点"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:488
+msgid "未知路径"
+msgstr ""
+
+#: zchat/aichat/chat_stream.py:489
+msgid "暂无描述"
+msgstr ""
+
 #: zchat/invitation/__init__.py:23
 msgid "Failed to get invitation code"
 msgstr ""
@@ -24,6 +109,27 @@ msgstr ""
 #: zchat/invitation/__init__.py:27
 #, python-brace-format
 msgid "我正在使用「职路」APP，邀请你一起加入！注册时使用我的邀请码「 {} 」获得额外积分奖励！"
+msgstr ""
+
+#: zchat/job/__init__.py:40
+msgid "No JD file or JD text provided"
+msgstr ""
+
+#: zchat/job/__init__.py:84
+msgid "No JD provided"
+msgstr ""
+
+#: zchat/job/__init__.py:104 zchat/resume/__init__.py:126
+#: zchat/resume/__init__.py:132
+msgid "Try again later"
+msgstr ""
+
+#: zchat/job/__init__.py:107
+msgid "Job Analysis"
+msgstr ""
+
+#: zchat/job/__init__.py:110 zchat/resume/__init__.py:137
+msgid "Points deduction failed, please try again later"
 msgstr ""
 
 #: zchat/points/__init__.py:84 zchat/points/__init__.py:128
@@ -126,6 +232,232 @@ msgstr ""
 msgid "使用服务: {}"
 msgstr ""
 
+#: zchat/resume/__init__.py:48
+msgid "No JD ID provided"
+msgstr ""
+
+#: zchat/resume/__init__.py:54
+msgid "No resume file or resume text provided"
+msgstr ""
+
+#: zchat/resume/__init__.py:67
+#, python-brace-format
+msgid "JD not found for the given JD ID: {}"
+msgstr ""
+
+#: zchat/resume/__init__.py:71
+#, python-brace-format
+msgid "No JD provided for the given JD ID: {}"
+msgstr ""
+
+#: zchat/resume/__init__.py:106
+msgid "No resume provided"
+msgstr ""
+
+#: zchat/resume/__init__.py:135 zchat/templates/index.html:211
+msgid "简历定制"
+msgstr ""
+
+#: zchat/resume/resume_optimizer.py:469
+msgid "简历优化专家"
+msgstr ""
+
+#: zchat/resume/resume_optimizer.py:846
+msgid "简历分析专家"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:5
+msgid "Education"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:6
+msgid "Degree"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:7
+msgid "Field of Study"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:8
+msgid "Institution"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:9
+msgid "GPA"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:12
+msgid "Skills"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:13
+msgid "Technical Skills"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:14
+msgid "Soft Skills"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:15
+msgid "Other Skills"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:16
+msgid "Languages"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:19
+msgid "Work Experience"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:20
+msgid "Responsibilities"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:21
+msgid "Achievements"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:22
+msgid "Technologies Used"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:25
+msgid "Projects"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:26
+msgid "Technologies"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:27
+msgid "Project Link"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:30
+msgid "Publications"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:31
+msgid "Authors"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:32
+msgid "Publisher"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:33
+msgid "Date"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:34
+msgid "Read Publication"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:37
+msgid "Awards"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:38
+msgid "Issuer"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:41
+msgid "Volunteer Experience"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:44
+msgid "Self-Evaluation"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:45
+msgid "Interests"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:46
+msgid "Strengths"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:49
+msgid "Email"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:50
+msgid "Phone"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:51
+msgid "Address"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:52
+msgid "LinkedIn"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:53
+msgid "GitHub"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:54
+msgid "Personal Website"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:57
+msgid "Present"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:58
+msgid " - "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:61
+msgid "Certifications"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:62
+msgid "Issuing Institution"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:63
+msgid "Date Obtained"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:64
+msgid "Expiration Date"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:65
+msgid "Certificate ID"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:66
+msgid "View Certificate"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:69
+msgid "@"
+msgstr ""
+
+#: zchat/resume/resume_translations.py:70
+msgid ", "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:71
+msgid ": "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:72
+msgid " | "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:73
+msgid "- "
+msgstr ""
+
+#: zchat/resume/resume_translations.py:76
+msgid "This resume was generated automatically"
+msgstr ""
+
 #: zchat/templates/index.html:6
 msgid "职路 - 您的职业发展伙伴"
 msgstr ""
@@ -203,10 +535,6 @@ msgstr ""
 
 #: zchat/templates/index.html:204
 msgid "结合行业大数据，智能规划求职升职决策，快人一步"
-msgstr ""
-
-#: zchat/templates/index.html:211
-msgid "简历定制"
 msgstr ""
 
 #: zchat/templates/index.html:212

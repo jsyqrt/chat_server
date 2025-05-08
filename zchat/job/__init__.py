@@ -11,6 +11,7 @@ from flask import (
     Blueprint, request, jsonify, current_app, g, send_file, render_template
 )
 from werkzeug.utils import secure_filename
+from flask_babel import gettext as _
 
 from zchat.auth import login_required, current_user
 from zchat.apis.ocr import ocr_file
@@ -36,7 +37,7 @@ def analyze():
     jd_text = request.form.get('jd_text', None)
 
     if not jd_file and not jd_text and not jd_file_name:
-        return jsonify({'error': 'No JD file or JD text provided'}), 400
+        return jsonify({'error': _('No JD file or JD text provided')}), 400
 
     user_id = current_user.get_id_int()
 
@@ -80,7 +81,7 @@ def analyze():
         pass
 
     if not jd:
-        return jsonify({'error': 'No JD provided'}), 400
+        return jsonify({'error': _('No JD provided')}), 400
 
     current_app.logger.debug(f"received jd text: {jd}")
 
@@ -100,12 +101,13 @@ def analyze():
 
     jd_analysis_result = parse_jd(jd)
     if not jd_analysis_result:
-        return jsonify({'error': 'Try again later'}), 500
+        return jsonify({'error': _('Try again later')}), 500
 
     # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.JOB_ANALYSIS.value, "职位分析")
+    service_description = _("Job Analysis")
+    success, points_spent = consume_points_for_service(user_id, ServiceType.JOB_ANALYSIS.value, service_description)
     if not success:
-        return jsonify({'error': '积分扣除失败，请稍后重试', 'points_required': True}), 402
+        return jsonify({'error': _('Points deduction failed, please try again later'), 'points_required': True}), 402
 
     current_app.logger.debug(f"jd analysis result: {json.dumps(jd_analysis_result, indent=4, ensure_ascii=False)}")
 

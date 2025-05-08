@@ -93,7 +93,6 @@ def get_response_from_llm(messages: List[Dict[str, str]], model: str, max_tokens
             client = openai.OpenAI(
                 base_url=api_url,
                 api_key=api_key,
-                timeout=1200,
             )
 
             response = client.chat.completions.create(
@@ -145,7 +144,6 @@ def get_response_from_llm_stream(messages: List[Dict[str, str]], model: str, max
         client = openai.OpenAI(
             base_url=api_url,
             api_key=api_key,
-            timeout=1200,
         )
 
         response = client.chat.completions.create(
