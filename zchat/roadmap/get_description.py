@@ -14,6 +14,7 @@ system_prompt_template_zh = """
 2. 在「{topic_path}」的前提背景下，「{topic}」具体代表了什么，提供深入、全面的解释
 3. 使用大部头教科书，学术论文，或技术博客的风格，但不要提供任何链接。需要详细，全面，深入，完整的解释和描述。
 4. 给出用户有可能想要进一步提问的3个问题，用于下一步与AI交互对话的提示词
+5. 创建5道测试题（单选或多选题, 至少包含1道多选题），用于测试用户对知识的掌握情况，每道题包含题目内容、选项、正确答案和解析
 
 您的解释应当：
 - 专业且准确：确保技术细节正确无误
@@ -36,6 +37,7 @@ Your task is to:
 2. Within the context of "{topic_path}", explain what "{topic}" specifically represents, providing a deep, comprehensive explanation
 3. Use the style of textbooks, academic papers, or technical blogs, but do not provide any links. The explanation needs to be detailed, comprehensive, in-depth, and complete.
 4. Provide 3 questions the user might want to ask further, to be used as prompts for the next step in AI interactive dialogue
+5. Create 5 test questions (single or multiple choice, at least 1 multiple choice) to assess the user's understanding of the topic, each including the question content, options, correct answer(s), and explanation
 
 Your explanation should be:
 - Professional and accurate: ensure technical details are correct
@@ -75,13 +77,23 @@ If this were a large article, the path would represent different levels of headi
 output_style_zh = """
 请使用犀利准确的语言，不要使用冗长的句子，不要使用复杂的句子。使用markdown格式。
 
-在解释的最后，给出用户有可能想要进一步提问的3个问题，用于下一步与AI交互对话的提示词。
-正文与问题之间用<|------ 互动建议 ------|>隔开。问题部分只包含json，不要包含其他内容。
+在解释的最后，给出用户有可能想要进一步提问的3个问题，以及5道测试题（可以是单选题或多选题）。
+正文与问题及测试题之间用<|------ 互动建议 ------|>隔开。这部分只包含一个json对象，不要包含其他内容。
 这三个问题要与当前解释的内容紧密相关，要站在用户的角度，考虑用户可能的疑问。
-三个问题需要用json格式输出， 严格遵循以下schema，注意在json中使用正确的引号。
+测试题用于测试用户对知识的掌握情况，每道题包含题目内容、选项、正确答案和解析。
+问题和测试题需要用json格式输出，严格遵循以下schema，注意在json中使用正确的引号。
 ```json
 {
-    "questions": ["问题1", "问题2", "问题3"]
+    "questions": ["用户可能想要了解的问题1", "用户可能想要了解的问题2", "用户可能想要了解的问题3"],
+    "quizzes": [
+        {
+            "question": "测试题1的题目内容",
+            "options": ["测试题1的选项A", "测试题1的选项B", "测试题1的选项C", "测试题1的选项D"],
+            "answer": [0],  // 答案为选项的索引，从0开始计数，单选题为一个数字，多选题为数组
+            "explanation": "测试题1的解析说明为什么这是正确答案"
+        },
+        // 其他4道测试题
+    ]
 }
 ```
 
@@ -94,13 +106,23 @@ output_style_zh = """
 output_style_en = """
 Please use precise and accurate language, avoiding long or complex sentences. Use markdown format.
 
-At the end of your explanation, provide 3 questions that the user might want to ask further, to be used as prompts for the next step in AI interactive dialogue.
-Separate the main text from the questions with <|------ Interaction Suggestions ------|>. The questions section should only contain JSON, without any other content.
+At the end of your explanation, provide 3 questions that the user might want to ask further, and 5 test questions (single or multiple choice).
+Separate the main text from the questions and test questions with <|------ Interaction Suggestions ------|>. This section should only contain one JSON object, without any other content.
 These three questions should be closely related to the current explanation, from the user's perspective, considering possible user inquiries.
-The three questions need to be output in JSON format, strictly following this schema, and using correct quotation marks in the JSON.
+The test questions aim to assess the user's understanding of the topic, each including the question content, options, correct answer(s), and explanation.
+The questions and test questions need to be output in JSON format, strictly following this schema, and using correct quotation marks in the JSON.
 ```json
 {
-    "questions": ["Question 1", "Question 2", "Question 3"]
+    "questions": ["Question 1 that user may ask", "Question 2 that user may ask", "Question 3 that user may ask"],
+    "quizzes": [
+        {
+            "question": "Question content of quiz question 1",
+            "options": ["Option A of quiz question 1", "Option B of quiz question 1", "Option C of quiz question 1", "Option D of quiz question 1"],
+            "answer": [0],  // Answer as index of options, starting from 0, single number for single choice, array for multiple choice
+            "explanation": "Explanation of why this is the correct answer of quiz question 1"
+        },
+        // Other 4 quiz questions
+    ]
 }
 ```
 
