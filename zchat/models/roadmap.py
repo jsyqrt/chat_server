@@ -10,7 +10,7 @@ from zchat.models.base import db
 from zchat.nosql import add_mindmap_nosql, delete_mindmap_nosql
 
 class RoadmapStatus(Enum):
-    UNKNOWN = 0
+    CREATED = 0
     PRIVATE = 1
     PUBLIC = 2
 
@@ -25,7 +25,7 @@ class Roadmap(db.Model):
     roadmap_subtitle = db.Column(db.String(255), nullable=False)
     roadmap_type = db.Column(db.String(50), nullable=False) # official, user
     roadmap_kind = db.Column(db.String(50), nullable=False) # industry, job, skill, skill_group, topic
-    roadmap_status = db.Column(db.Integer, nullable=False, default=RoadmapStatus.UNKNOWN.value) # 0->unknown, 1->private, 2->public
+    roadmap_status = db.Column(db.Integer, nullable=False, default=RoadmapStatus.CREATED.value) # 0->created, 1->private, 2->public
     roadmap_lang = db.Column(db.String(50), nullable=False, default='zh_CN') # zh_CN, en
 
     mindmap_id = db.Column(db.String(255), nullable=False)
@@ -1201,7 +1201,7 @@ class RoadmapOps:
         return True
 
     def get_official_roadmaps(self, lang: str='zh_CN')->list:
-        official_roadmaps = self.session.query(Roadmap).filter_by(roadmap_type='official', roadmap_status=2, roadmap_lang=lang).all()
+        official_roadmaps = self.session.query(Roadmap).filter_by(roadmap_type='official', roadmap_status=RoadmapStatus.PUBLIC.value, roadmap_lang=lang).all()
         return [roadmap.to_dict() for roadmap in official_roadmaps]
 
     def get_roadmap(self, roadmap_id: str)->Roadmap:
@@ -1218,19 +1218,19 @@ class RoadmapOps:
         return self.session.query(func.cast(func.count(Roadmap.roadmap_id), Integer)).filter_by(created_by=user_id).scalar()
 
     def search_roadmaps_with_title_like(self, title: str, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_title.like(f'%{title}%') & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.roadmap_title.like(f'%{title}%') & (Roadmap.roadmap_status == RoadmapStatus.PUBLIC.value) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
     def search_roadmaps_with_industry_tag_like(self, industry_tag: str, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.industry_tag.like(f'%{industry_tag}%') & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.industry_tag.like(f'%{industry_tag}%') & (Roadmap.roadmap_status == RoadmapStatus.PUBLIC.value) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
     def search_roadmaps_with_job_tag_like(self, job_tag: str, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.job_tag.like(f'%{job_tag}%') & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.job_tag.like(f'%{job_tag}%') & (Roadmap.roadmap_status == RoadmapStatus.PUBLIC.value) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
     def search_roadmaps_with_skill_tag_like(self, skill_tag: str, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
-        roadmaps = self.session.query(Roadmap).filter(Roadmap.skill_tag.like(f'%{skill_tag}%') & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
+        roadmaps = self.session.query(Roadmap).filter(Roadmap.skill_tag.like(f'%{skill_tag}%') & (Roadmap.roadmap_status == RoadmapStatus.PUBLIC.value) & (Roadmap.roadmap_lang == lang)).order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
     def search_roadmaps_for_topics(self, topics: list, lang: str='zh_CN', offset: int=0, limit: int=10)->list:
@@ -1246,7 +1246,7 @@ class RoadmapOps:
             )
 
         roadmaps = self.session.query(Roadmap).filter(
-            or_(*query_filters) & (Roadmap.roadmap_status == 2) & (Roadmap.roadmap_lang == lang)
+            or_(*query_filters) & (Roadmap.roadmap_status == RoadmapStatus.PUBLIC.value) & (Roadmap.roadmap_lang == lang)
         ).distinct().order_by(Roadmap.create_timestamp.desc()).offset(offset).limit(limit).all()
         return [roadmap.to_dict() for roadmap in roadmaps]
 
@@ -1263,7 +1263,7 @@ class RoadmapOps:
         return [skill_tag[0] for skill_tag in skill_tags if skill_tag[0] is not None]
 
     def get_public_roadmaps(self, lang: str='zh_CN')->list:
-        public_roadmaps = self.session.query(Roadmap).filter_by(roadmap_status=2, roadmap_lang=lang).all()
+        public_roadmaps = self.session.query(Roadmap).filter_by(roadmap_status=RoadmapStatus.PUBLIC.value, roadmap_lang=lang).all()
         return [roadmap.to_dict() for roadmap in public_roadmaps]
 
     def set_roadmap_public(self, roadmap_id: str)->bool:

@@ -11,7 +11,7 @@ from werkzeug.utils import secure_filename
 from zchat.auth import login_required, current_user, admin_required
 from zchat.models.base import db
 from zchat.models.user import UserOps
-from zchat.models.roadmap import RoadmapOps, RoadmapInteractionOps
+from zchat.models.roadmap import RoadmapOps, RoadmapInteractionOps, RoadmapStatus
 from zchat.roadmap.from_jd import mindmap_from_jd_and_resume
 from zchat.roadmap.from_topic import mindmap_from_topic
 from zchat.roadmap.get_description import description_from_topic_path, description_from_topic_path_stream
@@ -229,11 +229,6 @@ class RoadmapKind(Enum):
         else:
             raise ValueError(f"Invalid roadmap kind: {kind_str}")
 
-class RoadmapStatus(Enum):
-    CREATED = 0
-    VERIFIED = 1
-    PUBLIC = 2
-
 class MindmapModifier:
     def __init__(self):
         self.id_counter = 0
@@ -374,7 +369,7 @@ def create_from_jd_and_resume():
     roadmap_subtitle = translate('custom_career_path', lang)
     roadmap_type = RoadmapType.USER.value
     roadmap_kind = RoadmapKind.JOB.value
-    roadmap_status = RoadmapStatus.PUBLIC.value
+    roadmap_status = RoadmapStatus.PRIVATE.value
     roadmap_lang = lang
     mindmap_id = mindmap['id']
     created_by = user_id
