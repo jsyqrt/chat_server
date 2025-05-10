@@ -418,39 +418,6 @@ img {
     transition: color 0.3s ease;
 }
 
-.feature-card p.typing {
-    color: #666;
-}
-
-.feature-card p.typing .text-container {
-    display: inline;
-    position: relative;
-}
-
-.feature-card p.typing span {
-    transition: opacity 0.1s ease;
-}
-
-.feature-card p.typing span.cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1.2em;
-    background-color: #4285f4;
-    animation: cursorBlink 1s infinite;
-    vertical-align: middle;
-    margin: 0 1px;
-    position: relative;
-}
-
-@keyframes cursorBlink {
-    0%, 49% {
-        opacity: 1;
-    }
-    50%, 100% {
-        opacity: 0;
-    }
-}
-
 /* 下载区域 */
 .download {
     padding: 100px 0 120px;
@@ -862,8 +829,6 @@ img {
     .about .container {
         padding: 20px;
         border-radius: 12px;
-        margin: 0 10px;
-        max-width: calc(100% - 20px);
     }
 
     .feature-grid {
@@ -963,8 +928,6 @@ img {
     .about .container {
         padding: 15px;
         border-radius: 10px;
-        margin: 0 15px;
-        max-width: calc(100% - 30px);
     }
 
     .feature-grid {
@@ -1221,31 +1184,6 @@ img {
     }
     100% {
         transform: rotate(0deg) scale(1);
-    }
-}
-
-@media (max-width: 768px) {
-    .hero .container,
-    .features .container,
-    .download .container,
-    .about .container {
-        padding: 20px;
-        border-radius: 12px;
-    }
-
-    .feature-card p.typing::after {
-        white-space: normal;
-        word-break: break-word;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero .container,
-    .features .container,
-    .download .container,
-    .about .container {
-        padding: 15px;
-        border-radius: 10px;
     }
 }
 
