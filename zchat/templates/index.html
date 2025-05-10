@@ -37,9 +37,6 @@
                                 <a href="{{ url_for('website.switch_language', lang='zh_CN') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'zh_CN' else '' }}">
                                     <span class="language-code">简体</span>
                                 </a>
-                                <a href="{{ url_for('website.switch_language', lang='zh_TW') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'zh_TW' else '' }}">
-                                    <span class="language-code">繁體</span>
-                                </a>
                                 <a href="{{ url_for('website.switch_language', lang='en') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'en' else '' }}">
                                     <span class="language-code">EN</span>
                                 </a>
@@ -246,6 +243,215 @@
             </div>
         </div>
     </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">{{ _('常见问题') }}</h2>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>{{ _('我可以用职路做什么？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('任何需要您职业成长的事情！职路特别适用于：') }}</p>
+                        <ul>
+                            <li>{{ _('规划职业成长路径') }}</li>
+                            <li>{{ _('进行职位分析') }}</li>
+                            <li>{{ _('定制精准简历') }}</li>
+                            <li>{{ _('专业职业测评') }}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('职路有什么好处？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('职路是一个生产力工具，专为更快，更高效地创建符合您的路径而构建。') }}</p>
+                        <p>{{ _('使用职路，您将享受：') }}</p>
+                        <ul>
+                            <li>{{ _('助力职业发展：通过职业成长路径规划，明确发展方向，避免盲目摸索，少走弯路，快速实现职业目标。职位分析助深入了解职位，精准求职。简历定制和职业测评则提升求职竞争力，增加获得心仪工作的机会。') }}</li>
+                            <li>{{ _('节省时间和精力：无需四处搜集资料和信息，职路集成丰富职业相关资源，一站式满足职业发展需求，让你更高效地规划和管理职业生涯。') }}</li>
+                            <li>{{ _('提供个性化服务：根据个人情况量身定制职业成长路径和简历，考虑个体差异，使服务更具针对性和实效性，满足独特职业发展需求。') }}</li>
+                            <li>{{ _('促进自我认知：职业测评帮助深入了解兴趣、性格和能力，清晰自身优势和不足，做出适合职业选择，发挥潜力，实现自我价值。') }}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('如何创作学习路径？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('创建学习路径可能会令人生畏，但不必这样！使用职路，您可能需要几分钟时间就能创建专业的指导路径。') }}</p>
+                        <p>{{ _('第一步：根据您输入个人基本信息（如当前职业阶段、技能水平、职业目标等）') }}</p>
+                        <p>{{ _('第二步：只要点击确认系统会根据您提供的数据以及海量行业信息，为您量身定制一份专属的职业成长规划。将整体学习目标分解为阶段性小目标，逐步击破。（如将编程语言学习分为基础语法、数据结构与算法、项目实战等阶段。）') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('我不确定自己的职业目标，职路能帮我吗？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('当然可以！职路的职业测评功能可以帮助您初步了解自己的兴趣、性格和能力优势，为确定职业方向提供参考。在您完成测评后，我们的职业成长路径规划功能会根据测评结果为您推荐适合的职业领域和职位类型，并提供相应的发展建议。同时，您还可以查看职位分析内容，深入了解不同职位的工作内容、发展前景和要求，从而逐步明确自己的职业目标。') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('我的简历已经很长时间没有更新了，职路的简历定制功能能帮我重新整理吗？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('绝对可以！您只需将现有的简历内容上传至职路，我们的简历定制功能会根据您的职业背景和求职意向，对简历进行重新梳理和优化。我们会帮您筛选出重点信息，按照清晰的结构进行排版，突出您的优势和亮点，让您的简历更符合当前求职市场的要求。') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('职路的职业成长路径是否适合应届毕业生？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('职路的职业成长路径功能适合各个职业阶段的人群，包括应届毕业生及想要转行的人群。') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('职业测评的准确性如何保证？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('职路的职业测评基于科学的心理学理论和成熟的职业测评模型，同时结合了大量用户数据和实际案例分析。测评题目经过精心设计和反复验证，能够较为准确地评估您的职业兴趣、性格特点、能力优势等方面。但需要注意的是，测评结果仅供参考，我们建议您将其作为了解自身特点的工具之一，结合实际情况综合判断，以做出更明智的职业决策。') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('我在使用APP过程中遇到问题，如何联系客服？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('如果您在使用职路时遇到任何问题，可以通过以下几种方式联系我们的客服团队：') }}</p>
+                        <ul>
+                            <li>{{ _('在APP内点击"客服"按钮，与在线客服人员进行实时沟通') }}</li>
+                            <li>{{ _('我的界面点击反馈建议，填写对应内容，我们的客服人员会及时接听并为您解决问题') }}</li>
+                            <li>{{ _('发送邮件至support@voylead.com，详细描述您遇到的问题，我们会尽快回复您') }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* FAQ Styles */
+        .faq {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 24px 24px;
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        .faq-answer p {
+            margin: 0 0 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-answer ul {
+            margin: 0 0 16px;
+            padding-left: 20px;
+        }
+
+        .faq-answer li {
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .faq {
+                padding: 40px 0;
+            }
+
+            .faq-question h3 {
+                font-size: 16px;
+            }
+
+            .faq-question, .faq-answer {
+                padding: 16px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 16px 16px;
+            }
+        }
+    </style>
 
     <!-- 页脚 -->
     <footer class="footer">
@@ -853,6 +1059,31 @@
             createDataParticles('heroDataStream', 40);
             createDataParticles('featuresDataStream', 35);
             createFloatingData();
+
+            // FAQ Interaction
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            // Set first item as active by default
+            if (faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+            }
+
+            // Handle hover events
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('mouseenter', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // Open current item
+                    item.classList.add('active');
+                });
+            });
         });
 
         function toggleLanguageMenu() {
@@ -877,9 +1108,7 @@
             // 如果当前没有设置语言，则根据浏览器语言设置
             if (!currentLang) {
                 let targetLang = 'zh_CN'; // 默认简体中文
-                if (browserLang.startsWith('zh-TW') || browserLang.startsWith('zh-HK')) {
-                    targetLang = 'zh_TW';
-                } else if (browserLang.startsWith('en')) {
+                if (browserLang.startsWith('en')) {
                     targetLang = 'en';
                 }
 

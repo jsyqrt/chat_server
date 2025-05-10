@@ -1,3 +1,4 @@
+
 msgid ""
 msgstr ""
 "Project-Id-Version:  zchat\n"
@@ -835,4 +836,160 @@ msgid ""
 msgstr ""
 "Your password has been successfully reset. You can now log in with your "
 "new password."
+
+# FAQ Section
+msgid "常见问题"
+msgstr "Frequently Asked Questions"
+
+msgid "我可以用职路做什么？"
+msgstr "What can I do with VoyLead?"
+
+msgid "任何需要您职业成长的事情！职路特别适用于："
+msgstr ""
+"Anything related to your career growth! VoyLead is especially suitable "
+"for:"
+
+msgid "规划职业成长路径"
+msgstr "Planning your career growth path"
+
+msgid "进行职位分析"
+msgstr "Conducting job analysis"
+
+msgid "定制精准简历"
+msgstr "Customizing precise resumes"
+
+msgid "专业职业测评"
+msgstr "Professional career assessment"
+
+msgid "职路有什么好处？"
+msgstr "What are the benefits of VoyLead?"
+
+msgid "职路是一个生产力工具，专为更快，更高效地创建符合您的路径而构建。"
+msgstr ""
+"VoyLead is a productivity tool designed to help you create your career "
+"path faster and more efficiently."
+
+msgid "使用职路，您将享受："
+msgstr "With VoyLead, you will enjoy:"
+
+msgid "助力职业发展：通过职业成长路径规划，明确发展方向，避免盲目摸索，少走弯路，快速实现职业目标。职位分析助深入了解职位，精准求职。简历定制和职业测评则提升求职竞争力，增加获得心仪工作的机会。"
+msgstr ""
+"Boosting career development: Plan your career path, clarify your "
+"direction, avoid blind exploration, and achieve your goals faster. Job "
+"analysis helps you understand positions in depth and apply precisely. "
+"Resume customization and career assessment enhance your competitiveness "
+"and increase your chances of getting your desired job."
+
+msgid "节省时间和精力：无需四处搜集资料和信息，职路集成丰富职业相关资源，一站式满足职业发展需求，让你更高效地规划和管理职业生涯。"
+msgstr ""
+"Saving time and effort: No need to search for information everywhere. "
+"VoyLead integrates rich career resources to meet your development needs "
+"in one place, making your career planning and management more efficient."
+
+msgid "提供个性化服务：根据个人情况量身定制职业成长路径和简历，考虑个体差异，使服务更具针对性和实效性，满足独特职业发展需求。"
+msgstr ""
+"Personalized service: Tailor your career path and resume based on your "
+"personal situation, considering individual differences to make the "
+"service more targeted and effective, meeting your unique career "
+"development needs."
+
+msgid "促进自我认知：职业测评帮助深入了解兴趣、性格和能力，清晰自身优势和不足，做出适合职业选择，发挥潜力，实现自我价值。"
+msgstr ""
+"Promoting self-awareness: Career assessment helps you understand your "
+"interests, personality, and abilities, clarify your strengths and "
+"weaknesses, make suitable career choices, realize your potential, and "
+"achieve self-value."
+
+msgid "如何创作学习路径？"
+msgstr "How do I create a learning path?"
+
+msgid "创建学习路径可能会令人生畏，但不必这样！使用职路，您可能需要几分钟时间就能创建专业的指导路径。"
+msgstr ""
+"Creating a learning path may seem daunting, but it doesn't have to be! "
+"With VoyLead, you can create a professional guidance path in just a few "
+"minutes."
+
+msgid "第一步：根据您输入个人基本信息（如当前职业阶段、技能水平、职业目标等）"
+msgstr ""
+"Step 1: Enter your basic information (such as current career stage, skill"
+" level, career goals, etc.)"
+
+msgid "第二步：只要点击确认系统会根据您提供的数据以及海量行业信息，为您量身定制一份专属的职业成长规划。将整体学习目标分解为阶段性小目标，逐步击破。（如将编程语言学习分为基础语法、数据结构与算法、项目实战等阶段。）"
+msgstr ""
+"Step 2: Click confirm, and the system will tailor a personalized career "
+"growth plan for you based on your data and massive industry information. "
+"The overall learning goal is broken down into phased small goals to "
+"tackle step by step (e.g., dividing programming language learning into "
+"basic syntax, data structures and algorithms, project practice, etc.)."
+
+msgid "我不确定自己的职业目标，职路能帮我吗？"
+msgstr "I'm not sure about my career goals. Can VoyLead help?"
+
+msgid "当然可以！职路的职业测评功能可以帮助您初步了解自己的兴趣、性格和能力优势，为确定职业方向提供参考。在您完成测评后，我们的职业成长路径规划功能会根据测评结果为您推荐适合的职业领域和职位类型，并提供相应的发展建议。同时，您还可以查看职位分析内容，深入了解不同职位的工作内容、发展前景和要求，从而逐步明确自己的职业目标。"
+msgstr ""
+"Absolutely! VoyLead's career assessment can help you understand your "
+"interests, personality, and strengths, providing a reference for "
+"determining your career direction. After the assessment, our career path "
+"planning will recommend suitable fields and positions and provide "
+"development advice. You can also view job analysis content to understand "
+"different roles, prospects, and requirements, gradually clarifying your "
+"career goals."
+
+msgid "我的简历已经很长时间没有更新了，职路的简历定制功能能帮我重新整理吗？"
+msgstr ""
+"My resume hasn't been updated for a long time. Can VoyLead help me "
+"reorganize it?"
+
+msgid "绝对可以！您只需将现有的简历内容上传至职路，我们的简历定制功能会根据您的职业背景和求职意向，对简历进行重新梳理和优化。我们会帮您筛选出重点信息，按照清晰的结构进行排版，突出您的优势和亮点，让您的简历更符合当前求职市场的要求。"
+msgstr ""
+"Definitely! Just upload your current resume to VoyLead, and our resume "
+"customization will reorganize and optimize it based on your background "
+"and job intentions. We'll help you highlight key information, structure "
+"it clearly, and showcase your strengths, making your resume more "
+"competitive in today's job market."
+
+msgid "职路的职业成长路径是否适合应届毕业生？"
+msgstr "Is VoyLead's career path suitable for fresh graduates?"
+
+msgid "职路的职业成长路径功能适合各个职业阶段的人群，包括应届毕业生及想要转行的人群。"
+msgstr ""
+"VoyLead's career path feature is suitable for people at all career "
+"stages, including fresh graduates and those looking to change careers."
+
+msgid "职业测评的准确性如何保证？"
+msgstr "How is the accuracy of the career assessment ensured?"
+
+msgid "职路的职业测评基于科学的心理学理论和成熟的职业测评模型，同时结合了大量用户数据和实际案例分析。测评题目经过精心设计和反复验证，能够较为准确地评估您的职业兴趣、性格特点、能力优势等方面。但需要注意的是，测评结果仅供参考，我们建议您将其作为了解自身特点的工具之一，结合实际情况综合判断，以做出更明智的职业决策。"
+msgstr ""
+"VoyLead's career assessment is based on scientific psychological theories"
+" and mature models, combined with user data and real case analysis. The "
+"questions are carefully designed and validated to accurately assess your "
+"interests, personality, and strengths. However, results are for reference"
+" only; we recommend using them as one tool among many for self-"
+"understanding and making wise career decisions."
+
+msgid "我在使用APP过程中遇到问题，如何联系客服？"
+msgstr ""
+"I encountered problems while using the app. How can I contact customer "
+"service?"
+
+msgid "如果您在使用职路时遇到任何问题，可以通过以下几种方式联系我们的客服团队："
+msgstr ""
+"If you encounter any problems while using VoyLead, you can contact our "
+"customer service team in the following ways:"
+
+msgid "在APP内点击\"客服\"按钮，与在线客服人员进行实时沟通"
+msgstr ""
+"Click the 'Customer Service' button in the app to chat with our online "
+"support."
+
+msgid "我的界面点击反馈建议，填写对应内容，我们的客服人员会及时接听并为您解决问题"
+msgstr ""
+"Go to the 'My' page, click 'Feedback', fill in the details, and our team "
+"will respond promptly."
+
+msgid "发送邮件至support@voylead.com，详细描述您遇到的问题，我们会尽快回复您"
+msgstr ""
+"Send an email to support@voylead.com describing your issue in detail, and"
+" we will reply as soon as possible."
 
