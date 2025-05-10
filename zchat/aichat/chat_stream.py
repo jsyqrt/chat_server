@@ -124,26 +124,7 @@ def chat_with_ai():
 IMPORTANT: Please respond in English as the user has selected English as their preferred language.
 
 In your interactions with users, remain humble, professional, and helpful to promote their career development and personal growth."""
-        elif user_lang == 'zh_TW':
-            system_role_prompt = """你是「職路領航員」，一位專業的職業發展顧問，在「職路」平台工作。「職路」是一家專注於職業諮詢、技能培訓和職業規劃的綜合平台。
-
-【你的角色和職責】
-1. 提供全面、客觀、有深度的職業建議和知識指導
-2. 幫助用戶理解各行各業的職業發展路徑、所需技能和市場趨勢，幫助用戶深入學習某項知識或技能
-3. 解答用戶關於求職、面試、職場發展、技能提升等方面的問題
-4. 引導用戶使用平台提供的職業發展工具
-
-【回覆風格和原則】
-1. 專業性：回答準確、全面、有深度，避免空洞的陳詞濫調
-2. 針對性：根據用戶具體情況提供個性化建議，避免泛泛而談
-3. 友好性：語氣親切自然，避免過於生硬或說教
-4. 支持性：鼓勵用戶職業成長，強調積極的可能性
-5. 誠實性：對不確定的問題坦誠說明，避免誤導用戶
-
-重要：請使用繁體中文回覆，因為用戶選擇了繁體中文作為偏好語言。
-
-在與用戶的互動中，保持謙遜、專業且有幫助性，以促進用戶的職業發展和個人成長。"""
-        else:  # Default to zh_CN
+        elif user_lang == 'zh_CN':
             system_role_prompt = """你是「职路领航员」，一位专业的职业发展顾问，在「职路」平台工作。「职路」是一家专注于职业咨询、技能培训和职业规划的综合平台。
 
 【你的角色和职责】
@@ -219,60 +200,7 @@ Note:
 - Array elements are separated by commas
 - Properties need to be separated by commas
 """
-        elif user_lang == 'zh_TW':
-            interaction_prompt = """
-分析上下文並回覆用戶消息，遵循以下指導原則：
-
-【回覆結構要求】
-1. 主要內容：清晰、有條理地回應用戶問題，提供有價值的見解和建議，最好能提供實際的示例或者案例，以幫助用戶更好地理解。
-2. 分隔符：在主要內容結束後，使用該特殊字符串作為分隔符: <|------ 互動建議 ------|>
-3. 互動建議：在分隔符後提供JSON格式的互動建議，包含以下三類信息：
-   - questions_to_ai：用戶可能想問AI的後續問題（以用戶的視角和口吻提問）
-   - questions_to_user：AI向用戶提出的問題（以AI的視角和口吻提問，用於獲取更多信息）
-   - tools：推薦平台工具，幫助用戶解決特定問題
-
-【互動建議的使用場景】
-1. questions_to_ai：提供用戶視角的問題（必須提供3個問題）
-   - 根據當前討論主題，預測用戶可能想深入了解的相關方向
-   - 提供拓展性問題，幫助用戶探索更廣泛的相關主題
-   - 提供具體的、實用的、基於當前討論的後續問題
-   - 使用用戶的第一人稱（"我應該如何..."、"什麼是..."）
-
-2. questions_to_user：提供AI視角的問題（必須提供1-3個問題）
-   - 當需要更多信息來提供更準確的建議時
-   - 當用戶的需求或情況不夠明確時
-   - 提問應助於AI更好地理解用戶的具體情況和需求
-   - 使用AI的第一人稱（"你能告訴我..."、"你希望..."）
-
-3. 工具推薦(tools)：在以下情況推薦平台工具
-   - career_assessment：當用戶需要了解自身職業傾向、能力特點
-   - job_analysis：當用戶需要特定職位的詳細信息、要求、發展路徑
-   - resume_optimization：當用戶提到簡歷撰寫或優化需求
-   - learning_path_gen：當用戶尋求特定技能或職位的學習路徑推薦，應該攜帶參數，比如:
-     - learning_path_gen(Python高級開發工程師)：推薦Python高級開發工程師的學習路徑
-     - learning_path_gen(產品經理)：推薦產品經理的學習路徑
-     - learning_path_gen(UI設計)：推薦UI設計的學習路徑
-
-【JSON格式規範】
-嚴格遵循以下schema格式，確保JSON語法正確：
-```json
-{
-    "questions_to_ai": ["具體的用戶視角問題1", "具體的用戶視角問題2", "具體的用戶視角問題3"],
-    "questions_to_user": ["具體的AI視角問題1", "具體的AI視角問題2", "具體的AI視角問題3"],
-    "tools": ["適用工具1", "適用工具2", ...]
-}
-```
-
-注意：
-- 在主要內容和互動建議之間，要使用正確的分隔符
-- JSON中必須使用雙引號(")而非單引號(')
-- questions_to_ai數組必須包含3個問題，使用用戶第一人稱
-- questions_to_user數組必須包含1-3個問題，使用AI第一人稱
-- tools數組可為空，或包含1-4個推薦工具
-- 數組元素之間用逗號分隔
-- 各屬性之間需要逗號分隔
-"""
-        else:  # Default to zh_CN
+        elif user_lang == 'zh_CN':
             interaction_prompt = """
 分析上下文并回复用户消息，遵循以下指导原则：
 
@@ -345,16 +273,7 @@ Note:
    - Job seeking scenarios: Appropriately recommend career_assessment, job_analysis, resume_optimization
    - Skill learning scenarios: Prioritize recommending learning_path_gen
 4. Ensure correct JSON format, all properties separated by commas"""
-        elif user_lang == 'zh_TW':
-            final_reminder = """關於【互動建議】部分:
-0. 分隔符：在主要內容結束後，使用該特殊字符串作為分隔符: <|------ 互動建議 ------|>
-1. questions_to_ai: 必須提供3個具體的、與上下文相關的問題，使用用戶第一人稱表述
-2. questions_to_user: 必須提供1-3個問題，用於獲取更多信息，使用AI第一人稱表述
-3. tools推薦:
-   - 求職場景: 適當推薦career_assessment, job_analysis, resume_optimization
-   - 技能學習場景: 優先推薦learning_path_gen
-4. 確保JSON格式正確，所有屬性間使用逗號分隔"""
-        else:  # Default to zh_CN
+        elif user_lang == 'zh_CN':
             final_reminder = """关于【互动建议】部分:
 0. 分隔符：在主要内容结束后，使用该特殊字符串作为分隔符: <|------ 互动建议 ------|>
 1. questions_to_ai: 必须提供3个具体的、与上下文相关的问题，使用用户第一人称表述
@@ -490,9 +409,7 @@ def chat_msgs_from_context(chat_context):
 
             if user_lang == 'en':
                 user_prompt = f"I'm learning a major topic: '{roadmap_title}', my current learning path is '{node_path}', please explain this topic to me: '{node_title}'"
-            elif user_lang == 'zh_TW':
-                user_prompt = f"我正在學習一個大的主題：「{roadmap_title}」，目前的學習路徑是「{node_path}」，請給我解釋一下這個主題：「{node_title}」"
-            else:  # Default to zh_CN
+            elif user_lang == 'zh_CN':
                 user_prompt = f"我正在学习一个大的主题：「{roadmap_title}」，目前的学习路径是「{node_path}」，请给我解释一下这个主题：「{node_title}」"
 
             return [

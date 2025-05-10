@@ -130,7 +130,7 @@ def get_prompts_by_language(lang):
             'resume_prompt': resume_prompt_template_en,
             'mindmap_guidelines': MINDMAP_GENERATION_GUIDELINES_EN
         }
-    else:  # default to Chinese (zh_CN or zh_TW)
+    else:  # default to Chinese (zh_CN)
         return {
             'system_prompt': system_prompt_zh,
             'user_prompt': user_prompt_zh,

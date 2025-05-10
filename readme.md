@@ -26,3 +26,5 @@ curl -X SET 'http://localhost:5000/roadmap/reset_official_roadmaps'
 4. check migrate py file
 5. flask --app zchat migrate upgrade
 
+pybabel compile -d zchat/translations
+pybabel update -i zchat/translations/messages.pot -d zchat/translations

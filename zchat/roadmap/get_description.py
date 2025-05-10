@@ -210,7 +210,7 @@ def get_prompts_by_language(lang):
             'output_style': output_style_en,
             'json_schema': json_schema_en
         }
-    else:  # default to Chinese (zh_CN or zh_TW)
+    else:  # default to Chinese (zh_CN)
         return {
             'system_prompt': system_prompt_template_zh,
             'user_prompt': user_prompt_template_zh,

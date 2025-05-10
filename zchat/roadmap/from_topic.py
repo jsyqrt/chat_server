@@ -232,7 +232,7 @@ def get_prompts_by_language(lang):
             'other_prompts_template': other_prompts_template_en,
             'mindmap_guidelines': MINDMAP_GENERATION_GUIDELINES_EN
         }
-    else:  # default to Chinese (zh_CN or zh_TW)
+    else:  # default to Chinese (zh_CN)
         return {
             'system_prompt': system_prompt_template_zh,
             'user_prompt': user_prompt_zh,

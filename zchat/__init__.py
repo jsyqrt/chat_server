@@ -30,11 +30,11 @@ def create_app(test_config=None, tool_mode=False):
         if request.headers.get('X-Language'):
             return to_zh_CN(request.headers.get('X-Language'))
         # 尝试从浏览器设置获取语言
-        return request.accept_languages.best_match(['en', 'zh_CN', 'zh_TW'])
+        return request.accept_languages.best_match(['en', 'zh_CN'])
 
     # 设置语言选择函数
     app.config['BABEL_DEFAULT_LOCALE'] = 'zh_CN'
-    app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'zh_CN', 'zh_TW']
+    app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'zh_CN']
     babel.init_app(app, locale_selector=get_locale)
 
     @app.before_request

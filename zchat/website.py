@@ -45,7 +45,7 @@ def download():
 
 @bp.route('/switch_language/<lang>')
 def switch_language(lang):
-    if lang in ['en', 'zh_CN', 'zh_TW']:
+    if lang in ['en', 'zh_CN']:
         current_app.logger.info(f"Switching language to {lang}")
         session['lang'] = lang
     return redirect(request.referrer or url_for('website.index'))
