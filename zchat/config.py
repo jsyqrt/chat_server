@@ -57,8 +57,15 @@ ALIPAY_APP_ID = os.environ.get('ALIPAY_APP_ID', '')
 ALIPAY_PRIVATE_KEY = os.environ.get('ALIPAY_PRIVATE_KEY', '')
 ALIPAY_PUBLIC_KEY = os.environ.get('ALIPAY_PUBLIC_KEY', '')
 ALIPAY_GATEWAY_URL = os.environ.get('ALIPAY_GATEWAY_URL', '')
-ALIPAY_NOTIFY_URL = os.environ.get('ALIPAY_NOTIFY_URL', 'http://edu-paths.com/alipay/notify') # TODO update this
-ALIPAY_RETURN_URL = os.environ.get('ALIPAY_RETURN_URL', 'http://edu-paths.com/alipay/return')
+ALIPAY_NOTIFY_URL = os.environ.get('ALIPAY_NOTIFY_URL', '')
+ALIPAY_RETURN_URL = os.environ.get('ALIPAY_RETURN_URL', '')
+
+# Paddle支付配置
+PADDLE_VENDOR_ID = os.environ.get('PADDLE_VENDOR_ID', '')
+PADDLE_API_KEY = os.environ.get('PADDLE_API_KEY', '')
+PADDLE_PUBLIC_KEY = os.environ.get('PADDLE_PUBLIC_KEY', '')
+PADDLE_SANDBOX_MODE = os.environ.get('PADDLE_SANDBOX_MODE', 'true') == 'true'
+PADDLE_WEBHOOK_URL = os.environ.get('PADDLE_WEBHOOK_URL', '')
 
 # HTTPS配置
 PREFERRED_URL_SCHEME = os.environ.get('PREFERRED_URL_SCHEME', 'https')

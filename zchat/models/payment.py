@@ -13,6 +13,7 @@ class OrderType(Enum):
 class PaymentMethod(Enum):
     ALIPAY = 'alipay'    # 支付宝
     WECHAT = 'wechat'    # 微信支付
+    PADDLE = 'paddle'    # Paddle支付
     OTHER = 'other'      # 其他支付方式
 
 class OrderStatus(Enum):
@@ -35,6 +36,11 @@ class PaymentOrder(db.Model):
     payment_method = db.Column(db.String(50), nullable=False)  # 支付方式
     transaction_id = db.Column(db.String(64), nullable=True)  # 支付交易号（支付宝流水号）
     payment_time = db.Column(db.REAL, nullable=True)  # 支付时间
+
+    # Paddle-specific fields
+    paddle_checkout_id = db.Column(db.String(64), nullable=True)  # Paddle checkout ID
+    paddle_subscription_id = db.Column(db.String(64), nullable=True)  # Paddle subscription ID
+    paddle_payment_id = db.Column(db.String(64), nullable=True)  # Paddle payment ID
 
     # 附加数据（JSON格式的字符串）
     # 积分购买：{"points": 积分数量}
@@ -64,6 +70,9 @@ class PaymentOrder(db.Model):
             'payment_method': self.payment_method,
             'transaction_id': self.transaction_id,
             'payment_time': self.payment_time,
+            'paddle_checkout_id': self.paddle_checkout_id,
+            'paddle_subscription_id': self.paddle_subscription_id,
+            'paddle_payment_id': self.paddle_payment_id,
             'extra_data': self.extra_data,
             'created_at': self.created_at,
             'updated_at': self.updated_at

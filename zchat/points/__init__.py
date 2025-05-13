@@ -110,7 +110,7 @@ def get_point_packages():
 @bp.route('/purchase', methods=['POST'])
 @login_required
 def purchase_points():
-    """积分购买下单接口 - 创建订单，生成支付宝支付字符串"""
+    """积分购买下单接口 - 创建订单，生成支付链接"""
     user_id = current_user.get_id_int()
     data = request.json
 
@@ -125,9 +125,9 @@ def purchase_points():
 
     # 获取套餐信息
     packages = {
-        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A")},
-        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B")},
-        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C")},
+        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A"), "paddle_product_id": "12345"},
+        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B"), "paddle_product_id": "12346"},
+        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C"), "paddle_product_id": "12347"},
     }
 
     if package_id not in packages:
@@ -153,21 +153,62 @@ def purchase_points():
 
     current_app.logger.debug(f"Order created successfully: {order.order_id}")
 
-    # 生成支付字符串
+    # 生成支付链接
+    message = None
+
     if payment_method == PaymentMethod.ALIPAY.value:
         current_app.logger.debug(f"Generating Alipay order string for order {order.order_id}")
-        order_string = AlipayService.generate_order_string(
+        message = AlipayService.generate_order_string(
             subject=package["name"],
             out_trade_no=order.order_id,
             total_amount=package["price"],
             body=_("购买{}积分").format(package['points'])
         )
 
-        if not order_string:
+        if not message:
             current_app.logger.error(f"Failed to generate Alipay payment string for order {order.order_id}")
             return jsonify({"error": "Failed to generate payment string"}), 500
 
         current_app.logger.debug(f"Alipay order string generated successfully for order {order.order_id}")
+
+    elif payment_method == PaymentMethod.PADDLE.value:
+        # 导入Paddle工具
+        from zchat.utils.paddle_utils import PaddleService
+
+        # 获取用户信息
+        user_info = user_ops.get_one(user_id)
+        email = user_info.email if user_info else None
+        name = user_info.nickname if user_info else None
+
+        # 生成Paddle结账URL
+        current_app.logger.debug(f"Generating Paddle checkout URL for order {order.order_id}")
+        paddle_product_id = package.get("paddle_product_id")
+
+        if not paddle_product_id:
+            current_app.logger.error(f"No Paddle product ID configured for package {package_id}")
+            return jsonify({"error": "Paddle product not configured"}), 500
+
+        checkout_url = PaddleService.generate_checkout_url(
+            product_id=paddle_product_id,
+            customer_email=email,
+            customer_name=name,
+            passthrough=order.order_id,  # 传递订单ID给Paddle回调
+            title=package["name"],
+            custom_message=_("购买{}积分").format(package['points'])
+        )
+
+        if not checkout_url:
+            current_app.logger.error(f"Failed to generate Paddle checkout URL for order {order.order_id}")
+            return jsonify({"error": "Failed to generate Paddle checkout URL"}), 500
+
+        # 更新订单的Paddle信息
+        order.paddle_checkout_id = f"pending_{order.order_id}"  # 暂时使用一个占位符，实际ID会在webhook中获取
+        db.session.commit()
+
+        # 保存为JSON字符串
+        message = json.dumps({"checkoutUrl": checkout_url})
+        current_app.logger.debug(f"Paddle checkout URL generated successfully for order {order.order_id}: {checkout_url}")
+
     else:
         # 其他支付方式，目前不支持
         return jsonify({"error": "Unsupported payment method"}), 400
@@ -179,7 +220,7 @@ def purchase_points():
         "price": package["price"],
         "payment_method": payment_method,
         "status": OrderStatus.PENDING.value,
-        "message": order_string  # 支付宝支付字符串
+        "message": message
     })
 
 @bp.route('/purchase/verify', methods=['GET'])
@@ -218,70 +259,108 @@ def verify_points_purchase():
     points = extra_data.get('points', 0)
     current_app.logger.debug(f"Order {order_id} extra data: {extra_data}")
 
-    # 如果订单状态为待支付，则查询支付宝订单状态
-    if order.status == OrderStatus.PENDING.value and order.payment_method == PaymentMethod.ALIPAY.value:
-        current_app.logger.debug(f"Querying Alipay for payment status of order {order_id}")
-        # 调用支付宝查询接口
-        payment_result = AlipayService.verify_payment(order.order_id)
+    # 如果订单状态为待支付，则查询支付状态
+    if order.status == OrderStatus.PENDING.value:
+        if order.payment_method == PaymentMethod.ALIPAY.value:
+            current_app.logger.debug(f"Querying Alipay for payment status of order {order_id}")
+            # 调用支付宝查询接口
+            payment_result = AlipayService.verify_payment(order.order_id)
 
-        # 如果验证失败，尝试重新初始化支付宝客户端后再次验证
-        if payment_result is None:
-            current_app.logger.warning(f"First payment verification failed for order {order_id}, attempting to reinitialize Alipay client")
-            reinit_success = AlipayService.reinitialize_client()
-            if reinit_success:
-                current_app.logger.debug(f"Alipay client reinitialized successfully, retrying verification for order {order_id}")
-                payment_result = AlipayService.verify_payment(order.order_id)
+            # 如果验证失败，尝试重新初始化支付宝客户端后再次验证
+            if payment_result is None:
+                current_app.logger.warning(f"First payment verification failed for order {order_id}, attempting to reinitialize Alipay client")
+                reinit_success = AlipayService.reinitialize_client()
+                if reinit_success:
+                    current_app.logger.debug(f"Alipay client reinitialized successfully, retrying verification for order {order_id}")
+                    payment_result = AlipayService.verify_payment(order.order_id)
 
-        current_app.logger.debug(f"Alipay payment verification result for order {order_id}: {payment_result}")
+            current_app.logger.debug(f"Alipay payment verification result for order {order_id}: {payment_result}")
 
-        if payment_result and payment_result['success']:
-            # 支付成功
-            trade_status = payment_result.get('trade_status', '')
-            current_app.logger.debug(f"Alipay trade status for order {order_id}: {trade_status}")
+            if payment_result and payment_result['success']:
+                # 支付成功
+                trade_status = payment_result.get('trade_status', '')
+                current_app.logger.debug(f"Alipay trade status for order {order_id}: {trade_status}")
 
-            if AlipayService.is_payment_successful(trade_status):
-                current_app.logger.debug(f"Payment successful for order {order_id}, updating order status")
-                # 更新订单状态
-                payment_ops.update_order_status(
-                    order_id=order.order_id,
-                    status=OrderStatus.PAID.value,
-                    transaction_id=payment_result['trade_no']
-                )
+                if AlipayService.is_payment_successful(trade_status):
+                    current_app.logger.debug(f"Payment successful for order {order_id}, updating order status")
+                    # 更新订单状态
+                    payment_ops.update_order_status(
+                        order_id=order.order_id,
+                        status=OrderStatus.PAID.value,
+                        transaction_id=payment_result['trade_no']
+                    )
 
-                # 为用户添加积分
-                current_app.logger.debug(f"Adding {points} points to user {user_id} for order {order_id}")
-                points_ops = PointsOps(db.session)
-                success = points_ops.purchase_points(
-                    user_id=user_id,
-                    points_amount=points,
-                    payment_amount=order.amount,
-                    payment_order_id=order.order_id,
-                    payment_method=order.payment_method
-                )
+                    # 为用户添加积分
+                    current_app.logger.debug(f"Adding {points} points to user {user_id} for order {order_id}")
+                    points_ops = PointsOps(db.session)
+                    success = points_ops.purchase_points(
+                        user_id=user_id,
+                        points_amount=points,
+                        payment_amount=order.amount,
+                        payment_order_id=order.order_id,
+                        payment_method=order.payment_method
+                    )
 
-                if success:
-                    current_app.logger.debug(f"Successfully added points for order {order_id}")
+                    if success:
+                        current_app.logger.debug(f"Successfully added points for order {order_id}")
+                    else:
+                        current_app.logger.error(f"Failed to add points for order {order_id}")
+
+                    return jsonify({
+                        "success": True,
+                        "order_id": order.order_id,
+                        "status": OrderStatus.PAID.value,
+                        "message": _("支付成功"),
+                        "points": points,
+                        "transaction_id": payment_result['trade_no']
+                    })
                 else:
-                    current_app.logger.error(f"Failed to add points for order {order_id}")
+                    current_app.logger.debug(f"Payment not yet successful for order {order_id}, status: {trade_status}")
+                    # 支付未成功
+                    return jsonify({
+                        "success": False,
+                        "order_id": order.order_id,
+                        "status": order.status,
+                        "message": _("支付处理中"),
+                        "points": points,
+                    })
 
-                return jsonify({
-                    "success": True,
-                    "order_id": order.order_id,
-                    "status": OrderStatus.PAID.value,
-                    "message": _("支付成功"),
-                    "points": points,
-                    "transaction_id": payment_result['trade_no']
-                })
-            else:
-                current_app.logger.debug(f"Payment not yet successful for order {order_id}, status: {trade_status}")
-                # 支付未成功
-                return jsonify({
-                    "success": False,
-                    "order_id": order.order_id,
-                    "status": order.status,
-                    "message": _("支付处理中"),
-                    "points": points,
-                })
+        elif order.payment_method == PaymentMethod.PADDLE.value:
+            # Paddle支付验证
+            current_app.logger.debug(f"Verifying Paddle payment for order {order_id}")
+
+            # 对于Paddle，我们主要依靠webhook来更新订单状态
+            # 这里只返回当前状态，因为实际的状态更新是在webhook处理中完成的
+            from zchat.utils.paddle_utils import PaddleService
+
+            # 如果有checkout_id，可以查询Paddle订单状态
+            if order.paddle_checkout_id and not order.paddle_checkout_id.startswith('pending_'):
+                current_app.logger.debug(f"Querying Paddle API for checkout {order.paddle_checkout_id}")
+                paddle_result = PaddleService.verify_transaction(order.paddle_checkout_id)
+
+                if paddle_result and paddle_result.get('success'):
+                    status = paddle_result.get('status')
+                    current_app.logger.debug(f"Paddle checkout status: {status}")
+
+                    # 如果Paddle显示完成，但我们的订单还是待支付，更新它
+                    if status == 'completed' and order.status == OrderStatus.PENDING.value:
+                        payment_ops.update_order_status(
+                            order_id=order.order_id,
+                            status=OrderStatus.PAID.value,
+                            transaction_id=order.paddle_payment_id or 'paddle_payment'
+                        )
+
+                        # 为用户添加积分
+                        points_ops = PointsOps(db.session)
+                        success = points_ops.purchase_points(
+                            user_id=user_id,
+                            points_amount=points,
+                            payment_amount=order.amount,
+                            payment_order_id=order.order_id,
+                            payment_method=order.payment_method
+                        )
+
+                        order = payment_ops.get_order_by_id(order_id)  # 重新获取更新后的订单
 
     # 返回订单当前状态
     current_app.logger.debug(f"Returning current order status for order {order_id}: {order.status}")
@@ -394,7 +473,7 @@ def get_subscription_plans():
 @bp.route('/subscription/subscribe', methods=['POST'])
 @login_required
 def subscribe():
-    """订阅会员下单接口 - 创建订单，生成支付宝支付字符串"""
+    """订阅会员下单接口 - 创建订单，生成支付链接"""
     user_id = current_user.get_id_int()
     data = request.json
 
@@ -411,12 +490,14 @@ def subscribe():
         SubscriptionType.BASIC.value: {
             "price": PointsOps.PRICES[AccountType.BASIC.value],
             "name": _("基础会员(月)"),
-            "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value]
+            "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
+            "paddle_plan_id": "23456"
         },
         SubscriptionType.PRO.value: {
             "price": PointsOps.PRICES[AccountType.PRO.value],
             "name": _("高级会员(年)"),
-            "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value]
+            "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
+            "paddle_plan_id": "23457"
         }
     }
 
@@ -441,17 +522,57 @@ def subscribe():
 
     current_app.logger.debug(f"Subscription order created: {order.order_id}")
 
-    # 生成支付字符串
+    # 生成支付链接
+    message = None
+
     if payment_method == PaymentMethod.ALIPAY.value:
-        order_string = AlipayService.generate_order_string(
+        message = AlipayService.generate_order_string(
             subject=plan["name"],
             out_trade_no=order.order_id,
             total_amount=plan["price"],
             body=_("订阅{}，每日{}积分").format(plan['name'], plan['daily_points'])
         )
 
-        if not order_string:
+        if not message:
             return jsonify({"error": "Failed to generate payment string"}), 500
+
+    elif payment_method == PaymentMethod.PADDLE.value:
+        # 导入Paddle工具
+        from zchat.utils.paddle_utils import PaddleService
+
+        # 获取用户信息
+        user_ops = UserOps(db.session)
+        user_info = user_ops.get_one(user_id)
+        email = user_info.email if user_info else None
+        name = user_info.nickname if user_info else None
+
+        # 生成Paddle订阅URL
+        current_app.logger.debug(f"Generating Paddle subscription URL for order {order.order_id}")
+        paddle_plan_id = plan.get("paddle_plan_id")
+
+        if not paddle_plan_id:
+            current_app.logger.error(f"No Paddle plan ID configured for subscription type {subscription_type}")
+            return jsonify({"error": "Paddle plan not configured"}), 500
+
+        checkout_url = PaddleService.generate_subscription_url(
+            plan_id=paddle_plan_id,
+            customer_email=email,
+            customer_name=name,
+            passthrough=order.order_id  # 传递订单ID给Paddle回调
+        )
+
+        if not checkout_url:
+            current_app.logger.error(f"Failed to generate Paddle subscription URL for order {order.order_id}")
+            return jsonify({"error": "Failed to generate Paddle subscription URL"}), 500
+
+        # 更新订单的Paddle信息
+        order.paddle_checkout_id = f"pending_{order.order_id}"  # 暂时使用一个占位符，实际ID会在webhook中获取
+        db.session.commit()
+
+        # 保存为JSON字符串
+        message = json.dumps({"checkoutUrl": checkout_url})
+        current_app.logger.debug(f"Paddle subscription URL generated successfully for order {order.order_id}: {checkout_url}")
+
     else:
         # 其他支付方式，目前不支持
         return jsonify({"error": "Unsupported payment method"}), 400
@@ -471,7 +592,7 @@ def subscribe():
         "start_time": start_time,
         "end_time": end_time,
         "status": OrderStatus.PENDING.value,
-        "message": order_string  # 支付宝支付字符串
+        "message": message
     })
 
 @bp.route('/subscription/verify', methods=['GET'])
@@ -514,30 +635,95 @@ def verify_subscription():
         start_time = active_subscription.start_time
         end_time = active_subscription.end_time
 
-    # 如果订单状态为待支付，则查询支付宝订单状态
-    if order.status == OrderStatus.PENDING.value and order.payment_method == PaymentMethod.ALIPAY.value:
-        current_app.logger.debug(f"Querying Alipay for payment status of subscription order {order_id}")
-        # 调用支付宝查询接口
-        payment_result = AlipayService.verify_payment(order.order_id)
+    # 如果订单状态为待支付，则查询支付状态
+    if order.status == OrderStatus.PENDING.value:
+        if order.payment_method == PaymentMethod.ALIPAY.value:
+            current_app.logger.debug(f"Querying Alipay for payment status of subscription order {order_id}")
+            # 调用支付宝查询接口
+            payment_result = AlipayService.verify_payment(order.order_id)
 
-        # 如果验证失败，尝试重新初始化支付宝客户端后再次验证
-        if payment_result is None:
-            current_app.logger.warning(f"First payment verification failed for subscription order {order_id}, attempting to reinitialize Alipay client")
-            reinit_success = AlipayService.reinitialize_client()
-            if reinit_success:
-                current_app.logger.debug(f"Alipay client reinitialized successfully, retrying verification for subscription order {order_id}")
-                payment_result = AlipayService.verify_payment(order.order_id)
+            # 如果验证失败，尝试重新初始化支付宝客户端后再次验证
+            if payment_result is None:
+                current_app.logger.warning(f"First payment verification failed for subscription order {order_id}, attempting to reinitialize Alipay client")
+                reinit_success = AlipayService.reinitialize_client()
+                if reinit_success:
+                    current_app.logger.debug(f"Alipay client reinitialized successfully, retrying verification for subscription order {order_id}")
+                    payment_result = AlipayService.verify_payment(order.order_id)
 
-        current_app.logger.debug(f"Alipay payment verification result for subscription order {order_id}: {payment_result}")
+            current_app.logger.debug(f"Alipay payment verification result for subscription order {order_id}: {payment_result}")
 
-        if payment_result and payment_result['success']:
-            # 支付成功
-            if AlipayService.is_payment_successful(payment_result['trade_status']):
+            if payment_result and payment_result['success']:
+                # 支付成功
+                if AlipayService.is_payment_successful(payment_result['trade_status']):
+                    # 更新订单状态
+                    payment_ops.update_order_status(
+                        order_id=order.order_id,
+                        status=OrderStatus.PAID.value,
+                        transaction_id=payment_result['trade_no']
+                    )
+
+                    # 创建订阅记录
+                    subscription = subscription_ops.create_subscription(
+                        user_id=user_id,
+                        subscription_type=subscription_type,
+                        payment_amount=order.amount,
+                        payment_method=order.payment_method,
+                        payment_order_id=order.order_id
+                    )
+
+                    if subscription:
+                        # 更新用户账户类型
+                        user_ops = UserOps(db.session)
+                        account_type = AccountType.BASIC.value if subscription_type == SubscriptionType.BASIC.value else AccountType.PRO.value
+                        user_ops.update_account_type(
+                            id=user_id,
+                            account_type=account_type,
+                            subscription_start_time=subscription.start_time,
+                            subscription_end_time=subscription.end_time
+                        )
+
+                        # 更新开始和结束时间
+                        start_time = subscription.start_time
+                        end_time = subscription.end_time
+
+                    return jsonify({
+                        "success": True,
+                        "order_id": order.order_id,
+                        "status": OrderStatus.PAID.value,
+                        "message": _("支付成功"),
+                        "subscription_type": subscription_type,
+                        "start_time": start_time,
+                        "end_time": end_time,
+                        "transaction_id": payment_result['trade_no']
+                    })
+                else:
+                    # 支付未成功
+                    return jsonify({
+                        "success": False,
+                        "order_id": order.order_id,
+                        "status": order.status,
+                        "message": _("支付处理中"),
+                        "subscription_type": subscription_type,
+                        "start_time": start_time,
+                        "end_time": end_time
+                    })
+
+        elif order.payment_method == PaymentMethod.PADDLE.value:
+            # Paddle支付验证
+            current_app.logger.debug(f"Verifying Paddle subscription for order {order_id}")
+
+            # 对于Paddle，我们主要依靠webhook来更新订单状态
+            # 这里只检查订单当前状态，如果状态仍是Pending，则可能是webhook尚未处理
+
+            # 如果有subscription_id，则说明订阅已创建，但可能尚未更新订单状态
+            if order.paddle_subscription_id and order.status == OrderStatus.PENDING.value:
+                current_app.logger.debug(f"Found Paddle subscription ID but order status is pending: {order.paddle_subscription_id}")
+
                 # 更新订单状态
                 payment_ops.update_order_status(
                     order_id=order.order_id,
                     status=OrderStatus.PAID.value,
-                    transaction_id=payment_result['trade_no']
+                    transaction_id=order.paddle_payment_id or order.paddle_subscription_id
                 )
 
                 # 创建订阅记录
@@ -564,27 +750,8 @@ def verify_subscription():
                     start_time = subscription.start_time
                     end_time = subscription.end_time
 
-                return jsonify({
-                    "success": True,
-                    "order_id": order.order_id,
-                    "status": OrderStatus.PAID.value,
-                    "message": _("支付成功"),
-                    "subscription_type": subscription_type,
-                    "start_time": start_time,
-                    "end_time": end_time,
-                    "transaction_id": payment_result['trade_no']
-                })
-            else:
-                # 支付未成功
-                return jsonify({
-                    "success": False,
-                    "order_id": order.order_id,
-                    "status": order.status,
-                    "message": _("支付处理中"),
-                    "subscription_type": subscription_type,
-                    "start_time": start_time,
-                    "end_time": end_time
-                })
+                # 重新获取更新后的订单
+                order = payment_ops.get_order_by_id(order_id)
 
     # 返回订单当前状态
     return jsonify({

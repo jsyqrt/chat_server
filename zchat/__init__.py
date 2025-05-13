@@ -180,6 +180,15 @@ def create_app(test_config=None, tool_mode=False):
         app.logger.error(f"支付宝模块初始化失败: {str(e)}")
         app.logger.warning("应用将在没有支付宝功能的情况下继续运行")
 
+    # 5.1 初始化Paddle配置
+    try:
+        from zchat.utils.paddle_utils import paddle_config
+        paddle_config.init_app(app)
+        app.logger.info("Paddle模块初始化成功")
+    except Exception as e:
+        app.logger.error(f"Paddle模块初始化失败: {str(e)}")
+        app.logger.warning("应用将在没有Paddle功能的情况下继续运行")
+
     # 6. 注册所有蓝图
 
     # 认证蓝图
@@ -232,6 +241,10 @@ def create_app(test_config=None, tool_mode=False):
     # 支付宝支付蓝图
     from . import alipay
     alipay.init_app(app)
+
+    # Paddle支付webhook蓝图
+    from . import paddle
+    paddle.init_app(app)
 
     # 邀请系统蓝图
     from . import invitation
