@@ -222,3 +222,36 @@ class PaymentOrderOps:
         except Exception as e:
             current_app.logger.error(f"Failed to count user orders: {str(e)}")
             return 0
+
+    def find_orders_by_paddle_info(self, transaction_id=None, checkout_id=None, subscription_id=None):
+        """
+        通过Paddle交易信息查找订单
+
+        Args:
+            transaction_id (str, optional): Paddle交易ID
+            checkout_id (str, optional): Paddle结账ID
+            subscription_id (str, optional): Paddle订阅ID
+
+        Returns:
+            list: 符合条件的订单列表
+        """
+        try:
+            query = self.session.query(PaymentOrder).filter_by(payment_method=PaymentMethod.PADDLE.value)
+
+            if transaction_id:
+                # 可以通过paddle_payment_id或transaction_id查询
+                query = query.filter(
+                    (PaymentOrder.paddle_payment_id == transaction_id) |
+                    (PaymentOrder.transaction_id == transaction_id)
+                )
+
+            if checkout_id:
+                query = query.filter(PaymentOrder.paddle_checkout_id == checkout_id)
+
+            if subscription_id:
+                query = query.filter(PaymentOrder.paddle_subscription_id == subscription_id)
+
+            return query.all()
+        except Exception as e:
+            current_app.logger.error(f"Failed to find orders by Paddle info: {str(e)}")
+            return []

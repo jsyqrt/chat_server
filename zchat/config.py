@@ -66,6 +66,8 @@ PADDLE_API_KEY = os.environ.get('PADDLE_API_KEY', '')
 PADDLE_PUBLIC_KEY = os.environ.get('PADDLE_PUBLIC_KEY', '')
 PADDLE_SANDBOX_MODE = os.environ.get('PADDLE_SANDBOX_MODE', 'true') == 'true'
 PADDLE_WEBHOOK_URL = os.environ.get('PADDLE_WEBHOOK_URL', '')
+PADDLE_CHECKOUT_PREFIX = os.environ.get('PADDLE_CHECKOUT_PREFIX', 'https://pay.paddle.io')
+PADDLE_SANDBOX_CHECKOUT_PREFIX = os.environ.get('PADDLE_SANDBOX_CHECKOUT_PREFIX', 'https://sandbox-pay.paddle.io')
 
 # HTTPS配置
 PREFERRED_URL_SCHEME = os.environ.get('PREFERRED_URL_SCHEME', 'https')

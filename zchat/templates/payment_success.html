@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付成功 - Voylead</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <style>
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: #f5f6fa;
+        }
+        .page-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .payment-success-card {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 40px;
+        }
+        .order-details {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        .detail-label {
+            color: #666;
+        }
+        .detail-value {
+            font-weight: 500;
+        }
+        .btn-app {
+            background-color: #0066ff;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 500;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .btn-app:hover {
+            background-color: #0050cc;
+            transform: translateY(-2px);
+        }
+        .header-logo {
+            max-width: 160px;
+            margin: 0 auto 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="text-center mb-4">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Voylead Logo" class="header-logo">
+        </div>
+
+        <div class="payment-success-card">
+            <div class="success-icon">
+                <i>✓</i>
+            </div>
+
+            {% if payment_success %}
+                <h1 class="mb-4">支付成功</h1>
+
+                {% if no_order_found %}
+                    <p class="lead">我们已经收到您的付款，但订单信息还在处理中。</p>
+                {% else %}
+                    <p class="lead">谢谢您的购买! 您的交易已经处理成功。</p>
+                {% endif %}
+            {% else %}
+                <h1 class="mb-4">支付处理中</h1>
+                <p class="lead">您的交易正在处理中，请稍后查看。</p>
+            {% endif %}
+        </div>
+
+        {% if not no_order_found %}
+        <div class="order-details">
+            <h3 class="mb-4">订单详情</h3>
+
+            <div class="detail-item">
+                <div class="detail-label">订单编号</div>
+                <div class="detail-value">{{ order.order_id }}</div>
+            </div>
+
+            {% if purchase_detail %}
+                <div class="detail-item">
+                    <div class="detail-label">商品</div>
+                    <div class="detail-value">{{ purchase_detail.title }}</div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-label">金额</div>
+                    <div class="detail-value">¥{{ "%.2f"|format(purchase_detail.price) }}</div>
+                </div>
+
+                {% if purchase_detail.type == 'points' %}
+                    <div class="detail-item">
+                        <div class="detail-label">积分</div>
+                        <div class="detail-value">{{ purchase_detail.points }} 分</div>
+                    </div>
+                {% elif purchase_detail.type == 'subscription' %}
+                    <div class="detail-item">
+                        <div class="detail-label">会员类型</div>
+                        <div class="detail-value">{{ purchase_detail.subscription_type }}</div>
+                    </div>
+
+                    {% if purchase_detail.start_time and purchase_detail.end_time %}
+                    <div class="detail-item">
+                        <div class="detail-label">会员有效期</div>
+                        <div class="detail-value">
+                            {{ purchase_detail.start_time|timestamp_to_date }} 至 {{ purchase_detail.end_time|timestamp_to_date }}
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+
+            <div class="detail-item">
+                <div class="detail-label">交易编号</div>
+                <div class="detail-value">{{ transaction_id }}</div>
+            </div>
+
+            <div class="detail-item">
+                <div class="detail-label">购买时间</div>
+                <div class="detail-value">{{ order.payment_time|timestamp_to_date }}</div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="text-center mt-4">
+            <a href="https://voylead.com" class="btn btn-app">返回首页</a>
+
+            {% if not no_order_found and purchase_detail %}
+                {% if purchase_detail.type == 'points' %}
+                    <a href="https://voylead.com/account/points" class="btn btn-app ml-3">查看积分</a>
+                {% elif purchase_detail.type == 'subscription' %}
+                    <a href="https://voylead.com/account/subscription" class="btn btn-app ml-3">查看会员</a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        // 自动添加时间戳过滤器
+        document.addEventListener('DOMContentLoaded', function() {
+            // 查找所有时间戳元素并格式化
+            const timestampElements = document.querySelectorAll('[data-timestamp]');
+            timestampElements.forEach(element => {
+                const timestamp = parseInt(element.dataset.timestamp);
+                if (!isNaN(timestamp)) {
+                    const date = new Date(timestamp * 1000);
+                    element.textContent = date.toLocaleString('zh-CN');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

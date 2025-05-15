@@ -110,20 +110,30 @@ class SubscriptionOps:
             current_app.logger.error(f"Failed to get subscriptions for user {user_id}: {str(e)}")
             return []
 
-    def cancel_subscription(self, subscription_id, user_id):
+    def cancel_subscription(self, subscription_id):
         """取消用户订阅（将结束时间设为当前时间）"""
         try:
             subscription = self.session.query(Subscription)\
-                .filter(Subscription.id == subscription_id)\
-                .filter(Subscription.user_id == user_id).first()
+                .filter(Subscription.id == subscription_id).first()
 
             if subscription:
                 subscription.end_time = time.time()
                 self.session.commit()
-                current_app.logger.debug(f"Cancelled subscription {subscription_id} for user {user_id}")
+                current_app.logger.debug(f"Cancelled subscription {subscription_id} for user {subscription.user_id}")
                 return True
             return False
         except Exception as e:
             self.session.rollback()
             current_app.logger.error(f"Failed to cancel subscription {subscription_id}: {str(e)}")
             return False
+
+    def get_subscription_by_order(self, payment_order_id):
+        """根据支付订单ID获取订阅信息"""
+        try:
+            subscription = self.session.query(Subscription)\
+                .filter(Subscription.payment_order_id == payment_order_id)\
+                .first()
+            return subscription
+        except Exception as e:
+            current_app.logger.error(f"Failed to get subscription by order ID {payment_order_id}: {str(e)}")
+            return None

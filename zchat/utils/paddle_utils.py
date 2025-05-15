@@ -16,7 +16,7 @@ class PaddleConfig:
         self.sandbox_mode = None
         self.api_base_url = None
         self.webhook_url = None
-        self.checkout_url = None
+        self.checkout_url_prefix = None
 
         if app is not None:
             self.init_app(app)
@@ -31,10 +31,10 @@ class PaddleConfig:
         # API URL
         if self.sandbox_mode:
             self.api_base_url = "https://sandbox-vendors.paddle.com/api/2.0"
-            self.checkout_url = "https://sandbox-checkout.paddle.com/checkout"
+            self.checkout_url_prefix = app.config.get('PADDLE_SANDBOX_CHECKOUT_PREFIX', "https://sandbox-pay.paddle.io")
         else:
             self.api_base_url = "https://vendors.paddle.com/api/2.0"
-            self.checkout_url = "https://checkout.paddle.com/checkout"
+            self.checkout_url_prefix = app.config.get('PADDLE_CHECKOUT_PREFIX', "https://pay.paddle.io")
 
         # 支付结果通知回调地址
         self.webhook_url = app.config.get('PADDLE_WEBHOOK_URL')
@@ -48,12 +48,12 @@ class PaddleService:
     """Paddle服务类"""
 
     @staticmethod
-    def generate_checkout_url(product_id, customer_email=None, customer_name=None, passthrough=None, title=None, custom_message=None):
+    def generate_checkout_url(price_id, customer_email=None, customer_name=None, passthrough=None, title=None, custom_message=None):
         """
         生成Paddle结账URL
 
         Args:
-            product_id (str/int): Paddle产品ID
+            price_id (str): Paddle价格ID
             customer_email (str, optional): 客户电子邮件
             customer_name (str, optional): 客户姓名
             passthrough (str, optional): 传递给webhook的数据（通常是订单ID）
@@ -69,13 +69,15 @@ class PaddleService:
                 current_app.logger.error("Paddle not properly configured")
                 return None
 
-            # 创建参数
-            params = {
-                'product_id': product_id,
-                'vendor_id': paddle_config.vendor_id
-            }
+            # 生成唯一的主机特定部分（这里简化处理，实际可能需要调用Paddle API）
+            import uuid
+            host_specific_id = f"hsc_{uuid.uuid4().hex}"
+
+            # 生成结账URL，格式为：prefix/host_specific_id?price_id=xxx
+            checkout_url = f"{paddle_config.checkout_url_prefix}/{host_specific_id}?price_id={price_id}"
 
             # 添加可选参数
+            params = {}
             if passthrough:
                 params['passthrough'] = passthrough
 
@@ -91,22 +93,23 @@ class PaddleService:
             if custom_message:
                 params['custom_message'] = custom_message
 
-            # 生成结账URL
-            checkout_url = f"{paddle_config.checkout_url}/{product_id}"
-            query_string = '&'.join([f"{k}={v}" for k, v in params.items()])
+            # 添加其他查询参数
+            if params:
+                for key, value in params.items():
+                    checkout_url += f"&{key}={value}"
 
-            return f"{checkout_url}?{query_string}"
+            return checkout_url
         except Exception as e:
             current_app.logger.error(f"Failed to generate Paddle checkout URL: {str(e)}")
             return None
 
     @staticmethod
-    def generate_subscription_url(plan_id, customer_email=None, customer_name=None, passthrough=None, quantity=1):
+    def generate_subscription_url(price_id, customer_email=None, customer_name=None, passthrough=None, quantity=1):
         """
         生成Paddle订阅URL
 
         Args:
-            plan_id (str/int): Paddle计划ID
+            price_id (str): Paddle价格ID
             customer_email (str, optional): 客户电子邮件
             customer_name (str, optional): 客户姓名
             passthrough (str, optional): 传递给webhook的数据（通常是订单ID）
@@ -115,37 +118,14 @@ class PaddleService:
         Returns:
             str: Paddle订阅URL
         """
-        try:
-            # 检查配置
-            if not paddle_config.vendor_id or not paddle_config.api_key:
-                current_app.logger.error("Paddle not properly configured")
-                return None
-
-            # 创建参数
-            params = {
-                'plan_id': plan_id,
-                'vendor_id': paddle_config.vendor_id,
-                'quantity': quantity
-            }
-
-            # 添加可选参数
-            if passthrough:
-                params['passthrough'] = passthrough
-
-            if customer_email:
-                params['customer_email'] = customer_email
-
-            if customer_name:
-                params['customer_name'] = customer_name
-
-            # 生成结账URL
-            checkout_url = f"{paddle_config.checkout_url}/subscription"
-            query_string = '&'.join([f"{k}={v}" for k, v in params.items()])
-
-            return f"{checkout_url}?{query_string}"
-        except Exception as e:
-            current_app.logger.error(f"Failed to generate Paddle subscription URL: {str(e)}")
-            return None
+        # 订阅URL现在与普通结账URL使用相同格式，只是使用不同的price_id
+        return PaddleService.generate_checkout_url(
+            price_id=price_id,
+            customer_email=customer_email,
+            customer_name=customer_name,
+            passthrough=passthrough,
+            custom_message=f"Quantity: {quantity}"
+        )
 
     @staticmethod
     def verify_webhook_signature(data, signature):

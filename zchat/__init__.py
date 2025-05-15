@@ -197,6 +197,20 @@ def create_app(test_config=None, tool_mode=False):
     auth.init_verification_code_dict(app)
     auth.init_app(app)
 
+    # 添加自定义过滤器
+    @app.template_filter('timestamp_to_date')
+    def timestamp_to_date(timestamp):
+        """将时间戳转换为格式化的日期时间"""
+        from datetime import datetime
+        if not timestamp:
+            return ""
+        try:
+            dt = datetime.fromtimestamp(float(timestamp))
+            return dt.strftime('%Y-%m-%d %H:%M:%S')
+        except (ValueError, TypeError) as e:
+            app.logger.error(f"Error converting timestamp: {e}")
+            return ""
+
     # 邮件服务
     from . import mail
     mail.init_app(app)

@@ -125,9 +125,9 @@ def purchase_points():
 
     # 获取套餐信息
     packages = {
-        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A"), "paddle_product_id": "pro_01jv4wdygn2aeg2wvkke207q7h"},
-        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B"), "paddle_product_id": "12346"},
-        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C"), "paddle_product_id": "12347"},
+        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A"), "price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n"},
+        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B"), "price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n"},
+        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C"), "price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n"},
     }
 
     if package_id not in packages:
@@ -182,14 +182,14 @@ def purchase_points():
 
         # 生成Paddle结账URL
         current_app.logger.debug(f"Generating Paddle checkout URL for order {order.order_id}")
-        paddle_product_id = package.get("paddle_product_id")
+        price_id = package.get("price_id")
 
-        if not paddle_product_id:
-            current_app.logger.error(f"No Paddle product ID configured for package {package_id}")
+        if not price_id:
+            current_app.logger.error(f"No Paddle price ID configured for package {package_id}")
             return jsonify({"error": "Paddle product not configured"}), 500
 
         checkout_url = PaddleService.generate_checkout_url(
-            product_id=paddle_product_id,
+            price_id=price_id,
             customer_email=email,
             customer_name=name,
             passthrough=order.order_id,  # 传递订单ID给Paddle回调
@@ -491,13 +491,13 @@ def subscribe():
             "price": PointsOps.PRICES[AccountType.BASIC.value],
             "name": _("基础会员(月)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
-            "paddle_plan_id": "23456"
+            "price_id": "pri_01jv2k6rfqqvgfv9bv4zvqe6zw"
         },
         SubscriptionType.PRO.value: {
             "price": PointsOps.PRICES[AccountType.PRO.value],
             "name": _("高级会员(年)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
-            "paddle_plan_id": "23457"
+            "price_id": "pri_01jv2keq8ypah0hesppaaens6e"
         }
     }
 
@@ -548,14 +548,14 @@ def subscribe():
 
         # 生成Paddle订阅URL
         current_app.logger.debug(f"Generating Paddle subscription URL for order {order.order_id}")
-        paddle_plan_id = plan.get("paddle_plan_id")
+        price_id = plan.get("price_id")
 
-        if not paddle_plan_id:
-            current_app.logger.error(f"No Paddle plan ID configured for subscription type {subscription_type}")
+        if not price_id:
+            current_app.logger.error(f"No Paddle price ID configured for subscription type {subscription_type}")
             return jsonify({"error": "Paddle plan not configured"}), 500
 
         checkout_url = PaddleService.generate_subscription_url(
-            plan_id=paddle_plan_id,
+            price_id=price_id,
             customer_email=email,
             customer_name=name,
             passthrough=order.order_id  # 传递订单ID给Paddle回调
