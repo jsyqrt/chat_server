@@ -69,12 +69,8 @@ class PaddleService:
                 current_app.logger.error("Paddle not properly configured")
                 return None
 
-            # 生成唯一的主机特定部分（这里简化处理，实际可能需要调用Paddle API）
-            import uuid
-            host_specific_id = f"hsc_{uuid.uuid4().hex}"
-
-            # 生成结账URL，格式为：prefix/host_specific_id?price_id=xxx
-            checkout_url = f"{paddle_config.checkout_url_prefix}/{host_specific_id}?price_id={price_id}"
+            # 生成结账URL，格式为：prefix?price_id=xxx
+            checkout_url = f"{paddle_config.checkout_url_prefix}?price_id={price_id}"
 
             # 添加可选参数
             params = {}
