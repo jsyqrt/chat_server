@@ -40,7 +40,7 @@ def paddle_webhook():
         subscription_id = event_data.get('subscription_id', '')
 
         # 从自定义数据中获取订单ID
-        custom_data = event_data.get('custom_data', {})
+        custom_data = event_data.get('custom_data') or {}
         order_id = custom_data.get('order_id', '')
 
         # 获取支付ID

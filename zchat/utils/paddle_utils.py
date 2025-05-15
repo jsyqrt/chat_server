@@ -49,15 +49,15 @@ class PaddleService:
     """Paddle服务类"""
 
     @staticmethod
-    def generate_checkout_url(price_id, customer_email=None, customer_name=None, passthrough=None, title=None, custom_message=None):
+    def generate_checkout_url_api(price_id, customer_email=None, customer_name=None, passthrough=None, title=None, custom_message=None):
         """
-        生成Paddle结账URL
+        通过调用Paddle API生成结账URL
 
         Args:
             price_id (str): Paddle价格ID
             customer_email (str, optional): 客户电子邮件
             customer_name (str, optional): 客户姓名
-            passthrough (str, optional): 传递给webhook的数据（通常是订单ID）
+            passthrough (str or dict, optional): 传递给webhook的数据（通常是订单ID）
             title (str, optional): 结账页面标题
             custom_message (str, optional): 自定义消息
 
@@ -70,32 +70,86 @@ class PaddleService:
                 current_app.logger.error("Paddle not properly configured")
                 return None
 
-            # 生成结账URL，格式为：prefix?price_id=xxx
-            checkout_url = f"{paddle_config.checkout_url_prefix}?price_id={price_id}"
+            # 准备API请求数据
+            checkout_data = {
+                "price_id": price_id,
+                "vendor_id": paddle_config.vendor_id,
+                "vendor_auth_code": paddle_config.api_key
+            }
 
             # 添加可选参数
-            params = {}
             if passthrough:
-                params['passthrough'] = passthrough
+                # 如果passthrough是字典，转换为JSON字符串
+                if isinstance(passthrough, dict):
+                    checkout_data['passthrough'] = json.dumps(passthrough)
+                else:
+                    checkout_data['passthrough'] = passthrough
 
             if customer_email:
-                params['customer_email'] = customer_email
+                checkout_data['customer_email'] = customer_email
 
             if customer_name:
-                params['customer_name'] = customer_name
+                checkout_data['customer_name'] = customer_name
 
             if title:
-                params['title'] = title
+                checkout_data['title'] = title
 
             if custom_message:
-                params['custom_message'] = custom_message
+                checkout_data['custom_message'] = custom_message
 
-            # 添加其他查询参数
-            if params:
-                for key, value in params.items():
-                    checkout_url += f"&{key}={value}"
+            # 调用Paddle API创建结账URL
+            api_url = f"{paddle_config.api_base_url}/product/generate_pay_link"
+            current_app.logger.debug(f"Calling Paddle API to generate checkout URL: {api_url}")
 
-            return checkout_url
+            response = requests.post(
+                api_url,
+                data=checkout_data
+            )
+
+            # 检查响应
+            if response.status_code == 200:
+                result = response.json()
+                if result.get('success'):
+                    checkout_url = result.get('response', {}).get('url')
+                    current_app.logger.debug(f"Generated Paddle checkout URL: {checkout_url}")
+                    return checkout_url
+                else:
+                    error_msg = result.get('error', {}).get('message', 'Unknown error')
+                    current_app.logger.error(f"Failed to generate Paddle checkout URL: {error_msg}")
+            else:
+                current_app.logger.error(f"Failed to call Paddle API. Status: {response.status_code}, Response: {response.text}")
+
+            return None
+        except Exception as e:
+            current_app.logger.error(f"Failed to generate Paddle checkout URL via API: {str(e)}")
+            return None
+
+    @staticmethod
+    def generate_checkout_url(price_id, customer_email=None, customer_name=None, passthrough=None, title=None, custom_message=None):
+        """
+        生成Paddle结账URL
+
+        Args:
+            price_id (str): Paddle价格ID
+            customer_email (str, optional): 客户电子邮件
+            customer_name (str, optional): 客户姓名
+            passthrough (str or dict, optional): 传递给webhook的数据（通常是订单ID）
+            title (str, optional): 结账页面标题
+            custom_message (str, optional): 自定义消息
+
+        Returns:
+            str: Paddle结账URL
+        """
+        try:
+            # 使用API生成结账URL
+            return PaddleService.generate_checkout_url_api(
+                price_id=price_id,
+                customer_email=customer_email,
+                customer_name=customer_name,
+                passthrough=passthrough,
+                title=title,
+                custom_message=custom_message
+            )
         except Exception as e:
             current_app.logger.error(f"Failed to generate Paddle checkout URL: {str(e)}")
             return None
@@ -109,14 +163,14 @@ class PaddleService:
             price_id (str): Paddle价格ID
             customer_email (str, optional): 客户电子邮件
             customer_name (str, optional): 客户姓名
-            passthrough (str, optional): 传递给webhook的数据（通常是订单ID）
+            passthrough (str or dict, optional): 传递给webhook的数据（通常是订单ID）
             quantity (int, optional): 数量
 
         Returns:
             str: Paddle订阅URL
         """
-        # 订阅URL现在与普通结账URL使用相同格式，只是使用不同的price_id
-        return PaddleService.generate_checkout_url(
+        # 使用新的API方法生成订阅URL
+        return PaddleService.generate_checkout_url_api(
             price_id=price_id,
             customer_email=customer_email,
             customer_name=customer_name,
