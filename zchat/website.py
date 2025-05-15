@@ -5,14 +5,6 @@ bp = Blueprint('website', __name__)
 @bp.route('/')
 def index():
     """Voylead官网首页"""
-    # 获取当前域名
-    host = request.host.lower()
-
-    # 如果是子域名，显示职业发展平台页面
-    if host.startswith('career.') or host.startswith('zhilu.'):
-        return render_template('career.html')
-
-    # 主域名显示公司介绍页面
     return render_template('index.html')
 
 @bp.route('/favicon.ico')

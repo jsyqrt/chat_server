@@ -6,8 +6,52 @@
     <title>{{ _('Voylead - AI-Powered Education Technology') }}</title>
     <meta name="description" content="{{ _('Voylead is revolutionizing education through AI technology, making learning more efficient and accessible for everyone.') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- 引入字体图标 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 添加网站图标 -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <!-- 预加载重要资源 -->
+    <link rel="preload" href="{{ url_for('static', filename='images/icon.png') }}" as="image">
+    <link rel="preload" href="{{ url_for('static', filename='images/heading.jpg') }}" as="image">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/icon.png') }}" alt="{{ _('职路') }}">
+                <h1>{{ _('职路') }}</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#features">{{ _('产品特色') }}</a></li>
+                    <li><a href="#download">{{ _('立即下载') }}</a></li>
+                    <li><a href="#faq">{{ _('常见问题') }}</a></li>
+                    <li><a href="#about">{{ _('关于我们') }}</a></li>
+                    <li class="language-switch">
+                        <div class="language-selector">
+                            <button class="language-button" onclick="toggleLanguageMenu()">
+                                <span class="current-language">{{ g.get('lang', 'zh_CN')|upper }}</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="language-menu" id="languageMenu">
+                                <a href="{{ url_for('website.switch_language', lang='zh_CN') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'zh_CN' else '' }}">
+                                    <span class="language-code">简体</span>
+                                </a>
+                                <a href="{{ url_for('website.switch_language', lang='en') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'en' else '' }}">
+                                    <span class="language-code">EN</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
     <style>
         /* 语言切换按钮样式 */
         .language-switch {
@@ -88,43 +132,6 @@
             background: #f0f7f0;
         }
 
-        /* 动画效果 */
-        .hero-content {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .section-title {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .product-card {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* 响应式设计优化 */
         @media (max-width: 768px) {
             .language-switch {
                 margin: 10px 0;
@@ -140,86 +147,352 @@
                 transform: translateX(-50%) translateY(0);
             }
         }
+
+        /* 子章节标题样式 */
+        .subsection-title {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .subsection-title {
+                font-size: 18px;
+                margin-top: 25px;
+                margin-bottom: 12px;
+            }
+        }
+
+        /* 新增的关于我们部分的样式 */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        /* ICP备案样式 */
+        .icp-info {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .icp-info a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .icp-info a:hover {
+            color: #4CAF50;
+            text-decoration: underline;
+        }
+
+        /* FAQ Styles */
+        .faq {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 24px 24px;
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        .faq-answer p {
+            margin: 0 0 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-answer ul {
+            margin: 0 0 16px;
+            padding-left: 20px;
+        }
+
+        .faq-answer li {
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .faq {
+                padding: 40px 0;
+            }
+
+            .faq-question h3 {
+                font-size: 16px;
+            }
+
+            .faq-question, .faq-answer {
+                padding: 16px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 16px 16px;
+            }
+        }
     </style>
-</head>
-<body>
-    <!-- 导航栏 -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Voylead</h1>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#mission">{{ _('Our Mission') }}</a></li>
-                    <li><a href="#products">{{ _('Products') }}</a></li>
-                    <li><a href="#about">{{ _('About Us') }}</a></li>
-                    <li class="language-switch">
-                        <div class="language-selector">
-                            <button class="language-button" onclick="toggleLanguageMenu()">
-                                <span class="current-language">{{ g.get('lang', 'zh_CN')|upper }}</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="language-menu" id="languageMenu">
-                                <a href="{{ url_for('website.switch_language', lang='zh_CN') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'zh_CN' else '' }}">
-                                    <span class="language-code">简体</span>
-                                </a>
-                                <a href="{{ url_for('website.switch_language', lang='en') }}" class="{{ 'active' if g.get('lang', 'zh_CN') == 'en' else '' }}">
-                                    <span class="language-code">EN</span>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
     <!-- 主横幅 -->
     <section class="hero">
+        <!-- 数据流效果 -->
+        <div class="data-stream" id="heroDataStream"></div>
         <div class="container">
             <div class="hero-content">
-                <h2>{{ _('Empowering Learning Through AI Innovation') }}</h2>
-                <p>{{ _('Experience the future of education where artificial intelligence personalizes your learning journey, making knowledge acquisition more engaging and effective than ever before.') }}</p>
+                <h2>{{ _('职业成长，从精准规划开始') }}</h2>
+                <p>{{ _('领先一步的职业导航，让梦想有明确的坐标') }}</p>
                 <div class="hero-btns">
-                    <a href="https://career.voylead.com" class="btn btn-primary">{{ _('Discover Our Career Platform') }}</a>
+                    <a href="#download" class="btn btn-primary">{{ _('立即下载') }}</a>
+                    <a href="#features" class="btn btn-secondary">{{ _('了解更多') }}</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/heading.jpg') }}" alt="{{ _('职路应用展示') }}">
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色功能 -->
+    <section id="features" class="features">
+        <!-- 数据流效果 -->
+        <div class="data-stream" id="featuresDataStream"></div>
+        <div class="container">
+            <h2 class="section-title">{{ _('产品特色') }}</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>{{ _('职业规划') }}</h3>
+                    <p>{{ _('AI精准规划成长方向，实时追踪行业趋势调整路径') }}</p>
+                    <p>{{ _('拆解目标为可执行任务，缩短成长周期，拒绝无效努力') }}</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <h3>{{ _('职业测评') }}</h3>
+                    <p>{{ _('三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势') }}</p>
+                    <p>{{ _('对标高薪岗位人才画像，转行跳槽少走弯路') }}</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>{{ _('职位分析') }}</h3>
+                    <p>{{ _('深度分析目标岗位，提取企业隐性需求') }}</p>
+                    <p>{{ _('结合行业大数据，智能规划求职升职决策，快人一步') }}</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>{{ _('简历定制') }}</h3>
+                    <p>{{ _('智能拆解JD隐藏关键词，拉满简历匹配度') }}</p>
+                    <p>{{ _('一键生成最优简历，大幅提升面试邀约率') }}</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 使命部分 -->
-    <section id="mission" class="mission">
+    <!-- 下载区域 -->
+    <section id="download" class="download">
+        <!-- 浮动数据标签 -->
+        <div id="floatingDataContainer"></div>
         <div class="container">
-            <h2 class="section-title">{{ _('Our Vision') }}</h2>
-            <div class="mission-content">
-                <p>{{ _('At Voylead, we envision a world where education is truly personalized, accessible, and transformative. Our name represents our commitment to being the guiding light (Voy) that leads (lead) learners towards their full potential.') }}</p>
-                <p>{{ _('Through the power of artificial intelligence, we create adaptive learning experiences that understand and respond to each individual\'s unique learning style, pace, and goals, making education more engaging and effective.') }}</p>
+            <h2 class="section-title">{{ _('立即下载') }}</h2>
+            <p class="download-subtitle">{{ _('随时随地，开启您的成功"职路"') }}</p>
+            <div class="app-badges">
+                <a href="https://app.mi.com/details?id=com.edu_paths.zhilu" class="app-badge" id="android-download">
+                    <img src="{{ url_for('static', filename='images/mi_store.png') }}" alt="{{ _('小米应用商店下载') }}">
+                </a>
+            </div>
+            <div class="qr-code">
+                <img src="{{ url_for('static', filename='images/download_qr.png') }}" alt="{{ _('扫码下载职路APP') }}">
+                <p>{{ _('扫描二维码下载') }}</p>
             </div>
         </div>
     </section>
 
-    <!-- 产品部分 -->
-    <section id="products" class="products" style="margin-top: 80px; padding: 80px 0;">
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title">{{ _('Products') }}</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <h3>{{ _('Career Development Platform') }}</h3>
-                    <p>{{ _('Our flagship platform combines AI-driven insights with expert guidance to help professionals navigate their career journey with confidence and clarity.') }}</p>
-                    <a href="https://career.voylead.com" class="btn btn-secondary">{{ _('Explore Platform') }}</a>
+            <h2 class="section-title">{{ _('常见问题') }}</h2>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>{{ _('我可以用职路做什么？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('任何需要您职业成长的事情！职路特别适用于：') }}</p>
+                        <ul>
+                            <li>{{ _('规划职业成长路径') }}</li>
+                            <li>{{ _('进行职位分析') }}</li>
+                            <li>{{ _('定制精准简历') }}</li>
+                            <li>{{ _('专业职业测评') }}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('职路有什么好处？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('职路是一个生产力工具，专为更快，更高效地创建符合您的路径而构建。') }}</p>
+                        <p>{{ _('使用职路，您将享受：') }}</p>
+                        <ul>
+                            <li>{{ _('助力职业发展：通过职业成长路径规划，明确发展方向，避免盲目摸索，少走弯路，快速实现职业目标。职位分析助深入了解职位，精准求职。简历定制和职业测评则提升求职竞争力，增加获得心仪工作的机会。') }}</li>
+                            <li>{{ _('节省时间和精力：无需四处搜集资料和信息，职路集成丰富职业相关资源，一站式满足职业发展需求，让你更高效地规划和管理职业生涯。') }}</li>
+                            <li>{{ _('提供个性化服务：根据个人情况量身定制职业成长路径和简历，考虑个体差异，使服务更具针对性和实效性，满足独特职业发展需求。') }}</li>
+                            <li>{{ _('促进自我认知：职业测评帮助深入了解兴趣、性格和能力，清晰自身优势和不足，做出适合职业选择，发挥潜力，实现自我价值。') }}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('如何创作学习路径？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('创建学习路径可能会令人生畏，但不必这样！使用职路，您可能需要几分钟时间就能创建专业的指导路径。') }}</p>
+                        <p>{{ _('第一步：根据您输入个人基本信息（如当前职业阶段、技能水平、职业目标等）') }}</p>
+                        <p>{{ _('第二步：只要点击确认系统会根据您提供的数据以及海量行业信息，为您量身定制一份专属的职业成长规划。将整体学习目标分解为阶段性小目标，逐步击破。（如将编程语言学习分为基础语法、数据结构与算法、项目实战等阶段。）') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('我不确定自己的职业目标，职路能帮我吗？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('当然可以！职路的职业测评功能可以帮助您初步了解自己的兴趣、性格和能力优势，为确定职业方向提供参考。在您完成测评后，我们的职业成长路径规划功能会根据测评结果为您推荐适合的职业领域和职位类型，并提供相应的发展建议。同时，您还可以查看职位分析内容，深入了解不同职位的工作内容、发展前景和要求，从而逐步明确自己的职业目标。') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('我的简历已经很长时间没有更新了，职路的简历定制功能能帮我重新整理吗？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('绝对可以！您只需将现有的简历内容上传至职路，我们的简历定制功能会根据您的职业背景和求职意向，对简历进行重新梳理和优化。我们会帮您筛选出重点信息，按照清晰的结构进行排版，突出您的优势和亮点，让您的简历更符合当前求职市场的要求。') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('职路的职业成长路径是否适合应届毕业生？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('职路的职业成长路径功能适合各个职业阶段的人群，包括应届毕业生及想要转行的人群。') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('职业测评的准确性如何保证？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('职路的职业测评基于科学的心理学理论和成熟的职业测评模型，同时结合了大量用户数据和实际案例分析。测评题目经过精心设计和反复验证，能够较为准确地评估您的职业兴趣、性格特点、能力优势等方面。但需要注意的是，测评结果仅供参考，我们建议您将其作为了解自身特点的工具之一，结合实际情况综合判断，以做出更明智的职业决策。') }}</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{ _('我在使用APP过程中遇到问题，如何联系客服？') }}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{ _('如果您在使用职路时遇到任何问题，可以通过以下几种方式联系我们的客服团队：') }}</p>
+                        <ul>
+                            <li>{{ _('我的界面点击反馈建议，填写对应内容，我们的客服人员会及时接听并为您解决问题') }}</li>
+                            <li>{{ _('发送邮件至support@voylead.com，详细描述您遇到的问题，我们会尽快回复您') }}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 关于我们 -->
-    <section id="about" class="about" style="padding: 80px 0; background: #fff;">
+    <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">{{ _('About Voylead') }}</h2>
+            <h2 class="section-title">{{ _('关于我们') }}</h2>
             <div class="about-content">
-                <p>{{ _('Founded by a team of AI visionaries and education technology pioneers, Voylead is at the forefront of the educational revolution.') }}</p>
-                <p>{{ _('Our diverse team brings together expertise in artificial intelligence, educational psychology, and user experience design to create innovative solutions that transform how people learn and grow.') }}</p>
+                <p>{{ _('职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。') }}</p>
+                <p>{{ _('我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。') }}</p>
+                <p>{{ _('我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有"职路"，不走弯路。') }}</p>
             </div>
         </div>
     </section>
@@ -229,32 +502,441 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h3>Voylead</h3>
-                    <p>{{ _('Transforming Education Through AI') }}</p>
+                    <img src="{{ url_for('static', filename='images/icon.png') }}" alt="{{ _('职路') }}">
+                    <h3>{{ _('职路') }}</h3>
+                    <p>{{ _('您的职业发展伙伴') }}</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
-                        <h4>{{ _('Company') }}</h4>
+                        <h4>{{ _('公司') }}</h4>
                         <ul>
-                            <li><a href="#about">{{ _('About Us') }}</a></li>
-                            <li><a href="#!">{{ _('Contact') }}</a></li>
+                            <li><a href="#about">{{ _('关于我们') }}</a></li>
+                            <li><a href="mailto:support@voylead.com">{{ _('联系我们') }}</a></li>
                         </ul>
                     </div>
                     <div class="footer-links-group">
-                        <h4>{{ _('Products') }}</h4>
+                        <h4>{{ _('支持') }}</h4>
                         <ul>
-                            <li><a href="https://career.voylead.com">{{ _('Career Platform') }}</a></li>
+                            <li><a href="/customer_service/privacy_policy">{{ _('隐私政策') }}</a></li>
+                            <li><a href="/customer_service/terms_of_service">{{ _('服务条款') }}</a></li>
                         </ul>
                     </div>
                 </div>
+                <!-- <div class="footer-social">
+                    <h4>{{ _('关注我们') }}</h4>
+                    <div class="social-icons">
+                        <a href="#!" aria-label="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#!" aria-label="微博"><i class="fab fa-weibo"></i></a>
+                        <a href="#!" aria-label="QQ"><i class="fab fa-qq"></i></a>
+                        <a href="#!" aria-label="抖音"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div> -->
             </div>
             <div class="copyright">
-                <p>{{ _('&copy; 2024 Voylead. All rights reserved.') }}</p>
+                {% if g.lang == 'zh_CN' %}
+                <p class="icp-info">{{ _('&copy; 2025 职路APP. 保留所有权利.') }}<a href="https://beian.miit.gov.cn/" target="_blank">   沪ICP备2024103552号</a></p>
+                {% endif %}
+                {% if g.lang == 'en' %}
+                <p>{{ _('&copy; 2025 职路APP. 保留所有权利.') }}</p>
+                {% endif %}
             </div>
         </div>
     </footer>
 
+    <!-- 移动端应用商店跳转脚本 -->
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检测设备类型
+            console.log('检测设备类型', navigator.userAgent);
+            const userAgent = navigator.userAgent;
+            const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+            const isAndroid = /Android/.test(userAgent);
+            const isXiaomi = /MI\s|Redmi|HM\sNOTE|Mix\s/.test(userAgent);
+            const isOppo = /OPPO|PAFM|PBFM|PCRM|PCGM|PCLM|PDHM/.test(userAgent);
+            const isVivo = /vivo/.test(userAgent);
+            const isHuawei = /HUAWEI|Honor/.test(userAgent);
+
+            // 检测屏幕尺寸
+            const isSmallScreen = window.matchMedia('(max-width: 992px)').matches;
+
+            // 获取下载按钮和容器
+            const iosDownloadBtn = document.getElementById('ios-download');
+            const androidDownloadBtn = document.getElementById('android-download');
+
+            // 创建额外的应用商店按钮
+            const downloadContainer = document.querySelector('.app-badges');
+
+            // 设置iOS设备跳转
+            if (isIOS) {
+                iosDownloadBtn.href = 'https://apps.apple.com/cn/app/职路/id123456789';
+                // 隐藏其他下载按钮
+                if (androidDownloadBtn) androidDownloadBtn.style.display = 'none';
+            }
+            // Android设备根据品牌设置不同商店链接
+            else if (isAndroid) {
+                // 默认下载按钮（通用Android）
+                if (androidDownloadBtn) {
+                    androidDownloadBtn.querySelector('img').alt = '{{ _("下载Android版") }}';
+
+                    // 根据设备品牌设置不同的下载链接
+                    if (isXiaomi) {
+                        // 小米应用商店链接
+                        androidDownloadBtn.href = 'https://app.mi.com/details?id=com.edu_paths.zhilu';
+                        androidDownloadBtn.querySelector('img').alt = '{{ _("小米应用商店下载") }}';
+
+                        // 添加小米应用商店标识
+                        const storeName = document.createElement('span');
+                        storeName.textContent = '{{ _("小米应用商店") }}';
+                        storeName.className = 'store-name';
+                        androidDownloadBtn.appendChild(storeName);
+                    }
+                    else if (isOppo) {
+                        // OPPO应用商店链接
+                        androidDownloadBtn.href = 'https://store.oppomobile.com/search?keyword=职路';
+                        androidDownloadBtn.querySelector('img').alt = '{{ _("OPPO应用商店下载") }}';
+
+                        // 添加OPPO应用商店标识
+                        const storeName = document.createElement('span');
+                        storeName.textContent = '{{ _("OPPO应用商店") }}';
+                        storeName.className = 'store-name';
+                        androidDownloadBtn.appendChild(storeName);
+                    }
+                    else if (isHuawei) {
+                        // 华为应用商店链接
+                        androidDownloadBtn.href = 'https://appgallery.huawei.com/search/职路';
+                        androidDownloadBtn.querySelector('img').alt = '{{ _("华为应用商店下载") }}';
+
+                        // 添加华为应用商店标识
+                        const storeName = document.createElement('span');
+                        storeName.textContent = '{{ _("华为应用商店") }}';
+                        storeName.className = 'store-name';
+                        androidDownloadBtn.appendChild(storeName);
+                    }
+                    else if (isVivo) {
+                        // vivo应用商店链接
+                        androidDownloadBtn.href = 'https://info.appstore.vivo.com.cn/detail/职路';
+                        androidDownloadBtn.querySelector('img').alt = '{{ _("vivo应用商店下载") }}';
+
+                        // 添加vivo应用商店标识
+                        const storeName = document.createElement('span');
+                        storeName.textContent = '{{ _("vivo应用商店") }}';
+                        storeName.className = 'store-name';
+                        androidDownloadBtn.appendChild(storeName);
+                    }
+                }
+
+                // 隐藏iOS下载按钮
+                if (iosDownloadBtn) iosDownloadBtn.style.display = 'none';
+
+                // 创建"其他应用商店"下拉菜单
+                const otherStoresContainer = document.createElement('div');
+                otherStoresContainer.className = 'other-stores';
+
+                const otherStoresToggle = document.createElement('button');
+                otherStoresToggle.className = 'other-stores-toggle';
+                otherStoresToggle.textContent = '其他应用商店';
+
+                const otherStoresDropdown = document.createElement('div');
+                otherStoresDropdown.className = 'stores-dropdown';
+
+                // 添加各种应用商店链接
+                const storeLinks = [
+                    {name: '应用宝', url: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.edu_paths.zhilu'},
+                    {name: '华为应用商店', url: 'https://appgallery.huawei.com/search/职路'},
+                    {name: '小米应用商店', url: 'https://app.mi.com/details?id=com.edu_paths.zhilu'},
+                    {name: 'OPPO应用商店', url: 'https://store.oppomobile.com/search?keyword=职路'},
+                    {name: 'vivo应用商店', url: 'https://info.appstore.vivo.com.cn/detail/职路'},
+                    {name: '魅族应用商店', url: 'https://app.meizu.com/apps/public/detail?package_name=com.edu_paths.zhilu'}
+                ];
+
+                storeLinks.forEach(store => {
+                    // 跳过当前已经显示的商店
+                    if ((isXiaomi && store.name === '小米应用商店') ||
+                        (isOppo && store.name === 'OPPO应用商店') ||
+                        (isHuawei && store.name === '华为应用商店') ||
+                        (isVivo && store.name === 'vivo应用商店') ||
+                        (!isXiaomi && !isOppo && !isHuawei && !isVivo && store.name === '应用宝')) {
+                        return;
+                    }
+
+                    const link = document.createElement('a');
+                    link.href = store.url;
+                    link.textContent = store.name;
+                    otherStoresDropdown.appendChild(link);
+                });
+
+                otherStoresContainer.appendChild(otherStoresToggle);
+                otherStoresContainer.appendChild(otherStoresDropdown);
+                downloadContainer.appendChild(otherStoresContainer);
+
+                // 为"其他应用商店"按钮添加点击事件
+                otherStoresToggle.addEventListener('click', function() {
+                    otherStoresDropdown.classList.toggle('active');
+                });
+            }
+
+            // 菜单切换和平滑滚动功能保持不变
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // 如果导航菜单是展开的，点击后关闭它
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    }
+                });
+            });
+
+            // 获取所有特性卡片
+            const featureCards = document.querySelectorAll('.feature-card');
+
+            // 高亮卡片的类名
+            const highlightClass = 'feature-card-highlight';
+
+            // 当前高亮的卡片
+            let currentHighlightCard = null;
+
+            // 用于跟踪已触发过打字效果的卡片
+            const animatedCards = new Set();
+
+            // 移除所有卡片的高亮效果
+            function removeAllHighlights() {
+                featureCards.forEach(card => {
+                    card.classList.remove(highlightClass);
+                });
+                currentHighlightCard = null;
+            }
+
+            // 高亮特定卡片
+            function highlightCard(card) {
+                // 如果已经有高亮卡片且不是当前卡片，则移除高亮
+                if (currentHighlightCard && currentHighlightCard !== card) {
+                    currentHighlightCard.classList.remove(highlightClass);
+                }
+
+                // 高亮当前卡片
+                card.classList.add(highlightClass);
+                currentHighlightCard = card;
+            }
+
+            // 保存每个卡片的活动动画取消函数
+            const activeAnimations = new Map();
+
+            // 大屏幕行为：鼠标悬停触发动画和高亮
+            if (!isSmallScreen) {
+                featureCards.forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        highlightCard(card);
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        card.classList.remove(highlightClass);
+                        currentHighlightCard = null;
+                    });
+                });
+            }
+            // 小屏幕行为：使用intersection observer
+            else {
+                // 添加防抖延时变量
+                let highlightDebounceTimeout = null;
+                const DEBOUNCE_DELAY = 500; // 500毫秒的防抖延迟
+
+                // 中间80%的区域观察选项
+                const observerOptions = {
+                    root: null,
+                    // 顶部和底部各缩小10%，只检测中间80%区域
+                    rootMargin: '-10% 0% -10% 0%',
+                    threshold: 0.8 // 当80%的元素可见时触发
+                };
+
+                // 为卡片添加观察器
+                const cardObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        const card = entry.target;
+
+                        // 如果卡片进入观察区域
+                        if (entry.isIntersecting) {
+                            // 清除之前的延时器
+                            clearTimeout(highlightDebounceTimeout);
+
+                            // 设置新的延时器
+                            highlightDebounceTimeout = setTimeout(() => {
+                                // 移除所有高亮
+                                removeAllHighlights();
+
+                                // 取消所有卡片的动画
+                                activeAnimations.forEach((cancelFn, c) => {
+                                    if (cancelFn) cancelFn();
+                                });
+                                activeAnimations.clear();
+
+                                // 高亮当前卡片
+                                highlightCard(card);
+                            }, DEBOUNCE_DELAY);
+                        }
+                        // 如果卡片离开观察区域
+                        else {
+                            // 清除之前的延时器
+                            clearTimeout(highlightDebounceTimeout);
+
+                            // 设置延时器来移除高亮，避免快速滚动时的闪烁
+                            highlightDebounceTimeout = setTimeout(() => {
+                                // 如果当前高亮的是这个卡片，则移除高亮
+                                if (currentHighlightCard === card) {
+                                    card.classList.remove(highlightClass);
+                                    currentHighlightCard = null;
+                                }
+
+                                // 如果有活动的动画，取消它
+                                if (activeAnimations.has(card)) {
+                                    const cancelAnimation = activeAnimations.get(card);
+                                    if (cancelAnimation) cancelAnimation();
+                                    activeAnimations.delete(card);
+                                }
+                            }, DEBOUNCE_DELAY);
+                        }
+                    });
+                }, observerOptions);
+
+                // 观察所有卡片
+                featureCards.forEach(card => {
+                    cardObserver.observe(card);
+                });
+            }
+
+            // 创建数据流粒子效果
+            function createDataParticles(container, count) {
+                const dataStream = document.getElementById(container);
+                if (!dataStream) return;
+
+                for (let i = 0; i < count; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'data-particle';
+
+                    // 随机化粒子属性
+                    const y = Math.random() * 100; // 随机y位置 (%)
+                    const delay = Math.random() * 10; // 随机延迟
+                    const width = 5 + Math.random() * 15; // 随机宽度
+                    const height = 1 + Math.random() * 2; // 随机高度
+                    const opacity = 0.3 + Math.random() * 0.7; // 随机透明度
+
+                    // 设置样式
+                    particle.style.top = `${y}%`;
+                    particle.style.width = `${width}px`;
+                    particle.style.height = `${height}px`;
+                    particle.style.opacity = opacity;
+                    particle.style.animationDelay = `${delay}s`;
+                    particle.style.animationDuration = `${15 + Math.random() * 20}s`;
+
+                    // 添加到容器
+                    dataStream.appendChild(particle);
+                }
+            }
+
+            // 创建浮动数据标签
+            function createFloatingData() {
+                const dataTexts = [
+                    "{{ _('职位分析进行中...')|e }}",
+                    "{{ _('职位分析完成，正在生成专属报告，5个核心技能强匹配，来看看吧')|e }}",
+                    "{{ _('简历定制完成，匹配度提升30%%')|e }}",
+                    "{{ _('技能树定制完成，8个阶段，100+核心知识点，快来打卡吧')|e }}",
+                    "{{ _('匹配最优职位中...')|e }}",
+                    "{{ _('专属成长路径生成及技能树定制中...')|e }}",
+                    "{{ _('行业趋势分析中...')|e }}",
+                    "{{ _('简历匹配度分析中...')|e }}",
+                    "{{ _('职业能力评估中...')|e }}",
+                    "{{ _('职场竞争力提升中...')|e }}",
+                    "{{ _('简历曝光率提升中...')|e }}",
+                    "{{ _('面试机会增加中...')|e }}",
+                    "{{ _('薪资增长潜力提升中...')|e }}",
+                    "{{ _('职场竞争力+28%%')|e }}",
+                    "{{ _('简历曝光率提升42%%')|e }}",
+                    "{{ _('面试机会增加36%%')|e }}",
+                    "{{ _('薪资增长潜力52%%')|e }}",
+                    "{{ _('岗位需求增长17%%')|e }}"
+                ];
+
+                const container = document.getElementById('floatingDataContainer');
+                if (!container) return;
+
+                // 初始创建数据标签
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => createSingleFloatingData(), i * 2000);
+                }
+
+                // 持续创建新的数据标签
+                setInterval(createSingleFloatingData, 3000);
+
+                function createSingleFloatingData() {
+                    const dataElement = document.createElement('div');
+                    dataElement.className = 'floating-data';
+
+                    // 随机内容
+                    const randomText = dataTexts[Math.floor(Math.random() * dataTexts.length)];
+                    dataElement.textContent = randomText;
+
+                    // 随机位置
+                    const topPos = 10 + Math.random() * 80;
+                    dataElement.style.top = `${topPos}%`;
+
+                    // 随机动画持续时间
+                    const duration = 10 + Math.random() * 5;
+                    dataElement.style.animationDuration = `${duration}s`;
+
+                    // 添加到页面
+                    container.appendChild(dataElement);
+
+                    // 动画结束后移除元素
+                    setTimeout(() => {
+                        if (dataElement.parentNode === container) {
+                            container.removeChild(dataElement);
+                        }
+                    }, duration * 1000);
+                }
+            }
+
+            // 初始化数据流效果
+            createDataParticles('heroDataStream', 40);
+            createDataParticles('featuresDataStream', 35);
+            createFloatingData();
+
+            // FAQ Interaction
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            // Set first item as active by default
+            if (faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+            }
+
+            // Handle click events
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    if (isActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+
         function toggleLanguageMenu() {
             const menu = document.getElementById('languageMenu');
             menu.classList.toggle('show');
@@ -286,28 +968,6 @@
                     window.location.href = "{{ url_for('website.switch_language', lang='') }}" + targetLang;
                 }
             }
-
-            // 添加滚动动画
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationDelay = '0.2s';
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            }, observerOptions);
-
-            // 观察所有需要动画的元素
-            document.querySelectorAll('.section-title, .product-card').forEach(el => {
-                el.style.animationPlayState = 'paused';
-                observer.observe(el);
-            });
         });
     </script>
 </body>
