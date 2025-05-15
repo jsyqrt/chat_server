@@ -1,10 +1,10 @@
 import openai
 import os
 import re
-import logging
 from typing import Dict, List, Tuple, Generator, Optional, Any
 import time
 from ..monitoring.api_monitor import APIMonitor, monitor_api_call  # 导入API监控工具
+from flask import current_app
 
 # 模型名称映射：根据基础模型名和平台名，提供平台特定的模型名称
 MODEL_MAPPINGS: Dict[str, Dict[str, str]] = {
@@ -51,20 +51,22 @@ def get_api_url_and_key(platform="groq") -> Tuple[str, str]:
 
     if platform == "groq":
         api_url = "https://api.groq.com/openai/v1"
-        api_key = os.getenv("GROQ_API_KEY")
+        api_key = os.environ.get("GROQ_API_KEY")
     elif platform == "deepseek":
         api_url = "https://api.deepseek.com/v1"
-        api_key = os.getenv("DEEPSEEK_API_KEY")
+        api_key = os.environ.get("DEEPSEEK_API_KEY")
     elif platform == "aliyun":
         api_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-        api_key = os.getenv("ALIYUN_API_KEY")
+        api_key = os.environ.get("ALIYUN_API_KEY")
     elif platform == "siliconflow":
         api_url = "https://api.siliconflow.cn/v1"
-        api_key = os.getenv("SF_ZCHAT_API_KEY")
+        api_key = os.environ.get("SF_ZCHAT_API_KEY")
     else:
+        current_app.logger.error(f"不支持的平台: {platform}")
         raise ValueError(f"不支持的平台: {platform}")
 
     if not api_key:
+        current_app.logger.error(f"未找到平台 {platform} 的API密钥")
         raise ValueError(f"未找到平台 {platform} 的API密钥")
 
     return api_url, api_key
@@ -106,14 +108,14 @@ def get_response_from_llm(messages: List[Dict[str, str]], model: str, max_tokens
 
         except Exception as e:
             last_error = e
-            logging.error(f"LLM请求失败 (尝试 {attempt+1}/{retry_count}): {str(e)}")
+            current_app.logger.error(f"LLM请求失败 (尝试 {attempt+1}/{retry_count}): {str(e)}")
             if attempt < retry_count - 1:
                 # 指数退避重试
                 time.sleep(2 ** attempt)
                 continue
             else:
                 # 最后一次尝试失败
-                logging.error(f"所有LLM请求尝试均失败: {str(e)}")
+                current_app.logger.error(f"所有LLM请求尝试均失败: {str(e)}")
                 # 记录API调用失败 - 装饰器会自动处理，这里不需要额外记录
                 raise RuntimeError(f"LLM请求失败: {str(e)}") from e
 
@@ -161,7 +163,7 @@ def get_response_from_llm_stream(messages: List[Dict[str, str]], model: str, max
                 yield chunk.choices[0].delta.content
 
     except Exception as e:
-        logging.error(f"LLM流式请求失败: {str(e)}")
+        current_app.logger.error(f"LLM流式请求失败: {str(e)}")
         # 记录API调用失败
         APIMonitor.record_error(api_name)
         # 在流中发送错误标记
@@ -190,7 +192,7 @@ def chat_with_llm_stream(message: str, history: List[Dict[str, str]], model: str
     try:
         yield from get_response_from_llm_stream(messages, model, max_tokens, platform)
     except Exception as e:
-        logging.error(f"聊天流式请求失败: {str(e)}")
+        current_app.logger.error(f"聊天流式请求失败: {str(e)}")
         # 异常已在get_response_from_llm_stream中处理，这里不需要再次发送错误消息
 
 def get_json_blocks_from_llm_response(response: str) -> List[str]:
@@ -204,7 +206,7 @@ def get_json_blocks_from_llm_response(response: str) -> List[str]:
 
         return json_blocks
     except Exception as e:
-        logging.error(f"提取JSON代码块失败: {str(e)}")
+        current_app.logger.error(f"提取JSON代码块失败: {str(e)}")
         return []
 
 def get_html_blocks_from_llm_response(response: str) -> List[str]:
@@ -218,5 +220,5 @@ def get_html_blocks_from_llm_response(response: str) -> List[str]:
 
         return html_blocks
     except Exception as e:
-        logging.error(f"提取HTML代码块失败: {str(e)}")
+        current_app.logger.error(f"提取HTML代码块失败: {str(e)}")
         return []

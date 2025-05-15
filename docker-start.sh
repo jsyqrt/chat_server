@@ -252,7 +252,6 @@ services:
   app:
     environment:
       - LOG_LEVEL=${LOG_LEVEL}
-      - SF_ZCHAT_API_KEY=${SF_ZCHAT_API_KEY:-UNKNOWN}
   nginx:
     environment:
       - DEPLOY_MODE=${DEPLOY_MODE}
