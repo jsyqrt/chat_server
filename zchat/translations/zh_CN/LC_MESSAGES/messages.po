@@ -600,6 +600,10 @@ msgstr "隐私政策"
 msgid "服务条款"
 msgstr "服务条款"
 
+#: zchat/templates/index.html:272
+msgid "增值服务协议"
+msgstr "增值服务协议"
+
 #: zchat/templates/index.html:276
 msgid "关注我们"
 msgstr "关注我们"

@@ -631,6 +631,10 @@ msgstr "Privacy Policy"
 msgid "服务条款"
 msgstr "Terms of Service"
 
+#: zchat/templates/index.html:272
+msgid "增值服务协议"
+msgstr "Premium Service Agreement"
+
 #: zchat/templates/index.html:276
 msgid "关注我们"
 msgstr "Follow Us"

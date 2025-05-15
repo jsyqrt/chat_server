@@ -597,6 +597,10 @@ msgstr ""
 msgid "服务条款"
 msgstr ""
 
+#: zchat/templates/index.html:272
+msgid "增值服务协议"
+msgstr ""
+
 #: zchat/templates/index.html:276
 msgid "关注我们"
 msgstr ""

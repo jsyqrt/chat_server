@@ -234,8 +234,6 @@ else
     DEPLOY_MODE="prod"
 fi
 
-echo "SF_ZCHAT_API_KEY: ${SF_ZCHAT_API_KEY:-UNKNOWN}"
-
 # 显示Docker卷状态和信息
 echo "检查Docker卷状态..."
 echo "现有Docker卷:"
