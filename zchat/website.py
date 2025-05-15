@@ -2,10 +2,10 @@ from flask import Blueprint, render_template, request, redirect, url_for, send_f
 
 bp = Blueprint('website', __name__)
 
-@bp.route('/')
-def index():
-    """Voylead官网首页"""
-    return render_template('index.html')
+# @bp.route('/')
+# def index():
+#     """Voylead官网首页"""
+#     return render_template('index.html')
 
 @bp.route('/favicon.ico')
 def favicon():
