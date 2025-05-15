@@ -166,16 +166,11 @@ class PaddleService:
             tuple: (data, signature)
         """
         try:
-            if request.method == 'POST':
-                # 获取签名
-                signature = request.headers.get('Paddle-Signature')
-                # 处理表单数据
-                data = request.form.to_dict()
-            else:
-                # 获取签名
-                signature = request.args.get('p_signature')
-                # 处理查询参数
-                data = request.args.to_dict()
+            # 获取签名
+            signature = request.headers.get('Paddle-Signature')
+
+            # 处理JSON数据
+            data = request.json if request.is_json else {}
 
             return data, signature
         except Exception as e:

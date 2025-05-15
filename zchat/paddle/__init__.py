@@ -29,19 +29,32 @@ def paddle_webhook():
             current_app.logger.warning("Paddle webhook verification failed")
             return "false", 400
 
-        # 获取事件类型和订单信息
-        event_type = data.get('alert_name')
-        checkout_id = data.get('checkout_id')
-        subscription_id = data.get('subscription_id')
-        passthrough = data.get('passthrough')  # 我们在这里传递订单ID
-        payment_id = data.get('p_payment_id')
+        # 获取事件类型和事件数据
+        event_type = data.get('event_type', '')
+        event_data = data.get('data', {})
 
-        current_app.logger.debug(f"Processing Paddle event: {event_type}, passthrough: {passthrough}")
+        current_app.logger.debug(f"Processing Paddle event: {event_type}")
+
+        # 从事件数据中获取信息
+        checkout_id = event_data.get('id', '')
+        subscription_id = event_data.get('subscription_id', '')
+
+        # 从自定义数据中获取订单ID
+        custom_data = event_data.get('custom_data', {})
+        order_id = custom_data.get('order_id', '')
+
+        # 获取支付ID
+        payment_id = None
+        if 'payments' in event_data:
+            payments = event_data.get('payments', [])
+            if payments and isinstance(payments, list) and len(payments) > 0:
+                payment_id = payments[0].get('id', '')
+
+        current_app.logger.debug(f"Event details: checkout_id={checkout_id}, subscription_id={subscription_id}, order_id={order_id}")
 
         # 尝试获取订单信息
-        order_id = passthrough
         if not order_id:
-            current_app.logger.warning(f"No order ID in passthrough for Paddle event: {event_type}")
+            current_app.logger.warning(f"No order ID in custom_data for Paddle event: {event_type}")
             return "true"  # 返回成功，防止Paddle重试
 
         # 获取订单对象
@@ -53,7 +66,7 @@ def paddle_webhook():
             return "true", 404  # 返回成功，防止Paddle重试
 
         # 根据事件类型处理
-        if event_type == 'payment_succeeded':
+        if event_type == 'transaction.completed':
             # 支付成功事件
             current_app.logger.debug(f"Payment succeeded for order {order_id}")
 
@@ -68,7 +81,7 @@ def paddle_webhook():
             # 处理订单
             process_successful_payment(order)
 
-        elif event_type == 'subscription_created':
+        elif event_type == 'subscription.created':
             # 订阅创建事件
             current_app.logger.debug(f"Subscription created for order {order_id}, subscription id: {subscription_id}")
 
@@ -79,22 +92,7 @@ def paddle_webhook():
                 order.payment_time = time.time()
             db.session.commit()
 
-        elif event_type == 'subscription_payment_succeeded':
-            # 订阅支付成功
-            current_app.logger.debug(f"Subscription payment succeeded for order {order_id}")
-
-            # 更新订单状态
-            if order.status != OrderStatus.PAID.value:
-                order.status = OrderStatus.PAID.value
-                order.payment_time = time.time()
-                order.paddle_payment_id = payment_id
-                order.transaction_id = payment_id
-                db.session.commit()
-
-                # 处理订单
-                process_successful_payment(order)
-
-        elif event_type == 'subscription_cancelled':
+        elif event_type == 'subscription.canceled':
             # 订阅取消
             current_app.logger.debug(f"Subscription cancelled for order {order_id}")
 
@@ -112,7 +110,7 @@ def paddle_webhook():
                 user_ops = UserOps(db.session)
                 user_ops.update_account_type(user_id, 'free')
 
-        elif event_type == 'payment_refunded':
+        elif event_type == 'transaction.refunded':
             # 支付退款
             current_app.logger.debug(f"Payment refunded for order {order_id}")
 
