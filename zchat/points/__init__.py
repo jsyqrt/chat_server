@@ -125,7 +125,7 @@ def purchase_points():
 
     # 获取套餐信息
     packages = {
-        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A"), "paddle_product_id": "12345"},
+        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A"), "paddle_product_id": "pro_01jv4wdygn2aeg2wvkke207q7h"},
         2: {"points": 3000, "price": 28.0, "name": _("积分套餐B"), "paddle_product_id": "12346"},
         3: {"points": 5000, "price": 45.0, "name": _("积分套餐C"), "paddle_product_id": "12347"},
     }
