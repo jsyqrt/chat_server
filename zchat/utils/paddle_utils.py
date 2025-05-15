@@ -49,12 +49,12 @@ class PaddleService:
     """Paddle服务类"""
 
     @staticmethod
-    def generate_checkout_url_api(price_id, customer_email=None, customer_name=None, passthrough=None, title=None, custom_message=None):
+    def generate_checkout_url_api(product_id, customer_email=None, customer_name=None, passthrough=None, title=None, custom_message=None):
         """
         通过调用Paddle API生成结账URL
 
         Args:
-            price_id (str): Paddle价格ID
+            product_id (str): Paddle产品ID
             customer_email (str, optional): 客户电子邮件
             customer_name (str, optional): 客户姓名
             passthrough (str or dict, optional): 传递给webhook的数据（通常是订单ID）
@@ -66,15 +66,13 @@ class PaddleService:
         """
         try:
             # 检查配置
-            if not paddle_config.vendor_id or not paddle_config.api_key:
-                current_app.logger.error("Paddle not properly configured")
+            if not paddle_config.api_key:
+                current_app.logger.error("Paddle API key not configured")
                 return None
 
             # 准备API请求数据
             checkout_data = {
-                "price_id": price_id,
-                "vendor_id": paddle_config.vendor_id,
-                "vendor_auth_code": paddle_config.api_key
+                "product_id": product_id
             }
 
             # 添加可选参数
@@ -97,13 +95,20 @@ class PaddleService:
             if custom_message:
                 checkout_data['custom_message'] = custom_message
 
+            # 准备headers和认证信息
+            headers = {
+                "Authorization": f"Bearer {paddle_config.api_key}",
+                "Content-Type": "application/json"
+            }
+
             # 调用Paddle API创建结账URL
             api_url = f"{paddle_config.api_base_url}/product/generate_pay_link"
             current_app.logger.debug(f"Calling Paddle API to generate checkout URL: {api_url}")
 
             response = requests.post(
                 api_url,
-                data=checkout_data
+                json=checkout_data,
+                headers=headers
             )
 
             # 检查响应
@@ -143,7 +148,7 @@ class PaddleService:
         try:
             # 使用API生成结账URL
             return PaddleService.generate_checkout_url_api(
-                price_id=price_id,
+                product_id=price_id,  # 在新版本API中，price_id可以作为product_id使用
                 customer_email=customer_email,
                 customer_name=customer_name,
                 passthrough=passthrough,
