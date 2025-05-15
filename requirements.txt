@@ -68,3 +68,5 @@ Flask-Mail==0.9.1
 
 # 国际化
 Flask-Babel==4.0.0
+
+paddle-python-sdk==1.6.0

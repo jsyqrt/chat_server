@@ -21,8 +21,8 @@ def paddle_webhook():
         data, signature = PaddleService.parse_webhook_data(request)
         current_app.logger.debug(f"Received Paddle webhook: {json.dumps(data, indent=4, ensure_ascii=False)}")
 
-        # 验证通知的真实性
-        verify_result = PaddleService.verify_webhook_signature(data, signature)
+        # 使用SDK验证通知的真实性
+        verify_result = PaddleService.verify_webhook_with_sdk(request)
         current_app.logger.debug(f"Webhook verification result: {verify_result}")
 
         if not verify_result:

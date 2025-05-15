@@ -6,13 +6,14 @@ import hashlib
 import requests
 from urllib.parse import parse_qs
 from flask import current_app
+from paddle_billing.Notifications import Secret, Verifier
 
 class PaddleConfig:
     """Paddle配置类"""
     def __init__(self, app=None):
         self.vendor_id = None
         self.api_key = None
-        self.public_key = None
+        self.webhook_secret_key = None
         self.sandbox_mode = None
         self.api_base_url = None
         self.webhook_url = None
@@ -25,7 +26,7 @@ class PaddleConfig:
         """从Flask应用配置中初始化Paddle配置"""
         self.vendor_id = app.config.get('PADDLE_VENDOR_ID')
         self.api_key = app.config.get('PADDLE_API_KEY')
-        self.public_key = app.config.get('PADDLE_PUBLIC_KEY')
+        self.webhook_secret_key = app.config.get('PADDLE_WEBHOOK_SECRET_KEY')
         self.sandbox_mode = app.config.get('PADDLE_SANDBOX_MODE', False)
 
         # API URL
@@ -124,61 +125,33 @@ class PaddleService:
         )
 
     @staticmethod
-    def verify_webhook_signature(data, signature):
+    def verify_webhook_with_sdk(request):
         """
-        验证Paddle webhook签名
+        使用Paddle SDK验证webhook完整性
 
         Args:
-            data (dict): Webhook数据
-            signature (str): 签名
+            request: Flask请求对象
 
         Returns:
             bool: 验证是否成功
         """
         try:
             # 检查配置
-            if not paddle_config.public_key:
-                current_app.logger.error("Paddle public key not configured")
+            if not paddle_config.webhook_secret_key:
+                current_app.logger.error("Paddle webhook secret key not configured")
                 return False
 
-            # 按字母顺序排序数据
-            sorted_data = sorted([f"{k}={v}" for k, v in data.items()])
-            message = "\n".join(sorted_data)
+            # 使用Paddle SDK验证
+            integrity_check = Verifier().verify(request, Secret(paddle_config.webhook_secret_key))
 
-            # 使用PHP serialize格式 (特定于Paddle使用的序列化格式)
-            # For simplicity, we use the sorted string instead
-
-            # 验证签名
-            from cryptography.hazmat.primitives import serialization, hashes
-            from cryptography.hazmat.primitives.asymmetric import padding
-            from cryptography.hazmat.backends import default_backend
-            import base64
-
-            # 加载公钥
-            public_key_str = paddle_config.public_key
-            if '-----BEGIN PUBLIC KEY-----' not in public_key_str:
-                public_key_str = f"-----BEGIN PUBLIC KEY-----\n{public_key_str}\n-----END PUBLIC KEY-----"
-
-            public_key = serialization.load_pem_public_key(
-                public_key_str.encode('utf-8'),
-                backend=default_backend()
-            )
-
-            # 验证签名
-            try:
-                public_key.verify(
-                    base64.b64decode(signature),
-                    message.encode('utf-8'),
-                    padding.PKCS1v15(),
-                    hashes.SHA1()
-                )
-                current_app.logger.debug("Paddle webhook signature verification successful")
+            if integrity_check:
+                current_app.logger.debug("Paddle webhook verification successful using SDK")
                 return True
-            except Exception as e:
-                current_app.logger.warning(f"Paddle webhook signature verification failed: {str(e)}")
+            else:
+                current_app.logger.warning("Paddle webhook verification failed using SDK")
                 return False
         except Exception as e:
-            current_app.logger.error(f"Failed to verify Paddle webhook signature: {str(e)}")
+            current_app.logger.error(f"Failed to verify Paddle webhook using SDK: {str(e)}")
             return False
 
     @staticmethod
