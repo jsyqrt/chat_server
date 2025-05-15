@@ -3,6 +3,7 @@ from prometheus_flask_exporter import PrometheusMetrics
 from prometheus_client import Counter, Histogram, Gauge, generate_latest
 import time  # Add import for time module
 import traceback
+import werkzeug.exceptions
 
 bp = Blueprint('monitoring', __name__)
 
@@ -128,8 +129,12 @@ def init_app(app):
         except Exception as logging_error:
             app.logger.error(f"错误处理器中出现异常: {str(logging_error)}")
 
-        # 继续传递异常
-        raise e
+        # 对于 404 错误，返回适当的响应而不是重新抛出异常
+        if isinstance(e, werkzeug.exceptions.NotFound):
+            return Response("Not Found", status=404)
+
+        # 对于其他异常，返回 500 错误
+        return Response("Internal Server Error", status=500)
 
 @bp.route('/')
 def metrics():
