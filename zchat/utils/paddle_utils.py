@@ -49,17 +49,13 @@ class PaddleService:
     """Paddle服务类"""
 
     @staticmethod
-    def generate_checkout_url(price_id, customer_email=None, customer_name=None, passthrough=None, title=None, custom_message=None):
+    def generate_checkout_url(price_id, app_user_id):
         """
         生成Paddle结账URL
 
         Args:
             price_id (str): Paddle价格ID
-            customer_email (str, optional): 客户电子邮件
-            customer_name (str, optional): 客户姓名
-            passthrough (str, optional): 传递给webhook的数据（通常是订单ID）
-            title (str, optional): 结账页面标题
-            custom_message (str, optional): 自定义消息
+            app_user_id (str): 应用用户ID
 
         Returns:
             str: Paddle结账URL
@@ -71,29 +67,7 @@ class PaddleService:
                 return None
 
             # 生成结账URL，格式为：prefix?price_id=xxx
-            checkout_url = f"{paddle_config.checkout_url_prefix}?price_id={price_id}"
-
-            # 添加可选参数
-            params = {}
-            if passthrough:
-                params['passthrough'] = passthrough
-
-            if customer_email:
-                params['customer_email'] = customer_email
-
-            if customer_name:
-                params['customer_name'] = customer_name
-
-            if title:
-                params['title'] = title
-
-            if custom_message:
-                params['custom_message'] = custom_message
-
-            # 添加其他查询参数
-            if params:
-                for key, value in params.items():
-                    checkout_url += f"&{key}={value}"
+            checkout_url = f"{paddle_config.checkout_url_prefix}?price_id={price_id}&app_user_id={app_user_id}"
 
             return checkout_url
         except Exception as e:
@@ -101,16 +75,13 @@ class PaddleService:
             return None
 
     @staticmethod
-    def generate_subscription_url(price_id, customer_email=None, customer_name=None, passthrough=None, quantity=1):
+    def generate_subscription_url(price_id, app_user_id):
         """
         生成Paddle订阅URL
 
         Args:
             price_id (str): Paddle价格ID
-            customer_email (str, optional): 客户电子邮件
-            customer_name (str, optional): 客户姓名
-            passthrough (str, optional): 传递给webhook的数据（通常是订单ID）
-            quantity (int, optional): 数量
+            app_user_id (str): 应用用户ID
 
         Returns:
             str: Paddle订阅URL
@@ -118,10 +89,7 @@ class PaddleService:
         # 订阅URL现在与普通结账URL使用相同格式，只是使用不同的price_id
         return PaddleService.generate_checkout_url(
             price_id=price_id,
-            customer_email=customer_email,
-            customer_name=customer_name,
-            passthrough=passthrough,
-            custom_message=f"Quantity: {quantity}"
+            app_user_id=app_user_id
         )
 
     @staticmethod

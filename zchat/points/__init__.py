@@ -175,11 +175,6 @@ def purchase_points():
         # 导入Paddle工具
         from zchat.utils.paddle_utils import PaddleService
 
-        # 获取用户信息
-        user_info = user_ops.get_one(user_id)
-        email = user_info.email if user_info else None
-        name = user_info.nickname if user_info else None
-
         # 生成Paddle结账URL
         current_app.logger.debug(f"Generating Paddle checkout URL for order {order.order_id}")
         price_id = package.get("price_id")
@@ -190,11 +185,7 @@ def purchase_points():
 
         checkout_url = PaddleService.generate_checkout_url(
             price_id=price_id,
-            customer_email=email,
-            customer_name=name,
-            passthrough=order.order_id,  # 传递订单ID给Paddle回调
-            title=package["name"],
-            custom_message=_("购买{}积分").format(package['points'])
+            app_user_id=user_id,
         )
 
         if not checkout_url:
@@ -556,9 +547,7 @@ def subscribe():
 
         checkout_url = PaddleService.generate_subscription_url(
             price_id=price_id,
-            customer_email=email,
-            customer_name=name,
-            passthrough=order.order_id  # 传递订单ID给Paddle回调
+            app_user_id=user_id,
         )
 
         if not checkout_url:
