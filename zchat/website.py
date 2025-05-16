@@ -27,7 +27,7 @@ def payment_success():
     customer_email = request.args.get('customer_email')
     paddle_customer_id = request.args.get('paddle_customer_id')
 
-    current_app.logger.debug(f"Payment success page accessed: transaction_id={transaction_id}, email={customer_email}, customer_id={paddle_customer_id}")
+    current_app.logger.debug(f"Payment success page accessed: transaction_id={transaction_id}, email={customer_email}, customer_id={paddle_customer_id}, args={request.args}")
 
     # 查询交易信息
     payment_ops = PaymentOrderOps(db.session)

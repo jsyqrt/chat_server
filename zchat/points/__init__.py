@@ -84,6 +84,7 @@ def get_point_packages():
             "name": _("积分套餐A"),
             "points": 1000,
             "price": 10.0,
+            "paddle_price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n",
             "validity_days": 30,
             "description": _("10元购买1000积分，有效期30天")
         },
@@ -92,6 +93,7 @@ def get_point_packages():
             "name": _("积分套餐B"),
             "points": 3000,
             "price": 28.0,
+            "paddle_price_id": "pri_01jvc6jbnf5nansdc779wx3y0s",
             "validity_days": 30,
             "description": _("28元购买3000积分，有效期30天，比单独购买更优惠")
         },
@@ -100,6 +102,7 @@ def get_point_packages():
             "name": _("积分套餐C"),
             "points": 5000,
             "price": 45.0,
+            "paddle_price_id": "pri_01jvc6kkxpaqx1vyygqhq25pxr",
             "validity_days": 30,
             "description": _("45元购买5000积分，有效期30天，最实惠的选择")
         }
@@ -126,8 +129,8 @@ def purchase_points():
     # 获取套餐信息
     packages = {
         1: {"points": 1000, "price": 10.0, "name": _("积分套餐A"), "price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n"},
-        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B"), "price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n"},
-        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C"), "price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n"},
+        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B"), "price_id": "pri_01jvc6jbnf5nansdc779wx3y0s"},
+        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C"), "price_id": "pri_01jvc6kkxpaqx1vyygqhq25pxr"},
     }
 
     if package_id not in packages:
@@ -435,6 +438,7 @@ def get_subscription_plans():
             "type": AccountType.FREE.value,
             "name": _("免费账户"),
             "price": PointsOps.PRICES[AccountType.FREE.value],
+            "paddle_price_id": "",
             "cycle": "unlimited",
             "daily_points": PointsOps.DAILY_POINTS[AccountType.FREE.value],
             "description": _("免费账户，每天{}积分").format(PointsOps.DAILY_POINTS[AccountType.FREE.value])
@@ -444,6 +448,7 @@ def get_subscription_plans():
             "type": SubscriptionType.BASIC.value,
             "name": _("基础会员"),
             "price": PointsOps.PRICES[AccountType.BASIC.value],
+            "paddle_price_id": "pri_01jv2k6rfqqvgfv9bv4zvqe6zw",
             "cycle": "month",
             "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
             "description": _("每月{}元，每天{}积分").format(PointsOps.PRICES[AccountType.BASIC.value], PointsOps.DAILY_POINTS[AccountType.BASIC.value])
@@ -453,6 +458,7 @@ def get_subscription_plans():
             "type": SubscriptionType.PRO.value,
             "name": _("高级会员"),
             "price": PointsOps.PRICES[AccountType.PRO.value],
+            "paddle_price_id": "pri_01jv2keq8ypah0hesppaaens6e",
             "cycle": "year",
             "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
             "description": _("每年{}元(相当于每月{}元)，每天{}积分，性价比高").format(PointsOps.PRICES[AccountType.PRO.value], PointsOps.PRICES[AccountType.PRO.value] / 12, PointsOps.DAILY_POINTS[AccountType.PRO.value])
