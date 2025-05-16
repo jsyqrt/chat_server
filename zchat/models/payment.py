@@ -137,6 +137,14 @@ class PaymentOrderOps:
             current_app.logger.error(f"Failed to get payment order by ID: {str(e)}")
             return None
 
+    def get_latest_order_by_user_id(self, user_id):
+        """根据用户ID获取最新订单"""
+        try:
+            return self.session.query(PaymentOrder).filter_by(user_id=user_id).order_by(db.desc(PaymentOrder.created_at)).first()
+        except Exception as e:
+            current_app.logger.error(f"Failed to get payment order by user ID: {str(e)}")
+            return None
+
     def update_order_status(self, order_id, status, transaction_id=None):
         """
         更新订单状态

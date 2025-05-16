@@ -41,7 +41,8 @@ def paddle_webhook():
 
         # 从自定义数据中获取订单ID
         custom_data = event_data.get('custom_data', {})
-        order_id = custom_data.get('order_id', '')
+        user_id_str = custom_data.get('appUserId', '')
+        user_id = int(user_id_str) if user_id_str else None
 
         # 获取支付ID
         payment_id = None
@@ -50,20 +51,22 @@ def paddle_webhook():
             if payments and isinstance(payments, list) and len(payments) > 0:
                 payment_id = payments[0].get('id', '')
 
-        current_app.logger.debug(f"Event details: checkout_id={checkout_id}, subscription_id={subscription_id}, order_id={order_id}")
+        current_app.logger.debug(f"Event details: checkout_id={checkout_id}, subscription_id={subscription_id}, user_id={user_id}")
 
         # 尝试获取订单信息
-        if not order_id:
-            current_app.logger.warning(f"No order ID in custom_data for Paddle event: {event_type}")
+        if not user_id:
+            current_app.logger.warning(f"No user ID in custom_data for Paddle event: {event_type}")
             return "true"  # 返回成功，防止Paddle重试
 
         # 获取订单对象
         payment_ops = PaymentOrderOps(db.session)
-        order = payment_ops.get_order_by_id(order_id)
+        order = payment_ops.get_latest_order_by_user_id(user_id)
 
         if not order:
-            current_app.logger.warning(f"Order not found: {order_id}")
+            current_app.logger.warning(f"Order not found: {user_id}")
             return "true", 404  # 返回成功，防止Paddle重试
+
+        order_id = order.order_id
 
         # 根据事件类型处理
         if event_type == 'transaction.completed':
