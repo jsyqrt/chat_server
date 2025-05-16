@@ -40,7 +40,7 @@ def paddle_webhook():
         subscription_id = event_data.get('subscription_id', '')
 
         # 从自定义数据中获取订单ID
-        custom_data = event_data.get('custom_data', {})
+        custom_data = event_data.get('custom_data', {}) or {}
         user_id_str = custom_data.get('appUserId', '')
         user_id = int(user_id_str) if user_id_str else None
 
