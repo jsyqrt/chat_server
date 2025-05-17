@@ -128,9 +128,9 @@ def purchase_points():
 
     # 获取套餐信息
     packages = {
-        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A"), "price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n"},
-        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B"), "price_id": "pri_01jvc6jbnf5nansdc779wx3y0s"},
-        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C"), "price_id": "pri_01jvc6kkxpaqx1vyygqhq25pxr"},
+        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A"), "paddle_price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n"},
+        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B"), "paddle_price_id": "pri_01jvc6jbnf5nansdc779wx3y0s"},
+        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C"), "paddle_price_id": "pri_01jvc6kkxpaqx1vyygqhq25pxr"},
     }
 
     if package_id not in packages:
@@ -147,6 +147,7 @@ def purchase_points():
         item_id=package_id,
         amount=package["price"],
         payment_method=payment_method,
+        paddle_price_id=package["paddle_price_id"],
         extra_data={"points": package["points"]}
     )
 
@@ -180,7 +181,7 @@ def purchase_points():
 
         # 生成Paddle结账URL
         current_app.logger.debug(f"Generating Paddle checkout URL for order {order.order_id}")
-        price_id = package.get("price_id")
+        price_id = package.get("paddle_price_id")
 
         if not price_id:
             current_app.logger.error(f"No Paddle price ID configured for package {package_id}")
@@ -488,13 +489,13 @@ def subscribe():
             "price": PointsOps.PRICES[AccountType.BASIC.value],
             "name": _("基础会员(月)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
-            "price_id": "pri_01jv2k6rfqqvgfv9bv4zvqe6zw"
+            "paddle_price_id": "pri_01jv2k6rfqqvgfv9bv4zvqe6zw"
         },
         SubscriptionType.PRO.value: {
             "price": PointsOps.PRICES[AccountType.PRO.value],
             "name": _("高级会员(年)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
-            "price_id": "pri_01jv2keq8ypah0hesppaaens6e"
+            "paddle_price_id": "pri_01jv2keq8ypah0hesppaaens6e"
         }
     }
 
@@ -510,6 +511,7 @@ def subscribe():
         item_id=item_id,
         amount=plan["price"],
         payment_method=payment_method,
+        paddle_price_id=plan["paddle_price_id"],
         extra_data={"subscription_type": subscription_type}
     )
 
@@ -545,7 +547,7 @@ def subscribe():
 
         # 生成Paddle订阅URL
         current_app.logger.debug(f"Generating Paddle subscription URL for order {order.order_id}")
-        price_id = plan.get("price_id")
+        price_id = plan.get("paddle_price_id")
 
         if not price_id:
             current_app.logger.error(f"No Paddle price ID configured for subscription type {subscription_type}")

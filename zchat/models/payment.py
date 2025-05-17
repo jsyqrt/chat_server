@@ -41,6 +41,7 @@ class PaymentOrder(db.Model):
     paddle_checkout_id = db.Column(db.String(64), nullable=True)  # Paddle checkout ID
     paddle_subscription_id = db.Column(db.String(64), nullable=True)  # Paddle subscription ID
     paddle_payment_id = db.Column(db.String(64), nullable=True)  # Paddle payment ID
+    paddle_price_id = db.Column(db.String(64), nullable=True)  # Paddle price ID
 
     # 附加数据（JSON格式的字符串）
     # 积分购买：{"points": 积分数量}
@@ -54,7 +55,14 @@ class PaymentOrder(db.Model):
     __table_args__ = (
         db.Index('index_PAYMENT_ORDER_order_id', 'order_id'),
         db.Index('index_PAYMENT_ORDER_user_id', 'user_id'),
+        db.Index('index_PAYMENT_ORDER_order_type', 'order_type'),
         db.Index('index_PAYMENT_ORDER_status', 'status'),
+        db.Index('index_PAYMENT_ORDER_payment_method', 'payment_method'),
+        db.Index('index_PAYMENT_ORDER_transaction_id', 'transaction_id'),
+        db.Index('index_PAYMENT_ORDER_paddle_checkout_id', 'paddle_checkout_id'),
+        db.Index('index_PAYMENT_ORDER_paddle_subscription_id', 'paddle_subscription_id'),
+        db.Index('index_PAYMENT_ORDER_paddle_payment_id', 'paddle_payment_id'),
+        db.Index('index_PAYMENT_ORDER_paddle_price_id', 'paddle_price_id'),
         db.Index('index_PAYMENT_ORDER_created_at', 'created_at'),
     )
 
@@ -73,6 +81,7 @@ class PaymentOrder(db.Model):
             'paddle_checkout_id': self.paddle_checkout_id,
             'paddle_subscription_id': self.paddle_subscription_id,
             'paddle_payment_id': self.paddle_payment_id,
+            'paddle_price_id': self.paddle_price_id,
             'extra_data': self.extra_data,
             'created_at': self.created_at,
             'updated_at': self.updated_at
@@ -83,7 +92,7 @@ class PaymentOrderOps:
     def __init__(self, session):
         self.session = session
 
-    def create_order(self, user_id, order_type, item_id, amount, payment_method, extra_data=None):
+    def create_order(self, user_id, order_type, item_id, amount, payment_method, paddle_price_id=None, extra_data=None):
         """
         创建支付订单
 
@@ -118,6 +127,7 @@ class PaymentOrderOps:
                 amount=amount,
                 status=OrderStatus.PENDING.value,
                 payment_method=payment_method,
+                paddle_price_id=paddle_price_id,
                 extra_data=extra_data_str
             )
 
@@ -137,12 +147,12 @@ class PaymentOrderOps:
             current_app.logger.error(f"Failed to get payment order by ID: {str(e)}")
             return None
 
-    def get_latest_order_by_user_id(self, user_id):
-        """根据用户ID获取最新订单"""
+    def get_paddle_order_by_user_id_and_price_id(self, user_id, price_id):
+        """根据用户ID和Paddle价格ID获取订单"""
         try:
-            return self.session.query(PaymentOrder).filter_by(user_id=user_id).order_by(db.desc(PaymentOrder.created_at)).first()
+            return self.session.query(PaymentOrder).filter_by(user_id=user_id, paddle_price_id=price_id, payment_method=PaymentMethod.PADDLE.value).order_by(db.desc(PaymentOrder.created_at)).first()
         except Exception as e:
-            current_app.logger.error(f"Failed to get payment order by user ID: {str(e)}")
+            current_app.logger.error(f"Failed to get payment order by user ID and price ID: {str(e)}")
             return None
 
     def update_order_status(self, order_id, status, transaction_id=None):

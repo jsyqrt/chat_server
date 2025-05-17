@@ -38,6 +38,7 @@ def paddle_webhook():
         # 从事件数据中获取信息
         checkout_id = event_data.get('id', '')
         subscription_id = event_data.get('subscription_id', '')
+        price_id = event_data.get('items', [{}])[0].get('price_id', 'empty_price_id')
 
         # 从自定义数据中获取订单ID
         custom_data = event_data.get('custom_data', {}) or {}
@@ -51,7 +52,7 @@ def paddle_webhook():
             if payments and isinstance(payments, list) and len(payments) > 0:
                 payment_id = payments[0].get('id', '')
 
-        current_app.logger.debug(f"Event details: checkout_id={checkout_id}, subscription_id={subscription_id}, user_id={user_id}")
+        current_app.logger.debug(f"Event details: checkout_id={checkout_id}, subscription_id={subscription_id}, user_id={user_id}, price_id={price_id}")
 
         # 尝试获取订单信息
         if not user_id:
@@ -60,10 +61,10 @@ def paddle_webhook():
 
         # 获取订单对象
         payment_ops = PaymentOrderOps(db.session)
-        order = payment_ops.get_latest_order_by_user_id(user_id)
+        order = payment_ops.get_paddle_order_by_user_id_and_price_id(user_id, price_id)
 
         if not order:
-            current_app.logger.warning(f"Order not found: {user_id}")
+            current_app.logger.warning(f"Order not found: {user_id}, price_id={price_id}")
             return "true", 404  # 返回成功，防止Paddle重试
 
         order_id = order.order_id
