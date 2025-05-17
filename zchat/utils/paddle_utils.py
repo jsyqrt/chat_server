@@ -212,32 +212,102 @@ class PaddleService:
     @staticmethod
     def get_prices_by_paddle_price_ids(paddle_price_ids: list[str], country_code: str):
         """
-        根据Paddle价格ID获取价格ID
+        根据Paddle价格ID获取价格信息
+
+        Args:
+            paddle_price_ids (list[str]): Paddle价格ID列表
+            country_code (str): 国家代码，如 'CN' 或 'US'
+
+        Returns:
+            dict: 包含价格信息的字典，格式为 {price_id: {'formatted_price': '$9.99', 'amount': 999, 'currency_code': 'USD'}}
+            如果出错，返回None
         """
-        try:
-            params = {
-                "items": [
-                    {"quantity": 1, "price_id": paddle_price_id}
-                    for paddle_price_id in paddle_price_ids
-                ],
-                "address": {
-                    "country_code": country_code
+        max_retries = 2
+        retry_count = 0
+
+        while retry_count <= max_retries:
+            try:
+                # 检查配置
+                if not paddle_config.api_key:
+                    current_app.logger.error("Paddle API key not configured")
+                    return None
+
+                # 确保country_code是有效的
+                if not country_code or len(country_code) != 2:
+                    current_app.logger.warning(f"Invalid country code: {country_code}, using 'US' as default")
+                    country_code = "US"
+
+                params = {
+                    "items": [
+                        {"quantity": 1, "price_id": paddle_price_id}
+                        for paddle_price_id in paddle_price_ids
+                    ],
+                    "address": {
+                        "country_code": country_code
+                    }
                 }
-            }
 
-            url = f"{paddle_config.api_base_url}/pricing-preview"
-            headers = {
-                "Authorization": f"Bearer {paddle_config.api_key}"
-            }
+                url = f"{paddle_config.api_base_url}/pricing-preview"
+                headers = {
+                    "Authorization": f"Bearer {paddle_config.api_key}",
+                    "Content-Type": "application/json"
+                }
 
-            response = requests.post(url, headers=headers, json=params)
-            response_json = response.json()
+                # 设置超时，以防API响应慢
+                timeout = 5.0  # 5秒超时
+                response = requests.post(url, headers=headers, json=params, timeout=timeout)
 
-            data = response_json.get('data', {})
-            details = data.get('details', {})
-            line_items = details.get('line_items', [{}])
-            prices = [line_item.get('formatted_totals', {}).get('total') for line_item in line_items]
-            return prices
-        except Exception as e:
-            current_app.logger.error(f"Failed to get prices by paddle price IDs: {str(e)}")
-            return None
+                # 检查响应状态码
+                if response.status_code != 200:
+                    current_app.logger.error(f"Paddle API returned error status: {response.status_code}, response: {response.text}")
+                    retry_count += 1
+                    if retry_count <= max_retries:
+                        current_app.logger.info(f"Retrying Paddle API request, attempt {retry_count}/{max_retries}")
+                        continue
+                    return None
+
+                response_json = response.json()
+
+                # 解析响应
+                data = response_json.get('data', {})
+                details = data.get('details', {})
+                line_items = details.get('line_items', [])
+
+                result = {}
+                for i, item in enumerate(line_items):
+                    if i < len(paddle_price_ids):
+                        price_id = paddle_price_ids[i]
+                        formatted_price = item.get('formatted_totals', {}).get('total')
+                        unit_price = item.get('price', {}).get('unit_price', {})
+                        amount = unit_price.get('amount')
+                        currency_code = unit_price.get('currency_code')
+
+                        result[price_id] = {
+                            'formatted_price': formatted_price,
+                            'amount': int(amount) if amount else 0,
+                            'currency_code': currency_code
+                        }
+
+                # 验证结果是否包含所有请求的价格ID
+                if len(result) != len(paddle_price_ids):
+                    missing_ids = set(paddle_price_ids) - set(result.keys())
+                    current_app.logger.warning(f"Some price IDs were not found in the Paddle response: {missing_ids}")
+
+                return result
+            except requests.Timeout:
+                current_app.logger.error(f"Paddle API request timed out")
+                retry_count += 1
+                if retry_count <= max_retries:
+                    current_app.logger.info(f"Retrying Paddle API request after timeout, attempt {retry_count}/{max_retries}")
+                else:
+                    current_app.logger.error("Max retries reached after timeout")
+                    return None
+            except Exception as e:
+                current_app.logger.error(f"Failed to get prices by paddle price IDs: {str(e)}")
+                retry_count += 1
+                if retry_count <= max_retries:
+                    current_app.logger.info(f"Retrying Paddle API request after error, attempt {retry_count}/{max_retries}")
+                else:
+                    return None
+
+        return None

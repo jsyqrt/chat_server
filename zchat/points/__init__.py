@@ -26,20 +26,98 @@ class PaddlePriceService:
         self.prefix = "paddle_price"
 
     def get_prices(self, paddle_price_ids):
+        """
+        获取Paddle价格信息，优先从缓存中获取，缓存不存在则从API获取并缓存
+
+        Args:
+            paddle_price_ids (list): Paddle价格ID列表
+
+        Returns:
+            dict: 价格ID到价格信息的映射
+        """
         country_code = get_country_code()
-
         cache_key = f"{self.prefix}:{':'.join(paddle_price_ids)}:{country_code}"
-        prices = self.redis.get(cache_key)
-        current_app.logger.debug(f"Paddle prices from cache: {prices}")
-        if prices:
-            prices = json.loads(prices)
-            if len(prices) == len(paddle_price_ids):
-                return prices
 
-        prices = PaddleService.get_prices_by_paddle_price_ids(paddle_price_ids, country_code)
-        current_app.logger.debug(f"Paddle prices from API: {prices}")
-        self.redis.set(cache_key, json.dumps(prices), ex=60 * 60 * 1)
-        return prices
+        # 尝试从缓存获取
+        cached_data = self.redis.get(cache_key)
+        current_app.logger.debug(f"Paddle prices from cache: {cached_data}")
+
+        if cached_data:
+            try:
+                price_data = json.loads(cached_data)
+                # 验证缓存数据是否完整
+                if len(price_data) == len(paddle_price_ids):
+                    return price_data
+            except:
+                current_app.logger.warning("Failed to parse cached Paddle price data")
+
+        # 从API获取价格
+        price_data = PaddleService.get_prices_by_paddle_price_ids(paddle_price_ids, country_code)
+        current_app.logger.debug(f"Paddle prices from API: {price_data}")
+
+        if price_data:
+            # 增强价格显示，适配不同的货币和区域
+            self._enhance_price_formatting(price_data, country_code)
+            # 缓存数据，有效期1小时
+            self.redis.set(cache_key, json.dumps(price_data), ex=60 * 60)
+
+        return price_data or {}
+
+    def _enhance_price_formatting(self, price_data, country_code):
+        """
+        增强价格显示，为不同地区提供更好的价格展示
+
+        Args:
+            price_data (dict): 价格数据
+            country_code (str): 国家代码
+        """
+        # 为中国用户适配人民币显示
+        if country_code == "CN":
+            for price_id, price_info in price_data.items():
+                # 如果已经是人民币格式，确保显示为"¥xxx"格式
+                if price_info.get('currency_code') == 'CNY':
+                    formatted_price = price_info.get('formatted_price', '')
+                    # 如果不是以"¥"开头，添加正确的符号
+                    if formatted_price and not formatted_price.startswith("¥"):
+                        if formatted_price.startswith("$") or formatted_price.startswith("€"):
+                            price_info['formatted_price'] = f"¥{price_info['amount'] / 100}"
+                        else:
+                            price_info['formatted_price'] = f"¥{formatted_price}"
+
+        # 其他货币格式适配可以在这里添加
+
+    def get_price_amount(self, price_id, default_price=0):
+        """
+        获取指定价格ID的金额（数值）
+
+        Args:
+            price_id (str): Paddle价格ID
+            default_price (float): 默认价格，如果无法获取则返回此值
+
+        Returns:
+            float: 金额数值
+        """
+        price_data = self.get_prices([price_id])
+        if price_id in price_data:
+            # 转换为小数点格式，Paddle金额单位为分
+            return price_data[price_id]['amount'] / 100
+        return default_price
+
+    def get_formatted_price(self, price_id, default_formatted=""):
+        """
+        获取指定价格ID的格式化价格字符串
+
+        Args:
+            price_id (str): Paddle价格ID
+            default_formatted (str): 默认格式化价格，如果无法获取则返回此值
+
+        Returns:
+            str: 格式化价格字符串
+        """
+        price_data = self.get_prices([price_id])
+        if price_id in price_data:
+            return price_data[price_id]['formatted_price']
+        return default_formatted
 
 bp = Blueprint('points', __name__, url_prefix='/points')
 
@@ -107,39 +185,31 @@ def get_costs_and_rewards():
 def get_point_packages():
     """获取积分套餐列表"""
     try:
-
-        paddle_price_service = PaddlePriceService(current_app.redis)
-        prices = paddle_price_service.get_prices(PointsOps.PADDLE_PACKAGE_PRICE_IDS)
-        current_app.logger.debug(f"Paddle package prices: {prices}")
-
         # 定义积分套餐
         packages = [
             {
                 "id": 1,
                 "name": _("积分套餐A"),
                 "points": 1000,
-                "price": PointsOps.PACKAGE_PRICES[0],
                 "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[0],
                 "validity_days": 30,
-                "description": prices[0]
+                **PointsOps.get_package_price(1, redis_client=current_app.redis)
             },
             {
                 "id": 2,
                 "name": _("积分套餐B"),
                 "points": 3000,
-                "price": PointsOps.PACKAGE_PRICES[1],
                 "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[1],
                 "validity_days": 30,
-                "description": prices[1]
+                **PointsOps.get_package_price(2, redis_client=current_app.redis)
             },
             {
                 "id": 3,
                 "name": _("积分套餐C"),
                 "points": 5000,
-                "price": PointsOps.PACKAGE_PRICES[2],
                 "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[2],
                 "validity_days": 30,
-                "description": prices[2]
+                **PointsOps.get_package_price(3, redis_client=current_app.redis)
             }
         ]
 
@@ -166,15 +236,28 @@ def purchase_points():
 
     # 获取套餐信息
     packages = {
-        1: {"points": 1000, "price": PointsOps.PACKAGE_PRICES[0], "name": _("积分套餐A"), "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[0]},
-        2: {"points": 3000, "price": PointsOps.PACKAGE_PRICES[1], "name": _("积分套餐B"), "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[1]},
-        3: {"points": 5000, "price": PointsOps.PACKAGE_PRICES[2], "name": _("积分套餐C"), "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[2]},
+        1: {"points": 1000, "name": _("积分套餐A"), "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[0]},
+        2: {"points": 3000, "name": _("积分套餐B"), "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[1]},
+        3: {"points": 5000, "name": _("积分套餐C"), "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[2]},
     }
 
     if package_id not in packages:
         return jsonify({"error": "Invalid package ID"}), 400
 
     package = packages[package_id]
+    paddle_price_id = package["paddle_price_id"]
+
+    # 使用集中的价格获取方法，根据支付方式获取正确的价格
+    country_code = "CN" if payment_method == PaymentMethod.ALIPAY.value else None
+    price_info = PointsOps.get_package_price(
+        package_id,
+        payment_method=payment_method,
+        redis_client=current_app.redis,
+        country_code=country_code
+    )
+    package_price = price_info['price']
+
+    current_app.logger.debug(f"Package price for {package_id} with payment method {payment_method}: {package_price}")
 
     # 创建支付订单
     payment_ops = PaymentOrderOps(db.session)
@@ -183,9 +266,9 @@ def purchase_points():
         user_id=user_id,
         order_type=OrderType.POINTS_PURCHASE.value,
         item_id=package_id,
-        amount=package["price"],
+        amount=package_price,
         payment_method=payment_method,
-        paddle_price_id=package["paddle_price_id"],
+        paddle_price_id=paddle_price_id,
         extra_data={"points": package["points"]}
     )
 
@@ -203,7 +286,7 @@ def purchase_points():
         message = AlipayService.generate_order_string(
             subject=package["name"],
             out_trade_no=order.order_id,
-            total_amount=package["price"],
+            total_amount=package_price,
             body=_("购买{}积分").format(package['points'])
         )
 
@@ -250,7 +333,7 @@ def purchase_points():
     return jsonify({
         "order_id": order.order_id,
         "points": package["points"],
-        "price": package["price"],
+        "price": package_price,
         "payment_method": payment_method,
         "status": OrderStatus.PENDING.value,
         "message": message
@@ -470,45 +553,45 @@ def get_user_orders():
 @bp.route('/subscription/plans', methods=['GET'])
 @login_required
 def get_subscription_plans():
-
-    paddle_price_service = PaddlePriceService(current_app.redis)
-    prices = paddle_price_service.get_prices(PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS)
-
     """获取订阅计划列表"""
-    plans = [
-        {
-            "id": 0,
-            "type": AccountType.FREE.value,
-            "name": _("免费账户"),
-            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.FREE.value],
-            "paddle_price_id": "",
-            "cycle": "unlimited",
-            "daily_points": PointsOps.DAILY_POINTS[AccountType.FREE.value],
-            "description": _("免费账户，每天{}积分").format(PointsOps.DAILY_POINTS[AccountType.FREE.value])
-        },
-        {
-            "id": 1,
-            "type": SubscriptionType.BASIC.value,
-            "name": _("基础会员"),
-            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.BASIC.value],
-            "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[0],
-            "cycle": "month",
-            "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
-            "description": prices[0]
-        },
-        {
-            "id": 2,
-            "type": SubscriptionType.PRO.value,
-            "name": _("高级会员"),
-            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.PRO.value],
-            "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[1],
-            "cycle": "year",
-            "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
-            "description": prices[1]
-        }
-    ]
+    try:
+        from zchat.models.subscription import SubscriptionType, AccountType
 
-    return jsonify({"plans": plans})
+        plans = [
+            {
+                "id": 0,
+                "type": AccountType.FREE.value,
+                "name": _("免费账户"),
+                "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.FREE.value],
+                "paddle_price_id": "",
+                "cycle": "unlimited",
+                "daily_points": PointsOps.DAILY_POINTS[AccountType.FREE.value],
+                "description": _("免费账户，每天{}积分").format(PointsOps.DAILY_POINTS[AccountType.FREE.value])
+            },
+            {
+                "id": 1,
+                "type": SubscriptionType.BASIC.value,
+                "name": _("基础会员"),
+                "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[0],
+                "cycle": "month",
+                "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
+                **PointsOps.get_subscription_price(SubscriptionType.BASIC.value, redis_client=current_app.redis)
+            },
+            {
+                "id": 2,
+                "type": SubscriptionType.PRO.value,
+                "name": _("高级会员"),
+                "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[1],
+                "cycle": "year",
+                "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
+                **PointsOps.get_subscription_price(SubscriptionType.PRO.value, redis_client=current_app.redis)
+            }
+        ]
+
+        return jsonify({"plans": plans})
+    except Exception as e:
+        current_app.logger.error(f"Failed to get subscription plans: {e}")
+        return jsonify({"error": "Failed to get subscription plans"}), 500
 
 @bp.route('/subscription/subscribe', methods=['POST'])
 @login_required
@@ -528,13 +611,11 @@ def subscribe():
     # 获取订阅价格和信息
     subscription_info = {
         SubscriptionType.BASIC.value: {
-            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.BASIC.value],
             "name": _("基础会员(月)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
             "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[0]
         },
         SubscriptionType.PRO.value: {
-            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.PRO.value],
             "name": _("高级会员(年)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
             "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[1]
@@ -542,6 +623,19 @@ def subscribe():
     }
 
     plan = subscription_info[subscription_type]
+    paddle_price_id = plan["paddle_price_id"]
+
+    # 使用集中的价格获取方法，根据支付方式获取正确的价格
+    country_code = "CN" if payment_method == PaymentMethod.ALIPAY.value else None
+    price_info = PointsOps.get_subscription_price(
+        subscription_type,
+        payment_method=payment_method,
+        redis_client=current_app.redis,
+        country_code=country_code
+    )
+    plan_price = price_info['price']
+
+    current_app.logger.debug(f"Subscription price for {subscription_type} with payment method {payment_method}: {plan_price}")
 
     # 创建支付订单
     current_app.logger.debug(f"Creating subscription payment order for user {user_id}, type {subscription_type}")
@@ -551,9 +645,9 @@ def subscribe():
         user_id=user_id,
         order_type=OrderType.SUBSCRIPTION.value,
         item_id=item_id,
-        amount=plan["price"],
+        amount=plan_price,
         payment_method=payment_method,
-        paddle_price_id=plan["paddle_price_id"],
+        paddle_price_id=paddle_price_id,
         extra_data={"subscription_type": subscription_type}
     )
 
@@ -570,7 +664,7 @@ def subscribe():
         message = AlipayService.generate_order_string(
             subject=plan["name"],
             out_trade_no=order.order_id,
-            total_amount=plan["price"],
+            total_amount=plan_price,
             body=_("订阅{}，每日{}积分").format(plan['name'], plan['daily_points'])
         )
 
@@ -580,12 +674,6 @@ def subscribe():
     elif payment_method == PaymentMethod.PADDLE.value:
         # 导入Paddle工具
         from zchat.utils.paddle_utils import PaddleService
-
-        # 获取用户信息
-        user_ops = UserOps(db.session)
-        user_info = user_ops.get_one(user_id)
-        email = user_info.email if user_info else None
-        name = user_info.nickname if user_info else None
 
         # 生成Paddle订阅URL
         current_app.logger.debug(f"Generating Paddle subscription URL for order {order.order_id}")
@@ -626,7 +714,7 @@ def subscribe():
     return jsonify({
         "order_id": order.order_id,
         "subscription_type": subscription_type,
-        "price": plan["price"],
+        "price": plan_price,
         "payment_method": payment_method,
         "start_time": start_time,
         "end_time": end_time,

@@ -115,8 +115,8 @@ class PointsOps:
 
     SUBSCRIPTION_PRICES = {
         AccountType.FREE.value: 0,
-        AccountType.BASIC.value: 29.9,
-        AccountType.PRO.value: 180,
+        AccountType.BASIC.value: 30,
+        AccountType.PRO.value: 300,
     }
 
     PADDLE_SUBSCRIPTION_PRICE_IDS = [
@@ -145,6 +145,156 @@ class PointsOps:
 
     # 新增：一天的秒数
     SECONDS_PER_DAY = 86400
+
+    @classmethod
+    def get_package_price(cls, package_id, payment_method=None, redis_client=None, country_code=None):
+        """
+        获取积分套餐价格
+
+        Args:
+            package_id (int): 套餐ID (1, 2, 3)
+            payment_method (str, optional): 支付方式，决定货币类型
+            redis_client: Redis客户端，用于缓存价格
+            country_code (str, optional): 国家代码，如 'CN' 或 'US'
+
+        Returns:
+            dict: 包含价格的字典 {'price': 价格数值, 'formatted_price': 格式化价格字符串}
+        """
+        try:
+            # 获取套餐对应的价格ID和默认价格
+            if package_id not in [1, 2, 3]:
+                return {"price": 0, "formatted_price": "$0.00"}
+
+            index = package_id - 1
+            price_id = cls.PADDLE_PACKAGE_PRICE_IDS[index]
+            default_price = cls.PACKAGE_PRICES[index]
+
+            # 尝试从Paddle获取动态价格
+            if redis_client:
+                from zchat.points import PaddlePriceService, get_country_code
+
+                if country_code is None:
+                    country_code = get_country_code()
+
+                price_service = PaddlePriceService(redis_client)
+                price_data = price_service.get_prices([price_id])
+
+                if price_id in price_data:
+                    price_info = price_data[price_id]
+                    # 金额单位为分，需要转换为元
+                    price = price_info['amount'] / 100
+                    formatted_price = price_info['formatted_price']
+
+                    # 支付宝支付需要使用人民币价格且格式适配
+                    if payment_method == 'alipay' and country_code == 'CN':
+                        currency_code = price_info.get('currency_code', 'USD')
+                        if currency_code != 'CNY':
+                            # 如果不是人民币，提供更好的适配
+                            current_app.logger.warning(f"Expected CNY price for Alipay payment but got {currency_code}")
+                            # 暂时使用默认价格，更好的方案是实现汇率转换
+                            return {"price": default_price, "formatted_price": f"¥{default_price}"}
+
+                    return {"price": price, "formatted_price": formatted_price}
+
+            # 如果无法获取动态价格，返回默认价格
+            formatted_price = f"${default_price}"
+            # 对于中国用户使用人民币符号
+            if country_code == 'CN':
+                formatted_price = f"¥{default_price}"
+
+            return {"price": default_price, "formatted_price": formatted_price}
+        except Exception as e:
+            current_app.logger.error(f"Failed to get package price: {str(e)}")
+            # 发生错误时返回默认价格
+            if package_id in [1, 2, 3]:
+                index = package_id - 1
+                default_price = cls.PACKAGE_PRICES[index]
+                formatted_price = f"${default_price}"
+                if country_code == 'CN':
+                    formatted_price = f"¥{default_price}"
+                return {"price": default_price, "formatted_price": formatted_price}
+            return {"price": 0, "formatted_price": "$0.00"}
+
+    @classmethod
+    def get_subscription_price(cls, subscription_type, payment_method=None, redis_client=None, country_code=None):
+        """
+        获取订阅计划价格
+
+        Args:
+            subscription_type (str): 订阅类型
+            payment_method (str, optional): 支付方式，决定货币类型
+            redis_client: Redis客户端，用于缓存价格
+            country_code (str, optional): 国家代码，如 'CN' 或 'US'
+
+        Returns:
+            dict: 包含价格的字典 {'price': 价格数值, 'formatted_price': 格式化价格字符串}
+        """
+        try:
+            from zchat.models.subscription import SubscriptionType, AccountType
+
+            # 获取订阅对应的价格ID和默认价格
+            if subscription_type == SubscriptionType.BASIC.value:
+                index = 0
+                default_price = cls.SUBSCRIPTION_PRICES[AccountType.BASIC.value]
+                suffix = "/月"
+            elif subscription_type == SubscriptionType.PRO.value:
+                index = 1
+                default_price = cls.SUBSCRIPTION_PRICES[AccountType.PRO.value]
+                suffix = "/年"
+            else:
+                return {"price": 0, "formatted_price": "$0.00"}
+
+            price_id = cls.PADDLE_SUBSCRIPTION_PRICE_IDS[index]
+
+            # 尝试从Paddle获取动态价格
+            if redis_client:
+                from zchat.points import PaddlePriceService, get_country_code
+
+                if country_code is None:
+                    country_code = get_country_code()
+
+                price_service = PaddlePriceService(redis_client)
+                price_data = price_service.get_prices([price_id])
+
+                if price_id in price_data:
+                    price_info = price_data[price_id]
+                    # 金额单位为分，需要转换为元
+                    price = price_info['amount'] / 100
+                    formatted_price = price_info['formatted_price']
+
+                    # 支付宝支付需要使用人民币价格且格式适配
+                    if payment_method == 'alipay' and country_code == 'CN':
+                        currency_code = price_info.get('currency_code', 'USD')
+                        if currency_code != 'CNY':
+                            # 如果不是人民币，提供更好的适配
+                            current_app.logger.warning(f"Expected CNY price for Alipay payment but got {currency_code}")
+                            # 暂时使用默认价格，更好的方案是实现汇率转换
+                            return {"price": default_price, "formatted_price": f"¥{default_price}{suffix}"}
+
+                    return {"price": price, "formatted_price": formatted_price}
+
+            # 如果无法获取动态价格，返回默认价格
+            formatted_price = f"${default_price}{suffix}"
+            # 对于中国用户使用人民币符号
+            if country_code == 'CN':
+                formatted_price = f"¥{default_price}{suffix}"
+
+            return {"price": default_price, "formatted_price": formatted_price}
+        except Exception as e:
+            current_app.logger.error(f"Failed to get subscription price: {str(e)}")
+            # 发生错误时返回默认价格
+            if subscription_type in [SubscriptionType.BASIC.value, SubscriptionType.PRO.value]:
+                if subscription_type == SubscriptionType.BASIC.value:
+                    default_price = cls.SUBSCRIPTION_PRICES[AccountType.BASIC.value]
+                    suffix = "/月"
+                else:
+                    default_price = cls.SUBSCRIPTION_PRICES[AccountType.PRO.value]
+                    suffix = "/年"
+                formatted_price = f"${default_price}{suffix}"
+                if country_code == 'CN':
+                    formatted_price = f"¥{default_price}{suffix}"
+                return {"price": default_price, "formatted_price": formatted_price}
+            return {"price": 0, "formatted_price": "$0.00"}
 
     def get_costs_and_rewards(self):
         """获取积分成本和奖励"""
