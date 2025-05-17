@@ -31,11 +31,11 @@ class PaddleConfig:
 
         # API URL
         if self.sandbox_mode:
-            self.api_base_url = "https://sandbox-vendors.paddle.com/api/2.0"
-            self.checkout_url_prefix = app.config.get('PADDLE_SANDBOX_CHECKOUT_PREFIX', "https://sandbox-pay.paddle.io")
+            self.api_base_url = "https://sandbox-api.paddle.com"
+            self.checkout_url_prefix = app.config.get('PADDLE_SANDBOX_CHECKOUT_PREFIX', "")
         else:
-            self.api_base_url = "https://vendors.paddle.com/api/2.0"
-            self.checkout_url_prefix = app.config.get('PADDLE_CHECKOUT_PREFIX', "https://pay.paddle.io")
+            self.api_base_url = "https://api.paddle.com"
+            self.checkout_url_prefix = app.config.get('PADDLE_CHECKOUT_PREFIX', "")
 
         # 支付结果通知回调地址
         self.webhook_url = app.config.get('PADDLE_WEBHOOK_URL')

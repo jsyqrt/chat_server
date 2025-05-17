@@ -30,11 +30,14 @@ class PaddlePriceService:
 
         cache_key = f"{self.prefix}:{':'.join(paddle_price_ids)}:{country_code}"
         prices = self.redis.get(cache_key)
+        current_app.logger.debug(f"Paddle prices from cache: {prices}")
         if prices:
-            return json.loads(prices)
+            prices = json.loads(prices)
+            if len(prices) == len(paddle_price_ids):
+                return prices
 
         prices = PaddleService.get_prices_by_paddle_price_ids(paddle_price_ids, country_code)
-
+        current_app.logger.debug(f"Paddle prices from API: {prices}")
         self.redis.set(cache_key, json.dumps(prices), ex=60 * 60 * 1)
         return prices
 
@@ -103,42 +106,47 @@ def get_costs_and_rewards():
 @login_required
 def get_point_packages():
     """获取积分套餐列表"""
+    try:
 
-    paddle_price_service = PaddlePriceService(current_app.redis)
-    prices = paddle_price_service.get_prices(PointsOps.PADDLE_PACKAGE_PRICE_IDS)
+        paddle_price_service = PaddlePriceService(current_app.redis)
+        prices = paddle_price_service.get_prices(PointsOps.PADDLE_PACKAGE_PRICE_IDS)
+        current_app.logger.debug(f"Paddle package prices: {prices}")
 
-    # 定义积分套餐
-    packages = [
-        {
-            "id": 1,
-            "name": _("积分套餐A"),
-            "points": 1000,
-            "price": PointsOps.PACKAGE_PRICES[0],
-            "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[0],
-            "validity_days": 30,
-            "description": prices[0]
-        },
-        {
-            "id": 2,
-            "name": _("积分套餐B"),
-            "points": 3000,
-            "price": PointsOps.PACKAGE_PRICES[1],
-            "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[1],
-            "validity_days": 30,
-            "description": prices[1]
-        },
-        {
-            "id": 3,
-            "name": _("积分套餐C"),
-            "points": 5000,
-            "price": PointsOps.PACKAGE_PRICES[2],
-            "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[2],
-            "validity_days": 30,
-            "description": prices[2]
-        }
-    ]
+        # 定义积分套餐
+        packages = [
+            {
+                "id": 1,
+                "name": _("积分套餐A"),
+                "points": 1000,
+                "price": PointsOps.PACKAGE_PRICES[0],
+                "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[0],
+                "validity_days": 30,
+                "description": prices[0]
+            },
+            {
+                "id": 2,
+                "name": _("积分套餐B"),
+                "points": 3000,
+                "price": PointsOps.PACKAGE_PRICES[1],
+                "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[1],
+                "validity_days": 30,
+                "description": prices[1]
+            },
+            {
+                "id": 3,
+                "name": _("积分套餐C"),
+                "points": 5000,
+                "price": PointsOps.PACKAGE_PRICES[2],
+                "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[2],
+                "validity_days": 30,
+                "description": prices[2]
+            }
+        ]
 
-    return jsonify({"packages": packages})
+        return jsonify({"packages": packages})
+    except Exception as e:
+        current_app.logger.error(f"Failed to get point packages: {e}")
+        return jsonify({"error": "Failed to get point packages"}), 500
 
 @bp.route('/purchase', methods=['POST'])
 @login_required
