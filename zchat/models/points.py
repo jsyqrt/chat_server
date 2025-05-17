@@ -113,11 +113,28 @@ class PointsOps:
         AccountType.PRO.value: 1000,
     }
 
-    PRICES = {
+    SUBSCRIPTION_PRICES = {
         AccountType.FREE.value: 0,
         AccountType.BASIC.value: 29.9,
         AccountType.PRO.value: 180,
     }
+
+    PADDLE_SUBSCRIPTION_PRICE_IDS = [
+        "pri_01jv2k6rfqqvgfv9bv4zvqe6zw", # BASIC
+        "pri_01jv2keq8ypah0hesppaaens6e", # PRO
+    ]
+
+    PACKAGE_PRICES = [
+        10.0,
+        28.0,
+        45.0,
+    ]
+
+    PADDLE_PACKAGE_PRICE_IDS = [
+        "pri_01jv4wgf02q0d11e2fdvstbe0n", # 1000积分
+        "pri_01jvc6jbnf5nansdc779wx3y0s", # 3000积分
+        "pri_01jvc6kkxpaqx1vyygqhq25pxr", # 5000积分
+    ]
 
     REWARDS = {
         RewardType.INVITATION.value: 88  # 邀请奖励积分

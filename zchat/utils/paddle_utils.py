@@ -208,3 +208,36 @@ class PaddleService:
         timestamp = int(time.time())
         random_part = str(uuid.uuid4()).replace('-', '')[:8]
         return f"{prefix}{timestamp}{random_part}"
+
+    @staticmethod
+    def get_prices_by_paddle_price_ids(paddle_price_ids: list[str], country_code: str):
+        """
+        根据Paddle价格ID获取价格ID
+        """
+        try:
+            params = {
+                "items": [
+                    {"quantity": 1, "price_id": paddle_price_id}
+                    for paddle_price_id in paddle_price_ids
+                ],
+                "address": {
+                    "country_code": country_code
+                }
+            }
+
+            url = f"{paddle_config.api_base_url}/pricing-preview"
+            headers = {
+                "Authorization": f"Bearer {paddle_config.api_key}"
+            }
+
+            response = requests.post(url, headers=headers, json=params)
+            response_json = response.json()
+
+            data = response_json.get('data', {})
+            details = data.get('details', {})
+            line_items = details.get('line_items', [{}])
+            prices = [line_item.get('formatted_totals', {}).get('total') for line_item in line_items]
+            return prices
+        except Exception as e:
+            current_app.logger.error(f"Failed to get prices by paddle price IDs: {str(e)}")
+            return None

@@ -11,6 +11,32 @@ from zchat.models.subscription import SubscriptionOps, AccountType, Subscription
 from zchat.models.invitation import InvitationOps
 from zchat.models.payment import PaymentOrderOps, OrderType, PaymentMethod, OrderStatus
 from zchat.utils.alipay_utils import AlipayService
+from zchat.utils.paddle_utils import PaddleService
+
+def get_country_code():
+    lang = getattr(g, 'lang', 'zh_CN')
+    if lang == 'zh_CN':
+        return "CN"
+    else:
+        return "US"
+
+class PaddlePriceService:
+    def __init__(self, redis_client):
+        self.redis = redis_client
+        self.prefix = "paddle_price"
+
+    def get_prices(self, paddle_price_ids):
+        country_code = get_country_code()
+
+        cache_key = f"{self.prefix}:{':'.join(paddle_price_ids)}:{country_code}"
+        prices = self.redis.get(cache_key)
+        if prices:
+            return json.loads(prices)
+
+        prices = PaddleService.get_prices_by_paddle_price_ids(paddle_price_ids, country_code)
+
+        self.redis.set(cache_key, json.dumps(prices), ex=60 * 60 * 1)
+        return prices
 
 bp = Blueprint('points', __name__, url_prefix='/points')
 
@@ -77,34 +103,38 @@ def get_costs_and_rewards():
 @login_required
 def get_point_packages():
     """获取积分套餐列表"""
+
+    paddle_price_service = PaddlePriceService(current_app.redis)
+    prices = paddle_price_service.get_prices(PointsOps.PADDLE_PACKAGE_PRICE_IDS)
+
     # 定义积分套餐
     packages = [
         {
             "id": 1,
             "name": _("积分套餐A"),
             "points": 1000,
-            "price": 10.0,
-            "paddle_price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n",
+            "price": PointsOps.PACKAGE_PRICES[0],
+            "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[0],
             "validity_days": 30,
-            "description": _("10元购买1000积分，有效期30天")
+            "description": prices[0]
         },
         {
             "id": 2,
             "name": _("积分套餐B"),
             "points": 3000,
-            "price": 28.0,
-            "paddle_price_id": "pri_01jvc6jbnf5nansdc779wx3y0s",
+            "price": PointsOps.PACKAGE_PRICES[1],
+            "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[1],
             "validity_days": 30,
-            "description": _("28元购买3000积分，有效期30天，比单独购买更优惠")
+            "description": prices[1]
         },
         {
             "id": 3,
             "name": _("积分套餐C"),
             "points": 5000,
-            "price": 45.0,
-            "paddle_price_id": "pri_01jvc6kkxpaqx1vyygqhq25pxr",
+            "price": PointsOps.PACKAGE_PRICES[2],
+            "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[2],
             "validity_days": 30,
-            "description": _("45元购买5000积分，有效期30天，最实惠的选择")
+            "description": prices[2]
         }
     ]
 
@@ -128,9 +158,9 @@ def purchase_points():
 
     # 获取套餐信息
     packages = {
-        1: {"points": 1000, "price": 10.0, "name": _("积分套餐A"), "paddle_price_id": "pri_01jv4wgf02q0d11e2fdvstbe0n"},
-        2: {"points": 3000, "price": 28.0, "name": _("积分套餐B"), "paddle_price_id": "pri_01jvc6jbnf5nansdc779wx3y0s"},
-        3: {"points": 5000, "price": 45.0, "name": _("积分套餐C"), "paddle_price_id": "pri_01jvc6kkxpaqx1vyygqhq25pxr"},
+        1: {"points": 1000, "price": PointsOps.PACKAGE_PRICES[0], "name": _("积分套餐A"), "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[0]},
+        2: {"points": 3000, "price": PointsOps.PACKAGE_PRICES[1], "name": _("积分套餐B"), "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[1]},
+        3: {"points": 5000, "price": PointsOps.PACKAGE_PRICES[2], "name": _("积分套餐C"), "paddle_price_id": PointsOps.PADDLE_PACKAGE_PRICE_IDS[2]},
     }
 
     if package_id not in packages:
@@ -432,13 +462,17 @@ def get_user_orders():
 @bp.route('/subscription/plans', methods=['GET'])
 @login_required
 def get_subscription_plans():
+
+    paddle_price_service = PaddlePriceService(current_app.redis)
+    prices = paddle_price_service.get_prices(PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS)
+
     """获取订阅计划列表"""
     plans = [
         {
             "id": 0,
             "type": AccountType.FREE.value,
             "name": _("免费账户"),
-            "price": PointsOps.PRICES[AccountType.FREE.value],
+            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.FREE.value],
             "paddle_price_id": "",
             "cycle": "unlimited",
             "daily_points": PointsOps.DAILY_POINTS[AccountType.FREE.value],
@@ -448,21 +482,21 @@ def get_subscription_plans():
             "id": 1,
             "type": SubscriptionType.BASIC.value,
             "name": _("基础会员"),
-            "price": PointsOps.PRICES[AccountType.BASIC.value],
-            "paddle_price_id": "pri_01jv2k6rfqqvgfv9bv4zvqe6zw",
+            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.BASIC.value],
+            "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[0],
             "cycle": "month",
             "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
-            "description": _("每月{}元，每天{}积分").format(PointsOps.PRICES[AccountType.BASIC.value], PointsOps.DAILY_POINTS[AccountType.BASIC.value])
+            "description": prices[0]
         },
         {
             "id": 2,
             "type": SubscriptionType.PRO.value,
             "name": _("高级会员"),
-            "price": PointsOps.PRICES[AccountType.PRO.value],
-            "paddle_price_id": "pri_01jv2keq8ypah0hesppaaens6e",
+            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.PRO.value],
+            "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[1],
             "cycle": "year",
             "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
-            "description": _("每年{}元(相当于每月{}元)，每天{}积分，性价比高").format(PointsOps.PRICES[AccountType.PRO.value], PointsOps.PRICES[AccountType.PRO.value] / 12, PointsOps.DAILY_POINTS[AccountType.PRO.value])
+            "description": prices[1]
         }
     ]
 
@@ -486,16 +520,16 @@ def subscribe():
     # 获取订阅价格和信息
     subscription_info = {
         SubscriptionType.BASIC.value: {
-            "price": PointsOps.PRICES[AccountType.BASIC.value],
+            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.BASIC.value],
             "name": _("基础会员(月)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.BASIC.value],
-            "paddle_price_id": "pri_01jv2k6rfqqvgfv9bv4zvqe6zw"
+            "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[0]
         },
         SubscriptionType.PRO.value: {
-            "price": PointsOps.PRICES[AccountType.PRO.value],
+            "price": PointsOps.SUBSCRIPTION_PRICES[AccountType.PRO.value],
             "name": _("高级会员(年)"),
             "daily_points": PointsOps.DAILY_POINTS[AccountType.PRO.value],
-            "paddle_price_id": "pri_01jv2keq8ypah0hesppaaens6e"
+            "paddle_price_id": PointsOps.PADDLE_SUBSCRIPTION_PRICE_IDS[1]
         }
     }
 
