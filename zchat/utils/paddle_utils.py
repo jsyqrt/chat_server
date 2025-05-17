@@ -254,7 +254,7 @@ class PaddleService:
                 }
 
                 # 设置超时，以防API响应慢
-                timeout = 5.0  # 5秒超时
+                timeout = 10.0  # 10秒超时
                 response = requests.post(url, headers=headers, json=params, timeout=timeout)
 
                 # 检查响应状态码

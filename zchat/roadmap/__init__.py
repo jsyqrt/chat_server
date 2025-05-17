@@ -666,46 +666,6 @@ def my_roadmaps():
         'count': count,
     })
 
-@bp.route('/description', methods=['POST'])
-@login_required
-def description():
-    topic = request.form.get('topic')
-    topic_path = request.form.get('topic_path')
-    topic_path = topic_path.split(',')
-    user_id = current_user.get_id_int()
-
-    current_app.logger.debug(f"description topic: {topic}, topic_path: {topic_path}")
-
-    # 检查积分是否足够
-    sufficient, message = check_points_sufficient(user_id, ServiceType.GET_DESCRIPTION.value)
-    if not sufficient:
-        return jsonify({'error': message, 'points_required': True}), 402
-
-    # 获取用户语言
-    lang = get_user_lang()
-
-    description_json = description_from_topic_path(topic, topic_path, lang)
-    is_valid = False
-    max_retries = 3
-    while not is_valid and max_retries > 0:
-        try:
-            description_info = json.loads(description_json)
-            is_valid = True
-        except Exception as e:
-            # try again
-            description_json = description_from_topic_path(topic, topic_path, lang)
-            max_retries -= 1
-
-    # 消费积分
-    success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, translate('get_knowledge_detail', lang, topic=topic))
-    if not success:
-        return jsonify({'error': translate('points_deduction_failed', lang), 'points_required': True}), 402
-
-    return jsonify({
-        'description': description_info,
-        'points_spent': points_spent
-    })
-
 @bp.route('/description_stream', methods=['POST'])
 @login_required
 def description_stream():
@@ -713,6 +673,7 @@ def description_stream():
     topic_path = request.form.get('topic_path')
     topic_path = topic_path.split(',')
     user_id = current_user.get_id_int()
+    lang = request.form.get('lang')
 
     current_app.logger.debug(f"description_stream topic: {topic}, topic_path: {topic_path}")
 
@@ -720,9 +681,6 @@ def description_stream():
     sufficient, message = check_points_sufficient(user_id, ServiceType.GET_DESCRIPTION.value)
     if not sufficient:
         return jsonify({'error': message, 'points_required': True}), 402
-
-    # 获取用户语言
-    lang = get_user_lang()
 
     # 消费积分
     success, points_spent = consume_points_for_service(user_id, ServiceType.GET_DESCRIPTION.value, translate('get_knowledge_detail', lang, topic=topic))
@@ -820,6 +778,7 @@ def get_map():
             'title': roadmap.roadmap_title,
             'type': roadmap.roadmap_type,
             'kind': roadmap.roadmap_kind,
+            'lang': roadmap.roadmap_lang,
             'mindmap': mindmap,
         })
 
