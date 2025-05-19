@@ -670,12 +670,21 @@ def my_roadmaps():
 @login_required
 def description_stream():
     topic = request.form.get('topic')
+
     topic_path = request.form.get('topic_path')
-    topic_path = topic_path.split(',')
+    siblings = request.form.get('siblings')
+    children = request.form.get('children')
+
+    delimiter = '<|voylead_separator|>'
+
+    topic_path = topic_path.split(delimiter)
+    siblings = siblings.split(delimiter)
+    children = children.split(delimiter)
+
     user_id = current_user.get_id_int()
     lang = request.form.get('lang')
 
-    current_app.logger.debug(f"description_stream topic: {topic}, topic_path: {topic_path}")
+    current_app.logger.debug(f"description_stream topic: {topic}, topic_path: {topic_path}, siblings: {siblings}, children: {children}")
 
     # 检查积分是否足够
     sufficient, message = check_points_sufficient(user_id, ServiceType.GET_DESCRIPTION.value)
@@ -688,7 +697,7 @@ def description_stream():
         return jsonify({'error': translate('points_deduction_failed', lang), 'points_required': True}), 402
 
     def generate():
-        for chunk in description_from_topic_path_stream(topic, topic_path, lang):
+        for chunk in description_from_topic_path_stream(topic, topic_path, siblings, children, lang):
             yield chunk
 
     return Response(stream_with_context(generate()), mimetype='text/plain')

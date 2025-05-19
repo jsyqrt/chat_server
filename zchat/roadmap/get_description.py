@@ -23,6 +23,11 @@ system_prompt_template_zh = """
 - 循序渐进：考虑用户已有的知识基础
 - 给出示例：最好给出一些实际的例子，包括使用场景，具体操作，应用案例等等，帮助用户理解
 
+此外，请注意以下信息：
+- 「{topic}」的兄弟节点有：{siblings}，这些节点将在其他章节中详细解释
+- 「{topic}」的子节点有：{children}，这些节点将在后续章节中详细解释
+- 请专注于解释「{topic}」本身的内容，避免过多涉及其他节点将会详细解释的内容
+
 请记住，您的解释将直接影响用户对该概念的理解深度和学习效果。
 """
 
@@ -46,6 +51,11 @@ Your explanation should be:
 - Progressive: consider the user's existing knowledge base
 - Provide examples: ideally include practical examples, including usage scenarios, specific operations, application cases, etc., to help users understand
 
+Additionally, please note the following information:
+- The sibling nodes of "{topic}" include: {siblings}, which will be explained in detail in other sections
+- The child nodes of "{topic}" include: {children}, which will be explained in detail in subsequent sections
+- Please focus on explaining "{topic}" itself. Avoid excessive coverage of content that will be explained in detail in other nodes
+
 Please remember that your explanation will directly impact the depth of the user's understanding and learning effectiveness.
 """
 
@@ -57,7 +67,13 @@ user_prompt_template_zh = """
 ## 目标概念
 {topic}
 
-如果是写一篇大的文章，那些路径就是各级标题，「{topic}」就是当前章节的标题，所以你的任务是写出当前章节的内容。注意确保你的语言风格和输出内容的质量符合要求。
+## 兄弟节点
+{siblings}
+
+## 子节点
+{children}
+
+如果是写一篇大的文章，那些路径就是各级标题，「{topic}」就是当前章节的标题，所以你的任务是写出当前章节的内容。兄弟节点和子节点会在其他章节中详细解释，所以请专注于当前节点的内容，避免过多涉及将在其他章节详细讲解的内容。注意确保你的语言风格和输出内容的质量符合要求。
 
 """
 
@@ -69,7 +85,13 @@ user_prompt_template_en = """
 ## Target Concept
 {topic}
 
-If this were a large article, the path would represent different levels of headings, and "{topic}" would be the title of the current section. So your task is to write the content of this current section. Make sure your language style and output quality meet the requirements.
+## Sibling Nodes
+{siblings}
+
+## Child Nodes
+{children}
+
+If this were a large article, the path would represent different levels of headings, and "{topic}" would be the title of the current section. So your task is to write the content of this current section. The sibling nodes and child nodes will be explained in detail in other sections, so please focus on the content of the current node, avoiding excessive coverage of content that will be explained in other sections. Make sure your language style and output quality meet the requirements.
 
 """
 
@@ -218,11 +240,24 @@ def get_prompts_by_language(lang):
             'json_schema': json_schema_zh
         }
 
-def get_llm_response(topic, topic_path, lang='zh_CN'):
+def get_llm_response(topic, topic_path, siblings=None, children=None, lang='zh_CN'):
   prompts = get_prompts_by_language(lang)
+  siblings_str = "、".join(siblings) if siblings else "无"
+  children_str = "、".join(children) if children else "无"
+
   messages=[
-    {"role": "system", "content": prompts['system_prompt'].format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
-    {"role": "user", "content": prompts['user_prompt'].format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
+    {"role": "system", "content": prompts['system_prompt'].format(
+        topic=topic,
+        topic_path='->'.join(topic_path[:-1]),
+        siblings=siblings_str,
+        children=children_str
+    )},
+    {"role": "user", "content": prompts['user_prompt'].format(
+        topic=topic,
+        topic_path='->'.join(topic_path[:-1]),
+        siblings=siblings_str,
+        children=children_str
+    )},
     {"role": "user", "content": prompts['json_schema']},
   ]
   current_app.logger.debug(f"get_llm_response messages: {messages}")
@@ -234,8 +269,8 @@ def get_llm_response(topic, topic_path, lang='zh_CN'):
 def parse_llm_response(response):
   return get_json_blocks_from_llm_response(response)
 
-def description_from_topic_path(topic, topic_path, lang='zh_CN'):
-  response = get_llm_response(topic, topic_path, lang)
+def description_from_topic_path(topic, topic_path, siblings=None, children=None, lang='zh_CN'):
+  response = get_llm_response(topic, topic_path, siblings, children, lang)
   json_blocks = parse_llm_response(response)
   if len(json_blocks) == 0:
     return None
@@ -243,11 +278,24 @@ def description_from_topic_path(topic, topic_path, lang='zh_CN'):
   description = json_blocks[0]
   return description
 
-def get_llm_response_stream(topic, topic_path, lang='zh_CN'):
+def get_llm_response_stream(topic, topic_path, siblings=None, children=None, lang='zh_CN'):
     prompts = get_prompts_by_language(lang)
+    siblings_str = "、".join(siblings) if siblings else "无"
+    children_str = "、".join(children) if children else "无"
+
     messages=[
-        {"role": "system", "content": prompts['system_prompt'].format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
-        {"role": "user", "content": prompts['user_prompt'].format(topic=topic, topic_path='->'.join(topic_path[:-1]))},
+        {"role": "system", "content": prompts['system_prompt'].format(
+            topic=topic,
+            topic_path='->'.join(topic_path[:-1]),
+            siblings=siblings_str,
+            children=children_str
+        )},
+        {"role": "user", "content": prompts['user_prompt'].format(
+            topic=topic,
+            topic_path='->'.join(topic_path[:-1]),
+            siblings=siblings_str,
+            children=children_str
+        )},
         {"role": "user", "content": prompts['output_style']},
     ]
     current_app.logger.debug(f"get_llm_response_stream messages: {messages}")
@@ -259,12 +307,14 @@ def get_llm_response_stream(topic, topic_path, lang='zh_CN'):
         platform='siliconflow'
     )
 
-def description_from_topic_path_stream(topic, topic_path, lang='zh_CN'):
+def description_from_topic_path_stream(topic, topic_path, siblings=None, children=None, lang='zh_CN'):
     """Stream the description for a topic path directly from the LLM"""
-    return get_llm_response_stream(topic, topic_path, lang)
+    return get_llm_response_stream(topic, topic_path, siblings, children, lang)
 
 if __name__ == "__main__":
   topic = "UI/UX设计基础"
   topic_path = "前端工程师->设计系统->UI/UX设计基础"
-  description = description_from_topic_path(topic, topic_path)
+  siblings = ["响应式设计", "设计系统组件"]
+  children = ["色彩理论", "排版基础", "交互设计原则"]
+  description = description_from_topic_path(topic, topic_path, siblings, children)
   print(description)
