@@ -207,6 +207,30 @@ class RedisTokenStore:
         key = f"{self.refresh_prefix}{token}"
         self.redis.delete(key)
 
+class RedisStateStore:
+    """Redis存储OAuth状态参数"""
+    def __init__(self, redis_client, expiration_time=600):  # 默认10分钟过期
+        self.redis = redis_client
+        self.expiration_time = expiration_time
+        self.prefix = "oauth_state:"
+
+    def store_state(self, state, callback_scheme):
+        """存储状态参数和回调scheme"""
+        key = f"{self.prefix}{state}"
+        self.redis.set(key, callback_scheme, ex=self.expiration_time)
+
+    def verify_state(self, state):
+        """验证状态参数并返回关联的回调scheme"""
+        key = f"{self.prefix}{state}"
+        callback_scheme = self.redis.get(key)
+        if callback_scheme:
+            if isinstance(callback_scheme, bytes):
+                callback_scheme = callback_scheme.decode('utf-8')
+            # 验证成功后删除状态参数
+            self.redis.delete(key)
+            return callback_scheme
+        return None
+
 @bp.route('/verification_code', methods=['POST'])
 def verification_code():
     # 修改为POST方法
@@ -668,149 +692,243 @@ def refresh_token():
 @bp.route('/google_login')
 def google_login():
     """Google OAuth登录"""
+    # 获取状态参数和回调scheme
+    state = request.args.get('state')
+    callback_scheme = request.args.get('callback_scheme')
+
+    # 如果没有提供state参数，生成一个随机的
+    if not state:
+        state = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(32))
+
+    # 存储状态参数和回调scheme
+    if callback_scheme:
+        state_store = RedisStateStore(current_app.redis)
+        state_store.store_state(state, callback_scheme)
+
+    # 生成重定向URI，添加状态参数
     redirect_uri = url_for('auth.google_callback', _external=True)
-    return oauth.google.authorize_redirect(redirect_uri)
+    return oauth.google.authorize_redirect(redirect_uri, state=state)
 
 @bp.route('/google_callback')
 def google_callback():
     """Google OAuth回调"""
-    token = oauth.google.authorize_access_token()
-    user_info = oauth.google.get('userinfo').json()
+    # 获取状态参数
+    state = request.args.get('state')
+    callback_scheme = None
 
-    if not user_info or 'email' not in user_info:
-        return {"error": "Google login failed, unable to get user information!"}, 400
+    # 验证状态参数
+    if state:
+        state_store = RedisStateStore(current_app.redis)
+        callback_scheme = state_store.verify_state(state)
 
-    email = user_info['email']
-    oauth_id = user_info['id']
+    # 处理OAuth回调
+    try:
+        token = oauth.google.authorize_access_token()
+        user_info = oauth.google.get('userinfo').json()
 
-    # 查找或创建用户
-    user_ops = UserOps(session=db.session)
-    user = user_ops.get_user_by_oauth('google', oauth_id)
+        if not user_info or 'email' not in user_info:
+            error_msg = "Google login failed, unable to get user information!"
+            # 如果有回调scheme，重定向到应用
+            if callback_scheme:
+                redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                return redirect(redirect_url)
+            return {"error": error_msg}, 400
 
-    if not user:
-        user = user_ops.get_user_by_email(email)
+        email = user_info['email']
+        oauth_id = user_info['id']
 
-        if user:
-            # 如果邮箱已存在，关联OAuth信息
-            user.set_oauth_info('google', oauth_id)
-            db.session.commit()
-        else:
-            # 创建新用户
-            nickname = user_info.get('name', '用户')
-            user_id = user_ops.get_or_create_user(
-                email=email,
-                oauth_provider='google',
-                oauth_id=oauth_id
-            )
-            user = user_ops.get_one(id=user_id)
+        # 查找或创建用户
+        user_ops = UserOps(session=db.session)
+        user = user_ops.get_user_by_oauth('google', oauth_id)
 
-            if not user:
-                return {"error": "Failed to create user!"}, 500
+        if not user:
+            user = user_ops.get_user_by_email(email)
 
-            # 对于OAuth登录，自动验证邮箱
-            user.email_verified = True
-            db.session.commit()
+            if user:
+                # 如果邮箱已存在，关联OAuth信息
+                user.set_oauth_info('google', oauth_id)
+                db.session.commit()
+            else:
+                # 创建新用户
+                nickname = user_info.get('name', '用户')
+                user_id = user_ops.get_or_create_user(
+                    email=email,
+                    oauth_provider='google',
+                    oauth_id=oauth_id
+                )
+                user = user_ops.get_one(id=user_id)
 
-    # 登录用户
-    lg_user = LGUser(user)
-    login_user(lg_user)
+                if not user:
+                    error_msg = "Failed to create user!"
+                    if callback_scheme:
+                        redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                        return redirect(redirect_url)
+                    return {"error": error_msg}, 500
 
-    # 生成访问令牌和刷新令牌
-    access_token = generate_jwt_token(user.id)
-    refresh_token = generate_refresh_token(user.id)
+                # 对于OAuth登录，自动验证邮箱
+                user.email_verified = True
+                db.session.commit()
 
-    # 这里可以返回JSON或重定向到前端页面
-    return jsonify({
-        "error": "login succeed",
-        "jwt": access_token,
-        "refresh_token": refresh_token,
-        "user_id": user.id
-    })
+        # 登录用户
+        lg_user = LGUser(user)
+        login_user(lg_user)
+
+        # 生成访问令牌和刷新令牌
+        access_token = generate_jwt_token(user.id)
+        refresh_token = generate_refresh_token(user.id)
+
+        # 如果有回调scheme，重定向到应用
+        if callback_scheme:
+            redirect_url = f"{callback_scheme}://oauth_callback?token={access_token}&refresh_token={refresh_token}&provider=google&state={state}"
+            return redirect(redirect_url)
+
+        # 否则返回JSON响应
+        return jsonify({
+            "error": "login succeed",
+            "jwt": access_token,
+            "refresh_token": refresh_token,
+            "user_id": user.id
+        })
+    except Exception as e:
+        current_app.logger.error(f"Google OAuth callback error: {str(e)}")
+        error_msg = "Authentication failed"
+        if callback_scheme:
+            redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+            return redirect(redirect_url)
+        return {"error": error_msg}, 500
 
 @bp.route('/github_login')
 def github_login():
     """GitHub OAuth登录"""
+    # 获取状态参数和回调scheme
+    state = request.args.get('state')
+    callback_scheme = request.args.get('callback_scheme')
+
+    # 如果没有提供state参数，生成一个随机的
+    if not state:
+        state = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(32))
+
+    # 存储状态参数和回调scheme
+    if callback_scheme:
+        state_store = RedisStateStore(current_app.redis)
+        state_store.store_state(state, callback_scheme)
+
+    # 生成重定向URI，添加状态参数
     redirect_uri = url_for('auth.github_callback', _external=True)
-    return oauth.github.authorize_redirect(redirect_uri)
+    return oauth.github.authorize_redirect(redirect_uri, state=state)
 
 @bp.route('/github_callback')
 def github_callback():
     """GitHub OAuth回调"""
-    token = oauth.github.authorize_access_token()
-    # 获取用户信息
-    resp = oauth.github.get('user', token=token)
-    user_info = resp.json()
+    # 获取状态参数
+    state = request.args.get('state')
+    callback_scheme = None
 
-    if not user_info or 'id' not in user_info:
-        return {"error": "GitHub login failed, unable to get user information!"}, 400
+    # 验证状态参数
+    if state:
+        state_store = RedisStateStore(current_app.redis)
+        callback_scheme = state_store.verify_state(state)
 
-    oauth_id = str(user_info['id'])
-
-    # GitHub不会直接提供公开邮箱，需要额外请求邮箱信息
-    email = None
+    # 处理OAuth回调
     try:
-        emails_resp = oauth.github.get('user/emails', token=token)
-        emails_data = emails_resp.json()
-        # 查找主要且已验证的邮箱
-        for email_data in emails_data:
-            if email_data.get('primary', False) and email_data.get('verified', False):
-                email = email_data.get('email')
-                break
-        # 如果没有找到主要邮箱，使用第一个已验证的邮箱
-        if not email:
+        token = oauth.github.authorize_access_token()
+        resp = oauth.github.get('user', token=token)
+        user_info = resp.json()
+
+        if not user_info or 'id' not in user_info:
+            error_msg = "GitHub login failed, unable to get user information!"
+            if callback_scheme:
+                redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                return redirect(redirect_url)
+            return {"error": error_msg}, 400
+
+        oauth_id = str(user_info['id'])
+
+        # GitHub不会直接提供公开邮箱，需要额外请求邮箱信息
+        email = None
+        try:
+            emails_resp = oauth.github.get('user/emails', token=token)
+            emails_data = emails_resp.json()
+            # 查找主要且已验证的邮箱
             for email_data in emails_data:
-                if email_data.get('verified', False):
+                if email_data.get('primary', False) and email_data.get('verified', False):
                     email = email_data.get('email')
                     break
+            # 如果没有找到主要邮箱，使用第一个已验证的邮箱
+            if not email:
+                for email_data in emails_data:
+                    if email_data.get('verified', False):
+                        email = email_data.get('email')
+                        break
+        except Exception as e:
+            current_app.logger.error(f"Failed to get GitHub emails: {str(e)}")
+
+        if not email:
+            error_msg = "GitHub login failed, unable to get valid email!"
+            if callback_scheme:
+                redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                return redirect(redirect_url)
+            return {"error": error_msg}, 400
+
+        # 查找或创建用户
+        user_ops = UserOps(session=db.session)
+        user = user_ops.get_user_by_oauth('github', oauth_id)
+
+        if not user:
+            user = user_ops.get_user_by_email(email)
+
+            if user:
+                # 如果邮箱已存在，关联OAuth信息
+                user.set_oauth_info('github', oauth_id)
+                db.session.commit()
+            else:
+                # 创建新用户
+                nickname = user_info.get('name') or user_info.get('login', '用户')
+                user_id = user_ops.get_or_create_user(
+                    email=email,
+                    oauth_provider='github',
+                    oauth_id=oauth_id
+                )
+                user = user_ops.get_one(id=user_id)
+
+                if not user:
+                    error_msg = "Failed to create user!"
+                    if callback_scheme:
+                        redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                        return redirect(redirect_url)
+                    return {"error": error_msg}, 500
+
+                # 对于OAuth登录，自动验证邮箱
+                user.email_verified = True
+                db.session.commit()
+
+        # 登录用户
+        lg_user = LGUser(user)
+        login_user(lg_user)
+
+        # 生成访问令牌和刷新令牌
+        access_token = generate_jwt_token(user.id)
+        refresh_token = generate_refresh_token(user.id)
+
+        # 如果有回调scheme，重定向到应用
+        if callback_scheme:
+            redirect_url = f"{callback_scheme}://oauth_callback?token={access_token}&refresh_token={refresh_token}&provider=github&state={state}"
+            return redirect(redirect_url)
+
+        # 否则返回JSON响应
+        return jsonify({
+            "error": "login succeed",
+            "jwt": access_token,
+            "refresh_token": refresh_token,
+            "user_id": user.id
+        })
     except Exception as e:
-        current_app.logger.error(f"Failed to get GitHub emails: {str(e)}")
-
-    if not email:
-        return {"error": "GitHub login failed, unable to get valid email!"}, 400
-
-    # 查找或创建用户
-    user_ops = UserOps(session=db.session)
-    user = user_ops.get_user_by_oauth('github', oauth_id)
-
-    if not user:
-        user = user_ops.get_user_by_email(email)
-
-        if user:
-            # 如果邮箱已存在，关联OAuth信息
-            user.set_oauth_info('github', oauth_id)
-            db.session.commit()
-        else:
-            # 创建新用户
-            nickname = user_info.get('name') or user_info.get('login', '用户')
-            user_id = user_ops.get_or_create_user(
-                email=email,
-                oauth_provider='github',
-                oauth_id=oauth_id
-            )
-            user = user_ops.get_one(id=user_id)
-
-            if not user:
-                return {"error": "Failed to create user!"}, 500
-
-            # 对于OAuth登录，自动验证邮箱
-            user.email_verified = True
-            db.session.commit()
-
-    # 登录用户
-    lg_user = LGUser(user)
-    login_user(lg_user)
-
-    # 生成访问令牌和刷新令牌
-    access_token = generate_jwt_token(user.id)
-    refresh_token = generate_refresh_token(user.id)
-
-    # 这里可以返回JSON或重定向到前端页面
-    return jsonify({
-        "error": "login succeed",
-        "jwt": access_token,
-        "refresh_token": refresh_token,
-        "user_id": user.id
-    })
+        current_app.logger.error(f"GitHub OAuth callback error: {str(e)}")
+        error_msg = "Authentication failed"
+        if callback_scheme:
+            redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+            return redirect(redirect_url)
+        return {"error": error_msg}, 500
 
 # 用户管理接口
 @bp.route('/change_password', methods=['POST'])
@@ -987,4 +1105,99 @@ def unbind_email():
         return {"message": "Email unbound successfully!"}
     else:
         return {"error": "Failed to unbind email!"}, 500
+
+@bp.route('/validate_oauth_token', methods=['POST'])
+def validate_oauth_token():
+    """验证OAuth回调返回的令牌"""
+    data = request.json if request.is_json else request.form
+    token = data.get('token')
+    provider = data.get('provider')
+
+    if not token:
+        return jsonify({
+            "success": False,
+            "error": "Missing token"
+        }), 400
+
+    # 验证令牌
+    try:
+        # 解码JWT令牌获取用户ID
+        payload = jwt.decode(token, current_app.config['JWT_SECRET_KEY'], algorithms=['HS256'])
+        user_id = payload.get('user_id')
+
+        if not user_id:
+            return jsonify({
+                "success": False,
+                "error": "Invalid token"
+            }), 401
+
+        # 获取用户信息
+        user_ops = UserOps(session=db.session)
+        user = user_ops.get_one(id=user_id)
+
+        if not user:
+            return jsonify({
+                "success": False,
+                "error": "User not found"
+            }), 404
+
+        # 返回用户信息
+        return jsonify({
+            "success": True,
+            "jwt": token,
+            "user": {
+                "id": user.id,
+                "email": user.email,
+                "name": user.name,
+                "avatar_url": user.avatar_url
+            }
+        })
+    except jwt.ExpiredSignatureError:
+        return jsonify({
+            "success": False,
+            "error": "Token expired"
+        }), 401
+    except jwt.InvalidTokenError:
+        return jsonify({
+            "success": False,
+            "error": "Invalid token"
+        }), 401
+    except Exception as e:
+        current_app.logger.error(f"Token validation error: {str(e)}")
+        return jsonify({
+            "success": False,
+            "error": "Authentication failed"
+        }), 500
+
+@bp.route('/user', methods=['GET'])
+@login_required
+def get_user_info():
+    """获取当前用户信息"""
+    user_id = current_user.get_id_int()
+    user_ops = UserOps(session=db.session)
+    user = user_ops.get_one(id=user_id)
+
+    if not user:
+        return jsonify({
+            "error": "User not found"
+        }), 404
+
+    # 获取用户的认证提供商列表
+    auth_providers = []
+    if user.oauth_google_id:
+        auth_providers.append("google")
+    if user.oauth_github_id:
+        auth_providers.append("github")
+    if user.email and user.password_hash:
+        auth_providers.append("email")
+    if user.phone_number:
+        auth_providers.append("phone")
+
+    return jsonify({
+        "user_id": user.id,
+        "email": user.email,
+        "name": user.name,
+        "avatar_url": user.avatar_url,
+        "auth_providers": auth_providers
+    })
 
