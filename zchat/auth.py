@@ -104,25 +104,15 @@ def init_app(app):
     else:
         app.logger.info("No proxy configured for Google OAuth")
 
-    # 配置Google OAuth
+    # 配置Google OAuth - 使用标准的OpenID Connect配置
     oauth.register(
         name='google',
         client_id=app.config.get('GOOGLE_CLIENT_ID'),
         client_secret=app.config.get('GOOGLE_CLIENT_SECRET'),
         server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
-        access_token_url='https://oauth2.googleapis.com/token',
-        access_token_params=None,
-        authorize_url='https://accounts.google.com/o/oauth2/auth',
-        authorize_params={
-            'prompt': 'select_account',  # 强制显示账号选择界面
-            'access_type': 'offline'     # 获取刷新令牌
-        },
-        api_base_url='https://www.googleapis.com/oauth2/v1/',
-        userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo',
         client_kwargs=google_client_kwargs,
     )
 
-    # 添加额外的日志记录来帮助调试
     app.logger.info(f"Google OAuth registered with client_id: {app.config.get('GOOGLE_CLIENT_ID')[:5]}...")
     app.logger.info(f"Google OAuth configuration complete")
 
@@ -864,139 +854,89 @@ def google_callback():
     if state:
         state_store = RedisStateStore(current_app.redis)
         callback_scheme = state_store.verify_state(state)
+        if not callback_scheme:
+            error_msg = "Invalid state parameter, possible CSRF attack"
+            current_app.logger.error(error_msg)
+            return {"error": error_msg}, 400
 
     # 处理OAuth回调
     try:
-        # 检查代理配置
-        client = oauth.google
-        proxy_config = getattr(client, '_client_kwargs', {}).get('proxies', None)
-        current_app.logger.info(f"Current proxy configuration: {proxy_config}")
-
-        # 尝试获取OpenID配置
-        try:
-            openid_config = client.load_server_metadata()
-            current_app.logger.info(f"OpenID configuration loaded: {openid_config.get('issuer')}")
-        except Exception as e:
-            current_app.logger.error(f"Failed to load OpenID configuration: {str(e)}")
-            # 如果无法从元数据URL加载，则手动设置jwks_uri
-            client.server_metadata = {
-                'issuer': 'https://accounts.google.com',
-                'authorization_endpoint': 'https://accounts.google.com/o/oauth2/auth',
-                'token_endpoint': 'https://oauth2.googleapis.com/token',
-                'userinfo_endpoint': 'https://openidconnect.googleapis.com/v1/userinfo',
-                'jwks_uri': 'https://www.googleapis.com/oauth2/v3/certs',
-            }
-            current_app.logger.info("Manually set OpenID configuration")
-
-        # 尝试获取访问令牌
+        # 获取访问令牌
         current_app.logger.info("Attempting to get access token from Google...")
-        token_params = {
-            'grant_type': 'authorization_code',
-            'code': request.args.get('code'),
-            'redirect_uri': url_for('auth.google_callback', _external=True)
-        }
-
         try:
-            # 使用明确的参数类型进行传递
-            token = client.authorize_access_token()  # 不传递params参数，让authlib使用默认方式处理
-            current_app.logger.debug(f"Received Google token: {token.get('access_token')[:10]}...")
-        except Exception as token_error:
-            current_app.logger.error(f"Token retrieval error: {str(token_error)}")
-            # 如果ID令牌验证失败，尝试只获取访问令牌
-            try:
-                response = client.request(
-                    'POST',
-                    client.access_token_url,
-                    data={
-                        'client_id': client.client_id,
-                        'client_secret': client.client_secret,
-                        'code': request.args.get('code'),
-                        'grant_type': 'authorization_code',
-                        'redirect_uri': url_for('auth.google_callback', _external=True)
-                    },
-                    withhold_token=True
-                )
-                token = response.json()
-                current_app.logger.info("Retrieved access token without ID token validation")
-            except Exception as fallback_error:
-                current_app.logger.error(f"Fallback token retrieval error: {str(fallback_error)}")
-                raise token_error  # 如果备用方法也失败，抛出原始错误
+            token = oauth.google.authorize_access_token()
+            current_app.logger.debug(f"Received token with keys: {list(token.keys())}")
+        except Exception as e:
+            current_app.logger.error(f"Failed to get access token: {str(e)}")
+            raise e
 
-        # 获取用户信息
-        current_app.logger.info("Attempting to get user info from Google...")
+        # 获取用户信息 - 使用标准的OpenID Connect endpoint
+        current_app.logger.info("Getting user info from Google...")
         try:
-            # 1. 使用完整的userinfo URL
-            userinfo_url = 'https://openidconnect.googleapis.com/v1/userinfo'
-            current_app.logger.info(f"Using userinfo URL: {userinfo_url}")
+            # 从token中获取access_token
+            access_token = token.get('access_token')
+            if not access_token:
+                current_app.logger.error("No access_token in response")
+                raise ValueError("Missing access token")
 
-            # 2. 创建自定义的会话并配置代理
+            # 使用标准的userinfo端点
+            userinfo_endpoint = 'https://openidconnect.googleapis.com/v1/userinfo'
+            headers = {'Authorization': f'Bearer {access_token}'}
+
+            # 创建会话并设置代理（如果配置了）
             session = requests.Session()
-            # 如果我们有代理配置，重新应用它们
-            if hasattr(client, '_client_kwargs') and 'proxies' in client._client_kwargs:
-                proxies = client._client_kwargs['proxies']
-                current_app.logger.info(f"Re-applying proxy settings for userinfo request: {proxies}")
-                session.proxies.update(proxies)
+            if hasattr(oauth.google, '_client_kwargs') and 'proxies' in oauth.google._client_kwargs:
+                session.proxies.update(oauth.google._client_kwargs['proxies'])
+                current_app.logger.info(f"Using proxies for userinfo request: {session.proxies}")
 
-            # 3. 添加重试机制
-            retry = requests.packages.urllib3.util.retry.Retry(
-                total=3,
-                backoff_factor=0.5,
-                status_forcelist=[500, 502, 503, 504]
-            )
-            adapter = requests.adapters.HTTPAdapter(max_retries=retry)
-            session.mount('http://', adapter)
-            session.mount('https://', adapter)
-
-            # 发起请求
-            headers = {'Authorization': f'Bearer {token["access_token"]}'}
-            response = session.get(userinfo_url, headers=headers, timeout=30, verify=True)
-            response.raise_for_status()  # 确保抛出错误状态码
+            # 发送请求获取用户信息
+            response = session.get(userinfo_endpoint, headers=headers, timeout=30)
+            response.raise_for_status()
             user_info = response.json()
 
-            current_app.logger.debug(f"Received Google user info: {user_info.get('email')}")
+            current_app.logger.debug(f"Received user info with email: {user_info.get('email')}")
         except Exception as e:
-            current_app.logger.error(f"Failed to get user info: {str(e)}")
-            current_app.logger.error(traceback.format_exc())
+            current_app.logger.error(f"Error getting user info: {str(e)}")
 
-            # 尝试备用方法
-            try:
-                current_app.logger.info("Trying alternative method to get user info...")
-                userinfo_url = 'https://www.googleapis.com/oauth2/v1/userinfo'
-                current_app.logger.info(f"Using alternate userinfo URL: {userinfo_url}")
+            # 尝试从ID token提取信息作为备用方案
+            if 'id_token' in token:
+                try:
+                    import jwt
+                    decoded = jwt.decode(token['id_token'], options={"verify_signature": False})
+                    user_info = {
+                        'email': decoded.get('email'),
+                        'sub': decoded.get('sub'),
+                        'name': decoded.get('name'),
+                        'picture': decoded.get('picture')
+                    }
+                    current_app.logger.info(f"Created user_info from id_token, email: {user_info.get('email')}")
+                except Exception as jwt_error:
+                    current_app.logger.error(f"Failed to decode id_token: {str(jwt_error)}")
+                    raise e
+            else:
+                raise e
 
-                headers = {'Authorization': f'Bearer {token["access_token"]}'}
-                response = session.get(userinfo_url, headers=headers, timeout=30, verify=False)
-                response.raise_for_status()
-                user_info = response.json()
-                current_app.logger.debug(f"Successfully retrieved user info using alternative method")
-            except Exception as alt_error:
-                current_app.logger.error(f"Alternative method also failed: {str(alt_error)}")
-                raise e  # 如果备用方法也失败，抛出原始错误
-
+        # 验证用户信息
         if not user_info or 'email' not in user_info:
-            error_msg = "Google login failed, unable to get user information!"
-            current_app.logger.error(f"User info error: {user_info}")
-            # 如果有回调scheme，重定向到应用
+            error_msg = "Google login failed, unable to get user information"
+            current_app.logger.error(f"User info missing email: {user_info}")
             if callback_scheme:
                 redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
                 return redirect(redirect_url)
             return {"error": error_msg}, 400
 
         email = user_info['email']
-        # OpenID Connect使用'sub'作为用户标识符，而不是'id'
-        # 记录完整的用户信息以便调试
-        current_app.logger.debug(f"Full user info: {user_info}")
 
-        # 优先使用'sub'，如果没有则尝试使用'id'
-        if 'sub' in user_info:
-            oauth_id = user_info['sub']
-        elif 'id' in user_info:
-            oauth_id = user_info['id']
-        else:
-            # 如果都没有，使用email作为备用
-            current_app.logger.warning(f"No 'sub' or 'id' field found in user info, using email as oauth_id")
-            oauth_id = f"email:{email}"
+        # 获取用户ID - OpenID Connect使用'sub'作为标准的用户ID
+        if 'sub' not in user_info:
+            current_app.logger.error(f"No 'sub' field in user info: {user_info}")
+            error_msg = "Invalid user information from Google"
+            if callback_scheme:
+                redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
+                return redirect(redirect_url)
+            return {"error": error_msg}, 400
 
+        oauth_id = user_info['sub']
         current_app.logger.info(f"Processing login for Google user: {email} with ID: {oauth_id}")
 
         # 查找或创建用户
@@ -1013,7 +953,7 @@ def google_callback():
                 current_app.logger.info(f"Linked Google account to existing user: {email}")
             else:
                 # 创建新用户
-                nickname = user_info.get('name', '用户')
+                nickname = user_info.get('name', email.split('@')[0])
                 current_app.logger.info(f"Creating new user for Google account: {email}")
                 user_id = user_ops.get_or_create_user(
                     email=email,
@@ -1029,6 +969,13 @@ def google_callback():
                         redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
                         return redirect(redirect_url)
                     return {"error": error_msg}, 500
+
+                # 设置额外的用户信息
+                if 'picture' in user_info and user_info['picture']:
+                    user.avatar_name = user_info['picture']
+
+                if nickname:
+                    user.nickname = nickname
 
                 # 对于OAuth登录，自动验证邮箱
                 user.email_verified = True
@@ -1053,17 +1000,16 @@ def google_callback():
 
         # 否则返回JSON响应
         return jsonify({
-            "error": "login succeed",
+            "success": True,
             "jwt": access_token,
             "refresh_token": refresh_token,
             "user_id": user.id
         })
     except Exception as e:
         current_app.logger.error(f"Google OAuth callback error: {str(e)}")
-        # 打印详细的堆栈跟踪
         current_app.logger.error(traceback.format_exc())
 
-        error_msg = "Authentication failed"
+        error_msg = f"Authentication failed: {str(e)}"
         if callback_scheme:
             redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
             return redirect(redirect_url)
