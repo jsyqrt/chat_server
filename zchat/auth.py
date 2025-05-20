@@ -35,7 +35,8 @@ def init_app(app):
     # 准备Google OAuth的client_kwargs
     google_client_kwargs = {
         'scope': 'openid email profile',
-        'token_endpoint_auth_method': 'client_secret_post'
+        'token_endpoint_auth_method': 'client_secret_post',
+        'timeout': 30  # 添加超时设置，确保是整数
     }
 
     # 配置代理设置，只为Google配置代理
@@ -883,7 +884,8 @@ def google_callback():
         }
 
         try:
-            token = client.authorize_access_token(params=token_params)
+            # 使用明确的参数类型进行传递
+            token = client.authorize_access_token()  # 不传递params参数，让authlib使用默认方式处理
             current_app.logger.debug(f"Received Google token: {token.get('access_token')[:10]}...")
         except Exception as token_error:
             current_app.logger.error(f"Token retrieval error: {str(token_error)}")
@@ -1346,8 +1348,8 @@ def validate_oauth_token():
             "user": {
                 "id": user.id,
                 "email": user.email,
-                "name": user.name,
-                "avatar_url": user.avatar_url
+                "name": user.nickname,
+                "avatar_url": user.avatar_name
             }
         })
     except jwt.ExpiredSignatureError:
@@ -1382,9 +1384,9 @@ def get_user_info():
 
     # 获取用户的认证提供商列表
     auth_providers = []
-    if user.oauth_google_id:
+    if user.oauth_provider == 'google' and user.oauth_id:
         auth_providers.append("google")
-    if user.oauth_github_id:
+    if user.oauth_provider == 'github' and user.oauth_id:
         auth_providers.append("github")
     if user.email and user.password_hash:
         auth_providers.append("email")
@@ -1394,8 +1396,8 @@ def get_user_info():
     return jsonify({
         "user_id": user.id,
         "email": user.email,
-        "name": user.name,
-        "avatar_url": user.avatar_url,
+        "name": user.nickname,
+        "avatar_url": user.avatar_name,
         "auth_providers": auth_providers
     })
 
