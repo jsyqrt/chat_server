@@ -5,6 +5,8 @@ import time
 import hashlib
 import uuid
 import os
+import socket
+import traceback
 from collections import OrderedDict
 from urllib.parse import quote_plus
 
@@ -30,18 +32,56 @@ def init_app(app):
     login_manager.init_app(app)
     oauth.init_app(app)
 
-    # 准备Google OAuth的client_kwargs
+        # 准备Google OAuth的client_kwargs
     google_client_kwargs = {'scope': 'openid email profile'}
 
     # 配置代理设置，只为Google配置代理
     proxy_url = app.config.get('SOCKS_PROXY')
     if proxy_url:
-        # 为Google客户端添加代理配置
-        google_client_kwargs['proxies'] = {
-            'http': proxy_url,
-            'https': proxy_url
-        }
-        app.logger.info(f"Google OAuth configured with proxy: {proxy_url}")
+        try:
+            # 尝试解析代理URL
+            proxy_parts = proxy_url.split('://')
+            if len(proxy_parts) > 1:
+                proxy_type = proxy_parts[0]  # socks5, http等
+                proxy_addr = proxy_parts[1].split('@')[-1].split(':')[0]
+                proxy_port = int(proxy_parts[1].split('@')[-1].split(':')[1]) if ':' in proxy_parts[1].split('@')[-1] else 1080
+
+                # 测试代理连接
+                app.logger.info(f"Testing proxy connection to {proxy_addr}:{proxy_port}...")
+                try:
+                    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    sock.settimeout(5)
+                    result = sock.connect_ex((proxy_addr, proxy_port))
+                    sock.close()
+
+                    if result == 0:
+                        app.logger.info(f"Proxy connection test successful")
+                    else:
+                        app.logger.error(f"Proxy connection test failed with error code {result}")
+                except Exception as e:
+                    app.logger.error(f"Proxy connection test failed: {str(e)}")
+
+            # 为Google客户端添加代理配置
+            google_client_kwargs['proxies'] = {
+                'http': proxy_url,
+                'https': proxy_url
+            }
+
+            # 检查必要的依赖包
+            try:
+                import socks
+                app.logger.info("SOCKS library available")
+            except ImportError:
+                app.logger.error("Missing SOCKS library. Please install 'PySocks' package.")
+
+            app.logger.info(f"Google OAuth configured with proxy: {proxy_url}")
+        except Exception as e:
+            app.logger.error(f"Failed to configure proxy: {str(e)}")
+            # 出错时不使用代理
+            if 'proxies' in google_client_kwargs:
+                del google_client_kwargs['proxies']
+    else:
+        app.logger.info("No proxy configured for Google OAuth")
 
     # 配置Google OAuth
     oauth.register(
@@ -768,14 +808,24 @@ def google_callback():
 
     # 处理OAuth回调
     try:
-        token = oauth.google.authorize_access_token()
+        # 检查代理配置
+        client = oauth.google
+        proxy_config = getattr(client, '_client_kwargs', {}).get('proxies', None)
+        current_app.logger.info(f"Current proxy configuration: {proxy_config}")
+
+        # 尝试获取访问令牌
+        current_app.logger.info("Attempting to get access token from Google...")
+        token = client.authorize_access_token()
         current_app.logger.debug(f"Received Google token: {token.get('access_token')[:10]}...")
 
-        user_info = oauth.google.get('userinfo').json()
+        # 获取用户信息
+        current_app.logger.info("Attempting to get user info from Google...")
+        user_info = client.get('userinfo').json()
         current_app.logger.debug(f"Received Google user info: {user_info.get('email')}")
 
         if not user_info or 'email' not in user_info:
             error_msg = "Google login failed, unable to get user information!"
+            current_app.logger.error(f"User info error: {user_info}")
             # 如果有回调scheme，重定向到应用
             if callback_scheme:
                 redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
@@ -784,6 +834,7 @@ def google_callback():
 
         email = user_info['email']
         oauth_id = user_info['id']
+        current_app.logger.info(f"Processing login for Google user: {email}")
 
         # 查找或创建用户
         user_ops = UserOps(session=db.session)
@@ -796,9 +847,11 @@ def google_callback():
                 # 如果邮箱已存在，关联OAuth信息
                 user.set_oauth_info('google', oauth_id)
                 db.session.commit()
+                current_app.logger.info(f"Linked Google account to existing user: {email}")
             else:
                 # 创建新用户
                 nickname = user_info.get('name', '用户')
+                current_app.logger.info(f"Creating new user for Google account: {email}")
                 user_id = user_ops.get_or_create_user(
                     email=email,
                     oauth_provider='google',
@@ -808,6 +861,7 @@ def google_callback():
 
                 if not user:
                     error_msg = "Failed to create user!"
+                    current_app.logger.error(f"Failed to create user for {email}")
                     if callback_scheme:
                         redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
                         return redirect(redirect_url)
@@ -816,14 +870,17 @@ def google_callback():
                 # 对于OAuth登录，自动验证邮箱
                 user.email_verified = True
                 db.session.commit()
+                current_app.logger.info(f"Created new user for Google account: {email}, ID: {user.id}")
 
         # 登录用户
         lg_user = LGUser(user)
         login_user(lg_user)
+        current_app.logger.info(f"Logged in Google user: {email}, ID: {user.id}")
 
         # 生成访问令牌和刷新令牌
         access_token = generate_jwt_token(user.id)
         refresh_token = generate_refresh_token(user.id)
+        current_app.logger.info(f"Generated tokens for user: {user.id}")
 
         # 如果有回调scheme，重定向到应用
         if callback_scheme:
@@ -840,6 +897,9 @@ def google_callback():
         })
     except Exception as e:
         current_app.logger.error(f"Google OAuth callback error: {str(e)}")
+        # 打印详细的堆栈跟踪
+        current_app.logger.error(traceback.format_exc())
+
         error_msg = "Authentication failed"
         if callback_scheme:
             redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
