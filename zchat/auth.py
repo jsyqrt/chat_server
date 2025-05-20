@@ -122,6 +122,19 @@ def init_app(app):
         client_kwargs=google_client_kwargs,
     )
 
+    # 添加额外的日志记录来帮助调试
+    app.logger.info(f"Google OAuth registered with client_id: {app.config.get('GOOGLE_CLIENT_ID')[:5]}...")
+    app.logger.info(f"Google userinfo endpoint: {oauth.google.userinfo_endpoint}")
+
+    # 检查SSL证书
+    try:
+        import ssl
+        import certifi
+        app.logger.info(f"Using certifi version: {certifi.__version__}")
+        app.logger.info(f"SSL version: {ssl.OPENSSL_VERSION}")
+    except Exception as e:
+        app.logger.warning(f"Could not get SSL information: {str(e)}")
+
     # 配置GitHub OAuth
     oauth.register(
         name='github',
@@ -911,8 +924,54 @@ def google_callback():
 
         # 获取用户信息
         current_app.logger.info("Attempting to get user info from Google...")
-        user_info = client.get('userinfo', token=token).json()
-        current_app.logger.debug(f"Received Google user info: {user_info.get('email')}")
+        try:
+            # 1. 使用完整的userinfo URL
+            userinfo_url = 'https://openidconnect.googleapis.com/v1/userinfo'
+            current_app.logger.info(f"Using userinfo URL: {userinfo_url}")
+
+            # 2. 创建自定义的会话并配置代理
+            session = requests.Session()
+            # 如果我们有代理配置，重新应用它们
+            if hasattr(client, '_client_kwargs') and 'proxies' in client._client_kwargs:
+                proxies = client._client_kwargs['proxies']
+                current_app.logger.info(f"Re-applying proxy settings for userinfo request: {proxies}")
+                session.proxies.update(proxies)
+
+            # 3. 添加重试机制
+            retry = requests.packages.urllib3.util.retry.Retry(
+                total=3,
+                backoff_factor=0.5,
+                status_forcelist=[500, 502, 503, 504]
+            )
+            adapter = requests.adapters.HTTPAdapter(max_retries=retry)
+            session.mount('http://', adapter)
+            session.mount('https://', adapter)
+
+            # 发起请求
+            headers = {'Authorization': f'Bearer {token["access_token"]}'}
+            response = session.get(userinfo_url, headers=headers, timeout=30, verify=True)
+            response.raise_for_status()  # 确保抛出错误状态码
+            user_info = response.json()
+
+            current_app.logger.debug(f"Received Google user info: {user_info.get('email')}")
+        except Exception as e:
+            current_app.logger.error(f"Failed to get user info: {str(e)}")
+            current_app.logger.error(traceback.format_exc())
+
+            # 尝试备用方法
+            try:
+                current_app.logger.info("Trying alternative method to get user info...")
+                userinfo_url = 'https://www.googleapis.com/oauth2/v1/userinfo'
+                current_app.logger.info(f"Using alternate userinfo URL: {userinfo_url}")
+
+                headers = {'Authorization': f'Bearer {token["access_token"]}'}
+                response = session.get(userinfo_url, headers=headers, timeout=30, verify=False)
+                response.raise_for_status()
+                user_info = response.json()
+                current_app.logger.debug(f"Successfully retrieved user info using alternative method")
+            except Exception as alt_error:
+                current_app.logger.error(f"Alternative method also failed: {str(alt_error)}")
+                raise e  # 如果备用方法也失败，抛出原始错误
 
         if not user_info or 'email' not in user_info:
             error_msg = "Google login failed, unable to get user information!"
