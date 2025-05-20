@@ -1015,30 +1015,58 @@ def github_login():
 
     # 生成重定向URI，添加状态参数
     redirect_uri = url_for('auth.github_callback', _external=True)
-    return oauth.github.authorize_redirect(redirect_uri, state=state)
+    current_app.logger.info(f"GitHub OAuth redirect URI: {redirect_uri}")
+
+    try:
+        return oauth.github.authorize_redirect(redirect_uri, state=state)
+    except Exception as e:
+        current_app.logger.error(f"GitHub login error: {e}")
+        current_app.logger.error(traceback.format_exc())
+        return {"error": f"GitHub login failed: {str(e)}"}, 500
 
 @bp.route('/github_callback')
 def github_callback():
     """GitHub OAuth回调"""
     # 获取状态参数
     state = request.args.get('state')
+    error = request.args.get('error')
     callback_scheme = None
+
+    current_app.logger.info(f"GitHub callback received, state: {state}, error: {error}")
+
+    # 处理错误情况
+    if error:
+        error_msg = f"GitHub authentication error: {error}"
+        current_app.logger.error(error_msg)
+        return render_template('customer_service/error.html',
+                              title='GitHub登录失败',
+                              message=error_msg)
 
     # 验证状态参数
     if state:
         state_store = RedisStateStore(current_app.redis)
         callback_scheme = state_store.verify_state(state)
+        if not callback_scheme:
+            error_msg = "Invalid state parameter, possible CSRF attack"
+            current_app.logger.error(error_msg)
+            return {"error": error_msg}, 400
 
     # 处理OAuth回调
     try:
+        current_app.logger.info("Attempting to get access token from GitHub...")
         token = oauth.github.authorize_access_token()
+
+        # 获取用户基本信息
+        current_app.logger.info("Getting user info from GitHub...")
         resp = oauth.github.get('user', token=token)
         user_info = resp.json()
+        current_app.logger.info(f"Received GitHub user info: {user_info.get('login')}")
 
         if not user_info or 'id' not in user_info:
             error_msg = "GitHub login failed, unable to get user information!"
+            current_app.logger.error(f"User info missing id: {user_info}")
             if callback_scheme:
-                redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
                 return redirect(redirect_url)
             return {"error": error_msg}, 400
 
@@ -1047,8 +1075,10 @@ def github_callback():
         # GitHub不会直接提供公开邮箱，需要额外请求邮箱信息
         email = None
         try:
+            current_app.logger.info("Getting GitHub user emails...")
             emails_resp = oauth.github.get('user/emails', token=token)
             emails_data = emails_resp.json()
+
             # 查找主要且已验证的邮箱
             for email_data in emails_data:
                 if email_data.get('primary', False) and email_data.get('verified', False):
@@ -1060,19 +1090,24 @@ def github_callback():
                     if email_data.get('verified', False):
                         email = email_data.get('email')
                         break
+
+            current_app.logger.info(f"Found GitHub user email: {email}")
         except Exception as e:
             current_app.logger.error(f"Failed to get GitHub emails: {str(e)}")
+            current_app.logger.error(traceback.format_exc())
 
         if not email:
             error_msg = "GitHub login failed, unable to get valid email!"
+            current_app.logger.error("No valid email found for GitHub user")
             if callback_scheme:
-                redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
                 return redirect(redirect_url)
             return {"error": error_msg}, 400
 
         # 查找或创建用户
         user_ops = UserOps(session=db.session)
         user = user_ops.get_user_by_oauth('github', oauth_id)
+        current_app.logger.info(f"Processing login for GitHub user: {email} with ID: {oauth_id}")
 
         if not user:
             user = user_ops.get_user_by_email(email)
@@ -1081,9 +1116,11 @@ def github_callback():
                 # 如果邮箱已存在，关联OAuth信息
                 user.set_oauth_info('github', oauth_id)
                 db.session.commit()
+                current_app.logger.info(f"Linked GitHub account to existing user: {email}")
             else:
                 # 创建新用户
                 nickname = user_info.get('name') or user_info.get('login', '用户')
+                current_app.logger.info(f"Creating new user for GitHub account: {email}")
                 user_id = user_ops.get_or_create_user(
                     email=email,
                     oauth_provider='github',
@@ -1093,26 +1130,38 @@ def github_callback():
 
                 if not user:
                     error_msg = "Failed to create user!"
+                    current_app.logger.error(f"Failed to create user for GitHub account {email}")
                     if callback_scheme:
-                        redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                        redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
                         return redirect(redirect_url)
                     return {"error": error_msg}, 500
+
+                # 设置额外的用户信息
+                if user_info.get('avatar_url'):
+                    user.avatar_name = user_info['avatar_url']
+
+                if nickname:
+                    user.nickname = nickname
 
                 # 对于OAuth登录，自动验证邮箱
                 user.email_verified = True
                 db.session.commit()
+                current_app.logger.info(f"Created new user for GitHub account: {email}, ID: {user.id}")
 
         # 登录用户
         lg_user = LGUser(user)
         login_user(lg_user)
+        current_app.logger.info(f"Logged in GitHub user: {email}, ID: {user.id}")
 
         # 生成访问令牌和刷新令牌
         access_token = generate_jwt_token(user.id)
         refresh_token = generate_refresh_token(user.id)
+        current_app.logger.info(f"Generated tokens for GitHub user: {user.id}")
 
         # 如果有回调scheme，重定向到应用
         if callback_scheme:
             redirect_url = f"{callback_scheme}://oauth_callback?token={access_token}&refresh_token={refresh_token}&provider=github&state={state}"
+            current_app.logger.info(f"Redirecting to app: {callback_scheme}")
             return redirect(redirect_url)
 
         # 否则返回JSON响应
@@ -1124,9 +1173,11 @@ def github_callback():
         })
     except Exception as e:
         current_app.logger.error(f"GitHub OAuth callback error: {str(e)}")
-        error_msg = "Authentication failed"
+        current_app.logger.error(traceback.format_exc())
+
+        error_msg = f"Authentication failed: {str(e)}"
         if callback_scheme:
-            redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+            redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
             return redirect(redirect_url)
         return {"error": error_msg}, 500
 
