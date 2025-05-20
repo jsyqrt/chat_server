@@ -29,19 +29,18 @@ def init_app(app):
     login_manager.init_app(app)
     oauth.init_app(app)
 
-    # 配置代理设置
+    # 准备Google OAuth的client_kwargs
+    google_client_kwargs = {'scope': 'openid email profile'}
+
+    # 配置代理设置，只为Google配置代理
     proxy_url = app.config.get('SOCKS_PROXY')
     if proxy_url:
-        os.environ['HTTP_PROXY'] = proxy_url
-        os.environ['HTTPS_PROXY'] = proxy_url
-        # 为OAuth客户端配置代理
-        session = requests.Session()
-        session.proxies = {
+        # 为Google客户端添加代理配置
+        google_client_kwargs['proxies'] = {
             'http': proxy_url,
             'https': proxy_url
         }
-        # 注入代理会话到OAuth客户端
-        oauth.registry.update_oauth_client('google', session=session)
+        app.logger.info(f"Google OAuth configured with proxy: {proxy_url}")
 
     # 配置Google OAuth
     oauth.register(
@@ -54,7 +53,7 @@ def init_app(app):
         authorize_params=None,
         api_base_url='https://www.googleapis.com/oauth2/v1/',
         userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo',
-        client_kwargs={'scope': 'openid email profile'},
+        client_kwargs=google_client_kwargs,
     )
 
     # 配置GitHub OAuth
