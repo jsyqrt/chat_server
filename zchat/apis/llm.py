@@ -31,6 +31,12 @@ MODEL_MAPPINGS: Dict[str, Dict[str, str]] = {
         "deepseek": "deepseek-chat",
         "aliyun": "qwen2.5-32b-instruct",
         "siliconflow": "Qwen/Qwen2.5-VL-32B-Instruct"
+    },
+    "qwen-3-32b": {
+        "groq": "qwen-3-32b",
+        "deepseek": "deepseek-chat",
+        "aliyun": "qwen3-32b-instruct",
+        "siliconflow": "Qwen/Qwen3-32B"
     }
 }
 

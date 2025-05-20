@@ -262,8 +262,8 @@ def get_llm_response(topic, topic_path, siblings=None, children=None, lang='zh_C
   ]
   current_app.logger.debug(f"get_llm_response messages: {messages}")
   # 使用更大的token限制以获取更详细的描述
-  response = get_response_from_llm(messages, "qwen-2.5-32b", 4096, platform='siliconflow')
-#   response = get_response_from_llm(messages, "qwen-2.5-32b", 8192, platform='aliyun')
+#   response = get_response_from_llm(messages, "qwen-2.5-32b", 4096, platform='siliconflow')
+  response = get_response_from_llm(messages, "qwen-3-32b", 8192, platform='siliconflow')
   return response
 
 def parse_llm_response(response):
@@ -300,12 +300,8 @@ def get_llm_response_stream(topic, topic_path, siblings=None, children=None, lan
     ]
     current_app.logger.debug(f"get_llm_response_stream messages: {messages}")
     # Use the stream function from llm.py
-    return get_response_from_llm_stream(
-        messages,
-        "qwen-2.5-32b",
-        4096,
-        platform='siliconflow'
-    )
+    # return get_response_from_llm_stream(messages, "qwen-2.5-32b", 4096, platform='siliconflow')
+    return get_response_from_llm_stream(messages, "qwen-3-32b", 8192, platform='siliconflow')
 
 def description_from_topic_path_stream(topic, topic_path, siblings=None, children=None, lang='zh_CN'):
     """Stream the description for a topic path directly from the LLM"""
