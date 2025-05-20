@@ -983,8 +983,21 @@ def google_callback():
             return {"error": error_msg}, 400
 
         email = user_info['email']
-        oauth_id = user_info['id']
-        current_app.logger.info(f"Processing login for Google user: {email}")
+        # OpenID Connect使用'sub'作为用户标识符，而不是'id'
+        # 记录完整的用户信息以便调试
+        current_app.logger.debug(f"Full user info: {user_info}")
+
+        # 优先使用'sub'，如果没有则尝试使用'id'
+        if 'sub' in user_info:
+            oauth_id = user_info['sub']
+        elif 'id' in user_info:
+            oauth_id = user_info['id']
+        else:
+            # 如果都没有，使用email作为备用
+            current_app.logger.warning(f"No 'sub' or 'id' field found in user info, using email as oauth_id")
+            oauth_id = f"email:{email}"
+
+        current_app.logger.info(f"Processing login for Google user: {email} with ID: {oauth_id}")
 
         # 查找或创建用户
         user_ops = UserOps(session=db.session)
