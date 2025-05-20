@@ -26,9 +26,9 @@ services:
     env_file:
       - .env
     environment:
-      - SOCKS_PROXY=socks5://v2ray-client:1080
-      - HTTP_PROXY=http://v2ray-client:1081
-      - HTTPS_PROXY=http://v2ray-client:1081
+      - MY_SOCKS_PROXY=socks5://v2ray-client:1080
+      - MY_HTTP_PROXY=http://v2ray-client:1081
+      - MY_HTTPS_PROXY=http://v2ray-client:1081
     networks:
       - zchat-network
     healthcheck:

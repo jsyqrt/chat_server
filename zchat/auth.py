@@ -40,9 +40,9 @@ def init_app(app):
     }
 
     # 配置代理设置，只为Google配置代理
-    socks_proxy_url = app.config.get('SOCKS_PROXY')
-    http_proxy_url = app.config.get('HTTP_PROXY')
-    https_proxy_url = app.config.get('HTTPS_PROXY')
+    socks_proxy_url = app.config.get('MY_SOCKS_PROXY')
+    http_proxy_url = app.config.get('MY_HTTP_PROXY')
+    https_proxy_url = app.config.get('MY_HTTPS_PROXY')
 
     # 配置SSL证书
     try:
