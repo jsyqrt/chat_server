@@ -313,7 +313,11 @@ def get_prompts_by_language(lang, style=None):
         return {
             'system_prompt': system_prompt_template_en.format(
                 style_name=style_name,
-                style_description=style_description
+                style_description=style_description,
+                topic_path="{topic_path}",
+                topic="{topic}",
+                siblings="{siblings}",
+                children="{children}"
             ),
             'user_prompt': user_prompt_template_en.format(
                 style_name=style_name,
@@ -332,7 +336,11 @@ def get_prompts_by_language(lang, style=None):
         return {
             'system_prompt': system_prompt_template_zh.format(
                 style_name=style_name,
-                style_description=style_description
+                style_description=style_description,
+                topic_path="{topic_path}",
+                topic="{topic}",
+                siblings="{siblings}",
+                children="{children}"
             ),
             'user_prompt': user_prompt_template_zh.format(
                 style_name=style_name,
@@ -352,17 +360,18 @@ def get_llm_response(topic, topic_path, siblings=None, children=None, lang='zh_C
   prompts = get_prompts_by_language(lang, style)
   siblings_str = "、".join(siblings) if siblings else "无"
   children_str = "、".join(children) if children else "无"
+  topic_path_str = '->'.join(topic_path[:-1])
 
   messages=[
     {"role": "system", "content": prompts['system_prompt'].format(
         topic=topic,
-        topic_path='->'.join(topic_path[:-1]),
+        topic_path=topic_path_str,
         siblings=siblings_str,
         children=children_str
     )},
     {"role": "user", "content": prompts['user_prompt'].format(
         topic=topic,
-        topic_path='->'.join(topic_path[:-1]),
+        topic_path=topic_path_str,
         siblings=siblings_str,
         children=children_str
     )},
@@ -389,17 +398,18 @@ def get_llm_response_stream(topic, topic_path, siblings=None, children=None, lan
     prompts = get_prompts_by_language(lang, style)
     siblings_str = "、".join(siblings) if siblings else "无"
     children_str = "、".join(children) if children else "无"
+    topic_path_str = '->'.join(topic_path[:-1])
 
     messages=[
         {"role": "system", "content": prompts['system_prompt'].format(
             topic=topic,
-            topic_path='->'.join(topic_path[:-1]),
+            topic_path=topic_path_str,
             siblings=siblings_str,
             children=children_str
         )},
         {"role": "user", "content": prompts['user_prompt'].format(
             topic=topic,
-            topic_path='->'.join(topic_path[:-1]),
+            topic_path=topic_path_str,
             siblings=siblings_str,
             children=children_str
         )},
