@@ -8,6 +8,8 @@ LOG_LEVEL = os.environ.get('LOG_LEVEL', 'info')
 
 # 代理配置
 SOCKS_PROXY = os.environ.get('SOCKS_PROXY', '')  # 格式: 'socks5://user:pass@host:port'
+HTTP_PROXY = os.environ.get('HTTP_PROXY', '')  # 格式: 'http://host:port'
+HTTPS_PROXY = os.environ.get('HTTPS_PROXY', '')  # 格式: 'http://host:port'
 
 # 数据库配置
 SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:///zchat.db')

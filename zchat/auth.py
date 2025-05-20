@@ -36,36 +36,53 @@ def init_app(app):
     google_client_kwargs = {'scope': 'openid email profile'}
 
     # 配置代理设置，只为Google配置代理
-    proxy_url = app.config.get('SOCKS_PROXY')
-    if proxy_url:
+    socks_proxy_url = app.config.get('SOCKS_PROXY')
+    http_proxy_url = app.config.get('HTTP_PROXY')
+    https_proxy_url = app.config.get('HTTPS_PROXY')
+
+    if http_proxy_url or https_proxy_url or socks_proxy_url:
         try:
-            # 尝试解析代理URL
-            proxy_parts = proxy_url.split('://')
-            if len(proxy_parts) > 1:
-                proxy_type = proxy_parts[0]  # socks5, http等
-                proxy_addr = proxy_parts[1].split('@')[-1].split(':')[0]
-                proxy_port = int(proxy_parts[1].split('@')[-1].split(':')[1]) if ':' in proxy_parts[1].split('@')[-1] else 1080
+            # 优先使用HTTP/HTTPS代理
+            if http_proxy_url or https_proxy_url:
+                proxy_url = https_proxy_url or http_proxy_url
+                app.logger.info(f"使用HTTP代理: {proxy_url}")
 
-                # 测试代理连接
-                app.logger.info(f"Testing proxy connection to {proxy_addr}:{proxy_port}...")
-                try:
-                    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                    sock.settimeout(5)
-                    result = sock.connect_ex((proxy_addr, proxy_port))
-                    sock.close()
+                # 为Google客户端添加代理配置
+                google_client_kwargs['proxies'] = {
+                    'http': http_proxy_url or proxy_url,
+                    'https': https_proxy_url or proxy_url
+                }
+            elif socks_proxy_url:
+                # 如果只有SOCKS代理，则使用SOCKS代理
+                app.logger.info(f"使用SOCKS代理: {socks_proxy_url}")
 
-                    if result == 0:
-                        app.logger.info(f"Proxy connection test successful")
-                    else:
-                        app.logger.error(f"Proxy connection test failed with error code {result}")
-                except Exception as e:
-                    app.logger.error(f"Proxy connection test failed: {str(e)}")
+                # 解析代理URL
+                proxy_parts = socks_proxy_url.split('://')
+                if len(proxy_parts) > 1:
+                    proxy_type = proxy_parts[0]  # socks5, http等
+                    proxy_addr = proxy_parts[1].split('@')[-1].split(':')[0]
+                    proxy_port = int(proxy_parts[1].split('@')[-1].split(':')[1]) if ':' in proxy_parts[1].split('@')[-1] else 1080
 
-            # 为Google客户端添加代理配置
-            google_client_kwargs['proxies'] = {
-                'http': proxy_url,
-                'https': proxy_url
-            }
+                    # 测试代理连接
+                    app.logger.info(f"Testing proxy connection to {proxy_addr}:{proxy_port}...")
+                    try:
+                        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        sock.settimeout(5)
+                        result = sock.connect_ex((proxy_addr, proxy_port))
+                        sock.close()
+
+                        if result == 0:
+                            app.logger.info(f"Proxy connection test successful")
+                        else:
+                            app.logger.error(f"Proxy connection test failed with error code {result}")
+                    except Exception as e:
+                        app.logger.error(f"Proxy connection test failed: {str(e)}")
+
+                # 为Google客户端添加代理配置
+                google_client_kwargs['proxies'] = {
+                    'http': socks_proxy_url,
+                    'https': socks_proxy_url
+                }
 
             # 检查必要的依赖包
             try:
@@ -74,7 +91,7 @@ def init_app(app):
             except ImportError:
                 app.logger.error("Missing SOCKS library. Please install 'PySocks' package.")
 
-            app.logger.info(f"Google OAuth configured with proxy: {proxy_url}")
+            app.logger.info(f"Google OAuth configured with proxies: {google_client_kwargs['proxies']}")
         except Exception as e:
             app.logger.error(f"Failed to configure proxy: {str(e)}")
             # 出错时不使用代理

@@ -27,6 +27,8 @@ services:
       - .env
     environment:
       - SOCKS_PROXY=socks5://v2ray-client:1080
+      - HTTP_PROXY=http://v2ray-client:1081
+      - HTTPS_PROXY=http://v2ray-client:1081
     networks:
       - zchat-network
     healthcheck:
@@ -47,8 +49,9 @@ services:
       - zchat-network
     ports:
       - "1080:1080"  # SOCKS代理端口
+      - "1081:1081"  # HTTP代理端口
     healthcheck:
-      test: ["CMD", "wget", "--spider", "--quiet", "http://localhost:1080"]
+      test: ["CMD", "wget", "--spider", "--quiet", "http://localhost:1081"]
       interval: 10s
       timeout: 5s
       retries: 3
