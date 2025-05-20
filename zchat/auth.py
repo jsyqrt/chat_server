@@ -1341,6 +1341,11 @@ def validate_oauth_token():
                 "error": "User not found"
             }), 404
 
+        # 为用户创建会话，就像用户使用账号密码登录一样
+        current_app.logger.debug(f"Setting up session for user ID: {user.id} from OAuth validation")
+        lg_user = LGUser(user)
+        login_user(lg_user)
+
         # 返回用户信息
         return jsonify({
             "success": True,
