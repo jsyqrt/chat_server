@@ -120,8 +120,6 @@ def init_app(app):
         name='google',
         client_id=app.config.get('GOOGLE_CLIENT_ID'),
         client_secret=app.config.get('GOOGLE_CLIENT_SECRET'),
-        # 不使用server_metadata_url，改为直接配置所有端点
-        # server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
         access_token_url='https://oauth2.googleapis.com/token',
         authorize_url='https://accounts.google.com/o/oauth2/auth',
         api_base_url='https://www.googleapis.com/',
@@ -877,9 +875,11 @@ def google_callback():
 
         # 创建会话并设置代理（如果配置了）
         session = requests.Session()
-        if hasattr(oauth.google, '_client_kwargs') and 'proxies' in oauth.google._client_kwargs:
-            session.proxies.update(oauth.google._client_kwargs['proxies'])
-            current_app.logger.info(f"Using proxies for userinfo request: {session.proxies}")
+        session.proxies = {
+            'http': current_app.config.get('MY_HTTP_PROXY'),
+            'https': current_app.config.get('MY_HTTPS_PROXY')
+        }
+        current_app.logger.info(f"Using proxies for userinfo request: {session.proxies}")
 
         # 设置SSL验证
         verify = True
