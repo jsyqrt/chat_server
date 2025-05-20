@@ -36,13 +36,22 @@ def init_app(app):
     google_client_kwargs = {
         'scope': 'openid email profile',
         'token_endpoint_auth_method': 'client_secret_post',
-        'timeout': 30  # 添加超时设置，确保是整数
+        'timeout': 60
     }
 
     # 配置代理设置，只为Google配置代理
     socks_proxy_url = app.config.get('SOCKS_PROXY')
     http_proxy_url = app.config.get('HTTP_PROXY')
     https_proxy_url = app.config.get('HTTPS_PROXY')
+
+    # 配置SSL证书
+    try:
+        import certifi
+        # 使用certifi的CA证书确保SSL连接安全
+        google_client_kwargs['verify'] = certifi.where()
+        app.logger.info("Using certifi CA certificates")
+    except Exception as e:
+        app.logger.warning(f"Failed to configure certifi: {str(e)}")
 
     if http_proxy_url or https_proxy_url or socks_proxy_url:
         try:
@@ -56,6 +65,31 @@ def init_app(app):
                     'http': http_proxy_url or proxy_url,
                     'https': https_proxy_url or proxy_url
                 }
+
+                # 添加重试会话
+                try:
+                    from requests.adapters import HTTPAdapter
+                    from urllib3.util import Retry
+
+                    # 创建具有重试功能的会话
+                    retry_strategy = Retry(
+                        total=3,
+                        backoff_factor=1,
+                        status_forcelist=[429, 500, 502, 503, 504],
+                        allowed_methods=["HEAD", "GET", "POST", "OPTIONS"]
+                    )
+                    adapter = HTTPAdapter(max_retries=retry_strategy)
+
+                    # 添加会话配置到client_kwargs
+                    google_client_kwargs['session'] = requests.Session()
+                    google_client_kwargs['session'].mount("https://", adapter)
+                    google_client_kwargs['session'].mount("http://", adapter)
+                    google_client_kwargs['session'].proxies = google_client_kwargs['proxies']
+
+                    app.logger.info("Configured retry session for HTTP requests")
+                except Exception as e:
+                    app.logger.warning(f"Failed to configure retry session: {str(e)}")
+
             elif socks_proxy_url:
                 # 如果只有SOCKS代理，则使用SOCKS代理
                 app.logger.info(f"使用SOCKS代理: {socks_proxy_url}")
@@ -863,148 +897,44 @@ def google_callback():
     try:
         # 获取访问令牌
         current_app.logger.info("Attempting to get access token from Google...")
-        try:
-            token = oauth.google.authorize_access_token()
-            current_app.logger.debug(f"Received token with keys: {list(token.keys())}")
-        except Exception as e:
-            current_app.logger.error(f"Failed to get access token: {str(e)}")
-            raise e
+        token = oauth.google.authorize_access_token()
+        current_app.logger.debug(f"Received token with keys: {list(token.keys())}")
 
         # 获取用户信息 - 使用标准的OpenID Connect endpoint
         current_app.logger.info("Getting user info from Google...")
-        try:
-            # 从token中获取access_token
-            access_token = token.get('access_token')
-            if not access_token:
-                current_app.logger.error("No access_token in response")
-                raise ValueError("Missing access token")
 
-            # 使用标准的userinfo端点
-            userinfo_endpoint = 'https://openidconnect.googleapis.com/v1/userinfo'
-            headers = {'Authorization': f'Bearer {access_token}'}
+        # 从token中获取access_token
+        access_token = token.get('access_token')
+        if not access_token:
+            current_app.logger.error("No access_token in response")
+            raise ValueError("Missing access token")
 
-            # 创建会话并设置代理（如果配置了）
-            session = requests.Session()
-            if hasattr(oauth.google, '_client_kwargs') and 'proxies' in oauth.google._client_kwargs:
-                session.proxies.update(oauth.google._client_kwargs['proxies'])
-                current_app.logger.info(f"Using proxies for userinfo request: {session.proxies}")
+        # 使用标准的userinfo端点
+        userinfo_endpoint = 'https://openidconnect.googleapis.com/v1/userinfo'
+        headers = {'Authorization': f'Bearer {access_token}'}
 
-            # 发送请求获取用户信息
-            response = session.get(userinfo_endpoint, headers=headers, timeout=30)
-            response.raise_for_status()
-            user_info = response.json()
+        # 创建会话并设置代理（如果配置了）
+        session = requests.Session()
+        if hasattr(oauth.google, '_client_kwargs') and 'proxies' in oauth.google._client_kwargs:
+            session.proxies.update(oauth.google._client_kwargs['proxies'])
+            current_app.logger.info(f"Using proxies for userinfo request: {session.proxies}")
 
-            current_app.logger.debug(f"Received user info with email: {user_info.get('email')}")
-        except Exception as e:
-            current_app.logger.error(f"Error getting user info: {str(e)}")
+        # 设置SSL验证
+        verify = True
+        if hasattr(oauth.google, '_client_kwargs') and 'verify' in oauth.google._client_kwargs:
+            verify = oauth.google._client_kwargs['verify']
 
-            # 尝试从ID token提取信息作为备用方案
-            if 'id_token' in token:
-                try:
-                    import jwt
-                    decoded = jwt.decode(token['id_token'], options={"verify_signature": False})
-                    user_info = {
-                        'email': decoded.get('email'),
-                        'sub': decoded.get('sub'),
-                        'name': decoded.get('name'),
-                        'picture': decoded.get('picture')
-                    }
-                    current_app.logger.info(f"Created user_info from id_token, email: {user_info.get('email')}")
-                except Exception as jwt_error:
-                    current_app.logger.error(f"Failed to decode id_token: {str(jwt_error)}")
-                    raise e
-            else:
-                raise e
+        # 发送请求获取用户信息
+        response = session.get(
+            userinfo_endpoint,
+            headers=headers,
+            timeout=60,
+            verify=verify
+        )
+        response.raise_for_status()
+        user_info = response.json()
+        current_app.logger.debug(f"Received user info with email: {user_info.get('email')}")
 
-        # 验证用户信息
-        if not user_info or 'email' not in user_info:
-            error_msg = "Google login failed, unable to get user information"
-            current_app.logger.error(f"User info missing email: {user_info}")
-            if callback_scheme:
-                redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
-                return redirect(redirect_url)
-            return {"error": error_msg}, 400
-
-        email = user_info['email']
-
-        # 获取用户ID - OpenID Connect使用'sub'作为标准的用户ID
-        if 'sub' not in user_info:
-            current_app.logger.error(f"No 'sub' field in user info: {user_info}")
-            error_msg = "Invalid user information from Google"
-            if callback_scheme:
-                redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
-                return redirect(redirect_url)
-            return {"error": error_msg}, 400
-
-        oauth_id = user_info['sub']
-        current_app.logger.info(f"Processing login for Google user: {email} with ID: {oauth_id}")
-
-        # 查找或创建用户
-        user_ops = UserOps(session=db.session)
-        user = user_ops.get_user_by_oauth('google', oauth_id)
-
-        if not user:
-            user = user_ops.get_user_by_email(email)
-
-            if user:
-                # 如果邮箱已存在，关联OAuth信息
-                user.set_oauth_info('google', oauth_id)
-                db.session.commit()
-                current_app.logger.info(f"Linked Google account to existing user: {email}")
-            else:
-                # 创建新用户
-                nickname = user_info.get('name', email.split('@')[0])
-                current_app.logger.info(f"Creating new user for Google account: {email}")
-                user_id = user_ops.get_or_create_user(
-                    email=email,
-                    oauth_provider='google',
-                    oauth_id=oauth_id
-                )
-                user = user_ops.get_one(id=user_id)
-
-                if not user:
-                    error_msg = "Failed to create user!"
-                    current_app.logger.error(f"Failed to create user for {email}")
-                    if callback_scheme:
-                        redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
-                        return redirect(redirect_url)
-                    return {"error": error_msg}, 500
-
-                # 设置额外的用户信息
-                if 'picture' in user_info and user_info['picture']:
-                    user.avatar_name = user_info['picture']
-
-                if nickname:
-                    user.nickname = nickname
-
-                # 对于OAuth登录，自动验证邮箱
-                user.email_verified = True
-                db.session.commit()
-                current_app.logger.info(f"Created new user for Google account: {email}, ID: {user.id}")
-
-        # 登录用户
-        lg_user = LGUser(user)
-        login_user(lg_user)
-        current_app.logger.info(f"Logged in Google user: {email}, ID: {user.id}")
-
-        # 生成访问令牌和刷新令牌
-        access_token = generate_jwt_token(user.id)
-        refresh_token = generate_refresh_token(user.id)
-        current_app.logger.info(f"Generated tokens for user: {user.id}")
-
-        # 如果有回调scheme，重定向到应用
-        if callback_scheme:
-            redirect_url = f"{callback_scheme}://oauth_callback?token={access_token}&refresh_token={refresh_token}&provider=google&state={state}"
-            current_app.logger.info(f"Redirecting to app: {callback_scheme}")
-            return redirect(redirect_url)
-
-        # 否则返回JSON响应
-        return jsonify({
-            "success": True,
-            "jwt": access_token,
-            "refresh_token": refresh_token,
-            "user_id": user.id
-        })
     except Exception as e:
         current_app.logger.error(f"Google OAuth callback error: {str(e)}")
         current_app.logger.error(traceback.format_exc())
