@@ -15,6 +15,8 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+      v2ray-client:
+        condition: service_started
     volumes:
       - ./zchat:/app/zchat
       - ./scripts:/app/scripts
@@ -23,6 +25,8 @@ services:
       - app_logs:/app/log
     env_file:
       - .env
+    environment:
+      - SOCKS_PROXY=socks5://v2ray-client:1080
     networks:
       - zchat-network
     healthcheck:
@@ -31,6 +35,24 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+
+  # V2Ray客户端 - 提供代理服务
+  v2ray-client:
+    image: v2fly/v2fly-core:latest
+    container_name: zchat-v2ray-client
+    restart: always
+    volumes:
+      - ./docker/v2ray/config.json:/etc/v2ray/config.json
+    networks:
+      - zchat-network
+    ports:
+      - "1080:1080"  # SOCKS代理端口
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "--quiet", "http://localhost:1080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
 
   # Nginx反向代理
   nginx:
