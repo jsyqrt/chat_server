@@ -32,8 +32,11 @@ def init_app(app):
     login_manager.init_app(app)
     oauth.init_app(app)
 
-        # 准备Google OAuth的client_kwargs
-    google_client_kwargs = {'scope': 'openid email profile'}
+    # 准备Google OAuth的client_kwargs
+    google_client_kwargs = {
+        'scope': 'openid email profile',
+        'token_endpoint_auth_method': 'client_secret_post'
+    }
 
     # 配置代理设置，只为Google配置代理
     socks_proxy_url = app.config.get('SOCKS_PROXY')
@@ -105,7 +108,8 @@ def init_app(app):
         name='google',
         client_id=app.config.get('GOOGLE_CLIENT_ID'),
         client_secret=app.config.get('GOOGLE_CLIENT_SECRET'),
-        access_token_url='https://accounts.google.com/o/oauth2/token',
+        server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
+        access_token_url='https://oauth2.googleapis.com/token',
         access_token_params=None,
         authorize_url='https://accounts.google.com/o/oauth2/auth',
         authorize_params={
@@ -789,15 +793,39 @@ def google_login():
     session['oauth_redirect_uri'] = redirect_uri
 
     try:
+        # 检查客户端配置
+        client = oauth.google
+
+        # 确保client_kwargs中包含必要的配置
+        if not hasattr(client, 'server_metadata') or not client.server_metadata:
+            current_app.logger.info("Manually checking and setting OpenID metadata")
+            try:
+                # 尝试手动加载元数据
+                client.load_server_metadata()
+                current_app.logger.info("Successfully loaded server metadata")
+            except Exception as e:
+                current_app.logger.error(f"Failed to load server metadata: {str(e)}")
+                # 手动设置元数据
+                client.server_metadata = {
+                    'issuer': 'https://accounts.google.com',
+                    'authorization_endpoint': 'https://accounts.google.com/o/oauth2/auth',
+                    'token_endpoint': 'https://oauth2.googleapis.com/token',
+                    'userinfo_endpoint': 'https://openidconnect.googleapis.com/v1/userinfo',
+                    'jwks_uri': 'https://www.googleapis.com/oauth2/v3/certs',
+                }
+                current_app.logger.info("Manually set OpenID configuration")
+
         # 使用authlib的authorize_redirect方法
         return oauth.google.authorize_redirect(
             redirect_uri,
             state=state,
             # 添加额外参数以避免iframe问题
-            nonce=hashlib.sha256(os.urandom(32)).hexdigest()
+            nonce=hashlib.sha256(os.urandom(32)).hexdigest(),
+            prompt='select_account'
         )
     except Exception as e:
         current_app.logger.error(f"Google login error: {e}")
+        current_app.logger.error(traceback.format_exc())
         return {"error": "Google login failed"}, 500
 
 @bp.route('/google_callback')
@@ -805,8 +833,8 @@ def google_callback():
     """Google OAuth回调"""
     # 获取状态参数
     state = request.args.get('state')
-    callback_scheme = None
     error = request.args.get('error')
+    callback_scheme = None
 
     current_app.logger.info(f"Google callback received, state: {state}, error: {error}")
 
@@ -830,14 +858,58 @@ def google_callback():
         proxy_config = getattr(client, '_client_kwargs', {}).get('proxies', None)
         current_app.logger.info(f"Current proxy configuration: {proxy_config}")
 
+        # 尝试获取OpenID配置
+        try:
+            openid_config = client.load_server_metadata()
+            current_app.logger.info(f"OpenID configuration loaded: {openid_config.get('issuer')}")
+        except Exception as e:
+            current_app.logger.error(f"Failed to load OpenID configuration: {str(e)}")
+            # 如果无法从元数据URL加载，则手动设置jwks_uri
+            client.server_metadata = {
+                'issuer': 'https://accounts.google.com',
+                'authorization_endpoint': 'https://accounts.google.com/o/oauth2/auth',
+                'token_endpoint': 'https://oauth2.googleapis.com/token',
+                'userinfo_endpoint': 'https://openidconnect.googleapis.com/v1/userinfo',
+                'jwks_uri': 'https://www.googleapis.com/oauth2/v3/certs',
+            }
+            current_app.logger.info("Manually set OpenID configuration")
+
         # 尝试获取访问令牌
         current_app.logger.info("Attempting to get access token from Google...")
-        token = client.authorize_access_token()
-        current_app.logger.debug(f"Received Google token: {token.get('access_token')[:10]}...")
+        token_params = {
+            'grant_type': 'authorization_code',
+            'code': request.args.get('code'),
+            'redirect_uri': url_for('auth.google_callback', _external=True)
+        }
+
+        try:
+            token = client.authorize_access_token(params=token_params)
+            current_app.logger.debug(f"Received Google token: {token.get('access_token')[:10]}...")
+        except Exception as token_error:
+            current_app.logger.error(f"Token retrieval error: {str(token_error)}")
+            # 如果ID令牌验证失败，尝试只获取访问令牌
+            try:
+                response = client.request(
+                    'POST',
+                    client.access_token_url,
+                    data={
+                        'client_id': client.client_id,
+                        'client_secret': client.client_secret,
+                        'code': request.args.get('code'),
+                        'grant_type': 'authorization_code',
+                        'redirect_uri': url_for('auth.google_callback', _external=True)
+                    },
+                    withhold_token=True
+                )
+                token = response.json()
+                current_app.logger.info("Retrieved access token without ID token validation")
+            except Exception as fallback_error:
+                current_app.logger.error(f"Fallback token retrieval error: {str(fallback_error)}")
+                raise token_error  # 如果备用方法也失败，抛出原始错误
 
         # 获取用户信息
         current_app.logger.info("Attempting to get user info from Google...")
-        user_info = client.get('userinfo').json()
+        user_info = client.get('userinfo', token=token).json()
         current_app.logger.debug(f"Received Google user info: {user_info.get('email')}")
 
         if not user_info or 'email' not in user_info:
