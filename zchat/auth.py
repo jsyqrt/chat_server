@@ -66,29 +66,8 @@ def init_app(app):
                     'https': https_proxy_url or proxy_url
                 }
 
-                # 添加重试会话
-                try:
-                    from requests.adapters import HTTPAdapter
-                    from urllib3.util import Retry
-
-                    # 创建具有重试功能的会话
-                    retry_strategy = Retry(
-                        total=3,
-                        backoff_factor=1,
-                        status_forcelist=[429, 500, 502, 503, 504],
-                        allowed_methods=["HEAD", "GET", "POST", "OPTIONS"]
-                    )
-                    adapter = HTTPAdapter(max_retries=retry_strategy)
-
-                    # 添加会话配置到client_kwargs
-                    google_client_kwargs['session'] = requests.Session()
-                    google_client_kwargs['session'].mount("https://", adapter)
-                    google_client_kwargs['session'].mount("http://", adapter)
-                    google_client_kwargs['session'].proxies = google_client_kwargs['proxies']
-
-                    app.logger.info("Configured retry session for HTTP requests")
-                except Exception as e:
-                    app.logger.warning(f"Failed to configure retry session: {str(e)}")
+                # 不再添加自定义session，而是使用authlib的默认session
+                # Authlib会自动应用proxies配置到其内部session中
 
             elif socks_proxy_url:
                 # 如果只有SOCKS代理，则使用SOCKS代理
