@@ -6,6 +6,7 @@ import hashlib
 import uuid
 import os
 from collections import OrderedDict
+from urllib.parse import quote_plus
 
 import jwt
 from flask import (
@@ -50,7 +51,10 @@ def init_app(app):
         access_token_url='https://accounts.google.com/o/oauth2/token',
         access_token_params=None,
         authorize_url='https://accounts.google.com/o/oauth2/auth',
-        authorize_params=None,
+        authorize_params={
+            'prompt': 'select_account',  # 强制显示账号选择界面
+            'access_type': 'offline'     # 获取刷新令牌
+        },
         api_base_url='https://www.googleapis.com/oauth2/v1/',
         userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo',
         client_kwargs=google_client_kwargs,
@@ -720,9 +724,24 @@ def google_login():
         state_store = RedisStateStore(current_app.redis)
         state_store.store_state(state, callback_scheme)
 
-    # 生成重定向URI，添加状态参数
+    # 构建完整回调URL
     redirect_uri = url_for('auth.google_callback', _external=True)
-    return oauth.google.authorize_redirect(redirect_uri, state=state)
+    current_app.logger.info(f"Google OAuth redirect URI: {redirect_uri}")
+
+    # 设置会话参数，确保不在iframe中加载
+    session['oauth_redirect_uri'] = redirect_uri
+
+    try:
+        # 使用authlib的authorize_redirect方法
+        return oauth.google.authorize_redirect(
+            redirect_uri,
+            state=state,
+            # 添加额外参数以避免iframe问题
+            nonce=hashlib.sha256(os.urandom(32)).hexdigest()
+        )
+    except Exception as e:
+        current_app.logger.error(f"Google login error: {e}")
+        return {"error": "Google login failed"}, 500
 
 @bp.route('/google_callback')
 def google_callback():
@@ -730,6 +749,17 @@ def google_callback():
     # 获取状态参数
     state = request.args.get('state')
     callback_scheme = None
+    error = request.args.get('error')
+
+    current_app.logger.info(f"Google callback received, state: {state}, error: {error}")
+
+    # 处理错误情况
+    if error:
+        error_msg = f"Google authentication error: {error}"
+        current_app.logger.error(error_msg)
+        return render_template('customer_service/error.html',
+                              title='Google登录失败',
+                              message=error_msg)
 
     # 验证状态参数
     if state:
@@ -739,13 +769,16 @@ def google_callback():
     # 处理OAuth回调
     try:
         token = oauth.google.authorize_access_token()
+        current_app.logger.debug(f"Received Google token: {token.get('access_token')[:10]}...")
+
         user_info = oauth.google.get('userinfo').json()
+        current_app.logger.debug(f"Received Google user info: {user_info.get('email')}")
 
         if not user_info or 'email' not in user_info:
             error_msg = "Google login failed, unable to get user information!"
             # 如果有回调scheme，重定向到应用
             if callback_scheme:
-                redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
                 return redirect(redirect_url)
             return {"error": error_msg}, 400
 
@@ -776,7 +809,7 @@ def google_callback():
                 if not user:
                     error_msg = "Failed to create user!"
                     if callback_scheme:
-                        redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+                        redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
                         return redirect(redirect_url)
                     return {"error": error_msg}, 500
 
@@ -795,6 +828,7 @@ def google_callback():
         # 如果有回调scheme，重定向到应用
         if callback_scheme:
             redirect_url = f"{callback_scheme}://oauth_callback?token={access_token}&refresh_token={refresh_token}&provider=google&state={state}"
+            current_app.logger.info(f"Redirecting to app: {callback_scheme}")
             return redirect(redirect_url)
 
         # 否则返回JSON响应
@@ -808,7 +842,7 @@ def google_callback():
         current_app.logger.error(f"Google OAuth callback error: {str(e)}")
         error_msg = "Authentication failed"
         if callback_scheme:
-            redirect_url = f"{callback_scheme}://oauth_callback?error={error_msg}&state={state}"
+            redirect_url = f"{callback_scheme}://oauth_callback?error={quote_plus(error_msg)}&state={state}"
             return redirect(redirect_url)
         return {"error": error_msg}, 500
 
