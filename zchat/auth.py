@@ -4,6 +4,7 @@ import string
 import time
 import hashlib
 import uuid
+import os
 from collections import OrderedDict
 
 import jwt
@@ -13,6 +14,7 @@ from flask import (
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from authlib.integrations.flask_client import OAuth
+import requests
 
 from zchat.models.base import db
 from zchat.models.user import *
@@ -26,6 +28,20 @@ oauth = OAuth()
 def init_app(app):
     login_manager.init_app(app)
     oauth.init_app(app)
+
+    # 配置代理设置
+    proxy_url = app.config.get('SOCKS_PROXY')
+    if proxy_url:
+        os.environ['HTTP_PROXY'] = proxy_url
+        os.environ['HTTPS_PROXY'] = proxy_url
+        # 为OAuth客户端配置代理
+        session = requests.Session()
+        session.proxies = {
+            'http': proxy_url,
+            'https': proxy_url
+        }
+        # 注入代理会话到OAuth客户端
+        oauth.registry.update_oauth_client('google', session=session)
 
     # 配置Google OAuth
     oauth.register(

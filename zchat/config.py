@@ -6,6 +6,9 @@ JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY', 'dev')
 FLASK_ENV = os.environ.get('FLASK_ENV', 'production')
 LOG_LEVEL = os.environ.get('LOG_LEVEL', 'info')
 
+# 代理配置
+SOCKS_PROXY = os.environ.get('SOCKS_PROXY', '')  # 格式: 'socks5://user:pass@host:port'
+
 # 数据库配置
 SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:///zchat.db')
 # SQLALCHEMY_TRACK_MODIFICATIONS = False
