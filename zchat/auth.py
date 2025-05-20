@@ -124,7 +124,7 @@ def init_app(app):
 
     # 添加额外的日志记录来帮助调试
     app.logger.info(f"Google OAuth registered with client_id: {app.config.get('GOOGLE_CLIENT_ID')[:5]}...")
-    app.logger.info(f"Google userinfo endpoint: {oauth.google.userinfo_endpoint}")
+    app.logger.info(f"Google OAuth configuration complete")
 
     # 检查SSL证书
     try:
