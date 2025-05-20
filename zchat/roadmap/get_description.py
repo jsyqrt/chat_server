@@ -156,18 +156,18 @@ output_style_zh = """
 测试题用于测试用户对知识的掌握情况，每道题包含题目内容、选项、正确答案和解析。
 问题和测试题需要用json格式输出，严格遵循以下schema，注意在json中使用正确的引号。
 ```json
-{
+{{
     "questions": ["用户可能想要了解的问题1", "用户可能想要了解的问题2", "用户可能想要了解的问题3"],
     "quizzes": [
-        {
+        {{
             "question": "测试题1的题目内容",
             "options": ["测试题1的选项A", "测试题1的选项B", "测试题1的选项C", "测试题1的选项D"],
             "answer": [0],  // 答案为选项的索引，从0开始计数，单选题为一个数字，多选题为数组
             "explanation": "测试题1的解析说明为什么这是正确答案"
-        },
+        }},
         // 其他4道测试题
     ]
-}
+}}
 ```
 
 必须用中文回答。
@@ -185,18 +185,18 @@ These three questions should be closely related to the current explanation, from
 The test questions aim to assess the user's understanding of the topic, each including the question content, options, correct answer(s), and explanation.
 The questions and test questions need to be output in JSON format, strictly following this schema, and using correct quotation marks in the JSON.
 ```json
-{
+{{
     "questions": ["Question 1 that user may ask", "Question 2 that user may ask", "Question 3 that user may ask"],
     "quizzes": [
-        {
+        {{
             "question": "Question content of quiz question 1",
             "options": ["Option A of quiz question 1", "Option B of quiz question 1", "Option C of quiz question 1", "Option D of quiz question 1"],
             "answer": [0],  // Answer as index of options, starting from 0, single number for single choice, array for multiple choice
             "explanation": "Explanation of why this is the correct answer of quiz question 1"
-        },
+        }},
         // Other 4 quiz questions
     ]
-}
+}}
 ```
 
 Must respond in English.
