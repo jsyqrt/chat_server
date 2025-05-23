@@ -11,7 +11,7 @@
     <!-- 添加网站图标 -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <!-- 预加载重要资源 -->
-    <link rel="preload" href="{{ url_for('static', filename='images/icon.png') }}" as="image">
+    <link rel="preload" href="{{ url_for('static', filename='images/icon_en.png') }}" as="image">
     <link rel="preload" href="{{ url_for('static', filename='images/heading.jpg') }}" as="image">
 </head>
 <body>
@@ -19,7 +19,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="{{ url_for('static', filename='images/icon.png') }}" alt="{{ _('职路') }}">
+                <img src="{{ url_for('static', filename='images/icon_en.png') }}" alt="{{ _('职路') }}">
                 <h1>{{ _('职路') }}</h1>
             </div>
             <nav class="main-nav">
@@ -501,7 +501,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="{{ url_for('static', filename='images/icon.png') }}" alt="{{ _('职路') }}">
+                    <img src="{{ url_for('static', filename='images/icon_en.png') }}" alt="{{ _('职路') }}">
                     <h3>{{ _('职路') }}</h3>
                     <p>{{ _('您的职业发展伙伴') }}</p>
                 </div>
