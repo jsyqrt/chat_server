@@ -6,6 +6,7 @@ from flask import current_app
 # Define writing styles
 # English writing styles
 ENGLISH_WRITING_STYLES = {
+    "default": "AI Assistant: Objective, careful, and methodical explanations with clear structure, precise language, and comprehensive coverage without personal flair",
     "feynman": "Richard Feynman: Known for simple, intuitive explanations with vivid metaphors, conversational tone, and childlike curiosity",
     "graham": "Paul Graham: Clear writing with philosophical depth, personal experiences, and well-structured short paragraphs building to profound points",
     "musk": "Elon Musk: Direct, bold and visionary, using technical terms while focusing on future possibilities with concise, impactful language",
@@ -19,6 +20,7 @@ ENGLISH_WRITING_STYLES = {
 
 # Chinese writing styles
 CHINESE_WRITING_STYLES = {
+    "default": "AI助手: 客观、仔细、有条理的解释，结构清晰，用词准确，内容全面，没有个人特色的平铺直叙",
     "feynman": "理查德·费曼 (Richard Feynman): 擅长用简单直观的语言和比喻解释复杂概念，对话式、亲切且充满好奇心",
     "graham": "保罗·格雷厄姆 (Paul Graham): 结合个人经验与哲学思考，文笔清晰而富有洞见，擅长用简短段落构建深刻论点",
     "musk": "埃隆·马斯克 (Elon Musk): 直接、大胆且有远见，经常使用技术术语并关注未来可能性，语言简洁有力",
@@ -35,7 +37,7 @@ CHINESE_WRITING_STYLES = {
 }
 
 # Common styles available in both languages
-COMMON_STYLES = ["feynman", "graham", "musk", "trump", "einstein", "twain", "hemingway", "jobs", "linus"]
+COMMON_STYLES = ["default", "feynman", "graham", "musk", "trump", "einstein", "twain", "hemingway", "jobs", "linus"]
 
 # Chinese-only styles
 CHINESE_ONLY_STYLES = ["luxun", "liao", "tseng", "liang"]
@@ -73,6 +75,39 @@ system_prompt_template_zh = """
 请记住，优秀的解释不只是传递正确的信息，还能激发读者的思考和学习兴趣。
 """
 
+# Chinese AI system prompt (for default style)
+system_prompt_template_ai_zh = """
+您是一位专业的AI助手，擅长将复杂概念转化为清晰、准确、系统性的解释。
+
+您需要以客观、仔细、有条理的方式来写作，结构清晰，用词准确，内容全面，没有个人特色的平铺直叙。
+
+用户想要了解主题「{topic}」，并希望获得深入且准确的解释。用户已经掌握了思维导图中的上层概念，现在需要深入理解特定的概念。
+
+您的任务是：
+1. 分析该思维导图路径 (topic → subtopic → leaf_topic): {topic_path}
+2. 以清晰、系统的方式解释「{topic}」，确保内容准确且全面
+3. 使用客观、专业的语言风格 - 既有深度又易于理解
+4. 在解释中适当使用比喻、实例来帮助理解抽象概念，但保持客观性
+5. 平衡通俗易懂的解释与必要的专业定义，确保概念的准确性
+6. 给出用户有可能想要进一步提问的3个问题，用于下一步与AI交互对话的提示词
+7. 创建5道测试题（单选或多选题, 至少包含1道多选题），用于检验理解程度
+
+您的解释应当：
+- 逻辑清晰：从基础概念到深入内容，层次分明
+- 内容准确：确保所有信息的正确性和完整性
+- 结构合理：有条理地组织内容，便于理解和记忆
+- 适度举例：使用恰当的例子帮助理解，但不过度依赖
+- 保持客观：基于事实进行解释，避免主观臆断
+- 语言规范：使用标准、准确的表达方式
+
+此外，请注意以下信息：
+- 「{topic}」的兄弟节点有：{siblings}，这些节点将在其他章节中详细解释
+- 「{topic}」的子节点有：{children}，这些节点将在后续章节中详细解释
+- 请专注于解释「{topic}」本身的内容，避免过多涉及其他节点将会详细解释的内容
+
+请记住，优秀的解释应当准确传递知识，帮助读者建立正确的理解。
+"""
+
 # English system prompt
 system_prompt_template_en = """
 You are a brilliant educator and explainer, skilled at transforming complex concepts into vivid, engaging, and easily understandable explanations.
@@ -106,6 +141,39 @@ Additionally, please note the following information:
 Remember, great explanations don't just convey correct information; they inspire thinking and curiosity in the reader.
 """
 
+# English AI system prompt (for default style)
+system_prompt_template_ai_en = """
+You are a professional AI assistant, skilled at transforming complex concepts into clear, accurate, and systematic explanations.
+
+You need to write in an objective, careful, and methodical manner with clear structure, precise language, and comprehensive coverage without personal flair.
+
+The user wants to understand the topic "{topic}" and desires an explanation that is both deep and accurate. The user has already mastered the higher-level concepts in the mind map and now needs to deeply understand this specific concept.
+
+Your task is to:
+1. Analyze the mind map path (topic → subtopic → leaf_topic): {topic_path}
+2. Explain "{topic}" in a clear, systematic manner, ensuring content accuracy and comprehensiveness
+3. Use objective, professional language style - both insightful and accessible
+4. Appropriately use metaphors and examples to help understand abstract concepts while maintaining objectivity
+5. Balance accessible explanations with necessary professional definitions, ensuring conceptual accuracy
+6. Provide 3 questions the user might want to ask further, to be used as prompts for the next step in AI interactive dialogue
+7. Create 5 test questions (single or multiple choice, at least 1 multiple choice) to assess understanding
+
+Your explanation should be:
+- Logically clear: from basic concepts to in-depth content, well-structured
+- Content accurate: ensure correctness and completeness of all information
+- Well-organized: systematically organize content for easy understanding and memorization
+- Appropriately exemplified: use suitable examples to aid understanding without over-reliance
+- Maintain objectivity: explain based on facts, avoiding subjective speculation
+- Language standard: use standard, accurate expressions
+
+Additionally, please note the following information:
+- The sibling nodes of "{topic}" include: {siblings}, which will be explained in detail in other sections
+- The child nodes of "{topic}" include: {children}, which will be explained in detail in subsequent sections
+- Please focus on explaining "{topic}" itself. Avoid excessive coverage of content that will be explained in detail in other nodes
+
+Remember, excellent explanations should accurately convey knowledge and help readers build correct understanding.
+"""
+
 # Chinese user prompt
 user_prompt_template_zh = """
 ## 思维导图路径
@@ -126,6 +194,26 @@ user_prompt_template_zh = """
 
 """
 
+# Chinese AI user prompt (for default style)
+user_prompt_template_ai_zh = """
+## 思维导图路径
+{topic_path}
+
+## 目标概念
+{topic}
+
+## 兄弟节点
+{siblings}
+
+## 子节点
+{children}
+
+请为「{topic}」创作一篇深入浅出的解释，采用客观、仔细、有条理的AI助手风格。确保内容既有深度又易于理解，使用准确规范的语言，适度运用比喻和例子，平衡通俗易懂的解释与必要的专业定义。
+
+兄弟节点和子节点会在其他章节中详细解释，所以请专注于当前节点的内容，避免过多涉及将在其他章节详细讲解的内容。
+
+"""
+
 # English user prompt
 user_prompt_template_en = """
 ## Mind Map Path
@@ -141,6 +229,26 @@ user_prompt_template_en = """
 {children}
 
 Please create an explanation for "{topic}" that's both deep and accessible, in the style of {style_name} - {style_description}. It should be intellectually rich yet easy to understand, with personal flair in your language, appropriate metaphors and examples, and a balance of informal explanation with necessary formal definitions. Write as if you're talking to a smart friend, not writing an academic paper.
+
+The sibling nodes and child nodes will be explained in detail in other sections, so please focus on the content of the current node, avoiding excessive coverage of content that will be explained in other sections.
+
+"""
+
+# English AI user prompt (for default style)
+user_prompt_template_ai_en = """
+## Mind Map Path
+{topic_path}
+
+## Target Concept
+{topic}
+
+## Sibling Nodes
+{siblings}
+
+## Child Nodes
+{children}
+
+Please create an explanation for "{topic}" that's both deep and accessible, using an objective, careful, and methodical AI assistant style. Ensure the content is intellectually rich yet easy to understand, using accurate and standard language, moderate use of metaphors and examples, and a balance of accessible explanation with necessary professional definitions.
 
 The sibling nodes and child nodes will be explained in detail in other sections, so please focus on the content of the current node, avoiding excessive coverage of content that will be explained in other sections.
 
@@ -175,9 +283,67 @@ output_style_zh = """
 开始你的解释。
 """
 
+# Chinese AI output style (for default style)
+output_style_ai_zh = """
+请使用客观、准确且有条理的语言，采用标准的AI助手风格。避免过于个人化或主观的表达，转而使用清晰的逻辑结构、准确的术语和恰当的例子。使用markdown格式。
+
+在解释的最后，给出用户有可能想要进一步提问的3个问题，以及5道测试题（可以是单选题或多选题）。
+正文与问题及测试题之间用<|------ 互动建议 ------|>隔开。这部分只包含一个json对象，不要包含其他内容。
+这三个问题要与当前解释的内容紧密相关，要站在用户的角度，考虑用户可能的疑问。
+测试题用于测试用户对知识的掌握情况，每道题包含题目内容、选项、正确答案和解析。
+问题和测试题需要用json格式输出，严格遵循以下schema，注意在json中使用正确的引号。
+```json
+{{
+    "questions": ["用户可能想要了解的问题1", "用户可能想要了解的问题2", "用户可能想要了解的问题3"],
+    "quizzes": [
+        {{
+            "question": "测试题1的题目内容",
+            "options": ["测试题1的选项A", "测试题1的选项B", "测试题1的选项C", "测试题1的选项D"],
+            "answer": [0],  // 答案为选项的索引，从0开始计数，单选题为一个数字，多选题为数组
+            "explanation": "测试题1的解析说明为什么这是正确答案"
+        }},
+        // 其他4道测试题
+    ]
+}}
+```
+
+必须用中文回答。
+
+开始你的解释。
+"""
+
 # English output style
 output_style_en = """
 Please use vivid, friendly, and personally styled language in the style of {style_name}, as if you're conversing with a friend. Avoid overly formal or academic expressions, and instead use engaging narratives, vivid metaphors, and concrete examples. Use markdown format.
+
+At the end of your explanation, provide 3 questions that the user might want to ask further, and 5 test questions (single or multiple choice).
+Separate the main text from the questions and test questions with <|------ Interaction Suggestions ------|>. This section should only contain one JSON object, without any other content.
+These three questions should be closely related to the current explanation, from the user's perspective, considering possible user inquiries.
+The test questions aim to assess the user's understanding of the topic, each including the question content, options, correct answer(s), and explanation.
+The questions and test questions need to be output in JSON format, strictly following this schema, and using correct quotation marks in the JSON.
+```json
+{{
+    "questions": ["Question 1 that user may ask", "Question 2 that user may ask", "Question 3 that user may ask"],
+    "quizzes": [
+        {{
+            "question": "Question content of quiz question 1",
+            "options": ["Option A of quiz question 1", "Option B of quiz question 1", "Option C of quiz question 1", "Option D of quiz question 1"],
+            "answer": [0],  // Answer as index of options, starting from 0, single number for single choice, array for multiple choice
+            "explanation": "Explanation of why this is the correct answer of quiz question 1"
+        }},
+        // Other 4 quiz questions
+    ]
+}}
+```
+
+Must respond in English.
+
+Begin your explanation.
+"""
+
+# English AI output style (for default style)
+output_style_ai_en = """
+Please use objective, accurate, and methodical language, adopting a standard AI assistant style. Avoid overly personal or subjective expressions, and instead use clear logical structure, precise terminology, and appropriate examples. Use markdown format.
 
 At the end of your explanation, provide 3 questions that the user might want to ask further, and 5 test questions (single or multiple choice).
 Separate the main text from the questions and test questions with <|------ Interaction Suggestions ------|>. This section should only contain one JSON object, without any other content.
@@ -276,9 +442,9 @@ Ensure the output JSON format is correct and can be parsed directly. Do not add 
 
 def get_style_info(style, lang):
     """Get style name and description based on style code and language"""
-    # Default to Feynman style
+    # Default to default style
     if not style:
-        style = "feynman"
+        style = "default"
 
     style = style.lower()
 
@@ -286,15 +452,15 @@ def get_style_info(style, lang):
     if lang == 'en':
         # Don't allow Chinese-only styles for English content
         if style in CHINESE_ONLY_STYLES:
-            style = "feynman"
+            style = "default"
 
         if style not in ENGLISH_WRITING_STYLES:
-            style = "feynman"
+            style = "default"
 
         style_dict = ENGLISH_WRITING_STYLES
     else:  # Chinese
         if style not in CHINESE_WRITING_STYLES:
-            style = "feynman"
+            style = "default"
 
         style_dict = CHINESE_WRITING_STYLES
 
@@ -309,52 +475,95 @@ def get_prompts_by_language(lang, style=None):
     """Get the appropriate prompts based on the user's language and style"""
     style_name, style_description = get_style_info(style, lang)
 
+    # Determine if we should use AI style templates (for default style)
+    is_default_style = (style is None or style.lower() == "default")
+
     if lang == 'en':
-        return {
-            'system_prompt': system_prompt_template_en.format(
-                style_name=style_name,
-                style_description=style_description,
-                topic_path="{topic_path}",
-                topic="{topic}",
-                siblings="{siblings}",
-                children="{children}"
-            ),
-            'user_prompt': user_prompt_template_en.format(
-                style_name=style_name,
-                style_description=style_description,
-                topic_path="{topic_path}",
-                topic="{topic}",
-                siblings="{siblings}",
-                children="{children}"
-            ),
-            'output_style': output_style_en.format(
-                style_name=style_name
-            ),
-            'json_schema': json_schema_en
-        }
+        if is_default_style:
+            # Use AI style templates for default style
+            return {
+                'system_prompt': system_prompt_template_ai_en.format(
+                    topic_path="{topic_path}",
+                    topic="{topic}",
+                    siblings="{siblings}",
+                    children="{children}"
+                ),
+                'user_prompt': user_prompt_template_ai_en.format(
+                    topic_path="{topic_path}",
+                    topic="{topic}",
+                    siblings="{siblings}",
+                    children="{children}"
+                ),
+                'output_style': output_style_ai_en,
+                'json_schema': json_schema_en
+            }
+        else:
+            # Use human style templates for other styles
+            return {
+                'system_prompt': system_prompt_template_en.format(
+                    style_name=style_name,
+                    style_description=style_description,
+                    topic_path="{topic_path}",
+                    topic="{topic}",
+                    siblings="{siblings}",
+                    children="{children}"
+                ),
+                'user_prompt': user_prompt_template_en.format(
+                    style_name=style_name,
+                    style_description=style_description,
+                    topic_path="{topic_path}",
+                    topic="{topic}",
+                    siblings="{siblings}",
+                    children="{children}"
+                ),
+                'output_style': output_style_en.format(
+                    style_name=style_name
+                ),
+                'json_schema': json_schema_en
+            }
     else:  # default to Chinese (zh_CN)
-        return {
-            'system_prompt': system_prompt_template_zh.format(
-                style_name=style_name,
-                style_description=style_description,
-                topic_path="{topic_path}",
-                topic="{topic}",
-                siblings="{siblings}",
-                children="{children}"
-            ),
-            'user_prompt': user_prompt_template_zh.format(
-                style_name=style_name,
-                style_description=style_description,
-                topic_path="{topic_path}",
-                topic="{topic}",
-                siblings="{siblings}",
-                children="{children}"
-            ),
-            'output_style': output_style_zh.format(
-                style_name=style_name
-            ),
-            'json_schema': json_schema_zh
-        }
+        if is_default_style:
+            # Use AI style templates for default style
+            return {
+                'system_prompt': system_prompt_template_ai_zh.format(
+                    topic_path="{topic_path}",
+                    topic="{topic}",
+                    siblings="{siblings}",
+                    children="{children}"
+                ),
+                'user_prompt': user_prompt_template_ai_zh.format(
+                    topic_path="{topic_path}",
+                    topic="{topic}",
+                    siblings="{siblings}",
+                    children="{children}"
+                ),
+                'output_style': output_style_ai_zh,
+                'json_schema': json_schema_zh
+            }
+        else:
+            # Use human style templates for other styles
+            return {
+                'system_prompt': system_prompt_template_zh.format(
+                    style_name=style_name,
+                    style_description=style_description,
+                    topic_path="{topic_path}",
+                    topic="{topic}",
+                    siblings="{siblings}",
+                    children="{children}"
+                ),
+                'user_prompt': user_prompt_template_zh.format(
+                    style_name=style_name,
+                    style_description=style_description,
+                    topic_path="{topic_path}",
+                    topic="{topic}",
+                    siblings="{siblings}",
+                    children="{children}"
+                ),
+                'output_style': output_style_zh.format(
+                    style_name=style_name
+                ),
+                'json_schema': json_schema_zh
+            }
 
 def get_llm_response(topic, topic_path, siblings=None, children=None, lang='zh_CN', style=None):
   prompts = get_prompts_by_language(lang, style)
