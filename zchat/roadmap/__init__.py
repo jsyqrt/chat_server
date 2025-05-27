@@ -14,7 +14,7 @@ from zchat.models.user import UserOps
 from zchat.models.roadmap import RoadmapOps, RoadmapInteractionOps, RoadmapStatus
 from zchat.roadmap.from_jd import mindmap_from_jd_and_resume
 from zchat.roadmap.from_topic import mindmap_from_topic
-from zchat.roadmap.get_description import description_from_topic_path, description_from_topic_path_stream
+from zchat.roadmap.get_description import description_from_topic_path, description_from_topic_path_stream, ENGLISH_WRITING_STYLES, CHINESE_WRITING_STYLES, COMMON_STYLES, CHINESE_ONLY_STYLES
 from zchat.nosql import *
 from zchat.apis.ocr import ocr_file
 from zchat.models.points import ServiceType
@@ -26,6 +26,23 @@ bp = Blueprint('roadmap', __name__, url_prefix='/roadmap')
 def get_user_lang():
     current_app.logger.debug(f"g.lang: {g.lang}")
     return getattr(g, 'lang', 'zh_CN')
+
+# Get available writing styles for a language
+def get_available_styles(lang='zh_CN'):
+    """Get available writing styles for the specified language"""
+    if lang == 'en':
+        return {
+            'common_styles': COMMON_STYLES,
+            'styles': ENGLISH_WRITING_STYLES
+        }
+    else:  # Chinese
+        all_chinese_styles = COMMON_STYLES + CHINESE_ONLY_STYLES
+        return {
+            'common_styles': COMMON_STYLES,
+            'chinese_only_styles': CHINESE_ONLY_STYLES,
+            'all_styles': all_chinese_styles,
+            'styles': CHINESE_WRITING_STYLES
+        }
 
 # Dictionary for translations
 TRANSLATIONS = {
@@ -264,10 +281,20 @@ class MindmapModifier:
         return updated_map
 
 
+@bp.route('/get_styles', methods=['GET'])
+@login_required
+def get_styles():
+    """Get available writing styles for the current language"""
+    lang = get_user_lang()
+    styles_data = get_available_styles(lang)
+    return jsonify(styles_data)
+
 @bp.route('/create_from_jd_and_resume', methods=['POST'])
 @login_required
 def create_from_jd_and_resume():
     jd_id = request.form.get('jd_id', None)
+    style = request.form.get('style', 'default')  # Get style parameter, default to 'default'
+
     if not jd_id:
         lang = get_user_lang()
         return jsonify({'error': translate('no_jd_id', lang)}), 400
@@ -392,6 +419,7 @@ def create_from_jd_and_resume():
         industry_tag=industry_tag,
         job_tag=job_tag,
         skill_tag=skill_tag,
+        style=style,
     )
 
     add_mindmap_nosql(current_app, mindmap)
@@ -458,6 +486,7 @@ def restore_all_roadmaps():
             industry_tag=roadmap['industry_tag'],
             job_tag=roadmap['job_tag'],
             skill_tag=roadmap['skill_tag'],
+            style=roadmap.get('style', 'default'),
         )
         add_mindmap_nosql(current_app, roadmap['mindmap'])
     return jsonify({
@@ -473,6 +502,7 @@ def create_from_topic():
     learning_goal = request.form.get('learning_goal', '')
     user_background = request.form.get('user_background', '')
     other_prompts = request.form.get('other_prompts', '')
+    style = request.form.get('style', 'default')  # Get style parameter, default to 'default'
     user_id = current_user.get_id_int()
 
     # 检查积分是否足够
@@ -536,6 +566,7 @@ def create_from_topic():
         industry_tag=industry_tag,
         job_tag=job_tag,
         skill_tag=skill_tag,
+        style=style,
     )
 
     # 消费积分
@@ -674,6 +705,7 @@ def description_stream():
     topic_path = request.form.get('topic_path')
     siblings = request.form.get('siblings')
     children = request.form.get('children')
+    style = request.form.get('style', 'default')  # Get style parameter, default to 'default'
 
     delimiter = '<|voylead_separator|>'
 
@@ -697,7 +729,7 @@ def description_stream():
         return jsonify({'error': translate('points_deduction_failed', lang), 'points_required': True}), 402
 
     def generate():
-        for chunk in description_from_topic_path_stream(topic, topic_path, siblings, children, lang):
+        for chunk in description_from_topic_path_stream(topic, topic_path, siblings, children, lang, style):
             yield chunk
 
     return Response(stream_with_context(generate()), mimetype='text/plain')

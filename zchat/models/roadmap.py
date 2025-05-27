@@ -34,6 +34,7 @@ class Roadmap(db.Model):
     industry_tag = db.Column(db.String(100), nullable=True)
     job_tag = db.Column(db.String(100), nullable=True)
     skill_tag = db.Column(db.String(100), nullable=True)
+    style = db.Column(db.String(50), nullable=True, default='default')  # Writing style for descriptions
 
     create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
     update_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
@@ -56,6 +57,7 @@ class Roadmap(db.Model):
         db.Index('index_ROADMAP_industry_tag', 'industry_tag', unique=False),
         db.Index('index_ROADMAP_job_tag', 'job_tag', unique=False),
         db.Index('index_ROADMAP_skill_tag', 'skill_tag', unique=False),
+        db.Index('index_ROADMAP_style', 'style', unique=False),
         db.Index('index_ROADMAP_create_timestamp', 'create_timestamp', unique=False),
         db.Index('index_ROADMAP_update_timestamp', 'update_timestamp', unique=False),
         db.Index('index_ROADMAP_viewed', 'viewed', unique=False),
@@ -80,6 +82,7 @@ class Roadmap(db.Model):
             'industry_tag': self.industry_tag,
             'job_tag': self.job_tag,
             'skill_tag': self.skill_tag,
+            'style': self.style,
             'created_at': self.create_timestamp,
             'updated_at': self.update_timestamp,
             'viewed': self.viewed,
@@ -304,7 +307,7 @@ class RoadmapOps:
     def __init__(self, session):
         self.session = session
 
-    def create_roadmap(self, id, icon, title, subtitle, type, kind, status, lang, mindmap_id, created_by, industry_tag, job_tag, skill_tag)->Roadmap:
+    def create_roadmap(self, id, icon, title, subtitle, type, kind, status, lang, mindmap_id, created_by, industry_tag, job_tag, skill_tag, style='default')->Roadmap:
         try:
             roadmap = Roadmap(
                 roadmap_id=id,
@@ -320,6 +323,7 @@ class RoadmapOps:
                 industry_tag=industry_tag,
                 job_tag=job_tag,
                 skill_tag=skill_tag,
+                style=style,
             )
             self.session.add(roadmap)
             self.session.commit()
@@ -1181,6 +1185,7 @@ class RoadmapOps:
                 industry_tag=industry_tag,
                 job_tag=job_tag,
                 skill_tag=skill_tag,
+                style='default',
             )
             self.session.add(roadmap)
             self.session.commit()
