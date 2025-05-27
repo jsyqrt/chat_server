@@ -69,4 +69,8 @@ Flask-Mail==0.9.1
 # 国际化
 Flask-Babel==4.0.0
 
+# paddle 支付
 paddle-python-sdk==1.6.0
+
+# 阿里短信验证码
+alibabacloud_dysmsapi20170525==4.1.0

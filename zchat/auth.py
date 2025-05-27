@@ -22,6 +22,7 @@ import requests
 from zchat.models.base import db
 from zchat.models.user import *
 from zchat.mail import send_verification_email, send_password_reset_email, generate_verification_token
+from zchat.utils.ali_sms_utils import send_sms_verification_code
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -348,16 +349,57 @@ def verification_code():
 
     # 使用增强的安全验证码生成方法
     verification_code = generate_secure_code(phone_number)
-    vcode_handler[phone_number] = verification_code
 
-    current_app.logger.debug(f"auth/verification_code returns: phone: {phone_number}, code: {verification_code}")
+    # 尝试发送真实的短信验证码
+    try:
+        current_app.logger.info(f"开始发送验证码短信，手机号: {phone_number}")
+        sms_sent = send_sms_verification_code(phone_number, verification_code)
 
-    return jsonify(
-        {
-            "code": verification_code,
-            "error": "succeed"
-        }
-    )
+        if sms_sent:
+            # 短信发送成功，存储验证码
+            vcode_handler[phone_number] = verification_code
+            current_app.logger.info(f"验证码短信发送成功，手机号: {phone_number}")
+
+            return jsonify({
+                "error": "succeed",
+                "message": "Verification code sent successfully"
+            })
+        else:
+            # 短信发送失败，但仍然返回验证码用于测试（可选）
+            current_app.logger.warning(f"验证码短信发送失败，手机号: {phone_number}，但仍存储验证码用于测试")
+            vcode_handler[phone_number] = verification_code
+
+            # 在开发环境下返回验证码，生产环境下不返回
+            if current_app.config.get('DEBUG', False):
+                return jsonify({
+                    "code": verification_code,
+                    "error": "SMS sending failed, but code generated for testing",
+                    "message": "SMS service unavailable, please contact support"
+                })
+            else:
+                return jsonify({
+                    "error": "SMS sending failed",
+                    "message": "Failed to send verification code, please try again later"
+                }), 500
+
+    except Exception as e:
+        current_app.logger.error(f"发送验证码短信时发生异常，手机号: {phone_number}，错误: {str(e)}")
+
+        # 异常情况下，在开发环境仍然生成验证码用于测试
+        if current_app.config.get('DEBUG', False):
+            vcode_handler[phone_number] = verification_code
+            current_app.logger.warning(f"短信发送异常，但在开发环境下仍生成验证码: {verification_code}")
+
+            return jsonify({
+                "code": verification_code,
+                "error": "SMS service exception, but code generated for testing",
+                "message": "SMS service temporarily unavailable"
+            })
+        else:
+            return jsonify({
+                "error": "SMS service error",
+                "message": "Verification code service temporarily unavailable, please try again later"
+            }), 500
 
 class LGUser(UserMixin):
     def __init__(self, user):
@@ -410,6 +452,7 @@ def login():
 
     code_data = vcode_handler.get(phone_number)
     if code_data is None:
+        current_app.logger.warning(f"登录时验证码不存在或已过期，手机号: {phone_number}")
         return { "error": "Verification code not found or expired" }, 400
 
     insert_time, expected_code = code_data
@@ -419,13 +462,16 @@ def login():
     if current_time - insert_time > vcode_handler.expiration_time:
         # Remove expired code
         del vcode_handler[phone_number]
+        current_app.logger.warning(f"登录时验证码已过期，手机号: {phone_number}")
         return { "error": "Verification code has expired" }, 400
 
     if verification_code != expected_code:
+        current_app.logger.warning(f"登录时验证码错误，手机号: {phone_number}，期望: {expected_code}，实际: {verification_code}")
         return { "error": "Incorrect verification code" }, 400
 
     # Remove the used verification code
     del vcode_handler[phone_number]
+    current_app.logger.info(f"登录验证码验证成功，手机号: {phone_number}")
 
     # 处理邀请者ID
     inviter_id = None
@@ -1227,6 +1273,7 @@ def bind_phone():
     code_data = vcode_handler.get(phone_number)
 
     if code_data is None:
+        current_app.logger.warning(f"绑定手机号时验证码不存在或已过期，手机号: {phone_number}")
         return {"error": "Verification code does not exist or has expired!"}, 400
 
     insert_time, expected_code = code_data
@@ -1234,19 +1281,23 @@ def bind_phone():
 
     if current_time - insert_time > vcode_handler.expiration_time:
         del vcode_handler[phone_number]
+        current_app.logger.warning(f"绑定手机号时验证码已过期，手机号: {phone_number}")
         return {"error": "Verification code has expired!"}, 400
 
     if verification_code != expected_code:
+        current_app.logger.warning(f"绑定手机号时验证码错误，手机号: {phone_number}，期望: {expected_code}，实际: {verification_code}")
         return {"error": "Verification code is incorrect!"}, 400
 
     # 验证码正确，删除
     del vcode_handler[phone_number]
+    current_app.logger.info(f"绑定手机号验证码验证成功，手机号: {phone_number}")
 
     # 检查手机号是否已被其他用户绑定
     user_ops = UserOps(session=db.session)
     existing_user = user_ops.get_user_by_phone(phone_number)
 
     if existing_user and existing_user.id != current_user.get_id_int():
+        current_app.logger.warning(f"手机号已被其他用户绑定，手机号: {phone_number}，当前用户: {current_user.get_id_int()}，已绑定用户: {existing_user.id}")
         return {"error": "This phone number has been bound to another account!"}, 400
 
     # 绑定手机号
@@ -1254,8 +1305,10 @@ def bind_phone():
     success = user_ops.update_phone(user_id, phone_number)
 
     if success:
+        current_app.logger.info(f"手机号绑定成功，用户ID: {user_id}，手机号: {phone_number}")
         return {"message": "Phone number bound successfully!"}
     else:
+        current_app.logger.error(f"手机号绑定失败，用户ID: {user_id}，手机号: {phone_number}")
         return {"error": "Failed to bind phone number!"}, 500
 
 @bp.route('/unbind_phone', methods=['POST'])
