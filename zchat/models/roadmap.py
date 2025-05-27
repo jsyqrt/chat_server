@@ -31,9 +31,9 @@ class Roadmap(db.Model):
     mindmap_id = db.Column(db.String(255), nullable=False)
     created_by = db.Column(db.String(255), nullable=True)
 
-    industry_tag = db.Column(db.String(100), nullable=True)
-    job_tag = db.Column(db.String(100), nullable=True)
-    skill_tag = db.Column(db.String(100), nullable=True)
+    industry_tag = db.Column(db.String(255), nullable=True)
+    job_tag = db.Column(db.String(255), nullable=True)
+    skill_tag = db.Column(db.String(255), nullable=True)
     style = db.Column(db.String(50), nullable=True, default='default')  # Writing style for descriptions
 
     create_timestamp = db.Column(db.REAL, nullable=True, default=time.time())
