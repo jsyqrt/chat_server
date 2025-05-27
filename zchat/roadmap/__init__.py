@@ -820,6 +820,7 @@ def get_map():
             'type': roadmap.roadmap_type,
             'kind': roadmap.roadmap_kind,
             'lang': roadmap.roadmap_lang,
+            'style': roadmap.style,
             'mindmap': mindmap,
         })
 
