@@ -370,7 +370,7 @@ def verification_code():
             vcode_handler[phone_number] = verification_code
 
             # 在开发环境下返回验证码，生产环境下不返回
-            if current_app.config.get('DEBUG', False):
+            if current_app.config.get('FLASK_ENV', 'production') == 'development':
                 return jsonify({
                     "code": verification_code,
                     "error": "SMS sending failed, but code generated for testing",
@@ -386,7 +386,7 @@ def verification_code():
         current_app.logger.error(f"发送验证码短信时发生异常，手机号: {phone_number}，错误: {str(e)}")
 
         # 异常情况下，在开发环境仍然生成验证码用于测试
-        if current_app.config.get('DEBUG', False):
+        if current_app.config.get('FLASK_ENV', 'production') == 'development':
             vcode_handler[phone_number] = verification_code
             current_app.logger.warning(f"短信发送异常，但在开发环境下仍生成验证码: {verification_code}")
 
