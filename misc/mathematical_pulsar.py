@@ -85,14 +85,14 @@ def draw_jet_pair(ax, x_range, is_first_pair, step_counter, bg_color='black'):
     if is_first_pair:
         # For first pair: y = x ± sqrt(32x), valid when x >= 0
         x = np.linspace(0, x_range, 5000)  # Only positive x values
-        sqrt_term = np.sqrt(32 * x)  # 16*(x+x) = 32*x
+        sqrt_term = np.sqrt(16 * x)  # 16*(x+x) = 32*x
         y1 = x + sqrt_term
         y2 = x - sqrt_term
         pair_name = "first"
     else:
         # For second pair: y = x ± sqrt(-32x), valid when x <= 0
         x = np.linspace(-x_range, 0, 5000)  # Only negative x values
-        sqrt_term = np.sqrt(-32 * x)  # sqrt(-32*x) is valid when x <= 0
+        sqrt_term = np.sqrt(-16 * x)  # sqrt(-32*x) is valid when x <= 0
         y1 = x + sqrt_term
         y2 = x - sqrt_term
         pair_name = "second"
@@ -183,9 +183,8 @@ def create_mathematical_pulsar(bg_color='black', color_name='black'):
 
     # 定义环的参数
     ring_pairs = [
-        (20000, 40000),
-        (80000, 160000),
-        (320000, 600000),
+        (20000, 80000),
+        (160000, 480000),
     ]
 
     # 先画右上部分（从外到内）
