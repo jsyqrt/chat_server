@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ _('Voylead - AI-Powered Education Technology') }}</title>
-    <meta name="description" content="{{ _('Voylead is revolutionizing education through AI technology, making learning more efficient and accessible for everyone.') }}">
+    <title>{{ _('职路 - AI驱动的职业发展平台') }}</title>
+    <meta name="description" content="{{ _('职路通过AI技术革新职业发展，为每个人提供精准的职业规划、测评和简历定制服务，让职业成长更高效。') }}">
+    <meta name="keywords" content="{{ _('职业规划,AI职业测评,简历定制,职位分析,职业发展,求职,跳槽') }}">
+    <meta property="og:title" content="{{ _('职路 - AI驱动的职业发展平台') }}">
+    <meta property="og:description" content="{{ _('职路通过AI技术革新职业发展，为每个人提供精准的职业规划、测评和简历定制服务，让职业成长更高效。') }}">
+    <meta property="og:image" content="{{ url_for('static', filename='images/og-image.jpg', _external=True) }}">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- 引入字体图标 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- 添加网站图标 -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <!-- 预加载重要资源 -->
     <link rel="preload" href="{{ url_for('static', filename='images/icon_en.png') }}" as="image">
     <link rel="preload" href="{{ url_for('static', filename='images/heading.jpg') }}" as="image">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -24,8 +35,9 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#features">{{ _('产品特色') }}</a></li>
-                    <!-- <li><a href="#download">{{ _('立即下载') }}</a></li> -->
+                    <li><a href="#features">{{ _('核心功能') }}</a></li>
+                    <li><a href="#demo">{{ _('产品演示') }}</a></li>
+                    <li><a href="#pricing">{{ _('定价方案') }}</a></li>
                     <li><a href="#faq">{{ _('常见问题') }}</a></li>
                     <li><a href="#about">{{ _('关于我们') }}</a></li>
                     <li class="language-switch">
@@ -292,69 +304,457 @@
                 padding: 0 16px 16px;
             }
         }
+
+        .main-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .main-nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #4CAF50;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #4CAF50;
+        }
+
+        .main-nav a:hover:after,
+        .main-nav a.active:after {
+            width: 100%;
+        }
     </style>
 
     <!-- 主横幅 -->
     <section class="hero">
-        <!-- 数据流效果 -->
-        <div class="data-stream" id="heroDataStream"></div>
         <div class="container">
             <div class="hero-content">
-                <h2>{{ _('职业成长，从精准规划开始') }}</h2>
-                <p>{{ _('领先一步的职业导航，让梦想有明确的坐标') }}</p>
+                <!-- 信任标识 -->
+                <div class="trust-badges">
+                    <span class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        {{ _('AI驱动') }}
+                    </span>
+                    <span class="trust-badge">
+                        <i class="fas fa-star"></i>
+                        {{ _('4.8分好评') }}
+                    </span>
+                    <!-- <span class="trust-badge">
+                        <i class="fas fa-users"></i>
+                        {{ _('100万+用户') }}
+                    </span> -->
+                </div>
+
+                <h1 class="hero-title">{{ _('AI驱动的职业发展平台') }}</h1>
+
+                <p class="hero-subtitle">{{ _('为您提供个性化的职业规划、精准的岗位分析和智能简历定制，让每一步职业选择都更明智') }}</p>
+
                 <div class="hero-btns">
-                    <!-- <a href="#download" class="btn btn-primary">{{ _('立即下载') }}</a> -->
-                    <a href="#features" class="btn btn-secondary">{{ _('了解更多') }}</a>
+                    <a href="#pricing" class="btn btn-primary btn-large">
+                        <i class="fas fa-play"></i>
+                        {{ _('免费开始使用') }}
+                    </a>
+                    <a href="#demo" class="btn btn-secondary btn-large">
+                        <i class="fas fa-video"></i>
+                        {{ _('观看演示') }}
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="{{ url_for('static', filename='images/heading.jpg') }}" alt="{{ _('职路应用展示') }}">
+
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="{{ url_for('static', filename='images/heading.jpg') }}" alt="{{ _('职路应用展示') }}" class="hero-main-image">
+
+                    <!-- 浮动数据卡片 -->
+                    <div class="floating-elements">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-rocket"></i>
+                            <div class="card-content">
+                                <span>{{ _('求职成功率') }}</span>
+                                <strong>+85%</strong>
+                            </div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="card-content">
+                                <span>{{ _('平均薪资增长') }}</span>
+                                <strong>+32%</strong>
+                            </div>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-clock"></i>
+                            <div class="card-content">
+                                <span>{{ _('节省求职时间') }}</span>
+                                <strong>60%</strong>
+                            </div>
+                        </div>
+                        <div class="floating-card card-4">
+                            <i class="fas fa-bullseye"></i>
+                            <div class="card-content">
+                                <span>{{ _('职业匹配度') }}</span>
+                                <strong>95%</strong>
+                            </div>
+                        </div>
+                        <div class="floating-card card-5">
+                            <i class="fas fa-trophy"></i>
+                            <div class="card-content">
+                                <span>{{ _('面试通过率') }}</span>
+                                <strong>+85%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 特色功能 -->
     <section id="features" class="features">
-        <!-- 数据流效果 -->
-        <div class="data-stream" id="featuresDataStream"></div>
         <div class="container">
-            <h2 class="section-title">{{ _('产品特色') }}</h2>
+            <div class="section-header">
+                <h2 class="section-title">{{ _('核心功能') }}</h2>
+                <p class="section-subtitle">{{ _('AI驱动的全方位职业发展解决方案，让您的每一步都更精准') }}</p>
+            </div>
+
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-road"></i>
+                        <i class="fas fa-route"></i>
                     </div>
-                    <h3>{{ _('职业规划') }}</h3>
-                    <p>{{ _('AI精准规划成长方向，实时追踪行业趋势调整路径') }}</p>
-                    <p>{{ _('拆解目标为可执行任务，缩短成长周期，拒绝无效努力') }}</p>
+                    <div class="feature-content">
+                        <h3>{{ _('AI职业规划') }}</h3>
+                        <p>{{ _('基于大数据和AI算法，为您量身定制职业发展路径，实时追踪行业趋势，智能调整成长方向') }}</p>
+                        <ul class="feature-benefits">
+                            <li><i class="fas fa-check"></i>{{ _('个性化成长路径') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('行业趋势分析') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('技能差距识别') }}</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-user-check"></i>
                     </div>
-                    <h3>{{ _('职业测评') }}</h3>
-                    <p>{{ _('三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势') }}</p>
-                    <p>{{ _('对标高薪岗位人才画像，转行跳槽少走弯路') }}</p>
+                    <div class="feature-content">
+                        <h3>{{ _('专业职业测评') }}</h3>
+                        <p>{{ _('多维度职业能力评估，深度挖掘您的职业潜力和优势，精准匹配最适合的职业方向') }}</p>
+                        <ul class="feature-benefits">
+                            <li><i class="fas fa-check"></i>{{ _('性格特质分析') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('能力模型评估') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('职业匹配推荐') }}</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-search-dollar"></i>
                     </div>
-                    <h3>{{ _('职位分析') }}</h3>
-                    <p>{{ _('深度分析目标岗位，提取企业隐性需求') }}</p>
-                    <p>{{ _('结合行业大数据，智能规划求职升职决策，快人一步') }}</p>
+                    <div class="feature-content">
+                        <h3>{{ _('智能职位分析') }}</h3>
+                        <p>{{ _('深度解析目标岗位要求，提取企业隐性需求，为您提供精准的求职策略和面试指导') }}</p>
+                        <ul class="feature-benefits">
+                            <li><i class="fas fa-check"></i>{{ _('JD深度解析') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('企业文化分析') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('面试策略制定') }}</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
+                        <i class="fas fa-file-contract"></i>
                     </div>
-                    <h3>{{ _('简历定制') }}</h3>
-                    <p>{{ _('智能拆解JD隐藏关键词，拉满简历匹配度') }}</p>
-                    <p>{{ _('一键生成最优简历，大幅提升面试邀约率') }}</p>
+                    <div class="feature-content">
+                        <h3>{{ _('智能简历定制') }}</h3>
+                        <p>{{ _('AI智能分析岗位需求，自动优化简历内容和格式，显著提升简历通过率和面试邀约率') }}</p>
+                        <ul class="feature-benefits">
+                            <li><i class="fas fa-check"></i>{{ _('关键词智能匹配') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('格式自动优化') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('ATS系统适配') }}</li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作流程 -->
+    <section class="workflow-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ _('简单三步，开启职业新篇章') }}</h2>
+                <p class="section-subtitle">{{ _('我们的AI系统将引导您完成整个职业发展过程') }}</p>
+            </div>
+
+            <div class="workflow-steps">
+                <div class="workflow-step" data-aos="fade-right" data-aos-delay="100">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>{{ _('完成职业测评') }}</h3>
+                        <p>{{ _('通过我们的专业测评系统，深度了解您的职业偏好、能力特长和发展潜力') }}</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3>{{ _('获取专属规划') }}</h3>
+                        <p>{{ _('AI为您生成个性化的职业发展路径，包括技能提升建议和时间规划') }}</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step" data-aos="fade-left" data-aos-delay="300">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>{{ _('实现职业突破') }}</h3>
+                        <p>{{ _('使用我们的简历优化和职位分析工具，快速获得心仪offer') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ _('用户真实反馈') }}</h2>
+                <p class="section-subtitle">{{ _('看看其他用户如何通过职路实现职业突破') }}</p>
+            </div>
+
+            <div class="testimonials-container">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>{{ _('使用职路后，我的简历终于不再石沉大海，已经成功从传统行业转型到互联网，薪资翻了一倍！') }}</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>{{ _('张***') }}</h4>
+                                <span>{{ _('产品经理') }} • {{ _('3-5年') }}</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>{{ _('职路的学习路径规划很好用，现在每一步都很有目标感。') }}</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>{{ _('鱼鱼') }}</h4>
+                                <span>{{ _('UI设计师') }} • {{ _('1-3年') }}</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>{{ _('作为应届生，职路帮我分析了适合的岗位，面试通过率大大提升，现在已经拿到心仪的offer') }}</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>{{ _('138****5890') }}</h4>
+                                <span>{{ _('软件工程师') }} • {{ _('应届') }}</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>{{ _('职路的职位分析功能让我深度了解了目标公司的需求，面试时回答问题可以更有针对性。') }}</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>{{ _('alex@*****.com') }}</h4>
+                                <span>{{ _('数据分析师') }} • {{ _('5年以上') }}</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>{{ _('简历定制功能真的很实用，针对岗位自动调整关键词，批量定制海投，效果不错') }}</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>{{ _('菲斯布可') }}</h4>
+                                <span>{{ _('软件工程师') }} • {{ _('应届生') }}</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>{{ _('职业测评帮我重新认识了自己的优势，从迷茫到清晰，现在的工作完全符合我的性格特点。') }}</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>{{ _('189****2589') }}</h4>
+                                <span>{{ _('市场营销') }} • {{ _('3-5年') }}</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>{{ _('转行时使用职路分析了很多岗位，做了充分准备，总算顺利翻身到AI行业。') }}</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>{{ _('深圳老司机') }}</h4>
+                                <span>{{ _('项目经理') }} • {{ _('5年以上') }}</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>{{ _('刚毕业时很迷茫，职路的职业规划让我找到了方向，现在工作一年多，发展轨迹完全按照规划在走。') }}</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>{{ _('lily@*****.com') }}</h4>
+                                <span>{{ _('前端开发') }} • {{ _('1-3年') }}</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>{{ _('转行时用职路做了全面的能力评估和规划，现在成功转入AI行业，感谢职路的专业指导！') }}</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>{{ _('我是小白') }}</h4>
+                                <span>{{ _('算法工程师') }} • {{ _('保密') }}</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonials-nav">
+                    <button class="nav-btn prev-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="testimonials-dots" id="testimonialsDots"></div>
             </div>
         </div>
     </section>
@@ -376,6 +776,171 @@
             </div>
         </div>
     </section> -->
+
+    <!-- 定价方案 -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ _('选择适合您的方案') }}</h2>
+            </div>
+
+            <div class="pricing-toggle">
+                <span class="toggle-label">{{ _('按月付费') }}</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">{{ _('按年付费') }} <span class="discount-badge">{{ _('省30%%') }}</span></span>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- 免费体验 -->
+                <div class="pricing-card basic" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-header">
+                        <h3>{{ _('免费体验') }}</h3>
+                        <div class="price">
+                            <span class="currency">¥</span>
+                            <span class="amount">0</span>
+                            <span class="period">/{{ _('天') }}</span>
+                        </div>
+                        <p class="price-desc">{{ _('每日免费积分，体验核心功能') }}</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i>{{ _('每日88积分') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('完整职业测评') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('智能简历优化') }}</li>
+                            <li><i class="fas fa-times"></i>{{ _('高级职业规划') }}</li>
+                            <li><i class="fas fa-times"></i>{{ _('深度职位分析') }}</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="pricing-btn btn-outline">{{ _('免费开始使用') }}</a>
+                </div>
+
+                <!-- 基础会员/高级会员 -->
+                <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="200">
+                    <div class="popular-badge">{{ _('最受欢迎') }}</div>
+                    <div class="pricing-header">
+                        <h3 class="membership-title">{{ _('基础会员') }}</h3>
+                        <div class="price">
+                            <span class="currency">¥</span>
+                            <span class="amount membership-price">45</span>
+                            <span class="period membership-period">/{{ _('月') }}</span>
+                        </div>
+                        <p class="price-desc">{{ _('无限使用，专业服务') }}</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i>{{ _('每日500积分') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('所有功能无限制') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('优先客服支持') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('专属职业顾问') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('行业报告下载') }}</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="pricing-btn btn-primary membership-btn">{{ _('开通会员') }}</a>
+                </div>
+
+                <!-- 积分套餐 -->
+                <div class="pricing-card premium" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-header">
+                        <h3>{{ _('积分套餐') }}</h3>
+                        <div class="price">
+                            <span class="currency">¥</span>
+                            <span class="amount">28</span>
+                            <span class="period">/{{ _('3000积分') }}</span>
+                        </div>
+                        <p class="price-desc">{{ _('按需购买，灵活使用') }}</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i>{{ _('3000积分') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('完整职业测评') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('智能简历定制') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('职位深度分析') }}</li>
+                            <li><i class="fas fa-check"></i>{{ _('30天有效期') }}</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="pricing-btn btn-premium">{{ _('立即购买') }}</a>
+                </div>
+            </div>
+
+            <div class="pricing-guarantee">
+                <div class="guarantee-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>{{ _('7天无理由退款') }}</span>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-lock"></i>
+                    <span>{{ _('数据安全保护') }}</span>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-headset"></i>
+                    <span>{{ _('24/7客服支持') }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品演示 -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ _('看看职路如何工作') }}</h2>
+                <p class="section-subtitle">{{ _('通过真实案例，了解职路如何帮助您实现职业突破') }}</p>
+            </div>
+
+            <div class="demo-content">
+                <div class="demo-video" data-aos="fade-right">
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <span>{{ _('点击观看产品演示') }}</span>
+                        </div>
+                        <!-- 实际使用时替换为真实视频 -->
+                        <video controls poster="{{ url_for('static', filename='images/video-poster.jpg') }}">
+                            <source src="{{ url_for('static', filename='videos/demo.mp4') }}" type="video/mp4">
+                            {{ _('您的浏览器不支持视频播放') }}
+                        </video>
+                    </div>
+                </div>
+
+                <div class="demo-features" data-aos="fade-left">
+                    <div class="demo-feature">
+                        <div class="feature-number">01</div>
+                        <div class="feature-content">
+                            <h4>{{ _('智能职业测评') }}</h4>
+                            <p>{{ _('通过科学的测评体系，全面了解您的职业偏好和能力特长') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-feature">
+                        <div class="feature-number">02</div>
+                        <div class="feature-content">
+                            <h4>{{ _('个性化职业规划') }}</h4>
+                            <p>{{ _('基于测评结果和行业数据，为您制定专属的职业发展路径') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-feature">
+                        <div class="feature-number">03</div>
+                        <div class="feature-content">
+                            <h4>{{ _('智能简历优化') }}</h4>
+                            <p>{{ _('AI分析目标岗位需求，自动优化简历内容和格式') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-feature">
+                        <div class="feature-number">04</div>
+                        <div class="feature-content">
+                            <h4>{{ _('职位深度分析') }}</h4>
+                            <p>{{ _('深度解析企业需求，提供精准的求职策略和面试指导') }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="faq">
@@ -487,11 +1052,73 @@
     <!-- 关于我们 -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">{{ _('关于我们') }}</h2>
+            <div class="section-header">
+                <h2 class="section-title">{{ _('关于我们') }}</h2>
+                <p class="section-subtitle">{{ _('用AI与大数据为每个选择注入科学的力量') }}</p>
+            </div>
             <div class="about-content">
                 <p>{{ _('职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。') }}</p>
                 <p>{{ _('我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。') }}</p>
                 <p>{{ _('我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有"职路"，不走弯路。') }}</p>
+
+                <div class="about-highlights">
+                    <div class="about-highlight">
+                        <i class="fas fa-brain"></i>
+                        <h4>{{ _('AI算法专家') }}</h4>
+                        <p>{{ _('顶尖的人工智能技术团队，为职业发展提供科学的数据支撑') }}</p>
+                    </div>
+                    <div class="about-highlight">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>{{ _('资深职业规划师') }}</h4>
+                        <p>{{ _('拥有丰富经验的职业规划专家，深度理解职场发展规律') }}</p>
+                    </div>
+                    <div class="about-highlight">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>{{ _('大厂HRBP背景') }}</h4>
+                        <p>{{ _('来自知名企业的人力资源专家，洞察企业用人需求') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最终行动号召 -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>{{ _('准备好开启您的职业新篇章了吗？') }}</h2>
+                <p>{{ _('加入100万+用户的选择，让AI助力您的职业发展') }}</p>
+
+                <div class="cta-stats">
+                    <div class="cta-stat">
+                        <strong>85%</strong>
+                        <span>{{ _('求职成功率提升') }}</span>
+                    </div>
+                    <div class="cta-stat">
+                        <strong>32%</strong>
+                        <span>{{ _('平均薪资增长') }}</span>
+                    </div>
+                    <div class="cta-stat">
+                        <strong>60%</strong>
+                        <span>{{ _('求职时间节省') }}</span>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#pricing" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        {{ _('免费开始使用') }}
+                    </a>
+                    <a href="#demo" class="btn btn-secondary btn-large">
+                        <i class="fas fa-play"></i>
+                        {{ _('观看产品演示') }}
+                    </a>
+                </div>
+
+                <div class="cta-guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>{{ _('7天无理由退款保证 • 数据安全保护 • 24/7客服支持') }}</span>
+                </div>
             </div>
         </div>
     </section>
@@ -937,6 +1564,114 @@
             });
         });
 
+
+
+        // 定价切换功能
+        function initPricingToggle() {
+            const toggle = document.getElementById('pricingToggle');
+            const membershipTitle = document.querySelector('.membership-title');
+            const membershipPrice = document.querySelector('.membership-price');
+            const membershipPeriod = document.querySelector('.membership-period');
+            const membershipBtn = document.querySelector('.membership-btn');
+
+            if (toggle) {
+                toggle.addEventListener('change', function() {
+                    if (this.checked) {
+                        // 按年付费 - 显示高级会员
+                        if (membershipTitle) membershipTitle.textContent = '{{ _("高级会员")|e }}';
+                        if (membershipPrice) membershipPrice.textContent = '315';
+                        if (membershipPeriod) membershipPeriod.textContent = '/{{ _("年")|e }}';
+                        if (membershipBtn) membershipBtn.textContent = '{{ _("开通高级会员")|e }}';
+                    } else {
+                        // 按月付费 - 显示基础会员
+                        if (membershipTitle) membershipTitle.textContent = '{{ _("基础会员")|e }}';
+                        if (membershipPrice) membershipPrice.textContent = '45';
+                        if (membershipPeriod) membershipPeriod.textContent = '/{{ _("月")|e }}';
+                        if (membershipBtn) membershipBtn.textContent = '{{ _("开通会员")|e }}';
+                    }
+                });
+            }
+        }
+
+        // 视频播放功能
+        function initVideoPlayer() {
+            const videoContainer = document.querySelector('.video-container');
+            const placeholder = document.querySelector('.video-placeholder');
+            const video = document.querySelector('.video-container video');
+
+            if (placeholder && video) {
+                placeholder.addEventListener('click', function() {
+                    placeholder.style.display = 'none';
+                    video.style.display = 'block';
+                    video.play();
+                });
+            }
+        }
+
+        // 滚动动画观察器
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+
+
+                    }
+                });
+            }, observerOptions);
+
+            // 观察所有需要动画的元素
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                observer.observe(el);
+            });
+
+
+        }
+
+        // 平滑滚动增强
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight - 20;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // 初始化所有功能
+        document.addEventListener('DOMContentLoaded', function() {
+            initPricingToggle();
+            initVideoPlayer();
+            initScrollAnimations();
+            initSmoothScroll();
+            initTestimonialsCarousel();
+        });
+
+        // 检查元素是否在视窗内
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
         function toggleLanguageMenu() {
             const menu = document.getElementById('languageMenu');
             menu.classList.toggle('show');
@@ -969,6 +1704,172 @@
                 }
             }
         });
+
+        // 导航高亮功能
+        function updateActiveNavigation() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+
+            let currentSection = '';
+            const scrollPosition = window.scrollY + 100; // 偏移量，提前高亮
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // 监听滚动事件
+        window.addEventListener('scroll', updateActiveNavigation);
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', updateActiveNavigation);
+
+        // 用户反馈轮播功能
+        function initTestimonialsCarousel() {
+            const track = document.getElementById('testimonialsTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('testimonialsDots');
+
+            if (!track) return;
+
+            const cards = track.querySelectorAll('.testimonial-card');
+            const cardWidth = 350 + 30; // 卡片宽度 + gap
+            const visibleCards = Math.floor(track.parentElement.offsetWidth / cardWidth);
+            const totalCards = cards.length;
+            let currentIndex = 0;
+            let autoPlayInterval;
+            let isHovered = false;
+
+            // 创建指示点
+            function createDots() {
+                const totalDots = Math.max(1, totalCards - visibleCards + 1);
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalDots; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            // 更新指示点
+            function updateDots() {
+                const dots = dotsContainer.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            // 移动到指定幻灯片
+            function goToSlide(index) {
+                const maxIndex = Math.max(0, totalCards - visibleCards);
+                currentIndex = Math.max(0, Math.min(index, maxIndex));
+                const translateX = -currentIndex * cardWidth;
+                track.style.transform = `translateX(${translateX}px)`;
+                updateDots();
+            }
+
+            // 下一张
+            function nextSlide() {
+                const maxIndex = Math.max(0, totalCards - visibleCards);
+                if (currentIndex >= maxIndex) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex++;
+                }
+                goToSlide(currentIndex);
+            }
+
+            // 上一张
+            function prevSlide() {
+                if (currentIndex <= 0) {
+                    currentIndex = Math.max(0, totalCards - visibleCards);
+                } else {
+                    currentIndex--;
+                }
+                goToSlide(currentIndex);
+            }
+
+            // 自动播放
+            function startAutoPlay() {
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(() => {
+                    if (!isHovered) {
+                        nextSlide();
+                    }
+                }, 4000);
+            }
+
+            // 停止自动播放
+            function stopAutoPlay() {
+                if (autoPlayInterval) {
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = null;
+                }
+            }
+
+            // 事件监听
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+            // 悬停事件
+            track.addEventListener('mouseenter', () => {
+                isHovered = true;
+            });
+
+            track.addEventListener('mouseleave', () => {
+                isHovered = false;
+            });
+
+            // 卡片悬停效果
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.zIndex = '100';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.zIndex = '1';
+                });
+            });
+
+            // 响应式处理
+            function handleResize() {
+                const newVisibleCards = Math.floor(track.parentElement.offsetWidth / cardWidth);
+                if (newVisibleCards !== visibleCards) {
+                    createDots();
+                    goToSlide(0);
+                }
+            }
+
+            window.addEventListener('resize', handleResize);
+
+            // 初始化
+            createDots();
+            startAutoPlay();
+
+            // 页面可见性变化时控制自动播放
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    stopAutoPlay();
+                } else {
+                    startAutoPlay();
+                }
+            });
+        }
     </script>
 </body>
 </html>

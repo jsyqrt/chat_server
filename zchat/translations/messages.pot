@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-08 15:49+0800\n"
+"POT-Creation-Date: 2025-05-28 22:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,47 +58,47 @@ msgstr ""
 msgid "获取聊天历史失败，请稍后重试"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:371
+#: zchat/aichat/chat_stream.py:290
 msgid "AI聊天"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:373
+#: zchat/aichat/chat_stream.py:292
 msgid "积分扣除失败，请稍后重试"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:377
+#: zchat/aichat/chat_stream.py:296
 msgid "积分消费失败，请稍后重试"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:397
+#: zchat/aichat/chat_stream.py:316
 msgid "创建AI消息记录失败，请稍后重试"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:419
+#: zchat/aichat/chat_stream.py:338
 msgid "获取AI响应时出现错误，请稍后重试"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:422
+#: zchat/aichat/chat_stream.py:341
 msgid "[系统提示: 获取AI响应时出现错误]"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:451
+#: zchat/aichat/chat_stream.py:370
 msgid "处理请求时发生错误，请稍后重试"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:486
+#: zchat/aichat/chat_stream.py:405
 msgid "未知主题"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:487
+#: zchat/aichat/chat_stream.py:406
 msgid "未知节点"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:488
+#: zchat/aichat/chat_stream.py:407
 msgid "未知路径"
 msgstr ""
 
-#: zchat/aichat/chat_stream.py:489
+#: zchat/aichat/chat_stream.py:408
 msgid "暂无描述"
 msgstr ""
 
@@ -132,102 +132,81 @@ msgstr ""
 msgid "Points deduction failed, please try again later"
 msgstr ""
 
-#: zchat/points/__init__.py:84 zchat/points/__init__.py:128
+#: zchat/points/__init__.py:192 zchat/points/__init__.py:239
 msgid "积分套餐A"
 msgstr ""
 
-#: zchat/points/__init__.py:88
-msgid "10元购买1000积分，有效期30天"
-msgstr ""
-
-#: zchat/points/__init__.py:92 zchat/points/__init__.py:129
+#: zchat/points/__init__.py:200 zchat/points/__init__.py:240
 msgid "积分套餐B"
 msgstr ""
 
-#: zchat/points/__init__.py:96
-msgid "28元购买3000积分，有效期30天，比单独购买更优惠"
-msgstr ""
-
-#: zchat/points/__init__.py:100 zchat/points/__init__.py:130
+#: zchat/points/__init__.py:208 zchat/points/__init__.py:241
 msgid "积分套餐C"
 msgstr ""
 
-#: zchat/points/__init__.py:104
-msgid "45元购买5000积分，有效期30天，最实惠的选择"
-msgstr ""
-
-#: zchat/points/__init__.py:163
+#: zchat/points/__init__.py:290
 #, python-brace-format
 msgid "购买{}积分"
 msgstr ""
 
-#: zchat/points/__init__.py:271 zchat/points/__init__.py:292
-#: zchat/points/__init__.py:571 zchat/points/__init__.py:594
+#: zchat/points/__init__.py:429 zchat/points/__init__.py:487
+#: zchat/points/__init__.py:820 zchat/points/__init__.py:888
 msgid "支付成功"
 msgstr ""
 
-#: zchat/points/__init__.py:282 zchat/points/__init__.py:583
+#: zchat/points/__init__.py:440 zchat/points/__init__.py:832
 msgid "支付处理中"
 msgstr ""
 
-#: zchat/points/__init__.py:293 zchat/points/__init__.py:595
+#: zchat/points/__init__.py:488 zchat/points/__init__.py:889
 msgid "支付失败"
 msgstr ""
 
-#: zchat/points/__init__.py:294 zchat/points/__init__.py:596
+#: zchat/points/__init__.py:489 zchat/points/__init__.py:890
 msgid "已取消"
 msgstr ""
 
-#: zchat/points/__init__.py:294 zchat/points/__init__.py:596
+#: zchat/points/__init__.py:489 zchat/points/__init__.py:890
 msgid "待支付"
 msgstr ""
 
-#: zchat/points/__init__.py:366
+#: zchat/points/__init__.py:564
 msgid "免费账户"
 msgstr ""
 
-#: zchat/points/__init__.py:370
+#: zchat/points/__init__.py:569
 #, python-brace-format
 msgid "免费账户，每天{}积分"
 msgstr ""
 
-#: zchat/points/__init__.py:375
+#: zchat/points/__init__.py:574 zchat/templates/index.html:824
+#: zchat/templates/index.html:1587
 msgid "基础会员"
 msgstr ""
 
-#: zchat/points/__init__.py:379
-#, python-brace-format
-msgid "每月{}元，每天{}积分"
-msgstr ""
-
-#: zchat/points/__init__.py:384
+#: zchat/points/__init__.py:583 zchat/templates/index.html:1581
 msgid "高级会员"
 msgstr ""
 
-#: zchat/points/__init__.py:388
-#, python-brace-format
-msgid "每年{}元(相当于每月{}元)，每天{}积分，性价比高"
-msgstr ""
-
-#: zchat/points/__init__.py:413
+#: zchat/points/__init__.py:614
 msgid "基础会员(月)"
 msgstr ""
 
-#: zchat/points/__init__.py:418
+#: zchat/points/__init__.py:619
 msgid "高级会员(年)"
 msgstr ""
 
-#: zchat/points/__init__.py:450
+#: zchat/points/__init__.py:668
 #, python-brace-format
 msgid "订阅{}，每日{}积分"
 msgstr ""
 
-#: zchat/points/__init__.py:692
+#: zchat/points/__init__.py:986
 #, python-brace-format
 msgid "积分不足，当前可用积分: {}，需要积分: {}"
 msgstr ""
 
-#: zchat/points/__init__.py:706
+#: zchat/points/__init__.py:1000
 #, python-brace-format
 msgid "使用服务: {}"
 msgstr ""
@@ -254,7 +233,7 @@ msgstr ""
 msgid "No resume provided"
 msgstr ""
 
-#: zchat/resume/__init__.py:135 zchat/templates/index.html:211
+#: zchat/resume/__init__.py:135
 msgid "简历定制"
 msgstr ""
 
@@ -458,265 +437,858 @@ msgstr ""
 msgid "This resume was generated automatically"
 msgstr ""
 
-#: zchat/templates/index.html:6
-msgid "职路 - 您的职业发展伙伴"
+#: zchat/templates/index.html:6 zchat/templates/index.html:9
+msgid "职路 - AI驱动的职业发展平台"
 msgstr ""
 
-#: zchat/templates/index.html:7
-msgid "职路是一款专注于职业发展、求职指导和职场提升的应用，助您踏上理想的职业之路。"
+#: zchat/templates/index.html:7 zchat/templates/index.html:10
+msgid "职路通过AI技术革新职业发展，为每个人提供精准的职业规划、测评和简历定制服务，让职业成长更高效。"
 msgstr ""
 
-#: zchat/templates/index.html:22 zchat/templates/index.html:23
-#: zchat/templates/index.html:255 zchat/templates/index.html:256
+#: zchat/templates/index.html:8
+msgid "职业规划,AI职业测评,简历定制,职位分析,职业发展,求职,跳槽"
+msgstr ""
+
+#: zchat/templates/index.html:33 zchat/templates/index.html:34
+#: zchat/templates/index.html:1131 zchat/templates/index.html:1132
 msgid "职路"
 msgstr ""
 
-#: zchat/templates/index.html:27 zchat/templates/index.html:178
-msgid "产品特色"
+#: zchat/templates/index.html:38 zchat/templates/index.html:426
+msgid "核心功能"
 msgstr ""
 
-#: zchat/templates/index.html:28 zchat/templates/index.html:163
-#: zchat/templates/index.html:224
-msgid "立即下载"
+#: zchat/templates/index.html:39
+msgid "产品演示"
 msgstr ""
 
-#: zchat/templates/index.html:29 zchat/templates/index.html:241
-#: zchat/templates/index.html:263
+#: zchat/templates/index.html:40
+msgid "定价方案"
+msgstr ""
+
+#: zchat/templates/index.html:41 zchat/templates/index.html:948
+msgid "常见问题"
+msgstr ""
+
+#: zchat/templates/index.html:42 zchat/templates/index.html:1056
+#: zchat/templates/index.html:1139
 msgid "关于我们"
 msgstr ""
 
-#: zchat/templates/index.html:160
-msgid "职业成长，从精准规划开始"
+#: zchat/templates/index.html:347
+msgid "AI驱动"
 msgstr ""
 
-#: zchat/templates/index.html:161
-msgid "领先一步的职业导航，让梦想有明确的坐标"
+#: zchat/templates/index.html:351
+msgid "4.8分好评"
 msgstr ""
 
-#: zchat/templates/index.html:164
-msgid "了解更多"
+#: zchat/templates/index.html:355
+msgid "100万+用户"
 msgstr ""
 
-#: zchat/templates/index.html:168
+#: zchat/templates/index.html:359
+msgid "AI驱动的职业发展平台"
+msgstr ""
+
+#: zchat/templates/index.html:361
+msgid "为您提供个性化的职业规划、精准的岗位分析和智能简历定制，让每一步职业选择都更明智"
+msgstr ""
+
+#: zchat/templates/index.html:366 zchat/templates/index.html:817
+#: zchat/templates/index.html:1110
+msgid "免费开始使用"
+msgstr ""
+
+#: zchat/templates/index.html:370
+msgid "观看演示"
+msgstr ""
+
+#: zchat/templates/index.html:377
 msgid "职路应用展示"
 msgstr ""
 
-#: zchat/templates/index.html:184
-msgid "职业规划"
+#: zchat/templates/index.html:384
+msgid "求职成功率"
 msgstr ""
 
-#: zchat/templates/index.html:185
-msgid "AI精准规划成长方向，实时追踪行业趋势调整路径"
+#: zchat/templates/index.html:391 zchat/templates/index.html:1099
+msgid "平均薪资增长"
 msgstr ""
 
-#: zchat/templates/index.html:186
-msgid "拆解目标为可执行任务，缩短成长周期，拒绝无效努力"
+#: zchat/templates/index.html:398
+msgid "节省求职时间"
 msgstr ""
 
-#: zchat/templates/index.html:193
-msgid "职业测评"
+#: zchat/templates/index.html:405
+msgid "职业匹配度"
 msgstr ""
 
-#: zchat/templates/index.html:194
-msgid "三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势"
+#: zchat/templates/index.html:412
+msgid "面试通过率"
 msgstr ""
 
-#: zchat/templates/index.html:195
-msgid "对标高薪岗位人才画像，转行跳槽少走弯路"
+#: zchat/templates/index.html:427
+msgid "AI驱动的全方位职业发展解决方案，让您的每一步都更精准"
 msgstr ""
 
-#: zchat/templates/index.html:202
-msgid "职位分析"
+#: zchat/templates/index.html:436
+msgid "AI职业规划"
 msgstr ""
 
-#: zchat/templates/index.html:203
-msgid "深度分析目标岗位，提取企业隐性需求"
+#: zchat/templates/index.html:437
+msgid "基于大数据和AI算法，为您量身定制职业发展路径，实时追踪行业趋势，智能调整成长方向"
 msgstr ""
 
-#: zchat/templates/index.html:204
-msgid "结合行业大数据，智能规划求职升职决策，快人一步"
+#: zchat/templates/index.html:439
+msgid "个性化成长路径"
 msgstr ""
 
-#: zchat/templates/index.html:212
-msgid "智能拆解JD隐藏关键词，拉满简历匹配度"
+#: zchat/templates/index.html:440
+msgid "行业趋势分析"
 msgstr ""
 
-#: zchat/templates/index.html:213
-msgid "一键生成最优简历，大幅提升面试邀约率"
+#: zchat/templates/index.html:441
+msgid "技能差距识别"
 msgstr ""
 
-#: zchat/templates/index.html:225
+#: zchat/templates/index.html:451 zchat/templates/index.html:961
+msgid "专业职业测评"
+msgstr ""
+
+#: zchat/templates/index.html:452
+msgid "多维度职业能力评估，深度挖掘您的职业潜力和优势，精准匹配最适合的职业方向"
+msgstr ""
+
+#: zchat/templates/index.html:454
+msgid "性格特质分析"
+msgstr ""
+
+#: zchat/templates/index.html:455
+msgid "能力模型评估"
+msgstr ""
+
+#: zchat/templates/index.html:456
+msgid "职业匹配推荐"
+msgstr ""
+
+#: zchat/templates/index.html:466
+msgid "智能职位分析"
+msgstr ""
+
+#: zchat/templates/index.html:467
+msgid "深度解析目标岗位要求，提取企业隐性需求，为您提供精准的求职策略和面试指导"
+msgstr ""
+
+#: zchat/templates/index.html:469
+msgid "JD深度解析"
+msgstr ""
+
+#: zchat/templates/index.html:470
+msgid "企业文化分析"
+msgstr ""
+
+#: zchat/templates/index.html:471
+msgid "面试策略制定"
+msgstr ""
+
+#: zchat/templates/index.html:481 zchat/templates/index.html:859
+msgid "智能简历定制"
+msgstr ""
+
+#: zchat/templates/index.html:482
+msgid "AI智能分析岗位需求，自动优化简历内容和格式，显著提升简历通过率和面试邀约率"
+msgstr ""
+
+#: zchat/templates/index.html:484
+msgid "关键词智能匹配"
+msgstr ""
+
+#: zchat/templates/index.html:485
+msgid "格式自动优化"
+msgstr ""
+
+#: zchat/templates/index.html:486
+msgid "ATS系统适配"
+msgstr ""
+
+#: zchat/templates/index.html:498
+msgid "简单三步，开启职业新篇章"
+msgstr ""
+
+#: zchat/templates/index.html:499
+msgid "我们的AI系统将引导您完成整个职业发展过程"
+msgstr ""
+
+#: zchat/templates/index.html:509
+msgid "完成职业测评"
+msgstr ""
+
+#: zchat/templates/index.html:510
+msgid "通过我们的专业测评系统，深度了解您的职业偏好、能力特长和发展潜力"
+msgstr ""
+
+#: zchat/templates/index.html:520
+msgid "获取专属规划"
+msgstr ""
+
+#: zchat/templates/index.html:521
+msgid "AI为您生成个性化的职业发展路径，包括技能提升建议和时间规划"
+msgstr ""
+
+#: zchat/templates/index.html:531
+msgid "实现职业突破"
+msgstr ""
+
+#: zchat/templates/index.html:532
+msgid "使用我们的简历优化和职位分析工具，快速获得心仪offer"
+msgstr ""
+
+#: zchat/templates/index.html:543
+msgid "用户真实反馈"
+msgstr ""
+
+#: zchat/templates/index.html:544
+msgid "看看其他用户如何通过职路实现职业突破"
+msgstr ""
+
+#: zchat/templates/index.html:554
+msgid "使用职路后，我的简历终于不再石沉大海，已经成功从传统行业转型到互联网，薪资翻了一倍！"
+msgstr ""
+
+#: zchat/templates/index.html:558
+msgid "张***"
+msgstr ""
+
+#: zchat/templates/index.html:559
+msgid "产品经理"
+msgstr ""
+
+#: zchat/templates/index.html:559 zchat/templates/index.html:669
+msgid "3-5年"
+msgstr ""
+
+#: zchat/templates/index.html:576
+msgid "职路的学习路径规划很好用，现在每一步都很有目标感。"
+msgstr ""
+
+#: zchat/templates/index.html:580
+msgid "鱼鱼"
+msgstr ""
+
+#: zchat/templates/index.html:581
+msgid "UI设计师"
+msgstr ""
+
+#: zchat/templates/index.html:581 zchat/templates/index.html:713
+msgid "1-3年"
+msgstr ""
+
+#: zchat/templates/index.html:598
+msgid "作为应届生，职路帮我分析了适合的岗位，面试通过率大大提升，现在已经拿到心仪的offer"
+msgstr ""
+
+#: zchat/templates/index.html:602
+msgid "138****5890"
+msgstr ""
+
+#: zchat/templates/index.html:603 zchat/templates/index.html:647
+msgid "软件工程师"
+msgstr ""
+
+#: zchat/templates/index.html:603
+msgid "应届"
+msgstr ""
+
+#: zchat/templates/index.html:620
+msgid "职路的职位分析功能让我深度了解了目标公司的需求，面试时回答问题可以更有针对性。"
+msgstr ""
+
+#: zchat/templates/index.html:624
+msgid "alex@*****.com"
+msgstr ""
+
+#: zchat/templates/index.html:625
+msgid "数据分析师"
+msgstr ""
+
+#: zchat/templates/index.html:625 zchat/templates/index.html:691
+msgid "5年以上"
+msgstr ""
+
+#: zchat/templates/index.html:642
+msgid "简历定制功能真的很实用，针对岗位自动调整关键词，批量定制海投，效果不错"
+msgstr ""
+
+#: zchat/templates/index.html:646
+msgid "菲斯布可"
+msgstr ""
+
+#: zchat/templates/index.html:647
+msgid "应届生"
+msgstr ""
+
+#: zchat/templates/index.html:664
+msgid "职业测评帮我重新认识了自己的优势，从迷茫到清晰，现在的工作完全符合我的性格特点。"
+msgstr ""
+
+#: zchat/templates/index.html:668
+msgid "189****2589"
+msgstr ""
+
+#: zchat/templates/index.html:669
+msgid "市场营销"
+msgstr ""
+
+#: zchat/templates/index.html:686
+msgid "转行时使用职路分析了很多岗位，做了充分准备，总算顺利翻身到AI行业。"
+msgstr ""
+
+#: zchat/templates/index.html:690
+msgid "深圳老司机"
+msgstr ""
+
+#: zchat/templates/index.html:691
+msgid "项目经理"
+msgstr ""
+
+#: zchat/templates/index.html:708
+msgid "刚毕业时很迷茫，职路的职业规划让我找到了方向，现在工作一年多，发展轨迹完全按照规划在走。"
+msgstr ""
+
+#: zchat/templates/index.html:712
+msgid "lily@*****.com"
+msgstr ""
+
+#: zchat/templates/index.html:713
+msgid "前端开发"
+msgstr ""
+
+#: zchat/templates/index.html:730
+msgid "转行时用职路做了全面的能力评估和规划，现在成功转入AI行业，感谢职路的专业指导！"
+msgstr ""
+
+#: zchat/templates/index.html:734
+msgid "我是小白"
+msgstr ""
+
+#: zchat/templates/index.html:735
+msgid "算法工程师"
+msgstr ""
+
+#: zchat/templates/index.html:735
+msgid "保密"
+msgstr ""
+
+#: zchat/templates/index.html:766
+msgid "立即下载"
+msgstr ""
+
+#: zchat/templates/index.html:767
 msgid "随时随地，开启您的成功\"职路\""
 msgstr ""
 
-#: zchat/templates/index.html:228 zchat/templates/index.html:330
+#: zchat/templates/index.html:770 zchat/templates/index.html:1212
 msgid "小米应用商店下载"
 msgstr ""
 
-#: zchat/templates/index.html:232
+#: zchat/templates/index.html:774
 msgid "扫码下载职路APP"
 msgstr ""
 
-#: zchat/templates/index.html:233
+#: zchat/templates/index.html:775
 msgid "扫描二维码下载"
 msgstr ""
 
-#: zchat/templates/index.html:243
-msgid "职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。"
+#: zchat/templates/index.html:784
+msgid "选择适合您的方案"
 msgstr ""
 
-#: zchat/templates/index.html:244
-msgid "我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。"
-msgstr ""
-
-#: zchat/templates/index.html:245
-msgid "我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有\"职路\"，不走弯路。"
-msgstr ""
-
-#: zchat/templates/index.html:257
-msgid "您的职业发展伙伴"
-msgstr ""
-
-#: zchat/templates/index.html:261
-msgid "公司"
-msgstr ""
-
-#: zchat/templates/index.html:264
-msgid "联系我们"
-msgstr ""
-
-#: zchat/templates/index.html:268
-msgid "支持"
-msgstr ""
-
-#: zchat/templates/index.html:270
-msgid "隐私政策"
-msgstr ""
-
-#: zchat/templates/index.html:271
-msgid "服务条款"
-msgstr ""
-
-#: zchat/templates/index.html:272
-msgid "增值服务协议"
-msgstr ""
-
-#: zchat/templates/index.html:276
-msgid "关注我们"
-msgstr ""
-
-#: zchat/templates/index.html:286
-msgid "&copy; 2025 职路APP. 保留所有权利."
-msgstr ""
-
-#: zchat/templates/index.html:324
-msgid "下载Android版"
-msgstr ""
-
-#: zchat/templates/index.html:334
-msgid "小米应用商店"
-msgstr ""
-
-#: zchat/templates/index.html:341
-msgid "OPPO应用商店下载"
-msgstr ""
-
-#: zchat/templates/index.html:345
-msgid "OPPO应用商店"
-msgstr ""
-
-#: zchat/templates/index.html:352
-msgid "华为应用商店下载"
-msgstr ""
-
-#: zchat/templates/index.html:356
-msgid "华为应用商店"
-msgstr ""
-
-#: zchat/templates/index.html:363
-msgid "vivo应用商店下载"
-msgstr ""
-
-#: zchat/templates/index.html:367
-msgid "vivo应用商店"
+#: zchat/templates/index.html:788
+msgid "按月付费"
 msgstr ""
 
 #: zchat/templates/index.html:793
+msgid "按年付费"
+msgstr ""
+
+#: zchat/templates/index.html:793
+#, python-format
+msgid "省30%%"
+msgstr ""
+
+#: zchat/templates/index.html:800
+msgid "免费体验"
+msgstr ""
+
+#: zchat/templates/index.html:804
+msgid "天"
+msgstr ""
+
+#: zchat/templates/index.html:806
+msgid "每日免费积分，体验核心功能"
+msgstr ""
+
+#: zchat/templates/index.html:810
+msgid "每日88积分"
+msgstr ""
+
+#: zchat/templates/index.html:811 zchat/templates/index.html:858
+msgid "完整职业测评"
+msgstr ""
+
+#: zchat/templates/index.html:812 zchat/templates/index.html:928
+msgid "智能简历优化"
+msgstr ""
+
+#: zchat/templates/index.html:813
+msgid "高级职业规划"
+msgstr ""
+
+#: zchat/templates/index.html:814
+msgid "深度职位分析"
+msgstr ""
+
+#: zchat/templates/index.html:822
+msgid "最受欢迎"
+msgstr ""
+
+#: zchat/templates/index.html:828 zchat/templates/index.html:1589
+msgid "月"
+msgstr ""
+
+#: zchat/templates/index.html:830
+msgid "无限使用，专业服务"
+msgstr ""
+
+#: zchat/templates/index.html:834
+msgid "每日500积分"
+msgstr ""
+
+#: zchat/templates/index.html:835
+msgid "所有功能无限制"
+msgstr ""
+
+#: zchat/templates/index.html:836
+msgid "优先客服支持"
+msgstr ""
+
+#: zchat/templates/index.html:837
+msgid "专属职业顾问"
+msgstr ""
+
+#: zchat/templates/index.html:838
+msgid "行业报告下载"
+msgstr ""
+
+#: zchat/templates/index.html:841 zchat/templates/index.html:1590
+msgid "开通会员"
+msgstr ""
+
+#: zchat/templates/index.html:847
+msgid "积分套餐"
+msgstr ""
+
+#: zchat/templates/index.html:851 zchat/templates/index.html:857
+msgid "3000积分"
+msgstr ""
+
+#: zchat/templates/index.html:853
+msgid "按需购买，灵活使用"
+msgstr ""
+
+#: zchat/templates/index.html:860 zchat/templates/index.html:936
+msgid "职位深度分析"
+msgstr ""
+
+#: zchat/templates/index.html:861
+msgid "30天有效期"
+msgstr ""
+
+#: zchat/templates/index.html:864
+msgid "立即购买"
+msgstr ""
+
+#: zchat/templates/index.html:871
+msgid "7天无理由退款"
+msgstr ""
+
+#: zchat/templates/index.html:875
+msgid "数据安全保护"
+msgstr ""
+
+#: zchat/templates/index.html:879
+msgid "24/7客服支持"
+msgstr ""
+
+#: zchat/templates/index.html:889
+msgid "看看职路如何工作"
+msgstr ""
+
+#: zchat/templates/index.html:890
+msgid "通过真实案例，了解职路如何帮助您实现职业突破"
+msgstr ""
+
+#: zchat/templates/index.html:898
+msgid "点击观看产品演示"
+msgstr ""
+
+#: zchat/templates/index.html:903
+msgid "您的浏览器不支持视频播放"
+msgstr ""
+
+#: zchat/templates/index.html:912
+msgid "智能职业测评"
+msgstr ""
+
+#: zchat/templates/index.html:913
+msgid "通过科学的测评体系，全面了解您的职业偏好和能力特长"
+msgstr ""
+
+#: zchat/templates/index.html:920
+msgid "个性化职业规划"
+msgstr ""
+
+#: zchat/templates/index.html:921
+msgid "基于测评结果和行业数据，为您制定专属的职业发展路径"
+msgstr ""
+
+#: zchat/templates/index.html:929
+msgid "AI分析目标岗位需求，自动优化简历内容和格式"
+msgstr ""
+
+#: zchat/templates/index.html:937
+msgid "深度解析企业需求，提供精准的求职策略和面试指导"
+msgstr ""
+
+#: zchat/templates/index.html:952
+msgid "我可以用职路做什么？"
+msgstr ""
+
+#: zchat/templates/index.html:956
+msgid "任何需要您职业成长的事情！职路特别适用于："
+msgstr ""
+
+#: zchat/templates/index.html:958
+msgid "规划职业成长路径"
+msgstr ""
+
+#: zchat/templates/index.html:959
+msgid "进行职位分析"
+msgstr ""
+
+#: zchat/templates/index.html:960
+msgid "定制精准简历"
+msgstr ""
+
+#: zchat/templates/index.html:968
+msgid "职路有什么好处？"
+msgstr ""
+
+#: zchat/templates/index.html:972
+msgid "职路是一个生产力工具，专为更快，更高效地创建符合您的路径而构建。"
+msgstr ""
+
+#: zchat/templates/index.html:973
+msgid "使用职路，您将享受："
+msgstr ""
+
+#: zchat/templates/index.html:975
+msgid "助力职业发展：通过职业成长路径规划，明确发展方向，避免盲目摸索，少走弯路，快速实现职业目标。职位分析助深入了解职位，精准求职。简历定制和职业测评则提升求职竞争力，增加获得心仪工作的机会。"
+msgstr ""
+
+#: zchat/templates/index.html:976
+msgid "节省时间和精力：无需四处搜集资料和信息，职路集成丰富职业相关资源，一站式满足职业发展需求，让你更高效地规划和管理职业生涯。"
+msgstr ""
+
+#: zchat/templates/index.html:977
+msgid "提供个性化服务：根据个人情况量身定制职业成长路径和简历，考虑个体差异，使服务更具针对性和实效性，满足独特职业发展需求。"
+msgstr ""
+
+#: zchat/templates/index.html:978
+msgid "促进自我认知：职业测评帮助深入了解兴趣、性格和能力，清晰自身优势和不足，做出适合职业选择，发挥潜力，实现自我价值。"
+msgstr ""
+
+#: zchat/templates/index.html:985
+msgid "如何创作学习路径？"
+msgstr ""
+
+#: zchat/templates/index.html:989
+msgid "创建学习路径可能会令人生畏，但不必这样！使用职路，您可能需要几分钟时间就能创建专业的指导路径。"
+msgstr ""
+
+#: zchat/templates/index.html:990
+msgid "第一步：根据您输入个人基本信息（如当前职业阶段、技能水平、职业目标等）"
+msgstr ""
+
+#: zchat/templates/index.html:991
+msgid "第二步：只要点击确认系统会根据您提供的数据以及海量行业信息，为您量身定制一份专属的职业成长规划。将整体学习目标分解为阶段性小目标，逐步击破。（如将编程语言学习分为基础语法、数据结构与算法、项目实战等阶段。）"
+msgstr ""
+
+#: zchat/templates/index.html:997
+msgid "我不确定自己的职业目标，职路能帮我吗？"
+msgstr ""
+
+#: zchat/templates/index.html:1001
+msgid "当然可以！职路的职业测评功能可以帮助您初步了解自己的兴趣、性格和能力优势，为确定职业方向提供参考。在您完成测评后，我们的职业成长路径规划功能会根据测评结果为您推荐适合的职业领域和职位类型，并提供相应的发展建议。同时，您还可以查看职位分析内容，深入了解不同职位的工作内容、发展前景和要求，从而逐步明确自己的职业目标。"
+msgstr ""
+
+#: zchat/templates/index.html:1007
+msgid "我的简历已经很长时间没有更新了，职路的简历定制功能能帮我重新整理吗？"
+msgstr ""
+
+#: zchat/templates/index.html:1011
+msgid "绝对可以！您只需将现有的简历内容上传至职路，我们的简历定制功能会根据您的职业背景和求职意向，对简历进行重新梳理和优化。我们会帮您筛选出重点信息，按照清晰的结构进行排版，突出您的优势和亮点，让您的简历更符合当前求职市场的要求。"
+msgstr ""
+
+#: zchat/templates/index.html:1017
+msgid "职路的职业成长路径是否适合应届毕业生？"
+msgstr ""
+
+#: zchat/templates/index.html:1021
+msgid "职路的职业成长路径功能适合各个职业阶段的人群，包括应届毕业生及想要转行的人群。"
+msgstr ""
+
+#: zchat/templates/index.html:1027
+msgid "职业测评的准确性如何保证？"
+msgstr ""
+
+#: zchat/templates/index.html:1031
+msgid "职路的职业测评基于科学的心理学理论和成熟的职业测评模型，同时结合了大量用户数据和实际案例分析。测评题目经过精心设计和反复验证，能够较为准确地评估您的职业兴趣、性格特点、能力优势等方面。但需要注意的是，测评结果仅供参考，我们建议您将其作为了解自身特点的工具之一，结合实际情况综合判断，以做出更明智的职业决策。"
+msgstr ""
+
+#: zchat/templates/index.html:1037
+msgid "我在使用APP过程中遇到问题，如何联系客服？"
+msgstr ""
+
+#: zchat/templates/index.html:1041
+msgid "如果您在使用职路时遇到任何问题，可以通过以下几种方式联系我们的客服团队："
+msgstr ""
+
+#: zchat/templates/index.html:1043
+msgid "我的界面点击反馈建议，填写对应内容，我们的客服人员会及时接听并为您解决问题"
+msgstr ""
+
+#: zchat/templates/index.html:1044
+msgid "发送邮件至support@voylead.com，详细描述您遇到的问题，我们会尽快回复您"
+msgstr ""
+
+#: zchat/templates/index.html:1057
+msgid "用AI与大数据为每个选择注入科学的力量"
+msgstr ""
+
+#: zchat/templates/index.html:1060
+msgid "职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。"
+msgstr ""
+
+#: zchat/templates/index.html:1061
+msgid "我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。"
+msgstr ""
+
+#: zchat/templates/index.html:1062
+msgid "我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有\"职路\"，不走弯路。"
+msgstr ""
+
+#: zchat/templates/index.html:1067
+msgid "AI算法专家"
+msgstr ""
+
+#: zchat/templates/index.html:1068
+msgid "顶尖的人工智能技术团队，为职业发展提供科学的数据支撑"
+msgstr ""
+
+#: zchat/templates/index.html:1072
+msgid "资深职业规划师"
+msgstr ""
+
+#: zchat/templates/index.html:1073
+msgid "拥有丰富经验的职业规划专家，深度理解职场发展规律"
+msgstr ""
+
+#: zchat/templates/index.html:1077
+msgid "大厂HRBP背景"
+msgstr ""
+
+#: zchat/templates/index.html:1078
+msgid "来自知名企业的人力资源专家，洞察企业用人需求"
+msgstr ""
+
+#: zchat/templates/index.html:1089
+msgid "准备好开启您的职业新篇章了吗？"
+msgstr ""
+
+#: zchat/templates/index.html:1090
+msgid "加入100万+用户的选择，让AI助力您的职业发展"
+msgstr ""
+
+#: zchat/templates/index.html:1095
+msgid "求职成功率提升"
+msgstr ""
+
+#: zchat/templates/index.html:1103
+msgid "求职时间节省"
+msgstr ""
+
+#: zchat/templates/index.html:1114
+msgid "观看产品演示"
+msgstr ""
+
+#: zchat/templates/index.html:1120
+msgid "7天无理由退款保证 • 数据安全保护 • 24/7客服支持"
+msgstr ""
+
+#: zchat/templates/index.html:1133
+msgid "您的职业发展伙伴"
+msgstr ""
+
+#: zchat/templates/index.html:1137
+msgid "公司"
+msgstr ""
+
+#: zchat/templates/index.html:1140
+msgid "联系我们"
+msgstr ""
+
+#: zchat/templates/index.html:1144
+msgid "支持"
+msgstr ""
+
+#: zchat/templates/index.html:1146
+msgid "隐私政策"
+msgstr ""
+
+#: zchat/templates/index.html:1147
+msgid "服务条款"
+msgstr ""
+
+#: zchat/templates/index.html:1148
+msgid "增值服务协议"
+msgstr ""
+
+#: zchat/templates/index.html:1153
+msgid "关注我们"
+msgstr ""
+
+#: zchat/templates/index.html:1164 zchat/templates/index.html:1167
+msgid "&copy; 2025 职路APP. 保留所有权利."
+msgstr ""
+
+#: zchat/templates/index.html:1206
+msgid "下载Android版"
+msgstr ""
+
+#: zchat/templates/index.html:1216
+msgid "小米应用商店"
+msgstr ""
+
+#: zchat/templates/index.html:1223
+msgid "OPPO应用商店下载"
+msgstr ""
+
+#: zchat/templates/index.html:1227
+msgid "OPPO应用商店"
+msgstr ""
+
+#: zchat/templates/index.html:1234
+msgid "华为应用商店下载"
+msgstr ""
+
+#: zchat/templates/index.html:1238
+msgid "华为应用商店"
+msgstr ""
+
+#: zchat/templates/index.html:1245
+msgid "vivo应用商店下载"
+msgstr ""
+
+#: zchat/templates/index.html:1249
+msgid "vivo应用商店"
+msgstr ""
+
+#: zchat/templates/index.html:1480
 msgid "职位分析进行中..."
 msgstr ""
 
-#: zchat/templates/index.html:794
+#: zchat/templates/index.html:1481
 msgid "职位分析完成，正在生成专属报告，5个核心技能强匹配，来看看吧"
 msgstr ""
 
-#: zchat/templates/index.html:795
+#: zchat/templates/index.html:1482
 #, python-format
 msgid "简历定制完成，匹配度提升30%%"
 msgstr ""
 
-#: zchat/templates/index.html:796
+#: zchat/templates/index.html:1483
 msgid "技能树定制完成，8个阶段，100+核心知识点，快来打卡吧"
 msgstr ""
 
-#: zchat/templates/index.html:797
+#: zchat/templates/index.html:1484
 msgid "匹配最优职位中..."
 msgstr ""
 
-#: zchat/templates/index.html:798
+#: zchat/templates/index.html:1485
 msgid "专属成长路径生成及技能树定制中..."
 msgstr ""
 
-#: zchat/templates/index.html:799
+#: zchat/templates/index.html:1486
 msgid "行业趋势分析中..."
 msgstr ""
 
-#: zchat/templates/index.html:800
+#: zchat/templates/index.html:1487
 msgid "简历匹配度分析中..."
 msgstr ""
 
-#: zchat/templates/index.html:801
+#: zchat/templates/index.html:1488
 msgid "职业能力评估中..."
 msgstr ""
 
-#: zchat/templates/index.html:802
+#: zchat/templates/index.html:1489
 msgid "职场竞争力提升中..."
 msgstr ""
 
-#: zchat/templates/index.html:803
+#: zchat/templates/index.html:1490
 msgid "简历曝光率提升中..."
 msgstr ""
 
-#: zchat/templates/index.html:804
+#: zchat/templates/index.html:1491
 msgid "面试机会增加中..."
 msgstr ""
 
-#: zchat/templates/index.html:805
+#: zchat/templates/index.html:1492
 msgid "薪资增长潜力提升中..."
 msgstr ""
 
-#: zchat/templates/index.html:806
+#: zchat/templates/index.html:1493
 #, python-format
 msgid "职场竞争力+28%%"
 msgstr ""
 
-#: zchat/templates/index.html:807
+#: zchat/templates/index.html:1494
 #, python-format
 msgid "简历曝光率提升42%%"
 msgstr ""
 
-#: zchat/templates/index.html:808
+#: zchat/templates/index.html:1495
 #, python-format
 msgid "面试机会增加36%%"
 msgstr ""
 
-#: zchat/templates/index.html:809
+#: zchat/templates/index.html:1496
 #, python-format
 msgid "薪资增长潜力52%%"
 msgstr ""
 
-#: zchat/templates/index.html:810
+#: zchat/templates/index.html:1497
 #, python-format
 msgid "岗位需求增长17%%"
+msgstr ""
+
+#: zchat/templates/index.html:1583
+msgid "年"
+msgstr ""
+
+#: zchat/templates/index.html:1584
+msgid "开通高级会员"
 msgstr ""
 
 #: zchat/templates/customer_service/email_verified.html:6
@@ -793,77 +1365,5 @@ msgstr ""
 msgid ""
 "Your password has been successfully reset. You can now log in with your "
 "new password."
-msgstr ""
-
-# FAQ Section
-msgid "常见问题"
-msgstr ""
-
-msgid "我可以用职路做什么？"
-msgstr ""
-msgid "任何需要您职业成长的事情！职路特别适用于："
-msgstr ""
-msgid "规划职业成长路径"
-msgstr ""
-msgid "进行职位分析"
-msgstr ""
-msgid "定制精准简历"
-msgstr ""
-msgid "专业职业测评"
-msgstr ""
-
-msgid "职路有什么好处？"
-msgstr ""
-msgid "职路是一个生产力工具，专为更快，更高效地创建符合您的路径而构建。"
-msgstr ""
-msgid "使用职路，您将享受："
-msgstr ""
-msgid "助力职业发展：通过职业成长路径规划，明确发展方向，避免盲目摸索，少走弯路，快速实现职业目标。职位分析助深入了解职位，精准求职。简历定制和职业测评则提升求职竞争力，增加获得心仪工作的机会。"
-msgstr ""
-msgid "节省时间和精力：无需四处搜集资料和信息，职路集成丰富职业相关资源，一站式满足职业发展需求，让你更高效地规划和管理职业生涯。"
-msgstr ""
-msgid "提供个性化服务：根据个人情况量身定制职业成长路径和简历，考虑个体差异，使服务更具针对性和实效性，满足独特职业发展需求。"
-msgstr ""
-msgid "促进自我认知：职业测评帮助深入了解兴趣、性格和能力，清晰自身优势和不足，做出适合职业选择，发挥潜力，实现自我价值。"
-msgstr ""
-
-msgid "如何创作学习路径？"
-msgstr ""
-msgid "创建学习路径可能会令人生畏，但不必这样！使用职路，您可能需要几分钟时间就能创建专业的指导路径。"
-msgstr ""
-msgid "第一步：根据您输入个人基本信息（如当前职业阶段、技能水平、职业目标等）"
-msgstr ""
-msgid "第二步：只要点击确认系统会根据您提供的数据以及海量行业信息，为您量身定制一份专属的职业成长规划。将整体学习目标分解为阶段性小目标，逐步击破。（如将编程语言学习分为基础语法、数据结构与算法、项目实战等阶段。）"
-msgstr ""
-
-msgid "我不确定自己的职业目标，职路能帮我吗？"
-msgstr ""
-msgid "当然可以！职路的职业测评功能可以帮助您初步了解自己的兴趣、性格和能力优势，为确定职业方向提供参考。在您完成测评后，我们的职业成长路径规划功能会根据测评结果为您推荐适合的职业领域和职位类型，并提供相应的发展建议。同时，您还可以查看职位分析内容，深入了解不同职位的工作内容、发展前景和要求，从而逐步明确自己的职业目标。"
-msgstr ""
-
-msgid "我的简历已经很长时间没有更新了，职路的简历定制功能能帮我重新整理吗？"
-msgstr ""
-msgid "绝对可以！您只需将现有的简历内容上传至职路，我们的简历定制功能会根据您的职业背景和求职意向，对简历进行重新梳理和优化。我们会帮您筛选出重点信息，按照清晰的结构进行排版，突出您的优势和亮点，让您的简历更符合当前求职市场的要求。"
-msgstr ""
-
-msgid "职路的职业成长路径是否适合应届毕业生？"
-msgstr ""
-msgid "职路的职业成长路径功能适合各个职业阶段的人群，包括应届毕业生及想要转行的人群。"
-msgstr ""
-
-msgid "职业测评的准确性如何保证？"
-msgstr ""
-msgid "职路的职业测评基于科学的心理学理论和成熟的职业测评模型，同时结合了大量用户数据和实际案例分析。测评题目经过精心设计和反复验证，能够较为准确地评估您的职业兴趣、性格特点、能力优势等方面。但需要注意的是，测评结果仅供参考，我们建议您将其作为了解自身特点的工具之一，结合实际情况综合判断，以做出更明智的职业决策。"
-msgstr ""
-
-msgid "我在使用APP过程中遇到问题，如何联系客服？"
-msgstr ""
-msgid "如果您在使用职路时遇到任何问题，可以通过以下几种方式联系我们的客服团队："
-msgstr ""
-msgid "在APP内点击\"客服\"按钮，与在线客服人员进行实时沟通"
-msgstr ""
-msgid "我的界面点击反馈建议，填写对应内容，我们的客服人员会及时接听并为您解决问题"
-msgstr ""
-msgid "发送邮件至support@voylead.com，详细描述您遇到的问题，我们会尽快回复您"
 msgstr ""
 

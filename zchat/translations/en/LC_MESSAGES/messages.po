@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  zchat\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-08 15:49+0800\n"
+"POT-Creation-Date: 2025-05-28 22:35+0800\n"
 "PO-Revision-Date: 2024-05-16 12:00+0800\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -55,47 +55,47 @@ msgstr "Failed to save user message, please try again later"
 msgid "获取聊天历史失败，请稍后重试"
 msgstr "Failed to get chat history, please try again later"
 
-#: zchat/aichat/chat_stream.py:371
+#: zchat/aichat/chat_stream.py:290
 msgid "AI聊天"
 msgstr "AI Chat"
 
-#: zchat/aichat/chat_stream.py:373
+#: zchat/aichat/chat_stream.py:292
 msgid "积分扣除失败，请稍后重试"
 msgstr "Points deduction failed, please try again later"
 
-#: zchat/aichat/chat_stream.py:377
+#: zchat/aichat/chat_stream.py:296
 msgid "积分消费失败，请稍后重试"
 msgstr "Points consumption failed, please try again later"
 
-#: zchat/aichat/chat_stream.py:397
+#: zchat/aichat/chat_stream.py:316
 msgid "创建AI消息记录失败，请稍后重试"
 msgstr "Failed to create AI message record, please try again later"
 
-#: zchat/aichat/chat_stream.py:419
+#: zchat/aichat/chat_stream.py:338
 msgid "获取AI响应时出现错误，请稍后重试"
 msgstr "An error occurred while getting AI response, please try again later"
 
-#: zchat/aichat/chat_stream.py:422
+#: zchat/aichat/chat_stream.py:341
 msgid "[系统提示: 获取AI响应时出现错误]"
 msgstr "[System prompt: An error occurred while getting AI response]"
 
-#: zchat/aichat/chat_stream.py:451
+#: zchat/aichat/chat_stream.py:370
 msgid "处理请求时发生错误，请稍后重试"
 msgstr "An error occurred while processing the request, please try again later"
 
-#: zchat/aichat/chat_stream.py:486
+#: zchat/aichat/chat_stream.py:405
 msgid "未知主题"
 msgstr "Unknown topic"
 
-#: zchat/aichat/chat_stream.py:487
+#: zchat/aichat/chat_stream.py:406
 msgid "未知节点"
 msgstr "Unknown node"
 
-#: zchat/aichat/chat_stream.py:488
+#: zchat/aichat/chat_stream.py:407
 msgid "未知路径"
 msgstr "Unknown path"
 
-#: zchat/aichat/chat_stream.py:489
+#: zchat/aichat/chat_stream.py:408
 msgid "暂无描述"
 msgstr "No description available"
 
@@ -132,137 +132,109 @@ msgstr "Job Analysis"
 msgid "Points deduction failed, please try again later"
 msgstr "Points deduction failed, please try again later"
 
-#: zchat/points/__init__.py:84 zchat/points/__init__.py:128
+#: zchat/points/__init__.py:192 zchat/points/__init__.py:239
 msgid "积分套餐A"
 msgstr "Points Package A"
 
-#: zchat/points/__init__.py:88
-msgid "10元购买1000积分，有效期30天"
-msgstr "10 yuan for 1000 points, valid for 30 days"
-
-#: zchat/points/__init__.py:92 zchat/points/__init__.py:129
+#: zchat/points/__init__.py:200 zchat/points/__init__.py:240
 msgid "积分套餐B"
 msgstr "Points Package B"
 
-#: zchat/points/__init__.py:96
-msgid "28元购买3000积分，有效期30天，比单独购买更优惠"
-msgstr ""
-"28 yuan for 3000 points, valid for 30 days, better value than individual "
-"purchase"
-
-#: zchat/points/__init__.py:100 zchat/points/__init__.py:130
+#: zchat/points/__init__.py:208 zchat/points/__init__.py:241
 msgid "积分套餐C"
 msgstr "Points Package C"
 
-#: zchat/points/__init__.py:104
-msgid "45元购买5000积分，有效期30天，最实惠的选择"
-msgstr "45 yuan for 5000 points, valid for 30 days, best value option"
-
-#: zchat/points/__init__.py:163
+#: zchat/points/__init__.py:290
 #, python-brace-format
 msgid "购买{}积分"
 msgstr "Purchase {} points"
 
-#: zchat/points/__init__.py:271 zchat/points/__init__.py:292
-#: zchat/points/__init__.py:571 zchat/points/__init__.py:594
+#: zchat/points/__init__.py:429 zchat/points/__init__.py:487
+#: zchat/points/__init__.py:820 zchat/points/__init__.py:888
 msgid "支付成功"
 msgstr "Payment successful"
 
-#: zchat/points/__init__.py:282 zchat/points/__init__.py:583
+#: zchat/points/__init__.py:440 zchat/points/__init__.py:832
 msgid "支付处理中"
 msgstr "Payment processing"
 
-#: zchat/points/__init__.py:293 zchat/points/__init__.py:595
+#: zchat/points/__init__.py:488 zchat/points/__init__.py:889
 msgid "支付失败"
 msgstr "Payment failed"
 
-#: zchat/points/__init__.py:294 zchat/points/__init__.py:596
+#: zchat/points/__init__.py:489 zchat/points/__init__.py:890
 msgid "已取消"
 msgstr "Cancelled"
 
-#: zchat/points/__init__.py:294 zchat/points/__init__.py:596
+#: zchat/points/__init__.py:489 zchat/points/__init__.py:890
 msgid "待支付"
 msgstr "Payment pending"
 
-#: zchat/points/__init__.py:366
+#: zchat/points/__init__.py:564
 msgid "免费账户"
 msgstr "Free Account"
 
-#: zchat/points/__init__.py:370
+#: zchat/points/__init__.py:569
 #, python-brace-format
 msgid "免费账户，每天{}积分"
 msgstr "Free account, {} points daily"
 
-#: zchat/points/__init__.py:375
+#: zchat/points/__init__.py:574 zchat/templates/index.html:824
+#: zchat/templates/index.html:1587
 msgid "基础会员"
 msgstr "Basic Membership"
 
-#: zchat/points/__init__.py:379
-#, python-brace-format
-msgid "每月{}元，每天{}积分"
-msgstr "{} yuan monthly, {} points daily"
-
-#: zchat/points/__init__.py:384
+#: zchat/points/__init__.py:583 zchat/templates/index.html:1581
 msgid "高级会员"
 msgstr "Premium Membership"
 
-#: zchat/points/__init__.py:388
-#, python-brace-format
-msgid "每年{}元(相当于每月{}元)，每天{}积分，性价比高"
-msgstr ""
-"{} yuan yearly (equivalent to {} yuan monthly), {} points daily, high "
-"value"
-
-#: zchat/points/__init__.py:413
+#: zchat/points/__init__.py:614
 msgid "基础会员(月)"
 msgstr "Basic Membership (Monthly)"
 
-#: zchat/points/__init__.py:418
+#: zchat/points/__init__.py:619
 msgid "高级会员(年)"
 msgstr "Premium Membership (Yearly)"
 
-#: zchat/points/__init__.py:450
+#: zchat/points/__init__.py:668
 #, python-brace-format
 msgid "订阅{}，每日{}积分"
 msgstr "Subscribe to {}, {} points daily"
 
-#: zchat/points/__init__.py:692
+#: zchat/points/__init__.py:986
 #, python-brace-format
 msgid "积分不足，当前可用积分: {}，需要积分: {}"
 msgstr "Insufficient points, current available points: {}, required points: {}"
 
-#: zchat/points/__init__.py:706
+#: zchat/points/__init__.py:1000
 #, python-brace-format
 msgid "使用服务: {}"
 msgstr "Service used: {}"
 
 #: zchat/resume/__init__.py:48
-#, fuzzy
 msgid "No JD ID provided"
-msgstr "No JD provided"
+msgstr "No JD ID provided"
 
 # English translations for job module.
 #: zchat/resume/__init__.py:54
-#, fuzzy
 msgid "No resume file or resume text provided"
-msgstr "No JD file or JD text provided"
+msgstr "No resume file or resume text provided"
 
 #: zchat/resume/__init__.py:67
 #, python-brace-format
 msgid "JD not found for the given JD ID: {}"
-msgstr ""
+msgstr "JD not found for the given JD ID: {}"
 
 #: zchat/resume/__init__.py:71
 #, python-brace-format
 msgid "No JD provided for the given JD ID: {}"
-msgstr ""
+msgstr "No JD provided for the given JD ID: {}"
 
 #: zchat/resume/__init__.py:106
-#, fuzzy
 msgid "No resume provided"
-msgstr "No JD provided"
+msgstr "No resume provided"
 
-#: zchat/resume/__init__.py:135 zchat/templates/index.html:211
+#: zchat/resume/__init__.py:135
 msgid "简历定制"
 msgstr "Resume Customization"
 
@@ -276,490 +248,1199 @@ msgstr "Resume Analysis Expert"
 
 #: zchat/resume/resume_translations.py:5
 msgid "Education"
-msgstr ""
+msgstr "Education"
 
 #: zchat/resume/resume_translations.py:6
 msgid "Degree"
-msgstr ""
+msgstr "Degree"
 
 #: zchat/resume/resume_translations.py:7
 msgid "Field of Study"
-msgstr ""
+msgstr "Field of Study"
 
 #: zchat/resume/resume_translations.py:8
 msgid "Institution"
-msgstr ""
+msgstr "Institution"
 
 #: zchat/resume/resume_translations.py:9
 msgid "GPA"
-msgstr ""
+msgstr "GPA"
 
 #: zchat/resume/resume_translations.py:12
 msgid "Skills"
-msgstr ""
+msgstr "Skills"
 
 #: zchat/resume/resume_translations.py:13
 msgid "Technical Skills"
-msgstr ""
+msgstr "Technical Skills"
 
 #: zchat/resume/resume_translations.py:14
 msgid "Soft Skills"
-msgstr ""
+msgstr "Soft Skills"
 
 #: zchat/resume/resume_translations.py:15
 msgid "Other Skills"
-msgstr ""
+msgstr "Other Skills"
 
 #: zchat/resume/resume_translations.py:16
 msgid "Languages"
-msgstr ""
+msgstr "Languages"
 
 #: zchat/resume/resume_translations.py:19
 msgid "Work Experience"
-msgstr ""
+msgstr "Work Experience"
 
 #: zchat/resume/resume_translations.py:20
 msgid "Responsibilities"
-msgstr ""
+msgstr "Responsibilities"
 
 #: zchat/resume/resume_translations.py:21
 msgid "Achievements"
-msgstr ""
+msgstr "Achievements"
 
 #: zchat/resume/resume_translations.py:22
 msgid "Technologies Used"
-msgstr ""
+msgstr "Technologies Used"
 
 #: zchat/resume/resume_translations.py:25
 msgid "Projects"
-msgstr ""
+msgstr "Projects"
 
 #: zchat/resume/resume_translations.py:26
 msgid "Technologies"
-msgstr ""
+msgstr "Technologies"
 
 #: zchat/resume/resume_translations.py:27
 msgid "Project Link"
-msgstr ""
+msgstr "Project Link"
 
 #: zchat/resume/resume_translations.py:30
 msgid "Publications"
-msgstr ""
+msgstr "Publications"
 
 #: zchat/resume/resume_translations.py:31
 msgid "Authors"
-msgstr ""
+msgstr "Authors"
 
 #: zchat/resume/resume_translations.py:32
 msgid "Publisher"
-msgstr ""
+msgstr "Publisher"
 
 #: zchat/resume/resume_translations.py:33
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #: zchat/resume/resume_translations.py:34
 msgid "Read Publication"
-msgstr ""
+msgstr "Read Publication"
 
 #: zchat/resume/resume_translations.py:37
 msgid "Awards"
-msgstr ""
+msgstr "Awards"
 
 #: zchat/resume/resume_translations.py:38
 msgid "Issuer"
-msgstr ""
+msgstr "Issuer"
 
 #: zchat/resume/resume_translations.py:41
 msgid "Volunteer Experience"
-msgstr ""
+msgstr "Volunteer Experience"
 
 #: zchat/resume/resume_translations.py:44
 msgid "Self-Evaluation"
-msgstr ""
+msgstr "Self-Evaluation"
 
 #: zchat/resume/resume_translations.py:45
 msgid "Interests"
-msgstr ""
+msgstr "Interests"
 
 #: zchat/resume/resume_translations.py:46
 msgid "Strengths"
-msgstr ""
+msgstr "Strengths"
 
 #: zchat/resume/resume_translations.py:49
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: zchat/resume/resume_translations.py:50
 msgid "Phone"
-msgstr ""
+msgstr "Phone"
 
 #: zchat/resume/resume_translations.py:51
 msgid "Address"
-msgstr ""
+msgstr "Address"
 
 #: zchat/resume/resume_translations.py:52
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: zchat/resume/resume_translations.py:53
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: zchat/resume/resume_translations.py:54
 msgid "Personal Website"
-msgstr ""
+msgstr "Personal Website"
 
 #: zchat/resume/resume_translations.py:57
 msgid "Present"
-msgstr ""
+msgstr "Present"
 
 #: zchat/resume/resume_translations.py:58
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: zchat/resume/resume_translations.py:61
 msgid "Certifications"
-msgstr ""
+msgstr "Certifications"
 
 #: zchat/resume/resume_translations.py:62
 msgid "Issuing Institution"
-msgstr ""
+msgstr "Issuing Institution"
 
 #: zchat/resume/resume_translations.py:63
 msgid "Date Obtained"
-msgstr ""
+msgstr "Date Obtained"
 
 #: zchat/resume/resume_translations.py:64
 msgid "Expiration Date"
-msgstr ""
+msgstr "Expiration Date"
 
 #: zchat/resume/resume_translations.py:65
 msgid "Certificate ID"
-msgstr ""
+msgstr "Certificate ID"
 
 #: zchat/resume/resume_translations.py:66
 msgid "View Certificate"
-msgstr ""
+msgstr "View Certificate"
 
 #: zchat/resume/resume_translations.py:69
 msgid "@"
-msgstr ""
+msgstr "@"
 
 #: zchat/resume/resume_translations.py:70
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: zchat/resume/resume_translations.py:71
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: zchat/resume/resume_translations.py:72
 msgid " | "
-msgstr ""
+msgstr " | "
 
 #: zchat/resume/resume_translations.py:73
 msgid "- "
-msgstr ""
+msgstr "- "
 
 #: zchat/resume/resume_translations.py:76
 msgid "This resume was generated automatically"
+msgstr "This resume was generated automatically"
+
+#: zchat/templates/index.html:6 zchat/templates/index.html:9
+msgid "职路 - AI驱动的职业发展平台"
+msgstr "VoyLead - AI-driven Career Development Platform"
+
+#: zchat/templates/index.html:7 zchat/templates/index.html:10
+msgid "职路通过AI技术革新职业发展，为每个人提供精准的职业规划、测评和简历定制服务，让职业成长更高效。"
 msgstr ""
+"VoyLead revolutionizes career development through AI technology, "
+"providing everyone with precise career planning, assessment, and resume "
+"customization services, making career growth more efficient."
 
-#: zchat/templates/index.html:6
-msgid "职路 - 您的职业发展伙伴"
-msgstr "VoyLead - Your Career Development Partner"
-
-#: zchat/templates/index.html:7
-msgid "职路是一款专注于职业发展、求职指导和职场提升的应用，助您踏上理想的职业之路。"
+#: zchat/templates/index.html:8
+msgid "职业规划,AI职业测评,简历定制,职位分析,职业发展,求职,跳槽"
 msgstr ""
-"VoyLead is an application focused on career development, job guidance, "
-"and workplace advancement, helping you embark on your ideal career path."
+"Career Planning,AI Career Assessment,Resume Customization,Job "
+"Analysis,Career Development,Job Search,Job Change"
 
-#: zchat/templates/index.html:22 zchat/templates/index.html:23
-#: zchat/templates/index.html:255 zchat/templates/index.html:256
+#: zchat/templates/index.html:33 zchat/templates/index.html:34
+#: zchat/templates/index.html:1131 zchat/templates/index.html:1132
 msgid "职路"
 msgstr "VoyLead"
 
-#: zchat/templates/index.html:27 zchat/templates/index.html:178
-msgid "产品特色"
-msgstr "Features"
+#: zchat/templates/index.html:38 zchat/templates/index.html:426
+msgid "核心功能"
+msgstr "Core Features"
 
-#: zchat/templates/index.html:28 zchat/templates/index.html:163
-#: zchat/templates/index.html:224
-msgid "立即下载"
-msgstr "Download Now"
+#: zchat/templates/index.html:39
+msgid "产品演示"
+msgstr "Product Demo"
 
-#: zchat/templates/index.html:29 zchat/templates/index.html:241
-#: zchat/templates/index.html:263
+#: zchat/templates/index.html:40
+msgid "定价方案"
+msgstr "Pricing Plans"
+
+# FAQ Section
+#: zchat/templates/index.html:41 zchat/templates/index.html:948
+msgid "常见问题"
+msgstr "Frequently Asked Questions"
+
+#: zchat/templates/index.html:42 zchat/templates/index.html:1056
+#: zchat/templates/index.html:1139
 msgid "关于我们"
 msgstr "About Us"
 
-#: zchat/templates/index.html:160
-msgid "职业成长，从精准规划开始"
-msgstr "Career Growth Starts with Precise Planning"
+#: zchat/templates/index.html:347
+msgid "AI驱动"
+msgstr "AI-Driven"
 
-#: zchat/templates/index.html:161
-msgid "领先一步的职业导航，让梦想有明确的坐标"
-msgstr "Stay ahead with career navigation that gives your dreams clear coordinates"
+#: zchat/templates/index.html:351
+msgid "4.8分好评"
+msgstr "4.8 Rating"
 
-#: zchat/templates/index.html:164
-msgid "了解更多"
-msgstr "Learn More"
+# Missing translations for website content that appear as Chinese in English
+# version
+#: zchat/templates/index.html:355
+msgid "100万+用户"
+msgstr "1M+ Users"
 
-#: zchat/templates/index.html:168
+#: zchat/templates/index.html:359
+msgid "AI驱动的职业发展平台"
+msgstr "AI-driven Career Development Platform"
+
+#: zchat/templates/index.html:361
+msgid "为您提供个性化的职业规划、精准的岗位分析和智能简历定制，让每一步职业选择都更明智"
+msgstr ""
+"Providing personalized career planning, precise job analysis, and "
+"intelligent resume customization, making every career choice smarter"
+
+#: zchat/templates/index.html:366 zchat/templates/index.html:817
+#: zchat/templates/index.html:1110
+msgid "免费开始使用"
+msgstr "Start Free"
+
+#: zchat/templates/index.html:370
+msgid "观看演示"
+msgstr "Watch Demo"
+
+#: zchat/templates/index.html:377
 msgid "职路应用展示"
 msgstr "VoyLead App Showcase"
 
-#: zchat/templates/index.html:184
-msgid "职业规划"
-msgstr "Career Planning"
+#: zchat/templates/index.html:384
+msgid "求职成功率"
+msgstr "Job Success Rate"
 
-#: zchat/templates/index.html:185
-msgid "AI精准规划成长方向，实时追踪行业趋势调整路径"
+#: zchat/templates/index.html:391 zchat/templates/index.html:1099
+msgid "平均薪资增长"
+msgstr "Average Salary Growth"
+
+#: zchat/templates/index.html:398
+msgid "节省求职时间"
+msgstr "Job Search Time Saved"
+
+#: zchat/templates/index.html:405
+msgid "职业匹配度"
+msgstr "Career Match Rate"
+
+#: zchat/templates/index.html:412
+msgid "面试通过率"
+msgstr "Interview Pass Rate"
+
+#: zchat/templates/index.html:427
+msgid "AI驱动的全方位职业发展解决方案，让您的每一步都更精准"
 msgstr ""
-"AI precisely plans your growth direction, tracking industry trends in "
-"real-time to adjust your path"
+"AI-driven comprehensive career development solution, making every step "
+"more precise"
 
-#: zchat/templates/index.html:186
-msgid "拆解目标为可执行任务，缩短成长周期，拒绝无效努力"
+#: zchat/templates/index.html:436
+msgid "AI职业规划"
+msgstr "AI Career Planning"
+
+#: zchat/templates/index.html:437
+msgid "基于大数据和AI算法，为您量身定制职业发展路径，实时追踪行业趋势，智能调整成长方向"
 msgstr ""
-"Break down goals into executable tasks, shorten growth cycles, and "
-"eliminate ineffective efforts"
+"Based on big data and AI algorithms, customize career development paths "
+"for you, track industry trends in real-time, and intelligently adjust "
+"growth direction"
 
-#: zchat/templates/index.html:193
-msgid "职业测评"
-msgstr "Career Assessment"
+#: zchat/templates/index.html:439
+msgid "个性化成长路径"
+msgstr "Personalized Growth Path"
 
-#: zchat/templates/index.html:194
-msgid "三维模型（性格/能力/大数据）诊断职业偏好，挖掘优势"
+#: zchat/templates/index.html:440
+msgid "行业趋势分析"
+msgstr "Industry Trend Analysis"
+
+#: zchat/templates/index.html:441
+msgid "技能差距识别"
+msgstr "Skill Gap Identification"
+
+#: zchat/templates/index.html:451 zchat/templates/index.html:961
+msgid "专业职业测评"
+msgstr "Professional career assessment"
+
+#: zchat/templates/index.html:452
+msgid "多维度职业能力评估，深度挖掘您的职业潜力和优势，精准匹配最适合的职业方向"
 msgstr ""
-"Three-dimensional model (personality/ability/big data) diagnoses career "
-"preferences and uncovers strengths"
+"Multi-dimensional career ability assessment, deeply explore your career "
+"potential and advantages, precisely match the most suitable career "
+"direction"
 
-#: zchat/templates/index.html:195
-msgid "对标高薪岗位人才画像，转行跳槽少走弯路"
-msgstr ""
-"Align with high-salary position talent profiles, making career "
-"transitions smoother"
+#: zchat/templates/index.html:454
+msgid "性格特质分析"
+msgstr "Personality Trait Analysis"
+
+#: zchat/templates/index.html:455
+msgid "能力模型评估"
+msgstr "Competency Model Assessment"
+
+#: zchat/templates/index.html:456
+msgid "职业匹配推荐"
+msgstr "Career Match Recommendations"
 
 # Default Chinese messages with English translations
-#: zchat/templates/index.html:202
-msgid "职位分析"
-msgstr "Job Analysis"
+#: zchat/templates/index.html:466
+msgid "智能职位分析"
+msgstr "Intelligent Job Analysis"
 
-#: zchat/templates/index.html:203
-msgid "深度分析目标岗位，提取企业隐性需求"
+#: zchat/templates/index.html:467
+msgid "深度解析目标岗位要求，提取企业隐性需求，为您提供精准的求职策略和面试指导"
 msgstr ""
-"Deep analysis of target positions, extracting implicit corporate "
-"requirements"
+"Deep analysis of target position requirements, extract implicit corporate"
+" needs, provide precise job search strategies and interview guidance"
 
-#: zchat/templates/index.html:204
-msgid "结合行业大数据，智能规划求职升职决策，快人一步"
+#: zchat/templates/index.html:469
+msgid "JD深度解析"
+msgstr "Deep JD Analysis"
+
+#: zchat/templates/index.html:470
+msgid "企业文化分析"
+msgstr "Corporate Culture Analysis"
+
+#: zchat/templates/index.html:471
+msgid "面试策略制定"
+msgstr "Interview Strategy Development"
+
+#: zchat/templates/index.html:481 zchat/templates/index.html:859
+msgid "智能简历定制"
+msgstr "Intelligent Resume Customization"
+
+#: zchat/templates/index.html:482
+msgid "AI智能分析岗位需求，自动优化简历内容和格式，显著提升简历通过率和面试邀约率"
 msgstr ""
-"Combine industry big data to intelligently plan job search and promotion "
-"decisions, staying ahead"
+"AI intelligently analyzes job requirements, automatically optimizes "
+"resume content and format, significantly improves resume pass rate and "
+"interview invitation rate"
 
-#: zchat/templates/index.html:212
-msgid "智能拆解JD隐藏关键词，拉满简历匹配度"
-msgstr "Intelligently break down hidden JD keywords to maximize resume match rate"
+#: zchat/templates/index.html:484
+msgid "关键词智能匹配"
+msgstr "Intelligent Keyword Matching"
 
-#: zchat/templates/index.html:213
-msgid "一键生成最优简历，大幅提升面试邀约率"
+#: zchat/templates/index.html:485
+msgid "格式自动优化"
+msgstr "Automatic Format Optimization"
+
+#: zchat/templates/index.html:486
+msgid "ATS系统适配"
+msgstr "ATS System Compatibility"
+
+#: zchat/templates/index.html:498
+msgid "简单三步，开启职业新篇章"
+msgstr "Three Simple Steps to Start a New Career Chapter"
+
+#: zchat/templates/index.html:499
+msgid "我们的AI系统将引导您完成整个职业发展过程"
+msgstr "Our AI system will guide you through the entire career development process"
+
+#: zchat/templates/index.html:509
+msgid "完成职业测评"
+msgstr "Complete Career Assessment"
+
+#: zchat/templates/index.html:510
+msgid "通过我们的专业测评系统，深度了解您的职业偏好、能力特长和发展潜力"
 msgstr ""
-"Generate optimal resumes with one click, significantly increasing "
-"interview invitation rates"
+"Through our professional assessment system, deeply understand your career"
+" preferences, abilities, and development potential"
 
-#: zchat/templates/index.html:225
+#: zchat/templates/index.html:520
+msgid "获取专属规划"
+msgstr "Get Personalized Planning"
+
+#: zchat/templates/index.html:521
+msgid "AI为您生成个性化的职业发展路径，包括技能提升建议和时间规划"
+msgstr ""
+"AI generates personalized career development paths for you, including "
+"skill improvement suggestions and time planning"
+
+#: zchat/templates/index.html:531
+msgid "实现职业突破"
+msgstr "Achieve Career Breakthrough"
+
+#: zchat/templates/index.html:532
+msgid "使用我们的简历优化和职位分析工具，快速获得心仪offer"
+msgstr ""
+"Use our resume optimization and job analysis tools to quickly get your "
+"desired offer"
+
+#: zchat/templates/index.html:543
+msgid "用户真实反馈"
+msgstr "Real User Feedback"
+
+#: zchat/templates/index.html:544
+msgid "看看其他用户如何通过职路实现职业突破"
+msgstr "See how other users achieved career breakthroughs with VoyLead"
+
+#: zchat/templates/index.html:554
+msgid "使用职路后，我的简历终于不再石沉大海，已经成功从传统行业转型到互联网，薪资翻了一倍！"
+msgstr ""
+"After using VoyLead, my resume finally stopped sinking and successfully "
+"transitioned from traditional industry to internet, and doubled my "
+"salary!"
+
+#: zchat/templates/index.html:558
+msgid "张***"
+msgstr "Zhang***"
+
+#: zchat/templates/index.html:559
+msgid "产品经理"
+msgstr "Product Manager"
+
+#: zchat/templates/index.html:559 zchat/templates/index.html:669
+msgid "3-5年"
+msgstr "3-5 years"
+
+#: zchat/templates/index.html:576
+msgid "职路的学习路径规划很好用，现在每一步都很有目标感。"
+msgstr ""
+"VoyLead's learning path planning is very useful, now every step feels "
+"purposeful."
+
+#: zchat/templates/index.html:580
+msgid "鱼鱼"
+msgstr "Fishy"
+
+#: zchat/templates/index.html:581
+msgid "UI设计师"
+msgstr "UI Designer"
+
+#: zchat/templates/index.html:581 zchat/templates/index.html:713
+msgid "1-3年"
+msgstr "1-3 years"
+
+#: zchat/templates/index.html:598
+msgid "作为应届生，职路帮我分析了适合的岗位，面试通过率大大提升，现在已经拿到心仪的offer"
+msgstr ""
+"As a fresh graduate, VoyLead helped me analyze the suitable position, "
+"greatly improved my interview pass rate, and now I've got my desired "
+"offer"
+
+#: zchat/templates/index.html:602
+msgid "138****5890"
+msgstr "138****5890"
+
+#: zchat/templates/index.html:603 zchat/templates/index.html:647
+msgid "软件工程师"
+msgstr "Software Engineer"
+
+#: zchat/templates/index.html:603
+msgid "应届"
+msgstr "Fresh Graduate"
+
+#: zchat/templates/index.html:620
+msgid "职路的职位分析功能让我深度了解了目标公司的需求，面试时回答问题可以更有针对性。"
+msgstr ""
+"VoyLead's job analysis feature helped me deeply understand the needs of "
+"the target company, and I answered questions more针对性, the success rate of"
+" the interview was greatly improved."
+
+#: zchat/templates/index.html:624
+msgid "alex@*****.com"
+msgstr "alex@*****.com"
+
+#: zchat/templates/index.html:625
+msgid "数据分析师"
+msgstr "Data Analyst"
+
+#: zchat/templates/index.html:625 zchat/templates/index.html:691
+msgid "5年以上"
+msgstr "5+ years"
+
+#: zchat/templates/index.html:642
+msgid "简历定制功能真的很实用，针对岗位自动调整关键词，批量定制海投，效果不错"
+msgstr ""
+"The resume customization feature is really practical, automatically "
+"adjusting keywords for different positions, batch customization of mass "
+"delivery, the effect is good"
+
+#: zchat/templates/index.html:646
+msgid "菲斯布可"
+msgstr "Alyssa"
+
+#: zchat/templates/index.html:647
+msgid "应届生"
+msgstr "Fresh Graduate"
+
+#: zchat/templates/index.html:664
+msgid "职业测评帮我重新认识了自己的优势，从迷茫到清晰，现在的工作完全符合我的性格特点。"
+msgstr ""
+"The career assessment helped me re-recognize my strengths, from confusion"
+" to clarity, and now my work completely matches my characteristics."
+
+#: zchat/templates/index.html:668
+msgid "189****2589"
+msgstr "189****2589"
+
+#: zchat/templates/index.html:669
+msgid "市场营销"
+msgstr "Marketing"
+
+#: zchat/templates/index.html:686
+msgid "转行时使用职路分析了很多岗位，做了充分准备，总算顺利翻身到AI行业。"
+msgstr ""
+"When I was switching jobs, I used VoyLead to analyze many positions, made"
+" thorough preparation, and finally successfully turned to the AI "
+"industry."
+
+#: zchat/templates/index.html:690
+msgid "深圳老司机"
+msgstr "Shenzhen Old Driver"
+
+#: zchat/templates/index.html:691
+msgid "项目经理"
+msgstr "Project Manager"
+
+#: zchat/templates/index.html:708
+msgid "刚毕业时很迷茫，职路的职业规划让我找到了方向，现在工作一年多，发展轨迹完全按照规划在走。"
+msgstr ""
+"When I graduated, I was very lost, the career planning of VoyLead helped "
+"me find direction, now I have been working for more than a year, and the "
+"development trajectory is completely in line with the plan."
+
+#: zchat/templates/index.html:712
+msgid "lily@*****.com"
+msgstr "lily@*****.com"
+
+#: zchat/templates/index.html:713
+msgid "前端开发"
+msgstr "Frontend Development"
+
+#: zchat/templates/index.html:730
+msgid "转行时用职路做了全面的能力评估和规划，现在成功转入AI行业，感谢职路的专业指导！"
+msgstr ""
+"When I was switching jobs, I used VoyLead to do a comprehensive ability "
+"evaluation and planning, now I have successfully switched to the AI "
+"industry, thank you for the professional guidance of VoyLead!"
+
+#: zchat/templates/index.html:734
+msgid "我是小白"
+msgstr "NewbieAsMyself"
+
+#: zchat/templates/index.html:735
+msgid "算法工程师"
+msgstr "Software Engineer"
+
+#: zchat/templates/index.html:735
+msgid "保密"
+msgstr "Confidential"
+
+#: zchat/templates/index.html:766
+msgid "立即下载"
+msgstr "Download Now"
+
+#: zchat/templates/index.html:767
 msgid "随时随地，开启您的成功\"职路\""
 msgstr "Start your successful career path anytime, anywhere"
 
-#: zchat/templates/index.html:228 zchat/templates/index.html:330
+#: zchat/templates/index.html:770 zchat/templates/index.html:1212
 msgid "小米应用商店下载"
 msgstr "Download from Xiaomi App Store"
 
-#: zchat/templates/index.html:232
+#: zchat/templates/index.html:774
 msgid "扫码下载职路APP"
 msgstr "Scan to download VoyLead APP"
 
-#: zchat/templates/index.html:233
+#: zchat/templates/index.html:775
 msgid "扫描二维码下载"
 msgstr "Scan QR code to download"
 
-#: zchat/templates/index.html:243
+#: zchat/templates/index.html:784
+msgid "选择适合您的方案"
+msgstr "Choose the Right Plan for You"
+
+#: zchat/templates/index.html:788
+msgid "按月付费"
+msgstr "Pay Per Use"
+
+#: zchat/templates/index.html:793
+msgid "按年付费"
+msgstr "Pay Per Use"
+
+#: zchat/templates/index.html:793
+#, python-format
+msgid "省30%%"
+msgstr "Save 30%%"
+
+#: zchat/templates/index.html:800
+msgid "免费体验"
+msgstr "Free Trial"
+
+#: zchat/templates/index.html:804
+msgid "天"
+msgstr "Days"
+
+#: zchat/templates/index.html:806
+msgid "每日免费积分，体验核心功能"
+msgstr "Daily free points to experience core features"
+
+#: zchat/templates/index.html:810
+msgid "每日88积分"
+msgstr "50 Points Daily"
+
+#: zchat/templates/index.html:811 zchat/templates/index.html:858
+msgid "完整职业测评"
+msgstr "Complete Career Assessment"
+
+#: zchat/templates/index.html:812 zchat/templates/index.html:928
+msgid "智能简历优化"
+msgstr "Intelligent Resume Optimization"
+
+#: zchat/templates/index.html:813
+msgid "高级职业规划"
+msgstr "Advanced Career Planning"
+
+# Default Chinese messages with English translations
+#: zchat/templates/index.html:814
+msgid "深度职位分析"
+msgstr "Deep Job Analysis"
+
+#: zchat/templates/index.html:822
+msgid "最受欢迎"
+msgstr "Most Popular"
+
+#: zchat/templates/index.html:828 zchat/templates/index.html:1589
+msgid "月"
+msgstr "Month"
+
+#: zchat/templates/index.html:830
+msgid "无限使用，专业服务"
+msgstr "Unlimited use, professional service"
+
+#: zchat/templates/index.html:834
+msgid "每日500积分"
+msgstr "50 Points Daily"
+
+#: zchat/templates/index.html:835
+msgid "所有功能无限制"
+msgstr "All Features Unlimited"
+
+#: zchat/templates/index.html:836
+msgid "优先客服支持"
+msgstr "Priority Customer Support"
+
+#: zchat/templates/index.html:837
+msgid "专属职业顾问"
+msgstr "Dedicated Career Advisor"
+
+#: zchat/templates/index.html:838
+msgid "行业报告下载"
+msgstr "Industry Report Downloads"
+
+#: zchat/templates/index.html:841 zchat/templates/index.html:1590
+msgid "开通会员"
+msgstr "Become a Member"
+
+#: zchat/templates/index.html:847
+msgid "积分套餐"
+msgstr "Points Package"
+
+#: zchat/templates/index.html:851 zchat/templates/index.html:857
+msgid "3000积分"
+msgstr "3000 Points"
+
+#: zchat/templates/index.html:853
+msgid "按需购买，灵活使用"
+msgstr "Purchase as needed, use flexibly"
+
+# Default Chinese messages with English translations
+#: zchat/templates/index.html:860 zchat/templates/index.html:936
+msgid "职位深度分析"
+msgstr "Deep Job Analysis"
+
+#: zchat/templates/index.html:861
+msgid "30天有效期"
+msgstr "30 Days Validity"
+
+#: zchat/templates/index.html:864
+msgid "立即购买"
+msgstr "Buy Now"
+
+#: zchat/templates/index.html:871
+msgid "7天无理由退款"
+msgstr "7-Day Money-Back Guarantee"
+
+#: zchat/templates/index.html:875
+msgid "数据安全保护"
+msgstr "Data Security Protection"
+
+#: zchat/templates/index.html:879
+msgid "24/7客服支持"
+msgstr "24/7 Customer Support"
+
+#: zchat/templates/index.html:889
+msgid "看看职路如何工作"
+msgstr "See How VoyLead Works"
+
+#: zchat/templates/index.html:890
+msgid "通过真实案例，了解职路如何帮助您实现职业突破"
+msgstr ""
+"Through real cases, understand how VoyLead helps you achieve career "
+"breakthroughs"
+
+#: zchat/templates/index.html:898
+msgid "点击观看产品演示"
+msgstr "Click to Watch Product Demo"
+
+#: zchat/templates/index.html:903
+msgid "您的浏览器不支持视频播放"
+msgstr "Your browser does not support video playback"
+
+#: zchat/templates/index.html:912
+msgid "智能职业测评"
+msgstr "Intelligent Career Assessment"
+
+#: zchat/templates/index.html:913
+msgid "通过科学的测评体系，全面了解您的职业偏好和能力特长"
+msgstr ""
+"Through a scientific assessment system, comprehensively understand your "
+"career preferences and capabilities"
+
+#: zchat/templates/index.html:920
+msgid "个性化职业规划"
+msgstr "Personalized Career Planning"
+
+#: zchat/templates/index.html:921
+msgid "基于测评结果和行业数据，为您制定专属的职业发展路径"
+msgstr ""
+"Based on assessment results and industry data, create your exclusive "
+"career development path"
+
+#: zchat/templates/index.html:929
+msgid "AI分析目标岗位需求，自动优化简历内容和格式"
+msgstr ""
+"AI analyzes target position requirements, automatically optimizes resume "
+"content and format"
+
+#: zchat/templates/index.html:937
+msgid "深度解析企业需求，提供精准的求职策略和面试指导"
+msgstr ""
+"Deep analysis of corporate needs, providing precise job search strategies"
+" and interview guidance"
+
+#: zchat/templates/index.html:952
+msgid "我可以用职路做什么？"
+msgstr "What can I do with VoyLead?"
+
+#: zchat/templates/index.html:956
+msgid "任何需要您职业成长的事情！职路特别适用于："
+msgstr ""
+"Anything related to your career growth! VoyLead is especially suitable "
+"for:"
+
+#: zchat/templates/index.html:958
+msgid "规划职业成长路径"
+msgstr "Planning your career growth path"
+
+#: zchat/templates/index.html:959
+msgid "进行职位分析"
+msgstr "Conducting job analysis"
+
+#: zchat/templates/index.html:960
+msgid "定制精准简历"
+msgstr "Customizing precise resumes"
+
+#: zchat/templates/index.html:968
+msgid "职路有什么好处？"
+msgstr "What are the benefits of VoyLead?"
+
+#: zchat/templates/index.html:972
+msgid "职路是一个生产力工具，专为更快，更高效地创建符合您的路径而构建。"
+msgstr ""
+"VoyLead is a productivity tool built to create paths that fit you faster "
+"and more efficiently."
+
+#: zchat/templates/index.html:973
+msgid "使用职路，您将享受："
+msgstr "Using VoyLead, you will enjoy:"
+
+#: zchat/templates/index.html:975
+msgid "助力职业发展：通过职业成长路径规划，明确发展方向，避免盲目摸索，少走弯路，快速实现职业目标。职位分析助深入了解职位，精准求职。简历定制和职业测评则提升求职竞争力，增加获得心仪工作的机会。"
+msgstr ""
+"Career development support: Through career growth path planning, clarify "
+"development direction, avoid blind exploration, take fewer detours, and "
+"quickly achieve career goals. Job analysis helps you understand positions"
+" deeply for precise job searching. Resume customization and career "
+"assessment enhance job competitiveness and increase chances of getting "
+"desired jobs."
+
+#: zchat/templates/index.html:976
+msgid "节省时间和精力：无需四处搜集资料和信息，职路集成丰富职业相关资源，一站式满足职业发展需求，让你更高效地规划和管理职业生涯。"
+msgstr ""
+"Save time and energy: No need to search for information everywhere. "
+"VoyLead integrates rich career-related resources, providing one-stop "
+"career development needs, allowing you to plan and manage your career "
+"more efficiently."
+
+#: zchat/templates/index.html:977
+msgid "提供个性化服务：根据个人情况量身定制职业成长路径和简历，考虑个体差异，使服务更具针对性和实效性，满足独特职业发展需求。"
+msgstr ""
+"Provide personalized services: Tailor career growth paths and resumes "
+"according to individual circumstances, considering individual "
+"differences, making services more targeted and effective to meet unique "
+"career development needs."
+
+#: zchat/templates/index.html:978
+msgid "促进自我认知：职业测评帮助深入了解兴趣、性格和能力，清晰自身优势和不足，做出适合职业选择，发挥潜力，实现自我价值。"
+msgstr ""
+"Promoting self-awareness: Career assessment helps you understand your "
+"interests, personality, and abilities, clarify your strengths and "
+"weaknesses, make suitable career choices, realize your potential, and "
+"achieve self-value."
+
+#: zchat/templates/index.html:985
+msgid "如何创作学习路径？"
+msgstr "How do I create a learning path?"
+
+#: zchat/templates/index.html:989
+msgid "创建学习路径可能会令人生畏，但不必这样！使用职路，您可能需要几分钟时间就能创建专业的指导路径。"
+msgstr ""
+"Creating a learning path may seem daunting, but it doesn't have to be! "
+"With VoyLead, you can create a professional guidance path in just a few "
+"minutes."
+
+#: zchat/templates/index.html:990
+msgid "第一步：根据您输入个人基本信息（如当前职业阶段、技能水平、职业目标等）"
+msgstr ""
+"Step 1: Enter your basic information (such as current career stage, skill"
+" level, career goals, etc.)"
+
+#: zchat/templates/index.html:991
+msgid "第二步：只要点击确认系统会根据您提供的数据以及海量行业信息，为您量身定制一份专属的职业成长规划。将整体学习目标分解为阶段性小目标，逐步击破。（如将编程语言学习分为基础语法、数据结构与算法、项目实战等阶段。）"
+msgstr ""
+"Step 2: Click confirm, and the system will tailor a personalized career "
+"growth plan for you based on your data and massive industry information. "
+"The overall learning goal is broken down into phased small goals to "
+"tackle step by step (e.g., dividing programming language learning into "
+"basic syntax, data structures and algorithms, project practice, etc.)."
+
+#: zchat/templates/index.html:997
+msgid "我不确定自己的职业目标，职路能帮我吗？"
+msgstr "I'm not sure about my career goals. Can VoyLead help?"
+
+#: zchat/templates/index.html:1001
+msgid "当然可以！职路的职业测评功能可以帮助您初步了解自己的兴趣、性格和能力优势，为确定职业方向提供参考。在您完成测评后，我们的职业成长路径规划功能会根据测评结果为您推荐适合的职业领域和职位类型，并提供相应的发展建议。同时，您还可以查看职位分析内容，深入了解不同职位的工作内容、发展前景和要求，从而逐步明确自己的职业目标。"
+msgstr ""
+"Absolutely! VoyLead's career assessment can help you understand your "
+"interests, personality, and strengths, providing a reference for "
+"determining your career direction. After the assessment, our career path "
+"planning will recommend suitable fields and positions and provide "
+"development advice. You can also view job analysis content to understand "
+"different roles, prospects, and requirements, gradually clarifying your "
+"career goals."
+
+#: zchat/templates/index.html:1007
+msgid "我的简历已经很长时间没有更新了，职路的简历定制功能能帮我重新整理吗？"
+msgstr ""
+"My resume hasn't been updated for a long time. Can VoyLead help me "
+"reorganize it?"
+
+#: zchat/templates/index.html:1011
+msgid "绝对可以！您只需将现有的简历内容上传至职路，我们的简历定制功能会根据您的职业背景和求职意向，对简历进行重新梳理和优化。我们会帮您筛选出重点信息，按照清晰的结构进行排版，突出您的优势和亮点，让您的简历更符合当前求职市场的要求。"
+msgstr ""
+"Definitely! Just upload your current resume to VoyLead, and our resume "
+"customization will reorganize and optimize it based on your background "
+"and job intentions. We'll help you highlight key information, structure "
+"it clearly, and showcase your strengths, making your resume more "
+"competitive in today's job market."
+
+#: zchat/templates/index.html:1017
+msgid "职路的职业成长路径是否适合应届毕业生？"
+msgstr "Is VoyLead's career path suitable for fresh graduates?"
+
+#: zchat/templates/index.html:1021
+msgid "职路的职业成长路径功能适合各个职业阶段的人群，包括应届毕业生及想要转行的人群。"
+msgstr ""
+"VoyLead's career path feature is suitable for people at all career "
+"stages, including fresh graduates and those looking to change careers."
+
+#: zchat/templates/index.html:1027
+msgid "职业测评的准确性如何保证？"
+msgstr "How is the accuracy of the career assessment ensured?"
+
+#: zchat/templates/index.html:1031
+msgid "职路的职业测评基于科学的心理学理论和成熟的职业测评模型，同时结合了大量用户数据和实际案例分析。测评题目经过精心设计和反复验证，能够较为准确地评估您的职业兴趣、性格特点、能力优势等方面。但需要注意的是，测评结果仅供参考，我们建议您将其作为了解自身特点的工具之一，结合实际情况综合判断，以做出更明智的职业决策。"
+msgstr ""
+"VoyLead's career assessment is based on scientific psychological theories"
+" and mature models, combined with user data and real case analysis. The "
+"questions are carefully designed and validated to accurately assess your "
+"interests, personality, and strengths. However, results are for reference"
+" only; we recommend using them as one tool among many for self-"
+"understanding and making wise career decisions."
+
+#: zchat/templates/index.html:1037
+msgid "我在使用APP过程中遇到问题，如何联系客服？"
+msgstr ""
+"I encountered problems while using the app. How can I contact customer "
+"service?"
+
+#: zchat/templates/index.html:1041
+msgid "如果您在使用职路时遇到任何问题，可以通过以下几种方式联系我们的客服团队："
+msgstr ""
+"If you encounter any problems while using VoyLead, you can contact our "
+"customer service team in the following ways:"
+
+#: zchat/templates/index.html:1043
+msgid "我的界面点击反馈建议，填写对应内容，我们的客服人员会及时接听并为您解决问题"
+msgstr ""
+"Go to the 'My' page, click 'Feedback', fill in the details, and our team "
+"will respond promptly."
+
+#: zchat/templates/index.html:1044
+msgid "发送邮件至support@voylead.com，详细描述您遇到的问题，我们会尽快回复您"
+msgstr ""
+"Send an email to support@voylead.com describing your issue in detail, and"
+" we will reply as soon as possible."
+
+#: zchat/templates/index.html:1057
+msgid "用AI与大数据为每个选择注入科学的力量"
+msgstr "Using AI and big data to inject scientific power into every choice"
+
+#: zchat/templates/index.html:1060
 msgid "职路由一群热爱职业发展领域的专业人士创立，用AI与大数据为每个选择注入科学的力量，让职业成长告别盲目试错。"
 msgstr ""
 "VoyLead was founded by a group of professionals passionate about career "
 "development, using AI and big data to inject scientific power into every "
 "choice, making career growth free from blind trial and error."
 
-#: zchat/templates/index.html:244
+#: zchat/templates/index.html:1061
 msgid "我们的团队汇集了AI算法专家、资深职业规划师、顶尖猎头合伙人及前大厂HRBP，共同打造这款专注于职业发展的应用。"
 msgstr ""
 "Our team brings together AI algorithm experts, senior career planners, "
 "top headhunting partners, and former HRBPs from major companies to create"
 " this career development-focused application."
 
-#: zchat/templates/index.html:245
+#: zchat/templates/index.html:1062
 msgid "我们的使命是赋能每一位职场人士，让职业发展变得更加清晰、高效和充满可能性。真正做到有路可依，有\"职路\"，不走弯路。"
 msgstr ""
 "Our mission is to empower every professional, making career development "
 "clearer, more efficient, and full of possibilities. Truly providing a "
 "clear path, a 'VoyLead', without detours."
 
-#: zchat/templates/index.html:257
+#: zchat/templates/index.html:1067
+msgid "AI算法专家"
+msgstr "AI Algorithm Experts"
+
+#: zchat/templates/index.html:1068
+msgid "顶尖的人工智能技术团队，为职业发展提供科学的数据支撑"
+msgstr ""
+"Top artificial intelligence technology team, providing scientific data "
+"support for career development"
+
+#: zchat/templates/index.html:1072
+msgid "资深职业规划师"
+msgstr "Senior Career Planners"
+
+#: zchat/templates/index.html:1073
+msgid "拥有丰富经验的职业规划专家，深度理解职场发展规律"
+msgstr ""
+"Experienced career planning experts with deep understanding of workplace "
+"development patterns"
+
+#: zchat/templates/index.html:1077
+msgid "大厂HRBP背景"
+msgstr "HRBP Background from Major Companies"
+
+#: zchat/templates/index.html:1078
+msgid "来自知名企业的人力资源专家，洞察企业用人需求"
+msgstr ""
+"Human resources experts from well-known companies, with insights into "
+"corporate hiring needs"
+
+#: zchat/templates/index.html:1089
+msgid "准备好开启您的职业新篇章了吗？"
+msgstr "Ready to Start Your New Career Chapter?"
+
+#: zchat/templates/index.html:1090
+msgid "加入100万+用户的选择，让AI助力您的职业发展"
+msgstr "Join 1 million+ users, let AI power your career development"
+
+#: zchat/templates/index.html:1095
+msgid "求职成功率提升"
+msgstr "Job Success Rate Improvement"
+
+#: zchat/templates/index.html:1103
+msgid "求职时间节省"
+msgstr "Job Search Time Saved"
+
+#: zchat/templates/index.html:1114
+msgid "观看产品演示"
+msgstr "Watch Product Demo"
+
+#: zchat/templates/index.html:1120
+msgid "7天无理由退款保证 • 数据安全保护 • 24/7客服支持"
+msgstr ""
+"7-Day Money-Back Guarantee • Data Security Protection • 24/7 Customer "
+"Support"
+
+#: zchat/templates/index.html:1133
 msgid "您的职业发展伙伴"
 msgstr "Your Career Development Partner"
 
-#: zchat/templates/index.html:261
+#: zchat/templates/index.html:1137
 msgid "公司"
 msgstr "Company"
 
-#: zchat/templates/index.html:264
+#: zchat/templates/index.html:1140
 msgid "联系我们"
 msgstr "Contact Us"
 
-#: zchat/templates/index.html:268
+#: zchat/templates/index.html:1144
 msgid "支持"
 msgstr "Support"
 
-#: zchat/templates/index.html:270
+#: zchat/templates/index.html:1146
 msgid "隐私政策"
 msgstr "Privacy Policy"
 
-#: zchat/templates/index.html:271
+#: zchat/templates/index.html:1147
 msgid "服务条款"
 msgstr "Terms of Service"
 
-#: zchat/templates/index.html:272
+#: zchat/templates/index.html:1148
 msgid "增值服务协议"
 msgstr "Premium Service Agreement"
 
-#: zchat/templates/index.html:276
+#: zchat/templates/index.html:1153
 msgid "关注我们"
 msgstr "Follow Us"
 
-#: zchat/templates/index.html:286
+#: zchat/templates/index.html:1164 zchat/templates/index.html:1167
 msgid "&copy; 2025 职路APP. 保留所有权利."
 msgstr "&copy; 2025 VoyLead APP. All rights reserved."
 
-#: zchat/templates/index.html:324
+#: zchat/templates/index.html:1206
 msgid "下载Android版"
 msgstr "Download Android Version"
 
-#: zchat/templates/index.html:334
-#, fuzzy
+#: zchat/templates/index.html:1216
 msgid "小米应用商店"
 msgstr "Download from Xiaomi App Store"
 
-#: zchat/templates/index.html:341
-#, fuzzy
+#: zchat/templates/index.html:1223
 msgid "OPPO应用商店下载"
 msgstr "Download from Xiaomi App Store"
 
-#: zchat/templates/index.html:345
+#: zchat/templates/index.html:1227
 msgid "OPPO应用商店"
-msgstr ""
+msgstr "OPPO App Store"
 
-#: zchat/templates/index.html:352
-#, fuzzy
+#: zchat/templates/index.html:1234
 msgid "华为应用商店下载"
 msgstr "Download from Xiaomi App Store"
 
-#: zchat/templates/index.html:356
+#: zchat/templates/index.html:1238
 msgid "华为应用商店"
-msgstr ""
+msgstr "Huawei App Store"
 
-#: zchat/templates/index.html:363
-#, fuzzy
+#: zchat/templates/index.html:1245
 msgid "vivo应用商店下载"
 msgstr "Download from Xiaomi App Store"
 
-#: zchat/templates/index.html:367
+#: zchat/templates/index.html:1249
 msgid "vivo应用商店"
-msgstr ""
+msgstr "vivo App Store"
 
-#: zchat/templates/index.html:793
+#: zchat/templates/index.html:1480
 msgid "职位分析进行中..."
 msgstr "Job Analysis in Progress..."
 
-#: zchat/templates/index.html:794
+#: zchat/templates/index.html:1481
 msgid "职位分析完成，正在生成专属报告，5个核心技能强匹配，来看看吧"
 msgstr ""
 "Job Analysis Complete, Generating Custom Report with 5 Strongly Matched "
 "Core Skills, Check it Out"
 
-#: zchat/templates/index.html:795
+#: zchat/templates/index.html:1482
 #, python-format
 msgid "简历定制完成，匹配度提升30%%"
 msgstr "Resume Customization Complete, Match Rate Increased by 30%%"
 
-#: zchat/templates/index.html:796
+#: zchat/templates/index.html:1483
 msgid "技能树定制完成，8个阶段，100+核心知识点，快来打卡吧"
 msgstr ""
 "Skill Tree Customization Complete, 8 Stages, 100+ Core Knowledge Points, "
 "Start Your Journey"
 
-#: zchat/templates/index.html:797
+#: zchat/templates/index.html:1484
 msgid "匹配最优职位中..."
 msgstr "Matching Best Positions..."
 
-#: zchat/templates/index.html:798
+#: zchat/templates/index.html:1485
 msgid "专属成长路径生成及技能树定制中..."
 msgstr "Generating Custom Growth Path and Skill Tree..."
 
-#: zchat/templates/index.html:799
+#: zchat/templates/index.html:1486
 msgid "行业趋势分析中..."
 msgstr "Analyzing Industry Trends..."
 
-#: zchat/templates/index.html:800
+#: zchat/templates/index.html:1487
 msgid "简历匹配度分析中..."
 msgstr "Analyzing Resume Match Rate..."
 
-#: zchat/templates/index.html:801
+#: zchat/templates/index.html:1488
 msgid "职业能力评估中..."
 msgstr "Assessing Professional Capabilities..."
 
-#: zchat/templates/index.html:802
+#: zchat/templates/index.html:1489
 msgid "职场竞争力提升中..."
 msgstr "Enhancing Workplace Competitiveness..."
 
-#: zchat/templates/index.html:803
+#: zchat/templates/index.html:1490
 msgid "简历曝光率提升中..."
 msgstr "Increasing Resume Exposure..."
 
-#: zchat/templates/index.html:804
+#: zchat/templates/index.html:1491
 msgid "面试机会增加中..."
 msgstr "Increasing Interview Opportunities..."
 
-#: zchat/templates/index.html:805
+#: zchat/templates/index.html:1492
 msgid "薪资增长潜力提升中..."
 msgstr "Enhancing Salary Growth Potential..."
 
-#: zchat/templates/index.html:806
+#: zchat/templates/index.html:1493
 #, python-format
 msgid "职场竞争力+28%%"
 msgstr "Career Competitiveness +28%%"
 
-#: zchat/templates/index.html:807
+#: zchat/templates/index.html:1494
 #, python-format
 msgid "简历曝光率提升42%%"
 msgstr "Resume Exposure Rate Increased by 42%%"
 
-#: zchat/templates/index.html:808
+#: zchat/templates/index.html:1495
 #, python-format
 msgid "面试机会增加36%%"
 msgstr "Interview Opportunities Increased by 36%%"
 
-#: zchat/templates/index.html:809
+#: zchat/templates/index.html:1496
 #, python-format
 msgid "薪资增长潜力52%%"
 msgstr "Salary Growth Potential 52%%"
 
-#: zchat/templates/index.html:810
+#: zchat/templates/index.html:1497
 #, python-format
 msgid "岗位需求增长17%%"
 msgstr "Job Demand Growth 17%%"
+
+#: zchat/templates/index.html:1583
+msgid "年"
+msgstr "year"
+
+#: zchat/templates/index.html:1584
+msgid "开通高级会员"
+msgstr "Upgrade to Premium"
 
 #: zchat/templates/customer_service/email_verified.html:6
 msgid "Email Verified"
@@ -781,7 +1462,7 @@ msgstr ""
 #: zchat/templates/customer_service/error.html:66
 #: zchat/templates/customer_service/reset_password_success.html:66
 msgid "Return to Homepage"
-msgstr ""
+msgstr "Return to Homepage"
 
 #: zchat/templates/customer_service/email_verified.html:68
 #: zchat/templates/customer_service/error.html:68
@@ -840,160 +1521,4 @@ msgid ""
 msgstr ""
 "Your password has been successfully reset. You can now log in with your "
 "new password."
-
-# FAQ Section
-msgid "常见问题"
-msgstr "Frequently Asked Questions"
-
-msgid "我可以用职路做什么？"
-msgstr "What can I do with VoyLead?"
-
-msgid "任何需要您职业成长的事情！职路特别适用于："
-msgstr ""
-"Anything related to your career growth! VoyLead is especially suitable "
-"for:"
-
-msgid "规划职业成长路径"
-msgstr "Planning your career growth path"
-
-msgid "进行职位分析"
-msgstr "Conducting job analysis"
-
-msgid "定制精准简历"
-msgstr "Customizing precise resumes"
-
-msgid "专业职业测评"
-msgstr "Professional career assessment"
-
-msgid "职路有什么好处？"
-msgstr "What are the benefits of VoyLead?"
-
-msgid "职路是一个生产力工具，专为更快，更高效地创建符合您的路径而构建。"
-msgstr ""
-"VoyLead is a productivity tool designed to help you create your career "
-"path faster and more efficiently."
-
-msgid "使用职路，您将享受："
-msgstr "With VoyLead, you will enjoy:"
-
-msgid "助力职业发展：通过职业成长路径规划，明确发展方向，避免盲目摸索，少走弯路，快速实现职业目标。职位分析助深入了解职位，精准求职。简历定制和职业测评则提升求职竞争力，增加获得心仪工作的机会。"
-msgstr ""
-"Boosting career development: Plan your career path, clarify your "
-"direction, avoid blind exploration, and achieve your goals faster. Job "
-"analysis helps you understand positions in depth and apply precisely. "
-"Resume customization and career assessment enhance your competitiveness "
-"and increase your chances of getting your desired job."
-
-msgid "节省时间和精力：无需四处搜集资料和信息，职路集成丰富职业相关资源，一站式满足职业发展需求，让你更高效地规划和管理职业生涯。"
-msgstr ""
-"Saving time and effort: No need to search for information everywhere. "
-"VoyLead integrates rich career resources to meet your development needs "
-"in one place, making your career planning and management more efficient."
-
-msgid "提供个性化服务：根据个人情况量身定制职业成长路径和简历，考虑个体差异，使服务更具针对性和实效性，满足独特职业发展需求。"
-msgstr ""
-"Personalized service: Tailor your career path and resume based on your "
-"personal situation, considering individual differences to make the "
-"service more targeted and effective, meeting your unique career "
-"development needs."
-
-msgid "促进自我认知：职业测评帮助深入了解兴趣、性格和能力，清晰自身优势和不足，做出适合职业选择，发挥潜力，实现自我价值。"
-msgstr ""
-"Promoting self-awareness: Career assessment helps you understand your "
-"interests, personality, and abilities, clarify your strengths and "
-"weaknesses, make suitable career choices, realize your potential, and "
-"achieve self-value."
-
-msgid "如何创作学习路径？"
-msgstr "How do I create a learning path?"
-
-msgid "创建学习路径可能会令人生畏，但不必这样！使用职路，您可能需要几分钟时间就能创建专业的指导路径。"
-msgstr ""
-"Creating a learning path may seem daunting, but it doesn't have to be! "
-"With VoyLead, you can create a professional guidance path in just a few "
-"minutes."
-
-msgid "第一步：根据您输入个人基本信息（如当前职业阶段、技能水平、职业目标等）"
-msgstr ""
-"Step 1: Enter your basic information (such as current career stage, skill"
-" level, career goals, etc.)"
-
-msgid "第二步：只要点击确认系统会根据您提供的数据以及海量行业信息，为您量身定制一份专属的职业成长规划。将整体学习目标分解为阶段性小目标，逐步击破。（如将编程语言学习分为基础语法、数据结构与算法、项目实战等阶段。）"
-msgstr ""
-"Step 2: Click confirm, and the system will tailor a personalized career "
-"growth plan for you based on your data and massive industry information. "
-"The overall learning goal is broken down into phased small goals to "
-"tackle step by step (e.g., dividing programming language learning into "
-"basic syntax, data structures and algorithms, project practice, etc.)."
-
-msgid "我不确定自己的职业目标，职路能帮我吗？"
-msgstr "I'm not sure about my career goals. Can VoyLead help?"
-
-msgid "当然可以！职路的职业测评功能可以帮助您初步了解自己的兴趣、性格和能力优势，为确定职业方向提供参考。在您完成测评后，我们的职业成长路径规划功能会根据测评结果为您推荐适合的职业领域和职位类型，并提供相应的发展建议。同时，您还可以查看职位分析内容，深入了解不同职位的工作内容、发展前景和要求，从而逐步明确自己的职业目标。"
-msgstr ""
-"Absolutely! VoyLead's career assessment can help you understand your "
-"interests, personality, and strengths, providing a reference for "
-"determining your career direction. After the assessment, our career path "
-"planning will recommend suitable fields and positions and provide "
-"development advice. You can also view job analysis content to understand "
-"different roles, prospects, and requirements, gradually clarifying your "
-"career goals."
-
-msgid "我的简历已经很长时间没有更新了，职路的简历定制功能能帮我重新整理吗？"
-msgstr ""
-"My resume hasn't been updated for a long time. Can VoyLead help me "
-"reorganize it?"
-
-msgid "绝对可以！您只需将现有的简历内容上传至职路，我们的简历定制功能会根据您的职业背景和求职意向，对简历进行重新梳理和优化。我们会帮您筛选出重点信息，按照清晰的结构进行排版，突出您的优势和亮点，让您的简历更符合当前求职市场的要求。"
-msgstr ""
-"Definitely! Just upload your current resume to VoyLead, and our resume "
-"customization will reorganize and optimize it based on your background "
-"and job intentions. We'll help you highlight key information, structure "
-"it clearly, and showcase your strengths, making your resume more "
-"competitive in today's job market."
-
-msgid "职路的职业成长路径是否适合应届毕业生？"
-msgstr "Is VoyLead's career path suitable for fresh graduates?"
-
-msgid "职路的职业成长路径功能适合各个职业阶段的人群，包括应届毕业生及想要转行的人群。"
-msgstr ""
-"VoyLead's career path feature is suitable for people at all career "
-"stages, including fresh graduates and those looking to change careers."
-
-msgid "职业测评的准确性如何保证？"
-msgstr "How is the accuracy of the career assessment ensured?"
-
-msgid "职路的职业测评基于科学的心理学理论和成熟的职业测评模型，同时结合了大量用户数据和实际案例分析。测评题目经过精心设计和反复验证，能够较为准确地评估您的职业兴趣、性格特点、能力优势等方面。但需要注意的是，测评结果仅供参考，我们建议您将其作为了解自身特点的工具之一，结合实际情况综合判断，以做出更明智的职业决策。"
-msgstr ""
-"VoyLead's career assessment is based on scientific psychological theories"
-" and mature models, combined with user data and real case analysis. The "
-"questions are carefully designed and validated to accurately assess your "
-"interests, personality, and strengths. However, results are for reference"
-" only; we recommend using them as one tool among many for self-"
-"understanding and making wise career decisions."
-
-msgid "我在使用APP过程中遇到问题，如何联系客服？"
-msgstr ""
-"I encountered problems while using the app. How can I contact customer "
-"service?"
-
-msgid "如果您在使用职路时遇到任何问题，可以通过以下几种方式联系我们的客服团队："
-msgstr ""
-"If you encounter any problems while using VoyLead, you can contact our "
-"customer service team in the following ways:"
-
-msgid "在APP内点击\"客服\"按钮，与在线客服人员进行实时沟通"
-msgstr ""
-"Click the 'Customer Service' button in the app to chat with our online "
-"support."
-
-msgid "我的界面点击反馈建议，填写对应内容，我们的客服人员会及时接听并为您解决问题"
-msgstr ""
-"Go to the 'My' page, click 'Feedback', fill in the details, and our team "
-"will respond promptly."
-
-msgid "发送邮件至support@voylead.com，详细描述您遇到的问题，我们会尽快回复您"
-msgstr ""
-"Send an email to support@voylead.com describing your issue in detail, and"
-" we will reply as soon as possible."
 
