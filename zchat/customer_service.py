@@ -3,6 +3,7 @@ import uuid
 import time
 from zchat.nosql import add_feedback_nosql, get_feedback_nosql, update_feedback_nosql, get_feedback_list_nosql
 from zchat.auth import login_required, current_user, admin_required
+from zchat.mail import send_feedback_notification_email
 
 bp = Blueprint('customer_service', __name__, url_prefix='/customer_service')
 
@@ -40,6 +41,14 @@ def feedback():
         'status': 'pending',
     }
     add_feedback_to_nosql(current_app, feedback)
+
+    try:
+        send_feedback_notification_email(feedback)
+    except Exception as e:
+        current_app.logger.error(f"Failed to send feedback notification: {str(e)}")
+        # We don't want to fail the feedback submission if email fails
+        pass
+
     return jsonify({'message': '反馈成功'})
 
 @bp.route('/feedback_list', methods=['GET'])

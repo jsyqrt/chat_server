@@ -101,3 +101,39 @@ def send_password_reset_email(email, token):
     """
 
     return send_email(subject, [email], html_body, text_body)
+
+def send_feedback_notification_email(feedback):
+    """发送用户反馈通知邮件到客服邮箱"""
+    try:
+        # 邮件主题
+        subject = f"新的用户反馈 - {feedback['category']}"
+
+        # 邮件HTML内容
+        html_body = f"""
+        <h2>新的用户反馈</h2>
+        <p><strong>反馈ID：</strong>{feedback['id']}</p>
+        <p><strong>用户ID：</strong>{feedback['user_id']}</p>
+        <p><strong>分类：</strong>{feedback['category']}</p>
+        <p><strong>内容：</strong>{feedback['content']}</p>
+        <p><strong>联系方式：</strong>{feedback['contact']}</p>
+        <p><strong>图片链接：</strong>{feedback['image_urls']}</p>
+        <p><strong>提交时间：</strong>{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(feedback['created_at']))}</p>
+        """
+
+        # 邮件纯文本内容
+        text_body = f"""
+        新的用户反馈
+
+        反馈ID：{feedback['id']}
+        用户ID：{feedback['user_id']}
+        分类：{feedback['category']}
+        内容：{feedback['content']}
+        联系方式：{feedback['contact']}
+        图片链接：{feedback['image_urls']}
+        提交时间：{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(feedback['created_at']))}
+        """
+
+        return send_email(subject, ['support@voylead.com'], html_body, text_body)
+    except Exception as e:
+        current_app.logger.error(f"Failed to send feedback notification email: {str(e)}")
+        raise
