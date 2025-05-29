@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-28 22:35+0800\n"
+"POT-Creation-Date: 2025-05-29 14:23+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -890,7 +890,7 @@ msgid "积分套餐"
 msgstr ""
 
 #: zchat/templates/index.html:851 zchat/templates/index.html:857
-msgid "3000积分"
+msgid "5000积分"
 msgstr ""
 
 #: zchat/templates/index.html:853

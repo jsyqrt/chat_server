@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  zchat\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-28 22:35+0800\n"
+"POT-Creation-Date: 2025-05-29 14:22+0800\n"
 "PO-Revision-Date: 2024-05-16 12:00+0800\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -887,7 +887,7 @@ msgstr "Daily free points to experience core features"
 
 #: zchat/templates/index.html:810
 msgid "每日88积分"
-msgstr "50 Points Daily"
+msgstr "88 Points Daily"
 
 #: zchat/templates/index.html:811 zchat/templates/index.html:858
 msgid "完整职业测评"
@@ -920,7 +920,7 @@ msgstr "Unlimited use, professional service"
 
 #: zchat/templates/index.html:834
 msgid "每日500积分"
-msgstr "50 Points Daily"
+msgstr "500 Points Daily"
 
 #: zchat/templates/index.html:835
 msgid "所有功能无限制"
@@ -947,8 +947,9 @@ msgid "积分套餐"
 msgstr "Points Package"
 
 #: zchat/templates/index.html:851 zchat/templates/index.html:857
-msgid "3000积分"
-msgstr "3000 Points"
+#, fuzzy
+msgid "5000积分"
+msgstr "5000 Points"
 
 #: zchat/templates/index.html:853
 msgid "按需购买，灵活使用"

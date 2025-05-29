@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  zchat\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-28 22:35+0800\n"
+"POT-Creation-Date: 2025-05-29 14:22+0800\n"
 "PO-Revision-Date: 2024-05-16 12:00+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -838,7 +838,7 @@ msgstr "每日免费积分，体验核心功能"
 #: zchat/templates/index.html:810
 #, fuzzy
 msgid "每日88积分"
-msgstr "每日50积分"
+msgstr "每日88积分"
 
 #: zchat/templates/index.html:811 zchat/templates/index.html:858
 msgid "完整职业测评"
@@ -870,9 +870,8 @@ msgid "无限使用，专业服务"
 msgstr "无限使用，专业服务"
 
 #: zchat/templates/index.html:834
-#, fuzzy
 msgid "每日500积分"
-msgstr "每日50积分"
+msgstr "每日500积分"
 
 #: zchat/templates/index.html:835
 msgid "所有功能无限制"
@@ -899,8 +898,9 @@ msgid "积分套餐"
 msgstr "积分套餐"
 
 #: zchat/templates/index.html:851 zchat/templates/index.html:857
-msgid "3000积分"
-msgstr "3000积分"
+#, fuzzy
+msgid "5000积分"
+msgstr "5000积分"
 
 #: zchat/templates/index.html:853
 msgid "按需购买，灵活使用"
