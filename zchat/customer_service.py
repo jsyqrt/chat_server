@@ -40,7 +40,7 @@ def feedback():
         'created_at': time.time(),
         'status': 'pending',
     }
-    add_feedback_to_nosql(current_app, feedback)
+    add_feedback_nosql(current_app, feedback)
 
     try:
         send_feedback_notification_email(feedback)
