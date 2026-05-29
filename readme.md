@@ -1,6 +1,6 @@
 # ZChat — Career Mentoring Marketplace Backend
 
-[![CI](https://github.com/jsyqrt/chat_server/actions/workflows/ci.yml/badge.svg)](https://github.com/jsyqrt/chat_server/actions/workflows/ci.yml)
+[![CI](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml)
 
 A production-grade **real-time communication backend** for a career mentoring marketplace. The platform connects **career mentees (newbies)** with **industry experts** for one-on-one mentoring sessions. Built with Flask, this backend powers phone-based authentication, instant messaging, video/voice calls via LiveKit, appointment booking with a formal state machine, full-text search via Meilisearch, and a balanced payment system.
 
@@ -242,7 +242,7 @@ flask --app zchat migrate upgrade
 │   └── templates/                 # Jinja2 templates
 ├── tests/                         # Test suite
 │   ├── __init__.py
-│   ├── conftest.py                # Fixtures (app, client, socketio)
+│   ├── conftest.py                # Fixtures (app, client)
 │   ├── test_auth.py               # Phone auth flow tests
 │   ├── test_chat.py               # WebSocket messaging tests
 │   └── test_models.py             # State machine & model tests
