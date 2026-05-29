@@ -1,6 +1,6 @@
 # ZChat — Career Mentoring Marketplace Backend
 
-[![CI](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml)
+[![CI](https://github.com/jsyqrt/chat_server/actions/workflows/ci.yml/badge.svg)](https://github.com/jsyqrt/chat_server/actions/workflows/ci.yml)
 
 A production-grade **real-time communication backend** for a career mentoring marketplace. The platform connects **career mentees (newbies)** with **industry experts** for one-on-one mentoring sessions. Built with Flask, this backend powers phone-based authentication, instant messaging, video/voice calls via LiveKit, appointment booking with a formal state machine, full-text search via Meilisearch, and a balanced payment system.
 
