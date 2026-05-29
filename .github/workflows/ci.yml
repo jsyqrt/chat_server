@@ -27,11 +27,11 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m pytest tests/ -v --tb=short
+          python -m pytest tests/ -v --tb=short --junitxml=test-results.xml
 
       - name: Upload test results (on failure)
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: test-output
-          path: tests/test_output/
+          name: test-results
+          path: test-results.xml
